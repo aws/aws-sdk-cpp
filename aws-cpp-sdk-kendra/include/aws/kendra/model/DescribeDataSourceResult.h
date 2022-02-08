@@ -337,37 +337,37 @@ namespace Model
 
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline const Aws::String& GetSchedule() const{ return m_schedule; }
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline void SetSchedule(const Aws::String& value) { m_schedule = value; }
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline void SetSchedule(Aws::String&& value) { m_schedule = std::move(value); }
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline void SetSchedule(const char* value) { m_schedule.assign(value); }
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline DescribeDataSourceResult& WithSchedule(const Aws::String& value) { SetSchedule(value); return *this;}
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline DescribeDataSourceResult& WithSchedule(Aws::String&& value) { SetSchedule(std::move(value)); return *this;}
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline DescribeDataSourceResult& WithSchedule(const char* value) { SetSchedule(value); return *this;}
 

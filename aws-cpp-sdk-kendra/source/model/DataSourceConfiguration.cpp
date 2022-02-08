@@ -28,7 +28,8 @@ DataSourceConfiguration::DataSourceConfiguration() :
     m_confluenceConfigurationHasBeenSet(false),
     m_googleDriveConfigurationHasBeenSet(false),
     m_webCrawlerConfigurationHasBeenSet(false),
-    m_workDocsConfigurationHasBeenSet(false)
+    m_workDocsConfigurationHasBeenSet(false),
+    m_fsxConfigurationHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue) :
     m_confluenceConfigurationHasBeenSet(false),
     m_googleDriveConfigurationHasBeenSet(false),
     m_webCrawlerConfigurationHasBeenSet(false),
-    m_workDocsConfigurationHasBeenSet(false)
+    m_workDocsConfigurationHasBeenSet(false),
+    m_fsxConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -119,6 +121,13 @@ DataSourceConfiguration& DataSourceConfiguration::operator =(JsonView jsonValue)
     m_workDocsConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FsxConfiguration"))
+  {
+    m_fsxConfiguration = jsonValue.GetObject("FsxConfiguration");
+
+    m_fsxConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +192,12 @@ JsonValue DataSourceConfiguration::Jsonize() const
   if(m_workDocsConfigurationHasBeenSet)
   {
    payload.WithObject("WorkDocsConfiguration", m_workDocsConfiguration.Jsonize());
+
+  }
+
+  if(m_fsxConfigurationHasBeenSet)
+  {
+   payload.WithObject("FsxConfiguration", m_fsxConfiguration.Jsonize());
 
   }
 

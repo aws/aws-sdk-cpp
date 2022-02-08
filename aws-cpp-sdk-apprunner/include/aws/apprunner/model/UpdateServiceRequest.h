@@ -10,6 +10,7 @@
 #include <aws/apprunner/model/SourceConfiguration.h>
 #include <aws/apprunner/model/InstanceConfiguration.h>
 #include <aws/apprunner/model/HealthCheckConfiguration.h>
+#include <aws/apprunner/model/NetworkConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -198,88 +199,133 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
-     * configuration resource that you want to associate with your service.</p>
+     * configuration resource that you want to associate with the App Runner
+     * service.</p>
      */
     inline const Aws::String& GetAutoScalingConfigurationArn() const{ return m_autoScalingConfigurationArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
-     * configuration resource that you want to associate with your service.</p>
+     * configuration resource that you want to associate with the App Runner
+     * service.</p>
      */
     inline bool AutoScalingConfigurationArnHasBeenSet() const { return m_autoScalingConfigurationArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
-     * configuration resource that you want to associate with your service.</p>
+     * configuration resource that you want to associate with the App Runner
+     * service.</p>
      */
     inline void SetAutoScalingConfigurationArn(const Aws::String& value) { m_autoScalingConfigurationArnHasBeenSet = true; m_autoScalingConfigurationArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
-     * configuration resource that you want to associate with your service.</p>
+     * configuration resource that you want to associate with the App Runner
+     * service.</p>
      */
     inline void SetAutoScalingConfigurationArn(Aws::String&& value) { m_autoScalingConfigurationArnHasBeenSet = true; m_autoScalingConfigurationArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
-     * configuration resource that you want to associate with your service.</p>
+     * configuration resource that you want to associate with the App Runner
+     * service.</p>
      */
     inline void SetAutoScalingConfigurationArn(const char* value) { m_autoScalingConfigurationArnHasBeenSet = true; m_autoScalingConfigurationArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
-     * configuration resource that you want to associate with your service.</p>
+     * configuration resource that you want to associate with the App Runner
+     * service.</p>
      */
     inline UpdateServiceRequest& WithAutoScalingConfigurationArn(const Aws::String& value) { SetAutoScalingConfigurationArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
-     * configuration resource that you want to associate with your service.</p>
+     * configuration resource that you want to associate with the App Runner
+     * service.</p>
      */
     inline UpdateServiceRequest& WithAutoScalingConfigurationArn(Aws::String&& value) { SetAutoScalingConfigurationArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
-     * configuration resource that you want to associate with your service.</p>
+     * configuration resource that you want to associate with the App Runner
+     * service.</p>
      */
     inline UpdateServiceRequest& WithAutoScalingConfigurationArn(const char* value) { SetAutoScalingConfigurationArn(value); return *this;}
 
 
     /**
      * <p>The settings for the health check that App Runner performs to monitor the
-     * health of your service.</p>
+     * health of the App Runner service.</p>
      */
     inline const HealthCheckConfiguration& GetHealthCheckConfiguration() const{ return m_healthCheckConfiguration; }
 
     /**
      * <p>The settings for the health check that App Runner performs to monitor the
-     * health of your service.</p>
+     * health of the App Runner service.</p>
      */
     inline bool HealthCheckConfigurationHasBeenSet() const { return m_healthCheckConfigurationHasBeenSet; }
 
     /**
      * <p>The settings for the health check that App Runner performs to monitor the
-     * health of your service.</p>
+     * health of the App Runner service.</p>
      */
     inline void SetHealthCheckConfiguration(const HealthCheckConfiguration& value) { m_healthCheckConfigurationHasBeenSet = true; m_healthCheckConfiguration = value; }
 
     /**
      * <p>The settings for the health check that App Runner performs to monitor the
-     * health of your service.</p>
+     * health of the App Runner service.</p>
      */
     inline void SetHealthCheckConfiguration(HealthCheckConfiguration&& value) { m_healthCheckConfigurationHasBeenSet = true; m_healthCheckConfiguration = std::move(value); }
 
     /**
      * <p>The settings for the health check that App Runner performs to monitor the
-     * health of your service.</p>
+     * health of the App Runner service.</p>
      */
     inline UpdateServiceRequest& WithHealthCheckConfiguration(const HealthCheckConfiguration& value) { SetHealthCheckConfiguration(value); return *this;}
 
     /**
      * <p>The settings for the health check that App Runner performs to monitor the
-     * health of your service.</p>
+     * health of the App Runner service.</p>
      */
     inline UpdateServiceRequest& WithHealthCheckConfiguration(HealthCheckConfiguration&& value) { SetHealthCheckConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Configuration settings related to network traffic of the web application that
+     * the App Runner service runs.</p>
+     */
+    inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
+
+    /**
+     * <p>Configuration settings related to network traffic of the web application that
+     * the App Runner service runs.</p>
+     */
+    inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration settings related to network traffic of the web application that
+     * the App Runner service runs.</p>
+     */
+    inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
+
+    /**
+     * <p>Configuration settings related to network traffic of the web application that
+     * the App Runner service runs.</p>
+     */
+    inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration settings related to network traffic of the web application that
+     * the App Runner service runs.</p>
+     */
+    inline UpdateServiceRequest& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration settings related to network traffic of the web application that
+     * the App Runner service runs.</p>
+     */
+    inline UpdateServiceRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -297,6 +343,9 @@ namespace Model
 
     HealthCheckConfiguration m_healthCheckConfiguration;
     bool m_healthCheckConfigurationHasBeenSet;
+
+    NetworkConfiguration m_networkConfiguration;
+    bool m_networkConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -28,7 +28,7 @@ namespace Model
    * <p>Specifies the blog settings for the Confluence data source. Blogs are always
    * indexed unless filtered from the index by the <code>ExclusionPatterns</code> or
    * <code>InclusionPatterns</code> fields in the
-   * <code>ConfluenceConfiguration</code> type.</p><p><h3>See Also:</h3>   <a
+   * <code>ConfluenceConfiguration</code> object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ConfluenceBlogConfiguration">AWS
    * API Reference</a></p>
    */
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>Defines how blog metadata fields should be mapped to index fields. Before you
      * can map a field, you must first create an index field with a matching type using
-     * the console or the <code>UpdateIndex</code> operation.</p> <p>If you specify the
+     * the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
      * <code>BlogFieldMappings</code> parameter, you must specify at least one field
      * mapping.</p>
      */
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>Defines how blog metadata fields should be mapped to index fields. Before you
      * can map a field, you must first create an index field with a matching type using
-     * the console or the <code>UpdateIndex</code> operation.</p> <p>If you specify the
+     * the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
      * <code>BlogFieldMappings</code> parameter, you must specify at least one field
      * mapping.</p>
      */
@@ -62,7 +62,7 @@ namespace Model
     /**
      * <p>Defines how blog metadata fields should be mapped to index fields. Before you
      * can map a field, you must first create an index field with a matching type using
-     * the console or the <code>UpdateIndex</code> operation.</p> <p>If you specify the
+     * the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
      * <code>BlogFieldMappings</code> parameter, you must specify at least one field
      * mapping.</p>
      */
@@ -71,7 +71,7 @@ namespace Model
     /**
      * <p>Defines how blog metadata fields should be mapped to index fields. Before you
      * can map a field, you must first create an index field with a matching type using
-     * the console or the <code>UpdateIndex</code> operation.</p> <p>If you specify the
+     * the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
      * <code>BlogFieldMappings</code> parameter, you must specify at least one field
      * mapping.</p>
      */
@@ -80,7 +80,7 @@ namespace Model
     /**
      * <p>Defines how blog metadata fields should be mapped to index fields. Before you
      * can map a field, you must first create an index field with a matching type using
-     * the console or the <code>UpdateIndex</code> operation.</p> <p>If you specify the
+     * the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
      * <code>BlogFieldMappings</code> parameter, you must specify at least one field
      * mapping.</p>
      */
@@ -89,7 +89,7 @@ namespace Model
     /**
      * <p>Defines how blog metadata fields should be mapped to index fields. Before you
      * can map a field, you must first create an index field with a matching type using
-     * the console or the <code>UpdateIndex</code> operation.</p> <p>If you specify the
+     * the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
      * <code>BlogFieldMappings</code> parameter, you must specify at least one field
      * mapping.</p>
      */
@@ -98,7 +98,7 @@ namespace Model
     /**
      * <p>Defines how blog metadata fields should be mapped to index fields. Before you
      * can map a field, you must first create an index field with a matching type using
-     * the console or the <code>UpdateIndex</code> operation.</p> <p>If you specify the
+     * the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
      * <code>BlogFieldMappings</code> parameter, you must specify at least one field
      * mapping.</p>
      */
@@ -107,7 +107,7 @@ namespace Model
     /**
      * <p>Defines how blog metadata fields should be mapped to index fields. Before you
      * can map a field, you must first create an index field with a matching type using
-     * the console or the <code>UpdateIndex</code> operation.</p> <p>If you specify the
+     * the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
      * <code>BlogFieldMappings</code> parameter, you must specify at least one field
      * mapping.</p>
      */

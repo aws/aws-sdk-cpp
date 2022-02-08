@@ -243,32 +243,44 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>If you don't provide this parameter, Amazon S3 copies all the metadata from
+     * the original objects. If you specify an empty set, the new objects will have no
+     * tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
      */
     inline const S3ObjectMetadata& GetNewObjectMetadata() const{ return m_newObjectMetadata; }
 
     /**
-     * <p/>
+     * <p>If you don't provide this parameter, Amazon S3 copies all the metadata from
+     * the original objects. If you specify an empty set, the new objects will have no
+     * tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
      */
     inline bool NewObjectMetadataHasBeenSet() const { return m_newObjectMetadataHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>If you don't provide this parameter, Amazon S3 copies all the metadata from
+     * the original objects. If you specify an empty set, the new objects will have no
+     * tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
      */
     inline void SetNewObjectMetadata(const S3ObjectMetadata& value) { m_newObjectMetadataHasBeenSet = true; m_newObjectMetadata = value; }
 
     /**
-     * <p/>
+     * <p>If you don't provide this parameter, Amazon S3 copies all the metadata from
+     * the original objects. If you specify an empty set, the new objects will have no
+     * tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
      */
     inline void SetNewObjectMetadata(S3ObjectMetadata&& value) { m_newObjectMetadataHasBeenSet = true; m_newObjectMetadata = std::move(value); }
 
     /**
-     * <p/>
+     * <p>If you don't provide this parameter, Amazon S3 copies all the metadata from
+     * the original objects. If you specify an empty set, the new objects will have no
+     * tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
      */
     inline S3CopyObjectOperation& WithNewObjectMetadata(const S3ObjectMetadata& value) { SetNewObjectMetadata(value); return *this;}
 
     /**
-     * <p/>
+     * <p>If you don't provide this parameter, Amazon S3 copies all the metadata from
+     * the original objects. If you specify an empty set, the new objects will have no
+     * tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
      */
     inline S3CopyObjectOperation& WithNewObjectMetadata(S3ObjectMetadata&& value) { SetNewObjectMetadata(std::move(value)); return *this;}
 

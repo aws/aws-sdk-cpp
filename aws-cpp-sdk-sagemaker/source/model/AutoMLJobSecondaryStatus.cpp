@@ -35,6 +35,8 @@ namespace Aws
         static const int ExplainabilityError_HASH = HashingUtils::HashString("ExplainabilityError");
         static const int DeployingModel_HASH = HashingUtils::HashString("DeployingModel");
         static const int ModelDeploymentError_HASH = HashingUtils::HashString("ModelDeploymentError");
+        static const int GeneratingModelInsightsReport_HASH = HashingUtils::HashString("GeneratingModelInsightsReport");
+        static const int ModelInsightsError_HASH = HashingUtils::HashString("ModelInsightsError");
 
 
         AutoMLJobSecondaryStatus GetAutoMLJobSecondaryStatusForName(const Aws::String& name)
@@ -100,6 +102,14 @@ namespace Aws
           {
             return AutoMLJobSecondaryStatus::ModelDeploymentError;
           }
+          else if (hashCode == GeneratingModelInsightsReport_HASH)
+          {
+            return AutoMLJobSecondaryStatus::GeneratingModelInsightsReport;
+          }
+          else if (hashCode == ModelInsightsError_HASH)
+          {
+            return AutoMLJobSecondaryStatus::ModelInsightsError;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -144,6 +154,10 @@ namespace Aws
             return "DeployingModel";
           case AutoMLJobSecondaryStatus::ModelDeploymentError:
             return "ModelDeploymentError";
+          case AutoMLJobSecondaryStatus::GeneratingModelInsightsReport:
+            return "GeneratingModelInsightsReport";
+          case AutoMLJobSecondaryStatus::ModelInsightsError:
+            return "ModelInsightsError";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

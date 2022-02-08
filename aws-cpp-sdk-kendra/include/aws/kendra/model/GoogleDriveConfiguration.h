@@ -273,7 +273,7 @@ namespace Model
      * <p>Defines mapping between a field in the Google Drive and a Amazon Kendra index
      * field.</p> <p>If you are using the console, you can define index fields when
      * creating the mapping. If you are using the API, you must first create the field
-     * using the <code>UpdateIndex</code> operation.</p>
+     * using the <code>UpdateIndex</code> API.</p>
      */
     inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetFieldMappings() const{ return m_fieldMappings; }
 
@@ -281,7 +281,7 @@ namespace Model
      * <p>Defines mapping between a field in the Google Drive and a Amazon Kendra index
      * field.</p> <p>If you are using the console, you can define index fields when
      * creating the mapping. If you are using the API, you must first create the field
-     * using the <code>UpdateIndex</code> operation.</p>
+     * using the <code>UpdateIndex</code> API.</p>
      */
     inline bool FieldMappingsHasBeenSet() const { return m_fieldMappingsHasBeenSet; }
 
@@ -289,7 +289,7 @@ namespace Model
      * <p>Defines mapping between a field in the Google Drive and a Amazon Kendra index
      * field.</p> <p>If you are using the console, you can define index fields when
      * creating the mapping. If you are using the API, you must first create the field
-     * using the <code>UpdateIndex</code> operation.</p>
+     * using the <code>UpdateIndex</code> API.</p>
      */
     inline void SetFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = value; }
 
@@ -297,7 +297,7 @@ namespace Model
      * <p>Defines mapping between a field in the Google Drive and a Amazon Kendra index
      * field.</p> <p>If you are using the console, you can define index fields when
      * creating the mapping. If you are using the API, you must first create the field
-     * using the <code>UpdateIndex</code> operation.</p>
+     * using the <code>UpdateIndex</code> API.</p>
      */
     inline void SetFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = std::move(value); }
 
@@ -305,7 +305,7 @@ namespace Model
      * <p>Defines mapping between a field in the Google Drive and a Amazon Kendra index
      * field.</p> <p>If you are using the console, you can define index fields when
      * creating the mapping. If you are using the API, you must first create the field
-     * using the <code>UpdateIndex</code> operation.</p>
+     * using the <code>UpdateIndex</code> API.</p>
      */
     inline GoogleDriveConfiguration& WithFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetFieldMappings(value); return *this;}
 
@@ -313,7 +313,7 @@ namespace Model
      * <p>Defines mapping between a field in the Google Drive and a Amazon Kendra index
      * field.</p> <p>If you are using the console, you can define index fields when
      * creating the mapping. If you are using the API, you must first create the field
-     * using the <code>UpdateIndex</code> operation.</p>
+     * using the <code>UpdateIndex</code> API.</p>
      */
     inline GoogleDriveConfiguration& WithFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetFieldMappings(std::move(value)); return *this;}
 
@@ -321,7 +321,7 @@ namespace Model
      * <p>Defines mapping between a field in the Google Drive and a Amazon Kendra index
      * field.</p> <p>If you are using the console, you can define index fields when
      * creating the mapping. If you are using the API, you must first create the field
-     * using the <code>UpdateIndex</code> operation.</p>
+     * using the <code>UpdateIndex</code> API.</p>
      */
     inline GoogleDriveConfiguration& AddFieldMappings(const DataSourceToIndexFieldMapping& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(value); return *this; }
 
@@ -329,7 +329,7 @@ namespace Model
      * <p>Defines mapping between a field in the Google Drive and a Amazon Kendra index
      * field.</p> <p>If you are using the console, you can define index fields when
      * creating the mapping. If you are using the API, you must first create the field
-     * using the <code>UpdateIndex</code> operation.</p>
+     * using the <code>UpdateIndex</code> API.</p>
      */
     inline GoogleDriveConfiguration& AddFieldMappings(DataSourceToIndexFieldMapping&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(std::move(value)); return *this; }
 

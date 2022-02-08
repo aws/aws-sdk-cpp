@@ -375,8 +375,8 @@ namespace Model
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
      * WorkDocs field names to custom index field names in Amazon Kendra. You must
-     * first create the custom index fields using the <code>UpdateIndex</code>
-     * operation before you map to Amazon WorkDocs fields. For more information, see <a
+     * first create the custom index fields using the <code>UpdateIndex</code> API
+     * before you map to Amazon WorkDocs fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * Data Source Fields</a>. The Amazon WorkDocs data source field names need to
      * exist in your Amazon WorkDocs custom metadata.</p>
@@ -386,8 +386,8 @@ namespace Model
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
      * WorkDocs field names to custom index field names in Amazon Kendra. You must
-     * first create the custom index fields using the <code>UpdateIndex</code>
-     * operation before you map to Amazon WorkDocs fields. For more information, see <a
+     * first create the custom index fields using the <code>UpdateIndex</code> API
+     * before you map to Amazon WorkDocs fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * Data Source Fields</a>. The Amazon WorkDocs data source field names need to
      * exist in your Amazon WorkDocs custom metadata.</p>
@@ -397,8 +397,8 @@ namespace Model
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
      * WorkDocs field names to custom index field names in Amazon Kendra. You must
-     * first create the custom index fields using the <code>UpdateIndex</code>
-     * operation before you map to Amazon WorkDocs fields. For more information, see <a
+     * first create the custom index fields using the <code>UpdateIndex</code> API
+     * before you map to Amazon WorkDocs fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * Data Source Fields</a>. The Amazon WorkDocs data source field names need to
      * exist in your Amazon WorkDocs custom metadata.</p>
@@ -408,8 +408,8 @@ namespace Model
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
      * WorkDocs field names to custom index field names in Amazon Kendra. You must
-     * first create the custom index fields using the <code>UpdateIndex</code>
-     * operation before you map to Amazon WorkDocs fields. For more information, see <a
+     * first create the custom index fields using the <code>UpdateIndex</code> API
+     * before you map to Amazon WorkDocs fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * Data Source Fields</a>. The Amazon WorkDocs data source field names need to
      * exist in your Amazon WorkDocs custom metadata.</p>
@@ -419,8 +419,8 @@ namespace Model
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
      * WorkDocs field names to custom index field names in Amazon Kendra. You must
-     * first create the custom index fields using the <code>UpdateIndex</code>
-     * operation before you map to Amazon WorkDocs fields. For more information, see <a
+     * first create the custom index fields using the <code>UpdateIndex</code> API
+     * before you map to Amazon WorkDocs fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * Data Source Fields</a>. The Amazon WorkDocs data source field names need to
      * exist in your Amazon WorkDocs custom metadata.</p>
@@ -430,8 +430,8 @@ namespace Model
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
      * WorkDocs field names to custom index field names in Amazon Kendra. You must
-     * first create the custom index fields using the <code>UpdateIndex</code>
-     * operation before you map to Amazon WorkDocs fields. For more information, see <a
+     * first create the custom index fields using the <code>UpdateIndex</code> API
+     * before you map to Amazon WorkDocs fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * Data Source Fields</a>. The Amazon WorkDocs data source field names need to
      * exist in your Amazon WorkDocs custom metadata.</p>
@@ -441,8 +441,8 @@ namespace Model
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
      * WorkDocs field names to custom index field names in Amazon Kendra. You must
-     * first create the custom index fields using the <code>UpdateIndex</code>
-     * operation before you map to Amazon WorkDocs fields. For more information, see <a
+     * first create the custom index fields using the <code>UpdateIndex</code> API
+     * before you map to Amazon WorkDocs fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * Data Source Fields</a>. The Amazon WorkDocs data source field names need to
      * exist in your Amazon WorkDocs custom metadata.</p>
@@ -452,8 +452,8 @@ namespace Model
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
      * WorkDocs field names to custom index field names in Amazon Kendra. You must
-     * first create the custom index fields using the <code>UpdateIndex</code>
-     * operation before you map to Amazon WorkDocs fields. For more information, see <a
+     * first create the custom index fields using the <code>UpdateIndex</code> API
+     * before you map to Amazon WorkDocs fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * Data Source Fields</a>. The Amazon WorkDocs data source field names need to
      * exist in your Amazon WorkDocs custom metadata.</p>

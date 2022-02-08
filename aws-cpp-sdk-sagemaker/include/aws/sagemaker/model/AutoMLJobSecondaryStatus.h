@@ -30,7 +30,9 @@ namespace Model
     Completed,
     ExplainabilityError,
     DeployingModel,
-    ModelDeploymentError
+    ModelDeploymentError,
+    GeneratingModelInsightsReport,
+    ModelInsightsError
   };
 
 namespace AutoMLJobSecondaryStatusMapper

@@ -19,7 +19,8 @@ CreateServiceRequest::CreateServiceRequest() :
     m_tagsHasBeenSet(false),
     m_encryptionConfigurationHasBeenSet(false),
     m_healthCheckConfigurationHasBeenSet(false),
-    m_autoScalingConfigurationArnHasBeenSet(false)
+    m_autoScalingConfigurationArnHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,12 @@ Aws::String CreateServiceRequest::SerializePayload() const
   if(m_autoScalingConfigurationArnHasBeenSet)
   {
    payload.WithString("AutoScalingConfigurationArn", m_autoScalingConfigurationArn);
+
+  }
+
+  if(m_networkConfigurationHasBeenSet)
+  {
+   payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
 
   }
 

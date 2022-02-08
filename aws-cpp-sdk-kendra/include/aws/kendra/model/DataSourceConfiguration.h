@@ -15,6 +15,7 @@
 #include <aws/kendra/model/GoogleDriveConfiguration.h>
 #include <aws/kendra/model/WebCrawlerConfiguration.h>
 #include <aws/kendra/model/WorkDocsConfiguration.h>
+#include <aws/kendra/model/FsxConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -357,40 +358,77 @@ namespace Model
 
 
     /**
-     * <p>Provides the configuration information to connect to WorkDocs as your data
-     * source.</p>
+     * <p>Provides the configuration information to connect to Amazon WorkDocs as your
+     * data source.</p>
      */
     inline const WorkDocsConfiguration& GetWorkDocsConfiguration() const{ return m_workDocsConfiguration; }
 
     /**
-     * <p>Provides the configuration information to connect to WorkDocs as your data
-     * source.</p>
+     * <p>Provides the configuration information to connect to Amazon WorkDocs as your
+     * data source.</p>
      */
     inline bool WorkDocsConfigurationHasBeenSet() const { return m_workDocsConfigurationHasBeenSet; }
 
     /**
-     * <p>Provides the configuration information to connect to WorkDocs as your data
-     * source.</p>
+     * <p>Provides the configuration information to connect to Amazon WorkDocs as your
+     * data source.</p>
      */
     inline void SetWorkDocsConfiguration(const WorkDocsConfiguration& value) { m_workDocsConfigurationHasBeenSet = true; m_workDocsConfiguration = value; }
 
     /**
-     * <p>Provides the configuration information to connect to WorkDocs as your data
-     * source.</p>
+     * <p>Provides the configuration information to connect to Amazon WorkDocs as your
+     * data source.</p>
      */
     inline void SetWorkDocsConfiguration(WorkDocsConfiguration&& value) { m_workDocsConfigurationHasBeenSet = true; m_workDocsConfiguration = std::move(value); }
 
     /**
-     * <p>Provides the configuration information to connect to WorkDocs as your data
-     * source.</p>
+     * <p>Provides the configuration information to connect to Amazon WorkDocs as your
+     * data source.</p>
      */
     inline DataSourceConfiguration& WithWorkDocsConfiguration(const WorkDocsConfiguration& value) { SetWorkDocsConfiguration(value); return *this;}
 
     /**
-     * <p>Provides the configuration information to connect to WorkDocs as your data
-     * source.</p>
+     * <p>Provides the configuration information to connect to Amazon WorkDocs as your
+     * data source.</p>
      */
     inline DataSourceConfiguration& WithWorkDocsConfiguration(WorkDocsConfiguration&& value) { SetWorkDocsConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides the configuration information to connect to Amazon FSx as your data
+     * source.</p>
+     */
+    inline const FsxConfiguration& GetFsxConfiguration() const{ return m_fsxConfiguration; }
+
+    /**
+     * <p>Provides the configuration information to connect to Amazon FSx as your data
+     * source.</p>
+     */
+    inline bool FsxConfigurationHasBeenSet() const { return m_fsxConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides the configuration information to connect to Amazon FSx as your data
+     * source.</p>
+     */
+    inline void SetFsxConfiguration(const FsxConfiguration& value) { m_fsxConfigurationHasBeenSet = true; m_fsxConfiguration = value; }
+
+    /**
+     * <p>Provides the configuration information to connect to Amazon FSx as your data
+     * source.</p>
+     */
+    inline void SetFsxConfiguration(FsxConfiguration&& value) { m_fsxConfigurationHasBeenSet = true; m_fsxConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides the configuration information to connect to Amazon FSx as your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithFsxConfiguration(const FsxConfiguration& value) { SetFsxConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides the configuration information to connect to Amazon FSx as your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithFsxConfiguration(FsxConfiguration&& value) { SetFsxConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -423,6 +461,9 @@ namespace Model
 
     WorkDocsConfiguration m_workDocsConfiguration;
     bool m_workDocsConfigurationHasBeenSet;
+
+    FsxConfiguration m_fsxConfiguration;
+    bool m_fsxConfigurationHasBeenSet;
   };
 
 } // namespace Model

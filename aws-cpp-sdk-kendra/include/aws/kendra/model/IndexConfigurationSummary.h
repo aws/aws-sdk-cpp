@@ -83,56 +83,56 @@ namespace Model
 
     /**
      * <p>A unique identifier for the index. Use this to identify the index when you
-     * are using operations such as <code>Query</code>, <code>DescribeIndex</code>,
+     * are using APIs such as <code>Query</code>, <code>DescribeIndex</code>,
      * <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
      * <p>A unique identifier for the index. Use this to identify the index when you
-     * are using operations such as <code>Query</code>, <code>DescribeIndex</code>,
+     * are using APIs such as <code>Query</code>, <code>DescribeIndex</code>,
      * <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>A unique identifier for the index. Use this to identify the index when you
-     * are using operations such as <code>Query</code>, <code>DescribeIndex</code>,
+     * are using APIs such as <code>Query</code>, <code>DescribeIndex</code>,
      * <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
      * <p>A unique identifier for the index. Use this to identify the index when you
-     * are using operations such as <code>Query</code>, <code>DescribeIndex</code>,
+     * are using APIs such as <code>Query</code>, <code>DescribeIndex</code>,
      * <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>A unique identifier for the index. Use this to identify the index when you
-     * are using operations such as <code>Query</code>, <code>DescribeIndex</code>,
+     * are using APIs such as <code>Query</code>, <code>DescribeIndex</code>,
      * <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
      * <p>A unique identifier for the index. Use this to identify the index when you
-     * are using operations such as <code>Query</code>, <code>DescribeIndex</code>,
+     * are using APIs such as <code>Query</code>, <code>DescribeIndex</code>,
      * <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
      */
     inline IndexConfigurationSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * <p>A unique identifier for the index. Use this to identify the index when you
-     * are using operations such as <code>Query</code>, <code>DescribeIndex</code>,
+     * are using APIs such as <code>Query</code>, <code>DescribeIndex</code>,
      * <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
      */
     inline IndexConfigurationSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the index. Use this to identify the index when you
-     * are using operations such as <code>Query</code>, <code>DescribeIndex</code>,
+     * are using APIs such as <code>Query</code>, <code>DescribeIndex</code>,
      * <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
      */
     inline IndexConfigurationSummary& WithId(const char* value) { SetId(value); return *this;}
@@ -208,37 +208,37 @@ namespace Model
 
     /**
      * <p>The Unix timestamp when the index was last updated by the
-     * <code>UpdateIndex</code> operation.</p>
+     * <code>UpdateIndex</code> API.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
      * <p>The Unix timestamp when the index was last updated by the
-     * <code>UpdateIndex</code> operation.</p>
+     * <code>UpdateIndex</code> API.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
      * <p>The Unix timestamp when the index was last updated by the
-     * <code>UpdateIndex</code> operation.</p>
+     * <code>UpdateIndex</code> API.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
      * <p>The Unix timestamp when the index was last updated by the
-     * <code>UpdateIndex</code> operation.</p>
+     * <code>UpdateIndex</code> API.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
      * <p>The Unix timestamp when the index was last updated by the
-     * <code>UpdateIndex</code> operation.</p>
+     * <code>UpdateIndex</code> API.</p>
      */
     inline IndexConfigurationSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
      * <p>The Unix timestamp when the index was last updated by the
-     * <code>UpdateIndex</code> operation.</p>
+     * <code>UpdateIndex</code> API.</p>
      */
     inline IndexConfigurationSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 

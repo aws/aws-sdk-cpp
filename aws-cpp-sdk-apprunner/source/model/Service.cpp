@@ -32,7 +32,8 @@ Service::Service() :
     m_instanceConfigurationHasBeenSet(false),
     m_encryptionConfigurationHasBeenSet(false),
     m_healthCheckConfigurationHasBeenSet(false),
-    m_autoScalingConfigurationSummaryHasBeenSet(false)
+    m_autoScalingConfigurationSummaryHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ Service::Service(JsonView jsonValue) :
     m_instanceConfigurationHasBeenSet(false),
     m_encryptionConfigurationHasBeenSet(false),
     m_healthCheckConfigurationHasBeenSet(false),
-    m_autoScalingConfigurationSummaryHasBeenSet(false)
+    m_autoScalingConfigurationSummaryHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -148,6 +150,13 @@ Service& Service::operator =(JsonView jsonValue)
     m_autoScalingConfigurationSummaryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NetworkConfiguration"))
+  {
+    m_networkConfiguration = jsonValue.GetObject("NetworkConfiguration");
+
+    m_networkConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -226,6 +235,12 @@ JsonValue Service::Jsonize() const
   if(m_autoScalingConfigurationSummaryHasBeenSet)
   {
    payload.WithObject("AutoScalingConfigurationSummary", m_autoScalingConfigurationSummary.Jsonize());
+
+  }
+
+  if(m_networkConfigurationHasBeenSet)
+  {
+   payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
 
   }
 

@@ -308,72 +308,72 @@ namespace Model
     /**
      * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
      * the block list text file in your S3 bucket.</p> <p>You need permissions to the
-     * role ARN (Amazon Resource Name). The role needs S3 read permissions to your file
-     * in S3 and needs to give STS (Security Token Service) assume role permissions to
-     * Amazon Kendra.</p>
+     * role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions
+     * to your file in S3 and needs to give STS (Security Token Service) assume role
+     * permissions to Amazon Kendra.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
      * the block list text file in your S3 bucket.</p> <p>You need permissions to the
-     * role ARN (Amazon Resource Name). The role needs S3 read permissions to your file
-     * in S3 and needs to give STS (Security Token Service) assume role permissions to
-     * Amazon Kendra.</p>
+     * role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions
+     * to your file in S3 and needs to give STS (Security Token Service) assume role
+     * permissions to Amazon Kendra.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
      * the block list text file in your S3 bucket.</p> <p>You need permissions to the
-     * role ARN (Amazon Resource Name). The role needs S3 read permissions to your file
-     * in S3 and needs to give STS (Security Token Service) assume role permissions to
-     * Amazon Kendra.</p>
+     * role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions
+     * to your file in S3 and needs to give STS (Security Token Service) assume role
+     * permissions to Amazon Kendra.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
      * the block list text file in your S3 bucket.</p> <p>You need permissions to the
-     * role ARN (Amazon Resource Name). The role needs S3 read permissions to your file
-     * in S3 and needs to give STS (Security Token Service) assume role permissions to
-     * Amazon Kendra.</p>
+     * role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions
+     * to your file in S3 and needs to give STS (Security Token Service) assume role
+     * permissions to Amazon Kendra.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
      * the block list text file in your S3 bucket.</p> <p>You need permissions to the
-     * role ARN (Amazon Resource Name). The role needs S3 read permissions to your file
-     * in S3 and needs to give STS (Security Token Service) assume role permissions to
-     * Amazon Kendra.</p>
+     * role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions
+     * to your file in S3 and needs to give STS (Security Token Service) assume role
+     * permissions to Amazon Kendra.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
      * the block list text file in your S3 bucket.</p> <p>You need permissions to the
-     * role ARN (Amazon Resource Name). The role needs S3 read permissions to your file
-     * in S3 and needs to give STS (Security Token Service) assume role permissions to
-     * Amazon Kendra.</p>
+     * role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions
+     * to your file in S3 and needs to give STS (Security Token Service) assume role
+     * permissions to Amazon Kendra.</p>
      */
     inline CreateQuerySuggestionsBlockListRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
      * the block list text file in your S3 bucket.</p> <p>You need permissions to the
-     * role ARN (Amazon Resource Name). The role needs S3 read permissions to your file
-     * in S3 and needs to give STS (Security Token Service) assume role permissions to
-     * Amazon Kendra.</p>
+     * role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions
+     * to your file in S3 and needs to give STS (Security Token Service) assume role
+     * permissions to Amazon Kendra.</p>
      */
     inline CreateQuerySuggestionsBlockListRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
      * the block list text file in your S3 bucket.</p> <p>You need permissions to the
-     * role ARN (Amazon Resource Name). The role needs S3 read permissions to your file
-     * in S3 and needs to give STS (Security Token Service) assume role permissions to
-     * Amazon Kendra.</p>
+     * role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions
+     * to your file in S3 and needs to give STS (Security Token Service) assume role
+     * permissions to Amazon Kendra.</p>
      */
     inline CreateQuerySuggestionsBlockListRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

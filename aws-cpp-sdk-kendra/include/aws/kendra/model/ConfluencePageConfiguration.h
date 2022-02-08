@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Defines how page metadata fields should be mapped to index fields. Before you
      * can map a field, you must first create an index field with a matching type using
-     * the console or the <code>UpdateIndex</code> operation.</p> <p>If you specify the
+     * the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
      * <code>PageFieldMappings</code> parameter, you must specify at least one field
      * mapping.</p>
      */
@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>Defines how page metadata fields should be mapped to index fields. Before you
      * can map a field, you must first create an index field with a matching type using
-     * the console or the <code>UpdateIndex</code> operation.</p> <p>If you specify the
+     * the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
      * <code>PageFieldMappings</code> parameter, you must specify at least one field
      * mapping.</p>
      */
@@ -60,7 +60,7 @@ namespace Model
     /**
      * <p>Defines how page metadata fields should be mapped to index fields. Before you
      * can map a field, you must first create an index field with a matching type using
-     * the console or the <code>UpdateIndex</code> operation.</p> <p>If you specify the
+     * the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
      * <code>PageFieldMappings</code> parameter, you must specify at least one field
      * mapping.</p>
      */
@@ -69,7 +69,7 @@ namespace Model
     /**
      * <p>Defines how page metadata fields should be mapped to index fields. Before you
      * can map a field, you must first create an index field with a matching type using
-     * the console or the <code>UpdateIndex</code> operation.</p> <p>If you specify the
+     * the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
      * <code>PageFieldMappings</code> parameter, you must specify at least one field
      * mapping.</p>
      */
@@ -78,7 +78,7 @@ namespace Model
     /**
      * <p>Defines how page metadata fields should be mapped to index fields. Before you
      * can map a field, you must first create an index field with a matching type using
-     * the console or the <code>UpdateIndex</code> operation.</p> <p>If you specify the
+     * the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
      * <code>PageFieldMappings</code> parameter, you must specify at least one field
      * mapping.</p>
      */
@@ -87,7 +87,7 @@ namespace Model
     /**
      * <p>Defines how page metadata fields should be mapped to index fields. Before you
      * can map a field, you must first create an index field with a matching type using
-     * the console or the <code>UpdateIndex</code> operation.</p> <p>If you specify the
+     * the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
      * <code>PageFieldMappings</code> parameter, you must specify at least one field
      * mapping.</p>
      */
@@ -96,7 +96,7 @@ namespace Model
     /**
      * <p>Defines how page metadata fields should be mapped to index fields. Before you
      * can map a field, you must first create an index field with a matching type using
-     * the console or the <code>UpdateIndex</code> operation.</p> <p>If you specify the
+     * the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
      * <code>PageFieldMappings</code> parameter, you must specify at least one field
      * mapping.</p>
      */
@@ -105,7 +105,7 @@ namespace Model
     /**
      * <p>Defines how page metadata fields should be mapped to index fields. Before you
      * can map a field, you must first create an index field with a matching type using
-     * the console or the <code>UpdateIndex</code> operation.</p> <p>If you specify the
+     * the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
      * <code>PageFieldMappings</code> parameter, you must specify at least one field
      * mapping.</p>
      */

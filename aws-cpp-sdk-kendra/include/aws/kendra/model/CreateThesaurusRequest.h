@@ -292,57 +292,57 @@ namespace Model
 
     /**
      * <p>A token that you provide to identify the request to create a thesaurus.
-     * Multiple calls to the <code>CreateThesaurus</code> operation with the same
-     * client token will create only one thesaurus. </p>
+     * Multiple calls to the <code>CreateThesaurus</code> API with the same client
+     * token will create only one thesaurus. </p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>A token that you provide to identify the request to create a thesaurus.
-     * Multiple calls to the <code>CreateThesaurus</code> operation with the same
-     * client token will create only one thesaurus. </p>
+     * Multiple calls to the <code>CreateThesaurus</code> API with the same client
+     * token will create only one thesaurus. </p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A token that you provide to identify the request to create a thesaurus.
-     * Multiple calls to the <code>CreateThesaurus</code> operation with the same
-     * client token will create only one thesaurus. </p>
+     * Multiple calls to the <code>CreateThesaurus</code> API with the same client
+     * token will create only one thesaurus. </p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>A token that you provide to identify the request to create a thesaurus.
-     * Multiple calls to the <code>CreateThesaurus</code> operation with the same
-     * client token will create only one thesaurus. </p>
+     * Multiple calls to the <code>CreateThesaurus</code> API with the same client
+     * token will create only one thesaurus. </p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>A token that you provide to identify the request to create a thesaurus.
-     * Multiple calls to the <code>CreateThesaurus</code> operation with the same
-     * client token will create only one thesaurus. </p>
+     * Multiple calls to the <code>CreateThesaurus</code> API with the same client
+     * token will create only one thesaurus. </p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>A token that you provide to identify the request to create a thesaurus.
-     * Multiple calls to the <code>CreateThesaurus</code> operation with the same
-     * client token will create only one thesaurus. </p>
+     * Multiple calls to the <code>CreateThesaurus</code> API with the same client
+     * token will create only one thesaurus. </p>
      */
     inline CreateThesaurusRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to create a thesaurus.
-     * Multiple calls to the <code>CreateThesaurus</code> operation with the same
-     * client token will create only one thesaurus. </p>
+     * Multiple calls to the <code>CreateThesaurus</code> API with the same client
+     * token will create only one thesaurus. </p>
      */
     inline CreateThesaurusRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to create a thesaurus.
-     * Multiple calls to the <code>CreateThesaurus</code> operation with the same
-     * client token will create only one thesaurus. </p>
+     * Multiple calls to the <code>CreateThesaurus</code> API with the same client
+     * token will create only one thesaurus. </p>
      */
     inline CreateThesaurusRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

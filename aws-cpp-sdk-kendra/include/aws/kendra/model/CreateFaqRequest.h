@@ -376,57 +376,57 @@ namespace Model
 
     /**
      * <p>A token that you provide to identify the request to create a FAQ. Multiple
-     * calls to the <code>CreateFaqRequest</code> operation with the same client token
-     * will create only one FAQ. </p>
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>A token that you provide to identify the request to create a FAQ. Multiple
-     * calls to the <code>CreateFaqRequest</code> operation with the same client token
-     * will create only one FAQ. </p>
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A token that you provide to identify the request to create a FAQ. Multiple
-     * calls to the <code>CreateFaqRequest</code> operation with the same client token
-     * will create only one FAQ. </p>
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>A token that you provide to identify the request to create a FAQ. Multiple
-     * calls to the <code>CreateFaqRequest</code> operation with the same client token
-     * will create only one FAQ. </p>
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>A token that you provide to identify the request to create a FAQ. Multiple
-     * calls to the <code>CreateFaqRequest</code> operation with the same client token
-     * will create only one FAQ. </p>
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>A token that you provide to identify the request to create a FAQ. Multiple
-     * calls to the <code>CreateFaqRequest</code> operation with the same client token
-     * will create only one FAQ. </p>
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
      */
     inline CreateFaqRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to create a FAQ. Multiple
-     * calls to the <code>CreateFaqRequest</code> operation with the same client token
-     * will create only one FAQ. </p>
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
      */
     inline CreateFaqRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to create a FAQ. Multiple
-     * calls to the <code>CreateFaqRequest</code> operation with the same client token
-     * will create only one FAQ. </p>
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
      */
     inline CreateFaqRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

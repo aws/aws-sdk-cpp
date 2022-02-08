@@ -15,18 +15,22 @@
 #include <aws/apprunner/model/CreateAutoScalingConfigurationResult.h>
 #include <aws/apprunner/model/CreateConnectionResult.h>
 #include <aws/apprunner/model/CreateServiceResult.h>
+#include <aws/apprunner/model/CreateVpcConnectorResult.h>
 #include <aws/apprunner/model/DeleteAutoScalingConfigurationResult.h>
 #include <aws/apprunner/model/DeleteConnectionResult.h>
 #include <aws/apprunner/model/DeleteServiceResult.h>
+#include <aws/apprunner/model/DeleteVpcConnectorResult.h>
 #include <aws/apprunner/model/DescribeAutoScalingConfigurationResult.h>
 #include <aws/apprunner/model/DescribeCustomDomainsResult.h>
 #include <aws/apprunner/model/DescribeServiceResult.h>
+#include <aws/apprunner/model/DescribeVpcConnectorResult.h>
 #include <aws/apprunner/model/DisassociateCustomDomainResult.h>
 #include <aws/apprunner/model/ListAutoScalingConfigurationsResult.h>
 #include <aws/apprunner/model/ListConnectionsResult.h>
 #include <aws/apprunner/model/ListOperationsResult.h>
 #include <aws/apprunner/model/ListServicesResult.h>
 #include <aws/apprunner/model/ListTagsForResourceResult.h>
+#include <aws/apprunner/model/ListVpcConnectorsResult.h>
 #include <aws/apprunner/model/PauseServiceResult.h>
 #include <aws/apprunner/model/ResumeServiceResult.h>
 #include <aws/apprunner/model/StartDeploymentResult.h>
@@ -76,18 +80,22 @@ namespace Model
         class CreateAutoScalingConfigurationRequest;
         class CreateConnectionRequest;
         class CreateServiceRequest;
+        class CreateVpcConnectorRequest;
         class DeleteAutoScalingConfigurationRequest;
         class DeleteConnectionRequest;
         class DeleteServiceRequest;
+        class DeleteVpcConnectorRequest;
         class DescribeAutoScalingConfigurationRequest;
         class DescribeCustomDomainsRequest;
         class DescribeServiceRequest;
+        class DescribeVpcConnectorRequest;
         class DisassociateCustomDomainRequest;
         class ListAutoScalingConfigurationsRequest;
         class ListConnectionsRequest;
         class ListOperationsRequest;
         class ListServicesRequest;
         class ListTagsForResourceRequest;
+        class ListVpcConnectorsRequest;
         class PauseServiceRequest;
         class ResumeServiceRequest;
         class StartDeploymentRequest;
@@ -99,18 +107,22 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateAutoScalingConfigurationResult, AppRunnerError> CreateAutoScalingConfigurationOutcome;
         typedef Aws::Utils::Outcome<CreateConnectionResult, AppRunnerError> CreateConnectionOutcome;
         typedef Aws::Utils::Outcome<CreateServiceResult, AppRunnerError> CreateServiceOutcome;
+        typedef Aws::Utils::Outcome<CreateVpcConnectorResult, AppRunnerError> CreateVpcConnectorOutcome;
         typedef Aws::Utils::Outcome<DeleteAutoScalingConfigurationResult, AppRunnerError> DeleteAutoScalingConfigurationOutcome;
         typedef Aws::Utils::Outcome<DeleteConnectionResult, AppRunnerError> DeleteConnectionOutcome;
         typedef Aws::Utils::Outcome<DeleteServiceResult, AppRunnerError> DeleteServiceOutcome;
+        typedef Aws::Utils::Outcome<DeleteVpcConnectorResult, AppRunnerError> DeleteVpcConnectorOutcome;
         typedef Aws::Utils::Outcome<DescribeAutoScalingConfigurationResult, AppRunnerError> DescribeAutoScalingConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeCustomDomainsResult, AppRunnerError> DescribeCustomDomainsOutcome;
         typedef Aws::Utils::Outcome<DescribeServiceResult, AppRunnerError> DescribeServiceOutcome;
+        typedef Aws::Utils::Outcome<DescribeVpcConnectorResult, AppRunnerError> DescribeVpcConnectorOutcome;
         typedef Aws::Utils::Outcome<DisassociateCustomDomainResult, AppRunnerError> DisassociateCustomDomainOutcome;
         typedef Aws::Utils::Outcome<ListAutoScalingConfigurationsResult, AppRunnerError> ListAutoScalingConfigurationsOutcome;
         typedef Aws::Utils::Outcome<ListConnectionsResult, AppRunnerError> ListConnectionsOutcome;
         typedef Aws::Utils::Outcome<ListOperationsResult, AppRunnerError> ListOperationsOutcome;
         typedef Aws::Utils::Outcome<ListServicesResult, AppRunnerError> ListServicesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, AppRunnerError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListVpcConnectorsResult, AppRunnerError> ListVpcConnectorsOutcome;
         typedef Aws::Utils::Outcome<PauseServiceResult, AppRunnerError> PauseServiceOutcome;
         typedef Aws::Utils::Outcome<ResumeServiceResult, AppRunnerError> ResumeServiceOutcome;
         typedef Aws::Utils::Outcome<StartDeploymentResult, AppRunnerError> StartDeploymentOutcome;
@@ -122,18 +134,22 @@ namespace Model
         typedef std::future<CreateAutoScalingConfigurationOutcome> CreateAutoScalingConfigurationOutcomeCallable;
         typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
         typedef std::future<CreateServiceOutcome> CreateServiceOutcomeCallable;
+        typedef std::future<CreateVpcConnectorOutcome> CreateVpcConnectorOutcomeCallable;
         typedef std::future<DeleteAutoScalingConfigurationOutcome> DeleteAutoScalingConfigurationOutcomeCallable;
         typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
         typedef std::future<DeleteServiceOutcome> DeleteServiceOutcomeCallable;
+        typedef std::future<DeleteVpcConnectorOutcome> DeleteVpcConnectorOutcomeCallable;
         typedef std::future<DescribeAutoScalingConfigurationOutcome> DescribeAutoScalingConfigurationOutcomeCallable;
         typedef std::future<DescribeCustomDomainsOutcome> DescribeCustomDomainsOutcomeCallable;
         typedef std::future<DescribeServiceOutcome> DescribeServiceOutcomeCallable;
+        typedef std::future<DescribeVpcConnectorOutcome> DescribeVpcConnectorOutcomeCallable;
         typedef std::future<DisassociateCustomDomainOutcome> DisassociateCustomDomainOutcomeCallable;
         typedef std::future<ListAutoScalingConfigurationsOutcome> ListAutoScalingConfigurationsOutcomeCallable;
         typedef std::future<ListConnectionsOutcome> ListConnectionsOutcomeCallable;
         typedef std::future<ListOperationsOutcome> ListOperationsOutcomeCallable;
         typedef std::future<ListServicesOutcome> ListServicesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<ListVpcConnectorsOutcome> ListVpcConnectorsOutcomeCallable;
         typedef std::future<PauseServiceOutcome> PauseServiceOutcomeCallable;
         typedef std::future<ResumeServiceOutcome> ResumeServiceOutcomeCallable;
         typedef std::future<StartDeploymentOutcome> StartDeploymentOutcomeCallable;
@@ -148,18 +164,22 @@ namespace Model
     typedef std::function<void(const AppRunnerClient*, const Model::CreateAutoScalingConfigurationRequest&, const Model::CreateAutoScalingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAutoScalingConfigurationResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::CreateConnectionRequest&, const Model::CreateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectionResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::CreateServiceRequest&, const Model::CreateServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateServiceResponseReceivedHandler;
+    typedef std::function<void(const AppRunnerClient*, const Model::CreateVpcConnectorRequest&, const Model::CreateVpcConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVpcConnectorResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::DeleteAutoScalingConfigurationRequest&, const Model::DeleteAutoScalingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAutoScalingConfigurationResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::DeleteConnectionRequest&, const Model::DeleteConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectionResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::DeleteServiceRequest&, const Model::DeleteServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceResponseReceivedHandler;
+    typedef std::function<void(const AppRunnerClient*, const Model::DeleteVpcConnectorRequest&, const Model::DeleteVpcConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpcConnectorResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::DescribeAutoScalingConfigurationRequest&, const Model::DescribeAutoScalingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAutoScalingConfigurationResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::DescribeCustomDomainsRequest&, const Model::DescribeCustomDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomDomainsResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::DescribeServiceRequest&, const Model::DescribeServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServiceResponseReceivedHandler;
+    typedef std::function<void(const AppRunnerClient*, const Model::DescribeVpcConnectorRequest&, const Model::DescribeVpcConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVpcConnectorResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::DisassociateCustomDomainRequest&, const Model::DisassociateCustomDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateCustomDomainResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::ListAutoScalingConfigurationsRequest&, const Model::ListAutoScalingConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAutoScalingConfigurationsResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::ListConnectionsRequest&, const Model::ListConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConnectionsResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::ListOperationsRequest&, const Model::ListOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOperationsResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::ListServicesRequest&, const Model::ListServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServicesResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const AppRunnerClient*, const Model::ListVpcConnectorsRequest&, const Model::ListVpcConnectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVpcConnectorsResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::PauseServiceRequest&, const Model::PauseServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PauseServiceResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::ResumeServiceRequest&, const Model::ResumeServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeServiceResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::StartDeploymentRequest&, const Model::StartDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDeploymentResponseReceivedHandler;
@@ -273,7 +293,8 @@ namespace Model
          * requires this resource when you create App Runner services that require
          * non-default auto scaling settings. You can share an auto scaling configuration
          * across multiple services.</p> <p>Create multiple revisions of a configuration by
-         * using the same <code>AutoScalingConfigurationName</code> and different
+         * calling this action multiple times using the same
+         * <code>AutoScalingConfigurationName</code>. The call returns incremental
          * <code>AutoScalingConfigurationRevision</code> values. When you create a service,
          * you can set it to use the latest active revision of an auto scaling
          * configuration or a specific revision.</p> <p>Configure a higher
@@ -292,7 +313,8 @@ namespace Model
          * requires this resource when you create App Runner services that require
          * non-default auto scaling settings. You can share an auto scaling configuration
          * across multiple services.</p> <p>Create multiple revisions of a configuration by
-         * using the same <code>AutoScalingConfigurationName</code> and different
+         * calling this action multiple times using the same
+         * <code>AutoScalingConfigurationName</code>. The call returns incremental
          * <code>AutoScalingConfigurationRevision</code> values. When you create a service,
          * you can set it to use the latest active revision of an auto scaling
          * configuration or a specific revision.</p> <p>Configure a higher
@@ -313,7 +335,8 @@ namespace Model
          * requires this resource when you create App Runner services that require
          * non-default auto scaling settings. You can share an auto scaling configuration
          * across multiple services.</p> <p>Create multiple revisions of a configuration by
-         * using the same <code>AutoScalingConfigurationName</code> and different
+         * calling this action multiple times using the same
+         * <code>AutoScalingConfigurationName</code>. The call returns incremental
          * <code>AutoScalingConfigurationRevision</code> values. When you create a service,
          * you can set it to use the latest active revision of an auto scaling
          * configuration or a specific revision.</p> <p>Configure a higher
@@ -405,6 +428,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateServiceAsync(const Model::CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Create an App Runner VPC connector resource. App Runner requires this
+         * resource when you want to associate your App Runner service to a custom Amazon
+         * Virtual Private Cloud (Amazon VPC).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcConnector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateVpcConnectorOutcome CreateVpcConnector(const Model::CreateVpcConnectorRequest& request) const;
+
+        /**
+         * <p>Create an App Runner VPC connector resource. App Runner requires this
+         * resource when you want to associate your App Runner service to a custom Amazon
+         * Virtual Private Cloud (Amazon VPC).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcConnector">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateVpcConnectorOutcomeCallable CreateVpcConnectorCallable(const Model::CreateVpcConnectorRequest& request) const;
+
+        /**
+         * <p>Create an App Runner VPC connector resource. App Runner requires this
+         * resource when you want to associate your App Runner service to a custom Amazon
+         * Virtual Private Cloud (Amazon VPC).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcConnector">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateVpcConnectorAsync(const Model::CreateVpcConnectorRequest& request, const CreateVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete an App Runner automatic scaling configuration resource. You can delete
@@ -506,6 +560,34 @@ namespace Model
         virtual void DeleteServiceAsync(const Model::DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Delete an App Runner VPC connector resource. You can't delete a connector
+         * that's used by one or more App Runner services.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcConnector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteVpcConnectorOutcome DeleteVpcConnector(const Model::DeleteVpcConnectorRequest& request) const;
+
+        /**
+         * <p>Delete an App Runner VPC connector resource. You can't delete a connector
+         * that's used by one or more App Runner services.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcConnector">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteVpcConnectorOutcomeCallable DeleteVpcConnectorCallable(const Model::DeleteVpcConnectorRequest& request) const;
+
+        /**
+         * <p>Delete an App Runner VPC connector resource. You can't delete a connector
+         * that's used by one or more App Runner services.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcConnector">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteVpcConnectorAsync(const Model::DeleteVpcConnectorRequest& request, const DeleteVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Return a full description of an App Runner automatic scaling configuration
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeAutoScalingConfiguration">AWS
@@ -588,6 +670,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeServiceAsync(const Model::DescribeServiceRequest& request, const DescribeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Return a description of an App Runner VPC connector resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcConnector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeVpcConnectorOutcome DescribeVpcConnector(const Model::DescribeVpcConnectorRequest& request) const;
+
+        /**
+         * <p>Return a description of an App Runner VPC connector resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcConnector">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeVpcConnectorOutcomeCallable DescribeVpcConnectorCallable(const Model::DescribeVpcConnectorRequest& request) const;
+
+        /**
+         * <p>Return a description of an App Runner VPC connector resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcConnector">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeVpcConnectorAsync(const Model::DescribeVpcConnectorRequest& request, const DescribeVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociate a custom domain name from an App Runner service.</p>
@@ -783,6 +893,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of App Runner VPC connectors in your Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcConnectors">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListVpcConnectorsOutcome ListVpcConnectors(const Model::ListVpcConnectorsRequest& request) const;
+
+        /**
+         * <p>Returns a list of App Runner VPC connectors in your Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcConnectors">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListVpcConnectorsOutcomeCallable ListVpcConnectorsCallable(const Model::ListVpcConnectorsRequest& request) const;
+
+        /**
+         * <p>Returns a list of App Runner VPC connectors in your Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcConnectors">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListVpcConnectorsAsync(const Model::ListVpcConnectorsRequest& request, const ListVpcConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Pause an active App Runner service. App Runner reduces compute capacity for
@@ -1017,18 +1155,22 @@ namespace Model
         void CreateAutoScalingConfigurationAsyncHelper(const Model::CreateAutoScalingConfigurationRequest& request, const CreateAutoScalingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateConnectionAsyncHelper(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateServiceAsyncHelper(const Model::CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateVpcConnectorAsyncHelper(const Model::CreateVpcConnectorRequest& request, const CreateVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAutoScalingConfigurationAsyncHelper(const Model::DeleteAutoScalingConfigurationRequest& request, const DeleteAutoScalingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConnectionAsyncHelper(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteServiceAsyncHelper(const Model::DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteVpcConnectorAsyncHelper(const Model::DeleteVpcConnectorRequest& request, const DeleteVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAutoScalingConfigurationAsyncHelper(const Model::DescribeAutoScalingConfigurationRequest& request, const DescribeAutoScalingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCustomDomainsAsyncHelper(const Model::DescribeCustomDomainsRequest& request, const DescribeCustomDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeServiceAsyncHelper(const Model::DescribeServiceRequest& request, const DescribeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeVpcConnectorAsyncHelper(const Model::DescribeVpcConnectorRequest& request, const DescribeVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateCustomDomainAsyncHelper(const Model::DisassociateCustomDomainRequest& request, const DisassociateCustomDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAutoScalingConfigurationsAsyncHelper(const Model::ListAutoScalingConfigurationsRequest& request, const ListAutoScalingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListConnectionsAsyncHelper(const Model::ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOperationsAsyncHelper(const Model::ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListServicesAsyncHelper(const Model::ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListVpcConnectorsAsyncHelper(const Model::ListVpcConnectorsRequest& request, const ListVpcConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PauseServiceAsyncHelper(const Model::PauseServiceRequest& request, const PauseServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResumeServiceAsyncHelper(const Model::ResumeServiceRequest& request, const ResumeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartDeploymentAsyncHelper(const Model::StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

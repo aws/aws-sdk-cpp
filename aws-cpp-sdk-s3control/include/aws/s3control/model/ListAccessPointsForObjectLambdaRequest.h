@@ -147,33 +147,37 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of access points that you want to include in the list. If
-     * there are more than this number of access points, then the response will include
-     * a continuation token in the <code>NextToken</code> field that you can use to
+     * <p>The maximum number of access points that you want to include in the list. The
+     * response may contain fewer access points but will never contain more. If there
+     * are more than this number of access points, then the response will include a
+     * continuation token in the <code>NextToken</code> field that you can use to
      * retrieve the next page of access points.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of access points that you want to include in the list. If
-     * there are more than this number of access points, then the response will include
-     * a continuation token in the <code>NextToken</code> field that you can use to
+     * <p>The maximum number of access points that you want to include in the list. The
+     * response may contain fewer access points but will never contain more. If there
+     * are more than this number of access points, then the response will include a
+     * continuation token in the <code>NextToken</code> field that you can use to
      * retrieve the next page of access points.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of access points that you want to include in the list. If
-     * there are more than this number of access points, then the response will include
-     * a continuation token in the <code>NextToken</code> field that you can use to
+     * <p>The maximum number of access points that you want to include in the list. The
+     * response may contain fewer access points but will never contain more. If there
+     * are more than this number of access points, then the response will include a
+     * continuation token in the <code>NextToken</code> field that you can use to
      * retrieve the next page of access points.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of access points that you want to include in the list. If
-     * there are more than this number of access points, then the response will include
-     * a continuation token in the <code>NextToken</code> field that you can use to
+     * <p>The maximum number of access points that you want to include in the list. The
+     * response may contain fewer access points but will never contain more. If there
+     * are more than this number of access points, then the response will include a
+     * continuation token in the <code>NextToken</code> field that you can use to
      * retrieve the next page of access points.</p>
      */
     inline ListAccessPointsForObjectLambdaRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

@@ -27,7 +27,7 @@ namespace Model
   /**
    * <p>Defines the mapping between a field in the Confluence data source to a Amazon
    * Kendra index field.</p> <p>You must first create the index field using the
-   * <code>UpdateIndex</code> operation. </p><p><h3>See Also:</h3>   <a
+   * <code>UpdateIndex</code> API. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ConfluenceAttachmentToIndexFieldMapping">AWS
    * API Reference</a></p>
    */
@@ -42,37 +42,37 @@ namespace Model
 
     /**
      * <p>The name of the field in the data source. </p> <p>You must first create the
-     * index field using the <code>UpdateIndex</code> operation. </p>
+     * index field using the <code>UpdateIndex</code> API. </p>
      */
     inline const ConfluenceAttachmentFieldName& GetDataSourceFieldName() const{ return m_dataSourceFieldName; }
 
     /**
      * <p>The name of the field in the data source. </p> <p>You must first create the
-     * index field using the <code>UpdateIndex</code> operation. </p>
+     * index field using the <code>UpdateIndex</code> API. </p>
      */
     inline bool DataSourceFieldNameHasBeenSet() const { return m_dataSourceFieldNameHasBeenSet; }
 
     /**
      * <p>The name of the field in the data source. </p> <p>You must first create the
-     * index field using the <code>UpdateIndex</code> operation. </p>
+     * index field using the <code>UpdateIndex</code> API. </p>
      */
     inline void SetDataSourceFieldName(const ConfluenceAttachmentFieldName& value) { m_dataSourceFieldNameHasBeenSet = true; m_dataSourceFieldName = value; }
 
     /**
      * <p>The name of the field in the data source. </p> <p>You must first create the
-     * index field using the <code>UpdateIndex</code> operation. </p>
+     * index field using the <code>UpdateIndex</code> API. </p>
      */
     inline void SetDataSourceFieldName(ConfluenceAttachmentFieldName&& value) { m_dataSourceFieldNameHasBeenSet = true; m_dataSourceFieldName = std::move(value); }
 
     /**
      * <p>The name of the field in the data source. </p> <p>You must first create the
-     * index field using the <code>UpdateIndex</code> operation. </p>
+     * index field using the <code>UpdateIndex</code> API. </p>
      */
     inline ConfluenceAttachmentToIndexFieldMapping& WithDataSourceFieldName(const ConfluenceAttachmentFieldName& value) { SetDataSourceFieldName(value); return *this;}
 
     /**
      * <p>The name of the field in the data source. </p> <p>You must first create the
-     * index field using the <code>UpdateIndex</code> operation. </p>
+     * index field using the <code>UpdateIndex</code> API. </p>
      */
     inline ConfluenceAttachmentToIndexFieldMapping& WithDataSourceFieldName(ConfluenceAttachmentFieldName&& value) { SetDataSourceFieldName(std::move(value)); return *this;}
 

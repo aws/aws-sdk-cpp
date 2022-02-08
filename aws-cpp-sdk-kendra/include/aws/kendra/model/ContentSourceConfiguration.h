@@ -153,25 +153,25 @@ namespace Model
 
     /**
      * <p> <code>TRUE</code> to use documents you indexed directly using the
-     * <code>BatchPutDocument</code> operation.</p>
+     * <code>BatchPutDocument</code> API.</p>
      */
     inline bool GetDirectPutContent() const{ return m_directPutContent; }
 
     /**
      * <p> <code>TRUE</code> to use documents you indexed directly using the
-     * <code>BatchPutDocument</code> operation.</p>
+     * <code>BatchPutDocument</code> API.</p>
      */
     inline bool DirectPutContentHasBeenSet() const { return m_directPutContentHasBeenSet; }
 
     /**
      * <p> <code>TRUE</code> to use documents you indexed directly using the
-     * <code>BatchPutDocument</code> operation.</p>
+     * <code>BatchPutDocument</code> API.</p>
      */
     inline void SetDirectPutContent(bool value) { m_directPutContentHasBeenSet = true; m_directPutContent = value; }
 
     /**
      * <p> <code>TRUE</code> to use documents you indexed directly using the
-     * <code>BatchPutDocument</code> operation.</p>
+     * <code>BatchPutDocument</code> API.</p>
      */
     inline ContentSourceConfiguration& WithDirectPutContent(bool value) { SetDirectPutContent(value); return *this;}
 

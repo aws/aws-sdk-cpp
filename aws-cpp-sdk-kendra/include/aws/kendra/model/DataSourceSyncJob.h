@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about a synchronization job.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Provides information about a data source synchronization job.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceSyncJob">AWS
    * API Reference</a></p>
    */
@@ -84,63 +84,63 @@ namespace Model
 
 
     /**
-     * <p>The UNIX datetime that the synchronization job was started.</p>
+     * <p>The UNIX datetime that the synchronization job started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The UNIX datetime that the synchronization job was started.</p>
+     * <p>The UNIX datetime that the synchronization job started.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>The UNIX datetime that the synchronization job was started.</p>
+     * <p>The UNIX datetime that the synchronization job started.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The UNIX datetime that the synchronization job was started.</p>
+     * <p>The UNIX datetime that the synchronization job started.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The UNIX datetime that the synchronization job was started.</p>
+     * <p>The UNIX datetime that the synchronization job started.</p>
      */
     inline DataSourceSyncJob& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The UNIX datetime that the synchronization job was started.</p>
+     * <p>The UNIX datetime that the synchronization job started.</p>
      */
     inline DataSourceSyncJob& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The UNIX datetime that the synchronization job was completed.</p>
+     * <p>The UNIX datetime that the synchronization job completed.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The UNIX datetime that the synchronization job was completed.</p>
+     * <p>The UNIX datetime that the synchronization job completed.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>The UNIX datetime that the synchronization job was completed.</p>
+     * <p>The UNIX datetime that the synchronization job completed.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The UNIX datetime that the synchronization job was completed.</p>
+     * <p>The UNIX datetime that the synchronization job completed.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The UNIX datetime that the synchronization job was completed.</p>
+     * <p>The UNIX datetime that the synchronization job completed.</p>
      */
     inline DataSourceSyncJob& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The UNIX datetime that the synchronization job was completed.</p>
+     * <p>The UNIX datetime that the synchronization job completed.</p>
      */
     inline DataSourceSyncJob& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
@@ -253,42 +253,42 @@ namespace Model
 
     /**
      * <p>If the <code>Status</code> field is set to <code>FAILED</code>, the
-     * <code>ErrorCode</code> field contains a the reason that the synchronization
+     * <code>ErrorCode</code> field indicates the reason the synchronization
      * failed.</p>
      */
     inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
 
     /**
      * <p>If the <code>Status</code> field is set to <code>FAILED</code>, the
-     * <code>ErrorCode</code> field contains a the reason that the synchronization
+     * <code>ErrorCode</code> field indicates the reason the synchronization
      * failed.</p>
      */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>If the <code>Status</code> field is set to <code>FAILED</code>, the
-     * <code>ErrorCode</code> field contains a the reason that the synchronization
+     * <code>ErrorCode</code> field indicates the reason the synchronization
      * failed.</p>
      */
     inline void SetErrorCode(const ErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
      * <p>If the <code>Status</code> field is set to <code>FAILED</code>, the
-     * <code>ErrorCode</code> field contains a the reason that the synchronization
+     * <code>ErrorCode</code> field indicates the reason the synchronization
      * failed.</p>
      */
     inline void SetErrorCode(ErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
      * <p>If the <code>Status</code> field is set to <code>FAILED</code>, the
-     * <code>ErrorCode</code> field contains a the reason that the synchronization
+     * <code>ErrorCode</code> field indicates the reason the synchronization
      * failed.</p>
      */
     inline DataSourceSyncJob& WithErrorCode(const ErrorCode& value) { SetErrorCode(value); return *this;}
 
     /**
      * <p>If the <code>Status</code> field is set to <code>FAILED</code>, the
-     * <code>ErrorCode</code> field contains a the reason that the synchronization
+     * <code>ErrorCode</code> field indicates the reason the synchronization
      * failed.</p>
      */
     inline DataSourceSyncJob& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}

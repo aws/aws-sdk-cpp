@@ -13,6 +13,7 @@
 #include <aws/apprunner/model/EncryptionConfiguration.h>
 #include <aws/apprunner/model/HealthCheckConfiguration.h>
 #include <aws/apprunner/model/AutoScalingConfigurationSummary.h>
+#include <aws/apprunner/model/NetworkConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -498,7 +499,7 @@ namespace Model
      * <p>The encryption key that App Runner uses to encrypt the service logs and the
      * copy of the source repository that App Runner maintains for the service. It can
      * be either a customer-provided encryption key or an Amazon Web Services managed
-     * CMK.</p>
+     * key.</p>
      */
     inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
 
@@ -506,7 +507,7 @@ namespace Model
      * <p>The encryption key that App Runner uses to encrypt the service logs and the
      * copy of the source repository that App Runner maintains for the service. It can
      * be either a customer-provided encryption key or an Amazon Web Services managed
-     * CMK.</p>
+     * key.</p>
      */
     inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
 
@@ -514,7 +515,7 @@ namespace Model
      * <p>The encryption key that App Runner uses to encrypt the service logs and the
      * copy of the source repository that App Runner maintains for the service. It can
      * be either a customer-provided encryption key or an Amazon Web Services managed
-     * CMK.</p>
+     * key.</p>
      */
     inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
 
@@ -522,7 +523,7 @@ namespace Model
      * <p>The encryption key that App Runner uses to encrypt the service logs and the
      * copy of the source repository that App Runner maintains for the service. It can
      * be either a customer-provided encryption key or an Amazon Web Services managed
-     * CMK.</p>
+     * key.</p>
      */
     inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
 
@@ -530,7 +531,7 @@ namespace Model
      * <p>The encryption key that App Runner uses to encrypt the service logs and the
      * copy of the source repository that App Runner maintains for the service. It can
      * be either a customer-provided encryption key or an Amazon Web Services managed
-     * CMK.</p>
+     * key.</p>
      */
     inline Service& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
 
@@ -538,7 +539,7 @@ namespace Model
      * <p>The encryption key that App Runner uses to encrypt the service logs and the
      * copy of the source repository that App Runner maintains for the service. It can
      * be either a customer-provided encryption key or an Amazon Web Services managed
-     * CMK.</p>
+     * key.</p>
      */
     inline Service& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
 
@@ -616,6 +617,43 @@ namespace Model
      */
     inline Service& WithAutoScalingConfigurationSummary(AutoScalingConfigurationSummary&& value) { SetAutoScalingConfigurationSummary(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Configuration settings related to network traffic of the web application that
+     * this service runs.</p>
+     */
+    inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
+
+    /**
+     * <p>Configuration settings related to network traffic of the web application that
+     * this service runs.</p>
+     */
+    inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration settings related to network traffic of the web application that
+     * this service runs.</p>
+     */
+    inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
+
+    /**
+     * <p>Configuration settings related to network traffic of the web application that
+     * this service runs.</p>
+     */
+    inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration settings related to network traffic of the web application that
+     * this service runs.</p>
+     */
+    inline Service& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration settings related to network traffic of the web application that
+     * this service runs.</p>
+     */
+    inline Service& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serviceName;
@@ -656,6 +694,9 @@ namespace Model
 
     AutoScalingConfigurationSummary m_autoScalingConfigurationSummary;
     bool m_autoScalingConfigurationSummaryHasBeenSet;
+
+    NetworkConfiguration m_networkConfiguration;
+    bool m_networkConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -269,72 +269,72 @@ namespace Model
     /**
      * <p>Defines how space metadata fields should be mapped to index fields. Before
      * you can map a field, you must first create an index field with a matching type
-     * using the console or the <code>UpdateIndex</code> operation.</p> <p>If you
-     * specify the <code>SpaceFieldMappings</code> parameter, you must specify at least
-     * one field mapping.</p>
+     * using the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
+     * <code>SpaceFieldMappings</code> parameter, you must specify at least one field
+     * mapping.</p>
      */
     inline const Aws::Vector<ConfluenceSpaceToIndexFieldMapping>& GetSpaceFieldMappings() const{ return m_spaceFieldMappings; }
 
     /**
      * <p>Defines how space metadata fields should be mapped to index fields. Before
      * you can map a field, you must first create an index field with a matching type
-     * using the console or the <code>UpdateIndex</code> operation.</p> <p>If you
-     * specify the <code>SpaceFieldMappings</code> parameter, you must specify at least
-     * one field mapping.</p>
+     * using the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
+     * <code>SpaceFieldMappings</code> parameter, you must specify at least one field
+     * mapping.</p>
      */
     inline bool SpaceFieldMappingsHasBeenSet() const { return m_spaceFieldMappingsHasBeenSet; }
 
     /**
      * <p>Defines how space metadata fields should be mapped to index fields. Before
      * you can map a field, you must first create an index field with a matching type
-     * using the console or the <code>UpdateIndex</code> operation.</p> <p>If you
-     * specify the <code>SpaceFieldMappings</code> parameter, you must specify at least
-     * one field mapping.</p>
+     * using the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
+     * <code>SpaceFieldMappings</code> parameter, you must specify at least one field
+     * mapping.</p>
      */
     inline void SetSpaceFieldMappings(const Aws::Vector<ConfluenceSpaceToIndexFieldMapping>& value) { m_spaceFieldMappingsHasBeenSet = true; m_spaceFieldMappings = value; }
 
     /**
      * <p>Defines how space metadata fields should be mapped to index fields. Before
      * you can map a field, you must first create an index field with a matching type
-     * using the console or the <code>UpdateIndex</code> operation.</p> <p>If you
-     * specify the <code>SpaceFieldMappings</code> parameter, you must specify at least
-     * one field mapping.</p>
+     * using the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
+     * <code>SpaceFieldMappings</code> parameter, you must specify at least one field
+     * mapping.</p>
      */
     inline void SetSpaceFieldMappings(Aws::Vector<ConfluenceSpaceToIndexFieldMapping>&& value) { m_spaceFieldMappingsHasBeenSet = true; m_spaceFieldMappings = std::move(value); }
 
     /**
      * <p>Defines how space metadata fields should be mapped to index fields. Before
      * you can map a field, you must first create an index field with a matching type
-     * using the console or the <code>UpdateIndex</code> operation.</p> <p>If you
-     * specify the <code>SpaceFieldMappings</code> parameter, you must specify at least
-     * one field mapping.</p>
+     * using the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
+     * <code>SpaceFieldMappings</code> parameter, you must specify at least one field
+     * mapping.</p>
      */
     inline ConfluenceSpaceConfiguration& WithSpaceFieldMappings(const Aws::Vector<ConfluenceSpaceToIndexFieldMapping>& value) { SetSpaceFieldMappings(value); return *this;}
 
     /**
      * <p>Defines how space metadata fields should be mapped to index fields. Before
      * you can map a field, you must first create an index field with a matching type
-     * using the console or the <code>UpdateIndex</code> operation.</p> <p>If you
-     * specify the <code>SpaceFieldMappings</code> parameter, you must specify at least
-     * one field mapping.</p>
+     * using the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
+     * <code>SpaceFieldMappings</code> parameter, you must specify at least one field
+     * mapping.</p>
      */
     inline ConfluenceSpaceConfiguration& WithSpaceFieldMappings(Aws::Vector<ConfluenceSpaceToIndexFieldMapping>&& value) { SetSpaceFieldMappings(std::move(value)); return *this;}
 
     /**
      * <p>Defines how space metadata fields should be mapped to index fields. Before
      * you can map a field, you must first create an index field with a matching type
-     * using the console or the <code>UpdateIndex</code> operation.</p> <p>If you
-     * specify the <code>SpaceFieldMappings</code> parameter, you must specify at least
-     * one field mapping.</p>
+     * using the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
+     * <code>SpaceFieldMappings</code> parameter, you must specify at least one field
+     * mapping.</p>
      */
     inline ConfluenceSpaceConfiguration& AddSpaceFieldMappings(const ConfluenceSpaceToIndexFieldMapping& value) { m_spaceFieldMappingsHasBeenSet = true; m_spaceFieldMappings.push_back(value); return *this; }
 
     /**
      * <p>Defines how space metadata fields should be mapped to index fields. Before
      * you can map a field, you must first create an index field with a matching type
-     * using the console or the <code>UpdateIndex</code> operation.</p> <p>If you
-     * specify the <code>SpaceFieldMappings</code> parameter, you must specify at least
-     * one field mapping.</p>
+     * using the console or the <code>UpdateIndex</code> API.</p> <p>If you specify the
+     * <code>SpaceFieldMappings</code> parameter, you must specify at least one field
+     * mapping.</p>
      */
     inline ConfluenceSpaceConfiguration& AddSpaceFieldMappings(ConfluenceSpaceToIndexFieldMapping&& value) { m_spaceFieldMappingsHasBeenSet = true; m_spaceFieldMappings.push_back(std::move(value)); return *this; }
 
