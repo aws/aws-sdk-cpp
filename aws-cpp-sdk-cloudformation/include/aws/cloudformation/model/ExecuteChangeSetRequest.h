@@ -41,99 +41,107 @@ namespace Model
   public:
 
     /**
-     * <p>The name or ARN of the change set that you want use to update the specified
-     * stack.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the change set that you want use to
+     * update the specified stack.</p>
      */
     inline const Aws::String& GetChangeSetName() const{ return m_changeSetName; }
 
     /**
-     * <p>The name or ARN of the change set that you want use to update the specified
-     * stack.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the change set that you want use to
+     * update the specified stack.</p>
      */
     inline bool ChangeSetNameHasBeenSet() const { return m_changeSetNameHasBeenSet; }
 
     /**
-     * <p>The name or ARN of the change set that you want use to update the specified
-     * stack.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the change set that you want use to
+     * update the specified stack.</p>
      */
     inline void SetChangeSetName(const Aws::String& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = value; }
 
     /**
-     * <p>The name or ARN of the change set that you want use to update the specified
-     * stack.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the change set that you want use to
+     * update the specified stack.</p>
      */
     inline void SetChangeSetName(Aws::String&& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = std::move(value); }
 
     /**
-     * <p>The name or ARN of the change set that you want use to update the specified
-     * stack.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the change set that you want use to
+     * update the specified stack.</p>
      */
     inline void SetChangeSetName(const char* value) { m_changeSetNameHasBeenSet = true; m_changeSetName.assign(value); }
 
     /**
-     * <p>The name or ARN of the change set that you want use to update the specified
-     * stack.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the change set that you want use to
+     * update the specified stack.</p>
      */
     inline ExecuteChangeSetRequest& WithChangeSetName(const Aws::String& value) { SetChangeSetName(value); return *this;}
 
     /**
-     * <p>The name or ARN of the change set that you want use to update the specified
-     * stack.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the change set that you want use to
+     * update the specified stack.</p>
      */
     inline ExecuteChangeSetRequest& WithChangeSetName(Aws::String&& value) { SetChangeSetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name or ARN of the change set that you want use to update the specified
-     * stack.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the change set that you want use to
+     * update the specified stack.</p>
      */
     inline ExecuteChangeSetRequest& WithChangeSetName(const char* value) { SetChangeSetName(value); return *this;}
 
 
     /**
-     * <p>If you specified the name of a change set, specify the stack name or ID (ARN)
-     * that is associated with the change set you want to execute.</p>
+     * <p>If you specified the name of a change set, specify the stack name or Amazon
+     * Resource Name (ARN) that's associated with the change set you want to
+     * execute.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
 
     /**
-     * <p>If you specified the name of a change set, specify the stack name or ID (ARN)
-     * that is associated with the change set you want to execute.</p>
+     * <p>If you specified the name of a change set, specify the stack name or Amazon
+     * Resource Name (ARN) that's associated with the change set you want to
+     * execute.</p>
      */
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
 
     /**
-     * <p>If you specified the name of a change set, specify the stack name or ID (ARN)
-     * that is associated with the change set you want to execute.</p>
+     * <p>If you specified the name of a change set, specify the stack name or Amazon
+     * Resource Name (ARN) that's associated with the change set you want to
+     * execute.</p>
      */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
-     * <p>If you specified the name of a change set, specify the stack name or ID (ARN)
-     * that is associated with the change set you want to execute.</p>
+     * <p>If you specified the name of a change set, specify the stack name or Amazon
+     * Resource Name (ARN) that's associated with the change set you want to
+     * execute.</p>
      */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
-     * <p>If you specified the name of a change set, specify the stack name or ID (ARN)
-     * that is associated with the change set you want to execute.</p>
+     * <p>If you specified the name of a change set, specify the stack name or Amazon
+     * Resource Name (ARN) that's associated with the change set you want to
+     * execute.</p>
      */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
 
     /**
-     * <p>If you specified the name of a change set, specify the stack name or ID (ARN)
-     * that is associated with the change set you want to execute.</p>
+     * <p>If you specified the name of a change set, specify the stack name or Amazon
+     * Resource Name (ARN) that's associated with the change set you want to
+     * execute.</p>
      */
     inline ExecuteChangeSetRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
 
     /**
-     * <p>If you specified the name of a change set, specify the stack name or ID (ARN)
-     * that is associated with the change set you want to execute.</p>
+     * <p>If you specified the name of a change set, specify the stack name or Amazon
+     * Resource Name (ARN) that's associated with the change set you want to
+     * execute.</p>
      */
     inline ExecuteChangeSetRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
-     * <p>If you specified the name of a change set, specify the stack name or ID (ARN)
-     * that is associated with the change set you want to execute.</p>
+     * <p>If you specified the name of a change set, specify the stack name or Amazon
+     * Resource Name (ARN) that's associated with the change set you want to
+     * execute.</p>
      */
     inline ExecuteChangeSetRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 

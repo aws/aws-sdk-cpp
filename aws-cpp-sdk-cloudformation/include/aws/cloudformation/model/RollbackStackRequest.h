@@ -37,42 +37,42 @@ namespace Model
   public:
 
     /**
-     * <p>The name that is associated with the stack.</p>
+     * <p>The name that's associated with the stack.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
 
     /**
-     * <p>The name that is associated with the stack.</p>
+     * <p>The name that's associated with the stack.</p>
      */
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
 
     /**
-     * <p>The name that is associated with the stack.</p>
+     * <p>The name that's associated with the stack.</p>
      */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
-     * <p>The name that is associated with the stack.</p>
+     * <p>The name that's associated with the stack.</p>
      */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
-     * <p>The name that is associated with the stack.</p>
+     * <p>The name that's associated with the stack.</p>
      */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
 
     /**
-     * <p>The name that is associated with the stack.</p>
+     * <p>The name that's associated with the stack.</p>
      */
     inline RollbackStackRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
 
     /**
-     * <p>The name that is associated with the stack.</p>
+     * <p>The name that's associated with the stack.</p>
      */
     inline RollbackStackRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
-     * <p>The name that is associated with the stack.</p>
+     * <p>The name that's associated with the stack.</p>
      */
     inline RollbackStackRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 

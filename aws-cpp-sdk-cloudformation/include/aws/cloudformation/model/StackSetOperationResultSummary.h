@@ -135,15 +135,15 @@ namespace Model
     /**
      * <p>The result status of the stack set operation for the given account in the
      * given Region.</p> <ul> <li> <p> <code>CANCELLED</code>: The operation in the
-     * specified account and Region has been cancelled. This is either because a user
+     * specified account and Region has been canceled. This is either because a user
      * has stopped the stack set operation, or because the failure tolerance of the
      * stack set operation has been exceeded.</p> </li> <li> <p> <code>FAILED</code>:
-     * The operation in the specified account and Region failed. </p> <p>If the stack
+     * The operation in the specified account and Region failed.</p> <p>If the stack
      * set operation fails in enough accounts within a Region, the failure tolerance
-     * for the stack set operation as a whole might be exceeded. </p> </li> <li> <p>
+     * for the stack set operation as a whole might be exceeded.</p> </li> <li> <p>
      * <code>RUNNING</code>: The operation in the specified account and Region is
      * currently in progress.</p> </li> <li> <p> <code>PENDING</code>: The operation in
-     * the specified account and Region has yet to start. </p> </li> <li> <p>
+     * the specified account and Region has yet to start.</p> </li> <li> <p>
      * <code>SUCCEEDED</code>: The operation in the specified account and Region
      * completed successfully.</p> </li> </ul>
      */
@@ -152,15 +152,15 @@ namespace Model
     /**
      * <p>The result status of the stack set operation for the given account in the
      * given Region.</p> <ul> <li> <p> <code>CANCELLED</code>: The operation in the
-     * specified account and Region has been cancelled. This is either because a user
+     * specified account and Region has been canceled. This is either because a user
      * has stopped the stack set operation, or because the failure tolerance of the
      * stack set operation has been exceeded.</p> </li> <li> <p> <code>FAILED</code>:
-     * The operation in the specified account and Region failed. </p> <p>If the stack
+     * The operation in the specified account and Region failed.</p> <p>If the stack
      * set operation fails in enough accounts within a Region, the failure tolerance
-     * for the stack set operation as a whole might be exceeded. </p> </li> <li> <p>
+     * for the stack set operation as a whole might be exceeded.</p> </li> <li> <p>
      * <code>RUNNING</code>: The operation in the specified account and Region is
      * currently in progress.</p> </li> <li> <p> <code>PENDING</code>: The operation in
-     * the specified account and Region has yet to start. </p> </li> <li> <p>
+     * the specified account and Region has yet to start.</p> </li> <li> <p>
      * <code>SUCCEEDED</code>: The operation in the specified account and Region
      * completed successfully.</p> </li> </ul>
      */
@@ -169,15 +169,15 @@ namespace Model
     /**
      * <p>The result status of the stack set operation for the given account in the
      * given Region.</p> <ul> <li> <p> <code>CANCELLED</code>: The operation in the
-     * specified account and Region has been cancelled. This is either because a user
+     * specified account and Region has been canceled. This is either because a user
      * has stopped the stack set operation, or because the failure tolerance of the
      * stack set operation has been exceeded.</p> </li> <li> <p> <code>FAILED</code>:
-     * The operation in the specified account and Region failed. </p> <p>If the stack
+     * The operation in the specified account and Region failed.</p> <p>If the stack
      * set operation fails in enough accounts within a Region, the failure tolerance
-     * for the stack set operation as a whole might be exceeded. </p> </li> <li> <p>
+     * for the stack set operation as a whole might be exceeded.</p> </li> <li> <p>
      * <code>RUNNING</code>: The operation in the specified account and Region is
      * currently in progress.</p> </li> <li> <p> <code>PENDING</code>: The operation in
-     * the specified account and Region has yet to start. </p> </li> <li> <p>
+     * the specified account and Region has yet to start.</p> </li> <li> <p>
      * <code>SUCCEEDED</code>: The operation in the specified account and Region
      * completed successfully.</p> </li> </ul>
      */
@@ -186,15 +186,15 @@ namespace Model
     /**
      * <p>The result status of the stack set operation for the given account in the
      * given Region.</p> <ul> <li> <p> <code>CANCELLED</code>: The operation in the
-     * specified account and Region has been cancelled. This is either because a user
+     * specified account and Region has been canceled. This is either because a user
      * has stopped the stack set operation, or because the failure tolerance of the
      * stack set operation has been exceeded.</p> </li> <li> <p> <code>FAILED</code>:
-     * The operation in the specified account and Region failed. </p> <p>If the stack
+     * The operation in the specified account and Region failed.</p> <p>If the stack
      * set operation fails in enough accounts within a Region, the failure tolerance
-     * for the stack set operation as a whole might be exceeded. </p> </li> <li> <p>
+     * for the stack set operation as a whole might be exceeded.</p> </li> <li> <p>
      * <code>RUNNING</code>: The operation in the specified account and Region is
      * currently in progress.</p> </li> <li> <p> <code>PENDING</code>: The operation in
-     * the specified account and Region has yet to start. </p> </li> <li> <p>
+     * the specified account and Region has yet to start.</p> </li> <li> <p>
      * <code>SUCCEEDED</code>: The operation in the specified account and Region
      * completed successfully.</p> </li> </ul>
      */
@@ -203,15 +203,15 @@ namespace Model
     /**
      * <p>The result status of the stack set operation for the given account in the
      * given Region.</p> <ul> <li> <p> <code>CANCELLED</code>: The operation in the
-     * specified account and Region has been cancelled. This is either because a user
+     * specified account and Region has been canceled. This is either because a user
      * has stopped the stack set operation, or because the failure tolerance of the
      * stack set operation has been exceeded.</p> </li> <li> <p> <code>FAILED</code>:
-     * The operation in the specified account and Region failed. </p> <p>If the stack
+     * The operation in the specified account and Region failed.</p> <p>If the stack
      * set operation fails in enough accounts within a Region, the failure tolerance
-     * for the stack set operation as a whole might be exceeded. </p> </li> <li> <p>
+     * for the stack set operation as a whole might be exceeded.</p> </li> <li> <p>
      * <code>RUNNING</code>: The operation in the specified account and Region is
      * currently in progress.</p> </li> <li> <p> <code>PENDING</code>: The operation in
-     * the specified account and Region has yet to start. </p> </li> <li> <p>
+     * the specified account and Region has yet to start.</p> </li> <li> <p>
      * <code>SUCCEEDED</code>: The operation in the specified account and Region
      * completed successfully.</p> </li> </ul>
      */
@@ -220,15 +220,15 @@ namespace Model
     /**
      * <p>The result status of the stack set operation for the given account in the
      * given Region.</p> <ul> <li> <p> <code>CANCELLED</code>: The operation in the
-     * specified account and Region has been cancelled. This is either because a user
+     * specified account and Region has been canceled. This is either because a user
      * has stopped the stack set operation, or because the failure tolerance of the
      * stack set operation has been exceeded.</p> </li> <li> <p> <code>FAILED</code>:
-     * The operation in the specified account and Region failed. </p> <p>If the stack
+     * The operation in the specified account and Region failed.</p> <p>If the stack
      * set operation fails in enough accounts within a Region, the failure tolerance
-     * for the stack set operation as a whole might be exceeded. </p> </li> <li> <p>
+     * for the stack set operation as a whole might be exceeded.</p> </li> <li> <p>
      * <code>RUNNING</code>: The operation in the specified account and Region is
      * currently in progress.</p> </li> <li> <p> <code>PENDING</code>: The operation in
-     * the specified account and Region has yet to start. </p> </li> <li> <p>
+     * the specified account and Region has yet to start.</p> </li> <li> <p>
      * <code>SUCCEEDED</code>: The operation in the specified account and Region
      * completed successfully.</p> </li> </ul>
      */
@@ -278,37 +278,37 @@ namespace Model
 
     /**
      * <p>The results of the account gate function CloudFormation invokes, if present,
-     * before proceeding with stack set operations in an account</p>
+     * before proceeding with stack set operations in an account.</p>
      */
     inline const AccountGateResult& GetAccountGateResult() const{ return m_accountGateResult; }
 
     /**
      * <p>The results of the account gate function CloudFormation invokes, if present,
-     * before proceeding with stack set operations in an account</p>
+     * before proceeding with stack set operations in an account.</p>
      */
     inline bool AccountGateResultHasBeenSet() const { return m_accountGateResultHasBeenSet; }
 
     /**
      * <p>The results of the account gate function CloudFormation invokes, if present,
-     * before proceeding with stack set operations in an account</p>
+     * before proceeding with stack set operations in an account.</p>
      */
     inline void SetAccountGateResult(const AccountGateResult& value) { m_accountGateResultHasBeenSet = true; m_accountGateResult = value; }
 
     /**
      * <p>The results of the account gate function CloudFormation invokes, if present,
-     * before proceeding with stack set operations in an account</p>
+     * before proceeding with stack set operations in an account.</p>
      */
     inline void SetAccountGateResult(AccountGateResult&& value) { m_accountGateResultHasBeenSet = true; m_accountGateResult = std::move(value); }
 
     /**
      * <p>The results of the account gate function CloudFormation invokes, if present,
-     * before proceeding with stack set operations in an account</p>
+     * before proceeding with stack set operations in an account.</p>
      */
     inline StackSetOperationResultSummary& WithAccountGateResult(const AccountGateResult& value) { SetAccountGateResult(value); return *this;}
 
     /**
      * <p>The results of the account gate function CloudFormation invokes, if present,
-     * before proceeding with stack set operations in an account</p>
+     * before proceeding with stack set operations in an account.</p>
      */
     inline StackSetOperationResultSummary& WithAccountGateResult(AccountGateResult&& value) { SetAccountGateResult(std::move(value)); return *this;}
 

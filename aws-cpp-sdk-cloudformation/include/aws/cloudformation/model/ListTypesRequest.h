@@ -126,11 +126,11 @@ namespace Model
      * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
      * includes an update handler to process updates to the type during stack update
-     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type does
-     * not include an update handler, so the type cannot be updated and must instead be
+     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type doesn't
+     * include an update handler, so the type can't be updated and must instead be
      * replaced during stack update operations.</p> </li> <li> <p>
-     * <code>NON_PROVISIONABLE</code>: The resource type does not include create, read,
-     * and delete handlers, and therefore cannot actually be provisioned.</p> </li>
+     * <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read,
+     * and delete handlers, and therefore can't actually be provisioned.</p> </li>
      * </ul> <p>The default is <code>FULLY_MUTABLE</code>.</p>
      */
     inline const ProvisioningType& GetProvisioningType() const{ return m_provisioningType; }
@@ -141,11 +141,11 @@ namespace Model
      * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
      * includes an update handler to process updates to the type during stack update
-     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type does
-     * not include an update handler, so the type cannot be updated and must instead be
+     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type doesn't
+     * include an update handler, so the type can't be updated and must instead be
      * replaced during stack update operations.</p> </li> <li> <p>
-     * <code>NON_PROVISIONABLE</code>: The resource type does not include create, read,
-     * and delete handlers, and therefore cannot actually be provisioned.</p> </li>
+     * <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read,
+     * and delete handlers, and therefore can't actually be provisioned.</p> </li>
      * </ul> <p>The default is <code>FULLY_MUTABLE</code>.</p>
      */
     inline bool ProvisioningTypeHasBeenSet() const { return m_provisioningTypeHasBeenSet; }
@@ -156,11 +156,11 @@ namespace Model
      * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
      * includes an update handler to process updates to the type during stack update
-     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type does
-     * not include an update handler, so the type cannot be updated and must instead be
+     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type doesn't
+     * include an update handler, so the type can't be updated and must instead be
      * replaced during stack update operations.</p> </li> <li> <p>
-     * <code>NON_PROVISIONABLE</code>: The resource type does not include create, read,
-     * and delete handlers, and therefore cannot actually be provisioned.</p> </li>
+     * <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read,
+     * and delete handlers, and therefore can't actually be provisioned.</p> </li>
      * </ul> <p>The default is <code>FULLY_MUTABLE</code>.</p>
      */
     inline void SetProvisioningType(const ProvisioningType& value) { m_provisioningTypeHasBeenSet = true; m_provisioningType = value; }
@@ -171,11 +171,11 @@ namespace Model
      * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
      * includes an update handler to process updates to the type during stack update
-     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type does
-     * not include an update handler, so the type cannot be updated and must instead be
+     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type doesn't
+     * include an update handler, so the type can't be updated and must instead be
      * replaced during stack update operations.</p> </li> <li> <p>
-     * <code>NON_PROVISIONABLE</code>: The resource type does not include create, read,
-     * and delete handlers, and therefore cannot actually be provisioned.</p> </li>
+     * <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read,
+     * and delete handlers, and therefore can't actually be provisioned.</p> </li>
      * </ul> <p>The default is <code>FULLY_MUTABLE</code>.</p>
      */
     inline void SetProvisioningType(ProvisioningType&& value) { m_provisioningTypeHasBeenSet = true; m_provisioningType = std::move(value); }
@@ -186,11 +186,11 @@ namespace Model
      * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
      * includes an update handler to process updates to the type during stack update
-     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type does
-     * not include an update handler, so the type cannot be updated and must instead be
+     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type doesn't
+     * include an update handler, so the type can't be updated and must instead be
      * replaced during stack update operations.</p> </li> <li> <p>
-     * <code>NON_PROVISIONABLE</code>: The resource type does not include create, read,
-     * and delete handlers, and therefore cannot actually be provisioned.</p> </li>
+     * <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read,
+     * and delete handlers, and therefore can't actually be provisioned.</p> </li>
      * </ul> <p>The default is <code>FULLY_MUTABLE</code>.</p>
      */
     inline ListTypesRequest& WithProvisioningType(const ProvisioningType& value) { SetProvisioningType(value); return *this;}
@@ -201,11 +201,11 @@ namespace Model
      * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
      * includes an update handler to process updates to the type during stack update
-     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type does
-     * not include an update handler, so the type cannot be updated and must instead be
+     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type doesn't
+     * include an update handler, so the type can't be updated and must instead be
      * replaced during stack update operations.</p> </li> <li> <p>
-     * <code>NON_PROVISIONABLE</code>: The resource type does not include create, read,
-     * and delete handlers, and therefore cannot actually be provisioned.</p> </li>
+     * <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read,
+     * and delete handlers, and therefore can't actually be provisioned.</p> </li>
      * </ul> <p>The default is <code>FULLY_MUTABLE</code>.</p>
      */
     inline ListTypesRequest& WithProvisioningType(ProvisioningType&& value) { SetProvisioningType(std::move(value)); return *this;}
@@ -216,7 +216,7 @@ namespace Model
      * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
      * <code>LIVE</code>: The extension is registered for use in CloudFormation
      * operations.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension has been
-     * deregistered and can no longer be used in CloudFormation operations. </p> </li>
+     * deregistered and can no longer be used in CloudFormation operations.</p> </li>
      * </ul>
      */
     inline const DeprecatedStatus& GetDeprecatedStatus() const{ return m_deprecatedStatus; }
@@ -226,7 +226,7 @@ namespace Model
      * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
      * <code>LIVE</code>: The extension is registered for use in CloudFormation
      * operations.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension has been
-     * deregistered and can no longer be used in CloudFormation operations. </p> </li>
+     * deregistered and can no longer be used in CloudFormation operations.</p> </li>
      * </ul>
      */
     inline bool DeprecatedStatusHasBeenSet() const { return m_deprecatedStatusHasBeenSet; }
@@ -236,7 +236,7 @@ namespace Model
      * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
      * <code>LIVE</code>: The extension is registered for use in CloudFormation
      * operations.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension has been
-     * deregistered and can no longer be used in CloudFormation operations. </p> </li>
+     * deregistered and can no longer be used in CloudFormation operations.</p> </li>
      * </ul>
      */
     inline void SetDeprecatedStatus(const DeprecatedStatus& value) { m_deprecatedStatusHasBeenSet = true; m_deprecatedStatus = value; }
@@ -246,7 +246,7 @@ namespace Model
      * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
      * <code>LIVE</code>: The extension is registered for use in CloudFormation
      * operations.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension has been
-     * deregistered and can no longer be used in CloudFormation operations. </p> </li>
+     * deregistered and can no longer be used in CloudFormation operations.</p> </li>
      * </ul>
      */
     inline void SetDeprecatedStatus(DeprecatedStatus&& value) { m_deprecatedStatusHasBeenSet = true; m_deprecatedStatus = std::move(value); }
@@ -256,7 +256,7 @@ namespace Model
      * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
      * <code>LIVE</code>: The extension is registered for use in CloudFormation
      * operations.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension has been
-     * deregistered and can no longer be used in CloudFormation operations. </p> </li>
+     * deregistered and can no longer be used in CloudFormation operations.</p> </li>
      * </ul>
      */
     inline ListTypesRequest& WithDeprecatedStatus(const DeprecatedStatus& value) { SetDeprecatedStatus(value); return *this;}
@@ -266,7 +266,7 @@ namespace Model
      * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
      * <code>LIVE</code>: The extension is registered for use in CloudFormation
      * operations.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension has been
-     * deregistered and can no longer be used in CloudFormation operations. </p> </li>
+     * deregistered and can no longer be used in CloudFormation operations.</p> </li>
      * </ul>
      */
     inline ListTypesRequest& WithDeprecatedStatus(DeprecatedStatus&& value) { SetDeprecatedStatus(std::move(value)); return *this;}

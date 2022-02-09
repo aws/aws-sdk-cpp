@@ -22,6 +22,7 @@ namespace Aws
 
         static const int RESOURCE_HASH = HashingUtils::HashString("RESOURCE");
         static const int MODULE_HASH = HashingUtils::HashString("MODULE");
+        static const int HOOK_HASH = HashingUtils::HashString("HOOK");
 
 
         RegistryType GetRegistryTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == MODULE_HASH)
           {
             return RegistryType::MODULE;
+          }
+          else if (hashCode == HOOK_HASH)
+          {
+            return RegistryType::HOOK;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "RESOURCE";
           case RegistryType::MODULE:
             return "MODULE";
+          case RegistryType::HOOK:
+            return "HOOK";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -38,37 +38,37 @@ namespace Model
   public:
 
     /**
-     * <p>The kind of extension. </p> <p>Conditional: You must specify either
+     * <p>The kind of extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline const RegistryType& GetType() const{ return m_type; }
 
     /**
-     * <p>The kind of extension. </p> <p>Conditional: You must specify either
+     * <p>The kind of extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The kind of extension. </p> <p>Conditional: You must specify either
+     * <p>The kind of extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetType(const RegistryType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The kind of extension. </p> <p>Conditional: You must specify either
+     * <p>The kind of extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetType(RegistryType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The kind of extension. </p> <p>Conditional: You must specify either
+     * <p>The kind of extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline DescribeTypeRequest& WithType(const RegistryType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The kind of extension. </p> <p>Conditional: You must specify either
+     * <p>The kind of extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline DescribeTypeRequest& WithType(RegistryType&& value) { SetType(std::move(value)); return *this;}

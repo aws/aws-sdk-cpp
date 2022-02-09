@@ -46,10 +46,10 @@ namespace Model
 
     /**
      * <p>Status of the stack's actual configuration compared to its expected template
-     * configuration. </p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
+     * configuration.</p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
      * its expected template configuration. A stack is considered to have drifted if
      * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs
+     * <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs
      * from its expected template configuration.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
      * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
@@ -59,10 +59,10 @@ namespace Model
 
     /**
      * <p>Status of the stack's actual configuration compared to its expected template
-     * configuration. </p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
+     * configuration.</p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
      * its expected template configuration. A stack is considered to have drifted if
      * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs
+     * <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs
      * from its expected template configuration.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
      * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
@@ -72,10 +72,10 @@ namespace Model
 
     /**
      * <p>Status of the stack's actual configuration compared to its expected template
-     * configuration. </p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
+     * configuration.</p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
      * its expected template configuration. A stack is considered to have drifted if
      * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs
+     * <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs
      * from its expected template configuration.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
      * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
@@ -85,10 +85,10 @@ namespace Model
 
     /**
      * <p>Status of the stack's actual configuration compared to its expected template
-     * configuration. </p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
+     * configuration.</p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
      * its expected template configuration. A stack is considered to have drifted if
      * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs
+     * <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs
      * from its expected template configuration.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
      * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
@@ -98,10 +98,10 @@ namespace Model
 
     /**
      * <p>Status of the stack's actual configuration compared to its expected template
-     * configuration. </p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
+     * configuration.</p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
      * its expected template configuration. A stack is considered to have drifted if
      * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs
+     * <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs
      * from its expected template configuration.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
      * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
@@ -111,10 +111,10 @@ namespace Model
 
     /**
      * <p>Status of the stack's actual configuration compared to its expected template
-     * configuration. </p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
+     * configuration.</p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
      * its expected template configuration. A stack is considered to have drifted if
      * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs
+     * <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs
      * from its expected template configuration.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
      * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is

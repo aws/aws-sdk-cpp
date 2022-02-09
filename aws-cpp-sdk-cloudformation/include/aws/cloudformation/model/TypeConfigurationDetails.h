@@ -144,56 +144,56 @@ namespace Model
 
     /**
      * <p>A JSON string specifying the configuration data for the extension, in this
-     * account and region. </p> <p>If a configuration has not been set for a specified
+     * account and region.</p> <p>If a configuration hasn't been set for a specified
      * extension, CloudFormation returns <code>{}</code>.</p>
      */
     inline const Aws::String& GetConfiguration() const{ return m_configuration; }
 
     /**
      * <p>A JSON string specifying the configuration data for the extension, in this
-     * account and region. </p> <p>If a configuration has not been set for a specified
+     * account and region.</p> <p>If a configuration hasn't been set for a specified
      * extension, CloudFormation returns <code>{}</code>.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
      * <p>A JSON string specifying the configuration data for the extension, in this
-     * account and region. </p> <p>If a configuration has not been set for a specified
+     * account and region.</p> <p>If a configuration hasn't been set for a specified
      * extension, CloudFormation returns <code>{}</code>.</p>
      */
     inline void SetConfiguration(const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
      * <p>A JSON string specifying the configuration data for the extension, in this
-     * account and region. </p> <p>If a configuration has not been set for a specified
+     * account and region.</p> <p>If a configuration hasn't been set for a specified
      * extension, CloudFormation returns <code>{}</code>.</p>
      */
     inline void SetConfiguration(Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
      * <p>A JSON string specifying the configuration data for the extension, in this
-     * account and region. </p> <p>If a configuration has not been set for a specified
+     * account and region.</p> <p>If a configuration hasn't been set for a specified
      * extension, CloudFormation returns <code>{}</code>.</p>
      */
     inline void SetConfiguration(const char* value) { m_configurationHasBeenSet = true; m_configuration.assign(value); }
 
     /**
      * <p>A JSON string specifying the configuration data for the extension, in this
-     * account and region. </p> <p>If a configuration has not been set for a specified
+     * account and region.</p> <p>If a configuration hasn't been set for a specified
      * extension, CloudFormation returns <code>{}</code>.</p>
      */
     inline TypeConfigurationDetails& WithConfiguration(const Aws::String& value) { SetConfiguration(value); return *this;}
 
     /**
      * <p>A JSON string specifying the configuration data for the extension, in this
-     * account and region. </p> <p>If a configuration has not been set for a specified
+     * account and region.</p> <p>If a configuration hasn't been set for a specified
      * extension, CloudFormation returns <code>{}</code>.</p>
      */
     inline TypeConfigurationDetails& WithConfiguration(Aws::String&& value) { SetConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>A JSON string specifying the configuration data for the extension, in this
-     * account and region. </p> <p>If a configuration has not been set for a specified
+     * account and region.</p> <p>If a configuration hasn't been set for a specified
      * extension, CloudFormation returns <code>{}</code>.</p>
      */
     inline TypeConfigurationDetails& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
@@ -201,42 +201,42 @@ namespace Model
 
     /**
      * <p>When the configuration data was last updated for this extension.</p> <p>If a
-     * configuration has not been set for a specified extension, CloudFormation returns
+     * configuration hasn't been set for a specified extension, CloudFormation returns
      * <code>null</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
 
     /**
      * <p>When the configuration data was last updated for this extension.</p> <p>If a
-     * configuration has not been set for a specified extension, CloudFormation returns
+     * configuration hasn't been set for a specified extension, CloudFormation returns
      * <code>null</code>.</p>
      */
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
 
     /**
      * <p>When the configuration data was last updated for this extension.</p> <p>If a
-     * configuration has not been set for a specified extension, CloudFormation returns
+     * configuration hasn't been set for a specified extension, CloudFormation returns
      * <code>null</code>.</p>
      */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
 
     /**
      * <p>When the configuration data was last updated for this extension.</p> <p>If a
-     * configuration has not been set for a specified extension, CloudFormation returns
+     * configuration hasn't been set for a specified extension, CloudFormation returns
      * <code>null</code>.</p>
      */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
 
     /**
      * <p>When the configuration data was last updated for this extension.</p> <p>If a
-     * configuration has not been set for a specified extension, CloudFormation returns
+     * configuration hasn't been set for a specified extension, CloudFormation returns
      * <code>null</code>.</p>
      */
     inline TypeConfigurationDetails& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
 
     /**
      * <p>When the configuration data was last updated for this extension.</p> <p>If a
-     * configuration has not been set for a specified extension, CloudFormation returns
+     * configuration hasn't been set for a specified extension, CloudFormation returns
      * <code>null</code>.</p>
      */
     inline TypeConfigurationDetails& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
@@ -249,7 +249,7 @@ namespace Model
      * the type</a> in this account and region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region. </p>
+     * the type</a> in this account and region.</p>
      */
     inline const Aws::String& GetTypeArn() const{ return m_typeArn; }
 
@@ -260,7 +260,7 @@ namespace Model
      * the type</a> in this account and region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region. </p>
+     * the type</a> in this account and region.</p>
      */
     inline bool TypeArnHasBeenSet() const { return m_typeArnHasBeenSet; }
 
@@ -271,7 +271,7 @@ namespace Model
      * the type</a> in this account and region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region. </p>
+     * the type</a> in this account and region.</p>
      */
     inline void SetTypeArn(const Aws::String& value) { m_typeArnHasBeenSet = true; m_typeArn = value; }
 
@@ -282,7 +282,7 @@ namespace Model
      * the type</a> in this account and region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region. </p>
+     * the type</a> in this account and region.</p>
      */
     inline void SetTypeArn(Aws::String&& value) { m_typeArnHasBeenSet = true; m_typeArn = std::move(value); }
 
@@ -293,7 +293,7 @@ namespace Model
      * the type</a> in this account and region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region. </p>
+     * the type</a> in this account and region.</p>
      */
     inline void SetTypeArn(const char* value) { m_typeArnHasBeenSet = true; m_typeArn.assign(value); }
 
@@ -304,7 +304,7 @@ namespace Model
      * the type</a> in this account and region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region. </p>
+     * the type</a> in this account and region.</p>
      */
     inline TypeConfigurationDetails& WithTypeArn(const Aws::String& value) { SetTypeArn(value); return *this;}
 
@@ -315,7 +315,7 @@ namespace Model
      * the type</a> in this account and region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region. </p>
+     * the type</a> in this account and region.</p>
      */
     inline TypeConfigurationDetails& WithTypeArn(Aws::String&& value) { SetTypeArn(std::move(value)); return *this;}
 
@@ -326,7 +326,7 @@ namespace Model
      * the type</a> in this account and region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region. </p>
+     * the type</a> in this account and region.</p>
      */
     inline TypeConfigurationDetails& WithTypeArn(const char* value) { SetTypeArn(value); return *this;}
 

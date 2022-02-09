@@ -85,109 +85,116 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the change set.</p>
+     * <p>The Amazon Resource Name (ARN) of the change set.</p>
      */
     inline const Aws::String& GetChangeSetId() const{ return m_changeSetId; }
 
     /**
-     * <p>The ARN of the change set.</p>
+     * <p>The Amazon Resource Name (ARN) of the change set.</p>
      */
     inline void SetChangeSetId(const Aws::String& value) { m_changeSetId = value; }
 
     /**
-     * <p>The ARN of the change set.</p>
+     * <p>The Amazon Resource Name (ARN) of the change set.</p>
      */
     inline void SetChangeSetId(Aws::String&& value) { m_changeSetId = std::move(value); }
 
     /**
-     * <p>The ARN of the change set.</p>
+     * <p>The Amazon Resource Name (ARN) of the change set.</p>
      */
     inline void SetChangeSetId(const char* value) { m_changeSetId.assign(value); }
 
     /**
-     * <p>The ARN of the change set.</p>
+     * <p>The Amazon Resource Name (ARN) of the change set.</p>
      */
     inline DescribeChangeSetResult& WithChangeSetId(const Aws::String& value) { SetChangeSetId(value); return *this;}
 
     /**
-     * <p>The ARN of the change set.</p>
+     * <p>The Amazon Resource Name (ARN) of the change set.</p>
      */
     inline DescribeChangeSetResult& WithChangeSetId(Aws::String&& value) { SetChangeSetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the change set.</p>
+     * <p>The Amazon Resource Name (ARN) of the change set.</p>
      */
     inline DescribeChangeSetResult& WithChangeSetId(const char* value) { SetChangeSetId(value); return *this;}
 
 
     /**
-     * <p>The ARN of the stack that is associated with the change set.</p>
+     * <p>The Amazon Resource Name (ARN) of the stack that's associated with the change
+     * set.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
 
     /**
-     * <p>The ARN of the stack that is associated with the change set.</p>
+     * <p>The Amazon Resource Name (ARN) of the stack that's associated with the change
+     * set.</p>
      */
     inline void SetStackId(const Aws::String& value) { m_stackId = value; }
 
     /**
-     * <p>The ARN of the stack that is associated with the change set.</p>
+     * <p>The Amazon Resource Name (ARN) of the stack that's associated with the change
+     * set.</p>
      */
     inline void SetStackId(Aws::String&& value) { m_stackId = std::move(value); }
 
     /**
-     * <p>The ARN of the stack that is associated with the change set.</p>
+     * <p>The Amazon Resource Name (ARN) of the stack that's associated with the change
+     * set.</p>
      */
     inline void SetStackId(const char* value) { m_stackId.assign(value); }
 
     /**
-     * <p>The ARN of the stack that is associated with the change set.</p>
+     * <p>The Amazon Resource Name (ARN) of the stack that's associated with the change
+     * set.</p>
      */
     inline DescribeChangeSetResult& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
 
     /**
-     * <p>The ARN of the stack that is associated with the change set.</p>
+     * <p>The Amazon Resource Name (ARN) of the stack that's associated with the change
+     * set.</p>
      */
     inline DescribeChangeSetResult& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the stack that is associated with the change set.</p>
+     * <p>The Amazon Resource Name (ARN) of the stack that's associated with the change
+     * set.</p>
      */
     inline DescribeChangeSetResult& WithStackId(const char* value) { SetStackId(value); return *this;}
 
 
     /**
-     * <p>The name of the stack that is associated with the change set.</p>
+     * <p>The name of the stack that's associated with the change set.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
 
     /**
-     * <p>The name of the stack that is associated with the change set.</p>
+     * <p>The name of the stack that's associated with the change set.</p>
      */
     inline void SetStackName(const Aws::String& value) { m_stackName = value; }
 
     /**
-     * <p>The name of the stack that is associated with the change set.</p>
+     * <p>The name of the stack that's associated with the change set.</p>
      */
     inline void SetStackName(Aws::String&& value) { m_stackName = std::move(value); }
 
     /**
-     * <p>The name of the stack that is associated with the change set.</p>
+     * <p>The name of the stack that's associated with the change set.</p>
      */
     inline void SetStackName(const char* value) { m_stackName.assign(value); }
 
     /**
-     * <p>The name of the stack that is associated with the change set.</p>
+     * <p>The name of the stack that's associated with the change set.</p>
      */
     inline DescribeChangeSetResult& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
 
     /**
-     * <p>The name of the stack that is associated with the change set.</p>
+     * <p>The name of the stack that's associated with the change set.</p>
      */
     inline DescribeChangeSetResult& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the stack that is associated with the change set.</p>
+     * <p>The name of the stack that's associated with the change set.</p>
      */
     inline DescribeChangeSetResult& WithStackName(const char* value) { SetStackName(value); return *this;}
 
@@ -320,7 +327,7 @@ namespace Model
 
     /**
      * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
-     * the change set. If you can’t execute the change set, the status indicates why.
+     * the change set. If you can't execute the change set, the status indicates why.
      * For example, a change set might be in an <code>UNAVAILABLE</code> state because
      * CloudFormation is still creating it or in an <code>OBSOLETE</code> state because
      * the stack was already updated.</p>
@@ -329,7 +336,7 @@ namespace Model
 
     /**
      * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
-     * the change set. If you can’t execute the change set, the status indicates why.
+     * the change set. If you can't execute the change set, the status indicates why.
      * For example, a change set might be in an <code>UNAVAILABLE</code> state because
      * CloudFormation is still creating it or in an <code>OBSOLETE</code> state because
      * the stack was already updated.</p>
@@ -338,7 +345,7 @@ namespace Model
 
     /**
      * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
-     * the change set. If you can’t execute the change set, the status indicates why.
+     * the change set. If you can't execute the change set, the status indicates why.
      * For example, a change set might be in an <code>UNAVAILABLE</code> state because
      * CloudFormation is still creating it or in an <code>OBSOLETE</code> state because
      * the stack was already updated.</p>
@@ -347,7 +354,7 @@ namespace Model
 
     /**
      * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
-     * the change set. If you can’t execute the change set, the status indicates why.
+     * the change set. If you can't execute the change set, the status indicates why.
      * For example, a change set might be in an <code>UNAVAILABLE</code> state because
      * CloudFormation is still creating it or in an <code>OBSOLETE</code> state because
      * the stack was already updated.</p>
@@ -356,7 +363,7 @@ namespace Model
 
     /**
      * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
-     * the change set. If you can’t execute the change set, the status indicates why.
+     * the change set. If you can't execute the change set, the status indicates why.
      * For example, a change set might be in an <code>UNAVAILABLE</code> state because
      * CloudFormation is still creating it or in an <code>OBSOLETE</code> state because
      * the stack was already updated.</p>

@@ -41,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The name that is associated with the parameter.</p>
+     * <p>The name that's associated with the parameter.</p>
      */
     inline const Aws::String& GetParameterKey() const{ return m_parameterKey; }
 
     /**
-     * <p>The name that is associated with the parameter.</p>
+     * <p>The name that's associated with the parameter.</p>
      */
     inline bool ParameterKeyHasBeenSet() const { return m_parameterKeyHasBeenSet; }
 
     /**
-     * <p>The name that is associated with the parameter.</p>
+     * <p>The name that's associated with the parameter.</p>
      */
     inline void SetParameterKey(const Aws::String& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = value; }
 
     /**
-     * <p>The name that is associated with the parameter.</p>
+     * <p>The name that's associated with the parameter.</p>
      */
     inline void SetParameterKey(Aws::String&& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = std::move(value); }
 
     /**
-     * <p>The name that is associated with the parameter.</p>
+     * <p>The name that's associated with the parameter.</p>
      */
     inline void SetParameterKey(const char* value) { m_parameterKeyHasBeenSet = true; m_parameterKey.assign(value); }
 
     /**
-     * <p>The name that is associated with the parameter.</p>
+     * <p>The name that's associated with the parameter.</p>
      */
     inline ParameterDeclaration& WithParameterKey(const Aws::String& value) { SetParameterKey(value); return *this;}
 
     /**
-     * <p>The name that is associated with the parameter.</p>
+     * <p>The name that's associated with the parameter.</p>
      */
     inline ParameterDeclaration& WithParameterKey(Aws::String&& value) { SetParameterKey(std::move(value)); return *this;}
 
     /**
-     * <p>The name that is associated with the parameter.</p>
+     * <p>The name that's associated with the parameter.</p>
      */
     inline ParameterDeclaration& WithParameterKey(const char* value) { SetParameterKey(value); return *this;}
 
@@ -189,42 +189,42 @@ namespace Model
 
 
     /**
-     * <p>The description that is associate with the parameter.</p>
+     * <p>The description that's associate with the parameter.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description that is associate with the parameter.</p>
+     * <p>The description that's associate with the parameter.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description that is associate with the parameter.</p>
+     * <p>The description that's associate with the parameter.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description that is associate with the parameter.</p>
+     * <p>The description that's associate with the parameter.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description that is associate with the parameter.</p>
+     * <p>The description that's associate with the parameter.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description that is associate with the parameter.</p>
+     * <p>The description that's associate with the parameter.</p>
      */
     inline ParameterDeclaration& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description that is associate with the parameter.</p>
+     * <p>The description that's associate with the parameter.</p>
      */
     inline ParameterDeclaration& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description that is associate with the parameter.</p>
+     * <p>The description that's associate with the parameter.</p>
      */
     inline ParameterDeclaration& WithDescription(const char* value) { SetDescription(value); return *this;}
 

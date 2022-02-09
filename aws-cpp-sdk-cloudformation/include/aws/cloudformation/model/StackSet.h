@@ -36,8 +36,8 @@ namespace Model
    * <p>A structure that contains information about a stack set. A stack set enables
    * you to provision stacks into Amazon Web Services accounts and across Regions by
    * using a single CloudFormation template. In the stack set, you specify the
-   * template to use, as well as any parameters and capabilities that the template
-   * requires. </p><p><h3>See Also:</h3>   <a
+   * template to use, in addition to any parameters and capabilities that the
+   * template requires.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSet">AWS
    * API Reference</a></p>
    */
@@ -565,58 +565,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the IAM execution role used to create or update the stack set.
-     * </p> <p>Use customized execution roles to control which stack resources users
-     * and groups can include in their stack sets. </p>
+     * <p>The name of the IAM execution role used to create or update the stack
+     * set.</p> <p>Use customized execution roles to control which stack resources
+     * users and groups can include in their stack sets.</p>
      */
     inline const Aws::String& GetExecutionRoleName() const{ return m_executionRoleName; }
 
     /**
-     * <p>The name of the IAM execution role used to create or update the stack set.
-     * </p> <p>Use customized execution roles to control which stack resources users
-     * and groups can include in their stack sets. </p>
+     * <p>The name of the IAM execution role used to create or update the stack
+     * set.</p> <p>Use customized execution roles to control which stack resources
+     * users and groups can include in their stack sets.</p>
      */
     inline bool ExecutionRoleNameHasBeenSet() const { return m_executionRoleNameHasBeenSet; }
 
     /**
-     * <p>The name of the IAM execution role used to create or update the stack set.
-     * </p> <p>Use customized execution roles to control which stack resources users
-     * and groups can include in their stack sets. </p>
+     * <p>The name of the IAM execution role used to create or update the stack
+     * set.</p> <p>Use customized execution roles to control which stack resources
+     * users and groups can include in their stack sets.</p>
      */
     inline void SetExecutionRoleName(const Aws::String& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = value; }
 
     /**
-     * <p>The name of the IAM execution role used to create or update the stack set.
-     * </p> <p>Use customized execution roles to control which stack resources users
-     * and groups can include in their stack sets. </p>
+     * <p>The name of the IAM execution role used to create or update the stack
+     * set.</p> <p>Use customized execution roles to control which stack resources
+     * users and groups can include in their stack sets.</p>
      */
     inline void SetExecutionRoleName(Aws::String&& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = std::move(value); }
 
     /**
-     * <p>The name of the IAM execution role used to create or update the stack set.
-     * </p> <p>Use customized execution roles to control which stack resources users
-     * and groups can include in their stack sets. </p>
+     * <p>The name of the IAM execution role used to create or update the stack
+     * set.</p> <p>Use customized execution roles to control which stack resources
+     * users and groups can include in their stack sets.</p>
      */
     inline void SetExecutionRoleName(const char* value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName.assign(value); }
 
     /**
-     * <p>The name of the IAM execution role used to create or update the stack set.
-     * </p> <p>Use customized execution roles to control which stack resources users
-     * and groups can include in their stack sets. </p>
+     * <p>The name of the IAM execution role used to create or update the stack
+     * set.</p> <p>Use customized execution roles to control which stack resources
+     * users and groups can include in their stack sets.</p>
      */
     inline StackSet& WithExecutionRoleName(const Aws::String& value) { SetExecutionRoleName(value); return *this;}
 
     /**
-     * <p>The name of the IAM execution role used to create or update the stack set.
-     * </p> <p>Use customized execution roles to control which stack resources users
-     * and groups can include in their stack sets. </p>
+     * <p>The name of the IAM execution role used to create or update the stack
+     * set.</p> <p>Use customized execution roles to control which stack resources
+     * users and groups can include in their stack sets.</p>
      */
     inline StackSet& WithExecutionRoleName(Aws::String&& value) { SetExecutionRoleName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the IAM execution role used to create or update the stack set.
-     * </p> <p>Use customized execution roles to control which stack resources users
-     * and groups can include in their stack sets. </p>
+     * <p>The name of the IAM execution role used to create or update the stack
+     * set.</p> <p>Use customized execution roles to control which stack resources
+     * users and groups can include in their stack sets.</p>
      */
     inline StackSet& WithExecutionRoleName(const char* value) { SetExecutionRoleName(value); return *this;}
 
@@ -625,7 +625,7 @@ namespace Model
      * <p>Detailed information about the drift status of the stack set.</p> <p>For
      * stack sets, contains information about the last <i>completed</i> drift operation
      * performed on the stack set. Information about drift operations currently in
-     * progress is not included.</p>
+     * progress isn't included.</p>
      */
     inline const StackSetDriftDetectionDetails& GetStackSetDriftDetectionDetails() const{ return m_stackSetDriftDetectionDetails; }
 
@@ -633,7 +633,7 @@ namespace Model
      * <p>Detailed information about the drift status of the stack set.</p> <p>For
      * stack sets, contains information about the last <i>completed</i> drift operation
      * performed on the stack set. Information about drift operations currently in
-     * progress is not included.</p>
+     * progress isn't included.</p>
      */
     inline bool StackSetDriftDetectionDetailsHasBeenSet() const { return m_stackSetDriftDetectionDetailsHasBeenSet; }
 
@@ -641,7 +641,7 @@ namespace Model
      * <p>Detailed information about the drift status of the stack set.</p> <p>For
      * stack sets, contains information about the last <i>completed</i> drift operation
      * performed on the stack set. Information about drift operations currently in
-     * progress is not included.</p>
+     * progress isn't included.</p>
      */
     inline void SetStackSetDriftDetectionDetails(const StackSetDriftDetectionDetails& value) { m_stackSetDriftDetectionDetailsHasBeenSet = true; m_stackSetDriftDetectionDetails = value; }
 
@@ -649,7 +649,7 @@ namespace Model
      * <p>Detailed information about the drift status of the stack set.</p> <p>For
      * stack sets, contains information about the last <i>completed</i> drift operation
      * performed on the stack set. Information about drift operations currently in
-     * progress is not included.</p>
+     * progress isn't included.</p>
      */
     inline void SetStackSetDriftDetectionDetails(StackSetDriftDetectionDetails&& value) { m_stackSetDriftDetectionDetailsHasBeenSet = true; m_stackSetDriftDetectionDetails = std::move(value); }
 
@@ -657,7 +657,7 @@ namespace Model
      * <p>Detailed information about the drift status of the stack set.</p> <p>For
      * stack sets, contains information about the last <i>completed</i> drift operation
      * performed on the stack set. Information about drift operations currently in
-     * progress is not included.</p>
+     * progress isn't included.</p>
      */
     inline StackSet& WithStackSetDriftDetectionDetails(const StackSetDriftDetectionDetails& value) { SetStackSetDriftDetectionDetails(value); return *this;}
 
@@ -665,7 +665,7 @@ namespace Model
      * <p>Detailed information about the drift status of the stack set.</p> <p>For
      * stack sets, contains information about the last <i>completed</i> drift operation
      * performed on the stack set. Information about drift operations currently in
-     * progress is not included.</p>
+     * progress isn't included.</p>
      */
     inline StackSet& WithStackSetDriftDetectionDetails(StackSetDriftDetectionDetails&& value) { SetStackSetDriftDetectionDetails(std::move(value)); return *this;}
 

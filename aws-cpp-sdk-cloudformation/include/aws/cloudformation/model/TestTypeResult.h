@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the extension.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension.</p>
      */
     inline const Aws::String& GetTypeVersionArn() const{ return m_typeVersionArn; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the extension.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension.</p>
      */
     inline void SetTypeVersionArn(const Aws::String& value) { m_typeVersionArn = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the extension.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension.</p>
      */
     inline void SetTypeVersionArn(Aws::String&& value) { m_typeVersionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the extension.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension.</p>
      */
     inline void SetTypeVersionArn(const char* value) { m_typeVersionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the extension.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension.</p>
      */
     inline TestTypeResult& WithTypeVersionArn(const Aws::String& value) { SetTypeVersionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the extension.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension.</p>
      */
     inline TestTypeResult& WithTypeVersionArn(Aws::String&& value) { SetTypeVersionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the extension.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension.</p>
      */
     inline TestTypeResult& WithTypeVersionArn(const char* value) { SetTypeVersionArn(value); return *this;}
 

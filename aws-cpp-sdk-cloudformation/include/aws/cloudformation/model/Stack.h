@@ -463,75 +463,84 @@ namespace Model
 
     /**
      * <p>Boolean to enable or disable rollback on stack creation failures:</p> <ul>
-     * <li> <p> <code>true</code>: disable rollback</p> </li> <li> <p>
-     * <code>false</code>: enable rollback</p> </li> </ul>
+     * <li> <p> <code>true</code>: disable rollback.</p> </li> <li> <p>
+     * <code>false</code>: enable rollback.</p> </li> </ul>
      */
     inline bool GetDisableRollback() const{ return m_disableRollback; }
 
     /**
      * <p>Boolean to enable or disable rollback on stack creation failures:</p> <ul>
-     * <li> <p> <code>true</code>: disable rollback</p> </li> <li> <p>
-     * <code>false</code>: enable rollback</p> </li> </ul>
+     * <li> <p> <code>true</code>: disable rollback.</p> </li> <li> <p>
+     * <code>false</code>: enable rollback.</p> </li> </ul>
      */
     inline bool DisableRollbackHasBeenSet() const { return m_disableRollbackHasBeenSet; }
 
     /**
      * <p>Boolean to enable or disable rollback on stack creation failures:</p> <ul>
-     * <li> <p> <code>true</code>: disable rollback</p> </li> <li> <p>
-     * <code>false</code>: enable rollback</p> </li> </ul>
+     * <li> <p> <code>true</code>: disable rollback.</p> </li> <li> <p>
+     * <code>false</code>: enable rollback.</p> </li> </ul>
      */
     inline void SetDisableRollback(bool value) { m_disableRollbackHasBeenSet = true; m_disableRollback = value; }
 
     /**
      * <p>Boolean to enable or disable rollback on stack creation failures:</p> <ul>
-     * <li> <p> <code>true</code>: disable rollback</p> </li> <li> <p>
-     * <code>false</code>: enable rollback</p> </li> </ul>
+     * <li> <p> <code>true</code>: disable rollback.</p> </li> <li> <p>
+     * <code>false</code>: enable rollback.</p> </li> </ul>
      */
     inline Stack& WithDisableRollback(bool value) { SetDisableRollback(value); return *this;}
 
 
     /**
-     * <p>SNS topic ARNs to which stack related events are published.</p>
+     * <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events
+     * are published.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNotificationARNs() const{ return m_notificationARNs; }
 
     /**
-     * <p>SNS topic ARNs to which stack related events are published.</p>
+     * <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events
+     * are published.</p>
      */
     inline bool NotificationARNsHasBeenSet() const { return m_notificationARNsHasBeenSet; }
 
     /**
-     * <p>SNS topic ARNs to which stack related events are published.</p>
+     * <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events
+     * are published.</p>
      */
     inline void SetNotificationARNs(const Aws::Vector<Aws::String>& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = value; }
 
     /**
-     * <p>SNS topic ARNs to which stack related events are published.</p>
+     * <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events
+     * are published.</p>
      */
     inline void SetNotificationARNs(Aws::Vector<Aws::String>&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = std::move(value); }
 
     /**
-     * <p>SNS topic ARNs to which stack related events are published.</p>
+     * <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events
+     * are published.</p>
      */
     inline Stack& WithNotificationARNs(const Aws::Vector<Aws::String>& value) { SetNotificationARNs(value); return *this;}
 
     /**
-     * <p>SNS topic ARNs to which stack related events are published.</p>
+     * <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events
+     * are published.</p>
      */
     inline Stack& WithNotificationARNs(Aws::Vector<Aws::String>&& value) { SetNotificationARNs(std::move(value)); return *this;}
 
     /**
-     * <p>SNS topic ARNs to which stack related events are published.</p>
+     * <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events
+     * are published.</p>
      */
     inline Stack& AddNotificationARNs(const Aws::String& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
 
     /**
-     * <p>SNS topic ARNs to which stack related events are published.</p>
+     * <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events
+     * are published.</p>
      */
     inline Stack& AddNotificationARNs(Aws::String&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>SNS topic ARNs to which stack related events are published.</p>
+     * <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events
+     * are published.</p>
      */
     inline Stack& AddNotificationARNs(const char* value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
 
@@ -641,56 +650,56 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
-     * role that is associated with the stack. During a stack operation, CloudFormation
+     * role that's associated with the stack. During a stack operation, CloudFormation
      * uses this role's credentials to make calls on your behalf.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
-     * role that is associated with the stack. During a stack operation, CloudFormation
+     * role that's associated with the stack. During a stack operation, CloudFormation
      * uses this role's credentials to make calls on your behalf.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
-     * role that is associated with the stack. During a stack operation, CloudFormation
+     * role that's associated with the stack. During a stack operation, CloudFormation
      * uses this role's credentials to make calls on your behalf.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
-     * role that is associated with the stack. During a stack operation, CloudFormation
+     * role that's associated with the stack. During a stack operation, CloudFormation
      * uses this role's credentials to make calls on your behalf.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
-     * role that is associated with the stack. During a stack operation, CloudFormation
+     * role that's associated with the stack. During a stack operation, CloudFormation
      * uses this role's credentials to make calls on your behalf.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
-     * role that is associated with the stack. During a stack operation, CloudFormation
+     * role that's associated with the stack. During a stack operation, CloudFormation
      * uses this role's credentials to make calls on your behalf.</p>
      */
     inline Stack& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
-     * role that is associated with the stack. During a stack operation, CloudFormation
+     * role that's associated with the stack. During a stack operation, CloudFormation
      * uses this role's credentials to make calls on your behalf.</p>
      */
     inline Stack& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
-     * role that is associated with the stack. During a stack operation, CloudFormation
+     * role that's associated with the stack. During a stack operation, CloudFormation
      * uses this role's credentials to make calls on your behalf.</p>
      */
     inline Stack& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
@@ -738,7 +747,7 @@ namespace Model
 
 
     /**
-     * <p>Whether termination protection is enabled for the stack.</p> <p> For <a
+     * <p>Whether termination protection is enabled for the stack.</p> <p>For <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
      * stacks</a>, termination protection is set on the root stack and cannot be
      * changed directly on the nested stack. For more information, see <a
@@ -748,7 +757,7 @@ namespace Model
     inline bool GetEnableTerminationProtection() const{ return m_enableTerminationProtection; }
 
     /**
-     * <p>Whether termination protection is enabled for the stack.</p> <p> For <a
+     * <p>Whether termination protection is enabled for the stack.</p> <p>For <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
      * stacks</a>, termination protection is set on the root stack and cannot be
      * changed directly on the nested stack. For more information, see <a
@@ -758,7 +767,7 @@ namespace Model
     inline bool EnableTerminationProtectionHasBeenSet() const { return m_enableTerminationProtectionHasBeenSet; }
 
     /**
-     * <p>Whether termination protection is enabled for the stack.</p> <p> For <a
+     * <p>Whether termination protection is enabled for the stack.</p> <p>For <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
      * stacks</a>, termination protection is set on the root stack and cannot be
      * changed directly on the nested stack. For more information, see <a
@@ -768,7 +777,7 @@ namespace Model
     inline void SetEnableTerminationProtection(bool value) { m_enableTerminationProtectionHasBeenSet = true; m_enableTerminationProtection = value; }
 
     /**
-     * <p>Whether termination protection is enabled for the stack.</p> <p> For <a
+     * <p>Whether termination protection is enabled for the stack.</p> <p>For <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
      * stacks</a>, termination protection is set on the root stack and cannot be
      * changed directly on the nested stack. For more information, see <a

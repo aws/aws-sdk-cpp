@@ -45,7 +45,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -56,7 +56,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -67,7 +67,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -78,7 +78,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -89,7 +89,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -100,7 +100,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -111,7 +111,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -122,7 +122,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -132,10 +132,10 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket or a
+     * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -144,10 +144,10 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket or a
+     * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -156,10 +156,10 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket or a
+     * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -168,10 +168,10 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket or a
+     * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -180,10 +180,10 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket or a
+     * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -192,10 +192,10 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket or a
+     * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -204,10 +204,10 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket or a
+     * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -216,10 +216,10 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket or a
+     * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -228,7 +228,7 @@ namespace Model
 
 
     /**
-     * <p>The name or the stack ID that is associated with the stack, which are not
+     * <p>The name or the stack ID that's associated with the stack, which aren't
      * always interchangeable. For running stacks, you can specify either the stack's
      * name or its unique stack ID. For deleted stack, you must specify the unique
      * stack ID.</p> <p>Conditional: You must specify only one of the following
@@ -238,7 +238,7 @@ namespace Model
     inline const Aws::String& GetStackName() const{ return m_stackName; }
 
     /**
-     * <p>The name or the stack ID that is associated with the stack, which are not
+     * <p>The name or the stack ID that's associated with the stack, which aren't
      * always interchangeable. For running stacks, you can specify either the stack's
      * name or its unique stack ID. For deleted stack, you must specify the unique
      * stack ID.</p> <p>Conditional: You must specify only one of the following
@@ -248,7 +248,7 @@ namespace Model
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
 
     /**
-     * <p>The name or the stack ID that is associated with the stack, which are not
+     * <p>The name or the stack ID that's associated with the stack, which aren't
      * always interchangeable. For running stacks, you can specify either the stack's
      * name or its unique stack ID. For deleted stack, you must specify the unique
      * stack ID.</p> <p>Conditional: You must specify only one of the following
@@ -258,7 +258,7 @@ namespace Model
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
-     * <p>The name or the stack ID that is associated with the stack, which are not
+     * <p>The name or the stack ID that's associated with the stack, which aren't
      * always interchangeable. For running stacks, you can specify either the stack's
      * name or its unique stack ID. For deleted stack, you must specify the unique
      * stack ID.</p> <p>Conditional: You must specify only one of the following
@@ -268,7 +268,7 @@ namespace Model
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
-     * <p>The name or the stack ID that is associated with the stack, which are not
+     * <p>The name or the stack ID that's associated with the stack, which aren't
      * always interchangeable. For running stacks, you can specify either the stack's
      * name or its unique stack ID. For deleted stack, you must specify the unique
      * stack ID.</p> <p>Conditional: You must specify only one of the following
@@ -278,7 +278,7 @@ namespace Model
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
 
     /**
-     * <p>The name or the stack ID that is associated with the stack, which are not
+     * <p>The name or the stack ID that's associated with the stack, which aren't
      * always interchangeable. For running stacks, you can specify either the stack's
      * name or its unique stack ID. For deleted stack, you must specify the unique
      * stack ID.</p> <p>Conditional: You must specify only one of the following
@@ -288,7 +288,7 @@ namespace Model
     inline GetTemplateSummaryRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
 
     /**
-     * <p>The name or the stack ID that is associated with the stack, which are not
+     * <p>The name or the stack ID that's associated with the stack, which aren't
      * always interchangeable. For running stacks, you can specify either the stack's
      * name or its unique stack ID. For deleted stack, you must specify the unique
      * stack ID.</p> <p>Conditional: You must specify only one of the following
@@ -298,7 +298,7 @@ namespace Model
     inline GetTemplateSummaryRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
-     * <p>The name or the stack ID that is associated with the stack, which are not
+     * <p>The name or the stack ID that's associated with the stack, which aren't
      * always interchangeable. For running stacks, you can specify either the stack's
      * name or its unique stack ID. For deleted stack, you must specify the unique
      * stack ID.</p> <p>Conditional: You must specify only one of the following

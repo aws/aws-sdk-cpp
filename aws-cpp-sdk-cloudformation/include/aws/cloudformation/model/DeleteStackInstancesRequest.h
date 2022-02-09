@@ -198,47 +198,56 @@ namespace Model
 
 
     /**
-     * <p>The Regions where you want to delete stack set instances.</p>
+     * <p>The Amazon Web Services Regions where you want to delete stack set
+     * instances.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
 
     /**
-     * <p>The Regions where you want to delete stack set instances.</p>
+     * <p>The Amazon Web Services Regions where you want to delete stack set
+     * instances.</p>
      */
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
 
     /**
-     * <p>The Regions where you want to delete stack set instances.</p>
+     * <p>The Amazon Web Services Regions where you want to delete stack set
+     * instances.</p>
      */
     inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
 
     /**
-     * <p>The Regions where you want to delete stack set instances.</p>
+     * <p>The Amazon Web Services Regions where you want to delete stack set
+     * instances.</p>
      */
     inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
 
     /**
-     * <p>The Regions where you want to delete stack set instances.</p>
+     * <p>The Amazon Web Services Regions where you want to delete stack set
+     * instances.</p>
      */
     inline DeleteStackInstancesRequest& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
 
     /**
-     * <p>The Regions where you want to delete stack set instances.</p>
+     * <p>The Amazon Web Services Regions where you want to delete stack set
+     * instances.</p>
      */
     inline DeleteStackInstancesRequest& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
 
     /**
-     * <p>The Regions where you want to delete stack set instances.</p>
+     * <p>The Amazon Web Services Regions where you want to delete stack set
+     * instances.</p>
      */
     inline DeleteStackInstancesRequest& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
     /**
-     * <p>The Regions where you want to delete stack set instances.</p>
+     * <p>The Amazon Web Services Regions where you want to delete stack set
+     * instances.</p>
      */
     inline DeleteStackInstancesRequest& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Regions where you want to delete stack set instances.</p>
+     * <p>The Amazon Web Services Regions where you want to delete stack set
+     * instances.</p>
      */
     inline DeleteStackInstancesRequest& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 

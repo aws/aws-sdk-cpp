@@ -36,7 +36,7 @@ namespace Model
    * in the stack template are checked for drift. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
    * Unregulated Configuration Changes to Stacks and Resources</a>.</p> <p>Resources
-   * that do not currently support drift detection cannot be checked. For a list of
+   * that don't currently support drift detection can't be checked. For a list of
    * resources that support drift detection, see <a
    * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
    * that Support Drift Detection</a>.</p> <p>Use <a>DetectStackResourceDrift</a> to
@@ -141,49 +141,49 @@ namespace Model
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by CloudFormation. </p>
+     * resource supported by CloudFormation.</p>
      */
     inline const Aws::String& GetPhysicalResourceId() const{ return m_physicalResourceId; }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by CloudFormation. </p>
+     * resource supported by CloudFormation.</p>
      */
     inline bool PhysicalResourceIdHasBeenSet() const { return m_physicalResourceIdHasBeenSet; }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by CloudFormation. </p>
+     * resource supported by CloudFormation.</p>
      */
     inline void SetPhysicalResourceId(const Aws::String& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = value; }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by CloudFormation. </p>
+     * resource supported by CloudFormation.</p>
      */
     inline void SetPhysicalResourceId(Aws::String&& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = std::move(value); }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by CloudFormation. </p>
+     * resource supported by CloudFormation.</p>
      */
     inline void SetPhysicalResourceId(const char* value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId.assign(value); }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by CloudFormation. </p>
+     * resource supported by CloudFormation.</p>
      */
     inline StackResourceDrift& WithPhysicalResourceId(const Aws::String& value) { SetPhysicalResourceId(value); return *this;}
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by CloudFormation. </p>
+     * resource supported by CloudFormation.</p>
      */
     inline StackResourceDrift& WithPhysicalResourceId(Aws::String&& value) { SetPhysicalResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by CloudFormation. </p>
+     * resource supported by CloudFormation.</p>
      */
     inline StackResourceDrift& WithPhysicalResourceId(const char* value) { SetPhysicalResourceId(value); return *this;}
 
@@ -191,7 +191,7 @@ namespace Model
     /**
      * <p>Context information that enables CloudFormation to uniquely identify a
      * resource. CloudFormation uses context key-value pairs in cases where a
-     * resource's logical and physical IDs are not enough to uniquely identify that
+     * resource's logical and physical IDs aren't enough to uniquely identify that
      * resource. Each context key-value pair specifies a unique resource that contains
      * the targeted resource.</p>
      */
@@ -200,7 +200,7 @@ namespace Model
     /**
      * <p>Context information that enables CloudFormation to uniquely identify a
      * resource. CloudFormation uses context key-value pairs in cases where a
-     * resource's logical and physical IDs are not enough to uniquely identify that
+     * resource's logical and physical IDs aren't enough to uniquely identify that
      * resource. Each context key-value pair specifies a unique resource that contains
      * the targeted resource.</p>
      */
@@ -209,7 +209,7 @@ namespace Model
     /**
      * <p>Context information that enables CloudFormation to uniquely identify a
      * resource. CloudFormation uses context key-value pairs in cases where a
-     * resource's logical and physical IDs are not enough to uniquely identify that
+     * resource's logical and physical IDs aren't enough to uniquely identify that
      * resource. Each context key-value pair specifies a unique resource that contains
      * the targeted resource.</p>
      */
@@ -218,7 +218,7 @@ namespace Model
     /**
      * <p>Context information that enables CloudFormation to uniquely identify a
      * resource. CloudFormation uses context key-value pairs in cases where a
-     * resource's logical and physical IDs are not enough to uniquely identify that
+     * resource's logical and physical IDs aren't enough to uniquely identify that
      * resource. Each context key-value pair specifies a unique resource that contains
      * the targeted resource.</p>
      */
@@ -227,7 +227,7 @@ namespace Model
     /**
      * <p>Context information that enables CloudFormation to uniquely identify a
      * resource. CloudFormation uses context key-value pairs in cases where a
-     * resource's logical and physical IDs are not enough to uniquely identify that
+     * resource's logical and physical IDs aren't enough to uniquely identify that
      * resource. Each context key-value pair specifies a unique resource that contains
      * the targeted resource.</p>
      */
@@ -236,7 +236,7 @@ namespace Model
     /**
      * <p>Context information that enables CloudFormation to uniquely identify a
      * resource. CloudFormation uses context key-value pairs in cases where a
-     * resource's logical and physical IDs are not enough to uniquely identify that
+     * resource's logical and physical IDs aren't enough to uniquely identify that
      * resource. Each context key-value pair specifies a unique resource that contains
      * the targeted resource.</p>
      */
@@ -245,7 +245,7 @@ namespace Model
     /**
      * <p>Context information that enables CloudFormation to uniquely identify a
      * resource. CloudFormation uses context key-value pairs in cases where a
-     * resource's logical and physical IDs are not enough to uniquely identify that
+     * resource's logical and physical IDs aren't enough to uniquely identify that
      * resource. Each context key-value pair specifies a unique resource that contains
      * the targeted resource.</p>
      */
@@ -254,7 +254,7 @@ namespace Model
     /**
      * <p>Context information that enables CloudFormation to uniquely identify a
      * resource. CloudFormation uses context key-value pairs in cases where a
-     * resource's logical and physical IDs are not enough to uniquely identify that
+     * resource's logical and physical IDs aren't enough to uniquely identify that
      * resource. Each context key-value pair specifies a unique resource that contains
      * the targeted resource.</p>
      */
@@ -305,64 +305,64 @@ namespace Model
     /**
      * <p>A JSON structure containing the expected property values of the stack
      * resource, as defined in the stack template and any values specified as template
-     * parameters. </p> <p>For resources whose <code>StackResourceDriftStatus</code> is
-     * <code>DELETED</code>, this structure will not be present. </p>
+     * parameters.</p> <p>For resources whose <code>StackResourceDriftStatus</code> is
+     * <code>DELETED</code>, this structure will not be present.</p>
      */
     inline const Aws::String& GetExpectedProperties() const{ return m_expectedProperties; }
 
     /**
      * <p>A JSON structure containing the expected property values of the stack
      * resource, as defined in the stack template and any values specified as template
-     * parameters. </p> <p>For resources whose <code>StackResourceDriftStatus</code> is
-     * <code>DELETED</code>, this structure will not be present. </p>
+     * parameters.</p> <p>For resources whose <code>StackResourceDriftStatus</code> is
+     * <code>DELETED</code>, this structure will not be present.</p>
      */
     inline bool ExpectedPropertiesHasBeenSet() const { return m_expectedPropertiesHasBeenSet; }
 
     /**
      * <p>A JSON structure containing the expected property values of the stack
      * resource, as defined in the stack template and any values specified as template
-     * parameters. </p> <p>For resources whose <code>StackResourceDriftStatus</code> is
-     * <code>DELETED</code>, this structure will not be present. </p>
+     * parameters.</p> <p>For resources whose <code>StackResourceDriftStatus</code> is
+     * <code>DELETED</code>, this structure will not be present.</p>
      */
     inline void SetExpectedProperties(const Aws::String& value) { m_expectedPropertiesHasBeenSet = true; m_expectedProperties = value; }
 
     /**
      * <p>A JSON structure containing the expected property values of the stack
      * resource, as defined in the stack template and any values specified as template
-     * parameters. </p> <p>For resources whose <code>StackResourceDriftStatus</code> is
-     * <code>DELETED</code>, this structure will not be present. </p>
+     * parameters.</p> <p>For resources whose <code>StackResourceDriftStatus</code> is
+     * <code>DELETED</code>, this structure will not be present.</p>
      */
     inline void SetExpectedProperties(Aws::String&& value) { m_expectedPropertiesHasBeenSet = true; m_expectedProperties = std::move(value); }
 
     /**
      * <p>A JSON structure containing the expected property values of the stack
      * resource, as defined in the stack template and any values specified as template
-     * parameters. </p> <p>For resources whose <code>StackResourceDriftStatus</code> is
-     * <code>DELETED</code>, this structure will not be present. </p>
+     * parameters.</p> <p>For resources whose <code>StackResourceDriftStatus</code> is
+     * <code>DELETED</code>, this structure will not be present.</p>
      */
     inline void SetExpectedProperties(const char* value) { m_expectedPropertiesHasBeenSet = true; m_expectedProperties.assign(value); }
 
     /**
      * <p>A JSON structure containing the expected property values of the stack
      * resource, as defined in the stack template and any values specified as template
-     * parameters. </p> <p>For resources whose <code>StackResourceDriftStatus</code> is
-     * <code>DELETED</code>, this structure will not be present. </p>
+     * parameters.</p> <p>For resources whose <code>StackResourceDriftStatus</code> is
+     * <code>DELETED</code>, this structure will not be present.</p>
      */
     inline StackResourceDrift& WithExpectedProperties(const Aws::String& value) { SetExpectedProperties(value); return *this;}
 
     /**
      * <p>A JSON structure containing the expected property values of the stack
      * resource, as defined in the stack template and any values specified as template
-     * parameters. </p> <p>For resources whose <code>StackResourceDriftStatus</code> is
-     * <code>DELETED</code>, this structure will not be present. </p>
+     * parameters.</p> <p>For resources whose <code>StackResourceDriftStatus</code> is
+     * <code>DELETED</code>, this structure will not be present.</p>
      */
     inline StackResourceDrift& WithExpectedProperties(Aws::String&& value) { SetExpectedProperties(std::move(value)); return *this;}
 
     /**
      * <p>A JSON structure containing the expected property values of the stack
      * resource, as defined in the stack template and any values specified as template
-     * parameters. </p> <p>For resources whose <code>StackResourceDriftStatus</code> is
-     * <code>DELETED</code>, this structure will not be present. </p>
+     * parameters.</p> <p>For resources whose <code>StackResourceDriftStatus</code> is
+     * <code>DELETED</code>, this structure will not be present.</p>
      */
     inline StackResourceDrift& WithExpectedProperties(const char* value) { SetExpectedProperties(value); return *this;}
 
@@ -370,56 +370,56 @@ namespace Model
     /**
      * <p>A JSON structure containing the actual property values of the stack
      * resource.</p> <p>For resources whose <code>StackResourceDriftStatus</code> is
-     * <code>DELETED</code>, this structure will not be present. </p>
+     * <code>DELETED</code>, this structure will not be present.</p>
      */
     inline const Aws::String& GetActualProperties() const{ return m_actualProperties; }
 
     /**
      * <p>A JSON structure containing the actual property values of the stack
      * resource.</p> <p>For resources whose <code>StackResourceDriftStatus</code> is
-     * <code>DELETED</code>, this structure will not be present. </p>
+     * <code>DELETED</code>, this structure will not be present.</p>
      */
     inline bool ActualPropertiesHasBeenSet() const { return m_actualPropertiesHasBeenSet; }
 
     /**
      * <p>A JSON structure containing the actual property values of the stack
      * resource.</p> <p>For resources whose <code>StackResourceDriftStatus</code> is
-     * <code>DELETED</code>, this structure will not be present. </p>
+     * <code>DELETED</code>, this structure will not be present.</p>
      */
     inline void SetActualProperties(const Aws::String& value) { m_actualPropertiesHasBeenSet = true; m_actualProperties = value; }
 
     /**
      * <p>A JSON structure containing the actual property values of the stack
      * resource.</p> <p>For resources whose <code>StackResourceDriftStatus</code> is
-     * <code>DELETED</code>, this structure will not be present. </p>
+     * <code>DELETED</code>, this structure will not be present.</p>
      */
     inline void SetActualProperties(Aws::String&& value) { m_actualPropertiesHasBeenSet = true; m_actualProperties = std::move(value); }
 
     /**
      * <p>A JSON structure containing the actual property values of the stack
      * resource.</p> <p>For resources whose <code>StackResourceDriftStatus</code> is
-     * <code>DELETED</code>, this structure will not be present. </p>
+     * <code>DELETED</code>, this structure will not be present.</p>
      */
     inline void SetActualProperties(const char* value) { m_actualPropertiesHasBeenSet = true; m_actualProperties.assign(value); }
 
     /**
      * <p>A JSON structure containing the actual property values of the stack
      * resource.</p> <p>For resources whose <code>StackResourceDriftStatus</code> is
-     * <code>DELETED</code>, this structure will not be present. </p>
+     * <code>DELETED</code>, this structure will not be present.</p>
      */
     inline StackResourceDrift& WithActualProperties(const Aws::String& value) { SetActualProperties(value); return *this;}
 
     /**
      * <p>A JSON structure containing the actual property values of the stack
      * resource.</p> <p>For resources whose <code>StackResourceDriftStatus</code> is
-     * <code>DELETED</code>, this structure will not be present. </p>
+     * <code>DELETED</code>, this structure will not be present.</p>
      */
     inline StackResourceDrift& WithActualProperties(Aws::String&& value) { SetActualProperties(std::move(value)); return *this;}
 
     /**
      * <p>A JSON structure containing the actual property values of the stack
      * resource.</p> <p>For resources whose <code>StackResourceDriftStatus</code> is
-     * <code>DELETED</code>, this structure will not be present. </p>
+     * <code>DELETED</code>, this structure will not be present.</p>
      */
     inline StackResourceDrift& WithActualProperties(const char* value) { SetActualProperties(value); return *this;}
 
@@ -427,135 +427,135 @@ namespace Model
     /**
      * <p>A collection of the resource properties whose actual values differ from their
      * expected values. These will be present only for resources whose
-     * <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
+     * <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>.</p>
      */
     inline const Aws::Vector<PropertyDifference>& GetPropertyDifferences() const{ return m_propertyDifferences; }
 
     /**
      * <p>A collection of the resource properties whose actual values differ from their
      * expected values. These will be present only for resources whose
-     * <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
+     * <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>.</p>
      */
     inline bool PropertyDifferencesHasBeenSet() const { return m_propertyDifferencesHasBeenSet; }
 
     /**
      * <p>A collection of the resource properties whose actual values differ from their
      * expected values. These will be present only for resources whose
-     * <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
+     * <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>.</p>
      */
     inline void SetPropertyDifferences(const Aws::Vector<PropertyDifference>& value) { m_propertyDifferencesHasBeenSet = true; m_propertyDifferences = value; }
 
     /**
      * <p>A collection of the resource properties whose actual values differ from their
      * expected values. These will be present only for resources whose
-     * <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
+     * <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>.</p>
      */
     inline void SetPropertyDifferences(Aws::Vector<PropertyDifference>&& value) { m_propertyDifferencesHasBeenSet = true; m_propertyDifferences = std::move(value); }
 
     /**
      * <p>A collection of the resource properties whose actual values differ from their
      * expected values. These will be present only for resources whose
-     * <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
+     * <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>.</p>
      */
     inline StackResourceDrift& WithPropertyDifferences(const Aws::Vector<PropertyDifference>& value) { SetPropertyDifferences(value); return *this;}
 
     /**
      * <p>A collection of the resource properties whose actual values differ from their
      * expected values. These will be present only for resources whose
-     * <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
+     * <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>.</p>
      */
     inline StackResourceDrift& WithPropertyDifferences(Aws::Vector<PropertyDifference>&& value) { SetPropertyDifferences(std::move(value)); return *this;}
 
     /**
      * <p>A collection of the resource properties whose actual values differ from their
      * expected values. These will be present only for resources whose
-     * <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
+     * <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>.</p>
      */
     inline StackResourceDrift& AddPropertyDifferences(const PropertyDifference& value) { m_propertyDifferencesHasBeenSet = true; m_propertyDifferences.push_back(value); return *this; }
 
     /**
      * <p>A collection of the resource properties whose actual values differ from their
      * expected values. These will be present only for resources whose
-     * <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
+     * <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>.</p>
      */
     inline StackResourceDrift& AddPropertyDifferences(PropertyDifference&& value) { m_propertyDifferencesHasBeenSet = true; m_propertyDifferences.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>Status of the resource's actual configuration compared to its expected
-     * configuration</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
+     * configuration.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
      * its expected template configuration because the resource has been deleted.</p>
      * </li> <li> <p> <code>MODIFIED</code>: One or more resource properties differ
      * from their expected values (as defined in the stack template and any values
      * specified as template parameters).</p> </li> <li> <p> <code>IN_SYNC</code>: The
-     * resources's actual configuration matches its expected template
-     * configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation does
-     * not currently return this value.</p> </li> </ul>
+     * resource's actual configuration matches its expected template configuration.</p>
+     * </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation does not currently
+     * return this value.</p> </li> </ul>
      */
     inline const StackResourceDriftStatus& GetStackResourceDriftStatus() const{ return m_stackResourceDriftStatus; }
 
     /**
      * <p>Status of the resource's actual configuration compared to its expected
-     * configuration</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
+     * configuration.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
      * its expected template configuration because the resource has been deleted.</p>
      * </li> <li> <p> <code>MODIFIED</code>: One or more resource properties differ
      * from their expected values (as defined in the stack template and any values
      * specified as template parameters).</p> </li> <li> <p> <code>IN_SYNC</code>: The
-     * resources's actual configuration matches its expected template
-     * configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation does
-     * not currently return this value.</p> </li> </ul>
+     * resource's actual configuration matches its expected template configuration.</p>
+     * </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation does not currently
+     * return this value.</p> </li> </ul>
      */
     inline bool StackResourceDriftStatusHasBeenSet() const { return m_stackResourceDriftStatusHasBeenSet; }
 
     /**
      * <p>Status of the resource's actual configuration compared to its expected
-     * configuration</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
+     * configuration.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
      * its expected template configuration because the resource has been deleted.</p>
      * </li> <li> <p> <code>MODIFIED</code>: One or more resource properties differ
      * from their expected values (as defined in the stack template and any values
      * specified as template parameters).</p> </li> <li> <p> <code>IN_SYNC</code>: The
-     * resources's actual configuration matches its expected template
-     * configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation does
-     * not currently return this value.</p> </li> </ul>
+     * resource's actual configuration matches its expected template configuration.</p>
+     * </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation does not currently
+     * return this value.</p> </li> </ul>
      */
     inline void SetStackResourceDriftStatus(const StackResourceDriftStatus& value) { m_stackResourceDriftStatusHasBeenSet = true; m_stackResourceDriftStatus = value; }
 
     /**
      * <p>Status of the resource's actual configuration compared to its expected
-     * configuration</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
+     * configuration.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
      * its expected template configuration because the resource has been deleted.</p>
      * </li> <li> <p> <code>MODIFIED</code>: One or more resource properties differ
      * from their expected values (as defined in the stack template and any values
      * specified as template parameters).</p> </li> <li> <p> <code>IN_SYNC</code>: The
-     * resources's actual configuration matches its expected template
-     * configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation does
-     * not currently return this value.</p> </li> </ul>
+     * resource's actual configuration matches its expected template configuration.</p>
+     * </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation does not currently
+     * return this value.</p> </li> </ul>
      */
     inline void SetStackResourceDriftStatus(StackResourceDriftStatus&& value) { m_stackResourceDriftStatusHasBeenSet = true; m_stackResourceDriftStatus = std::move(value); }
 
     /**
      * <p>Status of the resource's actual configuration compared to its expected
-     * configuration</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
+     * configuration.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
      * its expected template configuration because the resource has been deleted.</p>
      * </li> <li> <p> <code>MODIFIED</code>: One or more resource properties differ
      * from their expected values (as defined in the stack template and any values
      * specified as template parameters).</p> </li> <li> <p> <code>IN_SYNC</code>: The
-     * resources's actual configuration matches its expected template
-     * configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation does
-     * not currently return this value.</p> </li> </ul>
+     * resource's actual configuration matches its expected template configuration.</p>
+     * </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation does not currently
+     * return this value.</p> </li> </ul>
      */
     inline StackResourceDrift& WithStackResourceDriftStatus(const StackResourceDriftStatus& value) { SetStackResourceDriftStatus(value); return *this;}
 
     /**
      * <p>Status of the resource's actual configuration compared to its expected
-     * configuration</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
+     * configuration.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
      * its expected template configuration because the resource has been deleted.</p>
      * </li> <li> <p> <code>MODIFIED</code>: One or more resource properties differ
      * from their expected values (as defined in the stack template and any values
      * specified as template parameters).</p> </li> <li> <p> <code>IN_SYNC</code>: The
-     * resources's actual configuration matches its expected template
-     * configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation does
-     * not currently return this value.</p> </li> </ul>
+     * resource's actual configuration matches its expected template configuration.</p>
+     * </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation does not currently
+     * return this value.</p> </li> </ul>
      */
     inline StackResourceDrift& WithStackResourceDriftStatus(StackResourceDriftStatus&& value) { SetStackResourceDriftStatus(std::move(value)); return *this;}
 

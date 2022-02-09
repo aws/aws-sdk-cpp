@@ -127,57 +127,57 @@ namespace Model
 
 
     /**
-     * <p>The id of the publisher of the extension. </p> <p>Extensions published by
-     * Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category
+     * <p>The id of the publisher of the extension.</p> <p>Extensions published by
+     * Amazon aren't assigned a publisher ID. Use the <code>AWS_TYPES</code> category
      * to specify a list of types published by Amazon.</p>
      */
     inline const Aws::String& GetPublisherId() const{ return m_publisherId; }
 
     /**
-     * <p>The id of the publisher of the extension. </p> <p>Extensions published by
-     * Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category
+     * <p>The id of the publisher of the extension.</p> <p>Extensions published by
+     * Amazon aren't assigned a publisher ID. Use the <code>AWS_TYPES</code> category
      * to specify a list of types published by Amazon.</p>
      */
     inline bool PublisherIdHasBeenSet() const { return m_publisherIdHasBeenSet; }
 
     /**
-     * <p>The id of the publisher of the extension. </p> <p>Extensions published by
-     * Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category
+     * <p>The id of the publisher of the extension.</p> <p>Extensions published by
+     * Amazon aren't assigned a publisher ID. Use the <code>AWS_TYPES</code> category
      * to specify a list of types published by Amazon.</p>
      */
     inline void SetPublisherId(const Aws::String& value) { m_publisherIdHasBeenSet = true; m_publisherId = value; }
 
     /**
-     * <p>The id of the publisher of the extension. </p> <p>Extensions published by
-     * Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category
+     * <p>The id of the publisher of the extension.</p> <p>Extensions published by
+     * Amazon aren't assigned a publisher ID. Use the <code>AWS_TYPES</code> category
      * to specify a list of types published by Amazon.</p>
      */
     inline void SetPublisherId(Aws::String&& value) { m_publisherIdHasBeenSet = true; m_publisherId = std::move(value); }
 
     /**
-     * <p>The id of the publisher of the extension. </p> <p>Extensions published by
-     * Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category
+     * <p>The id of the publisher of the extension.</p> <p>Extensions published by
+     * Amazon aren't assigned a publisher ID. Use the <code>AWS_TYPES</code> category
      * to specify a list of types published by Amazon.</p>
      */
     inline void SetPublisherId(const char* value) { m_publisherIdHasBeenSet = true; m_publisherId.assign(value); }
 
     /**
-     * <p>The id of the publisher of the extension. </p> <p>Extensions published by
-     * Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category
+     * <p>The id of the publisher of the extension.</p> <p>Extensions published by
+     * Amazon aren't assigned a publisher ID. Use the <code>AWS_TYPES</code> category
      * to specify a list of types published by Amazon.</p>
      */
     inline TypeFilters& WithPublisherId(const Aws::String& value) { SetPublisherId(value); return *this;}
 
     /**
-     * <p>The id of the publisher of the extension. </p> <p>Extensions published by
-     * Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category
+     * <p>The id of the publisher of the extension.</p> <p>Extensions published by
+     * Amazon aren't assigned a publisher ID. Use the <code>AWS_TYPES</code> category
      * to specify a list of types published by Amazon.</p>
      */
     inline TypeFilters& WithPublisherId(Aws::String&& value) { SetPublisherId(std::move(value)); return *this;}
 
     /**
-     * <p>The id of the publisher of the extension. </p> <p>Extensions published by
-     * Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category
+     * <p>The id of the publisher of the extension.</p> <p>Extensions published by
+     * Amazon aren't assigned a publisher ID. Use the <code>AWS_TYPES</code> category
      * to specify a list of types published by Amazon.</p>
      */
     inline TypeFilters& WithPublisherId(const char* value) { SetPublisherId(value); return *this;}

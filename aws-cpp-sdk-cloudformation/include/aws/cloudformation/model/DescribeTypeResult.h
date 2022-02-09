@@ -79,27 +79,27 @@ namespace Model
 
 
     /**
-     * <p>The kind of extension. </p>
+     * <p>The kind of extension.</p>
      */
     inline const RegistryType& GetType() const{ return m_type; }
 
     /**
-     * <p>The kind of extension. </p>
+     * <p>The kind of extension.</p>
      */
     inline void SetType(const RegistryType& value) { m_type = value; }
 
     /**
-     * <p>The kind of extension. </p>
+     * <p>The kind of extension.</p>
      */
     inline void SetType(RegistryType&& value) { m_type = std::move(value); }
 
     /**
-     * <p>The kind of extension. </p>
+     * <p>The kind of extension.</p>
      */
     inline DescribeTypeResult& WithType(const RegistryType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The kind of extension. </p>
+     * <p>The kind of extension.</p>
      */
     inline DescribeTypeResult& WithType(RegistryType&& value) { SetType(std::move(value)); return *this;}
 
@@ -163,85 +163,85 @@ namespace Model
 
     /**
      * <p>The ID of the default version of the extension. The default version is used
-     * when the extension version is not specified.</p> <p>This applies only to private
+     * when the extension version isn't specified.</p> <p>This applies only to private
      * extensions you have registered in your account. For public extensions, both
      * those provided by Amazon and published by third parties, CloudFormation returns
      * <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
      * <p>To set the default version of an extension, use <code>
-     * <a>SetTypeDefaultVersion</a> </code>. </p>
+     * <a>SetTypeDefaultVersion</a> </code>.</p>
      */
     inline const Aws::String& GetDefaultVersionId() const{ return m_defaultVersionId; }
 
     /**
      * <p>The ID of the default version of the extension. The default version is used
-     * when the extension version is not specified.</p> <p>This applies only to private
+     * when the extension version isn't specified.</p> <p>This applies only to private
      * extensions you have registered in your account. For public extensions, both
      * those provided by Amazon and published by third parties, CloudFormation returns
      * <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
      * <p>To set the default version of an extension, use <code>
-     * <a>SetTypeDefaultVersion</a> </code>. </p>
+     * <a>SetTypeDefaultVersion</a> </code>.</p>
      */
     inline void SetDefaultVersionId(const Aws::String& value) { m_defaultVersionId = value; }
 
     /**
      * <p>The ID of the default version of the extension. The default version is used
-     * when the extension version is not specified.</p> <p>This applies only to private
+     * when the extension version isn't specified.</p> <p>This applies only to private
      * extensions you have registered in your account. For public extensions, both
      * those provided by Amazon and published by third parties, CloudFormation returns
      * <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
      * <p>To set the default version of an extension, use <code>
-     * <a>SetTypeDefaultVersion</a> </code>. </p>
+     * <a>SetTypeDefaultVersion</a> </code>.</p>
      */
     inline void SetDefaultVersionId(Aws::String&& value) { m_defaultVersionId = std::move(value); }
 
     /**
      * <p>The ID of the default version of the extension. The default version is used
-     * when the extension version is not specified.</p> <p>This applies only to private
+     * when the extension version isn't specified.</p> <p>This applies only to private
      * extensions you have registered in your account. For public extensions, both
      * those provided by Amazon and published by third parties, CloudFormation returns
      * <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
      * <p>To set the default version of an extension, use <code>
-     * <a>SetTypeDefaultVersion</a> </code>. </p>
+     * <a>SetTypeDefaultVersion</a> </code>.</p>
      */
     inline void SetDefaultVersionId(const char* value) { m_defaultVersionId.assign(value); }
 
     /**
      * <p>The ID of the default version of the extension. The default version is used
-     * when the extension version is not specified.</p> <p>This applies only to private
+     * when the extension version isn't specified.</p> <p>This applies only to private
      * extensions you have registered in your account. For public extensions, both
      * those provided by Amazon and published by third parties, CloudFormation returns
      * <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
      * <p>To set the default version of an extension, use <code>
-     * <a>SetTypeDefaultVersion</a> </code>. </p>
+     * <a>SetTypeDefaultVersion</a> </code>.</p>
      */
     inline DescribeTypeResult& WithDefaultVersionId(const Aws::String& value) { SetDefaultVersionId(value); return *this;}
 
     /**
      * <p>The ID of the default version of the extension. The default version is used
-     * when the extension version is not specified.</p> <p>This applies only to private
+     * when the extension version isn't specified.</p> <p>This applies only to private
      * extensions you have registered in your account. For public extensions, both
      * those provided by Amazon and published by third parties, CloudFormation returns
      * <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
      * <p>To set the default version of an extension, use <code>
-     * <a>SetTypeDefaultVersion</a> </code>. </p>
+     * <a>SetTypeDefaultVersion</a> </code>.</p>
      */
     inline DescribeTypeResult& WithDefaultVersionId(Aws::String&& value) { SetDefaultVersionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the default version of the extension. The default version is used
-     * when the extension version is not specified.</p> <p>This applies only to private
+     * when the extension version isn't specified.</p> <p>This applies only to private
      * extensions you have registered in your account. For public extensions, both
      * those provided by Amazon and published by third parties, CloudFormation returns
      * <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
      * <p>To set the default version of an extension, use <code>
-     * <a>SetTypeDefaultVersion</a> </code>. </p>
+     * <a>SetTypeDefaultVersion</a> </code>.</p>
      */
     inline DescribeTypeResult& WithDefaultVersionId(const char* value) { SetDefaultVersionId(value); return *this;}
 
@@ -276,10 +276,10 @@ namespace Model
 
     /**
      * <p>The contract test status of the registered extension version. To return the
-     * extension test status of a specifc extension version, you must specify
-     * <code>VersionId</code>. </p> <p>This applies only to registered private
-     * extension versions. CloudFormation does not return this information for public
-     * extensions, whether or not they are activated in your account.</p> <ul> <li> <p>
+     * extension test status of a specific extension version, you must specify
+     * <code>VersionId</code>.</p> <p>This applies only to registered private extension
+     * versions. CloudFormation doesn't return this information for public extensions,
+     * whether or not they are activated in your account.</p> <ul> <li> <p>
      * <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An
      * extension must have a test status of <code>PASSED</code> before it can be
      * published. For more information, see <a
@@ -288,17 +288,17 @@ namespace Model
      * Command Line Interface User Guide</i>.</p> </li> <li> <p> <code>FAILED</code>:
      * The extension has failed one or more contract tests.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: Contract tests are currently being performed on the
-     * extension.</p> </li> <li> <p> <code>NOT_TESTED</code>: Contract tests have not
+     * extension.</p> </li> <li> <p> <code>NOT_TESTED</code>: Contract tests haven't
      * been performed on the extension.</p> </li> </ul>
      */
     inline const TypeTestsStatus& GetTypeTestsStatus() const{ return m_typeTestsStatus; }
 
     /**
      * <p>The contract test status of the registered extension version. To return the
-     * extension test status of a specifc extension version, you must specify
-     * <code>VersionId</code>. </p> <p>This applies only to registered private
-     * extension versions. CloudFormation does not return this information for public
-     * extensions, whether or not they are activated in your account.</p> <ul> <li> <p>
+     * extension test status of a specific extension version, you must specify
+     * <code>VersionId</code>.</p> <p>This applies only to registered private extension
+     * versions. CloudFormation doesn't return this information for public extensions,
+     * whether or not they are activated in your account.</p> <ul> <li> <p>
      * <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An
      * extension must have a test status of <code>PASSED</code> before it can be
      * published. For more information, see <a
@@ -307,17 +307,17 @@ namespace Model
      * Command Line Interface User Guide</i>.</p> </li> <li> <p> <code>FAILED</code>:
      * The extension has failed one or more contract tests.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: Contract tests are currently being performed on the
-     * extension.</p> </li> <li> <p> <code>NOT_TESTED</code>: Contract tests have not
+     * extension.</p> </li> <li> <p> <code>NOT_TESTED</code>: Contract tests haven't
      * been performed on the extension.</p> </li> </ul>
      */
     inline void SetTypeTestsStatus(const TypeTestsStatus& value) { m_typeTestsStatus = value; }
 
     /**
      * <p>The contract test status of the registered extension version. To return the
-     * extension test status of a specifc extension version, you must specify
-     * <code>VersionId</code>. </p> <p>This applies only to registered private
-     * extension versions. CloudFormation does not return this information for public
-     * extensions, whether or not they are activated in your account.</p> <ul> <li> <p>
+     * extension test status of a specific extension version, you must specify
+     * <code>VersionId</code>.</p> <p>This applies only to registered private extension
+     * versions. CloudFormation doesn't return this information for public extensions,
+     * whether or not they are activated in your account.</p> <ul> <li> <p>
      * <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An
      * extension must have a test status of <code>PASSED</code> before it can be
      * published. For more information, see <a
@@ -326,17 +326,17 @@ namespace Model
      * Command Line Interface User Guide</i>.</p> </li> <li> <p> <code>FAILED</code>:
      * The extension has failed one or more contract tests.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: Contract tests are currently being performed on the
-     * extension.</p> </li> <li> <p> <code>NOT_TESTED</code>: Contract tests have not
+     * extension.</p> </li> <li> <p> <code>NOT_TESTED</code>: Contract tests haven't
      * been performed on the extension.</p> </li> </ul>
      */
     inline void SetTypeTestsStatus(TypeTestsStatus&& value) { m_typeTestsStatus = std::move(value); }
 
     /**
      * <p>The contract test status of the registered extension version. To return the
-     * extension test status of a specifc extension version, you must specify
-     * <code>VersionId</code>. </p> <p>This applies only to registered private
-     * extension versions. CloudFormation does not return this information for public
-     * extensions, whether or not they are activated in your account.</p> <ul> <li> <p>
+     * extension test status of a specific extension version, you must specify
+     * <code>VersionId</code>.</p> <p>This applies only to registered private extension
+     * versions. CloudFormation doesn't return this information for public extensions,
+     * whether or not they are activated in your account.</p> <ul> <li> <p>
      * <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An
      * extension must have a test status of <code>PASSED</code> before it can be
      * published. For more information, see <a
@@ -345,17 +345,17 @@ namespace Model
      * Command Line Interface User Guide</i>.</p> </li> <li> <p> <code>FAILED</code>:
      * The extension has failed one or more contract tests.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: Contract tests are currently being performed on the
-     * extension.</p> </li> <li> <p> <code>NOT_TESTED</code>: Contract tests have not
+     * extension.</p> </li> <li> <p> <code>NOT_TESTED</code>: Contract tests haven't
      * been performed on the extension.</p> </li> </ul>
      */
     inline DescribeTypeResult& WithTypeTestsStatus(const TypeTestsStatus& value) { SetTypeTestsStatus(value); return *this;}
 
     /**
      * <p>The contract test status of the registered extension version. To return the
-     * extension test status of a specifc extension version, you must specify
-     * <code>VersionId</code>. </p> <p>This applies only to registered private
-     * extension versions. CloudFormation does not return this information for public
-     * extensions, whether or not they are activated in your account.</p> <ul> <li> <p>
+     * extension test status of a specific extension version, you must specify
+     * <code>VersionId</code>.</p> <p>This applies only to registered private extension
+     * versions. CloudFormation doesn't return this information for public extensions,
+     * whether or not they are activated in your account.</p> <ul> <li> <p>
      * <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An
      * extension must have a test status of <code>PASSED</code> before it can be
      * published. For more information, see <a
@@ -364,7 +364,7 @@ namespace Model
      * Command Line Interface User Guide</i>.</p> </li> <li> <p> <code>FAILED</code>:
      * The extension has failed one or more contract tests.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: Contract tests are currently being performed on the
-     * extension.</p> </li> <li> <p> <code>NOT_TESTED</code>: Contract tests have not
+     * extension.</p> </li> <li> <p> <code>NOT_TESTED</code>: Contract tests haven't
      * been performed on the extension.</p> </li> </ul>
      */
     inline DescribeTypeResult& WithTypeTestsStatus(TypeTestsStatus&& value) { SetTypeTestsStatus(std::move(value)); return *this;}
@@ -372,8 +372,8 @@ namespace Model
 
     /**
      * <p>The description of the test status. To return the extension test status of a
-     * specifc extension version, you must specify <code>VersionId</code>. </p> <p>This
-     * applies only to registered private extension versions. CloudFormation does not
+     * specific extension version, you must specify <code>VersionId</code>.</p> <p>This
+     * applies only to registered private extension versions. CloudFormation doesn't
      * return this information for public extensions, whether or not they are activated
      * in your account.</p>
      */
@@ -381,8 +381,8 @@ namespace Model
 
     /**
      * <p>The description of the test status. To return the extension test status of a
-     * specifc extension version, you must specify <code>VersionId</code>. </p> <p>This
-     * applies only to registered private extension versions. CloudFormation does not
+     * specific extension version, you must specify <code>VersionId</code>.</p> <p>This
+     * applies only to registered private extension versions. CloudFormation doesn't
      * return this information for public extensions, whether or not they are activated
      * in your account.</p>
      */
@@ -390,8 +390,8 @@ namespace Model
 
     /**
      * <p>The description of the test status. To return the extension test status of a
-     * specifc extension version, you must specify <code>VersionId</code>. </p> <p>This
-     * applies only to registered private extension versions. CloudFormation does not
+     * specific extension version, you must specify <code>VersionId</code>.</p> <p>This
+     * applies only to registered private extension versions. CloudFormation doesn't
      * return this information for public extensions, whether or not they are activated
      * in your account.</p>
      */
@@ -399,8 +399,8 @@ namespace Model
 
     /**
      * <p>The description of the test status. To return the extension test status of a
-     * specifc extension version, you must specify <code>VersionId</code>. </p> <p>This
-     * applies only to registered private extension versions. CloudFormation does not
+     * specific extension version, you must specify <code>VersionId</code>.</p> <p>This
+     * applies only to registered private extension versions. CloudFormation doesn't
      * return this information for public extensions, whether or not they are activated
      * in your account.</p>
      */
@@ -408,8 +408,8 @@ namespace Model
 
     /**
      * <p>The description of the test status. To return the extension test status of a
-     * specifc extension version, you must specify <code>VersionId</code>. </p> <p>This
-     * applies only to registered private extension versions. CloudFormation does not
+     * specific extension version, you must specify <code>VersionId</code>.</p> <p>This
+     * applies only to registered private extension versions. CloudFormation doesn't
      * return this information for public extensions, whether or not they are activated
      * in your account.</p>
      */
@@ -417,8 +417,8 @@ namespace Model
 
     /**
      * <p>The description of the test status. To return the extension test status of a
-     * specifc extension version, you must specify <code>VersionId</code>. </p> <p>This
-     * applies only to registered private extension versions. CloudFormation does not
+     * specific extension version, you must specify <code>VersionId</code>.</p> <p>This
+     * applies only to registered private extension versions. CloudFormation doesn't
      * return this information for public extensions, whether or not they are activated
      * in your account.</p>
      */
@@ -426,8 +426,8 @@ namespace Model
 
     /**
      * <p>The description of the test status. To return the extension test status of a
-     * specifc extension version, you must specify <code>VersionId</code>. </p> <p>This
-     * applies only to registered private extension versions. CloudFormation does not
+     * specific extension version, you must specify <code>VersionId</code>.</p> <p>This
+     * applies only to registered private extension versions. CloudFormation doesn't
      * return this information for public extensions, whether or not they are activated
      * in your account.</p>
      */
@@ -533,11 +533,11 @@ namespace Model
      * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
      * includes an update handler to process updates to the type during stack update
-     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type does
-     * not include an update handler, so the type cannot be updated and must instead be
+     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type doesn't
+     * include an update handler, so the type can't be updated and must instead be
      * replaced during stack update operations.</p> </li> <li> <p>
-     * <code>NON_PROVISIONABLE</code>: The resource type does not include all of the
-     * following handlers, and therefore cannot actually be provisioned.</p> <ul> <li>
+     * <code>NON_PROVISIONABLE</code>: The resource type doesn't include all the
+     * following handlers, and therefore can't actually be provisioned.</p> <ul> <li>
      * <p>create</p> </li> <li> <p>read</p> </li> <li> <p>delete</p> </li> </ul> </li>
      * </ul>
      */
@@ -549,11 +549,11 @@ namespace Model
      * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
      * includes an update handler to process updates to the type during stack update
-     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type does
-     * not include an update handler, so the type cannot be updated and must instead be
+     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type doesn't
+     * include an update handler, so the type can't be updated and must instead be
      * replaced during stack update operations.</p> </li> <li> <p>
-     * <code>NON_PROVISIONABLE</code>: The resource type does not include all of the
-     * following handlers, and therefore cannot actually be provisioned.</p> <ul> <li>
+     * <code>NON_PROVISIONABLE</code>: The resource type doesn't include all the
+     * following handlers, and therefore can't actually be provisioned.</p> <ul> <li>
      * <p>create</p> </li> <li> <p>read</p> </li> <li> <p>delete</p> </li> </ul> </li>
      * </ul>
      */
@@ -565,11 +565,11 @@ namespace Model
      * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
      * includes an update handler to process updates to the type during stack update
-     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type does
-     * not include an update handler, so the type cannot be updated and must instead be
+     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type doesn't
+     * include an update handler, so the type can't be updated and must instead be
      * replaced during stack update operations.</p> </li> <li> <p>
-     * <code>NON_PROVISIONABLE</code>: The resource type does not include all of the
-     * following handlers, and therefore cannot actually be provisioned.</p> <ul> <li>
+     * <code>NON_PROVISIONABLE</code>: The resource type doesn't include all the
+     * following handlers, and therefore can't actually be provisioned.</p> <ul> <li>
      * <p>create</p> </li> <li> <p>read</p> </li> <li> <p>delete</p> </li> </ul> </li>
      * </ul>
      */
@@ -581,11 +581,11 @@ namespace Model
      * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
      * includes an update handler to process updates to the type during stack update
-     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type does
-     * not include an update handler, so the type cannot be updated and must instead be
+     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type doesn't
+     * include an update handler, so the type can't be updated and must instead be
      * replaced during stack update operations.</p> </li> <li> <p>
-     * <code>NON_PROVISIONABLE</code>: The resource type does not include all of the
-     * following handlers, and therefore cannot actually be provisioned.</p> <ul> <li>
+     * <code>NON_PROVISIONABLE</code>: The resource type doesn't include all the
+     * following handlers, and therefore can't actually be provisioned.</p> <ul> <li>
      * <p>create</p> </li> <li> <p>read</p> </li> <li> <p>delete</p> </li> </ul> </li>
      * </ul>
      */
@@ -597,11 +597,11 @@ namespace Model
      * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
      * includes an update handler to process updates to the type during stack update
-     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type does
-     * not include an update handler, so the type cannot be updated and must instead be
+     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type doesn't
+     * include an update handler, so the type can't be updated and must instead be
      * replaced during stack update operations.</p> </li> <li> <p>
-     * <code>NON_PROVISIONABLE</code>: The resource type does not include all of the
-     * following handlers, and therefore cannot actually be provisioned.</p> <ul> <li>
+     * <code>NON_PROVISIONABLE</code>: The resource type doesn't include all the
+     * following handlers, and therefore can't actually be provisioned.</p> <ul> <li>
      * <p>create</p> </li> <li> <p>read</p> </li> <li> <p>delete</p> </li> </ul> </li>
      * </ul>
      */
@@ -614,7 +614,7 @@ namespace Model
      * registered and can be used in CloudFormation operations, dependent on its
      * provisioning behavior and visibility scope.</p> </li> <li> <p>
      * <code>DEPRECATED</code>: The extension has been deactivated or deregistered and
-     * can no longer be used in CloudFormation operations. </p> </li> </ul> <p>For
+     * can no longer be used in CloudFormation operations.</p> </li> </ul> <p>For
      * public third-party extensions, CloudFormation returns <code>null</code>.</p>
      */
     inline const DeprecatedStatus& GetDeprecatedStatus() const{ return m_deprecatedStatus; }
@@ -625,7 +625,7 @@ namespace Model
      * registered and can be used in CloudFormation operations, dependent on its
      * provisioning behavior and visibility scope.</p> </li> <li> <p>
      * <code>DEPRECATED</code>: The extension has been deactivated or deregistered and
-     * can no longer be used in CloudFormation operations. </p> </li> </ul> <p>For
+     * can no longer be used in CloudFormation operations.</p> </li> </ul> <p>For
      * public third-party extensions, CloudFormation returns <code>null</code>.</p>
      */
     inline void SetDeprecatedStatus(const DeprecatedStatus& value) { m_deprecatedStatus = value; }
@@ -636,7 +636,7 @@ namespace Model
      * registered and can be used in CloudFormation operations, dependent on its
      * provisioning behavior and visibility scope.</p> </li> <li> <p>
      * <code>DEPRECATED</code>: The extension has been deactivated or deregistered and
-     * can no longer be used in CloudFormation operations. </p> </li> </ul> <p>For
+     * can no longer be used in CloudFormation operations.</p> </li> </ul> <p>For
      * public third-party extensions, CloudFormation returns <code>null</code>.</p>
      */
     inline void SetDeprecatedStatus(DeprecatedStatus&& value) { m_deprecatedStatus = std::move(value); }
@@ -647,7 +647,7 @@ namespace Model
      * registered and can be used in CloudFormation operations, dependent on its
      * provisioning behavior and visibility scope.</p> </li> <li> <p>
      * <code>DEPRECATED</code>: The extension has been deactivated or deregistered and
-     * can no longer be used in CloudFormation operations. </p> </li> </ul> <p>For
+     * can no longer be used in CloudFormation operations.</p> </li> </ul> <p>For
      * public third-party extensions, CloudFormation returns <code>null</code>.</p>
      */
     inline DescribeTypeResult& WithDeprecatedStatus(const DeprecatedStatus& value) { SetDeprecatedStatus(value); return *this;}
@@ -658,7 +658,7 @@ namespace Model
      * registered and can be used in CloudFormation operations, dependent on its
      * provisioning behavior and visibility scope.</p> </li> <li> <p>
      * <code>DEPRECATED</code>: The extension has been deactivated or deregistered and
-     * can no longer be used in CloudFormation operations. </p> </li> </ul> <p>For
+     * can no longer be used in CloudFormation operations.</p> </li> </ul> <p>For
      * public third-party extensions, CloudFormation returns <code>null</code>.</p>
      */
     inline DescribeTypeResult& WithDeprecatedStatus(DeprecatedStatus&& value) { SetDeprecatedStatus(std::move(value)); return *this;}
@@ -865,7 +865,7 @@ namespace Model
      * The extension is only visible and usable within the account in which it is
      * registered. CloudFormation marks any extensions you register as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
-     * publically visible and usable within any Amazon account.</p> </li> </ul>
+     * publicly visible and usable within any Amazon account.</p> </li> </ul>
      */
     inline const Visibility& GetVisibility() const{ return m_visibility; }
 
@@ -875,7 +875,7 @@ namespace Model
      * The extension is only visible and usable within the account in which it is
      * registered. CloudFormation marks any extensions you register as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
-     * publically visible and usable within any Amazon account.</p> </li> </ul>
+     * publicly visible and usable within any Amazon account.</p> </li> </ul>
      */
     inline void SetVisibility(const Visibility& value) { m_visibility = value; }
 
@@ -885,7 +885,7 @@ namespace Model
      * The extension is only visible and usable within the account in which it is
      * registered. CloudFormation marks any extensions you register as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
-     * publically visible and usable within any Amazon account.</p> </li> </ul>
+     * publicly visible and usable within any Amazon account.</p> </li> </ul>
      */
     inline void SetVisibility(Visibility&& value) { m_visibility = std::move(value); }
 
@@ -895,7 +895,7 @@ namespace Model
      * The extension is only visible and usable within the account in which it is
      * registered. CloudFormation marks any extensions you register as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
-     * publically visible and usable within any Amazon account.</p> </li> </ul>
+     * publicly visible and usable within any Amazon account.</p> </li> </ul>
      */
     inline DescribeTypeResult& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
 
@@ -905,7 +905,7 @@ namespace Model
      * The extension is only visible and usable within the account in which it is
      * registered. CloudFormation marks any extensions you register as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
-     * publically visible and usable within any Amazon account.</p> </li> </ul>
+     * publicly visible and usable within any Amazon account.</p> </li> </ul>
      */
     inline DescribeTypeResult& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
 
@@ -1045,31 +1045,31 @@ namespace Model
 
     /**
      * <p>When the specified private extension version was registered or activated in
-     * your account. </p>
+     * your account.</p>
      */
     inline const Aws::Utils::DateTime& GetTimeCreated() const{ return m_timeCreated; }
 
     /**
      * <p>When the specified private extension version was registered or activated in
-     * your account. </p>
+     * your account.</p>
      */
     inline void SetTimeCreated(const Aws::Utils::DateTime& value) { m_timeCreated = value; }
 
     /**
      * <p>When the specified private extension version was registered or activated in
-     * your account. </p>
+     * your account.</p>
      */
     inline void SetTimeCreated(Aws::Utils::DateTime&& value) { m_timeCreated = std::move(value); }
 
     /**
      * <p>When the specified private extension version was registered or activated in
-     * your account. </p>
+     * your account.</p>
      */
     inline DescribeTypeResult& WithTimeCreated(const Aws::Utils::DateTime& value) { SetTimeCreated(value); return *this;}
 
     /**
      * <p>When the specified private extension version was registered or activated in
-     * your account. </p>
+     * your account.</p>
      */
     inline DescribeTypeResult& WithTimeCreated(Aws::Utils::DateTime&& value) { SetTimeCreated(std::move(value)); return *this;}
 
@@ -1155,49 +1155,49 @@ namespace Model
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>This applies only to
      * public third-party extensions. For private registered extensions, and extensions
-     * provided by Amazon, CloudFormation returns <code>null</code>.</p>
+     * provided by Amazon Web Services, CloudFormation returns <code>null</code>.</p>
      */
     inline const Aws::String& GetPublisherId() const{ return m_publisherId; }
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>This applies only to
      * public third-party extensions. For private registered extensions, and extensions
-     * provided by Amazon, CloudFormation returns <code>null</code>.</p>
+     * provided by Amazon Web Services, CloudFormation returns <code>null</code>.</p>
      */
     inline void SetPublisherId(const Aws::String& value) { m_publisherId = value; }
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>This applies only to
      * public third-party extensions. For private registered extensions, and extensions
-     * provided by Amazon, CloudFormation returns <code>null</code>.</p>
+     * provided by Amazon Web Services, CloudFormation returns <code>null</code>.</p>
      */
     inline void SetPublisherId(Aws::String&& value) { m_publisherId = std::move(value); }
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>This applies only to
      * public third-party extensions. For private registered extensions, and extensions
-     * provided by Amazon, CloudFormation returns <code>null</code>.</p>
+     * provided by Amazon Web Services, CloudFormation returns <code>null</code>.</p>
      */
     inline void SetPublisherId(const char* value) { m_publisherId.assign(value); }
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>This applies only to
      * public third-party extensions. For private registered extensions, and extensions
-     * provided by Amazon, CloudFormation returns <code>null</code>.</p>
+     * provided by Amazon Web Services, CloudFormation returns <code>null</code>.</p>
      */
     inline DescribeTypeResult& WithPublisherId(const Aws::String& value) { SetPublisherId(value); return *this;}
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>This applies only to
      * public third-party extensions. For private registered extensions, and extensions
-     * provided by Amazon, CloudFormation returns <code>null</code>.</p>
+     * provided by Amazon Web Services, CloudFormation returns <code>null</code>.</p>
      */
     inline DescribeTypeResult& WithPublisherId(Aws::String&& value) { SetPublisherId(std::move(value)); return *this;}
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>This applies only to
      * public third-party extensions. For private registered extensions, and extensions
-     * provided by Amazon, CloudFormation returns <code>null</code>.</p>
+     * provided by Amazon Web Services, CloudFormation returns <code>null</code>.</p>
      */
     inline DescribeTypeResult& WithPublisherId(const char* value) { SetPublisherId(value); return *this;}
 
@@ -1389,7 +1389,7 @@ namespace Model
 
     /**
      * <p>The latest version of a public extension <i>that is available</i> for
-     * use.</p> <p>This only applies if you specify a public extension, and you do not
+     * use.</p> <p>This only applies if you specify a public extension, and you don't
      * specify a version. For all other requests, CloudFormation returns
      * <code>null</code>.</p>
      */
@@ -1397,7 +1397,7 @@ namespace Model
 
     /**
      * <p>The latest version of a public extension <i>that is available</i> for
-     * use.</p> <p>This only applies if you specify a public extension, and you do not
+     * use.</p> <p>This only applies if you specify a public extension, and you don't
      * specify a version. For all other requests, CloudFormation returns
      * <code>null</code>.</p>
      */
@@ -1405,7 +1405,7 @@ namespace Model
 
     /**
      * <p>The latest version of a public extension <i>that is available</i> for
-     * use.</p> <p>This only applies if you specify a public extension, and you do not
+     * use.</p> <p>This only applies if you specify a public extension, and you don't
      * specify a version. For all other requests, CloudFormation returns
      * <code>null</code>.</p>
      */
@@ -1413,7 +1413,7 @@ namespace Model
 
     /**
      * <p>The latest version of a public extension <i>that is available</i> for
-     * use.</p> <p>This only applies if you specify a public extension, and you do not
+     * use.</p> <p>This only applies if you specify a public extension, and you don't
      * specify a version. For all other requests, CloudFormation returns
      * <code>null</code>.</p>
      */
@@ -1421,7 +1421,7 @@ namespace Model
 
     /**
      * <p>The latest version of a public extension <i>that is available</i> for
-     * use.</p> <p>This only applies if you specify a public extension, and you do not
+     * use.</p> <p>This only applies if you specify a public extension, and you don't
      * specify a version. For all other requests, CloudFormation returns
      * <code>null</code>.</p>
      */
@@ -1429,7 +1429,7 @@ namespace Model
 
     /**
      * <p>The latest version of a public extension <i>that is available</i> for
-     * use.</p> <p>This only applies if you specify a public extension, and you do not
+     * use.</p> <p>This only applies if you specify a public extension, and you don't
      * specify a version. For all other requests, CloudFormation returns
      * <code>null</code>.</p>
      */
@@ -1437,7 +1437,7 @@ namespace Model
 
     /**
      * <p>The latest version of a public extension <i>that is available</i> for
-     * use.</p> <p>This only applies if you specify a public extension, and you do not
+     * use.</p> <p>This only applies if you specify a public extension, and you don't
      * specify a version. For all other requests, CloudFormation returns
      * <code>null</code>.</p>
      */

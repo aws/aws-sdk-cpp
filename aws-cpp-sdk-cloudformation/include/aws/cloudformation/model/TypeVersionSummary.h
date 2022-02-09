@@ -117,56 +117,56 @@ namespace Model
     /**
      * <p>The ID of a specific version of the extension. The version ID is the value at
      * the end of the Amazon Resource Name (ARN) assigned to the extension version when
-     * it is registered.</p>
+     * it's registered.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
      * <p>The ID of a specific version of the extension. The version ID is the value at
      * the end of the Amazon Resource Name (ARN) assigned to the extension version when
-     * it is registered.</p>
+     * it's registered.</p>
      */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p>The ID of a specific version of the extension. The version ID is the value at
      * the end of the Amazon Resource Name (ARN) assigned to the extension version when
-     * it is registered.</p>
+     * it's registered.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
      * <p>The ID of a specific version of the extension. The version ID is the value at
      * the end of the Amazon Resource Name (ARN) assigned to the extension version when
-     * it is registered.</p>
+     * it's registered.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
     /**
      * <p>The ID of a specific version of the extension. The version ID is the value at
      * the end of the Amazon Resource Name (ARN) assigned to the extension version when
-     * it is registered.</p>
+     * it's registered.</p>
      */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
     /**
      * <p>The ID of a specific version of the extension. The version ID is the value at
      * the end of the Amazon Resource Name (ARN) assigned to the extension version when
-     * it is registered.</p>
+     * it's registered.</p>
      */
     inline TypeVersionSummary& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
      * <p>The ID of a specific version of the extension. The version ID is the value at
      * the end of the Amazon Resource Name (ARN) assigned to the extension version when
-     * it is registered.</p>
+     * it's registered.</p>
      */
     inline TypeVersionSummary& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of a specific version of the extension. The version ID is the value at
      * the end of the Amazon Resource Name (ARN) assigned to the extension version when
-     * it is registered.</p>
+     * it's registered.</p>
      */
     inline TypeVersionSummary& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
@@ -174,36 +174,32 @@ namespace Model
     /**
      * <p>Whether the specified extension version is set as the default version.</p>
      * <p>This applies only to private extensions you have registered in your account,
-     * and extensions published by Amazon. For public third-party extensions, whether
-     * or not they are activated in your account, CloudFormation returns
-     * <code>null</code>.</p>
+     * and extensions published by Amazon. For public third-party extensions,
+     * CloudFormation returns <code>null</code>.</p>
      */
     inline bool GetIsDefaultVersion() const{ return m_isDefaultVersion; }
 
     /**
      * <p>Whether the specified extension version is set as the default version.</p>
      * <p>This applies only to private extensions you have registered in your account,
-     * and extensions published by Amazon. For public third-party extensions, whether
-     * or not they are activated in your account, CloudFormation returns
-     * <code>null</code>.</p>
+     * and extensions published by Amazon. For public third-party extensions,
+     * CloudFormation returns <code>null</code>.</p>
      */
     inline bool IsDefaultVersionHasBeenSet() const { return m_isDefaultVersionHasBeenSet; }
 
     /**
      * <p>Whether the specified extension version is set as the default version.</p>
      * <p>This applies only to private extensions you have registered in your account,
-     * and extensions published by Amazon. For public third-party extensions, whether
-     * or not they are activated in your account, CloudFormation returns
-     * <code>null</code>.</p>
+     * and extensions published by Amazon. For public third-party extensions,
+     * CloudFormation returns <code>null</code>.</p>
      */
     inline void SetIsDefaultVersion(bool value) { m_isDefaultVersionHasBeenSet = true; m_isDefaultVersion = value; }
 
     /**
      * <p>Whether the specified extension version is set as the default version.</p>
      * <p>This applies only to private extensions you have registered in your account,
-     * and extensions published by Amazon. For public third-party extensions, whether
-     * or not they are activated in your account, CloudFormation returns
-     * <code>null</code>.</p>
+     * and extensions published by Amazon. For public third-party extensions,
+     * CloudFormation returns <code>null</code>.</p>
      */
     inline TypeVersionSummary& WithIsDefaultVersion(bool value) { SetIsDefaultVersion(value); return *this;}
 
@@ -327,7 +323,7 @@ namespace Model
      * this account and region. For any extensions other than activated third-arty
      * extensions, CloudFormation returns <code>null</code>.</p> <p>How you specified
      * <code>AutoUpdate</code> when enabling the extension affects whether
-     * CloudFormation automatically updates the extention in this account and region
+     * CloudFormation automatically updates the extension in this account and region
      * when a new version is released. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -341,7 +337,7 @@ namespace Model
      * this account and region. For any extensions other than activated third-arty
      * extensions, CloudFormation returns <code>null</code>.</p> <p>How you specified
      * <code>AutoUpdate</code> when enabling the extension affects whether
-     * CloudFormation automatically updates the extention in this account and region
+     * CloudFormation automatically updates the extension in this account and region
      * when a new version is released. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -355,7 +351,7 @@ namespace Model
      * this account and region. For any extensions other than activated third-arty
      * extensions, CloudFormation returns <code>null</code>.</p> <p>How you specified
      * <code>AutoUpdate</code> when enabling the extension affects whether
-     * CloudFormation automatically updates the extention in this account and region
+     * CloudFormation automatically updates the extension in this account and region
      * when a new version is released. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -369,7 +365,7 @@ namespace Model
      * this account and region. For any extensions other than activated third-arty
      * extensions, CloudFormation returns <code>null</code>.</p> <p>How you specified
      * <code>AutoUpdate</code> when enabling the extension affects whether
-     * CloudFormation automatically updates the extention in this account and region
+     * CloudFormation automatically updates the extension in this account and region
      * when a new version is released. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -383,7 +379,7 @@ namespace Model
      * this account and region. For any extensions other than activated third-arty
      * extensions, CloudFormation returns <code>null</code>.</p> <p>How you specified
      * <code>AutoUpdate</code> when enabling the extension affects whether
-     * CloudFormation automatically updates the extention in this account and region
+     * CloudFormation automatically updates the extension in this account and region
      * when a new version is released. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -397,7 +393,7 @@ namespace Model
      * this account and region. For any extensions other than activated third-arty
      * extensions, CloudFormation returns <code>null</code>.</p> <p>How you specified
      * <code>AutoUpdate</code> when enabling the extension affects whether
-     * CloudFormation automatically updates the extention in this account and region
+     * CloudFormation automatically updates the extension in this account and region
      * when a new version is released. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -411,7 +407,7 @@ namespace Model
      * this account and region. For any extensions other than activated third-arty
      * extensions, CloudFormation returns <code>null</code>.</p> <p>How you specified
      * <code>AutoUpdate</code> when enabling the extension affects whether
-     * CloudFormation automatically updates the extention in this account and region
+     * CloudFormation automatically updates the extension in this account and region
      * when a new version is released. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -425,7 +421,7 @@ namespace Model
      * this account and region. For any extensions other than activated third-arty
      * extensions, CloudFormation returns <code>null</code>.</p> <p>How you specified
      * <code>AutoUpdate</code> when enabling the extension affects whether
-     * CloudFormation automatically updates the extention in this account and region
+     * CloudFormation automatically updates the extension in this account and region
      * when a new version is released. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the

@@ -52,8 +52,8 @@ namespace Model
      * not currently support drift detection have a status of <code>NOT_CHECKED</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
-     * that Support Drift Detection</a>. </p> </li> <li> <p> <code>IN_SYNC</code>: The
-     * resources's actual configuration matches its expected configuration.</p> </li>
+     * that Support Drift Detection</a>.</p> </li> <li> <p> <code>IN_SYNC</code>: The
+     * resource's actual configuration matches its expected configuration.</p> </li>
      * </ul>
      */
     inline const StackResourceDriftStatus& GetStackResourceDriftStatus() const{ return m_stackResourceDriftStatus; }
@@ -68,8 +68,8 @@ namespace Model
      * not currently support drift detection have a status of <code>NOT_CHECKED</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
-     * that Support Drift Detection</a>. </p> </li> <li> <p> <code>IN_SYNC</code>: The
-     * resources's actual configuration matches its expected configuration.</p> </li>
+     * that Support Drift Detection</a>.</p> </li> <li> <p> <code>IN_SYNC</code>: The
+     * resource's actual configuration matches its expected configuration.</p> </li>
      * </ul>
      */
     inline bool StackResourceDriftStatusHasBeenSet() const { return m_stackResourceDriftStatusHasBeenSet; }
@@ -84,8 +84,8 @@ namespace Model
      * not currently support drift detection have a status of <code>NOT_CHECKED</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
-     * that Support Drift Detection</a>. </p> </li> <li> <p> <code>IN_SYNC</code>: The
-     * resources's actual configuration matches its expected configuration.</p> </li>
+     * that Support Drift Detection</a>.</p> </li> <li> <p> <code>IN_SYNC</code>: The
+     * resource's actual configuration matches its expected configuration.</p> </li>
      * </ul>
      */
     inline void SetStackResourceDriftStatus(const StackResourceDriftStatus& value) { m_stackResourceDriftStatusHasBeenSet = true; m_stackResourceDriftStatus = value; }
@@ -100,8 +100,8 @@ namespace Model
      * not currently support drift detection have a status of <code>NOT_CHECKED</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
-     * that Support Drift Detection</a>. </p> </li> <li> <p> <code>IN_SYNC</code>: The
-     * resources's actual configuration matches its expected configuration.</p> </li>
+     * that Support Drift Detection</a>.</p> </li> <li> <p> <code>IN_SYNC</code>: The
+     * resource's actual configuration matches its expected configuration.</p> </li>
      * </ul>
      */
     inline void SetStackResourceDriftStatus(StackResourceDriftStatus&& value) { m_stackResourceDriftStatusHasBeenSet = true; m_stackResourceDriftStatus = std::move(value); }
@@ -116,8 +116,8 @@ namespace Model
      * not currently support drift detection have a status of <code>NOT_CHECKED</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
-     * that Support Drift Detection</a>. </p> </li> <li> <p> <code>IN_SYNC</code>: The
-     * resources's actual configuration matches its expected configuration.</p> </li>
+     * that Support Drift Detection</a>.</p> </li> <li> <p> <code>IN_SYNC</code>: The
+     * resource's actual configuration matches its expected configuration.</p> </li>
      * </ul>
      */
     inline StackResourceDriftInformation& WithStackResourceDriftStatus(const StackResourceDriftStatus& value) { SetStackResourceDriftStatus(value); return *this;}
@@ -132,8 +132,8 @@ namespace Model
      * not currently support drift detection have a status of <code>NOT_CHECKED</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
-     * that Support Drift Detection</a>. </p> </li> <li> <p> <code>IN_SYNC</code>: The
-     * resources's actual configuration matches its expected configuration.</p> </li>
+     * that Support Drift Detection</a>.</p> </li> <li> <p> <code>IN_SYNC</code>: The
+     * resource's actual configuration matches its expected configuration.</p> </li>
      * </ul>
      */
     inline StackResourceDriftInformation& WithStackResourceDriftStatus(StackResourceDriftStatus&& value) { SetStackResourceDriftStatus(std::move(value)); return *this;}
