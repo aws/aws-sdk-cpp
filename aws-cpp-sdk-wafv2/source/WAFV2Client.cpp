@@ -35,9 +35,11 @@
 #include <aws/wafv2/model/DeleteWebACLRequest.h>
 #include <aws/wafv2/model/DescribeManagedRuleGroupRequest.h>
 #include <aws/wafv2/model/DisassociateWebACLRequest.h>
+#include <aws/wafv2/model/GenerateMobileSdkReleaseUrlRequest.h>
 #include <aws/wafv2/model/GetIPSetRequest.h>
 #include <aws/wafv2/model/GetLoggingConfigurationRequest.h>
 #include <aws/wafv2/model/GetManagedRuleSetRequest.h>
+#include <aws/wafv2/model/GetMobileSdkReleaseRequest.h>
 #include <aws/wafv2/model/GetPermissionPolicyRequest.h>
 #include <aws/wafv2/model/GetRateBasedStatementManagedKeysRequest.h>
 #include <aws/wafv2/model/GetRegexPatternSetRequest.h>
@@ -50,6 +52,7 @@
 #include <aws/wafv2/model/ListIPSetsRequest.h>
 #include <aws/wafv2/model/ListLoggingConfigurationsRequest.h>
 #include <aws/wafv2/model/ListManagedRuleSetsRequest.h>
+#include <aws/wafv2/model/ListMobileSdkReleasesRequest.h>
 #include <aws/wafv2/model/ListRegexPatternSetsRequest.h>
 #include <aws/wafv2/model/ListResourcesForWebACLRequest.h>
 #include <aws/wafv2/model/ListRuleGroupsRequest.h>
@@ -499,6 +502,30 @@ void WAFV2Client::DisassociateWebACLAsyncHelper(const DisassociateWebACLRequest&
   handler(this, request, DisassociateWebACL(request), context);
 }
 
+GenerateMobileSdkReleaseUrlOutcome WAFV2Client::GenerateMobileSdkReleaseUrl(const GenerateMobileSdkReleaseUrlRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GenerateMobileSdkReleaseUrlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GenerateMobileSdkReleaseUrlOutcomeCallable WAFV2Client::GenerateMobileSdkReleaseUrlCallable(const GenerateMobileSdkReleaseUrlRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GenerateMobileSdkReleaseUrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GenerateMobileSdkReleaseUrl(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFV2Client::GenerateMobileSdkReleaseUrlAsync(const GenerateMobileSdkReleaseUrlRequest& request, const GenerateMobileSdkReleaseUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GenerateMobileSdkReleaseUrlAsyncHelper( request, handler, context ); } );
+}
+
+void WAFV2Client::GenerateMobileSdkReleaseUrlAsyncHelper(const GenerateMobileSdkReleaseUrlRequest& request, const GenerateMobileSdkReleaseUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GenerateMobileSdkReleaseUrl(request), context);
+}
+
 GetIPSetOutcome WAFV2Client::GetIPSet(const GetIPSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -569,6 +596,30 @@ void WAFV2Client::GetManagedRuleSetAsync(const GetManagedRuleSetRequest& request
 void WAFV2Client::GetManagedRuleSetAsyncHelper(const GetManagedRuleSetRequest& request, const GetManagedRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetManagedRuleSet(request), context);
+}
+
+GetMobileSdkReleaseOutcome WAFV2Client::GetMobileSdkRelease(const GetMobileSdkReleaseRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetMobileSdkReleaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetMobileSdkReleaseOutcomeCallable WAFV2Client::GetMobileSdkReleaseCallable(const GetMobileSdkReleaseRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMobileSdkReleaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMobileSdkRelease(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFV2Client::GetMobileSdkReleaseAsync(const GetMobileSdkReleaseRequest& request, const GetMobileSdkReleaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMobileSdkReleaseAsyncHelper( request, handler, context ); } );
+}
+
+void WAFV2Client::GetMobileSdkReleaseAsyncHelper(const GetMobileSdkReleaseRequest& request, const GetMobileSdkReleaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMobileSdkRelease(request), context);
 }
 
 GetPermissionPolicyOutcome WAFV2Client::GetPermissionPolicy(const GetPermissionPolicyRequest& request) const
@@ -857,6 +908,30 @@ void WAFV2Client::ListManagedRuleSetsAsync(const ListManagedRuleSetsRequest& req
 void WAFV2Client::ListManagedRuleSetsAsyncHelper(const ListManagedRuleSetsRequest& request, const ListManagedRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListManagedRuleSets(request), context);
+}
+
+ListMobileSdkReleasesOutcome WAFV2Client::ListMobileSdkReleases(const ListMobileSdkReleasesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListMobileSdkReleasesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListMobileSdkReleasesOutcomeCallable WAFV2Client::ListMobileSdkReleasesCallable(const ListMobileSdkReleasesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMobileSdkReleasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMobileSdkReleases(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFV2Client::ListMobileSdkReleasesAsync(const ListMobileSdkReleasesRequest& request, const ListMobileSdkReleasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMobileSdkReleasesAsyncHelper( request, handler, context ); } );
+}
+
+void WAFV2Client::ListMobileSdkReleasesAsyncHelper(const ListMobileSdkReleasesRequest& request, const ListMobileSdkReleasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMobileSdkReleases(request), context);
 }
 
 ListRegexPatternSetsOutcome WAFV2Client::ListRegexPatternSets(const ListRegexPatternSetsRequest& request) const

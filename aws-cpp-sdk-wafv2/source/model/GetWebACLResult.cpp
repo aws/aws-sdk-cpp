@@ -40,6 +40,12 @@ GetWebACLResult& GetWebACLResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
+  if(jsonValue.ValueExists("ApplicationIntegrationURL"))
+  {
+    m_applicationIntegrationURL = jsonValue.GetString("ApplicationIntegrationURL");
+
+  }
+
 
 
   return *this;

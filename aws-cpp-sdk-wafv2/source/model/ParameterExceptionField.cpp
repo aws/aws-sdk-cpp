@@ -77,6 +77,8 @@ namespace Aws
         static const int CHANGE_PROPAGATION_STATUS_HASH = HashingUtils::HashString("CHANGE_PROPAGATION_STATUS");
         static const int ASSOCIABLE_RESOURCE_HASH = HashingUtils::HashString("ASSOCIABLE_RESOURCE");
         static const int LOG_DESTINATION_HASH = HashingUtils::HashString("LOG_DESTINATION");
+        static const int MANAGED_RULE_GROUP_CONFIG_HASH = HashingUtils::HashString("MANAGED_RULE_GROUP_CONFIG");
+        static const int PAYLOAD_TYPE_HASH = HashingUtils::HashString("PAYLOAD_TYPE");
 
 
         ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name)
@@ -310,6 +312,14 @@ namespace Aws
           {
             return ParameterExceptionField::LOG_DESTINATION;
           }
+          else if (hashCode == MANAGED_RULE_GROUP_CONFIG_HASH)
+          {
+            return ParameterExceptionField::MANAGED_RULE_GROUP_CONFIG;
+          }
+          else if (hashCode == PAYLOAD_TYPE_HASH)
+          {
+            return ParameterExceptionField::PAYLOAD_TYPE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -438,6 +448,10 @@ namespace Aws
             return "ASSOCIABLE_RESOURCE";
           case ParameterExceptionField::LOG_DESTINATION:
             return "LOG_DESTINATION";
+          case ParameterExceptionField::MANAGED_RULE_GROUP_CONFIG:
+            return "MANAGED_RULE_GROUP_CONFIG";
+          case ParameterExceptionField::PAYLOAD_TYPE:
+            return "PAYLOAD_TYPE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

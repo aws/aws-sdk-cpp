@@ -49,65 +49,81 @@ namespace Model
 
     /**
      * <p>Additional compiler options for the Greengrass component. Currently, only
-     * NVIDIA Graphics Processing Units (GPU) are supported.</p> <p>For more
-     * information, see <i>Compiler options</i> in the Amazon Lookout for Vision
-     * Developer Guide. </p>
+     * NVIDIA Graphics Processing Units (GPU) are supported. If you specify
+     * <code>TargetPlatform</code>, you must specify <code>CompilerOptions</code>. If
+     * you specify <code>TargetDevice</code>, don't specify
+     * <code>CompilerOptions</code>.</p> <p>For more information, see <i>Compiler
+     * options</i> in the Amazon Lookout for Vision Developer Guide. </p>
      */
     inline const Aws::String& GetCompilerOptions() const{ return m_compilerOptions; }
 
     /**
      * <p>Additional compiler options for the Greengrass component. Currently, only
-     * NVIDIA Graphics Processing Units (GPU) are supported.</p> <p>For more
-     * information, see <i>Compiler options</i> in the Amazon Lookout for Vision
-     * Developer Guide. </p>
+     * NVIDIA Graphics Processing Units (GPU) are supported. If you specify
+     * <code>TargetPlatform</code>, you must specify <code>CompilerOptions</code>. If
+     * you specify <code>TargetDevice</code>, don't specify
+     * <code>CompilerOptions</code>.</p> <p>For more information, see <i>Compiler
+     * options</i> in the Amazon Lookout for Vision Developer Guide. </p>
      */
     inline bool CompilerOptionsHasBeenSet() const { return m_compilerOptionsHasBeenSet; }
 
     /**
      * <p>Additional compiler options for the Greengrass component. Currently, only
-     * NVIDIA Graphics Processing Units (GPU) are supported.</p> <p>For more
-     * information, see <i>Compiler options</i> in the Amazon Lookout for Vision
-     * Developer Guide. </p>
+     * NVIDIA Graphics Processing Units (GPU) are supported. If you specify
+     * <code>TargetPlatform</code>, you must specify <code>CompilerOptions</code>. If
+     * you specify <code>TargetDevice</code>, don't specify
+     * <code>CompilerOptions</code>.</p> <p>For more information, see <i>Compiler
+     * options</i> in the Amazon Lookout for Vision Developer Guide. </p>
      */
     inline void SetCompilerOptions(const Aws::String& value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions = value; }
 
     /**
      * <p>Additional compiler options for the Greengrass component. Currently, only
-     * NVIDIA Graphics Processing Units (GPU) are supported.</p> <p>For more
-     * information, see <i>Compiler options</i> in the Amazon Lookout for Vision
-     * Developer Guide. </p>
+     * NVIDIA Graphics Processing Units (GPU) are supported. If you specify
+     * <code>TargetPlatform</code>, you must specify <code>CompilerOptions</code>. If
+     * you specify <code>TargetDevice</code>, don't specify
+     * <code>CompilerOptions</code>.</p> <p>For more information, see <i>Compiler
+     * options</i> in the Amazon Lookout for Vision Developer Guide. </p>
      */
     inline void SetCompilerOptions(Aws::String&& value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions = std::move(value); }
 
     /**
      * <p>Additional compiler options for the Greengrass component. Currently, only
-     * NVIDIA Graphics Processing Units (GPU) are supported.</p> <p>For more
-     * information, see <i>Compiler options</i> in the Amazon Lookout for Vision
-     * Developer Guide. </p>
+     * NVIDIA Graphics Processing Units (GPU) are supported. If you specify
+     * <code>TargetPlatform</code>, you must specify <code>CompilerOptions</code>. If
+     * you specify <code>TargetDevice</code>, don't specify
+     * <code>CompilerOptions</code>.</p> <p>For more information, see <i>Compiler
+     * options</i> in the Amazon Lookout for Vision Developer Guide. </p>
      */
     inline void SetCompilerOptions(const char* value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions.assign(value); }
 
     /**
      * <p>Additional compiler options for the Greengrass component. Currently, only
-     * NVIDIA Graphics Processing Units (GPU) are supported.</p> <p>For more
-     * information, see <i>Compiler options</i> in the Amazon Lookout for Vision
-     * Developer Guide. </p>
+     * NVIDIA Graphics Processing Units (GPU) are supported. If you specify
+     * <code>TargetPlatform</code>, you must specify <code>CompilerOptions</code>. If
+     * you specify <code>TargetDevice</code>, don't specify
+     * <code>CompilerOptions</code>.</p> <p>For more information, see <i>Compiler
+     * options</i> in the Amazon Lookout for Vision Developer Guide. </p>
      */
     inline GreengrassConfiguration& WithCompilerOptions(const Aws::String& value) { SetCompilerOptions(value); return *this;}
 
     /**
      * <p>Additional compiler options for the Greengrass component. Currently, only
-     * NVIDIA Graphics Processing Units (GPU) are supported.</p> <p>For more
-     * information, see <i>Compiler options</i> in the Amazon Lookout for Vision
-     * Developer Guide. </p>
+     * NVIDIA Graphics Processing Units (GPU) are supported. If you specify
+     * <code>TargetPlatform</code>, you must specify <code>CompilerOptions</code>. If
+     * you specify <code>TargetDevice</code>, don't specify
+     * <code>CompilerOptions</code>.</p> <p>For more information, see <i>Compiler
+     * options</i> in the Amazon Lookout for Vision Developer Guide. </p>
      */
     inline GreengrassConfiguration& WithCompilerOptions(Aws::String&& value) { SetCompilerOptions(std::move(value)); return *this;}
 
     /**
      * <p>Additional compiler options for the Greengrass component. Currently, only
-     * NVIDIA Graphics Processing Units (GPU) are supported.</p> <p>For more
-     * information, see <i>Compiler options</i> in the Amazon Lookout for Vision
-     * Developer Guide. </p>
+     * NVIDIA Graphics Processing Units (GPU) are supported. If you specify
+     * <code>TargetPlatform</code>, you must specify <code>CompilerOptions</code>. If
+     * you specify <code>TargetDevice</code>, don't specify
+     * <code>CompilerOptions</code>.</p> <p>For more information, see <i>Compiler
+     * options</i> in the Amazon Lookout for Vision Developer Guide. </p>
      */
     inline GreengrassConfiguration& WithCompilerOptions(const char* value) { SetCompilerOptions(value); return *this;}
 

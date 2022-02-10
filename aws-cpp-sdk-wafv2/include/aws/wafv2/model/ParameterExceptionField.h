@@ -72,7 +72,9 @@ namespace Model
     EXPIRE_TIMESTAMP,
     CHANGE_PROPAGATION_STATUS,
     ASSOCIABLE_RESOURCE,
-    LOG_DESTINATION
+    LOG_DESTINATION,
+    MANAGED_RULE_GROUP_CONFIG,
+    PAYLOAD_TYPE
   };
 
 namespace ParameterExceptionFieldMapper

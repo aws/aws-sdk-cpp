@@ -30,7 +30,10 @@ namespace Model
     ServiceInternalError,
     NetworkFailure,
     InternalFailure,
-    InvalidTypeConfiguration
+    InvalidTypeConfiguration,
+    HandlerInternalFailure,
+    NonCompliant,
+    Unknown
   };
 
 namespace HandlerErrorCodeMapper

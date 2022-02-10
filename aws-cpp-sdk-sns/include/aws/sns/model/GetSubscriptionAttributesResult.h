@@ -64,7 +64,7 @@ namespace Model
      * endpoint is unreachable) or server errors (for example, when the service that
      * powers the subscribed endpoint becomes unavailable) are held in the dead-letter
      * queue for further analysis or reprocessing.</p> </li> <li> <p>
-     * <code>SubscriptionArn</code> �� The subscription's ARN.</p> </li> <li> <p>
+     * <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
      * <code>TopicArn</code> – The topic ARN that the subscription is associated
      * with.</p> </li> </ul> <p>The following attribute applies only to Amazon Kinesis
      * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
@@ -104,7 +104,7 @@ namespace Model
      * endpoint is unreachable) or server errors (for example, when the service that
      * powers the subscribed endpoint becomes unavailable) are held in the dead-letter
      * queue for further analysis or reprocessing.</p> </li> <li> <p>
-     * <code>SubscriptionArn</code> �� The subscription's ARN.</p> </li> <li> <p>
+     * <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
      * <code>TopicArn</code> – The topic ARN that the subscription is associated
      * with.</p> </li> </ul> <p>The following attribute applies only to Amazon Kinesis
      * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
@@ -144,7 +144,7 @@ namespace Model
      * endpoint is unreachable) or server errors (for example, when the service that
      * powers the subscribed endpoint becomes unavailable) are held in the dead-letter
      * queue for further analysis or reprocessing.</p> </li> <li> <p>
-     * <code>SubscriptionArn</code> �� The subscription's ARN.</p> </li> <li> <p>
+     * <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
      * <code>TopicArn</code> – The topic ARN that the subscription is associated
      * with.</p> </li> </ul> <p>The following attribute applies only to Amazon Kinesis
      * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
@@ -184,7 +184,7 @@ namespace Model
      * endpoint is unreachable) or server errors (for example, when the service that
      * powers the subscribed endpoint becomes unavailable) are held in the dead-letter
      * queue for further analysis or reprocessing.</p> </li> <li> <p>
-     * <code>SubscriptionArn</code> �� The subscription's ARN.</p> </li> <li> <p>
+     * <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
      * <code>TopicArn</code> – The topic ARN that the subscription is associated
      * with.</p> </li> </ul> <p>The following attribute applies only to Amazon Kinesis
      * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
@@ -224,7 +224,7 @@ namespace Model
      * endpoint is unreachable) or server errors (for example, when the service that
      * powers the subscribed endpoint becomes unavailable) are held in the dead-letter
      * queue for further analysis or reprocessing.</p> </li> <li> <p>
-     * <code>SubscriptionArn</code> �� The subscription's ARN.</p> </li> <li> <p>
+     * <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
      * <code>TopicArn</code> – The topic ARN that the subscription is associated
      * with.</p> </li> </ul> <p>The following attribute applies only to Amazon Kinesis
      * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
@@ -264,7 +264,7 @@ namespace Model
      * endpoint is unreachable) or server errors (for example, when the service that
      * powers the subscribed endpoint becomes unavailable) are held in the dead-letter
      * queue for further analysis or reprocessing.</p> </li> <li> <p>
-     * <code>SubscriptionArn</code> �� The subscription's ARN.</p> </li> <li> <p>
+     * <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
      * <code>TopicArn</code> – The topic ARN that the subscription is associated
      * with.</p> </li> </ul> <p>The following attribute applies only to Amazon Kinesis
      * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
@@ -304,7 +304,7 @@ namespace Model
      * endpoint is unreachable) or server errors (for example, when the service that
      * powers the subscribed endpoint becomes unavailable) are held in the dead-letter
      * queue for further analysis or reprocessing.</p> </li> <li> <p>
-     * <code>SubscriptionArn</code> �� The subscription's ARN.</p> </li> <li> <p>
+     * <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
      * <code>TopicArn</code> – The topic ARN that the subscription is associated
      * with.</p> </li> </ul> <p>The following attribute applies only to Amazon Kinesis
      * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
@@ -344,7 +344,7 @@ namespace Model
      * endpoint is unreachable) or server errors (for example, when the service that
      * powers the subscribed endpoint becomes unavailable) are held in the dead-letter
      * queue for further analysis or reprocessing.</p> </li> <li> <p>
-     * <code>SubscriptionArn</code> �� The subscription's ARN.</p> </li> <li> <p>
+     * <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
      * <code>TopicArn</code> – The topic ARN that the subscription is associated
      * with.</p> </li> </ul> <p>The following attribute applies only to Amazon Kinesis
      * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
@@ -384,7 +384,7 @@ namespace Model
      * endpoint is unreachable) or server errors (for example, when the service that
      * powers the subscribed endpoint becomes unavailable) are held in the dead-letter
      * queue for further analysis or reprocessing.</p> </li> <li> <p>
-     * <code>SubscriptionArn</code> �� The subscription's ARN.</p> </li> <li> <p>
+     * <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
      * <code>TopicArn</code> – The topic ARN that the subscription is associated
      * with.</p> </li> </ul> <p>The following attribute applies only to Amazon Kinesis
      * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
@@ -424,7 +424,7 @@ namespace Model
      * endpoint is unreachable) or server errors (for example, when the service that
      * powers the subscribed endpoint becomes unavailable) are held in the dead-letter
      * queue for further analysis or reprocessing.</p> </li> <li> <p>
-     * <code>SubscriptionArn</code> �� The subscription's ARN.</p> </li> <li> <p>
+     * <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
      * <code>TopicArn</code> – The topic ARN that the subscription is associated
      * with.</p> </li> </ul> <p>The following attribute applies only to Amazon Kinesis
      * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
@@ -464,7 +464,7 @@ namespace Model
      * endpoint is unreachable) or server errors (for example, when the service that
      * powers the subscribed endpoint becomes unavailable) are held in the dead-letter
      * queue for further analysis or reprocessing.</p> </li> <li> <p>
-     * <code>SubscriptionArn</code> �� The subscription's ARN.</p> </li> <li> <p>
+     * <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
      * <code>TopicArn</code> – The topic ARN that the subscription is associated
      * with.</p> </li> </ul> <p>The following attribute applies only to Amazon Kinesis
      * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
@@ -504,7 +504,7 @@ namespace Model
      * endpoint is unreachable) or server errors (for example, when the service that
      * powers the subscribed endpoint becomes unavailable) are held in the dead-letter
      * queue for further analysis or reprocessing.</p> </li> <li> <p>
-     * <code>SubscriptionArn</code> �� The subscription's ARN.</p> </li> <li> <p>
+     * <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
      * <code>TopicArn</code> – The topic ARN that the subscription is associated
      * with.</p> </li> </ul> <p>The following attribute applies only to Amazon Kinesis
      * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>

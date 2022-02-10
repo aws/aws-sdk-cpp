@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/ExcludedRule.h>
+#include <aws/wafv2/model/ManagedRuleGroupConfig.h>
 #include <utility>
 #include <memory>
 
@@ -337,6 +338,71 @@ namespace Model
      */
     ManagedRuleGroupStatement& WithScopeDownStatement(Statement&& value);
 
+
+    /**
+     * <p>Additional information that's used by a managed rule group. Most managed rule
+     * groups don't require this.</p> <p>Use this for the account takeover prevention
+     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
+     * information about the sign-in page of your application. </p>
+     */
+    inline const Aws::Vector<ManagedRuleGroupConfig>& GetManagedRuleGroupConfigs() const{ return m_managedRuleGroupConfigs; }
+
+    /**
+     * <p>Additional information that's used by a managed rule group. Most managed rule
+     * groups don't require this.</p> <p>Use this for the account takeover prevention
+     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
+     * information about the sign-in page of your application. </p>
+     */
+    inline bool ManagedRuleGroupConfigsHasBeenSet() const { return m_managedRuleGroupConfigsHasBeenSet; }
+
+    /**
+     * <p>Additional information that's used by a managed rule group. Most managed rule
+     * groups don't require this.</p> <p>Use this for the account takeover prevention
+     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
+     * information about the sign-in page of your application. </p>
+     */
+    inline void SetManagedRuleGroupConfigs(const Aws::Vector<ManagedRuleGroupConfig>& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs = value; }
+
+    /**
+     * <p>Additional information that's used by a managed rule group. Most managed rule
+     * groups don't require this.</p> <p>Use this for the account takeover prevention
+     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
+     * information about the sign-in page of your application. </p>
+     */
+    inline void SetManagedRuleGroupConfigs(Aws::Vector<ManagedRuleGroupConfig>&& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs = std::move(value); }
+
+    /**
+     * <p>Additional information that's used by a managed rule group. Most managed rule
+     * groups don't require this.</p> <p>Use this for the account takeover prevention
+     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
+     * information about the sign-in page of your application. </p>
+     */
+    inline ManagedRuleGroupStatement& WithManagedRuleGroupConfigs(const Aws::Vector<ManagedRuleGroupConfig>& value) { SetManagedRuleGroupConfigs(value); return *this;}
+
+    /**
+     * <p>Additional information that's used by a managed rule group. Most managed rule
+     * groups don't require this.</p> <p>Use this for the account takeover prevention
+     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
+     * information about the sign-in page of your application. </p>
+     */
+    inline ManagedRuleGroupStatement& WithManagedRuleGroupConfigs(Aws::Vector<ManagedRuleGroupConfig>&& value) { SetManagedRuleGroupConfigs(std::move(value)); return *this;}
+
+    /**
+     * <p>Additional information that's used by a managed rule group. Most managed rule
+     * groups don't require this.</p> <p>Use this for the account takeover prevention
+     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
+     * information about the sign-in page of your application. </p>
+     */
+    inline ManagedRuleGroupStatement& AddManagedRuleGroupConfigs(const ManagedRuleGroupConfig& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs.push_back(value); return *this; }
+
+    /**
+     * <p>Additional information that's used by a managed rule group. Most managed rule
+     * groups don't require this.</p> <p>Use this for the account takeover prevention
+     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
+     * information about the sign-in page of your application. </p>
+     */
+    inline ManagedRuleGroupStatement& AddManagedRuleGroupConfigs(ManagedRuleGroupConfig&& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_vendorName;
@@ -353,6 +419,9 @@ namespace Model
 
     std::shared_ptr<Statement> m_scopeDownStatement;
     bool m_scopeDownStatementHasBeenSet;
+
+    Aws::Vector<ManagedRuleGroupConfig> m_managedRuleGroupConfigs;
+    bool m_managedRuleGroupConfigsHasBeenSet;
   };
 
 } // namespace Model

@@ -148,11 +148,91 @@ namespace Model
      */
     inline GetWebACLResult& WithLockToken(const char* value) { SetLockToken(value); return *this;}
 
+
+    /**
+     * <p>The URL to use in SDK integrations with Amazon Web Services managed rule
+     * groups. For example, you can use the integration SDKs with the account takeover
+     * prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>. This is
+     * only populated if you are using a rule group in your web ACL that integrates
+     * with your applications in this way. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+     * application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     */
+    inline const Aws::String& GetApplicationIntegrationURL() const{ return m_applicationIntegrationURL; }
+
+    /**
+     * <p>The URL to use in SDK integrations with Amazon Web Services managed rule
+     * groups. For example, you can use the integration SDKs with the account takeover
+     * prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>. This is
+     * only populated if you are using a rule group in your web ACL that integrates
+     * with your applications in this way. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+     * application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     */
+    inline void SetApplicationIntegrationURL(const Aws::String& value) { m_applicationIntegrationURL = value; }
+
+    /**
+     * <p>The URL to use in SDK integrations with Amazon Web Services managed rule
+     * groups. For example, you can use the integration SDKs with the account takeover
+     * prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>. This is
+     * only populated if you are using a rule group in your web ACL that integrates
+     * with your applications in this way. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+     * application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     */
+    inline void SetApplicationIntegrationURL(Aws::String&& value) { m_applicationIntegrationURL = std::move(value); }
+
+    /**
+     * <p>The URL to use in SDK integrations with Amazon Web Services managed rule
+     * groups. For example, you can use the integration SDKs with the account takeover
+     * prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>. This is
+     * only populated if you are using a rule group in your web ACL that integrates
+     * with your applications in this way. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+     * application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     */
+    inline void SetApplicationIntegrationURL(const char* value) { m_applicationIntegrationURL.assign(value); }
+
+    /**
+     * <p>The URL to use in SDK integrations with Amazon Web Services managed rule
+     * groups. For example, you can use the integration SDKs with the account takeover
+     * prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>. This is
+     * only populated if you are using a rule group in your web ACL that integrates
+     * with your applications in this way. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+     * application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     */
+    inline GetWebACLResult& WithApplicationIntegrationURL(const Aws::String& value) { SetApplicationIntegrationURL(value); return *this;}
+
+    /**
+     * <p>The URL to use in SDK integrations with Amazon Web Services managed rule
+     * groups. For example, you can use the integration SDKs with the account takeover
+     * prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>. This is
+     * only populated if you are using a rule group in your web ACL that integrates
+     * with your applications in this way. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+     * application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     */
+    inline GetWebACLResult& WithApplicationIntegrationURL(Aws::String&& value) { SetApplicationIntegrationURL(std::move(value)); return *this;}
+
+    /**
+     * <p>The URL to use in SDK integrations with Amazon Web Services managed rule
+     * groups. For example, you can use the integration SDKs with the account takeover
+     * prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>. This is
+     * only populated if you are using a rule group in your web ACL that integrates
+     * with your applications in this way. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+     * application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     */
+    inline GetWebACLResult& WithApplicationIntegrationURL(const char* value) { SetApplicationIntegrationURL(value); return *this;}
+
   private:
 
     WebACL m_webACL;
 
     Aws::String m_lockToken;
+
+    Aws::String m_applicationIntegrationURL;
   };
 
 } // namespace Model

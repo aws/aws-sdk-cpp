@@ -26,9 +26,11 @@
 #include <aws/wafv2/model/DeleteWebACLResult.h>
 #include <aws/wafv2/model/DescribeManagedRuleGroupResult.h>
 #include <aws/wafv2/model/DisassociateWebACLResult.h>
+#include <aws/wafv2/model/GenerateMobileSdkReleaseUrlResult.h>
 #include <aws/wafv2/model/GetIPSetResult.h>
 #include <aws/wafv2/model/GetLoggingConfigurationResult.h>
 #include <aws/wafv2/model/GetManagedRuleSetResult.h>
+#include <aws/wafv2/model/GetMobileSdkReleaseResult.h>
 #include <aws/wafv2/model/GetPermissionPolicyResult.h>
 #include <aws/wafv2/model/GetRateBasedStatementManagedKeysResult.h>
 #include <aws/wafv2/model/GetRegexPatternSetResult.h>
@@ -41,6 +43,7 @@
 #include <aws/wafv2/model/ListIPSetsResult.h>
 #include <aws/wafv2/model/ListLoggingConfigurationsResult.h>
 #include <aws/wafv2/model/ListManagedRuleSetsResult.h>
+#include <aws/wafv2/model/ListMobileSdkReleasesResult.h>
 #include <aws/wafv2/model/ListRegexPatternSetsResult.h>
 #include <aws/wafv2/model/ListResourcesForWebACLResult.h>
 #include <aws/wafv2/model/ListRuleGroupsResult.h>
@@ -110,9 +113,11 @@ namespace Model
         class DeleteWebACLRequest;
         class DescribeManagedRuleGroupRequest;
         class DisassociateWebACLRequest;
+        class GenerateMobileSdkReleaseUrlRequest;
         class GetIPSetRequest;
         class GetLoggingConfigurationRequest;
         class GetManagedRuleSetRequest;
+        class GetMobileSdkReleaseRequest;
         class GetPermissionPolicyRequest;
         class GetRateBasedStatementManagedKeysRequest;
         class GetRegexPatternSetRequest;
@@ -125,6 +130,7 @@ namespace Model
         class ListIPSetsRequest;
         class ListLoggingConfigurationsRequest;
         class ListManagedRuleSetsRequest;
+        class ListMobileSdkReleasesRequest;
         class ListRegexPatternSetsRequest;
         class ListResourcesForWebACLRequest;
         class ListRuleGroupsRequest;
@@ -156,9 +162,11 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteWebACLResult, WAFV2Error> DeleteWebACLOutcome;
         typedef Aws::Utils::Outcome<DescribeManagedRuleGroupResult, WAFV2Error> DescribeManagedRuleGroupOutcome;
         typedef Aws::Utils::Outcome<DisassociateWebACLResult, WAFV2Error> DisassociateWebACLOutcome;
+        typedef Aws::Utils::Outcome<GenerateMobileSdkReleaseUrlResult, WAFV2Error> GenerateMobileSdkReleaseUrlOutcome;
         typedef Aws::Utils::Outcome<GetIPSetResult, WAFV2Error> GetIPSetOutcome;
         typedef Aws::Utils::Outcome<GetLoggingConfigurationResult, WAFV2Error> GetLoggingConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetManagedRuleSetResult, WAFV2Error> GetManagedRuleSetOutcome;
+        typedef Aws::Utils::Outcome<GetMobileSdkReleaseResult, WAFV2Error> GetMobileSdkReleaseOutcome;
         typedef Aws::Utils::Outcome<GetPermissionPolicyResult, WAFV2Error> GetPermissionPolicyOutcome;
         typedef Aws::Utils::Outcome<GetRateBasedStatementManagedKeysResult, WAFV2Error> GetRateBasedStatementManagedKeysOutcome;
         typedef Aws::Utils::Outcome<GetRegexPatternSetResult, WAFV2Error> GetRegexPatternSetOutcome;
@@ -171,6 +179,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListIPSetsResult, WAFV2Error> ListIPSetsOutcome;
         typedef Aws::Utils::Outcome<ListLoggingConfigurationsResult, WAFV2Error> ListLoggingConfigurationsOutcome;
         typedef Aws::Utils::Outcome<ListManagedRuleSetsResult, WAFV2Error> ListManagedRuleSetsOutcome;
+        typedef Aws::Utils::Outcome<ListMobileSdkReleasesResult, WAFV2Error> ListMobileSdkReleasesOutcome;
         typedef Aws::Utils::Outcome<ListRegexPatternSetsResult, WAFV2Error> ListRegexPatternSetsOutcome;
         typedef Aws::Utils::Outcome<ListResourcesForWebACLResult, WAFV2Error> ListResourcesForWebACLOutcome;
         typedef Aws::Utils::Outcome<ListRuleGroupsResult, WAFV2Error> ListRuleGroupsOutcome;
@@ -202,9 +211,11 @@ namespace Model
         typedef std::future<DeleteWebACLOutcome> DeleteWebACLOutcomeCallable;
         typedef std::future<DescribeManagedRuleGroupOutcome> DescribeManagedRuleGroupOutcomeCallable;
         typedef std::future<DisassociateWebACLOutcome> DisassociateWebACLOutcomeCallable;
+        typedef std::future<GenerateMobileSdkReleaseUrlOutcome> GenerateMobileSdkReleaseUrlOutcomeCallable;
         typedef std::future<GetIPSetOutcome> GetIPSetOutcomeCallable;
         typedef std::future<GetLoggingConfigurationOutcome> GetLoggingConfigurationOutcomeCallable;
         typedef std::future<GetManagedRuleSetOutcome> GetManagedRuleSetOutcomeCallable;
+        typedef std::future<GetMobileSdkReleaseOutcome> GetMobileSdkReleaseOutcomeCallable;
         typedef std::future<GetPermissionPolicyOutcome> GetPermissionPolicyOutcomeCallable;
         typedef std::future<GetRateBasedStatementManagedKeysOutcome> GetRateBasedStatementManagedKeysOutcomeCallable;
         typedef std::future<GetRegexPatternSetOutcome> GetRegexPatternSetOutcomeCallable;
@@ -217,6 +228,7 @@ namespace Model
         typedef std::future<ListIPSetsOutcome> ListIPSetsOutcomeCallable;
         typedef std::future<ListLoggingConfigurationsOutcome> ListLoggingConfigurationsOutcomeCallable;
         typedef std::future<ListManagedRuleSetsOutcome> ListManagedRuleSetsOutcomeCallable;
+        typedef std::future<ListMobileSdkReleasesOutcome> ListMobileSdkReleasesOutcomeCallable;
         typedef std::future<ListRegexPatternSetsOutcome> ListRegexPatternSetsOutcomeCallable;
         typedef std::future<ListResourcesForWebACLOutcome> ListResourcesForWebACLOutcomeCallable;
         typedef std::future<ListRuleGroupsOutcome> ListRuleGroupsOutcomeCallable;
@@ -251,9 +263,11 @@ namespace Model
     typedef std::function<void(const WAFV2Client*, const Model::DeleteWebACLRequest&, const Model::DeleteWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWebACLResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::DescribeManagedRuleGroupRequest&, const Model::DescribeManagedRuleGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeManagedRuleGroupResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::DisassociateWebACLRequest&, const Model::DisassociateWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateWebACLResponseReceivedHandler;
+    typedef std::function<void(const WAFV2Client*, const Model::GenerateMobileSdkReleaseUrlRequest&, const Model::GenerateMobileSdkReleaseUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateMobileSdkReleaseUrlResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::GetIPSetRequest&, const Model::GetIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIPSetResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::GetLoggingConfigurationRequest&, const Model::GetLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLoggingConfigurationResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::GetManagedRuleSetRequest&, const Model::GetManagedRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetManagedRuleSetResponseReceivedHandler;
+    typedef std::function<void(const WAFV2Client*, const Model::GetMobileSdkReleaseRequest&, const Model::GetMobileSdkReleaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMobileSdkReleaseResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::GetPermissionPolicyRequest&, const Model::GetPermissionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPermissionPolicyResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::GetRateBasedStatementManagedKeysRequest&, const Model::GetRateBasedStatementManagedKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRateBasedStatementManagedKeysResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::GetRegexPatternSetRequest&, const Model::GetRegexPatternSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRegexPatternSetResponseReceivedHandler;
@@ -266,6 +280,7 @@ namespace Model
     typedef std::function<void(const WAFV2Client*, const Model::ListIPSetsRequest&, const Model::ListIPSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIPSetsResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::ListLoggingConfigurationsRequest&, const Model::ListLoggingConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLoggingConfigurationsResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::ListManagedRuleSetsRequest&, const Model::ListManagedRuleSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListManagedRuleSetsResponseReceivedHandler;
+    typedef std::function<void(const WAFV2Client*, const Model::ListMobileSdkReleasesRequest&, const Model::ListMobileSdkReleasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMobileSdkReleasesResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::ListRegexPatternSetsRequest&, const Model::ListRegexPatternSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRegexPatternSetsResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::ListResourcesForWebACLRequest&, const Model::ListResourcesForWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourcesForWebACLResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::ListRuleGroupsRequest&, const Model::ListRuleGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRuleGroupsResponseReceivedHandler;
@@ -893,6 +908,43 @@ namespace Model
         virtual void DisassociateWebACLAsync(const Model::DisassociateWebACLRequest& request, const DisassociateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Generates a presigned download URL for the specified release of the mobile
+         * SDK.</p> <p>The mobile SDK is not generally available. Customers who have access
+         * to the mobile SDK can use it to establish and manage Security Token Service
+         * (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GenerateMobileSdkReleaseUrl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GenerateMobileSdkReleaseUrlOutcome GenerateMobileSdkReleaseUrl(const Model::GenerateMobileSdkReleaseUrlRequest& request) const;
+
+        /**
+         * <p>Generates a presigned download URL for the specified release of the mobile
+         * SDK.</p> <p>The mobile SDK is not generally available. Customers who have access
+         * to the mobile SDK can use it to establish and manage Security Token Service
+         * (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GenerateMobileSdkReleaseUrl">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GenerateMobileSdkReleaseUrlOutcomeCallable GenerateMobileSdkReleaseUrlCallable(const Model::GenerateMobileSdkReleaseUrlRequest& request) const;
+
+        /**
+         * <p>Generates a presigned download URL for the specified release of the mobile
+         * SDK.</p> <p>The mobile SDK is not generally available. Customers who have access
+         * to the mobile SDK can use it to establish and manage Security Token Service
+         * (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GenerateMobileSdkReleaseUrl">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GenerateMobileSdkReleaseUrlAsync(const Model::GenerateMobileSdkReleaseUrlRequest& request, const GenerateMobileSdkReleaseUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves the specified <a>IPSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetIPSet">AWS API
          * Reference</a></p>
@@ -993,6 +1045,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetManagedRuleSetAsync(const Model::GetManagedRuleSetRequest& request, const GetManagedRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves information for the specified mobile SDK release, including release
+         * notes and tags.</p> <p>The mobile SDK is not generally available. Customers who
+         * have access to the mobile SDK can use it to establish and manage Security Token
+         * Service (STS) security tokens for use in HTTP(S) requests from a mobile device
+         * to WAF. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetMobileSdkRelease">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMobileSdkReleaseOutcome GetMobileSdkRelease(const Model::GetMobileSdkReleaseRequest& request) const;
+
+        /**
+         * <p>Retrieves information for the specified mobile SDK release, including release
+         * notes and tags.</p> <p>The mobile SDK is not generally available. Customers who
+         * have access to the mobile SDK can use it to establish and manage Security Token
+         * Service (STS) security tokens for use in HTTP(S) requests from a mobile device
+         * to WAF. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetMobileSdkRelease">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMobileSdkReleaseOutcomeCallable GetMobileSdkReleaseCallable(const Model::GetMobileSdkReleaseRequest& request) const;
+
+        /**
+         * <p>Retrieves information for the specified mobile SDK release, including release
+         * notes and tags.</p> <p>The mobile SDK is not generally available. Customers who
+         * have access to the mobile SDK can use it to establish and manage Security Token
+         * Service (STS) security tokens for use in HTTP(S) requests from a mobile device
+         * to WAF. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetMobileSdkRelease">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMobileSdkReleaseAsync(const Model::GetMobileSdkReleaseRequest& request, const GetMobileSdkReleaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the IAM policy that is attached to the specified rule group.</p>
@@ -1413,6 +1502,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListManagedRuleSetsAsync(const Model::ListManagedRuleSetsRequest& request, const ListManagedRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a list of the available releases for the mobile SDK and the
+         * specified device platform. </p> <p>The mobile SDK is not generally available.
+         * Customers who have access to the mobile SDK can use it to establish and manage
+         * Security Token Service (STS) security tokens for use in HTTP(S) requests from a
+         * mobile device to WAF. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListMobileSdkReleases">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMobileSdkReleasesOutcome ListMobileSdkReleases(const Model::ListMobileSdkReleasesRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of the available releases for the mobile SDK and the
+         * specified device platform. </p> <p>The mobile SDK is not generally available.
+         * Customers who have access to the mobile SDK can use it to establish and manage
+         * Security Token Service (STS) security tokens for use in HTTP(S) requests from a
+         * mobile device to WAF. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListMobileSdkReleases">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMobileSdkReleasesOutcomeCallable ListMobileSdkReleasesCallable(const Model::ListMobileSdkReleasesRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of the available releases for the mobile SDK and the
+         * specified device platform. </p> <p>The mobile SDK is not generally available.
+         * Customers who have access to the mobile SDK can use it to establish and manage
+         * Security Token Service (STS) security tokens for use in HTTP(S) requests from a
+         * mobile device to WAF. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListMobileSdkReleases">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMobileSdkReleasesAsync(const Model::ListMobileSdkReleasesRequest& request, const ListMobileSdkReleasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves an array of <a>RegexPatternSetSummary</a> objects for the regex
@@ -2144,9 +2270,11 @@ namespace Model
         void DeleteWebACLAsyncHelper(const Model::DeleteWebACLRequest& request, const DeleteWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeManagedRuleGroupAsyncHelper(const Model::DescribeManagedRuleGroupRequest& request, const DescribeManagedRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateWebACLAsyncHelper(const Model::DisassociateWebACLRequest& request, const DisassociateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GenerateMobileSdkReleaseUrlAsyncHelper(const Model::GenerateMobileSdkReleaseUrlRequest& request, const GenerateMobileSdkReleaseUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIPSetAsyncHelper(const Model::GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLoggingConfigurationAsyncHelper(const Model::GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetManagedRuleSetAsyncHelper(const Model::GetManagedRuleSetRequest& request, const GetManagedRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMobileSdkReleaseAsyncHelper(const Model::GetMobileSdkReleaseRequest& request, const GetMobileSdkReleaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPermissionPolicyAsyncHelper(const Model::GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRateBasedStatementManagedKeysAsyncHelper(const Model::GetRateBasedStatementManagedKeysRequest& request, const GetRateBasedStatementManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRegexPatternSetAsyncHelper(const Model::GetRegexPatternSetRequest& request, const GetRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2159,6 +2287,7 @@ namespace Model
         void ListIPSetsAsyncHelper(const Model::ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLoggingConfigurationsAsyncHelper(const Model::ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListManagedRuleSetsAsyncHelper(const Model::ListManagedRuleSetsRequest& request, const ListManagedRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListMobileSdkReleasesAsyncHelper(const Model::ListMobileSdkReleasesRequest& request, const ListMobileSdkReleasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRegexPatternSetsAsyncHelper(const Model::ListRegexPatternSetsRequest& request, const ListRegexPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResourcesForWebACLAsyncHelper(const Model::ListResourcesForWebACLRequest& request, const ListResourcesForWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRuleGroupsAsyncHelper(const Model::ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
