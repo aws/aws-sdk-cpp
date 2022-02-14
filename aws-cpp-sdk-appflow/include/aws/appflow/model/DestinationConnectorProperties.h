@@ -16,6 +16,7 @@
 #include <aws/appflow/model/CustomerProfilesDestinationProperties.h>
 #include <aws/appflow/model/ZendeskDestinationProperties.h>
 #include <aws/appflow/model/CustomConnectorDestinationProperties.h>
+#include <aws/appflow/model/SAPODataDestinationProperties.h>
 #include <utility>
 
 namespace Aws
@@ -388,6 +389,37 @@ namespace Model
      */
     inline DestinationConnectorProperties& WithCustomConnector(CustomConnectorDestinationProperties&& value) { SetCustomConnector(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The properties required to query SAPOData.</p>
+     */
+    inline const SAPODataDestinationProperties& GetSAPOData() const{ return m_sAPOData; }
+
+    /**
+     * <p>The properties required to query SAPOData.</p>
+     */
+    inline bool SAPODataHasBeenSet() const { return m_sAPODataHasBeenSet; }
+
+    /**
+     * <p>The properties required to query SAPOData.</p>
+     */
+    inline void SetSAPOData(const SAPODataDestinationProperties& value) { m_sAPODataHasBeenSet = true; m_sAPOData = value; }
+
+    /**
+     * <p>The properties required to query SAPOData.</p>
+     */
+    inline void SetSAPOData(SAPODataDestinationProperties&& value) { m_sAPODataHasBeenSet = true; m_sAPOData = std::move(value); }
+
+    /**
+     * <p>The properties required to query SAPOData.</p>
+     */
+    inline DestinationConnectorProperties& WithSAPOData(const SAPODataDestinationProperties& value) { SetSAPOData(value); return *this;}
+
+    /**
+     * <p>The properties required to query SAPOData.</p>
+     */
+    inline DestinationConnectorProperties& WithSAPOData(SAPODataDestinationProperties&& value) { SetSAPOData(std::move(value)); return *this;}
+
   private:
 
     RedshiftDestinationProperties m_redshift;
@@ -422,6 +454,9 @@ namespace Model
 
     CustomConnectorDestinationProperties m_customConnector;
     bool m_customConnectorHasBeenSet;
+
+    SAPODataDestinationProperties m_sAPOData;
+    bool m_sAPODataHasBeenSet;
   };
 
 } // namespace Model

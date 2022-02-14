@@ -266,42 +266,186 @@ namespace Model
 
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more DB engine versions to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-parameter-group-family</code> -
+     * Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.
+     * </p> </li> <li> <p> <code>engine</code> - Accepts engine names. The results list
+     * only includes information about the DB engine versions for these engines. </p>
+     * </li> <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results
+     * list only includes information about the DB engine versions for these engine
+     * modes. Valid DB engine modes are the following: </p> <ul> <li> <p>
+     * <code>global</code> </p> </li> <li> <p> <code>multimaster</code> </p> </li> <li>
+     * <p> <code>parallelquery</code> </p> </li> <li> <p> <code>provisioned</code> </p>
+     * </li> <li> <p> <code>serverless</code> </p> </li> </ul> </li> <li> <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only
+     * includes information about the DB engine versions for these engine versions.
+     * </p> </li> <li> <p> <code>status</code> - Accepts engine version statuses. The
+     * results list only includes information about the DB engine versions for these
+     * statuses. Valid statuses are the following: </p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>deprecated</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more DB engine versions to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-parameter-group-family</code> -
+     * Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.
+     * </p> </li> <li> <p> <code>engine</code> - Accepts engine names. The results list
+     * only includes information about the DB engine versions for these engines. </p>
+     * </li> <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results
+     * list only includes information about the DB engine versions for these engine
+     * modes. Valid DB engine modes are the following: </p> <ul> <li> <p>
+     * <code>global</code> </p> </li> <li> <p> <code>multimaster</code> </p> </li> <li>
+     * <p> <code>parallelquery</code> </p> </li> <li> <p> <code>provisioned</code> </p>
+     * </li> <li> <p> <code>serverless</code> </p> </li> </ul> </li> <li> <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only
+     * includes information about the DB engine versions for these engine versions.
+     * </p> </li> <li> <p> <code>status</code> - Accepts engine version statuses. The
+     * results list only includes information about the DB engine versions for these
+     * statuses. Valid statuses are the following: </p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>deprecated</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more DB engine versions to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-parameter-group-family</code> -
+     * Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.
+     * </p> </li> <li> <p> <code>engine</code> - Accepts engine names. The results list
+     * only includes information about the DB engine versions for these engines. </p>
+     * </li> <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results
+     * list only includes information about the DB engine versions for these engine
+     * modes. Valid DB engine modes are the following: </p> <ul> <li> <p>
+     * <code>global</code> </p> </li> <li> <p> <code>multimaster</code> </p> </li> <li>
+     * <p> <code>parallelquery</code> </p> </li> <li> <p> <code>provisioned</code> </p>
+     * </li> <li> <p> <code>serverless</code> </p> </li> </ul> </li> <li> <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only
+     * includes information about the DB engine versions for these engine versions.
+     * </p> </li> <li> <p> <code>status</code> - Accepts engine version statuses. The
+     * results list only includes information about the DB engine versions for these
+     * statuses. Valid statuses are the following: </p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>deprecated</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more DB engine versions to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-parameter-group-family</code> -
+     * Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.
+     * </p> </li> <li> <p> <code>engine</code> - Accepts engine names. The results list
+     * only includes information about the DB engine versions for these engines. </p>
+     * </li> <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results
+     * list only includes information about the DB engine versions for these engine
+     * modes. Valid DB engine modes are the following: </p> <ul> <li> <p>
+     * <code>global</code> </p> </li> <li> <p> <code>multimaster</code> </p> </li> <li>
+     * <p> <code>parallelquery</code> </p> </li> <li> <p> <code>provisioned</code> </p>
+     * </li> <li> <p> <code>serverless</code> </p> </li> </ul> </li> <li> <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only
+     * includes information about the DB engine versions for these engine versions.
+     * </p> </li> <li> <p> <code>status</code> - Accepts engine version statuses. The
+     * results list only includes information about the DB engine versions for these
+     * statuses. Valid statuses are the following: </p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>deprecated</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more DB engine versions to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-parameter-group-family</code> -
+     * Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.
+     * </p> </li> <li> <p> <code>engine</code> - Accepts engine names. The results list
+     * only includes information about the DB engine versions for these engines. </p>
+     * </li> <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results
+     * list only includes information about the DB engine versions for these engine
+     * modes. Valid DB engine modes are the following: </p> <ul> <li> <p>
+     * <code>global</code> </p> </li> <li> <p> <code>multimaster</code> </p> </li> <li>
+     * <p> <code>parallelquery</code> </p> </li> <li> <p> <code>provisioned</code> </p>
+     * </li> <li> <p> <code>serverless</code> </p> </li> </ul> </li> <li> <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only
+     * includes information about the DB engine versions for these engine versions.
+     * </p> </li> <li> <p> <code>status</code> - Accepts engine version statuses. The
+     * results list only includes information about the DB engine versions for these
+     * statuses. Valid statuses are the following: </p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>deprecated</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline DescribeDBEngineVersionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more DB engine versions to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-parameter-group-family</code> -
+     * Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.
+     * </p> </li> <li> <p> <code>engine</code> - Accepts engine names. The results list
+     * only includes information about the DB engine versions for these engines. </p>
+     * </li> <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results
+     * list only includes information about the DB engine versions for these engine
+     * modes. Valid DB engine modes are the following: </p> <ul> <li> <p>
+     * <code>global</code> </p> </li> <li> <p> <code>multimaster</code> </p> </li> <li>
+     * <p> <code>parallelquery</code> </p> </li> <li> <p> <code>provisioned</code> </p>
+     * </li> <li> <p> <code>serverless</code> </p> </li> </ul> </li> <li> <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only
+     * includes information about the DB engine versions for these engine versions.
+     * </p> </li> <li> <p> <code>status</code> - Accepts engine version statuses. The
+     * results list only includes information about the DB engine versions for these
+     * statuses. Valid statuses are the following: </p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>deprecated</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline DescribeDBEngineVersionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more DB engine versions to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-parameter-group-family</code> -
+     * Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.
+     * </p> </li> <li> <p> <code>engine</code> - Accepts engine names. The results list
+     * only includes information about the DB engine versions for these engines. </p>
+     * </li> <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results
+     * list only includes information about the DB engine versions for these engine
+     * modes. Valid DB engine modes are the following: </p> <ul> <li> <p>
+     * <code>global</code> </p> </li> <li> <p> <code>multimaster</code> </p> </li> <li>
+     * <p> <code>parallelquery</code> </p> </li> <li> <p> <code>provisioned</code> </p>
+     * </li> <li> <p> <code>serverless</code> </p> </li> </ul> </li> <li> <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only
+     * includes information about the DB engine versions for these engine versions.
+     * </p> </li> <li> <p> <code>status</code> - Accepts engine version statuses. The
+     * results list only includes information about the DB engine versions for these
+     * statuses. Valid statuses are the following: </p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>deprecated</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline DescribeDBEngineVersionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more DB engine versions to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-parameter-group-family</code> -
+     * Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.
+     * </p> </li> <li> <p> <code>engine</code> - Accepts engine names. The results list
+     * only includes information about the DB engine versions for these engines. </p>
+     * </li> <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results
+     * list only includes information about the DB engine versions for these engine
+     * modes. Valid DB engine modes are the following: </p> <ul> <li> <p>
+     * <code>global</code> </p> </li> <li> <p> <code>multimaster</code> </p> </li> <li>
+     * <p> <code>parallelquery</code> </p> </li> <li> <p> <code>provisioned</code> </p>
+     * </li> <li> <p> <code>serverless</code> </p> </li> </ul> </li> <li> <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only
+     * includes information about the DB engine versions for these engine versions.
+     * </p> </li> <li> <p> <code>status</code> - Accepts engine version statuses. The
+     * results list only includes information about the DB engine versions for these
+     * statuses. Valid statuses are the following: </p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>deprecated</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline DescribeDBEngineVersionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

@@ -1609,7 +1609,7 @@ namespace Model
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
-     * Aurora DB clusters and Multi-AZ DB clusters</p>
+     * Multi-AZ DB clusters only</p>
      */
     inline const Aws::String& GetDBClusterInstanceClass() const{ return m_dBClusterInstanceClass; }
 
@@ -1620,7 +1620,7 @@ namespace Model
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
-     * Aurora DB clusters and Multi-AZ DB clusters</p>
+     * Multi-AZ DB clusters only</p>
      */
     inline bool DBClusterInstanceClassHasBeenSet() const { return m_dBClusterInstanceClassHasBeenSet; }
 
@@ -1631,7 +1631,7 @@ namespace Model
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
-     * Aurora DB clusters and Multi-AZ DB clusters</p>
+     * Multi-AZ DB clusters only</p>
      */
     inline void SetDBClusterInstanceClass(const Aws::String& value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass = value; }
 
@@ -1642,7 +1642,7 @@ namespace Model
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
-     * Aurora DB clusters and Multi-AZ DB clusters</p>
+     * Multi-AZ DB clusters only</p>
      */
     inline void SetDBClusterInstanceClass(Aws::String&& value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass = std::move(value); }
 
@@ -1653,7 +1653,7 @@ namespace Model
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
-     * Aurora DB clusters and Multi-AZ DB clusters</p>
+     * Multi-AZ DB clusters only</p>
      */
     inline void SetDBClusterInstanceClass(const char* value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass.assign(value); }
 
@@ -1664,7 +1664,7 @@ namespace Model
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
-     * Aurora DB clusters and Multi-AZ DB clusters</p>
+     * Multi-AZ DB clusters only</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDBClusterInstanceClass(const Aws::String& value) { SetDBClusterInstanceClass(value); return *this;}
 
@@ -1675,7 +1675,7 @@ namespace Model
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
-     * Aurora DB clusters and Multi-AZ DB clusters</p>
+     * Multi-AZ DB clusters only</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDBClusterInstanceClass(Aws::String&& value) { SetDBClusterInstanceClass(std::move(value)); return *this;}
 
@@ -1686,7 +1686,7 @@ namespace Model
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
-     * Aurora DB clusters and Multi-AZ DB clusters</p>
+     * Multi-AZ DB clusters only</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDBClusterInstanceClass(const char* value) { SetDBClusterInstanceClass(value); return *this;}
 

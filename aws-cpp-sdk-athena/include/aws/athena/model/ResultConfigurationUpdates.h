@@ -152,7 +152,7 @@ namespace Model
      * present in the <code>OutputLocation</code> in
      * <code>ResultConfigurationUpdates</code> (the client-side setting), the
      * <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code>
-     * is updated with the new value. For more information, see <a
+     * will be updated with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
@@ -165,7 +165,7 @@ namespace Model
      * present in the <code>OutputLocation</code> in
      * <code>ResultConfigurationUpdates</code> (the client-side setting), the
      * <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code>
-     * is updated with the new value. For more information, see <a
+     * will be updated with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
@@ -178,7 +178,7 @@ namespace Model
      * present in the <code>OutputLocation</code> in
      * <code>ResultConfigurationUpdates</code> (the client-side setting), the
      * <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code>
-     * is updated with the new value. For more information, see <a
+     * will be updated with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
@@ -191,7 +191,7 @@ namespace Model
      * present in the <code>OutputLocation</code> in
      * <code>ResultConfigurationUpdates</code> (the client-side setting), the
      * <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code>
-     * is updated with the new value. For more information, see <a
+     * will be updated with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
@@ -236,7 +236,7 @@ namespace Model
      * value is present in the <code>EncryptionConfiguration</code> in
      * <code>ResultConfigurationUpdates</code> (the client-side setting), the
      * <code>EncryptionConfiguration</code> in the workgroup's
-     * <code>ResultConfiguration</code> is updated with the new value. For more
+     * <code>ResultConfiguration</code> will be updated with the new value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
@@ -250,7 +250,7 @@ namespace Model
      * value is present in the <code>EncryptionConfiguration</code> in
      * <code>ResultConfigurationUpdates</code> (the client-side setting), the
      * <code>EncryptionConfiguration</code> in the workgroup's
-     * <code>ResultConfiguration</code> is updated with the new value. For more
+     * <code>ResultConfiguration</code> will be updated with the new value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
@@ -264,7 +264,7 @@ namespace Model
      * value is present in the <code>EncryptionConfiguration</code> in
      * <code>ResultConfigurationUpdates</code> (the client-side setting), the
      * <code>EncryptionConfiguration</code> in the workgroup's
-     * <code>ResultConfiguration</code> is updated with the new value. For more
+     * <code>ResultConfiguration</code> will be updated with the new value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
@@ -278,7 +278,7 @@ namespace Model
      * value is present in the <code>EncryptionConfiguration</code> in
      * <code>ResultConfigurationUpdates</code> (the client-side setting), the
      * <code>EncryptionConfiguration</code> in the workgroup's
-     * <code>ResultConfiguration</code> is updated with the new value. For more
+     * <code>ResultConfiguration</code> will be updated with the new value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>

@@ -20,13 +20,17 @@ namespace Model
 
 AthenaError::AthenaError() : 
     m_errorCategory(0),
-    m_errorCategoryHasBeenSet(false)
+    m_errorCategoryHasBeenSet(false),
+    m_errorType(0),
+    m_errorTypeHasBeenSet(false)
 {
 }
 
 AthenaError::AthenaError(JsonView jsonValue) : 
     m_errorCategory(0),
-    m_errorCategoryHasBeenSet(false)
+    m_errorCategoryHasBeenSet(false),
+    m_errorType(0),
+    m_errorTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +44,13 @@ AthenaError& AthenaError::operator =(JsonView jsonValue)
     m_errorCategoryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ErrorType"))
+  {
+    m_errorType = jsonValue.GetInteger("ErrorType");
+
+    m_errorTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +61,12 @@ JsonValue AthenaError::Jsonize() const
   if(m_errorCategoryHasBeenSet)
   {
    payload.WithInteger("ErrorCategory", m_errorCategory);
+
+  }
+
+  if(m_errorTypeHasBeenSet)
+  {
+   payload.WithInteger("ErrorType", m_errorType);
 
   }
 

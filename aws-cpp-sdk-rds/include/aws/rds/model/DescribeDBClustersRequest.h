@@ -109,128 +109,120 @@ namespace Model
     /**
      * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
      * filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
-     * identifiers. The results list will only include information about the DB
-     * clusters associated with these clone groups.</p> </li> <li> <p>
+     * identifiers. The results list only includes information about the DB clusters
+     * associated with these clone groups.</p> </li> <li> <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
-     * Amazon Resource Names (ARNs). The results list will only include information
-     * about the DB clusters identified by these ARNs.</p> </li> <li> <p>
-     * <code>domain</code> - Accepts Active Directory directory IDs. The results list
-     * will only include information about the DB clusters associated with these
-     * domains.</p> </li> <li> <p> <code>engine</code> - Accepts engine names. The
-     * results list will only include information about the DB clusters for these
-     * engines.</p> </li> </ul>
+     * Amazon Resource Names (ARNs). The results list only includes information about
+     * the DB clusters identified by these ARNs.</p> </li> <li> <p> <code>domain</code>
+     * - Accepts Active Directory directory IDs. The results list only includes
+     * information about the DB clusters associated with these domains.</p> </li> <li>
+     * <p> <code>engine</code> - Accepts engine names. The results list only includes
+     * information about the DB clusters for these engines.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
      * filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
-     * identifiers. The results list will only include information about the DB
-     * clusters associated with these clone groups.</p> </li> <li> <p>
+     * identifiers. The results list only includes information about the DB clusters
+     * associated with these clone groups.</p> </li> <li> <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
-     * Amazon Resource Names (ARNs). The results list will only include information
-     * about the DB clusters identified by these ARNs.</p> </li> <li> <p>
-     * <code>domain</code> - Accepts Active Directory directory IDs. The results list
-     * will only include information about the DB clusters associated with these
-     * domains.</p> </li> <li> <p> <code>engine</code> - Accepts engine names. The
-     * results list will only include information about the DB clusters for these
-     * engines.</p> </li> </ul>
+     * Amazon Resource Names (ARNs). The results list only includes information about
+     * the DB clusters identified by these ARNs.</p> </li> <li> <p> <code>domain</code>
+     * - Accepts Active Directory directory IDs. The results list only includes
+     * information about the DB clusters associated with these domains.</p> </li> <li>
+     * <p> <code>engine</code> - Accepts engine names. The results list only includes
+     * information about the DB clusters for these engines.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
      * filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
-     * identifiers. The results list will only include information about the DB
-     * clusters associated with these clone groups.</p> </li> <li> <p>
+     * identifiers. The results list only includes information about the DB clusters
+     * associated with these clone groups.</p> </li> <li> <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
-     * Amazon Resource Names (ARNs). The results list will only include information
-     * about the DB clusters identified by these ARNs.</p> </li> <li> <p>
-     * <code>domain</code> - Accepts Active Directory directory IDs. The results list
-     * will only include information about the DB clusters associated with these
-     * domains.</p> </li> <li> <p> <code>engine</code> - Accepts engine names. The
-     * results list will only include information about the DB clusters for these
-     * engines.</p> </li> </ul>
+     * Amazon Resource Names (ARNs). The results list only includes information about
+     * the DB clusters identified by these ARNs.</p> </li> <li> <p> <code>domain</code>
+     * - Accepts Active Directory directory IDs. The results list only includes
+     * information about the DB clusters associated with these domains.</p> </li> <li>
+     * <p> <code>engine</code> - Accepts engine names. The results list only includes
+     * information about the DB clusters for these engines.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
      * filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
-     * identifiers. The results list will only include information about the DB
-     * clusters associated with these clone groups.</p> </li> <li> <p>
+     * identifiers. The results list only includes information about the DB clusters
+     * associated with these clone groups.</p> </li> <li> <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
-     * Amazon Resource Names (ARNs). The results list will only include information
-     * about the DB clusters identified by these ARNs.</p> </li> <li> <p>
-     * <code>domain</code> - Accepts Active Directory directory IDs. The results list
-     * will only include information about the DB clusters associated with these
-     * domains.</p> </li> <li> <p> <code>engine</code> - Accepts engine names. The
-     * results list will only include information about the DB clusters for these
-     * engines.</p> </li> </ul>
+     * Amazon Resource Names (ARNs). The results list only includes information about
+     * the DB clusters identified by these ARNs.</p> </li> <li> <p> <code>domain</code>
+     * - Accepts Active Directory directory IDs. The results list only includes
+     * information about the DB clusters associated with these domains.</p> </li> <li>
+     * <p> <code>engine</code> - Accepts engine names. The results list only includes
+     * information about the DB clusters for these engines.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
      * filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
-     * identifiers. The results list will only include information about the DB
-     * clusters associated with these clone groups.</p> </li> <li> <p>
+     * identifiers. The results list only includes information about the DB clusters
+     * associated with these clone groups.</p> </li> <li> <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
-     * Amazon Resource Names (ARNs). The results list will only include information
-     * about the DB clusters identified by these ARNs.</p> </li> <li> <p>
-     * <code>domain</code> - Accepts Active Directory directory IDs. The results list
-     * will only include information about the DB clusters associated with these
-     * domains.</p> </li> <li> <p> <code>engine</code> - Accepts engine names. The
-     * results list will only include information about the DB clusters for these
-     * engines.</p> </li> </ul>
+     * Amazon Resource Names (ARNs). The results list only includes information about
+     * the DB clusters identified by these ARNs.</p> </li> <li> <p> <code>domain</code>
+     * - Accepts Active Directory directory IDs. The results list only includes
+     * information about the DB clusters associated with these domains.</p> </li> <li>
+     * <p> <code>engine</code> - Accepts engine names. The results list only includes
+     * information about the DB clusters for these engines.</p> </li> </ul>
      */
     inline DescribeDBClustersRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
      * filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
-     * identifiers. The results list will only include information about the DB
-     * clusters associated with these clone groups.</p> </li> <li> <p>
+     * identifiers. The results list only includes information about the DB clusters
+     * associated with these clone groups.</p> </li> <li> <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
-     * Amazon Resource Names (ARNs). The results list will only include information
-     * about the DB clusters identified by these ARNs.</p> </li> <li> <p>
-     * <code>domain</code> - Accepts Active Directory directory IDs. The results list
-     * will only include information about the DB clusters associated with these
-     * domains.</p> </li> <li> <p> <code>engine</code> - Accepts engine names. The
-     * results list will only include information about the DB clusters for these
-     * engines.</p> </li> </ul>
+     * Amazon Resource Names (ARNs). The results list only includes information about
+     * the DB clusters identified by these ARNs.</p> </li> <li> <p> <code>domain</code>
+     * - Accepts Active Directory directory IDs. The results list only includes
+     * information about the DB clusters associated with these domains.</p> </li> <li>
+     * <p> <code>engine</code> - Accepts engine names. The results list only includes
+     * information about the DB clusters for these engines.</p> </li> </ul>
      */
     inline DescribeDBClustersRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
      * filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
-     * identifiers. The results list will only include information about the DB
-     * clusters associated with these clone groups.</p> </li> <li> <p>
+     * identifiers. The results list only includes information about the DB clusters
+     * associated with these clone groups.</p> </li> <li> <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
-     * Amazon Resource Names (ARNs). The results list will only include information
-     * about the DB clusters identified by these ARNs.</p> </li> <li> <p>
-     * <code>domain</code> - Accepts Active Directory directory IDs. The results list
-     * will only include information about the DB clusters associated with these
-     * domains.</p> </li> <li> <p> <code>engine</code> - Accepts engine names. The
-     * results list will only include information about the DB clusters for these
-     * engines.</p> </li> </ul>
+     * Amazon Resource Names (ARNs). The results list only includes information about
+     * the DB clusters identified by these ARNs.</p> </li> <li> <p> <code>domain</code>
+     * - Accepts Active Directory directory IDs. The results list only includes
+     * information about the DB clusters associated with these domains.</p> </li> <li>
+     * <p> <code>engine</code> - Accepts engine names. The results list only includes
+     * information about the DB clusters for these engines.</p> </li> </ul>
      */
     inline DescribeDBClustersRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
      * filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
-     * identifiers. The results list will only include information about the DB
-     * clusters associated with these clone groups.</p> </li> <li> <p>
+     * identifiers. The results list only includes information about the DB clusters
+     * associated with these clone groups.</p> </li> <li> <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
-     * Amazon Resource Names (ARNs). The results list will only include information
-     * about the DB clusters identified by these ARNs.</p> </li> <li> <p>
-     * <code>domain</code> - Accepts Active Directory directory IDs. The results list
-     * will only include information about the DB clusters associated with these
-     * domains.</p> </li> <li> <p> <code>engine</code> - Accepts engine names. The
-     * results list will only include information about the DB clusters for these
-     * engines.</p> </li> </ul>
+     * Amazon Resource Names (ARNs). The results list only includes information about
+     * the DB clusters identified by these ARNs.</p> </li> <li> <p> <code>domain</code>
+     * - Accepts Active Directory directory IDs. The results list only includes
+     * information about the DB clusters associated with these domains.</p> </li> <li>
+     * <p> <code>engine</code> - Accepts engine names. The results list only includes
+     * information about the DB clusters for these engines.</p> </li> </ul>
      */
     inline DescribeDBClustersRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

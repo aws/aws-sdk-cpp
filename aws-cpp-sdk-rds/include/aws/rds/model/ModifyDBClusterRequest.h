@@ -1142,13 +1142,13 @@ namespace Model
      * <p>The name of the DB parameter group to apply to all instances of the DB
      * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
-     * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p>  <p>Default:
-     * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
-     * group must be in the same DB parameter group family as this DB cluster.</p>
-     * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
-     * valid in combination with the <code>AllowMajorVersionUpgrade</code>
-     * parameter.</p> </li> </ul> <p>Valid for: Aurora DB clusters only</p>
+     * rebooted automatically. Also, parameter changes are applied immediately rather
+     * than during the next maintenance window.</p>  <p>Default: The existing
+     * name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter group must be
+     * in the same DB parameter group family as this DB cluster.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is valid in combination with
+     * the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade
+     * only.</p> </li> </ul> <p>Valid for: Aurora DB clusters only</p>
      */
     inline const Aws::String& GetDBInstanceParameterGroupName() const{ return m_dBInstanceParameterGroupName; }
 
@@ -1156,13 +1156,13 @@ namespace Model
      * <p>The name of the DB parameter group to apply to all instances of the DB
      * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
-     * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p>  <p>Default:
-     * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
-     * group must be in the same DB parameter group family as this DB cluster.</p>
-     * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
-     * valid in combination with the <code>AllowMajorVersionUpgrade</code>
-     * parameter.</p> </li> </ul> <p>Valid for: Aurora DB clusters only</p>
+     * rebooted automatically. Also, parameter changes are applied immediately rather
+     * than during the next maintenance window.</p>  <p>Default: The existing
+     * name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter group must be
+     * in the same DB parameter group family as this DB cluster.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is valid in combination with
+     * the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade
+     * only.</p> </li> </ul> <p>Valid for: Aurora DB clusters only</p>
      */
     inline bool DBInstanceParameterGroupNameHasBeenSet() const { return m_dBInstanceParameterGroupNameHasBeenSet; }
 
@@ -1170,13 +1170,13 @@ namespace Model
      * <p>The name of the DB parameter group to apply to all instances of the DB
      * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
-     * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p>  <p>Default:
-     * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
-     * group must be in the same DB parameter group family as this DB cluster.</p>
-     * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
-     * valid in combination with the <code>AllowMajorVersionUpgrade</code>
-     * parameter.</p> </li> </ul> <p>Valid for: Aurora DB clusters only</p>
+     * rebooted automatically. Also, parameter changes are applied immediately rather
+     * than during the next maintenance window.</p>  <p>Default: The existing
+     * name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter group must be
+     * in the same DB parameter group family as this DB cluster.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is valid in combination with
+     * the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade
+     * only.</p> </li> </ul> <p>Valid for: Aurora DB clusters only</p>
      */
     inline void SetDBInstanceParameterGroupName(const Aws::String& value) { m_dBInstanceParameterGroupNameHasBeenSet = true; m_dBInstanceParameterGroupName = value; }
 
@@ -1184,13 +1184,13 @@ namespace Model
      * <p>The name of the DB parameter group to apply to all instances of the DB
      * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
-     * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p>  <p>Default:
-     * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
-     * group must be in the same DB parameter group family as this DB cluster.</p>
-     * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
-     * valid in combination with the <code>AllowMajorVersionUpgrade</code>
-     * parameter.</p> </li> </ul> <p>Valid for: Aurora DB clusters only</p>
+     * rebooted automatically. Also, parameter changes are applied immediately rather
+     * than during the next maintenance window.</p>  <p>Default: The existing
+     * name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter group must be
+     * in the same DB parameter group family as this DB cluster.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is valid in combination with
+     * the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade
+     * only.</p> </li> </ul> <p>Valid for: Aurora DB clusters only</p>
      */
     inline void SetDBInstanceParameterGroupName(Aws::String&& value) { m_dBInstanceParameterGroupNameHasBeenSet = true; m_dBInstanceParameterGroupName = std::move(value); }
 
@@ -1198,13 +1198,13 @@ namespace Model
      * <p>The name of the DB parameter group to apply to all instances of the DB
      * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
-     * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p>  <p>Default:
-     * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
-     * group must be in the same DB parameter group family as this DB cluster.</p>
-     * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
-     * valid in combination with the <code>AllowMajorVersionUpgrade</code>
-     * parameter.</p> </li> </ul> <p>Valid for: Aurora DB clusters only</p>
+     * rebooted automatically. Also, parameter changes are applied immediately rather
+     * than during the next maintenance window.</p>  <p>Default: The existing
+     * name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter group must be
+     * in the same DB parameter group family as this DB cluster.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is valid in combination with
+     * the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade
+     * only.</p> </li> </ul> <p>Valid for: Aurora DB clusters only</p>
      */
     inline void SetDBInstanceParameterGroupName(const char* value) { m_dBInstanceParameterGroupNameHasBeenSet = true; m_dBInstanceParameterGroupName.assign(value); }
 
@@ -1212,13 +1212,13 @@ namespace Model
      * <p>The name of the DB parameter group to apply to all instances of the DB
      * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
-     * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p>  <p>Default:
-     * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
-     * group must be in the same DB parameter group family as this DB cluster.</p>
-     * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
-     * valid in combination with the <code>AllowMajorVersionUpgrade</code>
-     * parameter.</p> </li> </ul> <p>Valid for: Aurora DB clusters only</p>
+     * rebooted automatically. Also, parameter changes are applied immediately rather
+     * than during the next maintenance window.</p>  <p>Default: The existing
+     * name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter group must be
+     * in the same DB parameter group family as this DB cluster.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is valid in combination with
+     * the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade
+     * only.</p> </li> </ul> <p>Valid for: Aurora DB clusters only</p>
      */
     inline ModifyDBClusterRequest& WithDBInstanceParameterGroupName(const Aws::String& value) { SetDBInstanceParameterGroupName(value); return *this;}
 
@@ -1226,13 +1226,13 @@ namespace Model
      * <p>The name of the DB parameter group to apply to all instances of the DB
      * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
-     * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p>  <p>Default:
-     * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
-     * group must be in the same DB parameter group family as this DB cluster.</p>
-     * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
-     * valid in combination with the <code>AllowMajorVersionUpgrade</code>
-     * parameter.</p> </li> </ul> <p>Valid for: Aurora DB clusters only</p>
+     * rebooted automatically. Also, parameter changes are applied immediately rather
+     * than during the next maintenance window.</p>  <p>Default: The existing
+     * name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter group must be
+     * in the same DB parameter group family as this DB cluster.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is valid in combination with
+     * the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade
+     * only.</p> </li> </ul> <p>Valid for: Aurora DB clusters only</p>
      */
     inline ModifyDBClusterRequest& WithDBInstanceParameterGroupName(Aws::String&& value) { SetDBInstanceParameterGroupName(std::move(value)); return *this;}
 
@@ -1240,13 +1240,13 @@ namespace Model
      * <p>The name of the DB parameter group to apply to all instances of the DB
      * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
-     * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p>  <p>Default:
-     * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
-     * group must be in the same DB parameter group family as this DB cluster.</p>
-     * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
-     * valid in combination with the <code>AllowMajorVersionUpgrade</code>
-     * parameter.</p> </li> </ul> <p>Valid for: Aurora DB clusters only</p>
+     * rebooted automatically. Also, parameter changes are applied immediately rather
+     * than during the next maintenance window.</p>  <p>Default: The existing
+     * name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter group must be
+     * in the same DB parameter group family as this DB cluster.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is valid in combination with
+     * the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade
+     * only.</p> </li> </ul> <p>Valid for: Aurora DB clusters only</p>
      */
     inline ModifyDBClusterRequest& WithDBInstanceParameterGroupName(const char* value) { SetDBInstanceParameterGroupName(value); return *this;}
 

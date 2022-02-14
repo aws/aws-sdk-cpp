@@ -68,10 +68,46 @@ namespace Model
      */
     inline AthenaError& WithErrorCategory(int value) { SetErrorCategory(value); return *this;}
 
+
+    /**
+     * <p>An integer value that provides specific information about an Athena query
+     * error. For the meaning of specific values, see the <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference">Error
+     * Type Reference</a> in the <i>Amazon Athena User Guide</i>.</p>
+     */
+    inline int GetErrorType() const{ return m_errorType; }
+
+    /**
+     * <p>An integer value that provides specific information about an Athena query
+     * error. For the meaning of specific values, see the <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference">Error
+     * Type Reference</a> in the <i>Amazon Athena User Guide</i>.</p>
+     */
+    inline bool ErrorTypeHasBeenSet() const { return m_errorTypeHasBeenSet; }
+
+    /**
+     * <p>An integer value that provides specific information about an Athena query
+     * error. For the meaning of specific values, see the <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference">Error
+     * Type Reference</a> in the <i>Amazon Athena User Guide</i>.</p>
+     */
+    inline void SetErrorType(int value) { m_errorTypeHasBeenSet = true; m_errorType = value; }
+
+    /**
+     * <p>An integer value that provides specific information about an Athena query
+     * error. For the meaning of specific values, see the <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference">Error
+     * Type Reference</a> in the <i>Amazon Athena User Guide</i>.</p>
+     */
+    inline AthenaError& WithErrorType(int value) { SetErrorType(value); return *this;}
+
   private:
 
     int m_errorCategory;
     bool m_errorCategoryHasBeenSet;
+
+    int m_errorType;
+    bool m_errorTypeHasBeenSet;
   };
 
 } // namespace Model

@@ -309,6 +309,31 @@ namespace Model
      */
     inline UpgradeTarget& WithSupportsGlobalDatabases(bool value) { SetSupportsGlobalDatabases(value); return *this;}
 
+
+    /**
+     * <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL
+     * with the target engine version.</p>
+     */
+    inline bool GetSupportsBabelfish() const{ return m_supportsBabelfish; }
+
+    /**
+     * <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL
+     * with the target engine version.</p>
+     */
+    inline bool SupportsBabelfishHasBeenSet() const { return m_supportsBabelfishHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL
+     * with the target engine version.</p>
+     */
+    inline void SetSupportsBabelfish(bool value) { m_supportsBabelfishHasBeenSet = true; m_supportsBabelfish = value; }
+
+    /**
+     * <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL
+     * with the target engine version.</p>
+     */
+    inline UpgradeTarget& WithSupportsBabelfish(bool value) { SetSupportsBabelfish(value); return *this;}
+
   private:
 
     Aws::String m_engine;
@@ -334,6 +359,9 @@ namespace Model
 
     bool m_supportsGlobalDatabases;
     bool m_supportsGlobalDatabasesHasBeenSet;
+
+    bool m_supportsBabelfish;
+    bool m_supportsBabelfishHasBeenSet;
   };
 
 } // namespace Model

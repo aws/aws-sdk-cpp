@@ -1022,6 +1022,25 @@ namespace Model
     inline ModifyCustomDBEngineVersionResult& AddTagList(Tag&& value) { m_tagList.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>A value that indicates whether the engine version supports Babelfish for
+     * Aurora PostgreSQL.</p>
+     */
+    inline bool GetSupportsBabelfish() const{ return m_supportsBabelfish; }
+
+    /**
+     * <p>A value that indicates whether the engine version supports Babelfish for
+     * Aurora PostgreSQL.</p>
+     */
+    inline void SetSupportsBabelfish(bool value) { m_supportsBabelfish = value; }
+
+    /**
+     * <p>A value that indicates whether the engine version supports Babelfish for
+     * Aurora PostgreSQL.</p>
+     */
+    inline ModifyCustomDBEngineVersionResult& WithSupportsBabelfish(bool value) { SetSupportsBabelfish(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -1088,6 +1107,8 @@ namespace Model
     Aws::Utils::DateTime m_createTime;
 
     Aws::Vector<Tag> m_tagList;
+
+    bool m_supportsBabelfish;
 
     ResponseMetadata m_responseMetadata;
   };

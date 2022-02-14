@@ -50,6 +50,8 @@ DBEngineVersion::DBEngineVersion() :
     m_kMSKeyIdHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_tagListHasBeenSet(false),
+    m_supportsBabelfish(false),
+    m_supportsBabelfishHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
 }
@@ -84,6 +86,8 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_kMSKeyIdHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_tagListHasBeenSet(false),
+    m_supportsBabelfish(false),
+    m_supportsBabelfishHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
@@ -293,6 +297,12 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
 
       m_tagListHasBeenSet = true;
     }
+    XmlNode supportsBabelfishNode = resultNode.FirstChild("SupportsBabelfish");
+    if(!supportsBabelfishNode.IsNull())
+    {
+      m_supportsBabelfish = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsBabelfishNode.GetText()).c_str()).c_str());
+      m_supportsBabelfishHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -469,6 +479,11 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       }
   }
 
+  if(m_supportsBabelfishHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsBabelfish=" << std::boolalpha << m_supportsBabelfish << "&";
+  }
+
   if(m_responseMetadataHasBeenSet)
   {
       Aws::StringStream responseMetadataLocationAndMemberSs;
@@ -623,6 +638,10 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
         tagListSs << location <<  ".Tag." << tagListIdx++;
         item.OutputToStream(oStream, tagListSs.str().c_str());
       }
+  }
+  if(m_supportsBabelfishHasBeenSet)
+  {
+      oStream << location << ".SupportsBabelfish=" << std::boolalpha << m_supportsBabelfish << "&";
   }
   if(m_responseMetadataHasBeenSet)
   {

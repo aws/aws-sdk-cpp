@@ -22,6 +22,7 @@ namespace Model
     Map_all,
     Mask,
     Merge,
+    Passthrough,
     Truncate,
     Validate
   };

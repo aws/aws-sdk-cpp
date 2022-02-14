@@ -1173,6 +1173,31 @@ namespace Model
     inline DBEngineVersion& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>A value that indicates whether the engine version supports Babelfish for
+     * Aurora PostgreSQL.</p>
+     */
+    inline bool GetSupportsBabelfish() const{ return m_supportsBabelfish; }
+
+    /**
+     * <p>A value that indicates whether the engine version supports Babelfish for
+     * Aurora PostgreSQL.</p>
+     */
+    inline bool SupportsBabelfishHasBeenSet() const { return m_supportsBabelfishHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether the engine version supports Babelfish for
+     * Aurora PostgreSQL.</p>
+     */
+    inline void SetSupportsBabelfish(bool value) { m_supportsBabelfishHasBeenSet = true; m_supportsBabelfish = value; }
+
+    /**
+     * <p>A value that indicates whether the engine version supports Babelfish for
+     * Aurora PostgreSQL.</p>
+     */
+    inline DBEngineVersion& WithSupportsBabelfish(bool value) { SetSupportsBabelfish(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -1267,6 +1292,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tagList;
     bool m_tagListHasBeenSet;
+
+    bool m_supportsBabelfish;
+    bool m_supportsBabelfishHasBeenSet;
 
     ResponseMetadata m_responseMetadata;
     bool m_responseMetadataHasBeenSet;
