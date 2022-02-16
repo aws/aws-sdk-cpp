@@ -5483,10 +5483,10 @@ namespace Model
          * <p>Launches an EC2 Fleet.</p> <p>You can create a single EC2 Fleet that includes
          * multiple launch specifications that vary by instance type, AMI, Availability
          * Zone, or subnet.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">Launching
-         * an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">AWS
-         * API Reference</a></p>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">EC2
+         * Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">AWS API
+         * Reference</a></p>
          */
         virtual Model::CreateFleetOutcome CreateFleet(const Model::CreateFleetRequest& request) const;
 
@@ -5494,10 +5494,10 @@ namespace Model
          * <p>Launches an EC2 Fleet.</p> <p>You can create a single EC2 Fleet that includes
          * multiple launch specifications that vary by instance type, AMI, Availability
          * Zone, or subnet.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">Launching
-         * an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">AWS
-         * API Reference</a></p>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">EC2
+         * Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -5507,10 +5507,10 @@ namespace Model
          * <p>Launches an EC2 Fleet.</p> <p>You can create a single EC2 Fleet that includes
          * multiple launch specifications that vary by instance type, AMI, Availability
          * Zone, or subnet.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">Launching
-         * an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">AWS
-         * API Reference</a></p>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">EC2
+         * Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -8730,7 +8730,7 @@ namespace Model
          * request.</p> </li> <li> <p>Up to 1000 instances can be terminated in a single
          * request to delete <code>instant</code> fleets.</p> </li> </ul> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#delete-fleet">Deleting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#delete-fleet">Delete
          * an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">AWS
          * API Reference</a></p>
@@ -8754,7 +8754,7 @@ namespace Model
          * request.</p> </li> <li> <p>Up to 1000 instances can be terminated in a single
          * request to delete <code>instant</code> fleets.</p> </li> </ul> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#delete-fleet">Deleting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#delete-fleet">Delete
          * an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">AWS
          * API Reference</a></p>
@@ -8780,7 +8780,7 @@ namespace Model
          * request.</p> </li> <li> <p>Up to 1000 instances can be terminated in a single
          * request to delete <code>instant</code> fleets.</p> </li> </ul> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#delete-fleet">Deleting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#delete-fleet">Delete
          * an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">AWS
          * API Reference</a></p>
@@ -10724,8 +10724,8 @@ namespace Model
         virtual void DeregisterImageAsync(const Model::DeregisterImageRequest& request, const DeregisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>c</p> <p>Deregisters tag keys to prevent tags that have the specified tag
-         * keys from being included in scheduled event notifications for resources in the
+         * <p>Deregisters tag keys to prevent tags that have the specified tag keys from
+         * being included in scheduled event notifications for resources in the
          * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">AWS
          * API Reference</a></p>
@@ -10733,8 +10733,8 @@ namespace Model
         virtual Model::DeregisterInstanceEventNotificationAttributesOutcome DeregisterInstanceEventNotificationAttributes(const Model::DeregisterInstanceEventNotificationAttributesRequest& request) const;
 
         /**
-         * <p>c</p> <p>Deregisters tag keys to prevent tags that have the specified tag
-         * keys from being included in scheduled event notifications for resources in the
+         * <p>Deregisters tag keys to prevent tags that have the specified tag keys from
+         * being included in scheduled event notifications for resources in the
          * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">AWS
          * API Reference</a></p>
@@ -10744,8 +10744,8 @@ namespace Model
         virtual Model::DeregisterInstanceEventNotificationAttributesOutcomeCallable DeregisterInstanceEventNotificationAttributesCallable(const Model::DeregisterInstanceEventNotificationAttributesRequest& request) const;
 
         /**
-         * <p>c</p> <p>Deregisters tag keys to prevent tags that have the specified tag
-         * keys from being included in scheduled event notifications for resources in the
+         * <p>Deregisters tag keys to prevent tags that have the specified tag keys from
+         * being included in scheduled event notifications for resources in the
          * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">AWS
          * API Reference</a></p>
@@ -11788,7 +11788,7 @@ namespace Model
         /**
          * <p>Describes the running instances for the specified EC2 Fleet.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor
          * your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances">AWS
@@ -11799,7 +11799,7 @@ namespace Model
         /**
          * <p>Describes the running instances for the specified EC2 Fleet.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor
          * your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances">AWS
@@ -11812,7 +11812,7 @@ namespace Model
         /**
          * <p>Describes the running instances for the specified EC2 Fleet.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor
          * your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances">AWS
@@ -11825,7 +11825,7 @@ namespace Model
         /**
          * <p>Describes the specified EC2 Fleets or all of your EC2 Fleets.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor
          * your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">AWS
@@ -11836,7 +11836,7 @@ namespace Model
         /**
          * <p>Describes the specified EC2 Fleets or all of your EC2 Fleets.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor
          * your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">AWS
@@ -11849,7 +11849,7 @@ namespace Model
         /**
          * <p>Describes the specified EC2 Fleets or all of your EC2 Fleets.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor
          * your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">AWS
@@ -21609,7 +21609,9 @@ namespace Model
          * monitoring is enabled. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitor
          * your instances using CloudWatch</a> in the <i>Amazon EC2 User Guide</i>.</p>
-         * <p>To disable detailed monitoring, see .</p><p><h3>See Also:</h3>   <a
+         * <p>To disable detailed monitoring, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UnmonitorInstances.html">UnmonitorInstances</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MonitorInstances">AWS
          * API Reference</a></p>
          */
@@ -21620,7 +21622,9 @@ namespace Model
          * monitoring is enabled. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitor
          * your instances using CloudWatch</a> in the <i>Amazon EC2 User Guide</i>.</p>
-         * <p>To disable detailed monitoring, see .</p><p><h3>See Also:</h3>   <a
+         * <p>To disable detailed monitoring, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UnmonitorInstances.html">UnmonitorInstances</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MonitorInstances">AWS
          * API Reference</a></p>
          *
@@ -21633,7 +21637,9 @@ namespace Model
          * monitoring is enabled. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitor
          * your instances using CloudWatch</a> in the <i>Amazon EC2 User Guide</i>.</p>
-         * <p>To disable detailed monitoring, see .</p><p><h3>See Also:</h3>   <a
+         * <p>To disable detailed monitoring, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UnmonitorInstances.html">UnmonitorInstances</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MonitorInstances">AWS
          * API Reference</a></p>
          *
@@ -22190,7 +22196,9 @@ namespace Model
 
         /**
          * <p>Registers a set of tag keys to include in scheduled event notifications for
-         * your resources. </p> <p>To remove tags, use .</p><p><h3>See Also:</h3>   <a
+         * your resources. </p> <p>To remove tags, use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeregisterInstanceEventNotificationAttributes.html">DeregisterInstanceEventNotificationAttributes</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes">AWS
          * API Reference</a></p>
          */
@@ -22198,7 +22206,9 @@ namespace Model
 
         /**
          * <p>Registers a set of tag keys to include in scheduled event notifications for
-         * your resources. </p> <p>To remove tags, use .</p><p><h3>See Also:</h3>   <a
+         * your resources. </p> <p>To remove tags, use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeregisterInstanceEventNotificationAttributes.html">DeregisterInstanceEventNotificationAttributes</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes">AWS
          * API Reference</a></p>
          *
@@ -22208,7 +22218,9 @@ namespace Model
 
         /**
          * <p>Registers a set of tag keys to include in scheduled event notifications for
-         * your resources. </p> <p>To remove tags, use .</p><p><h3>See Also:</h3>   <a
+         * your resources. </p> <p>To remove tags, use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeregisterInstanceEventNotificationAttributes.html">DeregisterInstanceEventNotificationAttributes</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes">AWS
          * API Reference</a></p>
          *

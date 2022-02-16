@@ -495,32 +495,44 @@ namespace Model
 
 
     /**
-     * <p>The type of document to create.</p>
+     * <p>The type of document to create.</p>  <p>The
+     * <code>DeploymentStrategy</code> document type is an internal-use-only document
+     * type reserved for AppConfig.</p> 
      */
     inline const DocumentType& GetDocumentType() const{ return m_documentType; }
 
     /**
-     * <p>The type of document to create.</p>
+     * <p>The type of document to create.</p>  <p>The
+     * <code>DeploymentStrategy</code> document type is an internal-use-only document
+     * type reserved for AppConfig.</p> 
      */
     inline bool DocumentTypeHasBeenSet() const { return m_documentTypeHasBeenSet; }
 
     /**
-     * <p>The type of document to create.</p>
+     * <p>The type of document to create.</p>  <p>The
+     * <code>DeploymentStrategy</code> document type is an internal-use-only document
+     * type reserved for AppConfig.</p> 
      */
     inline void SetDocumentType(const DocumentType& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
 
     /**
-     * <p>The type of document to create.</p>
+     * <p>The type of document to create.</p>  <p>The
+     * <code>DeploymentStrategy</code> document type is an internal-use-only document
+     * type reserved for AppConfig.</p> 
      */
     inline void SetDocumentType(DocumentType&& value) { m_documentTypeHasBeenSet = true; m_documentType = std::move(value); }
 
     /**
-     * <p>The type of document to create.</p>
+     * <p>The type of document to create.</p>  <p>The
+     * <code>DeploymentStrategy</code> document type is an internal-use-only document
+     * type reserved for AppConfig.</p> 
      */
     inline CreateDocumentRequest& WithDocumentType(const DocumentType& value) { SetDocumentType(value); return *this;}
 
     /**
-     * <p>The type of document to create.</p>
+     * <p>The type of document to create.</p>  <p>The
+     * <code>DeploymentStrategy</code> document type is an internal-use-only document
+     * type reserved for AppConfig.</p> 
      */
     inline CreateDocumentRequest& WithDocumentType(DocumentType&& value) { SetDocumentType(std::move(value)); return *this;}
 

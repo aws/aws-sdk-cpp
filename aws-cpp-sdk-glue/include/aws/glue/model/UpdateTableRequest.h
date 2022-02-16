@@ -239,6 +239,31 @@ namespace Model
      */
     inline UpdateTableRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
+
+    
+    inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
+
+    
+    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
+
+    
+    inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
+
+    
+    inline UpdateTableRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+
+    
+    inline UpdateTableRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
+
+    
+    inline UpdateTableRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+
   private:
 
     Aws::String m_catalogId;
@@ -255,6 +280,9 @@ namespace Model
 
     Aws::String m_transactionId;
     bool m_transactionIdHasBeenSet;
+
+    Aws::String m_versionId;
+    bool m_versionIdHasBeenSet;
   };
 
 } // namespace Model

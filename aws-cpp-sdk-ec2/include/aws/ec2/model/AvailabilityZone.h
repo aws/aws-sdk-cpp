@@ -45,32 +45,38 @@ namespace Model
 
 
     /**
-     * <p>The state of the Availability Zone, Local Zone, or Wavelength Zone.</p>
+     * <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This
+     * value is always <code>available</code>.</p>
      */
     inline const AvailabilityZoneState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the Availability Zone, Local Zone, or Wavelength Zone.</p>
+     * <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This
+     * value is always <code>available</code>.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The state of the Availability Zone, Local Zone, or Wavelength Zone.</p>
+     * <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This
+     * value is always <code>available</code>.</p>
      */
     inline void SetState(const AvailabilityZoneState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the Availability Zone, Local Zone, or Wavelength Zone.</p>
+     * <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This
+     * value is always <code>available</code>.</p>
      */
     inline void SetState(AvailabilityZoneState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The state of the Availability Zone, Local Zone, or Wavelength Zone.</p>
+     * <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This
+     * value is always <code>available</code>.</p>
      */
     inline AvailabilityZone& WithState(const AvailabilityZoneState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the Availability Zone, Local Zone, or Wavelength Zone.</p>
+     * <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This
+     * value is always <code>available</code>.</p>
      */
     inline AvailabilityZone& WithState(AvailabilityZoneState&& value) { SetState(std::move(value)); return *this;}
 

@@ -218,50 +218,50 @@ namespace Model
 
 
     /**
-     * <p>A list of amounts of cost or usage that you created budgets for, compared to
-     * your actual costs or usage.</p>
+     * <p>A list of amounts of cost or usage that you created budgets for, which are
+     * compared to your actual costs or usage.</p>
      */
     inline const Aws::Vector<BudgetedAndActualAmounts>& GetBudgetedAndActualAmountsList() const{ return m_budgetedAndActualAmountsList; }
 
     /**
-     * <p>A list of amounts of cost or usage that you created budgets for, compared to
-     * your actual costs or usage.</p>
+     * <p>A list of amounts of cost or usage that you created budgets for, which are
+     * compared to your actual costs or usage.</p>
      */
     inline bool BudgetedAndActualAmountsListHasBeenSet() const { return m_budgetedAndActualAmountsListHasBeenSet; }
 
     /**
-     * <p>A list of amounts of cost or usage that you created budgets for, compared to
-     * your actual costs or usage.</p>
+     * <p>A list of amounts of cost or usage that you created budgets for, which are
+     * compared to your actual costs or usage.</p>
      */
     inline void SetBudgetedAndActualAmountsList(const Aws::Vector<BudgetedAndActualAmounts>& value) { m_budgetedAndActualAmountsListHasBeenSet = true; m_budgetedAndActualAmountsList = value; }
 
     /**
-     * <p>A list of amounts of cost or usage that you created budgets for, compared to
-     * your actual costs or usage.</p>
+     * <p>A list of amounts of cost or usage that you created budgets for, which are
+     * compared to your actual costs or usage.</p>
      */
     inline void SetBudgetedAndActualAmountsList(Aws::Vector<BudgetedAndActualAmounts>&& value) { m_budgetedAndActualAmountsListHasBeenSet = true; m_budgetedAndActualAmountsList = std::move(value); }
 
     /**
-     * <p>A list of amounts of cost or usage that you created budgets for, compared to
-     * your actual costs or usage.</p>
+     * <p>A list of amounts of cost or usage that you created budgets for, which are
+     * compared to your actual costs or usage.</p>
      */
     inline BudgetPerformanceHistory& WithBudgetedAndActualAmountsList(const Aws::Vector<BudgetedAndActualAmounts>& value) { SetBudgetedAndActualAmountsList(value); return *this;}
 
     /**
-     * <p>A list of amounts of cost or usage that you created budgets for, compared to
-     * your actual costs or usage.</p>
+     * <p>A list of amounts of cost or usage that you created budgets for, which are
+     * compared to your actual costs or usage.</p>
      */
     inline BudgetPerformanceHistory& WithBudgetedAndActualAmountsList(Aws::Vector<BudgetedAndActualAmounts>&& value) { SetBudgetedAndActualAmountsList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of amounts of cost or usage that you created budgets for, compared to
-     * your actual costs or usage.</p>
+     * <p>A list of amounts of cost or usage that you created budgets for, which are
+     * compared to your actual costs or usage.</p>
      */
     inline BudgetPerformanceHistory& AddBudgetedAndActualAmountsList(const BudgetedAndActualAmounts& value) { m_budgetedAndActualAmountsListHasBeenSet = true; m_budgetedAndActualAmountsList.push_back(value); return *this; }
 
     /**
-     * <p>A list of amounts of cost or usage that you created budgets for, compared to
-     * your actual costs or usage.</p>
+     * <p>A list of amounts of cost or usage that you created budgets for, which are
+     * compared to your actual costs or usage.</p>
      */
     inline BudgetPerformanceHistory& AddBudgetedAndActualAmountsList(BudgetedAndActualAmounts&& value) { m_budgetedAndActualAmountsListHasBeenSet = true; m_budgetedAndActualAmountsList.push_back(std::move(value)); return *this; }
 

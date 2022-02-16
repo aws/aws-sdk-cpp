@@ -173,49 +173,49 @@ namespace Model
 
 
     /**
-     * <p>The severity of the patchsuch as <code>Critical</code>,
+     * <p>The severity of the patch such as <code>Critical</code>,
      * <code>Important</code>, and <code>Moderate</code>.</p>
      */
     inline const Aws::String& GetSeverity() const{ return m_severity; }
 
     /**
-     * <p>The severity of the patchsuch as <code>Critical</code>,
+     * <p>The severity of the patch such as <code>Critical</code>,
      * <code>Important</code>, and <code>Moderate</code>.</p>
      */
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
 
     /**
-     * <p>The severity of the patchsuch as <code>Critical</code>,
+     * <p>The severity of the patch such as <code>Critical</code>,
      * <code>Important</code>, and <code>Moderate</code>.</p>
      */
     inline void SetSeverity(const Aws::String& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
-     * <p>The severity of the patchsuch as <code>Critical</code>,
+     * <p>The severity of the patch such as <code>Critical</code>,
      * <code>Important</code>, and <code>Moderate</code>.</p>
      */
     inline void SetSeverity(Aws::String&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
 
     /**
-     * <p>The severity of the patchsuch as <code>Critical</code>,
+     * <p>The severity of the patch such as <code>Critical</code>,
      * <code>Important</code>, and <code>Moderate</code>.</p>
      */
     inline void SetSeverity(const char* value) { m_severityHasBeenSet = true; m_severity.assign(value); }
 
     /**
-     * <p>The severity of the patchsuch as <code>Critical</code>,
+     * <p>The severity of the patch such as <code>Critical</code>,
      * <code>Important</code>, and <code>Moderate</code>.</p>
      */
     inline PatchComplianceData& WithSeverity(const Aws::String& value) { SetSeverity(value); return *this;}
 
     /**
-     * <p>The severity of the patchsuch as <code>Critical</code>,
+     * <p>The severity of the patch such as <code>Critical</code>,
      * <code>Important</code>, and <code>Moderate</code>.</p>
      */
     inline PatchComplianceData& WithSeverity(Aws::String&& value) { SetSeverity(std::move(value)); return *this;}
 
     /**
-     * <p>The severity of the patchsuch as <code>Critical</code>,
+     * <p>The severity of the patch such as <code>Critical</code>,
      * <code>Important</code>, and <code>Moderate</code>.</p>
      */
     inline PatchComplianceData& WithSeverity(const char* value) { SetSeverity(value); return *this;}

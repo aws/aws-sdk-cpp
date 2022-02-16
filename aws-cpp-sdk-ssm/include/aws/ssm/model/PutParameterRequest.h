@@ -1268,7 +1268,8 @@ namespace Model
      * <p>The data type for a <code>String</code> parameter. Supported data types
      * include plain text and Amazon Machine Image (AMI) IDs.</p> <p> <b>The following
      * data type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p>
-     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> <li> <p>
+     * <code>aws:ssm:integration</code> </p> </li> </ul> <p>When you create a
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
@@ -1283,7 +1284,8 @@ namespace Model
      * <p>The data type for a <code>String</code> parameter. Supported data types
      * include plain text and Amazon Machine Image (AMI) IDs.</p> <p> <b>The following
      * data type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p>
-     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> <li> <p>
+     * <code>aws:ssm:integration</code> </p> </li> </ul> <p>When you create a
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
@@ -1298,7 +1300,8 @@ namespace Model
      * <p>The data type for a <code>String</code> parameter. Supported data types
      * include plain text and Amazon Machine Image (AMI) IDs.</p> <p> <b>The following
      * data type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p>
-     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> <li> <p>
+     * <code>aws:ssm:integration</code> </p> </li> </ul> <p>When you create a
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
@@ -1313,7 +1316,8 @@ namespace Model
      * <p>The data type for a <code>String</code> parameter. Supported data types
      * include plain text and Amazon Machine Image (AMI) IDs.</p> <p> <b>The following
      * data type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p>
-     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> <li> <p>
+     * <code>aws:ssm:integration</code> </p> </li> </ul> <p>When you create a
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
@@ -1328,7 +1332,8 @@ namespace Model
      * <p>The data type for a <code>String</code> parameter. Supported data types
      * include plain text and Amazon Machine Image (AMI) IDs.</p> <p> <b>The following
      * data type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p>
-     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> <li> <p>
+     * <code>aws:ssm:integration</code> </p> </li> </ul> <p>When you create a
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
@@ -1343,7 +1348,8 @@ namespace Model
      * <p>The data type for a <code>String</code> parameter. Supported data types
      * include plain text and Amazon Machine Image (AMI) IDs.</p> <p> <b>The following
      * data type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p>
-     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> <li> <p>
+     * <code>aws:ssm:integration</code> </p> </li> </ul> <p>When you create a
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
@@ -1358,7 +1364,8 @@ namespace Model
      * <p>The data type for a <code>String</code> parameter. Supported data types
      * include plain text and Amazon Machine Image (AMI) IDs.</p> <p> <b>The following
      * data type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p>
-     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> <li> <p>
+     * <code>aws:ssm:integration</code> </p> </li> </ul> <p>When you create a
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
@@ -1373,7 +1380,8 @@ namespace Model
      * <p>The data type for a <code>String</code> parameter. Supported data types
      * include plain text and Amazon Machine Image (AMI) IDs.</p> <p> <b>The following
      * data type values are supported.</b> </p> <ul> <li> <p> <code>text</code> </p>
-     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a
+     * </li> <li> <p> <code>aws:ec2:image</code> </p> </li> <li> <p>
+     * <code>aws:ssm:integration</code> </p> </li> </ul> <p>When you create a
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI

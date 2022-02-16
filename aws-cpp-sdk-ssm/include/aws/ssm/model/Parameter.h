@@ -84,77 +84,111 @@ namespace Model
     /**
      * <p>The type of parameter. Valid values include the following:
      * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
+     *  <p>If type is <code>StringList</code>, the system returns a
+     * comma-separated string with no spaces between commas in the <code>Value</code>
+     * field.</p> 
      */
     inline const ParameterType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of parameter. Valid values include the following:
      * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
+     *  <p>If type is <code>StringList</code>, the system returns a
+     * comma-separated string with no spaces between commas in the <code>Value</code>
+     * field.</p> 
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of parameter. Valid values include the following:
      * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
+     *  <p>If type is <code>StringList</code>, the system returns a
+     * comma-separated string with no spaces between commas in the <code>Value</code>
+     * field.</p> 
      */
     inline void SetType(const ParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of parameter. Valid values include the following:
      * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
+     *  <p>If type is <code>StringList</code>, the system returns a
+     * comma-separated string with no spaces between commas in the <code>Value</code>
+     * field.</p> 
      */
     inline void SetType(ParameterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of parameter. Valid values include the following:
      * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
+     *  <p>If type is <code>StringList</code>, the system returns a
+     * comma-separated string with no spaces between commas in the <code>Value</code>
+     * field.</p> 
      */
     inline Parameter& WithType(const ParameterType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of parameter. Valid values include the following:
      * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
+     *  <p>If type is <code>StringList</code>, the system returns a
+     * comma-separated string with no spaces between commas in the <code>Value</code>
+     * field.</p> 
      */
     inline Parameter& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The parameter value.</p>
+     * <p>The parameter value.</p>  <p>If type is <code>StringList</code>, the
+     * system returns a comma-separated string with no spaces between commas in the
+     * <code>Value</code> field.</p> 
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The parameter value.</p>
+     * <p>The parameter value.</p>  <p>If type is <code>StringList</code>, the
+     * system returns a comma-separated string with no spaces between commas in the
+     * <code>Value</code> field.</p> 
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The parameter value.</p>
+     * <p>The parameter value.</p>  <p>If type is <code>StringList</code>, the
+     * system returns a comma-separated string with no spaces between commas in the
+     * <code>Value</code> field.</p> 
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The parameter value.</p>
+     * <p>The parameter value.</p>  <p>If type is <code>StringList</code>, the
+     * system returns a comma-separated string with no spaces between commas in the
+     * <code>Value</code> field.</p> 
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The parameter value.</p>
+     * <p>The parameter value.</p>  <p>If type is <code>StringList</code>, the
+     * system returns a comma-separated string with no spaces between commas in the
+     * <code>Value</code> field.</p> 
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The parameter value.</p>
+     * <p>The parameter value.</p>  <p>If type is <code>StringList</code>, the
+     * system returns a comma-separated string with no spaces between commas in the
+     * <code>Value</code> field.</p> 
      */
     inline Parameter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The parameter value.</p>
+     * <p>The parameter value.</p>  <p>If type is <code>StringList</code>, the
+     * system returns a comma-separated string with no spaces between commas in the
+     * <code>Value</code> field.</p> 
      */
     inline Parameter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The parameter value.</p>
+     * <p>The parameter value.</p>  <p>If type is <code>StringList</code>, the
+     * system returns a comma-separated string with no spaces between commas in the
+     * <code>Value</code> field.</p> 
      */
     inline Parameter& WithValue(const char* value) { SetValue(value); return *this;}
 

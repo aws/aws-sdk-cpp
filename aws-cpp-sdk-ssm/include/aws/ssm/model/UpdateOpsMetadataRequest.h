@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resoure Name (ARN) of the OpsMetadata Object to update.</p>
+     * <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
      */
     inline const Aws::String& GetOpsMetadataArn() const{ return m_opsMetadataArn; }
 
     /**
-     * <p>The Amazon Resoure Name (ARN) of the OpsMetadata Object to update.</p>
+     * <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
      */
     inline bool OpsMetadataArnHasBeenSet() const { return m_opsMetadataArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resoure Name (ARN) of the OpsMetadata Object to update.</p>
+     * <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
      */
     inline void SetOpsMetadataArn(const Aws::String& value) { m_opsMetadataArnHasBeenSet = true; m_opsMetadataArn = value; }
 
     /**
-     * <p>The Amazon Resoure Name (ARN) of the OpsMetadata Object to update.</p>
+     * <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
      */
     inline void SetOpsMetadataArn(Aws::String&& value) { m_opsMetadataArnHasBeenSet = true; m_opsMetadataArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resoure Name (ARN) of the OpsMetadata Object to update.</p>
+     * <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
      */
     inline void SetOpsMetadataArn(const char* value) { m_opsMetadataArnHasBeenSet = true; m_opsMetadataArn.assign(value); }
 
     /**
-     * <p>The Amazon Resoure Name (ARN) of the OpsMetadata Object to update.</p>
+     * <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
      */
     inline UpdateOpsMetadataRequest& WithOpsMetadataArn(const Aws::String& value) { SetOpsMetadataArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resoure Name (ARN) of the OpsMetadata Object to update.</p>
+     * <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
      */
     inline UpdateOpsMetadataRequest& WithOpsMetadataArn(Aws::String&& value) { SetOpsMetadataArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resoure Name (ARN) of the OpsMetadata Object to update.</p>
+     * <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
      */
     inline UpdateOpsMetadataRequest& WithOpsMetadataArn(const char* value) { SetOpsMetadataArn(value); return *this;}
 
