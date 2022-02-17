@@ -119,7 +119,9 @@ namespace Model
      * duration or data size. If <code>FeatureType</code> is <code>spectrum</code>,
      * then <code>LimitType</code> must be <code>data-scanned</code>. If
      * <code>FeatureType</code> is <code>concurrency-scaling</code>, then
-     * <code>LimitType</code> must be <code>time</code>. </p>
+     * <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is
+     * <code>cross-region-datasharing</code>, then <code>LimitType</code> must be
+     * <code>data-scanned</code>. </p>
      */
     inline const UsageLimitLimitType& GetLimitType() const{ return m_limitType; }
 
@@ -128,7 +130,9 @@ namespace Model
      * duration or data size. If <code>FeatureType</code> is <code>spectrum</code>,
      * then <code>LimitType</code> must be <code>data-scanned</code>. If
      * <code>FeatureType</code> is <code>concurrency-scaling</code>, then
-     * <code>LimitType</code> must be <code>time</code>. </p>
+     * <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is
+     * <code>cross-region-datasharing</code>, then <code>LimitType</code> must be
+     * <code>data-scanned</code>. </p>
      */
     inline bool LimitTypeHasBeenSet() const { return m_limitTypeHasBeenSet; }
 
@@ -137,7 +141,9 @@ namespace Model
      * duration or data size. If <code>FeatureType</code> is <code>spectrum</code>,
      * then <code>LimitType</code> must be <code>data-scanned</code>. If
      * <code>FeatureType</code> is <code>concurrency-scaling</code>, then
-     * <code>LimitType</code> must be <code>time</code>. </p>
+     * <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is
+     * <code>cross-region-datasharing</code>, then <code>LimitType</code> must be
+     * <code>data-scanned</code>. </p>
      */
     inline void SetLimitType(const UsageLimitLimitType& value) { m_limitTypeHasBeenSet = true; m_limitType = value; }
 
@@ -146,7 +152,9 @@ namespace Model
      * duration or data size. If <code>FeatureType</code> is <code>spectrum</code>,
      * then <code>LimitType</code> must be <code>data-scanned</code>. If
      * <code>FeatureType</code> is <code>concurrency-scaling</code>, then
-     * <code>LimitType</code> must be <code>time</code>. </p>
+     * <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is
+     * <code>cross-region-datasharing</code>, then <code>LimitType</code> must be
+     * <code>data-scanned</code>. </p>
      */
     inline void SetLimitType(UsageLimitLimitType&& value) { m_limitTypeHasBeenSet = true; m_limitType = std::move(value); }
 
@@ -155,7 +163,9 @@ namespace Model
      * duration or data size. If <code>FeatureType</code> is <code>spectrum</code>,
      * then <code>LimitType</code> must be <code>data-scanned</code>. If
      * <code>FeatureType</code> is <code>concurrency-scaling</code>, then
-     * <code>LimitType</code> must be <code>time</code>. </p>
+     * <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is
+     * <code>cross-region-datasharing</code>, then <code>LimitType</code> must be
+     * <code>data-scanned</code>. </p>
      */
     inline CreateUsageLimitRequest& WithLimitType(const UsageLimitLimitType& value) { SetLimitType(value); return *this;}
 
@@ -164,7 +174,9 @@ namespace Model
      * duration or data size. If <code>FeatureType</code> is <code>spectrum</code>,
      * then <code>LimitType</code> must be <code>data-scanned</code>. If
      * <code>FeatureType</code> is <code>concurrency-scaling</code>, then
-     * <code>LimitType</code> must be <code>time</code>. </p>
+     * <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is
+     * <code>cross-region-datasharing</code>, then <code>LimitType</code> must be
+     * <code>data-scanned</code>. </p>
      */
     inline CreateUsageLimitRequest& WithLimitType(UsageLimitLimitType&& value) { SetLimitType(std::move(value)); return *this;}
 

@@ -1595,10 +1595,10 @@ namespace Model
         virtual void CreateScheduledActionAsync(const Model::CreateScheduledActionRequest& request, const CreateScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a snapshot copy grant that permits Amazon Redshift to use a customer
-         * master key (CMK) from Key Management Service (KMS) to encrypt copied snapshots
-         * in a destination region.</p> <p> For more information about managing snapshot
-         * copy grants, go to <a
+         * <p>Creates a snapshot copy grant that permits Amazon Redshift to use an
+         * encrypted symmetric key from Key Management Service (KMS) to encrypt copied
+         * snapshots in a destination region.</p> <p> For more information about managing
+         * snapshot copy grants, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>. </p><p><h3>See Also:</h3>   <a
@@ -1608,10 +1608,10 @@ namespace Model
         virtual Model::CreateSnapshotCopyGrantOutcome CreateSnapshotCopyGrant(const Model::CreateSnapshotCopyGrantRequest& request) const;
 
         /**
-         * <p>Creates a snapshot copy grant that permits Amazon Redshift to use a customer
-         * master key (CMK) from Key Management Service (KMS) to encrypt copied snapshots
-         * in a destination region.</p> <p> For more information about managing snapshot
-         * copy grants, go to <a
+         * <p>Creates a snapshot copy grant that permits Amazon Redshift to use an
+         * encrypted symmetric key from Key Management Service (KMS) to encrypt copied
+         * snapshots in a destination region.</p> <p> For more information about managing
+         * snapshot copy grants, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>. </p><p><h3>See Also:</h3>   <a
@@ -1623,10 +1623,10 @@ namespace Model
         virtual Model::CreateSnapshotCopyGrantOutcomeCallable CreateSnapshotCopyGrantCallable(const Model::CreateSnapshotCopyGrantRequest& request) const;
 
         /**
-         * <p>Creates a snapshot copy grant that permits Amazon Redshift to use a customer
-         * master key (CMK) from Key Management Service (KMS) to encrypt copied snapshots
-         * in a destination region.</p> <p> For more information about managing snapshot
-         * copy grants, go to <a
+         * <p>Creates a snapshot copy grant that permits Amazon Redshift to use an
+         * encrypted symmetric key from Key Management Service (KMS) to encrypt copied
+         * snapshots in a destination region.</p> <p> For more information about managing
+         * snapshot copy grants, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>. </p><p><h3>See Also:</h3>   <a
@@ -3828,9 +3828,9 @@ namespace Model
         /**
          * <p>Disables the automatic copying of snapshots from one region to another region
          * for a specified cluster.</p> <p>If your cluster and its snapshots are encrypted
-         * using a customer master key (CMK) from Key Management Service, use
+         * using an encrypted symmetric key from Key Management Service, use
          * <a>DeleteSnapshotCopyGrant</a> to delete the grant that grants Amazon Redshift
-         * permission to the CMK in the destination region. </p><p><h3>See Also:</h3>   <a
+         * permission to the key in the destination region. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableSnapshotCopy">AWS
          * API Reference</a></p>
          */
@@ -3839,9 +3839,9 @@ namespace Model
         /**
          * <p>Disables the automatic copying of snapshots from one region to another region
          * for a specified cluster.</p> <p>If your cluster and its snapshots are encrypted
-         * using a customer master key (CMK) from Key Management Service, use
+         * using an encrypted symmetric key from Key Management Service, use
          * <a>DeleteSnapshotCopyGrant</a> to delete the grant that grants Amazon Redshift
-         * permission to the CMK in the destination region. </p><p><h3>See Also:</h3>   <a
+         * permission to the key in the destination region. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableSnapshotCopy">AWS
          * API Reference</a></p>
          *
@@ -3852,9 +3852,9 @@ namespace Model
         /**
          * <p>Disables the automatic copying of snapshots from one region to another region
          * for a specified cluster.</p> <p>If your cluster and its snapshots are encrypted
-         * using a customer master key (CMK) from Key Management Service, use
+         * using an encrypted symmetric key from Key Management Service, use
          * <a>DeleteSnapshotCopyGrant</a> to delete the grant that grants Amazon Redshift
-         * permission to the CMK in the destination region. </p><p><h3>See Also:</h3>   <a
+         * permission to the key in the destination region. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableSnapshotCopy">AWS
          * API Reference</a></p>
          *
@@ -4246,9 +4246,12 @@ namespace Model
 
         /**
          * <p>Modifies the list of Identity and Access Management (IAM) roles that can be
-         * used by the cluster to access other Amazon Web Services services.</p> <p>A
-         * cluster can have up to 10 IAM roles associated at any time.</p><p><h3>See
-         * Also:</h3>   <a
+         * used by the cluster to access other Amazon Web Services services.</p> <p>The
+         * maximum number of IAM roles that you can associate is subject to a quota. For
+         * more information, go to <a
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+         * and limits</a> in the <i>Amazon Redshift Cluster Management
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterIamRoles">AWS
          * API Reference</a></p>
          */
@@ -4256,9 +4259,12 @@ namespace Model
 
         /**
          * <p>Modifies the list of Identity and Access Management (IAM) roles that can be
-         * used by the cluster to access other Amazon Web Services services.</p> <p>A
-         * cluster can have up to 10 IAM roles associated at any time.</p><p><h3>See
-         * Also:</h3>   <a
+         * used by the cluster to access other Amazon Web Services services.</p> <p>The
+         * maximum number of IAM roles that you can associate is subject to a quota. For
+         * more information, go to <a
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+         * and limits</a> in the <i>Amazon Redshift Cluster Management
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterIamRoles">AWS
          * API Reference</a></p>
          *
@@ -4268,9 +4274,12 @@ namespace Model
 
         /**
          * <p>Modifies the list of Identity and Access Management (IAM) roles that can be
-         * used by the cluster to access other Amazon Web Services services.</p> <p>A
-         * cluster can have up to 10 IAM roles associated at any time.</p><p><h3>See
-         * Also:</h3>   <a
+         * used by the cluster to access other Amazon Web Services services.</p> <p>The
+         * maximum number of IAM roles that you can associate is subject to a quota. For
+         * more information, go to <a
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+         * and limits</a> in the <i>Amazon Redshift Cluster Management
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterIamRoles">AWS
          * API Reference</a></p>
          *

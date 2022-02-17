@@ -210,58 +210,106 @@ namespace Model
 
 
     /**
-     * <p>The server-side encryption key that is used to protect your backups; for
-     * example,
-     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+     * <p>A server-side encryption key you can specify to encrypt your backups from
+     * services that support full Backup management; for example,
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     * If you specify a key, you must specify its ARN, not its alias. If you do not
+     * specify a key, Backup creates a KMS key for you by default.</p> <p>To learn
+     * which Backup services support full Backup management and how Backup handles
+     * encryption for backups from services that do not yet support full Backup, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/encryption.html">
+     * Encryption for backups in Backup</a> </p>
      */
     inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
 
     /**
-     * <p>The server-side encryption key that is used to protect your backups; for
-     * example,
-     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+     * <p>A server-side encryption key you can specify to encrypt your backups from
+     * services that support full Backup management; for example,
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     * If you specify a key, you must specify its ARN, not its alias. If you do not
+     * specify a key, Backup creates a KMS key for you by default.</p> <p>To learn
+     * which Backup services support full Backup management and how Backup handles
+     * encryption for backups from services that do not yet support full Backup, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/encryption.html">
+     * Encryption for backups in Backup</a> </p>
      */
     inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
 
     /**
-     * <p>The server-side encryption key that is used to protect your backups; for
-     * example,
-     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+     * <p>A server-side encryption key you can specify to encrypt your backups from
+     * services that support full Backup management; for example,
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     * If you specify a key, you must specify its ARN, not its alias. If you do not
+     * specify a key, Backup creates a KMS key for you by default.</p> <p>To learn
+     * which Backup services support full Backup management and how Backup handles
+     * encryption for backups from services that do not yet support full Backup, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/encryption.html">
+     * Encryption for backups in Backup</a> </p>
      */
     inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = value; }
 
     /**
-     * <p>The server-side encryption key that is used to protect your backups; for
-     * example,
-     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+     * <p>A server-side encryption key you can specify to encrypt your backups from
+     * services that support full Backup management; for example,
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     * If you specify a key, you must specify its ARN, not its alias. If you do not
+     * specify a key, Backup creates a KMS key for you by default.</p> <p>To learn
+     * which Backup services support full Backup management and how Backup handles
+     * encryption for backups from services that do not yet support full Backup, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/encryption.html">
+     * Encryption for backups in Backup</a> </p>
      */
     inline void SetEncryptionKeyArn(Aws::String&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::move(value); }
 
     /**
-     * <p>The server-side encryption key that is used to protect your backups; for
-     * example,
-     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+     * <p>A server-side encryption key you can specify to encrypt your backups from
+     * services that support full Backup management; for example,
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     * If you specify a key, you must specify its ARN, not its alias. If you do not
+     * specify a key, Backup creates a KMS key for you by default.</p> <p>To learn
+     * which Backup services support full Backup management and how Backup handles
+     * encryption for backups from services that do not yet support full Backup, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/encryption.html">
+     * Encryption for backups in Backup</a> </p>
      */
     inline void SetEncryptionKeyArn(const char* value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn.assign(value); }
 
     /**
-     * <p>The server-side encryption key that is used to protect your backups; for
-     * example,
-     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+     * <p>A server-side encryption key you can specify to encrypt your backups from
+     * services that support full Backup management; for example,
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     * If you specify a key, you must specify its ARN, not its alias. If you do not
+     * specify a key, Backup creates a KMS key for you by default.</p> <p>To learn
+     * which Backup services support full Backup management and how Backup handles
+     * encryption for backups from services that do not yet support full Backup, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/encryption.html">
+     * Encryption for backups in Backup</a> </p>
      */
     inline BackupVaultListMember& WithEncryptionKeyArn(const Aws::String& value) { SetEncryptionKeyArn(value); return *this;}
 
     /**
-     * <p>The server-side encryption key that is used to protect your backups; for
-     * example,
-     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+     * <p>A server-side encryption key you can specify to encrypt your backups from
+     * services that support full Backup management; for example,
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     * If you specify a key, you must specify its ARN, not its alias. If you do not
+     * specify a key, Backup creates a KMS key for you by default.</p> <p>To learn
+     * which Backup services support full Backup management and how Backup handles
+     * encryption for backups from services that do not yet support full Backup, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/encryption.html">
+     * Encryption for backups in Backup</a> </p>
      */
     inline BackupVaultListMember& WithEncryptionKeyArn(Aws::String&& value) { SetEncryptionKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The server-side encryption key that is used to protect your backups; for
-     * example,
-     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+     * <p>A server-side encryption key you can specify to encrypt your backups from
+     * services that support full Backup management; for example,
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+     * If you specify a key, you must specify its ARN, not its alias. If you do not
+     * specify a key, Backup creates a KMS key for you by default.</p> <p>To learn
+     * which Backup services support full Backup management and how Backup handles
+     * encryption for backups from services that do not yet support full Backup, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/encryption.html">
+     * Encryption for backups in Backup</a> </p>
      */
     inline BackupVaultListMember& WithEncryptionKeyArn(const char* value) { SetEncryptionKeyArn(value); return *this;}
 

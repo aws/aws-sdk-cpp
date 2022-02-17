@@ -24,6 +24,7 @@ DataShareAssociation::DataShareAssociation() :
     m_consumerIdentifierHasBeenSet(false),
     m_status(DataShareStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_consumerRegionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_statusChangeDateHasBeenSet(false)
 {
@@ -33,6 +34,7 @@ DataShareAssociation::DataShareAssociation(const XmlNode& xmlNode) :
     m_consumerIdentifierHasBeenSet(false),
     m_status(DataShareStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_consumerRegionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_statusChangeDateHasBeenSet(false)
 {
@@ -56,6 +58,12 @@ DataShareAssociation& DataShareAssociation::operator =(const XmlNode& xmlNode)
     {
       m_status = DataShareStatusMapper::GetDataShareStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
+    }
+    XmlNode consumerRegionNode = resultNode.FirstChild("ConsumerRegion");
+    if(!consumerRegionNode.IsNull())
+    {
+      m_consumerRegion = Aws::Utils::Xml::DecodeEscapedXmlText(consumerRegionNode.GetText());
+      m_consumerRegionHasBeenSet = true;
     }
     XmlNode createdDateNode = resultNode.FirstChild("CreatedDate");
     if(!createdDateNode.IsNull())
@@ -86,6 +94,11 @@ void DataShareAssociation::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << index << locationValue << ".Status=" << DataShareStatusMapper::GetNameForDataShareStatus(m_status) << "&";
   }
 
+  if(m_consumerRegionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ConsumerRegion=" << StringUtils::URLEncode(m_consumerRegion.c_str()) << "&";
+  }
+
   if(m_createdDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreatedDate=" << StringUtils::URLEncode(m_createdDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
@@ -107,6 +120,10 @@ void DataShareAssociation::OutputToStream(Aws::OStream& oStream, const char* loc
   if(m_statusHasBeenSet)
   {
       oStream << location << ".Status=" << DataShareStatusMapper::GetNameForDataShareStatus(m_status) << "&";
+  }
+  if(m_consumerRegionHasBeenSet)
+  {
+      oStream << location << ".ConsumerRegion=" << StringUtils::URLEncode(m_consumerRegion.c_str()) << "&";
   }
   if(m_createdDateHasBeenSet)
   {

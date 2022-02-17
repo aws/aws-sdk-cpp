@@ -91,8 +91,9 @@ namespace Model
      * with a retention period equal to or longer than the minimum retention period. If
      * the job's retention period is shorter than that minimum retention period, then
      * the vault fails that backup or copy job, and you should either modify your
-     * lifecycle settings or use a different vault. Recovery points already saved in
-     * the vault prior to Vault Lock are not affected.</p>
+     * lifecycle settings or use a different vault. The shortest minimum retention
+     * period you can specify is 1 day. Recovery points already saved in the vault
+     * prior to Vault Lock are not affected.</p>
      */
     inline long long GetMinRetentionDays() const{ return m_minRetentionDays; }
 
@@ -106,8 +107,9 @@ namespace Model
      * with a retention period equal to or longer than the minimum retention period. If
      * the job's retention period is shorter than that minimum retention period, then
      * the vault fails that backup or copy job, and you should either modify your
-     * lifecycle settings or use a different vault. Recovery points already saved in
-     * the vault prior to Vault Lock are not affected.</p>
+     * lifecycle settings or use a different vault. The shortest minimum retention
+     * period you can specify is 1 day. Recovery points already saved in the vault
+     * prior to Vault Lock are not affected.</p>
      */
     inline bool MinRetentionDaysHasBeenSet() const { return m_minRetentionDaysHasBeenSet; }
 
@@ -121,8 +123,9 @@ namespace Model
      * with a retention period equal to or longer than the minimum retention period. If
      * the job's retention period is shorter than that minimum retention period, then
      * the vault fails that backup or copy job, and you should either modify your
-     * lifecycle settings or use a different vault. Recovery points already saved in
-     * the vault prior to Vault Lock are not affected.</p>
+     * lifecycle settings or use a different vault. The shortest minimum retention
+     * period you can specify is 1 day. Recovery points already saved in the vault
+     * prior to Vault Lock are not affected.</p>
      */
     inline void SetMinRetentionDays(long long value) { m_minRetentionDaysHasBeenSet = true; m_minRetentionDays = value; }
 
@@ -136,8 +139,9 @@ namespace Model
      * with a retention period equal to or longer than the minimum retention period. If
      * the job's retention period is shorter than that minimum retention period, then
      * the vault fails that backup or copy job, and you should either modify your
-     * lifecycle settings or use a different vault. Recovery points already saved in
-     * the vault prior to Vault Lock are not affected.</p>
+     * lifecycle settings or use a different vault. The shortest minimum retention
+     * period you can specify is 1 day. Recovery points already saved in the vault
+     * prior to Vault Lock are not affected.</p>
      */
     inline PutBackupVaultLockConfigurationRequest& WithMinRetentionDays(long long value) { SetMinRetentionDays(value); return *this;}
 
@@ -154,8 +158,9 @@ namespace Model
      * with a retention period equal to or shorter than the maximum retention period.
      * If the job's retention period is longer than that maximum retention period, then
      * the vault fails the backup or copy job, and you should either modify your
-     * lifecycle settings or use a different vault. Recovery points already saved in
-     * the vault prior to Vault Lock are not affected.</p>
+     * lifecycle settings or use a different vault. The longest maximum retention
+     * period you can specify is 36500 days (approximately 100 years). Recovery points
+     * already saved in the vault prior to Vault Lock are not affected.</p>
      */
     inline long long GetMaxRetentionDays() const{ return m_maxRetentionDays; }
 
@@ -171,8 +176,9 @@ namespace Model
      * with a retention period equal to or shorter than the maximum retention period.
      * If the job's retention period is longer than that maximum retention period, then
      * the vault fails the backup or copy job, and you should either modify your
-     * lifecycle settings or use a different vault. Recovery points already saved in
-     * the vault prior to Vault Lock are not affected.</p>
+     * lifecycle settings or use a different vault. The longest maximum retention
+     * period you can specify is 36500 days (approximately 100 years). Recovery points
+     * already saved in the vault prior to Vault Lock are not affected.</p>
      */
     inline bool MaxRetentionDaysHasBeenSet() const { return m_maxRetentionDaysHasBeenSet; }
 
@@ -188,8 +194,9 @@ namespace Model
      * with a retention period equal to or shorter than the maximum retention period.
      * If the job's retention period is longer than that maximum retention period, then
      * the vault fails the backup or copy job, and you should either modify your
-     * lifecycle settings or use a different vault. Recovery points already saved in
-     * the vault prior to Vault Lock are not affected.</p>
+     * lifecycle settings or use a different vault. The longest maximum retention
+     * period you can specify is 36500 days (approximately 100 years). Recovery points
+     * already saved in the vault prior to Vault Lock are not affected.</p>
      */
     inline void SetMaxRetentionDays(long long value) { m_maxRetentionDaysHasBeenSet = true; m_maxRetentionDays = value; }
 
@@ -205,8 +212,9 @@ namespace Model
      * with a retention period equal to or shorter than the maximum retention period.
      * If the job's retention period is longer than that maximum retention period, then
      * the vault fails the backup or copy job, and you should either modify your
-     * lifecycle settings or use a different vault. Recovery points already saved in
-     * the vault prior to Vault Lock are not affected.</p>
+     * lifecycle settings or use a different vault. The longest maximum retention
+     * period you can specify is 36500 days (approximately 100 years). Recovery points
+     * already saved in the vault prior to Vault Lock are not affected.</p>
      */
     inline PutBackupVaultLockConfigurationRequest& WithMaxRetentionDays(long long value) { SetMaxRetentionDays(value); return *this;}
 

@@ -3584,8 +3584,8 @@ namespace Model
          * <p>Generates a report that includes details about when an IAM resource (user,
          * group, role, or policy) was last used in an attempt to access Amazon Web
          * Services services. Recent activity usually appears within four hours. IAM
-         * reports activity for the last 365 days, or less if your Region began supporting
-         * this feature within the last year. For more information, see <a
+         * reports activity for at least the last 400 days, or less if your Region began
+         * supporting this feature within the last year. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
          * where data is tracked</a>.</p>  <p>The service last accessed data
          * includes all attempts to access an Amazon Web Services API, not just the
@@ -3638,8 +3638,8 @@ namespace Model
          * <p>Generates a report that includes details about when an IAM resource (user,
          * group, role, or policy) was last used in an attempt to access Amazon Web
          * Services services. Recent activity usually appears within four hours. IAM
-         * reports activity for the last 365 days, or less if your Region began supporting
-         * this feature within the last year. For more information, see <a
+         * reports activity for at least the last 400 days, or less if your Region began
+         * supporting this feature within the last year. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
          * where data is tracked</a>.</p>  <p>The service last accessed data
          * includes all attempts to access an Amazon Web Services API, not just the
@@ -3694,8 +3694,8 @@ namespace Model
          * <p>Generates a report that includes details about when an IAM resource (user,
          * group, role, or policy) was last used in an attempt to access Amazon Web
          * Services services. Recent activity usually appears within four hours. IAM
-         * reports activity for the last 365 days, or less if your Region began supporting
-         * this feature within the last year. For more information, see <a
+         * reports activity for at least the last 400 days, or less if your Region began
+         * supporting this feature within the last year. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
          * where data is tracked</a>.</p>  <p>The service last accessed data
          * includes all attempts to access an Amazon Web Services API, not just the
@@ -6721,8 +6721,8 @@ namespace Model
          * <code>Assigned</code>, <code>Unassigned</code>, or <code>Any</code>.</p> 
          * <p>IAM resource-listing operations return a subset of the available attributes
          * for the resource. For example, this operation does not return tags, even though
-         * they are an attribute of the returned object. To view all of the information for
-         * a virtual MFA device, see <a>ListVirtualMFADevices</a>.</p>  <p>You can
+         * they are an attribute of the returned object. To view tag information for a
+         * virtual MFA device, see <a>ListMFADeviceTags</a>.</p>  <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices">AWS
@@ -6737,8 +6737,8 @@ namespace Model
          * <code>Assigned</code>, <code>Unassigned</code>, or <code>Any</code>.</p> 
          * <p>IAM resource-listing operations return a subset of the available attributes
          * for the resource. For example, this operation does not return tags, even though
-         * they are an attribute of the returned object. To view all of the information for
-         * a virtual MFA device, see <a>ListVirtualMFADevices</a>.</p>  <p>You can
+         * they are an attribute of the returned object. To view tag information for a
+         * virtual MFA device, see <a>ListMFADeviceTags</a>.</p>  <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices">AWS
@@ -6755,8 +6755,8 @@ namespace Model
          * <code>Assigned</code>, <code>Unassigned</code>, or <code>Any</code>.</p> 
          * <p>IAM resource-listing operations return a subset of the available attributes
          * for the resource. For example, this operation does not return tags, even though
-         * they are an attribute of the returned object. To view all of the information for
-         * a virtual MFA device, see <a>ListVirtualMFADevices</a>.</p>  <p>You can
+         * they are an attribute of the returned object. To view tag information for a
+         * virtual MFA device, see <a>ListMFADeviceTags</a>.</p>  <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices">AWS
@@ -8785,13 +8785,13 @@ namespace Model
 
         /**
          * <p>Updates the password policy settings for the Amazon Web Services account.</p>
-         *  <ul> <li> <p>This operation does not support partial updates. No
-         * parameters are required, but if you do not specify a parameter, that parameter's
-         * value reverts to its default value. See the <b>Request Parameters</b> section
-         * for each parameter's default value. Also note that some parameters do not allow
-         * the default parameter to be explicitly set. Instead, to invoke the default
-         * value, do not include that parameter when you invoke the operation.</p> </li>
-         * </ul>  <p> For more information about using a password policy, see <a
+         *  <p>This operation does not support partial updates. No parameters are
+         * required, but if you do not specify a parameter, that parameter's value reverts
+         * to its default value. See the <b>Request Parameters</b> section for each
+         * parameter's default value. Also note that some parameters do not allow the
+         * default parameter to be explicitly set. Instead, to invoke the default value, do
+         * not include that parameter when you invoke the operation.</p>  <p> For
+         * more information about using a password policy, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
          * an IAM password policy</a> in the <i>IAM User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -8802,13 +8802,13 @@ namespace Model
 
         /**
          * <p>Updates the password policy settings for the Amazon Web Services account.</p>
-         *  <ul> <li> <p>This operation does not support partial updates. No
-         * parameters are required, but if you do not specify a parameter, that parameter's
-         * value reverts to its default value. See the <b>Request Parameters</b> section
-         * for each parameter's default value. Also note that some parameters do not allow
-         * the default parameter to be explicitly set. Instead, to invoke the default
-         * value, do not include that parameter when you invoke the operation.</p> </li>
-         * </ul>  <p> For more information about using a password policy, see <a
+         *  <p>This operation does not support partial updates. No parameters are
+         * required, but if you do not specify a parameter, that parameter's value reverts
+         * to its default value. See the <b>Request Parameters</b> section for each
+         * parameter's default value. Also note that some parameters do not allow the
+         * default parameter to be explicitly set. Instead, to invoke the default value, do
+         * not include that parameter when you invoke the operation.</p>  <p> For
+         * more information about using a password policy, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
          * an IAM password policy</a> in the <i>IAM User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -8821,13 +8821,13 @@ namespace Model
 
         /**
          * <p>Updates the password policy settings for the Amazon Web Services account.</p>
-         *  <ul> <li> <p>This operation does not support partial updates. No
-         * parameters are required, but if you do not specify a parameter, that parameter's
-         * value reverts to its default value. See the <b>Request Parameters</b> section
-         * for each parameter's default value. Also note that some parameters do not allow
-         * the default parameter to be explicitly set. Instead, to invoke the default
-         * value, do not include that parameter when you invoke the operation.</p> </li>
-         * </ul>  <p> For more information about using a password policy, see <a
+         *  <p>This operation does not support partial updates. No parameters are
+         * required, but if you do not specify a parameter, that parameter's value reverts
+         * to its default value. See the <b>Request Parameters</b> section for each
+         * parameter's default value. Also note that some parameters do not allow the
+         * default parameter to be explicitly set. Instead, to invoke the default value, do
+         * not include that parameter when you invoke the operation.</p>  <p> For
+         * more information about using a password policy, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
          * an IAM password policy</a> in the <i>IAM User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a

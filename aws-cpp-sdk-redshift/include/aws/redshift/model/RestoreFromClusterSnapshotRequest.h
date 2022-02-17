@@ -1308,81 +1308,99 @@ namespace Model
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIamRoles() const{ return m_iamRoles; }
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline bool IamRolesHasBeenSet() const { return m_iamRolesHasBeenSet; }
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline void SetIamRoles(const Aws::Vector<Aws::String>& value) { m_iamRolesHasBeenSet = true; m_iamRoles = value; }
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline void SetIamRoles(Aws::Vector<Aws::String>&& value) { m_iamRolesHasBeenSet = true; m_iamRoles = std::move(value); }
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithIamRoles(const Aws::Vector<Aws::String>& value) { SetIamRoles(value); return *this;}
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithIamRoles(Aws::Vector<Aws::String>&& value) { SetIamRoles(std::move(value)); return *this;}
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline RestoreFromClusterSnapshotRequest& AddIamRoles(const Aws::String& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline RestoreFromClusterSnapshotRequest& AddIamRoles(Aws::String&& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of Identity and Access Management (IAM) roles that can be used by the
      * cluster to access other Amazon Web Services services. You must supply the IAM
-     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
-     * associated at any time.</p>
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline RestoreFromClusterSnapshotRequest& AddIamRoles(const char* value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
 

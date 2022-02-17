@@ -19,7 +19,9 @@ ListLaunchesRequest::ListLaunchesRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_projectHasBeenSet(false)
+    m_projectHasBeenSet(false),
+    m_status(LaunchStatus::NOT_SET),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -42,6 +44,13 @@ void ListLaunchesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_statusHasBeenSet)
+    {
+      ss << LaunchStatusMapper::GetNameForLaunchStatus(m_status);
+      uri.AddQueryStringParameter("status", ss.str());
       ss.str("");
     }
 

@@ -27,7 +27,7 @@ namespace Model
 
   /**
    * <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt
-   * copied snapshots with the specified customer master key (CMK) from Amazon Web
+   * copied snapshots with the specified encrypted symmetric key from Amazon Web
    * Services KMS in the destination region.</p> <p> For more information about
    * managing snapshot copy grants, go to <a
    * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
@@ -89,49 +89,49 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the customer master key (CMK) in Amazon Web Services
+     * <p>The unique identifier of the encrypted symmetric key in Amazon Web Services
      * KMS to which Amazon Redshift is granted permission.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The unique identifier of the customer master key (CMK) in Amazon Web Services
+     * <p>The unique identifier of the encrypted symmetric key in Amazon Web Services
      * KMS to which Amazon Redshift is granted permission.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the customer master key (CMK) in Amazon Web Services
+     * <p>The unique identifier of the encrypted symmetric key in Amazon Web Services
      * KMS to which Amazon Redshift is granted permission.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The unique identifier of the customer master key (CMK) in Amazon Web Services
+     * <p>The unique identifier of the encrypted symmetric key in Amazon Web Services
      * KMS to which Amazon Redshift is granted permission.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the customer master key (CMK) in Amazon Web Services
+     * <p>The unique identifier of the encrypted symmetric key in Amazon Web Services
      * KMS to which Amazon Redshift is granted permission.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The unique identifier of the customer master key (CMK) in Amazon Web Services
+     * <p>The unique identifier of the encrypted symmetric key in Amazon Web Services
      * KMS to which Amazon Redshift is granted permission.</p>
      */
     inline SnapshotCopyGrant& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the customer master key (CMK) in Amazon Web Services
+     * <p>The unique identifier of the encrypted symmetric key in Amazon Web Services
      * KMS to which Amazon Redshift is granted permission.</p>
      */
     inline SnapshotCopyGrant& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the customer master key (CMK) in Amazon Web Services
+     * <p>The unique identifier of the encrypted symmetric key in Amazon Web Services
      * KMS to which Amazon Redshift is granted permission.</p>
      */
     inline SnapshotCopyGrant& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}

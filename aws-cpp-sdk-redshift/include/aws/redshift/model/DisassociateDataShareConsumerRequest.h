@@ -158,6 +158,63 @@ namespace Model
      */
     inline DisassociateDataShareConsumerRequest& WithConsumerArn(const char* value) { SetConsumerArn(value); return *this;}
 
+
+    /**
+     * <p>From a datashare consumer account, removes association of a datashare from
+     * all the existing and future namespaces in the specified Amazon Web Services
+     * Region.</p>
+     */
+    inline const Aws::String& GetConsumerRegion() const{ return m_consumerRegion; }
+
+    /**
+     * <p>From a datashare consumer account, removes association of a datashare from
+     * all the existing and future namespaces in the specified Amazon Web Services
+     * Region.</p>
+     */
+    inline bool ConsumerRegionHasBeenSet() const { return m_consumerRegionHasBeenSet; }
+
+    /**
+     * <p>From a datashare consumer account, removes association of a datashare from
+     * all the existing and future namespaces in the specified Amazon Web Services
+     * Region.</p>
+     */
+    inline void SetConsumerRegion(const Aws::String& value) { m_consumerRegionHasBeenSet = true; m_consumerRegion = value; }
+
+    /**
+     * <p>From a datashare consumer account, removes association of a datashare from
+     * all the existing and future namespaces in the specified Amazon Web Services
+     * Region.</p>
+     */
+    inline void SetConsumerRegion(Aws::String&& value) { m_consumerRegionHasBeenSet = true; m_consumerRegion = std::move(value); }
+
+    /**
+     * <p>From a datashare consumer account, removes association of a datashare from
+     * all the existing and future namespaces in the specified Amazon Web Services
+     * Region.</p>
+     */
+    inline void SetConsumerRegion(const char* value) { m_consumerRegionHasBeenSet = true; m_consumerRegion.assign(value); }
+
+    /**
+     * <p>From a datashare consumer account, removes association of a datashare from
+     * all the existing and future namespaces in the specified Amazon Web Services
+     * Region.</p>
+     */
+    inline DisassociateDataShareConsumerRequest& WithConsumerRegion(const Aws::String& value) { SetConsumerRegion(value); return *this;}
+
+    /**
+     * <p>From a datashare consumer account, removes association of a datashare from
+     * all the existing and future namespaces in the specified Amazon Web Services
+     * Region.</p>
+     */
+    inline DisassociateDataShareConsumerRequest& WithConsumerRegion(Aws::String&& value) { SetConsumerRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>From a datashare consumer account, removes association of a datashare from
+     * all the existing and future namespaces in the specified Amazon Web Services
+     * Region.</p>
+     */
+    inline DisassociateDataShareConsumerRequest& WithConsumerRegion(const char* value) { SetConsumerRegion(value); return *this;}
+
   private:
 
     Aws::String m_dataShareArn;
@@ -168,6 +225,9 @@ namespace Model
 
     Aws::String m_consumerArn;
     bool m_consumerArnHasBeenSet;
+
+    Aws::String m_consumerRegion;
+    bool m_consumerRegionHasBeenSet;
   };
 
 } // namespace Model
