@@ -52,57 +52,57 @@ namespace Model
 
     /**
      * <p>A developer-defined identifier for the game server group that includes the
-     * game server instance. The name is unique for each Region in each AWS
-     * account.</p>
+     * game server instance. The name is unique for each Region in each Amazon Web
+     * Services account.</p>
      */
     inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
 
     /**
      * <p>A developer-defined identifier for the game server group that includes the
-     * game server instance. The name is unique for each Region in each AWS
-     * account.</p>
+     * game server instance. The name is unique for each Region in each Amazon Web
+     * Services account.</p>
      */
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
 
     /**
      * <p>A developer-defined identifier for the game server group that includes the
-     * game server instance. The name is unique for each Region in each AWS
-     * account.</p>
+     * game server instance. The name is unique for each Region in each Amazon Web
+     * Services account.</p>
      */
     inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
 
     /**
      * <p>A developer-defined identifier for the game server group that includes the
-     * game server instance. The name is unique for each Region in each AWS
-     * account.</p>
+     * game server instance. The name is unique for each Region in each Amazon Web
+     * Services account.</p>
      */
     inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
 
     /**
      * <p>A developer-defined identifier for the game server group that includes the
-     * game server instance. The name is unique for each Region in each AWS
-     * account.</p>
+     * game server instance. The name is unique for each Region in each Amazon Web
+     * Services account.</p>
      */
     inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
 
     /**
      * <p>A developer-defined identifier for the game server group that includes the
-     * game server instance. The name is unique for each Region in each AWS
-     * account.</p>
+     * game server instance. The name is unique for each Region in each Amazon Web
+     * Services account.</p>
      */
     inline GameServerInstance& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
 
     /**
      * <p>A developer-defined identifier for the game server group that includes the
-     * game server instance. The name is unique for each Region in each AWS
-     * account.</p>
+     * game server instance. The name is unique for each Region in each Amazon Web
+     * Services account.</p>
      */
     inline GameServerInstance& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
 
     /**
      * <p>A developer-defined identifier for the game server group that includes the
-     * game server instance. The name is unique for each Region in each AWS
-     * account.</p>
+     * game server instance. The name is unique for each Region in each Amazon Web
+     * Services account.</p>
      */
     inline GameServerInstance& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
 

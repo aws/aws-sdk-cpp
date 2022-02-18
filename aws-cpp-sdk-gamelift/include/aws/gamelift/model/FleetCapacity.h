@@ -28,9 +28,13 @@ namespace Model
   /**
    * <p>Current resource capacity settings in a specified fleet or location. The
    * location value might refer to a fleet's remote location or its home Region. </p>
-   * <p> <b>Related actions</b> </p> <p> <a>DescribeFleetCapacity</a> |
-   * <a>DescribeFleetLocationCapacity</a> | <a>UpdateFleetCapacity</a> </p><p><h3>See
-   * Also:</h3>   <a
+   * <p> <b>Related actions</b> </p> <p> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a>
+   * | <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">DescribeFleetLocationCapacity</a>
+   * | <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html">UpdateFleetCapacity</a>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetCapacity">AWS
    * API Reference</a></p>
    */
@@ -158,56 +162,56 @@ namespace Model
 
 
     /**
-     * <p>The EC2 instance type that is used for all instances in a fleet. The instance
-     * type determines the computing resources in use, including CPU, memory, storage,
-     * and networking capacity. See <a
-     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-     * for detailed descriptions.</p>
+     * <p>The Amazon EC2 instance type that is used for all instances in a fleet. The
+     * instance type determines the computing resources in use, including CPU, memory,
+     * storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
+     * Instance Types</a> for detailed descriptions.</p>
      */
     inline const EC2InstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The EC2 instance type that is used for all instances in a fleet. The instance
-     * type determines the computing resources in use, including CPU, memory, storage,
-     * and networking capacity. See <a
-     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-     * for detailed descriptions.</p>
+     * <p>The Amazon EC2 instance type that is used for all instances in a fleet. The
+     * instance type determines the computing resources in use, including CPU, memory,
+     * storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
+     * Instance Types</a> for detailed descriptions.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The EC2 instance type that is used for all instances in a fleet. The instance
-     * type determines the computing resources in use, including CPU, memory, storage,
-     * and networking capacity. See <a
-     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-     * for detailed descriptions.</p>
+     * <p>The Amazon EC2 instance type that is used for all instances in a fleet. The
+     * instance type determines the computing resources in use, including CPU, memory,
+     * storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
+     * Instance Types</a> for detailed descriptions.</p>
      */
     inline void SetInstanceType(const EC2InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The EC2 instance type that is used for all instances in a fleet. The instance
-     * type determines the computing resources in use, including CPU, memory, storage,
-     * and networking capacity. See <a
-     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-     * for detailed descriptions.</p>
+     * <p>The Amazon EC2 instance type that is used for all instances in a fleet. The
+     * instance type determines the computing resources in use, including CPU, memory,
+     * storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
+     * Instance Types</a> for detailed descriptions.</p>
      */
     inline void SetInstanceType(EC2InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The EC2 instance type that is used for all instances in a fleet. The instance
-     * type determines the computing resources in use, including CPU, memory, storage,
-     * and networking capacity. See <a
-     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-     * for detailed descriptions.</p>
+     * <p>The Amazon EC2 instance type that is used for all instances in a fleet. The
+     * instance type determines the computing resources in use, including CPU, memory,
+     * storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
+     * Instance Types</a> for detailed descriptions.</p>
      */
     inline FleetCapacity& WithInstanceType(const EC2InstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The EC2 instance type that is used for all instances in a fleet. The instance
-     * type determines the computing resources in use, including CPU, memory, storage,
-     * and networking capacity. See <a
-     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-     * for detailed descriptions.</p>
+     * <p>The Amazon EC2 instance type that is used for all instances in a fleet. The
+     * instance type determines the computing resources in use, including CPU, memory,
+     * storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
+     * Instance Types</a> for detailed descriptions.</p>
      */
     inline FleetCapacity& WithInstanceType(EC2InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
@@ -244,50 +248,50 @@ namespace Model
 
 
     /**
-     * <p>The fleet location for the instance count information, expressed as an AWS
-     * Region code, such as <code>us-west-2</code>. </p>
+     * <p>The fleet location for the instance count information, expressed as an Amazon
+     * Web Services Region code, such as <code>us-west-2</code>. </p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p>The fleet location for the instance count information, expressed as an AWS
-     * Region code, such as <code>us-west-2</code>. </p>
+     * <p>The fleet location for the instance count information, expressed as an Amazon
+     * Web Services Region code, such as <code>us-west-2</code>. </p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p>The fleet location for the instance count information, expressed as an AWS
-     * Region code, such as <code>us-west-2</code>. </p>
+     * <p>The fleet location for the instance count information, expressed as an Amazon
+     * Web Services Region code, such as <code>us-west-2</code>. </p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>The fleet location for the instance count information, expressed as an AWS
-     * Region code, such as <code>us-west-2</code>. </p>
+     * <p>The fleet location for the instance count information, expressed as an Amazon
+     * Web Services Region code, such as <code>us-west-2</code>. </p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>The fleet location for the instance count information, expressed as an AWS
-     * Region code, such as <code>us-west-2</code>. </p>
+     * <p>The fleet location for the instance count information, expressed as an Amazon
+     * Web Services Region code, such as <code>us-west-2</code>. </p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
-     * <p>The fleet location for the instance count information, expressed as an AWS
-     * Region code, such as <code>us-west-2</code>. </p>
+     * <p>The fleet location for the instance count information, expressed as an Amazon
+     * Web Services Region code, such as <code>us-west-2</code>. </p>
      */
     inline FleetCapacity& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The fleet location for the instance count information, expressed as an AWS
-     * Region code, such as <code>us-west-2</code>. </p>
+     * <p>The fleet location for the instance count information, expressed as an Amazon
+     * Web Services Region code, such as <code>us-west-2</code>. </p>
      */
     inline FleetCapacity& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p>The fleet location for the instance count information, expressed as an AWS
-     * Region code, such as <code>us-west-2</code>. </p>
+     * <p>The fleet location for the instance count information, expressed as an Amazon
+     * Web Services Region code, such as <code>us-west-2</code>. </p>
      */
     inline FleetCapacity& WithLocation(const char* value) { SetLocation(value); return *this;}
 

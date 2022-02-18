@@ -509,10 +509,10 @@ namespace Model
 
 
     /**
-     * <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling
-     * adjustment. For detailed descriptions of fleet metrics, see <a
+     * <p>Name of the Amazon Web Services-defined metric that is used to trigger a
+     * scaling adjustment. For detailed descriptions of fleet metrics, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
-     * Amazon GameLift with Amazon CloudWatch</a>. </p> <ul> <li> <p>
+     * Amazon Web Services with Amazon CloudWatch</a>. </p> <ul> <li> <p>
      * <b>ActivatingGameSessions</b> -- Game sessions in the process of being
      * created.</p> </li> <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are
      * currently running.</p> </li> <li> <p> <b>ActiveInstances</b> -- Fleet instances
@@ -539,10 +539,10 @@ namespace Model
     inline const MetricName& GetMetricName() const{ return m_metricName; }
 
     /**
-     * <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling
-     * adjustment. For detailed descriptions of fleet metrics, see <a
+     * <p>Name of the Amazon Web Services-defined metric that is used to trigger a
+     * scaling adjustment. For detailed descriptions of fleet metrics, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
-     * Amazon GameLift with Amazon CloudWatch</a>. </p> <ul> <li> <p>
+     * Amazon Web Services with Amazon CloudWatch</a>. </p> <ul> <li> <p>
      * <b>ActivatingGameSessions</b> -- Game sessions in the process of being
      * created.</p> </li> <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are
      * currently running.</p> </li> <li> <p> <b>ActiveInstances</b> -- Fleet instances
@@ -569,10 +569,10 @@ namespace Model
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
-     * <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling
-     * adjustment. For detailed descriptions of fleet metrics, see <a
+     * <p>Name of the Amazon Web Services-defined metric that is used to trigger a
+     * scaling adjustment. For detailed descriptions of fleet metrics, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
-     * Amazon GameLift with Amazon CloudWatch</a>. </p> <ul> <li> <p>
+     * Amazon Web Services with Amazon CloudWatch</a>. </p> <ul> <li> <p>
      * <b>ActivatingGameSessions</b> -- Game sessions in the process of being
      * created.</p> </li> <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are
      * currently running.</p> </li> <li> <p> <b>ActiveInstances</b> -- Fleet instances
@@ -599,10 +599,10 @@ namespace Model
     inline void SetMetricName(const MetricName& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
-     * <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling
-     * adjustment. For detailed descriptions of fleet metrics, see <a
+     * <p>Name of the Amazon Web Services-defined metric that is used to trigger a
+     * scaling adjustment. For detailed descriptions of fleet metrics, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
-     * Amazon GameLift with Amazon CloudWatch</a>. </p> <ul> <li> <p>
+     * Amazon Web Services with Amazon CloudWatch</a>. </p> <ul> <li> <p>
      * <b>ActivatingGameSessions</b> -- Game sessions in the process of being
      * created.</p> </li> <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are
      * currently running.</p> </li> <li> <p> <b>ActiveInstances</b> -- Fleet instances
@@ -629,10 +629,10 @@ namespace Model
     inline void SetMetricName(MetricName&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
-     * <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling
-     * adjustment. For detailed descriptions of fleet metrics, see <a
+     * <p>Name of the Amazon Web Services-defined metric that is used to trigger a
+     * scaling adjustment. For detailed descriptions of fleet metrics, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
-     * Amazon GameLift with Amazon CloudWatch</a>. </p> <ul> <li> <p>
+     * Amazon Web Services with Amazon CloudWatch</a>. </p> <ul> <li> <p>
      * <b>ActivatingGameSessions</b> -- Game sessions in the process of being
      * created.</p> </li> <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are
      * currently running.</p> </li> <li> <p> <b>ActiveInstances</b> -- Fleet instances
@@ -659,10 +659,10 @@ namespace Model
     inline ScalingPolicy& WithMetricName(const MetricName& value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling
-     * adjustment. For detailed descriptions of fleet metrics, see <a
+     * <p>Name of the Amazon Web Services-defined metric that is used to trigger a
+     * scaling adjustment. For detailed descriptions of fleet metrics, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
-     * Amazon GameLift with Amazon CloudWatch</a>. </p> <ul> <li> <p>
+     * Amazon Web Services with Amazon CloudWatch</a>. </p> <ul> <li> <p>
      * <b>ActivatingGameSessions</b> -- Game sessions in the process of being
      * created.</p> </li> <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are
      * currently running.</p> </li> <li> <p> <b>ActiveInstances</b> -- Fleet instances
@@ -825,42 +825,42 @@ namespace Model
 
 
     /**
-     * <p> </p>
+     * <p> The fleet location. </p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p> </p>
+     * <p> The fleet location. </p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p> </p>
+     * <p> The fleet location. </p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p> </p>
+     * <p> The fleet location. </p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p> </p>
+     * <p> The fleet location. </p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
-     * <p> </p>
+     * <p> The fleet location. </p>
      */
     inline ScalingPolicy& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p> </p>
+     * <p> The fleet location. </p>
      */
     inline ScalingPolicy& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p> </p>
+     * <p> The fleet location. </p>
      */
     inline ScalingPolicy& WithLocation(const char* value) { SetLocation(value); return *this;}
 

@@ -179,72 +179,72 @@ namespace Model
     /**
      * <p>The prioritization order to use for fleet locations, when the
      * <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations
-     * are identified by AWS Region codes such as <code>us-west-2</code>. Each location
-     * can only be listed once. </p>
+     * are identified by Amazon Web Services Region codes such as
+     * <code>us-west-2</code>. Each location can only be listed once. </p>
      */
     inline const Aws::Vector<Aws::String>& GetLocationOrder() const{ return m_locationOrder; }
 
     /**
      * <p>The prioritization order to use for fleet locations, when the
      * <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations
-     * are identified by AWS Region codes such as <code>us-west-2</code>. Each location
-     * can only be listed once. </p>
+     * are identified by Amazon Web Services Region codes such as
+     * <code>us-west-2</code>. Each location can only be listed once. </p>
      */
     inline bool LocationOrderHasBeenSet() const { return m_locationOrderHasBeenSet; }
 
     /**
      * <p>The prioritization order to use for fleet locations, when the
      * <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations
-     * are identified by AWS Region codes such as <code>us-west-2</code>. Each location
-     * can only be listed once. </p>
+     * are identified by Amazon Web Services Region codes such as
+     * <code>us-west-2</code>. Each location can only be listed once. </p>
      */
     inline void SetLocationOrder(const Aws::Vector<Aws::String>& value) { m_locationOrderHasBeenSet = true; m_locationOrder = value; }
 
     /**
      * <p>The prioritization order to use for fleet locations, when the
      * <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations
-     * are identified by AWS Region codes such as <code>us-west-2</code>. Each location
-     * can only be listed once. </p>
+     * are identified by Amazon Web Services Region codes such as
+     * <code>us-west-2</code>. Each location can only be listed once. </p>
      */
     inline void SetLocationOrder(Aws::Vector<Aws::String>&& value) { m_locationOrderHasBeenSet = true; m_locationOrder = std::move(value); }
 
     /**
      * <p>The prioritization order to use for fleet locations, when the
      * <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations
-     * are identified by AWS Region codes such as <code>us-west-2</code>. Each location
-     * can only be listed once. </p>
+     * are identified by Amazon Web Services Region codes such as
+     * <code>us-west-2</code>. Each location can only be listed once. </p>
      */
     inline PriorityConfiguration& WithLocationOrder(const Aws::Vector<Aws::String>& value) { SetLocationOrder(value); return *this;}
 
     /**
      * <p>The prioritization order to use for fleet locations, when the
      * <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations
-     * are identified by AWS Region codes such as <code>us-west-2</code>. Each location
-     * can only be listed once. </p>
+     * are identified by Amazon Web Services Region codes such as
+     * <code>us-west-2</code>. Each location can only be listed once. </p>
      */
     inline PriorityConfiguration& WithLocationOrder(Aws::Vector<Aws::String>&& value) { SetLocationOrder(std::move(value)); return *this;}
 
     /**
      * <p>The prioritization order to use for fleet locations, when the
      * <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations
-     * are identified by AWS Region codes such as <code>us-west-2</code>. Each location
-     * can only be listed once. </p>
+     * are identified by Amazon Web Services Region codes such as
+     * <code>us-west-2</code>. Each location can only be listed once. </p>
      */
     inline PriorityConfiguration& AddLocationOrder(const Aws::String& value) { m_locationOrderHasBeenSet = true; m_locationOrder.push_back(value); return *this; }
 
     /**
      * <p>The prioritization order to use for fleet locations, when the
      * <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations
-     * are identified by AWS Region codes such as <code>us-west-2</code>. Each location
-     * can only be listed once. </p>
+     * are identified by Amazon Web Services Region codes such as
+     * <code>us-west-2</code>. Each location can only be listed once. </p>
      */
     inline PriorityConfiguration& AddLocationOrder(Aws::String&& value) { m_locationOrderHasBeenSet = true; m_locationOrder.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The prioritization order to use for fleet locations, when the
      * <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations
-     * are identified by AWS Region codes such as <code>us-west-2</code>. Each location
-     * can only be listed once. </p>
+     * are identified by Amazon Web Services Region codes such as
+     * <code>us-west-2</code>. Each location can only be listed once. </p>
      */
     inline PriorityConfiguration& AddLocationOrder(const char* value) { m_locationOrderHasBeenSet = true; m_locationOrder.push_back(value); return *this; }
 

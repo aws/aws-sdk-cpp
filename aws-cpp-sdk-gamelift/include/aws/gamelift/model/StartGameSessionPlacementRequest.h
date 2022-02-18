@@ -304,7 +304,7 @@ namespace Model
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions. This
+     * latency that a player experiences when connected to @aws; Regions. This
      * information is used to try to place the new game session where it can offer the
      * best possible gameplay experience for the players. </p>
      */
@@ -312,7 +312,7 @@ namespace Model
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions. This
+     * latency that a player experiences when connected to @aws; Regions. This
      * information is used to try to place the new game session where it can offer the
      * best possible gameplay experience for the players. </p>
      */
@@ -320,7 +320,7 @@ namespace Model
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions. This
+     * latency that a player experiences when connected to @aws; Regions. This
      * information is used to try to place the new game session where it can offer the
      * best possible gameplay experience for the players. </p>
      */
@@ -328,7 +328,7 @@ namespace Model
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions. This
+     * latency that a player experiences when connected to @aws; Regions. This
      * information is used to try to place the new game session where it can offer the
      * best possible gameplay experience for the players. </p>
      */
@@ -336,7 +336,7 @@ namespace Model
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions. This
+     * latency that a player experiences when connected to @aws; Regions. This
      * information is used to try to place the new game session where it can offer the
      * best possible gameplay experience for the players. </p>
      */
@@ -344,7 +344,7 @@ namespace Model
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions. This
+     * latency that a player experiences when connected to @aws; Regions. This
      * information is used to try to place the new game session where it can offer the
      * best possible gameplay experience for the players. </p>
      */
@@ -352,7 +352,7 @@ namespace Model
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions. This
+     * latency that a player experiences when connected to @aws; Regions. This
      * information is used to try to place the new game session where it can offer the
      * best possible gameplay experience for the players. </p>
      */
@@ -360,7 +360,7 @@ namespace Model
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions. This
+     * latency that a player experiences when connected to @aws; Regions. This
      * information is used to try to place the new game session where it can offer the
      * best possible gameplay experience for the players. </p>
      */

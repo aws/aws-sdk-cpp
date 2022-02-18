@@ -211,56 +211,56 @@ namespace Model
 
 
     /**
-     * <p>The EC2 instance type that determines the computing resources of each
+     * <p>The Amazon EC2 instance type that determines the computing resources of each
      * instance in the fleet. Instance type defines the CPU, memory, storage, and
      * networking capacity. See <a
-     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-     * for detailed descriptions.</p>
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
+     * Instance Types</a> for detailed descriptions.</p>
      */
     inline const EC2InstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The EC2 instance type that determines the computing resources of each
+     * <p>The Amazon EC2 instance type that determines the computing resources of each
      * instance in the fleet. Instance type defines the CPU, memory, storage, and
      * networking capacity. See <a
-     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-     * for detailed descriptions.</p>
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
+     * Instance Types</a> for detailed descriptions.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The EC2 instance type that determines the computing resources of each
+     * <p>The Amazon EC2 instance type that determines the computing resources of each
      * instance in the fleet. Instance type defines the CPU, memory, storage, and
      * networking capacity. See <a
-     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-     * for detailed descriptions.</p>
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
+     * Instance Types</a> for detailed descriptions.</p>
      */
     inline void SetInstanceType(const EC2InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The EC2 instance type that determines the computing resources of each
+     * <p>The Amazon EC2 instance type that determines the computing resources of each
      * instance in the fleet. Instance type defines the CPU, memory, storage, and
      * networking capacity. See <a
-     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-     * for detailed descriptions.</p>
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
+     * Instance Types</a> for detailed descriptions.</p>
      */
     inline void SetInstanceType(EC2InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The EC2 instance type that determines the computing resources of each
+     * <p>The Amazon EC2 instance type that determines the computing resources of each
      * instance in the fleet. Instance type defines the CPU, memory, storage, and
      * networking capacity. See <a
-     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-     * for detailed descriptions.</p>
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
+     * Instance Types</a> for detailed descriptions.</p>
      */
     inline FleetAttributes& WithInstanceType(const EC2InstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The EC2 instance type that determines the computing resources of each
+     * <p>The Amazon EC2 instance type that determines the computing resources of each
      * instance in the fleet. Instance type defines the CPU, memory, storage, and
      * networking capacity. See <a
-     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-     * for detailed descriptions.</p>
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
+     * Instance Types</a> for detailed descriptions.</p>
      */
     inline FleetAttributes& WithInstanceType(EC2InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
@@ -1215,104 +1215,104 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
+     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
+     * Services services. With an instance role ARN set, any application that runs on
+     * an instance in this fleet can assume the role, including install scripts, server
      * processes, and daemons (background processes). Create a role or look up a role's
      * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the AWS Management Console. Learn more about using on-box credentials for
-     * your game servers at <a
+     * in the Amazon Web Services Management Console. Learn more about using on-box
+     * credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
      */
     inline const Aws::String& GetInstanceRoleArn() const{ return m_instanceRoleArn; }
 
     /**
-     * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
+     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
+     * Services services. With an instance role ARN set, any application that runs on
+     * an instance in this fleet can assume the role, including install scripts, server
      * processes, and daemons (background processes). Create a role or look up a role's
      * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the AWS Management Console. Learn more about using on-box credentials for
-     * your game servers at <a
+     * in the Amazon Web Services Management Console. Learn more about using on-box
+     * credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
      */
     inline bool InstanceRoleArnHasBeenSet() const { return m_instanceRoleArnHasBeenSet; }
 
     /**
-     * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
+     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
+     * Services services. With an instance role ARN set, any application that runs on
+     * an instance in this fleet can assume the role, including install scripts, server
      * processes, and daemons (background processes). Create a role or look up a role's
      * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the AWS Management Console. Learn more about using on-box credentials for
-     * your game servers at <a
+     * in the Amazon Web Services Management Console. Learn more about using on-box
+     * credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
      */
     inline void SetInstanceRoleArn(const Aws::String& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = value; }
 
     /**
-     * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
+     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
+     * Services services. With an instance role ARN set, any application that runs on
+     * an instance in this fleet can assume the role, including install scripts, server
      * processes, and daemons (background processes). Create a role or look up a role's
      * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the AWS Management Console. Learn more about using on-box credentials for
-     * your game servers at <a
+     * in the Amazon Web Services Management Console. Learn more about using on-box
+     * credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
      */
     inline void SetInstanceRoleArn(Aws::String&& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = std::move(value); }
 
     /**
-     * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
+     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
+     * Services services. With an instance role ARN set, any application that runs on
+     * an instance in this fleet can assume the role, including install scripts, server
      * processes, and daemons (background processes). Create a role or look up a role's
      * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the AWS Management Console. Learn more about using on-box credentials for
-     * your game servers at <a
+     * in the Amazon Web Services Management Console. Learn more about using on-box
+     * credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
      */
     inline void SetInstanceRoleArn(const char* value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn.assign(value); }
 
     /**
-     * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
+     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
+     * Services services. With an instance role ARN set, any application that runs on
+     * an instance in this fleet can assume the role, including install scripts, server
      * processes, and daemons (background processes). Create a role or look up a role's
      * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the AWS Management Console. Learn more about using on-box credentials for
-     * your game servers at <a
+     * in the Amazon Web Services Management Console. Learn more about using on-box
+     * credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
      */
     inline FleetAttributes& WithInstanceRoleArn(const Aws::String& value) { SetInstanceRoleArn(value); return *this;}
 
     /**
-     * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
+     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
+     * Services services. With an instance role ARN set, any application that runs on
+     * an instance in this fleet can assume the role, including install scripts, server
      * processes, and daemons (background processes). Create a role or look up a role's
      * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the AWS Management Console. Learn more about using on-box credentials for
-     * your game servers at <a
+     * in the Amazon Web Services Management Console. Learn more about using on-box
+     * credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
      */
     inline FleetAttributes& WithInstanceRoleArn(Aws::String&& value) { SetInstanceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for an AWS IAM role that manages access to your AWS
-     * services. With an instance role ARN set, any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server
+     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
+     * Services services. With an instance role ARN set, any application that runs on
+     * an instance in this fleet can assume the role, including install scripts, server
      * processes, and daemons (background processes). Create a role or look up a role's
      * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-     * in the AWS Management Console. Learn more about using on-box credentials for
-     * your game servers at <a
+     * in the Amazon Web Services Management Console. Learn more about using on-box
+     * credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
      */

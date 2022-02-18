@@ -85,74 +85,74 @@ namespace Model
 
 
     /**
-     * <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs
-     * use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To
-     * retrieve all instances in the game server group, leave this parameter empty.
-     * </p>
+     * <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2
+     * instance IDs use a 17-character format, for example:
+     * <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server
+     * group, leave this parameter empty. </p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs
-     * use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To
-     * retrieve all instances in the game server group, leave this parameter empty.
-     * </p>
+     * <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2
+     * instance IDs use a 17-character format, for example:
+     * <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server
+     * group, leave this parameter empty. </p>
      */
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
 
     /**
-     * <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs
-     * use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To
-     * retrieve all instances in the game server group, leave this parameter empty.
-     * </p>
+     * <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2
+     * instance IDs use a 17-character format, for example:
+     * <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server
+     * group, leave this parameter empty. </p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs
-     * use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To
-     * retrieve all instances in the game server group, leave this parameter empty.
-     * </p>
+     * <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2
+     * instance IDs use a 17-character format, for example:
+     * <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server
+     * group, leave this parameter empty. </p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
-     * <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs
-     * use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To
-     * retrieve all instances in the game server group, leave this parameter empty.
-     * </p>
+     * <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2
+     * instance IDs use a 17-character format, for example:
+     * <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server
+     * group, leave this parameter empty. </p>
      */
     inline DescribeGameServerInstancesRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs
-     * use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To
-     * retrieve all instances in the game server group, leave this parameter empty.
-     * </p>
+     * <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2
+     * instance IDs use a 17-character format, for example:
+     * <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server
+     * group, leave this parameter empty. </p>
      */
     inline DescribeGameServerInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
-     * <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs
-     * use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To
-     * retrieve all instances in the game server group, leave this parameter empty.
-     * </p>
+     * <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2
+     * instance IDs use a 17-character format, for example:
+     * <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server
+     * group, leave this parameter empty. </p>
      */
     inline DescribeGameServerInstancesRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs
-     * use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To
-     * retrieve all instances in the game server group, leave this parameter empty.
-     * </p>
+     * <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2
+     * instance IDs use a 17-character format, for example:
+     * <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server
+     * group, leave this parameter empty. </p>
      */
     inline DescribeGameServerInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs
-     * use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To
-     * retrieve all instances in the game server group, leave this parameter empty.
-     * </p>
+     * <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2
+     * instance IDs use a 17-character format, for example:
+     * <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server
+     * group, leave this parameter empty. </p>
      */
     inline DescribeGameServerInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 

@@ -385,32 +385,38 @@ namespace Model
 
 
     /**
-     * <p>EC2 instance type that defines the computing resources of this instance. </p>
+     * <p>Amazon EC2 instance type that defines the computing resources of this
+     * instance. </p>
      */
     inline const EC2InstanceType& GetType() const{ return m_type; }
 
     /**
-     * <p>EC2 instance type that defines the computing resources of this instance. </p>
+     * <p>Amazon EC2 instance type that defines the computing resources of this
+     * instance. </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>EC2 instance type that defines the computing resources of this instance. </p>
+     * <p>Amazon EC2 instance type that defines the computing resources of this
+     * instance. </p>
      */
     inline void SetType(const EC2InstanceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>EC2 instance type that defines the computing resources of this instance. </p>
+     * <p>Amazon EC2 instance type that defines the computing resources of this
+     * instance. </p>
      */
     inline void SetType(EC2InstanceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>EC2 instance type that defines the computing resources of this instance. </p>
+     * <p>Amazon EC2 instance type that defines the computing resources of this
+     * instance. </p>
      */
     inline Instance& WithType(const EC2InstanceType& value) { SetType(value); return *this;}
 
     /**
-     * <p>EC2 instance type that defines the computing resources of this instance. </p>
+     * <p>Amazon EC2 instance type that defines the computing resources of this
+     * instance. </p>
      */
     inline Instance& WithType(EC2InstanceType&& value) { SetType(std::move(value)); return *this;}
 
@@ -544,50 +550,50 @@ namespace Model
 
 
     /**
-     * <p>The fleet location of the instance, expressed as an AWS Region code, such as
-     * <code>us-west-2</code>. </p>
+     * <p>The fleet location of the instance, expressed as an Amazon Web Services
+     * Region code, such as <code>us-west-2</code>. </p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p>The fleet location of the instance, expressed as an AWS Region code, such as
-     * <code>us-west-2</code>. </p>
+     * <p>The fleet location of the instance, expressed as an Amazon Web Services
+     * Region code, such as <code>us-west-2</code>. </p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p>The fleet location of the instance, expressed as an AWS Region code, such as
-     * <code>us-west-2</code>. </p>
+     * <p>The fleet location of the instance, expressed as an Amazon Web Services
+     * Region code, such as <code>us-west-2</code>. </p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>The fleet location of the instance, expressed as an AWS Region code, such as
-     * <code>us-west-2</code>. </p>
+     * <p>The fleet location of the instance, expressed as an Amazon Web Services
+     * Region code, such as <code>us-west-2</code>. </p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>The fleet location of the instance, expressed as an AWS Region code, such as
-     * <code>us-west-2</code>. </p>
+     * <p>The fleet location of the instance, expressed as an Amazon Web Services
+     * Region code, such as <code>us-west-2</code>. </p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
-     * <p>The fleet location of the instance, expressed as an AWS Region code, such as
-     * <code>us-west-2</code>. </p>
+     * <p>The fleet location of the instance, expressed as an Amazon Web Services
+     * Region code, such as <code>us-west-2</code>. </p>
      */
     inline Instance& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The fleet location of the instance, expressed as an AWS Region code, such as
-     * <code>us-west-2</code>. </p>
+     * <p>The fleet location of the instance, expressed as an Amazon Web Services
+     * Region code, such as <code>us-west-2</code>. </p>
      */
     inline Instance& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p>The fleet location of the instance, expressed as an AWS Region code, such as
-     * <code>us-west-2</code>. </p>
+     * <p>The fleet location of the instance, expressed as an Amazon Web Services
+     * Region code, such as <code>us-west-2</code>. </p>
      */
     inline Instance& WithLocation(const char* value) { SetLocation(value); return *this;}
 

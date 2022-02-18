@@ -284,7 +284,7 @@ namespace Model
 
     /**
      * <p>A list of locations where a queue is allowed to place new game sessions.
-     * Locations are specified in the form of AWS Region codes, such as
+     * Locations are specified in the form of Amazon Web Services Region codes, such as
      * <code>us-west-2</code>. If this parameter is not set, game sessions can be
      * placed in any queue location. To remove an existing filter configuration, pass
      * in an empty set.</p>
@@ -293,7 +293,7 @@ namespace Model
 
     /**
      * <p>A list of locations where a queue is allowed to place new game sessions.
-     * Locations are specified in the form of AWS Region codes, such as
+     * Locations are specified in the form of Amazon Web Services Region codes, such as
      * <code>us-west-2</code>. If this parameter is not set, game sessions can be
      * placed in any queue location. To remove an existing filter configuration, pass
      * in an empty set.</p>
@@ -302,7 +302,7 @@ namespace Model
 
     /**
      * <p>A list of locations where a queue is allowed to place new game sessions.
-     * Locations are specified in the form of AWS Region codes, such as
+     * Locations are specified in the form of Amazon Web Services Region codes, such as
      * <code>us-west-2</code>. If this parameter is not set, game sessions can be
      * placed in any queue location. To remove an existing filter configuration, pass
      * in an empty set.</p>
@@ -311,7 +311,7 @@ namespace Model
 
     /**
      * <p>A list of locations where a queue is allowed to place new game sessions.
-     * Locations are specified in the form of AWS Region codes, such as
+     * Locations are specified in the form of Amazon Web Services Region codes, such as
      * <code>us-west-2</code>. If this parameter is not set, game sessions can be
      * placed in any queue location. To remove an existing filter configuration, pass
      * in an empty set.</p>
@@ -320,7 +320,7 @@ namespace Model
 
     /**
      * <p>A list of locations where a queue is allowed to place new game sessions.
-     * Locations are specified in the form of AWS Region codes, such as
+     * Locations are specified in the form of Amazon Web Services Region codes, such as
      * <code>us-west-2</code>. If this parameter is not set, game sessions can be
      * placed in any queue location. To remove an existing filter configuration, pass
      * in an empty set.</p>
@@ -329,7 +329,7 @@ namespace Model
 
     /**
      * <p>A list of locations where a queue is allowed to place new game sessions.
-     * Locations are specified in the form of AWS Region codes, such as
+     * Locations are specified in the form of Amazon Web Services Region codes, such as
      * <code>us-west-2</code>. If this parameter is not set, game sessions can be
      * placed in any queue location. To remove an existing filter configuration, pass
      * in an empty set.</p>

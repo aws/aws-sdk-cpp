@@ -38,58 +38,58 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the AWS account that you use to manage your GameLift
-     * fleet. You can find your Account ID in the AWS Management Console under account
-     * settings.</p>
+     * <p>A unique identifier for the Amazon Web Services account that you use to
+     * manage your GameLift fleet. You can find your Account ID in the Amazon Web
+     * Services Management Console under account settings.</p>
      */
     inline const Aws::String& GetGameLiftAwsAccountId() const{ return m_gameLiftAwsAccountId; }
 
     /**
-     * <p>A unique identifier for the AWS account that you use to manage your GameLift
-     * fleet. You can find your Account ID in the AWS Management Console under account
-     * settings.</p>
+     * <p>A unique identifier for the Amazon Web Services account that you use to
+     * manage your GameLift fleet. You can find your Account ID in the Amazon Web
+     * Services Management Console under account settings.</p>
      */
     inline bool GameLiftAwsAccountIdHasBeenSet() const { return m_gameLiftAwsAccountIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the AWS account that you use to manage your GameLift
-     * fleet. You can find your Account ID in the AWS Management Console under account
-     * settings.</p>
+     * <p>A unique identifier for the Amazon Web Services account that you use to
+     * manage your GameLift fleet. You can find your Account ID in the Amazon Web
+     * Services Management Console under account settings.</p>
      */
     inline void SetGameLiftAwsAccountId(const Aws::String& value) { m_gameLiftAwsAccountIdHasBeenSet = true; m_gameLiftAwsAccountId = value; }
 
     /**
-     * <p>A unique identifier for the AWS account that you use to manage your GameLift
-     * fleet. You can find your Account ID in the AWS Management Console under account
-     * settings.</p>
+     * <p>A unique identifier for the Amazon Web Services account that you use to
+     * manage your GameLift fleet. You can find your Account ID in the Amazon Web
+     * Services Management Console under account settings.</p>
      */
     inline void SetGameLiftAwsAccountId(Aws::String&& value) { m_gameLiftAwsAccountIdHasBeenSet = true; m_gameLiftAwsAccountId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the AWS account that you use to manage your GameLift
-     * fleet. You can find your Account ID in the AWS Management Console under account
-     * settings.</p>
+     * <p>A unique identifier for the Amazon Web Services account that you use to
+     * manage your GameLift fleet. You can find your Account ID in the Amazon Web
+     * Services Management Console under account settings.</p>
      */
     inline void SetGameLiftAwsAccountId(const char* value) { m_gameLiftAwsAccountIdHasBeenSet = true; m_gameLiftAwsAccountId.assign(value); }
 
     /**
-     * <p>A unique identifier for the AWS account that you use to manage your GameLift
-     * fleet. You can find your Account ID in the AWS Management Console under account
-     * settings.</p>
+     * <p>A unique identifier for the Amazon Web Services account that you use to
+     * manage your GameLift fleet. You can find your Account ID in the Amazon Web
+     * Services Management Console under account settings.</p>
      */
     inline DeleteVpcPeeringAuthorizationRequest& WithGameLiftAwsAccountId(const Aws::String& value) { SetGameLiftAwsAccountId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the AWS account that you use to manage your GameLift
-     * fleet. You can find your Account ID in the AWS Management Console under account
-     * settings.</p>
+     * <p>A unique identifier for the Amazon Web Services account that you use to
+     * manage your GameLift fleet. You can find your Account ID in the Amazon Web
+     * Services Management Console under account settings.</p>
      */
     inline DeleteVpcPeeringAuthorizationRequest& WithGameLiftAwsAccountId(Aws::String&& value) { SetGameLiftAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the AWS account that you use to manage your GameLift
-     * fleet. You can find your Account ID in the AWS Management Console under account
-     * settings.</p>
+     * <p>A unique identifier for the Amazon Web Services account that you use to
+     * manage your GameLift fleet. You can find your Account ID in the Amazon Web
+     * Services Management Console under account settings.</p>
      */
     inline DeleteVpcPeeringAuthorizationRequest& WithGameLiftAwsAccountId(const char* value) { SetGameLiftAwsAccountId(value); return *this;}
 
@@ -98,7 +98,7 @@ namespace Model
      * <p>A unique identifier for a VPC with resources to be accessed by your GameLift
      * fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID,
      * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
-     * AWS Management Console. Learn more about VPC peering in <a
+     * Amazon Web Services Management Console. Learn more about VPC peering in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
      * Peering with GameLift Fleets</a>.</p>
      */
@@ -108,7 +108,7 @@ namespace Model
      * <p>A unique identifier for a VPC with resources to be accessed by your GameLift
      * fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID,
      * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
-     * AWS Management Console. Learn more about VPC peering in <a
+     * Amazon Web Services Management Console. Learn more about VPC peering in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
      * Peering with GameLift Fleets</a>.</p>
      */
@@ -118,7 +118,7 @@ namespace Model
      * <p>A unique identifier for a VPC with resources to be accessed by your GameLift
      * fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID,
      * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
-     * AWS Management Console. Learn more about VPC peering in <a
+     * Amazon Web Services Management Console. Learn more about VPC peering in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
      * Peering with GameLift Fleets</a>.</p>
      */
@@ -128,7 +128,7 @@ namespace Model
      * <p>A unique identifier for a VPC with resources to be accessed by your GameLift
      * fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID,
      * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
-     * AWS Management Console. Learn more about VPC peering in <a
+     * Amazon Web Services Management Console. Learn more about VPC peering in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
      * Peering with GameLift Fleets</a>.</p>
      */
@@ -138,7 +138,7 @@ namespace Model
      * <p>A unique identifier for a VPC with resources to be accessed by your GameLift
      * fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID,
      * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
-     * AWS Management Console. Learn more about VPC peering in <a
+     * Amazon Web Services Management Console. Learn more about VPC peering in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
      * Peering with GameLift Fleets</a>.</p>
      */
@@ -148,7 +148,7 @@ namespace Model
      * <p>A unique identifier for a VPC with resources to be accessed by your GameLift
      * fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID,
      * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
-     * AWS Management Console. Learn more about VPC peering in <a
+     * Amazon Web Services Management Console. Learn more about VPC peering in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
      * Peering with GameLift Fleets</a>.</p>
      */
@@ -158,7 +158,7 @@ namespace Model
      * <p>A unique identifier for a VPC with resources to be accessed by your GameLift
      * fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID,
      * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
-     * AWS Management Console. Learn more about VPC peering in <a
+     * Amazon Web Services Management Console. Learn more about VPC peering in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
      * Peering with GameLift Fleets</a>.</p>
      */
@@ -168,7 +168,7 @@ namespace Model
      * <p>A unique identifier for a VPC with resources to be accessed by your GameLift
      * fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID,
      * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
-     * AWS Management Console. Learn more about VPC peering in <a
+     * Amazon Web Services Management Console. Learn more about VPC peering in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
      * Peering with GameLift Fleets</a>.</p>
      */

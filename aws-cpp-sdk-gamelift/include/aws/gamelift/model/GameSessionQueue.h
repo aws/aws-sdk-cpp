@@ -31,9 +31,13 @@ namespace Model
   /**
    * <p>Configuration for a game session placement mechanism that processes requests
    * for new game sessions. A queue can be used on its own or as part of a
-   * matchmaking solution.</p> <p> <b>Related actions</b> </p> <p>
-   * <a>CreateGameSessionQueue</a> | <a>DescribeGameSessionQueues</a> |
-   * <a>UpdateGameSessionQueue</a> </p><p><h3>See Also:</h3>   <a
+   * matchmaking solution.</p> <p> <b>Related actions</b> </p> <p> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSessionQueue.html">CreateGameSessionQueue</a>
+   * | <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionQueues.html">DescribeGameSessionQueues</a>
+   * | <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSessionQueue.html">UpdateGameSessionQueue</a>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionQueue">AWS
    * API Reference</a></p>
    */
@@ -361,7 +365,7 @@ namespace Model
 
     /**
      * <p>A list of locations where a queue is allowed to place new game sessions.
-     * Locations are specified in the form of AWS Region codes, such as
+     * Locations are specified in the form of Amazon Web Services Region codes, such as
      * <code>us-west-2</code>. If this parameter is not set, game sessions can be
      * placed in any queue location. </p>
      */
@@ -369,7 +373,7 @@ namespace Model
 
     /**
      * <p>A list of locations where a queue is allowed to place new game sessions.
-     * Locations are specified in the form of AWS Region codes, such as
+     * Locations are specified in the form of Amazon Web Services Region codes, such as
      * <code>us-west-2</code>. If this parameter is not set, game sessions can be
      * placed in any queue location. </p>
      */
@@ -377,7 +381,7 @@ namespace Model
 
     /**
      * <p>A list of locations where a queue is allowed to place new game sessions.
-     * Locations are specified in the form of AWS Region codes, such as
+     * Locations are specified in the form of Amazon Web Services Region codes, such as
      * <code>us-west-2</code>. If this parameter is not set, game sessions can be
      * placed in any queue location. </p>
      */
@@ -385,7 +389,7 @@ namespace Model
 
     /**
      * <p>A list of locations where a queue is allowed to place new game sessions.
-     * Locations are specified in the form of AWS Region codes, such as
+     * Locations are specified in the form of Amazon Web Services Region codes, such as
      * <code>us-west-2</code>. If this parameter is not set, game sessions can be
      * placed in any queue location. </p>
      */
@@ -393,7 +397,7 @@ namespace Model
 
     /**
      * <p>A list of locations where a queue is allowed to place new game sessions.
-     * Locations are specified in the form of AWS Region codes, such as
+     * Locations are specified in the form of Amazon Web Services Region codes, such as
      * <code>us-west-2</code>. If this parameter is not set, game sessions can be
      * placed in any queue location. </p>
      */
@@ -401,7 +405,7 @@ namespace Model
 
     /**
      * <p>A list of locations where a queue is allowed to place new game sessions.
-     * Locations are specified in the form of AWS Region codes, such as
+     * Locations are specified in the form of Amazon Web Services Region codes, such as
      * <code>us-west-2</code>. If this parameter is not set, game sessions can be
      * placed in any queue location. </p>
      */

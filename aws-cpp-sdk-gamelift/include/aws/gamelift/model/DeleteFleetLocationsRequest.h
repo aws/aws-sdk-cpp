@@ -89,55 +89,55 @@ namespace Model
 
     /**
      * <p>The list of fleet locations to delete. Specify locations in the form of an
-     * AWS Region code, such as <code>us-west-2</code>.</p>
+     * Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLocations() const{ return m_locations; }
 
     /**
      * <p>The list of fleet locations to delete. Specify locations in the form of an
-     * AWS Region code, such as <code>us-west-2</code>.</p>
+     * Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
      */
     inline bool LocationsHasBeenSet() const { return m_locationsHasBeenSet; }
 
     /**
      * <p>The list of fleet locations to delete. Specify locations in the form of an
-     * AWS Region code, such as <code>us-west-2</code>.</p>
+     * Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
      */
     inline void SetLocations(const Aws::Vector<Aws::String>& value) { m_locationsHasBeenSet = true; m_locations = value; }
 
     /**
      * <p>The list of fleet locations to delete. Specify locations in the form of an
-     * AWS Region code, such as <code>us-west-2</code>.</p>
+     * Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
      */
     inline void SetLocations(Aws::Vector<Aws::String>&& value) { m_locationsHasBeenSet = true; m_locations = std::move(value); }
 
     /**
      * <p>The list of fleet locations to delete. Specify locations in the form of an
-     * AWS Region code, such as <code>us-west-2</code>.</p>
+     * Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
      */
     inline DeleteFleetLocationsRequest& WithLocations(const Aws::Vector<Aws::String>& value) { SetLocations(value); return *this;}
 
     /**
      * <p>The list of fleet locations to delete. Specify locations in the form of an
-     * AWS Region code, such as <code>us-west-2</code>.</p>
+     * Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
      */
     inline DeleteFleetLocationsRequest& WithLocations(Aws::Vector<Aws::String>&& value) { SetLocations(std::move(value)); return *this;}
 
     /**
      * <p>The list of fleet locations to delete. Specify locations in the form of an
-     * AWS Region code, such as <code>us-west-2</code>.</p>
+     * Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
      */
     inline DeleteFleetLocationsRequest& AddLocations(const Aws::String& value) { m_locationsHasBeenSet = true; m_locations.push_back(value); return *this; }
 
     /**
      * <p>The list of fleet locations to delete. Specify locations in the form of an
-     * AWS Region code, such as <code>us-west-2</code>.</p>
+     * Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
      */
     inline DeleteFleetLocationsRequest& AddLocations(Aws::String&& value) { m_locationsHasBeenSet = true; m_locations.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of fleet locations to delete. Specify locations in the form of an
-     * AWS Region code, such as <code>us-west-2</code>.</p>
+     * Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
      */
     inline DeleteFleetLocationsRequest& AddLocations(const char* value) { m_locationsHasBeenSet = true; m_locations.push_back(value); return *this; }
 

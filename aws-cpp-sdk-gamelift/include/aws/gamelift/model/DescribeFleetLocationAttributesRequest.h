@@ -89,55 +89,64 @@ namespace Model
 
     /**
      * <p>A list of fleet locations to retrieve information for. Specify locations in
-     * the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+     * the form of an Amazon Web Services Region code, such as
+     * <code>us-west-2</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLocations() const{ return m_locations; }
 
     /**
      * <p>A list of fleet locations to retrieve information for. Specify locations in
-     * the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+     * the form of an Amazon Web Services Region code, such as
+     * <code>us-west-2</code>.</p>
      */
     inline bool LocationsHasBeenSet() const { return m_locationsHasBeenSet; }
 
     /**
      * <p>A list of fleet locations to retrieve information for. Specify locations in
-     * the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+     * the form of an Amazon Web Services Region code, such as
+     * <code>us-west-2</code>.</p>
      */
     inline void SetLocations(const Aws::Vector<Aws::String>& value) { m_locationsHasBeenSet = true; m_locations = value; }
 
     /**
      * <p>A list of fleet locations to retrieve information for. Specify locations in
-     * the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+     * the form of an Amazon Web Services Region code, such as
+     * <code>us-west-2</code>.</p>
      */
     inline void SetLocations(Aws::Vector<Aws::String>&& value) { m_locationsHasBeenSet = true; m_locations = std::move(value); }
 
     /**
      * <p>A list of fleet locations to retrieve information for. Specify locations in
-     * the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+     * the form of an Amazon Web Services Region code, such as
+     * <code>us-west-2</code>.</p>
      */
     inline DescribeFleetLocationAttributesRequest& WithLocations(const Aws::Vector<Aws::String>& value) { SetLocations(value); return *this;}
 
     /**
      * <p>A list of fleet locations to retrieve information for. Specify locations in
-     * the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+     * the form of an Amazon Web Services Region code, such as
+     * <code>us-west-2</code>.</p>
      */
     inline DescribeFleetLocationAttributesRequest& WithLocations(Aws::Vector<Aws::String>&& value) { SetLocations(std::move(value)); return *this;}
 
     /**
      * <p>A list of fleet locations to retrieve information for. Specify locations in
-     * the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+     * the form of an Amazon Web Services Region code, such as
+     * <code>us-west-2</code>.</p>
      */
     inline DescribeFleetLocationAttributesRequest& AddLocations(const Aws::String& value) { m_locationsHasBeenSet = true; m_locations.push_back(value); return *this; }
 
     /**
      * <p>A list of fleet locations to retrieve information for. Specify locations in
-     * the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+     * the form of an Amazon Web Services Region code, such as
+     * <code>us-west-2</code>.</p>
      */
     inline DescribeFleetLocationAttributesRequest& AddLocations(Aws::String&& value) { m_locationsHasBeenSet = true; m_locations.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of fleet locations to retrieve information for. Specify locations in
-     * the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+     * the form of an Amazon Web Services Region code, such as
+     * <code>us-west-2</code>.</p>
      */
     inline DescribeFleetLocationAttributesRequest& AddLocations(const char* value) { m_locationsHasBeenSet = true; m_locations.push_back(value); return *this; }
 

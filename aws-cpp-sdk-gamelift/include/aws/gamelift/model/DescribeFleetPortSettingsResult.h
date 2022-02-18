@@ -214,44 +214,44 @@ namespace Model
 
 
     /**
-     * <p>The requested fleet location, expressed as an AWS Region code, such as
-     * <code>us-west-2</code>. </p>
+     * <p>The requested fleet location, expressed as an Amazon Web Services Region
+     * code, such as <code>us-west-2</code>. </p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p>The requested fleet location, expressed as an AWS Region code, such as
-     * <code>us-west-2</code>. </p>
+     * <p>The requested fleet location, expressed as an Amazon Web Services Region
+     * code, such as <code>us-west-2</code>. </p>
      */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
 
     /**
-     * <p>The requested fleet location, expressed as an AWS Region code, such as
-     * <code>us-west-2</code>. </p>
+     * <p>The requested fleet location, expressed as an Amazon Web Services Region
+     * code, such as <code>us-west-2</code>. </p>
      */
     inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
 
     /**
-     * <p>The requested fleet location, expressed as an AWS Region code, such as
-     * <code>us-west-2</code>. </p>
+     * <p>The requested fleet location, expressed as an Amazon Web Services Region
+     * code, such as <code>us-west-2</code>. </p>
      */
     inline void SetLocation(const char* value) { m_location.assign(value); }
 
     /**
-     * <p>The requested fleet location, expressed as an AWS Region code, such as
-     * <code>us-west-2</code>. </p>
+     * <p>The requested fleet location, expressed as an Amazon Web Services Region
+     * code, such as <code>us-west-2</code>. </p>
      */
     inline DescribeFleetPortSettingsResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The requested fleet location, expressed as an AWS Region code, such as
-     * <code>us-west-2</code>. </p>
+     * <p>The requested fleet location, expressed as an Amazon Web Services Region
+     * code, such as <code>us-west-2</code>. </p>
      */
     inline DescribeFleetPortSettingsResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p>The requested fleet location, expressed as an AWS Region code, such as
-     * <code>us-west-2</code>. </p>
+     * <p>The requested fleet location, expressed as an Amazon Web Services Region
+     * code, such as <code>us-west-2</code>. </p>
      */
     inline DescribeFleetPortSettingsResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 

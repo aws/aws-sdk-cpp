@@ -25,7 +25,8 @@ namespace Model
 
   /**
    * <p>A remote location where a multi-location fleet can deploy EC2 instances for
-   * game hosting. </p> <p> <b>Related actions</b> </p> <p> <a>CreateFleet</a>
+   * game hosting. </p> <p> <b>Related actions</b> </p> <p> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html">CreateFleet</a>
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/LocationConfiguration">AWS
    * API Reference</a></p>
@@ -40,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>An AWS Region code, such as <code>us-west-2</code>. </p>
+     * <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p>An AWS Region code, such as <code>us-west-2</code>. </p>
+     * <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p>An AWS Region code, such as <code>us-west-2</code>. </p>
+     * <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>An AWS Region code, such as <code>us-west-2</code>. </p>
+     * <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>An AWS Region code, such as <code>us-west-2</code>. </p>
+     * <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
-     * <p>An AWS Region code, such as <code>us-west-2</code>. </p>
+     * <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
      */
     inline LocationConfiguration& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>An AWS Region code, such as <code>us-west-2</code>. </p>
+     * <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
      */
     inline LocationConfiguration& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p>An AWS Region code, such as <code>us-west-2</code>. </p>
+     * <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
      */
     inline LocationConfiguration& WithLocation(const char* value) { SetLocation(value); return *this;}
 

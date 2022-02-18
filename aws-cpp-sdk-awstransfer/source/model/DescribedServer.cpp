@@ -32,6 +32,8 @@ DescribedServer::DescribedServer() :
     m_identityProviderType(IdentityProviderType::NOT_SET),
     m_identityProviderTypeHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
+    m_postAuthenticationLoginBannerHasBeenSet(false),
+    m_preAuthenticationLoginBannerHasBeenSet(false),
     m_protocolsHasBeenSet(false),
     m_securityPolicyNameHasBeenSet(false),
     m_serverIdHasBeenSet(false),
@@ -58,6 +60,8 @@ DescribedServer::DescribedServer(JsonView jsonValue) :
     m_identityProviderType(IdentityProviderType::NOT_SET),
     m_identityProviderTypeHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
+    m_postAuthenticationLoginBannerHasBeenSet(false),
+    m_preAuthenticationLoginBannerHasBeenSet(false),
     m_protocolsHasBeenSet(false),
     m_securityPolicyNameHasBeenSet(false),
     m_serverIdHasBeenSet(false),
@@ -141,6 +145,20 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     m_loggingRole = jsonValue.GetString("LoggingRole");
 
     m_loggingRoleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PostAuthenticationLoginBanner"))
+  {
+    m_postAuthenticationLoginBanner = jsonValue.GetString("PostAuthenticationLoginBanner");
+
+    m_postAuthenticationLoginBannerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PreAuthenticationLoginBanner"))
+  {
+    m_preAuthenticationLoginBanner = jsonValue.GetString("PreAuthenticationLoginBanner");
+
+    m_preAuthenticationLoginBannerHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Protocols"))
@@ -259,6 +277,18 @@ JsonValue DescribedServer::Jsonize() const
   if(m_loggingRoleHasBeenSet)
   {
    payload.WithString("LoggingRole", m_loggingRole);
+
+  }
+
+  if(m_postAuthenticationLoginBannerHasBeenSet)
+  {
+   payload.WithString("PostAuthenticationLoginBanner", m_postAuthenticationLoginBanner);
+
+  }
+
+  if(m_preAuthenticationLoginBannerHasBeenSet)
+  {
+   payload.WithString("PreAuthenticationLoginBanner", m_preAuthenticationLoginBanner);
 
   }
 

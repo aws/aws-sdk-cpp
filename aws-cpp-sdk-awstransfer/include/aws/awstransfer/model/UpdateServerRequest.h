@@ -694,6 +694,56 @@ namespace Model
     inline UpdateServerRequest& WithLoggingRole(const char* value) { SetLoggingRole(value); return *this;}
 
 
+    
+    inline const Aws::String& GetPostAuthenticationLoginBanner() const{ return m_postAuthenticationLoginBanner; }
+
+    
+    inline bool PostAuthenticationLoginBannerHasBeenSet() const { return m_postAuthenticationLoginBannerHasBeenSet; }
+
+    
+    inline void SetPostAuthenticationLoginBanner(const Aws::String& value) { m_postAuthenticationLoginBannerHasBeenSet = true; m_postAuthenticationLoginBanner = value; }
+
+    
+    inline void SetPostAuthenticationLoginBanner(Aws::String&& value) { m_postAuthenticationLoginBannerHasBeenSet = true; m_postAuthenticationLoginBanner = std::move(value); }
+
+    
+    inline void SetPostAuthenticationLoginBanner(const char* value) { m_postAuthenticationLoginBannerHasBeenSet = true; m_postAuthenticationLoginBanner.assign(value); }
+
+    
+    inline UpdateServerRequest& WithPostAuthenticationLoginBanner(const Aws::String& value) { SetPostAuthenticationLoginBanner(value); return *this;}
+
+    
+    inline UpdateServerRequest& WithPostAuthenticationLoginBanner(Aws::String&& value) { SetPostAuthenticationLoginBanner(std::move(value)); return *this;}
+
+    
+    inline UpdateServerRequest& WithPostAuthenticationLoginBanner(const char* value) { SetPostAuthenticationLoginBanner(value); return *this;}
+
+
+    
+    inline const Aws::String& GetPreAuthenticationLoginBanner() const{ return m_preAuthenticationLoginBanner; }
+
+    
+    inline bool PreAuthenticationLoginBannerHasBeenSet() const { return m_preAuthenticationLoginBannerHasBeenSet; }
+
+    
+    inline void SetPreAuthenticationLoginBanner(const Aws::String& value) { m_preAuthenticationLoginBannerHasBeenSet = true; m_preAuthenticationLoginBanner = value; }
+
+    
+    inline void SetPreAuthenticationLoginBanner(Aws::String&& value) { m_preAuthenticationLoginBannerHasBeenSet = true; m_preAuthenticationLoginBanner = std::move(value); }
+
+    
+    inline void SetPreAuthenticationLoginBanner(const char* value) { m_preAuthenticationLoginBannerHasBeenSet = true; m_preAuthenticationLoginBanner.assign(value); }
+
+    
+    inline UpdateServerRequest& WithPreAuthenticationLoginBanner(const Aws::String& value) { SetPreAuthenticationLoginBanner(value); return *this;}
+
+    
+    inline UpdateServerRequest& WithPreAuthenticationLoginBanner(Aws::String&& value) { SetPreAuthenticationLoginBanner(std::move(value)); return *this;}
+
+    
+    inline UpdateServerRequest& WithPreAuthenticationLoginBanner(const char* value) { SetPreAuthenticationLoginBanner(value); return *this;}
+
+
     /**
      * <p>Specifies the file transfer protocol or protocols over which your file
      * transfer protocol client can connect to your server's endpoint. The available
@@ -1019,6 +1069,12 @@ namespace Model
 
     Aws::String m_loggingRole;
     bool m_loggingRoleHasBeenSet;
+
+    Aws::String m_postAuthenticationLoginBanner;
+    bool m_postAuthenticationLoginBannerHasBeenSet;
+
+    Aws::String m_preAuthenticationLoginBanner;
+    bool m_preAuthenticationLoginBannerHasBeenSet;
 
     Aws::Vector<Protocol> m_protocols;
     bool m_protocolsHasBeenSet;

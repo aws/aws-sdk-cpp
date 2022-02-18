@@ -632,25 +632,25 @@ namespace Model
 
 
     /**
-     * <p>Port number for the game session. To connect to a Amazon GameLift server
+     * <p>Port number for the game session. To connect to a Amazon Web Services server
      * process, an app needs both the IP address and port number.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>Port number for the game session. To connect to a Amazon GameLift server
+     * <p>Port number for the game session. To connect to a Amazon Web Services server
      * process, an app needs both the IP address and port number.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p>Port number for the game session. To connect to a Amazon GameLift server
+     * <p>Port number for the game session. To connect to a Amazon Web Services server
      * process, an app needs both the IP address and port number.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>Port number for the game session. To connect to a Amazon GameLift server
+     * <p>Port number for the game session. To connect to a Amazon Web Services server
      * process, an app needs both the IP address and port number.</p>
      */
     inline PlayerSession& WithPort(int value) { SetPort(value); return *this;}

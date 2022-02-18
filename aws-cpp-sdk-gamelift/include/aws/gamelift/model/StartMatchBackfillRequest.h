@@ -41,7 +41,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified
-     * here, Amazon GameLift will generate one in the form of a UUID. Use this
+     * here, Amazon Web Services will generate one in the form of a UUID. Use this
      * identifier to track the match backfill ticket status and retrieve match
      * results.</p>
      */
@@ -49,7 +49,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified
-     * here, Amazon GameLift will generate one in the form of a UUID. Use this
+     * here, Amazon Web Services will generate one in the form of a UUID. Use this
      * identifier to track the match backfill ticket status and retrieve match
      * results.</p>
      */
@@ -57,7 +57,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified
-     * here, Amazon GameLift will generate one in the form of a UUID. Use this
+     * here, Amazon Web Services will generate one in the form of a UUID. Use this
      * identifier to track the match backfill ticket status and retrieve match
      * results.</p>
      */
@@ -65,7 +65,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified
-     * here, Amazon GameLift will generate one in the form of a UUID. Use this
+     * here, Amazon Web Services will generate one in the form of a UUID. Use this
      * identifier to track the match backfill ticket status and retrieve match
      * results.</p>
      */
@@ -73,7 +73,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified
-     * here, Amazon GameLift will generate one in the form of a UUID. Use this
+     * here, Amazon Web Services will generate one in the form of a UUID. Use this
      * identifier to track the match backfill ticket status and retrieve match
      * results.</p>
      */
@@ -81,7 +81,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified
-     * here, Amazon GameLift will generate one in the form of a UUID. Use this
+     * here, Amazon Web Services will generate one in the form of a UUID. Use this
      * identifier to track the match backfill ticket status and retrieve match
      * results.</p>
      */
@@ -89,7 +89,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified
-     * here, Amazon GameLift will generate one in the form of a UUID. Use this
+     * here, Amazon Web Services will generate one in the form of a UUID. Use this
      * identifier to track the match backfill ticket status and retrieve match
      * results.</p>
      */
@@ -97,7 +97,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified
-     * here, Amazon GameLift will generate one in the form of a UUID. Use this
+     * here, Amazon Web Services will generate one in the form of a UUID. Use this
      * identifier to track the match backfill ticket status and retrieve match
      * results.</p>
      */
@@ -235,10 +235,11 @@ namespace Model
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
-     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -- If the matchmaker uses player
-     * latency, include a latency value, in milliseconds, for the Region that the game
-     * session is currently in. Do not include latency values for any other Region.</p>
-     * </li> </ul>
+     * Match Data</a>. </p> <p>The backfill request must specify the team membership
+     * for every player. Do not specify team if you are not using backfill.</p> </li>
+     * <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency
+     * value, in milliseconds, for the Region that the game session is currently in. Do
+     * not include latency values for any other Region.</p> </li> </ul>
      */
     inline const Aws::Vector<Player>& GetPlayers() const{ return m_players; }
 
@@ -251,10 +252,11 @@ namespace Model
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
-     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -- If the matchmaker uses player
-     * latency, include a latency value, in milliseconds, for the Region that the game
-     * session is currently in. Do not include latency values for any other Region.</p>
-     * </li> </ul>
+     * Match Data</a>. </p> <p>The backfill request must specify the team membership
+     * for every player. Do not specify team if you are not using backfill.</p> </li>
+     * <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency
+     * value, in milliseconds, for the Region that the game session is currently in. Do
+     * not include latency values for any other Region.</p> </li> </ul>
      */
     inline bool PlayersHasBeenSet() const { return m_playersHasBeenSet; }
 
@@ -267,10 +269,11 @@ namespace Model
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
-     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -- If the matchmaker uses player
-     * latency, include a latency value, in milliseconds, for the Region that the game
-     * session is currently in. Do not include latency values for any other Region.</p>
-     * </li> </ul>
+     * Match Data</a>. </p> <p>The backfill request must specify the team membership
+     * for every player. Do not specify team if you are not using backfill.</p> </li>
+     * <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency
+     * value, in milliseconds, for the Region that the game session is currently in. Do
+     * not include latency values for any other Region.</p> </li> </ul>
      */
     inline void SetPlayers(const Aws::Vector<Player>& value) { m_playersHasBeenSet = true; m_players = value; }
 
@@ -283,10 +286,11 @@ namespace Model
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
-     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -- If the matchmaker uses player
-     * latency, include a latency value, in milliseconds, for the Region that the game
-     * session is currently in. Do not include latency values for any other Region.</p>
-     * </li> </ul>
+     * Match Data</a>. </p> <p>The backfill request must specify the team membership
+     * for every player. Do not specify team if you are not using backfill.</p> </li>
+     * <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency
+     * value, in milliseconds, for the Region that the game session is currently in. Do
+     * not include latency values for any other Region.</p> </li> </ul>
      */
     inline void SetPlayers(Aws::Vector<Player>&& value) { m_playersHasBeenSet = true; m_players = std::move(value); }
 
@@ -299,10 +303,11 @@ namespace Model
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
-     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -- If the matchmaker uses player
-     * latency, include a latency value, in milliseconds, for the Region that the game
-     * session is currently in. Do not include latency values for any other Region.</p>
-     * </li> </ul>
+     * Match Data</a>. </p> <p>The backfill request must specify the team membership
+     * for every player. Do not specify team if you are not using backfill.</p> </li>
+     * <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency
+     * value, in milliseconds, for the Region that the game session is currently in. Do
+     * not include latency values for any other Region.</p> </li> </ul>
      */
     inline StartMatchBackfillRequest& WithPlayers(const Aws::Vector<Player>& value) { SetPlayers(value); return *this;}
 
@@ -315,10 +320,11 @@ namespace Model
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
-     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -- If the matchmaker uses player
-     * latency, include a latency value, in milliseconds, for the Region that the game
-     * session is currently in. Do not include latency values for any other Region.</p>
-     * </li> </ul>
+     * Match Data</a>. </p> <p>The backfill request must specify the team membership
+     * for every player. Do not specify team if you are not using backfill.</p> </li>
+     * <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency
+     * value, in milliseconds, for the Region that the game session is currently in. Do
+     * not include latency values for any other Region.</p> </li> </ul>
      */
     inline StartMatchBackfillRequest& WithPlayers(Aws::Vector<Player>&& value) { SetPlayers(std::move(value)); return *this;}
 
@@ -331,10 +337,11 @@ namespace Model
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
-     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -- If the matchmaker uses player
-     * latency, include a latency value, in milliseconds, for the Region that the game
-     * session is currently in. Do not include latency values for any other Region.</p>
-     * </li> </ul>
+     * Match Data</a>. </p> <p>The backfill request must specify the team membership
+     * for every player. Do not specify team if you are not using backfill.</p> </li>
+     * <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency
+     * value, in milliseconds, for the Region that the game session is currently in. Do
+     * not include latency values for any other Region.</p> </li> </ul>
      */
     inline StartMatchBackfillRequest& AddPlayers(const Player& value) { m_playersHasBeenSet = true; m_players.push_back(value); return *this; }
 
@@ -347,10 +354,11 @@ namespace Model
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
-     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -- If the matchmaker uses player
-     * latency, include a latency value, in milliseconds, for the Region that the game
-     * session is currently in. Do not include latency values for any other Region.</p>
-     * </li> </ul>
+     * Match Data</a>. </p> <p>The backfill request must specify the team membership
+     * for every player. Do not specify team if you are not using backfill.</p> </li>
+     * <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency
+     * value, in milliseconds, for the Region that the game session is currently in. Do
+     * not include latency values for any other Region.</p> </li> </ul>
      */
     inline StartMatchBackfillRequest& AddPlayers(Player&& value) { m_playersHasBeenSet = true; m_players.push_back(std::move(value)); return *this; }
 

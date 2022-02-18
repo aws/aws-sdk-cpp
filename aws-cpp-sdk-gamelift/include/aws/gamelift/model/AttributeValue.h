@@ -105,63 +105,63 @@ namespace Model
 
 
     /**
-     * <p>For a list of up to 10 strings. Maximum length for each string is 100
+     * <p>For a list of up to 100 strings. Maximum length for each string is 100
      * characters. Duplicate values are not recognized; all occurrences of the repeated
      * value after the first of a repeated value are ignored.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSL() const{ return m_sL; }
 
     /**
-     * <p>For a list of up to 10 strings. Maximum length for each string is 100
+     * <p>For a list of up to 100 strings. Maximum length for each string is 100
      * characters. Duplicate values are not recognized; all occurrences of the repeated
      * value after the first of a repeated value are ignored.</p>
      */
     inline bool SLHasBeenSet() const { return m_sLHasBeenSet; }
 
     /**
-     * <p>For a list of up to 10 strings. Maximum length for each string is 100
+     * <p>For a list of up to 100 strings. Maximum length for each string is 100
      * characters. Duplicate values are not recognized; all occurrences of the repeated
      * value after the first of a repeated value are ignored.</p>
      */
     inline void SetSL(const Aws::Vector<Aws::String>& value) { m_sLHasBeenSet = true; m_sL = value; }
 
     /**
-     * <p>For a list of up to 10 strings. Maximum length for each string is 100
+     * <p>For a list of up to 100 strings. Maximum length for each string is 100
      * characters. Duplicate values are not recognized; all occurrences of the repeated
      * value after the first of a repeated value are ignored.</p>
      */
     inline void SetSL(Aws::Vector<Aws::String>&& value) { m_sLHasBeenSet = true; m_sL = std::move(value); }
 
     /**
-     * <p>For a list of up to 10 strings. Maximum length for each string is 100
+     * <p>For a list of up to 100 strings. Maximum length for each string is 100
      * characters. Duplicate values are not recognized; all occurrences of the repeated
      * value after the first of a repeated value are ignored.</p>
      */
     inline AttributeValue& WithSL(const Aws::Vector<Aws::String>& value) { SetSL(value); return *this;}
 
     /**
-     * <p>For a list of up to 10 strings. Maximum length for each string is 100
+     * <p>For a list of up to 100 strings. Maximum length for each string is 100
      * characters. Duplicate values are not recognized; all occurrences of the repeated
      * value after the first of a repeated value are ignored.</p>
      */
     inline AttributeValue& WithSL(Aws::Vector<Aws::String>&& value) { SetSL(std::move(value)); return *this;}
 
     /**
-     * <p>For a list of up to 10 strings. Maximum length for each string is 100
+     * <p>For a list of up to 100 strings. Maximum length for each string is 100
      * characters. Duplicate values are not recognized; all occurrences of the repeated
      * value after the first of a repeated value are ignored.</p>
      */
     inline AttributeValue& AddSL(const Aws::String& value) { m_sLHasBeenSet = true; m_sL.push_back(value); return *this; }
 
     /**
-     * <p>For a list of up to 10 strings. Maximum length for each string is 100
+     * <p>For a list of up to 100 strings. Maximum length for each string is 100
      * characters. Duplicate values are not recognized; all occurrences of the repeated
      * value after the first of a repeated value are ignored.</p>
      */
     inline AttributeValue& AddSL(Aws::String&& value) { m_sLHasBeenSet = true; m_sL.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>For a list of up to 10 strings. Maximum length for each string is 100
+     * <p>For a list of up to 100 strings. Maximum length for each string is 100
      * characters. Duplicate values are not recognized; all occurrences of the repeated
      * value after the first of a repeated value are ignored.</p>
      */

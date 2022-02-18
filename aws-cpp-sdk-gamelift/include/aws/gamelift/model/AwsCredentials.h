@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>Temporary access credentials used for uploading game build files to Amazon
-   * GameLift. They are valid for a limited time. If they expire before you upload
-   * your game build, get a new set by calling
+   * Web Services. They are valid for a limited time. If they expire before you
+   * upload your game build, get a new set by calling
    * <a>RequestUploadCredentials</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AwsCredentials">AWS
    * API Reference</a></p>
@@ -41,83 +41,91 @@ namespace Model
 
 
     /**
-     * <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
+     * <p>Temporary key allowing access to the Amazon Web Services S3 account.</p>
      */
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
 
     /**
-     * <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
+     * <p>Temporary key allowing access to the Amazon Web Services S3 account.</p>
      */
     inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
 
     /**
-     * <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
+     * <p>Temporary key allowing access to the Amazon Web Services S3 account.</p>
      */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /**
-     * <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
+     * <p>Temporary key allowing access to the Amazon Web Services S3 account.</p>
      */
     inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::move(value); }
 
     /**
-     * <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
+     * <p>Temporary key allowing access to the Amazon Web Services S3 account.</p>
      */
     inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
 
     /**
-     * <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
+     * <p>Temporary key allowing access to the Amazon Web Services S3 account.</p>
      */
     inline AwsCredentials& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
 
     /**
-     * <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
+     * <p>Temporary key allowing access to the Amazon Web Services S3 account.</p>
      */
     inline AwsCredentials& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
+     * <p>Temporary key allowing access to the Amazon Web Services S3 account.</p>
      */
     inline AwsCredentials& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
 
 
     /**
-     * <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
+     * <p>Temporary secret key allowing access to the Amazon Web Services S3
+     * account.</p>
      */
     inline const Aws::String& GetSecretAccessKey() const{ return m_secretAccessKey; }
 
     /**
-     * <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
+     * <p>Temporary secret key allowing access to the Amazon Web Services S3
+     * account.</p>
      */
     inline bool SecretAccessKeyHasBeenSet() const { return m_secretAccessKeyHasBeenSet; }
 
     /**
-     * <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
+     * <p>Temporary secret key allowing access to the Amazon Web Services S3
+     * account.</p>
      */
     inline void SetSecretAccessKey(const Aws::String& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = value; }
 
     /**
-     * <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
+     * <p>Temporary secret key allowing access to the Amazon Web Services S3
+     * account.</p>
      */
     inline void SetSecretAccessKey(Aws::String&& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = std::move(value); }
 
     /**
-     * <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
+     * <p>Temporary secret key allowing access to the Amazon Web Services S3
+     * account.</p>
      */
     inline void SetSecretAccessKey(const char* value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey.assign(value); }
 
     /**
-     * <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
+     * <p>Temporary secret key allowing access to the Amazon Web Services S3
+     * account.</p>
      */
     inline AwsCredentials& WithSecretAccessKey(const Aws::String& value) { SetSecretAccessKey(value); return *this;}
 
     /**
-     * <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
+     * <p>Temporary secret key allowing access to the Amazon Web Services S3
+     * account.</p>
      */
     inline AwsCredentials& WithSecretAccessKey(Aws::String&& value) { SetSecretAccessKey(std::move(value)); return *this;}
 
     /**
-     * <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
+     * <p>Temporary secret key allowing access to the Amazon Web Services S3
+     * account.</p>
      */
     inline AwsCredentials& WithSecretAccessKey(const char* value) { SetSecretAccessKey(value); return *this;}
 

@@ -555,49 +555,49 @@ namespace Model
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions.</p>
+     * latency that a player experiences when connected to @aws; Regions.</p>
      */
     inline const Aws::Vector<PlayerLatency>& GetPlayerLatencies() const{ return m_playerLatencies; }
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions.</p>
+     * latency that a player experiences when connected to @aws; Regions.</p>
      */
     inline bool PlayerLatenciesHasBeenSet() const { return m_playerLatenciesHasBeenSet; }
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions.</p>
+     * latency that a player experiences when connected to @aws; Regions.</p>
      */
     inline void SetPlayerLatencies(const Aws::Vector<PlayerLatency>& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies = value; }
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions.</p>
+     * latency that a player experiences when connected to @aws; Regions.</p>
      */
     inline void SetPlayerLatencies(Aws::Vector<PlayerLatency>&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies = std::move(value); }
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions.</p>
+     * latency that a player experiences when connected to @aws; Regions.</p>
      */
     inline GameSessionPlacement& WithPlayerLatencies(const Aws::Vector<PlayerLatency>& value) { SetPlayerLatencies(value); return *this;}
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions.</p>
+     * latency that a player experiences when connected to @aws; Regions.</p>
      */
     inline GameSessionPlacement& WithPlayerLatencies(Aws::Vector<PlayerLatency>&& value) { SetPlayerLatencies(std::move(value)); return *this;}
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions.</p>
+     * latency that a player experiences when connected to @aws; Regions.</p>
      */
     inline GameSessionPlacement& AddPlayerLatencies(const PlayerLatency& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies.push_back(value); return *this; }
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to AWS Regions.</p>
+     * latency that a player experiences when connected to @aws; Regions.</p>
      */
     inline GameSessionPlacement& AddPlayerLatencies(PlayerLatency&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies.push_back(std::move(value)); return *this; }
 
