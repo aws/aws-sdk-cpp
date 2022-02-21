@@ -370,7 +370,11 @@ namespace Model
 
         /**
          * <p>Creates a new component that can be used to build, validate, test, and assess
-         * your image.</p><p><h3>See Also:</h3>   <a
+         * your image. The component is based on a YAML document that you specify using
+         * exactly one of the following methods:</p> <ul> <li> <p>Inline, using the
+         * <code>data</code> property in the request body.</p> </li> <li> <p>A URL that
+         * points to a YAML document file stored in Amazon S3, using the <code>uri</code>
+         * property in the request body.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateComponent">AWS
          * API Reference</a></p>
          */
@@ -378,7 +382,11 @@ namespace Model
 
         /**
          * <p>Creates a new component that can be used to build, validate, test, and assess
-         * your image.</p><p><h3>See Also:</h3>   <a
+         * your image. The component is based on a YAML document that you specify using
+         * exactly one of the following methods:</p> <ul> <li> <p>Inline, using the
+         * <code>data</code> property in the request body.</p> </li> <li> <p>A URL that
+         * points to a YAML document file stored in Amazon S3, using the <code>uri</code>
+         * property in the request body.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateComponent">AWS
          * API Reference</a></p>
          *
@@ -388,7 +396,11 @@ namespace Model
 
         /**
          * <p>Creates a new component that can be used to build, validate, test, and assess
-         * your image.</p><p><h3>See Also:</h3>   <a
+         * your image. The component is based on a YAML document that you specify using
+         * exactly one of the following methods:</p> <ul> <li> <p>Inline, using the
+         * <code>data</code> property in the request body.</p> </li> <li> <p>A URL that
+         * points to a YAML document file stored in Amazon S3, using the <code>uri</code>
+         * property in the request body.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateComponent">AWS
          * API Reference</a></p>
          *

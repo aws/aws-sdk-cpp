@@ -76,6 +76,12 @@ GetIntegrationResult& GetIntegrationResult::operator =(const Aws::AmazonWebServi
     }
   }
 
+  if(jsonValue.ValueExists("WorkflowId"))
+  {
+    m_workflowId = jsonValue.GetString("WorkflowId");
+
+  }
+
 
 
   return *this;

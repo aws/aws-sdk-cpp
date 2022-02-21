@@ -1745,7 +1745,17 @@ namespace Model
 
         /**
          * <p>This operation allows you to perform reads and singleton writes on data
-         * stored in DynamoDB, using PartiQL.</p><p><h3>See Also:</h3>   <a
+         * stored in DynamoDB, using PartiQL.</p> <p>For PartiQL reads (<code>SELECT</code>
+         * statement), if the total number of processed items exceeds the maximum dataset
+         * size limit of 1 MB, the read stops and results are returned to the user as a
+         * <code>LastEvaluatedKey</code> value to continue the read in a subsequent
+         * operation. If the filter criteria in <code>WHERE</code> clause does not match
+         * any data, the read will return an empty result set.</p> <p>A single
+         * <code>SELECT</code> statement response can return up to the maximum number of
+         * items (if using the Limit parameter) or a maximum of 1 MB of data (and then
+         * apply any filtering to the results using <code>WHERE</code> clause). If
+         * <code>LastEvaluatedKey</code> is present in the response, you need to paginate
+         * the result set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement">AWS
          * API Reference</a></p>
          */
@@ -1753,7 +1763,17 @@ namespace Model
 
         /**
          * <p>This operation allows you to perform reads and singleton writes on data
-         * stored in DynamoDB, using PartiQL.</p><p><h3>See Also:</h3>   <a
+         * stored in DynamoDB, using PartiQL.</p> <p>For PartiQL reads (<code>SELECT</code>
+         * statement), if the total number of processed items exceeds the maximum dataset
+         * size limit of 1 MB, the read stops and results are returned to the user as a
+         * <code>LastEvaluatedKey</code> value to continue the read in a subsequent
+         * operation. If the filter criteria in <code>WHERE</code> clause does not match
+         * any data, the read will return an empty result set.</p> <p>A single
+         * <code>SELECT</code> statement response can return up to the maximum number of
+         * items (if using the Limit parameter) or a maximum of 1 MB of data (and then
+         * apply any filtering to the results using <code>WHERE</code> clause). If
+         * <code>LastEvaluatedKey</code> is present in the response, you need to paginate
+         * the result set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement">AWS
          * API Reference</a></p>
          *
@@ -1763,7 +1783,17 @@ namespace Model
 
         /**
          * <p>This operation allows you to perform reads and singleton writes on data
-         * stored in DynamoDB, using PartiQL.</p><p><h3>See Also:</h3>   <a
+         * stored in DynamoDB, using PartiQL.</p> <p>For PartiQL reads (<code>SELECT</code>
+         * statement), if the total number of processed items exceeds the maximum dataset
+         * size limit of 1 MB, the read stops and results are returned to the user as a
+         * <code>LastEvaluatedKey</code> value to continue the read in a subsequent
+         * operation. If the filter criteria in <code>WHERE</code> clause does not match
+         * any data, the read will return an empty result set.</p> <p>A single
+         * <code>SELECT</code> statement response can return up to the maximum number of
+         * items (if using the Limit parameter) or a maximum of 1 MB of data (and then
+         * apply any filtering to the results using <code>WHERE</code> clause). If
+         * <code>LastEvaluatedKey</code> is present in the response, you need to paginate
+         * the result set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement">AWS
          * API Reference</a></p>
          *

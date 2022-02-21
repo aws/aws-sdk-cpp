@@ -508,42 +508,42 @@ namespace Model
 
 
     /**
-     * <p>The data of the component.</p>
+     * <p>Component data contains the YAML document content for the component.</p>
      */
     inline const Aws::String& GetData() const{ return m_data; }
 
     /**
-     * <p>The data of the component.</p>
+     * <p>Component data contains the YAML document content for the component.</p>
      */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
-     * <p>The data of the component.</p>
+     * <p>Component data contains the YAML document content for the component.</p>
      */
     inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
-     * <p>The data of the component.</p>
+     * <p>Component data contains the YAML document content for the component.</p>
      */
     inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
-     * <p>The data of the component.</p>
+     * <p>Component data contains the YAML document content for the component.</p>
      */
     inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
 
     /**
-     * <p>The data of the component.</p>
+     * <p>Component data contains the YAML document content for the component.</p>
      */
     inline Component& WithData(const Aws::String& value) { SetData(value); return *this;}
 
     /**
-     * <p>The data of the component.</p>
+     * <p>Component data contains the YAML document content for the component.</p>
      */
     inline Component& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
 
     /**
-     * <p>The data of the component.</p>
+     * <p>Component data contains the YAML document content for the component.</p>
      */
     inline Component& WithData(const char* value) { SetData(value); return *this;}
 

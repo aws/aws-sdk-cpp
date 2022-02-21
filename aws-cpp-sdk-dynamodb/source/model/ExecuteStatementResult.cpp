@@ -55,6 +55,15 @@ ExecuteStatementResult& ExecuteStatementResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("LastEvaluatedKey"))
+  {
+    Aws::Map<Aws::String, JsonView> lastEvaluatedKeyJsonMap = jsonValue.GetObject("LastEvaluatedKey").GetAllObjects();
+    for(auto& lastEvaluatedKeyItem : lastEvaluatedKeyJsonMap)
+    {
+      m_lastEvaluatedKey[lastEvaluatedKeyItem.first] = lastEvaluatedKeyItem.second.AsObject();
+    }
+  }
+
 
 
   return *this;

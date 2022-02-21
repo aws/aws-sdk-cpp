@@ -24,7 +24,8 @@ Distribution::Distribution() :
     m_containerDistributionConfigurationHasBeenSet(false),
     m_licenseConfigurationArnsHasBeenSet(false),
     m_launchTemplateConfigurationsHasBeenSet(false),
-    m_s3ExportConfigurationHasBeenSet(false)
+    m_s3ExportConfigurationHasBeenSet(false),
+    m_fastLaunchConfigurationsHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ Distribution::Distribution(JsonView jsonValue) :
     m_containerDistributionConfigurationHasBeenSet(false),
     m_licenseConfigurationArnsHasBeenSet(false),
     m_launchTemplateConfigurationsHasBeenSet(false),
-    m_s3ExportConfigurationHasBeenSet(false)
+    m_s3ExportConfigurationHasBeenSet(false),
+    m_fastLaunchConfigurationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -89,6 +91,16 @@ Distribution& Distribution::operator =(JsonView jsonValue)
     m_s3ExportConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("fastLaunchConfigurations"))
+  {
+    Array<JsonView> fastLaunchConfigurationsJsonList = jsonValue.GetArray("fastLaunchConfigurations");
+    for(unsigned fastLaunchConfigurationsIndex = 0; fastLaunchConfigurationsIndex < fastLaunchConfigurationsJsonList.GetLength(); ++fastLaunchConfigurationsIndex)
+    {
+      m_fastLaunchConfigurations.push_back(fastLaunchConfigurationsJsonList[fastLaunchConfigurationsIndex].AsObject());
+    }
+    m_fastLaunchConfigurationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -139,6 +151,17 @@ JsonValue Distribution::Jsonize() const
   if(m_s3ExportConfigurationHasBeenSet)
   {
    payload.WithObject("s3ExportConfiguration", m_s3ExportConfiguration.Jsonize());
+
+  }
+
+  if(m_fastLaunchConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> fastLaunchConfigurationsJsonList(m_fastLaunchConfigurations.size());
+   for(unsigned fastLaunchConfigurationsIndex = 0; fastLaunchConfigurationsIndex < fastLaunchConfigurationsJsonList.GetLength(); ++fastLaunchConfigurationsIndex)
+   {
+     fastLaunchConfigurationsJsonList[fastLaunchConfigurationsIndex].AsObject(m_fastLaunchConfigurations[fastLaunchConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("fastLaunchConfigurations", std::move(fastLaunchConfigurationsJsonList));
 
   }
 

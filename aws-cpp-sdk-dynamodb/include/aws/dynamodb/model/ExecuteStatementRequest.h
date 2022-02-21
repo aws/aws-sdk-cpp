@@ -215,6 +215,59 @@ namespace Model
     
     inline ExecuteStatementRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity&& value) { SetReturnConsumedCapacity(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The maximum number of items to evaluate (not necessarily the number of
+     * matching items). If DynamoDB processes the number of items up to the limit while
+     * processing the results, it stops the operation and returns the matching values
+     * up to that point, along with a key in <code>LastEvaluatedKey</code> to apply in
+     * a subsequent operation so you can pick up where you left off. Also, if the
+     * processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops
+     * the operation and returns the matching values up to the limit, and a key in
+     * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the
+     * operation. </p>
+     */
+    inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of items to evaluate (not necessarily the number of
+     * matching items). If DynamoDB processes the number of items up to the limit while
+     * processing the results, it stops the operation and returns the matching values
+     * up to that point, along with a key in <code>LastEvaluatedKey</code> to apply in
+     * a subsequent operation so you can pick up where you left off. Also, if the
+     * processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops
+     * the operation and returns the matching values up to the limit, and a key in
+     * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the
+     * operation. </p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to evaluate (not necessarily the number of
+     * matching items). If DynamoDB processes the number of items up to the limit while
+     * processing the results, it stops the operation and returns the matching values
+     * up to that point, along with a key in <code>LastEvaluatedKey</code> to apply in
+     * a subsequent operation so you can pick up where you left off. Also, if the
+     * processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops
+     * the operation and returns the matching values up to the limit, and a key in
+     * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the
+     * operation. </p>
+     */
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
+
+    /**
+     * <p>The maximum number of items to evaluate (not necessarily the number of
+     * matching items). If DynamoDB processes the number of items up to the limit while
+     * processing the results, it stops the operation and returns the matching values
+     * up to that point, along with a key in <code>LastEvaluatedKey</code> to apply in
+     * a subsequent operation so you can pick up where you left off. Also, if the
+     * processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops
+     * the operation and returns the matching values up to the limit, and a key in
+     * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the
+     * operation. </p>
+     */
+    inline ExecuteStatementRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
   private:
 
     Aws::String m_statement;
@@ -231,6 +284,9 @@ namespace Model
 
     ReturnConsumedCapacity m_returnConsumedCapacity;
     bool m_returnConsumedCapacityHasBeenSet;
+
+    int m_limit;
+    bool m_limitHasBeenSet;
   };
 
 } // namespace Model

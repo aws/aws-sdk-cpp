@@ -25,7 +25,8 @@ ListIntegrationItem::ListIntegrationItem() :
     m_createdAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_objectTypeNamesHasBeenSet(false)
+    m_objectTypeNamesHasBeenSet(false),
+    m_workflowIdHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ ListIntegrationItem::ListIntegrationItem(JsonView jsonValue) :
     m_createdAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_objectTypeNamesHasBeenSet(false)
+    m_objectTypeNamesHasBeenSet(false),
+    m_workflowIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +100,13 @@ ListIntegrationItem& ListIntegrationItem::operator =(JsonView jsonValue)
     m_objectTypeNamesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WorkflowId"))
+  {
+    m_workflowId = jsonValue.GetString("WorkflowId");
+
+    m_workflowIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -152,6 +161,12 @@ JsonValue ListIntegrationItem::Jsonize() const
      objectTypeNamesJsonMap.WithString(objectTypeNamesItem.first, objectTypeNamesItem.second);
    }
    payload.WithObject("ObjectTypeNames", std::move(objectTypeNamesJsonMap));
+
+  }
+
+  if(m_workflowIdHasBeenSet)
+  {
+   payload.WithString("WorkflowId", m_workflowId);
 
   }
 
