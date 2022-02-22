@@ -30,8 +30,23 @@ namespace Model
    * <p>Defines an association between logging destinations and a web ACL resource,
    * for logging from WAF. As part of the association, you can specify parts of the
    * standard logging fields to keep out of the logs and you can specify filters so
-   * that you log only a subset of the logging records. </p> <p>For information about
-   * configuring web ACL logging destinations, see <a
+   * that you log only a subset of the logging records. </p>  <p>You can define
+   * one logging destination per web ACL.</p>  <p>You can access information
+   * about the traffic that WAF inspects using the following steps:</p> <ol> <li>
+   * <p>Create your logging destination. You can use an Amazon CloudWatch Logs log
+   * group, an Amazon Simple Storage Service (Amazon S3) bucket, or an Amazon Kinesis
+   * Data Firehose. For information about configuring logging destinations and the
+   * permissions that are required for each, see <a
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+   * web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p> </li>
+   * <li> <p>Associate your logging destination to your web ACL using a
+   * <code>PutLoggingConfiguration</code> request.</p> </li> </ol> <p>When you
+   * successfully enable logging using a <code>PutLoggingConfiguration</code>
+   * request, WAF creates an additional role or policy that is required to write logs
+   * to the logging destination. For an Amazon CloudWatch Logs log group, WAF creates
+   * a resource policy on the log group. For an Amazon S3 bucket, WAF creates a
+   * bucket policy. For an Amazon Kinesis Data Firehose, WAF creates a service-linked
+   * role.</p> <p>For additional information about web ACL logging, see <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
    * web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
@@ -97,56 +112,65 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to
-     * associate with the web ACL.</p>
+     * <p>The logging destination configuration that you want to associate with the web
+     * ACL.</p>  <p>You can associate one logging destination to a web ACL.</p>
+     * 
      */
     inline const Aws::Vector<Aws::String>& GetLogDestinationConfigs() const{ return m_logDestinationConfigs; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to
-     * associate with the web ACL.</p>
+     * <p>The logging destination configuration that you want to associate with the web
+     * ACL.</p>  <p>You can associate one logging destination to a web ACL.</p>
+     * 
      */
     inline bool LogDestinationConfigsHasBeenSet() const { return m_logDestinationConfigsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to
-     * associate with the web ACL.</p>
+     * <p>The logging destination configuration that you want to associate with the web
+     * ACL.</p>  <p>You can associate one logging destination to a web ACL.</p>
+     * 
      */
     inline void SetLogDestinationConfigs(const Aws::Vector<Aws::String>& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to
-     * associate with the web ACL.</p>
+     * <p>The logging destination configuration that you want to associate with the web
+     * ACL.</p>  <p>You can associate one logging destination to a web ACL.</p>
+     * 
      */
     inline void SetLogDestinationConfigs(Aws::Vector<Aws::String>&& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to
-     * associate with the web ACL.</p>
+     * <p>The logging destination configuration that you want to associate with the web
+     * ACL.</p>  <p>You can associate one logging destination to a web ACL.</p>
+     * 
      */
     inline LoggingConfiguration& WithLogDestinationConfigs(const Aws::Vector<Aws::String>& value) { SetLogDestinationConfigs(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to
-     * associate with the web ACL.</p>
+     * <p>The logging destination configuration that you want to associate with the web
+     * ACL.</p>  <p>You can associate one logging destination to a web ACL.</p>
+     * 
      */
     inline LoggingConfiguration& WithLogDestinationConfigs(Aws::Vector<Aws::String>&& value) { SetLogDestinationConfigs(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to
-     * associate with the web ACL.</p>
+     * <p>The logging destination configuration that you want to associate with the web
+     * ACL.</p>  <p>You can associate one logging destination to a web ACL.</p>
+     * 
      */
     inline LoggingConfiguration& AddLogDestinationConfigs(const Aws::String& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to
-     * associate with the web ACL.</p>
+     * <p>The logging destination configuration that you want to associate with the web
+     * ACL.</p>  <p>You can associate one logging destination to a web ACL.</p>
+     * 
      */
     inline LoggingConfiguration& AddLogDestinationConfigs(Aws::String&& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to
-     * associate with the web ACL.</p>
+     * <p>The logging destination configuration that you want to associate with the web
+     * ACL.</p>  <p>You can associate one logging destination to a web ACL.</p>
+     * 
      */
     inline LoggingConfiguration& AddLogDestinationConfigs(const char* value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs.push_back(value); return *this; }
 

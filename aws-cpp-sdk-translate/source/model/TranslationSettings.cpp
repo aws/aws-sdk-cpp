@@ -19,12 +19,16 @@ namespace Model
 {
 
 TranslationSettings::TranslationSettings() : 
+    m_formality(Formality::NOT_SET),
+    m_formalityHasBeenSet(false),
     m_profanity(Profanity::NOT_SET),
     m_profanityHasBeenSet(false)
 {
 }
 
 TranslationSettings::TranslationSettings(JsonView jsonValue) : 
+    m_formality(Formality::NOT_SET),
+    m_formalityHasBeenSet(false),
     m_profanity(Profanity::NOT_SET),
     m_profanityHasBeenSet(false)
 {
@@ -33,6 +37,13 @@ TranslationSettings::TranslationSettings(JsonView jsonValue) :
 
 TranslationSettings& TranslationSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Formality"))
+  {
+    m_formality = FormalityMapper::GetFormalityForName(jsonValue.GetString("Formality"));
+
+    m_formalityHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Profanity"))
   {
     m_profanity = ProfanityMapper::GetProfanityForName(jsonValue.GetString("Profanity"));
@@ -46,6 +57,11 @@ TranslationSettings& TranslationSettings::operator =(JsonView jsonValue)
 JsonValue TranslationSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_formalityHasBeenSet)
+  {
+   payload.WithString("Formality", FormalityMapper::GetNameForFormality(m_formality));
+  }
 
   if(m_profanityHasBeenSet)
   {

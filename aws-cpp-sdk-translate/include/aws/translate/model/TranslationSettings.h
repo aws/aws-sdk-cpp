@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/translate/Translate_EXPORTS.h>
+#include <aws/translate/model/Formality.h>
 #include <aws/translate/model/Profanity.h>
 #include <utility>
 
@@ -35,6 +36,25 @@ namespace Model
     TranslationSettings(Aws::Utils::Json::JsonView jsonValue);
     TranslationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    
+    inline const Formality& GetFormality() const{ return m_formality; }
+
+    
+    inline bool FormalityHasBeenSet() const { return m_formalityHasBeenSet; }
+
+    
+    inline void SetFormality(const Formality& value) { m_formalityHasBeenSet = true; m_formality = value; }
+
+    
+    inline void SetFormality(Formality&& value) { m_formalityHasBeenSet = true; m_formality = std::move(value); }
+
+    
+    inline TranslationSettings& WithFormality(const Formality& value) { SetFormality(value); return *this;}
+
+    
+    inline TranslationSettings& WithFormality(Formality&& value) { SetFormality(std::move(value)); return *this;}
 
 
     /**
@@ -116,6 +136,9 @@ namespace Model
     inline TranslationSettings& WithProfanity(Profanity&& value) { SetProfanity(std::move(value)); return *this;}
 
   private:
+
+    Formality m_formality;
+    bool m_formalityHasBeenSet;
 
     Profanity m_profanity;
     bool m_profanityHasBeenSet;

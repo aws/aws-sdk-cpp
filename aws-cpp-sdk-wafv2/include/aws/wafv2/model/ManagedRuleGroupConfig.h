@@ -45,50 +45,58 @@ namespace Model
 
 
     /**
-     * <p>The login endpoint for your application. For example
-     * <code>https://example.com/web/login</code>.</p>
+     * <p>The path of the login endpoint for your application. For example, for the URL
+     * <code>https://example.com/web/login</code>, you would provide the path
+     * <code>/web/login</code>.</p>
      */
     inline const Aws::String& GetLoginPath() const{ return m_loginPath; }
 
     /**
-     * <p>The login endpoint for your application. For example
-     * <code>https://example.com/web/login</code>.</p>
+     * <p>The path of the login endpoint for your application. For example, for the URL
+     * <code>https://example.com/web/login</code>, you would provide the path
+     * <code>/web/login</code>.</p>
      */
     inline bool LoginPathHasBeenSet() const { return m_loginPathHasBeenSet; }
 
     /**
-     * <p>The login endpoint for your application. For example
-     * <code>https://example.com/web/login</code>.</p>
+     * <p>The path of the login endpoint for your application. For example, for the URL
+     * <code>https://example.com/web/login</code>, you would provide the path
+     * <code>/web/login</code>.</p>
      */
     inline void SetLoginPath(const Aws::String& value) { m_loginPathHasBeenSet = true; m_loginPath = value; }
 
     /**
-     * <p>The login endpoint for your application. For example
-     * <code>https://example.com/web/login</code>.</p>
+     * <p>The path of the login endpoint for your application. For example, for the URL
+     * <code>https://example.com/web/login</code>, you would provide the path
+     * <code>/web/login</code>.</p>
      */
     inline void SetLoginPath(Aws::String&& value) { m_loginPathHasBeenSet = true; m_loginPath = std::move(value); }
 
     /**
-     * <p>The login endpoint for your application. For example
-     * <code>https://example.com/web/login</code>.</p>
+     * <p>The path of the login endpoint for your application. For example, for the URL
+     * <code>https://example.com/web/login</code>, you would provide the path
+     * <code>/web/login</code>.</p>
      */
     inline void SetLoginPath(const char* value) { m_loginPathHasBeenSet = true; m_loginPath.assign(value); }
 
     /**
-     * <p>The login endpoint for your application. For example
-     * <code>https://example.com/web/login</code>.</p>
+     * <p>The path of the login endpoint for your application. For example, for the URL
+     * <code>https://example.com/web/login</code>, you would provide the path
+     * <code>/web/login</code>.</p>
      */
     inline ManagedRuleGroupConfig& WithLoginPath(const Aws::String& value) { SetLoginPath(value); return *this;}
 
     /**
-     * <p>The login endpoint for your application. For example
-     * <code>https://example.com/web/login</code>.</p>
+     * <p>The path of the login endpoint for your application. For example, for the URL
+     * <code>https://example.com/web/login</code>, you would provide the path
+     * <code>/web/login</code>.</p>
      */
     inline ManagedRuleGroupConfig& WithLoginPath(Aws::String&& value) { SetLoginPath(std::move(value)); return *this;}
 
     /**
-     * <p>The login endpoint for your application. For example
-     * <code>https://example.com/web/login</code>.</p>
+     * <p>The path of the login endpoint for your application. For example, for the URL
+     * <code>https://example.com/web/login</code>, you would provide the path
+     * <code>/web/login</code>.</p>
      */
     inline ManagedRuleGroupConfig& WithLoginPath(const char* value) { SetLoginPath(value); return *this;}
 

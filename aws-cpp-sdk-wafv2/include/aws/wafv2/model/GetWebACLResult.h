@@ -156,7 +156,7 @@ namespace Model
      * only populated if you are using a rule group in your web ACL that integrates
      * with your applications in this way. For more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
      */
     inline const Aws::String& GetApplicationIntegrationURL() const{ return m_applicationIntegrationURL; }
 
@@ -167,7 +167,7 @@ namespace Model
      * only populated if you are using a rule group in your web ACL that integrates
      * with your applications in this way. For more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
      */
     inline void SetApplicationIntegrationURL(const Aws::String& value) { m_applicationIntegrationURL = value; }
 
@@ -178,7 +178,7 @@ namespace Model
      * only populated if you are using a rule group in your web ACL that integrates
      * with your applications in this way. For more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
      */
     inline void SetApplicationIntegrationURL(Aws::String&& value) { m_applicationIntegrationURL = std::move(value); }
 
@@ -189,7 +189,7 @@ namespace Model
      * only populated if you are using a rule group in your web ACL that integrates
      * with your applications in this way. For more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
      */
     inline void SetApplicationIntegrationURL(const char* value) { m_applicationIntegrationURL.assign(value); }
 
@@ -200,7 +200,7 @@ namespace Model
      * only populated if you are using a rule group in your web ACL that integrates
      * with your applications in this way. For more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
      */
     inline GetWebACLResult& WithApplicationIntegrationURL(const Aws::String& value) { SetApplicationIntegrationURL(value); return *this;}
 
@@ -211,7 +211,7 @@ namespace Model
      * only populated if you are using a rule group in your web ACL that integrates
      * with your applications in this way. For more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
      */
     inline GetWebACLResult& WithApplicationIntegrationURL(Aws::String&& value) { SetApplicationIntegrationURL(std::move(value)); return *this;}
 
@@ -222,7 +222,7 @@ namespace Model
      * only populated if you are using a rule group in your web ACL that integrates
      * with your applications in this way. For more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
      */
     inline GetWebACLResult& WithApplicationIntegrationURL(const char* value) { SetApplicationIntegrationURL(value); return *this;}
 
