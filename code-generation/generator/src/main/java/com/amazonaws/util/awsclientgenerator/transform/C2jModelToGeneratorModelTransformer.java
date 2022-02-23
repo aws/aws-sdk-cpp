@@ -622,6 +622,10 @@ public class C2jModelToGeneratorModelTransformer {
                 errorPayloadType.equals("json") && referencedShape.isJsonModeledException()) {
                 error.setModeled(true);
             }
+
+            if (shape.getRetryable() != null && shape.getRetryable().getOrDefault("throttling", false)) {
+                error.setRetryable(true);
+            }
         }
         error.setDocumentation(formatDocumentation(c2jError.getDocumentation(), 3));
         error.setName(CppViewHelper.convertToUpperCamel(c2jError.getShape()));
