@@ -174,15 +174,7 @@ namespace Model
      * <code>HomeDirectory</code> parameter value.</p> <p>The following is an
      * <code>Entry</code> and <code>Target</code> pair example for
      * <code>chroot</code>.</p> <p> <code>[ { "Entry:": "/", "Target":
-     * "/bucket_name/home/mydirectory" } ]</code> </p>  <p>If the target of a
-     * logical directory entry does not exist in Amazon S3 or EFS, the entry is
-     * ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0
-     * byte objects as place holders for your directory. If using the CLI, use the
-     * <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or
-     * <code>efs</code> so you can use the put-object operation. For example, you use
-     * the following: <code>aws s3api put-object --bucket bucketname --key
-     * path/to/folder/</code>. Make sure that the end of the key name ends in a
-     * <code>/</code> for it to be considered a folder.</p> 
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline const Aws::Vector<HomeDirectoryMapEntry>& GetHomeDirectoryMappings() const{ return m_homeDirectoryMappings; }
 
@@ -204,15 +196,7 @@ namespace Model
      * <code>HomeDirectory</code> parameter value.</p> <p>The following is an
      * <code>Entry</code> and <code>Target</code> pair example for
      * <code>chroot</code>.</p> <p> <code>[ { "Entry:": "/", "Target":
-     * "/bucket_name/home/mydirectory" } ]</code> </p>  <p>If the target of a
-     * logical directory entry does not exist in Amazon S3 or EFS, the entry is
-     * ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0
-     * byte objects as place holders for your directory. If using the CLI, use the
-     * <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or
-     * <code>efs</code> so you can use the put-object operation. For example, you use
-     * the following: <code>aws s3api put-object --bucket bucketname --key
-     * path/to/folder/</code>. Make sure that the end of the key name ends in a
-     * <code>/</code> for it to be considered a folder.</p> 
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline bool HomeDirectoryMappingsHasBeenSet() const { return m_homeDirectoryMappingsHasBeenSet; }
 
@@ -234,15 +218,7 @@ namespace Model
      * <code>HomeDirectory</code> parameter value.</p> <p>The following is an
      * <code>Entry</code> and <code>Target</code> pair example for
      * <code>chroot</code>.</p> <p> <code>[ { "Entry:": "/", "Target":
-     * "/bucket_name/home/mydirectory" } ]</code> </p>  <p>If the target of a
-     * logical directory entry does not exist in Amazon S3 or EFS, the entry is
-     * ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0
-     * byte objects as place holders for your directory. If using the CLI, use the
-     * <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or
-     * <code>efs</code> so you can use the put-object operation. For example, you use
-     * the following: <code>aws s3api put-object --bucket bucketname --key
-     * path/to/folder/</code>. Make sure that the end of the key name ends in a
-     * <code>/</code> for it to be considered a folder.</p> 
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline void SetHomeDirectoryMappings(const Aws::Vector<HomeDirectoryMapEntry>& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = value; }
 
@@ -264,15 +240,7 @@ namespace Model
      * <code>HomeDirectory</code> parameter value.</p> <p>The following is an
      * <code>Entry</code> and <code>Target</code> pair example for
      * <code>chroot</code>.</p> <p> <code>[ { "Entry:": "/", "Target":
-     * "/bucket_name/home/mydirectory" } ]</code> </p>  <p>If the target of a
-     * logical directory entry does not exist in Amazon S3 or EFS, the entry is
-     * ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0
-     * byte objects as place holders for your directory. If using the CLI, use the
-     * <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or
-     * <code>efs</code> so you can use the put-object operation. For example, you use
-     * the following: <code>aws s3api put-object --bucket bucketname --key
-     * path/to/folder/</code>. Make sure that the end of the key name ends in a
-     * <code>/</code> for it to be considered a folder.</p> 
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline void SetHomeDirectoryMappings(Aws::Vector<HomeDirectoryMapEntry>&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = std::move(value); }
 
@@ -294,15 +262,7 @@ namespace Model
      * <code>HomeDirectory</code> parameter value.</p> <p>The following is an
      * <code>Entry</code> and <code>Target</code> pair example for
      * <code>chroot</code>.</p> <p> <code>[ { "Entry:": "/", "Target":
-     * "/bucket_name/home/mydirectory" } ]</code> </p>  <p>If the target of a
-     * logical directory entry does not exist in Amazon S3 or EFS, the entry is
-     * ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0
-     * byte objects as place holders for your directory. If using the CLI, use the
-     * <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or
-     * <code>efs</code> so you can use the put-object operation. For example, you use
-     * the following: <code>aws s3api put-object --bucket bucketname --key
-     * path/to/folder/</code>. Make sure that the end of the key name ends in a
-     * <code>/</code> for it to be considered a folder.</p> 
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline UpdateAccessRequest& WithHomeDirectoryMappings(const Aws::Vector<HomeDirectoryMapEntry>& value) { SetHomeDirectoryMappings(value); return *this;}
 
@@ -324,15 +284,7 @@ namespace Model
      * <code>HomeDirectory</code> parameter value.</p> <p>The following is an
      * <code>Entry</code> and <code>Target</code> pair example for
      * <code>chroot</code>.</p> <p> <code>[ { "Entry:": "/", "Target":
-     * "/bucket_name/home/mydirectory" } ]</code> </p>  <p>If the target of a
-     * logical directory entry does not exist in Amazon S3 or EFS, the entry is
-     * ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0
-     * byte objects as place holders for your directory. If using the CLI, use the
-     * <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or
-     * <code>efs</code> so you can use the put-object operation. For example, you use
-     * the following: <code>aws s3api put-object --bucket bucketname --key
-     * path/to/folder/</code>. Make sure that the end of the key name ends in a
-     * <code>/</code> for it to be considered a folder.</p> 
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline UpdateAccessRequest& WithHomeDirectoryMappings(Aws::Vector<HomeDirectoryMapEntry>&& value) { SetHomeDirectoryMappings(std::move(value)); return *this;}
 
@@ -354,15 +306,7 @@ namespace Model
      * <code>HomeDirectory</code> parameter value.</p> <p>The following is an
      * <code>Entry</code> and <code>Target</code> pair example for
      * <code>chroot</code>.</p> <p> <code>[ { "Entry:": "/", "Target":
-     * "/bucket_name/home/mydirectory" } ]</code> </p>  <p>If the target of a
-     * logical directory entry does not exist in Amazon S3 or EFS, the entry is
-     * ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0
-     * byte objects as place holders for your directory. If using the CLI, use the
-     * <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or
-     * <code>efs</code> so you can use the put-object operation. For example, you use
-     * the following: <code>aws s3api put-object --bucket bucketname --key
-     * path/to/folder/</code>. Make sure that the end of the key name ends in a
-     * <code>/</code> for it to be considered a folder.</p> 
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline UpdateAccessRequest& AddHomeDirectoryMappings(const HomeDirectoryMapEntry& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings.push_back(value); return *this; }
 
@@ -384,15 +328,7 @@ namespace Model
      * <code>HomeDirectory</code> parameter value.</p> <p>The following is an
      * <code>Entry</code> and <code>Target</code> pair example for
      * <code>chroot</code>.</p> <p> <code>[ { "Entry:": "/", "Target":
-     * "/bucket_name/home/mydirectory" } ]</code> </p>  <p>If the target of a
-     * logical directory entry does not exist in Amazon S3 or EFS, the entry is
-     * ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0
-     * byte objects as place holders for your directory. If using the CLI, use the
-     * <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or
-     * <code>efs</code> so you can use the put-object operation. For example, you use
-     * the following: <code>aws s3api put-object --bucket bucketname --key
-     * path/to/folder/</code>. Make sure that the end of the key name ends in a
-     * <code>/</code> for it to be considered a folder.</p> 
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline UpdateAccessRequest& AddHomeDirectoryMappings(HomeDirectoryMapEntry&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings.push_back(std::move(value)); return *this; }
 

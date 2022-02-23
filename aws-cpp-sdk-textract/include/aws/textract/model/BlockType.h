@@ -22,7 +22,9 @@ namespace Model
     WORD,
     TABLE,
     CELL,
-    SELECTION_ELEMENT
+    SELECTION_ELEMENT,
+    MERGED_CELL,
+    TITLE
   };
 
 namespace BlockTypeMapper

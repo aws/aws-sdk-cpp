@@ -22,7 +22,8 @@ CustomStepDetails::CustomStepDetails() :
     m_nameHasBeenSet(false),
     m_targetHasBeenSet(false),
     m_timeoutSeconds(0),
-    m_timeoutSecondsHasBeenSet(false)
+    m_timeoutSecondsHasBeenSet(false),
+    m_sourceFileLocationHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ CustomStepDetails::CustomStepDetails(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_targetHasBeenSet(false),
     m_timeoutSeconds(0),
-    m_timeoutSecondsHasBeenSet(false)
+    m_timeoutSecondsHasBeenSet(false),
+    m_sourceFileLocationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ CustomStepDetails& CustomStepDetails::operator =(JsonView jsonValue)
     m_timeoutSecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SourceFileLocation"))
+  {
+    m_sourceFileLocation = jsonValue.GetString("SourceFileLocation");
+
+    m_sourceFileLocationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +89,12 @@ JsonValue CustomStepDetails::Jsonize() const
   if(m_timeoutSecondsHasBeenSet)
   {
    payload.WithInteger("TimeoutSeconds", m_timeoutSeconds);
+
+  }
+
+  if(m_sourceFileLocationHasBeenSet)
+  {
+   payload.WithString("SourceFileLocation", m_sourceFileLocation);
 
   }
 

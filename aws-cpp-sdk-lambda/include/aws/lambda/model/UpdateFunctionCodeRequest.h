@@ -134,127 +134,149 @@ namespace Model
 
     /**
      * <p>The base64-encoded contents of the deployment package. Amazon Web Services
-     * SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+     * SDK and Amazon Web Services CLI clients handle the encoding for you. Use only
+     * with a function defined with a .zip file archive deployment package.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetZipFile() const{ return m_zipFile; }
 
     /**
      * <p>The base64-encoded contents of the deployment package. Amazon Web Services
-     * SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+     * SDK and Amazon Web Services CLI clients handle the encoding for you. Use only
+     * with a function defined with a .zip file archive deployment package.</p>
      */
     inline bool ZipFileHasBeenSet() const { return m_zipFileHasBeenSet; }
 
     /**
      * <p>The base64-encoded contents of the deployment package. Amazon Web Services
-     * SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+     * SDK and Amazon Web Services CLI clients handle the encoding for you. Use only
+     * with a function defined with a .zip file archive deployment package.</p>
      */
     inline void SetZipFile(const Aws::Utils::CryptoBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
 
     /**
      * <p>The base64-encoded contents of the deployment package. Amazon Web Services
-     * SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+     * SDK and Amazon Web Services CLI clients handle the encoding for you. Use only
+     * with a function defined with a .zip file archive deployment package.</p>
      */
     inline void SetZipFile(Aws::Utils::CryptoBuffer&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::move(value); }
 
     /**
      * <p>The base64-encoded contents of the deployment package. Amazon Web Services
-     * SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+     * SDK and Amazon Web Services CLI clients handle the encoding for you. Use only
+     * with a function defined with a .zip file archive deployment package.</p>
      */
     inline UpdateFunctionCodeRequest& WithZipFile(const Aws::Utils::CryptoBuffer& value) { SetZipFile(value); return *this;}
 
     /**
      * <p>The base64-encoded contents of the deployment package. Amazon Web Services
-     * SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+     * SDK and Amazon Web Services CLI clients handle the encoding for you. Use only
+     * with a function defined with a .zip file archive deployment package.</p>
      */
     inline UpdateFunctionCodeRequest& WithZipFile(Aws::Utils::CryptoBuffer&& value) { SetZipFile(std::move(value)); return *this;}
 
 
     /**
      * <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function.
-     * The bucket can be in a different Amazon Web Services account.</p>
+     * The bucket can be in a different Amazon Web Services account. Use only with a
+     * function defined with a .zip file archive deployment package.</p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
 
     /**
      * <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function.
-     * The bucket can be in a different Amazon Web Services account.</p>
+     * The bucket can be in a different Amazon Web Services account. Use only with a
+     * function defined with a .zip file archive deployment package.</p>
      */
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
 
     /**
      * <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function.
-     * The bucket can be in a different Amazon Web Services account.</p>
+     * The bucket can be in a different Amazon Web Services account. Use only with a
+     * function defined with a .zip file archive deployment package.</p>
      */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
      * <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function.
-     * The bucket can be in a different Amazon Web Services account.</p>
+     * The bucket can be in a different Amazon Web Services account. Use only with a
+     * function defined with a .zip file archive deployment package.</p>
      */
     inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
      * <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function.
-     * The bucket can be in a different Amazon Web Services account.</p>
+     * The bucket can be in a different Amazon Web Services account. Use only with a
+     * function defined with a .zip file archive deployment package.</p>
      */
     inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
 
     /**
      * <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function.
-     * The bucket can be in a different Amazon Web Services account.</p>
+     * The bucket can be in a different Amazon Web Services account. Use only with a
+     * function defined with a .zip file archive deployment package.</p>
      */
     inline UpdateFunctionCodeRequest& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
 
     /**
      * <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function.
-     * The bucket can be in a different Amazon Web Services account.</p>
+     * The bucket can be in a different Amazon Web Services account. Use only with a
+     * function defined with a .zip file archive deployment package.</p>
      */
     inline UpdateFunctionCodeRequest& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
 
     /**
      * <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function.
-     * The bucket can be in a different Amazon Web Services account.</p>
+     * The bucket can be in a different Amazon Web Services account. Use only with a
+     * function defined with a .zip file archive deployment package.</p>
      */
     inline UpdateFunctionCodeRequest& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 
 
     /**
-     * <p>The Amazon S3 key of the deployment package.</p>
+     * <p>The Amazon S3 key of the deployment package. Use only with a function defined
+     * with a .zip file archive deployment package.</p>
      */
     inline const Aws::String& GetS3Key() const{ return m_s3Key; }
 
     /**
-     * <p>The Amazon S3 key of the deployment package.</p>
+     * <p>The Amazon S3 key of the deployment package. Use only with a function defined
+     * with a .zip file archive deployment package.</p>
      */
     inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 key of the deployment package.</p>
+     * <p>The Amazon S3 key of the deployment package. Use only with a function defined
+     * with a .zip file archive deployment package.</p>
      */
     inline void SetS3Key(const Aws::String& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
 
     /**
-     * <p>The Amazon S3 key of the deployment package.</p>
+     * <p>The Amazon S3 key of the deployment package. Use only with a function defined
+     * with a .zip file archive deployment package.</p>
      */
     inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::move(value); }
 
     /**
-     * <p>The Amazon S3 key of the deployment package.</p>
+     * <p>The Amazon S3 key of the deployment package. Use only with a function defined
+     * with a .zip file archive deployment package.</p>
      */
     inline void SetS3Key(const char* value) { m_s3KeyHasBeenSet = true; m_s3Key.assign(value); }
 
     /**
-     * <p>The Amazon S3 key of the deployment package.</p>
+     * <p>The Amazon S3 key of the deployment package. Use only with a function defined
+     * with a .zip file archive deployment package.</p>
      */
     inline UpdateFunctionCodeRequest& WithS3Key(const Aws::String& value) { SetS3Key(value); return *this;}
 
     /**
-     * <p>The Amazon S3 key of the deployment package.</p>
+     * <p>The Amazon S3 key of the deployment package. Use only with a function defined
+     * with a .zip file archive deployment package.</p>
      */
     inline UpdateFunctionCodeRequest& WithS3Key(Aws::String&& value) { SetS3Key(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon S3 key of the deployment package.</p>
+     * <p>The Amazon S3 key of the deployment package. Use only with a function defined
+     * with a .zip file archive deployment package.</p>
      */
     inline UpdateFunctionCodeRequest& WithS3Key(const char* value) { SetS3Key(value); return *this;}
 
@@ -309,42 +331,50 @@ namespace Model
 
 
     /**
-     * <p>URI of a container image in the Amazon ECR registry.</p>
+     * <p>URI of a container image in the Amazon ECR registry. Do not use for a
+     * function defined with a .zip file archive.</p>
      */
     inline const Aws::String& GetImageUri() const{ return m_imageUri; }
 
     /**
-     * <p>URI of a container image in the Amazon ECR registry.</p>
+     * <p>URI of a container image in the Amazon ECR registry. Do not use for a
+     * function defined with a .zip file archive.</p>
      */
     inline bool ImageUriHasBeenSet() const { return m_imageUriHasBeenSet; }
 
     /**
-     * <p>URI of a container image in the Amazon ECR registry.</p>
+     * <p>URI of a container image in the Amazon ECR registry. Do not use for a
+     * function defined with a .zip file archive.</p>
      */
     inline void SetImageUri(const Aws::String& value) { m_imageUriHasBeenSet = true; m_imageUri = value; }
 
     /**
-     * <p>URI of a container image in the Amazon ECR registry.</p>
+     * <p>URI of a container image in the Amazon ECR registry. Do not use for a
+     * function defined with a .zip file archive.</p>
      */
     inline void SetImageUri(Aws::String&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::move(value); }
 
     /**
-     * <p>URI of a container image in the Amazon ECR registry.</p>
+     * <p>URI of a container image in the Amazon ECR registry. Do not use for a
+     * function defined with a .zip file archive.</p>
      */
     inline void SetImageUri(const char* value) { m_imageUriHasBeenSet = true; m_imageUri.assign(value); }
 
     /**
-     * <p>URI of a container image in the Amazon ECR registry.</p>
+     * <p>URI of a container image in the Amazon ECR registry. Do not use for a
+     * function defined with a .zip file archive.</p>
      */
     inline UpdateFunctionCodeRequest& WithImageUri(const Aws::String& value) { SetImageUri(value); return *this;}
 
     /**
-     * <p>URI of a container image in the Amazon ECR registry.</p>
+     * <p>URI of a container image in the Amazon ECR registry. Do not use for a
+     * function defined with a .zip file archive.</p>
      */
     inline UpdateFunctionCodeRequest& WithImageUri(Aws::String&& value) { SetImageUri(std::move(value)); return *this;}
 
     /**
-     * <p>URI of a container image in the Amazon ECR registry.</p>
+     * <p>URI of a container image in the Amazon ECR registry. Do not use for a
+     * function defined with a .zip file archive.</p>
      */
     inline UpdateFunctionCodeRequest& WithImageUri(const char* value) { SetImageUri(value); return *this;}
 
