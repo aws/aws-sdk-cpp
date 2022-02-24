@@ -59,4 +59,10 @@ public class Operation {
 
     // For S3 CRT
     private boolean s3CrtSpecific;
+
+    // For flexible checksums
+    private boolean requestChecksumRequired;
+    private String requestAlgorithmMember;
+    private String requestValidationModeMember;
+    private List<String> responseAlgorithms;
 }

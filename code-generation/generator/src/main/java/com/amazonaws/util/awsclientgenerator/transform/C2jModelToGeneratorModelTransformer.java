@@ -500,6 +500,18 @@ public class C2jModelToGeneratorModelTransformer {
         // http
         operation.setHttp(convertHttp(c2jOperation.getHttp()));
 
+        // http checksum
+        if (c2jOperation.getHttpChecksum() != null) {
+            C2jHttpChecksum c2jHttpChecksum = c2jOperation.getHttpChecksum();
+
+            operation.setRequestChecksumRequired(c2jHttpChecksum.isRequestChecksumRequired());
+            operation.setRequestAlgorithmMember(c2jHttpChecksum.getRequestAlgorithmMember());
+            operation.setRequestValidationModeMember(c2jHttpChecksum.getRequestValidationModeMember());
+            if (c2jHttpChecksum.getResponseAlgorithms() != null) {
+                operation.setResponseAlgorithms(new ArrayList<>(c2jHttpChecksum.getResponseAlgorithms()));
+            }
+        }
+
         // errors
 
         List<Error> operationErrors = new ArrayList<>();

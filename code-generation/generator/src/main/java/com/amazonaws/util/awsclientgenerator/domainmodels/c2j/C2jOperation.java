@@ -22,6 +22,7 @@ public class C2jOperation {
     private String documentation;
     private boolean deprecated;
     private boolean httpChecksumRequired;
+    private C2jHttpChecksum httpChecksum;
     // For HostPrefixInjection
     private C2jEndpoint endpoint; // endpoint trait
 

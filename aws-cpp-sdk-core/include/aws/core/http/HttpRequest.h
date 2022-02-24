@@ -25,6 +25,13 @@ namespace Aws
             class HttpRequest;
         }
     }
+    namespace Utils
+    {
+        namespace Crypto
+        {
+            class Hash;
+        }
+    }
     namespace Http
     {
         extern AWS_CORE_API const char DATE_HEADER[];
@@ -36,8 +43,10 @@ namespace Aws
         extern AWS_CORE_API const char AUTHORIZATION_HEADER[];
         extern AWS_CORE_API const char AWS_AUTHORIZATION_HEADER[];
         extern AWS_CORE_API const char COOKIE_HEADER[];
+        extern AWS_CORE_API const char DECODED_CONTENT_LENGTH_HEADER[];
         extern AWS_CORE_API const char CONTENT_LENGTH_HEADER[];
         extern AWS_CORE_API const char CONTENT_TYPE_HEADER[];
+        extern AWS_CORE_API const char CONTENT_ENCODING_HEADER[];
         extern AWS_CORE_API const char TRANSFER_ENCODING_HEADER[];
         extern AWS_CORE_API const char USER_AGENT_HEADER[];
         extern AWS_CORE_API const char VIA_HEADER[];
@@ -46,9 +55,11 @@ namespace Aws
         extern AWS_CORE_API const char X_AMZ_EXPIRES_HEADER[];
         extern AWS_CORE_API const char CONTENT_MD5_HEADER[];
         extern AWS_CORE_API const char API_VERSION_HEADER[];
+        extern AWS_CORE_API const char AWS_TRAILER_HEADER[];
         extern AWS_CORE_API const char SDK_INVOCATION_ID_HEADER[];
         extern AWS_CORE_API const char SDK_REQUEST_HEADER[];
         extern AWS_CORE_API const char CHUNKED_VALUE[];
+        extern AWS_CORE_API const char AWS_CHUNKED_VALUE[];
 
         class HttpRequest;
         class HttpResponse;
@@ -534,6 +545,19 @@ namespace Aws
             void SetEventStreamRequest(bool eventStreamRequest) { m_isEvenStreamRequest = eventStreamRequest; }
 
             virtual std::shared_ptr<Aws::Crt::Http::HttpRequest> ToCrtHttpRequest();
+
+            void SetRequestHash(const Aws::String& algorithmName, const std::shared_ptr<Aws::Utils::Crypto::Hash>& hash)
+            {
+                m_requestHash = std::make_pair(algorithmName, hash);
+            }
+            const std::pair<Aws::String, std::shared_ptr<Aws::Utils::Crypto::Hash>>& GetRequestHash() { return m_requestHash; }
+
+            void AddResponseValidationHash(const Aws::String& algorithmName, const std::shared_ptr<Aws::Utils::Crypto::Hash>& hash)
+            {
+                m_responseValidationHashes.emplace_back(algorithmName, hash);
+            }
+            const Aws::Vector<std::pair<Aws::String, std::shared_ptr<Aws::Utils::Crypto::Hash>>>& GetResponseValidationHashes() const { return m_responseValidationHashes; }
+
         private:
             URI m_uri;
             HttpMethod m_method;
@@ -545,6 +569,8 @@ namespace Aws
             Aws::String m_signingAccessKey;
             Aws::String m_resolvedRemoteHost;
             Aws::Monitoring::HttpClientMetricsCollection m_httpRequestMetrics;
+            std::pair<Aws::String, std::shared_ptr<Aws::Utils::Crypto::Hash>> m_requestHash;
+            Aws::Vector<std::pair<Aws::String, std::shared_ptr<Aws::Utils::Crypto::Hash>>> m_responseValidationHashes;
         };
 
     } // namespace Http

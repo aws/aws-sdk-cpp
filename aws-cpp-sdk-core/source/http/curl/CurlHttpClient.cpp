@@ -7,9 +7,12 @@
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/ratelimiter/RateLimiterInterface.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/crypto/Hash.h>
+#include <aws/core/utils/Outcome.h>
 #include <aws/core/monitoring/HttpClientMetrics.h>
 #include <cassert>
 #include <algorithm>
@@ -146,13 +149,15 @@ struct CurlReadCallbackContext
         m_client(client),
         m_curlHandle(curlHandle),
         m_rateLimiter(limiter),
-        m_request(request)
+        m_request(request),
+        m_chunkEnd(false)
     {}
 
     const CurlHttpClient* m_client;
     CURL* m_curlHandle;
     Aws::Utils::RateLimits::RateLimiterInterface* m_rateLimiter;
     HttpRequest* m_request;
+    bool m_chunkEnd;
 };
 
 static const char* CURL_HTTP_CLIENT_TAG = "CurlHttpClient";
@@ -174,6 +179,11 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
         if (context->m_rateLimiter)
         {
             context->m_rateLimiter->ApplyAndPayForCost(static_cast<int64_t>(sizeToWrite));
+        }
+
+        for (const auto& hashIterator : context->m_request->GetResponseValidationHashes())
+        {
+            hashIterator.second->Update(reinterpret_cast<unsigned char*>(ptr), sizeToWrite);
         }
 
         response->GetResponseBody().write(ptr, static_cast<std::streamsize>(sizeToWrite));
@@ -232,7 +242,17 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata)
     HttpRequest* request = context->m_request;
     const std::shared_ptr<Aws::IOStream>& ioStream = request->GetContentBody();
 
-    const size_t amountToRead = size * nmemb;
+    size_t amountToRead = size * nmemb;
+    bool isAwsChunked = request->HasHeader(Aws::Http::CONTENT_ENCODING_HEADER) &&
+        request->GetHeaderValue(Aws::Http::CONTENT_ENCODING_HEADER) == Aws::Http::AWS_CHUNKED_VALUE;
+    // aws-chunk = hex(chunk-size) + CRLF + chunk-data + CRLF
+    // Needs to reserve bytes of sizeof(hex(chunk-size)) + sizeof(CRLF) + sizeof(CRLF)
+    if (isAwsChunked)
+    {
+        Aws::String amountToReadHexString = Aws::Utils::StringUtils::ToHexString(amountToRead);
+        amountToRead -= (amountToReadHexString.size() + 4);
+    }
+
     if (ioStream != nullptr && amountToRead > 0)
     {
         if (request->IsEventStreamRequest())
@@ -247,6 +267,39 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata)
             ioStream->read(ptr, amountToRead);
         }
         size_t amountRead = static_cast<size_t>(ioStream->gcount());
+
+        if (isAwsChunked)
+        {
+            if (amountRead > 0)
+            {
+                if (request->GetRequestHash().second != nullptr)
+                {
+                    request->GetRequestHash().second->Update(reinterpret_cast<unsigned char*>(ptr), amountRead);
+                }
+
+                Aws::String hex = Aws::Utils::StringUtils::ToHexString(amountRead);
+                memmove(ptr + hex.size() + 2, ptr, amountRead);
+                memmove(ptr + hex.size() + 2 + amountRead, "\r\n", 2);
+                memmove(ptr, hex.c_str(), hex.size());
+                memmove(ptr + hex.size(), "\r\n", 2);
+                amountRead += hex.size() + 4;
+            }
+            else if (amountRead == 0 && !context->m_chunkEnd)
+            {
+                Aws::StringStream chunkedTrailer;
+                chunkedTrailer << "0\r\n";
+                if (request->GetRequestHash().second != nullptr)
+                {
+                    chunkedTrailer << "x-amz-checksum-" << request->GetRequestHash().first << ":"
+                        << HashingUtils::Base64Encode(request->GetRequestHash().second->GetHash().GetResult()) << "\r\n";
+                }
+                chunkedTrailer << "\r\n";
+                amountRead = chunkedTrailer.str().size();
+                memcpy(ptr, chunkedTrailer.str().c_str(), amountRead);
+                context->m_chunkEnd = true;
+            }
+        }
+
         auto& sentHandler = request->GetDataSentEventHandler();
         if (sentHandler)
         {

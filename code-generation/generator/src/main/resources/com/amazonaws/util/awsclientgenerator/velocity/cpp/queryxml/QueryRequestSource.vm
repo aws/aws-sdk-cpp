@@ -197,3 +197,4 @@ void  ${typeInfo.className}::DumpBodyToUrl(Aws::Http::URI& uri ) const
   uri.SetQueryString(SerializePayload());
 }
 #end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassChecksumMembers.vm")

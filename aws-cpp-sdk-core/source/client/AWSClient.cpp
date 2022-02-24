@@ -27,6 +27,9 @@
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
 #include <aws/core/utils/crypto/MD5.h>
+#include <aws/core/utils/crypto/CRC32.h>
+#include <aws/core/utils/crypto/Sha256.h>
+#include <aws/core/utils/crypto/Sha1.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/event/EventStream.h>
@@ -495,6 +498,30 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpReque
     std::shared_ptr<HttpResponse> httpResponse(
         m_httpClient->MakeRequest(httpRequest, m_readRateLimiter.get(), m_writeRateLimiter.get()));
 
+    if (request.ShouldValidateResponseChecksum())
+    {
+        for (const auto& hashIterator : httpRequest->GetResponseValidationHashes())
+        {
+            Aws::String checksumHeaderKey = Aws::String("x-amz-checksum-") + hashIterator.first;
+            // TODO: If checksum ends with -#, then skip
+            if (httpResponse->HasHeader(checksumHeaderKey.c_str()))
+            {
+                Aws::String checksumHeaderValue = httpResponse->GetHeader(checksumHeaderKey.c_str());
+                if (HashingUtils::Base64Encode(hashIterator.second->GetHash().GetResult()) != checksumHeaderValue)
+                {
+                    AWSError<CoreErrors> error(CoreErrors::VALIDATION, "", "Response checksums mismatch", false/*retryable*/);
+                    error.SetResponseHeaders(httpResponse->GetHeaders());
+                    error.SetResponseCode(httpResponse->GetResponseCode());
+                    error.SetRemoteHostIpAddress(httpResponse->GetOriginatingRequest().GetResolvedRemoteHost());
+                    AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, error);
+                    return HttpResponseOutcome(error);
+                }
+                // Validate only a single checksum returned in an HTTP response
+                break;
+            }
+        }
+    }
+
     if (DoesResponseGenerateError(httpResponse))
     {
         AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
@@ -617,6 +644,105 @@ void AWSClient::AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest
     AddCommonHeaders(*httpRequest);
 }
 
+void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
+    const Aws::AmazonWebServiceRequest& request) const
+{
+    Aws::String checksumAlgorithmName = Aws::Utils::StringUtils::ToLower(request.GetChecksumAlgorithmName().c_str());
+
+    // Request checksums
+    if (!checksumAlgorithmName.empty())
+    {
+        // For non streaming payload, the resolved checksum location is always header.
+        // For streaming payload, the resolved checksum location depends on whether it's unsigned payload, we let AwsAuthSigner decide it.
+        if (checksumAlgorithmName == "crc32")
+        {
+            if (request.IsStreaming())
+            {
+                httpRequest->SetRequestHash("crc32", Aws::MakeShared<Crypto::CRC32>(AWS_CLIENT_LOG_TAG));
+            }
+            else
+            {
+                httpRequest->SetHeaderValue("x-amz-checksum-crc32", HashingUtils::Base64Encode(HashingUtils::CalculateCRC32(*(request.GetBody()))));
+            }
+        }
+        else if (checksumAlgorithmName == "crc32c")
+        {
+            if (request.IsStreaming())
+            {
+                httpRequest->SetRequestHash("crc32c", Aws::MakeShared<Crypto::CRC32C>(AWS_CLIENT_LOG_TAG));
+            }
+            else
+            {
+                httpRequest->SetHeaderValue("x-amz-checksum-crc32c", HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C(*(request.GetBody()))));
+            }
+        }
+        else if (checksumAlgorithmName == "sha256")
+        {
+            if (request.IsStreaming())
+            {
+                httpRequest->SetRequestHash("sha256", Aws::MakeShared<Crypto::Sha256>(AWS_CLIENT_LOG_TAG));
+            }
+            else
+            {
+                httpRequest->SetHeaderValue("x-amz-checksum-sha256", HashingUtils::Base64Encode(HashingUtils::CalculateSHA256(*(request.GetBody()))));
+            }
+        }
+        else if (checksumAlgorithmName == "sha1")
+        {
+            if (request.IsStreaming())
+            {
+                httpRequest->SetRequestHash("sha1", Aws::MakeShared<Crypto::Sha1>(AWS_CLIENT_LOG_TAG));
+            }
+            else
+            {
+                httpRequest->SetHeaderValue("x-amz-checksum-sha1", HashingUtils::Base64Encode(HashingUtils::CalculateSHA1(*(request.GetBody()))));
+            }
+        }
+        else if (checksumAlgorithmName == "md5")
+        {
+            httpRequest->SetHeaderValue(Http::CONTENT_MD5_HEADER, HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*(request.GetBody()))));
+        }
+        else
+        {
+            AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "Checksum algorithm: " << checksumAlgorithmName << "is not supported by SDK.");
+        }
+    }
+
+    // Response checksums
+    if (request.ShouldValidateResponseChecksum())
+    {
+        for (const Aws::String& responseChecksumAlgorithmName : request.GetResponseChecksumAlgorithmNames())
+        {
+            checksumAlgorithmName = Aws::Utils::StringUtils::ToLower(responseChecksumAlgorithmName.c_str());
+
+            if (checksumAlgorithmName == "crc32c")
+            {
+                std::shared_ptr<Aws::Utils::Crypto::CRC32C> crc32c = Aws::MakeShared<Aws::Utils::Crypto::CRC32C>(AWS_CLIENT_LOG_TAG);
+                httpRequest->AddResponseValidationHash("crc32c", crc32c);
+            }
+            else if (checksumAlgorithmName == "crc32")
+            {
+                std::shared_ptr<Aws::Utils::Crypto::CRC32> crc32 = Aws::MakeShared<Aws::Utils::Crypto::CRC32>(AWS_CLIENT_LOG_TAG);
+                httpRequest->AddResponseValidationHash("crc", crc32);
+            }
+            else if (checksumAlgorithmName == "sha1")
+            {
+                std::shared_ptr<Aws::Utils::Crypto::Sha1> sha1 = Aws::MakeShared<Aws::Utils::Crypto::Sha1>(AWS_CLIENT_LOG_TAG);
+                httpRequest->AddResponseValidationHash("sha1", sha1);
+            }
+            else if (checksumAlgorithmName == "sha256")
+            {
+                std::shared_ptr<Aws::Utils::Crypto::Sha256> sha256 = Aws::MakeShared<Aws::Utils::Crypto::Sha256>(AWS_CLIENT_LOG_TAG);
+                httpRequest->AddResponseValidationHash("sha256", sha256);
+            }
+            else
+            {
+                AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "Checksum algorithm: " << checksumAlgorithmName << " is not supported in validating response body yet.");
+            }
+        }
+    }
+}
+
 void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
     const std::shared_ptr<Aws::IOStream>& body, bool needsContentMd5, bool isChunked) const
 {
@@ -701,6 +827,8 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request,
 {
     //do headers first since the request likely will set content-length as it's own header.
     AddHeadersToRequest(httpRequest, request.GetHeaders());
+
+    AddChecksumToRequest(httpRequest, request);
 
     if (request.IsEventStreamRequest())
     {

@@ -40,7 +40,11 @@
 #elseif($member.shape.list)
   ${spaces}for(const auto& item : $memberVarName)
   ${spaces}{
+#if($member.shape.listMember.shape.enum)
+  ${spaces}  ss << ${member.shape.listMember.shape.name}Mapper::GetNameFor${member.shape.listMember.shape.name}(item);
+#else
   ${spaces}  ss << item;
+#end
   ${spaces}  headers.emplace("${locationName}", ss.str());
   ${spaces}  ss.str("");
   ${spaces}}

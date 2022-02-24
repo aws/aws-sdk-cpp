@@ -49,6 +49,7 @@ static const char* X_AMZ_SIGNED_HEADERS = "X-Amz-SignedHeaders";
 static const char* X_AMZ_ALGORITHM = "X-Amz-Algorithm";
 static const char* X_AMZ_CREDENTIAL = "X-Amz-Credential";
 static const char* UNSIGNED_PAYLOAD = "UNSIGNED-PAYLOAD";
+static const char* STREAMING_UNSIGNED_PAYLOAD_TRAILER = "STREAMING-UNSIGNED-PAYLOAD-TRAILER";
 static const char* X_AMZ_SIGNATURE = "X-Amz-Signature";
 static const char* X_AMZN_TRACE_ID = "x-amzn-trace-id";
 static const char* X_AMZ_CONTENT_SHA256 = "x-amz-content-sha256";
@@ -330,11 +331,28 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
         {
             return false;
         }
+        if (request.GetRequestHash().second != nullptr)
+        {
+            Aws::String checksumHeaderKey = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
+            Aws::String checksumHeaderValue = HashingUtils::Base64Encode(request.GetRequestHash().second->Calculate(*(request.GetContentBody())).GetResult());
+            request.SetHeaderValue(checksumHeaderKey, checksumHeaderValue);
+            request.SetRequestHash("", nullptr);
+        }
     }
     else
     {
         AWS_LOGSTREAM_DEBUG(v4LogTag, "Note: Http payloads are not being signed. signPayloads=" << signBody
                 << " http scheme=" << Http::SchemeMapper::ToString(request.GetUri().GetScheme()));
+        if (request.GetRequestHash().second != nullptr)
+        {
+            payloadHash = STREAMING_UNSIGNED_PAYLOAD_TRAILER;
+            Aws::String trailerHeaderValue = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
+            request.SetHeaderValue(Http::AWS_TRAILER_HEADER, trailerHeaderValue);
+            request.SetTransferEncoding(CHUNKED_VALUE);
+            request.SetHeaderValue(Http::CONTENT_ENCODING_HEADER, Http::AWS_CHUNKED_VALUE);
+            request.SetHeaderValue(Http::DECODED_CONTENT_LENGTH_HEADER, request.GetHeaderValue(Http::CONTENT_LENGTH_HEADER));
+            request.DeleteHeader(Http::CONTENT_LENGTH_HEADER);
+        }
     }
 
     if(m_includeSha256HashHeader)

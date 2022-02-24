@@ -392,4 +392,14 @@ public class CppViewHelper {
             return str.toUpperCase();
         }
     }
+
+    public static String computeChecksumAlgorithm(String algorithm)
+    {
+        return "Aws::Checksum::Algorithm::" + algorithm.toUpperCase();
+    }
+
+    public static String computeChecksumLocation(String location)
+    {
+        return "Aws::Checksum::Location::" + location.toUpperCase();
+    }
 }

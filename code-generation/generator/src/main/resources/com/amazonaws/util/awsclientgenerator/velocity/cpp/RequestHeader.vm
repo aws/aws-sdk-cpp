@@ -73,6 +73,18 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 #end
+#if($operation.requestChecksumRequired)
+    Aws::String GetChecksumAlgorithmName() const override;
+
+#end
+#if($operation.requestValidationModeMember)
+    bool ShouldValidateResponseChecksum() const override;
+
+#end
+#if($operation.responseAlgorithms)
+    Aws::Vector<Aws::String> GetResponseChecksumAlgorithmNames() const override;
+
+#end
 #if($shape.computeContentMd5)
     inline bool ShouldComputeContentMd5() const override { return true; }
 
