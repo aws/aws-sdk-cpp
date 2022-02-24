@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3-crt/model/Delete.h>
 #include <aws/s3-crt/model/RequestPayer.h>
+#include <aws/s3-crt/model/ChecksumAlgorithm.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -42,7 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    inline bool ShouldComputeContentMd5() const override { return true; }
+    Aws::String GetChecksumAlgorithmName() const override;
 
 
     /**
@@ -56,13 +57,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
      * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -77,13 +78,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
      * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
@@ -98,13 +99,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
      * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
@@ -119,13 +120,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
      * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
@@ -140,13 +141,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
      * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
@@ -161,13 +162,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
      * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline DeleteObjectsRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
@@ -182,13 +183,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
      * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline DeleteObjectsRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
@@ -203,13 +204,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
      * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline DeleteObjectsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -332,87 +333,184 @@ namespace Model
     /**
      * <p>Specifies whether you want to delete this object even if it has a
      * Governance-type Object Lock in place. To use this header, you must have the
-     * <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
+     * <code>s3:BypassGovernanceRetention</code> permission.</p>
      */
     inline bool GetBypassGovernanceRetention() const{ return m_bypassGovernanceRetention; }
 
     /**
      * <p>Specifies whether you want to delete this object even if it has a
      * Governance-type Object Lock in place. To use this header, you must have the
-     * <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
+     * <code>s3:BypassGovernanceRetention</code> permission.</p>
      */
     inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }
 
     /**
      * <p>Specifies whether you want to delete this object even if it has a
      * Governance-type Object Lock in place. To use this header, you must have the
-     * <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
+     * <code>s3:BypassGovernanceRetention</code> permission.</p>
      */
     inline void SetBypassGovernanceRetention(bool value) { m_bypassGovernanceRetentionHasBeenSet = true; m_bypassGovernanceRetention = value; }
 
     /**
      * <p>Specifies whether you want to delete this object even if it has a
      * Governance-type Object Lock in place. To use this header, you must have the
-     * <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
+     * <code>s3:BypassGovernanceRetention</code> permission.</p>
      */
     inline DeleteObjectsRequest& WithBypassGovernanceRetention(bool value) { SetBypassGovernanceRetention(value); return *this;}
 
 
     /**
      * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
 
     /**
      * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
 
     /**
      * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
 
     /**
      * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
 
     /**
      * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
 
     /**
      * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline DeleteObjectsRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
 
     /**
      * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline DeleteObjectsRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
 
     /**
      * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline DeleteObjectsRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
+
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p> <p>This checksum algorithm must be
+     * the same for all parts and it match the checksum value supplied in the
+     * <code>CreateMultipartUpload</code> request.</p>
+     */
+    inline const ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p> <p>This checksum algorithm must be
+     * the same for all parts and it match the checksum value supplied in the
+     * <code>CreateMultipartUpload</code> request.</p>
+     */
+    inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p> <p>This checksum algorithm must be
+     * the same for all parts and it match the checksum value supplied in the
+     * <code>CreateMultipartUpload</code> request.</p>
+     */
+    inline void SetChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p> <p>This checksum algorithm must be
+     * the same for all parts and it match the checksum value supplied in the
+     * <code>CreateMultipartUpload</code> request.</p>
+     */
+    inline void SetChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::move(value); }
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p> <p>This checksum algorithm must be
+     * the same for all parts and it match the checksum value supplied in the
+     * <code>CreateMultipartUpload</code> request.</p>
+     */
+    inline DeleteObjectsRequest& WithChecksumAlgorithm(const ChecksumAlgorithm& value) { SetChecksumAlgorithm(value); return *this;}
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p> <p>This checksum algorithm must be
+     * the same for all parts and it match the checksum value supplied in the
+     * <code>CreateMultipartUpload</code> request.</p>
+     */
+    inline DeleteObjectsRequest& WithChecksumAlgorithm(ChecksumAlgorithm&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
 
 
     
@@ -473,6 +571,9 @@ namespace Model
 
     Aws::String m_expectedBucketOwner;
     bool m_expectedBucketOwnerHasBeenSet;
+
+    ChecksumAlgorithm m_checksumAlgorithm;
+    bool m_checksumAlgorithmHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet;

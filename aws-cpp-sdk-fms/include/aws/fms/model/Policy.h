@@ -512,7 +512,9 @@ namespace Model
      * <p>If set to <code>True</code>, resources with the tags that are specified in
      * the <code>ResourceTag</code> array are not in scope of the policy. If set to
      * <code>False</code>, and the <code>ResourceTag</code> array is not null, only
-     * resources with the specified tags are in scope of the policy.</p>
+     * resources with the specified tags are in scope of the policy.</p> <p> This
+     * option isn't available for the centralized deployment model when creating
+     * policies to configure Network Firewall. </p>
      */
     inline bool GetExcludeResourceTags() const{ return m_excludeResourceTags; }
 
@@ -520,7 +522,9 @@ namespace Model
      * <p>If set to <code>True</code>, resources with the tags that are specified in
      * the <code>ResourceTag</code> array are not in scope of the policy. If set to
      * <code>False</code>, and the <code>ResourceTag</code> array is not null, only
-     * resources with the specified tags are in scope of the policy.</p>
+     * resources with the specified tags are in scope of the policy.</p> <p> This
+     * option isn't available for the centralized deployment model when creating
+     * policies to configure Network Firewall. </p>
      */
     inline bool ExcludeResourceTagsHasBeenSet() const { return m_excludeResourceTagsHasBeenSet; }
 
@@ -528,7 +532,9 @@ namespace Model
      * <p>If set to <code>True</code>, resources with the tags that are specified in
      * the <code>ResourceTag</code> array are not in scope of the policy. If set to
      * <code>False</code>, and the <code>ResourceTag</code> array is not null, only
-     * resources with the specified tags are in scope of the policy.</p>
+     * resources with the specified tags are in scope of the policy.</p> <p> This
+     * option isn't available for the centralized deployment model when creating
+     * policies to configure Network Firewall. </p>
      */
     inline void SetExcludeResourceTags(bool value) { m_excludeResourceTagsHasBeenSet = true; m_excludeResourceTags = value; }
 
@@ -536,7 +542,9 @@ namespace Model
      * <p>If set to <code>True</code>, resources with the tags that are specified in
      * the <code>ResourceTag</code> array are not in scope of the policy. If set to
      * <code>False</code>, and the <code>ResourceTag</code> array is not null, only
-     * resources with the specified tags are in scope of the policy.</p>
+     * resources with the specified tags are in scope of the policy.</p> <p> This
+     * option isn't available for the centralized deployment model when creating
+     * policies to configure Network Firewall. </p>
      */
     inline Policy& WithExcludeResourceTags(bool value) { SetExcludeResourceTags(value); return *this;}
 
@@ -630,7 +638,9 @@ namespace Model
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
-     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul> <p> This option
+     * isn't available for the centralized deployment model when creating policies to
+     * configure Network Firewall. </p>
      */
     inline const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& GetIncludeMap() const{ return m_includeMap; }
 
@@ -653,7 +663,9 @@ namespace Model
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
-     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul> <p> This option
+     * isn't available for the centralized deployment model when creating policies to
+     * configure Network Firewall. </p>
      */
     inline bool IncludeMapHasBeenSet() const { return m_includeMapHasBeenSet; }
 
@@ -676,7 +688,9 @@ namespace Model
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
-     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul> <p> This option
+     * isn't available for the centralized deployment model when creating policies to
+     * configure Network Firewall. </p>
      */
     inline void SetIncludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { m_includeMapHasBeenSet = true; m_includeMap = value; }
 
@@ -699,7 +713,9 @@ namespace Model
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
-     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul> <p> This option
+     * isn't available for the centralized deployment model when creating policies to
+     * configure Network Firewall. </p>
      */
     inline void SetIncludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { m_includeMapHasBeenSet = true; m_includeMap = std::move(value); }
 
@@ -722,7 +738,9 @@ namespace Model
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
-     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul> <p> This option
+     * isn't available for the centralized deployment model when creating policies to
+     * configure Network Firewall. </p>
      */
     inline Policy& WithIncludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { SetIncludeMap(value); return *this;}
 
@@ -745,7 +763,9 @@ namespace Model
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
-     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul> <p> This option
+     * isn't available for the centralized deployment model when creating policies to
+     * configure Network Firewall. </p>
      */
     inline Policy& WithIncludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { SetIncludeMap(std::move(value)); return *this;}
 
@@ -768,7 +788,9 @@ namespace Model
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
-     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul> <p> This option
+     * isn't available for the centralized deployment model when creating policies to
+     * configure Network Firewall. </p>
      */
     inline Policy& AddIncludeMap(const CustomerPolicyScopeIdType& key, const Aws::Vector<Aws::String>& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(key, value); return *this; }
 
@@ -791,7 +813,9 @@ namespace Model
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
-     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul> <p> This option
+     * isn't available for the centralized deployment model when creating policies to
+     * configure Network Firewall. </p>
      */
     inline Policy& AddIncludeMap(CustomerPolicyScopeIdType&& key, const Aws::Vector<Aws::String>& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(std::move(key), value); return *this; }
 
@@ -814,7 +838,9 @@ namespace Model
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
-     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul> <p> This option
+     * isn't available for the centralized deployment model when creating policies to
+     * configure Network Firewall. </p>
      */
     inline Policy& AddIncludeMap(const CustomerPolicyScopeIdType& key, Aws::Vector<Aws::String>&& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(key, std::move(value)); return *this; }
 
@@ -837,7 +863,9 @@ namespace Model
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
-     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul> <p> This option
+     * isn't available for the centralized deployment model when creating policies to
+     * configure Network Firewall. </p>
      */
     inline Policy& AddIncludeMap(CustomerPolicyScopeIdType&& key, Aws::Vector<Aws::String>&& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -861,7 +889,9 @@ namespace Model
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
-     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul> <p> This option
+     * isn't available for the centralized deployment model when creating policies to
+     * configure Network Firewall. </p>
      */
     inline const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& GetExcludeMap() const{ return m_excludeMap; }
 
@@ -884,7 +914,9 @@ namespace Model
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
-     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul> <p> This option
+     * isn't available for the centralized deployment model when creating policies to
+     * configure Network Firewall. </p>
      */
     inline bool ExcludeMapHasBeenSet() const { return m_excludeMapHasBeenSet; }
 
@@ -907,7 +939,9 @@ namespace Model
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
-     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul> <p> This option
+     * isn't available for the centralized deployment model when creating policies to
+     * configure Network Firewall. </p>
      */
     inline void SetExcludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { m_excludeMapHasBeenSet = true; m_excludeMap = value; }
 
@@ -930,7 +964,9 @@ namespace Model
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
-     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul> <p> This option
+     * isn't available for the centralized deployment model when creating policies to
+     * configure Network Firewall. </p>
      */
     inline void SetExcludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { m_excludeMapHasBeenSet = true; m_excludeMap = std::move(value); }
 
@@ -953,7 +989,9 @@ namespace Model
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
-     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul> <p> This option
+     * isn't available for the centralized deployment model when creating policies to
+     * configure Network Firewall. </p>
      */
     inline Policy& WithExcludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { SetExcludeMap(value); return *this;}
 
@@ -976,7 +1014,9 @@ namespace Model
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
-     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul> <p> This option
+     * isn't available for the centralized deployment model when creating policies to
+     * configure Network Firewall. </p>
      */
     inline Policy& WithExcludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { SetExcludeMap(std::move(value)); return *this;}
 
@@ -999,7 +1039,9 @@ namespace Model
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
-     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul> <p> This option
+     * isn't available for the centralized deployment model when creating policies to
+     * configure Network Firewall. </p>
      */
     inline Policy& AddExcludeMap(const CustomerPolicyScopeIdType& key, const Aws::Vector<Aws::String>& value) { m_excludeMapHasBeenSet = true; m_excludeMap.emplace(key, value); return *this; }
 
@@ -1022,7 +1064,9 @@ namespace Model
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
-     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul> <p> This option
+     * isn't available for the centralized deployment model when creating policies to
+     * configure Network Firewall. </p>
      */
     inline Policy& AddExcludeMap(CustomerPolicyScopeIdType&& key, const Aws::Vector<Aws::String>& value) { m_excludeMapHasBeenSet = true; m_excludeMap.emplace(std::move(key), value); return *this; }
 
@@ -1045,7 +1089,9 @@ namespace Model
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
-     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul> <p> This option
+     * isn't available for the centralized deployment model when creating policies to
+     * configure Network Firewall. </p>
      */
     inline Policy& AddExcludeMap(const CustomerPolicyScopeIdType& key, Aws::Vector<Aws::String>&& value) { m_excludeMapHasBeenSet = true; m_excludeMap.emplace(key, std::move(value)); return *this; }
 
@@ -1068,7 +1114,9 @@ namespace Model
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
-     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul> <p> This option
+     * isn't available for the centralized deployment model when creating policies to
+     * configure Network Firewall. </p>
      */
     inline Policy& AddExcludeMap(CustomerPolicyScopeIdType&& key, Aws::Vector<Aws::String>&& value) { m_excludeMapHasBeenSet = true; m_excludeMap.emplace(std::move(key), std::move(value)); return *this; }
 

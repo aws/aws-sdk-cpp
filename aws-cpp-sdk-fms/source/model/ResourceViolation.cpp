@@ -35,7 +35,9 @@ ResourceViolation::ResourceViolation() :
     m_dnsRuleGroupPriorityConflictViolationHasBeenSet(false),
     m_dnsDuplicateRuleGroupViolationHasBeenSet(false),
     m_dnsRuleGroupLimitExceededViolationHasBeenSet(false),
-    m_possibleRemediationActionsHasBeenSet(false)
+    m_possibleRemediationActionsHasBeenSet(false),
+    m_firewallSubnetIsOutOfScopeViolationHasBeenSet(false),
+    m_routeHasOutOfScopeEndpointViolationHasBeenSet(false)
 {
 }
 
@@ -56,7 +58,9 @@ ResourceViolation::ResourceViolation(JsonView jsonValue) :
     m_dnsRuleGroupPriorityConflictViolationHasBeenSet(false),
     m_dnsDuplicateRuleGroupViolationHasBeenSet(false),
     m_dnsRuleGroupLimitExceededViolationHasBeenSet(false),
-    m_possibleRemediationActionsHasBeenSet(false)
+    m_possibleRemediationActionsHasBeenSet(false),
+    m_firewallSubnetIsOutOfScopeViolationHasBeenSet(false),
+    m_routeHasOutOfScopeEndpointViolationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -182,6 +186,20 @@ ResourceViolation& ResourceViolation::operator =(JsonView jsonValue)
     m_possibleRemediationActionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FirewallSubnetIsOutOfScopeViolation"))
+  {
+    m_firewallSubnetIsOutOfScopeViolation = jsonValue.GetObject("FirewallSubnetIsOutOfScopeViolation");
+
+    m_firewallSubnetIsOutOfScopeViolationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RouteHasOutOfScopeEndpointViolation"))
+  {
+    m_routeHasOutOfScopeEndpointViolation = jsonValue.GetObject("RouteHasOutOfScopeEndpointViolation");
+
+    m_routeHasOutOfScopeEndpointViolationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -288,6 +306,18 @@ JsonValue ResourceViolation::Jsonize() const
   if(m_possibleRemediationActionsHasBeenSet)
   {
    payload.WithObject("PossibleRemediationActions", m_possibleRemediationActions.Jsonize());
+
+  }
+
+  if(m_firewallSubnetIsOutOfScopeViolationHasBeenSet)
+  {
+   payload.WithObject("FirewallSubnetIsOutOfScopeViolation", m_firewallSubnetIsOutOfScopeViolation.Jsonize());
+
+  }
+
+  if(m_routeHasOutOfScopeEndpointViolationHasBeenSet)
+  {
+   payload.WithObject("RouteHasOutOfScopeEndpointViolation", m_routeHasOutOfScopeEndpointViolation.Jsonize());
 
   }
 

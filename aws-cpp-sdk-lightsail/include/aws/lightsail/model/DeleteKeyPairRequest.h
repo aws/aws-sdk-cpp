@@ -74,10 +74,70 @@ namespace Model
      */
     inline DeleteKeyPairRequest& WithKeyPairName(const char* value) { SetKeyPairName(value); return *this;}
 
+
+    /**
+     * <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> 
+     * <p>The <code>expectedFingerprint</code> parameter is required only when
+     * specifying to delete a Lightsail default key pair.</p> 
+     */
+    inline const Aws::String& GetExpectedFingerprint() const{ return m_expectedFingerprint; }
+
+    /**
+     * <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> 
+     * <p>The <code>expectedFingerprint</code> parameter is required only when
+     * specifying to delete a Lightsail default key pair.</p> 
+     */
+    inline bool ExpectedFingerprintHasBeenSet() const { return m_expectedFingerprintHasBeenSet; }
+
+    /**
+     * <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> 
+     * <p>The <code>expectedFingerprint</code> parameter is required only when
+     * specifying to delete a Lightsail default key pair.</p> 
+     */
+    inline void SetExpectedFingerprint(const Aws::String& value) { m_expectedFingerprintHasBeenSet = true; m_expectedFingerprint = value; }
+
+    /**
+     * <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> 
+     * <p>The <code>expectedFingerprint</code> parameter is required only when
+     * specifying to delete a Lightsail default key pair.</p> 
+     */
+    inline void SetExpectedFingerprint(Aws::String&& value) { m_expectedFingerprintHasBeenSet = true; m_expectedFingerprint = std::move(value); }
+
+    /**
+     * <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> 
+     * <p>The <code>expectedFingerprint</code> parameter is required only when
+     * specifying to delete a Lightsail default key pair.</p> 
+     */
+    inline void SetExpectedFingerprint(const char* value) { m_expectedFingerprintHasBeenSet = true; m_expectedFingerprint.assign(value); }
+
+    /**
+     * <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> 
+     * <p>The <code>expectedFingerprint</code> parameter is required only when
+     * specifying to delete a Lightsail default key pair.</p> 
+     */
+    inline DeleteKeyPairRequest& WithExpectedFingerprint(const Aws::String& value) { SetExpectedFingerprint(value); return *this;}
+
+    /**
+     * <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> 
+     * <p>The <code>expectedFingerprint</code> parameter is required only when
+     * specifying to delete a Lightsail default key pair.</p> 
+     */
+    inline DeleteKeyPairRequest& WithExpectedFingerprint(Aws::String&& value) { SetExpectedFingerprint(std::move(value)); return *this;}
+
+    /**
+     * <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> 
+     * <p>The <code>expectedFingerprint</code> parameter is required only when
+     * specifying to delete a Lightsail default key pair.</p> 
+     */
+    inline DeleteKeyPairRequest& WithExpectedFingerprint(const char* value) { SetExpectedFingerprint(value); return *this;}
+
   private:
 
     Aws::String m_keyPairName;
     bool m_keyPairNameHasBeenSet;
+
+    Aws::String m_expectedFingerprint;
+    bool m_expectedFingerprintHasBeenSet;
   };
 
 } // namespace Model

@@ -20,6 +20,8 @@ PutBucketAccelerateConfigurationRequest::PutBucketAccelerateConfigurationRequest
     m_bucketHasBeenSet(false),
     m_accelerateConfigurationHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
+    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
+    m_checksumAlgorithmHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -71,6 +73,11 @@ Aws::Http::HeaderValueCollection PutBucketAccelerateConfigurationRequest::GetReq
     ss << m_expectedBucketOwner;
     headers.emplace("x-amz-expected-bucket-owner",  ss.str());
     ss.str("");
+  }
+
+  if(m_checksumAlgorithmHasBeenSet)
+  {
+    headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
   }
 
   return headers;

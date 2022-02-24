@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/autoscaling/model/WarmPoolState.h>
 #include <aws/autoscaling/model/WarmPoolStatus.h>
+#include <aws/autoscaling/model/InstanceReusePolicy.h>
 #include <utility>
 
 namespace Aws
@@ -153,6 +154,37 @@ namespace Model
      */
     inline WarmPoolConfiguration& WithStatus(WarmPoolStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The instance reuse policy.</p>
+     */
+    inline const InstanceReusePolicy& GetInstanceReusePolicy() const{ return m_instanceReusePolicy; }
+
+    /**
+     * <p>The instance reuse policy.</p>
+     */
+    inline bool InstanceReusePolicyHasBeenSet() const { return m_instanceReusePolicyHasBeenSet; }
+
+    /**
+     * <p>The instance reuse policy.</p>
+     */
+    inline void SetInstanceReusePolicy(const InstanceReusePolicy& value) { m_instanceReusePolicyHasBeenSet = true; m_instanceReusePolicy = value; }
+
+    /**
+     * <p>The instance reuse policy.</p>
+     */
+    inline void SetInstanceReusePolicy(InstanceReusePolicy&& value) { m_instanceReusePolicyHasBeenSet = true; m_instanceReusePolicy = std::move(value); }
+
+    /**
+     * <p>The instance reuse policy.</p>
+     */
+    inline WarmPoolConfiguration& WithInstanceReusePolicy(const InstanceReusePolicy& value) { SetInstanceReusePolicy(value); return *this;}
+
+    /**
+     * <p>The instance reuse policy.</p>
+     */
+    inline WarmPoolConfiguration& WithInstanceReusePolicy(InstanceReusePolicy&& value) { SetInstanceReusePolicy(std::move(value)); return *this;}
+
   private:
 
     int m_maxGroupPreparedCapacity;
@@ -166,6 +198,9 @@ namespace Model
 
     WarmPoolStatus m_status;
     bool m_statusHasBeenSet;
+
+    InstanceReusePolicy m_instanceReusePolicy;
+    bool m_instanceReusePolicyHasBeenSet;
   };
 
 } // namespace Model

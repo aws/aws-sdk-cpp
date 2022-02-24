@@ -33,6 +33,8 @@ HeadObjectRequest::HeadObjectRequest() :
     m_partNumber(0),
     m_partNumberHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
+    m_checksumMode(ChecksumMode::NOT_SET),
+    m_checksumModeHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -144,6 +146,11 @@ Aws::Http::HeaderValueCollection HeadObjectRequest::GetRequestSpecificHeaders() 
     ss << m_expectedBucketOwner;
     headers.emplace("x-amz-expected-bucket-owner",  ss.str());
     ss.str("");
+  }
+
+  if(m_checksumModeHasBeenSet)
+  {
+    headers.emplace("x-amz-checksum-mode", ChecksumModeMapper::GetNameForChecksumMode(m_checksumMode));
   }
 
   return headers;

@@ -144,60 +144,64 @@ namespace Model
     /**
      * <p>The integer status code for an HTTP response of a corresponding
      * <code>GetObject</code> request.</p> <p class="title"> <b>Status Codes</b> </p>
-     * <ul> <li> <p> <i>200 - OK</i> </p> </li> <li> <p> <i>206 - Partial Content</i>
-     * </p> </li> <li> <p> <i>304 - Not Modified</i> </p> </li> <li> <p> <i>400 - Bad
-     * Request</i> </p> </li> <li> <p> <i>401 - Unauthorized</i> </p> </li> <li> <p>
-     * <i>403 - Forbidden</i> </p> </li> <li> <p> <i>404 - Not Found</i> </p> </li>
-     * <li> <p> <i>405 - Method Not Allowed</i> </p> </li> <li> <p> <i>409 -
-     * Conflict</i> </p> </li> <li> <p> <i>411 - Length Required</i> </p> </li> <li>
-     * <p> <i>412 - Precondition Failed</i> </p> </li> <li> <p> <i>416 - Range Not
-     * Satisfiable</i> </p> </li> <li> <p> <i>500 - Internal Server Error</i> </p>
-     * </li> <li> <p> <i>503 - Service Unavailable</i> </p> </li> </ul>
+     * <ul> <li> <p> <code>200 - OK</code> </p> </li> <li> <p> <code>206 - Partial
+     * Content</code> </p> </li> <li> <p> <code>304 - Not Modified</code> </p> </li>
+     * <li> <p> <code>400 - Bad Request</code> </p> </li> <li> <p> <code>401 -
+     * Unauthorized</code> </p> </li> <li> <p> <code>403 - Forbidden</code> </p> </li>
+     * <li> <p> <code>404 - Not Found</code> </p> </li> <li> <p> <code>405 - Method Not
+     * Allowed</code> </p> </li> <li> <p> <code>409 - Conflict</code> </p> </li> <li>
+     * <p> <code>411 - Length Required</code> </p> </li> <li> <p> <code>412 -
+     * Precondition Failed</code> </p> </li> <li> <p> <code>416 - Range Not
+     * Satisfiable</code> </p> </li> <li> <p> <code>500 - Internal Server Error</code>
+     * </p> </li> <li> <p> <code>503 - Service Unavailable</code> </p> </li> </ul>
      */
     inline int GetStatusCode() const{ return m_statusCode; }
 
     /**
      * <p>The integer status code for an HTTP response of a corresponding
      * <code>GetObject</code> request.</p> <p class="title"> <b>Status Codes</b> </p>
-     * <ul> <li> <p> <i>200 - OK</i> </p> </li> <li> <p> <i>206 - Partial Content</i>
-     * </p> </li> <li> <p> <i>304 - Not Modified</i> </p> </li> <li> <p> <i>400 - Bad
-     * Request</i> </p> </li> <li> <p> <i>401 - Unauthorized</i> </p> </li> <li> <p>
-     * <i>403 - Forbidden</i> </p> </li> <li> <p> <i>404 - Not Found</i> </p> </li>
-     * <li> <p> <i>405 - Method Not Allowed</i> </p> </li> <li> <p> <i>409 -
-     * Conflict</i> </p> </li> <li> <p> <i>411 - Length Required</i> </p> </li> <li>
-     * <p> <i>412 - Precondition Failed</i> </p> </li> <li> <p> <i>416 - Range Not
-     * Satisfiable</i> </p> </li> <li> <p> <i>500 - Internal Server Error</i> </p>
-     * </li> <li> <p> <i>503 - Service Unavailable</i> </p> </li> </ul>
+     * <ul> <li> <p> <code>200 - OK</code> </p> </li> <li> <p> <code>206 - Partial
+     * Content</code> </p> </li> <li> <p> <code>304 - Not Modified</code> </p> </li>
+     * <li> <p> <code>400 - Bad Request</code> </p> </li> <li> <p> <code>401 -
+     * Unauthorized</code> </p> </li> <li> <p> <code>403 - Forbidden</code> </p> </li>
+     * <li> <p> <code>404 - Not Found</code> </p> </li> <li> <p> <code>405 - Method Not
+     * Allowed</code> </p> </li> <li> <p> <code>409 - Conflict</code> </p> </li> <li>
+     * <p> <code>411 - Length Required</code> </p> </li> <li> <p> <code>412 -
+     * Precondition Failed</code> </p> </li> <li> <p> <code>416 - Range Not
+     * Satisfiable</code> </p> </li> <li> <p> <code>500 - Internal Server Error</code>
+     * </p> </li> <li> <p> <code>503 - Service Unavailable</code> </p> </li> </ul>
      */
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
      * <p>The integer status code for an HTTP response of a corresponding
      * <code>GetObject</code> request.</p> <p class="title"> <b>Status Codes</b> </p>
-     * <ul> <li> <p> <i>200 - OK</i> </p> </li> <li> <p> <i>206 - Partial Content</i>
-     * </p> </li> <li> <p> <i>304 - Not Modified</i> </p> </li> <li> <p> <i>400 - Bad
-     * Request</i> </p> </li> <li> <p> <i>401 - Unauthorized</i> </p> </li> <li> <p>
-     * <i>403 - Forbidden</i> </p> </li> <li> <p> <i>404 - Not Found</i> </p> </li>
-     * <li> <p> <i>405 - Method Not Allowed</i> </p> </li> <li> <p> <i>409 -
-     * Conflict</i> </p> </li> <li> <p> <i>411 - Length Required</i> </p> </li> <li>
-     * <p> <i>412 - Precondition Failed</i> </p> </li> <li> <p> <i>416 - Range Not
-     * Satisfiable</i> </p> </li> <li> <p> <i>500 - Internal Server Error</i> </p>
-     * </li> <li> <p> <i>503 - Service Unavailable</i> </p> </li> </ul>
+     * <ul> <li> <p> <code>200 - OK</code> </p> </li> <li> <p> <code>206 - Partial
+     * Content</code> </p> </li> <li> <p> <code>304 - Not Modified</code> </p> </li>
+     * <li> <p> <code>400 - Bad Request</code> </p> </li> <li> <p> <code>401 -
+     * Unauthorized</code> </p> </li> <li> <p> <code>403 - Forbidden</code> </p> </li>
+     * <li> <p> <code>404 - Not Found</code> </p> </li> <li> <p> <code>405 - Method Not
+     * Allowed</code> </p> </li> <li> <p> <code>409 - Conflict</code> </p> </li> <li>
+     * <p> <code>411 - Length Required</code> </p> </li> <li> <p> <code>412 -
+     * Precondition Failed</code> </p> </li> <li> <p> <code>416 - Range Not
+     * Satisfiable</code> </p> </li> <li> <p> <code>500 - Internal Server Error</code>
+     * </p> </li> <li> <p> <code>503 - Service Unavailable</code> </p> </li> </ul>
      */
     inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
     /**
      * <p>The integer status code for an HTTP response of a corresponding
      * <code>GetObject</code> request.</p> <p class="title"> <b>Status Codes</b> </p>
-     * <ul> <li> <p> <i>200 - OK</i> </p> </li> <li> <p> <i>206 - Partial Content</i>
-     * </p> </li> <li> <p> <i>304 - Not Modified</i> </p> </li> <li> <p> <i>400 - Bad
-     * Request</i> </p> </li> <li> <p> <i>401 - Unauthorized</i> </p> </li> <li> <p>
-     * <i>403 - Forbidden</i> </p> </li> <li> <p> <i>404 - Not Found</i> </p> </li>
-     * <li> <p> <i>405 - Method Not Allowed</i> </p> </li> <li> <p> <i>409 -
-     * Conflict</i> </p> </li> <li> <p> <i>411 - Length Required</i> </p> </li> <li>
-     * <p> <i>412 - Precondition Failed</i> </p> </li> <li> <p> <i>416 - Range Not
-     * Satisfiable</i> </p> </li> <li> <p> <i>500 - Internal Server Error</i> </p>
-     * </li> <li> <p> <i>503 - Service Unavailable</i> </p> </li> </ul>
+     * <ul> <li> <p> <code>200 - OK</code> </p> </li> <li> <p> <code>206 - Partial
+     * Content</code> </p> </li> <li> <p> <code>304 - Not Modified</code> </p> </li>
+     * <li> <p> <code>400 - Bad Request</code> </p> </li> <li> <p> <code>401 -
+     * Unauthorized</code> </p> </li> <li> <p> <code>403 - Forbidden</code> </p> </li>
+     * <li> <p> <code>404 - Not Found</code> </p> </li> <li> <p> <code>405 - Method Not
+     * Allowed</code> </p> </li> <li> <p> <code>409 - Conflict</code> </p> </li> <li>
+     * <p> <code>411 - Length Required</code> </p> </li> <li> <p> <code>412 -
+     * Precondition Failed</code> </p> </li> <li> <p> <code>416 - Range Not
+     * Satisfiable</code> </p> </li> <li> <p> <code>500 - Internal Server Error</code>
+     * </p> </li> <li> <p> <code>503 - Service Unavailable</code> </p> </li> </ul>
      */
     inline WriteGetObjectResponseRequest& WithStatusCode(int value) { SetStatusCode(value); return *this;}
 
@@ -207,8 +211,8 @@ namespace Model
      * &lt;Code&gt; tag of the error XML response for a corresponding
      * <code>GetObject</code> call. Cannot be used with a successful
      * <code>StatusCode</code> header or when the transformed object is provided in the
-     * body. All error codes from S3 are sentence-cased. Regex value is
-     * "^[A-Z][a-zA-Z]+$".</p>
+     * body. All error codes from S3 are sentence-cased. The regular expression (regex)
+     * value is <code>"^[A-Z][a-zA-Z]+$"</code>.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
 
@@ -217,8 +221,8 @@ namespace Model
      * &lt;Code&gt; tag of the error XML response for a corresponding
      * <code>GetObject</code> call. Cannot be used with a successful
      * <code>StatusCode</code> header or when the transformed object is provided in the
-     * body. All error codes from S3 are sentence-cased. Regex value is
-     * "^[A-Z][a-zA-Z]+$".</p>
+     * body. All error codes from S3 are sentence-cased. The regular expression (regex)
+     * value is <code>"^[A-Z][a-zA-Z]+$"</code>.</p>
      */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
@@ -227,8 +231,8 @@ namespace Model
      * &lt;Code&gt; tag of the error XML response for a corresponding
      * <code>GetObject</code> call. Cannot be used with a successful
      * <code>StatusCode</code> header or when the transformed object is provided in the
-     * body. All error codes from S3 are sentence-cased. Regex value is
-     * "^[A-Z][a-zA-Z]+$".</p>
+     * body. All error codes from S3 are sentence-cased. The regular expression (regex)
+     * value is <code>"^[A-Z][a-zA-Z]+$"</code>.</p>
      */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
@@ -237,8 +241,8 @@ namespace Model
      * &lt;Code&gt; tag of the error XML response for a corresponding
      * <code>GetObject</code> call. Cannot be used with a successful
      * <code>StatusCode</code> header or when the transformed object is provided in the
-     * body. All error codes from S3 are sentence-cased. Regex value is
-     * "^[A-Z][a-zA-Z]+$".</p>
+     * body. All error codes from S3 are sentence-cased. The regular expression (regex)
+     * value is <code>"^[A-Z][a-zA-Z]+$"</code>.</p>
      */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
@@ -247,8 +251,8 @@ namespace Model
      * &lt;Code&gt; tag of the error XML response for a corresponding
      * <code>GetObject</code> call. Cannot be used with a successful
      * <code>StatusCode</code> header or when the transformed object is provided in the
-     * body. All error codes from S3 are sentence-cased. Regex value is
-     * "^[A-Z][a-zA-Z]+$".</p>
+     * body. All error codes from S3 are sentence-cased. The regular expression (regex)
+     * value is <code>"^[A-Z][a-zA-Z]+$"</code>.</p>
      */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
 
@@ -257,8 +261,8 @@ namespace Model
      * &lt;Code&gt; tag of the error XML response for a corresponding
      * <code>GetObject</code> call. Cannot be used with a successful
      * <code>StatusCode</code> header or when the transformed object is provided in the
-     * body. All error codes from S3 are sentence-cased. Regex value is
-     * "^[A-Z][a-zA-Z]+$".</p>
+     * body. All error codes from S3 are sentence-cased. The regular expression (regex)
+     * value is <code>"^[A-Z][a-zA-Z]+$"</code>.</p>
      */
     inline WriteGetObjectResponseRequest& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
 
@@ -267,8 +271,8 @@ namespace Model
      * &lt;Code&gt; tag of the error XML response for a corresponding
      * <code>GetObject</code> call. Cannot be used with a successful
      * <code>StatusCode</code> header or when the transformed object is provided in the
-     * body. All error codes from S3 are sentence-cased. Regex value is
-     * "^[A-Z][a-zA-Z]+$".</p>
+     * body. All error codes from S3 are sentence-cased. The regular expression (regex)
+     * value is <code>"^[A-Z][a-zA-Z]+$"</code>.</p>
      */
     inline WriteGetObjectResponseRequest& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
@@ -277,8 +281,8 @@ namespace Model
      * &lt;Code&gt; tag of the error XML response for a corresponding
      * <code>GetObject</code> call. Cannot be used with a successful
      * <code>StatusCode</code> header or when the transformed object is provided in the
-     * body. All error codes from S3 are sentence-cased. Regex value is
-     * "^[A-Z][a-zA-Z]+$".</p>
+     * body. All error codes from S3 are sentence-cased. The regular expression (regex)
+     * value is <code>"^[A-Z][a-zA-Z]+$"</code>.</p>
      */
     inline WriteGetObjectResponseRequest& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 
@@ -640,6 +644,490 @@ namespace Model
 
 
     /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 32-bit CRC32 checksum of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p> <p/>
+     */
+    inline const Aws::String& GetChecksumCRC32() const{ return m_checksumCRC32; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 32-bit CRC32 checksum of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p> <p/>
+     */
+    inline bool ChecksumCRC32HasBeenSet() const { return m_checksumCRC32HasBeenSet; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 32-bit CRC32 checksum of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p> <p/>
+     */
+    inline void SetChecksumCRC32(const Aws::String& value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32 = value; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 32-bit CRC32 checksum of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p> <p/>
+     */
+    inline void SetChecksumCRC32(Aws::String&& value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32 = std::move(value); }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 32-bit CRC32 checksum of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p> <p/>
+     */
+    inline void SetChecksumCRC32(const char* value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32.assign(value); }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 32-bit CRC32 checksum of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p> <p/>
+     */
+    inline WriteGetObjectResponseRequest& WithChecksumCRC32(const Aws::String& value) { SetChecksumCRC32(value); return *this;}
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 32-bit CRC32 checksum of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p> <p/>
+     */
+    inline WriteGetObjectResponseRequest& WithChecksumCRC32(Aws::String&& value) { SetChecksumCRC32(std::move(value)); return *this;}
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 32-bit CRC32 checksum of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p> <p/>
+     */
+    inline WriteGetObjectResponseRequest& WithChecksumCRC32(const char* value) { SetChecksumCRC32(value); return *this;}
+
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 32-bit CRC32C checksum of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline const Aws::String& GetChecksumCRC32C() const{ return m_checksumCRC32C; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 32-bit CRC32C checksum of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline bool ChecksumCRC32CHasBeenSet() const { return m_checksumCRC32CHasBeenSet; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 32-bit CRC32C checksum of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline void SetChecksumCRC32C(const Aws::String& value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C = value; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 32-bit CRC32C checksum of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline void SetChecksumCRC32C(Aws::String&& value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C = std::move(value); }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 32-bit CRC32C checksum of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline void SetChecksumCRC32C(const char* value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C.assign(value); }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 32-bit CRC32C checksum of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline WriteGetObjectResponseRequest& WithChecksumCRC32C(const Aws::String& value) { SetChecksumCRC32C(value); return *this;}
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 32-bit CRC32C checksum of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline WriteGetObjectResponseRequest& WithChecksumCRC32C(Aws::String&& value) { SetChecksumCRC32C(std::move(value)); return *this;}
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 32-bit CRC32C checksum of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline WriteGetObjectResponseRequest& WithChecksumCRC32C(const char* value) { SetChecksumCRC32C(value); return *this;}
+
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 160-bit SHA-1 digest of the object returned by the Object Lambda
+     * function. This may not match the checksum for the object stored in Amazon S3.
+     * Amazon S3 will perform validation of the checksum values only when the original
+     * <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline const Aws::String& GetChecksumSHA1() const{ return m_checksumSHA1; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 160-bit SHA-1 digest of the object returned by the Object Lambda
+     * function. This may not match the checksum for the object stored in Amazon S3.
+     * Amazon S3 will perform validation of the checksum values only when the original
+     * <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline bool ChecksumSHA1HasBeenSet() const { return m_checksumSHA1HasBeenSet; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 160-bit SHA-1 digest of the object returned by the Object Lambda
+     * function. This may not match the checksum for the object stored in Amazon S3.
+     * Amazon S3 will perform validation of the checksum values only when the original
+     * <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline void SetChecksumSHA1(const Aws::String& value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1 = value; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 160-bit SHA-1 digest of the object returned by the Object Lambda
+     * function. This may not match the checksum for the object stored in Amazon S3.
+     * Amazon S3 will perform validation of the checksum values only when the original
+     * <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline void SetChecksumSHA1(Aws::String&& value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1 = std::move(value); }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 160-bit SHA-1 digest of the object returned by the Object Lambda
+     * function. This may not match the checksum for the object stored in Amazon S3.
+     * Amazon S3 will perform validation of the checksum values only when the original
+     * <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline void SetChecksumSHA1(const char* value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1.assign(value); }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 160-bit SHA-1 digest of the object returned by the Object Lambda
+     * function. This may not match the checksum for the object stored in Amazon S3.
+     * Amazon S3 will perform validation of the checksum values only when the original
+     * <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline WriteGetObjectResponseRequest& WithChecksumSHA1(const Aws::String& value) { SetChecksumSHA1(value); return *this;}
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 160-bit SHA-1 digest of the object returned by the Object Lambda
+     * function. This may not match the checksum for the object stored in Amazon S3.
+     * Amazon S3 will perform validation of the checksum values only when the original
+     * <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline WriteGetObjectResponseRequest& WithChecksumSHA1(Aws::String&& value) { SetChecksumSHA1(std::move(value)); return *this;}
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 160-bit SHA-1 digest of the object returned by the Object Lambda
+     * function. This may not match the checksum for the object stored in Amazon S3.
+     * Amazon S3 will perform validation of the checksum values only when the original
+     * <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline WriteGetObjectResponseRequest& WithChecksumSHA1(const char* value) { SetChecksumSHA1(value); return *this;}
+
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 256-bit SHA-256 digest of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline const Aws::String& GetChecksumSHA256() const{ return m_checksumSHA256; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 256-bit SHA-256 digest of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline bool ChecksumSHA256HasBeenSet() const { return m_checksumSHA256HasBeenSet; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 256-bit SHA-256 digest of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline void SetChecksumSHA256(const Aws::String& value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256 = value; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 256-bit SHA-256 digest of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline void SetChecksumSHA256(Aws::String&& value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256 = std::move(value); }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 256-bit SHA-256 digest of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline void SetChecksumSHA256(const char* value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256.assign(value); }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 256-bit SHA-256 digest of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline WriteGetObjectResponseRequest& WithChecksumSHA256(const Aws::String& value) { SetChecksumSHA256(value); return *this;}
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 256-bit SHA-256 digest of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline WriteGetObjectResponseRequest& WithChecksumSHA256(Aws::String&& value) { SetChecksumSHA256(std::move(value)); return *this;}
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the
+     * base64-encoded, 256-bit SHA-256 digest of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
+     * information about checksums, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
+     * checksum header can be specified at a time. If you supply multiple checksum
+     * headers, this request will fail.</p>
+     */
+    inline WriteGetObjectResponseRequest& WithChecksumSHA256(const char* value) { SetChecksumSHA256(value); return *this;}
+
+
+    /**
      * <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is
      * not (<code>false</code>) a delete marker. </p>
      */
@@ -745,58 +1233,66 @@ namespace Model
 
 
     /**
-     * <p>If object stored in Amazon S3 expiration is configured (see PUT Bucket
-     * lifecycle) it includes expiry-date and rule-id key-value pairs providing object
-     * expiration information. The value of the rule-id is URL encoded. </p>
+     * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
+     * response includes this header. It includes the <code>expiry-date</code> and
+     * <code>rule-id</code> key-value pairs that provide the object expiration
+     * information. The value of the <code>rule-id</code> is URL-encoded. </p>
      */
     inline const Aws::String& GetExpiration() const{ return m_expiration; }
 
     /**
-     * <p>If object stored in Amazon S3 expiration is configured (see PUT Bucket
-     * lifecycle) it includes expiry-date and rule-id key-value pairs providing object
-     * expiration information. The value of the rule-id is URL encoded. </p>
+     * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
+     * response includes this header. It includes the <code>expiry-date</code> and
+     * <code>rule-id</code> key-value pairs that provide the object expiration
+     * information. The value of the <code>rule-id</code> is URL-encoded. </p>
      */
     inline bool ExpirationHasBeenSet() const { return m_expirationHasBeenSet; }
 
     /**
-     * <p>If object stored in Amazon S3 expiration is configured (see PUT Bucket
-     * lifecycle) it includes expiry-date and rule-id key-value pairs providing object
-     * expiration information. The value of the rule-id is URL encoded. </p>
+     * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
+     * response includes this header. It includes the <code>expiry-date</code> and
+     * <code>rule-id</code> key-value pairs that provide the object expiration
+     * information. The value of the <code>rule-id</code> is URL-encoded. </p>
      */
     inline void SetExpiration(const Aws::String& value) { m_expirationHasBeenSet = true; m_expiration = value; }
 
     /**
-     * <p>If object stored in Amazon S3 expiration is configured (see PUT Bucket
-     * lifecycle) it includes expiry-date and rule-id key-value pairs providing object
-     * expiration information. The value of the rule-id is URL encoded. </p>
+     * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
+     * response includes this header. It includes the <code>expiry-date</code> and
+     * <code>rule-id</code> key-value pairs that provide the object expiration
+     * information. The value of the <code>rule-id</code> is URL-encoded. </p>
      */
     inline void SetExpiration(Aws::String&& value) { m_expirationHasBeenSet = true; m_expiration = std::move(value); }
 
     /**
-     * <p>If object stored in Amazon S3 expiration is configured (see PUT Bucket
-     * lifecycle) it includes expiry-date and rule-id key-value pairs providing object
-     * expiration information. The value of the rule-id is URL encoded. </p>
+     * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
+     * response includes this header. It includes the <code>expiry-date</code> and
+     * <code>rule-id</code> key-value pairs that provide the object expiration
+     * information. The value of the <code>rule-id</code> is URL-encoded. </p>
      */
     inline void SetExpiration(const char* value) { m_expirationHasBeenSet = true; m_expiration.assign(value); }
 
     /**
-     * <p>If object stored in Amazon S3 expiration is configured (see PUT Bucket
-     * lifecycle) it includes expiry-date and rule-id key-value pairs providing object
-     * expiration information. The value of the rule-id is URL encoded. </p>
+     * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
+     * response includes this header. It includes the <code>expiry-date</code> and
+     * <code>rule-id</code> key-value pairs that provide the object expiration
+     * information. The value of the <code>rule-id</code> is URL-encoded. </p>
      */
     inline WriteGetObjectResponseRequest& WithExpiration(const Aws::String& value) { SetExpiration(value); return *this;}
 
     /**
-     * <p>If object stored in Amazon S3 expiration is configured (see PUT Bucket
-     * lifecycle) it includes expiry-date and rule-id key-value pairs providing object
-     * expiration information. The value of the rule-id is URL encoded. </p>
+     * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
+     * response includes this header. It includes the <code>expiry-date</code> and
+     * <code>rule-id</code> key-value pairs that provide the object expiration
+     * information. The value of the <code>rule-id</code> is URL-encoded. </p>
      */
     inline WriteGetObjectResponseRequest& WithExpiration(Aws::String&& value) { SetExpiration(std::move(value)); return *this;}
 
     /**
-     * <p>If object stored in Amazon S3 expiration is configured (see PUT Bucket
-     * lifecycle) it includes expiry-date and rule-id key-value pairs providing object
-     * expiration information. The value of the rule-id is URL encoded. </p>
+     * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
+     * response includes this header. It includes the <code>expiry-date</code> and
+     * <code>rule-id</code> key-value pairs that provide the object expiration
+     * information. The value of the <code>rule-id</code> is URL-encoded. </p>
      */
     inline WriteGetObjectResponseRequest& WithExpiration(const char* value) { SetExpiration(value); return *this;}
 
@@ -1391,32 +1887,56 @@ namespace Model
 
 
     /**
-     * <p> The class of storage used to store object in Amazon S3.</p>
+     * <p>Provides storage class information of the object. Amazon S3 returns this
+     * header for all objects except for S3 Standard storage class objects.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+     * Classes</a>.</p>
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * <p> The class of storage used to store object in Amazon S3.</p>
+     * <p>Provides storage class information of the object. Amazon S3 returns this
+     * header for all objects except for S3 Standard storage class objects.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+     * Classes</a>.</p>
      */
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
     /**
-     * <p> The class of storage used to store object in Amazon S3.</p>
+     * <p>Provides storage class information of the object. Amazon S3 returns this
+     * header for all objects except for S3 Standard storage class objects.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+     * Classes</a>.</p>
      */
     inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
-     * <p> The class of storage used to store object in Amazon S3.</p>
+     * <p>Provides storage class information of the object. Amazon S3 returns this
+     * header for all objects except for S3 Standard storage class objects.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+     * Classes</a>.</p>
      */
     inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
-     * <p> The class of storage used to store object in Amazon S3.</p>
+     * <p>Provides storage class information of the object. Amazon S3 returns this
+     * header for all objects except for S3 Standard storage class objects.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+     * Classes</a>.</p>
      */
     inline WriteGetObjectResponseRequest& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * <p> The class of storage used to store object in Amazon S3.</p>
+     * <p>Provides storage class information of the object. Amazon S3 returns this
+     * header for all objects except for S3 Standard storage class objects.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+     * Classes</a>.</p>
      */
     inline WriteGetObjectResponseRequest& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
@@ -1585,6 +2105,18 @@ namespace Model
 
     Aws::String m_contentRange;
     bool m_contentRangeHasBeenSet;
+
+    Aws::String m_checksumCRC32;
+    bool m_checksumCRC32HasBeenSet;
+
+    Aws::String m_checksumCRC32C;
+    bool m_checksumCRC32CHasBeenSet;
+
+    Aws::String m_checksumSHA1;
+    bool m_checksumSHA1HasBeenSet;
+
+    Aws::String m_checksumSHA256;
+    bool m_checksumSHA256HasBeenSet;
 
     bool m_deleteMarker;
     bool m_deleteMarkerHasBeenSet;

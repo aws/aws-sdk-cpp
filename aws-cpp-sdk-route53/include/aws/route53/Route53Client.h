@@ -456,7 +456,17 @@ namespace Model
          * private hosted zone must first submit a
          * <code>CreateVPCAssociationAuthorization</code> request. Then the account that
          * created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
-         * request.</p> <p><h3>See Also:</h3>   <a
+         * request.</p>   <p>When granting access, the hosted zone and the
+         * Amazon VPC must belong to the same partition. A partition is a group of Amazon
+         * Web Services Regions. Each Amazon Web Services account is scoped to one
+         * partition.</p> <p>The following are the supported partitions:</p> <ul> <li> <p>
+         * <code>aws</code> - Amazon Web Services Regions</p> </li> <li> <p>
+         * <code>aws-cn</code> - China Regions</p> </li> <li> <p> <code>aws-us-gov</code> -
+         * Amazon Web Services GovCloud (US) Region</p> </li> </ul> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+         * Management</a> in the <i>Amazon Web Services General Reference</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone">AWS
          * API Reference</a></p>
          */
@@ -472,7 +482,17 @@ namespace Model
          * private hosted zone must first submit a
          * <code>CreateVPCAssociationAuthorization</code> request. Then the account that
          * created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
-         * request.</p> <p><h3>See Also:</h3>   <a
+         * request.</p>   <p>When granting access, the hosted zone and the
+         * Amazon VPC must belong to the same partition. A partition is a group of Amazon
+         * Web Services Regions. Each Amazon Web Services account is scoped to one
+         * partition.</p> <p>The following are the supported partitions:</p> <ul> <li> <p>
+         * <code>aws</code> - Amazon Web Services Regions</p> </li> <li> <p>
+         * <code>aws-cn</code> - China Regions</p> </li> <li> <p> <code>aws-us-gov</code> -
+         * Amazon Web Services GovCloud (US) Region</p> </li> </ul> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+         * Management</a> in the <i>Amazon Web Services General Reference</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone">AWS
          * API Reference</a></p>
          *
@@ -490,7 +510,17 @@ namespace Model
          * private hosted zone must first submit a
          * <code>CreateVPCAssociationAuthorization</code> request. Then the account that
          * created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
-         * request.</p> <p><h3>See Also:</h3>   <a
+         * request.</p>   <p>When granting access, the hosted zone and the
+         * Amazon VPC must belong to the same partition. A partition is a group of Amazon
+         * Web Services Regions. Each Amazon Web Services account is scoped to one
+         * partition.</p> <p>The following are the supported partitions:</p> <ul> <li> <p>
+         * <code>aws</code> - Amazon Web Services Regions</p> </li> <li> <p>
+         * <code>aws-cn</code> - China Regions</p> </li> <li> <p> <code>aws-us-gov</code> -
+         * Amazon Web Services GovCloud (US) Region</p> </li> </ul> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+         * Management</a> in the <i>Amazon Web Services General Reference</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone">AWS
          * API Reference</a></p>
          *
@@ -537,16 +567,15 @@ namespace Model
          * actions:</p> <ul> <li> <p> <code>CREATE</code>: Creates a resource record set
          * that has the specified values.</p> </li> <li> <p> <code>DELETE</code>: Deletes
          * an existing resource record set that has the specified values.</p> </li> <li>
-         * <p> <code>UPSERT</code>: If a resource record set does not already exist, Amazon
-         * Web Services creates it. If a resource set does exist, Route 53 updates it with
-         * the values in the request. </p> </li> </ul> <p> <b>Syntaxes for Creating,
-         * Updating, and Deleting Resource Record Sets</b> </p> <p>The syntax for a request
-         * depends on the type of resource record set that you want to create, delete, or
-         * update, such as weighted, alias, or failover. The XML elements in your request
-         * must appear in the order listed in the syntax. </p> <p>For an example for each
-         * type of resource record set, see "Examples."</p> <p>Don't refer to the syntax in
-         * the "Parameter Syntax" section, which includes all of the elements for every
-         * kind of resource record set that you can create, delete, or update by using
+         * <p> <code>UPSERT</code>: If a resource set exists Route 53 updates it with the
+         * values in the request. </p> </li> </ul> <p> <b>Syntaxes for Creating, Updating,
+         * and Deleting Resource Record Sets</b> </p> <p>The syntax for a request depends
+         * on the type of resource record set that you want to create, delete, or update,
+         * such as weighted, alias, or failover. The XML elements in your request must
+         * appear in the order listed in the syntax. </p> <p>For an example for each type
+         * of resource record set, see "Examples."</p> <p>Don't refer to the syntax in the
+         * "Parameter Syntax" section, which includes all of the elements for every kind of
+         * resource record set that you can create, delete, or update by using
          * <code>ChangeResourceRecordSets</code>. </p> <p> <b>Change Propagation to Route
          * 53 DNS Servers</b> </p> <p>When you submit a
          * <code>ChangeResourceRecordSets</code> request, Route 53 propagates your changes
@@ -604,16 +633,15 @@ namespace Model
          * actions:</p> <ul> <li> <p> <code>CREATE</code>: Creates a resource record set
          * that has the specified values.</p> </li> <li> <p> <code>DELETE</code>: Deletes
          * an existing resource record set that has the specified values.</p> </li> <li>
-         * <p> <code>UPSERT</code>: If a resource record set does not already exist, Amazon
-         * Web Services creates it. If a resource set does exist, Route 53 updates it with
-         * the values in the request. </p> </li> </ul> <p> <b>Syntaxes for Creating,
-         * Updating, and Deleting Resource Record Sets</b> </p> <p>The syntax for a request
-         * depends on the type of resource record set that you want to create, delete, or
-         * update, such as weighted, alias, or failover. The XML elements in your request
-         * must appear in the order listed in the syntax. </p> <p>For an example for each
-         * type of resource record set, see "Examples."</p> <p>Don't refer to the syntax in
-         * the "Parameter Syntax" section, which includes all of the elements for every
-         * kind of resource record set that you can create, delete, or update by using
+         * <p> <code>UPSERT</code>: If a resource set exists Route 53 updates it with the
+         * values in the request. </p> </li> </ul> <p> <b>Syntaxes for Creating, Updating,
+         * and Deleting Resource Record Sets</b> </p> <p>The syntax for a request depends
+         * on the type of resource record set that you want to create, delete, or update,
+         * such as weighted, alias, or failover. The XML elements in your request must
+         * appear in the order listed in the syntax. </p> <p>For an example for each type
+         * of resource record set, see "Examples."</p> <p>Don't refer to the syntax in the
+         * "Parameter Syntax" section, which includes all of the elements for every kind of
+         * resource record set that you can create, delete, or update by using
          * <code>ChangeResourceRecordSets</code>. </p> <p> <b>Change Propagation to Route
          * 53 DNS Servers</b> </p> <p>When you submit a
          * <code>ChangeResourceRecordSets</code> request, Route 53 propagates your changes
@@ -673,16 +701,15 @@ namespace Model
          * actions:</p> <ul> <li> <p> <code>CREATE</code>: Creates a resource record set
          * that has the specified values.</p> </li> <li> <p> <code>DELETE</code>: Deletes
          * an existing resource record set that has the specified values.</p> </li> <li>
-         * <p> <code>UPSERT</code>: If a resource record set does not already exist, Amazon
-         * Web Services creates it. If a resource set does exist, Route 53 updates it with
-         * the values in the request. </p> </li> </ul> <p> <b>Syntaxes for Creating,
-         * Updating, and Deleting Resource Record Sets</b> </p> <p>The syntax for a request
-         * depends on the type of resource record set that you want to create, delete, or
-         * update, such as weighted, alias, or failover. The XML elements in your request
-         * must appear in the order listed in the syntax. </p> <p>For an example for each
-         * type of resource record set, see "Examples."</p> <p>Don't refer to the syntax in
-         * the "Parameter Syntax" section, which includes all of the elements for every
-         * kind of resource record set that you can create, delete, or update by using
+         * <p> <code>UPSERT</code>: If a resource set exists Route 53 updates it with the
+         * values in the request. </p> </li> </ul> <p> <b>Syntaxes for Creating, Updating,
+         * and Deleting Resource Record Sets</b> </p> <p>The syntax for a request depends
+         * on the type of resource record set that you want to create, delete, or update,
+         * such as weighted, alias, or failover. The XML elements in your request must
+         * appear in the order listed in the syntax. </p> <p>For an example for each type
+         * of resource record set, see "Examples."</p> <p>Don't refer to the syntax in the
+         * "Parameter Syntax" section, which includes all of the elements for every kind of
+         * resource record set that you can create, delete, or update by using
          * <code>ChangeResourceRecordSets</code>. </p> <p> <b>Change Propagation to Route
          * 53 DNS Servers</b> </p> <p>When you submit a
          * <code>ChangeResourceRecordSets</code> request, Route 53 propagates your changes
@@ -869,8 +896,18 @@ namespace Model
          * records are not yet available on all Route 53 DNS servers. When the NS and SOA
          * records are available, the status of the zone changes to
          * <code>INSYNC</code>.</p> <p>The <code>CreateHostedZone</code> request requires
-         * the caller to have an <code>ec2:DescribeVpcs</code> permission.</p><p><h3>See
-         * Also:</h3>   <a
+         * the caller to have an <code>ec2:DescribeVpcs</code> permission.</p> 
+         * <p>When creating private hosted zones, the Amazon VPC must belong to the same
+         * partition where the hosted zone is created. A partition is a group of Amazon Web
+         * Services Regions. Each Amazon Web Services account is scoped to one
+         * partition.</p> <p>The following are the supported partitions:</p> <ul> <li> <p>
+         * <code>aws</code> - Amazon Web Services Regions</p> </li> <li> <p>
+         * <code>aws-cn</code> - China Regions</p> </li> <li> <p> <code>aws-us-gov</code> -
+         * Amazon Web Services GovCloud (US) Region</p> </li> </ul> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+         * Management</a> in the <i>Amazon Web Services General Reference</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone">AWS
          * API Reference</a></p>
          */
@@ -908,8 +945,18 @@ namespace Model
          * records are not yet available on all Route 53 DNS servers. When the NS and SOA
          * records are available, the status of the zone changes to
          * <code>INSYNC</code>.</p> <p>The <code>CreateHostedZone</code> request requires
-         * the caller to have an <code>ec2:DescribeVpcs</code> permission.</p><p><h3>See
-         * Also:</h3>   <a
+         * the caller to have an <code>ec2:DescribeVpcs</code> permission.</p> 
+         * <p>When creating private hosted zones, the Amazon VPC must belong to the same
+         * partition where the hosted zone is created. A partition is a group of Amazon Web
+         * Services Regions. Each Amazon Web Services account is scoped to one
+         * partition.</p> <p>The following are the supported partitions:</p> <ul> <li> <p>
+         * <code>aws</code> - Amazon Web Services Regions</p> </li> <li> <p>
+         * <code>aws-cn</code> - China Regions</p> </li> <li> <p> <code>aws-us-gov</code> -
+         * Amazon Web Services GovCloud (US) Region</p> </li> </ul> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+         * Management</a> in the <i>Amazon Web Services General Reference</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone">AWS
          * API Reference</a></p>
          *
@@ -949,8 +996,18 @@ namespace Model
          * records are not yet available on all Route 53 DNS servers. When the NS and SOA
          * records are available, the status of the zone changes to
          * <code>INSYNC</code>.</p> <p>The <code>CreateHostedZone</code> request requires
-         * the caller to have an <code>ec2:DescribeVpcs</code> permission.</p><p><h3>See
-         * Also:</h3>   <a
+         * the caller to have an <code>ec2:DescribeVpcs</code> permission.</p> 
+         * <p>When creating private hosted zones, the Amazon VPC must belong to the same
+         * partition where the hosted zone is created. A partition is a group of Amazon Web
+         * Services Regions. Each Amazon Web Services account is scoped to one
+         * partition.</p> <p>The following are the supported partitions:</p> <ul> <li> <p>
+         * <code>aws</code> - Amazon Web Services Regions</p> </li> <li> <p>
+         * <code>aws-cn</code> - China Regions</p> </li> <li> <p> <code>aws-us-gov</code> -
+         * Amazon Web Services GovCloud (US) Region</p> </li> </ul> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+         * Management</a> in the <i>Amazon Web Services General Reference</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone">AWS
          * API Reference</a></p>
          *
@@ -1019,22 +1076,36 @@ namespace Model
          * configurations, replace the hosted zone name with <code>*</code>, for
          * example:</p> <p>
          * <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/ *</code> </p>
-         *  <p>You can't use the CloudWatch console to create or edit a resource
-         * policy. You must use the CloudWatch API, one of the Amazon Web Services SDKs, or
-         * the CLI.</p>  </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt>
-         * <dd> <p>When Route 53 finishes creating the configuration for DNS query logging,
-         * it does the following:</p> <ul> <li> <p>Creates a log stream for an edge
-         * location the first time that the edge location responds to DNS queries for the
-         * specified hosted zone. That log stream is used to log all queries that Route 53
-         * responds to for that edge location.</p> </li> <li> <p>Begins to send query logs
-         * to the applicable log stream.</p> </li> </ul> <p>The name of each log stream is
-         * in the following format:</p> <p> <code> <i>hosted zone ID</i>/<i>edge location
-         * code</i> </code> </p> <p>The edge location code is a three-letter code and an
-         * arbitrarily assigned number, for example, DFW3. The three-letter code typically
-         * corresponds with the International Air Transport Association airport code for an
-         * airport near the edge location. (These abbreviations might change in the
-         * future.) For a list of edge locations, see "The Route 53 Global Network" on the
-         * <a href="http://aws.amazon.com/route53/details/">Route 53 Product Details</a>
+         * <p>To avoid the confused deputy problem, a security issue where an entity
+         * without a permission for an action can coerce a more-privileged entity to
+         * perform it, you can optionally limit the permissions that a service has to a
+         * resource in a resource-based policy by supplying the following values:</p> <ul>
+         * <li> <p>For <code>aws:SourceArn</code>, supply the hosted zone ARN used in
+         * creating the query logging configuration. For example, <code>aws:SourceArn:
+         * arn:aws:route53:::hostedzone/hosted zone ID</code>.</p> </li> <li> <p>For
+         * <code>aws:SourceAccount</code>, supply the account ID for the account that
+         * creates the query logging configuration. For example,
+         * <code>aws:SourceAccount:111111111111</code>.</p> </li> </ul> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html">The
+         * confused deputy problem</a> in the <i>Amazon Web Services IAM User
+         * Guide</i>.</p>  <p>You can't use the CloudWatch console to create or edit
+         * a resource policy. You must use the CloudWatch API, one of the Amazon Web
+         * Services SDKs, or the CLI.</p>  </li> </ol> </dd> <dt>Log Streams and
+         * Edge Locations</dt> <dd> <p>When Route 53 finishes creating the configuration
+         * for DNS query logging, it does the following:</p> <ul> <li> <p>Creates a log
+         * stream for an edge location the first time that the edge location responds to
+         * DNS queries for the specified hosted zone. That log stream is used to log all
+         * queries that Route 53 responds to for that edge location.</p> </li> <li>
+         * <p>Begins to send query logs to the applicable log stream.</p> </li> </ul>
+         * <p>The name of each log stream is in the following format:</p> <p> <code>
+         * <i>hosted zone ID</i>/<i>edge location code</i> </code> </p> <p>The edge
+         * location code is a three-letter code and an arbitrarily assigned number, for
+         * example, DFW3. The three-letter code typically corresponds with the
+         * International Air Transport Association airport code for an airport near the
+         * edge location. (These abbreviations might change in the future.) For a list of
+         * edge locations, see "The Route 53 Global Network" on the <a
+         * href="http://aws.amazon.com/route53/details/">Route 53 Product Details</a>
          * page.</p> </dd> <dt>Queries That Are Logged</dt> <dd> <p>Query logs contain only
          * the queries that DNS resolvers forward to Route 53. If a DNS resolver has
          * already cached the response to a query (such as the IP address for a load
@@ -1096,22 +1167,36 @@ namespace Model
          * configurations, replace the hosted zone name with <code>*</code>, for
          * example:</p> <p>
          * <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/ *</code> </p>
-         *  <p>You can't use the CloudWatch console to create or edit a resource
-         * policy. You must use the CloudWatch API, one of the Amazon Web Services SDKs, or
-         * the CLI.</p>  </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt>
-         * <dd> <p>When Route 53 finishes creating the configuration for DNS query logging,
-         * it does the following:</p> <ul> <li> <p>Creates a log stream for an edge
-         * location the first time that the edge location responds to DNS queries for the
-         * specified hosted zone. That log stream is used to log all queries that Route 53
-         * responds to for that edge location.</p> </li> <li> <p>Begins to send query logs
-         * to the applicable log stream.</p> </li> </ul> <p>The name of each log stream is
-         * in the following format:</p> <p> <code> <i>hosted zone ID</i>/<i>edge location
-         * code</i> </code> </p> <p>The edge location code is a three-letter code and an
-         * arbitrarily assigned number, for example, DFW3. The three-letter code typically
-         * corresponds with the International Air Transport Association airport code for an
-         * airport near the edge location. (These abbreviations might change in the
-         * future.) For a list of edge locations, see "The Route 53 Global Network" on the
-         * <a href="http://aws.amazon.com/route53/details/">Route 53 Product Details</a>
+         * <p>To avoid the confused deputy problem, a security issue where an entity
+         * without a permission for an action can coerce a more-privileged entity to
+         * perform it, you can optionally limit the permissions that a service has to a
+         * resource in a resource-based policy by supplying the following values:</p> <ul>
+         * <li> <p>For <code>aws:SourceArn</code>, supply the hosted zone ARN used in
+         * creating the query logging configuration. For example, <code>aws:SourceArn:
+         * arn:aws:route53:::hostedzone/hosted zone ID</code>.</p> </li> <li> <p>For
+         * <code>aws:SourceAccount</code>, supply the account ID for the account that
+         * creates the query logging configuration. For example,
+         * <code>aws:SourceAccount:111111111111</code>.</p> </li> </ul> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html">The
+         * confused deputy problem</a> in the <i>Amazon Web Services IAM User
+         * Guide</i>.</p>  <p>You can't use the CloudWatch console to create or edit
+         * a resource policy. You must use the CloudWatch API, one of the Amazon Web
+         * Services SDKs, or the CLI.</p>  </li> </ol> </dd> <dt>Log Streams and
+         * Edge Locations</dt> <dd> <p>When Route 53 finishes creating the configuration
+         * for DNS query logging, it does the following:</p> <ul> <li> <p>Creates a log
+         * stream for an edge location the first time that the edge location responds to
+         * DNS queries for the specified hosted zone. That log stream is used to log all
+         * queries that Route 53 responds to for that edge location.</p> </li> <li>
+         * <p>Begins to send query logs to the applicable log stream.</p> </li> </ul>
+         * <p>The name of each log stream is in the following format:</p> <p> <code>
+         * <i>hosted zone ID</i>/<i>edge location code</i> </code> </p> <p>The edge
+         * location code is a three-letter code and an arbitrarily assigned number, for
+         * example, DFW3. The three-letter code typically corresponds with the
+         * International Air Transport Association airport code for an airport near the
+         * edge location. (These abbreviations might change in the future.) For a list of
+         * edge locations, see "The Route 53 Global Network" on the <a
+         * href="http://aws.amazon.com/route53/details/">Route 53 Product Details</a>
          * page.</p> </dd> <dt>Queries That Are Logged</dt> <dd> <p>Query logs contain only
          * the queries that DNS resolvers forward to Route 53. If a DNS resolver has
          * already cached the response to a query (such as the IP address for a load
@@ -1175,22 +1260,36 @@ namespace Model
          * configurations, replace the hosted zone name with <code>*</code>, for
          * example:</p> <p>
          * <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/ *</code> </p>
-         *  <p>You can't use the CloudWatch console to create or edit a resource
-         * policy. You must use the CloudWatch API, one of the Amazon Web Services SDKs, or
-         * the CLI.</p>  </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt>
-         * <dd> <p>When Route 53 finishes creating the configuration for DNS query logging,
-         * it does the following:</p> <ul> <li> <p>Creates a log stream for an edge
-         * location the first time that the edge location responds to DNS queries for the
-         * specified hosted zone. That log stream is used to log all queries that Route 53
-         * responds to for that edge location.</p> </li> <li> <p>Begins to send query logs
-         * to the applicable log stream.</p> </li> </ul> <p>The name of each log stream is
-         * in the following format:</p> <p> <code> <i>hosted zone ID</i>/<i>edge location
-         * code</i> </code> </p> <p>The edge location code is a three-letter code and an
-         * arbitrarily assigned number, for example, DFW3. The three-letter code typically
-         * corresponds with the International Air Transport Association airport code for an
-         * airport near the edge location. (These abbreviations might change in the
-         * future.) For a list of edge locations, see "The Route 53 Global Network" on the
-         * <a href="http://aws.amazon.com/route53/details/">Route 53 Product Details</a>
+         * <p>To avoid the confused deputy problem, a security issue where an entity
+         * without a permission for an action can coerce a more-privileged entity to
+         * perform it, you can optionally limit the permissions that a service has to a
+         * resource in a resource-based policy by supplying the following values:</p> <ul>
+         * <li> <p>For <code>aws:SourceArn</code>, supply the hosted zone ARN used in
+         * creating the query logging configuration. For example, <code>aws:SourceArn:
+         * arn:aws:route53:::hostedzone/hosted zone ID</code>.</p> </li> <li> <p>For
+         * <code>aws:SourceAccount</code>, supply the account ID for the account that
+         * creates the query logging configuration. For example,
+         * <code>aws:SourceAccount:111111111111</code>.</p> </li> </ul> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html">The
+         * confused deputy problem</a> in the <i>Amazon Web Services IAM User
+         * Guide</i>.</p>  <p>You can't use the CloudWatch console to create or edit
+         * a resource policy. You must use the CloudWatch API, one of the Amazon Web
+         * Services SDKs, or the CLI.</p>  </li> </ol> </dd> <dt>Log Streams and
+         * Edge Locations</dt> <dd> <p>When Route 53 finishes creating the configuration
+         * for DNS query logging, it does the following:</p> <ul> <li> <p>Creates a log
+         * stream for an edge location the first time that the edge location responds to
+         * DNS queries for the specified hosted zone. That log stream is used to log all
+         * queries that Route 53 responds to for that edge location.</p> </li> <li>
+         * <p>Begins to send query logs to the applicable log stream.</p> </li> </ul>
+         * <p>The name of each log stream is in the following format:</p> <p> <code>
+         * <i>hosted zone ID</i>/<i>edge location code</i> </code> </p> <p>The edge
+         * location code is a three-letter code and an arbitrarily assigned number, for
+         * example, DFW3. The three-letter code typically corresponds with the
+         * International Air Transport Association airport code for an airport near the
+         * edge location. (These abbreviations might change in the future.) For a list of
+         * edge locations, see "The Route 53 Global Network" on the <a
+         * href="http://aws.amazon.com/route53/details/">Route 53 Product Details</a>
          * page.</p> </dd> <dt>Queries That Are Logged</dt> <dd> <p>Query logs contain only
          * the queries that DNS resolvers forward to Route 53. If a DNS resolver has
          * already cached the response to a query (such as the IP address for a load
@@ -2057,8 +2156,17 @@ namespace Model
          * if the hosted zone has a value for <code>OwningAccount</code>, you can use
          * <code>DisassociateVPCFromHostedZone</code>. If the hosted zone has a value for
          * <code>OwningService</code>, you can't use
-         * <code>DisassociateVPCFromHostedZone</code>.</p> </li> </ul><p><h3>See Also:</h3>
-         * <a
+         * <code>DisassociateVPCFromHostedZone</code>.</p> </li> </ul>  <p>When
+         * revoking access, the hosted zone and the Amazon VPC must belong to the same
+         * partition. A partition is a group of Amazon Web Services Regions. Each Amazon
+         * Web Services account is scoped to one partition.</p> <p>The following are the
+         * supported partitions:</p> <ul> <li> <p> <code>aws</code> - Amazon Web Services
+         * Regions</p> </li> <li> <p> <code>aws-cn</code> - China Regions</p> </li> <li>
+         * <p> <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region</p> </li>
+         * </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+         * Management</a> in the <i>Amazon Web Services General Reference</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">AWS
          * API Reference</a></p>
          */
@@ -2081,8 +2189,17 @@ namespace Model
          * if the hosted zone has a value for <code>OwningAccount</code>, you can use
          * <code>DisassociateVPCFromHostedZone</code>. If the hosted zone has a value for
          * <code>OwningService</code>, you can't use
-         * <code>DisassociateVPCFromHostedZone</code>.</p> </li> </ul><p><h3>See Also:</h3>
-         * <a
+         * <code>DisassociateVPCFromHostedZone</code>.</p> </li> </ul>  <p>When
+         * revoking access, the hosted zone and the Amazon VPC must belong to the same
+         * partition. A partition is a group of Amazon Web Services Regions. Each Amazon
+         * Web Services account is scoped to one partition.</p> <p>The following are the
+         * supported partitions:</p> <ul> <li> <p> <code>aws</code> - Amazon Web Services
+         * Regions</p> </li> <li> <p> <code>aws-cn</code> - China Regions</p> </li> <li>
+         * <p> <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region</p> </li>
+         * </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+         * Management</a> in the <i>Amazon Web Services General Reference</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">AWS
          * API Reference</a></p>
          *
@@ -2107,8 +2224,17 @@ namespace Model
          * if the hosted zone has a value for <code>OwningAccount</code>, you can use
          * <code>DisassociateVPCFromHostedZone</code>. If the hosted zone has a value for
          * <code>OwningService</code>, you can't use
-         * <code>DisassociateVPCFromHostedZone</code>.</p> </li> </ul><p><h3>See Also:</h3>
-         * <a
+         * <code>DisassociateVPCFromHostedZone</code>.</p> </li> </ul>  <p>When
+         * revoking access, the hosted zone and the Amazon VPC must belong to the same
+         * partition. A partition is a group of Amazon Web Services Regions. Each Amazon
+         * Web Services account is scoped to one partition.</p> <p>The following are the
+         * supported partitions:</p> <ul> <li> <p> <code>aws</code> - Amazon Web Services
+         * Regions</p> </li> <li> <p> <code>aws-cn</code> - China Regions</p> </li> <li>
+         * <p> <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region</p> </li>
+         * </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+         * Management</a> in the <i>Amazon Web Services General Reference</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">AWS
          * API Reference</a></p>
          *
@@ -3083,8 +3209,18 @@ namespace Model
          * </p> </li> <li> <p>An <code>OwningService</code> element, which identifies the
          * Amazon Web Services service that created and owns the hosted zone. For example,
          * if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the
-         * value of <code>Owner</code> is <code>efs.amazonaws.com</code>. </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * value of <code>Owner</code> is <code>efs.amazonaws.com</code>. </p> </li> </ul>
+         *  <p>When listing private hosted zones, the hosted zone and the Amazon VPC
+         * must belong to the same partition where the hosted zones were created. A
+         * partition is a group of Amazon Web Services Regions. Each Amazon Web Services
+         * account is scoped to one partition.</p> <p>The following are the supported
+         * partitions:</p> <ul> <li> <p> <code>aws</code> - Amazon Web Services Regions</p>
+         * </li> <li> <p> <code>aws-cn</code> - China Regions</p> </li> <li> <p>
+         * <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region</p> </li>
+         * </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+         * Management</a> in the <i>Amazon Web Services General Reference</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByVPC">AWS
          * API Reference</a></p>
          */
@@ -3101,8 +3237,18 @@ namespace Model
          * </p> </li> <li> <p>An <code>OwningService</code> element, which identifies the
          * Amazon Web Services service that created and owns the hosted zone. For example,
          * if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the
-         * value of <code>Owner</code> is <code>efs.amazonaws.com</code>. </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * value of <code>Owner</code> is <code>efs.amazonaws.com</code>. </p> </li> </ul>
+         *  <p>When listing private hosted zones, the hosted zone and the Amazon VPC
+         * must belong to the same partition where the hosted zones were created. A
+         * partition is a group of Amazon Web Services Regions. Each Amazon Web Services
+         * account is scoped to one partition.</p> <p>The following are the supported
+         * partitions:</p> <ul> <li> <p> <code>aws</code> - Amazon Web Services Regions</p>
+         * </li> <li> <p> <code>aws-cn</code> - China Regions</p> </li> <li> <p>
+         * <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region</p> </li>
+         * </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+         * Management</a> in the <i>Amazon Web Services General Reference</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByVPC">AWS
          * API Reference</a></p>
          *
@@ -3121,8 +3267,18 @@ namespace Model
          * </p> </li> <li> <p>An <code>OwningService</code> element, which identifies the
          * Amazon Web Services service that created and owns the hosted zone. For example,
          * if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the
-         * value of <code>Owner</code> is <code>efs.amazonaws.com</code>. </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * value of <code>Owner</code> is <code>efs.amazonaws.com</code>. </p> </li> </ul>
+         *  <p>When listing private hosted zones, the hosted zone and the Amazon VPC
+         * must belong to the same partition where the hosted zones were created. A
+         * partition is a group of Amazon Web Services Regions. Each Amazon Web Services
+         * account is scoped to one partition.</p> <p>The following are the supported
+         * partitions:</p> <ul> <li> <p> <code>aws</code> - Amazon Web Services Regions</p>
+         * </li> <li> <p> <code>aws-cn</code> - China Regions</p> </li> <li> <p>
+         * <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region</p> </li>
+         * </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+         * Management</a> in the <i>Amazon Web Services General Reference</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByVPC">AWS
          * API Reference</a></p>
          *

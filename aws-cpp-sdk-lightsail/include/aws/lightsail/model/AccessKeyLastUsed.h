@@ -26,7 +26,8 @@ namespace Model
 
   /**
    * <p>Describes the last time an access key was used.</p>  <p>This object
-   * does not include data in the response of a <a>CreateBucketAccessKey</a>
+   * does not include data in the response of a <a
+   * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a>
    * action.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AccessKeyLastUsed">AWS
    * API Reference</a></p>

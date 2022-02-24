@@ -39,6 +39,8 @@ GetObjectRequest::GetObjectRequest() :
     m_partNumber(0),
     m_partNumberHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
+    m_checksumMode(ChecksumMode::NOT_SET),
+    m_checksumModeHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -194,5 +196,25 @@ Aws::Http::HeaderValueCollection GetObjectRequest::GetRequestSpecificHeaders() c
     ss.str("");
   }
 
+  if(m_checksumModeHasBeenSet)
+  {
+    headers.emplace("x-amz-checksum-mode", ChecksumModeMapper::GetNameForChecksumMode(m_checksumMode));
+  }
+
   return headers;
 }
+bool GetObjectRequest::ShouldValidateResponseChecksum() const
+{
+  return m_checksumMode == ChecksumMode::ENABLED;
+}
+
+Aws::Vector<Aws::String> GetObjectRequest::GetResponseChecksumAlgorithmNames() const
+{
+  Aws::Vector<Aws::String> responseChecksumAlgorithmNames;
+  responseChecksumAlgorithmNames.push_back("CRC32");
+  responseChecksumAlgorithmNames.push_back("CRC32C");
+  responseChecksumAlgorithmNames.push_back("SHA256");
+  responseChecksumAlgorithmNames.push_back("SHA1");
+  return responseChecksumAlgorithmNames;
+}
+

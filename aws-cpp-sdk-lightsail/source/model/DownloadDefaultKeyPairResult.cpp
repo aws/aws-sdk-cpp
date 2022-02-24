@@ -40,6 +40,12 @@ DownloadDefaultKeyPairResult& DownloadDefaultKeyPairResult::operator =(const Aws
 
   }
 
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+
+  }
+
 
 
   return *this;

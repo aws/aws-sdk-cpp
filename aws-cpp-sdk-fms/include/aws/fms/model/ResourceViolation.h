@@ -22,6 +22,8 @@
 #include <aws/fms/model/DnsDuplicateRuleGroupViolation.h>
 #include <aws/fms/model/DnsRuleGroupLimitExceededViolation.h>
 #include <aws/fms/model/PossibleRemediationActions.h>
+#include <aws/fms/model/FirewallSubnetIsOutOfScopeViolation.h>
+#include <aws/fms/model/RouteHasOutOfScopeEndpointViolation.h>
 #include <utility>
 
 namespace Aws
@@ -657,6 +659,74 @@ namespace Model
      */
     inline ResourceViolation& WithPossibleRemediationActions(PossibleRemediationActions&& value) { SetPossibleRemediationActions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains details about the firewall subnet that violates the policy
+     * scope.</p>
+     */
+    inline const FirewallSubnetIsOutOfScopeViolation& GetFirewallSubnetIsOutOfScopeViolation() const{ return m_firewallSubnetIsOutOfScopeViolation; }
+
+    /**
+     * <p>Contains details about the firewall subnet that violates the policy
+     * scope.</p>
+     */
+    inline bool FirewallSubnetIsOutOfScopeViolationHasBeenSet() const { return m_firewallSubnetIsOutOfScopeViolationHasBeenSet; }
+
+    /**
+     * <p>Contains details about the firewall subnet that violates the policy
+     * scope.</p>
+     */
+    inline void SetFirewallSubnetIsOutOfScopeViolation(const FirewallSubnetIsOutOfScopeViolation& value) { m_firewallSubnetIsOutOfScopeViolationHasBeenSet = true; m_firewallSubnetIsOutOfScopeViolation = value; }
+
+    /**
+     * <p>Contains details about the firewall subnet that violates the policy
+     * scope.</p>
+     */
+    inline void SetFirewallSubnetIsOutOfScopeViolation(FirewallSubnetIsOutOfScopeViolation&& value) { m_firewallSubnetIsOutOfScopeViolationHasBeenSet = true; m_firewallSubnetIsOutOfScopeViolation = std::move(value); }
+
+    /**
+     * <p>Contains details about the firewall subnet that violates the policy
+     * scope.</p>
+     */
+    inline ResourceViolation& WithFirewallSubnetIsOutOfScopeViolation(const FirewallSubnetIsOutOfScopeViolation& value) { SetFirewallSubnetIsOutOfScopeViolation(value); return *this;}
+
+    /**
+     * <p>Contains details about the firewall subnet that violates the policy
+     * scope.</p>
+     */
+    inline ResourceViolation& WithFirewallSubnetIsOutOfScopeViolation(FirewallSubnetIsOutOfScopeViolation&& value) { SetFirewallSubnetIsOutOfScopeViolation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains details about the route endpoint that violates the policy scope.</p>
+     */
+    inline const RouteHasOutOfScopeEndpointViolation& GetRouteHasOutOfScopeEndpointViolation() const{ return m_routeHasOutOfScopeEndpointViolation; }
+
+    /**
+     * <p>Contains details about the route endpoint that violates the policy scope.</p>
+     */
+    inline bool RouteHasOutOfScopeEndpointViolationHasBeenSet() const { return m_routeHasOutOfScopeEndpointViolationHasBeenSet; }
+
+    /**
+     * <p>Contains details about the route endpoint that violates the policy scope.</p>
+     */
+    inline void SetRouteHasOutOfScopeEndpointViolation(const RouteHasOutOfScopeEndpointViolation& value) { m_routeHasOutOfScopeEndpointViolationHasBeenSet = true; m_routeHasOutOfScopeEndpointViolation = value; }
+
+    /**
+     * <p>Contains details about the route endpoint that violates the policy scope.</p>
+     */
+    inline void SetRouteHasOutOfScopeEndpointViolation(RouteHasOutOfScopeEndpointViolation&& value) { m_routeHasOutOfScopeEndpointViolationHasBeenSet = true; m_routeHasOutOfScopeEndpointViolation = std::move(value); }
+
+    /**
+     * <p>Contains details about the route endpoint that violates the policy scope.</p>
+     */
+    inline ResourceViolation& WithRouteHasOutOfScopeEndpointViolation(const RouteHasOutOfScopeEndpointViolation& value) { SetRouteHasOutOfScopeEndpointViolation(value); return *this;}
+
+    /**
+     * <p>Contains details about the route endpoint that violates the policy scope.</p>
+     */
+    inline ResourceViolation& WithRouteHasOutOfScopeEndpointViolation(RouteHasOutOfScopeEndpointViolation&& value) { SetRouteHasOutOfScopeEndpointViolation(std::move(value)); return *this;}
+
   private:
 
     AwsVPCSecurityGroupViolation m_awsVPCSecurityGroupViolation;
@@ -709,6 +779,12 @@ namespace Model
 
     PossibleRemediationActions m_possibleRemediationActions;
     bool m_possibleRemediationActionsHasBeenSet;
+
+    FirewallSubnetIsOutOfScopeViolation m_firewallSubnetIsOutOfScopeViolation;
+    bool m_firewallSubnetIsOutOfScopeViolationHasBeenSet;
+
+    RouteHasOutOfScopeEndpointViolation m_routeHasOutOfScopeEndpointViolation;
+    bool m_routeHasOutOfScopeEndpointViolationHasBeenSet;
   };
 
 } // namespace Model

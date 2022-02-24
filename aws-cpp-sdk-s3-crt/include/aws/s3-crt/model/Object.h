@@ -7,8 +7,10 @@
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3-crt/model/ObjectStorageClass.h>
 #include <aws/s3-crt/model/Owner.h>
+#include <aws/s3-crt/model/ChecksumAlgorithm.h>
 #include <utility>
 
 namespace Aws
@@ -259,6 +261,47 @@ namespace Model
 
 
     /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline const Aws::Vector<ChecksumAlgorithm>& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline void SetChecksumAlgorithm(const Aws::Vector<ChecksumAlgorithm>& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline void SetChecksumAlgorithm(Aws::Vector<ChecksumAlgorithm>&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::move(value); }
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline Object& WithChecksumAlgorithm(const Aws::Vector<ChecksumAlgorithm>& value) { SetChecksumAlgorithm(value); return *this;}
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline Object& WithChecksumAlgorithm(Aws::Vector<ChecksumAlgorithm>&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline Object& AddChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm.push_back(value); return *this; }
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline Object& AddChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Size in bytes of the object</p>
      */
     inline long long GetSize() const{ return m_size; }
@@ -350,6 +393,9 @@ namespace Model
 
     Aws::String m_eTag;
     bool m_eTagHasBeenSet;
+
+    Aws::Vector<ChecksumAlgorithm> m_checksumAlgorithm;
+    bool m_checksumAlgorithmHasBeenSet;
 
     long long m_size;
     bool m_sizeHasBeenSet;

@@ -53,6 +53,8 @@ CreateMultipartUploadRequest::CreateMultipartUploadRequest() :
     m_objectLockLegalHoldStatus(ObjectLockLegalHoldStatus::NOT_SET),
     m_objectLockLegalHoldStatusHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
+    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
+    m_checksumAlgorithmHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -262,6 +264,11 @@ Aws::Http::HeaderValueCollection CreateMultipartUploadRequest::GetRequestSpecifi
     ss << m_expectedBucketOwner;
     headers.emplace("x-amz-expected-bucket-owner",  ss.str());
     ss.str("");
+  }
+
+  if(m_checksumAlgorithmHasBeenSet)
+  {
+    headers.emplace("x-amz-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
   }
 
   return headers;

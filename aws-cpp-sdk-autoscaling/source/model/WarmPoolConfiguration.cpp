@@ -28,7 +28,8 @@ WarmPoolConfiguration::WarmPoolConfiguration() :
     m_poolState(WarmPoolState::NOT_SET),
     m_poolStateHasBeenSet(false),
     m_status(WarmPoolStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_instanceReusePolicyHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ WarmPoolConfiguration::WarmPoolConfiguration(const XmlNode& xmlNode) :
     m_poolState(WarmPoolState::NOT_SET),
     m_poolStateHasBeenSet(false),
     m_status(WarmPoolStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_instanceReusePolicyHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -75,6 +77,12 @@ WarmPoolConfiguration& WarmPoolConfiguration::operator =(const XmlNode& xmlNode)
       m_status = WarmPoolStatusMapper::GetWarmPoolStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
+    XmlNode instanceReusePolicyNode = resultNode.FirstChild("InstanceReusePolicy");
+    if(!instanceReusePolicyNode.IsNull())
+    {
+      m_instanceReusePolicy = instanceReusePolicyNode;
+      m_instanceReusePolicyHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -102,6 +110,13 @@ void WarmPoolConfiguration::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".Status=" << WarmPoolStatusMapper::GetNameForWarmPoolStatus(m_status) << "&";
   }
 
+  if(m_instanceReusePolicyHasBeenSet)
+  {
+      Aws::StringStream instanceReusePolicyLocationAndMemberSs;
+      instanceReusePolicyLocationAndMemberSs << location << index << locationValue << ".InstanceReusePolicy";
+      m_instanceReusePolicy.OutputToStream(oStream, instanceReusePolicyLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void WarmPoolConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -121,6 +136,12 @@ void WarmPoolConfiguration::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_statusHasBeenSet)
   {
       oStream << location << ".Status=" << WarmPoolStatusMapper::GetNameForWarmPoolStatus(m_status) << "&";
+  }
+  if(m_instanceReusePolicyHasBeenSet)
+  {
+      Aws::String instanceReusePolicyLocationAndMember(location);
+      instanceReusePolicyLocationAndMember += ".InstanceReusePolicy";
+      m_instanceReusePolicy.OutputToStream(oStream, instanceReusePolicyLocationAndMember.c_str());
   }
 }
 

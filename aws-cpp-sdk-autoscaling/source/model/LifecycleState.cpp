@@ -42,6 +42,7 @@ namespace Aws
         static const int Warmed_Terminated_HASH = HashingUtils::HashString("Warmed:Terminated");
         static const int Warmed_Stopped_HASH = HashingUtils::HashString("Warmed:Stopped");
         static const int Warmed_Running_HASH = HashingUtils::HashString("Warmed:Running");
+        static const int Warmed_Hibernated_HASH = HashingUtils::HashString("Warmed:Hibernated");
 
 
         LifecycleState GetLifecycleStateForName(const Aws::String& name)
@@ -135,6 +136,10 @@ namespace Aws
           {
             return LifecycleState::Warmed_Running;
           }
+          else if (hashCode == Warmed_Hibernated_HASH)
+          {
+            return LifecycleState::Warmed_Hibernated;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -193,6 +198,8 @@ namespace Aws
             return "Warmed:Stopped";
           case LifecycleState::Warmed_Running:
             return "Warmed:Running";
+          case LifecycleState::Warmed_Hibernated:
+            return "Warmed:Hibernated";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

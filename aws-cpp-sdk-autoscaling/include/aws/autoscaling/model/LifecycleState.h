@@ -37,7 +37,8 @@ namespace Model
     Warmed_Terminating_Proceed,
     Warmed_Terminated,
     Warmed_Stopped,
-    Warmed_Running
+    Warmed_Running,
+    Warmed_Hibernated
   };
 
 namespace LifecycleStateMapper

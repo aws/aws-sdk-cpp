@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     Stopped,
-    Running
+    Running,
+    Hibernated
   };
 
 namespace WarmPoolStateMapper

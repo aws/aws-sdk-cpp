@@ -493,7 +493,7 @@ namespace Model
      * <code>0</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
      * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
+     * <p>Required if you are adding an <code>ELB</code> health check.</p>
      */
     inline int GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
 
@@ -504,7 +504,7 @@ namespace Model
      * <code>0</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
      * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
+     * <p>Required if you are adding an <code>ELB</code> health check.</p>
      */
     inline bool HealthCheckGracePeriodHasBeenSet() const { return m_healthCheckGracePeriodHasBeenSet; }
 
@@ -515,7 +515,7 @@ namespace Model
      * <code>0</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
      * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
+     * <p>Required if you are adding an <code>ELB</code> health check.</p>
      */
     inline void SetHealthCheckGracePeriod(int value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
 
@@ -526,7 +526,7 @@ namespace Model
      * <code>0</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
      * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
+     * <p>Required if you are adding an <code>ELB</code> health check.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckGracePeriod(int value) { SetHealthCheckGracePeriod(value); return *this;}
 

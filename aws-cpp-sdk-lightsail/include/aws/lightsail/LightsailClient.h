@@ -1262,9 +1262,10 @@ namespace Model
          * <p>Creates a new access key for the specified Amazon Lightsail bucket. Access
          * keys consist of an access key ID and corresponding secret access key.</p>
          * <p>Access keys grant full programmatic access to the specified bucket and its
-         * objects. You can have a maximum of two access keys per bucket. Use the
-         * <a>GetBucketAccessKeys</a> action to get a list of current access keys for a
-         * specific bucket. For more information about access keys, see <a
+         * objects. You can have a maximum of two access keys per bucket. Use the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a>
+         * action to get a list of current access keys for a specific bucket. For more
+         * information about access keys, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating
          * access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail
          * Developer Guide</i>.</p>  <p>The <code>secretAccessKey</code> value
@@ -1281,9 +1282,10 @@ namespace Model
          * <p>Creates a new access key for the specified Amazon Lightsail bucket. Access
          * keys consist of an access key ID and corresponding secret access key.</p>
          * <p>Access keys grant full programmatic access to the specified bucket and its
-         * objects. You can have a maximum of two access keys per bucket. Use the
-         * <a>GetBucketAccessKeys</a> action to get a list of current access keys for a
-         * specific bucket. For more information about access keys, see <a
+         * objects. You can have a maximum of two access keys per bucket. Use the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a>
+         * action to get a list of current access keys for a specific bucket. For more
+         * information about access keys, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating
          * access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail
          * Developer Guide</i>.</p>  <p>The <code>secretAccessKey</code> value
@@ -1302,9 +1304,10 @@ namespace Model
          * <p>Creates a new access key for the specified Amazon Lightsail bucket. Access
          * keys consist of an access key ID and corresponding secret access key.</p>
          * <p>Access keys grant full programmatic access to the specified bucket and its
-         * objects. You can have a maximum of two access keys per bucket. Use the
-         * <a>GetBucketAccessKeys</a> action to get a list of current access keys for a
-         * specific bucket. For more information about access keys, see <a
+         * objects. You can have a maximum of two access keys per bucket. Use the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a>
+         * action to get a list of current access keys for a specific bucket. For more
+         * information about access keys, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating
          * access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail
          * Developer Guide</i>.</p>  <p>The <code>secretAccessKey</code> value
@@ -2067,9 +2070,13 @@ namespace Model
         virtual void CreateInstancesFromSnapshotAsync(const Model::CreateInstancesFromSnapshotRequest& request, const CreateInstancesFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an SSH key pair.</p> <p>The <code>create key pair</code> operation
-         * supports tag-based access control via request tags. For more information, see
-         * the <a
+         * <p>Creates a custom SSH key pair that you can use with an Amazon Lightsail
+         * instance.</p>  <p>Use the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DownloadDefaultKeyPair.html">DownloadDefaultKeyPair</a>
+         * action to create a Lightsail default key pair in an Amazon Web Services Region
+         * where a default key pair does not currently exist.</p>  <p>The
+         * <code>create key pair</code> operation supports tag-based access control via
+         * request tags. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair">AWS
@@ -2078,9 +2085,13 @@ namespace Model
         virtual Model::CreateKeyPairOutcome CreateKeyPair(const Model::CreateKeyPairRequest& request) const;
 
         /**
-         * <p>Creates an SSH key pair.</p> <p>The <code>create key pair</code> operation
-         * supports tag-based access control via request tags. For more information, see
-         * the <a
+         * <p>Creates a custom SSH key pair that you can use with an Amazon Lightsail
+         * instance.</p>  <p>Use the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DownloadDefaultKeyPair.html">DownloadDefaultKeyPair</a>
+         * action to create a Lightsail default key pair in an Amazon Web Services Region
+         * where a default key pair does not currently exist.</p>  <p>The
+         * <code>create key pair</code> operation supports tag-based access control via
+         * request tags. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair">AWS
@@ -2091,9 +2102,13 @@ namespace Model
         virtual Model::CreateKeyPairOutcomeCallable CreateKeyPairCallable(const Model::CreateKeyPairRequest& request) const;
 
         /**
-         * <p>Creates an SSH key pair.</p> <p>The <code>create key pair</code> operation
-         * supports tag-based access control via request tags. For more information, see
-         * the <a
+         * <p>Creates a custom SSH key pair that you can use with an Amazon Lightsail
+         * instance.</p>  <p>Use the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DownloadDefaultKeyPair.html">DownloadDefaultKeyPair</a>
+         * action to create a Lightsail default key pair in an Amazon Web Services Region
+         * where a default key pair does not currently exist.</p>  <p>The
+         * <code>create key pair</code> operation supports tag-based access control via
+         * request tags. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair">AWS
@@ -2904,10 +2919,18 @@ namespace Model
         virtual void DeleteInstanceSnapshotAsync(const Model::DeleteInstanceSnapshotRequest& request, const DeleteInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specific SSH key pair.</p> <p>The <code>delete key pair</code>
-         * operation supports tag-based access control via resource tags applied to the
-         * resource identified by <code>key pair name</code>. For more information, see the
-         * <a
+         * <p>Deletes the specified key pair by removing the public key from Amazon
+         * Lightsail.</p> <p>You can delete key pairs that were created using the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ImportKeyPair.html">ImportKeyPair</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateKeyPair.html">CreateKeyPair</a>
+         * actions, as well as the Lightsail default key pair. A new default key pair will
+         * not be created unless you launch an instance without specifying a custom key
+         * pair, or you call the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DownloadDefaultKeyPair.html">DownloadDefaultKeyPair</a>
+         * API. </p> <p>The <code>delete key pair</code> operation supports tag-based
+         * access control via resource tags applied to the resource identified by <code>key
+         * pair name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair">AWS
@@ -2916,10 +2939,18 @@ namespace Model
         virtual Model::DeleteKeyPairOutcome DeleteKeyPair(const Model::DeleteKeyPairRequest& request) const;
 
         /**
-         * <p>Deletes a specific SSH key pair.</p> <p>The <code>delete key pair</code>
-         * operation supports tag-based access control via resource tags applied to the
-         * resource identified by <code>key pair name</code>. For more information, see the
-         * <a
+         * <p>Deletes the specified key pair by removing the public key from Amazon
+         * Lightsail.</p> <p>You can delete key pairs that were created using the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ImportKeyPair.html">ImportKeyPair</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateKeyPair.html">CreateKeyPair</a>
+         * actions, as well as the Lightsail default key pair. A new default key pair will
+         * not be created unless you launch an instance without specifying a custom key
+         * pair, or you call the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DownloadDefaultKeyPair.html">DownloadDefaultKeyPair</a>
+         * API. </p> <p>The <code>delete key pair</code> operation supports tag-based
+         * access control via resource tags applied to the resource identified by <code>key
+         * pair name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair">AWS
@@ -2930,10 +2961,18 @@ namespace Model
         virtual Model::DeleteKeyPairOutcomeCallable DeleteKeyPairCallable(const Model::DeleteKeyPairRequest& request) const;
 
         /**
-         * <p>Deletes a specific SSH key pair.</p> <p>The <code>delete key pair</code>
-         * operation supports tag-based access control via resource tags applied to the
-         * resource identified by <code>key pair name</code>. For more information, see the
-         * <a
+         * <p>Deletes the specified key pair by removing the public key from Amazon
+         * Lightsail.</p> <p>You can delete key pairs that were created using the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ImportKeyPair.html">ImportKeyPair</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateKeyPair.html">CreateKeyPair</a>
+         * actions, as well as the Lightsail default key pair. A new default key pair will
+         * not be created unless you launch an instance without specifying a custom key
+         * pair, or you call the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DownloadDefaultKeyPair.html">DownloadDefaultKeyPair</a>
+         * API. </p> <p>The <code>delete key pair</code> operation supports tag-based
+         * access control via resource tags applied to the resource identified by <code>key
+         * pair name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair">AWS
@@ -3350,16 +3389,18 @@ namespace Model
         virtual void DisableAddOnAsync(const Model::DisableAddOnRequest& request, const DisableAddOnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Downloads the default SSH key pair from the user's account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Downloads the regional Amazon Lightsail default key pair.</p> <p>This action
+         * also creates a Lightsail default key pair if a default key pair does not
+         * currently exist in the Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DownloadDefaultKeyPair">AWS
          * API Reference</a></p>
          */
         virtual Model::DownloadDefaultKeyPairOutcome DownloadDefaultKeyPair(const Model::DownloadDefaultKeyPairRequest& request) const;
 
         /**
-         * <p>Downloads the default SSH key pair from the user's account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Downloads the regional Amazon Lightsail default key pair.</p> <p>This action
+         * also creates a Lightsail default key pair if a default key pair does not
+         * currently exist in the Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DownloadDefaultKeyPair">AWS
          * API Reference</a></p>
          *
@@ -3368,8 +3409,9 @@ namespace Model
         virtual Model::DownloadDefaultKeyPairOutcomeCallable DownloadDefaultKeyPairCallable(const Model::DownloadDefaultKeyPairRequest& request) const;
 
         /**
-         * <p>Downloads the default SSH key pair from the user's account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Downloads the regional Amazon Lightsail default key pair.</p> <p>This action
+         * also creates a Lightsail default key pair if a default key pair does not
+         * currently exist in the Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DownloadDefaultKeyPair">AWS
          * API Reference</a></p>
          *
@@ -3645,9 +3687,10 @@ namespace Model
          * <p>Returns the existing access key IDs for the specified Amazon Lightsail
          * bucket.</p>  <p>This action does not return the secret access key
          * value of an access key. You can get a secret access key only when you create it
-         * from the response of the <a>CreateBucketAccessKey</a> action. If you lose the
-         * secret access key, you must create a new access key.</p> <p><h3>See
-         * Also:</h3>   <a
+         * from the response of the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a>
+         * action. If you lose the secret access key, you must create a new access key.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketAccessKeys">AWS
          * API Reference</a></p>
          */
@@ -3657,9 +3700,10 @@ namespace Model
          * <p>Returns the existing access key IDs for the specified Amazon Lightsail
          * bucket.</p>  <p>This action does not return the secret access key
          * value of an access key. You can get a secret access key only when you create it
-         * from the response of the <a>CreateBucketAccessKey</a> action. If you lose the
-         * secret access key, you must create a new access key.</p> <p><h3>See
-         * Also:</h3>   <a
+         * from the response of the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a>
+         * action. If you lose the secret access key, you must create a new access key.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketAccessKeys">AWS
          * API Reference</a></p>
          *
@@ -3671,9 +3715,10 @@ namespace Model
          * <p>Returns the existing access key IDs for the specified Amazon Lightsail
          * bucket.</p>  <p>This action does not return the secret access key
          * value of an access key. You can get a secret access key only when you create it
-         * from the response of the <a>CreateBucketAccessKey</a> action. If you lose the
-         * secret access key, you must create a new access key.</p> <p><h3>See
-         * Also:</h3>   <a
+         * from the response of the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a>
+         * action. If you lose the secret access key, you must create a new access key.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketAccessKeys">AWS
          * API Reference</a></p>
          *
@@ -3684,8 +3729,9 @@ namespace Model
         /**
          * <p>Returns the bundles that you can apply to a Amazon Lightsail bucket.</p>
          * <p>The bucket bundle specifies the monthly cost, storage quota, and data
-         * transfer quota for a bucket.</p> <p>Use the <a>UpdateBucketBundle</a> action to
-         * update the bundle for a bucket.</p><p><h3>See Also:</h3>   <a
+         * transfer quota for a bucket.</p> <p>Use the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
+         * action to update the bundle for a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketBundles">AWS
          * API Reference</a></p>
          */
@@ -3694,8 +3740,9 @@ namespace Model
         /**
          * <p>Returns the bundles that you can apply to a Amazon Lightsail bucket.</p>
          * <p>The bucket bundle specifies the monthly cost, storage quota, and data
-         * transfer quota for a bucket.</p> <p>Use the <a>UpdateBucketBundle</a> action to
-         * update the bundle for a bucket.</p><p><h3>See Also:</h3>   <a
+         * transfer quota for a bucket.</p> <p>Use the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
+         * action to update the bundle for a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketBundles">AWS
          * API Reference</a></p>
          *
@@ -3706,8 +3753,9 @@ namespace Model
         /**
          * <p>Returns the bundles that you can apply to a Amazon Lightsail bucket.</p>
          * <p>The bucket bundle specifies the monthly cost, storage quota, and data
-         * transfer quota for a bucket.</p> <p>Use the <a>UpdateBucketBundle</a> action to
-         * update the bundle for a bucket.</p><p><h3>See Also:</h3>   <a
+         * transfer quota for a bucket.</p> <p>Use the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
+         * action to update the bundle for a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketBundles">AWS
          * API Reference</a></p>
          *
@@ -4506,8 +4554,9 @@ namespace Model
         /**
          * <p>Returns all export snapshot records created as a result of the <code>export
          * snapshot</code> operation.</p> <p>An export snapshot record can be used to
-         * create a new Amazon EC2 instance and its related resources with the
-         * <a>CreateCloudFormationStack</a> action.</p><p><h3>See Also:</h3>   <a
+         * create a new Amazon EC2 instance and its related resources with the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateCloudFormationStack.html">CreateCloudFormationStack</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetExportSnapshotRecords">AWS
          * API Reference</a></p>
          */
@@ -4516,8 +4565,9 @@ namespace Model
         /**
          * <p>Returns all export snapshot records created as a result of the <code>export
          * snapshot</code> operation.</p> <p>An export snapshot record can be used to
-         * create a new Amazon EC2 instance and its related resources with the
-         * <a>CreateCloudFormationStack</a> action.</p><p><h3>See Also:</h3>   <a
+         * create a new Amazon EC2 instance and its related resources with the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateCloudFormationStack.html">CreateCloudFormationStack</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetExportSnapshotRecords">AWS
          * API Reference</a></p>
          *
@@ -4528,8 +4578,9 @@ namespace Model
         /**
          * <p>Returns all export snapshot records created as a result of the <code>export
          * snapshot</code> operation.</p> <p>An export snapshot record can be used to
-         * create a new Amazon EC2 instance and its related resources with the
-         * <a>CreateCloudFormationStack</a> action.</p><p><h3>See Also:</h3>   <a
+         * create a new Amazon EC2 instance and its related resources with the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateCloudFormationStack.html">CreateCloudFormationStack</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetExportSnapshotRecords">AWS
          * API Reference</a></p>
          *
@@ -6505,16 +6556,18 @@ namespace Model
          * bucket.</p> <p>A bucket bundle specifies the monthly cost, storage space, and
          * data transfer quota for a bucket. You can update a bucket's bundle only one time
          * within a monthly AWS billing cycle. To determine if you can update a bucket's
-         * bundle, use the <a>GetBuckets</a> action. The <code>ableToUpdateBundle</code>
-         * parameter in the response will indicate whether you can currently update a
-         * bucket's bundle.</p> <p>Update a bucket's bundle if it's consistently going over
-         * its storage space or data transfer quota, or if a bucket's usage is consistently
-         * in the lower range of its storage space or data transfer quota. Due to the
-         * unpredictable usage fluctuations that a bucket might experience, we strongly
-         * recommend that you update a bucket's bundle only as a long-term strategy,
-         * instead of as a short-term, monthly cost-cutting measure. Choose a bucket bundle
-         * that will provide the bucket with ample storage space and data transfer for a
-         * long time to come.</p><p><h3>See Also:</h3>   <a
+         * bundle, use the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a>
+         * action. The <code>ableToUpdateBundle</code> parameter in the response will
+         * indicate whether you can currently update a bucket's bundle.</p> <p>Update a
+         * bucket's bundle if it's consistently going over its storage space or data
+         * transfer quota, or if a bucket's usage is consistently in the lower range of its
+         * storage space or data transfer quota. Due to the unpredictable usage
+         * fluctuations that a bucket might experience, we strongly recommend that you
+         * update a bucket's bundle only as a long-term strategy, instead of as a
+         * short-term, monthly cost-cutting measure. Choose a bucket bundle that will
+         * provide the bucket with ample storage space and data transfer for a long time to
+         * come.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateBucketBundle">AWS
          * API Reference</a></p>
          */
@@ -6525,16 +6578,18 @@ namespace Model
          * bucket.</p> <p>A bucket bundle specifies the monthly cost, storage space, and
          * data transfer quota for a bucket. You can update a bucket's bundle only one time
          * within a monthly AWS billing cycle. To determine if you can update a bucket's
-         * bundle, use the <a>GetBuckets</a> action. The <code>ableToUpdateBundle</code>
-         * parameter in the response will indicate whether you can currently update a
-         * bucket's bundle.</p> <p>Update a bucket's bundle if it's consistently going over
-         * its storage space or data transfer quota, or if a bucket's usage is consistently
-         * in the lower range of its storage space or data transfer quota. Due to the
-         * unpredictable usage fluctuations that a bucket might experience, we strongly
-         * recommend that you update a bucket's bundle only as a long-term strategy,
-         * instead of as a short-term, monthly cost-cutting measure. Choose a bucket bundle
-         * that will provide the bucket with ample storage space and data transfer for a
-         * long time to come.</p><p><h3>See Also:</h3>   <a
+         * bundle, use the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a>
+         * action. The <code>ableToUpdateBundle</code> parameter in the response will
+         * indicate whether you can currently update a bucket's bundle.</p> <p>Update a
+         * bucket's bundle if it's consistently going over its storage space or data
+         * transfer quota, or if a bucket's usage is consistently in the lower range of its
+         * storage space or data transfer quota. Due to the unpredictable usage
+         * fluctuations that a bucket might experience, we strongly recommend that you
+         * update a bucket's bundle only as a long-term strategy, instead of as a
+         * short-term, monthly cost-cutting measure. Choose a bucket bundle that will
+         * provide the bucket with ample storage space and data transfer for a long time to
+         * come.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateBucketBundle">AWS
          * API Reference</a></p>
          *
@@ -6547,16 +6602,18 @@ namespace Model
          * bucket.</p> <p>A bucket bundle specifies the monthly cost, storage space, and
          * data transfer quota for a bucket. You can update a bucket's bundle only one time
          * within a monthly AWS billing cycle. To determine if you can update a bucket's
-         * bundle, use the <a>GetBuckets</a> action. The <code>ableToUpdateBundle</code>
-         * parameter in the response will indicate whether you can currently update a
-         * bucket's bundle.</p> <p>Update a bucket's bundle if it's consistently going over
-         * its storage space or data transfer quota, or if a bucket's usage is consistently
-         * in the lower range of its storage space or data transfer quota. Due to the
-         * unpredictable usage fluctuations that a bucket might experience, we strongly
-         * recommend that you update a bucket's bundle only as a long-term strategy,
-         * instead of as a short-term, monthly cost-cutting measure. Choose a bucket bundle
-         * that will provide the bucket with ample storage space and data transfer for a
-         * long time to come.</p><p><h3>See Also:</h3>   <a
+         * bundle, use the <a
+         * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a>
+         * action. The <code>ableToUpdateBundle</code> parameter in the response will
+         * indicate whether you can currently update a bucket's bundle.</p> <p>Update a
+         * bucket's bundle if it's consistently going over its storage space or data
+         * transfer quota, or if a bucket's usage is consistently in the lower range of its
+         * storage space or data transfer quota. Due to the unpredictable usage
+         * fluctuations that a bucket might experience, we strongly recommend that you
+         * update a bucket's bundle only as a long-term strategy, instead of as a
+         * short-term, monthly cost-cutting measure. Choose a bucket bundle that will
+         * provide the bucket with ample storage space and data transfer for a long time to
+         * come.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateBucketBundle">AWS
          * API Reference</a></p>
          *

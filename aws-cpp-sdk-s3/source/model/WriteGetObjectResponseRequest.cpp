@@ -32,6 +32,10 @@ WriteGetObjectResponseRequest::WriteGetObjectResponseRequest() :
     m_contentLength(0),
     m_contentLengthHasBeenSet(false),
     m_contentRangeHasBeenSet(false),
+    m_checksumCRC32HasBeenSet(false),
+    m_checksumCRC32CHasBeenSet(false),
+    m_checksumSHA1HasBeenSet(false),
+    m_checksumSHA256HasBeenSet(false),
     m_deleteMarker(false),
     m_deleteMarkerHasBeenSet(false),
     m_eTagHasBeenSet(false),
@@ -177,6 +181,34 @@ Aws::Http::HeaderValueCollection WriteGetObjectResponseRequest::GetRequestSpecif
   {
     ss << m_contentRange;
     headers.emplace("x-amz-fwd-header-content-range",  ss.str());
+    ss.str("");
+  }
+
+  if(m_checksumCRC32HasBeenSet)
+  {
+    ss << m_checksumCRC32;
+    headers.emplace("x-amz-fwd-header-x-amz-checksum-crc32",  ss.str());
+    ss.str("");
+  }
+
+  if(m_checksumCRC32CHasBeenSet)
+  {
+    ss << m_checksumCRC32C;
+    headers.emplace("x-amz-fwd-header-x-amz-checksum-crc32c",  ss.str());
+    ss.str("");
+  }
+
+  if(m_checksumSHA1HasBeenSet)
+  {
+    ss << m_checksumSHA1;
+    headers.emplace("x-amz-fwd-header-x-amz-checksum-sha1",  ss.str());
+    ss.str("");
+  }
+
+  if(m_checksumSHA256HasBeenSet)
+  {
+    ss << m_checksumSHA256;
+    headers.emplace("x-amz-fwd-header-x-amz-checksum-sha256",  ss.str());
     ss.str("");
   }
 

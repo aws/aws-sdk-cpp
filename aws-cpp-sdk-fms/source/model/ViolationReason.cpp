@@ -45,6 +45,8 @@ namespace Aws
         static const int BLACK_HOLE_ROUTE_DETECTED_HASH = HashingUtils::HashString("BLACK_HOLE_ROUTE_DETECTED");
         static const int BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET_HASH = HashingUtils::HashString("BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET");
         static const int RESOURCE_MISSING_DNS_FIREWALL_HASH = HashingUtils::HashString("RESOURCE_MISSING_DNS_FIREWALL");
+        static const int FIREWALL_SUBNET_IS_OUT_OF_SCOPE_HASH = HashingUtils::HashString("FIREWALL_SUBNET_IS_OUT_OF_SCOPE");
+        static const int ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT_HASH = HashingUtils::HashString("ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT");
 
 
         ViolationReason GetViolationReasonForName(const Aws::String& name)
@@ -150,6 +152,14 @@ namespace Aws
           {
             return ViolationReason::RESOURCE_MISSING_DNS_FIREWALL;
           }
+          else if (hashCode == FIREWALL_SUBNET_IS_OUT_OF_SCOPE_HASH)
+          {
+            return ViolationReason::FIREWALL_SUBNET_IS_OUT_OF_SCOPE;
+          }
+          else if (hashCode == ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT_HASH)
+          {
+            return ViolationReason::ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -214,6 +224,10 @@ namespace Aws
             return "BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET";
           case ViolationReason::RESOURCE_MISSING_DNS_FIREWALL:
             return "RESOURCE_MISSING_DNS_FIREWALL";
+          case ViolationReason::FIREWALL_SUBNET_IS_OUT_OF_SCOPE:
+            return "FIREWALL_SUBNET_IS_OUT_OF_SCOPE";
+          case ViolationReason::ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT:
+            return "ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

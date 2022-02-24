@@ -27,7 +27,9 @@ Output::Output() :
     m_locationHasBeenSet(false),
     m_overwrite(false),
     m_overwriteHasBeenSet(false),
-    m_formatOptionsHasBeenSet(false)
+    m_formatOptionsHasBeenSet(false),
+    m_maxOutputFiles(0),
+    m_maxOutputFilesHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ Output::Output(JsonView jsonValue) :
     m_locationHasBeenSet(false),
     m_overwrite(false),
     m_overwriteHasBeenSet(false),
-    m_formatOptionsHasBeenSet(false)
+    m_formatOptionsHasBeenSet(false),
+    m_maxOutputFiles(0),
+    m_maxOutputFilesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +96,13 @@ Output& Output::operator =(JsonView jsonValue)
     m_formatOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MaxOutputFiles"))
+  {
+    m_maxOutputFiles = jsonValue.GetInteger("MaxOutputFiles");
+
+    m_maxOutputFilesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -135,6 +146,12 @@ JsonValue Output::Jsonize() const
   if(m_formatOptionsHasBeenSet)
   {
    payload.WithObject("FormatOptions", m_formatOptions.Jsonize());
+
+  }
+
+  if(m_maxOutputFilesHasBeenSet)
+  {
+   payload.WithInteger("MaxOutputFiles", m_maxOutputFiles);
 
   }
 

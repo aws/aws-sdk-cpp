@@ -22,7 +22,8 @@ ComplianceViolator::ComplianceViolator() :
     m_resourceIdHasBeenSet(false),
     m_violationReason(ViolationReason::NOT_SET),
     m_violationReasonHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ ComplianceViolator::ComplianceViolator(JsonView jsonValue) :
     m_resourceIdHasBeenSet(false),
     m_violationReason(ViolationReason::NOT_SET),
     m_violationReasonHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,16 @@ ComplianceViolator& ComplianceViolator::operator =(JsonView jsonValue)
     m_resourceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Metadata"))
+  {
+    Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("Metadata").GetAllObjects();
+    for(auto& metadataItem : metadataJsonMap)
+    {
+      m_metadata[metadataItem.first] = metadataItem.second.AsString();
+    }
+    m_metadataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +91,17 @@ JsonValue ComplianceViolator::Jsonize() const
   if(m_resourceTypeHasBeenSet)
   {
    payload.WithString("ResourceType", m_resourceType);
+
+  }
+
+  if(m_metadataHasBeenSet)
+  {
+   JsonValue metadataJsonMap;
+   for(auto& metadataItem : m_metadata)
+   {
+     metadataJsonMap.WithString(metadataItem.first, metadataItem.second);
+   }
+   payload.WithObject("Metadata", std::move(metadataJsonMap));
 
   }
 

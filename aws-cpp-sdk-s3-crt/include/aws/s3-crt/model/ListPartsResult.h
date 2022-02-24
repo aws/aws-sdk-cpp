@@ -12,6 +12,7 @@
 #include <aws/s3-crt/model/Owner.h>
 #include <aws/s3-crt/model/StorageClass.h>
 #include <aws/s3-crt/model/RequestCharged.h>
+#include <aws/s3-crt/model/ChecksumAlgorithm.h>
 #include <aws/s3-crt/model/Part.h>
 #include <utility>
 
@@ -518,6 +519,32 @@ namespace Model
     
     inline ListPartsResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline const ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline void SetChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumAlgorithm = value; }
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline void SetChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumAlgorithm = std::move(value); }
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline ListPartsResult& WithChecksumAlgorithm(const ChecksumAlgorithm& value) { SetChecksumAlgorithm(value); return *this;}
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline ListPartsResult& WithChecksumAlgorithm(ChecksumAlgorithm&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_abortDate;
@@ -547,6 +574,8 @@ namespace Model
     StorageClass m_storageClass;
 
     RequestCharged m_requestCharged;
+
+    ChecksumAlgorithm m_checksumAlgorithm;
   };
 
 } // namespace Model

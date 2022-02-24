@@ -24,10 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes a lifecycle hook, which enables an Auto Scaling group to be aware
-   * of events in the Auto Scaling instance lifecycle, and then perform a custom
-   * action when the corresponding lifecycle event occurs.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Describes a lifecycle hook. A lifecycle hook lets you create solutions that
+   * are aware of events in the Auto Scaling instance lifecycle, and then perform a
+   * custom action on instances when the corresponding lifecycle event
+   * occurs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LifecycleHook">AWS
    * API Reference</a></p>
    */
@@ -248,49 +248,49 @@ namespace Model
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target.</p>
+     * specified notification target (an Amazon SNS topic or an Amazon SQS queue).</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target.</p>
+     * specified notification target (an Amazon SNS topic or an Amazon SQS queue).</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target.</p>
+     * specified notification target (an Amazon SNS topic or an Amazon SQS queue).</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target.</p>
+     * specified notification target (an Amazon SNS topic or an Amazon SQS queue).</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target.</p>
+     * specified notification target (an Amazon SNS topic or an Amazon SQS queue).</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target.</p>
+     * specified notification target (an Amazon SNS topic or an Amazon SQS queue).</p>
      */
     inline LifecycleHook& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target.</p>
+     * specified notification target (an Amazon SNS topic or an Amazon SQS queue).</p>
      */
     inline LifecycleHook& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target.</p>
+     * specified notification target (an Amazon SNS topic or an Amazon SQS queue).</p>
      */
     inline LifecycleHook& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 

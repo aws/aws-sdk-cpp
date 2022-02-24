@@ -27,7 +27,9 @@ MultipartUpload::MultipartUpload() :
     m_storageClass(StorageClass::NOT_SET),
     m_storageClassHasBeenSet(false),
     m_ownerHasBeenSet(false),
-    m_initiatorHasBeenSet(false)
+    m_initiatorHasBeenSet(false),
+    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
+    m_checksumAlgorithmHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ MultipartUpload::MultipartUpload(const XmlNode& xmlNode) :
     m_storageClass(StorageClass::NOT_SET),
     m_storageClassHasBeenSet(false),
     m_ownerHasBeenSet(false),
-    m_initiatorHasBeenSet(false)
+    m_initiatorHasBeenSet(false),
+    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
+    m_checksumAlgorithmHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -85,6 +89,12 @@ MultipartUpload& MultipartUpload::operator =(const XmlNode& xmlNode)
       m_initiator = initiatorNode;
       m_initiatorHasBeenSet = true;
     }
+    XmlNode checksumAlgorithmNode = resultNode.FirstChild("ChecksumAlgorithm");
+    if(!checksumAlgorithmNode.IsNull())
+    {
+      m_checksumAlgorithm = ChecksumAlgorithmMapper::GetChecksumAlgorithmForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumAlgorithmNode.GetText()).c_str()).c_str());
+      m_checksumAlgorithmHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -127,6 +137,12 @@ void MultipartUpload::AddToNode(XmlNode& parentNode) const
   {
    XmlNode initiatorNode = parentNode.CreateChildElement("Initiator");
    m_initiator.AddToNode(initiatorNode);
+  }
+
+  if(m_checksumAlgorithmHasBeenSet)
+  {
+   XmlNode checksumAlgorithmNode = parentNode.CreateChildElement("ChecksumAlgorithm");
+   checksumAlgorithmNode.SetText(ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
   }
 
 }

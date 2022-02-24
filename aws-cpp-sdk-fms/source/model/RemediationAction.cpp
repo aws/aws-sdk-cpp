@@ -26,7 +26,8 @@ RemediationAction::RemediationAction() :
     m_eC2CopyRouteTableActionHasBeenSet(false),
     m_eC2ReplaceRouteTableAssociationActionHasBeenSet(false),
     m_eC2AssociateRouteTableActionHasBeenSet(false),
-    m_eC2CreateRouteTableActionHasBeenSet(false)
+    m_eC2CreateRouteTableActionHasBeenSet(false),
+    m_fMSPolicyUpdateFirewallCreationConfigActionHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ RemediationAction::RemediationAction(JsonView jsonValue) :
     m_eC2CopyRouteTableActionHasBeenSet(false),
     m_eC2ReplaceRouteTableAssociationActionHasBeenSet(false),
     m_eC2AssociateRouteTableActionHasBeenSet(false),
-    m_eC2CreateRouteTableActionHasBeenSet(false)
+    m_eC2CreateRouteTableActionHasBeenSet(false),
+    m_fMSPolicyUpdateFirewallCreationConfigActionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +103,13 @@ RemediationAction& RemediationAction::operator =(JsonView jsonValue)
     m_eC2CreateRouteTableActionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FMSPolicyUpdateFirewallCreationConfigAction"))
+  {
+    m_fMSPolicyUpdateFirewallCreationConfigAction = jsonValue.GetObject("FMSPolicyUpdateFirewallCreationConfigAction");
+
+    m_fMSPolicyUpdateFirewallCreationConfigActionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +162,12 @@ JsonValue RemediationAction::Jsonize() const
   if(m_eC2CreateRouteTableActionHasBeenSet)
   {
    payload.WithObject("EC2CreateRouteTableAction", m_eC2CreateRouteTableAction.Jsonize());
+
+  }
+
+  if(m_fMSPolicyUpdateFirewallCreationConfigActionHasBeenSet)
+  {
+   payload.WithObject("FMSPolicyUpdateFirewallCreationConfigAction", m_fMSPolicyUpdateFirewallCreationConfigAction.Jsonize());
 
   }
 

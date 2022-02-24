@@ -22,6 +22,7 @@ namespace Aws
 
         static const int Stopped_HASH = HashingUtils::HashString("Stopped");
         static const int Running_HASH = HashingUtils::HashString("Running");
+        static const int Hibernated_HASH = HashingUtils::HashString("Hibernated");
 
 
         WarmPoolState GetWarmPoolStateForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == Running_HASH)
           {
             return WarmPoolState::Running;
+          }
+          else if (hashCode == Hibernated_HASH)
+          {
+            return WarmPoolState::Hibernated;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "Stopped";
           case WarmPoolState::Running:
             return "Running";
+          case WarmPoolState::Hibernated:
+            return "Hibernated";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

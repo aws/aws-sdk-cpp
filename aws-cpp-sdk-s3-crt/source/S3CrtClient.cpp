@@ -67,6 +67,7 @@
 #include <aws/s3-crt/model/GetBucketWebsiteRequest.h>
 #include <aws/s3-crt/model/GetObjectRequest.h>
 #include <aws/s3-crt/model/GetObjectAclRequest.h>
+#include <aws/s3-crt/model/GetObjectAttributesRequest.h>
 #include <aws/s3-crt/model/GetObjectLegalHoldRequest.h>
 #include <aws/s3-crt/model/GetObjectLockConfigurationRequest.h>
 #include <aws/s3-crt/model/GetObjectRetentionRequest.h>
@@ -2258,6 +2259,54 @@ void S3CrtClient::GetObjectAclAsync(const GetObjectAclRequest& request, const Ge
 void S3CrtClient::GetObjectAclAsyncHelper(const GetObjectAclRequest& request, const GetObjectAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetObjectAcl(request), context);
+}
+
+GetObjectAttributesOutcome S3CrtClient::GetObjectAttributes(const GetObjectAttributesRequest& request) const
+{
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetObjectAttributes", "Required field: Bucket, is not set");
+    return GetObjectAttributesOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetObjectAttributes", "Required field: Key, is not set");
+    return GetObjectAttributesOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
+  if (!request.ObjectAttributesHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetObjectAttributes", "Required field: ObjectAttributes, is not set");
+    return GetObjectAttributesOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ObjectAttributes]", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetObjectAttributesOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  Aws::StringStream ss;
+  uri.AddPathSegments(request.GetKey());
+  ss.str("?attributes");
+  uri.SetQueryString(ss.str());
+  return GetObjectAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+GetObjectAttributesOutcomeCallable S3CrtClient::GetObjectAttributesCallable(const GetObjectAttributesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetObjectAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetObjectAttributes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3CrtClient::GetObjectAttributesAsync(const GetObjectAttributesRequest& request, const GetObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetObjectAttributesAsyncHelper( request, handler, context ); } );
+}
+
+void S3CrtClient::GetObjectAttributesAsyncHelper(const GetObjectAttributesRequest& request, const GetObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetObjectAttributes(request), context);
 }
 
 GetObjectLegalHoldOutcome S3CrtClient::GetObjectLegalHold(const GetObjectLegalHoldRequest& request) const
