@@ -73,7 +73,7 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 #end
-#if($operation.requestChecksumRequired && $operation.requestAlgorithmMember)
+#if($operation.requestAlgorithmMember)
     Aws::String GetChecksumAlgorithmName() const override;
 
 #end

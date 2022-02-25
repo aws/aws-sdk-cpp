@@ -42,6 +42,8 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    Aws::String GetChecksumAlgorithmName() const override;
+
 
     /**
      * <p>The name of the bucket for which the accelerate configuration is set.</p>

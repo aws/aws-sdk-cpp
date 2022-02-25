@@ -43,6 +43,8 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    Aws::String GetChecksumAlgorithmName() const override;
+
 
     /**
      * <p>The bucket name containing the object to restore. </p> <p>When using this

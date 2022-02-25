@@ -41,6 +41,8 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    Aws::String GetChecksumAlgorithmName() const override;
+
 
     /**
      * <p>The name of the bucket to which the multipart upload was initiated.</p>

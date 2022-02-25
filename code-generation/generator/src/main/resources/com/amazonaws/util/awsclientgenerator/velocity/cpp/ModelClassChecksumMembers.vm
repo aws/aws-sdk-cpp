@@ -1,4 +1,4 @@
-#if($operation.requestChecksumRequired && $operation.requestAlgorithmMember)
+#if($operation.requestAlgorithmMember)
 #set($checksumAlgorithmMember = $shape.members.get($operation.requestAlgorithmMember))
 #set($lowerCaseVarName = $CppViewHelper.computeVariableName($operation.requestAlgorithmMember))
 

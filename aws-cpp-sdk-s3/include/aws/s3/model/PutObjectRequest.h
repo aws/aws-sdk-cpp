@@ -47,6 +47,8 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    Aws::String GetChecksumAlgorithmName() const override;
+
 
     /**
      * <p>The canned ACL to apply to the object. For more information, see <a

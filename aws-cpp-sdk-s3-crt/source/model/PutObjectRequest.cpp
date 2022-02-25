@@ -312,3 +312,16 @@ Aws::Http::HeaderValueCollection PutObjectRequest::GetRequestSpecificHeaders() c
   return headers;
 
 }
+
+Aws::String PutObjectRequest::GetChecksumAlgorithmName() const
+{
+  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)
+  {
+    return "md5";
+  }
+  else
+  {
+    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
+  }
+}
+

@@ -82,3 +82,16 @@ Aws::Http::HeaderValueCollection PutBucketAccelerateConfigurationRequest::GetReq
 
   return headers;
 }
+
+Aws::String PutBucketAccelerateConfigurationRequest::GetChecksumAlgorithmName() const
+{
+  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)
+  {
+    return "md5";
+  }
+  else
+  {
+    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
+  }
+}
+

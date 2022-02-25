@@ -166,3 +166,16 @@ Aws::Http::HeaderValueCollection UploadPartRequest::GetRequestSpecificHeaders() 
   return headers;
 
 }
+
+Aws::String UploadPartRequest::GetChecksumAlgorithmName() const
+{
+  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)
+  {
+    return "md5";
+  }
+  else
+  {
+    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
+  }
+}
+

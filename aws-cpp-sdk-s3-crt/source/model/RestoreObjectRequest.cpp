@@ -98,3 +98,16 @@ Aws::Http::HeaderValueCollection RestoreObjectRequest::GetRequestSpecificHeaders
 
   return headers;
 }
+
+Aws::String RestoreObjectRequest::GetChecksumAlgorithmName() const
+{
+  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)
+  {
+    return "md5";
+  }
+  else
+  {
+    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
+  }
+}
+
