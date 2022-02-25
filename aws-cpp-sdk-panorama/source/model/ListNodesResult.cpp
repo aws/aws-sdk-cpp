@@ -28,6 +28,12 @@ ListNodesResult::ListNodesResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 ListNodesResult& ListNodesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
+  }
+
   if(jsonValue.ValueExists("Nodes"))
   {
     Array<JsonView> nodesJsonList = jsonValue.GetArray("Nodes");
@@ -35,12 +41,6 @@ ListNodesResult& ListNodesResult::operator =(const Aws::AmazonWebServiceResult<J
     {
       m_nodes.push_back(nodesJsonList[nodesIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-
   }
 
 

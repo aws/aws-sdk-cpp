@@ -19,45 +19,59 @@ namespace Model
 {
 
 Node::Node() : 
-    m_nodeIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
     m_category(NodeCategory::NOT_SET),
     m_categoryHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
-    m_packageIdHasBeenSet(false),
-    m_packageArnHasBeenSet(false),
-    m_packageVersionHasBeenSet(false),
-    m_patchVersionHasBeenSet(false),
+    m_createdTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_nodeIdHasBeenSet(false),
+    m_ownerAccountHasBeenSet(false),
+    m_packageArnHasBeenSet(false),
+    m_packageIdHasBeenSet(false),
+    m_packageNameHasBeenSet(false),
+    m_packageVersionHasBeenSet(false),
+    m_patchVersionHasBeenSet(false)
 {
 }
 
 Node::Node(JsonView jsonValue) : 
-    m_nodeIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
     m_category(NodeCategory::NOT_SET),
     m_categoryHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
-    m_packageIdHasBeenSet(false),
-    m_packageArnHasBeenSet(false),
-    m_packageVersionHasBeenSet(false),
-    m_patchVersionHasBeenSet(false),
+    m_createdTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_nodeIdHasBeenSet(false),
+    m_ownerAccountHasBeenSet(false),
+    m_packageArnHasBeenSet(false),
+    m_packageIdHasBeenSet(false),
+    m_packageNameHasBeenSet(false),
+    m_packageVersionHasBeenSet(false),
+    m_patchVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Node& Node::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("NodeId"))
+  if(jsonValue.ValueExists("Category"))
   {
-    m_nodeId = jsonValue.GetString("NodeId");
+    m_category = NodeCategoryMapper::GetNodeCategoryForName(jsonValue.GetString("Category"));
 
-    m_nodeIdHasBeenSet = true;
+    m_categoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreatedTime"))
+  {
+    m_createdTime = jsonValue.GetDouble("CreatedTime");
+
+    m_createdTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+    m_descriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Name"))
@@ -67,11 +81,11 @@ Node& Node::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Category"))
+  if(jsonValue.ValueExists("NodeId"))
   {
-    m_category = NodeCategoryMapper::GetNodeCategoryForName(jsonValue.GetString("Category"));
+    m_nodeId = jsonValue.GetString("NodeId");
 
-    m_categoryHasBeenSet = true;
+    m_nodeIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("OwnerAccount"))
@@ -81,11 +95,11 @@ Node& Node::operator =(JsonView jsonValue)
     m_ownerAccountHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("PackageName"))
+  if(jsonValue.ValueExists("PackageArn"))
   {
-    m_packageName = jsonValue.GetString("PackageName");
+    m_packageArn = jsonValue.GetString("PackageArn");
 
-    m_packageNameHasBeenSet = true;
+    m_packageArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PackageId"))
@@ -95,11 +109,11 @@ Node& Node::operator =(JsonView jsonValue)
     m_packageIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("PackageArn"))
+  if(jsonValue.ValueExists("PackageName"))
   {
-    m_packageArn = jsonValue.GetString("PackageArn");
+    m_packageName = jsonValue.GetString("PackageName");
 
-    m_packageArnHasBeenSet = true;
+    m_packageNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PackageVersion"))
@@ -116,20 +130,6 @@ Node& Node::operator =(JsonView jsonValue)
     m_patchVersionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Description"))
-  {
-    m_description = jsonValue.GetString("Description");
-
-    m_descriptionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("CreatedTime"))
-  {
-    m_createdTime = jsonValue.GetDouble("CreatedTime");
-
-    m_createdTimeHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -137,9 +137,19 @@ JsonValue Node::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_nodeIdHasBeenSet)
+  if(m_categoryHasBeenSet)
   {
-   payload.WithString("NodeId", m_nodeId);
+   payload.WithString("Category", NodeCategoryMapper::GetNameForNodeCategory(m_category));
+  }
+
+  if(m_createdTimeHasBeenSet)
+  {
+   payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
 
   }
 
@@ -149,9 +159,10 @@ JsonValue Node::Jsonize() const
 
   }
 
-  if(m_categoryHasBeenSet)
+  if(m_nodeIdHasBeenSet)
   {
-   payload.WithString("Category", NodeCategoryMapper::GetNameForNodeCategory(m_category));
+   payload.WithString("NodeId", m_nodeId);
+
   }
 
   if(m_ownerAccountHasBeenSet)
@@ -160,9 +171,9 @@ JsonValue Node::Jsonize() const
 
   }
 
-  if(m_packageNameHasBeenSet)
+  if(m_packageArnHasBeenSet)
   {
-   payload.WithString("PackageName", m_packageName);
+   payload.WithString("PackageArn", m_packageArn);
 
   }
 
@@ -172,9 +183,9 @@ JsonValue Node::Jsonize() const
 
   }
 
-  if(m_packageArnHasBeenSet)
+  if(m_packageNameHasBeenSet)
   {
-   payload.WithString("PackageArn", m_packageArn);
+   payload.WithString("PackageName", m_packageName);
 
   }
 
@@ -188,17 +199,6 @@ JsonValue Node::Jsonize() const
   {
    payload.WithString("PatchVersion", m_patchVersion);
 
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
-  }
-
-  if(m_createdTimeHasBeenSet)
-  {
-   payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
   }
 
   return payload;

@@ -6,11 +6,11 @@
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/panorama/PanoramaRequest.h>
-#include <aws/panorama/model/PackageImportJobType.h>
-#include <aws/panorama/model/PackageImportJobInputConfig.h>
-#include <aws/panorama/model/PackageImportJobOutputConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/panorama/model/PackageImportJobInputConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/panorama/model/PackageImportJobType.h>
+#include <aws/panorama/model/PackageImportJobOutputConfig.h>
 #include <aws/panorama/model/JobResourceTags.h>
 #include <utility>
 
@@ -35,99 +35,6 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CreatePackageImportJob"; }
 
     Aws::String SerializePayload() const override;
-
-
-    /**
-     * <p>A job type for the package import job.</p>
-     */
-    inline const PackageImportJobType& GetJobType() const{ return m_jobType; }
-
-    /**
-     * <p>A job type for the package import job.</p>
-     */
-    inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
-
-    /**
-     * <p>A job type for the package import job.</p>
-     */
-    inline void SetJobType(const PackageImportJobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
-
-    /**
-     * <p>A job type for the package import job.</p>
-     */
-    inline void SetJobType(PackageImportJobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
-
-    /**
-     * <p>A job type for the package import job.</p>
-     */
-    inline CreatePackageImportJobRequest& WithJobType(const PackageImportJobType& value) { SetJobType(value); return *this;}
-
-    /**
-     * <p>A job type for the package import job.</p>
-     */
-    inline CreatePackageImportJobRequest& WithJobType(PackageImportJobType&& value) { SetJobType(std::move(value)); return *this;}
-
-
-    /**
-     * <p>An input config for the package import job.</p>
-     */
-    inline const PackageImportJobInputConfig& GetInputConfig() const{ return m_inputConfig; }
-
-    /**
-     * <p>An input config for the package import job.</p>
-     */
-    inline bool InputConfigHasBeenSet() const { return m_inputConfigHasBeenSet; }
-
-    /**
-     * <p>An input config for the package import job.</p>
-     */
-    inline void SetInputConfig(const PackageImportJobInputConfig& value) { m_inputConfigHasBeenSet = true; m_inputConfig = value; }
-
-    /**
-     * <p>An input config for the package import job.</p>
-     */
-    inline void SetInputConfig(PackageImportJobInputConfig&& value) { m_inputConfigHasBeenSet = true; m_inputConfig = std::move(value); }
-
-    /**
-     * <p>An input config for the package import job.</p>
-     */
-    inline CreatePackageImportJobRequest& WithInputConfig(const PackageImportJobInputConfig& value) { SetInputConfig(value); return *this;}
-
-    /**
-     * <p>An input config for the package import job.</p>
-     */
-    inline CreatePackageImportJobRequest& WithInputConfig(PackageImportJobInputConfig&& value) { SetInputConfig(std::move(value)); return *this;}
-
-
-    /**
-     * <p>An output config for the package import job.</p>
-     */
-    inline const PackageImportJobOutputConfig& GetOutputConfig() const{ return m_outputConfig; }
-
-    /**
-     * <p>An output config for the package import job.</p>
-     */
-    inline bool OutputConfigHasBeenSet() const { return m_outputConfigHasBeenSet; }
-
-    /**
-     * <p>An output config for the package import job.</p>
-     */
-    inline void SetOutputConfig(const PackageImportJobOutputConfig& value) { m_outputConfigHasBeenSet = true; m_outputConfig = value; }
-
-    /**
-     * <p>An output config for the package import job.</p>
-     */
-    inline void SetOutputConfig(PackageImportJobOutputConfig&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::move(value); }
-
-    /**
-     * <p>An output config for the package import job.</p>
-     */
-    inline CreatePackageImportJobRequest& WithOutputConfig(const PackageImportJobOutputConfig& value) { SetOutputConfig(value); return *this;}
-
-    /**
-     * <p>An output config for the package import job.</p>
-     */
-    inline CreatePackageImportJobRequest& WithOutputConfig(PackageImportJobOutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
 
 
     /**
@@ -172,6 +79,37 @@ namespace Model
 
 
     /**
+     * <p>An input config for the package import job.</p>
+     */
+    inline const PackageImportJobInputConfig& GetInputConfig() const{ return m_inputConfig; }
+
+    /**
+     * <p>An input config for the package import job.</p>
+     */
+    inline bool InputConfigHasBeenSet() const { return m_inputConfigHasBeenSet; }
+
+    /**
+     * <p>An input config for the package import job.</p>
+     */
+    inline void SetInputConfig(const PackageImportJobInputConfig& value) { m_inputConfigHasBeenSet = true; m_inputConfig = value; }
+
+    /**
+     * <p>An input config for the package import job.</p>
+     */
+    inline void SetInputConfig(PackageImportJobInputConfig&& value) { m_inputConfigHasBeenSet = true; m_inputConfig = std::move(value); }
+
+    /**
+     * <p>An input config for the package import job.</p>
+     */
+    inline CreatePackageImportJobRequest& WithInputConfig(const PackageImportJobInputConfig& value) { SetInputConfig(value); return *this;}
+
+    /**
+     * <p>An input config for the package import job.</p>
+     */
+    inline CreatePackageImportJobRequest& WithInputConfig(PackageImportJobInputConfig&& value) { SetInputConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>Tags for the package import job.</p>
      */
     inline const Aws::Vector<JobResourceTags>& GetJobTags() const{ return m_jobTags; }
@@ -211,22 +149,84 @@ namespace Model
      */
     inline CreatePackageImportJobRequest& AddJobTags(JobResourceTags&& value) { m_jobTagsHasBeenSet = true; m_jobTags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A job type for the package import job.</p>
+     */
+    inline const PackageImportJobType& GetJobType() const{ return m_jobType; }
+
+    /**
+     * <p>A job type for the package import job.</p>
+     */
+    inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
+
+    /**
+     * <p>A job type for the package import job.</p>
+     */
+    inline void SetJobType(const PackageImportJobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
+
+    /**
+     * <p>A job type for the package import job.</p>
+     */
+    inline void SetJobType(PackageImportJobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
+
+    /**
+     * <p>A job type for the package import job.</p>
+     */
+    inline CreatePackageImportJobRequest& WithJobType(const PackageImportJobType& value) { SetJobType(value); return *this;}
+
+    /**
+     * <p>A job type for the package import job.</p>
+     */
+    inline CreatePackageImportJobRequest& WithJobType(PackageImportJobType&& value) { SetJobType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An output config for the package import job.</p>
+     */
+    inline const PackageImportJobOutputConfig& GetOutputConfig() const{ return m_outputConfig; }
+
+    /**
+     * <p>An output config for the package import job.</p>
+     */
+    inline bool OutputConfigHasBeenSet() const { return m_outputConfigHasBeenSet; }
+
+    /**
+     * <p>An output config for the package import job.</p>
+     */
+    inline void SetOutputConfig(const PackageImportJobOutputConfig& value) { m_outputConfigHasBeenSet = true; m_outputConfig = value; }
+
+    /**
+     * <p>An output config for the package import job.</p>
+     */
+    inline void SetOutputConfig(PackageImportJobOutputConfig&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::move(value); }
+
+    /**
+     * <p>An output config for the package import job.</p>
+     */
+    inline CreatePackageImportJobRequest& WithOutputConfig(const PackageImportJobOutputConfig& value) { SetOutputConfig(value); return *this;}
+
+    /**
+     * <p>An output config for the package import job.</p>
+     */
+    inline CreatePackageImportJobRequest& WithOutputConfig(PackageImportJobOutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
+
   private:
-
-    PackageImportJobType m_jobType;
-    bool m_jobTypeHasBeenSet;
-
-    PackageImportJobInputConfig m_inputConfig;
-    bool m_inputConfigHasBeenSet;
-
-    PackageImportJobOutputConfig m_outputConfig;
-    bool m_outputConfigHasBeenSet;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
 
+    PackageImportJobInputConfig m_inputConfig;
+    bool m_inputConfigHasBeenSet;
+
     Aws::Vector<JobResourceTags> m_jobTags;
     bool m_jobTagsHasBeenSet;
+
+    PackageImportJobType m_jobType;
+    bool m_jobTypeHasBeenSet;
+
+    PackageImportJobOutputConfig m_outputConfig;
+    bool m_outputConfigHasBeenSet;
   };
 
 } // namespace Model

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int NODE_PACKAGE_VERSION_HASH = HashingUtils::HashString("NODE_PACKAGE_VERSION");
+        static const int MARKETPLACE_NODE_PACKAGE_VERSION_HASH = HashingUtils::HashString("MARKETPLACE_NODE_PACKAGE_VERSION");
 
 
         PackageImportJobType GetPackageImportJobTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == NODE_PACKAGE_VERSION_HASH)
           {
             return PackageImportJobType::NODE_PACKAGE_VERSION;
+          }
+          else if (hashCode == MARKETPLACE_NODE_PACKAGE_VERSION_HASH)
+          {
+            return PackageImportJobType::MARKETPLACE_NODE_PACKAGE_VERSION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case PackageImportJobType::NODE_PACKAGE_VERSION:
             return "NODE_PACKAGE_VERSION";
+          case PackageImportJobType::MARKETPLACE_NODE_PACKAGE_VERSION:
+            return "MARKETPLACE_NODE_PACKAGE_VERSION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -28,6 +28,12 @@ ListApplicationInstanceDependenciesResult::ListApplicationInstanceDependenciesRe
 ListApplicationInstanceDependenciesResult& ListApplicationInstanceDependenciesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
+  }
+
   if(jsonValue.ValueExists("PackageObjects"))
   {
     Array<JsonView> packageObjectsJsonList = jsonValue.GetArray("PackageObjects");
@@ -35,12 +41,6 @@ ListApplicationInstanceDependenciesResult& ListApplicationInstanceDependenciesRe
     {
       m_packageObjects.push_back(packageObjectsJsonList[packageObjectsIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-
   }
 
 

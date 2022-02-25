@@ -17,14 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeApplicationInstanceResult::DescribeApplicationInstanceResult() : 
-    m_status(ApplicationInstanceStatus::NOT_SET),
-    m_healthStatus(ApplicationInstanceHealthStatus::NOT_SET)
+    m_healthStatus(ApplicationInstanceHealthStatus::NOT_SET),
+    m_status(ApplicationInstanceStatus::NOT_SET)
 {
 }
 
 DescribeApplicationInstanceResult::DescribeApplicationInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ApplicationInstanceStatus::NOT_SET),
-    m_healthStatus(ApplicationInstanceHealthStatus::NOT_SET)
+    m_healthStatus(ApplicationInstanceHealthStatus::NOT_SET),
+    m_status(ApplicationInstanceStatus::NOT_SET)
 {
   *this = result;
 }
@@ -32,15 +32,27 @@ DescribeApplicationInstanceResult::DescribeApplicationInstanceResult(const Aws::
 DescribeApplicationInstanceResult& DescribeApplicationInstanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Name"))
+  if(jsonValue.ValueExists("ApplicationInstanceId"))
   {
-    m_name = jsonValue.GetString("Name");
+    m_applicationInstanceId = jsonValue.GetString("ApplicationInstanceId");
 
   }
 
-  if(jsonValue.ValueExists("Description"))
+  if(jsonValue.ValueExists("ApplicationInstanceIdToReplace"))
   {
-    m_description = jsonValue.GetString("Description");
+    m_applicationInstanceIdToReplace = jsonValue.GetString("ApplicationInstanceIdToReplace");
+
+  }
+
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+  }
+
+  if(jsonValue.ValueExists("CreatedTime"))
+  {
+    m_createdTime = jsonValue.GetDouble("CreatedTime");
 
   }
 
@@ -56,9 +68,27 @@ DescribeApplicationInstanceResult& DescribeApplicationInstanceResult::operator =
 
   }
 
-  if(jsonValue.ValueExists("ApplicationInstanceIdToReplace"))
+  if(jsonValue.ValueExists("Description"))
   {
-    m_applicationInstanceIdToReplace = jsonValue.GetString("ApplicationInstanceIdToReplace");
+    m_description = jsonValue.GetString("Description");
+
+  }
+
+  if(jsonValue.ValueExists("HealthStatus"))
+  {
+    m_healthStatus = ApplicationInstanceHealthStatusMapper::GetApplicationInstanceHealthStatusForName(jsonValue.GetString("HealthStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("LastUpdatedTime"))
+  {
+    m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
+
+  }
+
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
 
   }
 
@@ -74,39 +104,9 @@ DescribeApplicationInstanceResult& DescribeApplicationInstanceResult::operator =
 
   }
 
-  if(jsonValue.ValueExists("HealthStatus"))
-  {
-    m_healthStatus = ApplicationInstanceHealthStatusMapper::GetApplicationInstanceHealthStatusForName(jsonValue.GetString("HealthStatus"));
-
-  }
-
   if(jsonValue.ValueExists("StatusDescription"))
   {
     m_statusDescription = jsonValue.GetString("StatusDescription");
-
-  }
-
-  if(jsonValue.ValueExists("CreatedTime"))
-  {
-    m_createdTime = jsonValue.GetDouble("CreatedTime");
-
-  }
-
-  if(jsonValue.ValueExists("LastUpdatedTime"))
-  {
-    m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
-  }
-
-  if(jsonValue.ValueExists("ApplicationInstanceId"))
-  {
-    m_applicationInstanceId = jsonValue.GetString("ApplicationInstanceId");
-
-  }
-
-  if(jsonValue.ValueExists("Arn"))
-  {
-    m_arn = jsonValue.GetString("Arn");
 
   }
 

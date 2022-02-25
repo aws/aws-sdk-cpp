@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/panorama/model/ApplicationInstanceStatus.h>
-#include <aws/panorama/model/ApplicationInstanceHealthStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/panorama/model/ApplicationInstanceHealthStatus.h>
+#include <aws/panorama/model/ApplicationInstanceStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -39,47 +39,6 @@ namespace Model
     ApplicationInstance(Aws::Utils::Json::JsonView jsonValue);
     ApplicationInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The application instance's name.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The application instance's name.</p>
-     */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The application instance's name.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The application instance's name.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The application instance's name.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The application instance's name.</p>
-     */
-    inline ApplicationInstance& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The application instance's name.</p>
-     */
-    inline ApplicationInstance& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The application instance's name.</p>
-     */
-    inline ApplicationInstance& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -121,6 +80,78 @@ namespace Model
      * <p>The application instance's ID.</p>
      */
     inline ApplicationInstance& WithApplicationInstanceId(const char* value) { SetApplicationInstanceId(value); return *this;}
+
+
+    /**
+     * <p>The application instance's ARN.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The application instance's ARN.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The application instance's ARN.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The application instance's ARN.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The application instance's ARN.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The application instance's ARN.</p>
+     */
+    inline ApplicationInstance& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The application instance's ARN.</p>
+     */
+    inline ApplicationInstance& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The application instance's ARN.</p>
+     */
+    inline ApplicationInstance& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>When the application instance was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+
+    /**
+     * <p>When the application instance was created.</p>
+     */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>When the application instance was created.</p>
+     */
+    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+
+    /**
+     * <p>When the application instance was created.</p>
+     */
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
+
+    /**
+     * <p>When the application instance was created.</p>
+     */
+    inline ApplicationInstance& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
+
+    /**
+     * <p>When the application instance was created.</p>
+     */
+    inline ApplicationInstance& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
 
     /**
@@ -247,37 +278,6 @@ namespace Model
 
 
     /**
-     * <p>The application instance's status.</p>
-     */
-    inline const ApplicationInstanceStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The application instance's status.</p>
-     */
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The application instance's status.</p>
-     */
-    inline void SetStatus(const ApplicationInstanceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The application instance's status.</p>
-     */
-    inline void SetStatus(ApplicationInstanceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The application instance's status.</p>
-     */
-    inline ApplicationInstance& WithStatus(const ApplicationInstanceStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The application instance's status.</p>
-     */
-    inline ApplicationInstance& WithStatus(ApplicationInstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
-
-
-    /**
      * <p>The application instance's health status.</p>
      */
     inline const ApplicationInstanceHealthStatus& GetHealthStatus() const{ return m_healthStatus; }
@@ -306,6 +306,78 @@ namespace Model
      * <p>The application instance's health status.</p>
      */
     inline ApplicationInstance& WithHealthStatus(ApplicationInstanceHealthStatus&& value) { SetHealthStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The application instance's name.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The application instance's name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The application instance's name.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The application instance's name.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The application instance's name.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The application instance's name.</p>
+     */
+    inline ApplicationInstance& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The application instance's name.</p>
+     */
+    inline ApplicationInstance& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The application instance's name.</p>
+     */
+    inline ApplicationInstance& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The application instance's status.</p>
+     */
+    inline const ApplicationInstanceStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The application instance's status.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The application instance's status.</p>
+     */
+    inline void SetStatus(const ApplicationInstanceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The application instance's status.</p>
+     */
+    inline void SetStatus(ApplicationInstanceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The application instance's status.</p>
+     */
+    inline ApplicationInstance& WithStatus(const ApplicationInstanceStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The application instance's status.</p>
+     */
+    inline ApplicationInstance& WithStatus(ApplicationInstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
@@ -347,78 +419,6 @@ namespace Model
      * <p>The application instance's status description.</p>
      */
     inline ApplicationInstance& WithStatusDescription(const char* value) { SetStatusDescription(value); return *this;}
-
-
-    /**
-     * <p>When the application instance was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
-
-    /**
-     * <p>When the application instance was created.</p>
-     */
-    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-
-    /**
-     * <p>When the application instance was created.</p>
-     */
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-
-    /**
-     * <p>When the application instance was created.</p>
-     */
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-
-    /**
-     * <p>When the application instance was created.</p>
-     */
-    inline ApplicationInstance& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-
-    /**
-     * <p>When the application instance was created.</p>
-     */
-    inline ApplicationInstance& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The application instance's ARN.</p>
-     */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The application instance's ARN.</p>
-     */
-    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The application instance's ARN.</p>
-     */
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The application instance's ARN.</p>
-     */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The application instance's ARN.</p>
-     */
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The application instance's ARN.</p>
-     */
-    inline ApplicationInstance& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The application instance's ARN.</p>
-     */
-    inline ApplicationInstance& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The application instance's ARN.</p>
-     */
-    inline ApplicationInstance& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
@@ -488,11 +488,14 @@ namespace Model
 
   private:
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet;
-
     Aws::String m_applicationInstanceId;
     bool m_applicationInstanceIdHasBeenSet;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
+
+    Aws::Utils::DateTime m_createdTime;
+    bool m_createdTimeHasBeenSet;
 
     Aws::String m_defaultRuntimeContextDevice;
     bool m_defaultRuntimeContextDeviceHasBeenSet;
@@ -503,20 +506,17 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
 
-    ApplicationInstanceStatus m_status;
-    bool m_statusHasBeenSet;
-
     ApplicationInstanceHealthStatus m_healthStatus;
     bool m_healthStatusHasBeenSet;
 
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
+
+    ApplicationInstanceStatus m_status;
+    bool m_statusHasBeenSet;
+
     Aws::String m_statusDescription;
     bool m_statusDescriptionHasBeenSet;
-
-    Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
-
-    Aws::String m_arn;
-    bool m_arnHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

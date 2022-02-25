@@ -32,33 +32,42 @@ DescribeNodeFromTemplateJobResult::DescribeNodeFromTemplateJobResult(const Aws::
 DescribeNodeFromTemplateJobResult& DescribeNodeFromTemplateJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("JobId"))
-  {
-    m_jobId = jsonValue.GetString("JobId");
-
-  }
-
-  if(jsonValue.ValueExists("Status"))
-  {
-    m_status = NodeFromTemplateJobStatusMapper::GetNodeFromTemplateJobStatusForName(jsonValue.GetString("Status"));
-
-  }
-
-  if(jsonValue.ValueExists("StatusMessage"))
-  {
-    m_statusMessage = jsonValue.GetString("StatusMessage");
-
-  }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
 
   }
 
+  if(jsonValue.ValueExists("JobId"))
+  {
+    m_jobId = jsonValue.GetString("JobId");
+
+  }
+
+  if(jsonValue.ValueExists("JobTags"))
+  {
+    Array<JsonView> jobTagsJsonList = jsonValue.GetArray("JobTags");
+    for(unsigned jobTagsIndex = 0; jobTagsIndex < jobTagsJsonList.GetLength(); ++jobTagsIndex)
+    {
+      m_jobTags.push_back(jobTagsJsonList[jobTagsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
+
+  }
+
+  if(jsonValue.ValueExists("NodeDescription"))
+  {
+    m_nodeDescription = jsonValue.GetString("NodeDescription");
+
+  }
+
+  if(jsonValue.ValueExists("NodeName"))
+  {
+    m_nodeName = jsonValue.GetString("NodeName");
 
   }
 
@@ -74,21 +83,15 @@ DescribeNodeFromTemplateJobResult& DescribeNodeFromTemplateJobResult::operator =
 
   }
 
-  if(jsonValue.ValueExists("NodeName"))
+  if(jsonValue.ValueExists("Status"))
   {
-    m_nodeName = jsonValue.GetString("NodeName");
+    m_status = NodeFromTemplateJobStatusMapper::GetNodeFromTemplateJobStatusForName(jsonValue.GetString("Status"));
 
   }
 
-  if(jsonValue.ValueExists("NodeDescription"))
+  if(jsonValue.ValueExists("StatusMessage"))
   {
-    m_nodeDescription = jsonValue.GetString("NodeDescription");
-
-  }
-
-  if(jsonValue.ValueExists("TemplateType"))
-  {
-    m_templateType = TemplateTypeMapper::GetTemplateTypeForName(jsonValue.GetString("TemplateType"));
+    m_statusMessage = jsonValue.GetString("StatusMessage");
 
   }
 
@@ -101,13 +104,10 @@ DescribeNodeFromTemplateJobResult& DescribeNodeFromTemplateJobResult::operator =
     }
   }
 
-  if(jsonValue.ValueExists("JobTags"))
+  if(jsonValue.ValueExists("TemplateType"))
   {
-    Array<JsonView> jobTagsJsonList = jsonValue.GetArray("JobTags");
-    for(unsigned jobTagsIndex = 0; jobTagsIndex < jobTagsJsonList.GetLength(); ++jobTagsIndex)
-    {
-      m_jobTags.push_back(jobTagsJsonList[jobTagsIndex].AsObject());
-    }
+    m_templateType = TemplateTypeMapper::GetTemplateTypeForName(jsonValue.GetString("TemplateType"));
+
   }
 
 

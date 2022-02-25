@@ -17,11 +17,11 @@ using namespace Aws::Http;
 
 ListApplicationInstancesRequest::ListApplicationInstancesRequest() : 
     m_deviceIdHasBeenSet(false),
-    m_statusFilter(StatusFilter::NOT_SET),
-    m_statusFilterHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_statusFilter(StatusFilter::NOT_SET),
+    m_statusFilterHasBeenSet(false)
 {
 }
 
@@ -40,13 +40,6 @@ void ListApplicationInstancesRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
-    if(m_statusFilterHasBeenSet)
-    {
-      ss << StatusFilterMapper::GetNameForStatusFilter(m_statusFilter);
-      uri.AddQueryStringParameter("statusFilter", ss.str());
-      ss.str("");
-    }
-
     if(m_maxResultsHasBeenSet)
     {
       ss << m_maxResults;
@@ -58,6 +51,13 @@ void ListApplicationInstancesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_statusFilterHasBeenSet)
+    {
+      ss << StatusFilterMapper::GetNameForStatusFilter(m_statusFilter);
+      uri.AddQueryStringParameter("statusFilter", ss.str());
       ss.str("");
     }
 

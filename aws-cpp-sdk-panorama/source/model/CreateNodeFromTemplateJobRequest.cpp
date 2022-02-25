@@ -13,14 +13,14 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateNodeFromTemplateJobRequest::CreateNodeFromTemplateJobRequest() : 
-    m_templateType(TemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false),
+    m_jobTagsHasBeenSet(false),
+    m_nodeDescriptionHasBeenSet(false),
+    m_nodeNameHasBeenSet(false),
     m_outputPackageNameHasBeenSet(false),
     m_outputPackageVersionHasBeenSet(false),
-    m_nodeNameHasBeenSet(false),
-    m_nodeDescriptionHasBeenSet(false),
     m_templateParametersHasBeenSet(false),
-    m_jobTagsHasBeenSet(false)
+    m_templateType(TemplateType::NOT_SET),
+    m_templateTypeHasBeenSet(false)
 {
 }
 
@@ -28,9 +28,27 @@ Aws::String CreateNodeFromTemplateJobRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_templateTypeHasBeenSet)
+  if(m_jobTagsHasBeenSet)
   {
-   payload.WithString("TemplateType", TemplateTypeMapper::GetNameForTemplateType(m_templateType));
+   Array<JsonValue> jobTagsJsonList(m_jobTags.size());
+   for(unsigned jobTagsIndex = 0; jobTagsIndex < jobTagsJsonList.GetLength(); ++jobTagsIndex)
+   {
+     jobTagsJsonList[jobTagsIndex].AsObject(m_jobTags[jobTagsIndex].Jsonize());
+   }
+   payload.WithArray("JobTags", std::move(jobTagsJsonList));
+
+  }
+
+  if(m_nodeDescriptionHasBeenSet)
+  {
+   payload.WithString("NodeDescription", m_nodeDescription);
+
+  }
+
+  if(m_nodeNameHasBeenSet)
+  {
+   payload.WithString("NodeName", m_nodeName);
+
   }
 
   if(m_outputPackageNameHasBeenSet)
@@ -45,18 +63,6 @@ Aws::String CreateNodeFromTemplateJobRequest::SerializePayload() const
 
   }
 
-  if(m_nodeNameHasBeenSet)
-  {
-   payload.WithString("NodeName", m_nodeName);
-
-  }
-
-  if(m_nodeDescriptionHasBeenSet)
-  {
-   payload.WithString("NodeDescription", m_nodeDescription);
-
-  }
-
   if(m_templateParametersHasBeenSet)
   {
    JsonValue templateParametersJsonMap;
@@ -68,15 +74,9 @@ Aws::String CreateNodeFromTemplateJobRequest::SerializePayload() const
 
   }
 
-  if(m_jobTagsHasBeenSet)
+  if(m_templateTypeHasBeenSet)
   {
-   Array<JsonValue> jobTagsJsonList(m_jobTags.size());
-   for(unsigned jobTagsIndex = 0; jobTagsIndex < jobTagsJsonList.GetLength(); ++jobTagsIndex)
-   {
-     jobTagsJsonList[jobTagsIndex].AsObject(m_jobTags[jobTagsIndex].Jsonize());
-   }
-   payload.WithArray("JobTags", std::move(jobTagsJsonList));
-
+   payload.WithString("TemplateType", TemplateTypeMapper::GetNameForTemplateType(m_templateType));
   }
 
   return payload.View().WriteReadable();

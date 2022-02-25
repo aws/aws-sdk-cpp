@@ -17,16 +17,16 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeDeviceResult::DescribeDeviceResult() : 
-    m_type(DeviceType::NOT_SET),
     m_deviceConnectionStatus(DeviceConnectionStatus::NOT_SET),
-    m_provisioningStatus(DeviceStatus::NOT_SET)
+    m_provisioningStatus(DeviceStatus::NOT_SET),
+    m_type(DeviceType::NOT_SET)
 {
 }
 
 DescribeDeviceResult::DescribeDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(DeviceType::NOT_SET),
     m_deviceConnectionStatus(DeviceConnectionStatus::NOT_SET),
-    m_provisioningStatus(DeviceStatus::NOT_SET)
+    m_provisioningStatus(DeviceStatus::NOT_SET),
+    m_type(DeviceType::NOT_SET)
 {
   *this = result;
 }
@@ -34,39 +34,18 @@ DescribeDeviceResult::DescribeDeviceResult(const Aws::AmazonWebServiceResult<Jso
 DescribeDeviceResult& DescribeDeviceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("DeviceId"))
+  if(jsonValue.ValueExists("AlternateSoftwares"))
   {
-    m_deviceId = jsonValue.GetString("DeviceId");
-
-  }
-
-  if(jsonValue.ValueExists("Name"))
-  {
-    m_name = jsonValue.GetString("Name");
-
+    Array<JsonView> alternateSoftwaresJsonList = jsonValue.GetArray("AlternateSoftwares");
+    for(unsigned alternateSoftwaresIndex = 0; alternateSoftwaresIndex < alternateSoftwaresJsonList.GetLength(); ++alternateSoftwaresIndex)
+    {
+      m_alternateSoftwares.push_back(alternateSoftwaresJsonList[alternateSoftwaresIndex].AsObject());
+    }
   }
 
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
-  }
-
-  if(jsonValue.ValueExists("Description"))
-  {
-    m_description = jsonValue.GetString("Description");
-
-  }
-
-  if(jsonValue.ValueExists("Type"))
-  {
-    m_type = DeviceTypeMapper::GetDeviceTypeForName(jsonValue.GetString("Type"));
-
-  }
-
-  if(jsonValue.ValueExists("DeviceConnectionStatus"))
-  {
-    m_deviceConnectionStatus = DeviceConnectionStatusMapper::GetDeviceConnectionStatusForName(jsonValue.GetString("DeviceConnectionStatus"));
 
   }
 
@@ -76,9 +55,39 @@ DescribeDeviceResult& DescribeDeviceResult::operator =(const Aws::AmazonWebServi
 
   }
 
-  if(jsonValue.ValueExists("ProvisioningStatus"))
+  if(jsonValue.ValueExists("CurrentNetworkingStatus"))
   {
-    m_provisioningStatus = DeviceStatusMapper::GetDeviceStatusForName(jsonValue.GetString("ProvisioningStatus"));
+    m_currentNetworkingStatus = jsonValue.GetObject("CurrentNetworkingStatus");
+
+  }
+
+  if(jsonValue.ValueExists("CurrentSoftware"))
+  {
+    m_currentSoftware = jsonValue.GetString("CurrentSoftware");
+
+  }
+
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+  }
+
+  if(jsonValue.ValueExists("DeviceConnectionStatus"))
+  {
+    m_deviceConnectionStatus = DeviceConnectionStatusMapper::GetDeviceConnectionStatusForName(jsonValue.GetString("DeviceConnectionStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("DeviceId"))
+  {
+    m_deviceId = jsonValue.GetString("DeviceId");
+
+  }
+
+  if(jsonValue.ValueExists("LatestAlternateSoftware"))
+  {
+    m_latestAlternateSoftware = jsonValue.GetString("LatestAlternateSoftware");
 
   }
 
@@ -88,9 +97,27 @@ DescribeDeviceResult& DescribeDeviceResult::operator =(const Aws::AmazonWebServi
 
   }
 
-  if(jsonValue.ValueExists("CurrentSoftware"))
+  if(jsonValue.ValueExists("LeaseExpirationTime"))
   {
-    m_currentSoftware = jsonValue.GetString("CurrentSoftware");
+    m_leaseExpirationTime = jsonValue.GetDouble("LeaseExpirationTime");
+
+  }
+
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+
+  }
+
+  if(jsonValue.ValueExists("NetworkingConfiguration"))
+  {
+    m_networkingConfiguration = jsonValue.GetObject("NetworkingConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("ProvisioningStatus"))
+  {
+    m_provisioningStatus = DeviceStatusMapper::GetDeviceStatusForName(jsonValue.GetString("ProvisioningStatus"));
 
   }
 
@@ -109,21 +136,9 @@ DescribeDeviceResult& DescribeDeviceResult::operator =(const Aws::AmazonWebServi
     }
   }
 
-  if(jsonValue.ValueExists("NetworkingConfiguration"))
+  if(jsonValue.ValueExists("Type"))
   {
-    m_networkingConfiguration = jsonValue.GetObject("NetworkingConfiguration");
-
-  }
-
-  if(jsonValue.ValueExists("CurrentNetworkingStatus"))
-  {
-    m_currentNetworkingStatus = jsonValue.GetObject("CurrentNetworkingStatus");
-
-  }
-
-  if(jsonValue.ValueExists("LeaseExpirationTime"))
-  {
-    m_leaseExpirationTime = jsonValue.GetDouble("LeaseExpirationTime");
+    m_type = DeviceTypeMapper::GetDeviceTypeForName(jsonValue.GetString("Type"));
 
   }
 

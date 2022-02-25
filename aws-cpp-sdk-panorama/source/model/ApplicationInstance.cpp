@@ -19,35 +19,35 @@ namespace Model
 {
 
 ApplicationInstance::ApplicationInstance() : 
-    m_nameHasBeenSet(false),
     m_applicationInstanceIdHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_createdTimeHasBeenSet(false),
     m_defaultRuntimeContextDeviceHasBeenSet(false),
     m_defaultRuntimeContextDeviceNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_status(ApplicationInstanceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
     m_healthStatus(ApplicationInstanceHealthStatus::NOT_SET),
     m_healthStatusHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_status(ApplicationInstanceStatus::NOT_SET),
+    m_statusHasBeenSet(false),
     m_statusDescriptionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_arnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
 ApplicationInstance::ApplicationInstance(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
     m_applicationInstanceIdHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_createdTimeHasBeenSet(false),
     m_defaultRuntimeContextDeviceHasBeenSet(false),
     m_defaultRuntimeContextDeviceNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_status(ApplicationInstanceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
     m_healthStatus(ApplicationInstanceHealthStatus::NOT_SET),
     m_healthStatusHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_status(ApplicationInstanceStatus::NOT_SET),
+    m_statusHasBeenSet(false),
     m_statusDescriptionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_arnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -55,18 +55,25 @@ ApplicationInstance::ApplicationInstance(JsonView jsonValue) :
 
 ApplicationInstance& ApplicationInstance::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Name"))
-  {
-    m_name = jsonValue.GetString("Name");
-
-    m_nameHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("ApplicationInstanceId"))
   {
     m_applicationInstanceId = jsonValue.GetString("ApplicationInstanceId");
 
     m_applicationInstanceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreatedTime"))
+  {
+    m_createdTime = jsonValue.GetDouble("CreatedTime");
+
+    m_createdTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DefaultRuntimeContextDevice"))
@@ -90,13 +97,6 @@ ApplicationInstance& ApplicationInstance::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Status"))
-  {
-    m_status = ApplicationInstanceStatusMapper::GetApplicationInstanceStatusForName(jsonValue.GetString("Status"));
-
-    m_statusHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("HealthStatus"))
   {
     m_healthStatus = ApplicationInstanceHealthStatusMapper::GetApplicationInstanceHealthStatusForName(jsonValue.GetString("HealthStatus"));
@@ -104,25 +104,25 @@ ApplicationInstance& ApplicationInstance::operator =(JsonView jsonValue)
     m_healthStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = ApplicationInstanceStatusMapper::GetApplicationInstanceStatusForName(jsonValue.GetString("Status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("StatusDescription"))
   {
     m_statusDescription = jsonValue.GetString("StatusDescription");
 
     m_statusDescriptionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("CreatedTime"))
-  {
-    m_createdTime = jsonValue.GetDouble("CreatedTime");
-
-    m_createdTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Arn"))
-  {
-    m_arn = jsonValue.GetString("Arn");
-
-    m_arnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Tags"))
@@ -142,16 +142,21 @@ JsonValue ApplicationInstance::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
-  }
-
   if(m_applicationInstanceIdHasBeenSet)
   {
    payload.WithString("ApplicationInstanceId", m_applicationInstanceId);
 
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
+
+  }
+
+  if(m_createdTimeHasBeenSet)
+  {
+   payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
   }
 
   if(m_defaultRuntimeContextDeviceHasBeenSet)
@@ -172,30 +177,25 @@ JsonValue ApplicationInstance::Jsonize() const
 
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", ApplicationInstanceStatusMapper::GetNameForApplicationInstanceStatus(m_status));
-  }
-
   if(m_healthStatusHasBeenSet)
   {
    payload.WithString("HealthStatus", ApplicationInstanceHealthStatusMapper::GetNameForApplicationInstanceHealthStatus(m_healthStatus));
   }
 
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", ApplicationInstanceStatusMapper::GetNameForApplicationInstanceStatus(m_status));
+  }
+
   if(m_statusDescriptionHasBeenSet)
   {
    payload.WithString("StatusDescription", m_statusDescription);
-
-  }
-
-  if(m_createdTimeHasBeenSet)
-  {
-   payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
-  }
-
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
 
   }
 

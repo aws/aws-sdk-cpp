@@ -19,29 +19,22 @@ namespace Model
 {
 
 S3Location::S3Location() : 
-    m_regionHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
-    m_objectKeyHasBeenSet(false)
+    m_objectKeyHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
 }
 
 S3Location::S3Location(JsonView jsonValue) : 
-    m_regionHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
-    m_objectKeyHasBeenSet(false)
+    m_objectKeyHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 S3Location& S3Location::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Region"))
-  {
-    m_region = jsonValue.GetString("Region");
-
-    m_regionHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("BucketName"))
   {
     m_bucketName = jsonValue.GetString("BucketName");
@@ -56,18 +49,19 @@ S3Location& S3Location::operator =(JsonView jsonValue)
     m_objectKeyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Region"))
+  {
+    m_region = jsonValue.GetString("Region");
+
+    m_regionHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue S3Location::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_regionHasBeenSet)
-  {
-   payload.WithString("Region", m_region);
-
-  }
 
   if(m_bucketNameHasBeenSet)
   {
@@ -78,6 +72,12 @@ JsonValue S3Location::Jsonize() const
   if(m_objectKeyHasBeenSet)
   {
    payload.WithString("ObjectKey", m_objectKey);
+
+  }
+
+  if(m_regionHasBeenSet)
+  {
+   payload.WithString("Region", m_region);
 
   }
 

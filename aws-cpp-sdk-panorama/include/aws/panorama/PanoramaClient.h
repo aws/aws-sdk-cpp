@@ -223,10 +223,10 @@ namespace Model
     typedef std::function<void(const PanoramaClient*, const Model::UpdateDeviceMetadataRequest&, const Model::UpdateDeviceMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeviceMetadataResponseReceivedHandler;
 
   /**
-   * <fullname>AWS Panorama</fullname> <p> <b>Overview</b> </p> <p>This is the <i>AWS
-   * Panorama API Reference</i>. For an introduction to the service, see <a
+   * <p><fullname>AWS Panorama</fullname> <p> <b>Overview</b> </p> <p>This is the
+   * <i>AWS Panorama API Reference</i>. For an introduction to the service, see <a
    * href="https://docs.aws.amazon.com/panorama/latest/dev/panorama-welcome.html">What
-   * is AWS Panorama?</a> in the <i>AWS Panorama Developer Guide</i>.</p>
+   * is AWS Panorama?</a> in the <i>AWS Panorama Developer Guide</i>.</p></p>
    */
   class AWS_PANORAMA_API PanoramaClient : public Aws::Client::AWSJsonClient
   {
@@ -412,14 +412,18 @@ namespace Model
         virtual void DeleteDeviceAsync(const Model::DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a package.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a package.</p>  <p>To delete a package, you need permission to
+         * call <code>s3:DeleteObject</code> in addition to permissions for the AWS
+         * Panorama API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DeletePackage">AWS
          * API Reference</a></p>
          */
         virtual Model::DeletePackageOutcome DeletePackage(const Model::DeletePackageRequest& request) const;
 
         /**
-         * <p>Deletes a package.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a package.</p>  <p>To delete a package, you need permission to
+         * call <code>s3:DeleteObject</code> in addition to permissions for the AWS
+         * Panorama API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DeletePackage">AWS
          * API Reference</a></p>
          *
@@ -428,7 +432,9 @@ namespace Model
         virtual Model::DeletePackageOutcomeCallable DeletePackageCallable(const Model::DeletePackageRequest& request) const;
 
         /**
-         * <p>Deletes a package.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a package.</p>  <p>To delete a package, you need permission to
+         * call <code>s3:DeleteObject</code> in addition to permissions for the AWS
+         * Panorama API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DeletePackage">AWS
          * API Reference</a></p>
          *

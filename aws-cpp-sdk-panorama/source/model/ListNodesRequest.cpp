@@ -18,13 +18,13 @@ using namespace Aws::Http;
 ListNodesRequest::ListNodesRequest() : 
     m_category(NodeCategory::NOT_SET),
     m_categoryHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
     m_ownerAccountHasBeenSet(false),
     m_packageNameHasBeenSet(false),
     m_packageVersionHasBeenSet(false),
-    m_patchVersionHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_patchVersionHasBeenSet(false)
 {
 }
 
@@ -40,6 +40,20 @@ void ListNodesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << NodeCategoryMapper::GetNameForNodeCategory(m_category);
       uri.AddQueryStringParameter("category", ss.str());
+      ss.str("");
+    }
+
+    if(m_maxResultsHasBeenSet)
+    {
+      ss << m_maxResults;
+      uri.AddQueryStringParameter("maxResults", ss.str());
+      ss.str("");
+    }
+
+    if(m_nextTokenHasBeenSet)
+    {
+      ss << m_nextToken;
+      uri.AddQueryStringParameter("nextToken", ss.str());
       ss.str("");
     }
 
@@ -68,20 +82,6 @@ void ListNodesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_patchVersion;
       uri.AddQueryStringParameter("patchVersion", ss.str());
-      ss.str("");
-    }
-
-    if(m_nextTokenHasBeenSet)
-    {
-      ss << m_nextToken;
-      uri.AddQueryStringParameter("nextToken", ss.str());
-      ss.str("");
-    }
-
-    if(m_maxResultsHasBeenSet)
-    {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("maxResults", ss.str());
       ss.str("");
     }
 

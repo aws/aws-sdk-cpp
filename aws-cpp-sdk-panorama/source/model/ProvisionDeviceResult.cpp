@@ -31,21 +31,9 @@ ProvisionDeviceResult::ProvisionDeviceResult(const Aws::AmazonWebServiceResult<J
 ProvisionDeviceResult& ProvisionDeviceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("DeviceId"))
-  {
-    m_deviceId = jsonValue.GetString("DeviceId");
-
-  }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
-  }
-
-  if(jsonValue.ValueExists("Status"))
-  {
-    m_status = DeviceStatusMapper::GetDeviceStatusForName(jsonValue.GetString("Status"));
 
   }
 
@@ -54,9 +42,21 @@ ProvisionDeviceResult& ProvisionDeviceResult::operator =(const Aws::AmazonWebSer
     m_certificates = HashingUtils::Base64Decode(jsonValue.GetString("Certificates"));
   }
 
+  if(jsonValue.ValueExists("DeviceId"))
+  {
+    m_deviceId = jsonValue.GetString("DeviceId");
+
+  }
+
   if(jsonValue.ValueExists("IotThingName"))
   {
     m_iotThingName = jsonValue.GetString("IotThingName");
+
+  }
+
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = DeviceStatusMapper::GetDeviceStatusForName(jsonValue.GetString("Status"));
 
   }
 

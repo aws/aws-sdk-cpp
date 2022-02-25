@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/panorama/model/TemplateType.h>
-#include <aws/panorama/model/NodeFromTemplateJobStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/panorama/model/NodeFromTemplateJobStatus.h>
+#include <aws/panorama/model/TemplateType.h>
 #include <utility>
 
 namespace Aws
@@ -38,6 +38,37 @@ namespace Model
     NodeFromTemplateJob(Aws::Utils::Json::JsonView jsonValue);
     NodeFromTemplateJob& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline NodeFromTemplateJob& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline NodeFromTemplateJob& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
 
     /**
@@ -82,34 +113,44 @@ namespace Model
 
 
     /**
-     * <p>The job's template type.</p>
+     * <p>The node's name.</p>
      */
-    inline const TemplateType& GetTemplateType() const{ return m_templateType; }
+    inline const Aws::String& GetNodeName() const{ return m_nodeName; }
 
     /**
-     * <p>The job's template type.</p>
+     * <p>The node's name.</p>
      */
-    inline bool TemplateTypeHasBeenSet() const { return m_templateTypeHasBeenSet; }
+    inline bool NodeNameHasBeenSet() const { return m_nodeNameHasBeenSet; }
 
     /**
-     * <p>The job's template type.</p>
+     * <p>The node's name.</p>
      */
-    inline void SetTemplateType(const TemplateType& value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
+    inline void SetNodeName(const Aws::String& value) { m_nodeNameHasBeenSet = true; m_nodeName = value; }
 
     /**
-     * <p>The job's template type.</p>
+     * <p>The node's name.</p>
      */
-    inline void SetTemplateType(TemplateType&& value) { m_templateTypeHasBeenSet = true; m_templateType = std::move(value); }
+    inline void SetNodeName(Aws::String&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::move(value); }
 
     /**
-     * <p>The job's template type.</p>
+     * <p>The node's name.</p>
      */
-    inline NodeFromTemplateJob& WithTemplateType(const TemplateType& value) { SetTemplateType(value); return *this;}
+    inline void SetNodeName(const char* value) { m_nodeNameHasBeenSet = true; m_nodeName.assign(value); }
 
     /**
-     * <p>The job's template type.</p>
+     * <p>The node's name.</p>
      */
-    inline NodeFromTemplateJob& WithTemplateType(TemplateType&& value) { SetTemplateType(std::move(value)); return *this;}
+    inline NodeFromTemplateJob& WithNodeName(const Aws::String& value) { SetNodeName(value); return *this;}
+
+    /**
+     * <p>The node's name.</p>
+     */
+    inline NodeFromTemplateJob& WithNodeName(Aws::String&& value) { SetNodeName(std::move(value)); return *this;}
+
+    /**
+     * <p>The node's name.</p>
+     */
+    inline NodeFromTemplateJob& WithNodeName(const char* value) { SetNodeName(value); return *this;}
 
 
     /**
@@ -185,83 +226,45 @@ namespace Model
 
 
     /**
-     * <p>When the job was created.</p>
+     * <p>The job's template type.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+    inline const TemplateType& GetTemplateType() const{ return m_templateType; }
 
     /**
-     * <p>When the job was created.</p>
+     * <p>The job's template type.</p>
      */
-    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+    inline bool TemplateTypeHasBeenSet() const { return m_templateTypeHasBeenSet; }
 
     /**
-     * <p>When the job was created.</p>
+     * <p>The job's template type.</p>
      */
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+    inline void SetTemplateType(const TemplateType& value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
 
     /**
-     * <p>When the job was created.</p>
+     * <p>The job's template type.</p>
      */
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
+    inline void SetTemplateType(TemplateType&& value) { m_templateTypeHasBeenSet = true; m_templateType = std::move(value); }
 
     /**
-     * <p>When the job was created.</p>
+     * <p>The job's template type.</p>
      */
-    inline NodeFromTemplateJob& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
+    inline NodeFromTemplateJob& WithTemplateType(const TemplateType& value) { SetTemplateType(value); return *this;}
 
     /**
-     * <p>When the job was created.</p>
+     * <p>The job's template type.</p>
      */
-    inline NodeFromTemplateJob& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The node's name.</p>
-     */
-    inline const Aws::String& GetNodeName() const{ return m_nodeName; }
-
-    /**
-     * <p>The node's name.</p>
-     */
-    inline bool NodeNameHasBeenSet() const { return m_nodeNameHasBeenSet; }
-
-    /**
-     * <p>The node's name.</p>
-     */
-    inline void SetNodeName(const Aws::String& value) { m_nodeNameHasBeenSet = true; m_nodeName = value; }
-
-    /**
-     * <p>The node's name.</p>
-     */
-    inline void SetNodeName(Aws::String&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::move(value); }
-
-    /**
-     * <p>The node's name.</p>
-     */
-    inline void SetNodeName(const char* value) { m_nodeNameHasBeenSet = true; m_nodeName.assign(value); }
-
-    /**
-     * <p>The node's name.</p>
-     */
-    inline NodeFromTemplateJob& WithNodeName(const Aws::String& value) { SetNodeName(value); return *this;}
-
-    /**
-     * <p>The node's name.</p>
-     */
-    inline NodeFromTemplateJob& WithNodeName(Aws::String&& value) { SetNodeName(std::move(value)); return *this;}
-
-    /**
-     * <p>The node's name.</p>
-     */
-    inline NodeFromTemplateJob& WithNodeName(const char* value) { SetNodeName(value); return *this;}
+    inline NodeFromTemplateJob& WithTemplateType(TemplateType&& value) { SetTemplateType(std::move(value)); return *this;}
 
   private:
+
+    Aws::Utils::DateTime m_createdTime;
+    bool m_createdTimeHasBeenSet;
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
 
-    TemplateType m_templateType;
-    bool m_templateTypeHasBeenSet;
+    Aws::String m_nodeName;
+    bool m_nodeNameHasBeenSet;
 
     NodeFromTemplateJobStatus m_status;
     bool m_statusHasBeenSet;
@@ -269,11 +272,8 @@ namespace Model
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
 
-    Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
-
-    Aws::String m_nodeName;
-    bool m_nodeNameHasBeenSet;
+    TemplateType m_templateType;
+    bool m_templateTypeHasBeenSet;
   };
 
 } // namespace Model

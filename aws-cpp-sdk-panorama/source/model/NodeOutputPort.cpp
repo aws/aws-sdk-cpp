@@ -19,16 +19,16 @@ namespace Model
 {
 
 NodeOutputPort::NodeOutputPort() : 
-    m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_type(PortType::NOT_SET),
     m_typeHasBeenSet(false)
 {
 }
 
 NodeOutputPort::NodeOutputPort(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_type(PortType::NOT_SET),
     m_typeHasBeenSet(false)
 {
@@ -37,18 +37,18 @@ NodeOutputPort::NodeOutputPort(JsonView jsonValue) :
 
 NodeOutputPort& NodeOutputPort::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Name"))
-  {
-    m_name = jsonValue.GetString("Name");
-
-    m_nameHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+
+    m_nameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Type"))
@@ -65,15 +65,15 @@ JsonValue NodeOutputPort::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
-  }
-
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
 
   }
 

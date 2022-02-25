@@ -16,7 +16,8 @@ namespace Model
   enum class PackageImportJobType
   {
     NOT_SET,
-    NODE_PACKAGE_VERSION
+    NODE_PACKAGE_VERSION,
+    MARKETPLACE_NODE_PACKAGE_VERSION
   };
 
 namespace PackageImportJobTypeMapper

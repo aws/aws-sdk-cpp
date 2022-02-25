@@ -28,6 +28,12 @@ ListPackagesResult::ListPackagesResult(const Aws::AmazonWebServiceResult<JsonVal
 ListPackagesResult& ListPackagesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
+  }
+
   if(jsonValue.ValueExists("Packages"))
   {
     Array<JsonView> packagesJsonList = jsonValue.GetArray("Packages");
@@ -35,12 +41,6 @@ ListPackagesResult& ListPackagesResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_packages.push_back(packagesJsonList[packagesIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-
   }
 
 

@@ -34,42 +34,6 @@ namespace Model
 
 
     /**
-     * <p>The package's ID.</p>
-     */
-    inline const Aws::String& GetPackageId() const{ return m_packageId; }
-
-    /**
-     * <p>The package's ID.</p>
-     */
-    inline void SetPackageId(const Aws::String& value) { m_packageId = value; }
-
-    /**
-     * <p>The package's ID.</p>
-     */
-    inline void SetPackageId(Aws::String&& value) { m_packageId = std::move(value); }
-
-    /**
-     * <p>The package's ID.</p>
-     */
-    inline void SetPackageId(const char* value) { m_packageId.assign(value); }
-
-    /**
-     * <p>The package's ID.</p>
-     */
-    inline CreatePackageResult& WithPackageId(const Aws::String& value) { SetPackageId(value); return *this;}
-
-    /**
-     * <p>The package's ID.</p>
-     */
-    inline CreatePackageResult& WithPackageId(Aws::String&& value) { SetPackageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The package's ID.</p>
-     */
-    inline CreatePackageResult& WithPackageId(const char* value) { SetPackageId(value); return *this;}
-
-
-    /**
      * <p>The package's ARN.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
@@ -106,6 +70,42 @@ namespace Model
 
 
     /**
+     * <p>The package's ID.</p>
+     */
+    inline const Aws::String& GetPackageId() const{ return m_packageId; }
+
+    /**
+     * <p>The package's ID.</p>
+     */
+    inline void SetPackageId(const Aws::String& value) { m_packageId = value; }
+
+    /**
+     * <p>The package's ID.</p>
+     */
+    inline void SetPackageId(Aws::String&& value) { m_packageId = std::move(value); }
+
+    /**
+     * <p>The package's ID.</p>
+     */
+    inline void SetPackageId(const char* value) { m_packageId.assign(value); }
+
+    /**
+     * <p>The package's ID.</p>
+     */
+    inline CreatePackageResult& WithPackageId(const Aws::String& value) { SetPackageId(value); return *this;}
+
+    /**
+     * <p>The package's ID.</p>
+     */
+    inline CreatePackageResult& WithPackageId(Aws::String&& value) { SetPackageId(std::move(value)); return *this;}
+
+    /**
+     * <p>The package's ID.</p>
+     */
+    inline CreatePackageResult& WithPackageId(const char* value) { SetPackageId(value); return *this;}
+
+
+    /**
      * <p>The package's storage location.</p>
      */
     inline const StorageLocation& GetStorageLocation() const{ return m_storageLocation; }
@@ -132,9 +132,9 @@ namespace Model
 
   private:
 
-    Aws::String m_packageId;
-
     Aws::String m_arn;
+
+    Aws::String m_packageId;
 
     StorageLocation m_storageLocation;
   };

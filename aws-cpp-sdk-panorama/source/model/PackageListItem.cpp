@@ -19,19 +19,19 @@ namespace Model
 {
 
 PackageListItem::PackageListItem() : 
-    m_packageIdHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
+    m_packageIdHasBeenSet(false),
+    m_packageNameHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
 PackageListItem::PackageListItem(JsonView jsonValue) : 
-    m_packageIdHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
+    m_packageIdHasBeenSet(false),
+    m_packageNameHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -39,20 +39,6 @@ PackageListItem::PackageListItem(JsonView jsonValue) :
 
 PackageListItem& PackageListItem::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("PackageId"))
-  {
-    m_packageId = jsonValue.GetString("PackageId");
-
-    m_packageIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("PackageName"))
-  {
-    m_packageName = jsonValue.GetString("PackageName");
-
-    m_packageNameHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
@@ -65,6 +51,20 @@ PackageListItem& PackageListItem::operator =(JsonView jsonValue)
     m_createdTime = jsonValue.GetDouble("CreatedTime");
 
     m_createdTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PackageId"))
+  {
+    m_packageId = jsonValue.GetString("PackageId");
+
+    m_packageIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PackageName"))
+  {
+    m_packageName = jsonValue.GetString("PackageName");
+
+    m_packageNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Tags"))
@@ -84,6 +84,17 @@ JsonValue PackageListItem::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
+
+  }
+
+  if(m_createdTimeHasBeenSet)
+  {
+   payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
+  }
+
   if(m_packageIdHasBeenSet)
   {
    payload.WithString("PackageId", m_packageId);
@@ -94,17 +105,6 @@ JsonValue PackageListItem::Jsonize() const
   {
    payload.WithString("PackageName", m_packageName);
 
-  }
-
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
-  }
-
-  if(m_createdTimeHasBeenSet)
-  {
-   payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
   }
 
   if(m_tagsHasBeenSet)

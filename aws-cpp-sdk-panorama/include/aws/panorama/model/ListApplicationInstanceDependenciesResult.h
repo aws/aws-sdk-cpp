@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/panorama/model/PackageObject.h>
 #include <utility>
 
@@ -32,42 +32,6 @@ namespace Model
     ListApplicationInstanceDependenciesResult();
     ListApplicationInstanceDependenciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListApplicationInstanceDependenciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>A list of package objects.</p>
-     */
-    inline const Aws::Vector<PackageObject>& GetPackageObjects() const{ return m_packageObjects; }
-
-    /**
-     * <p>A list of package objects.</p>
-     */
-    inline void SetPackageObjects(const Aws::Vector<PackageObject>& value) { m_packageObjects = value; }
-
-    /**
-     * <p>A list of package objects.</p>
-     */
-    inline void SetPackageObjects(Aws::Vector<PackageObject>&& value) { m_packageObjects = std::move(value); }
-
-    /**
-     * <p>A list of package objects.</p>
-     */
-    inline ListApplicationInstanceDependenciesResult& WithPackageObjects(const Aws::Vector<PackageObject>& value) { SetPackageObjects(value); return *this;}
-
-    /**
-     * <p>A list of package objects.</p>
-     */
-    inline ListApplicationInstanceDependenciesResult& WithPackageObjects(Aws::Vector<PackageObject>&& value) { SetPackageObjects(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of package objects.</p>
-     */
-    inline ListApplicationInstanceDependenciesResult& AddPackageObjects(const PackageObject& value) { m_packageObjects.push_back(value); return *this; }
-
-    /**
-     * <p>A list of package objects.</p>
-     */
-    inline ListApplicationInstanceDependenciesResult& AddPackageObjects(PackageObject&& value) { m_packageObjects.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -105,11 +69,47 @@ namespace Model
      */
     inline ListApplicationInstanceDependenciesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>A list of package objects.</p>
+     */
+    inline const Aws::Vector<PackageObject>& GetPackageObjects() const{ return m_packageObjects; }
+
+    /**
+     * <p>A list of package objects.</p>
+     */
+    inline void SetPackageObjects(const Aws::Vector<PackageObject>& value) { m_packageObjects = value; }
+
+    /**
+     * <p>A list of package objects.</p>
+     */
+    inline void SetPackageObjects(Aws::Vector<PackageObject>&& value) { m_packageObjects = std::move(value); }
+
+    /**
+     * <p>A list of package objects.</p>
+     */
+    inline ListApplicationInstanceDependenciesResult& WithPackageObjects(const Aws::Vector<PackageObject>& value) { SetPackageObjects(value); return *this;}
+
+    /**
+     * <p>A list of package objects.</p>
+     */
+    inline ListApplicationInstanceDependenciesResult& WithPackageObjects(Aws::Vector<PackageObject>&& value) { SetPackageObjects(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of package objects.</p>
+     */
+    inline ListApplicationInstanceDependenciesResult& AddPackageObjects(const PackageObject& value) { m_packageObjects.push_back(value); return *this; }
+
+    /**
+     * <p>A list of package objects.</p>
+     */
+    inline ListApplicationInstanceDependenciesResult& AddPackageObjects(PackageObject&& value) { m_packageObjects.push_back(std::move(value)); return *this; }
+
   private:
 
-    Aws::Vector<PackageObject> m_packageObjects;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<PackageObject> m_packageObjects;
   };
 
 } // namespace Model

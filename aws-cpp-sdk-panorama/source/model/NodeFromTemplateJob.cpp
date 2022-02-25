@@ -19,32 +19,39 @@ namespace Model
 {
 
 NodeFromTemplateJob::NodeFromTemplateJob() : 
+    m_createdTimeHasBeenSet(false),
     m_jobIdHasBeenSet(false),
-    m_templateType(TemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false),
+    m_nodeNameHasBeenSet(false),
     m_status(NodeFromTemplateJobStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_nodeNameHasBeenSet(false)
+    m_templateType(TemplateType::NOT_SET),
+    m_templateTypeHasBeenSet(false)
 {
 }
 
 NodeFromTemplateJob::NodeFromTemplateJob(JsonView jsonValue) : 
+    m_createdTimeHasBeenSet(false),
     m_jobIdHasBeenSet(false),
-    m_templateType(TemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false),
+    m_nodeNameHasBeenSet(false),
     m_status(NodeFromTemplateJobStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_nodeNameHasBeenSet(false)
+    m_templateType(TemplateType::NOT_SET),
+    m_templateTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 NodeFromTemplateJob& NodeFromTemplateJob::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("CreatedTime"))
+  {
+    m_createdTime = jsonValue.GetDouble("CreatedTime");
+
+    m_createdTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
@@ -52,11 +59,11 @@ NodeFromTemplateJob& NodeFromTemplateJob::operator =(JsonView jsonValue)
     m_jobIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("TemplateType"))
+  if(jsonValue.ValueExists("NodeName"))
   {
-    m_templateType = TemplateTypeMapper::GetTemplateTypeForName(jsonValue.GetString("TemplateType"));
+    m_nodeName = jsonValue.GetString("NodeName");
 
-    m_templateTypeHasBeenSet = true;
+    m_nodeNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -73,18 +80,11 @@ NodeFromTemplateJob& NodeFromTemplateJob::operator =(JsonView jsonValue)
     m_statusMessageHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("CreatedTime"))
+  if(jsonValue.ValueExists("TemplateType"))
   {
-    m_createdTime = jsonValue.GetDouble("CreatedTime");
+    m_templateType = TemplateTypeMapper::GetTemplateTypeForName(jsonValue.GetString("TemplateType"));
 
-    m_createdTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("NodeName"))
-  {
-    m_nodeName = jsonValue.GetString("NodeName");
-
-    m_nodeNameHasBeenSet = true;
+    m_templateTypeHasBeenSet = true;
   }
 
   return *this;
@@ -94,15 +94,21 @@ JsonValue NodeFromTemplateJob::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_createdTimeHasBeenSet)
+  {
+   payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
+  }
+
   if(m_jobIdHasBeenSet)
   {
    payload.WithString("JobId", m_jobId);
 
   }
 
-  if(m_templateTypeHasBeenSet)
+  if(m_nodeNameHasBeenSet)
   {
-   payload.WithString("TemplateType", TemplateTypeMapper::GetNameForTemplateType(m_templateType));
+   payload.WithString("NodeName", m_nodeName);
+
   }
 
   if(m_statusHasBeenSet)
@@ -116,15 +122,9 @@ JsonValue NodeFromTemplateJob::Jsonize() const
 
   }
 
-  if(m_createdTimeHasBeenSet)
+  if(m_templateTypeHasBeenSet)
   {
-   payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
-  }
-
-  if(m_nodeNameHasBeenSet)
-  {
-   payload.WithString("NodeName", m_nodeName);
-
+   payload.WithString("TemplateType", TemplateTypeMapper::GetNameForTemplateType(m_templateType));
   }
 
   return payload;

@@ -20,13 +20,17 @@ namespace Model
 
 NetworkStatus::NetworkStatus() : 
     m_ethernet0StatusHasBeenSet(false),
-    m_ethernet1StatusHasBeenSet(false)
+    m_ethernet1StatusHasBeenSet(false),
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_ntpStatusHasBeenSet(false)
 {
 }
 
 NetworkStatus::NetworkStatus(JsonView jsonValue) : 
     m_ethernet0StatusHasBeenSet(false),
-    m_ethernet1StatusHasBeenSet(false)
+    m_ethernet1StatusHasBeenSet(false),
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_ntpStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,20 @@ NetworkStatus& NetworkStatus::operator =(JsonView jsonValue)
     m_ethernet1StatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastUpdatedTime"))
+  {
+    m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
+
+    m_lastUpdatedTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NtpStatus"))
+  {
+    m_ntpStatus = jsonValue.GetObject("NtpStatus");
+
+    m_ntpStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +81,17 @@ JsonValue NetworkStatus::Jsonize() const
   if(m_ethernet1StatusHasBeenSet)
   {
    payload.WithObject("Ethernet1Status", m_ethernet1Status.Jsonize());
+
+  }
+
+  if(m_lastUpdatedTimeHasBeenSet)
+  {
+   payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_ntpStatusHasBeenSet)
+  {
+   payload.WithObject("NtpStatus", m_ntpStatus.Jsonize());
 
   }
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/panorama/model/EthernetPayload.h>
+#include <aws/panorama/model/NtpPayload.h>
 #include <utility>
 
 namespace Aws
@@ -98,6 +99,37 @@ namespace Model
      */
     inline NetworkPayload& WithEthernet1(EthernetPayload&& value) { SetEthernet1(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Network time protocol (NTP) server settings.</p>
+     */
+    inline const NtpPayload& GetNtp() const{ return m_ntp; }
+
+    /**
+     * <p>Network time protocol (NTP) server settings.</p>
+     */
+    inline bool NtpHasBeenSet() const { return m_ntpHasBeenSet; }
+
+    /**
+     * <p>Network time protocol (NTP) server settings.</p>
+     */
+    inline void SetNtp(const NtpPayload& value) { m_ntpHasBeenSet = true; m_ntp = value; }
+
+    /**
+     * <p>Network time protocol (NTP) server settings.</p>
+     */
+    inline void SetNtp(NtpPayload&& value) { m_ntpHasBeenSet = true; m_ntp = std::move(value); }
+
+    /**
+     * <p>Network time protocol (NTP) server settings.</p>
+     */
+    inline NetworkPayload& WithNtp(const NtpPayload& value) { SetNtp(value); return *this;}
+
+    /**
+     * <p>Network time protocol (NTP) server settings.</p>
+     */
+    inline NetworkPayload& WithNtp(NtpPayload&& value) { SetNtp(std::move(value)); return *this;}
+
   private:
 
     EthernetPayload m_ethernet0;
@@ -105,6 +137,9 @@ namespace Model
 
     EthernetPayload m_ethernet1;
     bool m_ethernet1HasBeenSet;
+
+    NtpPayload m_ntp;
+    bool m_ntpHasBeenSet;
   };
 
 } // namespace Model

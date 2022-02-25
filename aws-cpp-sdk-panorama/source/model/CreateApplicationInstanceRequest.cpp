@@ -13,13 +13,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateApplicationInstanceRequest::CreateApplicationInstanceRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_manifestPayloadHasBeenSet(false),
-    m_manifestOverridesPayloadHasBeenSet(false),
     m_applicationInstanceIdToReplaceHasBeenSet(false),
-    m_runtimeRoleArnHasBeenSet(false),
     m_defaultRuntimeContextDeviceHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_manifestOverridesPayloadHasBeenSet(false),
+    m_manifestPayloadHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_runtimeRoleArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -28,9 +28,15 @@ Aws::String CreateApplicationInstanceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
+  if(m_applicationInstanceIdToReplaceHasBeenSet)
   {
-   payload.WithString("Name", m_name);
+   payload.WithString("ApplicationInstanceIdToReplace", m_applicationInstanceIdToReplace);
+
+  }
+
+  if(m_defaultRuntimeContextDeviceHasBeenSet)
+  {
+   payload.WithString("DefaultRuntimeContextDevice", m_defaultRuntimeContextDevice);
 
   }
 
@@ -40,33 +46,27 @@ Aws::String CreateApplicationInstanceRequest::SerializePayload() const
 
   }
 
-  if(m_manifestPayloadHasBeenSet)
-  {
-   payload.WithObject("ManifestPayload", m_manifestPayload.Jsonize());
-
-  }
-
   if(m_manifestOverridesPayloadHasBeenSet)
   {
    payload.WithObject("ManifestOverridesPayload", m_manifestOverridesPayload.Jsonize());
 
   }
 
-  if(m_applicationInstanceIdToReplaceHasBeenSet)
+  if(m_manifestPayloadHasBeenSet)
   {
-   payload.WithString("ApplicationInstanceIdToReplace", m_applicationInstanceIdToReplace);
+   payload.WithObject("ManifestPayload", m_manifestPayload.Jsonize());
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
 
   }
 
   if(m_runtimeRoleArnHasBeenSet)
   {
    payload.WithString("RuntimeRoleArn", m_runtimeRoleArn);
-
-  }
-
-  if(m_defaultRuntimeContextDeviceHasBeenSet)
-  {
-   payload.WithString("DefaultRuntimeContextDevice", m_defaultRuntimeContextDevice);
 
   }
 

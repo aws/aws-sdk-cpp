@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/panorama/model/NetworkConnectionStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -36,47 +36,6 @@ namespace Model
     EthernetStatus(Aws::Utils::Json::JsonView jsonValue);
     EthernetStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The device's IP address.</p>
-     */
-    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
-
-    /**
-     * <p>The device's IP address.</p>
-     */
-    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
-
-    /**
-     * <p>The device's IP address.</p>
-     */
-    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-
-    /**
-     * <p>The device's IP address.</p>
-     */
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-
-    /**
-     * <p>The device's IP address.</p>
-     */
-    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
-
-    /**
-     * <p>The device's IP address.</p>
-     */
-    inline EthernetStatus& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
-
-    /**
-     * <p>The device's IP address.</p>
-     */
-    inline EthernetStatus& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The device's IP address.</p>
-     */
-    inline EthernetStatus& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
 
     /**
@@ -150,16 +109,57 @@ namespace Model
      */
     inline EthernetStatus& WithHwAddress(const char* value) { SetHwAddress(value); return *this;}
 
-  private:
 
-    Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    /**
+     * <p>The device's IP address.</p>
+     */
+    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+
+    /**
+     * <p>The device's IP address.</p>
+     */
+    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
+
+    /**
+     * <p>The device's IP address.</p>
+     */
+    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
+
+    /**
+     * <p>The device's IP address.</p>
+     */
+    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
+
+    /**
+     * <p>The device's IP address.</p>
+     */
+    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
+
+    /**
+     * <p>The device's IP address.</p>
+     */
+    inline EthernetStatus& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
+
+    /**
+     * <p>The device's IP address.</p>
+     */
+    inline EthernetStatus& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
+
+    /**
+     * <p>The device's IP address.</p>
+     */
+    inline EthernetStatus& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+
+  private:
 
     NetworkConnectionStatus m_connectionStatus;
     bool m_connectionStatusHasBeenSet;
 
     Aws::String m_hwAddress;
     bool m_hwAddressHasBeenSet;
+
+    Aws::String m_ipAddress;
+    bool m_ipAddressHasBeenSet;
   };
 
 } // namespace Model

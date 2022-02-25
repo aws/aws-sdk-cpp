@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -39,44 +39,34 @@ namespace Model
 
 
     /**
-     * <p>The name of the target device</p>
+     * <p>When the job was created.</p>
      */
-    inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The name of the target device</p>
+     * <p>When the job was created.</p>
      */
-    inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
 
     /**
-     * <p>The name of the target device</p>
+     * <p>When the job was created.</p>
      */
-    inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
+    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The name of the target device</p>
+     * <p>When the job was created.</p>
      */
-    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The name of the target device</p>
+     * <p>When the job was created.</p>
      */
-    inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
+    inline DeviceJob& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The name of the target device</p>
+     * <p>When the job was created.</p>
      */
-    inline DeviceJob& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
-
-    /**
-     * <p>The name of the target device</p>
-     */
-    inline DeviceJob& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the target device</p>
-     */
-    inline DeviceJob& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
+    inline DeviceJob& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
 
     /**
@@ -121,6 +111,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the target device</p>
+     */
+    inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
+
+    /**
+     * <p>The name of the target device</p>
+     */
+    inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the target device</p>
+     */
+    inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
+
+    /**
+     * <p>The name of the target device</p>
+     */
+    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
+
+    /**
+     * <p>The name of the target device</p>
+     */
+    inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
+
+    /**
+     * <p>The name of the target device</p>
+     */
+    inline DeviceJob& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
+
+    /**
+     * <p>The name of the target device</p>
+     */
+    inline DeviceJob& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the target device</p>
+     */
+    inline DeviceJob& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
+
+
+    /**
      * <p>The job's ID.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
@@ -160,50 +191,19 @@ namespace Model
      */
     inline DeviceJob& WithJobId(const char* value) { SetJobId(value); return *this;}
 
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline DeviceJob& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline DeviceJob& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
-
   private:
 
-    Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    Aws::Utils::DateTime m_createdTime;
+    bool m_createdTimeHasBeenSet;
 
     Aws::String m_deviceId;
     bool m_deviceIdHasBeenSet;
 
+    Aws::String m_deviceName;
+    bool m_deviceNameHasBeenSet;
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
-
-    Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
   };
 
 } // namespace Model

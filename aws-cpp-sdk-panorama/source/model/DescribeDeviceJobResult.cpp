@@ -32,21 +32,21 @@ DescribeDeviceJobResult::DescribeDeviceJobResult(const Aws::AmazonWebServiceResu
 DescribeDeviceJobResult& DescribeDeviceJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("JobId"))
+  if(jsonValue.ValueExists("CreatedTime"))
   {
-    m_jobId = jsonValue.GetString("JobId");
-
-  }
-
-  if(jsonValue.ValueExists("DeviceId"))
-  {
-    m_deviceId = jsonValue.GetString("DeviceId");
+    m_createdTime = jsonValue.GetDouble("CreatedTime");
 
   }
 
   if(jsonValue.ValueExists("DeviceArn"))
   {
     m_deviceArn = jsonValue.GetString("DeviceArn");
+
+  }
+
+  if(jsonValue.ValueExists("DeviceId"))
+  {
+    m_deviceId = jsonValue.GetString("DeviceId");
 
   }
 
@@ -68,15 +68,15 @@ DescribeDeviceJobResult& DescribeDeviceJobResult::operator =(const Aws::AmazonWe
 
   }
 
-  if(jsonValue.ValueExists("Status"))
+  if(jsonValue.ValueExists("JobId"))
   {
-    m_status = UpdateProgressMapper::GetUpdateProgressForName(jsonValue.GetString("Status"));
+    m_jobId = jsonValue.GetString("JobId");
 
   }
 
-  if(jsonValue.ValueExists("CreatedTime"))
+  if(jsonValue.ValueExists("Status"))
   {
-    m_createdTime = jsonValue.GetDouble("CreatedTime");
+    m_status = UpdateProgressMapper::GetUpdateProgressForName(jsonValue.GetString("Status"));
 
   }
 

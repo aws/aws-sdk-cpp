@@ -80,6 +80,27 @@ namespace Model
 
 
     /**
+     * <p>The maximum number of device jobs to return in one page of results.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of device jobs to return in one page of results.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of device jobs to return in one page of results.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of device jobs to return in one page of results.</p>
+     */
+    inline ListDevicesJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+
+    /**
      * <p>Specify the pagination token from a previous request to retrieve the next
      * page of results.</p>
      */
@@ -127,37 +148,16 @@ namespace Model
      */
     inline ListDevicesJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-
-    /**
-     * <p>The maximum number of device jobs to return in one page of results.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of device jobs to return in one page of results.</p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of device jobs to return in one page of results.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of device jobs to return in one page of results.</p>
-     */
-    inline ListDevicesJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
   private:
 
     Aws::String m_deviceId;
     bool m_deviceIdHasBeenSet;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
-
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
   };
 
 } // namespace Model

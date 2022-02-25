@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/panorama/model/Node.h>
 #include <utility>
 
@@ -32,42 +32,6 @@ namespace Model
     ListNodesResult();
     ListNodesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListNodesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>A list of nodes.</p>
-     */
-    inline const Aws::Vector<Node>& GetNodes() const{ return m_nodes; }
-
-    /**
-     * <p>A list of nodes.</p>
-     */
-    inline void SetNodes(const Aws::Vector<Node>& value) { m_nodes = value; }
-
-    /**
-     * <p>A list of nodes.</p>
-     */
-    inline void SetNodes(Aws::Vector<Node>&& value) { m_nodes = std::move(value); }
-
-    /**
-     * <p>A list of nodes.</p>
-     */
-    inline ListNodesResult& WithNodes(const Aws::Vector<Node>& value) { SetNodes(value); return *this;}
-
-    /**
-     * <p>A list of nodes.</p>
-     */
-    inline ListNodesResult& WithNodes(Aws::Vector<Node>&& value) { SetNodes(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of nodes.</p>
-     */
-    inline ListNodesResult& AddNodes(const Node& value) { m_nodes.push_back(value); return *this; }
-
-    /**
-     * <p>A list of nodes.</p>
-     */
-    inline ListNodesResult& AddNodes(Node&& value) { m_nodes.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -105,11 +69,47 @@ namespace Model
      */
     inline ListNodesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>A list of nodes.</p>
+     */
+    inline const Aws::Vector<Node>& GetNodes() const{ return m_nodes; }
+
+    /**
+     * <p>A list of nodes.</p>
+     */
+    inline void SetNodes(const Aws::Vector<Node>& value) { m_nodes = value; }
+
+    /**
+     * <p>A list of nodes.</p>
+     */
+    inline void SetNodes(Aws::Vector<Node>&& value) { m_nodes = std::move(value); }
+
+    /**
+     * <p>A list of nodes.</p>
+     */
+    inline ListNodesResult& WithNodes(const Aws::Vector<Node>& value) { SetNodes(value); return *this;}
+
+    /**
+     * <p>A list of nodes.</p>
+     */
+    inline ListNodesResult& WithNodes(Aws::Vector<Node>&& value) { SetNodes(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of nodes.</p>
+     */
+    inline ListNodesResult& AddNodes(const Node& value) { m_nodes.push_back(value); return *this; }
+
+    /**
+     * <p>A list of nodes.</p>
+     */
+    inline ListNodesResult& AddNodes(Node&& value) { m_nodes.push_back(std::move(value)); return *this; }
+
   private:
 
-    Aws::Vector<Node> m_nodes;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<Node> m_nodes;
   };
 
 } // namespace Model

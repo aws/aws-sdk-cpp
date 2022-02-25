@@ -19,32 +19,32 @@ namespace Model
 {
 
 Job::Job() : 
-    m_jobIdHasBeenSet(false),
-    m_deviceIdHasBeenSet(false)
+    m_deviceIdHasBeenSet(false),
+    m_jobIdHasBeenSet(false)
 {
 }
 
 Job::Job(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_deviceIdHasBeenSet(false)
+    m_deviceIdHasBeenSet(false),
+    m_jobIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Job& Job::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("JobId"))
-  {
-    m_jobId = jsonValue.GetString("JobId");
-
-    m_jobIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("DeviceId"))
   {
     m_deviceId = jsonValue.GetString("DeviceId");
 
     m_deviceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JobId"))
+  {
+    m_jobId = jsonValue.GetString("JobId");
+
+    m_jobIdHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +54,15 @@ JsonValue Job::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_jobIdHasBeenSet)
-  {
-   payload.WithString("JobId", m_jobId);
-
-  }
-
   if(m_deviceIdHasBeenSet)
   {
    payload.WithString("DeviceId", m_deviceId);
+
+  }
+
+  if(m_jobIdHasBeenSet)
+  {
+   payload.WithString("JobId", m_jobId);
 
   }
 

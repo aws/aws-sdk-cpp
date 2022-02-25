@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/panorama/model/EthernetStatus.h>
+#include <aws/panorama/model/NtpStatus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -18,37 +18,30 @@ namespace Panorama
 namespace Model
 {
 
-EthernetStatus::EthernetStatus() : 
+NtpStatus::NtpStatus() : 
     m_connectionStatus(NetworkConnectionStatus::NOT_SET),
     m_connectionStatusHasBeenSet(false),
-    m_hwAddressHasBeenSet(false),
-    m_ipAddressHasBeenSet(false)
+    m_ipAddressHasBeenSet(false),
+    m_ntpServerNameHasBeenSet(false)
 {
 }
 
-EthernetStatus::EthernetStatus(JsonView jsonValue) : 
+NtpStatus::NtpStatus(JsonView jsonValue) : 
     m_connectionStatus(NetworkConnectionStatus::NOT_SET),
     m_connectionStatusHasBeenSet(false),
-    m_hwAddressHasBeenSet(false),
-    m_ipAddressHasBeenSet(false)
+    m_ipAddressHasBeenSet(false),
+    m_ntpServerNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EthernetStatus& EthernetStatus::operator =(JsonView jsonValue)
+NtpStatus& NtpStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ConnectionStatus"))
   {
     m_connectionStatus = NetworkConnectionStatusMapper::GetNetworkConnectionStatusForName(jsonValue.GetString("ConnectionStatus"));
 
     m_connectionStatusHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("HwAddress"))
-  {
-    m_hwAddress = jsonValue.GetString("HwAddress");
-
-    m_hwAddressHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("IpAddress"))
@@ -58,10 +51,17 @@ EthernetStatus& EthernetStatus::operator =(JsonView jsonValue)
     m_ipAddressHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NtpServerName"))
+  {
+    m_ntpServerName = jsonValue.GetString("NtpServerName");
+
+    m_ntpServerNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
-JsonValue EthernetStatus::Jsonize() const
+JsonValue NtpStatus::Jsonize() const
 {
   JsonValue payload;
 
@@ -70,15 +70,15 @@ JsonValue EthernetStatus::Jsonize() const
    payload.WithString("ConnectionStatus", NetworkConnectionStatusMapper::GetNameForNetworkConnectionStatus(m_connectionStatus));
   }
 
-  if(m_hwAddressHasBeenSet)
-  {
-   payload.WithString("HwAddress", m_hwAddress);
-
-  }
-
   if(m_ipAddressHasBeenSet)
   {
    payload.WithString("IpAddress", m_ipAddress);
+
+  }
+
+  if(m_ntpServerNameHasBeenSet)
+  {
+   payload.WithString("NtpServerName", m_ntpServerName);
 
   }
 

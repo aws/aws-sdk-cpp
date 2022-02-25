@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/panorama/model/PackageImportJobType.h>
 #include <aws/panorama/model/PackageImportJobStatus.h>
-#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -38,6 +38,37 @@ namespace Model
     PackageImportJob(Aws::Utils::Json::JsonView jsonValue);
     PackageImportJob& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline PackageImportJob& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline PackageImportJob& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
 
     /**
@@ -113,6 +144,37 @@ namespace Model
 
 
     /**
+     * <p>When the job was updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+
+    /**
+     * <p>When the job was updated.</p>
+     */
+    inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
+
+    /**
+     * <p>When the job was updated.</p>
+     */
+    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
+
+    /**
+     * <p>When the job was updated.</p>
+     */
+    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
+
+    /**
+     * <p>When the job was updated.</p>
+     */
+    inline PackageImportJob& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
+
+    /**
+     * <p>When the job was updated.</p>
+     */
+    inline PackageImportJob& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>The job's status.</p>
      */
     inline const PackageImportJobStatus& GetStatus() const{ return m_status; }
@@ -183,69 +245,10 @@ namespace Model
      */
     inline PackageImportJob& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline PackageImportJob& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline PackageImportJob& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>When the job was updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
-
-    /**
-     * <p>When the job was updated.</p>
-     */
-    inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-
-    /**
-     * <p>When the job was updated.</p>
-     */
-    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-
-    /**
-     * <p>When the job was updated.</p>
-     */
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-
-    /**
-     * <p>When the job was updated.</p>
-     */
-    inline PackageImportJob& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
-
-    /**
-     * <p>When the job was updated.</p>
-     */
-    inline PackageImportJob& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
-
   private:
+
+    Aws::Utils::DateTime m_createdTime;
+    bool m_createdTimeHasBeenSet;
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
@@ -253,17 +256,14 @@ namespace Model
     PackageImportJobType m_jobType;
     bool m_jobTypeHasBeenSet;
 
+    Aws::Utils::DateTime m_lastUpdatedTime;
+    bool m_lastUpdatedTimeHasBeenSet;
+
     PackageImportJobStatus m_status;
     bool m_statusHasBeenSet;
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
-
-    Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
-
-    Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
   };
 
 } // namespace Model

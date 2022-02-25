@@ -13,10 +13,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ProvisionDeviceRequest::ProvisionDeviceRequest() : 
-    m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_networkingConfigurationHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_networkingConfigurationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -24,15 +24,21 @@ Aws::String ProvisionDeviceRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
+
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
 
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_networkingConfigurationHasBeenSet)
   {
-   payload.WithString("Description", m_description);
+   payload.WithObject("NetworkingConfiguration", m_networkingConfiguration.Jsonize());
 
   }
 
@@ -44,12 +50,6 @@ Aws::String ProvisionDeviceRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_networkingConfigurationHasBeenSet)
-  {
-   payload.WithObject("NetworkingConfiguration", m_networkingConfiguration.Jsonize());
 
   }
 

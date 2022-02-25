@@ -63,6 +63,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the limit.</p>
+     */
+    inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
+
+    /**
+     * <p>The name of the limit.</p>
+     */
+    inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
+
+    /**
+     * <p>The name of the limit.</p>
+     */
+    inline void SetQuotaCode(const Aws::String& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = value; }
+
+    /**
+     * <p>The name of the limit.</p>
+     */
+    inline void SetQuotaCode(Aws::String&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::move(value); }
+
+    /**
+     * <p>The name of the limit.</p>
+     */
+    inline void SetQuotaCode(const char* value) { m_quotaCodeHasBeenSet = true; m_quotaCode.assign(value); }
+
+    /**
+     * <p>The name of the limit.</p>
+     */
+    inline ServiceQuotaExceededException& WithQuotaCode(const Aws::String& value) { SetQuotaCode(value); return *this;}
+
+    /**
+     * <p>The name of the limit.</p>
+     */
+    inline ServiceQuotaExceededException& WithQuotaCode(Aws::String&& value) { SetQuotaCode(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the limit.</p>
+     */
+    inline ServiceQuotaExceededException& WithQuotaCode(const char* value) { SetQuotaCode(value); return *this;}
+
+
+    /**
      * <p>The target resource's ID.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
@@ -145,47 +186,6 @@ namespace Model
 
 
     /**
-     * <p>The name of the limit.</p>
-     */
-    inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
-
-    /**
-     * <p>The name of the limit.</p>
-     */
-    inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
-
-    /**
-     * <p>The name of the limit.</p>
-     */
-    inline void SetQuotaCode(const Aws::String& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = value; }
-
-    /**
-     * <p>The name of the limit.</p>
-     */
-    inline void SetQuotaCode(Aws::String&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::move(value); }
-
-    /**
-     * <p>The name of the limit.</p>
-     */
-    inline void SetQuotaCode(const char* value) { m_quotaCodeHasBeenSet = true; m_quotaCode.assign(value); }
-
-    /**
-     * <p>The name of the limit.</p>
-     */
-    inline ServiceQuotaExceededException& WithQuotaCode(const Aws::String& value) { SetQuotaCode(value); return *this;}
-
-    /**
-     * <p>The name of the limit.</p>
-     */
-    inline ServiceQuotaExceededException& WithQuotaCode(Aws::String&& value) { SetQuotaCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the limit.</p>
-     */
-    inline ServiceQuotaExceededException& WithQuotaCode(const char* value) { SetQuotaCode(value); return *this;}
-
-
-    /**
      * <p>The name of the service.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
@@ -230,14 +230,14 @@ namespace Model
     Aws::String m_message;
     bool m_messageHasBeenSet;
 
+    Aws::String m_quotaCode;
+    bool m_quotaCodeHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
 
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
-
-    Aws::String m_quotaCode;
-    bool m_quotaCodeHasBeenSet;
 
     Aws::String m_serviceCode;
     bool m_serviceCodeHasBeenSet;

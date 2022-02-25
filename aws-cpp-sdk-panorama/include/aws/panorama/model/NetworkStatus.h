@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/panorama/model/EthernetStatus.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/panorama/model/NtpStatus.h>
 #include <utility>
 
 namespace Aws
@@ -98,6 +100,68 @@ namespace Model
      */
     inline NetworkStatus& WithEthernet1Status(EthernetStatus&& value) { SetEthernet1Status(std::move(value)); return *this;}
 
+
+    /**
+     * <p>When the network status changed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+
+    /**
+     * <p>When the network status changed.</p>
+     */
+    inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
+
+    /**
+     * <p>When the network status changed.</p>
+     */
+    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
+
+    /**
+     * <p>When the network status changed.</p>
+     */
+    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
+
+    /**
+     * <p>When the network status changed.</p>
+     */
+    inline NetworkStatus& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
+
+    /**
+     * <p>When the network status changed.</p>
+     */
+    inline NetworkStatus& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about a network time protocol (NTP) server connection.</p>
+     */
+    inline const NtpStatus& GetNtpStatus() const{ return m_ntpStatus; }
+
+    /**
+     * <p>Details about a network time protocol (NTP) server connection.</p>
+     */
+    inline bool NtpStatusHasBeenSet() const { return m_ntpStatusHasBeenSet; }
+
+    /**
+     * <p>Details about a network time protocol (NTP) server connection.</p>
+     */
+    inline void SetNtpStatus(const NtpStatus& value) { m_ntpStatusHasBeenSet = true; m_ntpStatus = value; }
+
+    /**
+     * <p>Details about a network time protocol (NTP) server connection.</p>
+     */
+    inline void SetNtpStatus(NtpStatus&& value) { m_ntpStatusHasBeenSet = true; m_ntpStatus = std::move(value); }
+
+    /**
+     * <p>Details about a network time protocol (NTP) server connection.</p>
+     */
+    inline NetworkStatus& WithNtpStatus(const NtpStatus& value) { SetNtpStatus(value); return *this;}
+
+    /**
+     * <p>Details about a network time protocol (NTP) server connection.</p>
+     */
+    inline NetworkStatus& WithNtpStatus(NtpStatus&& value) { SetNtpStatus(std::move(value)); return *this;}
+
   private:
 
     EthernetStatus m_ethernet0Status;
@@ -105,6 +169,12 @@ namespace Model
 
     EthernetStatus m_ethernet1Status;
     bool m_ethernet1StatusHasBeenSet;
+
+    Aws::Utils::DateTime m_lastUpdatedTime;
+    bool m_lastUpdatedTimeHasBeenSet;
+
+    NtpStatus m_ntpStatus;
+    bool m_ntpStatusHasBeenSet;
   };
 
 } // namespace Model

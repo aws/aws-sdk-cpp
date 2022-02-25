@@ -19,24 +19,41 @@ namespace Model
 {
 
 StaticIpConnectionInfo::StaticIpConnectionInfo() : 
-    m_ipAddressHasBeenSet(false),
-    m_maskHasBeenSet(false),
+    m_defaultGatewayHasBeenSet(false),
     m_dnsHasBeenSet(false),
-    m_defaultGatewayHasBeenSet(false)
+    m_ipAddressHasBeenSet(false),
+    m_maskHasBeenSet(false)
 {
 }
 
 StaticIpConnectionInfo::StaticIpConnectionInfo(JsonView jsonValue) : 
-    m_ipAddressHasBeenSet(false),
-    m_maskHasBeenSet(false),
+    m_defaultGatewayHasBeenSet(false),
     m_dnsHasBeenSet(false),
-    m_defaultGatewayHasBeenSet(false)
+    m_ipAddressHasBeenSet(false),
+    m_maskHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 StaticIpConnectionInfo& StaticIpConnectionInfo::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("DefaultGateway"))
+  {
+    m_defaultGateway = jsonValue.GetString("DefaultGateway");
+
+    m_defaultGatewayHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Dns"))
+  {
+    Array<JsonView> dnsJsonList = jsonValue.GetArray("Dns");
+    for(unsigned dnsIndex = 0; dnsIndex < dnsJsonList.GetLength(); ++dnsIndex)
+    {
+      m_dns.push_back(dnsJsonList[dnsIndex].AsString());
+    }
+    m_dnsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
@@ -51,23 +68,6 @@ StaticIpConnectionInfo& StaticIpConnectionInfo::operator =(JsonView jsonValue)
     m_maskHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Dns"))
-  {
-    Array<JsonView> dnsJsonList = jsonValue.GetArray("Dns");
-    for(unsigned dnsIndex = 0; dnsIndex < dnsJsonList.GetLength(); ++dnsIndex)
-    {
-      m_dns.push_back(dnsJsonList[dnsIndex].AsString());
-    }
-    m_dnsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("DefaultGateway"))
-  {
-    m_defaultGateway = jsonValue.GetString("DefaultGateway");
-
-    m_defaultGatewayHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -75,15 +75,9 @@ JsonValue StaticIpConnectionInfo::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_ipAddressHasBeenSet)
+  if(m_defaultGatewayHasBeenSet)
   {
-   payload.WithString("IpAddress", m_ipAddress);
-
-  }
-
-  if(m_maskHasBeenSet)
-  {
-   payload.WithString("Mask", m_mask);
+   payload.WithString("DefaultGateway", m_defaultGateway);
 
   }
 
@@ -98,9 +92,15 @@ JsonValue StaticIpConnectionInfo::Jsonize() const
 
   }
 
-  if(m_defaultGatewayHasBeenSet)
+  if(m_ipAddressHasBeenSet)
   {
-   payload.WithString("DefaultGateway", m_defaultGateway);
+   payload.WithString("IpAddress", m_ipAddress);
+
+  }
+
+  if(m_maskHasBeenSet)
+  {
+   payload.WithString("Mask", m_mask);
 
   }
 

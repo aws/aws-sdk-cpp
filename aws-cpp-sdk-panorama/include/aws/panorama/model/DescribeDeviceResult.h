@@ -5,14 +5,16 @@
 
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/panorama/model/DeviceType.h>
-#include <aws/panorama/model/DeviceConnectionStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/panorama/model/NetworkStatus.h>
+#include <aws/panorama/model/DeviceConnectionStatus.h>
+#include <aws/panorama/model/NetworkPayload.h>
 #include <aws/panorama/model/DeviceStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/panorama/model/NetworkPayload.h>
-#include <aws/panorama/model/NetworkStatus.h>
+#include <aws/panorama/model/DeviceType.h>
+#include <aws/panorama/model/AlternateSoftwareMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -40,75 +42,39 @@ namespace Model
 
 
     /**
-     * <p>The device's ID.</p>
+     * <p>Beta software releases available for the device.</p>
      */
-    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+    inline const Aws::Vector<AlternateSoftwareMetadata>& GetAlternateSoftwares() const{ return m_alternateSoftwares; }
 
     /**
-     * <p>The device's ID.</p>
+     * <p>Beta software releases available for the device.</p>
      */
-    inline void SetDeviceId(const Aws::String& value) { m_deviceId = value; }
+    inline void SetAlternateSoftwares(const Aws::Vector<AlternateSoftwareMetadata>& value) { m_alternateSoftwares = value; }
 
     /**
-     * <p>The device's ID.</p>
+     * <p>Beta software releases available for the device.</p>
      */
-    inline void SetDeviceId(Aws::String&& value) { m_deviceId = std::move(value); }
+    inline void SetAlternateSoftwares(Aws::Vector<AlternateSoftwareMetadata>&& value) { m_alternateSoftwares = std::move(value); }
 
     /**
-     * <p>The device's ID.</p>
+     * <p>Beta software releases available for the device.</p>
      */
-    inline void SetDeviceId(const char* value) { m_deviceId.assign(value); }
+    inline DescribeDeviceResult& WithAlternateSoftwares(const Aws::Vector<AlternateSoftwareMetadata>& value) { SetAlternateSoftwares(value); return *this;}
 
     /**
-     * <p>The device's ID.</p>
+     * <p>Beta software releases available for the device.</p>
      */
-    inline DescribeDeviceResult& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
+    inline DescribeDeviceResult& WithAlternateSoftwares(Aws::Vector<AlternateSoftwareMetadata>&& value) { SetAlternateSoftwares(std::move(value)); return *this;}
 
     /**
-     * <p>The device's ID.</p>
+     * <p>Beta software releases available for the device.</p>
      */
-    inline DescribeDeviceResult& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
+    inline DescribeDeviceResult& AddAlternateSoftwares(const AlternateSoftwareMetadata& value) { m_alternateSoftwares.push_back(value); return *this; }
 
     /**
-     * <p>The device's ID.</p>
+     * <p>Beta software releases available for the device.</p>
      */
-    inline DescribeDeviceResult& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
-
-
-    /**
-     * <p>The device's name.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The device's name.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
-
-    /**
-     * <p>The device's name.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-
-    /**
-     * <p>The device's name.</p>
-     */
-    inline void SetName(const char* value) { m_name.assign(value); }
-
-    /**
-     * <p>The device's name.</p>
-     */
-    inline DescribeDeviceResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The device's name.</p>
-     */
-    inline DescribeDeviceResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The device's name.</p>
-     */
-    inline DescribeDeviceResult& WithName(const char* value) { SetName(value); return *this;}
+    inline DescribeDeviceResult& AddAlternateSoftwares(AlternateSoftwareMetadata&& value) { m_alternateSoftwares.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -148,6 +114,94 @@ namespace Model
 
 
     /**
+     * <p>When the device was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+
+    /**
+     * <p>When the device was created.</p>
+     */
+    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTime = value; }
+
+    /**
+     * <p>When the device was created.</p>
+     */
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTime = std::move(value); }
+
+    /**
+     * <p>When the device was created.</p>
+     */
+    inline DescribeDeviceResult& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
+
+    /**
+     * <p>When the device was created.</p>
+     */
+    inline DescribeDeviceResult& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The device's networking status.</p>
+     */
+    inline const NetworkStatus& GetCurrentNetworkingStatus() const{ return m_currentNetworkingStatus; }
+
+    /**
+     * <p>The device's networking status.</p>
+     */
+    inline void SetCurrentNetworkingStatus(const NetworkStatus& value) { m_currentNetworkingStatus = value; }
+
+    /**
+     * <p>The device's networking status.</p>
+     */
+    inline void SetCurrentNetworkingStatus(NetworkStatus&& value) { m_currentNetworkingStatus = std::move(value); }
+
+    /**
+     * <p>The device's networking status.</p>
+     */
+    inline DescribeDeviceResult& WithCurrentNetworkingStatus(const NetworkStatus& value) { SetCurrentNetworkingStatus(value); return *this;}
+
+    /**
+     * <p>The device's networking status.</p>
+     */
+    inline DescribeDeviceResult& WithCurrentNetworkingStatus(NetworkStatus&& value) { SetCurrentNetworkingStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The device's current software version.</p>
+     */
+    inline const Aws::String& GetCurrentSoftware() const{ return m_currentSoftware; }
+
+    /**
+     * <p>The device's current software version.</p>
+     */
+    inline void SetCurrentSoftware(const Aws::String& value) { m_currentSoftware = value; }
+
+    /**
+     * <p>The device's current software version.</p>
+     */
+    inline void SetCurrentSoftware(Aws::String&& value) { m_currentSoftware = std::move(value); }
+
+    /**
+     * <p>The device's current software version.</p>
+     */
+    inline void SetCurrentSoftware(const char* value) { m_currentSoftware.assign(value); }
+
+    /**
+     * <p>The device's current software version.</p>
+     */
+    inline DescribeDeviceResult& WithCurrentSoftware(const Aws::String& value) { SetCurrentSoftware(value); return *this;}
+
+    /**
+     * <p>The device's current software version.</p>
+     */
+    inline DescribeDeviceResult& WithCurrentSoftware(Aws::String&& value) { SetCurrentSoftware(std::move(value)); return *this;}
+
+    /**
+     * <p>The device's current software version.</p>
+     */
+    inline DescribeDeviceResult& WithCurrentSoftware(const char* value) { SetCurrentSoftware(value); return *this;}
+
+
+    /**
      * <p>The device's description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -184,32 +238,6 @@ namespace Model
 
 
     /**
-     * <p>The device's type.</p>
-     */
-    inline const DeviceType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The device's type.</p>
-     */
-    inline void SetType(const DeviceType& value) { m_type = value; }
-
-    /**
-     * <p>The device's type.</p>
-     */
-    inline void SetType(DeviceType&& value) { m_type = std::move(value); }
-
-    /**
-     * <p>The device's type.</p>
-     */
-    inline DescribeDeviceResult& WithType(const DeviceType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The device's type.</p>
-     */
-    inline DescribeDeviceResult& WithType(DeviceType&& value) { SetType(std::move(value)); return *this;}
-
-
-    /**
      * <p>The device's connection status.</p>
      */
     inline const DeviceConnectionStatus& GetDeviceConnectionStatus() const{ return m_deviceConnectionStatus; }
@@ -236,55 +264,75 @@ namespace Model
 
 
     /**
-     * <p>When the device was created.</p>
+     * <p>The device's ID.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
 
     /**
-     * <p>When the device was created.</p>
+     * <p>The device's ID.</p>
      */
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTime = value; }
+    inline void SetDeviceId(const Aws::String& value) { m_deviceId = value; }
 
     /**
-     * <p>When the device was created.</p>
+     * <p>The device's ID.</p>
      */
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTime = std::move(value); }
+    inline void SetDeviceId(Aws::String&& value) { m_deviceId = std::move(value); }
 
     /**
-     * <p>When the device was created.</p>
+     * <p>The device's ID.</p>
      */
-    inline DescribeDeviceResult& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
+    inline void SetDeviceId(const char* value) { m_deviceId.assign(value); }
 
     /**
-     * <p>When the device was created.</p>
+     * <p>The device's ID.</p>
      */
-    inline DescribeDeviceResult& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    inline DescribeDeviceResult& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
+
+    /**
+     * <p>The device's ID.</p>
+     */
+    inline DescribeDeviceResult& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The device's ID.</p>
+     */
+    inline DescribeDeviceResult& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
 
 
     /**
-     * <p>The device's provisioning status.</p>
+     * <p>The most recent beta software release.</p>
      */
-    inline const DeviceStatus& GetProvisioningStatus() const{ return m_provisioningStatus; }
+    inline const Aws::String& GetLatestAlternateSoftware() const{ return m_latestAlternateSoftware; }
 
     /**
-     * <p>The device's provisioning status.</p>
+     * <p>The most recent beta software release.</p>
      */
-    inline void SetProvisioningStatus(const DeviceStatus& value) { m_provisioningStatus = value; }
+    inline void SetLatestAlternateSoftware(const Aws::String& value) { m_latestAlternateSoftware = value; }
 
     /**
-     * <p>The device's provisioning status.</p>
+     * <p>The most recent beta software release.</p>
      */
-    inline void SetProvisioningStatus(DeviceStatus&& value) { m_provisioningStatus = std::move(value); }
+    inline void SetLatestAlternateSoftware(Aws::String&& value) { m_latestAlternateSoftware = std::move(value); }
 
     /**
-     * <p>The device's provisioning status.</p>
+     * <p>The most recent beta software release.</p>
      */
-    inline DescribeDeviceResult& WithProvisioningStatus(const DeviceStatus& value) { SetProvisioningStatus(value); return *this;}
+    inline void SetLatestAlternateSoftware(const char* value) { m_latestAlternateSoftware.assign(value); }
 
     /**
-     * <p>The device's provisioning status.</p>
+     * <p>The most recent beta software release.</p>
      */
-    inline DescribeDeviceResult& WithProvisioningStatus(DeviceStatus&& value) { SetProvisioningStatus(std::move(value)); return *this;}
+    inline DescribeDeviceResult& WithLatestAlternateSoftware(const Aws::String& value) { SetLatestAlternateSoftware(value); return *this;}
+
+    /**
+     * <p>The most recent beta software release.</p>
+     */
+    inline DescribeDeviceResult& WithLatestAlternateSoftware(Aws::String&& value) { SetLatestAlternateSoftware(std::move(value)); return *this;}
+
+    /**
+     * <p>The most recent beta software release.</p>
+     */
+    inline DescribeDeviceResult& WithLatestAlternateSoftware(const char* value) { SetLatestAlternateSoftware(value); return *this;}
 
 
     /**
@@ -324,39 +372,117 @@ namespace Model
 
 
     /**
-     * <p>The device's current software version.</p>
+     * <p>The device's lease expiration time.</p>
      */
-    inline const Aws::String& GetCurrentSoftware() const{ return m_currentSoftware; }
+    inline const Aws::Utils::DateTime& GetLeaseExpirationTime() const{ return m_leaseExpirationTime; }
 
     /**
-     * <p>The device's current software version.</p>
+     * <p>The device's lease expiration time.</p>
      */
-    inline void SetCurrentSoftware(const Aws::String& value) { m_currentSoftware = value; }
+    inline void SetLeaseExpirationTime(const Aws::Utils::DateTime& value) { m_leaseExpirationTime = value; }
 
     /**
-     * <p>The device's current software version.</p>
+     * <p>The device's lease expiration time.</p>
      */
-    inline void SetCurrentSoftware(Aws::String&& value) { m_currentSoftware = std::move(value); }
+    inline void SetLeaseExpirationTime(Aws::Utils::DateTime&& value) { m_leaseExpirationTime = std::move(value); }
 
     /**
-     * <p>The device's current software version.</p>
+     * <p>The device's lease expiration time.</p>
      */
-    inline void SetCurrentSoftware(const char* value) { m_currentSoftware.assign(value); }
+    inline DescribeDeviceResult& WithLeaseExpirationTime(const Aws::Utils::DateTime& value) { SetLeaseExpirationTime(value); return *this;}
 
     /**
-     * <p>The device's current software version.</p>
+     * <p>The device's lease expiration time.</p>
      */
-    inline DescribeDeviceResult& WithCurrentSoftware(const Aws::String& value) { SetCurrentSoftware(value); return *this;}
+    inline DescribeDeviceResult& WithLeaseExpirationTime(Aws::Utils::DateTime&& value) { SetLeaseExpirationTime(std::move(value)); return *this;}
+
 
     /**
-     * <p>The device's current software version.</p>
+     * <p>The device's name.</p>
      */
-    inline DescribeDeviceResult& WithCurrentSoftware(Aws::String&& value) { SetCurrentSoftware(std::move(value)); return *this;}
+    inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The device's current software version.</p>
+     * <p>The device's name.</p>
      */
-    inline DescribeDeviceResult& WithCurrentSoftware(const char* value) { SetCurrentSoftware(value); return *this;}
+    inline void SetName(const Aws::String& value) { m_name = value; }
+
+    /**
+     * <p>The device's name.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
+
+    /**
+     * <p>The device's name.</p>
+     */
+    inline void SetName(const char* value) { m_name.assign(value); }
+
+    /**
+     * <p>The device's name.</p>
+     */
+    inline DescribeDeviceResult& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The device's name.</p>
+     */
+    inline DescribeDeviceResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The device's name.</p>
+     */
+    inline DescribeDeviceResult& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The device's networking configuration.</p>
+     */
+    inline const NetworkPayload& GetNetworkingConfiguration() const{ return m_networkingConfiguration; }
+
+    /**
+     * <p>The device's networking configuration.</p>
+     */
+    inline void SetNetworkingConfiguration(const NetworkPayload& value) { m_networkingConfiguration = value; }
+
+    /**
+     * <p>The device's networking configuration.</p>
+     */
+    inline void SetNetworkingConfiguration(NetworkPayload&& value) { m_networkingConfiguration = std::move(value); }
+
+    /**
+     * <p>The device's networking configuration.</p>
+     */
+    inline DescribeDeviceResult& WithNetworkingConfiguration(const NetworkPayload& value) { SetNetworkingConfiguration(value); return *this;}
+
+    /**
+     * <p>The device's networking configuration.</p>
+     */
+    inline DescribeDeviceResult& WithNetworkingConfiguration(NetworkPayload&& value) { SetNetworkingConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The device's provisioning status.</p>
+     */
+    inline const DeviceStatus& GetProvisioningStatus() const{ return m_provisioningStatus; }
+
+    /**
+     * <p>The device's provisioning status.</p>
+     */
+    inline void SetProvisioningStatus(const DeviceStatus& value) { m_provisioningStatus = value; }
+
+    /**
+     * <p>The device's provisioning status.</p>
+     */
+    inline void SetProvisioningStatus(DeviceStatus&& value) { m_provisioningStatus = std::move(value); }
+
+    /**
+     * <p>The device's provisioning status.</p>
+     */
+    inline DescribeDeviceResult& WithProvisioningStatus(const DeviceStatus& value) { SetProvisioningStatus(value); return *this;}
+
+    /**
+     * <p>The device's provisioning status.</p>
+     */
+    inline DescribeDeviceResult& WithProvisioningStatus(DeviceStatus&& value) { SetProvisioningStatus(std::move(value)); return *this;}
 
 
     /**
@@ -457,113 +583,65 @@ namespace Model
 
 
     /**
-     * <p>The device's networking configuration.</p>
+     * <p>The device's type.</p>
      */
-    inline const NetworkPayload& GetNetworkingConfiguration() const{ return m_networkingConfiguration; }
+    inline const DeviceType& GetType() const{ return m_type; }
 
     /**
-     * <p>The device's networking configuration.</p>
+     * <p>The device's type.</p>
      */
-    inline void SetNetworkingConfiguration(const NetworkPayload& value) { m_networkingConfiguration = value; }
+    inline void SetType(const DeviceType& value) { m_type = value; }
 
     /**
-     * <p>The device's networking configuration.</p>
+     * <p>The device's type.</p>
      */
-    inline void SetNetworkingConfiguration(NetworkPayload&& value) { m_networkingConfiguration = std::move(value); }
+    inline void SetType(DeviceType&& value) { m_type = std::move(value); }
 
     /**
-     * <p>The device's networking configuration.</p>
+     * <p>The device's type.</p>
      */
-    inline DescribeDeviceResult& WithNetworkingConfiguration(const NetworkPayload& value) { SetNetworkingConfiguration(value); return *this;}
+    inline DescribeDeviceResult& WithType(const DeviceType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The device's networking configuration.</p>
+     * <p>The device's type.</p>
      */
-    inline DescribeDeviceResult& WithNetworkingConfiguration(NetworkPayload&& value) { SetNetworkingConfiguration(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The device's networking status.</p>
-     */
-    inline const NetworkStatus& GetCurrentNetworkingStatus() const{ return m_currentNetworkingStatus; }
-
-    /**
-     * <p>The device's networking status.</p>
-     */
-    inline void SetCurrentNetworkingStatus(const NetworkStatus& value) { m_currentNetworkingStatus = value; }
-
-    /**
-     * <p>The device's networking status.</p>
-     */
-    inline void SetCurrentNetworkingStatus(NetworkStatus&& value) { m_currentNetworkingStatus = std::move(value); }
-
-    /**
-     * <p>The device's networking status.</p>
-     */
-    inline DescribeDeviceResult& WithCurrentNetworkingStatus(const NetworkStatus& value) { SetCurrentNetworkingStatus(value); return *this;}
-
-    /**
-     * <p>The device's networking status.</p>
-     */
-    inline DescribeDeviceResult& WithCurrentNetworkingStatus(NetworkStatus&& value) { SetCurrentNetworkingStatus(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The device's lease expiration time.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLeaseExpirationTime() const{ return m_leaseExpirationTime; }
-
-    /**
-     * <p>The device's lease expiration time.</p>
-     */
-    inline void SetLeaseExpirationTime(const Aws::Utils::DateTime& value) { m_leaseExpirationTime = value; }
-
-    /**
-     * <p>The device's lease expiration time.</p>
-     */
-    inline void SetLeaseExpirationTime(Aws::Utils::DateTime&& value) { m_leaseExpirationTime = std::move(value); }
-
-    /**
-     * <p>The device's lease expiration time.</p>
-     */
-    inline DescribeDeviceResult& WithLeaseExpirationTime(const Aws::Utils::DateTime& value) { SetLeaseExpirationTime(value); return *this;}
-
-    /**
-     * <p>The device's lease expiration time.</p>
-     */
-    inline DescribeDeviceResult& WithLeaseExpirationTime(Aws::Utils::DateTime&& value) { SetLeaseExpirationTime(std::move(value)); return *this;}
+    inline DescribeDeviceResult& WithType(DeviceType&& value) { SetType(std::move(value)); return *this;}
 
   private:
 
-    Aws::String m_deviceId;
-
-    Aws::String m_name;
+    Aws::Vector<AlternateSoftwareMetadata> m_alternateSoftwares;
 
     Aws::String m_arn;
 
-    Aws::String m_description;
+    Aws::Utils::DateTime m_createdTime;
 
-    DeviceType m_type;
+    NetworkStatus m_currentNetworkingStatus;
+
+    Aws::String m_currentSoftware;
+
+    Aws::String m_description;
 
     DeviceConnectionStatus m_deviceConnectionStatus;
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::String m_deviceId;
 
-    DeviceStatus m_provisioningStatus;
+    Aws::String m_latestAlternateSoftware;
 
     Aws::String m_latestSoftware;
 
-    Aws::String m_currentSoftware;
+    Aws::Utils::DateTime m_leaseExpirationTime;
+
+    Aws::String m_name;
+
+    NetworkPayload m_networkingConfiguration;
+
+    DeviceStatus m_provisioningStatus;
 
     Aws::String m_serialNumber;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
 
-    NetworkPayload m_networkingConfiguration;
-
-    NetworkStatus m_currentNetworkingStatus;
-
-    Aws::Utils::DateTime m_leaseExpirationTime;
+    DeviceType m_type;
   };
 
 } // namespace Model
