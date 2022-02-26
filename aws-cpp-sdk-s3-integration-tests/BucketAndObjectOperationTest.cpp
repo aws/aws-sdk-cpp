@@ -1840,7 +1840,7 @@ namespace
         putObjectRequest.SetBody(objectStream);
         putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::CRC32);
         auto putObjectOutcome = Client->PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess()) << putObjectOutcome.GetError().GetMessage();
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
 
         objectStream->clear();
         objectStream->seekg(0);
