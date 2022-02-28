@@ -887,12 +887,12 @@ namespace Model
          * <p>Creates a new Amazon FSx for Lustre, Amazon FSx for Windows File Server, or
          * Amazon FSx for OpenZFS file system from an existing Amazon FSx backup.</p> <p>If
          * a file system with the specified client request token exists and the parameters
-         * match, this operation returns the description of the file system. If a client
-         * request token with the specified by the file system exists and the parameters
-         * don't match, this call returns <code>IncompatibleParameterError</code>. If a
-         * file system with the specified client request token doesn't exist, this
-         * operation does the following:</p> <ul> <li> <p>Creates a new Amazon FSx file
-         * system from backup with an assigned ID, and an initial lifecycle state of
+         * match, this operation returns the description of the file system. If a file
+         * system with the specified client request token exists but the parameters don't
+         * match, this call returns <code>IncompatibleParameterError</code>. If a file
+         * system with the specified client request token doesn't exist, this operation
+         * does the following:</p> <ul> <li> <p>Creates a new Amazon FSx file system from
+         * backup with an assigned ID, and an initial lifecycle state of
          * <code>CREATING</code>.</p> </li> <li> <p>Returns the description of the file
          * system.</p> </li> </ul> <p>Parameters like the Active Directory, default share
          * name, automatic backup, and backup settings default to the parameters of the
@@ -919,12 +919,12 @@ namespace Model
          * <p>Creates a new Amazon FSx for Lustre, Amazon FSx for Windows File Server, or
          * Amazon FSx for OpenZFS file system from an existing Amazon FSx backup.</p> <p>If
          * a file system with the specified client request token exists and the parameters
-         * match, this operation returns the description of the file system. If a client
-         * request token with the specified by the file system exists and the parameters
-         * don't match, this call returns <code>IncompatibleParameterError</code>. If a
-         * file system with the specified client request token doesn't exist, this
-         * operation does the following:</p> <ul> <li> <p>Creates a new Amazon FSx file
-         * system from backup with an assigned ID, and an initial lifecycle state of
+         * match, this operation returns the description of the file system. If a file
+         * system with the specified client request token exists but the parameters don't
+         * match, this call returns <code>IncompatibleParameterError</code>. If a file
+         * system with the specified client request token doesn't exist, this operation
+         * does the following:</p> <ul> <li> <p>Creates a new Amazon FSx file system from
+         * backup with an assigned ID, and an initial lifecycle state of
          * <code>CREATING</code>.</p> </li> <li> <p>Returns the description of the file
          * system.</p> </li> </ul> <p>Parameters like the Active Directory, default share
          * name, automatic backup, and backup settings default to the parameters of the
@@ -953,12 +953,12 @@ namespace Model
          * <p>Creates a new Amazon FSx for Lustre, Amazon FSx for Windows File Server, or
          * Amazon FSx for OpenZFS file system from an existing Amazon FSx backup.</p> <p>If
          * a file system with the specified client request token exists and the parameters
-         * match, this operation returns the description of the file system. If a client
-         * request token with the specified by the file system exists and the parameters
-         * don't match, this call returns <code>IncompatibleParameterError</code>. If a
-         * file system with the specified client request token doesn't exist, this
-         * operation does the following:</p> <ul> <li> <p>Creates a new Amazon FSx file
-         * system from backup with an assigned ID, and an initial lifecycle state of
+         * match, this operation returns the description of the file system. If a file
+         * system with the specified client request token exists but the parameters don't
+         * match, this call returns <code>IncompatibleParameterError</code>. If a file
+         * system with the specified client request token doesn't exist, this operation
+         * does the following:</p> <ul> <li> <p>Creates a new Amazon FSx file system from
+         * backup with an assigned ID, and an initial lifecycle state of
          * <code>CREATING</code>.</p> </li> <li> <p>Returns the description of the file
          * system.</p> </li> </ul> <p>Parameters like the Active Directory, default share
          * name, automatic backup, and backup settings default to the parameters of the
@@ -984,7 +984,7 @@ namespace Model
         virtual void CreateFileSystemFromBackupAsync(const Model::CreateFileSystemFromBackupRequest& request, const CreateFileSystemFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a snapshot of an existing Amazon FSx for OpenZFS file system. With
+         * <p>Creates a snapshot of an existing Amazon FSx for OpenZFS volume. With
          * snapshots, you can easily undo file changes and compare file versions by
          * restoring the volume to a previous version.</p> <p>If a snapshot with the
          * specified client request token exists, and the parameters match, this operation
@@ -992,7 +992,7 @@ namespace Model
          * specified client request token exists, and the parameters don't match, this
          * operation returns <code>IncompatibleParameterError</code>. If a snapshot with
          * the specified client request token doesn't exist, <code>CreateSnapshot</code>
-         * does the following: </p> <ul> <li> <p>Creates a new OpenZFS snapshot with an
+         * does the following:</p> <ul> <li> <p>Creates a new OpenZFS snapshot with an
          * assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p> </li>
          * <li> <p>Returns the description of the snapshot.</p> </li> </ul> <p>By using the
          * idempotent operation, you can retry a <code>CreateSnapshot</code> operation
@@ -1004,15 +1004,15 @@ namespace Model
          * snapshot's lifecycle state is still <code>CREATING</code>. You can check the
          * snapshot creation status by calling the <a
          * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
-         * operation, which returns the snapshot state along with other information.
-         * </p><p><h3>See Also:</h3>   <a
+         * operation, which returns the snapshot state along with other
+         * information.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSnapshot">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateSnapshotOutcome CreateSnapshot(const Model::CreateSnapshotRequest& request) const;
 
         /**
-         * <p>Creates a snapshot of an existing Amazon FSx for OpenZFS file system. With
+         * <p>Creates a snapshot of an existing Amazon FSx for OpenZFS volume. With
          * snapshots, you can easily undo file changes and compare file versions by
          * restoring the volume to a previous version.</p> <p>If a snapshot with the
          * specified client request token exists, and the parameters match, this operation
@@ -1020,7 +1020,7 @@ namespace Model
          * specified client request token exists, and the parameters don't match, this
          * operation returns <code>IncompatibleParameterError</code>. If a snapshot with
          * the specified client request token doesn't exist, <code>CreateSnapshot</code>
-         * does the following: </p> <ul> <li> <p>Creates a new OpenZFS snapshot with an
+         * does the following:</p> <ul> <li> <p>Creates a new OpenZFS snapshot with an
          * assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p> </li>
          * <li> <p>Returns the description of the snapshot.</p> </li> </ul> <p>By using the
          * idempotent operation, you can retry a <code>CreateSnapshot</code> operation
@@ -1032,8 +1032,8 @@ namespace Model
          * snapshot's lifecycle state is still <code>CREATING</code>. You can check the
          * snapshot creation status by calling the <a
          * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
-         * operation, which returns the snapshot state along with other information.
-         * </p><p><h3>See Also:</h3>   <a
+         * operation, which returns the snapshot state along with other
+         * information.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1042,7 +1042,7 @@ namespace Model
         virtual Model::CreateSnapshotOutcomeCallable CreateSnapshotCallable(const Model::CreateSnapshotRequest& request) const;
 
         /**
-         * <p>Creates a snapshot of an existing Amazon FSx for OpenZFS file system. With
+         * <p>Creates a snapshot of an existing Amazon FSx for OpenZFS volume. With
          * snapshots, you can easily undo file changes and compare file versions by
          * restoring the volume to a previous version.</p> <p>If a snapshot with the
          * specified client request token exists, and the parameters match, this operation
@@ -1050,7 +1050,7 @@ namespace Model
          * specified client request token exists, and the parameters don't match, this
          * operation returns <code>IncompatibleParameterError</code>. If a snapshot with
          * the specified client request token doesn't exist, <code>CreateSnapshot</code>
-         * does the following: </p> <ul> <li> <p>Creates a new OpenZFS snapshot with an
+         * does the following:</p> <ul> <li> <p>Creates a new OpenZFS snapshot with an
          * assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p> </li>
          * <li> <p>Returns the description of the snapshot.</p> </li> </ul> <p>By using the
          * idempotent operation, you can retry a <code>CreateSnapshot</code> operation
@@ -1062,8 +1062,8 @@ namespace Model
          * snapshot's lifecycle state is still <code>CREATING</code>. You can check the
          * snapshot creation status by calling the <a
          * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
-         * operation, which returns the snapshot state along with other information.
-         * </p><p><h3>See Also:</h3>   <a
+         * operation, which returns the snapshot state along with other
+         * information.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1318,24 +1318,24 @@ namespace Model
         virtual void DeleteFileSystemAsync(const Model::DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the Amazon FSx snapshot. After deletion, the snapshot no longer
-         * exists, and its data is gone. Deleting a snapshot doesn't affect snapshots
-         * stored in a file system backup. </p> <p>The <code>DeleteSnapshot</code>
-         * operation returns instantly. The snapshot appears with the lifecycle status of
-         * <code>DELETING</code> until the deletion is complete.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes an Amazon FSx for OpenZFS snapshot. After deletion, the snapshot no
+         * longer exists, and its data is gone. Deleting a snapshot doesn't affect
+         * snapshots stored in a file system backup. </p> <p>The
+         * <code>DeleteSnapshot</code> operation returns instantly. The snapshot appears
+         * with the lifecycle status of <code>DELETING</code> until the deletion is
+         * complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteSnapshot">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteSnapshotOutcome DeleteSnapshot(const Model::DeleteSnapshotRequest& request) const;
 
         /**
-         * <p>Deletes the Amazon FSx snapshot. After deletion, the snapshot no longer
-         * exists, and its data is gone. Deleting a snapshot doesn't affect snapshots
-         * stored in a file system backup. </p> <p>The <code>DeleteSnapshot</code>
-         * operation returns instantly. The snapshot appears with the lifecycle status of
-         * <code>DELETING</code> until the deletion is complete.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes an Amazon FSx for OpenZFS snapshot. After deletion, the snapshot no
+         * longer exists, and its data is gone. Deleting a snapshot doesn't affect
+         * snapshots stored in a file system backup. </p> <p>The
+         * <code>DeleteSnapshot</code> operation returns instantly. The snapshot appears
+         * with the lifecycle status of <code>DELETING</code> until the deletion is
+         * complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1344,12 +1344,12 @@ namespace Model
         virtual Model::DeleteSnapshotOutcomeCallable DeleteSnapshotCallable(const Model::DeleteSnapshotRequest& request) const;
 
         /**
-         * <p>Deletes the Amazon FSx snapshot. After deletion, the snapshot no longer
-         * exists, and its data is gone. Deleting a snapshot doesn't affect snapshots
-         * stored in a file system backup. </p> <p>The <code>DeleteSnapshot</code>
-         * operation returns instantly. The snapshot appears with the lifecycle status of
-         * <code>DELETING</code> until the deletion is complete.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes an Amazon FSx for OpenZFS snapshot. After deletion, the snapshot no
+         * longer exists, and its data is gone. Deleting a snapshot doesn't affect
+         * snapshots stored in a file system backup. </p> <p>The
+         * <code>DeleteSnapshot</code> operation returns instantly. The snapshot appears
+         * with the lifecycle status of <code>DELETING</code> until the deletion is
+         * complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1761,7 +1761,7 @@ namespace Model
         virtual void DescribeFileSystemsAsync(const Model::DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the description of specific Amazon FSx snapshots, if a
+         * <p>Returns the description of specific Amazon FSx for OpenZFS snapshots, if a
          * <code>SnapshotIds</code> value is provided. Otherwise, this operation returns
          * all snapshots owned by your Amazon Web Services account in the Amazon Web
          * Services Region of the endpoint that you're calling.</p> <p>When retrieving all
@@ -1787,7 +1787,7 @@ namespace Model
         virtual Model::DescribeSnapshotsOutcome DescribeSnapshots(const Model::DescribeSnapshotsRequest& request) const;
 
         /**
-         * <p>Returns the description of specific Amazon FSx snapshots, if a
+         * <p>Returns the description of specific Amazon FSx for OpenZFS snapshots, if a
          * <code>SnapshotIds</code> value is provided. Otherwise, this operation returns
          * all snapshots owned by your Amazon Web Services account in the Amazon Web
          * Services Region of the endpoint that you're calling.</p> <p>When retrieving all
@@ -1815,7 +1815,7 @@ namespace Model
         virtual Model::DescribeSnapshotsOutcomeCallable DescribeSnapshotsCallable(const Model::DescribeSnapshotsRequest& request) const;
 
         /**
-         * <p>Returns the description of specific Amazon FSx snapshots, if a
+         * <p>Returns the description of specific Amazon FSx for OpenZFS snapshots, if a
          * <code>SnapshotIds</code> value is provided. Otherwise, this operation returns
          * all snapshots owned by your Amazon Web Services account in the Amazon Web
          * Services Region of the endpoint that you're calling.</p> <p>When retrieving all
@@ -2282,14 +2282,16 @@ namespace Model
         virtual void UpdateFileSystemAsync(const Model::UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the name of a snapshot. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates the name of an Amazon FSx for OpenZFS snapshot.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSnapshot">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateSnapshotOutcome UpdateSnapshot(const Model::UpdateSnapshotRequest& request) const;
 
         /**
-         * <p>Updates the name of a snapshot. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates the name of an Amazon FSx for OpenZFS snapshot.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSnapshot">AWS
          * API Reference</a></p>
          *
@@ -2298,7 +2300,8 @@ namespace Model
         virtual Model::UpdateSnapshotOutcomeCallable UpdateSnapshotCallable(const Model::UpdateSnapshotRequest& request) const;
 
         /**
-         * <p>Updates the name of a snapshot. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates the name of an Amazon FSx for OpenZFS snapshot.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSnapshot">AWS
          * API Reference</a></p>
          *

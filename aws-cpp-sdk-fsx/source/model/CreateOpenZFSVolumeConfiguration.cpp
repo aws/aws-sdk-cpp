@@ -24,6 +24,8 @@ CreateOpenZFSVolumeConfiguration::CreateOpenZFSVolumeConfiguration() :
     m_storageCapacityReservationGiBHasBeenSet(false),
     m_storageCapacityQuotaGiB(0),
     m_storageCapacityQuotaGiBHasBeenSet(false),
+    m_recordSizeKiB(0),
+    m_recordSizeKiBHasBeenSet(false),
     m_dataCompressionType(OpenZFSDataCompressionType::NOT_SET),
     m_dataCompressionTypeHasBeenSet(false),
     m_copyTagsToSnapshots(false),
@@ -42,6 +44,8 @@ CreateOpenZFSVolumeConfiguration::CreateOpenZFSVolumeConfiguration(JsonView json
     m_storageCapacityReservationGiBHasBeenSet(false),
     m_storageCapacityQuotaGiB(0),
     m_storageCapacityQuotaGiBHasBeenSet(false),
+    m_recordSizeKiB(0),
+    m_recordSizeKiBHasBeenSet(false),
     m_dataCompressionType(OpenZFSDataCompressionType::NOT_SET),
     m_dataCompressionTypeHasBeenSet(false),
     m_copyTagsToSnapshots(false),
@@ -76,6 +80,13 @@ CreateOpenZFSVolumeConfiguration& CreateOpenZFSVolumeConfiguration::operator =(J
     m_storageCapacityQuotaGiB = jsonValue.GetInteger("StorageCapacityQuotaGiB");
 
     m_storageCapacityQuotaGiBHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RecordSizeKiB"))
+  {
+    m_recordSizeKiB = jsonValue.GetInteger("RecordSizeKiB");
+
+    m_recordSizeKiBHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DataCompressionType"))
@@ -148,6 +159,12 @@ JsonValue CreateOpenZFSVolumeConfiguration::Jsonize() const
   if(m_storageCapacityQuotaGiBHasBeenSet)
   {
    payload.WithInteger("StorageCapacityQuotaGiB", m_storageCapacityQuotaGiB);
+
+  }
+
+  if(m_recordSizeKiBHasBeenSet)
+  {
+   payload.WithInteger("RecordSizeKiB", m_recordSizeKiB);
 
   }
 

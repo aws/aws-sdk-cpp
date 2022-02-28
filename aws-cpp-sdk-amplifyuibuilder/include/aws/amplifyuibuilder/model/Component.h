@@ -12,6 +12,7 @@
 #include <aws/amplifyuibuilder/model/ComponentBindingPropertiesValue.h>
 #include <aws/amplifyuibuilder/model/ComponentChild.h>
 #include <aws/amplifyuibuilder/model/ComponentDataConfiguration.h>
+#include <aws/amplifyuibuilder/model/ComponentEvent.h>
 #include <aws/amplifyuibuilder/model/ComponentProperty.h>
 #include <aws/amplifyuibuilder/model/ComponentVariant.h>
 #include <utility>
@@ -91,62 +92,86 @@ namespace Model
 
 
     /**
-     * <p>The information to connect a component's properties to data at runtime.</p>
+     * <p>The information to connect a component's properties to data at runtime. You
+     * can't specify <code>tags</code> as a valid property for
+     * <code>bindingProperties</code>.</p> <p/>
      */
     inline const Aws::Map<Aws::String, ComponentBindingPropertiesValue>& GetBindingProperties() const{ return m_bindingProperties; }
 
     /**
-     * <p>The information to connect a component's properties to data at runtime.</p>
+     * <p>The information to connect a component's properties to data at runtime. You
+     * can't specify <code>tags</code> as a valid property for
+     * <code>bindingProperties</code>.</p> <p/>
      */
     inline bool BindingPropertiesHasBeenSet() const { return m_bindingPropertiesHasBeenSet; }
 
     /**
-     * <p>The information to connect a component's properties to data at runtime.</p>
+     * <p>The information to connect a component's properties to data at runtime. You
+     * can't specify <code>tags</code> as a valid property for
+     * <code>bindingProperties</code>.</p> <p/>
      */
     inline void SetBindingProperties(const Aws::Map<Aws::String, ComponentBindingPropertiesValue>& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = value; }
 
     /**
-     * <p>The information to connect a component's properties to data at runtime.</p>
+     * <p>The information to connect a component's properties to data at runtime. You
+     * can't specify <code>tags</code> as a valid property for
+     * <code>bindingProperties</code>.</p> <p/>
      */
     inline void SetBindingProperties(Aws::Map<Aws::String, ComponentBindingPropertiesValue>&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = std::move(value); }
 
     /**
-     * <p>The information to connect a component's properties to data at runtime.</p>
+     * <p>The information to connect a component's properties to data at runtime. You
+     * can't specify <code>tags</code> as a valid property for
+     * <code>bindingProperties</code>.</p> <p/>
      */
     inline Component& WithBindingProperties(const Aws::Map<Aws::String, ComponentBindingPropertiesValue>& value) { SetBindingProperties(value); return *this;}
 
     /**
-     * <p>The information to connect a component's properties to data at runtime.</p>
+     * <p>The information to connect a component's properties to data at runtime. You
+     * can't specify <code>tags</code> as a valid property for
+     * <code>bindingProperties</code>.</p> <p/>
      */
     inline Component& WithBindingProperties(Aws::Map<Aws::String, ComponentBindingPropertiesValue>&& value) { SetBindingProperties(std::move(value)); return *this;}
 
     /**
-     * <p>The information to connect a component's properties to data at runtime.</p>
+     * <p>The information to connect a component's properties to data at runtime. You
+     * can't specify <code>tags</code> as a valid property for
+     * <code>bindingProperties</code>.</p> <p/>
      */
     inline Component& AddBindingProperties(const Aws::String& key, const ComponentBindingPropertiesValue& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(key, value); return *this; }
 
     /**
-     * <p>The information to connect a component's properties to data at runtime.</p>
+     * <p>The information to connect a component's properties to data at runtime. You
+     * can't specify <code>tags</code> as a valid property for
+     * <code>bindingProperties</code>.</p> <p/>
      */
     inline Component& AddBindingProperties(Aws::String&& key, const ComponentBindingPropertiesValue& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The information to connect a component's properties to data at runtime.</p>
+     * <p>The information to connect a component's properties to data at runtime. You
+     * can't specify <code>tags</code> as a valid property for
+     * <code>bindingProperties</code>.</p> <p/>
      */
     inline Component& AddBindingProperties(const Aws::String& key, ComponentBindingPropertiesValue&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The information to connect a component's properties to data at runtime.</p>
+     * <p>The information to connect a component's properties to data at runtime. You
+     * can't specify <code>tags</code> as a valid property for
+     * <code>bindingProperties</code>.</p> <p/>
      */
     inline Component& AddBindingProperties(Aws::String&& key, ComponentBindingPropertiesValue&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The information to connect a component's properties to data at runtime.</p>
+     * <p>The information to connect a component's properties to data at runtime. You
+     * can't specify <code>tags</code> as a valid property for
+     * <code>bindingProperties</code>.</p> <p/>
      */
     inline Component& AddBindingProperties(const char* key, ComponentBindingPropertiesValue&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The information to connect a component's properties to data at runtime.</p>
+     * <p>The information to connect a component's properties to data at runtime. You
+     * can't specify <code>tags</code> as a valid property for
+     * <code>bindingProperties</code>.</p> <p/>
      */
     inline Component& AddBindingProperties(const char* key, const ComponentBindingPropertiesValue& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(key, value); return *this; }
 
@@ -194,73 +219,85 @@ namespace Model
 
     /**
      * <p>The data binding configuration for the component's properties. Use this for a
-     * collection component.</p>
+     * collection component. You can't specify <code>tags</code> as a valid property
+     * for <code>collectionProperties</code>.</p>
      */
     inline const Aws::Map<Aws::String, ComponentDataConfiguration>& GetCollectionProperties() const{ return m_collectionProperties; }
 
     /**
      * <p>The data binding configuration for the component's properties. Use this for a
-     * collection component.</p>
+     * collection component. You can't specify <code>tags</code> as a valid property
+     * for <code>collectionProperties</code>.</p>
      */
     inline bool CollectionPropertiesHasBeenSet() const { return m_collectionPropertiesHasBeenSet; }
 
     /**
      * <p>The data binding configuration for the component's properties. Use this for a
-     * collection component.</p>
+     * collection component. You can't specify <code>tags</code> as a valid property
+     * for <code>collectionProperties</code>.</p>
      */
     inline void SetCollectionProperties(const Aws::Map<Aws::String, ComponentDataConfiguration>& value) { m_collectionPropertiesHasBeenSet = true; m_collectionProperties = value; }
 
     /**
      * <p>The data binding configuration for the component's properties. Use this for a
-     * collection component.</p>
+     * collection component. You can't specify <code>tags</code> as a valid property
+     * for <code>collectionProperties</code>.</p>
      */
     inline void SetCollectionProperties(Aws::Map<Aws::String, ComponentDataConfiguration>&& value) { m_collectionPropertiesHasBeenSet = true; m_collectionProperties = std::move(value); }
 
     /**
      * <p>The data binding configuration for the component's properties. Use this for a
-     * collection component.</p>
+     * collection component. You can't specify <code>tags</code> as a valid property
+     * for <code>collectionProperties</code>.</p>
      */
     inline Component& WithCollectionProperties(const Aws::Map<Aws::String, ComponentDataConfiguration>& value) { SetCollectionProperties(value); return *this;}
 
     /**
      * <p>The data binding configuration for the component's properties. Use this for a
-     * collection component.</p>
+     * collection component. You can't specify <code>tags</code> as a valid property
+     * for <code>collectionProperties</code>.</p>
      */
     inline Component& WithCollectionProperties(Aws::Map<Aws::String, ComponentDataConfiguration>&& value) { SetCollectionProperties(std::move(value)); return *this;}
 
     /**
      * <p>The data binding configuration for the component's properties. Use this for a
-     * collection component.</p>
+     * collection component. You can't specify <code>tags</code> as a valid property
+     * for <code>collectionProperties</code>.</p>
      */
     inline Component& AddCollectionProperties(const Aws::String& key, const ComponentDataConfiguration& value) { m_collectionPropertiesHasBeenSet = true; m_collectionProperties.emplace(key, value); return *this; }
 
     /**
      * <p>The data binding configuration for the component's properties. Use this for a
-     * collection component.</p>
+     * collection component. You can't specify <code>tags</code> as a valid property
+     * for <code>collectionProperties</code>.</p>
      */
     inline Component& AddCollectionProperties(Aws::String&& key, const ComponentDataConfiguration& value) { m_collectionPropertiesHasBeenSet = true; m_collectionProperties.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The data binding configuration for the component's properties. Use this for a
-     * collection component.</p>
+     * collection component. You can't specify <code>tags</code> as a valid property
+     * for <code>collectionProperties</code>.</p>
      */
     inline Component& AddCollectionProperties(const Aws::String& key, ComponentDataConfiguration&& value) { m_collectionPropertiesHasBeenSet = true; m_collectionProperties.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The data binding configuration for the component's properties. Use this for a
-     * collection component.</p>
+     * collection component. You can't specify <code>tags</code> as a valid property
+     * for <code>collectionProperties</code>.</p>
      */
     inline Component& AddCollectionProperties(Aws::String&& key, ComponentDataConfiguration&& value) { m_collectionPropertiesHasBeenSet = true; m_collectionProperties.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The data binding configuration for the component's properties. Use this for a
-     * collection component.</p>
+     * collection component. You can't specify <code>tags</code> as a valid property
+     * for <code>collectionProperties</code>.</p>
      */
     inline Component& AddCollectionProperties(const char* key, ComponentDataConfiguration&& value) { m_collectionPropertiesHasBeenSet = true; m_collectionProperties.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The data binding configuration for the component's properties. Use this for a
-     * collection component.</p>
+     * collection component. You can't specify <code>tags</code> as a valid property
+     * for <code>collectionProperties</code>.</p>
      */
     inline Component& AddCollectionProperties(const char* key, const ComponentDataConfiguration& value) { m_collectionPropertiesHasBeenSet = true; m_collectionProperties.emplace(key, value); return *this; }
 
@@ -387,6 +424,91 @@ namespace Model
 
 
     /**
+     * <p>Describes the events that can be raised on the component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline const Aws::Map<Aws::String, ComponentEvent>& GetEvents() const{ return m_events; }
+
+    /**
+     * <p>Describes the events that can be raised on the component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
+
+    /**
+     * <p>Describes the events that can be raised on the component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline void SetEvents(const Aws::Map<Aws::String, ComponentEvent>& value) { m_eventsHasBeenSet = true; m_events = value; }
+
+    /**
+     * <p>Describes the events that can be raised on the component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline void SetEvents(Aws::Map<Aws::String, ComponentEvent>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
+
+    /**
+     * <p>Describes the events that can be raised on the component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline Component& WithEvents(const Aws::Map<Aws::String, ComponentEvent>& value) { SetEvents(value); return *this;}
+
+    /**
+     * <p>Describes the events that can be raised on the component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline Component& WithEvents(Aws::Map<Aws::String, ComponentEvent>&& value) { SetEvents(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the events that can be raised on the component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline Component& AddEvents(const Aws::String& key, const ComponentEvent& value) { m_eventsHasBeenSet = true; m_events.emplace(key, value); return *this; }
+
+    /**
+     * <p>Describes the events that can be raised on the component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline Component& AddEvents(Aws::String&& key, const ComponentEvent& value) { m_eventsHasBeenSet = true; m_events.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Describes the events that can be raised on the component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline Component& AddEvents(const Aws::String& key, ComponentEvent&& value) { m_eventsHasBeenSet = true; m_events.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Describes the events that can be raised on the component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline Component& AddEvents(Aws::String&& key, ComponentEvent&& value) { m_eventsHasBeenSet = true; m_events.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Describes the events that can be raised on the component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline Component& AddEvents(const char* key, ComponentEvent&& value) { m_eventsHasBeenSet = true; m_events.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Describes the events that can be raised on the component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline Component& AddEvents(const char* key, const ComponentEvent& value) { m_eventsHasBeenSet = true; m_events.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The unique ID of the component.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
@@ -501,136 +623,201 @@ namespace Model
 
     /**
      * <p>Describes the component's properties that can be overriden in a customized
-     * instance of the component.</p>
+     * instance of the component. You can't specify <code>tags</code> as a valid
+     * property for <code>overrides</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& GetOverrides() const{ return m_overrides; }
 
     /**
      * <p>Describes the component's properties that can be overriden in a customized
-     * instance of the component.</p>
+     * instance of the component. You can't specify <code>tags</code> as a valid
+     * property for <code>overrides</code>.</p>
      */
     inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
 
     /**
      * <p>Describes the component's properties that can be overriden in a customized
-     * instance of the component.</p>
+     * instance of the component. You can't specify <code>tags</code> as a valid
+     * property for <code>overrides</code>.</p>
      */
     inline void SetOverrides(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& value) { m_overridesHasBeenSet = true; m_overrides = value; }
 
     /**
      * <p>Describes the component's properties that can be overriden in a customized
-     * instance of the component.</p>
+     * instance of the component. You can't specify <code>tags</code> as a valid
+     * property for <code>overrides</code>.</p>
      */
     inline void SetOverrides(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
 
     /**
      * <p>Describes the component's properties that can be overriden in a customized
-     * instance of the component.</p>
+     * instance of the component. You can't specify <code>tags</code> as a valid
+     * property for <code>overrides</code>.</p>
      */
     inline Component& WithOverrides(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& value) { SetOverrides(value); return *this;}
 
     /**
      * <p>Describes the component's properties that can be overriden in a customized
-     * instance of the component.</p>
+     * instance of the component. You can't specify <code>tags</code> as a valid
+     * property for <code>overrides</code>.</p>
      */
     inline Component& WithOverrides(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>&& value) { SetOverrides(std::move(value)); return *this;}
 
     /**
      * <p>Describes the component's properties that can be overriden in a customized
-     * instance of the component.</p>
+     * instance of the component. You can't specify <code>tags</code> as a valid
+     * property for <code>overrides</code>.</p>
      */
     inline Component& AddOverrides(const Aws::String& key, const Aws::Map<Aws::String, Aws::String>& value) { m_overridesHasBeenSet = true; m_overrides.emplace(key, value); return *this; }
 
     /**
      * <p>Describes the component's properties that can be overriden in a customized
-     * instance of the component.</p>
+     * instance of the component. You can't specify <code>tags</code> as a valid
+     * property for <code>overrides</code>.</p>
      */
     inline Component& AddOverrides(Aws::String&& key, const Aws::Map<Aws::String, Aws::String>& value) { m_overridesHasBeenSet = true; m_overrides.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Describes the component's properties that can be overriden in a customized
-     * instance of the component.</p>
+     * instance of the component. You can't specify <code>tags</code> as a valid
+     * property for <code>overrides</code>.</p>
      */
     inline Component& AddOverrides(const Aws::String& key, Aws::Map<Aws::String, Aws::String>&& value) { m_overridesHasBeenSet = true; m_overrides.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Describes the component's properties that can be overriden in a customized
-     * instance of the component.</p>
+     * instance of the component. You can't specify <code>tags</code> as a valid
+     * property for <code>overrides</code>.</p>
      */
     inline Component& AddOverrides(Aws::String&& key, Aws::Map<Aws::String, Aws::String>&& value) { m_overridesHasBeenSet = true; m_overrides.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Describes the component's properties that can be overriden in a customized
-     * instance of the component.</p>
+     * instance of the component. You can't specify <code>tags</code> as a valid
+     * property for <code>overrides</code>.</p>
      */
     inline Component& AddOverrides(const char* key, Aws::Map<Aws::String, Aws::String>&& value) { m_overridesHasBeenSet = true; m_overrides.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Describes the component's properties that can be overriden in a customized
-     * instance of the component.</p>
+     * instance of the component. You can't specify <code>tags</code> as a valid
+     * property for <code>overrides</code>.</p>
      */
     inline Component& AddOverrides(const char* key, const Aws::Map<Aws::String, Aws::String>& value) { m_overridesHasBeenSet = true; m_overrides.emplace(key, value); return *this; }
 
 
     /**
-     * <p>Describes the component's properties.</p>
+     * <p>Describes the component's properties. You can't specify <code>tags</code> as
+     * a valid property for <code>properties</code>.</p>
      */
     inline const Aws::Map<Aws::String, ComponentProperty>& GetProperties() const{ return m_properties; }
 
     /**
-     * <p>Describes the component's properties.</p>
+     * <p>Describes the component's properties. You can't specify <code>tags</code> as
+     * a valid property for <code>properties</code>.</p>
      */
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
 
     /**
-     * <p>Describes the component's properties.</p>
+     * <p>Describes the component's properties. You can't specify <code>tags</code> as
+     * a valid property for <code>properties</code>.</p>
      */
     inline void SetProperties(const Aws::Map<Aws::String, ComponentProperty>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
 
     /**
-     * <p>Describes the component's properties.</p>
+     * <p>Describes the component's properties. You can't specify <code>tags</code> as
+     * a valid property for <code>properties</code>.</p>
      */
     inline void SetProperties(Aws::Map<Aws::String, ComponentProperty>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
 
     /**
-     * <p>Describes the component's properties.</p>
+     * <p>Describes the component's properties. You can't specify <code>tags</code> as
+     * a valid property for <code>properties</code>.</p>
      */
     inline Component& WithProperties(const Aws::Map<Aws::String, ComponentProperty>& value) { SetProperties(value); return *this;}
 
     /**
-     * <p>Describes the component's properties.</p>
+     * <p>Describes the component's properties. You can't specify <code>tags</code> as
+     * a valid property for <code>properties</code>.</p>
      */
     inline Component& WithProperties(Aws::Map<Aws::String, ComponentProperty>&& value) { SetProperties(std::move(value)); return *this;}
 
     /**
-     * <p>Describes the component's properties.</p>
+     * <p>Describes the component's properties. You can't specify <code>tags</code> as
+     * a valid property for <code>properties</code>.</p>
      */
     inline Component& AddProperties(const Aws::String& key, const ComponentProperty& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
 
     /**
-     * <p>Describes the component's properties.</p>
+     * <p>Describes the component's properties. You can't specify <code>tags</code> as
+     * a valid property for <code>properties</code>.</p>
      */
     inline Component& AddProperties(Aws::String&& key, const ComponentProperty& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Describes the component's properties.</p>
+     * <p>Describes the component's properties. You can't specify <code>tags</code> as
+     * a valid property for <code>properties</code>.</p>
      */
     inline Component& AddProperties(const Aws::String& key, ComponentProperty&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Describes the component's properties.</p>
+     * <p>Describes the component's properties. You can't specify <code>tags</code> as
+     * a valid property for <code>properties</code>.</p>
      */
     inline Component& AddProperties(Aws::String&& key, ComponentProperty&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Describes the component's properties.</p>
+     * <p>Describes the component's properties. You can't specify <code>tags</code> as
+     * a valid property for <code>properties</code>.</p>
      */
     inline Component& AddProperties(const char* key, ComponentProperty&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Describes the component's properties.</p>
+     * <p>Describes the component's properties. You can't specify <code>tags</code> as
+     * a valid property for <code>properties</code>.</p>
      */
     inline Component& AddProperties(const char* key, const ComponentProperty& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The schema version of the component when it was imported.</p>
+     */
+    inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
+
+    /**
+     * <p>The schema version of the component when it was imported.</p>
+     */
+    inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
+
+    /**
+     * <p>The schema version of the component when it was imported.</p>
+     */
+    inline void SetSchemaVersion(const Aws::String& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
+
+    /**
+     * <p>The schema version of the component when it was imported.</p>
+     */
+    inline void SetSchemaVersion(Aws::String&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = std::move(value); }
+
+    /**
+     * <p>The schema version of the component when it was imported.</p>
+     */
+    inline void SetSchemaVersion(const char* value) { m_schemaVersionHasBeenSet = true; m_schemaVersion.assign(value); }
+
+    /**
+     * <p>The schema version of the component when it was imported.</p>
+     */
+    inline Component& WithSchemaVersion(const Aws::String& value) { SetSchemaVersion(value); return *this;}
+
+    /**
+     * <p>The schema version of the component when it was imported.</p>
+     */
+    inline Component& WithSchemaVersion(Aws::String&& value) { SetSchemaVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The schema version of the component when it was imported.</p>
+     */
+    inline Component& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
 
 
     /**
@@ -819,6 +1006,9 @@ namespace Model
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
 
+    Aws::Map<Aws::String, ComponentEvent> m_events;
+    bool m_eventsHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
 
@@ -833,6 +1023,9 @@ namespace Model
 
     Aws::Map<Aws::String, ComponentProperty> m_properties;
     bool m_propertiesHasBeenSet;
+
+    Aws::String m_schemaVersion;
+    bool m_schemaVersionHasBeenSet;
 
     Aws::String m_sourceId;
     bool m_sourceIdHasBeenSet;

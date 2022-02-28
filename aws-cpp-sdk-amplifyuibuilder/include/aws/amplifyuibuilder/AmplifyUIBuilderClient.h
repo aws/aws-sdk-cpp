@@ -140,7 +140,7 @@ namespace Model
    * For more information about deploying an Amplify application to Amazon Web
    * Services, see the <a
    * href="https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html">Amplify
-   * Console User Guide</a>.</p>
+   * User Guide</a>.</p>
    */
   class AWS_AMPLIFYUIBUILDER_API AmplifyUIBuilderClient : public Aws::Client::AWSJsonClient
   {

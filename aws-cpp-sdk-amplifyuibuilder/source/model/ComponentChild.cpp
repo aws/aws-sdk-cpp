@@ -21,6 +21,7 @@ namespace Model
 ComponentChild::ComponentChild() : 
     m_childrenHasBeenSet(false),
     m_componentTypeHasBeenSet(false),
+    m_eventsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_propertiesHasBeenSet(false)
 {
@@ -29,6 +30,7 @@ ComponentChild::ComponentChild() :
 ComponentChild::ComponentChild(JsonView jsonValue) : 
     m_childrenHasBeenSet(false),
     m_componentTypeHasBeenSet(false),
+    m_eventsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_propertiesHasBeenSet(false)
 {
@@ -52,6 +54,16 @@ ComponentChild& ComponentChild::operator =(JsonView jsonValue)
     m_componentType = jsonValue.GetString("componentType");
 
     m_componentTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("events"))
+  {
+    Aws::Map<Aws::String, JsonView> eventsJsonMap = jsonValue.GetObject("events").GetAllObjects();
+    for(auto& eventsItem : eventsJsonMap)
+    {
+      m_events[eventsItem.first] = eventsItem.second.AsObject();
+    }
+    m_eventsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -92,6 +104,17 @@ JsonValue ComponentChild::Jsonize() const
   if(m_componentTypeHasBeenSet)
   {
    payload.WithString("componentType", m_componentType);
+
+  }
+
+  if(m_eventsHasBeenSet)
+  {
+   JsonValue eventsJsonMap;
+   for(auto& eventsItem : m_events)
+   {
+     eventsJsonMap.WithObject(eventsItem.first, eventsItem.second.Jsonize());
+   }
+   payload.WithObject("events", std::move(eventsJsonMap));
 
   }
 

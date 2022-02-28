@@ -20,7 +20,8 @@ CreateExperimentTemplateRequest::CreateExperimentTemplateRequest() :
     m_targetsHasBeenSet(false),
     m_actionsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,12 @@ Aws::String CreateExperimentTemplateRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_logConfigurationHasBeenSet)
+  {
+   payload.WithObject("logConfiguration", m_logConfiguration.Jsonize());
 
   }
 

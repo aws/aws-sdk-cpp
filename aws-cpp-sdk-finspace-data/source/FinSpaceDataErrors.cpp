@@ -6,15 +6,37 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/finspace-data/FinSpaceDataErrors.h>
+#include <aws/finspace-data/model/ConflictException.h>
+#include <aws/finspace-data/model/ResourceNotFoundException.h>
+#include <aws/finspace-data/model/ValidationException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::FinSpaceData;
+using namespace Aws::FinSpaceData::Model;
 
 namespace Aws
 {
 namespace FinSpaceData
 {
+template<> AWS_FINSPACEDATA_API ConflictException FinSpaceDataError::GetModeledError()
+{
+  assert(this->GetErrorType() == FinSpaceDataErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
+template<> AWS_FINSPACEDATA_API ResourceNotFoundException FinSpaceDataError::GetModeledError()
+{
+  assert(this->GetErrorType() == FinSpaceDataErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_FINSPACEDATA_API ValidationException FinSpaceDataError::GetModeledError()
+{
+  assert(this->GetErrorType() == FinSpaceDataErrors::VALIDATION);
+  return ValidationException(this->GetJsonPayload().View());
+}
+
 namespace FinSpaceDataErrorMapper
 {
 

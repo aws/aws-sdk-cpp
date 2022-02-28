@@ -136,21 +136,21 @@ namespace Model
 
 
     /**
-     * <p>Time range to use for the Dataview. The value is determined as Epoch time in
+     * <p>Time range to use for the Dataview. The value is determined as epoch time in
      * milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM
      * UTC is specified as 1635768000000.</p>
      */
     inline long long GetAsOfTimestamp() const{ return m_asOfTimestamp; }
 
     /**
-     * <p>Time range to use for the Dataview. The value is determined as Epoch time in
+     * <p>Time range to use for the Dataview. The value is determined as epoch time in
      * milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM
      * UTC is specified as 1635768000000.</p>
      */
     inline void SetAsOfTimestamp(long long value) { m_asOfTimestamp = value; }
 
     /**
-     * <p>Time range to use for the Dataview. The value is determined as Epoch time in
+     * <p>Time range to use for the Dataview. The value is determined as epoch time in
      * milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM
      * UTC is specified as 1635768000000.</p>
      */
@@ -184,21 +184,21 @@ namespace Model
 
 
     /**
-     * <p>The last time that a Dataview was modified. The value is determined as Epoch
+     * <p>The last time that a Dataview was modified. The value is determined as epoch
      * time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline long long GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The last time that a Dataview was modified. The value is determined as Epoch
+     * <p>The last time that a Dataview was modified. The value is determined as epoch
      * time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline void SetLastModifiedTime(long long value) { m_lastModifiedTime = value; }
 
     /**
-     * <p>The last time that a Dataview was modified. The value is determined as Epoch
+     * <p>The last time that a Dataview was modified. The value is determined as epoch
      * time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
@@ -207,21 +207,21 @@ namespace Model
 
     /**
      * <p>The timestamp at which the Dataview was created in FinSpace. The value is
-     * determined as Epoch time in milliseconds. For example, the value for Monday,
+     * determined as epoch time in milliseconds. For example, the value for Monday,
      * November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline long long GetCreateTime() const{ return m_createTime; }
 
     /**
      * <p>The timestamp at which the Dataview was created in FinSpace. The value is
-     * determined as Epoch time in milliseconds. For example, the value for Monday,
+     * determined as epoch time in milliseconds. For example, the value for Monday,
      * November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline void SetCreateTime(long long value) { m_createTime = value; }
 
     /**
      * <p>The timestamp at which the Dataview was created in FinSpace. The value is
-     * determined as Epoch time in milliseconds. For example, the value for Monday,
+     * determined as epoch time in milliseconds. For example, the value for Monday,
      * November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline GetDataViewResult& WithCreateTime(long long value) { SetCreateTime(value); return *this;}
@@ -367,66 +367,66 @@ namespace Model
 
 
     /**
-     * <p>The status of a Dataview creation.</p> <ul> <li> <p> <code>RUNNING</code> -
-     * Dataview creation is running.</p> </li> <li> <p> <code>STARTING</code> -
-     * Dataview creation is starting.</p> </li> <li> <p> <code>FAILED</code> - Dataview
-     * creation has failed.</p> </li> <li> <p> <code>CANCELLED</code> - Dataview
-     * creation has been cancelled.</p> </li> <li> <p> <code>TIMEOUT</code> - Dataview
-     * creation has timed out.</p> </li> <li> <p> <code>SUCCESS</code> - Dataview
-     * creation has succeeded.</p> </li> <li> <p> <code>PENDING</code> - Dataview
-     * creation is pending.</p> </li> <li> <p> <code>FAILED_CLEANUP_FAILED</code> -
+     * <p>The status of a Dataview creation.</p> <ul> <li> <p> <code>RUNNING</code> –
+     * Dataview creation is running.</p> </li> <li> <p> <code>STARTING</code> –
+     * Dataview creation is starting.</p> </li> <li> <p> <code>FAILED</code> – Dataview
+     * creation has failed.</p> </li> <li> <p> <code>CANCELLED</code> – Dataview
+     * creation has been cancelled.</p> </li> <li> <p> <code>TIMEOUT</code> – Dataview
+     * creation has timed out.</p> </li> <li> <p> <code>SUCCESS</code> – Dataview
+     * creation has succeeded.</p> </li> <li> <p> <code>PENDING</code> – Dataview
+     * creation is pending.</p> </li> <li> <p> <code>FAILED_CLEANUP_FAILED</code> –
      * Dataview creation failed and resource cleanup failed.</p> </li> </ul>
      */
     inline const DataViewStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of a Dataview creation.</p> <ul> <li> <p> <code>RUNNING</code> -
-     * Dataview creation is running.</p> </li> <li> <p> <code>STARTING</code> -
-     * Dataview creation is starting.</p> </li> <li> <p> <code>FAILED</code> - Dataview
-     * creation has failed.</p> </li> <li> <p> <code>CANCELLED</code> - Dataview
-     * creation has been cancelled.</p> </li> <li> <p> <code>TIMEOUT</code> - Dataview
-     * creation has timed out.</p> </li> <li> <p> <code>SUCCESS</code> - Dataview
-     * creation has succeeded.</p> </li> <li> <p> <code>PENDING</code> - Dataview
-     * creation is pending.</p> </li> <li> <p> <code>FAILED_CLEANUP_FAILED</code> -
+     * <p>The status of a Dataview creation.</p> <ul> <li> <p> <code>RUNNING</code> –
+     * Dataview creation is running.</p> </li> <li> <p> <code>STARTING</code> –
+     * Dataview creation is starting.</p> </li> <li> <p> <code>FAILED</code> – Dataview
+     * creation has failed.</p> </li> <li> <p> <code>CANCELLED</code> – Dataview
+     * creation has been cancelled.</p> </li> <li> <p> <code>TIMEOUT</code> – Dataview
+     * creation has timed out.</p> </li> <li> <p> <code>SUCCESS</code> – Dataview
+     * creation has succeeded.</p> </li> <li> <p> <code>PENDING</code> – Dataview
+     * creation is pending.</p> </li> <li> <p> <code>FAILED_CLEANUP_FAILED</code> –
      * Dataview creation failed and resource cleanup failed.</p> </li> </ul>
      */
     inline void SetStatus(const DataViewStatus& value) { m_status = value; }
 
     /**
-     * <p>The status of a Dataview creation.</p> <ul> <li> <p> <code>RUNNING</code> -
-     * Dataview creation is running.</p> </li> <li> <p> <code>STARTING</code> -
-     * Dataview creation is starting.</p> </li> <li> <p> <code>FAILED</code> - Dataview
-     * creation has failed.</p> </li> <li> <p> <code>CANCELLED</code> - Dataview
-     * creation has been cancelled.</p> </li> <li> <p> <code>TIMEOUT</code> - Dataview
-     * creation has timed out.</p> </li> <li> <p> <code>SUCCESS</code> - Dataview
-     * creation has succeeded.</p> </li> <li> <p> <code>PENDING</code> - Dataview
-     * creation is pending.</p> </li> <li> <p> <code>FAILED_CLEANUP_FAILED</code> -
+     * <p>The status of a Dataview creation.</p> <ul> <li> <p> <code>RUNNING</code> –
+     * Dataview creation is running.</p> </li> <li> <p> <code>STARTING</code> –
+     * Dataview creation is starting.</p> </li> <li> <p> <code>FAILED</code> – Dataview
+     * creation has failed.</p> </li> <li> <p> <code>CANCELLED</code> – Dataview
+     * creation has been cancelled.</p> </li> <li> <p> <code>TIMEOUT</code> – Dataview
+     * creation has timed out.</p> </li> <li> <p> <code>SUCCESS</code> – Dataview
+     * creation has succeeded.</p> </li> <li> <p> <code>PENDING</code> – Dataview
+     * creation is pending.</p> </li> <li> <p> <code>FAILED_CLEANUP_FAILED</code> –
      * Dataview creation failed and resource cleanup failed.</p> </li> </ul>
      */
     inline void SetStatus(DataViewStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The status of a Dataview creation.</p> <ul> <li> <p> <code>RUNNING</code> -
-     * Dataview creation is running.</p> </li> <li> <p> <code>STARTING</code> -
-     * Dataview creation is starting.</p> </li> <li> <p> <code>FAILED</code> - Dataview
-     * creation has failed.</p> </li> <li> <p> <code>CANCELLED</code> - Dataview
-     * creation has been cancelled.</p> </li> <li> <p> <code>TIMEOUT</code> - Dataview
-     * creation has timed out.</p> </li> <li> <p> <code>SUCCESS</code> - Dataview
-     * creation has succeeded.</p> </li> <li> <p> <code>PENDING</code> - Dataview
-     * creation is pending.</p> </li> <li> <p> <code>FAILED_CLEANUP_FAILED</code> -
+     * <p>The status of a Dataview creation.</p> <ul> <li> <p> <code>RUNNING</code> –
+     * Dataview creation is running.</p> </li> <li> <p> <code>STARTING</code> –
+     * Dataview creation is starting.</p> </li> <li> <p> <code>FAILED</code> – Dataview
+     * creation has failed.</p> </li> <li> <p> <code>CANCELLED</code> – Dataview
+     * creation has been cancelled.</p> </li> <li> <p> <code>TIMEOUT</code> – Dataview
+     * creation has timed out.</p> </li> <li> <p> <code>SUCCESS</code> – Dataview
+     * creation has succeeded.</p> </li> <li> <p> <code>PENDING</code> – Dataview
+     * creation is pending.</p> </li> <li> <p> <code>FAILED_CLEANUP_FAILED</code> –
      * Dataview creation failed and resource cleanup failed.</p> </li> </ul>
      */
     inline GetDataViewResult& WithStatus(const DataViewStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of a Dataview creation.</p> <ul> <li> <p> <code>RUNNING</code> -
-     * Dataview creation is running.</p> </li> <li> <p> <code>STARTING</code> -
-     * Dataview creation is starting.</p> </li> <li> <p> <code>FAILED</code> - Dataview
-     * creation has failed.</p> </li> <li> <p> <code>CANCELLED</code> - Dataview
-     * creation has been cancelled.</p> </li> <li> <p> <code>TIMEOUT</code> - Dataview
-     * creation has timed out.</p> </li> <li> <p> <code>SUCCESS</code> - Dataview
-     * creation has succeeded.</p> </li> <li> <p> <code>PENDING</code> - Dataview
-     * creation is pending.</p> </li> <li> <p> <code>FAILED_CLEANUP_FAILED</code> -
+     * <p>The status of a Dataview creation.</p> <ul> <li> <p> <code>RUNNING</code> –
+     * Dataview creation is running.</p> </li> <li> <p> <code>STARTING</code> –
+     * Dataview creation is starting.</p> </li> <li> <p> <code>FAILED</code> – Dataview
+     * creation has failed.</p> </li> <li> <p> <code>CANCELLED</code> – Dataview
+     * creation has been cancelled.</p> </li> <li> <p> <code>TIMEOUT</code> – Dataview
+     * creation has timed out.</p> </li> <li> <p> <code>SUCCESS</code> – Dataview
+     * creation has succeeded.</p> </li> <li> <p> <code>PENDING</code> – Dataview
+     * creation is pending.</p> </li> <li> <p> <code>FAILED_CLEANUP_FAILED</code> –
      * Dataview creation failed and resource cleanup failed.</p> </li> </ul>
      */
     inline GetDataViewResult& WithStatus(DataViewStatus&& value) { SetStatus(std::move(value)); return *this;}

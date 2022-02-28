@@ -296,20 +296,76 @@ namespace Model
     inline DescribeImageAttributeResponse& WithSriovNetSupport(AttributeValue&& value) { SetSriovNetSupport(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The boot mode.</p>
+     */
     inline const AttributeValue& GetBootMode() const{ return m_bootMode; }
 
-    
+    /**
+     * <p>The boot mode.</p>
+     */
     inline void SetBootMode(const AttributeValue& value) { m_bootMode = value; }
 
-    
+    /**
+     * <p>The boot mode.</p>
+     */
     inline void SetBootMode(AttributeValue&& value) { m_bootMode = std::move(value); }
 
-    
+    /**
+     * <p>The boot mode.</p>
+     */
     inline DescribeImageAttributeResponse& WithBootMode(const AttributeValue& value) { SetBootMode(value); return *this;}
 
-    
+    /**
+     * <p>The boot mode.</p>
+     */
     inline DescribeImageAttributeResponse& WithBootMode(AttributeValue&& value) { SetBootMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
+     * the AMI is used, there is a 24-hour delay before that usage is reported.</p>
+     *  <p> <code>lastLaunchedTime</code> data is available starting April
+     * 2017.</p> 
+     */
+    inline const AttributeValue& GetLastLaunchedTime() const{ return m_lastLaunchedTime; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
+     * the AMI is used, there is a 24-hour delay before that usage is reported.</p>
+     *  <p> <code>lastLaunchedTime</code> data is available starting April
+     * 2017.</p> 
+     */
+    inline void SetLastLaunchedTime(const AttributeValue& value) { m_lastLaunchedTime = value; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
+     * the AMI is used, there is a 24-hour delay before that usage is reported.</p>
+     *  <p> <code>lastLaunchedTime</code> data is available starting April
+     * 2017.</p> 
+     */
+    inline void SetLastLaunchedTime(AttributeValue&& value) { m_lastLaunchedTime = std::move(value); }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
+     * the AMI is used, there is a 24-hour delay before that usage is reported.</p>
+     *  <p> <code>lastLaunchedTime</code> data is available starting April
+     * 2017.</p> 
+     */
+    inline DescribeImageAttributeResponse& WithLastLaunchedTime(const AttributeValue& value) { SetLastLaunchedTime(value); return *this;}
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
+     * the AMI is used, there is a 24-hour delay before that usage is reported.</p>
+     *  <p> <code>lastLaunchedTime</code> data is available starting April
+     * 2017.</p> 
+     */
+    inline DescribeImageAttributeResponse& WithLastLaunchedTime(AttributeValue&& value) { SetLastLaunchedTime(std::move(value)); return *this;}
 
 
     
@@ -346,6 +402,8 @@ namespace Model
     AttributeValue m_sriovNetSupport;
 
     AttributeValue m_bootMode;
+
+    AttributeValue m_lastLaunchedTime;
 
     ResponseMetadata m_responseMetadata;
   };

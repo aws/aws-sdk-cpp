@@ -37,6 +37,12 @@ ExportComponentsResult& ExportComponentsResult::operator =(const Aws::AmazonWebS
     }
   }
 
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
 
 
   return *this;

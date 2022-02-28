@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/fis/model/CreateExperimentTemplateLogConfigurationInput.h>
 #include <aws/fis/model/CreateExperimentTemplateStopConditionInput.h>
 #include <aws/fis/model/CreateExperimentTemplateTargetInput.h>
 #include <aws/fis/model/CreateExperimentTemplateActionInput.h>
@@ -405,6 +406,37 @@ namespace Model
      */
     inline CreateExperimentTemplateRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The configuration for experiment logging.</p>
+     */
+    inline const CreateExperimentTemplateLogConfigurationInput& GetLogConfiguration() const{ return m_logConfiguration; }
+
+    /**
+     * <p>The configuration for experiment logging.</p>
+     */
+    inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration for experiment logging.</p>
+     */
+    inline void SetLogConfiguration(const CreateExperimentTemplateLogConfigurationInput& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
+
+    /**
+     * <p>The configuration for experiment logging.</p>
+     */
+    inline void SetLogConfiguration(CreateExperimentTemplateLogConfigurationInput&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration for experiment logging.</p>
+     */
+    inline CreateExperimentTemplateRequest& WithLogConfiguration(const CreateExperimentTemplateLogConfigurationInput& value) { SetLogConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration for experiment logging.</p>
+     */
+    inline CreateExperimentTemplateRequest& WithLogConfiguration(CreateExperimentTemplateLogConfigurationInput&& value) { SetLogConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientToken;
@@ -427,6 +459,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    CreateExperimentTemplateLogConfigurationInput m_logConfiguration;
+    bool m_logConfigurationHasBeenSet;
   };
 
 } // namespace Model

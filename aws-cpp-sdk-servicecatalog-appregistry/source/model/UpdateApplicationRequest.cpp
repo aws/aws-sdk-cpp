@@ -14,7 +14,6 @@ using namespace Aws::Utils;
 
 UpdateApplicationRequest::UpdateApplicationRequest() : 
     m_applicationHasBeenSet(false),
-    m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
 }
@@ -22,12 +21,6 @@ UpdateApplicationRequest::UpdateApplicationRequest() :
 Aws::String UpdateApplicationRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
-  }
 
   if(m_descriptionHasBeenSet)
   {

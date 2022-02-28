@@ -45,42 +45,42 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the PermissionGroup.</p>
+     * <p>The unique identifier for the <code>PermissionGroup</code>.</p>
      */
     inline const Aws::String& GetPermissionGroupId() const{ return m_permissionGroupId; }
 
     /**
-     * <p>The unique identifier of the PermissionGroup.</p>
+     * <p>The unique identifier for the <code>PermissionGroup</code>.</p>
      */
     inline bool PermissionGroupIdHasBeenSet() const { return m_permissionGroupIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the PermissionGroup.</p>
+     * <p>The unique identifier for the <code>PermissionGroup</code>.</p>
      */
     inline void SetPermissionGroupId(const Aws::String& value) { m_permissionGroupIdHasBeenSet = true; m_permissionGroupId = value; }
 
     /**
-     * <p>The unique identifier of the PermissionGroup.</p>
+     * <p>The unique identifier for the <code>PermissionGroup</code>.</p>
      */
     inline void SetPermissionGroupId(Aws::String&& value) { m_permissionGroupIdHasBeenSet = true; m_permissionGroupId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the PermissionGroup.</p>
+     * <p>The unique identifier for the <code>PermissionGroup</code>.</p>
      */
     inline void SetPermissionGroupId(const char* value) { m_permissionGroupIdHasBeenSet = true; m_permissionGroupId.assign(value); }
 
     /**
-     * <p>The unique identifier of the PermissionGroup.</p>
+     * <p>The unique identifier for the <code>PermissionGroup</code>.</p>
      */
     inline PermissionGroupParams& WithPermissionGroupId(const Aws::String& value) { SetPermissionGroupId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the PermissionGroup.</p>
+     * <p>The unique identifier for the <code>PermissionGroup</code>.</p>
      */
     inline PermissionGroupParams& WithPermissionGroupId(Aws::String&& value) { SetPermissionGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the PermissionGroup.</p>
+     * <p>The unique identifier for the <code>PermissionGroup</code>.</p>
      */
     inline PermissionGroupParams& WithPermissionGroupId(const char* value) { SetPermissionGroupId(value); return *this;}
 

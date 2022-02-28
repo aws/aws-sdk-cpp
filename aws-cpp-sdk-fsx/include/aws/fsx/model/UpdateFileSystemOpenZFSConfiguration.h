@@ -60,7 +60,7 @@ namespace Model
      * <code>true</code> and you specify one or more tags, only the specified tags are
      * copied to backups. If you specify one or more tags when creating a
      * user-initiated backup, no tags are copied from the file system, regardless of
-     * this value. </p>
+     * this value.</p>
      */
     inline bool GetCopyTagsToBackups() const{ return m_copyTagsToBackups; }
 
@@ -72,7 +72,7 @@ namespace Model
      * <code>true</code> and you specify one or more tags, only the specified tags are
      * copied to backups. If you specify one or more tags when creating a
      * user-initiated backup, no tags are copied from the file system, regardless of
-     * this value. </p>
+     * this value.</p>
      */
     inline bool CopyTagsToBackupsHasBeenSet() const { return m_copyTagsToBackupsHasBeenSet; }
 
@@ -84,7 +84,7 @@ namespace Model
      * <code>true</code> and you specify one or more tags, only the specified tags are
      * copied to backups. If you specify one or more tags when creating a
      * user-initiated backup, no tags are copied from the file system, regardless of
-     * this value. </p>
+     * this value.</p>
      */
     inline void SetCopyTagsToBackups(bool value) { m_copyTagsToBackupsHasBeenSet = true; m_copyTagsToBackups = value; }
 
@@ -96,7 +96,7 @@ namespace Model
      * <code>true</code> and you specify one or more tags, only the specified tags are
      * copied to backups. If you specify one or more tags when creating a
      * user-initiated backup, no tags are copied from the file system, regardless of
-     * this value. </p>
+     * this value.</p>
      */
     inline UpdateFileSystemOpenZFSConfiguration& WithCopyTagsToBackups(bool value) { SetCopyTagsToBackups(value); return *this;}
 
@@ -108,7 +108,7 @@ namespace Model
      * user doesn't specify tags. If this value is <code>true</code> and you specify
      * one or more tags, only the specified tags are copied to snapshots. If you
      * specify one or more tags when creating the snapshot, no tags are copied from the
-     * volume, regardless of this value. </p>
+     * volume, regardless of this value.</p>
      */
     inline bool GetCopyTagsToVolumes() const{ return m_copyTagsToVolumes; }
 
@@ -119,7 +119,7 @@ namespace Model
      * user doesn't specify tags. If this value is <code>true</code> and you specify
      * one or more tags, only the specified tags are copied to snapshots. If you
      * specify one or more tags when creating the snapshot, no tags are copied from the
-     * volume, regardless of this value. </p>
+     * volume, regardless of this value.</p>
      */
     inline bool CopyTagsToVolumesHasBeenSet() const { return m_copyTagsToVolumesHasBeenSet; }
 
@@ -130,7 +130,7 @@ namespace Model
      * user doesn't specify tags. If this value is <code>true</code> and you specify
      * one or more tags, only the specified tags are copied to snapshots. If you
      * specify one or more tags when creating the snapshot, no tags are copied from the
-     * volume, regardless of this value. </p>
+     * volume, regardless of this value.</p>
      */
     inline void SetCopyTagsToVolumes(bool value) { m_copyTagsToVolumesHasBeenSet = true; m_copyTagsToVolumes = value; }
 
@@ -141,7 +141,7 @@ namespace Model
      * user doesn't specify tags. If this value is <code>true</code> and you specify
      * one or more tags, only the specified tags are copied to snapshots. If you
      * specify one or more tags when creating the snapshot, no tags are copied from the
-     * volume, regardless of this value. </p>
+     * volume, regardless of this value.</p>
      */
     inline UpdateFileSystemOpenZFSConfiguration& WithCopyTagsToVolumes(bool value) { SetCopyTagsToVolumes(value); return *this;}
 
@@ -173,25 +173,25 @@ namespace Model
 
     /**
      * <p>The throughput of an Amazon FSx file system, measured in megabytes per second
-     * (MBps), in 2 to the nth increments, between 2^3 (8) and 2^12 (4096). </p>
+     * (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
      */
     inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
 
     /**
      * <p>The throughput of an Amazon FSx file system, measured in megabytes per second
-     * (MBps), in 2 to the nth increments, between 2^3 (8) and 2^12 (4096). </p>
+     * (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
      */
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
 
     /**
      * <p>The throughput of an Amazon FSx file system, measured in megabytes per second
-     * (MBps), in 2 to the nth increments, between 2^3 (8) and 2^12 (4096). </p>
+     * (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
      */
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
 
     /**
      * <p>The throughput of an Amazon FSx file system, measured in megabytes per second
-     * (MBps), in 2 to the nth increments, between 2^3 (8) and 2^12 (4096). </p>
+     * (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
      */
     inline UpdateFileSystemOpenZFSConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
 

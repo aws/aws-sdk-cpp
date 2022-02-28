@@ -213,25 +213,25 @@ namespace Model
 
     /**
      * <p>The throughput of an Amazon FSx file system, measured in megabytes per second
-     * (MBps), in 2 to the nth increments, between 2^3 (8) and 2^11 (2048). </p>
+     * (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
      */
     inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
 
     /**
      * <p>The throughput of an Amazon FSx file system, measured in megabytes per second
-     * (MBps), in 2 to the nth increments, between 2^3 (8) and 2^11 (2048). </p>
+     * (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
      */
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
 
     /**
      * <p>The throughput of an Amazon FSx file system, measured in megabytes per second
-     * (MBps), in 2 to the nth increments, between 2^3 (8) and 2^11 (2048). </p>
+     * (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
      */
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
 
     /**
      * <p>The throughput of an Amazon FSx file system, measured in megabytes per second
-     * (MBps), in 2 to the nth increments, between 2^3 (8) and 2^11 (2048). </p>
+     * (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
      */
     inline OpenZFSFileSystemConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
 

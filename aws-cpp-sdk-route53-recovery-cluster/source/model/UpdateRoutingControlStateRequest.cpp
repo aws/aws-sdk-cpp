@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateRoutingControlStateRequest::UpdateRoutingControlStateRequest() : 
     m_routingControlArnHasBeenSet(false),
     m_routingControlState(RoutingControlState::NOT_SET),
-    m_routingControlStateHasBeenSet(false)
+    m_routingControlStateHasBeenSet(false),
+    m_safetyRulesToOverrideHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,17 @@ Aws::String UpdateRoutingControlStateRequest::SerializePayload() const
   if(m_routingControlStateHasBeenSet)
   {
    payload.WithString("RoutingControlState", RoutingControlStateMapper::GetNameForRoutingControlState(m_routingControlState));
+  }
+
+  if(m_safetyRulesToOverrideHasBeenSet)
+  {
+   Array<JsonValue> safetyRulesToOverrideJsonList(m_safetyRulesToOverride.size());
+   for(unsigned safetyRulesToOverrideIndex = 0; safetyRulesToOverrideIndex < safetyRulesToOverrideJsonList.GetLength(); ++safetyRulesToOverrideIndex)
+   {
+     safetyRulesToOverrideJsonList[safetyRulesToOverrideIndex].AsString(m_safetyRulesToOverride[safetyRulesToOverrideIndex]);
+   }
+   payload.WithArray("SafetyRulesToOverride", std::move(safetyRulesToOverrideJsonList));
+
   }
 
   return payload.View().WriteReadable();

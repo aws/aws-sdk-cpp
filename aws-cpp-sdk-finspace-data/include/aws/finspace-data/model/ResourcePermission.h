@@ -33,7 +33,7 @@ namespace Model
    * <code>AddDatasetData</code> </p> </li> <li> <p> <code>CreateSnapshot</code> </p>
    * </li> <li> <p> <code>EditDatasetMetadata</code> </p> </li> <li> <p>
    * <code>DeleteDataset</code> </p> </li> </ul> <p>For more information on the
-   * ataset permissions, see <a
+   * dataset permissions, see <a
    * href="https://docs.aws.amazon.com/finspace/latest/userguide/managing-user-permissions.html#supported-dataset-permissions">Supported
    * Dataset Permissions</a> in the FinSpace User Guide.</p><p><h3>See Also:</h3>  
    * <a

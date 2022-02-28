@@ -26,11 +26,13 @@ Component::Component() :
     m_componentTypeHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
+    m_eventsHasBeenSet(false),
     m_idHasBeenSet(false),
     m_modifiedAtHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_overridesHasBeenSet(false),
     m_propertiesHasBeenSet(false),
+    m_schemaVersionHasBeenSet(false),
     m_sourceIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_variantsHasBeenSet(false)
@@ -45,11 +47,13 @@ Component::Component(JsonView jsonValue) :
     m_componentTypeHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
+    m_eventsHasBeenSet(false),
     m_idHasBeenSet(false),
     m_modifiedAtHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_overridesHasBeenSet(false),
     m_propertiesHasBeenSet(false),
+    m_schemaVersionHasBeenSet(false),
     m_sourceIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_variantsHasBeenSet(false)
@@ -117,6 +121,16 @@ Component& Component::operator =(JsonView jsonValue)
     m_environmentNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("events"))
+  {
+    Aws::Map<Aws::String, JsonView> eventsJsonMap = jsonValue.GetObject("events").GetAllObjects();
+    for(auto& eventsItem : eventsJsonMap)
+    {
+      m_events[eventsItem.first] = eventsItem.second.AsObject();
+    }
+    m_eventsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -162,6 +176,13 @@ Component& Component::operator =(JsonView jsonValue)
       m_properties[propertiesItem.first] = propertiesItem.second.AsObject();
     }
     m_propertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("schemaVersion"))
+  {
+    m_schemaVersion = jsonValue.GetString("schemaVersion");
+
+    m_schemaVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sourceId"))
@@ -254,6 +275,17 @@ JsonValue Component::Jsonize() const
 
   }
 
+  if(m_eventsHasBeenSet)
+  {
+   JsonValue eventsJsonMap;
+   for(auto& eventsItem : m_events)
+   {
+     eventsJsonMap.WithObject(eventsItem.first, eventsItem.second.Jsonize());
+   }
+   payload.WithObject("events", std::move(eventsJsonMap));
+
+  }
+
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
@@ -295,6 +327,12 @@ JsonValue Component::Jsonize() const
      propertiesJsonMap.WithObject(propertiesItem.first, propertiesItem.second.Jsonize());
    }
    payload.WithObject("properties", std::move(propertiesJsonMap));
+
+  }
+
+  if(m_schemaVersionHasBeenSet)
+  {
+   payload.WithString("schemaVersion", m_schemaVersion);
 
   }
 

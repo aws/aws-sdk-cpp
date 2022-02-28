@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>A routing control state.</p><p><h3>See Also:</h3>   <a
+   * <p>A routing control state entry.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-cluster-2019-12-02/UpdateRoutingControlStateEntry">AWS
    * API Reference</a></p>
    */
@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Number (ARN) for the routing control state entry.</p>
+     * <p>The Amazon Resource Number (ARN) for a routing control state entry.</p>
      */
     inline const Aws::String& GetRoutingControlArn() const{ return m_routingControlArn; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) for the routing control state entry.</p>
+     * <p>The Amazon Resource Number (ARN) for a routing control state entry.</p>
      */
     inline bool RoutingControlArnHasBeenSet() const { return m_routingControlArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) for the routing control state entry.</p>
+     * <p>The Amazon Resource Number (ARN) for a routing control state entry.</p>
      */
     inline void SetRoutingControlArn(const Aws::String& value) { m_routingControlArnHasBeenSet = true; m_routingControlArn = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) for the routing control state entry.</p>
+     * <p>The Amazon Resource Number (ARN) for a routing control state entry.</p>
      */
     inline void SetRoutingControlArn(Aws::String&& value) { m_routingControlArnHasBeenSet = true; m_routingControlArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) for the routing control state entry.</p>
+     * <p>The Amazon Resource Number (ARN) for a routing control state entry.</p>
      */
     inline void SetRoutingControlArn(const char* value) { m_routingControlArnHasBeenSet = true; m_routingControlArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) for the routing control state entry.</p>
+     * <p>The Amazon Resource Number (ARN) for a routing control state entry.</p>
      */
     inline UpdateRoutingControlStateEntry& WithRoutingControlArn(const Aws::String& value) { SetRoutingControlArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) for the routing control state entry.</p>
+     * <p>The Amazon Resource Number (ARN) for a routing control state entry.</p>
      */
     inline UpdateRoutingControlStateEntry& WithRoutingControlArn(Aws::String&& value) { SetRoutingControlArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) for the routing control state entry.</p>
+     * <p>The Amazon Resource Number (ARN) for a routing control state entry.</p>
      */
     inline UpdateRoutingControlStateEntry& WithRoutingControlArn(const char* value) { SetRoutingControlArn(value); return *this;}
 

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/amplifyuibuilder/model/ComponentChild.h>
+#include <aws/amplifyuibuilder/model/ComponentEvent.h>
 #include <aws/amplifyuibuilder/model/ComponentProperty.h>
 #include <utility>
 
@@ -125,6 +126,91 @@ namespace Model
 
 
     /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline const Aws::Map<Aws::String, ComponentEvent>& GetEvents() const{ return m_events; }
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline void SetEvents(const Aws::Map<Aws::String, ComponentEvent>& value) { m_eventsHasBeenSet = true; m_events = value; }
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline void SetEvents(Aws::Map<Aws::String, ComponentEvent>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline ComponentChild& WithEvents(const Aws::Map<Aws::String, ComponentEvent>& value) { SetEvents(value); return *this;}
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline ComponentChild& WithEvents(Aws::Map<Aws::String, ComponentEvent>&& value) { SetEvents(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline ComponentChild& AddEvents(const Aws::String& key, const ComponentEvent& value) { m_eventsHasBeenSet = true; m_events.emplace(key, value); return *this; }
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline ComponentChild& AddEvents(Aws::String&& key, const ComponentEvent& value) { m_eventsHasBeenSet = true; m_events.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline ComponentChild& AddEvents(const Aws::String& key, ComponentEvent&& value) { m_eventsHasBeenSet = true; m_events.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline ComponentChild& AddEvents(Aws::String&& key, ComponentEvent&& value) { m_eventsHasBeenSet = true; m_events.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline ComponentChild& AddEvents(const char* key, ComponentEvent&& value) { m_eventsHasBeenSet = true; m_events.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline ComponentChild& AddEvents(const char* key, const ComponentEvent& value) { m_eventsHasBeenSet = true; m_events.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The name of the child component.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -166,62 +252,74 @@ namespace Model
 
 
     /**
-     * <p>Describes the properties of the child component.</p>
+     * <p>Describes the properties of the child component. You can't specify
+     * <code>tags</code> as a valid property for <code>properties</code>.</p>
      */
     inline const Aws::Map<Aws::String, ComponentProperty>& GetProperties() const{ return m_properties; }
 
     /**
-     * <p>Describes the properties of the child component.</p>
+     * <p>Describes the properties of the child component. You can't specify
+     * <code>tags</code> as a valid property for <code>properties</code>.</p>
      */
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
 
     /**
-     * <p>Describes the properties of the child component.</p>
+     * <p>Describes the properties of the child component. You can't specify
+     * <code>tags</code> as a valid property for <code>properties</code>.</p>
      */
     inline void SetProperties(const Aws::Map<Aws::String, ComponentProperty>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
 
     /**
-     * <p>Describes the properties of the child component.</p>
+     * <p>Describes the properties of the child component. You can't specify
+     * <code>tags</code> as a valid property for <code>properties</code>.</p>
      */
     inline void SetProperties(Aws::Map<Aws::String, ComponentProperty>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
 
     /**
-     * <p>Describes the properties of the child component.</p>
+     * <p>Describes the properties of the child component. You can't specify
+     * <code>tags</code> as a valid property for <code>properties</code>.</p>
      */
     inline ComponentChild& WithProperties(const Aws::Map<Aws::String, ComponentProperty>& value) { SetProperties(value); return *this;}
 
     /**
-     * <p>Describes the properties of the child component.</p>
+     * <p>Describes the properties of the child component. You can't specify
+     * <code>tags</code> as a valid property for <code>properties</code>.</p>
      */
     inline ComponentChild& WithProperties(Aws::Map<Aws::String, ComponentProperty>&& value) { SetProperties(std::move(value)); return *this;}
 
     /**
-     * <p>Describes the properties of the child component.</p>
+     * <p>Describes the properties of the child component. You can't specify
+     * <code>tags</code> as a valid property for <code>properties</code>.</p>
      */
     inline ComponentChild& AddProperties(const Aws::String& key, const ComponentProperty& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
 
     /**
-     * <p>Describes the properties of the child component.</p>
+     * <p>Describes the properties of the child component. You can't specify
+     * <code>tags</code> as a valid property for <code>properties</code>.</p>
      */
     inline ComponentChild& AddProperties(Aws::String&& key, const ComponentProperty& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Describes the properties of the child component.</p>
+     * <p>Describes the properties of the child component. You can't specify
+     * <code>tags</code> as a valid property for <code>properties</code>.</p>
      */
     inline ComponentChild& AddProperties(const Aws::String& key, ComponentProperty&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Describes the properties of the child component.</p>
+     * <p>Describes the properties of the child component. You can't specify
+     * <code>tags</code> as a valid property for <code>properties</code>.</p>
      */
     inline ComponentChild& AddProperties(Aws::String&& key, ComponentProperty&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Describes the properties of the child component.</p>
+     * <p>Describes the properties of the child component. You can't specify
+     * <code>tags</code> as a valid property for <code>properties</code>.</p>
      */
     inline ComponentChild& AddProperties(const char* key, ComponentProperty&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Describes the properties of the child component.</p>
+     * <p>Describes the properties of the child component. You can't specify
+     * <code>tags</code> as a valid property for <code>properties</code>.</p>
      */
     inline ComponentChild& AddProperties(const char* key, const ComponentProperty& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
 
@@ -232,6 +330,9 @@ namespace Model
 
     Aws::String m_componentType;
     bool m_componentTypeHasBeenSet;
+
+    Aws::Map<Aws::String, ComponentEvent> m_events;
+    bool m_eventsHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

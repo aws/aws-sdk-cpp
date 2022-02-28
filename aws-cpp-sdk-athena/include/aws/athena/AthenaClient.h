@@ -43,6 +43,7 @@
 #include <aws/athena/model/TagResourceResult.h>
 #include <aws/athena/model/UntagResourceResult.h>
 #include <aws/athena/model/UpdateDataCatalogResult.h>
+#include <aws/athena/model/UpdateNamedQueryResult.h>
 #include <aws/athena/model/UpdatePreparedStatementResult.h>
 #include <aws/athena/model/UpdateWorkGroupResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -116,6 +117,7 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateDataCatalogRequest;
+        class UpdateNamedQueryRequest;
         class UpdatePreparedStatementRequest;
         class UpdateWorkGroupRequest;
 
@@ -151,6 +153,7 @@ namespace Model
         typedef Aws::Utils::Outcome<TagResourceResult, AthenaError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, AthenaError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateDataCatalogResult, AthenaError> UpdateDataCatalogOutcome;
+        typedef Aws::Utils::Outcome<UpdateNamedQueryResult, AthenaError> UpdateNamedQueryOutcome;
         typedef Aws::Utils::Outcome<UpdatePreparedStatementResult, AthenaError> UpdatePreparedStatementOutcome;
         typedef Aws::Utils::Outcome<UpdateWorkGroupResult, AthenaError> UpdateWorkGroupOutcome;
 
@@ -186,6 +189,7 @@ namespace Model
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateDataCatalogOutcome> UpdateDataCatalogOutcomeCallable;
+        typedef std::future<UpdateNamedQueryOutcome> UpdateNamedQueryOutcomeCallable;
         typedef std::future<UpdatePreparedStatementOutcome> UpdatePreparedStatementOutcomeCallable;
         typedef std::future<UpdateWorkGroupOutcome> UpdateWorkGroupOutcomeCallable;
 } // namespace Model
@@ -224,6 +228,7 @@ namespace Model
     typedef std::function<void(const AthenaClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::UpdateDataCatalogRequest&, const Model::UpdateDataCatalogOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataCatalogResponseReceivedHandler;
+    typedef std::function<void(const AthenaClient*, const Model::UpdateNamedQueryRequest&, const Model::UpdateNamedQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNamedQueryResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::UpdatePreparedStatementRequest&, const Model::UpdatePreparedStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePreparedStatementResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::UpdateWorkGroupRequest&, const Model::UpdateWorkGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkGroupResponseReceivedHandler;
 
@@ -1368,6 +1373,34 @@ namespace Model
         virtual void UpdateDataCatalogAsync(const Model::UpdateDataCatalogRequest& request, const UpdateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates a <a>NamedQuery</a> object. The database or workgroup cannot be
+         * updated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNamedQuery">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateNamedQueryOutcome UpdateNamedQuery(const Model::UpdateNamedQueryRequest& request) const;
+
+        /**
+         * <p>Updates a <a>NamedQuery</a> object. The database or workgroup cannot be
+         * updated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNamedQuery">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateNamedQueryOutcomeCallable UpdateNamedQueryCallable(const Model::UpdateNamedQueryRequest& request) const;
+
+        /**
+         * <p>Updates a <a>NamedQuery</a> object. The database or workgroup cannot be
+         * updated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNamedQuery">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateNamedQueryAsync(const Model::UpdateNamedQueryRequest& request, const UpdateNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a prepared statement.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdatePreparedStatement">AWS
          * API Reference</a></p>
@@ -1456,6 +1489,7 @@ namespace Model
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDataCatalogAsyncHelper(const Model::UpdateDataCatalogRequest& request, const UpdateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateNamedQueryAsyncHelper(const Model::UpdateNamedQueryRequest& request, const UpdateNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePreparedStatementAsyncHelper(const Model::UpdatePreparedStatementRequest& request, const UpdatePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateWorkGroupAsyncHelper(const Model::UpdateWorkGroupRequest& request, const UpdateWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

@@ -67,6 +67,7 @@ namespace Model
     spot_fleet_request,
     spot_instances_request,
     subnet,
+    subnet_cidr_reservation,
     traffic_mirror_filter,
     traffic_mirror_session,
     traffic_mirror_target,

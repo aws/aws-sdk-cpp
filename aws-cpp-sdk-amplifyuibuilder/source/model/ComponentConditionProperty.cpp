@@ -23,6 +23,7 @@ ComponentConditionProperty::ComponentConditionProperty() :
     m_elseHasBeenSet(false),
     m_fieldHasBeenSet(false),
     m_operandHasBeenSet(false),
+    m_operandTypeHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_propertyHasBeenSet(false),
     m_thenHasBeenSet(false)
@@ -33,6 +34,7 @@ ComponentConditionProperty::ComponentConditionProperty(JsonView jsonValue) :
     m_elseHasBeenSet(false),
     m_fieldHasBeenSet(false),
     m_operandHasBeenSet(false),
+    m_operandTypeHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_propertyHasBeenSet(false),
     m_thenHasBeenSet(false)
@@ -75,6 +77,13 @@ ComponentConditionProperty& ComponentConditionProperty::operator =(JsonView json
     m_operand = jsonValue.GetString("operand");
 
     m_operandHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("operandType"))
+  {
+    m_operandType = jsonValue.GetString("operandType");
+
+    m_operandTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("operator"))
@@ -120,6 +129,12 @@ JsonValue ComponentConditionProperty::Jsonize() const
   if(m_operandHasBeenSet)
   {
    payload.WithString("operand", m_operand);
+
+  }
+
+  if(m_operandTypeHasBeenSet)
+  {
+   payload.WithString("operandType", m_operandType);
 
   }
 

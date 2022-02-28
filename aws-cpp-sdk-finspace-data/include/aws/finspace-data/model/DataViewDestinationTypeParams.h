@@ -41,100 +41,100 @@ namespace Model
 
 
     /**
-     * <p>Destination type for a Dataview.</p> <ul> <li> <p> <code>GLUE_TABLE</code> -
-     * Glue table destination type.</p> </li> <li> <p> <code>S3</code> - S3 destination
+     * <p>Destination type for a Dataview.</p> <ul> <li> <p> <code>GLUE_TABLE</code> –
+     * Glue table destination type.</p> </li> <li> <p> <code>S3</code> – S3 destination
      * type.</p> </li> </ul>
      */
     inline const Aws::String& GetDestinationType() const{ return m_destinationType; }
 
     /**
-     * <p>Destination type for a Dataview.</p> <ul> <li> <p> <code>GLUE_TABLE</code> -
-     * Glue table destination type.</p> </li> <li> <p> <code>S3</code> - S3 destination
+     * <p>Destination type for a Dataview.</p> <ul> <li> <p> <code>GLUE_TABLE</code> –
+     * Glue table destination type.</p> </li> <li> <p> <code>S3</code> – S3 destination
      * type.</p> </li> </ul>
      */
     inline bool DestinationTypeHasBeenSet() const { return m_destinationTypeHasBeenSet; }
 
     /**
-     * <p>Destination type for a Dataview.</p> <ul> <li> <p> <code>GLUE_TABLE</code> -
-     * Glue table destination type.</p> </li> <li> <p> <code>S3</code> - S3 destination
+     * <p>Destination type for a Dataview.</p> <ul> <li> <p> <code>GLUE_TABLE</code> –
+     * Glue table destination type.</p> </li> <li> <p> <code>S3</code> – S3 destination
      * type.</p> </li> </ul>
      */
     inline void SetDestinationType(const Aws::String& value) { m_destinationTypeHasBeenSet = true; m_destinationType = value; }
 
     /**
-     * <p>Destination type for a Dataview.</p> <ul> <li> <p> <code>GLUE_TABLE</code> -
-     * Glue table destination type.</p> </li> <li> <p> <code>S3</code> - S3 destination
+     * <p>Destination type for a Dataview.</p> <ul> <li> <p> <code>GLUE_TABLE</code> –
+     * Glue table destination type.</p> </li> <li> <p> <code>S3</code> – S3 destination
      * type.</p> </li> </ul>
      */
     inline void SetDestinationType(Aws::String&& value) { m_destinationTypeHasBeenSet = true; m_destinationType = std::move(value); }
 
     /**
-     * <p>Destination type for a Dataview.</p> <ul> <li> <p> <code>GLUE_TABLE</code> -
-     * Glue table destination type.</p> </li> <li> <p> <code>S3</code> - S3 destination
+     * <p>Destination type for a Dataview.</p> <ul> <li> <p> <code>GLUE_TABLE</code> –
+     * Glue table destination type.</p> </li> <li> <p> <code>S3</code> – S3 destination
      * type.</p> </li> </ul>
      */
     inline void SetDestinationType(const char* value) { m_destinationTypeHasBeenSet = true; m_destinationType.assign(value); }
 
     /**
-     * <p>Destination type for a Dataview.</p> <ul> <li> <p> <code>GLUE_TABLE</code> -
-     * Glue table destination type.</p> </li> <li> <p> <code>S3</code> - S3 destination
+     * <p>Destination type for a Dataview.</p> <ul> <li> <p> <code>GLUE_TABLE</code> –
+     * Glue table destination type.</p> </li> <li> <p> <code>S3</code> – S3 destination
      * type.</p> </li> </ul>
      */
     inline DataViewDestinationTypeParams& WithDestinationType(const Aws::String& value) { SetDestinationType(value); return *this;}
 
     /**
-     * <p>Destination type for a Dataview.</p> <ul> <li> <p> <code>GLUE_TABLE</code> -
-     * Glue table destination type.</p> </li> <li> <p> <code>S3</code> - S3 destination
+     * <p>Destination type for a Dataview.</p> <ul> <li> <p> <code>GLUE_TABLE</code> –
+     * Glue table destination type.</p> </li> <li> <p> <code>S3</code> – S3 destination
      * type.</p> </li> </ul>
      */
     inline DataViewDestinationTypeParams& WithDestinationType(Aws::String&& value) { SetDestinationType(std::move(value)); return *this;}
 
     /**
-     * <p>Destination type for a Dataview.</p> <ul> <li> <p> <code>GLUE_TABLE</code> -
-     * Glue table destination type.</p> </li> <li> <p> <code>S3</code> - S3 destination
+     * <p>Destination type for a Dataview.</p> <ul> <li> <p> <code>GLUE_TABLE</code> –
+     * Glue table destination type.</p> </li> <li> <p> <code>S3</code> – S3 destination
      * type.</p> </li> </ul>
      */
     inline DataViewDestinationTypeParams& WithDestinationType(const char* value) { SetDestinationType(value); return *this;}
 
 
     /**
-     * <p>Data view export file format.</p> <ul> <li> <p> <code>PARQUET</code> -
-     * Parquet export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> -
+     * <p>Data view export file format.</p> <ul> <li> <p> <code>PARQUET</code> –
+     * Parquet export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> –
      * Delimited text export file format.</p> </li> </ul>
      */
     inline const ExportFileFormat& GetS3DestinationExportFileFormat() const{ return m_s3DestinationExportFileFormat; }
 
     /**
-     * <p>Data view export file format.</p> <ul> <li> <p> <code>PARQUET</code> -
-     * Parquet export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> -
+     * <p>Data view export file format.</p> <ul> <li> <p> <code>PARQUET</code> –
+     * Parquet export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> –
      * Delimited text export file format.</p> </li> </ul>
      */
     inline bool S3DestinationExportFileFormatHasBeenSet() const { return m_s3DestinationExportFileFormatHasBeenSet; }
 
     /**
-     * <p>Data view export file format.</p> <ul> <li> <p> <code>PARQUET</code> -
-     * Parquet export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> -
+     * <p>Data view export file format.</p> <ul> <li> <p> <code>PARQUET</code> –
+     * Parquet export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> –
      * Delimited text export file format.</p> </li> </ul>
      */
     inline void SetS3DestinationExportFileFormat(const ExportFileFormat& value) { m_s3DestinationExportFileFormatHasBeenSet = true; m_s3DestinationExportFileFormat = value; }
 
     /**
-     * <p>Data view export file format.</p> <ul> <li> <p> <code>PARQUET</code> -
-     * Parquet export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> -
+     * <p>Data view export file format.</p> <ul> <li> <p> <code>PARQUET</code> –
+     * Parquet export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> –
      * Delimited text export file format.</p> </li> </ul>
      */
     inline void SetS3DestinationExportFileFormat(ExportFileFormat&& value) { m_s3DestinationExportFileFormatHasBeenSet = true; m_s3DestinationExportFileFormat = std::move(value); }
 
     /**
-     * <p>Data view export file format.</p> <ul> <li> <p> <code>PARQUET</code> -
-     * Parquet export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> -
+     * <p>Data view export file format.</p> <ul> <li> <p> <code>PARQUET</code> –
+     * Parquet export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> –
      * Delimited text export file format.</p> </li> </ul>
      */
     inline DataViewDestinationTypeParams& WithS3DestinationExportFileFormat(const ExportFileFormat& value) { SetS3DestinationExportFileFormat(value); return *this;}
 
     /**
-     * <p>Data view export file format.</p> <ul> <li> <p> <code>PARQUET</code> -
-     * Parquet export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> -
+     * <p>Data view export file format.</p> <ul> <li> <p> <code>PARQUET</code> –
+     * Parquet export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> –
      * Delimited text export file format.</p> </li> </ul>
      */
     inline DataViewDestinationTypeParams& WithS3DestinationExportFileFormat(ExportFileFormat&& value) { SetS3DestinationExportFileFormat(std::move(value)); return *this;}

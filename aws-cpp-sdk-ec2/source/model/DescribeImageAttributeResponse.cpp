@@ -101,6 +101,11 @@ DescribeImageAttributeResponse& DescribeImageAttributeResponse::operator =(const
     {
       m_bootMode = bootModeNode;
     }
+    XmlNode lastLaunchedTimeNode = resultNode.FirstChild("lastLaunchedTime");
+    if(!lastLaunchedTimeNode.IsNull())
+    {
+      m_lastLaunchedTime = lastLaunchedTimeNode;
+    }
   }
 
   if (!rootNode.IsNull()) {

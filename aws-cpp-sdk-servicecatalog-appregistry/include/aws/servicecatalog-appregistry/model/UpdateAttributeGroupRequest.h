@@ -82,55 +82,6 @@ namespace Model
 
 
     /**
-     * <p>The new name of the attribute group. The name must be unique in the region in
-     * which you are updating the attribute group.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The new name of the attribute group. The name must be unique in the region in
-     * which you are updating the attribute group.</p>
-     */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The new name of the attribute group. The name must be unique in the region in
-     * which you are updating the attribute group.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The new name of the attribute group. The name must be unique in the region in
-     * which you are updating the attribute group.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The new name of the attribute group. The name must be unique in the region in
-     * which you are updating the attribute group.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The new name of the attribute group. The name must be unique in the region in
-     * which you are updating the attribute group.</p>
-     */
-    inline UpdateAttributeGroupRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The new name of the attribute group. The name must be unique in the region in
-     * which you are updating the attribute group.</p>
-     */
-    inline UpdateAttributeGroupRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The new name of the attribute group. The name must be unique in the region in
-     * which you are updating the attribute group.</p>
-     */
-    inline UpdateAttributeGroupRequest& WithName(const char* value) { SetName(value); return *this;}
-
-
-    /**
      * <p>The description of the attribute group that the user provides.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -223,9 +174,6 @@ namespace Model
 
     Aws::String m_attributeGroup;
     bool m_attributeGroupHasBeenSet;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;

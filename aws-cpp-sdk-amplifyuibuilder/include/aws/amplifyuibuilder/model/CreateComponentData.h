@@ -11,6 +11,7 @@
 #include <aws/amplifyuibuilder/model/ComponentBindingPropertiesValue.h>
 #include <aws/amplifyuibuilder/model/ComponentChild.h>
 #include <aws/amplifyuibuilder/model/ComponentDataConfiguration.h>
+#include <aws/amplifyuibuilder/model/ComponentEvent.h>
 #include <aws/amplifyuibuilder/model/ComponentProperty.h>
 #include <aws/amplifyuibuilder/model/ComponentVariant.h>
 #include <utility>
@@ -270,6 +271,79 @@ namespace Model
 
 
     /**
+     * <p>The event configuration for the component. Use for the workflow feature in
+     * Amplify Studio that allows you to bind events and actions to components.</p>
+     */
+    inline const Aws::Map<Aws::String, ComponentEvent>& GetEvents() const{ return m_events; }
+
+    /**
+     * <p>The event configuration for the component. Use for the workflow feature in
+     * Amplify Studio that allows you to bind events and actions to components.</p>
+     */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
+
+    /**
+     * <p>The event configuration for the component. Use for the workflow feature in
+     * Amplify Studio that allows you to bind events and actions to components.</p>
+     */
+    inline void SetEvents(const Aws::Map<Aws::String, ComponentEvent>& value) { m_eventsHasBeenSet = true; m_events = value; }
+
+    /**
+     * <p>The event configuration for the component. Use for the workflow feature in
+     * Amplify Studio that allows you to bind events and actions to components.</p>
+     */
+    inline void SetEvents(Aws::Map<Aws::String, ComponentEvent>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
+
+    /**
+     * <p>The event configuration for the component. Use for the workflow feature in
+     * Amplify Studio that allows you to bind events and actions to components.</p>
+     */
+    inline CreateComponentData& WithEvents(const Aws::Map<Aws::String, ComponentEvent>& value) { SetEvents(value); return *this;}
+
+    /**
+     * <p>The event configuration for the component. Use for the workflow feature in
+     * Amplify Studio that allows you to bind events and actions to components.</p>
+     */
+    inline CreateComponentData& WithEvents(Aws::Map<Aws::String, ComponentEvent>&& value) { SetEvents(std::move(value)); return *this;}
+
+    /**
+     * <p>The event configuration for the component. Use for the workflow feature in
+     * Amplify Studio that allows you to bind events and actions to components.</p>
+     */
+    inline CreateComponentData& AddEvents(const Aws::String& key, const ComponentEvent& value) { m_eventsHasBeenSet = true; m_events.emplace(key, value); return *this; }
+
+    /**
+     * <p>The event configuration for the component. Use for the workflow feature in
+     * Amplify Studio that allows you to bind events and actions to components.</p>
+     */
+    inline CreateComponentData& AddEvents(Aws::String&& key, const ComponentEvent& value) { m_eventsHasBeenSet = true; m_events.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The event configuration for the component. Use for the workflow feature in
+     * Amplify Studio that allows you to bind events and actions to components.</p>
+     */
+    inline CreateComponentData& AddEvents(const Aws::String& key, ComponentEvent&& value) { m_eventsHasBeenSet = true; m_events.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The event configuration for the component. Use for the workflow feature in
+     * Amplify Studio that allows you to bind events and actions to components.</p>
+     */
+    inline CreateComponentData& AddEvents(Aws::String&& key, ComponentEvent&& value) { m_eventsHasBeenSet = true; m_events.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The event configuration for the component. Use for the workflow feature in
+     * Amplify Studio that allows you to bind events and actions to components.</p>
+     */
+    inline CreateComponentData& AddEvents(const char* key, ComponentEvent&& value) { m_eventsHasBeenSet = true; m_events.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The event configuration for the component. Use for the workflow feature in
+     * Amplify Studio that allows you to bind events and actions to components.</p>
+     */
+    inline CreateComponentData& AddEvents(const char* key, const ComponentEvent& value) { m_eventsHasBeenSet = true; m_events.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The name of the component</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -445,6 +519,47 @@ namespace Model
 
 
     /**
+     * <p>The schema version of the component when it was imported.</p>
+     */
+    inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
+
+    /**
+     * <p>The schema version of the component when it was imported.</p>
+     */
+    inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
+
+    /**
+     * <p>The schema version of the component when it was imported.</p>
+     */
+    inline void SetSchemaVersion(const Aws::String& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
+
+    /**
+     * <p>The schema version of the component when it was imported.</p>
+     */
+    inline void SetSchemaVersion(Aws::String&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = std::move(value); }
+
+    /**
+     * <p>The schema version of the component when it was imported.</p>
+     */
+    inline void SetSchemaVersion(const char* value) { m_schemaVersionHasBeenSet = true; m_schemaVersion.assign(value); }
+
+    /**
+     * <p>The schema version of the component when it was imported.</p>
+     */
+    inline CreateComponentData& WithSchemaVersion(const Aws::String& value) { SetSchemaVersion(value); return *this;}
+
+    /**
+     * <p>The schema version of the component when it was imported.</p>
+     */
+    inline CreateComponentData& WithSchemaVersion(Aws::String&& value) { SetSchemaVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The schema version of the component when it was imported.</p>
+     */
+    inline CreateComponentData& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
+
+
+    /**
      * <p>The unique ID of the component in its original source system, such as
      * Figma.</p>
      */
@@ -613,6 +728,9 @@ namespace Model
     Aws::String m_componentType;
     bool m_componentTypeHasBeenSet;
 
+    Aws::Map<Aws::String, ComponentEvent> m_events;
+    bool m_eventsHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
 
@@ -621,6 +739,9 @@ namespace Model
 
     Aws::Map<Aws::String, ComponentProperty> m_properties;
     bool m_propertiesHasBeenSet;
+
+    Aws::String m_schemaVersion;
+    bool m_schemaVersionHasBeenSet;
 
     Aws::String m_sourceId;
     bool m_sourceIdHasBeenSet;

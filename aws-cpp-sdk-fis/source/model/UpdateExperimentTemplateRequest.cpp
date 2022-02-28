@@ -18,7 +18,8 @@ UpdateExperimentTemplateRequest::UpdateExperimentTemplateRequest() :
     m_stopConditionsHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_actionsHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,12 @@ Aws::String UpdateExperimentTemplateRequest::SerializePayload() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_logConfigurationHasBeenSet)
+  {
+   payload.WithObject("logConfiguration", m_logConfiguration.Jsonize());
 
   }
 

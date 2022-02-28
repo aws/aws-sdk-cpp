@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/fsx/model/SnapshotLifecycle.h>
+#include <aws/fsx/model/LifecycleTransitionReason.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fsx/model/Tag.h>
 #include <aws/fsx/model/AdministrativeAction.h>
@@ -265,6 +266,25 @@ namespace Model
 
 
     
+    inline const LifecycleTransitionReason& GetLifecycleTransitionReason() const{ return m_lifecycleTransitionReason; }
+
+    
+    inline bool LifecycleTransitionReasonHasBeenSet() const { return m_lifecycleTransitionReasonHasBeenSet; }
+
+    
+    inline void SetLifecycleTransitionReason(const LifecycleTransitionReason& value) { m_lifecycleTransitionReasonHasBeenSet = true; m_lifecycleTransitionReason = value; }
+
+    
+    inline void SetLifecycleTransitionReason(LifecycleTransitionReason&& value) { m_lifecycleTransitionReasonHasBeenSet = true; m_lifecycleTransitionReason = std::move(value); }
+
+    
+    inline Snapshot& WithLifecycleTransitionReason(const LifecycleTransitionReason& value) { SetLifecycleTransitionReason(value); return *this;}
+
+    
+    inline Snapshot& WithLifecycleTransitionReason(LifecycleTransitionReason&& value) { SetLifecycleTransitionReason(std::move(value)); return *this;}
+
+
+    
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     
@@ -364,6 +384,9 @@ namespace Model
 
     SnapshotLifecycle m_lifecycle;
     bool m_lifecycleHasBeenSet;
+
+    LifecycleTransitionReason m_lifecycleTransitionReason;
+    bool m_lifecycleTransitionReasonHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

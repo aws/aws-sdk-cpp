@@ -19,6 +19,8 @@ namespace Model
 {
 
 OpenZFSCreateRootVolumeConfiguration::OpenZFSCreateRootVolumeConfiguration() : 
+    m_recordSizeKiB(0),
+    m_recordSizeKiBHasBeenSet(false),
     m_dataCompressionType(OpenZFSDataCompressionType::NOT_SET),
     m_dataCompressionTypeHasBeenSet(false),
     m_nfsExportsHasBeenSet(false),
@@ -31,6 +33,8 @@ OpenZFSCreateRootVolumeConfiguration::OpenZFSCreateRootVolumeConfiguration() :
 }
 
 OpenZFSCreateRootVolumeConfiguration::OpenZFSCreateRootVolumeConfiguration(JsonView jsonValue) : 
+    m_recordSizeKiB(0),
+    m_recordSizeKiBHasBeenSet(false),
     m_dataCompressionType(OpenZFSDataCompressionType::NOT_SET),
     m_dataCompressionTypeHasBeenSet(false),
     m_nfsExportsHasBeenSet(false),
@@ -45,6 +49,13 @@ OpenZFSCreateRootVolumeConfiguration::OpenZFSCreateRootVolumeConfiguration(JsonV
 
 OpenZFSCreateRootVolumeConfiguration& OpenZFSCreateRootVolumeConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("RecordSizeKiB"))
+  {
+    m_recordSizeKiB = jsonValue.GetInteger("RecordSizeKiB");
+
+    m_recordSizeKiBHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("DataCompressionType"))
   {
     m_dataCompressionType = OpenZFSDataCompressionTypeMapper::GetOpenZFSDataCompressionTypeForName(jsonValue.GetString("DataCompressionType"));
@@ -92,6 +103,12 @@ OpenZFSCreateRootVolumeConfiguration& OpenZFSCreateRootVolumeConfiguration::oper
 JsonValue OpenZFSCreateRootVolumeConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_recordSizeKiBHasBeenSet)
+  {
+   payload.WithInteger("RecordSizeKiB", m_recordSizeKiB);
+
+  }
 
   if(m_dataCompressionTypeHasBeenSet)
   {

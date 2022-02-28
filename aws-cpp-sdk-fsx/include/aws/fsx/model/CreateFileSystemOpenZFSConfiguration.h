@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>The OpenZFS configuration properties for the file system that you are
-   * creating.</p><p><h3>See Also:</h3>   <a
+   * <p>The Amazon FSx for OpenZFS configuration properties for the file system that
+   * you are creating.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemOpenZFSConfiguration">AWS
    * API Reference</a></p>
    */

@@ -83,42 +83,42 @@ namespace Model
 
 
     /**
-     * <p>A token indicating where a results page should begin.</p>
+     * <p>A token that indicates where a results page should begin.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token indicating where a results page should begin.</p>
+     * <p>A token that indicates where a results page should begin.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>A token indicating where a results page should begin.</p>
+     * <p>A token that indicates where a results page should begin.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>A token indicating where a results page should begin.</p>
+     * <p>A token that indicates where a results page should begin.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>A token indicating where a results page should begin.</p>
+     * <p>A token that indicates where a results page should begin.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>A token indicating where a results page should begin.</p>
+     * <p>A token that indicates where a results page should begin.</p>
      */
     inline ListDataViewsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token indicating where a results page should begin.</p>
+     * <p>A token that indicates where a results page should begin.</p>
      */
     inline ListDataViewsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token indicating where a results page should begin.</p>
+     * <p>A token that indicates where a results page should begin.</p>
      */
     inline ListDataViewsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

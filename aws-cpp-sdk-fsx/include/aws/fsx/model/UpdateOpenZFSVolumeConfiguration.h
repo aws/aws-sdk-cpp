@@ -43,121 +43,198 @@ namespace Model
 
     /**
      * <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume.
-     * You can't reserve more storage than the parent volume has reserved.</p>
+     * You can't reserve more storage than the parent volume has reserved. You can
+     * specify a value of <code>-1</code> to unset a volume's storage capacity
+     * reservation.</p>
      */
     inline int GetStorageCapacityReservationGiB() const{ return m_storageCapacityReservationGiB; }
 
     /**
      * <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume.
-     * You can't reserve more storage than the parent volume has reserved.</p>
+     * You can't reserve more storage than the parent volume has reserved. You can
+     * specify a value of <code>-1</code> to unset a volume's storage capacity
+     * reservation.</p>
      */
     inline bool StorageCapacityReservationGiBHasBeenSet() const { return m_storageCapacityReservationGiBHasBeenSet; }
 
     /**
      * <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume.
-     * You can't reserve more storage than the parent volume has reserved.</p>
+     * You can't reserve more storage than the parent volume has reserved. You can
+     * specify a value of <code>-1</code> to unset a volume's storage capacity
+     * reservation.</p>
      */
     inline void SetStorageCapacityReservationGiB(int value) { m_storageCapacityReservationGiBHasBeenSet = true; m_storageCapacityReservationGiB = value; }
 
     /**
      * <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume.
-     * You can't reserve more storage than the parent volume has reserved.</p>
+     * You can't reserve more storage than the parent volume has reserved. You can
+     * specify a value of <code>-1</code> to unset a volume's storage capacity
+     * reservation.</p>
      */
     inline UpdateOpenZFSVolumeConfiguration& WithStorageCapacityReservationGiB(int value) { SetStorageCapacityReservationGiB(value); return *this;}
 
 
     /**
-     * <p/> <p>The maximum amount of storage in gibibytes (GiB) that the volume can use
-     * from its parent. You can specify a quota larger than the storage on the parent
-     * volume.</p>
+     * <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from
+     * its parent. You can specify a quota larger than the storage on the parent
+     * volume. You can specify a value of <code>-1</code> to unset a volume's storage
+     * capacity quota.</p>
      */
     inline int GetStorageCapacityQuotaGiB() const{ return m_storageCapacityQuotaGiB; }
 
     /**
-     * <p/> <p>The maximum amount of storage in gibibytes (GiB) that the volume can use
-     * from its parent. You can specify a quota larger than the storage on the parent
-     * volume.</p>
+     * <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from
+     * its parent. You can specify a quota larger than the storage on the parent
+     * volume. You can specify a value of <code>-1</code> to unset a volume's storage
+     * capacity quota.</p>
      */
     inline bool StorageCapacityQuotaGiBHasBeenSet() const { return m_storageCapacityQuotaGiBHasBeenSet; }
 
     /**
-     * <p/> <p>The maximum amount of storage in gibibytes (GiB) that the volume can use
-     * from its parent. You can specify a quota larger than the storage on the parent
-     * volume.</p>
+     * <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from
+     * its parent. You can specify a quota larger than the storage on the parent
+     * volume. You can specify a value of <code>-1</code> to unset a volume's storage
+     * capacity quota.</p>
      */
     inline void SetStorageCapacityQuotaGiB(int value) { m_storageCapacityQuotaGiBHasBeenSet = true; m_storageCapacityQuotaGiB = value; }
 
     /**
-     * <p/> <p>The maximum amount of storage in gibibytes (GiB) that the volume can use
-     * from its parent. You can specify a quota larger than the storage on the parent
-     * volume.</p>
+     * <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from
+     * its parent. You can specify a quota larger than the storage on the parent
+     * volume. You can specify a value of <code>-1</code> to unset a volume's storage
+     * capacity quota.</p>
      */
     inline UpdateOpenZFSVolumeConfiguration& WithStorageCapacityQuotaGiB(int value) { SetStorageCapacityQuotaGiB(value); return *this;}
 
 
     /**
-     * <p/> <p>Specifies the method used to compress the data on the volume. Unless the
-     * compression type is specified, volumes inherit the
-     * <code>DataCompressionType</code> value of their parent volume.</p> <ul> <li> <p>
-     * <code>NONE</code> - Doesn't compress the data on the volume.</p> </li> <li> <p>
-     * <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD)
-     * compression algorithm. This algorithm reduces the amount of space used on your
-     * volume and has very little impact on compute resources.</p> </li> </ul>
+     * <p>Specifies the record size of an OpenZFS volume, in kibibytes (KiB). Valid
+     * values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB.
+     * Most workloads should use the default record size. Database workflows can
+     * benefit from a smaller record size, while streaming workflows can benefit from a
+     * larger record size. For additional guidance on when to set a custom record size,
+     * see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs">
+     * Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User
+     * Guide</i>.</p>
+     */
+    inline int GetRecordSizeKiB() const{ return m_recordSizeKiB; }
+
+    /**
+     * <p>Specifies the record size of an OpenZFS volume, in kibibytes (KiB). Valid
+     * values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB.
+     * Most workloads should use the default record size. Database workflows can
+     * benefit from a smaller record size, while streaming workflows can benefit from a
+     * larger record size. For additional guidance on when to set a custom record size,
+     * see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs">
+     * Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User
+     * Guide</i>.</p>
+     */
+    inline bool RecordSizeKiBHasBeenSet() const { return m_recordSizeKiBHasBeenSet; }
+
+    /**
+     * <p>Specifies the record size of an OpenZFS volume, in kibibytes (KiB). Valid
+     * values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB.
+     * Most workloads should use the default record size. Database workflows can
+     * benefit from a smaller record size, while streaming workflows can benefit from a
+     * larger record size. For additional guidance on when to set a custom record size,
+     * see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs">
+     * Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User
+     * Guide</i>.</p>
+     */
+    inline void SetRecordSizeKiB(int value) { m_recordSizeKiBHasBeenSet = true; m_recordSizeKiB = value; }
+
+    /**
+     * <p>Specifies the record size of an OpenZFS volume, in kibibytes (KiB). Valid
+     * values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB.
+     * Most workloads should use the default record size. Database workflows can
+     * benefit from a smaller record size, while streaming workflows can benefit from a
+     * larger record size. For additional guidance on when to set a custom record size,
+     * see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs">
+     * Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User
+     * Guide</i>.</p>
+     */
+    inline UpdateOpenZFSVolumeConfiguration& WithRecordSizeKiB(int value) { SetRecordSizeKiB(value); return *this;}
+
+
+    /**
+     * <p>Specifies the method used to compress the data on the volume. The compression
+     * type is <code>NONE</code> by default.</p> <ul> <li> <p> <code>NONE</code> -
+     * Doesn't compress the data on the volume. <code>NONE</code> is the default.</p>
+     * </li> <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the
+     * Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a
+     * better compression ratio to minimize on-disk storage utilization.</p> </li> <li>
+     * <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4
+     * compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and
+     * delivers higher write throughput speeds.</p> </li> </ul>
      */
     inline const OpenZFSDataCompressionType& GetDataCompressionType() const{ return m_dataCompressionType; }
 
     /**
-     * <p/> <p>Specifies the method used to compress the data on the volume. Unless the
-     * compression type is specified, volumes inherit the
-     * <code>DataCompressionType</code> value of their parent volume.</p> <ul> <li> <p>
-     * <code>NONE</code> - Doesn't compress the data on the volume.</p> </li> <li> <p>
-     * <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD)
-     * compression algorithm. This algorithm reduces the amount of space used on your
-     * volume and has very little impact on compute resources.</p> </li> </ul>
+     * <p>Specifies the method used to compress the data on the volume. The compression
+     * type is <code>NONE</code> by default.</p> <ul> <li> <p> <code>NONE</code> -
+     * Doesn't compress the data on the volume. <code>NONE</code> is the default.</p>
+     * </li> <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the
+     * Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a
+     * better compression ratio to minimize on-disk storage utilization.</p> </li> <li>
+     * <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4
+     * compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and
+     * delivers higher write throughput speeds.</p> </li> </ul>
      */
     inline bool DataCompressionTypeHasBeenSet() const { return m_dataCompressionTypeHasBeenSet; }
 
     /**
-     * <p/> <p>Specifies the method used to compress the data on the volume. Unless the
-     * compression type is specified, volumes inherit the
-     * <code>DataCompressionType</code> value of their parent volume.</p> <ul> <li> <p>
-     * <code>NONE</code> - Doesn't compress the data on the volume.</p> </li> <li> <p>
-     * <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD)
-     * compression algorithm. This algorithm reduces the amount of space used on your
-     * volume and has very little impact on compute resources.</p> </li> </ul>
+     * <p>Specifies the method used to compress the data on the volume. The compression
+     * type is <code>NONE</code> by default.</p> <ul> <li> <p> <code>NONE</code> -
+     * Doesn't compress the data on the volume. <code>NONE</code> is the default.</p>
+     * </li> <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the
+     * Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a
+     * better compression ratio to minimize on-disk storage utilization.</p> </li> <li>
+     * <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4
+     * compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and
+     * delivers higher write throughput speeds.</p> </li> </ul>
      */
     inline void SetDataCompressionType(const OpenZFSDataCompressionType& value) { m_dataCompressionTypeHasBeenSet = true; m_dataCompressionType = value; }
 
     /**
-     * <p/> <p>Specifies the method used to compress the data on the volume. Unless the
-     * compression type is specified, volumes inherit the
-     * <code>DataCompressionType</code> value of their parent volume.</p> <ul> <li> <p>
-     * <code>NONE</code> - Doesn't compress the data on the volume.</p> </li> <li> <p>
-     * <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD)
-     * compression algorithm. This algorithm reduces the amount of space used on your
-     * volume and has very little impact on compute resources.</p> </li> </ul>
+     * <p>Specifies the method used to compress the data on the volume. The compression
+     * type is <code>NONE</code> by default.</p> <ul> <li> <p> <code>NONE</code> -
+     * Doesn't compress the data on the volume. <code>NONE</code> is the default.</p>
+     * </li> <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the
+     * Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a
+     * better compression ratio to minimize on-disk storage utilization.</p> </li> <li>
+     * <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4
+     * compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and
+     * delivers higher write throughput speeds.</p> </li> </ul>
      */
     inline void SetDataCompressionType(OpenZFSDataCompressionType&& value) { m_dataCompressionTypeHasBeenSet = true; m_dataCompressionType = std::move(value); }
 
     /**
-     * <p/> <p>Specifies the method used to compress the data on the volume. Unless the
-     * compression type is specified, volumes inherit the
-     * <code>DataCompressionType</code> value of their parent volume.</p> <ul> <li> <p>
-     * <code>NONE</code> - Doesn't compress the data on the volume.</p> </li> <li> <p>
-     * <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD)
-     * compression algorithm. This algorithm reduces the amount of space used on your
-     * volume and has very little impact on compute resources.</p> </li> </ul>
+     * <p>Specifies the method used to compress the data on the volume. The compression
+     * type is <code>NONE</code> by default.</p> <ul> <li> <p> <code>NONE</code> -
+     * Doesn't compress the data on the volume. <code>NONE</code> is the default.</p>
+     * </li> <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the
+     * Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a
+     * better compression ratio to minimize on-disk storage utilization.</p> </li> <li>
+     * <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4
+     * compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and
+     * delivers higher write throughput speeds.</p> </li> </ul>
      */
     inline UpdateOpenZFSVolumeConfiguration& WithDataCompressionType(const OpenZFSDataCompressionType& value) { SetDataCompressionType(value); return *this;}
 
     /**
-     * <p/> <p>Specifies the method used to compress the data on the volume. Unless the
-     * compression type is specified, volumes inherit the
-     * <code>DataCompressionType</code> value of their parent volume.</p> <ul> <li> <p>
-     * <code>NONE</code> - Doesn't compress the data on the volume.</p> </li> <li> <p>
-     * <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD)
-     * compression algorithm. This algorithm reduces the amount of space used on your
-     * volume and has very little impact on compute resources.</p> </li> </ul>
+     * <p>Specifies the method used to compress the data on the volume. The compression
+     * type is <code>NONE</code> by default.</p> <ul> <li> <p> <code>NONE</code> -
+     * Doesn't compress the data on the volume. <code>NONE</code> is the default.</p>
+     * </li> <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the
+     * Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a
+     * better compression ratio to minimize on-disk storage utilization.</p> </li> <li>
+     * <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4
+     * compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and
+     * delivers higher write throughput speeds.</p> </li> </ul>
      */
     inline UpdateOpenZFSVolumeConfiguration& WithDataCompressionType(OpenZFSDataCompressionType&& value) { SetDataCompressionType(std::move(value)); return *this;}
 
@@ -287,6 +364,9 @@ namespace Model
 
     int m_storageCapacityQuotaGiB;
     bool m_storageCapacityQuotaGiBHasBeenSet;
+
+    int m_recordSizeKiB;
+    bool m_recordSizeKiBHasBeenSet;
 
     OpenZFSDataCompressionType m_dataCompressionType;
     bool m_dataCompressionTypeHasBeenSet;

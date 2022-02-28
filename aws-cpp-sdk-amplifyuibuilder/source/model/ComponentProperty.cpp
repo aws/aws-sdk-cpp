@@ -23,6 +23,7 @@ ComponentProperty::ComponentProperty() :
     m_bindingPropertiesHasBeenSet(false),
     m_bindingsHasBeenSet(false),
     m_collectionBindingPropertiesHasBeenSet(false),
+    m_componentNameHasBeenSet(false),
     m_concatHasBeenSet(false),
     m_conditionHasBeenSet(false),
     m_configured(false),
@@ -31,6 +32,7 @@ ComponentProperty::ComponentProperty() :
     m_eventHasBeenSet(false),
     m_importedValueHasBeenSet(false),
     m_modelHasBeenSet(false),
+    m_propertyHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_userAttributeHasBeenSet(false),
     m_valueHasBeenSet(false)
@@ -41,6 +43,7 @@ ComponentProperty::ComponentProperty(JsonView jsonValue) :
     m_bindingPropertiesHasBeenSet(false),
     m_bindingsHasBeenSet(false),
     m_collectionBindingPropertiesHasBeenSet(false),
+    m_componentNameHasBeenSet(false),
     m_concatHasBeenSet(false),
     m_conditionHasBeenSet(false),
     m_configured(false),
@@ -49,6 +52,7 @@ ComponentProperty::ComponentProperty(JsonView jsonValue) :
     m_eventHasBeenSet(false),
     m_importedValueHasBeenSet(false),
     m_modelHasBeenSet(false),
+    m_propertyHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_userAttributeHasBeenSet(false),
     m_valueHasBeenSet(false)
@@ -87,6 +91,13 @@ ComponentProperty& ComponentProperty::operator =(JsonView jsonValue)
     m_collectionBindingProperties = jsonValue.GetObject("collectionBindingProperties");
 
     m_collectionBindingPropertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("componentName"))
+  {
+    m_componentName = jsonValue.GetString("componentName");
+
+    m_componentNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("concat"))
@@ -141,6 +152,13 @@ ComponentProperty& ComponentProperty::operator =(JsonView jsonValue)
     m_modelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("property"))
+  {
+    m_property = jsonValue.GetString("property");
+
+    m_propertyHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
@@ -192,6 +210,12 @@ JsonValue ComponentProperty::Jsonize() const
 
   }
 
+  if(m_componentNameHasBeenSet)
+  {
+   payload.WithString("componentName", m_componentName);
+
+  }
+
   if(m_concatHasBeenSet)
   {
    Array<JsonValue> concatJsonList(m_concat.size());
@@ -236,6 +260,12 @@ JsonValue ComponentProperty::Jsonize() const
   if(m_modelHasBeenSet)
   {
    payload.WithString("model", m_model);
+
+  }
+
+  if(m_propertyHasBeenSet)
+  {
+   payload.WithString("property", m_property);
 
   }
 

@@ -234,28 +234,28 @@ namespace Model
 
 
     /**
-     * <p>Beginning time to use for the Dataview. The value is determined as Epoch time
+     * <p>Beginning time to use for the Dataview. The value is determined as epoch time
      * in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM
      * UTC is specified as 1635768000000.</p>
      */
     inline long long GetAsOfTimestamp() const{ return m_asOfTimestamp; }
 
     /**
-     * <p>Beginning time to use for the Dataview. The value is determined as Epoch time
+     * <p>Beginning time to use for the Dataview. The value is determined as epoch time
      * in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM
      * UTC is specified as 1635768000000.</p>
      */
     inline bool AsOfTimestampHasBeenSet() const { return m_asOfTimestampHasBeenSet; }
 
     /**
-     * <p>Beginning time to use for the Dataview. The value is determined as Epoch time
+     * <p>Beginning time to use for the Dataview. The value is determined as epoch time
      * in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM
      * UTC is specified as 1635768000000.</p>
      */
     inline void SetAsOfTimestamp(long long value) { m_asOfTimestampHasBeenSet = true; m_asOfTimestamp = value; }
 
     /**
-     * <p>Beginning time to use for the Dataview. The value is determined as Epoch time
+     * <p>Beginning time to use for the Dataview. The value is determined as epoch time
      * in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM
      * UTC is specified as 1635768000000.</p>
      */

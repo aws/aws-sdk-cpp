@@ -22,6 +22,7 @@ namespace Aws
 
         static const int NONE_HASH = HashingUtils::HashString("NONE");
         static const int ZSTD_HASH = HashingUtils::HashString("ZSTD");
+        static const int LZ4_HASH = HashingUtils::HashString("LZ4");
 
 
         OpenZFSDataCompressionType GetOpenZFSDataCompressionTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ZSTD_HASH)
           {
             return OpenZFSDataCompressionType::ZSTD;
+          }
+          else if (hashCode == LZ4_HASH)
+          {
+            return OpenZFSDataCompressionType::LZ4;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "NONE";
           case OpenZFSDataCompressionType::ZSTD:
             return "ZSTD";
+          case OpenZFSDataCompressionType::LZ4:
+            return "LZ4";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

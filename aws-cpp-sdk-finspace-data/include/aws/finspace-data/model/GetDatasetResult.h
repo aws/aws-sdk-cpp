@@ -150,40 +150,40 @@ namespace Model
 
     /**
      * <p>The format in which Dataset data is structured.</p> <ul> <li> <p>
-     * <code>TABULAR</code> - Data is structured in a tabular format.</p> </li> <li>
-     * <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+     * <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> <li>
+     * <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p>
      * </li> </ul>
      */
     inline const DatasetKind& GetKind() const{ return m_kind; }
 
     /**
      * <p>The format in which Dataset data is structured.</p> <ul> <li> <p>
-     * <code>TABULAR</code> - Data is structured in a tabular format.</p> </li> <li>
-     * <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+     * <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> <li>
+     * <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p>
      * </li> </ul>
      */
     inline void SetKind(const DatasetKind& value) { m_kind = value; }
 
     /**
      * <p>The format in which Dataset data is structured.</p> <ul> <li> <p>
-     * <code>TABULAR</code> - Data is structured in a tabular format.</p> </li> <li>
-     * <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+     * <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> <li>
+     * <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p>
      * </li> </ul>
      */
     inline void SetKind(DatasetKind&& value) { m_kind = std::move(value); }
 
     /**
      * <p>The format in which Dataset data is structured.</p> <ul> <li> <p>
-     * <code>TABULAR</code> - Data is structured in a tabular format.</p> </li> <li>
-     * <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+     * <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> <li>
+     * <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p>
      * </li> </ul>
      */
     inline GetDatasetResult& WithKind(const DatasetKind& value) { SetKind(value); return *this;}
 
     /**
      * <p>The format in which Dataset data is structured.</p> <ul> <li> <p>
-     * <code>TABULAR</code> - Data is structured in a tabular format.</p> </li> <li>
-     * <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+     * <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> <li>
+     * <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p>
      * </li> </ul>
      */
     inline GetDatasetResult& WithKind(DatasetKind&& value) { SetKind(std::move(value)); return *this;}
@@ -227,42 +227,42 @@ namespace Model
 
     /**
      * <p>The timestamp at which the Dataset was created in FinSpace. The value is
-     * determined as Epoch time in milliseconds. For example, the value for Monday,
+     * determined as epoch time in milliseconds. For example, the value for Monday,
      * November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline long long GetCreateTime() const{ return m_createTime; }
 
     /**
      * <p>The timestamp at which the Dataset was created in FinSpace. The value is
-     * determined as Epoch time in milliseconds. For example, the value for Monday,
+     * determined as epoch time in milliseconds. For example, the value for Monday,
      * November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline void SetCreateTime(long long value) { m_createTime = value; }
 
     /**
      * <p>The timestamp at which the Dataset was created in FinSpace. The value is
-     * determined as Epoch time in milliseconds. For example, the value for Monday,
+     * determined as epoch time in milliseconds. For example, the value for Monday,
      * November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline GetDatasetResult& WithCreateTime(long long value) { SetCreateTime(value); return *this;}
 
 
     /**
-     * <p>The last time that the Dataset was modified. The value is determined as Epoch
+     * <p>The last time that the Dataset was modified. The value is determined as epoch
      * time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline long long GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The last time that the Dataset was modified. The value is determined as Epoch
+     * <p>The last time that the Dataset was modified. The value is determined as epoch
      * time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline void SetLastModifiedTime(long long value) { m_lastModifiedTime = value; }
 
     /**
-     * <p>The last time that the Dataset was modified. The value is determined as Epoch
+     * <p>The last time that the Dataset was modified. The value is determined as epoch
      * time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
@@ -332,46 +332,46 @@ namespace Model
 
 
     /**
-     * <p>Status of the Dataset creation.</p> <ul> <li> <p> <code>PENDING</code> -
-     * Dataset is pending creation.</p> </li> <li> <p> <code>FAILED</code> - Dataset
-     * creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> - Dataset creation
-     * has succeeded.</p> </li> <li> <p> <code>RUNNING</code> - Dataset creation is
+     * <p>Status of the Dataset creation.</p> <ul> <li> <p> <code>PENDING</code> –
+     * Dataset is pending creation.</p> </li> <li> <p> <code>FAILED</code> – Dataset
+     * creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> – Dataset creation
+     * has succeeded.</p> </li> <li> <p> <code>RUNNING</code> – Dataset creation is
      * running.</p> </li> </ul>
      */
     inline const DatasetStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Status of the Dataset creation.</p> <ul> <li> <p> <code>PENDING</code> -
-     * Dataset is pending creation.</p> </li> <li> <p> <code>FAILED</code> - Dataset
-     * creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> - Dataset creation
-     * has succeeded.</p> </li> <li> <p> <code>RUNNING</code> - Dataset creation is
+     * <p>Status of the Dataset creation.</p> <ul> <li> <p> <code>PENDING</code> –
+     * Dataset is pending creation.</p> </li> <li> <p> <code>FAILED</code> – Dataset
+     * creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> – Dataset creation
+     * has succeeded.</p> </li> <li> <p> <code>RUNNING</code> – Dataset creation is
      * running.</p> </li> </ul>
      */
     inline void SetStatus(const DatasetStatus& value) { m_status = value; }
 
     /**
-     * <p>Status of the Dataset creation.</p> <ul> <li> <p> <code>PENDING</code> -
-     * Dataset is pending creation.</p> </li> <li> <p> <code>FAILED</code> - Dataset
-     * creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> - Dataset creation
-     * has succeeded.</p> </li> <li> <p> <code>RUNNING</code> - Dataset creation is
+     * <p>Status of the Dataset creation.</p> <ul> <li> <p> <code>PENDING</code> –
+     * Dataset is pending creation.</p> </li> <li> <p> <code>FAILED</code> – Dataset
+     * creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> – Dataset creation
+     * has succeeded.</p> </li> <li> <p> <code>RUNNING</code> – Dataset creation is
      * running.</p> </li> </ul>
      */
     inline void SetStatus(DatasetStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>Status of the Dataset creation.</p> <ul> <li> <p> <code>PENDING</code> -
-     * Dataset is pending creation.</p> </li> <li> <p> <code>FAILED</code> - Dataset
-     * creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> - Dataset creation
-     * has succeeded.</p> </li> <li> <p> <code>RUNNING</code> - Dataset creation is
+     * <p>Status of the Dataset creation.</p> <ul> <li> <p> <code>PENDING</code> –
+     * Dataset is pending creation.</p> </li> <li> <p> <code>FAILED</code> – Dataset
+     * creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> – Dataset creation
+     * has succeeded.</p> </li> <li> <p> <code>RUNNING</code> – Dataset creation is
      * running.</p> </li> </ul>
      */
     inline GetDatasetResult& WithStatus(const DatasetStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Status of the Dataset creation.</p> <ul> <li> <p> <code>PENDING</code> -
-     * Dataset is pending creation.</p> </li> <li> <p> <code>FAILED</code> - Dataset
-     * creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> - Dataset creation
-     * has succeeded.</p> </li> <li> <p> <code>RUNNING</code> - Dataset creation is
+     * <p>Status of the Dataset creation.</p> <ul> <li> <p> <code>PENDING</code> –
+     * Dataset is pending creation.</p> </li> <li> <p> <code>FAILED</code> – Dataset
+     * creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> – Dataset creation
+     * has succeeded.</p> </li> <li> <p> <code>RUNNING</code> – Dataset creation is
      * running.</p> </li> </ul>
      */
     inline GetDatasetResult& WithStatus(DatasetStatus&& value) { SetStatus(std::move(value)); return *this;}

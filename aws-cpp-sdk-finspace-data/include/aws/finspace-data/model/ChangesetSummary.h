@@ -174,60 +174,60 @@ namespace Model
 
     /**
      * <p>Type that indicates how a Changeset is applied to a Dataset.</p> <ul> <li>
-     * <p> <code>REPLACE</code> - Changeset is considered as a replacement to all prior
-     * loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> - Changeset is
+     * <p> <code>REPLACE</code> – Changeset is considered as a replacement to all prior
+     * loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> – Changeset is
      * considered as an addition to the end of all prior loaded Changesets.</p> </li>
-     * <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a
+     * <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a
      * specific prior ingested Changeset.</p> </li> </ul>
      */
     inline const ChangeType& GetChangeType() const{ return m_changeType; }
 
     /**
      * <p>Type that indicates how a Changeset is applied to a Dataset.</p> <ul> <li>
-     * <p> <code>REPLACE</code> - Changeset is considered as a replacement to all prior
-     * loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> - Changeset is
+     * <p> <code>REPLACE</code> – Changeset is considered as a replacement to all prior
+     * loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> – Changeset is
      * considered as an addition to the end of all prior loaded Changesets.</p> </li>
-     * <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a
+     * <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a
      * specific prior ingested Changeset.</p> </li> </ul>
      */
     inline bool ChangeTypeHasBeenSet() const { return m_changeTypeHasBeenSet; }
 
     /**
      * <p>Type that indicates how a Changeset is applied to a Dataset.</p> <ul> <li>
-     * <p> <code>REPLACE</code> - Changeset is considered as a replacement to all prior
-     * loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> - Changeset is
+     * <p> <code>REPLACE</code> – Changeset is considered as a replacement to all prior
+     * loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> – Changeset is
      * considered as an addition to the end of all prior loaded Changesets.</p> </li>
-     * <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a
+     * <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a
      * specific prior ingested Changeset.</p> </li> </ul>
      */
     inline void SetChangeType(const ChangeType& value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
 
     /**
      * <p>Type that indicates how a Changeset is applied to a Dataset.</p> <ul> <li>
-     * <p> <code>REPLACE</code> - Changeset is considered as a replacement to all prior
-     * loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> - Changeset is
+     * <p> <code>REPLACE</code> – Changeset is considered as a replacement to all prior
+     * loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> – Changeset is
      * considered as an addition to the end of all prior loaded Changesets.</p> </li>
-     * <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a
+     * <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a
      * specific prior ingested Changeset.</p> </li> </ul>
      */
     inline void SetChangeType(ChangeType&& value) { m_changeTypeHasBeenSet = true; m_changeType = std::move(value); }
 
     /**
      * <p>Type that indicates how a Changeset is applied to a Dataset.</p> <ul> <li>
-     * <p> <code>REPLACE</code> - Changeset is considered as a replacement to all prior
-     * loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> - Changeset is
+     * <p> <code>REPLACE</code> – Changeset is considered as a replacement to all prior
+     * loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> – Changeset is
      * considered as an addition to the end of all prior loaded Changesets.</p> </li>
-     * <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a
+     * <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a
      * specific prior ingested Changeset.</p> </li> </ul>
      */
     inline ChangesetSummary& WithChangeType(const ChangeType& value) { SetChangeType(value); return *this;}
 
     /**
      * <p>Type that indicates how a Changeset is applied to a Dataset.</p> <ul> <li>
-     * <p> <code>REPLACE</code> - Changeset is considered as a replacement to all prior
-     * loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> - Changeset is
+     * <p> <code>REPLACE</code> – Changeset is considered as a replacement to all prior
+     * loaded Changesets.</p> </li> <li> <p> <code>APPEND</code> – Changeset is
      * considered as an addition to the end of all prior loaded Changesets.</p> </li>
-     * <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a
+     * <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a
      * specific prior ingested Changeset.</p> </li> </ul>
      */
     inline ChangesetSummary& WithChangeType(ChangeType&& value) { SetChangeType(std::move(value)); return *this;}
@@ -367,89 +367,89 @@ namespace Model
 
     /**
      * <p>The timestamp at which the Changeset was created in FinSpace. The value is
-     * determined as Epoch time in milliseconds. For example, the value for Monday,
+     * determined as epoch time in milliseconds. For example, the value for Monday,
      * November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline long long GetCreateTime() const{ return m_createTime; }
 
     /**
      * <p>The timestamp at which the Changeset was created in FinSpace. The value is
-     * determined as Epoch time in milliseconds. For example, the value for Monday,
+     * determined as epoch time in milliseconds. For example, the value for Monday,
      * November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
 
     /**
      * <p>The timestamp at which the Changeset was created in FinSpace. The value is
-     * determined as Epoch time in milliseconds. For example, the value for Monday,
+     * determined as epoch time in milliseconds. For example, the value for Monday,
      * November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline void SetCreateTime(long long value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
      * <p>The timestamp at which the Changeset was created in FinSpace. The value is
-     * determined as Epoch time in milliseconds. For example, the value for Monday,
+     * determined as epoch time in milliseconds. For example, the value for Monday,
      * November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline ChangesetSummary& WithCreateTime(long long value) { SetCreateTime(value); return *this;}
 
 
     /**
-     * <p>Status of the Changeset ingestion.</p> <ul> <li> <p> <code>PENDING</code> -
-     * Changeset is pending creation.</p> </li> <li> <p> <code>FAILED</code> -
-     * Changeset creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> -
-     * Changeset creation has succeeded.</p> </li> <li> <p> <code>RUNNING</code> -
-     * Changeset creation is running.</p> </li> <li> <p> <code>STOP_REQUESTED</code> -
+     * <p>Status of the Changeset ingestion.</p> <ul> <li> <p> <code>PENDING</code> –
+     * Changeset is pending creation.</p> </li> <li> <p> <code>FAILED</code> –
+     * Changeset creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> –
+     * Changeset creation has succeeded.</p> </li> <li> <p> <code>RUNNING</code> –
+     * Changeset creation is running.</p> </li> <li> <p> <code>STOP_REQUESTED</code> –
      * User requested Changeset creation to stop.</p> </li> </ul>
      */
     inline const IngestionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Status of the Changeset ingestion.</p> <ul> <li> <p> <code>PENDING</code> -
-     * Changeset is pending creation.</p> </li> <li> <p> <code>FAILED</code> -
-     * Changeset creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> -
-     * Changeset creation has succeeded.</p> </li> <li> <p> <code>RUNNING</code> -
-     * Changeset creation is running.</p> </li> <li> <p> <code>STOP_REQUESTED</code> -
+     * <p>Status of the Changeset ingestion.</p> <ul> <li> <p> <code>PENDING</code> –
+     * Changeset is pending creation.</p> </li> <li> <p> <code>FAILED</code> –
+     * Changeset creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> –
+     * Changeset creation has succeeded.</p> </li> <li> <p> <code>RUNNING</code> –
+     * Changeset creation is running.</p> </li> <li> <p> <code>STOP_REQUESTED</code> –
      * User requested Changeset creation to stop.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Status of the Changeset ingestion.</p> <ul> <li> <p> <code>PENDING</code> -
-     * Changeset is pending creation.</p> </li> <li> <p> <code>FAILED</code> -
-     * Changeset creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> -
-     * Changeset creation has succeeded.</p> </li> <li> <p> <code>RUNNING</code> -
-     * Changeset creation is running.</p> </li> <li> <p> <code>STOP_REQUESTED</code> -
+     * <p>Status of the Changeset ingestion.</p> <ul> <li> <p> <code>PENDING</code> –
+     * Changeset is pending creation.</p> </li> <li> <p> <code>FAILED</code> –
+     * Changeset creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> –
+     * Changeset creation has succeeded.</p> </li> <li> <p> <code>RUNNING</code> –
+     * Changeset creation is running.</p> </li> <li> <p> <code>STOP_REQUESTED</code> –
      * User requested Changeset creation to stop.</p> </li> </ul>
      */
     inline void SetStatus(const IngestionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Status of the Changeset ingestion.</p> <ul> <li> <p> <code>PENDING</code> -
-     * Changeset is pending creation.</p> </li> <li> <p> <code>FAILED</code> -
-     * Changeset creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> -
-     * Changeset creation has succeeded.</p> </li> <li> <p> <code>RUNNING</code> -
-     * Changeset creation is running.</p> </li> <li> <p> <code>STOP_REQUESTED</code> -
+     * <p>Status of the Changeset ingestion.</p> <ul> <li> <p> <code>PENDING</code> –
+     * Changeset is pending creation.</p> </li> <li> <p> <code>FAILED</code> –
+     * Changeset creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> –
+     * Changeset creation has succeeded.</p> </li> <li> <p> <code>RUNNING</code> –
+     * Changeset creation is running.</p> </li> <li> <p> <code>STOP_REQUESTED</code> –
      * User requested Changeset creation to stop.</p> </li> </ul>
      */
     inline void SetStatus(IngestionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Status of the Changeset ingestion.</p> <ul> <li> <p> <code>PENDING</code> -
-     * Changeset is pending creation.</p> </li> <li> <p> <code>FAILED</code> -
-     * Changeset creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> -
-     * Changeset creation has succeeded.</p> </li> <li> <p> <code>RUNNING</code> -
-     * Changeset creation is running.</p> </li> <li> <p> <code>STOP_REQUESTED</code> -
+     * <p>Status of the Changeset ingestion.</p> <ul> <li> <p> <code>PENDING</code> –
+     * Changeset is pending creation.</p> </li> <li> <p> <code>FAILED</code> –
+     * Changeset creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> –
+     * Changeset creation has succeeded.</p> </li> <li> <p> <code>RUNNING</code> –
+     * Changeset creation is running.</p> </li> <li> <p> <code>STOP_REQUESTED</code> –
      * User requested Changeset creation to stop.</p> </li> </ul>
      */
     inline ChangesetSummary& WithStatus(const IngestionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Status of the Changeset ingestion.</p> <ul> <li> <p> <code>PENDING</code> -
-     * Changeset is pending creation.</p> </li> <li> <p> <code>FAILED</code> -
-     * Changeset creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> -
-     * Changeset creation has succeeded.</p> </li> <li> <p> <code>RUNNING</code> -
-     * Changeset creation is running.</p> </li> <li> <p> <code>STOP_REQUESTED</code> -
+     * <p>Status of the Changeset ingestion.</p> <ul> <li> <p> <code>PENDING</code> –
+     * Changeset is pending creation.</p> </li> <li> <p> <code>FAILED</code> –
+     * Changeset creation has failed.</p> </li> <li> <p> <code>SUCCESS</code> –
+     * Changeset creation has succeeded.</p> </li> <li> <p> <code>RUNNING</code> –
+     * Changeset creation is running.</p> </li> <li> <p> <code>STOP_REQUESTED</code> –
      * User requested Changeset creation to stop.</p> </li> </ul>
      */
     inline ChangesetSummary& WithStatus(IngestionStatus&& value) { SetStatus(std::move(value)); return *this;}
@@ -487,28 +487,28 @@ namespace Model
 
 
     /**
-     * <p>Time until which the Changeset is active. The value is determined as Epoch
+     * <p>Time until which the Changeset is active. The value is determined as epoch
      * time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline long long GetActiveUntilTimestamp() const{ return m_activeUntilTimestamp; }
 
     /**
-     * <p>Time until which the Changeset is active. The value is determined as Epoch
+     * <p>Time until which the Changeset is active. The value is determined as epoch
      * time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline bool ActiveUntilTimestampHasBeenSet() const { return m_activeUntilTimestampHasBeenSet; }
 
     /**
-     * <p>Time until which the Changeset is active. The value is determined as Epoch
+     * <p>Time until which the Changeset is active. The value is determined as epoch
      * time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline void SetActiveUntilTimestamp(long long value) { m_activeUntilTimestampHasBeenSet = true; m_activeUntilTimestamp = value; }
 
     /**
-     * <p>Time until which the Changeset is active. The value is determined as Epoch
+     * <p>Time until which the Changeset is active. The value is determined as epoch
      * time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
@@ -517,28 +517,28 @@ namespace Model
 
     /**
      * <p>Beginning time from which the Changeset is active. The value is determined as
-     * Epoch time in milliseconds. For example, the value for Monday, November 1, 2021
+     * epoch time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline long long GetActiveFromTimestamp() const{ return m_activeFromTimestamp; }
 
     /**
      * <p>Beginning time from which the Changeset is active. The value is determined as
-     * Epoch time in milliseconds. For example, the value for Monday, November 1, 2021
+     * epoch time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline bool ActiveFromTimestampHasBeenSet() const { return m_activeFromTimestampHasBeenSet; }
 
     /**
      * <p>Beginning time from which the Changeset is active. The value is determined as
-     * Epoch time in milliseconds. For example, the value for Monday, November 1, 2021
+     * epoch time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline void SetActiveFromTimestamp(long long value) { m_activeFromTimestampHasBeenSet = true; m_activeFromTimestamp = value; }
 
     /**
      * <p>Beginning time from which the Changeset is active. The value is determined as
-     * Epoch time in milliseconds. For example, the value for Monday, November 1, 2021
+     * epoch time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
     inline ChangesetSummary& WithActiveFromTimestamp(long long value) { SetActiveFromTimestamp(value); return *this;}

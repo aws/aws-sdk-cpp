@@ -74,55 +74,6 @@ namespace Model
 
 
     /**
-     * <p>The new name of the application. The name must be unique in the region in
-     * which you are updating the application.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The new name of the application. The name must be unique in the region in
-     * which you are updating the application.</p>
-     */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The new name of the application. The name must be unique in the region in
-     * which you are updating the application.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The new name of the application. The name must be unique in the region in
-     * which you are updating the application.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The new name of the application. The name must be unique in the region in
-     * which you are updating the application.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The new name of the application. The name must be unique in the region in
-     * which you are updating the application.</p>
-     */
-    inline UpdateApplicationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The new name of the application. The name must be unique in the region in
-     * which you are updating the application.</p>
-     */
-    inline UpdateApplicationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The new name of the application. The name must be unique in the region in
-     * which you are updating the application.</p>
-     */
-    inline UpdateApplicationRequest& WithName(const char* value) { SetName(value); return *this;}
-
-
-    /**
      * <p>The new description of the application.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -166,9 +117,6 @@ namespace Model
 
     Aws::String m_application;
     bool m_applicationHasBeenSet;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;

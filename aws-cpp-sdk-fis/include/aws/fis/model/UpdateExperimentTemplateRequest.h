@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/fis/model/UpdateExperimentTemplateLogConfigurationInput.h>
 #include <aws/fis/model/UpdateExperimentTemplateStopConditionInput.h>
 #include <aws/fis/model/UpdateExperimentTemplateTargetInput.h>
 #include <aws/fis/model/UpdateExperimentTemplateActionInputItem.h>
@@ -330,6 +331,37 @@ namespace Model
      */
     inline UpdateExperimentTemplateRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    /**
+     * <p>The configuration for experiment logging.</p>
+     */
+    inline const UpdateExperimentTemplateLogConfigurationInput& GetLogConfiguration() const{ return m_logConfiguration; }
+
+    /**
+     * <p>The configuration for experiment logging.</p>
+     */
+    inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration for experiment logging.</p>
+     */
+    inline void SetLogConfiguration(const UpdateExperimentTemplateLogConfigurationInput& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
+
+    /**
+     * <p>The configuration for experiment logging.</p>
+     */
+    inline void SetLogConfiguration(UpdateExperimentTemplateLogConfigurationInput&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration for experiment logging.</p>
+     */
+    inline UpdateExperimentTemplateRequest& WithLogConfiguration(const UpdateExperimentTemplateLogConfigurationInput& value) { SetLogConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration for experiment logging.</p>
+     */
+    inline UpdateExperimentTemplateRequest& WithLogConfiguration(UpdateExperimentTemplateLogConfigurationInput&& value) { SetLogConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -349,6 +381,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    UpdateExperimentTemplateLogConfigurationInput m_logConfiguration;
+    bool m_logConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -77,37 +77,37 @@ namespace Model
 
 
     /**
-     * <p>A token indicating where a results page should begin.</p>
+     * <p>A token that indicates where a results page should begin.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token indicating where a results page should begin.</p>
+     * <p>A token that indicates where a results page should begin.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>A token indicating where a results page should begin.</p>
+     * <p>A token that indicates where a results page should begin.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>A token indicating where a results page should begin.</p>
+     * <p>A token that indicates where a results page should begin.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>A token indicating where a results page should begin.</p>
+     * <p>A token that indicates where a results page should begin.</p>
      */
     inline ListChangesetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token indicating where a results page should begin.</p>
+     * <p>A token that indicates where a results page should begin.</p>
      */
     inline ListChangesetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token indicating where a results page should begin.</p>
+     * <p>A token that indicates where a results page should begin.</p>
      */
     inline ListChangesetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

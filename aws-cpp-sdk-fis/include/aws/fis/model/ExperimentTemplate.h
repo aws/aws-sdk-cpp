@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/fis/model/ExperimentTemplateLogConfiguration.h>
 #include <aws/fis/model/ExperimentTemplateTarget.h>
 #include <aws/fis/model/ExperimentTemplateAction.h>
 #include <aws/fis/model/ExperimentTemplateStopCondition.h>
@@ -456,6 +457,37 @@ namespace Model
      */
     inline ExperimentTemplate& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The configuration for experiment logging.</p>
+     */
+    inline const ExperimentTemplateLogConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
+
+    /**
+     * <p>The configuration for experiment logging.</p>
+     */
+    inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration for experiment logging.</p>
+     */
+    inline void SetLogConfiguration(const ExperimentTemplateLogConfiguration& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
+
+    /**
+     * <p>The configuration for experiment logging.</p>
+     */
+    inline void SetLogConfiguration(ExperimentTemplateLogConfiguration&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration for experiment logging.</p>
+     */
+    inline ExperimentTemplate& WithLogConfiguration(const ExperimentTemplateLogConfiguration& value) { SetLogConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration for experiment logging.</p>
+     */
+    inline ExperimentTemplate& WithLogConfiguration(ExperimentTemplateLogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -484,6 +516,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    ExperimentTemplateLogConfiguration m_logConfiguration;
+    bool m_logConfigurationHasBeenSet;
   };
 
 } // namespace Model
