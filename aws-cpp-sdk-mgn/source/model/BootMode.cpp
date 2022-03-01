@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediapackage/model/Profile.h>
+#include <aws/mgn/model/BootMode.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -13,53 +13,46 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace MediaPackage
+  namespace mgn
   {
     namespace Model
     {
-      namespace ProfileMapper
+      namespace BootModeMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int HBBTV_1_5_HASH = HashingUtils::HashString("HBBTV_1_5");
-        static const int HYBRIDCAST_HASH = HashingUtils::HashString("HYBRIDCAST");
+        static const int LEGACY_BIOS_HASH = HashingUtils::HashString("LEGACY_BIOS");
+        static const int UEFI_HASH = HashingUtils::HashString("UEFI");
 
 
-        Profile GetProfileForName(const Aws::String& name)
+        BootMode GetBootModeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == NONE_HASH)
+          if (hashCode == LEGACY_BIOS_HASH)
           {
-            return Profile::NONE;
+            return BootMode::LEGACY_BIOS;
           }
-          else if (hashCode == HBBTV_1_5_HASH)
+          else if (hashCode == UEFI_HASH)
           {
-            return Profile::HBBTV_1_5;
-          }
-          else if (hashCode == HYBRIDCAST_HASH)
-          {
-            return Profile::HYBRIDCAST;
+            return BootMode::UEFI;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<Profile>(hashCode);
+            return static_cast<BootMode>(hashCode);
           }
 
-          return Profile::NOT_SET;
+          return BootMode::NOT_SET;
         }
 
-        Aws::String GetNameForProfile(Profile enumValue)
+        Aws::String GetNameForBootMode(BootMode enumValue)
         {
           switch(enumValue)
           {
-          case Profile::NONE:
-            return "NONE";
-          case Profile::HBBTV_1_5:
-            return "HBBTV_1_5";
-          case Profile::HYBRIDCAST:
-            return "HYBRIDCAST";
+          case BootMode::LEGACY_BIOS:
+            return "LEGACY_BIOS";
+          case BootMode::UEFI:
+            return "UEFI";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -71,7 +64,7 @@ namespace Aws
           }
         }
 
-      } // namespace ProfileMapper
+      } // namespace BootModeMapper
     } // namespace Model
-  } // namespace MediaPackage
+  } // namespace mgn
 } // namespace Aws

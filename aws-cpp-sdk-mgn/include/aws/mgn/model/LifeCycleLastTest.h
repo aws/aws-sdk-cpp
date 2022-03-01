@@ -40,32 +40,32 @@ namespace Model
 
 
     /**
-     * <p>Lifecycle last Test finlized.</p>
+     * <p>Lifecycle last Test finalized.</p>
      */
     inline const LifeCycleLastTestFinalized& GetFinalized() const{ return m_finalized; }
 
     /**
-     * <p>Lifecycle last Test finlized.</p>
+     * <p>Lifecycle last Test finalized.</p>
      */
     inline bool FinalizedHasBeenSet() const { return m_finalizedHasBeenSet; }
 
     /**
-     * <p>Lifecycle last Test finlized.</p>
+     * <p>Lifecycle last Test finalized.</p>
      */
     inline void SetFinalized(const LifeCycleLastTestFinalized& value) { m_finalizedHasBeenSet = true; m_finalized = value; }
 
     /**
-     * <p>Lifecycle last Test finlized.</p>
+     * <p>Lifecycle last Test finalized.</p>
      */
     inline void SetFinalized(LifeCycleLastTestFinalized&& value) { m_finalizedHasBeenSet = true; m_finalized = std::move(value); }
 
     /**
-     * <p>Lifecycle last Test finlized.</p>
+     * <p>Lifecycle last Test finalized.</p>
      */
     inline LifeCycleLastTest& WithFinalized(const LifeCycleLastTestFinalized& value) { SetFinalized(value); return *this;}
 
     /**
-     * <p>Lifecycle last Test finlized.</p>
+     * <p>Lifecycle last Test finalized.</p>
      */
     inline LifeCycleLastTest& WithFinalized(LifeCycleLastTestFinalized&& value) { SetFinalized(std::move(value)); return *this;}
 

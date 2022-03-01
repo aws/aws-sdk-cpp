@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Lifecycle last Test finlized.</p><p><h3>See Also:</h3>   <a
+   * <p>Lifecycle last Test finalized.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/LifeCycleLastTestFinalized">AWS
    * API Reference</a></p>
    */

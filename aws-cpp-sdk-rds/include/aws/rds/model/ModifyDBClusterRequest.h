@@ -867,43 +867,127 @@ namespace Model
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB cluster.</p> <p>Valid for: Aurora DB clusters
-     * only</p>
+     * CloudWatch Logs for a specific DB cluster. The values in the list depend on the
+     * DB engine being used.</p> <p> <b>RDS for MySQL</b> </p> <p>Possible values are
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p> <p>
+     * <b>RDS for PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code>
+     * and <code>upgrade</code>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values
+     * are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>.</p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible value
+     * is <code>postgresql</code>.</p> <p>For more information about exporting
+     * CloudWatch Logs for Amazon RDS, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
+     * Service User Guide</i>.</p> <p>For more information about exporting CloudWatch
+     * Logs for Amazon Aurora, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline const CloudwatchLogsExportConfiguration& GetCloudwatchLogsExportConfiguration() const{ return m_cloudwatchLogsExportConfiguration; }
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB cluster.</p> <p>Valid for: Aurora DB clusters
-     * only</p>
+     * CloudWatch Logs for a specific DB cluster. The values in the list depend on the
+     * DB engine being used.</p> <p> <b>RDS for MySQL</b> </p> <p>Possible values are
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p> <p>
+     * <b>RDS for PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code>
+     * and <code>upgrade</code>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values
+     * are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>.</p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible value
+     * is <code>postgresql</code>.</p> <p>For more information about exporting
+     * CloudWatch Logs for Amazon RDS, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
+     * Service User Guide</i>.</p> <p>For more information about exporting CloudWatch
+     * Logs for Amazon Aurora, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline bool CloudwatchLogsExportConfigurationHasBeenSet() const { return m_cloudwatchLogsExportConfigurationHasBeenSet; }
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB cluster.</p> <p>Valid for: Aurora DB clusters
-     * only</p>
+     * CloudWatch Logs for a specific DB cluster. The values in the list depend on the
+     * DB engine being used.</p> <p> <b>RDS for MySQL</b> </p> <p>Possible values are
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p> <p>
+     * <b>RDS for PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code>
+     * and <code>upgrade</code>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values
+     * are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>.</p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible value
+     * is <code>postgresql</code>.</p> <p>For more information about exporting
+     * CloudWatch Logs for Amazon RDS, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
+     * Service User Guide</i>.</p> <p>For more information about exporting CloudWatch
+     * Logs for Amazon Aurora, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline void SetCloudwatchLogsExportConfiguration(const CloudwatchLogsExportConfiguration& value) { m_cloudwatchLogsExportConfigurationHasBeenSet = true; m_cloudwatchLogsExportConfiguration = value; }
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB cluster.</p> <p>Valid for: Aurora DB clusters
-     * only</p>
+     * CloudWatch Logs for a specific DB cluster. The values in the list depend on the
+     * DB engine being used.</p> <p> <b>RDS for MySQL</b> </p> <p>Possible values are
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p> <p>
+     * <b>RDS for PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code>
+     * and <code>upgrade</code>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values
+     * are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>.</p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible value
+     * is <code>postgresql</code>.</p> <p>For more information about exporting
+     * CloudWatch Logs for Amazon RDS, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
+     * Service User Guide</i>.</p> <p>For more information about exporting CloudWatch
+     * Logs for Amazon Aurora, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline void SetCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration&& value) { m_cloudwatchLogsExportConfigurationHasBeenSet = true; m_cloudwatchLogsExportConfiguration = std::move(value); }
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB cluster.</p> <p>Valid for: Aurora DB clusters
-     * only</p>
+     * CloudWatch Logs for a specific DB cluster. The values in the list depend on the
+     * DB engine being used.</p> <p> <b>RDS for MySQL</b> </p> <p>Possible values are
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p> <p>
+     * <b>RDS for PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code>
+     * and <code>upgrade</code>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values
+     * are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>.</p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible value
+     * is <code>postgresql</code>.</p> <p>For more information about exporting
+     * CloudWatch Logs for Amazon RDS, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
+     * Service User Guide</i>.</p> <p>For more information about exporting CloudWatch
+     * Logs for Amazon Aurora, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline ModifyDBClusterRequest& WithCloudwatchLogsExportConfiguration(const CloudwatchLogsExportConfiguration& value) { SetCloudwatchLogsExportConfiguration(value); return *this;}
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB cluster.</p> <p>Valid for: Aurora DB clusters
-     * only</p>
+     * CloudWatch Logs for a specific DB cluster. The values in the list depend on the
+     * DB engine being used.</p> <p> <b>RDS for MySQL</b> </p> <p>Possible values are
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p> <p>
+     * <b>RDS for PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code>
+     * and <code>upgrade</code>.</p> <p> <b>Aurora MySQL</b> </p> <p>Possible values
+     * are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>.</p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible value
+     * is <code>postgresql</code>.</p> <p>For more information about exporting
+     * CloudWatch Logs for Amazon RDS, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
+     * Service User Guide</i>.</p> <p>For more information about exporting CloudWatch
+     * Logs for Amazon Aurora, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline ModifyDBClusterRequest& WithCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration&& value) { SetCloudwatchLogsExportConfiguration(std::move(value)); return *this;}
 
@@ -1513,28 +1597,28 @@ namespace Model
     /**
      * <p>A value that indicates whether to copy all tags from the DB cluster to
      * snapshots of the DB cluster. The default is not to copy them.</p> <p>Valid for:
-     * Aurora DB clusters only</p>
+     * Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
      * <p>A value that indicates whether to copy all tags from the DB cluster to
      * snapshots of the DB cluster. The default is not to copy them.</p> <p>Valid for:
-     * Aurora DB clusters only</p>
+     * Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
      * <p>A value that indicates whether to copy all tags from the DB cluster to
      * snapshots of the DB cluster. The default is not to copy them.</p> <p>Valid for:
-     * Aurora DB clusters only</p>
+     * Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
      * <p>A value that indicates whether to copy all tags from the DB cluster to
      * snapshots of the DB cluster. The default is not to copy them.</p> <p>Valid for:
-     * Aurora DB clusters only</p>
+     * Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline ModifyDBClusterRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 

@@ -24,6 +24,7 @@
 #include <aws/kafkaconnect/model/CreateCustomPluginRequest.h>
 #include <aws/kafkaconnect/model/CreateWorkerConfigurationRequest.h>
 #include <aws/kafkaconnect/model/DeleteConnectorRequest.h>
+#include <aws/kafkaconnect/model/DeleteCustomPluginRequest.h>
 #include <aws/kafkaconnect/model/DescribeConnectorRequest.h>
 #include <aws/kafkaconnect/model/DescribeCustomPluginRequest.h>
 #include <aws/kafkaconnect/model/DescribeWorkerConfigurationRequest.h>
@@ -209,6 +210,37 @@ void KafkaConnectClient::DeleteConnectorAsync(const DeleteConnectorRequest& requ
 void KafkaConnectClient::DeleteConnectorAsyncHelper(const DeleteConnectorRequest& request, const DeleteConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteConnector(request), context);
+}
+
+DeleteCustomPluginOutcome KafkaConnectClient::DeleteCustomPlugin(const DeleteCustomPluginRequest& request) const
+{
+  if (!request.CustomPluginArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCustomPlugin", "Required field: CustomPluginArn, is not set");
+    return DeleteCustomPluginOutcome(Aws::Client::AWSError<KafkaConnectErrors>(KafkaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CustomPluginArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/custom-plugins/");
+  uri.AddPathSegment(request.GetCustomPluginArn());
+  return DeleteCustomPluginOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteCustomPluginOutcomeCallable KafkaConnectClient::DeleteCustomPluginCallable(const DeleteCustomPluginRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCustomPluginOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCustomPlugin(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KafkaConnectClient::DeleteCustomPluginAsync(const DeleteCustomPluginRequest& request, const DeleteCustomPluginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomPluginAsyncHelper( request, handler, context ); } );
+}
+
+void KafkaConnectClient::DeleteCustomPluginAsyncHelper(const DeleteCustomPluginRequest& request, const DeleteCustomPluginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteCustomPlugin(request), context);
 }
 
 DescribeConnectorOutcome KafkaConnectClient::DescribeConnector(const DescribeConnectorRequest& request) const

@@ -57,8 +57,7 @@ namespace Model
    * more information on Multi-AZ DB clusters, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
    * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-   * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-   * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+   * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBCluster">AWS API
    * Reference</a></p>
    */

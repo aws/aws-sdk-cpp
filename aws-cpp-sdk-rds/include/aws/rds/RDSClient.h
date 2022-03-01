@@ -1220,8 +1220,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterSnapshot">AWS
          * API Reference</a></p>
          */
@@ -1295,8 +1294,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1372,8 +1370,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1642,8 +1639,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster">AWS
          * API Reference</a></p>
          */
@@ -1662,8 +1658,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster">AWS
          * API Reference</a></p>
          *
@@ -1684,8 +1679,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster">AWS
          * API Reference</a></p>
          *
@@ -1755,8 +1749,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
          */
@@ -1793,8 +1786,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -1833,8 +1825,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -1850,8 +1841,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterSnapshot">AWS
          * API Reference</a></p>
          */
@@ -1865,8 +1855,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1882,8 +1871,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterSnapshot">AWS
          * API Reference</a></p>
          *
@@ -2496,8 +2484,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBCluster">AWS
          * API Reference</a></p>
          */
@@ -2513,8 +2500,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBCluster">AWS
          * API Reference</a></p>
          *
@@ -2532,8 +2518,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBCluster">AWS
          * API Reference</a></p>
          *
@@ -2581,8 +2566,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterParameterGroup">AWS
          * API Reference</a></p>
          */
@@ -2597,8 +2581,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -2615,8 +2598,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -2634,8 +2616,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterSnapshot">AWS
          * API Reference</a></p>
          */
@@ -2651,8 +2632,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterSnapshot">AWS
          * API Reference</a></p>
          *
@@ -2670,8 +2650,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterSnapshot">AWS
          * API Reference</a></p>
          *
@@ -3298,8 +3277,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameterGroups">AWS
          * API Reference</a></p>
          */
@@ -3315,8 +3293,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameterGroups">AWS
          * API Reference</a></p>
          *
@@ -3334,8 +3311,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameterGroups">AWS
          * API Reference</a></p>
          *
@@ -3351,8 +3327,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameters">AWS
          * API Reference</a></p>
          */
@@ -3366,8 +3341,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameters">AWS
          * API Reference</a></p>
          *
@@ -3383,8 +3357,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameters">AWS
          * API Reference</a></p>
          *
@@ -3458,8 +3431,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshots">AWS
          * API Reference</a></p>
          */
@@ -3473,8 +3445,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshots">AWS
          * API Reference</a></p>
          *
@@ -3490,8 +3461,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshots">AWS
          * API Reference</a></p>
          *
@@ -3508,10 +3478,9 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p>  <p>This operation can also return
-         * information for Amazon Neptune DB instances and Amazon DocumentDB
-         * instances.</p><p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p> <p>This operation can also return information for
+         * Amazon Neptune DB instances and Amazon DocumentDB instances.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
          */
@@ -3526,10 +3495,9 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p>  <p>This operation can also return
-         * information for Amazon Neptune DB instances and Amazon DocumentDB
-         * instances.</p><p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p> <p>This operation can also return information for
+         * Amazon Neptune DB instances and Amazon DocumentDB instances.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
          *
@@ -3546,10 +3514,9 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p>  <p>This operation can also return
-         * information for Amazon Neptune DB instances and Amazon DocumentDB
-         * instances.</p><p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p> <p>This operation can also return information for
+         * Amazon Neptune DB instances and Amazon DocumentDB instances.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
          *
@@ -4565,8 +4532,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverDBCluster">AWS
          * API Reference</a></p>
          */
@@ -4592,8 +4558,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverDBCluster">AWS
          * API Reference</a></p>
          *
@@ -4621,8 +4586,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverDBCluster">AWS
          * API Reference</a></p>
          *
@@ -4997,8 +4961,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster">AWS
          * API Reference</a></p>
          */
@@ -5014,8 +4977,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster">AWS
          * API Reference</a></p>
          *
@@ -5033,8 +4995,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster">AWS
          * API Reference</a></p>
          *
@@ -5099,8 +5060,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterParameterGroup">AWS
          * API Reference</a></p>
          */
@@ -5132,8 +5092,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -5167,8 +5126,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -5807,8 +5765,7 @@ namespace Aws
          * changes to take effect. </p> <p>Rebooting a DB cluster restarts the database
          * engine service. Rebooting a DB cluster results in a momentary outage, during
          * which the DB cluster status is set to rebooting. </p> <p>Use this operation only
-         * for a non-Aurora Multi-AZ DB cluster. The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p>For more information on Multi-AZ DB
+         * for a non-Aurora Multi-AZ DB cluster.</p> <p>For more information on Multi-AZ DB
          * clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
@@ -5825,8 +5782,7 @@ namespace Aws
          * changes to take effect. </p> <p>Rebooting a DB cluster restarts the database
          * engine service. Rebooting a DB cluster results in a momentary outage, during
          * which the DB cluster status is set to rebooting. </p> <p>Use this operation only
-         * for a non-Aurora Multi-AZ DB cluster. The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p>For more information on Multi-AZ DB
+         * for a non-Aurora Multi-AZ DB cluster.</p> <p>For more information on Multi-AZ DB
          * clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
@@ -5845,8 +5801,7 @@ namespace Aws
          * changes to take effect. </p> <p>Rebooting a DB cluster restarts the database
          * engine service. Rebooting a DB cluster results in a momentary outage, during
          * which the DB cluster status is set to rebooting. </p> <p>Use this operation only
-         * for a non-Aurora Multi-AZ DB cluster. The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p>For more information on Multi-AZ DB
+         * for a non-Aurora Multi-AZ DB cluster.</p> <p>For more information on Multi-AZ DB
          * clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
@@ -5984,8 +5939,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBCluster">AWS
          * API Reference</a></p>
          */
@@ -6000,8 +5954,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBCluster">AWS
          * API Reference</a></p>
          *
@@ -6018,8 +5971,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBCluster">AWS
          * API Reference</a></p>
          *
@@ -6137,8 +6089,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBClusterParameterGroup">AWS
          * API Reference</a></p>
          */
@@ -6161,8 +6112,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -6187,8 +6137,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -6329,8 +6278,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">AWS
          * API Reference</a></p>
          */
@@ -6353,8 +6301,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">AWS
          * API Reference</a></p>
          *
@@ -6379,8 +6326,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">AWS
          * API Reference</a></p>
          *
@@ -6407,8 +6353,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime">AWS
          * API Reference</a></p>
          */
@@ -6433,8 +6378,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime">AWS
          * API Reference</a></p>
          *
@@ -6461,8 +6405,7 @@ namespace Aws
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
          * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
-         * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime">AWS
          * API Reference</a></p>
          *

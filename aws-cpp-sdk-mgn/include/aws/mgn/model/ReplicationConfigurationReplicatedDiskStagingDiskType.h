@@ -21,7 +21,9 @@ namespace Model
     IO1,
     SC1,
     ST1,
-    STANDARD
+    STANDARD,
+    GP3,
+    IO2
   };
 
 namespace ReplicationConfigurationReplicatedDiskStagingDiskTypeMapper

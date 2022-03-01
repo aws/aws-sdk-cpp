@@ -150,123 +150,123 @@ namespace Model
 
 
     /**
-     * <p>Request to configure the Staging Disk EBS volume type to "gp2" during
+     * <p>Request to configure the default large staging disk EBS volume type during
      * Replication Settings template creation.</p>
      */
     inline const ReplicationConfigurationDefaultLargeStagingDiskType& GetDefaultLargeStagingDiskType() const{ return m_defaultLargeStagingDiskType; }
 
     /**
-     * <p>Request to configure the Staging Disk EBS volume type to "gp2" during
+     * <p>Request to configure the default large staging disk EBS volume type during
      * Replication Settings template creation.</p>
      */
     inline bool DefaultLargeStagingDiskTypeHasBeenSet() const { return m_defaultLargeStagingDiskTypeHasBeenSet; }
 
     /**
-     * <p>Request to configure the Staging Disk EBS volume type to "gp2" during
+     * <p>Request to configure the default large staging disk EBS volume type during
      * Replication Settings template creation.</p>
      */
     inline void SetDefaultLargeStagingDiskType(const ReplicationConfigurationDefaultLargeStagingDiskType& value) { m_defaultLargeStagingDiskTypeHasBeenSet = true; m_defaultLargeStagingDiskType = value; }
 
     /**
-     * <p>Request to configure the Staging Disk EBS volume type to "gp2" during
+     * <p>Request to configure the default large staging disk EBS volume type during
      * Replication Settings template creation.</p>
      */
     inline void SetDefaultLargeStagingDiskType(ReplicationConfigurationDefaultLargeStagingDiskType&& value) { m_defaultLargeStagingDiskTypeHasBeenSet = true; m_defaultLargeStagingDiskType = std::move(value); }
 
     /**
-     * <p>Request to configure the Staging Disk EBS volume type to "gp2" during
+     * <p>Request to configure the default large staging disk EBS volume type during
      * Replication Settings template creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& WithDefaultLargeStagingDiskType(const ReplicationConfigurationDefaultLargeStagingDiskType& value) { SetDefaultLargeStagingDiskType(value); return *this;}
 
     /**
-     * <p>Request to configure the Staging Disk EBS volume type to "gp2" during
+     * <p>Request to configure the default large staging disk EBS volume type during
      * Replication Settings template creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& WithDefaultLargeStagingDiskType(ReplicationConfigurationDefaultLargeStagingDiskType&& value) { SetDefaultLargeStagingDiskType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Request to configure EBS enryption during Replication Settings template
+     * <p>Request to configure EBS encryption during Replication Settings template
      * creation.</p>
      */
     inline const ReplicationConfigurationEbsEncryption& GetEbsEncryption() const{ return m_ebsEncryption; }
 
     /**
-     * <p>Request to configure EBS enryption during Replication Settings template
+     * <p>Request to configure EBS encryption during Replication Settings template
      * creation.</p>
      */
     inline bool EbsEncryptionHasBeenSet() const { return m_ebsEncryptionHasBeenSet; }
 
     /**
-     * <p>Request to configure EBS enryption during Replication Settings template
+     * <p>Request to configure EBS encryption during Replication Settings template
      * creation.</p>
      */
     inline void SetEbsEncryption(const ReplicationConfigurationEbsEncryption& value) { m_ebsEncryptionHasBeenSet = true; m_ebsEncryption = value; }
 
     /**
-     * <p>Request to configure EBS enryption during Replication Settings template
+     * <p>Request to configure EBS encryption during Replication Settings template
      * creation.</p>
      */
     inline void SetEbsEncryption(ReplicationConfigurationEbsEncryption&& value) { m_ebsEncryptionHasBeenSet = true; m_ebsEncryption = std::move(value); }
 
     /**
-     * <p>Request to configure EBS enryption during Replication Settings template
+     * <p>Request to configure EBS encryption during Replication Settings template
      * creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& WithEbsEncryption(const ReplicationConfigurationEbsEncryption& value) { SetEbsEncryption(value); return *this;}
 
     /**
-     * <p>Request to configure EBS enryption during Replication Settings template
+     * <p>Request to configure EBS encryption during Replication Settings template
      * creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& WithEbsEncryption(ReplicationConfigurationEbsEncryption&& value) { SetEbsEncryption(std::move(value)); return *this;}
 
 
     /**
-     * <p>Request to configure an EBS enryption key during Replication Settings
+     * <p>Request to configure an EBS encryption key during Replication Settings
      * template creation.</p>
      */
     inline const Aws::String& GetEbsEncryptionKeyArn() const{ return m_ebsEncryptionKeyArn; }
 
     /**
-     * <p>Request to configure an EBS enryption key during Replication Settings
+     * <p>Request to configure an EBS encryption key during Replication Settings
      * template creation.</p>
      */
     inline bool EbsEncryptionKeyArnHasBeenSet() const { return m_ebsEncryptionKeyArnHasBeenSet; }
 
     /**
-     * <p>Request to configure an EBS enryption key during Replication Settings
+     * <p>Request to configure an EBS encryption key during Replication Settings
      * template creation.</p>
      */
     inline void SetEbsEncryptionKeyArn(const Aws::String& value) { m_ebsEncryptionKeyArnHasBeenSet = true; m_ebsEncryptionKeyArn = value; }
 
     /**
-     * <p>Request to configure an EBS enryption key during Replication Settings
+     * <p>Request to configure an EBS encryption key during Replication Settings
      * template creation.</p>
      */
     inline void SetEbsEncryptionKeyArn(Aws::String&& value) { m_ebsEncryptionKeyArnHasBeenSet = true; m_ebsEncryptionKeyArn = std::move(value); }
 
     /**
-     * <p>Request to configure an EBS enryption key during Replication Settings
+     * <p>Request to configure an EBS encryption key during Replication Settings
      * template creation.</p>
      */
     inline void SetEbsEncryptionKeyArn(const char* value) { m_ebsEncryptionKeyArnHasBeenSet = true; m_ebsEncryptionKeyArn.assign(value); }
 
     /**
-     * <p>Request to configure an EBS enryption key during Replication Settings
+     * <p>Request to configure an EBS encryption key during Replication Settings
      * template creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& WithEbsEncryptionKeyArn(const Aws::String& value) { SetEbsEncryptionKeyArn(value); return *this;}
 
     /**
-     * <p>Request to configure an EBS enryption key during Replication Settings
+     * <p>Request to configure an EBS encryption key during Replication Settings
      * template creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& WithEbsEncryptionKeyArn(Aws::String&& value) { SetEbsEncryptionKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>Request to configure an EBS enryption key during Replication Settings
+     * <p>Request to configure an EBS encryption key during Replication Settings
      * template creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& WithEbsEncryptionKeyArn(const char* value) { SetEbsEncryptionKeyArn(value); return *this;}
@@ -322,55 +322,55 @@ namespace Model
 
 
     /**
-     * <p>Request to configure the Replication Server Secuirity group ID during
+     * <p>Request to configure the Replication Server Security group ID during
      * Replication Settings template creation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReplicationServersSecurityGroupsIDs() const{ return m_replicationServersSecurityGroupsIDs; }
 
     /**
-     * <p>Request to configure the Replication Server Secuirity group ID during
+     * <p>Request to configure the Replication Server Security group ID during
      * Replication Settings template creation.</p>
      */
     inline bool ReplicationServersSecurityGroupsIDsHasBeenSet() const { return m_replicationServersSecurityGroupsIDsHasBeenSet; }
 
     /**
-     * <p>Request to configure the Replication Server Secuirity group ID during
+     * <p>Request to configure the Replication Server Security group ID during
      * Replication Settings template creation.</p>
      */
     inline void SetReplicationServersSecurityGroupsIDs(const Aws::Vector<Aws::String>& value) { m_replicationServersSecurityGroupsIDsHasBeenSet = true; m_replicationServersSecurityGroupsIDs = value; }
 
     /**
-     * <p>Request to configure the Replication Server Secuirity group ID during
+     * <p>Request to configure the Replication Server Security group ID during
      * Replication Settings template creation.</p>
      */
     inline void SetReplicationServersSecurityGroupsIDs(Aws::Vector<Aws::String>&& value) { m_replicationServersSecurityGroupsIDsHasBeenSet = true; m_replicationServersSecurityGroupsIDs = std::move(value); }
 
     /**
-     * <p>Request to configure the Replication Server Secuirity group ID during
+     * <p>Request to configure the Replication Server Security group ID during
      * Replication Settings template creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& WithReplicationServersSecurityGroupsIDs(const Aws::Vector<Aws::String>& value) { SetReplicationServersSecurityGroupsIDs(value); return *this;}
 
     /**
-     * <p>Request to configure the Replication Server Secuirity group ID during
+     * <p>Request to configure the Replication Server Security group ID during
      * Replication Settings template creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& WithReplicationServersSecurityGroupsIDs(Aws::Vector<Aws::String>&& value) { SetReplicationServersSecurityGroupsIDs(std::move(value)); return *this;}
 
     /**
-     * <p>Request to configure the Replication Server Secuirity group ID during
+     * <p>Request to configure the Replication Server Security group ID during
      * Replication Settings template creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& AddReplicationServersSecurityGroupsIDs(const Aws::String& value) { m_replicationServersSecurityGroupsIDsHasBeenSet = true; m_replicationServersSecurityGroupsIDs.push_back(value); return *this; }
 
     /**
-     * <p>Request to configure the Replication Server Secuirity group ID during
+     * <p>Request to configure the Replication Server Security group ID during
      * Replication Settings template creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& AddReplicationServersSecurityGroupsIDs(Aws::String&& value) { m_replicationServersSecurityGroupsIDsHasBeenSet = true; m_replicationServersSecurityGroupsIDs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Request to configure the Replication Server Secuirity group ID during
+     * <p>Request to configure the Replication Server Security group ID during
      * Replication Settings template creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& AddReplicationServersSecurityGroupsIDs(const char* value) { m_replicationServersSecurityGroupsIDsHasBeenSet = true; m_replicationServersSecurityGroupsIDs.push_back(value); return *this; }
@@ -426,79 +426,79 @@ namespace Model
 
 
     /**
-     * <p>Request to configure Staiging Area tags during Replication Settings template
+     * <p>Request to configure Staging Area tags during Replication Settings template
      * creation.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetStagingAreaTags() const{ return m_stagingAreaTags; }
 
     /**
-     * <p>Request to configure Staiging Area tags during Replication Settings template
+     * <p>Request to configure Staging Area tags during Replication Settings template
      * creation.</p>
      */
     inline bool StagingAreaTagsHasBeenSet() const { return m_stagingAreaTagsHasBeenSet; }
 
     /**
-     * <p>Request to configure Staiging Area tags during Replication Settings template
+     * <p>Request to configure Staging Area tags during Replication Settings template
      * creation.</p>
      */
     inline void SetStagingAreaTags(const Aws::Map<Aws::String, Aws::String>& value) { m_stagingAreaTagsHasBeenSet = true; m_stagingAreaTags = value; }
 
     /**
-     * <p>Request to configure Staiging Area tags during Replication Settings template
+     * <p>Request to configure Staging Area tags during Replication Settings template
      * creation.</p>
      */
     inline void SetStagingAreaTags(Aws::Map<Aws::String, Aws::String>&& value) { m_stagingAreaTagsHasBeenSet = true; m_stagingAreaTags = std::move(value); }
 
     /**
-     * <p>Request to configure Staiging Area tags during Replication Settings template
+     * <p>Request to configure Staging Area tags during Replication Settings template
      * creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& WithStagingAreaTags(const Aws::Map<Aws::String, Aws::String>& value) { SetStagingAreaTags(value); return *this;}
 
     /**
-     * <p>Request to configure Staiging Area tags during Replication Settings template
+     * <p>Request to configure Staging Area tags during Replication Settings template
      * creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& WithStagingAreaTags(Aws::Map<Aws::String, Aws::String>&& value) { SetStagingAreaTags(std::move(value)); return *this;}
 
     /**
-     * <p>Request to configure Staiging Area tags during Replication Settings template
+     * <p>Request to configure Staging Area tags during Replication Settings template
      * creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& AddStagingAreaTags(const Aws::String& key, const Aws::String& value) { m_stagingAreaTagsHasBeenSet = true; m_stagingAreaTags.emplace(key, value); return *this; }
 
     /**
-     * <p>Request to configure Staiging Area tags during Replication Settings template
+     * <p>Request to configure Staging Area tags during Replication Settings template
      * creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& AddStagingAreaTags(Aws::String&& key, const Aws::String& value) { m_stagingAreaTagsHasBeenSet = true; m_stagingAreaTags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Request to configure Staiging Area tags during Replication Settings template
+     * <p>Request to configure Staging Area tags during Replication Settings template
      * creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& AddStagingAreaTags(const Aws::String& key, Aws::String&& value) { m_stagingAreaTagsHasBeenSet = true; m_stagingAreaTags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Request to configure Staiging Area tags during Replication Settings template
+     * <p>Request to configure Staging Area tags during Replication Settings template
      * creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& AddStagingAreaTags(Aws::String&& key, Aws::String&& value) { m_stagingAreaTagsHasBeenSet = true; m_stagingAreaTags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Request to configure Staiging Area tags during Replication Settings template
+     * <p>Request to configure Staging Area tags during Replication Settings template
      * creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& AddStagingAreaTags(const char* key, Aws::String&& value) { m_stagingAreaTagsHasBeenSet = true; m_stagingAreaTags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Request to configure Staiging Area tags during Replication Settings template
+     * <p>Request to configure Staging Area tags during Replication Settings template
      * creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& AddStagingAreaTags(Aws::String&& key, const char* value) { m_stagingAreaTagsHasBeenSet = true; m_stagingAreaTags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Request to configure Staiging Area tags during Replication Settings template
+     * <p>Request to configure Staging Area tags during Replication Settings template
      * creation.</p>
      */
     inline CreateReplicationConfigurationTemplateRequest& AddStagingAreaTags(const char* key, const char* value) { m_stagingAreaTagsHasBeenSet = true; m_stagingAreaTags.emplace(key, value); return *this; }

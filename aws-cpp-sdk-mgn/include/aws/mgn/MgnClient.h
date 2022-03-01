@@ -368,14 +368,14 @@ namespace Model
         virtual void DeleteSourceServerAsync(const Model::DeleteSourceServerRequest& request, const DeleteSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a single vCenter client by ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a given vCenter client by ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteVcenterClient">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteVcenterClientOutcome DeleteVcenterClient(const Model::DeleteVcenterClientRequest& request) const;
 
         /**
-         * <p>Deletes a single vCenter client by ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a given vCenter client by ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteVcenterClient">AWS
          * API Reference</a></p>
          *
@@ -384,7 +384,7 @@ namespace Model
         virtual Model::DeleteVcenterClientOutcomeCallable DeleteVcenterClientCallable(const Model::DeleteVcenterClientRequest& request) const;
 
         /**
-         * <p>Deletes a single vCenter client by ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a given vCenter client by ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteVcenterClient">AWS
          * API Reference</a></p>
          *
@@ -393,14 +393,14 @@ namespace Model
         virtual void DeleteVcenterClientAsync(const Model::DeleteVcenterClientRequest& request, const DeleteVcenterClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves detailed Job log with paging.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves detailed job log items with paging.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeJobLogItems">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeJobLogItemsOutcome DescribeJobLogItems(const Model::DescribeJobLogItemsRequest& request) const;
 
         /**
-         * <p>Retrieves detailed Job log with paging.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves detailed job log items with paging.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeJobLogItems">AWS
          * API Reference</a></p>
          *
@@ -409,7 +409,7 @@ namespace Model
         virtual Model::DescribeJobLogItemsOutcomeCallable DescribeJobLogItemsCallable(const Model::DescribeJobLogItemsRequest& request) const;
 
         /**
-         * <p>Retrieves detailed Job log with paging.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves detailed job log items with paging.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeJobLogItems">AWS
          * API Reference</a></p>
          *
@@ -420,7 +420,7 @@ namespace Model
         /**
          * <p>Returns a list of Jobs. Use the JobsID and fromDate and toData filters to
          * limit which jobs are returned. The response is sorted by creationDataTime -
-         * latest date first. Jobs are normaly created by the StartTest, StartCutover, and
+         * latest date first. Jobs are normally created by the StartTest, StartCutover, and
          * TerminateTargetInstances APIs. Jobs are also created by DiagnosticLaunch and
          * TerminateDiagnosticInstances, which are APIs available only to *Support* and
          * only used in response to relevant support tickets.</p><p><h3>See Also:</h3>   <a
@@ -432,7 +432,7 @@ namespace Model
         /**
          * <p>Returns a list of Jobs. Use the JobsID and fromDate and toData filters to
          * limit which jobs are returned. The response is sorted by creationDataTime -
-         * latest date first. Jobs are normaly created by the StartTest, StartCutover, and
+         * latest date first. Jobs are normally created by the StartTest, StartCutover, and
          * TerminateTargetInstances APIs. Jobs are also created by DiagnosticLaunch and
          * TerminateDiagnosticInstances, which are APIs available only to *Support* and
          * only used in response to relevant support tickets.</p><p><h3>See Also:</h3>   <a
@@ -446,7 +446,7 @@ namespace Model
         /**
          * <p>Returns a list of Jobs. Use the JobsID and fromDate and toData filters to
          * limit which jobs are returned. The response is sorted by creationDataTime -
-         * latest date first. Jobs are normaly created by the StartTest, StartCutover, and
+         * latest date first. Jobs are normally created by the StartTest, StartCutover, and
          * TerminateTargetInstances APIs. Jobs are also created by DiagnosticLaunch and
          * TerminateDiagnosticInstances, which are APIs available only to *Support* and
          * only used in response to relevant support tickets.</p><p><h3>See Also:</h3>   <a
@@ -514,14 +514,16 @@ namespace Model
         virtual void DescribeSourceServersAsync(const Model::DescribeSourceServersRequest& request, const DescribeSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all vCenter clients.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of the installed vCenter clients.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeVcenterClients">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeVcenterClientsOutcome DescribeVcenterClients(const Model::DescribeVcenterClientsRequest& request) const;
 
         /**
-         * <p>Lists all vCenter clients.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of the installed vCenter clients.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeVcenterClients">AWS
          * API Reference</a></p>
          *
@@ -530,7 +532,8 @@ namespace Model
         virtual Model::DescribeVcenterClientsOutcomeCallable DescribeVcenterClientsCallable(const Model::DescribeVcenterClientsRequest& request) const;
 
         /**
-         * <p>Lists all vCenter clients.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of the installed vCenter clients.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeVcenterClients">AWS
          * API Reference</a></p>
          *
@@ -544,13 +547,13 @@ namespace Model
          * Migration Service for enabling the replication of these source servers will be
          * terminated / deleted within 90 minutes. Launched Test or Cutover instances will
          * NOT be terminated. If the agent on the source server has not been prevented from
-         * communciating with the Application Migration Service service, then it will
+         * communicating with the Application Migration Service service, then it will
          * receive a command to uninstall itself (within approximately 10 minutes). The
          * following properties of the SourceServer will be changed immediately:
          * dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The
          * totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will
          * be set to zero; dataReplicationInfo.lagDuration and
-         * dataReplicationInfo.lagDurationwill be nullified.</p><p><h3>See Also:</h3>   <a
+         * dataReplicationInfo.lagDuration will be nullified.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisconnectFromService">AWS
          * API Reference</a></p>
          */
@@ -562,13 +565,13 @@ namespace Model
          * Migration Service for enabling the replication of these source servers will be
          * terminated / deleted within 90 minutes. Launched Test or Cutover instances will
          * NOT be terminated. If the agent on the source server has not been prevented from
-         * communciating with the Application Migration Service service, then it will
+         * communicating with the Application Migration Service service, then it will
          * receive a command to uninstall itself (within approximately 10 minutes). The
          * following properties of the SourceServer will be changed immediately:
          * dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The
          * totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will
          * be set to zero; dataReplicationInfo.lagDuration and
-         * dataReplicationInfo.lagDurationwill be nullified.</p><p><h3>See Also:</h3>   <a
+         * dataReplicationInfo.lagDuration will be nullified.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisconnectFromService">AWS
          * API Reference</a></p>
          *
@@ -582,13 +585,13 @@ namespace Model
          * Migration Service for enabling the replication of these source servers will be
          * terminated / deleted within 90 minutes. Launched Test or Cutover instances will
          * NOT be terminated. If the agent on the source server has not been prevented from
-         * communciating with the Application Migration Service service, then it will
+         * communicating with the Application Migration Service service, then it will
          * receive a command to uninstall itself (within approximately 10 minutes). The
          * following properties of the SourceServer will be changed immediately:
          * dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The
          * totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will
          * be set to zero; dataReplicationInfo.lagDuration and
-         * dataReplicationInfo.lagDurationwill be nullified.</p><p><h3>See Also:</h3>   <a
+         * dataReplicationInfo.lagDuration will be nullified.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisconnectFromService">AWS
          * API Reference</a></p>
          *
@@ -603,10 +606,10 @@ namespace Model
          * Test or Cutover instances will NOT be terminated. The AWS Replication Agent will
          * receive a command to uninstall itself (within 10 minutes). The following
          * properties of the SourceServer will be changed immediately:
-         * dataReplicationInfo.dataReplicationState will be to DISCONNECTED; The
+         * dataReplicationInfo.dataReplicationState will be changed to DISCONNECTED; The
          * SourceServer.lifeCycle.state will be changed to CUTOVER; The totalStorageBytes
          * property fo each of dataReplicationInfo.replicatedDisks will be set to zero;
-         * dataReplicationInfo.lagDuration and dataReplicationInfo.lagDurationwill be
+         * dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will be
          * nullified.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/FinalizeCutover">AWS
          * API Reference</a></p>
@@ -620,10 +623,10 @@ namespace Model
          * Test or Cutover instances will NOT be terminated. The AWS Replication Agent will
          * receive a command to uninstall itself (within 10 minutes). The following
          * properties of the SourceServer will be changed immediately:
-         * dataReplicationInfo.dataReplicationState will be to DISCONNECTED; The
+         * dataReplicationInfo.dataReplicationState will be changed to DISCONNECTED; The
          * SourceServer.lifeCycle.state will be changed to CUTOVER; The totalStorageBytes
          * property fo each of dataReplicationInfo.replicatedDisks will be set to zero;
-         * dataReplicationInfo.lagDuration and dataReplicationInfo.lagDurationwill be
+         * dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will be
          * nullified.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/FinalizeCutover">AWS
          * API Reference</a></p>
@@ -639,10 +642,10 @@ namespace Model
          * Test or Cutover instances will NOT be terminated. The AWS Replication Agent will
          * receive a command to uninstall itself (within 10 minutes). The following
          * properties of the SourceServer will be changed immediately:
-         * dataReplicationInfo.dataReplicationState will be to DISCONNECTED; The
+         * dataReplicationInfo.dataReplicationState will be changed to DISCONNECTED; The
          * SourceServer.lifeCycle.state will be changed to CUTOVER; The totalStorageBytes
          * property fo each of dataReplicationInfo.replicatedDisks will be set to zero;
-         * dataReplicationInfo.lagDuration and dataReplicationInfo.lagDurationwill be
+         * dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will be
          * nullified.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/FinalizeCutover">AWS
          * API Reference</a></p>
@@ -763,7 +766,7 @@ namespace Model
         /**
          * <p>Archives specific Source Servers by setting the SourceServer.isArchived
          * property to true for specified SourceServers by ID. This command only works for
-         * SourceServers with a lifecycle.state which equals DISCONNECTED or
+         * SourceServers with a lifecycle. state which equals DISCONNECTED or
          * CUTOVER.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/MarkAsArchived">AWS
          * API Reference</a></p>
@@ -773,7 +776,7 @@ namespace Model
         /**
          * <p>Archives specific Source Servers by setting the SourceServer.isArchived
          * property to true for specified SourceServers by ID. This command only works for
-         * SourceServers with a lifecycle.state which equals DISCONNECTED or
+         * SourceServers with a lifecycle. state which equals DISCONNECTED or
          * CUTOVER.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/MarkAsArchived">AWS
          * API Reference</a></p>
@@ -785,7 +788,7 @@ namespace Model
         /**
          * <p>Archives specific Source Servers by setting the SourceServer.isArchived
          * property to true for specified SourceServers by ID. This command only works for
-         * SourceServers with a lifecycle.state which equals DISCONNECTED or
+         * SourceServers with a lifecycle. state which equals DISCONNECTED or
          * CUTOVER.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/MarkAsArchived">AWS
          * API Reference</a></p>
@@ -860,14 +863,16 @@ namespace Model
         virtual void StartCutoverAsync(const Model::StartCutoverRequest& request, const StartCutoverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts replication on source server by ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts replication for SNAPSHOT_SHIPPING agents.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartReplication">AWS
          * API Reference</a></p>
          */
         virtual Model::StartReplicationOutcome StartReplication(const Model::StartReplicationRequest& request) const;
 
         /**
-         * <p>Starts replication on source server by ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts replication for SNAPSHOT_SHIPPING agents.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartReplication">AWS
          * API Reference</a></p>
          *
@@ -876,7 +881,8 @@ namespace Model
         virtual Model::StartReplicationOutcomeCallable StartReplicationCallable(const Model::StartReplicationRequest& request) const;
 
         /**
-         * <p>Starts replication on source server by ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts replication for SNAPSHOT_SHIPPING agents.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartReplication">AWS
          * API Reference</a></p>
          *
@@ -885,7 +891,7 @@ namespace Model
         virtual void StartReplicationAsync(const Model::StartReplicationRequest& request, const StartReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lauches a Test Instance for specific Source Servers. This command starts a
+         * <p>Launches a Test Instance for specific Source Servers. This command starts a
          * LAUNCH job whose initiatedBy property is StartTest and changes the
          * SourceServer.lifeCycle.state property to TESTING.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartTest">AWS API
@@ -894,7 +900,7 @@ namespace Model
         virtual Model::StartTestOutcome StartTest(const Model::StartTestRequest& request) const;
 
         /**
-         * <p>Lauches a Test Instance for specific Source Servers. This command starts a
+         * <p>Launches a Test Instance for specific Source Servers. This command starts a
          * LAUNCH job whose initiatedBy property is StartTest and changes the
          * SourceServer.lifeCycle.state property to TESTING.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartTest">AWS API
@@ -905,7 +911,7 @@ namespace Model
         virtual Model::StartTestOutcomeCallable StartTestCallable(const Model::StartTestRequest& request) const;
 
         /**
-         * <p>Lauches a Test Instance for specific Source Servers. This command starts a
+         * <p>Launches a Test Instance for specific Source Servers. This command starts a
          * LAUNCH job whose initiatedBy property is StartTest and changes the
          * SourceServer.lifeCycle.state property to TESTING.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartTest">AWS API
@@ -1096,14 +1102,16 @@ namespace Model
         virtual void UpdateReplicationConfigurationTemplateAsync(const Model::UpdateReplicationConfigurationTemplateRequest& request, const UpdateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates source server Replication Type by ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Allows you to change between the AGENT_BASED replication type and the
+         * SNAPSHOT_SHIPPING replication type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateSourceServerReplicationType">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateSourceServerReplicationTypeOutcome UpdateSourceServerReplicationType(const Model::UpdateSourceServerReplicationTypeRequest& request) const;
 
         /**
-         * <p>Updates source server Replication Type by ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Allows you to change between the AGENT_BASED replication type and the
+         * SNAPSHOT_SHIPPING replication type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateSourceServerReplicationType">AWS
          * API Reference</a></p>
          *
@@ -1112,7 +1120,8 @@ namespace Model
         virtual Model::UpdateSourceServerReplicationTypeOutcomeCallable UpdateSourceServerReplicationTypeCallable(const Model::UpdateSourceServerReplicationTypeRequest& request) const;
 
         /**
-         * <p>Updates source server Replication Type by ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Allows you to change between the AGENT_BASED replication type and the
+         * SNAPSHOT_SHIPPING replication type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateSourceServerReplicationType">AWS
          * API Reference</a></p>
          *

@@ -177,42 +177,42 @@ namespace Model
 
 
     /**
-     * <p>Request to query data replication lag durating.</p>
+     * <p>Request to query data replication lag duration.</p>
      */
     inline const Aws::String& GetLagDuration() const{ return m_lagDuration; }
 
     /**
-     * <p>Request to query data replication lag durating.</p>
+     * <p>Request to query data replication lag duration.</p>
      */
     inline bool LagDurationHasBeenSet() const { return m_lagDurationHasBeenSet; }
 
     /**
-     * <p>Request to query data replication lag durating.</p>
+     * <p>Request to query data replication lag duration.</p>
      */
     inline void SetLagDuration(const Aws::String& value) { m_lagDurationHasBeenSet = true; m_lagDuration = value; }
 
     /**
-     * <p>Request to query data replication lag durating.</p>
+     * <p>Request to query data replication lag duration.</p>
      */
     inline void SetLagDuration(Aws::String&& value) { m_lagDurationHasBeenSet = true; m_lagDuration = std::move(value); }
 
     /**
-     * <p>Request to query data replication lag durating.</p>
+     * <p>Request to query data replication lag duration.</p>
      */
     inline void SetLagDuration(const char* value) { m_lagDurationHasBeenSet = true; m_lagDuration.assign(value); }
 
     /**
-     * <p>Request to query data replication lag durating.</p>
+     * <p>Request to query data replication lag duration.</p>
      */
     inline DataReplicationInfo& WithLagDuration(const Aws::String& value) { SetLagDuration(value); return *this;}
 
     /**
-     * <p>Request to query data replication lag durating.</p>
+     * <p>Request to query data replication lag duration.</p>
      */
     inline DataReplicationInfo& WithLagDuration(Aws::String&& value) { SetLagDuration(std::move(value)); return *this;}
 
     /**
-     * <p>Request to query data replication lag durating.</p>
+     * <p>Request to query data replication lag duration.</p>
      */
     inline DataReplicationInfo& WithLagDuration(const char* value) { SetLagDuration(value); return *this;}
 

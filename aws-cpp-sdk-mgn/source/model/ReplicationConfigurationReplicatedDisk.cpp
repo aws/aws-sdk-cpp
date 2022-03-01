@@ -25,7 +25,9 @@ ReplicationConfigurationReplicatedDisk::ReplicationConfigurationReplicatedDisk()
     m_isBootDisk(false),
     m_isBootDiskHasBeenSet(false),
     m_stagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType::NOT_SET),
-    m_stagingDiskTypeHasBeenSet(false)
+    m_stagingDiskTypeHasBeenSet(false),
+    m_throughput(0),
+    m_throughputHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ ReplicationConfigurationReplicatedDisk::ReplicationConfigurationReplicatedDisk(J
     m_isBootDisk(false),
     m_isBootDiskHasBeenSet(false),
     m_stagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType::NOT_SET),
-    m_stagingDiskTypeHasBeenSet(false)
+    m_stagingDiskTypeHasBeenSet(false),
+    m_throughput(0),
+    m_throughputHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -71,6 +75,13 @@ ReplicationConfigurationReplicatedDisk& ReplicationConfigurationReplicatedDisk::
     m_stagingDiskTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("throughput"))
+  {
+    m_throughput = jsonValue.GetInt64("throughput");
+
+    m_throughputHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -99,6 +110,12 @@ JsonValue ReplicationConfigurationReplicatedDisk::Jsonize() const
   if(m_stagingDiskTypeHasBeenSet)
   {
    payload.WithString("stagingDiskType", ReplicationConfigurationReplicatedDiskStagingDiskTypeMapper::GetNameForReplicationConfigurationReplicatedDiskStagingDiskType(m_stagingDiskType));
+  }
+
+  if(m_throughputHasBeenSet)
+  {
+   payload.WithInt64("throughput", m_throughput);
+
   }
 
   return payload;

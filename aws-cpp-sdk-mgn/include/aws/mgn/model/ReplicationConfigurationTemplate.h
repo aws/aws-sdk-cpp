@@ -104,22 +104,22 @@ namespace Model
 
 
     /**
-     * <p>Replication Configuration template bandwidth throtting.</p>
+     * <p>Replication Configuration template bandwidth throttling.</p>
      */
     inline long long GetBandwidthThrottling() const{ return m_bandwidthThrottling; }
 
     /**
-     * <p>Replication Configuration template bandwidth throtting.</p>
+     * <p>Replication Configuration template bandwidth throttling.</p>
      */
     inline bool BandwidthThrottlingHasBeenSet() const { return m_bandwidthThrottlingHasBeenSet; }
 
     /**
-     * <p>Replication Configuration template bandwidth throtting.</p>
+     * <p>Replication Configuration template bandwidth throttling.</p>
      */
     inline void SetBandwidthThrottling(long long value) { m_bandwidthThrottlingHasBeenSet = true; m_bandwidthThrottling = value; }
 
     /**
-     * <p>Replication Configuration template bandwidth throtting.</p>
+     * <p>Replication Configuration template bandwidth throttling.</p>
      */
     inline ReplicationConfigurationTemplate& WithBandwidthThrottling(long long value) { SetBandwidthThrottling(value); return *this;}
 
@@ -177,32 +177,32 @@ namespace Model
 
 
     /**
-     * <p>Replication Configuration template use dedault large Staging Disk type.</p>
+     * <p>Replication Configuration template use default large Staging Disk type.</p>
      */
     inline const ReplicationConfigurationDefaultLargeStagingDiskType& GetDefaultLargeStagingDiskType() const{ return m_defaultLargeStagingDiskType; }
 
     /**
-     * <p>Replication Configuration template use dedault large Staging Disk type.</p>
+     * <p>Replication Configuration template use default large Staging Disk type.</p>
      */
     inline bool DefaultLargeStagingDiskTypeHasBeenSet() const { return m_defaultLargeStagingDiskTypeHasBeenSet; }
 
     /**
-     * <p>Replication Configuration template use dedault large Staging Disk type.</p>
+     * <p>Replication Configuration template use default large Staging Disk type.</p>
      */
     inline void SetDefaultLargeStagingDiskType(const ReplicationConfigurationDefaultLargeStagingDiskType& value) { m_defaultLargeStagingDiskTypeHasBeenSet = true; m_defaultLargeStagingDiskType = value; }
 
     /**
-     * <p>Replication Configuration template use dedault large Staging Disk type.</p>
+     * <p>Replication Configuration template use default large Staging Disk type.</p>
      */
     inline void SetDefaultLargeStagingDiskType(ReplicationConfigurationDefaultLargeStagingDiskType&& value) { m_defaultLargeStagingDiskTypeHasBeenSet = true; m_defaultLargeStagingDiskType = std::move(value); }
 
     /**
-     * <p>Replication Configuration template use dedault large Staging Disk type.</p>
+     * <p>Replication Configuration template use default large Staging Disk type.</p>
      */
     inline ReplicationConfigurationTemplate& WithDefaultLargeStagingDiskType(const ReplicationConfigurationDefaultLargeStagingDiskType& value) { SetDefaultLargeStagingDiskType(value); return *this;}
 
     /**
-     * <p>Replication Configuration template use dedault large Staging Disk type.</p>
+     * <p>Replication Configuration template use default large Staging Disk type.</p>
      */
     inline ReplicationConfigurationTemplate& WithDefaultLargeStagingDiskType(ReplicationConfigurationDefaultLargeStagingDiskType&& value) { SetDefaultLargeStagingDiskType(std::move(value)); return *this;}
 
@@ -280,42 +280,42 @@ namespace Model
 
 
     /**
-     * <p>Replication Configuration template template ID.</p>
+     * <p>Replication Configuration template ID.</p>
      */
     inline const Aws::String& GetReplicationConfigurationTemplateID() const{ return m_replicationConfigurationTemplateID; }
 
     /**
-     * <p>Replication Configuration template template ID.</p>
+     * <p>Replication Configuration template ID.</p>
      */
     inline bool ReplicationConfigurationTemplateIDHasBeenSet() const { return m_replicationConfigurationTemplateIDHasBeenSet; }
 
     /**
-     * <p>Replication Configuration template template ID.</p>
+     * <p>Replication Configuration template ID.</p>
      */
     inline void SetReplicationConfigurationTemplateID(const Aws::String& value) { m_replicationConfigurationTemplateIDHasBeenSet = true; m_replicationConfigurationTemplateID = value; }
 
     /**
-     * <p>Replication Configuration template template ID.</p>
+     * <p>Replication Configuration template ID.</p>
      */
     inline void SetReplicationConfigurationTemplateID(Aws::String&& value) { m_replicationConfigurationTemplateIDHasBeenSet = true; m_replicationConfigurationTemplateID = std::move(value); }
 
     /**
-     * <p>Replication Configuration template template ID.</p>
+     * <p>Replication Configuration template ID.</p>
      */
     inline void SetReplicationConfigurationTemplateID(const char* value) { m_replicationConfigurationTemplateIDHasBeenSet = true; m_replicationConfigurationTemplateID.assign(value); }
 
     /**
-     * <p>Replication Configuration template template ID.</p>
+     * <p>Replication Configuration template ID.</p>
      */
     inline ReplicationConfigurationTemplate& WithReplicationConfigurationTemplateID(const Aws::String& value) { SetReplicationConfigurationTemplateID(value); return *this;}
 
     /**
-     * <p>Replication Configuration template template ID.</p>
+     * <p>Replication Configuration template ID.</p>
      */
     inline ReplicationConfigurationTemplate& WithReplicationConfigurationTemplateID(Aws::String&& value) { SetReplicationConfigurationTemplateID(std::move(value)); return *this;}
 
     /**
-     * <p>Replication Configuration template template ID.</p>
+     * <p>Replication Configuration template ID.</p>
      */
     inline ReplicationConfigurationTemplate& WithReplicationConfigurationTemplateID(const char* value) { SetReplicationConfigurationTemplateID(value); return *this;}
 

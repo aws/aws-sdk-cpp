@@ -17,6 +17,7 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetLaunchConfigurationResult::GetLaunchConfigurationResult() : 
+    m_bootMode(BootMode::NOT_SET),
     m_copyPrivateIp(false),
     m_copyTags(false),
     m_launchDisposition(LaunchDisposition::NOT_SET),
@@ -25,6 +26,7 @@ GetLaunchConfigurationResult::GetLaunchConfigurationResult() :
 }
 
 GetLaunchConfigurationResult::GetLaunchConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_bootMode(BootMode::NOT_SET),
     m_copyPrivateIp(false),
     m_copyTags(false),
     m_launchDisposition(LaunchDisposition::NOT_SET),
@@ -36,6 +38,12 @@ GetLaunchConfigurationResult::GetLaunchConfigurationResult(const Aws::AmazonWebS
 GetLaunchConfigurationResult& GetLaunchConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("bootMode"))
+  {
+    m_bootMode = BootModeMapper::GetBootModeForName(jsonValue.GetString("bootMode"));
+
+  }
+
   if(jsonValue.ValueExists("copyPrivateIp"))
   {
     m_copyPrivateIp = jsonValue.GetBool("copyPrivateIp");

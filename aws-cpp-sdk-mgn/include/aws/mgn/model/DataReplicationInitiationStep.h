@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Data replication intiation step.</p><p><h3>See Also:</h3>   <a
+   * <p>Data replication initiation step.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DataReplicationInitiationStep">AWS
    * API Reference</a></p>
    */

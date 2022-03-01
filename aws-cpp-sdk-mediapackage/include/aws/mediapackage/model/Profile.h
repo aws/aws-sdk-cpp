@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     NONE,
-    HBBTV_1_5
+    HBBTV_1_5,
+    HYBRIDCAST
   };
 
 namespace ProfileMapper

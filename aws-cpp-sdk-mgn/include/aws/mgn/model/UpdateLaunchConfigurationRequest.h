@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/mgn/MgnRequest.h>
+#include <aws/mgn/model/BootMode.h>
 #include <aws/mgn/model/LaunchDisposition.h>
 #include <aws/mgn/model/Licensing.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -33,6 +34,37 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "UpdateLaunchConfiguration"; }
 
     Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>Update Launch configuration boot mode request.</p>
+     */
+    inline const BootMode& GetBootMode() const{ return m_bootMode; }
+
+    /**
+     * <p>Update Launch configuration boot mode request.</p>
+     */
+    inline bool BootModeHasBeenSet() const { return m_bootModeHasBeenSet; }
+
+    /**
+     * <p>Update Launch configuration boot mode request.</p>
+     */
+    inline void SetBootMode(const BootMode& value) { m_bootModeHasBeenSet = true; m_bootMode = value; }
+
+    /**
+     * <p>Update Launch configuration boot mode request.</p>
+     */
+    inline void SetBootMode(BootMode&& value) { m_bootModeHasBeenSet = true; m_bootMode = std::move(value); }
+
+    /**
+     * <p>Update Launch configuration boot mode request.</p>
+     */
+    inline UpdateLaunchConfigurationRequest& WithBootMode(const BootMode& value) { SetBootMode(value); return *this;}
+
+    /**
+     * <p>Update Launch configuration boot mode request.</p>
+     */
+    inline UpdateLaunchConfigurationRequest& WithBootMode(BootMode&& value) { SetBootMode(std::move(value)); return *this;}
 
 
     /**
@@ -252,6 +284,9 @@ namespace Model
     inline UpdateLaunchConfigurationRequest& WithTargetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod&& value) { SetTargetInstanceTypeRightSizingMethod(std::move(value)); return *this;}
 
   private:
+
+    BootMode m_bootMode;
+    bool m_bootModeHasBeenSet;
 
     bool m_copyPrivateIp;
     bool m_copyPrivateIpHasBeenSet;

@@ -15,6 +15,7 @@
 #include <aws/kafkaconnect/model/CreateCustomPluginResult.h>
 #include <aws/kafkaconnect/model/CreateWorkerConfigurationResult.h>
 #include <aws/kafkaconnect/model/DeleteConnectorResult.h>
+#include <aws/kafkaconnect/model/DeleteCustomPluginResult.h>
 #include <aws/kafkaconnect/model/DescribeConnectorResult.h>
 #include <aws/kafkaconnect/model/DescribeCustomPluginResult.h>
 #include <aws/kafkaconnect/model/DescribeWorkerConfigurationResult.h>
@@ -65,6 +66,7 @@ namespace Model
         class CreateCustomPluginRequest;
         class CreateWorkerConfigurationRequest;
         class DeleteConnectorRequest;
+        class DeleteCustomPluginRequest;
         class DescribeConnectorRequest;
         class DescribeCustomPluginRequest;
         class DescribeWorkerConfigurationRequest;
@@ -77,6 +79,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateCustomPluginResult, KafkaConnectError> CreateCustomPluginOutcome;
         typedef Aws::Utils::Outcome<CreateWorkerConfigurationResult, KafkaConnectError> CreateWorkerConfigurationOutcome;
         typedef Aws::Utils::Outcome<DeleteConnectorResult, KafkaConnectError> DeleteConnectorOutcome;
+        typedef Aws::Utils::Outcome<DeleteCustomPluginResult, KafkaConnectError> DeleteCustomPluginOutcome;
         typedef Aws::Utils::Outcome<DescribeConnectorResult, KafkaConnectError> DescribeConnectorOutcome;
         typedef Aws::Utils::Outcome<DescribeCustomPluginResult, KafkaConnectError> DescribeCustomPluginOutcome;
         typedef Aws::Utils::Outcome<DescribeWorkerConfigurationResult, KafkaConnectError> DescribeWorkerConfigurationOutcome;
@@ -89,6 +92,7 @@ namespace Model
         typedef std::future<CreateCustomPluginOutcome> CreateCustomPluginOutcomeCallable;
         typedef std::future<CreateWorkerConfigurationOutcome> CreateWorkerConfigurationOutcomeCallable;
         typedef std::future<DeleteConnectorOutcome> DeleteConnectorOutcomeCallable;
+        typedef std::future<DeleteCustomPluginOutcome> DeleteCustomPluginOutcomeCallable;
         typedef std::future<DescribeConnectorOutcome> DescribeConnectorOutcomeCallable;
         typedef std::future<DescribeCustomPluginOutcome> DescribeCustomPluginOutcomeCallable;
         typedef std::future<DescribeWorkerConfigurationOutcome> DescribeWorkerConfigurationOutcomeCallable;
@@ -104,6 +108,7 @@ namespace Model
     typedef std::function<void(const KafkaConnectClient*, const Model::CreateCustomPluginRequest&, const Model::CreateCustomPluginOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomPluginResponseReceivedHandler;
     typedef std::function<void(const KafkaConnectClient*, const Model::CreateWorkerConfigurationRequest&, const Model::CreateWorkerConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkerConfigurationResponseReceivedHandler;
     typedef std::function<void(const KafkaConnectClient*, const Model::DeleteConnectorRequest&, const Model::DeleteConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectorResponseReceivedHandler;
+    typedef std::function<void(const KafkaConnectClient*, const Model::DeleteCustomPluginRequest&, const Model::DeleteCustomPluginOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomPluginResponseReceivedHandler;
     typedef std::function<void(const KafkaConnectClient*, const Model::DescribeConnectorRequest&, const Model::DescribeConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectorResponseReceivedHandler;
     typedef std::function<void(const KafkaConnectClient*, const Model::DescribeCustomPluginRequest&, const Model::DescribeCustomPluginOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomPluginResponseReceivedHandler;
     typedef std::function<void(const KafkaConnectClient*, const Model::DescribeWorkerConfigurationRequest&, const Model::DescribeWorkerConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkerConfigurationResponseReceivedHandler;
@@ -250,6 +255,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteConnectorAsync(const Model::DeleteConnectorRequest& request, const DeleteConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a custom plugin.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DeleteCustomPlugin">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCustomPluginOutcome DeleteCustomPlugin(const Model::DeleteCustomPluginRequest& request) const;
+
+        /**
+         * <p>Deletes a custom plugin.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DeleteCustomPlugin">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteCustomPluginOutcomeCallable DeleteCustomPluginCallable(const Model::DeleteCustomPluginRequest& request) const;
+
+        /**
+         * <p>Deletes a custom plugin.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DeleteCustomPlugin">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteCustomPluginAsync(const Model::DeleteCustomPluginRequest& request, const DeleteCustomPluginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns summary information about the connector.</p><p><h3>See Also:</h3>  
@@ -455,6 +485,7 @@ namespace Model
         void CreateCustomPluginAsyncHelper(const Model::CreateCustomPluginRequest& request, const CreateCustomPluginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWorkerConfigurationAsyncHelper(const Model::CreateWorkerConfigurationRequest& request, const CreateWorkerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConnectorAsyncHelper(const Model::DeleteConnectorRequest& request, const DeleteConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteCustomPluginAsyncHelper(const Model::DeleteCustomPluginRequest& request, const DeleteCustomPluginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConnectorAsyncHelper(const Model::DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCustomPluginAsyncHelper(const Model::DescribeCustomPluginRequest& request, const DescribeCustomPluginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeWorkerConfigurationAsyncHelper(const Model::DescribeWorkerConfigurationRequest& request, const DescribeWorkerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
