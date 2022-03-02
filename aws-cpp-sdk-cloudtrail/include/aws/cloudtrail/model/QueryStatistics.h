@@ -77,6 +77,35 @@ namespace Model
      */
     inline QueryStatistics& WithTotalResultsCount(int value) { SetTotalResultsCount(value); return *this;}
 
+
+    /**
+     * <p>The total bytes that the query scanned in the event data store. This value
+     * matches the number of bytes for which your account is billed for the query,
+     * unless the query is still running.</p>
+     */
+    inline long long GetBytesScanned() const{ return m_bytesScanned; }
+
+    /**
+     * <p>The total bytes that the query scanned in the event data store. This value
+     * matches the number of bytes for which your account is billed for the query,
+     * unless the query is still running.</p>
+     */
+    inline bool BytesScannedHasBeenSet() const { return m_bytesScannedHasBeenSet; }
+
+    /**
+     * <p>The total bytes that the query scanned in the event data store. This value
+     * matches the number of bytes for which your account is billed for the query,
+     * unless the query is still running.</p>
+     */
+    inline void SetBytesScanned(long long value) { m_bytesScannedHasBeenSet = true; m_bytesScanned = value; }
+
+    /**
+     * <p>The total bytes that the query scanned in the event data store. This value
+     * matches the number of bytes for which your account is billed for the query,
+     * unless the query is still running.</p>
+     */
+    inline QueryStatistics& WithBytesScanned(long long value) { SetBytesScanned(value); return *this;}
+
   private:
 
     int m_resultsCount;
@@ -84,6 +113,9 @@ namespace Model
 
     int m_totalResultsCount;
     bool m_totalResultsCountHasBeenSet;
+
+    long long m_bytesScanned;
+    bool m_bytesScannedHasBeenSet;
   };
 
 } // namespace Model

@@ -3300,7 +3300,7 @@ namespace Model
         virtual void DescribeBuildAsync(const Model::DescribeBuildRequest& request, const DescribeBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The GameLift service limits and current utilization for an Amazon Web
+         * <p>Retrieves the instance limits and current utilization for an Amazon Web
          * Services Region or location. Instance limits control the number of instances,
          * per instance type, per location, that your Amazon Web Services account can use.
          * Learn more at <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
@@ -3351,7 +3351,7 @@ namespace Model
         virtual Model::DescribeEC2InstanceLimitsOutcome DescribeEC2InstanceLimits(const Model::DescribeEC2InstanceLimitsRequest& request) const;
 
         /**
-         * <p>The GameLift service limits and current utilization for an Amazon Web
+         * <p>Retrieves the instance limits and current utilization for an Amazon Web
          * Services Region or location. Instance limits control the number of instances,
          * per instance type, per location, that your Amazon Web Services account can use.
          * Learn more at <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
@@ -3404,7 +3404,7 @@ namespace Model
         virtual Model::DescribeEC2InstanceLimitsOutcomeCallable DescribeEC2InstanceLimitsCallable(const Model::DescribeEC2InstanceLimitsRequest& request) const;
 
         /**
-         * <p>The GameLift service limits and current utilization for an Amazon Web
+         * <p>Retrieves the instance limits and current utilization for an Amazon Web
          * Services Region or location. Instance limits control the number of instances,
          * per instance type, per location, that your Amazon Web Services account can use.
          * Learn more at <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
@@ -4874,7 +4874,7 @@ namespace Model
          * ticket status. This practice can cause you to exceed your API limit, which
          * results in errors. Instead, as a best practice, set up an Amazon Simple
          * Notification Service to receive notifications, and provide the topic ARN in the
-         * matchmaking configuration. Continuously poling ticket status with
+         * matchmaking configuration. Continuously polling ticket status with
          * <a>DescribeMatchmaking</a> should only be used for games in development with low
          * matchmaking usage.</p> <p/> <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-client.html">
@@ -4900,7 +4900,7 @@ namespace Model
          * ticket status. This practice can cause you to exceed your API limit, which
          * results in errors. Instead, as a best practice, set up an Amazon Simple
          * Notification Service to receive notifications, and provide the topic ARN in the
-         * matchmaking configuration. Continuously poling ticket status with
+         * matchmaking configuration. Continuously polling ticket status with
          * <a>DescribeMatchmaking</a> should only be used for games in development with low
          * matchmaking usage.</p> <p/> <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-client.html">
@@ -4928,7 +4928,7 @@ namespace Model
          * ticket status. This practice can cause you to exceed your API limit, which
          * results in errors. Instead, as a best practice, set up an Amazon Simple
          * Notification Service to receive notifications, and provide the topic ARN in the
-         * matchmaking configuration. Continuously poling ticket status with
+         * matchmaking configuration. Continuously polling ticket status with
          * <a>DescribeMatchmaking</a> should only be used for games in development with low
          * matchmaking usage.</p> <p/> <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-client.html">

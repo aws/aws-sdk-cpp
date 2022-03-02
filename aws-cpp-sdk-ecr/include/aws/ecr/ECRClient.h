@@ -1274,16 +1274,24 @@ namespace Model
         virtual void PutImageAsync(const Model::PutImageRequest& request, const PutImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the image scanning configuration for the specified
-         * repository.</p><p><h3>See Also:</h3>   <a
+         *  <p>The <code>PutImageScanningConfiguration</code> API is being
+         * deprecated, in favor of specifying the image scanning configuration at the
+         * registry level. For more information, see
+         * <a>PutRegistryScanningConfiguration</a>.</p>  <p>Updates the image
+         * scanning configuration for the specified repository.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageScanningConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::PutImageScanningConfigurationOutcome PutImageScanningConfiguration(const Model::PutImageScanningConfigurationRequest& request) const;
 
         /**
-         * <p>Updates the image scanning configuration for the specified
-         * repository.</p><p><h3>See Also:</h3>   <a
+         *  <p>The <code>PutImageScanningConfiguration</code> API is being
+         * deprecated, in favor of specifying the image scanning configuration at the
+         * registry level. For more information, see
+         * <a>PutRegistryScanningConfiguration</a>.</p>  <p>Updates the image
+         * scanning configuration for the specified repository.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageScanningConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1292,8 +1300,12 @@ namespace Model
         virtual Model::PutImageScanningConfigurationOutcomeCallable PutImageScanningConfigurationCallable(const Model::PutImageScanningConfigurationRequest& request) const;
 
         /**
-         * <p>Updates the image scanning configuration for the specified
-         * repository.</p><p><h3>See Also:</h3>   <a
+         *  <p>The <code>PutImageScanningConfiguration</code> API is being
+         * deprecated, in favor of specifying the image scanning configuration at the
+         * registry level. For more information, see
+         * <a>PutRegistryScanningConfiguration</a>.</p>  <p>Updates the image
+         * scanning configuration for the specified repository.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageScanningConfiguration">AWS
          * API Reference</a></p>
          *

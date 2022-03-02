@@ -27,7 +27,10 @@ ResultConfigurationUpdates::ResultConfigurationUpdates() :
     m_removeEncryptionConfigurationHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
     m_removeExpectedBucketOwner(false),
-    m_removeExpectedBucketOwnerHasBeenSet(false)
+    m_removeExpectedBucketOwnerHasBeenSet(false),
+    m_aclConfigurationHasBeenSet(false),
+    m_removeAclConfiguration(false),
+    m_removeAclConfigurationHasBeenSet(false)
 {
 }
 
@@ -40,7 +43,10 @@ ResultConfigurationUpdates::ResultConfigurationUpdates(JsonView jsonValue) :
     m_removeEncryptionConfigurationHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
     m_removeExpectedBucketOwner(false),
-    m_removeExpectedBucketOwnerHasBeenSet(false)
+    m_removeExpectedBucketOwnerHasBeenSet(false),
+    m_aclConfigurationHasBeenSet(false),
+    m_removeAclConfiguration(false),
+    m_removeAclConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -89,6 +95,20 @@ ResultConfigurationUpdates& ResultConfigurationUpdates::operator =(JsonView json
     m_removeExpectedBucketOwnerHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AclConfiguration"))
+  {
+    m_aclConfiguration = jsonValue.GetObject("AclConfiguration");
+
+    m_aclConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RemoveAclConfiguration"))
+  {
+    m_removeAclConfiguration = jsonValue.GetBool("RemoveAclConfiguration");
+
+    m_removeAclConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -129,6 +149,18 @@ JsonValue ResultConfigurationUpdates::Jsonize() const
   if(m_removeExpectedBucketOwnerHasBeenSet)
   {
    payload.WithBool("RemoveExpectedBucketOwner", m_removeExpectedBucketOwner);
+
+  }
+
+  if(m_aclConfigurationHasBeenSet)
+  {
+   payload.WithObject("AclConfiguration", m_aclConfiguration.Jsonize());
+
+  }
+
+  if(m_removeAclConfigurationHasBeenSet)
+  {
+   payload.WithBool("RemoveAclConfiguration", m_removeAclConfiguration);
 
   }
 

@@ -295,11 +295,12 @@ namespace Model
 
         /**
          * <p>Cancels a query if the query is not in a terminated state, such as
-         * <code>CANCELLED</code>, <code>FAILED</code> or <code>FINISHED</code>. You must
-         * specify an ARN value for <code>EventDataStore</code>. The ID of the query that
-         * you want to cancel is also required. When you run <code>CancelQuery</code>, the
-         * query status might show as <code>CANCELLED</code> even if the operation is not
-         * yet finished.</p><p><h3>See Also:</h3>   <a
+         * <code>CANCELLED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or
+         * <code>FINISHED</code>. You must specify an ARN value for
+         * <code>EventDataStore</code>. The ID of the query that you want to cancel is also
+         * required. When you run <code>CancelQuery</code>, the query status might show as
+         * <code>CANCELLED</code> even if the operation is not yet finished.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CancelQuery">AWS
          * API Reference</a></p>
          */
@@ -307,11 +308,12 @@ namespace Model
 
         /**
          * <p>Cancels a query if the query is not in a terminated state, such as
-         * <code>CANCELLED</code>, <code>FAILED</code> or <code>FINISHED</code>. You must
-         * specify an ARN value for <code>EventDataStore</code>. The ID of the query that
-         * you want to cancel is also required. When you run <code>CancelQuery</code>, the
-         * query status might show as <code>CANCELLED</code> even if the operation is not
-         * yet finished.</p><p><h3>See Also:</h3>   <a
+         * <code>CANCELLED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or
+         * <code>FINISHED</code>. You must specify an ARN value for
+         * <code>EventDataStore</code>. The ID of the query that you want to cancel is also
+         * required. When you run <code>CancelQuery</code>, the query status might show as
+         * <code>CANCELLED</code> even if the operation is not yet finished.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CancelQuery">AWS
          * API Reference</a></p>
          *
@@ -321,11 +323,12 @@ namespace Model
 
         /**
          * <p>Cancels a query if the query is not in a terminated state, such as
-         * <code>CANCELLED</code>, <code>FAILED</code> or <code>FINISHED</code>. You must
-         * specify an ARN value for <code>EventDataStore</code>. The ID of the query that
-         * you want to cancel is also required. When you run <code>CancelQuery</code>, the
-         * query status might show as <code>CANCELLED</code> even if the operation is not
-         * yet finished.</p><p><h3>See Also:</h3>   <a
+         * <code>CANCELLED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or
+         * <code>FINISHED</code>. You must specify an ARN value for
+         * <code>EventDataStore</code>. The ID of the query that you want to cancel is also
+         * required. When you run <code>CancelQuery</code>, the query status might show as
+         * <code>CANCELLED</code> even if the operation is not yet finished.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CancelQuery">AWS
          * API Reference</a></p>
          *
@@ -849,7 +852,7 @@ namespace Model
          * timestamps, by adding <code>StartTime</code> and <code>EndTime</code>
          * parameters, and a <code>QueryStatus</code> value. Valid values for
          * <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>,
-         * <code>FINISHED</code>, <code>FAILED</code>, or
+         * <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or
          * <code>CANCELLED</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListQueries">AWS
          * API Reference</a></p>
@@ -863,7 +866,7 @@ namespace Model
          * timestamps, by adding <code>StartTime</code> and <code>EndTime</code>
          * parameters, and a <code>QueryStatus</code> value. Valid values for
          * <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>,
-         * <code>FINISHED</code>, <code>FAILED</code>, or
+         * <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or
          * <code>CANCELLED</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListQueries">AWS
          * API Reference</a></p>
@@ -879,7 +882,7 @@ namespace Model
          * timestamps, by adding <code>StartTime</code> and <code>EndTime</code>
          * parameters, and a <code>QueryStatus</code> value. Valid values for
          * <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>,
-         * <code>FINISHED</code>, <code>FAILED</code>, or
+         * <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or
          * <code>CANCELLED</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListQueries">AWS
          * API Reference</a></p>

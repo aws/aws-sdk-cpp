@@ -7,6 +7,7 @@
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/athena/model/EncryptionConfiguration.h>
+#include <aws/athena/model/AclConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -475,6 +476,90 @@ namespace Model
      */
     inline ResultConfigurationUpdates& WithRemoveExpectedBucketOwner(bool value) { SetRemoveExpectedBucketOwner(value); return *this;}
 
+
+    /**
+     * <p>The ACL configuration for the query results.</p>
+     */
+    inline const AclConfiguration& GetAclConfiguration() const{ return m_aclConfiguration; }
+
+    /**
+     * <p>The ACL configuration for the query results.</p>
+     */
+    inline bool AclConfigurationHasBeenSet() const { return m_aclConfigurationHasBeenSet; }
+
+    /**
+     * <p>The ACL configuration for the query results.</p>
+     */
+    inline void SetAclConfiguration(const AclConfiguration& value) { m_aclConfigurationHasBeenSet = true; m_aclConfiguration = value; }
+
+    /**
+     * <p>The ACL configuration for the query results.</p>
+     */
+    inline void SetAclConfiguration(AclConfiguration&& value) { m_aclConfigurationHasBeenSet = true; m_aclConfiguration = std::move(value); }
+
+    /**
+     * <p>The ACL configuration for the query results.</p>
+     */
+    inline ResultConfigurationUpdates& WithAclConfiguration(const AclConfiguration& value) { SetAclConfiguration(value); return *this;}
+
+    /**
+     * <p>The ACL configuration for the query results.</p>
+     */
+    inline ResultConfigurationUpdates& WithAclConfiguration(AclConfiguration&& value) { SetAclConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>If set to <code>true</code>, indicates that the previously-specified ACL
+     * configuration for queries in this workgroup should be ignored and set to null.
+     * If set to <code>false</code> or not set, and a value is present in the
+     * <code>AclConfiguration</code> of <code>ResultConfigurationUpdates</code>, the
+     * <code>AclConfiguration</code> in the workgroup's
+     * <code>ResultConfiguration</code> is updated with the new value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     * Settings Override Client-Side Settings</a>.</p>
+     */
+    inline bool GetRemoveAclConfiguration() const{ return m_removeAclConfiguration; }
+
+    /**
+     * <p>If set to <code>true</code>, indicates that the previously-specified ACL
+     * configuration for queries in this workgroup should be ignored and set to null.
+     * If set to <code>false</code> or not set, and a value is present in the
+     * <code>AclConfiguration</code> of <code>ResultConfigurationUpdates</code>, the
+     * <code>AclConfiguration</code> in the workgroup's
+     * <code>ResultConfiguration</code> is updated with the new value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     * Settings Override Client-Side Settings</a>.</p>
+     */
+    inline bool RemoveAclConfigurationHasBeenSet() const { return m_removeAclConfigurationHasBeenSet; }
+
+    /**
+     * <p>If set to <code>true</code>, indicates that the previously-specified ACL
+     * configuration for queries in this workgroup should be ignored and set to null.
+     * If set to <code>false</code> or not set, and a value is present in the
+     * <code>AclConfiguration</code> of <code>ResultConfigurationUpdates</code>, the
+     * <code>AclConfiguration</code> in the workgroup's
+     * <code>ResultConfiguration</code> is updated with the new value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     * Settings Override Client-Side Settings</a>.</p>
+     */
+    inline void SetRemoveAclConfiguration(bool value) { m_removeAclConfigurationHasBeenSet = true; m_removeAclConfiguration = value; }
+
+    /**
+     * <p>If set to <code>true</code>, indicates that the previously-specified ACL
+     * configuration for queries in this workgroup should be ignored and set to null.
+     * If set to <code>false</code> or not set, and a value is present in the
+     * <code>AclConfiguration</code> of <code>ResultConfigurationUpdates</code>, the
+     * <code>AclConfiguration</code> in the workgroup's
+     * <code>ResultConfiguration</code> is updated with the new value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     * Settings Override Client-Side Settings</a>.</p>
+     */
+    inline ResultConfigurationUpdates& WithRemoveAclConfiguration(bool value) { SetRemoveAclConfiguration(value); return *this;}
+
   private:
 
     Aws::String m_outputLocation;
@@ -494,6 +579,12 @@ namespace Model
 
     bool m_removeExpectedBucketOwner;
     bool m_removeExpectedBucketOwnerHasBeenSet;
+
+    AclConfiguration m_aclConfiguration;
+    bool m_aclConfigurationHasBeenSet;
+
+    bool m_removeAclConfiguration;
+    bool m_removeAclConfigurationHasBeenSet;
   };
 
 } // namespace Model
