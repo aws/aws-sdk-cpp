@@ -699,10 +699,10 @@ namespace Model
      * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
      * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3">
      * Automatically import updates from your S3 bucket</a>.</p>  <p>This
      * parameter is not supported for file systems with the <code>Persistent_2</code>
-     * deployment type. Instead, use <code>CreateDataRepositoryAssociation"</code> to
+     * deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to
      * create a data repository association to link your Lustre file system to a data
      * repository.</p> 
      */
@@ -729,10 +729,10 @@ namespace Model
      * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
      * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3">
      * Automatically import updates from your S3 bucket</a>.</p>  <p>This
      * parameter is not supported for file systems with the <code>Persistent_2</code>
-     * deployment type. Instead, use <code>CreateDataRepositoryAssociation"</code> to
+     * deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to
      * create a data repository association to link your Lustre file system to a data
      * repository.</p> 
      */
@@ -759,10 +759,10 @@ namespace Model
      * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
      * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3">
      * Automatically import updates from your S3 bucket</a>.</p>  <p>This
      * parameter is not supported for file systems with the <code>Persistent_2</code>
-     * deployment type. Instead, use <code>CreateDataRepositoryAssociation"</code> to
+     * deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to
      * create a data repository association to link your Lustre file system to a data
      * repository.</p> 
      */
@@ -789,10 +789,10 @@ namespace Model
      * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
      * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3">
      * Automatically import updates from your S3 bucket</a>.</p>  <p>This
      * parameter is not supported for file systems with the <code>Persistent_2</code>
-     * deployment type. Instead, use <code>CreateDataRepositoryAssociation"</code> to
+     * deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to
      * create a data repository association to link your Lustre file system to a data
      * repository.</p> 
      */
@@ -819,10 +819,10 @@ namespace Model
      * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
      * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3">
      * Automatically import updates from your S3 bucket</a>.</p>  <p>This
      * parameter is not supported for file systems with the <code>Persistent_2</code>
-     * deployment type. Instead, use <code>CreateDataRepositoryAssociation"</code> to
+     * deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to
      * create a data repository association to link your Lustre file system to a data
      * repository.</p> 
      */
@@ -849,10 +849,10 @@ namespace Model
      * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
      * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3">
      * Automatically import updates from your S3 bucket</a>.</p>  <p>This
      * parameter is not supported for file systems with the <code>Persistent_2</code>
-     * deployment type. Instead, use <code>CreateDataRepositoryAssociation"</code> to
+     * deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to
      * create a data repository association to link your Lustre file system to a data
      * repository.</p> 
      */

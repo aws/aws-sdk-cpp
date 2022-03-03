@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides configuration information required to connect to a ServiceNow data
+   * <p>Provides the configuration information to connect to ServiceNow as your data
    * source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ServiceNowConfiguration">AWS
    * API Reference</a></p>
@@ -184,75 +184,75 @@ namespace Model
 
 
     /**
-     * <p>Provides configuration information for crawling knowledge articles in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling knowledge articles in the ServiceNow
+     * site.</p>
      */
     inline const ServiceNowKnowledgeArticleConfiguration& GetKnowledgeArticleConfiguration() const{ return m_knowledgeArticleConfiguration; }
 
     /**
-     * <p>Provides configuration information for crawling knowledge articles in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling knowledge articles in the ServiceNow
+     * site.</p>
      */
     inline bool KnowledgeArticleConfigurationHasBeenSet() const { return m_knowledgeArticleConfigurationHasBeenSet; }
 
     /**
-     * <p>Provides configuration information for crawling knowledge articles in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling knowledge articles in the ServiceNow
+     * site.</p>
      */
     inline void SetKnowledgeArticleConfiguration(const ServiceNowKnowledgeArticleConfiguration& value) { m_knowledgeArticleConfigurationHasBeenSet = true; m_knowledgeArticleConfiguration = value; }
 
     /**
-     * <p>Provides configuration information for crawling knowledge articles in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling knowledge articles in the ServiceNow
+     * site.</p>
      */
     inline void SetKnowledgeArticleConfiguration(ServiceNowKnowledgeArticleConfiguration&& value) { m_knowledgeArticleConfigurationHasBeenSet = true; m_knowledgeArticleConfiguration = std::move(value); }
 
     /**
-     * <p>Provides configuration information for crawling knowledge articles in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling knowledge articles in the ServiceNow
+     * site.</p>
      */
     inline ServiceNowConfiguration& WithKnowledgeArticleConfiguration(const ServiceNowKnowledgeArticleConfiguration& value) { SetKnowledgeArticleConfiguration(value); return *this;}
 
     /**
-     * <p>Provides configuration information for crawling knowledge articles in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling knowledge articles in the ServiceNow
+     * site.</p>
      */
     inline ServiceNowConfiguration& WithKnowledgeArticleConfiguration(ServiceNowKnowledgeArticleConfiguration&& value) { SetKnowledgeArticleConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Provides configuration information for crawling service catalogs in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling service catalogs in the ServiceNow
+     * site.</p>
      */
     inline const ServiceNowServiceCatalogConfiguration& GetServiceCatalogConfiguration() const{ return m_serviceCatalogConfiguration; }
 
     /**
-     * <p>Provides configuration information for crawling service catalogs in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling service catalogs in the ServiceNow
+     * site.</p>
      */
     inline bool ServiceCatalogConfigurationHasBeenSet() const { return m_serviceCatalogConfigurationHasBeenSet; }
 
     /**
-     * <p>Provides configuration information for crawling service catalogs in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling service catalogs in the ServiceNow
+     * site.</p>
      */
     inline void SetServiceCatalogConfiguration(const ServiceNowServiceCatalogConfiguration& value) { m_serviceCatalogConfigurationHasBeenSet = true; m_serviceCatalogConfiguration = value; }
 
     /**
-     * <p>Provides configuration information for crawling service catalogs in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling service catalogs in the ServiceNow
+     * site.</p>
      */
     inline void SetServiceCatalogConfiguration(ServiceNowServiceCatalogConfiguration&& value) { m_serviceCatalogConfigurationHasBeenSet = true; m_serviceCatalogConfiguration = std::move(value); }
 
     /**
-     * <p>Provides configuration information for crawling service catalogs in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling service catalogs in the ServiceNow
+     * site.</p>
      */
     inline ServiceNowConfiguration& WithServiceCatalogConfiguration(const ServiceNowServiceCatalogConfiguration& value) { SetServiceCatalogConfiguration(value); return *this;}
 
     /**
-     * <p>Provides configuration information for crawling service catalogs in the
-     * ServiceNow site.</p>
+     * <p>Configuration information for crawling service catalogs in the ServiceNow
+     * site.</p>
      */
     inline ServiceNowConfiguration& WithServiceCatalogConfiguration(ServiceNowServiceCatalogConfiguration&& value) { SetServiceCatalogConfiguration(std::move(value)); return *this;}
 

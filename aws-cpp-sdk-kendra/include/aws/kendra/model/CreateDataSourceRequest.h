@@ -170,7 +170,7 @@ namespace Model
 
 
     /**
-     * <p>The connector configuration information that is required to access the
+     * <p>Configuration information that is required to access the data source
      * repository.</p> <p>You can't specify the <code>Configuration</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -179,7 +179,7 @@ namespace Model
     inline const DataSourceConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>The connector configuration information that is required to access the
+     * <p>Configuration information that is required to access the data source
      * repository.</p> <p>You can't specify the <code>Configuration</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -188,7 +188,7 @@ namespace Model
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
-     * <p>The connector configuration information that is required to access the
+     * <p>Configuration information that is required to access the data source
      * repository.</p> <p>You can't specify the <code>Configuration</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -197,7 +197,7 @@ namespace Model
     inline void SetConfiguration(const DataSourceConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
-     * <p>The connector configuration information that is required to access the
+     * <p>Configuration information that is required to access the data source
      * repository.</p> <p>You can't specify the <code>Configuration</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -206,7 +206,7 @@ namespace Model
     inline void SetConfiguration(DataSourceConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
-     * <p>The connector configuration information that is required to access the
+     * <p>Configuration information that is required to access the data source
      * repository.</p> <p>You can't specify the <code>Configuration</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -215,7 +215,7 @@ namespace Model
     inline CreateDataSourceRequest& WithConfiguration(const DataSourceConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>The connector configuration information that is required to access the
+     * <p>Configuration information that is required to access the data source
      * repository.</p> <p>You can't specify the <code>Configuration</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The

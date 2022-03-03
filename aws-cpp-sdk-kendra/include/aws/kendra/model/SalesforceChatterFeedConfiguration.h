@@ -27,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Defines configuration for syncing a Salesforce chatter feed. The contents of
-   * the object comes from the Salesforce FeedItem table.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The configuration information for syncing a Salesforce chatter feed. The
+   * contents of the object comes from the Salesforce FeedItem table.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SalesforceChatterFeedConfiguration">AWS
    * API Reference</a></p>
    */

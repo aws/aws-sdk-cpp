@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides the information necessary to connect to a database.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Provides the configuration information that's required to connect to a
+   * database.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ConnectionConfiguration">AWS
    * API Reference</a></p>
    */

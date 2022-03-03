@@ -12,6 +12,7 @@
 #include <aws/kendra/model/QueryResultType.h>
 #include <aws/kendra/model/SortingConfiguration.h>
 #include <aws/kendra/model/UserContext.h>
+#include <aws/kendra/model/SpellCorrectionConfiguration.h>
 #include <aws/kendra/model/Facet.h>
 #include <aws/kendra/model/DocumentRelevanceConfiguration.h>
 #include <utility>
@@ -677,6 +678,37 @@ namespace Model
      */
     inline QueryRequest& WithVisitorId(const char* value) { SetVisitorId(value); return *this;}
 
+
+    /**
+     * <p>Enables suggested spell corrections for queries.</p>
+     */
+    inline const SpellCorrectionConfiguration& GetSpellCorrectionConfiguration() const{ return m_spellCorrectionConfiguration; }
+
+    /**
+     * <p>Enables suggested spell corrections for queries.</p>
+     */
+    inline bool SpellCorrectionConfigurationHasBeenSet() const { return m_spellCorrectionConfigurationHasBeenSet; }
+
+    /**
+     * <p>Enables suggested spell corrections for queries.</p>
+     */
+    inline void SetSpellCorrectionConfiguration(const SpellCorrectionConfiguration& value) { m_spellCorrectionConfigurationHasBeenSet = true; m_spellCorrectionConfiguration = value; }
+
+    /**
+     * <p>Enables suggested spell corrections for queries.</p>
+     */
+    inline void SetSpellCorrectionConfiguration(SpellCorrectionConfiguration&& value) { m_spellCorrectionConfigurationHasBeenSet = true; m_spellCorrectionConfiguration = std::move(value); }
+
+    /**
+     * <p>Enables suggested spell corrections for queries.</p>
+     */
+    inline QueryRequest& WithSpellCorrectionConfiguration(const SpellCorrectionConfiguration& value) { SetSpellCorrectionConfiguration(value); return *this;}
+
+    /**
+     * <p>Enables suggested spell corrections for queries.</p>
+     */
+    inline QueryRequest& WithSpellCorrectionConfiguration(SpellCorrectionConfiguration&& value) { SetSpellCorrectionConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_indexId;
@@ -714,6 +746,9 @@ namespace Model
 
     Aws::String m_visitorId;
     bool m_visitorIdHasBeenSet;
+
+    SpellCorrectionConfiguration m_spellCorrectionConfiguration;
+    bool m_spellCorrectionConfigurationHasBeenSet;
   };
 
 } // namespace Model

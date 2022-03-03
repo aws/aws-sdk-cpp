@@ -29,6 +29,7 @@ DestinationConnectorProperties::DestinationConnectorProperties() :
     m_honeycodeHasBeenSet(false),
     m_customerProfilesHasBeenSet(false),
     m_zendeskHasBeenSet(false),
+    m_marketoHasBeenSet(false),
     m_customConnectorHasBeenSet(false),
     m_sAPODataHasBeenSet(false)
 {
@@ -45,6 +46,7 @@ DestinationConnectorProperties::DestinationConnectorProperties(JsonView jsonValu
     m_honeycodeHasBeenSet(false),
     m_customerProfilesHasBeenSet(false),
     m_zendeskHasBeenSet(false),
+    m_marketoHasBeenSet(false),
     m_customConnectorHasBeenSet(false),
     m_sAPODataHasBeenSet(false)
 {
@@ -121,6 +123,13 @@ DestinationConnectorProperties& DestinationConnectorProperties::operator =(JsonV
     m_zendesk = jsonValue.GetObject("Zendesk");
 
     m_zendeskHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Marketo"))
+  {
+    m_marketo = jsonValue.GetObject("Marketo");
+
+    m_marketoHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CustomConnector"))
@@ -201,6 +210,12 @@ JsonValue DestinationConnectorProperties::Jsonize() const
   if(m_zendeskHasBeenSet)
   {
    payload.WithObject("Zendesk", m_zendesk.Jsonize());
+
+  }
+
+  if(m_marketoHasBeenSet)
+  {
+   payload.WithObject("Marketo", m_marketo.Jsonize());
 
   }
 

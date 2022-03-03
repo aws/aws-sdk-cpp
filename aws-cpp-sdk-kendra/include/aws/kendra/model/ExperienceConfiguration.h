@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the configuration information for your Amazon Kendra experience.
+   * <p>Provides the configuration information for your Amazon Kendra experience.
    * This includes the data source IDs and/or FAQ IDs, and user or group information
    * to grant access to your Amazon Kendra experience.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ExperienceConfiguration">AWS

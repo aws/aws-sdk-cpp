@@ -35,37 +35,44 @@ namespace Model
 
 
     /**
-     * <p>An array of summary information for one or more indexes.</p>
+     * <p>An array of summary information on the configuration of one or more
+     * indexes.</p>
      */
     inline const Aws::Vector<IndexConfigurationSummary>& GetIndexConfigurationSummaryItems() const{ return m_indexConfigurationSummaryItems; }
 
     /**
-     * <p>An array of summary information for one or more indexes.</p>
+     * <p>An array of summary information on the configuration of one or more
+     * indexes.</p>
      */
     inline void SetIndexConfigurationSummaryItems(const Aws::Vector<IndexConfigurationSummary>& value) { m_indexConfigurationSummaryItems = value; }
 
     /**
-     * <p>An array of summary information for one or more indexes.</p>
+     * <p>An array of summary information on the configuration of one or more
+     * indexes.</p>
      */
     inline void SetIndexConfigurationSummaryItems(Aws::Vector<IndexConfigurationSummary>&& value) { m_indexConfigurationSummaryItems = std::move(value); }
 
     /**
-     * <p>An array of summary information for one or more indexes.</p>
+     * <p>An array of summary information on the configuration of one or more
+     * indexes.</p>
      */
     inline ListIndicesResult& WithIndexConfigurationSummaryItems(const Aws::Vector<IndexConfigurationSummary>& value) { SetIndexConfigurationSummaryItems(value); return *this;}
 
     /**
-     * <p>An array of summary information for one or more indexes.</p>
+     * <p>An array of summary information on the configuration of one or more
+     * indexes.</p>
      */
     inline ListIndicesResult& WithIndexConfigurationSummaryItems(Aws::Vector<IndexConfigurationSummary>&& value) { SetIndexConfigurationSummaryItems(std::move(value)); return *this;}
 
     /**
-     * <p>An array of summary information for one or more indexes.</p>
+     * <p>An array of summary information on the configuration of one or more
+     * indexes.</p>
      */
     inline ListIndicesResult& AddIndexConfigurationSummaryItems(const IndexConfigurationSummary& value) { m_indexConfigurationSummaryItems.push_back(value); return *this; }
 
     /**
-     * <p>An array of summary information for one or more indexes.</p>
+     * <p>An array of summary information on the configuration of one or more
+     * indexes.</p>
      */
     inline ListIndicesResult& AddIndexConfigurationSummaryItems(IndexConfigurationSummary&& value) { m_indexConfigurationSummaryItems.push_back(std::move(value)); return *this; }
 

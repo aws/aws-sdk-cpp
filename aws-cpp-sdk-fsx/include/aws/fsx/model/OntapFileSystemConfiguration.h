@@ -113,49 +113,73 @@ namespace Model
 
     /**
      * <p>The IP address range in which the endpoints to access your file system are
-     * created.</p>
+     * created.</p>  <p>The Endpoint IP address range you select for your
+     * file system must exist outside the VPC's CIDR range and must be at least /30 or
+     * larger. If you do not specify this optional parameter, Amazon FSx will
+     * automatically select a CIDR block for you.</p> 
      */
     inline const Aws::String& GetEndpointIpAddressRange() const{ return m_endpointIpAddressRange; }
 
     /**
      * <p>The IP address range in which the endpoints to access your file system are
-     * created.</p>
+     * created.</p>  <p>The Endpoint IP address range you select for your
+     * file system must exist outside the VPC's CIDR range and must be at least /30 or
+     * larger. If you do not specify this optional parameter, Amazon FSx will
+     * automatically select a CIDR block for you.</p> 
      */
     inline bool EndpointIpAddressRangeHasBeenSet() const { return m_endpointIpAddressRangeHasBeenSet; }
 
     /**
      * <p>The IP address range in which the endpoints to access your file system are
-     * created.</p>
+     * created.</p>  <p>The Endpoint IP address range you select for your
+     * file system must exist outside the VPC's CIDR range and must be at least /30 or
+     * larger. If you do not specify this optional parameter, Amazon FSx will
+     * automatically select a CIDR block for you.</p> 
      */
     inline void SetEndpointIpAddressRange(const Aws::String& value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange = value; }
 
     /**
      * <p>The IP address range in which the endpoints to access your file system are
-     * created.</p>
+     * created.</p>  <p>The Endpoint IP address range you select for your
+     * file system must exist outside the VPC's CIDR range and must be at least /30 or
+     * larger. If you do not specify this optional parameter, Amazon FSx will
+     * automatically select a CIDR block for you.</p> 
      */
     inline void SetEndpointIpAddressRange(Aws::String&& value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange = std::move(value); }
 
     /**
      * <p>The IP address range in which the endpoints to access your file system are
-     * created.</p>
+     * created.</p>  <p>The Endpoint IP address range you select for your
+     * file system must exist outside the VPC's CIDR range and must be at least /30 or
+     * larger. If you do not specify this optional parameter, Amazon FSx will
+     * automatically select a CIDR block for you.</p> 
      */
     inline void SetEndpointIpAddressRange(const char* value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange.assign(value); }
 
     /**
      * <p>The IP address range in which the endpoints to access your file system are
-     * created.</p>
+     * created.</p>  <p>The Endpoint IP address range you select for your
+     * file system must exist outside the VPC's CIDR range and must be at least /30 or
+     * larger. If you do not specify this optional parameter, Amazon FSx will
+     * automatically select a CIDR block for you.</p> 
      */
     inline OntapFileSystemConfiguration& WithEndpointIpAddressRange(const Aws::String& value) { SetEndpointIpAddressRange(value); return *this;}
 
     /**
      * <p>The IP address range in which the endpoints to access your file system are
-     * created.</p>
+     * created.</p>  <p>The Endpoint IP address range you select for your
+     * file system must exist outside the VPC's CIDR range and must be at least /30 or
+     * larger. If you do not specify this optional parameter, Amazon FSx will
+     * automatically select a CIDR block for you.</p> 
      */
     inline OntapFileSystemConfiguration& WithEndpointIpAddressRange(Aws::String&& value) { SetEndpointIpAddressRange(std::move(value)); return *this;}
 
     /**
      * <p>The IP address range in which the endpoints to access your file system are
-     * created.</p>
+     * created.</p>  <p>The Endpoint IP address range you select for your
+     * file system must exist outside the VPC's CIDR range and must be at least /30 or
+     * larger. If you do not specify this optional parameter, Amazon FSx will
+     * automatically select a CIDR block for you.</p> 
      */
     inline OntapFileSystemConfiguration& WithEndpointIpAddressRange(const char* value) { SetEndpointIpAddressRange(value); return *this;}
 

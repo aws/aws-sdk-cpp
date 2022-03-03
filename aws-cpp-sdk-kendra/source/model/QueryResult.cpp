@@ -69,6 +69,15 @@ QueryResult& QueryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue
     }
   }
 
+  if(jsonValue.ValueExists("SpellCorrectedQueries"))
+  {
+    Array<JsonView> spellCorrectedQueriesJsonList = jsonValue.GetArray("SpellCorrectedQueries");
+    for(unsigned spellCorrectedQueriesIndex = 0; spellCorrectedQueriesIndex < spellCorrectedQueriesJsonList.GetLength(); ++spellCorrectedQueriesIndex)
+    {
+      m_spellCorrectedQueries.push_back(spellCorrectedQueriesJsonList[spellCorrectedQueriesIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

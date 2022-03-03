@@ -27,7 +27,8 @@ QueryRequest::QueryRequest() :
     m_pageSizeHasBeenSet(false),
     m_sortingConfigurationHasBeenSet(false),
     m_userContextHasBeenSet(false),
-    m_visitorIdHasBeenSet(false)
+    m_visitorIdHasBeenSet(false),
+    m_spellCorrectionConfigurationHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,12 @@ Aws::String QueryRequest::SerializePayload() const
   if(m_visitorIdHasBeenSet)
   {
    payload.WithString("VisitorId", m_visitorId);
+
+  }
+
+  if(m_spellCorrectionConfigurationHasBeenSet)
+  {
+   payload.WithObject("SpellCorrectionConfiguration", m_spellCorrectionConfiguration.Jsonize());
 
   }
 

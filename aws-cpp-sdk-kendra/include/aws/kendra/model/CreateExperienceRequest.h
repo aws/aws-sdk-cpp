@@ -200,56 +200,50 @@ namespace Model
 
 
     /**
-     * <p>Provides the configuration information for your Amazon Kendra experience.
-     * This includes <code>ContentSourceConfiguration</code>, which specifies the data
-     * source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which
-     * specifies the user or group information to grant access to your Amazon Kendra
-     * experience.</p>
+     * <p>Configuration information for your Amazon Kendra experience. This includes
+     * <code>ContentSourceConfiguration</code>, which specifies the data source IDs
+     * and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
+     * user or group information to grant access to your Amazon Kendra experience.</p>
      */
     inline const ExperienceConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>Provides the configuration information for your Amazon Kendra experience.
-     * This includes <code>ContentSourceConfiguration</code>, which specifies the data
-     * source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which
-     * specifies the user or group information to grant access to your Amazon Kendra
-     * experience.</p>
+     * <p>Configuration information for your Amazon Kendra experience. This includes
+     * <code>ContentSourceConfiguration</code>, which specifies the data source IDs
+     * and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
+     * user or group information to grant access to your Amazon Kendra experience.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
-     * <p>Provides the configuration information for your Amazon Kendra experience.
-     * This includes <code>ContentSourceConfiguration</code>, which specifies the data
-     * source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which
-     * specifies the user or group information to grant access to your Amazon Kendra
-     * experience.</p>
+     * <p>Configuration information for your Amazon Kendra experience. This includes
+     * <code>ContentSourceConfiguration</code>, which specifies the data source IDs
+     * and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
+     * user or group information to grant access to your Amazon Kendra experience.</p>
      */
     inline void SetConfiguration(const ExperienceConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
-     * <p>Provides the configuration information for your Amazon Kendra experience.
-     * This includes <code>ContentSourceConfiguration</code>, which specifies the data
-     * source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which
-     * specifies the user or group information to grant access to your Amazon Kendra
-     * experience.</p>
+     * <p>Configuration information for your Amazon Kendra experience. This includes
+     * <code>ContentSourceConfiguration</code>, which specifies the data source IDs
+     * and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
+     * user or group information to grant access to your Amazon Kendra experience.</p>
      */
     inline void SetConfiguration(ExperienceConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
-     * <p>Provides the configuration information for your Amazon Kendra experience.
-     * This includes <code>ContentSourceConfiguration</code>, which specifies the data
-     * source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which
-     * specifies the user or group information to grant access to your Amazon Kendra
-     * experience.</p>
+     * <p>Configuration information for your Amazon Kendra experience. This includes
+     * <code>ContentSourceConfiguration</code>, which specifies the data source IDs
+     * and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
+     * user or group information to grant access to your Amazon Kendra experience.</p>
      */
     inline CreateExperienceRequest& WithConfiguration(const ExperienceConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>Provides the configuration information for your Amazon Kendra experience.
-     * This includes <code>ContentSourceConfiguration</code>, which specifies the data
-     * source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which
-     * specifies the user or group information to grant access to your Amazon Kendra
-     * experience.</p>
+     * <p>Configuration information for your Amazon Kendra experience. This includes
+     * <code>ContentSourceConfiguration</code>, which specifies the data source IDs
+     * and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
+     * user or group information to grant access to your Amazon Kendra experience.</p>
      */
     inline CreateExperienceRequest& WithConfiguration(ExperienceConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 

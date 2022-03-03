@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Configuration information for your content sources, such as data sources,
-   * FAQs, and content indexed directly via <a
+   * <p>Provides the configuration information for your content sources, such as data
+   * sources, FAQs, and content indexed directly via <a
    * href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">BatchPutDocument</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ContentSourceConfiguration">AWS

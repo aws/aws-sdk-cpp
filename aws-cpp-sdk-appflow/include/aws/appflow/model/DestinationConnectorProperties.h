@@ -15,6 +15,7 @@
 #include <aws/appflow/model/HoneycodeDestinationProperties.h>
 #include <aws/appflow/model/CustomerProfilesDestinationProperties.h>
 #include <aws/appflow/model/ZendeskDestinationProperties.h>
+#include <aws/appflow/model/MarketoDestinationProperties.h>
 #include <aws/appflow/model/CustomConnectorDestinationProperties.h>
 #include <aws/appflow/model/SAPODataDestinationProperties.h>
 #include <utility>
@@ -360,6 +361,37 @@ namespace Model
 
 
     /**
+     * <p>The properties required to query Marketo.</p>
+     */
+    inline const MarketoDestinationProperties& GetMarketo() const{ return m_marketo; }
+
+    /**
+     * <p>The properties required to query Marketo.</p>
+     */
+    inline bool MarketoHasBeenSet() const { return m_marketoHasBeenSet; }
+
+    /**
+     * <p>The properties required to query Marketo.</p>
+     */
+    inline void SetMarketo(const MarketoDestinationProperties& value) { m_marketoHasBeenSet = true; m_marketo = value; }
+
+    /**
+     * <p>The properties required to query Marketo.</p>
+     */
+    inline void SetMarketo(MarketoDestinationProperties&& value) { m_marketoHasBeenSet = true; m_marketo = std::move(value); }
+
+    /**
+     * <p>The properties required to query Marketo.</p>
+     */
+    inline DestinationConnectorProperties& WithMarketo(const MarketoDestinationProperties& value) { SetMarketo(value); return *this;}
+
+    /**
+     * <p>The properties required to query Marketo.</p>
+     */
+    inline DestinationConnectorProperties& WithMarketo(MarketoDestinationProperties&& value) { SetMarketo(std::move(value)); return *this;}
+
+
+    /**
      * <p>The properties that are required to query the custom Connector.</p>
      */
     inline const CustomConnectorDestinationProperties& GetCustomConnector() const{ return m_customConnector; }
@@ -451,6 +483,9 @@ namespace Model
 
     ZendeskDestinationProperties m_zendesk;
     bool m_zendeskHasBeenSet;
+
+    MarketoDestinationProperties m_marketo;
+    bool m_marketoHasBeenSet;
 
     CustomConnectorDestinationProperties m_customConnector;
     bool m_customConnectorHasBeenSet;

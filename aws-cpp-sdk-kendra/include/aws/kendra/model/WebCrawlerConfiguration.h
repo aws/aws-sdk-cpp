@@ -394,78 +394,72 @@ namespace Model
 
 
     /**
-     * <p>Provides configuration information required to connect to your internal
-     * websites via a web proxy.</p> <p>You must provide the website host name and port
-     * number. For example, the host name of https://a.example.com/page1.html is
-     * "a.example.com" and the port is 443, the standard port for HTTPS.</p> <p>Web
-     * proxy credentials are optional and you can use them to connect to a web proxy
-     * server that requires basic authentication. To store web proxy credentials, you
-     * use a secret in <a
+     * <p>Configuration information required to connect to your internal websites via a
+     * web proxy.</p> <p>You must provide the website host name and port number. For
+     * example, the host name of https://a.example.com/page1.html is "a.example.com"
+     * and the port is 443, the standard port for HTTPS.</p> <p>Web proxy credentials
+     * are optional and you can use them to connect to a web proxy server that requires
+     * basic authentication. To store web proxy credentials, you use a secret in <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
      * Manager</a>.</p>
      */
     inline const ProxyConfiguration& GetProxyConfiguration() const{ return m_proxyConfiguration; }
 
     /**
-     * <p>Provides configuration information required to connect to your internal
-     * websites via a web proxy.</p> <p>You must provide the website host name and port
-     * number. For example, the host name of https://a.example.com/page1.html is
-     * "a.example.com" and the port is 443, the standard port for HTTPS.</p> <p>Web
-     * proxy credentials are optional and you can use them to connect to a web proxy
-     * server that requires basic authentication. To store web proxy credentials, you
-     * use a secret in <a
+     * <p>Configuration information required to connect to your internal websites via a
+     * web proxy.</p> <p>You must provide the website host name and port number. For
+     * example, the host name of https://a.example.com/page1.html is "a.example.com"
+     * and the port is 443, the standard port for HTTPS.</p> <p>Web proxy credentials
+     * are optional and you can use them to connect to a web proxy server that requires
+     * basic authentication. To store web proxy credentials, you use a secret in <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
      * Manager</a>.</p>
      */
     inline bool ProxyConfigurationHasBeenSet() const { return m_proxyConfigurationHasBeenSet; }
 
     /**
-     * <p>Provides configuration information required to connect to your internal
-     * websites via a web proxy.</p> <p>You must provide the website host name and port
-     * number. For example, the host name of https://a.example.com/page1.html is
-     * "a.example.com" and the port is 443, the standard port for HTTPS.</p> <p>Web
-     * proxy credentials are optional and you can use them to connect to a web proxy
-     * server that requires basic authentication. To store web proxy credentials, you
-     * use a secret in <a
+     * <p>Configuration information required to connect to your internal websites via a
+     * web proxy.</p> <p>You must provide the website host name and port number. For
+     * example, the host name of https://a.example.com/page1.html is "a.example.com"
+     * and the port is 443, the standard port for HTTPS.</p> <p>Web proxy credentials
+     * are optional and you can use them to connect to a web proxy server that requires
+     * basic authentication. To store web proxy credentials, you use a secret in <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
      * Manager</a>.</p>
      */
     inline void SetProxyConfiguration(const ProxyConfiguration& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = value; }
 
     /**
-     * <p>Provides configuration information required to connect to your internal
-     * websites via a web proxy.</p> <p>You must provide the website host name and port
-     * number. For example, the host name of https://a.example.com/page1.html is
-     * "a.example.com" and the port is 443, the standard port for HTTPS.</p> <p>Web
-     * proxy credentials are optional and you can use them to connect to a web proxy
-     * server that requires basic authentication. To store web proxy credentials, you
-     * use a secret in <a
+     * <p>Configuration information required to connect to your internal websites via a
+     * web proxy.</p> <p>You must provide the website host name and port number. For
+     * example, the host name of https://a.example.com/page1.html is "a.example.com"
+     * and the port is 443, the standard port for HTTPS.</p> <p>Web proxy credentials
+     * are optional and you can use them to connect to a web proxy server that requires
+     * basic authentication. To store web proxy credentials, you use a secret in <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
      * Manager</a>.</p>
      */
     inline void SetProxyConfiguration(ProxyConfiguration&& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = std::move(value); }
 
     /**
-     * <p>Provides configuration information required to connect to your internal
-     * websites via a web proxy.</p> <p>You must provide the website host name and port
-     * number. For example, the host name of https://a.example.com/page1.html is
-     * "a.example.com" and the port is 443, the standard port for HTTPS.</p> <p>Web
-     * proxy credentials are optional and you can use them to connect to a web proxy
-     * server that requires basic authentication. To store web proxy credentials, you
-     * use a secret in <a
+     * <p>Configuration information required to connect to your internal websites via a
+     * web proxy.</p> <p>You must provide the website host name and port number. For
+     * example, the host name of https://a.example.com/page1.html is "a.example.com"
+     * and the port is 443, the standard port for HTTPS.</p> <p>Web proxy credentials
+     * are optional and you can use them to connect to a web proxy server that requires
+     * basic authentication. To store web proxy credentials, you use a secret in <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
      * Manager</a>.</p>
      */
     inline WebCrawlerConfiguration& WithProxyConfiguration(const ProxyConfiguration& value) { SetProxyConfiguration(value); return *this;}
 
     /**
-     * <p>Provides configuration information required to connect to your internal
-     * websites via a web proxy.</p> <p>You must provide the website host name and port
-     * number. For example, the host name of https://a.example.com/page1.html is
-     * "a.example.com" and the port is 443, the standard port for HTTPS.</p> <p>Web
-     * proxy credentials are optional and you can use them to connect to a web proxy
-     * server that requires basic authentication. To store web proxy credentials, you
-     * use a secret in <a
+     * <p>Configuration information required to connect to your internal websites via a
+     * web proxy.</p> <p>You must provide the website host name and port number. For
+     * example, the host name of https://a.example.com/page1.html is "a.example.com"
+     * and the port is 443, the standard port for HTTPS.</p> <p>Web proxy credentials
+     * are optional and you can use them to connect to a web proxy server that requires
+     * basic authentication. To store web proxy credentials, you use a secret in <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
      * Manager</a>.</p>
      */
@@ -473,7 +467,7 @@ namespace Model
 
 
     /**
-     * <p>Provides configuration information required to connect to websites using
+     * <p>Configuration information required to connect to websites using
      * authentication.</p> <p>You can connect to websites using basic authentication of
      * user name and password.</p> <p>You must provide the website host name and port
      * number. For example, the host name of https://a.example.com/page1.html is
@@ -485,7 +479,7 @@ namespace Model
     inline const AuthenticationConfiguration& GetAuthenticationConfiguration() const{ return m_authenticationConfiguration; }
 
     /**
-     * <p>Provides configuration information required to connect to websites using
+     * <p>Configuration information required to connect to websites using
      * authentication.</p> <p>You can connect to websites using basic authentication of
      * user name and password.</p> <p>You must provide the website host name and port
      * number. For example, the host name of https://a.example.com/page1.html is
@@ -497,7 +491,7 @@ namespace Model
     inline bool AuthenticationConfigurationHasBeenSet() const { return m_authenticationConfigurationHasBeenSet; }
 
     /**
-     * <p>Provides configuration information required to connect to websites using
+     * <p>Configuration information required to connect to websites using
      * authentication.</p> <p>You can connect to websites using basic authentication of
      * user name and password.</p> <p>You must provide the website host name and port
      * number. For example, the host name of https://a.example.com/page1.html is
@@ -509,7 +503,7 @@ namespace Model
     inline void SetAuthenticationConfiguration(const AuthenticationConfiguration& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = value; }
 
     /**
-     * <p>Provides configuration information required to connect to websites using
+     * <p>Configuration information required to connect to websites using
      * authentication.</p> <p>You can connect to websites using basic authentication of
      * user name and password.</p> <p>You must provide the website host name and port
      * number. For example, the host name of https://a.example.com/page1.html is
@@ -521,7 +515,7 @@ namespace Model
     inline void SetAuthenticationConfiguration(AuthenticationConfiguration&& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = std::move(value); }
 
     /**
-     * <p>Provides configuration information required to connect to websites using
+     * <p>Configuration information required to connect to websites using
      * authentication.</p> <p>You can connect to websites using basic authentication of
      * user name and password.</p> <p>You must provide the website host name and port
      * number. For example, the host name of https://a.example.com/page1.html is
@@ -533,7 +527,7 @@ namespace Model
     inline WebCrawlerConfiguration& WithAuthenticationConfiguration(const AuthenticationConfiguration& value) { SetAuthenticationConfiguration(value); return *this;}
 
     /**
-     * <p>Provides configuration information required to connect to websites using
+     * <p>Configuration information required to connect to websites using
      * authentication.</p> <p>You can connect to websites using basic authentication of
      * user name and password.</p> <p>You must provide the website host name and port
      * number. For example, the host name of https://a.example.com/page1.html is

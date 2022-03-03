@@ -279,7 +279,11 @@ namespace Model
      * repository with file system path <code>/ns1/ns2</code>.</p> <p>This path
      * specifies where in your file system files will be exported from or imported to.
      * This file system directory can be linked to only one Amazon S3 bucket, and no
-     * other S3 bucket can be linked to the directory. </p>
+     * other S3 bucket can be linked to the directory.</p>  <p>If you specify
+     * only a forward slash (<code>/</code>) as the file system path, you can link only
+     * 1 data repository to the file system. You can only specify "/" as the file
+     * system path for the first data repository associated with a file system.</p>
+     * 
      */
     inline const Aws::String& GetFileSystemPath() const{ return m_fileSystemPath; }
 
@@ -293,7 +297,11 @@ namespace Model
      * repository with file system path <code>/ns1/ns2</code>.</p> <p>This path
      * specifies where in your file system files will be exported from or imported to.
      * This file system directory can be linked to only one Amazon S3 bucket, and no
-     * other S3 bucket can be linked to the directory. </p>
+     * other S3 bucket can be linked to the directory.</p>  <p>If you specify
+     * only a forward slash (<code>/</code>) as the file system path, you can link only
+     * 1 data repository to the file system. You can only specify "/" as the file
+     * system path for the first data repository associated with a file system.</p>
+     * 
      */
     inline bool FileSystemPathHasBeenSet() const { return m_fileSystemPathHasBeenSet; }
 
@@ -307,7 +315,11 @@ namespace Model
      * repository with file system path <code>/ns1/ns2</code>.</p> <p>This path
      * specifies where in your file system files will be exported from or imported to.
      * This file system directory can be linked to only one Amazon S3 bucket, and no
-     * other S3 bucket can be linked to the directory. </p>
+     * other S3 bucket can be linked to the directory.</p>  <p>If you specify
+     * only a forward slash (<code>/</code>) as the file system path, you can link only
+     * 1 data repository to the file system. You can only specify "/" as the file
+     * system path for the first data repository associated with a file system.</p>
+     * 
      */
     inline void SetFileSystemPath(const Aws::String& value) { m_fileSystemPathHasBeenSet = true; m_fileSystemPath = value; }
 
@@ -321,7 +333,11 @@ namespace Model
      * repository with file system path <code>/ns1/ns2</code>.</p> <p>This path
      * specifies where in your file system files will be exported from or imported to.
      * This file system directory can be linked to only one Amazon S3 bucket, and no
-     * other S3 bucket can be linked to the directory. </p>
+     * other S3 bucket can be linked to the directory.</p>  <p>If you specify
+     * only a forward slash (<code>/</code>) as the file system path, you can link only
+     * 1 data repository to the file system. You can only specify "/" as the file
+     * system path for the first data repository associated with a file system.</p>
+     * 
      */
     inline void SetFileSystemPath(Aws::String&& value) { m_fileSystemPathHasBeenSet = true; m_fileSystemPath = std::move(value); }
 
@@ -335,7 +351,11 @@ namespace Model
      * repository with file system path <code>/ns1/ns2</code>.</p> <p>This path
      * specifies where in your file system files will be exported from or imported to.
      * This file system directory can be linked to only one Amazon S3 bucket, and no
-     * other S3 bucket can be linked to the directory. </p>
+     * other S3 bucket can be linked to the directory.</p>  <p>If you specify
+     * only a forward slash (<code>/</code>) as the file system path, you can link only
+     * 1 data repository to the file system. You can only specify "/" as the file
+     * system path for the first data repository associated with a file system.</p>
+     * 
      */
     inline void SetFileSystemPath(const char* value) { m_fileSystemPathHasBeenSet = true; m_fileSystemPath.assign(value); }
 
@@ -349,7 +369,11 @@ namespace Model
      * repository with file system path <code>/ns1/ns2</code>.</p> <p>This path
      * specifies where in your file system files will be exported from or imported to.
      * This file system directory can be linked to only one Amazon S3 bucket, and no
-     * other S3 bucket can be linked to the directory. </p>
+     * other S3 bucket can be linked to the directory.</p>  <p>If you specify
+     * only a forward slash (<code>/</code>) as the file system path, you can link only
+     * 1 data repository to the file system. You can only specify "/" as the file
+     * system path for the first data repository associated with a file system.</p>
+     * 
      */
     inline DataRepositoryAssociation& WithFileSystemPath(const Aws::String& value) { SetFileSystemPath(value); return *this;}
 
@@ -363,7 +387,11 @@ namespace Model
      * repository with file system path <code>/ns1/ns2</code>.</p> <p>This path
      * specifies where in your file system files will be exported from or imported to.
      * This file system directory can be linked to only one Amazon S3 bucket, and no
-     * other S3 bucket can be linked to the directory. </p>
+     * other S3 bucket can be linked to the directory.</p>  <p>If you specify
+     * only a forward slash (<code>/</code>) as the file system path, you can link only
+     * 1 data repository to the file system. You can only specify "/" as the file
+     * system path for the first data repository associated with a file system.</p>
+     * 
      */
     inline DataRepositoryAssociation& WithFileSystemPath(Aws::String&& value) { SetFileSystemPath(std::move(value)); return *this;}
 
@@ -377,7 +405,11 @@ namespace Model
      * repository with file system path <code>/ns1/ns2</code>.</p> <p>This path
      * specifies where in your file system files will be exported from or imported to.
      * This file system directory can be linked to only one Amazon S3 bucket, and no
-     * other S3 bucket can be linked to the directory. </p>
+     * other S3 bucket can be linked to the directory.</p>  <p>If you specify
+     * only a forward slash (<code>/</code>) as the file system path, you can link only
+     * 1 data repository to the file system. You can only specify "/" as the file
+     * system path for the first data repository associated with a file system.</p>
+     * 
      */
     inline DataRepositoryAssociation& WithFileSystemPath(const char* value) { SetFileSystemPath(value); return *this;}
 

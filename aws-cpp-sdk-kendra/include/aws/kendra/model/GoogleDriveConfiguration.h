@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides configuration information for data sources that connect to Google
-   * Drive.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides the configuration information to connect to Google Drive as your
+   * data source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GoogleDriveConfiguration">AWS
    * API Reference</a></p>
    */

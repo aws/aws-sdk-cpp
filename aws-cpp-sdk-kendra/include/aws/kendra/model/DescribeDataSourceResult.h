@@ -172,37 +172,32 @@ namespace Model
 
 
     /**
-     * <p>Information that describes where the data source is located and how the data
-     * source is configured. The specific information in the description depends on the
-     * data source provider.</p>
+     * <p>Describes how the data source is configured. The specific information in the
+     * description depends on the data source provider.</p>
      */
     inline const DataSourceConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>Information that describes where the data source is located and how the data
-     * source is configured. The specific information in the description depends on the
-     * data source provider.</p>
+     * <p>Describes how the data source is configured. The specific information in the
+     * description depends on the data source provider.</p>
      */
     inline void SetConfiguration(const DataSourceConfiguration& value) { m_configuration = value; }
 
     /**
-     * <p>Information that describes where the data source is located and how the data
-     * source is configured. The specific information in the description depends on the
-     * data source provider.</p>
+     * <p>Describes how the data source is configured. The specific information in the
+     * description depends on the data source provider.</p>
      */
     inline void SetConfiguration(DataSourceConfiguration&& value) { m_configuration = std::move(value); }
 
     /**
-     * <p>Information that describes where the data source is located and how the data
-     * source is configured. The specific information in the description depends on the
-     * data source provider.</p>
+     * <p>Describes how the data source is configured. The specific information in the
+     * description depends on the data source provider.</p>
      */
     inline DescribeDataSourceResult& WithConfiguration(const DataSourceConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>Information that describes where the data source is located and how the data
-     * source is configured. The specific information in the description depends on the
-     * data source provider.</p>
+     * <p>Describes how the data source is configured. The specific information in the
+     * description depends on the data source provider.</p>
      */
     inline DescribeDataSourceResult& WithConfiguration(DataSourceConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 

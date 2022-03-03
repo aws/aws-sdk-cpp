@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies configuration information for indexing a single standard
+   * <p>Provides the configuration information for indexing a single standard
    * object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SalesforceStandardObjectConfiguration">AWS
    * API Reference</a></p>

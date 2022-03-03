@@ -213,42 +213,42 @@ namespace Model
 
 
     /**
-     * <p>The document metadata to update. </p>
+     * <p>The document metadata you want to update.</p>
      */
     inline const Aws::Vector<DocumentMetadataConfiguration>& GetDocumentMetadataConfigurationUpdates() const{ return m_documentMetadataConfigurationUpdates; }
 
     /**
-     * <p>The document metadata to update. </p>
+     * <p>The document metadata you want to update.</p>
      */
     inline bool DocumentMetadataConfigurationUpdatesHasBeenSet() const { return m_documentMetadataConfigurationUpdatesHasBeenSet; }
 
     /**
-     * <p>The document metadata to update. </p>
+     * <p>The document metadata you want to update.</p>
      */
     inline void SetDocumentMetadataConfigurationUpdates(const Aws::Vector<DocumentMetadataConfiguration>& value) { m_documentMetadataConfigurationUpdatesHasBeenSet = true; m_documentMetadataConfigurationUpdates = value; }
 
     /**
-     * <p>The document metadata to update. </p>
+     * <p>The document metadata you want to update.</p>
      */
     inline void SetDocumentMetadataConfigurationUpdates(Aws::Vector<DocumentMetadataConfiguration>&& value) { m_documentMetadataConfigurationUpdatesHasBeenSet = true; m_documentMetadataConfigurationUpdates = std::move(value); }
 
     /**
-     * <p>The document metadata to update. </p>
+     * <p>The document metadata you want to update.</p>
      */
     inline UpdateIndexRequest& WithDocumentMetadataConfigurationUpdates(const Aws::Vector<DocumentMetadataConfiguration>& value) { SetDocumentMetadataConfigurationUpdates(value); return *this;}
 
     /**
-     * <p>The document metadata to update. </p>
+     * <p>The document metadata you want to update.</p>
      */
     inline UpdateIndexRequest& WithDocumentMetadataConfigurationUpdates(Aws::Vector<DocumentMetadataConfiguration>&& value) { SetDocumentMetadataConfigurationUpdates(std::move(value)); return *this;}
 
     /**
-     * <p>The document metadata to update. </p>
+     * <p>The document metadata you want to update.</p>
      */
     inline UpdateIndexRequest& AddDocumentMetadataConfigurationUpdates(const DocumentMetadataConfiguration& value) { m_documentMetadataConfigurationUpdatesHasBeenSet = true; m_documentMetadataConfigurationUpdates.push_back(value); return *this; }
 
     /**
-     * <p>The document metadata to update. </p>
+     * <p>The document metadata you want to update.</p>
      */
     inline UpdateIndexRequest& AddDocumentMetadataConfigurationUpdates(DocumentMetadataConfiguration&& value) { m_documentMetadataConfigurationUpdatesHasBeenSet = true; m_documentMetadataConfigurationUpdates.push_back(std::move(value)); return *this; }
 

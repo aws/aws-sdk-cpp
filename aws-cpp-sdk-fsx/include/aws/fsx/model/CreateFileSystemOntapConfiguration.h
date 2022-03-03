@@ -125,56 +125,72 @@ namespace Model
     /**
      * <p>Specifies the IP address range in which the endpoints to access your file
      * system will be created. By default, Amazon FSx selects an unused IP address
-     * range for you from the 198.19.* range.</p>
+     * range for you from the 198.19.* range.</p>  <p>The Endpoint IP
+     * address range you select for your file system must exist outside the VPC's CIDR
+     * range and must be at least /30 or larger.</p> 
      */
     inline const Aws::String& GetEndpointIpAddressRange() const{ return m_endpointIpAddressRange; }
 
     /**
      * <p>Specifies the IP address range in which the endpoints to access your file
      * system will be created. By default, Amazon FSx selects an unused IP address
-     * range for you from the 198.19.* range.</p>
+     * range for you from the 198.19.* range.</p>  <p>The Endpoint IP
+     * address range you select for your file system must exist outside the VPC's CIDR
+     * range and must be at least /30 or larger.</p> 
      */
     inline bool EndpointIpAddressRangeHasBeenSet() const { return m_endpointIpAddressRangeHasBeenSet; }
 
     /**
      * <p>Specifies the IP address range in which the endpoints to access your file
      * system will be created. By default, Amazon FSx selects an unused IP address
-     * range for you from the 198.19.* range.</p>
+     * range for you from the 198.19.* range.</p>  <p>The Endpoint IP
+     * address range you select for your file system must exist outside the VPC's CIDR
+     * range and must be at least /30 or larger.</p> 
      */
     inline void SetEndpointIpAddressRange(const Aws::String& value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange = value; }
 
     /**
      * <p>Specifies the IP address range in which the endpoints to access your file
      * system will be created. By default, Amazon FSx selects an unused IP address
-     * range for you from the 198.19.* range.</p>
+     * range for you from the 198.19.* range.</p>  <p>The Endpoint IP
+     * address range you select for your file system must exist outside the VPC's CIDR
+     * range and must be at least /30 or larger.</p> 
      */
     inline void SetEndpointIpAddressRange(Aws::String&& value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange = std::move(value); }
 
     /**
      * <p>Specifies the IP address range in which the endpoints to access your file
      * system will be created. By default, Amazon FSx selects an unused IP address
-     * range for you from the 198.19.* range.</p>
+     * range for you from the 198.19.* range.</p>  <p>The Endpoint IP
+     * address range you select for your file system must exist outside the VPC's CIDR
+     * range and must be at least /30 or larger.</p> 
      */
     inline void SetEndpointIpAddressRange(const char* value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange.assign(value); }
 
     /**
      * <p>Specifies the IP address range in which the endpoints to access your file
      * system will be created. By default, Amazon FSx selects an unused IP address
-     * range for you from the 198.19.* range.</p>
+     * range for you from the 198.19.* range.</p>  <p>The Endpoint IP
+     * address range you select for your file system must exist outside the VPC's CIDR
+     * range and must be at least /30 or larger.</p> 
      */
     inline CreateFileSystemOntapConfiguration& WithEndpointIpAddressRange(const Aws::String& value) { SetEndpointIpAddressRange(value); return *this;}
 
     /**
      * <p>Specifies the IP address range in which the endpoints to access your file
      * system will be created. By default, Amazon FSx selects an unused IP address
-     * range for you from the 198.19.* range.</p>
+     * range for you from the 198.19.* range.</p>  <p>The Endpoint IP
+     * address range you select for your file system must exist outside the VPC's CIDR
+     * range and must be at least /30 or larger.</p> 
      */
     inline CreateFileSystemOntapConfiguration& WithEndpointIpAddressRange(Aws::String&& value) { SetEndpointIpAddressRange(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the IP address range in which the endpoints to access your file
      * system will be created. By default, Amazon FSx selects an unused IP address
-     * range for you from the 198.19.* range.</p>
+     * range for you from the 198.19.* range.</p>  <p>The Endpoint IP
+     * address range you select for your file system must exist outside the VPC's CIDR
+     * range and must be at least /30 or larger.</p> 
      */
     inline CreateFileSystemOntapConfiguration& WithEndpointIpAddressRange(const char* value) { SetEndpointIpAddressRange(value); return *this;}
 

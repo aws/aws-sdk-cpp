@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The Network File System NFS) configurations for mounting an Amazon FSx for
+   * <p>The Network File System (NFS) configurations for mounting an Amazon FSx for
    * OpenZFS file system. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/OpenZFSNfsExport">AWS
    * API Reference</a></p>

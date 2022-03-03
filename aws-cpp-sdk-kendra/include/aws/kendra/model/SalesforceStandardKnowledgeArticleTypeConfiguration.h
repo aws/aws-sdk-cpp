@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides configuration information for standard Salesforce knowledge
+   * <p>Configuration information for standard Salesforce knowledge
    * articles.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SalesforceStandardKnowledgeArticleTypeConfiguration">AWS
    * API Reference</a></p>

@@ -161,44 +161,38 @@ namespace Model
 
 
     /**
-     * <p>Provides the configuration information for connecting to an Amazon Virtual
-     * Private Cloud for your Amazon FSx. Your Amazon FSx instance must reside inside
-     * your VPC.</p>
+     * <p>Configuration information for connecting to an Amazon Virtual Private Cloud
+     * for your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
      */
     inline const DataSourceVpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
 
     /**
-     * <p>Provides the configuration information for connecting to an Amazon Virtual
-     * Private Cloud for your Amazon FSx. Your Amazon FSx instance must reside inside
-     * your VPC.</p>
+     * <p>Configuration information for connecting to an Amazon Virtual Private Cloud
+     * for your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
      */
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
 
     /**
-     * <p>Provides the configuration information for connecting to an Amazon Virtual
-     * Private Cloud for your Amazon FSx. Your Amazon FSx instance must reside inside
-     * your VPC.</p>
+     * <p>Configuration information for connecting to an Amazon Virtual Private Cloud
+     * for your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
      */
     inline void SetVpcConfiguration(const DataSourceVpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
 
     /**
-     * <p>Provides the configuration information for connecting to an Amazon Virtual
-     * Private Cloud for your Amazon FSx. Your Amazon FSx instance must reside inside
-     * your VPC.</p>
+     * <p>Configuration information for connecting to an Amazon Virtual Private Cloud
+     * for your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
      */
     inline void SetVpcConfiguration(DataSourceVpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
 
     /**
-     * <p>Provides the configuration information for connecting to an Amazon Virtual
-     * Private Cloud for your Amazon FSx. Your Amazon FSx instance must reside inside
-     * your VPC.</p>
+     * <p>Configuration information for connecting to an Amazon Virtual Private Cloud
+     * for your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
      */
     inline FsxConfiguration& WithVpcConfiguration(const DataSourceVpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
 
     /**
-     * <p>Provides the configuration information for connecting to an Amazon Virtual
-     * Private Cloud for your Amazon FSx. Your Amazon FSx instance must reside inside
-     * your VPC.</p>
+     * <p>Configuration information for connecting to an Amazon Virtual Private Cloud
+     * for your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
      */
     inline FsxConfiguration& WithVpcConfiguration(DataSourceVpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
 
@@ -211,8 +205,8 @@ namespace Model
      * along with the Domain Name System (DNS) domain name. For example,
      * <i>user@corp.example.com</i>. The Active Directory user account must have read
      * and mounting access to the Amazon FSx file system for Windows.</p> </li> <li>
-     * <p>password—The password of the active directory user with read and mounting
-     * access Amazon FSx Windows file system.</p> </li> </ul>
+     * <p>password—The password of the Active Directory user account with read and
+     * mounting access to the Amazon FSx Windows file system.</p> </li> </ul>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
@@ -224,8 +218,8 @@ namespace Model
      * along with the Domain Name System (DNS) domain name. For example,
      * <i>user@corp.example.com</i>. The Active Directory user account must have read
      * and mounting access to the Amazon FSx file system for Windows.</p> </li> <li>
-     * <p>password—The password of the active directory user with read and mounting
-     * access Amazon FSx Windows file system.</p> </li> </ul>
+     * <p>password—The password of the Active Directory user account with read and
+     * mounting access to the Amazon FSx Windows file system.</p> </li> </ul>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
@@ -237,8 +231,8 @@ namespace Model
      * along with the Domain Name System (DNS) domain name. For example,
      * <i>user@corp.example.com</i>. The Active Directory user account must have read
      * and mounting access to the Amazon FSx file system for Windows.</p> </li> <li>
-     * <p>password—The password of the active directory user with read and mounting
-     * access Amazon FSx Windows file system.</p> </li> </ul>
+     * <p>password—The password of the Active Directory user account with read and
+     * mounting access to the Amazon FSx Windows file system.</p> </li> </ul>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
@@ -250,8 +244,8 @@ namespace Model
      * along with the Domain Name System (DNS) domain name. For example,
      * <i>user@corp.example.com</i>. The Active Directory user account must have read
      * and mounting access to the Amazon FSx file system for Windows.</p> </li> <li>
-     * <p>password—The password of the active directory user with read and mounting
-     * access Amazon FSx Windows file system.</p> </li> </ul>
+     * <p>password—The password of the Active Directory user account with read and
+     * mounting access to the Amazon FSx Windows file system.</p> </li> </ul>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
@@ -263,8 +257,8 @@ namespace Model
      * along with the Domain Name System (DNS) domain name. For example,
      * <i>user@corp.example.com</i>. The Active Directory user account must have read
      * and mounting access to the Amazon FSx file system for Windows.</p> </li> <li>
-     * <p>password—The password of the active directory user with read and mounting
-     * access Amazon FSx Windows file system.</p> </li> </ul>
+     * <p>password—The password of the Active Directory user account with read and
+     * mounting access to the Amazon FSx Windows file system.</p> </li> </ul>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
@@ -276,8 +270,8 @@ namespace Model
      * along with the Domain Name System (DNS) domain name. For example,
      * <i>user@corp.example.com</i>. The Active Directory user account must have read
      * and mounting access to the Amazon FSx file system for Windows.</p> </li> <li>
-     * <p>password—The password of the active directory user with read and mounting
-     * access Amazon FSx Windows file system.</p> </li> </ul>
+     * <p>password—The password of the Active Directory user account with read and
+     * mounting access to the Amazon FSx Windows file system.</p> </li> </ul>
      */
     inline FsxConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
@@ -289,8 +283,8 @@ namespace Model
      * along with the Domain Name System (DNS) domain name. For example,
      * <i>user@corp.example.com</i>. The Active Directory user account must have read
      * and mounting access to the Amazon FSx file system for Windows.</p> </li> <li>
-     * <p>password—The password of the active directory user with read and mounting
-     * access Amazon FSx Windows file system.</p> </li> </ul>
+     * <p>password—The password of the Active Directory user account with read and
+     * mounting access to the Amazon FSx Windows file system.</p> </li> </ul>
      */
     inline FsxConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
@@ -302,8 +296,8 @@ namespace Model
      * along with the Domain Name System (DNS) domain name. For example,
      * <i>user@corp.example.com</i>. The Active Directory user account must have read
      * and mounting access to the Amazon FSx file system for Windows.</p> </li> <li>
-     * <p>password—The password of the active directory user with read and mounting
-     * access Amazon FSx Windows file system.</p> </li> </ul>
+     * <p>password—The password of the Active Directory user account with read and
+     * mounting access to the Amazon FSx Windows file system.</p> </li> </ul>
      */
     inline FsxConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 
@@ -474,9 +468,9 @@ namespace Model
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
-     * FSx data source attributes or field names to Amazon Kendra index field names in
-     * Amazon Kendra. To create custom fields, use the <code>UpdateIndex</code> API
-     * before you map to Amazon FSx fields. For more information, see <a
+     * FSx data source attributes or field names to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Amazon FSx fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * data source fields</a>. The Amazon FSx data source field names must exist in
      * your Amazon FSx custom metadata.</p>
@@ -485,9 +479,9 @@ namespace Model
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
-     * FSx data source attributes or field names to Amazon Kendra index field names in
-     * Amazon Kendra. To create custom fields, use the <code>UpdateIndex</code> API
-     * before you map to Amazon FSx fields. For more information, see <a
+     * FSx data source attributes or field names to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Amazon FSx fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * data source fields</a>. The Amazon FSx data source field names must exist in
      * your Amazon FSx custom metadata.</p>
@@ -496,9 +490,9 @@ namespace Model
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
-     * FSx data source attributes or field names to Amazon Kendra index field names in
-     * Amazon Kendra. To create custom fields, use the <code>UpdateIndex</code> API
-     * before you map to Amazon FSx fields. For more information, see <a
+     * FSx data source attributes or field names to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Amazon FSx fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * data source fields</a>. The Amazon FSx data source field names must exist in
      * your Amazon FSx custom metadata.</p>
@@ -507,9 +501,9 @@ namespace Model
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
-     * FSx data source attributes or field names to Amazon Kendra index field names in
-     * Amazon Kendra. To create custom fields, use the <code>UpdateIndex</code> API
-     * before you map to Amazon FSx fields. For more information, see <a
+     * FSx data source attributes or field names to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Amazon FSx fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * data source fields</a>. The Amazon FSx data source field names must exist in
      * your Amazon FSx custom metadata.</p>
@@ -518,9 +512,9 @@ namespace Model
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
-     * FSx data source attributes or field names to Amazon Kendra index field names in
-     * Amazon Kendra. To create custom fields, use the <code>UpdateIndex</code> API
-     * before you map to Amazon FSx fields. For more information, see <a
+     * FSx data source attributes or field names to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Amazon FSx fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * data source fields</a>. The Amazon FSx data source field names must exist in
      * your Amazon FSx custom metadata.</p>
@@ -529,9 +523,9 @@ namespace Model
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
-     * FSx data source attributes or field names to Amazon Kendra index field names in
-     * Amazon Kendra. To create custom fields, use the <code>UpdateIndex</code> API
-     * before you map to Amazon FSx fields. For more information, see <a
+     * FSx data source attributes or field names to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Amazon FSx fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * data source fields</a>. The Amazon FSx data source field names must exist in
      * your Amazon FSx custom metadata.</p>
@@ -540,9 +534,9 @@ namespace Model
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
-     * FSx data source attributes or field names to Amazon Kendra index field names in
-     * Amazon Kendra. To create custom fields, use the <code>UpdateIndex</code> API
-     * before you map to Amazon FSx fields. For more information, see <a
+     * FSx data source attributes or field names to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Amazon FSx fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * data source fields</a>. The Amazon FSx data source field names must exist in
      * your Amazon FSx custom metadata.</p>
@@ -551,9 +545,9 @@ namespace Model
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
-     * FSx data source attributes or field names to Amazon Kendra index field names in
-     * Amazon Kendra. To create custom fields, use the <code>UpdateIndex</code> API
-     * before you map to Amazon FSx fields. For more information, see <a
+     * FSx data source attributes or field names to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Amazon FSx fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * data source fields</a>. The Amazon FSx data source field names must exist in
      * your Amazon FSx custom metadata.</p>

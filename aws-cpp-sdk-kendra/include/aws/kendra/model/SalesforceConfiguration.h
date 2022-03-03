@@ -360,38 +360,38 @@ namespace Model
 
 
     /**
-     * <p>Provides configuration information for processing attachments to Salesforce
-     * standard objects. </p>
+     * <p>Configuration information for processing attachments to Salesforce standard
+     * objects. </p>
      */
     inline const SalesforceStandardObjectAttachmentConfiguration& GetStandardObjectAttachmentConfiguration() const{ return m_standardObjectAttachmentConfiguration; }
 
     /**
-     * <p>Provides configuration information for processing attachments to Salesforce
-     * standard objects. </p>
+     * <p>Configuration information for processing attachments to Salesforce standard
+     * objects. </p>
      */
     inline bool StandardObjectAttachmentConfigurationHasBeenSet() const { return m_standardObjectAttachmentConfigurationHasBeenSet; }
 
     /**
-     * <p>Provides configuration information for processing attachments to Salesforce
-     * standard objects. </p>
+     * <p>Configuration information for processing attachments to Salesforce standard
+     * objects. </p>
      */
     inline void SetStandardObjectAttachmentConfiguration(const SalesforceStandardObjectAttachmentConfiguration& value) { m_standardObjectAttachmentConfigurationHasBeenSet = true; m_standardObjectAttachmentConfiguration = value; }
 
     /**
-     * <p>Provides configuration information for processing attachments to Salesforce
-     * standard objects. </p>
+     * <p>Configuration information for processing attachments to Salesforce standard
+     * objects. </p>
      */
     inline void SetStandardObjectAttachmentConfiguration(SalesforceStandardObjectAttachmentConfiguration&& value) { m_standardObjectAttachmentConfigurationHasBeenSet = true; m_standardObjectAttachmentConfiguration = std::move(value); }
 
     /**
-     * <p>Provides configuration information for processing attachments to Salesforce
-     * standard objects. </p>
+     * <p>Configuration information for processing attachments to Salesforce standard
+     * objects. </p>
      */
     inline SalesforceConfiguration& WithStandardObjectAttachmentConfiguration(const SalesforceStandardObjectAttachmentConfiguration& value) { SetStandardObjectAttachmentConfiguration(value); return *this;}
 
     /**
-     * <p>Provides configuration information for processing attachments to Salesforce
-     * standard objects. </p>
+     * <p>Configuration information for processing attachments to Salesforce standard
+     * objects. </p>
      */
     inline SalesforceConfiguration& WithStandardObjectAttachmentConfiguration(SalesforceStandardObjectAttachmentConfiguration&& value) { SetStandardObjectAttachmentConfiguration(std::move(value)); return *this;}
 

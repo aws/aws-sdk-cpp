@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides configuration information for crawling knowledge articles in the
+   * <p>Provides the configuration information for crawling knowledge articles in the
    * ServiceNow site.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ServiceNowKnowledgeArticleConfiguration">AWS
    * API Reference</a></p>

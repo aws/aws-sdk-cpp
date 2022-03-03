@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides configuration information for crawling service catalog items in the
-   * ServiceNow site</p><p><h3>See Also:</h3>   <a
+   * <p>Provides the configuration information for crawling service catalog items in
+   * the ServiceNow site</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ServiceNowServiceCatalogConfiguration">AWS
    * API Reference</a></p>
    */

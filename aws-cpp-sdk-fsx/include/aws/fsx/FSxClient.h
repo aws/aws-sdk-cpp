@@ -1100,7 +1100,7 @@ namespace Model
         virtual void CreateStorageVirtualMachineAsync(const Model::CreateStorageVirtualMachineRequest& request, const CreateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS storage
+         * <p>Creates an FSx for ONTAP or Amazon FSx for OpenZFS storage
          * volume.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateVolume">AWS
          * API Reference</a></p>
@@ -1108,7 +1108,7 @@ namespace Model
         virtual Model::CreateVolumeOutcome CreateVolume(const Model::CreateVolumeRequest& request) const;
 
         /**
-         * <p>Creates an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS storage
+         * <p>Creates an FSx for ONTAP or Amazon FSx for OpenZFS storage
          * volume.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateVolume">AWS
          * API Reference</a></p>
@@ -1118,7 +1118,7 @@ namespace Model
         virtual Model::CreateVolumeOutcomeCallable CreateVolumeCallable(const Model::CreateVolumeRequest& request) const;
 
         /**
-         * <p>Creates an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS storage
+         * <p>Creates an FSx for ONTAP or Amazon FSx for OpenZFS storage
          * volume.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateVolume">AWS
          * API Reference</a></p>

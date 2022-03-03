@@ -157,7 +157,7 @@ namespace Model
          * Because cancellation is an idempotent operation, subsequent cancellation
          * requests will return a <code>CancellationMessage</code>, indicating that the
          * query has already been canceled. See <a
-         * href="https://docs.aws.amazon.com/Timestream/latest/developerguide/code-samples.cancel-query.html">code
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.cancel-query.html">code
          * sample</a> for details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/CancelQuery">AWS
          * API Reference</a></p>
@@ -170,7 +170,7 @@ namespace Model
          * Because cancellation is an idempotent operation, subsequent cancellation
          * requests will return a <code>CancellationMessage</code>, indicating that the
          * query has already been canceled. See <a
-         * href="https://docs.aws.amazon.com/Timestream/latest/developerguide/code-samples.cancel-query.html">code
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.cancel-query.html">code
          * sample</a> for details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/CancelQuery">AWS
          * API Reference</a></p>
@@ -185,7 +185,7 @@ namespace Model
          * Because cancellation is an idempotent operation, subsequent cancellation
          * requests will return a <code>CancellationMessage</code>, indicating that the
          * query has already been canceled. See <a
-         * href="https://docs.aws.amazon.com/Timestream/latest/developerguide/code-samples.cancel-query.html">code
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.cancel-query.html">code
          * sample</a> for details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/CancelQuery">AWS
          * API Reference</a></p>
@@ -266,13 +266,13 @@ namespace Model
          * service’s architecture, including the management and mapping of the service
          * endpoints, <i>it is not recommended that you use this API unless</i>:</p> <ul>
          * <li> <p>You are using <a
-         * href="https://docs.aws.amazon.com/Timestream/latest/developerguide/VPCEndpoints">VPC
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/VPCEndpoints">VPC
          * endpoints (Amazon Web Services PrivateLink) with Timestream </a> </p> </li> <li>
          * <p>Your application uses a programming language that does not yet have SDK
          * support</p> </li> <li> <p>You require better control over the client-side
          * implementation</p> </li> </ul> <p>For detailed information on how and when to
          * use and implement DescribeEndpoints, see <a
-         * href="https://docs.aws.amazon.com/Timestream/latest/developerguide/Using.API.html#Using-API.endpoint-discovery">The
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/Using.API.html#Using-API.endpoint-discovery">The
          * Endpoint Discovery Pattern</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/DescribeEndpoints">AWS
          * API Reference</a></p>
@@ -286,13 +286,13 @@ namespace Model
          * service’s architecture, including the management and mapping of the service
          * endpoints, <i>it is not recommended that you use this API unless</i>:</p> <ul>
          * <li> <p>You are using <a
-         * href="https://docs.aws.amazon.com/Timestream/latest/developerguide/VPCEndpoints">VPC
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/VPCEndpoints">VPC
          * endpoints (Amazon Web Services PrivateLink) with Timestream </a> </p> </li> <li>
          * <p>Your application uses a programming language that does not yet have SDK
          * support</p> </li> <li> <p>You require better control over the client-side
          * implementation</p> </li> </ul> <p>For detailed information on how and when to
          * use and implement DescribeEndpoints, see <a
-         * href="https://docs.aws.amazon.com/Timestream/latest/developerguide/Using.API.html#Using-API.endpoint-discovery">The
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/Using.API.html#Using-API.endpoint-discovery">The
          * Endpoint Discovery Pattern</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/DescribeEndpoints">AWS
          * API Reference</a></p>
@@ -308,13 +308,13 @@ namespace Model
          * service’s architecture, including the management and mapping of the service
          * endpoints, <i>it is not recommended that you use this API unless</i>:</p> <ul>
          * <li> <p>You are using <a
-         * href="https://docs.aws.amazon.com/Timestream/latest/developerguide/VPCEndpoints">VPC
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/VPCEndpoints">VPC
          * endpoints (Amazon Web Services PrivateLink) with Timestream </a> </p> </li> <li>
          * <p>Your application uses a programming language that does not yet have SDK
          * support</p> </li> <li> <p>You require better control over the client-side
          * implementation</p> </li> </ul> <p>For detailed information on how and when to
          * use and implement DescribeEndpoints, see <a
-         * href="https://docs.aws.amazon.com/Timestream/latest/developerguide/Using.API.html#Using-API.endpoint-discovery">The
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/Using.API.html#Using-API.endpoint-discovery">The
          * Endpoint Discovery Pattern</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/DescribeEndpoints">AWS
          * API Reference</a></p>
@@ -474,7 +474,7 @@ namespace Model
          * query against your Amazon Timestream data. <code>Query</code> will time out
          * after 60 seconds. You must update the default timeout in the SDK to support a
          * timeout of 60 seconds. See the <a
-         * href="https://docs.aws.amazon.com/Timestream/latest/developerguide/code-samples.run-query.html">code
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html">code
          * sample</a> for details. </p> <p>Your query request will fail in the following
          * cases:</p> <ul> <li> <p> If you submit a <code>Query</code> request with the
          * same client token outside of the 5-minute idempotency window. </p> </li> <li>
@@ -498,7 +498,7 @@ namespace Model
          * query against your Amazon Timestream data. <code>Query</code> will time out
          * after 60 seconds. You must update the default timeout in the SDK to support a
          * timeout of 60 seconds. See the <a
-         * href="https://docs.aws.amazon.com/Timestream/latest/developerguide/code-samples.run-query.html">code
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html">code
          * sample</a> for details. </p> <p>Your query request will fail in the following
          * cases:</p> <ul> <li> <p> If you submit a <code>Query</code> request with the
          * same client token outside of the 5-minute idempotency window. </p> </li> <li>
@@ -524,7 +524,7 @@ namespace Model
          * query against your Amazon Timestream data. <code>Query</code> will time out
          * after 60 seconds. You must update the default timeout in the SDK to support a
          * timeout of 60 seconds. See the <a
-         * href="https://docs.aws.amazon.com/Timestream/latest/developerguide/code-samples.run-query.html">code
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html">code
          * sample</a> for details. </p> <p>Your query request will fail in the following
          * cases:</p> <ul> <li> <p> If you submit a <code>Query</code> request with the
          * same client token outside of the 5-minute idempotency window. </p> </li> <li>

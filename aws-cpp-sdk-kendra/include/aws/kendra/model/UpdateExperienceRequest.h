@@ -248,44 +248,32 @@ namespace Model
 
 
     /**
-     * <p>Provides the user configuration information. This includes the Amazon Web
-     * Services SSO field name that contains the identifiers of your users, such as
-     * their emails.</p>
+     * <p>Configuration information for your Amazon Kendra you want to update.</p>
      */
     inline const ExperienceConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>Provides the user configuration information. This includes the Amazon Web
-     * Services SSO field name that contains the identifiers of your users, such as
-     * their emails.</p>
+     * <p>Configuration information for your Amazon Kendra you want to update.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
-     * <p>Provides the user configuration information. This includes the Amazon Web
-     * Services SSO field name that contains the identifiers of your users, such as
-     * their emails.</p>
+     * <p>Configuration information for your Amazon Kendra you want to update.</p>
      */
     inline void SetConfiguration(const ExperienceConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
-     * <p>Provides the user configuration information. This includes the Amazon Web
-     * Services SSO field name that contains the identifiers of your users, such as
-     * their emails.</p>
+     * <p>Configuration information for your Amazon Kendra you want to update.</p>
      */
     inline void SetConfiguration(ExperienceConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
-     * <p>Provides the user configuration information. This includes the Amazon Web
-     * Services SSO field name that contains the identifiers of your users, such as
-     * their emails.</p>
+     * <p>Configuration information for your Amazon Kendra you want to update.</p>
      */
     inline UpdateExperienceRequest& WithConfiguration(const ExperienceConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>Provides the user configuration information. This includes the Amazon Web
-     * Services SSO field name that contains the identifiers of your users, such as
-     * their emails.</p>
+     * <p>Configuration information for your Amazon Kendra you want to update.</p>
      */
     inline UpdateExperienceRequest& WithConfiguration(ExperienceConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
