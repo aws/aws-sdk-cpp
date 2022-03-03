@@ -173,6 +173,8 @@ namespace Aws
             virtual bool LoadInternal() override;
         private:
             std::shared_ptr<Aws::Internal::EC2MetadataClient> m_ec2metadataClient;
+            int64_t credentialsValidUntilMillis = 0;
+            int64_t calculateRetryTime() const;
         };
 
         /**
