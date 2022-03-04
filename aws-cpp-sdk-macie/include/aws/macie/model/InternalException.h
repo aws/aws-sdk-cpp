@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Internal server error.</p><p><h3>See Also:</h3>   <a
+   * <p>(Discontinued) Internal server error.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/InternalException">AWS
    * API Reference</a></p>
    */

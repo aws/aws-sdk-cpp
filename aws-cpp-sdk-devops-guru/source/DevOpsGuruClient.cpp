@@ -24,6 +24,7 @@
 #include <aws/devops-guru/model/DescribeAccountHealthRequest.h>
 #include <aws/devops-guru/model/DescribeAccountOverviewRequest.h>
 #include <aws/devops-guru/model/DescribeAnomalyRequest.h>
+#include <aws/devops-guru/model/DescribeEventSourcesConfigRequest.h>
 #include <aws/devops-guru/model/DescribeFeedbackRequest.h>
 #include <aws/devops-guru/model/DescribeInsightRequest.h>
 #include <aws/devops-guru/model/DescribeOrganizationHealthRequest.h>
@@ -44,6 +45,7 @@
 #include <aws/devops-guru/model/SearchInsightsRequest.h>
 #include <aws/devops-guru/model/SearchOrganizationInsightsRequest.h>
 #include <aws/devops-guru/model/StartCostEstimationRequest.h>
+#include <aws/devops-guru/model/UpdateEventSourcesConfigRequest.h>
 #include <aws/devops-guru/model/UpdateResourceCollectionRequest.h>
 #include <aws/devops-guru/model/UpdateServiceIntegrationRequest.h>
 
@@ -224,6 +226,31 @@ void DevOpsGuruClient::DescribeAnomalyAsync(const DescribeAnomalyRequest& reques
 void DevOpsGuruClient::DescribeAnomalyAsyncHelper(const DescribeAnomalyRequest& request, const DescribeAnomalyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeAnomaly(request), context);
+}
+
+DescribeEventSourcesConfigOutcome DevOpsGuruClient::DescribeEventSourcesConfig(const DescribeEventSourcesConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/event-sources");
+  return DescribeEventSourcesConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeEventSourcesConfigOutcomeCallable DevOpsGuruClient::DescribeEventSourcesConfigCallable(const DescribeEventSourcesConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEventSourcesConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEventSourcesConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DevOpsGuruClient::DescribeEventSourcesConfigAsync(const DescribeEventSourcesConfigRequest& request, const DescribeEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventSourcesConfigAsyncHelper( request, handler, context ); } );
+}
+
+void DevOpsGuruClient::DescribeEventSourcesConfigAsyncHelper(const DescribeEventSourcesConfigRequest& request, const DescribeEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEventSourcesConfig(request), context);
 }
 
 DescribeFeedbackOutcome DevOpsGuruClient::DescribeFeedback(const DescribeFeedbackRequest& request) const
@@ -754,6 +781,31 @@ void DevOpsGuruClient::StartCostEstimationAsync(const StartCostEstimationRequest
 void DevOpsGuruClient::StartCostEstimationAsyncHelper(const StartCostEstimationRequest& request, const StartCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartCostEstimation(request), context);
+}
+
+UpdateEventSourcesConfigOutcome DevOpsGuruClient::UpdateEventSourcesConfig(const UpdateEventSourcesConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/event-sources");
+  return UpdateEventSourcesConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateEventSourcesConfigOutcomeCallable DevOpsGuruClient::UpdateEventSourcesConfigCallable(const UpdateEventSourcesConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateEventSourcesConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEventSourcesConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DevOpsGuruClient::UpdateEventSourcesConfigAsync(const UpdateEventSourcesConfigRequest& request, const UpdateEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateEventSourcesConfigAsyncHelper( request, handler, context ); } );
+}
+
+void DevOpsGuruClient::UpdateEventSourcesConfigAsyncHelper(const UpdateEventSourcesConfigRequest& request, const UpdateEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateEventSourcesConfig(request), context);
 }
 
 UpdateResourceCollectionOutcome DevOpsGuruClient::UpdateResourceCollection(const UpdateResourceCollectionRequest& request) const

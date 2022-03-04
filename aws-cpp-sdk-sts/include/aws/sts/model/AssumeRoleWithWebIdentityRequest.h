@@ -242,82 +242,82 @@ namespace Model
 
 
     /**
-     * <p>The fully qualified host component of the domain name of the identity
-     * provider.</p> <p>Specify this value only for OAuth 2.0 access tokens. Currently
-     * <code>www.amazon.com</code> and <code>graph.facebook.com</code> are the only
-     * supported identity providers for OAuth 2.0 access tokens. Do not include URL
-     * schemes and port numbers.</p> <p>Do not specify this value for OpenID Connect ID
-     * tokens.</p>
+     * <p>The fully qualified host component of the domain name of the OAuth 2.0
+     * identity provider. Do not specify this value for an OpenID Connect identity
+     * provider.</p> <p>Currently <code>www.amazon.com</code> and
+     * <code>graph.facebook.com</code> are the only supported identity providers for
+     * OAuth 2.0 access tokens. Do not include URL schemes and port numbers.</p> <p>Do
+     * not specify this value for OpenID Connect ID tokens.</p>
      */
     inline const Aws::String& GetProviderId() const{ return m_providerId; }
 
     /**
-     * <p>The fully qualified host component of the domain name of the identity
-     * provider.</p> <p>Specify this value only for OAuth 2.0 access tokens. Currently
-     * <code>www.amazon.com</code> and <code>graph.facebook.com</code> are the only
-     * supported identity providers for OAuth 2.0 access tokens. Do not include URL
-     * schemes and port numbers.</p> <p>Do not specify this value for OpenID Connect ID
-     * tokens.</p>
+     * <p>The fully qualified host component of the domain name of the OAuth 2.0
+     * identity provider. Do not specify this value for an OpenID Connect identity
+     * provider.</p> <p>Currently <code>www.amazon.com</code> and
+     * <code>graph.facebook.com</code> are the only supported identity providers for
+     * OAuth 2.0 access tokens. Do not include URL schemes and port numbers.</p> <p>Do
+     * not specify this value for OpenID Connect ID tokens.</p>
      */
     inline bool ProviderIdHasBeenSet() const { return m_providerIdHasBeenSet; }
 
     /**
-     * <p>The fully qualified host component of the domain name of the identity
-     * provider.</p> <p>Specify this value only for OAuth 2.0 access tokens. Currently
-     * <code>www.amazon.com</code> and <code>graph.facebook.com</code> are the only
-     * supported identity providers for OAuth 2.0 access tokens. Do not include URL
-     * schemes and port numbers.</p> <p>Do not specify this value for OpenID Connect ID
-     * tokens.</p>
+     * <p>The fully qualified host component of the domain name of the OAuth 2.0
+     * identity provider. Do not specify this value for an OpenID Connect identity
+     * provider.</p> <p>Currently <code>www.amazon.com</code> and
+     * <code>graph.facebook.com</code> are the only supported identity providers for
+     * OAuth 2.0 access tokens. Do not include URL schemes and port numbers.</p> <p>Do
+     * not specify this value for OpenID Connect ID tokens.</p>
      */
     inline void SetProviderId(const Aws::String& value) { m_providerIdHasBeenSet = true; m_providerId = value; }
 
     /**
-     * <p>The fully qualified host component of the domain name of the identity
-     * provider.</p> <p>Specify this value only for OAuth 2.0 access tokens. Currently
-     * <code>www.amazon.com</code> and <code>graph.facebook.com</code> are the only
-     * supported identity providers for OAuth 2.0 access tokens. Do not include URL
-     * schemes and port numbers.</p> <p>Do not specify this value for OpenID Connect ID
-     * tokens.</p>
+     * <p>The fully qualified host component of the domain name of the OAuth 2.0
+     * identity provider. Do not specify this value for an OpenID Connect identity
+     * provider.</p> <p>Currently <code>www.amazon.com</code> and
+     * <code>graph.facebook.com</code> are the only supported identity providers for
+     * OAuth 2.0 access tokens. Do not include URL schemes and port numbers.</p> <p>Do
+     * not specify this value for OpenID Connect ID tokens.</p>
      */
     inline void SetProviderId(Aws::String&& value) { m_providerIdHasBeenSet = true; m_providerId = std::move(value); }
 
     /**
-     * <p>The fully qualified host component of the domain name of the identity
-     * provider.</p> <p>Specify this value only for OAuth 2.0 access tokens. Currently
-     * <code>www.amazon.com</code> and <code>graph.facebook.com</code> are the only
-     * supported identity providers for OAuth 2.0 access tokens. Do not include URL
-     * schemes and port numbers.</p> <p>Do not specify this value for OpenID Connect ID
-     * tokens.</p>
+     * <p>The fully qualified host component of the domain name of the OAuth 2.0
+     * identity provider. Do not specify this value for an OpenID Connect identity
+     * provider.</p> <p>Currently <code>www.amazon.com</code> and
+     * <code>graph.facebook.com</code> are the only supported identity providers for
+     * OAuth 2.0 access tokens. Do not include URL schemes and port numbers.</p> <p>Do
+     * not specify this value for OpenID Connect ID tokens.</p>
      */
     inline void SetProviderId(const char* value) { m_providerIdHasBeenSet = true; m_providerId.assign(value); }
 
     /**
-     * <p>The fully qualified host component of the domain name of the identity
-     * provider.</p> <p>Specify this value only for OAuth 2.0 access tokens. Currently
-     * <code>www.amazon.com</code> and <code>graph.facebook.com</code> are the only
-     * supported identity providers for OAuth 2.0 access tokens. Do not include URL
-     * schemes and port numbers.</p> <p>Do not specify this value for OpenID Connect ID
-     * tokens.</p>
+     * <p>The fully qualified host component of the domain name of the OAuth 2.0
+     * identity provider. Do not specify this value for an OpenID Connect identity
+     * provider.</p> <p>Currently <code>www.amazon.com</code> and
+     * <code>graph.facebook.com</code> are the only supported identity providers for
+     * OAuth 2.0 access tokens. Do not include URL schemes and port numbers.</p> <p>Do
+     * not specify this value for OpenID Connect ID tokens.</p>
      */
     inline AssumeRoleWithWebIdentityRequest& WithProviderId(const Aws::String& value) { SetProviderId(value); return *this;}
 
     /**
-     * <p>The fully qualified host component of the domain name of the identity
-     * provider.</p> <p>Specify this value only for OAuth 2.0 access tokens. Currently
-     * <code>www.amazon.com</code> and <code>graph.facebook.com</code> are the only
-     * supported identity providers for OAuth 2.0 access tokens. Do not include URL
-     * schemes and port numbers.</p> <p>Do not specify this value for OpenID Connect ID
-     * tokens.</p>
+     * <p>The fully qualified host component of the domain name of the OAuth 2.0
+     * identity provider. Do not specify this value for an OpenID Connect identity
+     * provider.</p> <p>Currently <code>www.amazon.com</code> and
+     * <code>graph.facebook.com</code> are the only supported identity providers for
+     * OAuth 2.0 access tokens. Do not include URL schemes and port numbers.</p> <p>Do
+     * not specify this value for OpenID Connect ID tokens.</p>
      */
     inline AssumeRoleWithWebIdentityRequest& WithProviderId(Aws::String&& value) { SetProviderId(std::move(value)); return *this;}
 
     /**
-     * <p>The fully qualified host component of the domain name of the identity
-     * provider.</p> <p>Specify this value only for OAuth 2.0 access tokens. Currently
-     * <code>www.amazon.com</code> and <code>graph.facebook.com</code> are the only
-     * supported identity providers for OAuth 2.0 access tokens. Do not include URL
-     * schemes and port numbers.</p> <p>Do not specify this value for OpenID Connect ID
-     * tokens.</p>
+     * <p>The fully qualified host component of the domain name of the OAuth 2.0
+     * identity provider. Do not specify this value for an OpenID Connect identity
+     * provider.</p> <p>Currently <code>www.amazon.com</code> and
+     * <code>graph.facebook.com</code> are the only supported identity providers for
+     * OAuth 2.0 access tokens. Do not include URL schemes and port numbers.</p> <p>Do
+     * not specify this value for OpenID Connect ID tokens.</p>
      */
     inline AssumeRoleWithWebIdentityRequest& WithProviderId(const char* value) { SetProviderId(value); return *this;}
 

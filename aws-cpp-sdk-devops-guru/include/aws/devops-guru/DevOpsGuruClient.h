@@ -15,6 +15,7 @@
 #include <aws/devops-guru/model/DescribeAccountHealthResult.h>
 #include <aws/devops-guru/model/DescribeAccountOverviewResult.h>
 #include <aws/devops-guru/model/DescribeAnomalyResult.h>
+#include <aws/devops-guru/model/DescribeEventSourcesConfigResult.h>
 #include <aws/devops-guru/model/DescribeFeedbackResult.h>
 #include <aws/devops-guru/model/DescribeInsightResult.h>
 #include <aws/devops-guru/model/DescribeOrganizationHealthResult.h>
@@ -35,6 +36,7 @@
 #include <aws/devops-guru/model/SearchInsightsResult.h>
 #include <aws/devops-guru/model/SearchOrganizationInsightsResult.h>
 #include <aws/devops-guru/model/StartCostEstimationResult.h>
+#include <aws/devops-guru/model/UpdateEventSourcesConfigResult.h>
 #include <aws/devops-guru/model/UpdateResourceCollectionResult.h>
 #include <aws/devops-guru/model/UpdateServiceIntegrationResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -80,6 +82,7 @@ namespace Model
         class DescribeAccountHealthRequest;
         class DescribeAccountOverviewRequest;
         class DescribeAnomalyRequest;
+        class DescribeEventSourcesConfigRequest;
         class DescribeFeedbackRequest;
         class DescribeInsightRequest;
         class DescribeOrganizationHealthRequest;
@@ -100,6 +103,7 @@ namespace Model
         class SearchInsightsRequest;
         class SearchOrganizationInsightsRequest;
         class StartCostEstimationRequest;
+        class UpdateEventSourcesConfigRequest;
         class UpdateResourceCollectionRequest;
         class UpdateServiceIntegrationRequest;
 
@@ -107,6 +111,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeAccountHealthResult, DevOpsGuruError> DescribeAccountHealthOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountOverviewResult, DevOpsGuruError> DescribeAccountOverviewOutcome;
         typedef Aws::Utils::Outcome<DescribeAnomalyResult, DevOpsGuruError> DescribeAnomalyOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventSourcesConfigResult, DevOpsGuruError> DescribeEventSourcesConfigOutcome;
         typedef Aws::Utils::Outcome<DescribeFeedbackResult, DevOpsGuruError> DescribeFeedbackOutcome;
         typedef Aws::Utils::Outcome<DescribeInsightResult, DevOpsGuruError> DescribeInsightOutcome;
         typedef Aws::Utils::Outcome<DescribeOrganizationHealthResult, DevOpsGuruError> DescribeOrganizationHealthOutcome;
@@ -127,6 +132,7 @@ namespace Model
         typedef Aws::Utils::Outcome<SearchInsightsResult, DevOpsGuruError> SearchInsightsOutcome;
         typedef Aws::Utils::Outcome<SearchOrganizationInsightsResult, DevOpsGuruError> SearchOrganizationInsightsOutcome;
         typedef Aws::Utils::Outcome<StartCostEstimationResult, DevOpsGuruError> StartCostEstimationOutcome;
+        typedef Aws::Utils::Outcome<UpdateEventSourcesConfigResult, DevOpsGuruError> UpdateEventSourcesConfigOutcome;
         typedef Aws::Utils::Outcome<UpdateResourceCollectionResult, DevOpsGuruError> UpdateResourceCollectionOutcome;
         typedef Aws::Utils::Outcome<UpdateServiceIntegrationResult, DevOpsGuruError> UpdateServiceIntegrationOutcome;
 
@@ -134,6 +140,7 @@ namespace Model
         typedef std::future<DescribeAccountHealthOutcome> DescribeAccountHealthOutcomeCallable;
         typedef std::future<DescribeAccountOverviewOutcome> DescribeAccountOverviewOutcomeCallable;
         typedef std::future<DescribeAnomalyOutcome> DescribeAnomalyOutcomeCallable;
+        typedef std::future<DescribeEventSourcesConfigOutcome> DescribeEventSourcesConfigOutcomeCallable;
         typedef std::future<DescribeFeedbackOutcome> DescribeFeedbackOutcomeCallable;
         typedef std::future<DescribeInsightOutcome> DescribeInsightOutcomeCallable;
         typedef std::future<DescribeOrganizationHealthOutcome> DescribeOrganizationHealthOutcomeCallable;
@@ -154,6 +161,7 @@ namespace Model
         typedef std::future<SearchInsightsOutcome> SearchInsightsOutcomeCallable;
         typedef std::future<SearchOrganizationInsightsOutcome> SearchOrganizationInsightsOutcomeCallable;
         typedef std::future<StartCostEstimationOutcome> StartCostEstimationOutcomeCallable;
+        typedef std::future<UpdateEventSourcesConfigOutcome> UpdateEventSourcesConfigOutcomeCallable;
         typedef std::future<UpdateResourceCollectionOutcome> UpdateResourceCollectionOutcomeCallable;
         typedef std::future<UpdateServiceIntegrationOutcome> UpdateServiceIntegrationOutcomeCallable;
 } // namespace Model
@@ -164,6 +172,7 @@ namespace Model
     typedef std::function<void(const DevOpsGuruClient*, const Model::DescribeAccountHealthRequest&, const Model::DescribeAccountHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountHealthResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::DescribeAccountOverviewRequest&, const Model::DescribeAccountOverviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountOverviewResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::DescribeAnomalyRequest&, const Model::DescribeAnomalyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAnomalyResponseReceivedHandler;
+    typedef std::function<void(const DevOpsGuruClient*, const Model::DescribeEventSourcesConfigRequest&, const Model::DescribeEventSourcesConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventSourcesConfigResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::DescribeFeedbackRequest&, const Model::DescribeFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFeedbackResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::DescribeInsightRequest&, const Model::DescribeInsightOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInsightResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::DescribeOrganizationHealthRequest&, const Model::DescribeOrganizationHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrganizationHealthResponseReceivedHandler;
@@ -184,6 +193,7 @@ namespace Model
     typedef std::function<void(const DevOpsGuruClient*, const Model::SearchInsightsRequest&, const Model::SearchInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchInsightsResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::SearchOrganizationInsightsRequest&, const Model::SearchOrganizationInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchOrganizationInsightsResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::StartCostEstimationRequest&, const Model::StartCostEstimationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCostEstimationResponseReceivedHandler;
+    typedef std::function<void(const DevOpsGuruClient*, const Model::UpdateEventSourcesConfigRequest&, const Model::UpdateEventSourcesConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEventSourcesConfigResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::UpdateResourceCollectionRequest&, const Model::UpdateResourceCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourceCollectionResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::UpdateServiceIntegrationRequest&, const Model::UpdateServiceIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceIntegrationResponseReceivedHandler;
 
@@ -393,6 +403,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAnomalyAsync(const Model::DescribeAnomalyRequest& request, const DescribeAnomalyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This operation lists details about a DevOps Guru event source that is shared
+         * with your&#x2028; account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeEventSourcesConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEventSourcesConfigOutcome DescribeEventSourcesConfig(const Model::DescribeEventSourcesConfigRequest& request) const;
+
+        /**
+         * <p>This operation lists details about a DevOps Guru event source that is shared
+         * with your&#x2028; account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeEventSourcesConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeEventSourcesConfigOutcomeCallable DescribeEventSourcesConfigCallable(const Model::DescribeEventSourcesConfigRequest& request) const;
+
+        /**
+         * <p>This operation lists details about a DevOps Guru event source that is shared
+         * with your&#x2028; account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeEventSourcesConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeEventSourcesConfigAsync(const Model::DescribeEventSourcesConfigRequest& request, const DescribeEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the most recent feedback submitted in the current Amazon Web
@@ -1078,6 +1116,31 @@ namespace Model
         virtual void StartCostEstimationAsync(const Model::StartCostEstimationRequest& request, const StartCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the event source configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateEventSourcesConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateEventSourcesConfigOutcome UpdateEventSourcesConfig(const Model::UpdateEventSourcesConfigRequest& request) const;
+
+        /**
+         * <p>Updates the event source configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateEventSourcesConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateEventSourcesConfigOutcomeCallable UpdateEventSourcesConfigCallable(const Model::UpdateEventSourcesConfigRequest& request) const;
+
+        /**
+         * <p>Updates the event source configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateEventSourcesConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateEventSourcesConfigAsync(const Model::UpdateEventSourcesConfigRequest& request, const UpdateEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Updates the collection of resources that DevOps Guru analyzes. The two types
          * of Amazon Web Services resource collections supported are Amazon Web Services
          * CloudFormation stacks and Amazon Web Services resources that contain the same
@@ -1165,6 +1228,7 @@ namespace Model
         void DescribeAccountHealthAsyncHelper(const Model::DescribeAccountHealthRequest& request, const DescribeAccountHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountOverviewAsyncHelper(const Model::DescribeAccountOverviewRequest& request, const DescribeAccountOverviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAnomalyAsyncHelper(const Model::DescribeAnomalyRequest& request, const DescribeAnomalyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeEventSourcesConfigAsyncHelper(const Model::DescribeEventSourcesConfigRequest& request, const DescribeEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFeedbackAsyncHelper(const Model::DescribeFeedbackRequest& request, const DescribeFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInsightAsyncHelper(const Model::DescribeInsightRequest& request, const DescribeInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeOrganizationHealthAsyncHelper(const Model::DescribeOrganizationHealthRequest& request, const DescribeOrganizationHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1185,6 +1249,7 @@ namespace Model
         void SearchInsightsAsyncHelper(const Model::SearchInsightsRequest& request, const SearchInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchOrganizationInsightsAsyncHelper(const Model::SearchOrganizationInsightsRequest& request, const SearchOrganizationInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartCostEstimationAsyncHelper(const Model::StartCostEstimationRequest& request, const StartCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateEventSourcesConfigAsyncHelper(const Model::UpdateEventSourcesConfigRequest& request, const UpdateEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateResourceCollectionAsyncHelper(const Model::UpdateResourceCollectionRequest& request, const UpdateResourceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateServiceIntegrationAsyncHelper(const Model::UpdateServiceIntegrationRequest& request, const UpdateServiceIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>You do not have required permissions to access the requested
+   * <p>(Discontinued) You do not have required permissions to access the requested
    * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/AccessDeniedException">AWS
    * API Reference</a></p>

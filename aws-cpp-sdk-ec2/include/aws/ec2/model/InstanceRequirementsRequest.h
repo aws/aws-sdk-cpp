@@ -501,6 +501,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
+     *  <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is applied based on the
+     * per-vCPU or per-memory price instead of the per-instance price.</p> 
      * <p>Default: <code>100</code> </p>
      */
     inline int GetSpotMaxPricePercentageOverLowestPrice() const{ return m_spotMaxPricePercentageOverLowestPrice; }
@@ -516,6 +519,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
+     *  <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is applied based on the
+     * per-vCPU or per-memory price instead of the per-instance price.</p> 
      * <p>Default: <code>100</code> </p>
      */
     inline bool SpotMaxPricePercentageOverLowestPriceHasBeenSet() const { return m_spotMaxPricePercentageOverLowestPriceHasBeenSet; }
@@ -531,6 +537,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
+     *  <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is applied based on the
+     * per-vCPU or per-memory price instead of the per-instance price.</p> 
      * <p>Default: <code>100</code> </p>
      */
     inline void SetSpotMaxPricePercentageOverLowestPrice(int value) { m_spotMaxPricePercentageOverLowestPriceHasBeenSet = true; m_spotMaxPricePercentageOverLowestPrice = value; }
@@ -546,6 +555,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
+     *  <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is applied based on the
+     * per-vCPU or per-memory price instead of the per-instance price.</p> 
      * <p>Default: <code>100</code> </p>
      */
     inline InstanceRequirementsRequest& WithSpotMaxPricePercentageOverLowestPrice(int value) { SetSpotMaxPricePercentageOverLowestPrice(value); return *this;}
@@ -563,6 +575,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
+     *  <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is applied based on the
+     * per-vCPU or per-memory price instead of the per-instance price.</p> 
      * <p>Default: <code>20</code> </p>
      */
     inline int GetOnDemandMaxPricePercentageOverLowestPrice() const{ return m_onDemandMaxPricePercentageOverLowestPrice; }
@@ -579,6 +594,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
+     *  <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is applied based on the
+     * per-vCPU or per-memory price instead of the per-instance price.</p> 
      * <p>Default: <code>20</code> </p>
      */
     inline bool OnDemandMaxPricePercentageOverLowestPriceHasBeenSet() const { return m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet; }
@@ -595,6 +613,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
+     *  <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is applied based on the
+     * per-vCPU or per-memory price instead of the per-instance price.</p> 
      * <p>Default: <code>20</code> </p>
      */
     inline void SetOnDemandMaxPricePercentageOverLowestPrice(int value) { m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet = true; m_onDemandMaxPricePercentageOverLowestPrice = value; }
@@ -611,6 +632,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
+     *  <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is applied based on the
+     * per-vCPU or per-memory price instead of the per-instance price.</p> 
      * <p>Default: <code>20</code> </p>
      */
     inline InstanceRequirementsRequest& WithOnDemandMaxPricePercentageOverLowestPrice(int value) { SetOnDemandMaxPricePercentageOverLowestPrice(value); return *this;}

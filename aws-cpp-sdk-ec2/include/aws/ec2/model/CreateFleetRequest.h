@@ -357,7 +357,7 @@ namespace Model
      * a synchronous one-time request for your desired capacity, and returns errors for
      * any instances that could not be launched.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/ec2-fleet-request-type.html">EC2
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-request-type.html">EC2
      * Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const FleetType& GetType() const{ return m_type; }
@@ -374,7 +374,7 @@ namespace Model
      * a synchronous one-time request for your desired capacity, and returns errors for
      * any instances that could not be launched.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/ec2-fleet-request-type.html">EC2
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-request-type.html">EC2
      * Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -391,7 +391,7 @@ namespace Model
      * a synchronous one-time request for your desired capacity, and returns errors for
      * any instances that could not be launched.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/ec2-fleet-request-type.html">EC2
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-request-type.html">EC2
      * Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetType(const FleetType& value) { m_typeHasBeenSet = true; m_type = value; }
@@ -408,7 +408,7 @@ namespace Model
      * a synchronous one-time request for your desired capacity, and returns errors for
      * any instances that could not be launched.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/ec2-fleet-request-type.html">EC2
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-request-type.html">EC2
      * Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetType(FleetType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
@@ -425,7 +425,7 @@ namespace Model
      * a synchronous one-time request for your desired capacity, and returns errors for
      * any instances that could not be launched.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/ec2-fleet-request-type.html">EC2
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-request-type.html">EC2
      * Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline CreateFleetRequest& WithType(const FleetType& value) { SetType(value); return *this;}
@@ -442,7 +442,7 @@ namespace Model
      * a synchronous one-time request for your desired capacity, and returns errors for
      * any instances that could not be launched.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/ec2-fleet-request-type.html">EC2
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-request-type.html">EC2
      * Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline CreateFleetRequest& WithType(FleetType&& value) { SetType(std::move(value)); return *this;}

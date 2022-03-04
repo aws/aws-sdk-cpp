@@ -762,7 +762,7 @@ namespace Model
      * session. If you pass a session tag with the same key as an inherited tag, the
      * operation fails. To view the inherited tags for a session, see the CloudTrail
      * logs. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_ctlogs">Viewing
      * Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -797,7 +797,7 @@ namespace Model
      * session. If you pass a session tag with the same key as an inherited tag, the
      * operation fails. To view the inherited tags for a session, see the CloudTrail
      * logs. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_ctlogs">Viewing
      * Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -832,7 +832,7 @@ namespace Model
      * session. If you pass a session tag with the same key as an inherited tag, the
      * operation fails. To view the inherited tags for a session, see the CloudTrail
      * logs. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_ctlogs">Viewing
      * Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
@@ -867,7 +867,7 @@ namespace Model
      * session. If you pass a session tag with the same key as an inherited tag, the
      * operation fails. To view the inherited tags for a session, see the CloudTrail
      * logs. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_ctlogs">Viewing
      * Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
@@ -902,7 +902,7 @@ namespace Model
      * session. If you pass a session tag with the same key as an inherited tag, the
      * operation fails. To view the inherited tags for a session, see the CloudTrail
      * logs. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_ctlogs">Viewing
      * Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.</p>
      */
     inline AssumeRoleRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
@@ -937,7 +937,7 @@ namespace Model
      * session. If you pass a session tag with the same key as an inherited tag, the
      * operation fails. To view the inherited tags for a session, see the CloudTrail
      * logs. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_ctlogs">Viewing
      * Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.</p>
      */
     inline AssumeRoleRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
@@ -972,7 +972,7 @@ namespace Model
      * session. If you pass a session tag with the same key as an inherited tag, the
      * operation fails. To view the inherited tags for a session, see the CloudTrail
      * logs. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_ctlogs">Viewing
      * Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.</p>
      */
     inline AssumeRoleRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
@@ -1007,7 +1007,7 @@ namespace Model
      * session. If you pass a session tag with the same key as an inherited tag, the
      * operation fails. To view the inherited tags for a session, see the CloudTrail
      * logs. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_ctlogs">Viewing
      * Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.</p>
      */
     inline AssumeRoleRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
