@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>Details about the task set.</p>
+     * <p>etails about the task set.</p>
      */
     inline const TaskSet& GetTaskSet() const{ return m_taskSet; }
 
     /**
-     * <p>Details about the task set.</p>
+     * <p>etails about the task set.</p>
      */
     inline void SetTaskSet(const TaskSet& value) { m_taskSet = value; }
 
     /**
-     * <p>Details about the task set.</p>
+     * <p>etails about the task set.</p>
      */
     inline void SetTaskSet(TaskSet&& value) { m_taskSet = std::move(value); }
 
     /**
-     * <p>Details about the task set.</p>
+     * <p>etails about the task set.</p>
      */
     inline UpdateServicePrimaryTaskSetResult& WithTaskSet(const TaskSet& value) { SetTaskSet(value); return *this;}
 
     /**
-     * <p>Details about the task set.</p>
+     * <p>etails about the task set.</p>
      */
     inline UpdateServicePrimaryTaskSetResult& WithTaskSet(TaskSet&& value) { SetTaskSet(std::move(value)); return *this;}
 

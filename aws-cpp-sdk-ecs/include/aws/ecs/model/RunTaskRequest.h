@@ -215,7 +215,7 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * <p>Specifies whether to use Amazon ECS managed tags for the task. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
@@ -224,7 +224,7 @@ namespace Model
     inline bool GetEnableECSManagedTags() const{ return m_enableECSManagedTags; }
 
     /**
-     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * <p>Specifies whether to use Amazon ECS managed tags for the task. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
@@ -233,7 +233,7 @@ namespace Model
     inline bool EnableECSManagedTagsHasBeenSet() const { return m_enableECSManagedTagsHasBeenSet; }
 
     /**
-     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * <p>Specifies whether to use Amazon ECS managed tags for the task. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
@@ -242,7 +242,7 @@ namespace Model
     inline void SetEnableECSManagedTags(bool value) { m_enableECSManagedTagsHasBeenSet = true; m_enableECSManagedTags = value; }
 
     /**
-     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * <p>Specifies whether to use Amazon ECS managed tags for the task. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
@@ -252,28 +252,28 @@ namespace Model
 
 
     /**
-     * <p>Determines whether to enable the execute command functionality for the
+     * <p>Determines whether to use the execute command functionality for the
      * containers in this task. If <code>true</code>, this enables execute command
      * functionality on all containers in the task.</p>
      */
     inline bool GetEnableExecuteCommand() const{ return m_enableExecuteCommand; }
 
     /**
-     * <p>Determines whether to enable the execute command functionality for the
+     * <p>Determines whether to use the execute command functionality for the
      * containers in this task. If <code>true</code>, this enables execute command
      * functionality on all containers in the task.</p>
      */
     inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
 
     /**
-     * <p>Determines whether to enable the execute command functionality for the
+     * <p>Determines whether to use the execute command functionality for the
      * containers in this task. If <code>true</code>, this enables execute command
      * functionality on all containers in the task.</p>
      */
     inline void SetEnableExecuteCommand(bool value) { m_enableExecuteCommandHasBeenSet = true; m_enableExecuteCommand = value; }
 
     /**
-     * <p>Determines whether to enable the execute command functionality for the
+     * <p>Determines whether to use the execute command functionality for the
      * containers in this task. If <code>true</code>, this enables execute command
      * functionality on all containers in the task.</p>
      */

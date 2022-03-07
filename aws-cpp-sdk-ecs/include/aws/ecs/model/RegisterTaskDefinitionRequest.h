@@ -1570,7 +1570,7 @@ namespace Model
      * <p>The configuration details for the App Mesh proxy.</p> <p>For tasks hosted on
      * Amazon EC2 instances, the container instances require at least version
      * <code>1.26.0</code> of the container agent and at least version
-     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
+     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to use a proxy
      * configuration. If your container instances are launched from the Amazon
      * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
      * required versions of the container agent and <code>ecs-init</code>. For more
@@ -1585,7 +1585,7 @@ namespace Model
      * <p>The configuration details for the App Mesh proxy.</p> <p>For tasks hosted on
      * Amazon EC2 instances, the container instances require at least version
      * <code>1.26.0</code> of the container agent and at least version
-     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
+     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to use a proxy
      * configuration. If your container instances are launched from the Amazon
      * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
      * required versions of the container agent and <code>ecs-init</code>. For more
@@ -1600,7 +1600,7 @@ namespace Model
      * <p>The configuration details for the App Mesh proxy.</p> <p>For tasks hosted on
      * Amazon EC2 instances, the container instances require at least version
      * <code>1.26.0</code> of the container agent and at least version
-     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
+     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to use a proxy
      * configuration. If your container instances are launched from the Amazon
      * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
      * required versions of the container agent and <code>ecs-init</code>. For more
@@ -1615,7 +1615,7 @@ namespace Model
      * <p>The configuration details for the App Mesh proxy.</p> <p>For tasks hosted on
      * Amazon EC2 instances, the container instances require at least version
      * <code>1.26.0</code> of the container agent and at least version
-     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
+     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to use a proxy
      * configuration. If your container instances are launched from the Amazon
      * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
      * required versions of the container agent and <code>ecs-init</code>. For more
@@ -1630,7 +1630,7 @@ namespace Model
      * <p>The configuration details for the App Mesh proxy.</p> <p>For tasks hosted on
      * Amazon EC2 instances, the container instances require at least version
      * <code>1.26.0</code> of the container agent and at least version
-     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
+     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to use a proxy
      * configuration. If your container instances are launched from the Amazon
      * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
      * required versions of the container agent and <code>ecs-init</code>. For more
@@ -1645,7 +1645,7 @@ namespace Model
      * <p>The configuration details for the App Mesh proxy.</p> <p>For tasks hosted on
      * Amazon EC2 instances, the container instances require at least version
      * <code>1.26.0</code> of the container agent and at least version
-     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
+     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to use a proxy
      * configuration. If your container instances are launched from the Amazon
      * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
      * required versions of the container agent and <code>ecs-init</code>. For more

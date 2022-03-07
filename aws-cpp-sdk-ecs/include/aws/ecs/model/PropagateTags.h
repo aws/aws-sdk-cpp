@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     TASK_DEFINITION,
-    SERVICE
+    SERVICE,
+    NONE
   };
 
 namespace PropagateTagsMapper

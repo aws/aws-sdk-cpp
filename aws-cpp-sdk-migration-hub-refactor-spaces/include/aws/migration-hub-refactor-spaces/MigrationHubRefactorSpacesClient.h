@@ -181,7 +181,13 @@ namespace Model
    * the Amazon Web Services SDKs to access an API that is tailored to the
    * programming language or platform that you're using. For more information, see
    * &lt;a href=&quot;http://aws.amazon.com/tools/#SDKs&quot;&gt;Amazon Web Services
-   * SDKs&lt;/a&gt;.&lt;/p&gt; </code></pre>
+   * SDKs&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;To share Refactor Spaces environments with
+   * other Amazon Web Services accounts or with Organizations and their OUs, use
+   * Resource Access Manager's &lt;code&gt;CreateResourceShare&lt;/code&gt; API. See
+   * &lt;a
+   * href=&quot;https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html&quot;&gt;CreateResourceShare&lt;/a&gt;
+   * in the &lt;i&gt;Amazon Web Services RAM API Reference&lt;/i&gt;.&lt;/p&gt;
+   * </code></pre>
    */
   class AWS_MIGRATIONHUBREFACTORSPACES_API MigrationHubRefactorSpacesClient : public Aws::Client::AWSJsonClient
   {
@@ -214,8 +220,9 @@ namespace Model
          * <p>Creates an Amazon Web Services Migration Hub Refactor Spaces application. The
          * account that owns the environment also owns the applications created inside the
          * environment, regardless of the account that creates the application. Refactor
-         * Spaces provisions the Amazon API Gateway and Network Load Balancer for the
-         * application proxy inside your account.</p><p><h3>See Also:</h3>   <a
+         * Spaces provisions an Amazon API Gateway, API Gateway VPC link, and Network Load
+         * Balancer for the application proxy inside your account.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/CreateApplication">AWS
          * API Reference</a></p>
          */
@@ -225,8 +232,9 @@ namespace Model
          * <p>Creates an Amazon Web Services Migration Hub Refactor Spaces application. The
          * account that owns the environment also owns the applications created inside the
          * environment, regardless of the account that creates the application. Refactor
-         * Spaces provisions the Amazon API Gateway and Network Load Balancer for the
-         * application proxy inside your account.</p><p><h3>See Also:</h3>   <a
+         * Spaces provisions an Amazon API Gateway, API Gateway VPC link, and Network Load
+         * Balancer for the application proxy inside your account.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/CreateApplication">AWS
          * API Reference</a></p>
          *
@@ -238,8 +246,9 @@ namespace Model
          * <p>Creates an Amazon Web Services Migration Hub Refactor Spaces application. The
          * account that owns the environment also owns the applications created inside the
          * environment, regardless of the account that creates the application. Refactor
-         * Spaces provisions the Amazon API Gateway and Network Load Balancer for the
-         * application proxy inside your account.</p><p><h3>See Also:</h3>   <a
+         * Spaces provisions an Amazon API Gateway, API Gateway VPC link, and Network Load
+         * Balancer for the application proxy inside your account.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/CreateApplication">AWS
          * API Reference</a></p>
          *
@@ -249,7 +258,8 @@ namespace Model
 
         /**
          * <p>Creates an Amazon Web Services Migration Hub Refactor Spaces environment. The
-         * caller owns the environment resource, and they are referred to as the
+         * caller owns the environment resource, and all Refactor Spaces applications,
+         * services, and routes created within the environment. They are referred to as the
          * <i>environment owner</i>. The environment owner has cross-account visibility and
          * control of Refactor Spaces resources that are added to the environment by other
          * accounts that the environment is shared with. When creating an environment,
@@ -262,7 +272,8 @@ namespace Model
 
         /**
          * <p>Creates an Amazon Web Services Migration Hub Refactor Spaces environment. The
-         * caller owns the environment resource, and they are referred to as the
+         * caller owns the environment resource, and all Refactor Spaces applications,
+         * services, and routes created within the environment. They are referred to as the
          * <i>environment owner</i>. The environment owner has cross-account visibility and
          * control of Refactor Spaces resources that are added to the environment by other
          * accounts that the environment is shared with. When creating an environment,
@@ -277,7 +288,8 @@ namespace Model
 
         /**
          * <p>Creates an Amazon Web Services Migration Hub Refactor Spaces environment. The
-         * caller owns the environment resource, and they are referred to as the
+         * caller owns the environment resource, and all Refactor Spaces applications,
+         * services, and routes created within the environment. They are referred to as the
          * <i>environment owner</i>. The environment owner has cross-account visibility and
          * control of Refactor Spaces resources that are added to the environment by other
          * accounts that the environment is shared with. When creating an environment,
@@ -302,14 +314,15 @@ namespace Model
          * routes traffic using the API Gateway VPC link. </p> </li> <li> <p>If the service
          * has a URL endpoint, and the endpoint resolves to a public IP address, Refactor
          * Spaces routes traffic over the public internet.</p> </li> <li> <p>If the service
-         * has an Lambda function endpoint, then Refactor Spaces uses the API Gateway
-         * Lambda integration.</p> </li> </ul> <p>A health check is performed on the
-         * service when the route is created. If the health check fails, the route
-         * transitions to <code>FAILED</code>, and no traffic is sent to the service.</p>
-         * <p>For Lambda functions, the Lambda function state is checked. If the function
-         * is not active, the function configuration is updated so that Lambda resources
-         * are provisioned. If the Lambda state is <code>Failed</code>, then the route
-         * creation fails. For more information, see the <a
+         * has an Lambda function endpoint, then Refactor Spaces configures the Lambda
+         * function's resource policy to allow the application's API Gateway to invoke the
+         * function.</p> </li> </ul> <p>A one-time health check is performed on the service
+         * when the route is created. If the health check fails, the route transitions to
+         * <code>FAILED</code>, and no traffic is sent to the service.</p> <p>For Lambda
+         * functions, the Lambda function state is checked. If the function is not active,
+         * the function configuration is updated so that Lambda resources are provisioned.
+         * If the Lambda state is <code>Failed</code>, then the route creation fails. For
+         * more information, see the <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html#SSS-GetFunctionConfiguration-response-State">GetFunctionConfiguration's
          * State response parameter</a> in the <i>Lambda Developer Guide</i>.</p> <p>For
          * public URLs, a connection is opened to the public endpoint. If the URL is not
@@ -321,8 +334,11 @@ namespace Model
          * described in <a
          * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">Health
          * checks for your target groups</a>. The health check is considered successful if
-         * at least one target within the target group transitions to a healthy
-         * state.</p><p><h3>See Also:</h3>   <a
+         * at least one target within the target group transitions to a healthy state.</p>
+         * <p>Services can have HTTP or HTTPS URL endpoints. For HTTPS URLs,
+         * publicly-signed certificates are supported. Private Certificate Authorities
+         * (CAs) are permitted only if the CA's domain is publicly
+         * resolvable.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/CreateRoute">AWS
          * API Reference</a></p>
          */
@@ -340,14 +356,15 @@ namespace Model
          * routes traffic using the API Gateway VPC link. </p> </li> <li> <p>If the service
          * has a URL endpoint, and the endpoint resolves to a public IP address, Refactor
          * Spaces routes traffic over the public internet.</p> </li> <li> <p>If the service
-         * has an Lambda function endpoint, then Refactor Spaces uses the API Gateway
-         * Lambda integration.</p> </li> </ul> <p>A health check is performed on the
-         * service when the route is created. If the health check fails, the route
-         * transitions to <code>FAILED</code>, and no traffic is sent to the service.</p>
-         * <p>For Lambda functions, the Lambda function state is checked. If the function
-         * is not active, the function configuration is updated so that Lambda resources
-         * are provisioned. If the Lambda state is <code>Failed</code>, then the route
-         * creation fails. For more information, see the <a
+         * has an Lambda function endpoint, then Refactor Spaces configures the Lambda
+         * function's resource policy to allow the application's API Gateway to invoke the
+         * function.</p> </li> </ul> <p>A one-time health check is performed on the service
+         * when the route is created. If the health check fails, the route transitions to
+         * <code>FAILED</code>, and no traffic is sent to the service.</p> <p>For Lambda
+         * functions, the Lambda function state is checked. If the function is not active,
+         * the function configuration is updated so that Lambda resources are provisioned.
+         * If the Lambda state is <code>Failed</code>, then the route creation fails. For
+         * more information, see the <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html#SSS-GetFunctionConfiguration-response-State">GetFunctionConfiguration's
          * State response parameter</a> in the <i>Lambda Developer Guide</i>.</p> <p>For
          * public URLs, a connection is opened to the public endpoint. If the URL is not
@@ -359,8 +376,11 @@ namespace Model
          * described in <a
          * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">Health
          * checks for your target groups</a>. The health check is considered successful if
-         * at least one target within the target group transitions to a healthy
-         * state.</p><p><h3>See Also:</h3>   <a
+         * at least one target within the target group transitions to a healthy state.</p>
+         * <p>Services can have HTTP or HTTPS URL endpoints. For HTTPS URLs,
+         * publicly-signed certificates are supported. Private Certificate Authorities
+         * (CAs) are permitted only if the CA's domain is publicly
+         * resolvable.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/CreateRoute">AWS
          * API Reference</a></p>
          *
@@ -380,14 +400,15 @@ namespace Model
          * routes traffic using the API Gateway VPC link. </p> </li> <li> <p>If the service
          * has a URL endpoint, and the endpoint resolves to a public IP address, Refactor
          * Spaces routes traffic over the public internet.</p> </li> <li> <p>If the service
-         * has an Lambda function endpoint, then Refactor Spaces uses the API Gateway
-         * Lambda integration.</p> </li> </ul> <p>A health check is performed on the
-         * service when the route is created. If the health check fails, the route
-         * transitions to <code>FAILED</code>, and no traffic is sent to the service.</p>
-         * <p>For Lambda functions, the Lambda function state is checked. If the function
-         * is not active, the function configuration is updated so that Lambda resources
-         * are provisioned. If the Lambda state is <code>Failed</code>, then the route
-         * creation fails. For more information, see the <a
+         * has an Lambda function endpoint, then Refactor Spaces configures the Lambda
+         * function's resource policy to allow the application's API Gateway to invoke the
+         * function.</p> </li> </ul> <p>A one-time health check is performed on the service
+         * when the route is created. If the health check fails, the route transitions to
+         * <code>FAILED</code>, and no traffic is sent to the service.</p> <p>For Lambda
+         * functions, the Lambda function state is checked. If the function is not active,
+         * the function configuration is updated so that Lambda resources are provisioned.
+         * If the Lambda state is <code>Failed</code>, then the route creation fails. For
+         * more information, see the <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html#SSS-GetFunctionConfiguration-response-State">GetFunctionConfiguration's
          * State response parameter</a> in the <i>Lambda Developer Guide</i>.</p> <p>For
          * public URLs, a connection is opened to the public endpoint. If the URL is not
@@ -399,8 +420,11 @@ namespace Model
          * described in <a
          * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">Health
          * checks for your target groups</a>. The health check is considered successful if
-         * at least one target within the target group transitions to a healthy
-         * state.</p><p><h3>See Also:</h3>   <a
+         * at least one target within the target group transitions to a healthy state.</p>
+         * <p>Services can have HTTP or HTTPS URL endpoints. For HTTPS URLs,
+         * publicly-signed certificates are supported. Private Certificate Authorities
+         * (CAs) are permitted only if the CA's domain is publicly
+         * resolvable.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/CreateRoute">AWS
          * API Reference</a></p>
          *
@@ -413,7 +437,7 @@ namespace Model
          * account owner of the service is always the environment owner, regardless of
          * which account in the environment creates the service. Services have either a URL
          * endpoint in a virtual private cloud (VPC), or a Lambda function endpoint.</p>
-         *  <p>If an Amazon Web Services resourceis launched in a service VPC,
+         *  <p>If an Amazon Web Services resource is launched in a service VPC,
          * and you want it to be accessible to all of an environment’s services with VPCs
          * and routes, apply the <code>RefactorSpacesSecurityGroup</code> to the resource.
          * Alternatively, to add more cross-account constraints, apply your own security
@@ -428,7 +452,7 @@ namespace Model
          * account owner of the service is always the environment owner, regardless of
          * which account in the environment creates the service. Services have either a URL
          * endpoint in a virtual private cloud (VPC), or a Lambda function endpoint.</p>
-         *  <p>If an Amazon Web Services resourceis launched in a service VPC,
+         *  <p>If an Amazon Web Services resource is launched in a service VPC,
          * and you want it to be accessible to all of an environment’s services with VPCs
          * and routes, apply the <code>RefactorSpacesSecurityGroup</code> to the resource.
          * Alternatively, to add more cross-account constraints, apply your own security
@@ -445,7 +469,7 @@ namespace Model
          * account owner of the service is always the environment owner, regardless of
          * which account in the environment creates the service. Services have either a URL
          * endpoint in a virtual private cloud (VPC), or a Lambda function endpoint.</p>
-         *  <p>If an Amazon Web Services resourceis launched in a service VPC,
+         *  <p>If an Amazon Web Services resource is launched in a service VPC,
          * and you want it to be accessible to all of an environment’s services with VPCs
          * and routes, apply the <code>RefactorSpacesSecurityGroup</code> to the resource.
          * Alternatively, to add more cross-account constraints, apply your own security
@@ -772,18 +796,18 @@ namespace Model
         virtual void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the virtual private clouds (VPCs) that are part of an Amazon Web
-         * Services Migration Hub Refactor Spaces environment. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists all Amazon Web Services Migration Hub Refactor Spaces service virtual
+         * private clouds (VPCs) that are part of the environment. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/ListEnvironmentVpcs">AWS
          * API Reference</a></p>
          */
         virtual Model::ListEnvironmentVpcsOutcome ListEnvironmentVpcs(const Model::ListEnvironmentVpcsRequest& request) const;
 
         /**
-         * <p>Lists all the virtual private clouds (VPCs) that are part of an Amazon Web
-         * Services Migration Hub Refactor Spaces environment. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists all Amazon Web Services Migration Hub Refactor Spaces service virtual
+         * private clouds (VPCs) that are part of the environment. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/ListEnvironmentVpcs">AWS
          * API Reference</a></p>
          *
@@ -792,9 +816,9 @@ namespace Model
         virtual Model::ListEnvironmentVpcsOutcomeCallable ListEnvironmentVpcsCallable(const Model::ListEnvironmentVpcsRequest& request) const;
 
         /**
-         * <p>Lists all the virtual private clouds (VPCs) that are part of an Amazon Web
-         * Services Migration Hub Refactor Spaces environment. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists all Amazon Web Services Migration Hub Refactor Spaces service virtual
+         * private clouds (VPCs) that are part of the environment. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/ListEnvironmentVpcs">AWS
          * API Reference</a></p>
          *

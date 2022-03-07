@@ -1846,7 +1846,7 @@ namespace Model
     /**
      * <p>The configuration details for the App Mesh proxy.</p> <p>Your Amazon ECS
      * container instances require at least version 1.26.0 of the container agent and
-     * at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy
+     * at least version 1.26.0-1 of the <code>ecs-init</code> package to use a proxy
      * configuration. If your container instances are launched from the Amazon ECS
      * optimized AMI version <code>20190301</code> or later, they contain the required
      * versions of the container agent and <code>ecs-init</code>. For more information,
@@ -1860,7 +1860,7 @@ namespace Model
     /**
      * <p>The configuration details for the App Mesh proxy.</p> <p>Your Amazon ECS
      * container instances require at least version 1.26.0 of the container agent and
-     * at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy
+     * at least version 1.26.0-1 of the <code>ecs-init</code> package to use a proxy
      * configuration. If your container instances are launched from the Amazon ECS
      * optimized AMI version <code>20190301</code> or later, they contain the required
      * versions of the container agent and <code>ecs-init</code>. For more information,
@@ -1874,7 +1874,7 @@ namespace Model
     /**
      * <p>The configuration details for the App Mesh proxy.</p> <p>Your Amazon ECS
      * container instances require at least version 1.26.0 of the container agent and
-     * at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy
+     * at least version 1.26.0-1 of the <code>ecs-init</code> package to use a proxy
      * configuration. If your container instances are launched from the Amazon ECS
      * optimized AMI version <code>20190301</code> or later, they contain the required
      * versions of the container agent and <code>ecs-init</code>. For more information,
@@ -1888,7 +1888,7 @@ namespace Model
     /**
      * <p>The configuration details for the App Mesh proxy.</p> <p>Your Amazon ECS
      * container instances require at least version 1.26.0 of the container agent and
-     * at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy
+     * at least version 1.26.0-1 of the <code>ecs-init</code> package to use a proxy
      * configuration. If your container instances are launched from the Amazon ECS
      * optimized AMI version <code>20190301</code> or later, they contain the required
      * versions of the container agent and <code>ecs-init</code>. For more information,
@@ -1902,7 +1902,7 @@ namespace Model
     /**
      * <p>The configuration details for the App Mesh proxy.</p> <p>Your Amazon ECS
      * container instances require at least version 1.26.0 of the container agent and
-     * at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy
+     * at least version 1.26.0-1 of the <code>ecs-init</code> package to use a proxy
      * configuration. If your container instances are launched from the Amazon ECS
      * optimized AMI version <code>20190301</code> or later, they contain the required
      * versions of the container agent and <code>ecs-init</code>. For more information,
@@ -1916,7 +1916,7 @@ namespace Model
     /**
      * <p>The configuration details for the App Mesh proxy.</p> <p>Your Amazon ECS
      * container instances require at least version 1.26.0 of the container agent and
-     * at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy
+     * at least version 1.26.0-1 of the <code>ecs-init</code> package to use a proxy
      * configuration. If your container instances are launched from the Amazon ECS
      * optimized AMI version <code>20190301</code> or later, they contain the required
      * versions of the container agent and <code>ecs-init</code>. For more information,

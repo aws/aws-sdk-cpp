@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>The configuration settings of the features available to a
-   * meeting.</p><p><h3>See Also:</h3>   <a
+   * meeting.&gt;</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/MeetingFeaturesConfiguration">AWS
    * API Reference</a></p>
    */

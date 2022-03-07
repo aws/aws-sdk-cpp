@@ -2277,7 +2277,7 @@ namespace Model
      * contain multiple dependencies. When a dependency is defined for container
      * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
      * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to enable container dependencies. However, we recommend using
+     * container agent to turn on container dependencies. However, we recommend using
      * the latest container agent version. For information about checking your agent
      * version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
@@ -2301,7 +2301,7 @@ namespace Model
      * contain multiple dependencies. When a dependency is defined for container
      * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
      * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to enable container dependencies. However, we recommend using
+     * container agent to turn on container dependencies. However, we recommend using
      * the latest container agent version. For information about checking your agent
      * version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
@@ -2325,7 +2325,7 @@ namespace Model
      * contain multiple dependencies. When a dependency is defined for container
      * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
      * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to enable container dependencies. However, we recommend using
+     * container agent to turn on container dependencies. However, we recommend using
      * the latest container agent version. For information about checking your agent
      * version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
@@ -2349,7 +2349,7 @@ namespace Model
      * contain multiple dependencies. When a dependency is defined for container
      * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
      * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to enable container dependencies. However, we recommend using
+     * container agent to turn on container dependencies. However, we recommend using
      * the latest container agent version. For information about checking your agent
      * version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
@@ -2373,7 +2373,7 @@ namespace Model
      * contain multiple dependencies. When a dependency is defined for container
      * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
      * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to enable container dependencies. However, we recommend using
+     * container agent to turn on container dependencies. However, we recommend using
      * the latest container agent version. For information about checking your agent
      * version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
@@ -2397,7 +2397,7 @@ namespace Model
      * contain multiple dependencies. When a dependency is defined for container
      * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
      * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to enable container dependencies. However, we recommend using
+     * container agent to turn on container dependencies. However, we recommend using
      * the latest container agent version. For information about checking your agent
      * version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
@@ -2421,7 +2421,7 @@ namespace Model
      * contain multiple dependencies. When a dependency is defined for container
      * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
      * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to enable container dependencies. However, we recommend using
+     * container agent to turn on container dependencies. However, we recommend using
      * the latest container agent version. For information about checking your agent
      * version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
@@ -2445,7 +2445,7 @@ namespace Model
      * contain multiple dependencies. When a dependency is defined for container
      * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
      * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to enable container dependencies. However, we recommend using
+     * container agent to turn on container dependencies. However, we recommend using
      * the latest container agent version. For information about checking your agent
      * version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
@@ -2480,7 +2480,7 @@ namespace Model
      * platform version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform
      * version <code>1.0.0</code> or later.</p> </li> </ul> <p>For tasks using the EC2
      * launch type, your container instances require at least version
-     * <code>1.26.0</code> of the container agent to enable a container start timeout
+     * <code>1.26.0</code> of the container agent to use a container start timeout
      * value. However, we recommend using the latest container agent version. For
      * information about checking your agent version and updating to the latest
      * version, see <a
@@ -2512,7 +2512,7 @@ namespace Model
      * platform version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform
      * version <code>1.0.0</code> or later.</p> </li> </ul> <p>For tasks using the EC2
      * launch type, your container instances require at least version
-     * <code>1.26.0</code> of the container agent to enable a container start timeout
+     * <code>1.26.0</code> of the container agent to use a container start timeout
      * value. However, we recommend using the latest container agent version. For
      * information about checking your agent version and updating to the latest
      * version, see <a
@@ -2544,7 +2544,7 @@ namespace Model
      * platform version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform
      * version <code>1.0.0</code> or later.</p> </li> </ul> <p>For tasks using the EC2
      * launch type, your container instances require at least version
-     * <code>1.26.0</code> of the container agent to enable a container start timeout
+     * <code>1.26.0</code> of the container agent to use a container start timeout
      * value. However, we recommend using the latest container agent version. For
      * information about checking your agent version and updating to the latest
      * version, see <a
@@ -2576,7 +2576,7 @@ namespace Model
      * platform version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform
      * version <code>1.0.0</code> or later.</p> </li> </ul> <p>For tasks using the EC2
      * launch type, your container instances require at least version
-     * <code>1.26.0</code> of the container agent to enable a container start timeout
+     * <code>1.26.0</code> of the container agent to use a container start timeout
      * value. However, we recommend using the latest container agent version. For
      * information about checking your agent version and updating to the latest
      * version, see <a
@@ -2609,8 +2609,8 @@ namespace Model
      * <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set,
      * then the default values of 30 seconds for Linux containers and 30 seconds on
      * Windows containers are used. Your container instances require at least version
-     * 1.26.0 of the container agent to enable a container stop timeout value. However,
-     * we recommend using the latest container agent version. For information about
+     * 1.26.0 of the container agent to use a container stop timeout value. However, we
+     * recommend using the latest container agent version. For information about
      * checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
@@ -2640,8 +2640,8 @@ namespace Model
      * <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set,
      * then the default values of 30 seconds for Linux containers and 30 seconds on
      * Windows containers are used. Your container instances require at least version
-     * 1.26.0 of the container agent to enable a container stop timeout value. However,
-     * we recommend using the latest container agent version. For information about
+     * 1.26.0 of the container agent to use a container stop timeout value. However, we
+     * recommend using the latest container agent version. For information about
      * checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
@@ -2671,8 +2671,8 @@ namespace Model
      * <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set,
      * then the default values of 30 seconds for Linux containers and 30 seconds on
      * Windows containers are used. Your container instances require at least version
-     * 1.26.0 of the container agent to enable a container stop timeout value. However,
-     * we recommend using the latest container agent version. For information about
+     * 1.26.0 of the container agent to use a container stop timeout value. However, we
+     * recommend using the latest container agent version. For information about
      * checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
@@ -2702,8 +2702,8 @@ namespace Model
      * <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set,
      * then the default values of 30 seconds for Linux containers and 30 seconds on
      * Windows containers are used. Your container instances require at least version
-     * 1.26.0 of the container agent to enable a container stop timeout value. However,
-     * we recommend using the latest container agent version. For information about
+     * 1.26.0 of the container agent to use a container stop timeout value. However, we
+     * recommend using the latest container agent version. For information about
      * checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service

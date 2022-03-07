@@ -171,6 +171,8 @@ namespace Model
      * <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>,
      * <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
      * <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
+     * <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     * <code>us-gov-west-1</code>.</p>
      */
     inline const Aws::String& GetMediaRegion() const{ return m_mediaRegion; }
 
@@ -183,6 +185,8 @@ namespace Model
      * <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>,
      * <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
      * <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
+     * <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     * <code>us-gov-west-1</code>.</p>
      */
     inline bool MediaRegionHasBeenSet() const { return m_mediaRegionHasBeenSet; }
 
@@ -195,6 +199,8 @@ namespace Model
      * <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>,
      * <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
      * <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
+     * <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     * <code>us-gov-west-1</code>.</p>
      */
     inline void SetMediaRegion(const Aws::String& value) { m_mediaRegionHasBeenSet = true; m_mediaRegion = value; }
 
@@ -207,6 +213,8 @@ namespace Model
      * <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>,
      * <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
      * <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
+     * <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     * <code>us-gov-west-1</code>.</p>
      */
     inline void SetMediaRegion(Aws::String&& value) { m_mediaRegionHasBeenSet = true; m_mediaRegion = std::move(value); }
 
@@ -219,6 +227,8 @@ namespace Model
      * <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>,
      * <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
      * <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
+     * <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     * <code>us-gov-west-1</code>.</p>
      */
     inline void SetMediaRegion(const char* value) { m_mediaRegionHasBeenSet = true; m_mediaRegion.assign(value); }
 
@@ -231,6 +241,8 @@ namespace Model
      * <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>,
      * <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
      * <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
+     * <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     * <code>us-gov-west-1</code>.</p>
      */
     inline Meeting& WithMediaRegion(const Aws::String& value) { SetMediaRegion(value); return *this;}
 
@@ -243,6 +255,8 @@ namespace Model
      * <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>,
      * <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
      * <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
+     * <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     * <code>us-gov-west-1</code>.</p>
      */
     inline Meeting& WithMediaRegion(Aws::String&& value) { SetMediaRegion(std::move(value)); return *this;}
 
@@ -255,6 +269,8 @@ namespace Model
      * <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>,
      * <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
      * <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
+     * <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     * <code>us-gov-west-1</code>.</p>
      */
     inline Meeting& WithMediaRegion(const char* value) { SetMediaRegion(value); return *this;}
 

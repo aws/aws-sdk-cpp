@@ -161,7 +161,7 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * <p>Specifies whether to use Amazon ECS managed tags for the task. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
@@ -170,7 +170,7 @@ namespace Model
     inline bool GetEnableECSManagedTags() const{ return m_enableECSManagedTags; }
 
     /**
-     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * <p>Specifies whether to use Amazon ECS managed tags for the task. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
@@ -179,7 +179,7 @@ namespace Model
     inline bool EnableECSManagedTagsHasBeenSet() const { return m_enableECSManagedTagsHasBeenSet; }
 
     /**
-     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * <p>Specifies whether to use Amazon ECS managed tags for the task. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
@@ -188,7 +188,7 @@ namespace Model
     inline void SetEnableECSManagedTags(bool value) { m_enableECSManagedTagsHasBeenSet = true; m_enableECSManagedTags = value; }
 
     /**
-     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * <p>Specifies whether to use Amazon ECS managed tags for the task. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service

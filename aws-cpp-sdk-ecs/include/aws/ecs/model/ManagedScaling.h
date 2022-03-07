@@ -47,32 +47,32 @@ namespace Model
 
 
     /**
-     * <p>Determines whether to enable managed scaling for the capacity provider.</p>
+     * <p>Determines whether to use managed scaling for the capacity provider.</p>
      */
     inline const ManagedScalingStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Determines whether to enable managed scaling for the capacity provider.</p>
+     * <p>Determines whether to use managed scaling for the capacity provider.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Determines whether to enable managed scaling for the capacity provider.</p>
+     * <p>Determines whether to use managed scaling for the capacity provider.</p>
      */
     inline void SetStatus(const ManagedScalingStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Determines whether to enable managed scaling for the capacity provider.</p>
+     * <p>Determines whether to use managed scaling for the capacity provider.</p>
      */
     inline void SetStatus(ManagedScalingStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Determines whether to enable managed scaling for the capacity provider.</p>
+     * <p>Determines whether to use managed scaling for the capacity provider.</p>
      */
     inline ManagedScaling& WithStatus(const ManagedScalingStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Determines whether to enable managed scaling for the capacity provider.</p>
+     * <p>Determines whether to use managed scaling for the capacity provider.</p>
      */
     inline ManagedScaling& WithStatus(ManagedScalingStatus&& value) { SetStatus(std::move(value)); return *this;}
 

@@ -331,70 +331,70 @@ namespace Model
 
 
     /**
-     * <p>The ID of service in which the rute iscreated. Traffic that matches this
+     * <p>The ID of service in which the route is created. Traffic that matches this
      * route is forwarded to this service.</p>
      */
     inline const Aws::String& GetServiceId() const{ return m_serviceId; }
 
     /**
-     * <p>The ID of service in which the rute iscreated. Traffic that matches this
+     * <p>The ID of service in which the route is created. Traffic that matches this
      * route is forwarded to this service.</p>
      */
     inline void SetServiceId(const Aws::String& value) { m_serviceId = value; }
 
     /**
-     * <p>The ID of service in which the rute iscreated. Traffic that matches this
+     * <p>The ID of service in which the route is created. Traffic that matches this
      * route is forwarded to this service.</p>
      */
     inline void SetServiceId(Aws::String&& value) { m_serviceId = std::move(value); }
 
     /**
-     * <p>The ID of service in which the rute iscreated. Traffic that matches this
+     * <p>The ID of service in which the route is created. Traffic that matches this
      * route is forwarded to this service.</p>
      */
     inline void SetServiceId(const char* value) { m_serviceId.assign(value); }
 
     /**
-     * <p>The ID of service in which the rute iscreated. Traffic that matches this
+     * <p>The ID of service in which the route is created. Traffic that matches this
      * route is forwarded to this service.</p>
      */
     inline CreateRouteResult& WithServiceId(const Aws::String& value) { SetServiceId(value); return *this;}
 
     /**
-     * <p>The ID of service in which the rute iscreated. Traffic that matches this
+     * <p>The ID of service in which the route is created. Traffic that matches this
      * route is forwarded to this service.</p>
      */
     inline CreateRouteResult& WithServiceId(Aws::String&& value) { SetServiceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of service in which the rute iscreated. Traffic that matches this
+     * <p>The ID of service in which the route is created. Traffic that matches this
      * route is forwarded to this service.</p>
      */
     inline CreateRouteResult& WithServiceId(const char* value) { SetServiceId(value); return *this;}
 
 
     /**
-     * <p>he current state of the route. </p>
+     * <p>The current state of the route. </p>
      */
     inline const RouteState& GetState() const{ return m_state; }
 
     /**
-     * <p>he current state of the route. </p>
+     * <p>The current state of the route. </p>
      */
     inline void SetState(const RouteState& value) { m_state = value; }
 
     /**
-     * <p>he current state of the route. </p>
+     * <p>The current state of the route. </p>
      */
     inline void SetState(RouteState&& value) { m_state = std::move(value); }
 
     /**
-     * <p>he current state of the route. </p>
+     * <p>The current state of the route. </p>
      */
     inline CreateRouteResult& WithState(const RouteState& value) { SetState(value); return *this;}
 
     /**
-     * <p>he current state of the route. </p>
+     * <p>The current state of the route. </p>
      */
     inline CreateRouteResult& WithState(RouteState&& value) { SetState(std::move(value)); return *this;}
 
