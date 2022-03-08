@@ -762,38 +762,56 @@ namespace Model
 
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
-     * the ID3 timed metadata from the input in this output.
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
      */
     inline const CmfcTimedMetadata& GetTimedMetadata() const{ return m_timedMetadata; }
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
-     * the ID3 timed metadata from the input in this output.
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
      */
     inline bool TimedMetadataHasBeenSet() const { return m_timedMetadataHasBeenSet; }
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
-     * the ID3 timed metadata from the input in this output.
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
      */
     inline void SetTimedMetadata(const CmfcTimedMetadata& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = value; }
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
-     * the ID3 timed metadata from the input in this output.
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
      */
     inline void SetTimedMetadata(CmfcTimedMetadata&& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = std::move(value); }
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
-     * the ID3 timed metadata from the input in this output.
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
      */
     inline CmfcSettings& WithTimedMetadata(const CmfcTimedMetadata& value) { SetTimedMetadata(value); return *this;}
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
-     * the ID3 timed metadata from the input in this output.
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
      */
     inline CmfcSettings& WithTimedMetadata(CmfcTimedMetadata&& value) { SetTimedMetadata(std::move(value)); return *this;}
 

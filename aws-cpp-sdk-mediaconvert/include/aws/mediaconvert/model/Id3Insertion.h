@@ -42,42 +42,42 @@ namespace Model
 
 
     /**
-     * Use ID3 tag (Id3) to provide a tag value in base64-encode format.
+     * Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
      */
     inline const Aws::String& GetId3() const{ return m_id3; }
 
     /**
-     * Use ID3 tag (Id3) to provide a tag value in base64-encode format.
+     * Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
      */
     inline bool Id3HasBeenSet() const { return m_id3HasBeenSet; }
 
     /**
-     * Use ID3 tag (Id3) to provide a tag value in base64-encode format.
+     * Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
      */
     inline void SetId3(const Aws::String& value) { m_id3HasBeenSet = true; m_id3 = value; }
 
     /**
-     * Use ID3 tag (Id3) to provide a tag value in base64-encode format.
+     * Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
      */
     inline void SetId3(Aws::String&& value) { m_id3HasBeenSet = true; m_id3 = std::move(value); }
 
     /**
-     * Use ID3 tag (Id3) to provide a tag value in base64-encode format.
+     * Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
      */
     inline void SetId3(const char* value) { m_id3HasBeenSet = true; m_id3.assign(value); }
 
     /**
-     * Use ID3 tag (Id3) to provide a tag value in base64-encode format.
+     * Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
      */
     inline Id3Insertion& WithId3(const Aws::String& value) { SetId3(value); return *this;}
 
     /**
-     * Use ID3 tag (Id3) to provide a tag value in base64-encode format.
+     * Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
      */
     inline Id3Insertion& WithId3(Aws::String&& value) { SetId3(std::move(value)); return *this;}
 
     /**
-     * Use ID3 tag (Id3) to provide a tag value in base64-encode format.
+     * Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
      */
     inline Id3Insertion& WithId3(const char* value) { SetId3(value); return *this;}
 

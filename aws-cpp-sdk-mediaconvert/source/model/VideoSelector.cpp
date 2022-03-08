@@ -25,6 +25,8 @@ VideoSelector::VideoSelector() :
     m_colorSpaceHasBeenSet(false),
     m_colorSpaceUsage(ColorSpaceUsage::NOT_SET),
     m_colorSpaceUsageHasBeenSet(false),
+    m_embeddedTimecodeOverride(EmbeddedTimecodeOverride::NOT_SET),
+    m_embeddedTimecodeOverrideHasBeenSet(false),
     m_hdr10MetadataHasBeenSet(false),
     m_pid(0),
     m_pidHasBeenSet(false),
@@ -44,6 +46,8 @@ VideoSelector::VideoSelector(JsonView jsonValue) :
     m_colorSpaceHasBeenSet(false),
     m_colorSpaceUsage(ColorSpaceUsage::NOT_SET),
     m_colorSpaceUsageHasBeenSet(false),
+    m_embeddedTimecodeOverride(EmbeddedTimecodeOverride::NOT_SET),
+    m_embeddedTimecodeOverrideHasBeenSet(false),
     m_hdr10MetadataHasBeenSet(false),
     m_pid(0),
     m_pidHasBeenSet(false),
@@ -78,6 +82,13 @@ VideoSelector& VideoSelector::operator =(JsonView jsonValue)
     m_colorSpaceUsage = ColorSpaceUsageMapper::GetColorSpaceUsageForName(jsonValue.GetString("colorSpaceUsage"));
 
     m_colorSpaceUsageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("embeddedTimecodeOverride"))
+  {
+    m_embeddedTimecodeOverride = EmbeddedTimecodeOverrideMapper::GetEmbeddedTimecodeOverrideForName(jsonValue.GetString("embeddedTimecodeOverride"));
+
+    m_embeddedTimecodeOverrideHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("hdr10Metadata"))
@@ -135,6 +146,11 @@ JsonValue VideoSelector::Jsonize() const
   if(m_colorSpaceUsageHasBeenSet)
   {
    payload.WithString("colorSpaceUsage", ColorSpaceUsageMapper::GetNameForColorSpaceUsage(m_colorSpaceUsage));
+  }
+
+  if(m_embeddedTimecodeOverrideHasBeenSet)
+  {
+   payload.WithString("embeddedTimecodeOverride", EmbeddedTimecodeOverrideMapper::GetNameForEmbeddedTimecodeOverride(m_embeddedTimecodeOverride));
   }
 
   if(m_hdr10MetadataHasBeenSet)
