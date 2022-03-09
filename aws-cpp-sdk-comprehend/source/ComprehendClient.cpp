@@ -45,6 +45,7 @@
 #include <aws/comprehend/model/DescribePiiEntitiesDetectionJobRequest.h>
 #include <aws/comprehend/model/DescribeResourcePolicyRequest.h>
 #include <aws/comprehend/model/DescribeSentimentDetectionJobRequest.h>
+#include <aws/comprehend/model/DescribeTargetedSentimentDetectionJobRequest.h>
 #include <aws/comprehend/model/DescribeTopicsDetectionJobRequest.h>
 #include <aws/comprehend/model/DetectDominantLanguageRequest.h>
 #include <aws/comprehend/model/DetectEntitiesRequest.h>
@@ -66,6 +67,7 @@
 #include <aws/comprehend/model/ListPiiEntitiesDetectionJobsRequest.h>
 #include <aws/comprehend/model/ListSentimentDetectionJobsRequest.h>
 #include <aws/comprehend/model/ListTagsForResourceRequest.h>
+#include <aws/comprehend/model/ListTargetedSentimentDetectionJobsRequest.h>
 #include <aws/comprehend/model/ListTopicsDetectionJobsRequest.h>
 #include <aws/comprehend/model/PutResourcePolicyRequest.h>
 #include <aws/comprehend/model/StartDocumentClassificationJobRequest.h>
@@ -75,6 +77,7 @@
 #include <aws/comprehend/model/StartKeyPhrasesDetectionJobRequest.h>
 #include <aws/comprehend/model/StartPiiEntitiesDetectionJobRequest.h>
 #include <aws/comprehend/model/StartSentimentDetectionJobRequest.h>
+#include <aws/comprehend/model/StartTargetedSentimentDetectionJobRequest.h>
 #include <aws/comprehend/model/StartTopicsDetectionJobRequest.h>
 #include <aws/comprehend/model/StopDominantLanguageDetectionJobRequest.h>
 #include <aws/comprehend/model/StopEntitiesDetectionJobRequest.h>
@@ -82,6 +85,7 @@
 #include <aws/comprehend/model/StopKeyPhrasesDetectionJobRequest.h>
 #include <aws/comprehend/model/StopPiiEntitiesDetectionJobRequest.h>
 #include <aws/comprehend/model/StopSentimentDetectionJobRequest.h>
+#include <aws/comprehend/model/StopTargetedSentimentDetectionJobRequest.h>
 #include <aws/comprehend/model/StopTrainingDocumentClassifierRequest.h>
 #include <aws/comprehend/model/StopTrainingEntityRecognizerRequest.h>
 #include <aws/comprehend/model/TagResourceRequest.h>
@@ -761,6 +765,30 @@ void ComprehendClient::DescribeSentimentDetectionJobAsyncHelper(const DescribeSe
   handler(this, request, DescribeSentimentDetectionJob(request), context);
 }
 
+DescribeTargetedSentimentDetectionJobOutcome ComprehendClient::DescribeTargetedSentimentDetectionJob(const DescribeTargetedSentimentDetectionJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeTargetedSentimentDetectionJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeTargetedSentimentDetectionJobOutcomeCallable ComprehendClient::DescribeTargetedSentimentDetectionJobCallable(const DescribeTargetedSentimentDetectionJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeTargetedSentimentDetectionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTargetedSentimentDetectionJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendClient::DescribeTargetedSentimentDetectionJobAsync(const DescribeTargetedSentimentDetectionJobRequest& request, const DescribeTargetedSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeTargetedSentimentDetectionJobAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendClient::DescribeTargetedSentimentDetectionJobAsyncHelper(const DescribeTargetedSentimentDetectionJobRequest& request, const DescribeTargetedSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeTargetedSentimentDetectionJob(request), context);
+}
+
 DescribeTopicsDetectionJobOutcome ComprehendClient::DescribeTopicsDetectionJob(const DescribeTopicsDetectionJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1265,6 +1293,30 @@ void ComprehendClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceR
   handler(this, request, ListTagsForResource(request), context);
 }
 
+ListTargetedSentimentDetectionJobsOutcome ComprehendClient::ListTargetedSentimentDetectionJobs(const ListTargetedSentimentDetectionJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListTargetedSentimentDetectionJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListTargetedSentimentDetectionJobsOutcomeCallable ComprehendClient::ListTargetedSentimentDetectionJobsCallable(const ListTargetedSentimentDetectionJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTargetedSentimentDetectionJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTargetedSentimentDetectionJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendClient::ListTargetedSentimentDetectionJobsAsync(const ListTargetedSentimentDetectionJobsRequest& request, const ListTargetedSentimentDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTargetedSentimentDetectionJobsAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendClient::ListTargetedSentimentDetectionJobsAsyncHelper(const ListTargetedSentimentDetectionJobsRequest& request, const ListTargetedSentimentDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTargetedSentimentDetectionJobs(request), context);
+}
+
 ListTopicsDetectionJobsOutcome ComprehendClient::ListTopicsDetectionJobs(const ListTopicsDetectionJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1481,6 +1533,30 @@ void ComprehendClient::StartSentimentDetectionJobAsyncHelper(const StartSentimen
   handler(this, request, StartSentimentDetectionJob(request), context);
 }
 
+StartTargetedSentimentDetectionJobOutcome ComprehendClient::StartTargetedSentimentDetectionJob(const StartTargetedSentimentDetectionJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StartTargetedSentimentDetectionJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartTargetedSentimentDetectionJobOutcomeCallable ComprehendClient::StartTargetedSentimentDetectionJobCallable(const StartTargetedSentimentDetectionJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartTargetedSentimentDetectionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartTargetedSentimentDetectionJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendClient::StartTargetedSentimentDetectionJobAsync(const StartTargetedSentimentDetectionJobRequest& request, const StartTargetedSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartTargetedSentimentDetectionJobAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendClient::StartTargetedSentimentDetectionJobAsyncHelper(const StartTargetedSentimentDetectionJobRequest& request, const StartTargetedSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartTargetedSentimentDetectionJob(request), context);
+}
+
 StartTopicsDetectionJobOutcome ComprehendClient::StartTopicsDetectionJob(const StartTopicsDetectionJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1647,6 +1723,30 @@ void ComprehendClient::StopSentimentDetectionJobAsync(const StopSentimentDetecti
 void ComprehendClient::StopSentimentDetectionJobAsyncHelper(const StopSentimentDetectionJobRequest& request, const StopSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopSentimentDetectionJob(request), context);
+}
+
+StopTargetedSentimentDetectionJobOutcome ComprehendClient::StopTargetedSentimentDetectionJob(const StopTargetedSentimentDetectionJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StopTargetedSentimentDetectionJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopTargetedSentimentDetectionJobOutcomeCallable ComprehendClient::StopTargetedSentimentDetectionJobCallable(const StopTargetedSentimentDetectionJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopTargetedSentimentDetectionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopTargetedSentimentDetectionJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendClient::StopTargetedSentimentDetectionJobAsync(const StopTargetedSentimentDetectionJobRequest& request, const StopTargetedSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopTargetedSentimentDetectionJobAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendClient::StopTargetedSentimentDetectionJobAsyncHelper(const StopTargetedSentimentDetectionJobRequest& request, const StopTargetedSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopTargetedSentimentDetectionJob(request), context);
 }
 
 StopTrainingDocumentClassifierOutcome ComprehendClient::StopTrainingDocumentClassifier(const StopTrainingDocumentClassifierRequest& request) const
