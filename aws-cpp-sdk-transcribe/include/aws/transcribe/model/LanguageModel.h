@@ -253,29 +253,29 @@ namespace Model
 
     /**
      * <p>Whether the base model used for the custom language model is up to date. If
-     * this field is <code>true</code> then you are running the most up-to-date version
-     * of the base model in your custom language model.</p>
+     * this field is <code>false</code> then you are running the most up-to-date
+     * version of the base model in your custom language model.</p>
      */
     inline bool GetUpgradeAvailability() const{ return m_upgradeAvailability; }
 
     /**
      * <p>Whether the base model used for the custom language model is up to date. If
-     * this field is <code>true</code> then you are running the most up-to-date version
-     * of the base model in your custom language model.</p>
+     * this field is <code>false</code> then you are running the most up-to-date
+     * version of the base model in your custom language model.</p>
      */
     inline bool UpgradeAvailabilityHasBeenSet() const { return m_upgradeAvailabilityHasBeenSet; }
 
     /**
      * <p>Whether the base model used for the custom language model is up to date. If
-     * this field is <code>true</code> then you are running the most up-to-date version
-     * of the base model in your custom language model.</p>
+     * this field is <code>false</code> then you are running the most up-to-date
+     * version of the base model in your custom language model.</p>
      */
     inline void SetUpgradeAvailability(bool value) { m_upgradeAvailabilityHasBeenSet = true; m_upgradeAvailability = value; }
 
     /**
      * <p>Whether the base model used for the custom language model is up to date. If
-     * this field is <code>true</code> then you are running the most up-to-date version
-     * of the base model in your custom language model.</p>
+     * this field is <code>false</code> then you are running the most up-to-date
+     * version of the base model in your custom language model.</p>
      */
     inline LanguageModel& WithUpgradeAvailability(bool value) { SetUpgradeAvailability(value); return *this;}
 

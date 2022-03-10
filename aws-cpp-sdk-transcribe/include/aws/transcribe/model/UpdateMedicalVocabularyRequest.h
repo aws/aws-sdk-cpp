@@ -139,10 +139,9 @@ namespace Model
      * <p>The location in Amazon S3 of the text file that contains your custom
      * vocabulary. The URI must be in the same Amazon Web Services Region as the
      * resource that you are calling. The following is the format for a URI:</p> <p>
-     * <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code>
+     * </p> <p>For example:</p> <p>
+     * <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code>
      * </p> <p>For more information about Amazon S3 object names, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
@@ -156,10 +155,9 @@ namespace Model
      * <p>The location in Amazon S3 of the text file that contains your custom
      * vocabulary. The URI must be in the same Amazon Web Services Region as the
      * resource that you are calling. The following is the format for a URI:</p> <p>
-     * <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code>
+     * </p> <p>For example:</p> <p>
+     * <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code>
      * </p> <p>For more information about Amazon S3 object names, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
@@ -173,10 +171,9 @@ namespace Model
      * <p>The location in Amazon S3 of the text file that contains your custom
      * vocabulary. The URI must be in the same Amazon Web Services Region as the
      * resource that you are calling. The following is the format for a URI:</p> <p>
-     * <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code>
+     * </p> <p>For example:</p> <p>
+     * <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code>
      * </p> <p>For more information about Amazon S3 object names, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
@@ -190,10 +187,9 @@ namespace Model
      * <p>The location in Amazon S3 of the text file that contains your custom
      * vocabulary. The URI must be in the same Amazon Web Services Region as the
      * resource that you are calling. The following is the format for a URI:</p> <p>
-     * <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code>
+     * </p> <p>For example:</p> <p>
+     * <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code>
      * </p> <p>For more information about Amazon S3 object names, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
@@ -207,10 +203,9 @@ namespace Model
      * <p>The location in Amazon S3 of the text file that contains your custom
      * vocabulary. The URI must be in the same Amazon Web Services Region as the
      * resource that you are calling. The following is the format for a URI:</p> <p>
-     * <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code>
+     * </p> <p>For example:</p> <p>
+     * <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code>
      * </p> <p>For more information about Amazon S3 object names, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
@@ -224,10 +219,9 @@ namespace Model
      * <p>The location in Amazon S3 of the text file that contains your custom
      * vocabulary. The URI must be in the same Amazon Web Services Region as the
      * resource that you are calling. The following is the format for a URI:</p> <p>
-     * <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code>
+     * </p> <p>For example:</p> <p>
+     * <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code>
      * </p> <p>For more information about Amazon S3 object names, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
@@ -241,10 +235,9 @@ namespace Model
      * <p>The location in Amazon S3 of the text file that contains your custom
      * vocabulary. The URI must be in the same Amazon Web Services Region as the
      * resource that you are calling. The following is the format for a URI:</p> <p>
-     * <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code>
+     * </p> <p>For example:</p> <p>
+     * <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code>
      * </p> <p>For more information about Amazon S3 object names, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
@@ -258,10 +251,9 @@ namespace Model
      * <p>The location in Amazon S3 of the text file that contains your custom
      * vocabulary. The URI must be in the same Amazon Web Services Region as the
      * resource that you are calling. The following is the format for a URI:</p> <p>
-     * <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code>
+     * </p> <p>For example:</p> <p>
+     * <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code>
      * </p> <p>For more information about Amazon S3 object names, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information

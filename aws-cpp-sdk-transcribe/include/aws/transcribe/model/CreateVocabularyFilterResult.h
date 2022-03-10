@@ -71,53 +71,53 @@ namespace Model
 
 
     /**
-     * <p>The language code of the words in the collection.</p>
+     * <p>The language code associated with your vocabulary filter.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language code of the words in the collection.</p>
+     * <p>The language code associated with your vocabulary filter.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCode = value; }
 
     /**
-     * <p>The language code of the words in the collection.</p>
+     * <p>The language code associated with your vocabulary filter.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCode = std::move(value); }
 
     /**
-     * <p>The language code of the words in the collection.</p>
+     * <p>The language code associated with your vocabulary filter.</p>
      */
     inline CreateVocabularyFilterResult& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code of the words in the collection.</p>
+     * <p>The language code associated with your vocabulary filter.</p>
      */
     inline CreateVocabularyFilterResult& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time that the vocabulary filter was modified.</p>
+     * <p>The date and time the vocabulary filter was modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The date and time that the vocabulary filter was modified.</p>
+     * <p>The date and time the vocabulary filter was modified.</p>
      */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
 
     /**
-     * <p>The date and time that the vocabulary filter was modified.</p>
+     * <p>The date and time the vocabulary filter was modified.</p>
      */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
 
     /**
-     * <p>The date and time that the vocabulary filter was modified.</p>
+     * <p>The date and time the vocabulary filter was modified.</p>
      */
     inline CreateVocabularyFilterResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * <p>The date and time that the vocabulary filter was modified.</p>
+     * <p>The date and time the vocabulary filter was modified.</p>
      */
     inline CreateVocabularyFilterResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 

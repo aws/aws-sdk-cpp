@@ -35,49 +35,49 @@ namespace Model
 
 
     /**
-     * <p>The name of the category you want information about. This value is case
+     * <p>The name of the category you want information about. Category names are case
      * sensitive.</p>
      */
     inline const Aws::String& GetCategoryName() const{ return m_categoryName; }
 
     /**
-     * <p>The name of the category you want information about. This value is case
+     * <p>The name of the category you want information about. Category names are case
      * sensitive.</p>
      */
     inline bool CategoryNameHasBeenSet() const { return m_categoryNameHasBeenSet; }
 
     /**
-     * <p>The name of the category you want information about. This value is case
+     * <p>The name of the category you want information about. Category names are case
      * sensitive.</p>
      */
     inline void SetCategoryName(const Aws::String& value) { m_categoryNameHasBeenSet = true; m_categoryName = value; }
 
     /**
-     * <p>The name of the category you want information about. This value is case
+     * <p>The name of the category you want information about. Category names are case
      * sensitive.</p>
      */
     inline void SetCategoryName(Aws::String&& value) { m_categoryNameHasBeenSet = true; m_categoryName = std::move(value); }
 
     /**
-     * <p>The name of the category you want information about. This value is case
+     * <p>The name of the category you want information about. Category names are case
      * sensitive.</p>
      */
     inline void SetCategoryName(const char* value) { m_categoryNameHasBeenSet = true; m_categoryName.assign(value); }
 
     /**
-     * <p>The name of the category you want information about. This value is case
+     * <p>The name of the category you want information about. Category names are case
      * sensitive.</p>
      */
     inline GetCallAnalyticsCategoryRequest& WithCategoryName(const Aws::String& value) { SetCategoryName(value); return *this;}
 
     /**
-     * <p>The name of the category you want information about. This value is case
+     * <p>The name of the category you want information about. Category names are case
      * sensitive.</p>
      */
     inline GetCallAnalyticsCategoryRequest& WithCategoryName(Aws::String&& value) { SetCategoryName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the category you want information about. This value is case
+     * <p>The name of the category you want information about. Category names are case
      * sensitive.</p>
      */
     inline GetCallAnalyticsCategoryRequest& WithCategoryName(const char* value) { SetCategoryName(value); return *this;}

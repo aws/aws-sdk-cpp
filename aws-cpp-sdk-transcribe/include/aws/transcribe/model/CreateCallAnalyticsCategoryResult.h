@@ -33,27 +33,62 @@ namespace Model
 
 
     /**
-     * <p>The rules and associated metadata used to create a category.</p>
+     * <p>If your audio matches one of your categories, this field contains data on
+     * that category and its associated rules. This parameter shows which category is
+     * flagged (<code>CategoryName</code>) along with metadata for the rules that match
+     * your audio. Metadata includes the rule filter (such as
+     * <code>InterruptionFilter</code>, <code>NonTalkTimeFilter</code>,
+     * <code>SentimentFilter</code>, and <code>TranscriptFilter</code>) and where in
+     * your audio (<code>StartTime</code> and <code>EndTime</code>) the rule has a
+     * match.</p>
      */
     inline const CategoryProperties& GetCategoryProperties() const{ return m_categoryProperties; }
 
     /**
-     * <p>The rules and associated metadata used to create a category.</p>
+     * <p>If your audio matches one of your categories, this field contains data on
+     * that category and its associated rules. This parameter shows which category is
+     * flagged (<code>CategoryName</code>) along with metadata for the rules that match
+     * your audio. Metadata includes the rule filter (such as
+     * <code>InterruptionFilter</code>, <code>NonTalkTimeFilter</code>,
+     * <code>SentimentFilter</code>, and <code>TranscriptFilter</code>) and where in
+     * your audio (<code>StartTime</code> and <code>EndTime</code>) the rule has a
+     * match.</p>
      */
     inline void SetCategoryProperties(const CategoryProperties& value) { m_categoryProperties = value; }
 
     /**
-     * <p>The rules and associated metadata used to create a category.</p>
+     * <p>If your audio matches one of your categories, this field contains data on
+     * that category and its associated rules. This parameter shows which category is
+     * flagged (<code>CategoryName</code>) along with metadata for the rules that match
+     * your audio. Metadata includes the rule filter (such as
+     * <code>InterruptionFilter</code>, <code>NonTalkTimeFilter</code>,
+     * <code>SentimentFilter</code>, and <code>TranscriptFilter</code>) and where in
+     * your audio (<code>StartTime</code> and <code>EndTime</code>) the rule has a
+     * match.</p>
      */
     inline void SetCategoryProperties(CategoryProperties&& value) { m_categoryProperties = std::move(value); }
 
     /**
-     * <p>The rules and associated metadata used to create a category.</p>
+     * <p>If your audio matches one of your categories, this field contains data on
+     * that category and its associated rules. This parameter shows which category is
+     * flagged (<code>CategoryName</code>) along with metadata for the rules that match
+     * your audio. Metadata includes the rule filter (such as
+     * <code>InterruptionFilter</code>, <code>NonTalkTimeFilter</code>,
+     * <code>SentimentFilter</code>, and <code>TranscriptFilter</code>) and where in
+     * your audio (<code>StartTime</code> and <code>EndTime</code>) the rule has a
+     * match.</p>
      */
     inline CreateCallAnalyticsCategoryResult& WithCategoryProperties(const CategoryProperties& value) { SetCategoryProperties(value); return *this;}
 
     /**
-     * <p>The rules and associated metadata used to create a category.</p>
+     * <p>If your audio matches one of your categories, this field contains data on
+     * that category and its associated rules. This parameter shows which category is
+     * flagged (<code>CategoryName</code>) along with metadata for the rules that match
+     * your audio. Metadata includes the rule filter (such as
+     * <code>InterruptionFilter</code>, <code>NonTalkTimeFilter</code>,
+     * <code>SentimentFilter</code>, and <code>TranscriptFilter</code>) and where in
+     * your audio (<code>StartTime</code> and <code>EndTime</code>) the rule has a
+     * match.</p>
      */
     inline CreateCallAnalyticsCategoryResult& WithCategoryProperties(CategoryProperties&& value) { SetCategoryProperties(std::move(value)); return *this;}
 

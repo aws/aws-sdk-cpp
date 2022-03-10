@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Specify the output format for your subtitle file.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Choose the output format for your subtitle file and the S3 location where you
+   * want your file saved.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/SubtitlesOutput">AWS
    * API Reference</a></p>
    */
@@ -90,55 +90,55 @@ namespace Model
 
 
     /**
-     * <p>Choose the output location for your subtitle file. This location must be an
+     * <p>Contains the output location for your subtitle file. This location must be an
      * S3 bucket.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubtitleFileUris() const{ return m_subtitleFileUris; }
 
     /**
-     * <p>Choose the output location for your subtitle file. This location must be an
+     * <p>Contains the output location for your subtitle file. This location must be an
      * S3 bucket.</p>
      */
     inline bool SubtitleFileUrisHasBeenSet() const { return m_subtitleFileUrisHasBeenSet; }
 
     /**
-     * <p>Choose the output location for your subtitle file. This location must be an
+     * <p>Contains the output location for your subtitle file. This location must be an
      * S3 bucket.</p>
      */
     inline void SetSubtitleFileUris(const Aws::Vector<Aws::String>& value) { m_subtitleFileUrisHasBeenSet = true; m_subtitleFileUris = value; }
 
     /**
-     * <p>Choose the output location for your subtitle file. This location must be an
+     * <p>Contains the output location for your subtitle file. This location must be an
      * S3 bucket.</p>
      */
     inline void SetSubtitleFileUris(Aws::Vector<Aws::String>&& value) { m_subtitleFileUrisHasBeenSet = true; m_subtitleFileUris = std::move(value); }
 
     /**
-     * <p>Choose the output location for your subtitle file. This location must be an
+     * <p>Contains the output location for your subtitle file. This location must be an
      * S3 bucket.</p>
      */
     inline SubtitlesOutput& WithSubtitleFileUris(const Aws::Vector<Aws::String>& value) { SetSubtitleFileUris(value); return *this;}
 
     /**
-     * <p>Choose the output location for your subtitle file. This location must be an
+     * <p>Contains the output location for your subtitle file. This location must be an
      * S3 bucket.</p>
      */
     inline SubtitlesOutput& WithSubtitleFileUris(Aws::Vector<Aws::String>&& value) { SetSubtitleFileUris(std::move(value)); return *this;}
 
     /**
-     * <p>Choose the output location for your subtitle file. This location must be an
+     * <p>Contains the output location for your subtitle file. This location must be an
      * S3 bucket.</p>
      */
     inline SubtitlesOutput& AddSubtitleFileUris(const Aws::String& value) { m_subtitleFileUrisHasBeenSet = true; m_subtitleFileUris.push_back(value); return *this; }
 
     /**
-     * <p>Choose the output location for your subtitle file. This location must be an
+     * <p>Contains the output location for your subtitle file. This location must be an
      * S3 bucket.</p>
      */
     inline SubtitlesOutput& AddSubtitleFileUris(Aws::String&& value) { m_subtitleFileUrisHasBeenSet = true; m_subtitleFileUris.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Choose the output location for your subtitle file. This location must be an
+     * <p>Contains the output location for your subtitle file. This location must be an
      * S3 bucket.</p>
      */
     inline SubtitlesOutput& AddSubtitleFileUris(const char* value) { m_subtitleFileUrisHasBeenSet = true; m_subtitleFileUris.push_back(value); return *this; }

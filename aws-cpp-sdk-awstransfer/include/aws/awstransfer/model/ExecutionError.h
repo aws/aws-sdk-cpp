@@ -40,44 +40,128 @@ namespace Model
 
 
     /**
-     * <p>Specifies the error type: currently, the only valid value is
-     * <code>PERMISSION_DENIED</code>, which occurs if your policy does not contain the
-     * correct permissions to complete one or more of the steps in the workflow.</p>
+     * <p>Specifies the error type.</p> <ul> <li> <p> <code>ALREADY_EXISTS</code>:
+     * occurs for a copy step, if the overwrite option is not selected and a file with
+     * the same name already exists in the target location.</p> </li> <li> <p>
+     * <code>BAD_REQUEST</code>: a general bad request: for example, a step that
+     * attempts to tag an EFS file returns <code>BAD_REQUEST</code>, as only S3 files
+     * can be tagged.</p> </li> <li> <p> <code>CUSTOM_STEP_FAILED</code>: occurs when
+     * the custom step provided a callback that indicates failure.</p> </li> <li> <p>
+     * <code>INTERNAL_SERVER_ERROR</code>: a catch-all error that can occur for a
+     * variety of reasons.</p> </li> <li> <p> <code>NOT_FOUND</code>: occurs when a
+     * requested entity, for example a source file for a copy step, does not exist.</p>
+     * </li> <li> <p> <code>PERMISSION_DENIED</code>: occurs if your policy does not
+     * contain the correct permissions to complete one or more of the steps in the
+     * workflow.</p> </li> <li> <p> <code>TIMEOUT</code>: occurs when the execution
+     * times out.</p>  <p> You can set the <code>TimeoutSeconds</code> for a
+     * custom step, anywhere from 1 second to 1800 seconds (30 minutes). </p> 
+     * </li> <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution
+     * refill rate of one workflow per second.</p> </li> </ul>
      */
     inline const ExecutionErrorType& GetType() const{ return m_type; }
 
     /**
-     * <p>Specifies the error type: currently, the only valid value is
-     * <code>PERMISSION_DENIED</code>, which occurs if your policy does not contain the
-     * correct permissions to complete one or more of the steps in the workflow.</p>
+     * <p>Specifies the error type.</p> <ul> <li> <p> <code>ALREADY_EXISTS</code>:
+     * occurs for a copy step, if the overwrite option is not selected and a file with
+     * the same name already exists in the target location.</p> </li> <li> <p>
+     * <code>BAD_REQUEST</code>: a general bad request: for example, a step that
+     * attempts to tag an EFS file returns <code>BAD_REQUEST</code>, as only S3 files
+     * can be tagged.</p> </li> <li> <p> <code>CUSTOM_STEP_FAILED</code>: occurs when
+     * the custom step provided a callback that indicates failure.</p> </li> <li> <p>
+     * <code>INTERNAL_SERVER_ERROR</code>: a catch-all error that can occur for a
+     * variety of reasons.</p> </li> <li> <p> <code>NOT_FOUND</code>: occurs when a
+     * requested entity, for example a source file for a copy step, does not exist.</p>
+     * </li> <li> <p> <code>PERMISSION_DENIED</code>: occurs if your policy does not
+     * contain the correct permissions to complete one or more of the steps in the
+     * workflow.</p> </li> <li> <p> <code>TIMEOUT</code>: occurs when the execution
+     * times out.</p>  <p> You can set the <code>TimeoutSeconds</code> for a
+     * custom step, anywhere from 1 second to 1800 seconds (30 minutes). </p> 
+     * </li> <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution
+     * refill rate of one workflow per second.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Specifies the error type: currently, the only valid value is
-     * <code>PERMISSION_DENIED</code>, which occurs if your policy does not contain the
-     * correct permissions to complete one or more of the steps in the workflow.</p>
+     * <p>Specifies the error type.</p> <ul> <li> <p> <code>ALREADY_EXISTS</code>:
+     * occurs for a copy step, if the overwrite option is not selected and a file with
+     * the same name already exists in the target location.</p> </li> <li> <p>
+     * <code>BAD_REQUEST</code>: a general bad request: for example, a step that
+     * attempts to tag an EFS file returns <code>BAD_REQUEST</code>, as only S3 files
+     * can be tagged.</p> </li> <li> <p> <code>CUSTOM_STEP_FAILED</code>: occurs when
+     * the custom step provided a callback that indicates failure.</p> </li> <li> <p>
+     * <code>INTERNAL_SERVER_ERROR</code>: a catch-all error that can occur for a
+     * variety of reasons.</p> </li> <li> <p> <code>NOT_FOUND</code>: occurs when a
+     * requested entity, for example a source file for a copy step, does not exist.</p>
+     * </li> <li> <p> <code>PERMISSION_DENIED</code>: occurs if your policy does not
+     * contain the correct permissions to complete one or more of the steps in the
+     * workflow.</p> </li> <li> <p> <code>TIMEOUT</code>: occurs when the execution
+     * times out.</p>  <p> You can set the <code>TimeoutSeconds</code> for a
+     * custom step, anywhere from 1 second to 1800 seconds (30 minutes). </p> 
+     * </li> <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution
+     * refill rate of one workflow per second.</p> </li> </ul>
      */
     inline void SetType(const ExecutionErrorType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Specifies the error type: currently, the only valid value is
-     * <code>PERMISSION_DENIED</code>, which occurs if your policy does not contain the
-     * correct permissions to complete one or more of the steps in the workflow.</p>
+     * <p>Specifies the error type.</p> <ul> <li> <p> <code>ALREADY_EXISTS</code>:
+     * occurs for a copy step, if the overwrite option is not selected and a file with
+     * the same name already exists in the target location.</p> </li> <li> <p>
+     * <code>BAD_REQUEST</code>: a general bad request: for example, a step that
+     * attempts to tag an EFS file returns <code>BAD_REQUEST</code>, as only S3 files
+     * can be tagged.</p> </li> <li> <p> <code>CUSTOM_STEP_FAILED</code>: occurs when
+     * the custom step provided a callback that indicates failure.</p> </li> <li> <p>
+     * <code>INTERNAL_SERVER_ERROR</code>: a catch-all error that can occur for a
+     * variety of reasons.</p> </li> <li> <p> <code>NOT_FOUND</code>: occurs when a
+     * requested entity, for example a source file for a copy step, does not exist.</p>
+     * </li> <li> <p> <code>PERMISSION_DENIED</code>: occurs if your policy does not
+     * contain the correct permissions to complete one or more of the steps in the
+     * workflow.</p> </li> <li> <p> <code>TIMEOUT</code>: occurs when the execution
+     * times out.</p>  <p> You can set the <code>TimeoutSeconds</code> for a
+     * custom step, anywhere from 1 second to 1800 seconds (30 minutes). </p> 
+     * </li> <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution
+     * refill rate of one workflow per second.</p> </li> </ul>
      */
     inline void SetType(ExecutionErrorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Specifies the error type: currently, the only valid value is
-     * <code>PERMISSION_DENIED</code>, which occurs if your policy does not contain the
-     * correct permissions to complete one or more of the steps in the workflow.</p>
+     * <p>Specifies the error type.</p> <ul> <li> <p> <code>ALREADY_EXISTS</code>:
+     * occurs for a copy step, if the overwrite option is not selected and a file with
+     * the same name already exists in the target location.</p> </li> <li> <p>
+     * <code>BAD_REQUEST</code>: a general bad request: for example, a step that
+     * attempts to tag an EFS file returns <code>BAD_REQUEST</code>, as only S3 files
+     * can be tagged.</p> </li> <li> <p> <code>CUSTOM_STEP_FAILED</code>: occurs when
+     * the custom step provided a callback that indicates failure.</p> </li> <li> <p>
+     * <code>INTERNAL_SERVER_ERROR</code>: a catch-all error that can occur for a
+     * variety of reasons.</p> </li> <li> <p> <code>NOT_FOUND</code>: occurs when a
+     * requested entity, for example a source file for a copy step, does not exist.</p>
+     * </li> <li> <p> <code>PERMISSION_DENIED</code>: occurs if your policy does not
+     * contain the correct permissions to complete one or more of the steps in the
+     * workflow.</p> </li> <li> <p> <code>TIMEOUT</code>: occurs when the execution
+     * times out.</p>  <p> You can set the <code>TimeoutSeconds</code> for a
+     * custom step, anywhere from 1 second to 1800 seconds (30 minutes). </p> 
+     * </li> <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution
+     * refill rate of one workflow per second.</p> </li> </ul>
      */
     inline ExecutionError& WithType(const ExecutionErrorType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Specifies the error type: currently, the only valid value is
-     * <code>PERMISSION_DENIED</code>, which occurs if your policy does not contain the
-     * correct permissions to complete one or more of the steps in the workflow.</p>
+     * <p>Specifies the error type.</p> <ul> <li> <p> <code>ALREADY_EXISTS</code>:
+     * occurs for a copy step, if the overwrite option is not selected and a file with
+     * the same name already exists in the target location.</p> </li> <li> <p>
+     * <code>BAD_REQUEST</code>: a general bad request: for example, a step that
+     * attempts to tag an EFS file returns <code>BAD_REQUEST</code>, as only S3 files
+     * can be tagged.</p> </li> <li> <p> <code>CUSTOM_STEP_FAILED</code>: occurs when
+     * the custom step provided a callback that indicates failure.</p> </li> <li> <p>
+     * <code>INTERNAL_SERVER_ERROR</code>: a catch-all error that can occur for a
+     * variety of reasons.</p> </li> <li> <p> <code>NOT_FOUND</code>: occurs when a
+     * requested entity, for example a source file for a copy step, does not exist.</p>
+     * </li> <li> <p> <code>PERMISSION_DENIED</code>: occurs if your policy does not
+     * contain the correct permissions to complete one or more of the steps in the
+     * workflow.</p> </li> <li> <p> <code>TIMEOUT</code>: occurs when the execution
+     * times out.</p>  <p> You can set the <code>TimeoutSeconds</code> for a
+     * custom step, anywhere from 1 second to 1800 seconds (30 minutes). </p> 
+     * </li> <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution
+     * refill rate of one workflow per second.</p> </li> </ul>
      */
     inline ExecutionError& WithType(ExecutionErrorType&& value) { SetType(std::move(value)); return *this;}
 
