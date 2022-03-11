@@ -626,16 +626,24 @@ namespace Model
         virtual void ListOutpostsAsync(const Model::ListOutpostsRequest& request, const ListOutpostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the sites for your Amazon Web Services account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Create a list of the Outpost sites for your Amazon Web Services account. Add
+         * operating address filters to your request to return a more specific list of
+         * results. Use filters to match site city, country code, or state/region of the
+         * operating address. </p> <p>If you specify multiple filters, the filters are
+         * joined with an <code>AND</code>, and the request returns only results that match
+         * all of the specified filters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListSites">AWS
          * API Reference</a></p>
          */
         virtual Model::ListSitesOutcome ListSites(const Model::ListSitesRequest& request) const;
 
         /**
-         * <p>Lists the sites for your Amazon Web Services account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Create a list of the Outpost sites for your Amazon Web Services account. Add
+         * operating address filters to your request to return a more specific list of
+         * results. Use filters to match site city, country code, or state/region of the
+         * operating address. </p> <p>If you specify multiple filters, the filters are
+         * joined with an <code>AND</code>, and the request returns only results that match
+         * all of the specified filters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListSites">AWS
          * API Reference</a></p>
          *
@@ -644,8 +652,12 @@ namespace Model
         virtual Model::ListSitesOutcomeCallable ListSitesCallable(const Model::ListSitesRequest& request) const;
 
         /**
-         * <p>Lists the sites for your Amazon Web Services account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Create a list of the Outpost sites for your Amazon Web Services account. Add
+         * operating address filters to your request to return a more specific list of
+         * results. Use filters to match site city, country code, or state/region of the
+         * operating address. </p> <p>If you specify multiple filters, the filters are
+         * joined with an <code>AND</code>, and the request returns only results that match
+         * all of the specified filters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListSites">AWS
          * API Reference</a></p>
          *

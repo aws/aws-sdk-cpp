@@ -167,42 +167,42 @@ namespace Model
 
 
     /**
-     * <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+     * <p>Tags assigned to the <code>AppInstance</code>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+     * <p>Tags assigned to the <code>AppInstance</code>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+     * <p>Tags assigned to the <code>AppInstance</code>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+     * <p>Tags assigned to the <code>AppInstance</code>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+     * <p>Tags assigned to the <code>AppInstance</code>.</p>
      */
     inline CreateAppInstanceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+     * <p>Tags assigned to the <code>AppInstance</code>.</p>
      */
     inline CreateAppInstanceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+     * <p>Tags assigned to the <code>AppInstance</code>.</p>
      */
     inline CreateAppInstanceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+     * <p>Tags assigned to the <code>AppInstance</code>.</p>
      */
     inline CreateAppInstanceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

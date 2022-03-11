@@ -104,22 +104,30 @@ namespace Model
 
 
     /**
-     * <p>The sample rate of the input audio in Hertz.</p>
+     * <p>The sample rate of the input audio (in Hertz). Amazon Transcribe medical
+     * supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you
+     * specify must match that of your audio.</p>
      */
     inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
 
     /**
-     * <p>The sample rate of the input audio in Hertz.</p>
+     * <p>The sample rate of the input audio (in Hertz). Amazon Transcribe medical
+     * supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you
+     * specify must match that of your audio.</p>
      */
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
 
     /**
-     * <p>The sample rate of the input audio in Hertz.</p>
+     * <p>The sample rate of the input audio (in Hertz). Amazon Transcribe medical
+     * supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you
+     * specify must match that of your audio.</p>
      */
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
 
     /**
-     * <p>The sample rate of the input audio in Hertz.</p>
+     * <p>The sample rate of the input audio (in Hertz). Amazon Transcribe medical
+     * supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you
+     * specify must match that of your audio.</p>
      */
     inline StartMedicalStreamTranscriptionRequest& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
 

@@ -3730,8 +3730,11 @@ namespace Model
         virtual void StartChatContactAsync(const Model::StartChatContactRequest& request, const StartChatContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts recording the contact when the agent joins the call.
-         * StartContactRecording is a one-time action. For example, if you use
+         * <p>Starts recording the contact: </p> <ul> <li> <p>If the API is called
+         * <i>before</i> the agent joins the call, recording starts when the agent joins
+         * the call.</p> </li> <li> <p>If the API is called <i>after</i> the agent joins
+         * the call, recording starts at the time of the API call.</p> </li> </ul>
+         * <p>StartContactRecording is a one-time action. For example, if you use
          * StopContactRecording to stop recording an ongoing call, you can't use
          * StartContactRecording to restart it. For scenarios where the recording has
          * started and you want to suspend and resume it, such as when collecting sensitive
@@ -3747,8 +3750,11 @@ namespace Model
         virtual Model::StartContactRecordingOutcome StartContactRecording(const Model::StartContactRecordingRequest& request) const;
 
         /**
-         * <p>Starts recording the contact when the agent joins the call.
-         * StartContactRecording is a one-time action. For example, if you use
+         * <p>Starts recording the contact: </p> <ul> <li> <p>If the API is called
+         * <i>before</i> the agent joins the call, recording starts when the agent joins
+         * the call.</p> </li> <li> <p>If the API is called <i>after</i> the agent joins
+         * the call, recording starts at the time of the API call.</p> </li> </ul>
+         * <p>StartContactRecording is a one-time action. For example, if you use
          * StopContactRecording to stop recording an ongoing call, you can't use
          * StartContactRecording to restart it. For scenarios where the recording has
          * started and you want to suspend and resume it, such as when collecting sensitive
@@ -3766,8 +3772,11 @@ namespace Model
         virtual Model::StartContactRecordingOutcomeCallable StartContactRecordingCallable(const Model::StartContactRecordingRequest& request) const;
 
         /**
-         * <p>Starts recording the contact when the agent joins the call.
-         * StartContactRecording is a one-time action. For example, if you use
+         * <p>Starts recording the contact: </p> <ul> <li> <p>If the API is called
+         * <i>before</i> the agent joins the call, recording starts when the agent joins
+         * the call.</p> </li> <li> <p>If the API is called <i>after</i> the agent joins
+         * the call, recording starts at the time of the API call.</p> </li> </ul>
+         * <p>StartContactRecording is a one-time action. For example, if you use
          * StopContactRecording to stop recording an ongoing call, you can't use
          * StartContactRecording to restart it. For scenarios where the recording has
          * started and you want to suspend and resume it, such as when collecting sensitive
@@ -3923,14 +3932,20 @@ namespace Model
         virtual void StartTaskContactAsync(const Model::StartTaskContactRequest& request, const StartTaskContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Ends the specified contact.</p><p><h3>See Also:</h3>   <a
+         * <p>Ends the specified contact. This call does not work for the following
+         * initiation methods:</p> <ul> <li> <p>CALLBACK</p> </li> <li> <p>DISCONNECT</p>
+         * </li> <li> <p>TRANSFER</p> </li> <li> <p>QUEUE_TRANSFER</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContact">AWS
          * API Reference</a></p>
          */
         virtual Model::StopContactOutcome StopContact(const Model::StopContactRequest& request) const;
 
         /**
-         * <p>Ends the specified contact.</p><p><h3>See Also:</h3>   <a
+         * <p>Ends the specified contact. This call does not work for the following
+         * initiation methods:</p> <ul> <li> <p>CALLBACK</p> </li> <li> <p>DISCONNECT</p>
+         * </li> <li> <p>TRANSFER</p> </li> <li> <p>QUEUE_TRANSFER</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContact">AWS
          * API Reference</a></p>
          *
@@ -3939,7 +3954,10 @@ namespace Model
         virtual Model::StopContactOutcomeCallable StopContactCallable(const Model::StopContactRequest& request) const;
 
         /**
-         * <p>Ends the specified contact.</p><p><h3>See Also:</h3>   <a
+         * <p>Ends the specified contact. This call does not work for the following
+         * initiation methods:</p> <ul> <li> <p>CALLBACK</p> </li> <li> <p>DISCONNECT</p>
+         * </li> <li> <p>TRANSFER</p> </li> <li> <p>QUEUE_TRANSFER</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContact">AWS
          * API Reference</a></p>
          *

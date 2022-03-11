@@ -21,7 +21,8 @@ StartChatContactRequest::StartChatContactRequest() :
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_chatDurationInMinutes(0),
-    m_chatDurationInMinutesHasBeenSet(false)
+    m_chatDurationInMinutesHasBeenSet(false),
+    m_supportedMessagingContentTypesHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,17 @@ Aws::String StartChatContactRequest::SerializePayload() const
   if(m_chatDurationInMinutesHasBeenSet)
   {
    payload.WithInteger("ChatDurationInMinutes", m_chatDurationInMinutes);
+
+  }
+
+  if(m_supportedMessagingContentTypesHasBeenSet)
+  {
+   Array<JsonValue> supportedMessagingContentTypesJsonList(m_supportedMessagingContentTypes.size());
+   for(unsigned supportedMessagingContentTypesIndex = 0; supportedMessagingContentTypesIndex < supportedMessagingContentTypesJsonList.GetLength(); ++supportedMessagingContentTypesIndex)
+   {
+     supportedMessagingContentTypesJsonList[supportedMessagingContentTypesIndex].AsString(m_supportedMessagingContentTypes[supportedMessagingContentTypesIndex]);
+   }
+   payload.WithArray("SupportedMessagingContentTypes", std::move(supportedMessagingContentTypesJsonList));
 
   }
 

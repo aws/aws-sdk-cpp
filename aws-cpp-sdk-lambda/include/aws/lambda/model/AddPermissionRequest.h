@@ -590,6 +590,55 @@ namespace Model
      */
     inline AddPermissionRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
 
+
+    /**
+     * <p>The identifier for your organization in Organizations. Use this to grant
+     * permissions to all the Amazon Web Services accounts under this organization.</p>
+     */
+    inline const Aws::String& GetPrincipalOrgID() const{ return m_principalOrgID; }
+
+    /**
+     * <p>The identifier for your organization in Organizations. Use this to grant
+     * permissions to all the Amazon Web Services accounts under this organization.</p>
+     */
+    inline bool PrincipalOrgIDHasBeenSet() const { return m_principalOrgIDHasBeenSet; }
+
+    /**
+     * <p>The identifier for your organization in Organizations. Use this to grant
+     * permissions to all the Amazon Web Services accounts under this organization.</p>
+     */
+    inline void SetPrincipalOrgID(const Aws::String& value) { m_principalOrgIDHasBeenSet = true; m_principalOrgID = value; }
+
+    /**
+     * <p>The identifier for your organization in Organizations. Use this to grant
+     * permissions to all the Amazon Web Services accounts under this organization.</p>
+     */
+    inline void SetPrincipalOrgID(Aws::String&& value) { m_principalOrgIDHasBeenSet = true; m_principalOrgID = std::move(value); }
+
+    /**
+     * <p>The identifier for your organization in Organizations. Use this to grant
+     * permissions to all the Amazon Web Services accounts under this organization.</p>
+     */
+    inline void SetPrincipalOrgID(const char* value) { m_principalOrgIDHasBeenSet = true; m_principalOrgID.assign(value); }
+
+    /**
+     * <p>The identifier for your organization in Organizations. Use this to grant
+     * permissions to all the Amazon Web Services accounts under this organization.</p>
+     */
+    inline AddPermissionRequest& WithPrincipalOrgID(const Aws::String& value) { SetPrincipalOrgID(value); return *this;}
+
+    /**
+     * <p>The identifier for your organization in Organizations. Use this to grant
+     * permissions to all the Amazon Web Services accounts under this organization.</p>
+     */
+    inline AddPermissionRequest& WithPrincipalOrgID(Aws::String&& value) { SetPrincipalOrgID(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier for your organization in Organizations. Use this to grant
+     * permissions to all the Amazon Web Services accounts under this organization.</p>
+     */
+    inline AddPermissionRequest& WithPrincipalOrgID(const char* value) { SetPrincipalOrgID(value); return *this;}
+
   private:
 
     Aws::String m_functionName;
@@ -618,6 +667,9 @@ namespace Model
 
     Aws::String m_revisionId;
     bool m_revisionIdHasBeenSet;
+
+    Aws::String m_principalOrgID;
+    bool m_principalOrgIDHasBeenSet;
   };
 
 } // namespace Model

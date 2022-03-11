@@ -6990,18 +6990,18 @@ namespace Model
         virtual void UpdateSipMediaApplicationAsync(const Model::UpdateSipMediaApplicationRequest& request, const UpdateSipMediaApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allows you to trigger a Lambda function at any time while a call is active,
-         * and replace the current actions with new actions returned by the
-         * invocation.</p><p><h3>See Also:</h3>   <a
+         * <p>Invokes the AWS Lambda function associated with the SIP media application and
+         * transaction ID in an update request. The Lambda function can then return a new
+         * set of actions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipMediaApplicationCall">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateSipMediaApplicationCallOutcome UpdateSipMediaApplicationCall(const Model::UpdateSipMediaApplicationCallRequest& request) const;
 
         /**
-         * <p>Allows you to trigger a Lambda function at any time while a call is active,
-         * and replace the current actions with new actions returned by the
-         * invocation.</p><p><h3>See Also:</h3>   <a
+         * <p>Invokes the AWS Lambda function associated with the SIP media application and
+         * transaction ID in an update request. The Lambda function can then return a new
+         * set of actions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipMediaApplicationCall">AWS
          * API Reference</a></p>
          *
@@ -7010,9 +7010,9 @@ namespace Model
         virtual Model::UpdateSipMediaApplicationCallOutcomeCallable UpdateSipMediaApplicationCallCallable(const Model::UpdateSipMediaApplicationCallRequest& request) const;
 
         /**
-         * <p>Allows you to trigger a Lambda function at any time while a call is active,
-         * and replace the current actions with new actions returned by the
-         * invocation.</p><p><h3>See Also:</h3>   <a
+         * <p>Invokes the AWS Lambda function associated with the SIP media application and
+         * transaction ID in an update request. The Lambda function can then return a new
+         * set of actions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipMediaApplicationCall">AWS
          * API Reference</a></p>
          *

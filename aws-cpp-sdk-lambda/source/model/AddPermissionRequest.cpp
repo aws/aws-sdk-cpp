@@ -24,7 +24,8 @@ AddPermissionRequest::AddPermissionRequest() :
     m_sourceAccountHasBeenSet(false),
     m_eventSourceTokenHasBeenSet(false),
     m_qualifierHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
+    m_revisionIdHasBeenSet(false),
+    m_principalOrgIDHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,12 @@ Aws::String AddPermissionRequest::SerializePayload() const
   if(m_revisionIdHasBeenSet)
   {
    payload.WithString("RevisionId", m_revisionId);
+
+  }
+
+  if(m_principalOrgIDHasBeenSet)
+  {
+   payload.WithString("PrincipalOrgID", m_principalOrgID);
 
   }
 
