@@ -161,38 +161,38 @@ namespace Model
 
 
     /**
-     * <p>Configuration information for connecting to an Amazon Virtual Private Cloud
-     * for your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
+     * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
+     * your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
      */
     inline const DataSourceVpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
 
     /**
-     * <p>Configuration information for connecting to an Amazon Virtual Private Cloud
-     * for your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
+     * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
+     * your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
      */
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
 
     /**
-     * <p>Configuration information for connecting to an Amazon Virtual Private Cloud
-     * for your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
+     * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
+     * your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
      */
     inline void SetVpcConfiguration(const DataSourceVpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
 
     /**
-     * <p>Configuration information for connecting to an Amazon Virtual Private Cloud
-     * for your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
+     * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
+     * your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
      */
     inline void SetVpcConfiguration(DataSourceVpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
 
     /**
-     * <p>Configuration information for connecting to an Amazon Virtual Private Cloud
-     * for your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
+     * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
+     * your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
      */
     inline FsxConfiguration& WithVpcConfiguration(const DataSourceVpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
 
     /**
-     * <p>Configuration information for connecting to an Amazon Virtual Private Cloud
-     * for your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
+     * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
+     * your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
      */
     inline FsxConfiguration& WithVpcConfiguration(DataSourceVpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
 
@@ -306,8 +306,8 @@ namespace Model
      * <p>A list of regular expression patterns to include certain files in your Amazon
      * FSx file system. Files that match the patterns are included in the index. Files
      * that don't match the patterns are excluded from the index. If a file matches
-     * both an inclusion pattern and an exclusion pattern, the exclusion pattern takes
-     * precedence and the file isn't included in the index.</p>
+     * both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     * and the file isn't included in the index.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInclusionPatterns() const{ return m_inclusionPatterns; }
 
@@ -315,8 +315,8 @@ namespace Model
      * <p>A list of regular expression patterns to include certain files in your Amazon
      * FSx file system. Files that match the patterns are included in the index. Files
      * that don't match the patterns are excluded from the index. If a file matches
-     * both an inclusion pattern and an exclusion pattern, the exclusion pattern takes
-     * precedence and the file isn't included in the index.</p>
+     * both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     * and the file isn't included in the index.</p>
      */
     inline bool InclusionPatternsHasBeenSet() const { return m_inclusionPatternsHasBeenSet; }
 
@@ -324,8 +324,8 @@ namespace Model
      * <p>A list of regular expression patterns to include certain files in your Amazon
      * FSx file system. Files that match the patterns are included in the index. Files
      * that don't match the patterns are excluded from the index. If a file matches
-     * both an inclusion pattern and an exclusion pattern, the exclusion pattern takes
-     * precedence and the file isn't included in the index.</p>
+     * both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     * and the file isn't included in the index.</p>
      */
     inline void SetInclusionPatterns(const Aws::Vector<Aws::String>& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = value; }
 
@@ -333,8 +333,8 @@ namespace Model
      * <p>A list of regular expression patterns to include certain files in your Amazon
      * FSx file system. Files that match the patterns are included in the index. Files
      * that don't match the patterns are excluded from the index. If a file matches
-     * both an inclusion pattern and an exclusion pattern, the exclusion pattern takes
-     * precedence and the file isn't included in the index.</p>
+     * both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     * and the file isn't included in the index.</p>
      */
     inline void SetInclusionPatterns(Aws::Vector<Aws::String>&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = std::move(value); }
 
@@ -342,8 +342,8 @@ namespace Model
      * <p>A list of regular expression patterns to include certain files in your Amazon
      * FSx file system. Files that match the patterns are included in the index. Files
      * that don't match the patterns are excluded from the index. If a file matches
-     * both an inclusion pattern and an exclusion pattern, the exclusion pattern takes
-     * precedence and the file isn't included in the index.</p>
+     * both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     * and the file isn't included in the index.</p>
      */
     inline FsxConfiguration& WithInclusionPatterns(const Aws::Vector<Aws::String>& value) { SetInclusionPatterns(value); return *this;}
 
@@ -351,8 +351,8 @@ namespace Model
      * <p>A list of regular expression patterns to include certain files in your Amazon
      * FSx file system. Files that match the patterns are included in the index. Files
      * that don't match the patterns are excluded from the index. If a file matches
-     * both an inclusion pattern and an exclusion pattern, the exclusion pattern takes
-     * precedence and the file isn't included in the index.</p>
+     * both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     * and the file isn't included in the index.</p>
      */
     inline FsxConfiguration& WithInclusionPatterns(Aws::Vector<Aws::String>&& value) { SetInclusionPatterns(std::move(value)); return *this;}
 
@@ -360,8 +360,8 @@ namespace Model
      * <p>A list of regular expression patterns to include certain files in your Amazon
      * FSx file system. Files that match the patterns are included in the index. Files
      * that don't match the patterns are excluded from the index. If a file matches
-     * both an inclusion pattern and an exclusion pattern, the exclusion pattern takes
-     * precedence and the file isn't included in the index.</p>
+     * both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     * and the file isn't included in the index.</p>
      */
     inline FsxConfiguration& AddInclusionPatterns(const Aws::String& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
 
@@ -369,8 +369,8 @@ namespace Model
      * <p>A list of regular expression patterns to include certain files in your Amazon
      * FSx file system. Files that match the patterns are included in the index. Files
      * that don't match the patterns are excluded from the index. If a file matches
-     * both an inclusion pattern and an exclusion pattern, the exclusion pattern takes
-     * precedence and the file isn't included in the index.</p>
+     * both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     * and the file isn't included in the index.</p>
      */
     inline FsxConfiguration& AddInclusionPatterns(Aws::String&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(std::move(value)); return *this; }
 
@@ -378,8 +378,8 @@ namespace Model
      * <p>A list of regular expression patterns to include certain files in your Amazon
      * FSx file system. Files that match the patterns are included in the index. Files
      * that don't match the patterns are excluded from the index. If a file matches
-     * both an inclusion pattern and an exclusion pattern, the exclusion pattern takes
-     * precedence and the file isn't included in the index.</p>
+     * both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     * and the file isn't included in the index.</p>
      */
     inline FsxConfiguration& AddInclusionPatterns(const char* value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
 
@@ -387,81 +387,81 @@ namespace Model
     /**
      * <p>A list of regular expression patterns to exclude certain files in your Amazon
      * FSx file system. Files that match the patterns are excluded from the index.
-     * Files that don’t match the patterns are included in the index. If a file matches
-     * both an inclusion pattern and an exclusion pattern, the exclusion pattern takes
-     * precedence and the file isn't included in the index.</p>
+     * Files that don't match the patterns are included in the index. If a file matches
+     * both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     * and the file isn't included in the index.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExclusionPatterns() const{ return m_exclusionPatterns; }
 
     /**
      * <p>A list of regular expression patterns to exclude certain files in your Amazon
      * FSx file system. Files that match the patterns are excluded from the index.
-     * Files that don’t match the patterns are included in the index. If a file matches
-     * both an inclusion pattern and an exclusion pattern, the exclusion pattern takes
-     * precedence and the file isn't included in the index.</p>
+     * Files that don't match the patterns are included in the index. If a file matches
+     * both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     * and the file isn't included in the index.</p>
      */
     inline bool ExclusionPatternsHasBeenSet() const { return m_exclusionPatternsHasBeenSet; }
 
     /**
      * <p>A list of regular expression patterns to exclude certain files in your Amazon
      * FSx file system. Files that match the patterns are excluded from the index.
-     * Files that don’t match the patterns are included in the index. If a file matches
-     * both an inclusion pattern and an exclusion pattern, the exclusion pattern takes
-     * precedence and the file isn't included in the index.</p>
+     * Files that don't match the patterns are included in the index. If a file matches
+     * both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     * and the file isn't included in the index.</p>
      */
     inline void SetExclusionPatterns(const Aws::Vector<Aws::String>& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = value; }
 
     /**
      * <p>A list of regular expression patterns to exclude certain files in your Amazon
      * FSx file system. Files that match the patterns are excluded from the index.
-     * Files that don’t match the patterns are included in the index. If a file matches
-     * both an inclusion pattern and an exclusion pattern, the exclusion pattern takes
-     * precedence and the file isn't included in the index.</p>
+     * Files that don't match the patterns are included in the index. If a file matches
+     * both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     * and the file isn't included in the index.</p>
      */
     inline void SetExclusionPatterns(Aws::Vector<Aws::String>&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = std::move(value); }
 
     /**
      * <p>A list of regular expression patterns to exclude certain files in your Amazon
      * FSx file system. Files that match the patterns are excluded from the index.
-     * Files that don’t match the patterns are included in the index. If a file matches
-     * both an inclusion pattern and an exclusion pattern, the exclusion pattern takes
-     * precedence and the file isn't included in the index.</p>
+     * Files that don't match the patterns are included in the index. If a file matches
+     * both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     * and the file isn't included in the index.</p>
      */
     inline FsxConfiguration& WithExclusionPatterns(const Aws::Vector<Aws::String>& value) { SetExclusionPatterns(value); return *this;}
 
     /**
      * <p>A list of regular expression patterns to exclude certain files in your Amazon
      * FSx file system. Files that match the patterns are excluded from the index.
-     * Files that don’t match the patterns are included in the index. If a file matches
-     * both an inclusion pattern and an exclusion pattern, the exclusion pattern takes
-     * precedence and the file isn't included in the index.</p>
+     * Files that don't match the patterns are included in the index. If a file matches
+     * both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     * and the file isn't included in the index.</p>
      */
     inline FsxConfiguration& WithExclusionPatterns(Aws::Vector<Aws::String>&& value) { SetExclusionPatterns(std::move(value)); return *this;}
 
     /**
      * <p>A list of regular expression patterns to exclude certain files in your Amazon
      * FSx file system. Files that match the patterns are excluded from the index.
-     * Files that don’t match the patterns are included in the index. If a file matches
-     * both an inclusion pattern and an exclusion pattern, the exclusion pattern takes
-     * precedence and the file isn't included in the index.</p>
+     * Files that don't match the patterns are included in the index. If a file matches
+     * both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     * and the file isn't included in the index.</p>
      */
     inline FsxConfiguration& AddExclusionPatterns(const Aws::String& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
 
     /**
      * <p>A list of regular expression patterns to exclude certain files in your Amazon
      * FSx file system. Files that match the patterns are excluded from the index.
-     * Files that don’t match the patterns are included in the index. If a file matches
-     * both an inclusion pattern and an exclusion pattern, the exclusion pattern takes
-     * precedence and the file isn't included in the index.</p>
+     * Files that don't match the patterns are included in the index. If a file matches
+     * both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     * and the file isn't included in the index.</p>
      */
     inline FsxConfiguration& AddExclusionPatterns(Aws::String&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of regular expression patterns to exclude certain files in your Amazon
      * FSx file system. Files that match the patterns are excluded from the index.
-     * Files that don’t match the patterns are included in the index. If a file matches
-     * both an inclusion pattern and an exclusion pattern, the exclusion pattern takes
-     * precedence and the file isn't included in the index.</p>
+     * Files that don't match the patterns are included in the index. If a file matches
+     * both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     * and the file isn't included in the index.</p>
      */
     inline FsxConfiguration& AddExclusionPatterns(const char* value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
 

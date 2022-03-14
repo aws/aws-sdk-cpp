@@ -27,7 +27,8 @@ namespace Model
     GOOGLEDRIVE,
     WEBCRAWLER,
     WORKDOCS,
-    FSX
+    FSX,
+    SLACK
   };
 
 namespace DataSourceTypeMapper

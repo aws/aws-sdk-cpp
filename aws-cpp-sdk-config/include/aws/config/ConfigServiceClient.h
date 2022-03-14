@@ -3067,12 +3067,12 @@ namespace Model
          * accounts and regions. The source account can be individual account(s) or an
          * organization.</p> <p> <code>accountIds</code> that are passed will be replaced
          * with existing accounts. If you want to add additional accounts into the
-         * aggregator, call <code>DescribeAggregator</code> to get the previous accounts
-         * and then append new ones.</p>  <p>Config should be enabled in source
-         * accounts and regions you want to aggregate.</p> <p>If your source type is an
-         * organization, you must be signed in to the management account or a registered
-         * delegated administrator and all the features must be enabled in your
-         * organization. If the caller is a management account, Config calls
+         * aggregator, call <code>DescribeConfigurationAggregators</code> to get the
+         * previous accounts and then append new ones.</p>  <p>Config should be
+         * enabled in source accounts and regions you want to aggregate.</p> <p>If your
+         * source type is an organization, you must be signed in to the management account
+         * or a registered delegated administrator and all the features must be enabled in
+         * your organization. If the caller is a management account, Config calls
          * <code>EnableAwsServiceAccess</code> API to enable integration between Config and
          * Organizations. If the caller is a registered delegated administrator, Config
          * calls <code>ListDelegatedAdministrators</code> API to verify whether the caller
@@ -3091,12 +3091,12 @@ namespace Model
          * accounts and regions. The source account can be individual account(s) or an
          * organization.</p> <p> <code>accountIds</code> that are passed will be replaced
          * with existing accounts. If you want to add additional accounts into the
-         * aggregator, call <code>DescribeAggregator</code> to get the previous accounts
-         * and then append new ones.</p>  <p>Config should be enabled in source
-         * accounts and regions you want to aggregate.</p> <p>If your source type is an
-         * organization, you must be signed in to the management account or a registered
-         * delegated administrator and all the features must be enabled in your
-         * organization. If the caller is a management account, Config calls
+         * aggregator, call <code>DescribeConfigurationAggregators</code> to get the
+         * previous accounts and then append new ones.</p>  <p>Config should be
+         * enabled in source accounts and regions you want to aggregate.</p> <p>If your
+         * source type is an organization, you must be signed in to the management account
+         * or a registered delegated administrator and all the features must be enabled in
+         * your organization. If the caller is a management account, Config calls
          * <code>EnableAwsServiceAccess</code> API to enable integration between Config and
          * Organizations. If the caller is a registered delegated administrator, Config
          * calls <code>ListDelegatedAdministrators</code> API to verify whether the caller
@@ -3117,12 +3117,12 @@ namespace Model
          * accounts and regions. The source account can be individual account(s) or an
          * organization.</p> <p> <code>accountIds</code> that are passed will be replaced
          * with existing accounts. If you want to add additional accounts into the
-         * aggregator, call <code>DescribeAggregator</code> to get the previous accounts
-         * and then append new ones.</p>  <p>Config should be enabled in source
-         * accounts and regions you want to aggregate.</p> <p>If your source type is an
-         * organization, you must be signed in to the management account or a registered
-         * delegated administrator and all the features must be enabled in your
-         * organization. If the caller is a management account, Config calls
+         * aggregator, call <code>DescribeConfigurationAggregators</code> to get the
+         * previous accounts and then append new ones.</p>  <p>Config should be
+         * enabled in source accounts and regions you want to aggregate.</p> <p>If your
+         * source type is an organization, you must be signed in to the management account
+         * or a registered delegated administrator and all the features must be enabled in
+         * your organization. If the caller is a management account, Config calls
          * <code>EnableAwsServiceAccess</code> API to enable integration between Config and
          * Organizations. If the caller is a registered delegated administrator, Config
          * calls <code>ListDelegatedAdministrators</code> API to verify whether the caller

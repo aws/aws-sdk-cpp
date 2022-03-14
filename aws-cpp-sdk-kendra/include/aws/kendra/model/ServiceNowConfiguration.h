@@ -44,49 +44,49 @@ namespace Model
 
     /**
      * <p>The ServiceNow instance that the data source connects to. The host endpoint
-     * should look like the following: <code>{instance}.service-now.com.</code> </p>
+     * should look like the following: <i>{instance}.service-now.com.</i> </p>
      */
     inline const Aws::String& GetHostUrl() const{ return m_hostUrl; }
 
     /**
      * <p>The ServiceNow instance that the data source connects to. The host endpoint
-     * should look like the following: <code>{instance}.service-now.com.</code> </p>
+     * should look like the following: <i>{instance}.service-now.com.</i> </p>
      */
     inline bool HostUrlHasBeenSet() const { return m_hostUrlHasBeenSet; }
 
     /**
      * <p>The ServiceNow instance that the data source connects to. The host endpoint
-     * should look like the following: <code>{instance}.service-now.com.</code> </p>
+     * should look like the following: <i>{instance}.service-now.com.</i> </p>
      */
     inline void SetHostUrl(const Aws::String& value) { m_hostUrlHasBeenSet = true; m_hostUrl = value; }
 
     /**
      * <p>The ServiceNow instance that the data source connects to. The host endpoint
-     * should look like the following: <code>{instance}.service-now.com.</code> </p>
+     * should look like the following: <i>{instance}.service-now.com.</i> </p>
      */
     inline void SetHostUrl(Aws::String&& value) { m_hostUrlHasBeenSet = true; m_hostUrl = std::move(value); }
 
     /**
      * <p>The ServiceNow instance that the data source connects to. The host endpoint
-     * should look like the following: <code>{instance}.service-now.com.</code> </p>
+     * should look like the following: <i>{instance}.service-now.com.</i> </p>
      */
     inline void SetHostUrl(const char* value) { m_hostUrlHasBeenSet = true; m_hostUrl.assign(value); }
 
     /**
      * <p>The ServiceNow instance that the data source connects to. The host endpoint
-     * should look like the following: <code>{instance}.service-now.com.</code> </p>
+     * should look like the following: <i>{instance}.service-now.com.</i> </p>
      */
     inline ServiceNowConfiguration& WithHostUrl(const Aws::String& value) { SetHostUrl(value); return *this;}
 
     /**
      * <p>The ServiceNow instance that the data source connects to. The host endpoint
-     * should look like the following: <code>{instance}.service-now.com.</code> </p>
+     * should look like the following: <i>{instance}.service-now.com.</i> </p>
      */
     inline ServiceNowConfiguration& WithHostUrl(Aws::String&& value) { SetHostUrl(std::move(value)); return *this;}
 
     /**
      * <p>The ServiceNow instance that the data source connects to. The host endpoint
-     * should look like the following: <code>{instance}.service-now.com.</code> </p>
+     * should look like the following: <i>{instance}.service-now.com.</i> </p>
      */
     inline ServiceNowConfiguration& WithHostUrl(const char* value) { SetHostUrl(value); return *this;}
 
@@ -258,9 +258,9 @@ namespace Model
 
 
     /**
-     * <p>Determines the type of authentication used to connect to the ServiceNow
-     * instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated
-     * using the user name and password provided in the Secrets Manager secret in the
+     * <p>The type of authentication used to connect to the ServiceNow instance. If you
+     * choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user
+     * name and password provided in the Secrets Manager secret in the
      * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
      * is authenticated using the OAuth token and secret provided in the Secrets
      * Manager secret, and the user name and password are used to determine which
@@ -273,9 +273,9 @@ namespace Model
     inline const ServiceNowAuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
 
     /**
-     * <p>Determines the type of authentication used to connect to the ServiceNow
-     * instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated
-     * using the user name and password provided in the Secrets Manager secret in the
+     * <p>The type of authentication used to connect to the ServiceNow instance. If you
+     * choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user
+     * name and password provided in the Secrets Manager secret in the
      * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
      * is authenticated using the OAuth token and secret provided in the Secrets
      * Manager secret, and the user name and password are used to determine which
@@ -288,9 +288,9 @@ namespace Model
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
 
     /**
-     * <p>Determines the type of authentication used to connect to the ServiceNow
-     * instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated
-     * using the user name and password provided in the Secrets Manager secret in the
+     * <p>The type of authentication used to connect to the ServiceNow instance. If you
+     * choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user
+     * name and password provided in the Secrets Manager secret in the
      * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
      * is authenticated using the OAuth token and secret provided in the Secrets
      * Manager secret, and the user name and password are used to determine which
@@ -303,9 +303,9 @@ namespace Model
     inline void SetAuthenticationType(const ServiceNowAuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
 
     /**
-     * <p>Determines the type of authentication used to connect to the ServiceNow
-     * instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated
-     * using the user name and password provided in the Secrets Manager secret in the
+     * <p>The type of authentication used to connect to the ServiceNow instance. If you
+     * choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user
+     * name and password provided in the Secrets Manager secret in the
      * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
      * is authenticated using the OAuth token and secret provided in the Secrets
      * Manager secret, and the user name and password are used to determine which
@@ -318,9 +318,9 @@ namespace Model
     inline void SetAuthenticationType(ServiceNowAuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
 
     /**
-     * <p>Determines the type of authentication used to connect to the ServiceNow
-     * instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated
-     * using the user name and password provided in the Secrets Manager secret in the
+     * <p>The type of authentication used to connect to the ServiceNow instance. If you
+     * choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user
+     * name and password provided in the Secrets Manager secret in the
      * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
      * is authenticated using the OAuth token and secret provided in the Secrets
      * Manager secret, and the user name and password are used to determine which
@@ -333,9 +333,9 @@ namespace Model
     inline ServiceNowConfiguration& WithAuthenticationType(const ServiceNowAuthenticationType& value) { SetAuthenticationType(value); return *this;}
 
     /**
-     * <p>Determines the type of authentication used to connect to the ServiceNow
-     * instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated
-     * using the user name and password provided in the Secrets Manager secret in the
+     * <p>The type of authentication used to connect to the ServiceNow instance. If you
+     * choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user
+     * name and password provided in the Secrets Manager secret in the
      * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
      * is authenticated using the OAuth token and secret provided in the Secrets
      * Manager secret, and the user name and password are used to determine which

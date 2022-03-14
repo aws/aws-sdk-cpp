@@ -16,6 +16,7 @@
 #include <aws/kendra/model/WebCrawlerConfiguration.h>
 #include <aws/kendra/model/WorkDocsConfiguration.h>
 #include <aws/kendra/model/FsxConfiguration.h>
+#include <aws/kendra/model/SlackConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -271,37 +272,37 @@ namespace Model
 
 
     /**
-     * <p>Provides configuration information for connecting to a Confluence data
+     * <p>Provides the configuration information to connect to Confluence as your data
      * source.</p>
      */
     inline const ConfluenceConfiguration& GetConfluenceConfiguration() const{ return m_confluenceConfiguration; }
 
     /**
-     * <p>Provides configuration information for connecting to a Confluence data
+     * <p>Provides the configuration information to connect to Confluence as your data
      * source.</p>
      */
     inline bool ConfluenceConfigurationHasBeenSet() const { return m_confluenceConfigurationHasBeenSet; }
 
     /**
-     * <p>Provides configuration information for connecting to a Confluence data
+     * <p>Provides the configuration information to connect to Confluence as your data
      * source.</p>
      */
     inline void SetConfluenceConfiguration(const ConfluenceConfiguration& value) { m_confluenceConfigurationHasBeenSet = true; m_confluenceConfiguration = value; }
 
     /**
-     * <p>Provides configuration information for connecting to a Confluence data
+     * <p>Provides the configuration information to connect to Confluence as your data
      * source.</p>
      */
     inline void SetConfluenceConfiguration(ConfluenceConfiguration&& value) { m_confluenceConfigurationHasBeenSet = true; m_confluenceConfiguration = std::move(value); }
 
     /**
-     * <p>Provides configuration information for connecting to a Confluence data
+     * <p>Provides the configuration information to connect to Confluence as your data
      * source.</p>
      */
     inline DataSourceConfiguration& WithConfluenceConfiguration(const ConfluenceConfiguration& value) { SetConfluenceConfiguration(value); return *this;}
 
     /**
-     * <p>Provides configuration information for connecting to a Confluence data
+     * <p>Provides the configuration information to connect to Confluence as your data
      * source.</p>
      */
     inline DataSourceConfiguration& WithConfluenceConfiguration(ConfluenceConfiguration&& value) { SetConfluenceConfiguration(std::move(value)); return *this;}
@@ -309,37 +310,37 @@ namespace Model
 
     /**
      * <p>Provides the configuration information to connect to Google Drive as your
-     * data source. </p>
+     * data source.</p>
      */
     inline const GoogleDriveConfiguration& GetGoogleDriveConfiguration() const{ return m_googleDriveConfiguration; }
 
     /**
      * <p>Provides the configuration information to connect to Google Drive as your
-     * data source. </p>
+     * data source.</p>
      */
     inline bool GoogleDriveConfigurationHasBeenSet() const { return m_googleDriveConfigurationHasBeenSet; }
 
     /**
      * <p>Provides the configuration information to connect to Google Drive as your
-     * data source. </p>
+     * data source.</p>
      */
     inline void SetGoogleDriveConfiguration(const GoogleDriveConfiguration& value) { m_googleDriveConfigurationHasBeenSet = true; m_googleDriveConfiguration = value; }
 
     /**
      * <p>Provides the configuration information to connect to Google Drive as your
-     * data source. </p>
+     * data source.</p>
      */
     inline void SetGoogleDriveConfiguration(GoogleDriveConfiguration&& value) { m_googleDriveConfigurationHasBeenSet = true; m_googleDriveConfiguration = std::move(value); }
 
     /**
      * <p>Provides the configuration information to connect to Google Drive as your
-     * data source. </p>
+     * data source.</p>
      */
     inline DataSourceConfiguration& WithGoogleDriveConfiguration(const GoogleDriveConfiguration& value) { SetGoogleDriveConfiguration(value); return *this;}
 
     /**
      * <p>Provides the configuration information to connect to Google Drive as your
-     * data source. </p>
+     * data source.</p>
      */
     inline DataSourceConfiguration& WithGoogleDriveConfiguration(GoogleDriveConfiguration&& value) { SetGoogleDriveConfiguration(std::move(value)); return *this;}
 
@@ -436,6 +437,43 @@ namespace Model
      */
     inline DataSourceConfiguration& WithFsxConfiguration(FsxConfiguration&& value) { SetFsxConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides the configuration information to connect to Slack as your data
+     * source.</p>
+     */
+    inline const SlackConfiguration& GetSlackConfiguration() const{ return m_slackConfiguration; }
+
+    /**
+     * <p>Provides the configuration information to connect to Slack as your data
+     * source.</p>
+     */
+    inline bool SlackConfigurationHasBeenSet() const { return m_slackConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides the configuration information to connect to Slack as your data
+     * source.</p>
+     */
+    inline void SetSlackConfiguration(const SlackConfiguration& value) { m_slackConfigurationHasBeenSet = true; m_slackConfiguration = value; }
+
+    /**
+     * <p>Provides the configuration information to connect to Slack as your data
+     * source.</p>
+     */
+    inline void SetSlackConfiguration(SlackConfiguration&& value) { m_slackConfigurationHasBeenSet = true; m_slackConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides the configuration information to connect to Slack as your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithSlackConfiguration(const SlackConfiguration& value) { SetSlackConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides the configuration information to connect to Slack as your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithSlackConfiguration(SlackConfiguration&& value) { SetSlackConfiguration(std::move(value)); return *this;}
+
   private:
 
     S3DataSourceConfiguration m_s3Configuration;
@@ -470,6 +508,9 @@ namespace Model
 
     FsxConfiguration m_fsxConfiguration;
     bool m_fsxConfigurationHasBeenSet;
+
+    SlackConfiguration m_slackConfiguration;
+    bool m_slackConfigurationHasBeenSet;
   };
 
 } // namespace Model

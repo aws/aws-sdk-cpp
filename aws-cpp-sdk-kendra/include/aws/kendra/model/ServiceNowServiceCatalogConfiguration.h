@@ -66,164 +66,182 @@ namespace Model
 
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the file name of the attachment.</p>
+     * <p>A list of regular expression patterns to include certain attachments of
+     * catalogs in your ServiceNow. Item that match the patterns are included in the
+     * index. Items that don't match the patterns are excluded from the index. If an
+     * item matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the item isn't included in the index.</p> <p>The regex is
+     * applied to the file name of the attachment.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIncludeAttachmentFilePatterns() const{ return m_includeAttachmentFilePatterns; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the file name of the attachment.</p>
+     * <p>A list of regular expression patterns to include certain attachments of
+     * catalogs in your ServiceNow. Item that match the patterns are included in the
+     * index. Items that don't match the patterns are excluded from the index. If an
+     * item matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the item isn't included in the index.</p> <p>The regex is
+     * applied to the file name of the attachment.</p>
      */
     inline bool IncludeAttachmentFilePatternsHasBeenSet() const { return m_includeAttachmentFilePatternsHasBeenSet; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the file name of the attachment.</p>
+     * <p>A list of regular expression patterns to include certain attachments of
+     * catalogs in your ServiceNow. Item that match the patterns are included in the
+     * index. Items that don't match the patterns are excluded from the index. If an
+     * item matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the item isn't included in the index.</p> <p>The regex is
+     * applied to the file name of the attachment.</p>
      */
     inline void SetIncludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns = value; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the file name of the attachment.</p>
+     * <p>A list of regular expression patterns to include certain attachments of
+     * catalogs in your ServiceNow. Item that match the patterns are included in the
+     * index. Items that don't match the patterns are excluded from the index. If an
+     * item matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the item isn't included in the index.</p> <p>The regex is
+     * applied to the file name of the attachment.</p>
      */
     inline void SetIncludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns = std::move(value); }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the file name of the attachment.</p>
+     * <p>A list of regular expression patterns to include certain attachments of
+     * catalogs in your ServiceNow. Item that match the patterns are included in the
+     * index. Items that don't match the patterns are excluded from the index. If an
+     * item matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the item isn't included in the index.</p> <p>The regex is
+     * applied to the file name of the attachment.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& WithIncludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { SetIncludeAttachmentFilePatterns(value); return *this;}
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the file name of the attachment.</p>
+     * <p>A list of regular expression patterns to include certain attachments of
+     * catalogs in your ServiceNow. Item that match the patterns are included in the
+     * index. Items that don't match the patterns are excluded from the index. If an
+     * item matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the item isn't included in the index.</p> <p>The regex is
+     * applied to the file name of the attachment.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& WithIncludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { SetIncludeAttachmentFilePatterns(std::move(value)); return *this;}
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the file name of the attachment.</p>
+     * <p>A list of regular expression patterns to include certain attachments of
+     * catalogs in your ServiceNow. Item that match the patterns are included in the
+     * index. Items that don't match the patterns are excluded from the index. If an
+     * item matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the item isn't included in the index.</p> <p>The regex is
+     * applied to the file name of the attachment.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& AddIncludeAttachmentFilePatterns(const Aws::String& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns.push_back(value); return *this; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the file name of the attachment.</p>
+     * <p>A list of regular expression patterns to include certain attachments of
+     * catalogs in your ServiceNow. Item that match the patterns are included in the
+     * index. Items that don't match the patterns are excluded from the index. If an
+     * item matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the item isn't included in the index.</p> <p>The regex is
+     * applied to the file name of the attachment.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& AddIncludeAttachmentFilePatterns(Aws::String&& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the file name of the attachment.</p>
+     * <p>A list of regular expression patterns to include certain attachments of
+     * catalogs in your ServiceNow. Item that match the patterns are included in the
+     * index. Items that don't match the patterns are excluded from the index. If an
+     * item matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the item isn't included in the index.</p> <p>The regex is
+     * applied to the file name of the attachment.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& AddIncludeAttachmentFilePatterns(const char* value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns.push_back(value); return *this; }
 
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * <p>A list of regular expression patterns to exclude certain attachments of
+     * catalogs in your ServiceNow. Item that match the patterns are excluded from the
+     * index. Items that don't match the patterns are included in the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p> <p>The regex is applied
      * to the file name of the attachment.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExcludeAttachmentFilePatterns() const{ return m_excludeAttachmentFilePatterns; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * <p>A list of regular expression patterns to exclude certain attachments of
+     * catalogs in your ServiceNow. Item that match the patterns are excluded from the
+     * index. Items that don't match the patterns are included in the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p> <p>The regex is applied
      * to the file name of the attachment.</p>
      */
     inline bool ExcludeAttachmentFilePatternsHasBeenSet() const { return m_excludeAttachmentFilePatternsHasBeenSet; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * <p>A list of regular expression patterns to exclude certain attachments of
+     * catalogs in your ServiceNow. Item that match the patterns are excluded from the
+     * index. Items that don't match the patterns are included in the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p> <p>The regex is applied
      * to the file name of the attachment.</p>
      */
     inline void SetExcludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns = value; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * <p>A list of regular expression patterns to exclude certain attachments of
+     * catalogs in your ServiceNow. Item that match the patterns are excluded from the
+     * index. Items that don't match the patterns are included in the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p> <p>The regex is applied
      * to the file name of the attachment.</p>
      */
     inline void SetExcludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns = std::move(value); }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * <p>A list of regular expression patterns to exclude certain attachments of
+     * catalogs in your ServiceNow. Item that match the patterns are excluded from the
+     * index. Items that don't match the patterns are included in the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p> <p>The regex is applied
      * to the file name of the attachment.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& WithExcludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { SetExcludeAttachmentFilePatterns(value); return *this;}
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * <p>A list of regular expression patterns to exclude certain attachments of
+     * catalogs in your ServiceNow. Item that match the patterns are excluded from the
+     * index. Items that don't match the patterns are included in the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p> <p>The regex is applied
      * to the file name of the attachment.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& WithExcludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { SetExcludeAttachmentFilePatterns(std::move(value)); return *this;}
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * <p>A list of regular expression patterns to exclude certain attachments of
+     * catalogs in your ServiceNow. Item that match the patterns are excluded from the
+     * index. Items that don't match the patterns are included in the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p> <p>The regex is applied
      * to the file name of the attachment.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& AddExcludeAttachmentFilePatterns(const Aws::String& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns.push_back(value); return *this; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * <p>A list of regular expression patterns to exclude certain attachments of
+     * catalogs in your ServiceNow. Item that match the patterns are excluded from the
+     * index. Items that don't match the patterns are included in the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p> <p>The regex is applied
      * to the file name of the attachment.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& AddExcludeAttachmentFilePatterns(Aws::String&& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * <p>A list of regular expression patterns to exclude certain attachments of
+     * catalogs in your ServiceNow. Item that match the patterns are excluded from the
+     * index. Items that don't match the patterns are included in the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p> <p>The regex is applied
      * to the file name of the attachment.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& AddExcludeAttachmentFilePatterns(const char* value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns.push_back(value); return *this; }
@@ -328,50 +346,82 @@ namespace Model
 
 
     /**
-     * <p>Mapping between ServiceNow fields and Amazon Kendra index fields. You must
-     * create the index field before you map the field.</p>
+     * <p>Maps attributes or field names of catalogs to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to ServiceNow fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The ServiceNow data source field names must exist in
+     * your ServiceNow custom metadata.</p>
      */
     inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetFieldMappings() const{ return m_fieldMappings; }
 
     /**
-     * <p>Mapping between ServiceNow fields and Amazon Kendra index fields. You must
-     * create the index field before you map the field.</p>
+     * <p>Maps attributes or field names of catalogs to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to ServiceNow fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The ServiceNow data source field names must exist in
+     * your ServiceNow custom metadata.</p>
      */
     inline bool FieldMappingsHasBeenSet() const { return m_fieldMappingsHasBeenSet; }
 
     /**
-     * <p>Mapping between ServiceNow fields and Amazon Kendra index fields. You must
-     * create the index field before you map the field.</p>
+     * <p>Maps attributes or field names of catalogs to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to ServiceNow fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The ServiceNow data source field names must exist in
+     * your ServiceNow custom metadata.</p>
      */
     inline void SetFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = value; }
 
     /**
-     * <p>Mapping between ServiceNow fields and Amazon Kendra index fields. You must
-     * create the index field before you map the field.</p>
+     * <p>Maps attributes or field names of catalogs to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to ServiceNow fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The ServiceNow data source field names must exist in
+     * your ServiceNow custom metadata.</p>
      */
     inline void SetFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = std::move(value); }
 
     /**
-     * <p>Mapping between ServiceNow fields and Amazon Kendra index fields. You must
-     * create the index field before you map the field.</p>
+     * <p>Maps attributes or field names of catalogs to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to ServiceNow fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The ServiceNow data source field names must exist in
+     * your ServiceNow custom metadata.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& WithFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetFieldMappings(value); return *this;}
 
     /**
-     * <p>Mapping between ServiceNow fields and Amazon Kendra index fields. You must
-     * create the index field before you map the field.</p>
+     * <p>Maps attributes or field names of catalogs to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to ServiceNow fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The ServiceNow data source field names must exist in
+     * your ServiceNow custom metadata.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& WithFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetFieldMappings(std::move(value)); return *this;}
 
     /**
-     * <p>Mapping between ServiceNow fields and Amazon Kendra index fields. You must
-     * create the index field before you map the field.</p>
+     * <p>Maps attributes or field names of catalogs to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to ServiceNow fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The ServiceNow data source field names must exist in
+     * your ServiceNow custom metadata.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& AddFieldMappings(const DataSourceToIndexFieldMapping& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(value); return *this; }
 
     /**
-     * <p>Mapping between ServiceNow fields and Amazon Kendra index fields. You must
-     * create the index field before you map the field.</p>
+     * <p>Maps attributes or field names of catalogs to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to ServiceNow fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The ServiceNow data source field names must exist in
+     * your ServiceNow custom metadata.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& AddFieldMappings(DataSourceToIndexFieldMapping&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(std::move(value)); return *this; }
 

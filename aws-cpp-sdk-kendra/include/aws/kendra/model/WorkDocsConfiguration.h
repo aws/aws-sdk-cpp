@@ -168,42 +168,34 @@ namespace Model
 
 
     /**
-     * <p> <code>TRUE</code> to use the change logs to update documents in your index
-     * instead of scanning all documents.</p> <p>If you are syncing your Amazon
-     * WorkDocs data source with your index for the first time, all documents are
-     * scanned. After your first sync, you can use the change logs to update your
-     * documents in your index for future syncs.</p> <p>The default is set to
-     * <code>FALSE</code>.</p>
+     * <p> <code>TRUE</code> to use the Amazon WorkDocs change log to determine which
+     * documents require updating in the index. Depending on the change log's size, it
+     * may take longer for Amazon Kendra to use the change log than to scan all of your
+     * documents in Amazon WorkDocs.</p>
      */
     inline bool GetUseChangeLog() const{ return m_useChangeLog; }
 
     /**
-     * <p> <code>TRUE</code> to use the change logs to update documents in your index
-     * instead of scanning all documents.</p> <p>If you are syncing your Amazon
-     * WorkDocs data source with your index for the first time, all documents are
-     * scanned. After your first sync, you can use the change logs to update your
-     * documents in your index for future syncs.</p> <p>The default is set to
-     * <code>FALSE</code>.</p>
+     * <p> <code>TRUE</code> to use the Amazon WorkDocs change log to determine which
+     * documents require updating in the index. Depending on the change log's size, it
+     * may take longer for Amazon Kendra to use the change log than to scan all of your
+     * documents in Amazon WorkDocs.</p>
      */
     inline bool UseChangeLogHasBeenSet() const { return m_useChangeLogHasBeenSet; }
 
     /**
-     * <p> <code>TRUE</code> to use the change logs to update documents in your index
-     * instead of scanning all documents.</p> <p>If you are syncing your Amazon
-     * WorkDocs data source with your index for the first time, all documents are
-     * scanned. After your first sync, you can use the change logs to update your
-     * documents in your index for future syncs.</p> <p>The default is set to
-     * <code>FALSE</code>.</p>
+     * <p> <code>TRUE</code> to use the Amazon WorkDocs change log to determine which
+     * documents require updating in the index. Depending on the change log's size, it
+     * may take longer for Amazon Kendra to use the change log than to scan all of your
+     * documents in Amazon WorkDocs.</p>
      */
     inline void SetUseChangeLog(bool value) { m_useChangeLogHasBeenSet = true; m_useChangeLog = value; }
 
     /**
-     * <p> <code>TRUE</code> to use the change logs to update documents in your index
-     * instead of scanning all documents.</p> <p>If you are syncing your Amazon
-     * WorkDocs data source with your index for the first time, all documents are
-     * scanned. After your first sync, you can use the change logs to update your
-     * documents in your index for future syncs.</p> <p>The default is set to
-     * <code>FALSE</code>.</p>
+     * <p> <code>TRUE</code> to use the Amazon WorkDocs change log to determine which
+     * documents require updating in the index. Depending on the change log's size, it
+     * may take longer for Amazon Kendra to use the change log than to scan all of your
+     * documents in Amazon WorkDocs.</p>
      */
     inline WorkDocsConfiguration& WithUseChangeLog(bool value) { SetUseChangeLog(value); return *this;}
 
@@ -212,8 +204,8 @@ namespace Model
      * <p>A list of regular expression patterns to include certain files in your Amazon
      * WorkDocs site repository. Files that match the patterns are included in the
      * index. Files that don't match the patterns are excluded from the index. If a
-     * file matches both an inclusion pattern and an exclusion pattern, the exclusion
-     * pattern takes precedence and the file isn’t included in the index.</p>
+     * file matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the file isn't included in the index.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInclusionPatterns() const{ return m_inclusionPatterns; }
 
@@ -221,8 +213,8 @@ namespace Model
      * <p>A list of regular expression patterns to include certain files in your Amazon
      * WorkDocs site repository. Files that match the patterns are included in the
      * index. Files that don't match the patterns are excluded from the index. If a
-     * file matches both an inclusion pattern and an exclusion pattern, the exclusion
-     * pattern takes precedence and the file isn’t included in the index.</p>
+     * file matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the file isn't included in the index.</p>
      */
     inline bool InclusionPatternsHasBeenSet() const { return m_inclusionPatternsHasBeenSet; }
 
@@ -230,8 +222,8 @@ namespace Model
      * <p>A list of regular expression patterns to include certain files in your Amazon
      * WorkDocs site repository. Files that match the patterns are included in the
      * index. Files that don't match the patterns are excluded from the index. If a
-     * file matches both an inclusion pattern and an exclusion pattern, the exclusion
-     * pattern takes precedence and the file isn’t included in the index.</p>
+     * file matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the file isn't included in the index.</p>
      */
     inline void SetInclusionPatterns(const Aws::Vector<Aws::String>& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = value; }
 
@@ -239,8 +231,8 @@ namespace Model
      * <p>A list of regular expression patterns to include certain files in your Amazon
      * WorkDocs site repository. Files that match the patterns are included in the
      * index. Files that don't match the patterns are excluded from the index. If a
-     * file matches both an inclusion pattern and an exclusion pattern, the exclusion
-     * pattern takes precedence and the file isn’t included in the index.</p>
+     * file matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the file isn't included in the index.</p>
      */
     inline void SetInclusionPatterns(Aws::Vector<Aws::String>&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = std::move(value); }
 
@@ -248,8 +240,8 @@ namespace Model
      * <p>A list of regular expression patterns to include certain files in your Amazon
      * WorkDocs site repository. Files that match the patterns are included in the
      * index. Files that don't match the patterns are excluded from the index. If a
-     * file matches both an inclusion pattern and an exclusion pattern, the exclusion
-     * pattern takes precedence and the file isn’t included in the index.</p>
+     * file matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the file isn't included in the index.</p>
      */
     inline WorkDocsConfiguration& WithInclusionPatterns(const Aws::Vector<Aws::String>& value) { SetInclusionPatterns(value); return *this;}
 
@@ -257,8 +249,8 @@ namespace Model
      * <p>A list of regular expression patterns to include certain files in your Amazon
      * WorkDocs site repository. Files that match the patterns are included in the
      * index. Files that don't match the patterns are excluded from the index. If a
-     * file matches both an inclusion pattern and an exclusion pattern, the exclusion
-     * pattern takes precedence and the file isn’t included in the index.</p>
+     * file matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the file isn't included in the index.</p>
      */
     inline WorkDocsConfiguration& WithInclusionPatterns(Aws::Vector<Aws::String>&& value) { SetInclusionPatterns(std::move(value)); return *this;}
 
@@ -266,8 +258,8 @@ namespace Model
      * <p>A list of regular expression patterns to include certain files in your Amazon
      * WorkDocs site repository. Files that match the patterns are included in the
      * index. Files that don't match the patterns are excluded from the index. If a
-     * file matches both an inclusion pattern and an exclusion pattern, the exclusion
-     * pattern takes precedence and the file isn’t included in the index.</p>
+     * file matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the file isn't included in the index.</p>
      */
     inline WorkDocsConfiguration& AddInclusionPatterns(const Aws::String& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
 
@@ -275,8 +267,8 @@ namespace Model
      * <p>A list of regular expression patterns to include certain files in your Amazon
      * WorkDocs site repository. Files that match the patterns are included in the
      * index. Files that don't match the patterns are excluded from the index. If a
-     * file matches both an inclusion pattern and an exclusion pattern, the exclusion
-     * pattern takes precedence and the file isn’t included in the index.</p>
+     * file matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the file isn't included in the index.</p>
      */
     inline WorkDocsConfiguration& AddInclusionPatterns(Aws::String&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(std::move(value)); return *this; }
 
@@ -284,8 +276,8 @@ namespace Model
      * <p>A list of regular expression patterns to include certain files in your Amazon
      * WorkDocs site repository. Files that match the patterns are included in the
      * index. Files that don't match the patterns are excluded from the index. If a
-     * file matches both an inclusion pattern and an exclusion pattern, the exclusion
-     * pattern takes precedence and the file isn’t included in the index.</p>
+     * file matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the file isn't included in the index.</p>
      */
     inline WorkDocsConfiguration& AddInclusionPatterns(const char* value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
 
@@ -294,8 +286,8 @@ namespace Model
      * <p>A list of regular expression patterns to exclude certain files in your Amazon
      * WorkDocs site repository. Files that match the patterns are excluded from the
      * index. Files that don’t match the patterns are included in the index. If a file
-     * matches both an inclusion pattern and an exclusion pattern, the exclusion
-     * pattern takes precedence and the file isn’t included in the index.</p>
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the file isn't included in the index.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExclusionPatterns() const{ return m_exclusionPatterns; }
 
@@ -303,8 +295,8 @@ namespace Model
      * <p>A list of regular expression patterns to exclude certain files in your Amazon
      * WorkDocs site repository. Files that match the patterns are excluded from the
      * index. Files that don’t match the patterns are included in the index. If a file
-     * matches both an inclusion pattern and an exclusion pattern, the exclusion
-     * pattern takes precedence and the file isn’t included in the index.</p>
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the file isn't included in the index.</p>
      */
     inline bool ExclusionPatternsHasBeenSet() const { return m_exclusionPatternsHasBeenSet; }
 
@@ -312,8 +304,8 @@ namespace Model
      * <p>A list of regular expression patterns to exclude certain files in your Amazon
      * WorkDocs site repository. Files that match the patterns are excluded from the
      * index. Files that don’t match the patterns are included in the index. If a file
-     * matches both an inclusion pattern and an exclusion pattern, the exclusion
-     * pattern takes precedence and the file isn’t included in the index.</p>
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the file isn't included in the index.</p>
      */
     inline void SetExclusionPatterns(const Aws::Vector<Aws::String>& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = value; }
 
@@ -321,8 +313,8 @@ namespace Model
      * <p>A list of regular expression patterns to exclude certain files in your Amazon
      * WorkDocs site repository. Files that match the patterns are excluded from the
      * index. Files that don’t match the patterns are included in the index. If a file
-     * matches both an inclusion pattern and an exclusion pattern, the exclusion
-     * pattern takes precedence and the file isn’t included in the index.</p>
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the file isn't included in the index.</p>
      */
     inline void SetExclusionPatterns(Aws::Vector<Aws::String>&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = std::move(value); }
 
@@ -330,8 +322,8 @@ namespace Model
      * <p>A list of regular expression patterns to exclude certain files in your Amazon
      * WorkDocs site repository. Files that match the patterns are excluded from the
      * index. Files that don’t match the patterns are included in the index. If a file
-     * matches both an inclusion pattern and an exclusion pattern, the exclusion
-     * pattern takes precedence and the file isn’t included in the index.</p>
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the file isn't included in the index.</p>
      */
     inline WorkDocsConfiguration& WithExclusionPatterns(const Aws::Vector<Aws::String>& value) { SetExclusionPatterns(value); return *this;}
 
@@ -339,8 +331,8 @@ namespace Model
      * <p>A list of regular expression patterns to exclude certain files in your Amazon
      * WorkDocs site repository. Files that match the patterns are excluded from the
      * index. Files that don’t match the patterns are included in the index. If a file
-     * matches both an inclusion pattern and an exclusion pattern, the exclusion
-     * pattern takes precedence and the file isn’t included in the index.</p>
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the file isn't included in the index.</p>
      */
     inline WorkDocsConfiguration& WithExclusionPatterns(Aws::Vector<Aws::String>&& value) { SetExclusionPatterns(std::move(value)); return *this;}
 
@@ -348,8 +340,8 @@ namespace Model
      * <p>A list of regular expression patterns to exclude certain files in your Amazon
      * WorkDocs site repository. Files that match the patterns are excluded from the
      * index. Files that don’t match the patterns are included in the index. If a file
-     * matches both an inclusion pattern and an exclusion pattern, the exclusion
-     * pattern takes precedence and the file isn’t included in the index.</p>
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the file isn't included in the index.</p>
      */
     inline WorkDocsConfiguration& AddExclusionPatterns(const Aws::String& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
 
@@ -357,8 +349,8 @@ namespace Model
      * <p>A list of regular expression patterns to exclude certain files in your Amazon
      * WorkDocs site repository. Files that match the patterns are excluded from the
      * index. Files that don’t match the patterns are included in the index. If a file
-     * matches both an inclusion pattern and an exclusion pattern, the exclusion
-     * pattern takes precedence and the file isn’t included in the index.</p>
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the file isn't included in the index.</p>
      */
     inline WorkDocsConfiguration& AddExclusionPatterns(Aws::String&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(std::move(value)); return *this; }
 
@@ -366,97 +358,97 @@ namespace Model
      * <p>A list of regular expression patterns to exclude certain files in your Amazon
      * WorkDocs site repository. Files that match the patterns are excluded from the
      * index. Files that don’t match the patterns are included in the index. If a file
-     * matches both an inclusion pattern and an exclusion pattern, the exclusion
-     * pattern takes precedence and the file isn’t included in the index.</p>
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the file isn't included in the index.</p>
      */
     inline WorkDocsConfiguration& AddExclusionPatterns(const char* value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
 
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
-     * WorkDocs field names to custom index field names in Amazon Kendra. You must
-     * first create the custom index fields using the <code>UpdateIndex</code> API
-     * before you map to Amazon WorkDocs fields. For more information, see <a
+     * WorkDocs data source attributes or field names to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Amazon WorkDocs fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * Data Source Fields</a>. The Amazon WorkDocs data source field names need to
-     * exist in your Amazon WorkDocs custom metadata.</p>
+     * data source fields</a>. The Amazon WorkDocs data source field names must exist
+     * in your Amazon WorkDocs custom metadata.</p>
      */
     inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetFieldMappings() const{ return m_fieldMappings; }
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
-     * WorkDocs field names to custom index field names in Amazon Kendra. You must
-     * first create the custom index fields using the <code>UpdateIndex</code> API
-     * before you map to Amazon WorkDocs fields. For more information, see <a
+     * WorkDocs data source attributes or field names to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Amazon WorkDocs fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * Data Source Fields</a>. The Amazon WorkDocs data source field names need to
-     * exist in your Amazon WorkDocs custom metadata.</p>
+     * data source fields</a>. The Amazon WorkDocs data source field names must exist
+     * in your Amazon WorkDocs custom metadata.</p>
      */
     inline bool FieldMappingsHasBeenSet() const { return m_fieldMappingsHasBeenSet; }
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
-     * WorkDocs field names to custom index field names in Amazon Kendra. You must
-     * first create the custom index fields using the <code>UpdateIndex</code> API
-     * before you map to Amazon WorkDocs fields. For more information, see <a
+     * WorkDocs data source attributes or field names to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Amazon WorkDocs fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * Data Source Fields</a>. The Amazon WorkDocs data source field names need to
-     * exist in your Amazon WorkDocs custom metadata.</p>
+     * data source fields</a>. The Amazon WorkDocs data source field names must exist
+     * in your Amazon WorkDocs custom metadata.</p>
      */
     inline void SetFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = value; }
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
-     * WorkDocs field names to custom index field names in Amazon Kendra. You must
-     * first create the custom index fields using the <code>UpdateIndex</code> API
-     * before you map to Amazon WorkDocs fields. For more information, see <a
+     * WorkDocs data source attributes or field names to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Amazon WorkDocs fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * Data Source Fields</a>. The Amazon WorkDocs data source field names need to
-     * exist in your Amazon WorkDocs custom metadata.</p>
+     * data source fields</a>. The Amazon WorkDocs data source field names must exist
+     * in your Amazon WorkDocs custom metadata.</p>
      */
     inline void SetFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = std::move(value); }
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
-     * WorkDocs field names to custom index field names in Amazon Kendra. You must
-     * first create the custom index fields using the <code>UpdateIndex</code> API
-     * before you map to Amazon WorkDocs fields. For more information, see <a
+     * WorkDocs data source attributes or field names to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Amazon WorkDocs fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * Data Source Fields</a>. The Amazon WorkDocs data source field names need to
-     * exist in your Amazon WorkDocs custom metadata.</p>
+     * data source fields</a>. The Amazon WorkDocs data source field names must exist
+     * in your Amazon WorkDocs custom metadata.</p>
      */
     inline WorkDocsConfiguration& WithFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetFieldMappings(value); return *this;}
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
-     * WorkDocs field names to custom index field names in Amazon Kendra. You must
-     * first create the custom index fields using the <code>UpdateIndex</code> API
-     * before you map to Amazon WorkDocs fields. For more information, see <a
+     * WorkDocs data source attributes or field names to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Amazon WorkDocs fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * Data Source Fields</a>. The Amazon WorkDocs data source field names need to
-     * exist in your Amazon WorkDocs custom metadata.</p>
+     * data source fields</a>. The Amazon WorkDocs data source field names must exist
+     * in your Amazon WorkDocs custom metadata.</p>
      */
     inline WorkDocsConfiguration& WithFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetFieldMappings(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
-     * WorkDocs field names to custom index field names in Amazon Kendra. You must
-     * first create the custom index fields using the <code>UpdateIndex</code> API
-     * before you map to Amazon WorkDocs fields. For more information, see <a
+     * WorkDocs data source attributes or field names to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Amazon WorkDocs fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * Data Source Fields</a>. The Amazon WorkDocs data source field names need to
-     * exist in your Amazon WorkDocs custom metadata.</p>
+     * data source fields</a>. The Amazon WorkDocs data source field names must exist
+     * in your Amazon WorkDocs custom metadata.</p>
      */
     inline WorkDocsConfiguration& AddFieldMappings(const DataSourceToIndexFieldMapping& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(value); return *this; }
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon
-     * WorkDocs field names to custom index field names in Amazon Kendra. You must
-     * first create the custom index fields using the <code>UpdateIndex</code> API
-     * before you map to Amazon WorkDocs fields. For more information, see <a
+     * WorkDocs data source attributes or field names to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Amazon WorkDocs fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * Data Source Fields</a>. The Amazon WorkDocs data source field names need to
-     * exist in your Amazon WorkDocs custom metadata.</p>
+     * data source fields</a>. The Amazon WorkDocs data source field names must exist
+     * in your Amazon WorkDocs custom metadata.</p>
      */
     inline WorkDocsConfiguration& AddFieldMappings(DataSourceToIndexFieldMapping&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(std::move(value)); return *this; }
 

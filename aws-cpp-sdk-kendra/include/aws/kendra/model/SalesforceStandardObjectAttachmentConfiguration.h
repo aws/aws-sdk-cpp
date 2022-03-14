@@ -27,7 +27,7 @@ namespace Model
 
   /**
    * <p>Provides the configuration information for processing attachments to
-   * Salesforce standard objects. </p><p><h3>See Also:</h3>   <a
+   * Salesforce standard objects.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SalesforceStandardObjectAttachmentConfiguration">AWS
    * API Reference</a></p>
    */

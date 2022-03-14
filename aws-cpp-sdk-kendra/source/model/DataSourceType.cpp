@@ -32,6 +32,7 @@ namespace Aws
         static const int WEBCRAWLER_HASH = HashingUtils::HashString("WEBCRAWLER");
         static const int WORKDOCS_HASH = HashingUtils::HashString("WORKDOCS");
         static const int FSX_HASH = HashingUtils::HashString("FSX");
+        static const int SLACK_HASH = HashingUtils::HashString("SLACK");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -85,6 +86,10 @@ namespace Aws
           {
             return DataSourceType::FSX;
           }
+          else if (hashCode == SLACK_HASH)
+          {
+            return DataSourceType::SLACK;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -123,6 +128,8 @@ namespace Aws
             return "WORKDOCS";
           case DataSourceType::FSX:
             return "FSX";
+          case DataSourceType::SLACK:
+            return "SLACK";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

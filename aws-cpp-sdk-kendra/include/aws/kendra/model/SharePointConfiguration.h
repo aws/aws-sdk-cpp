@@ -260,202 +260,216 @@ namespace Model
 
 
     /**
-     * <p>Set to <code>TRUE</code> to use the Microsoft SharePoint change log to
-     * determine the documents that need to be updated in the index. Depending on the
-     * size of the SharePoint change log, it may take longer for Amazon Kendra to use
-     * the change log than it takes it to determine the changed documents using the
-     * Amazon Kendra document crawler.</p>
+     * <p> <code>TRUE</code> to use the SharePoint change log to determine which
+     * documents require updating in the index. Depending on the change log's size, it
+     * may take longer for Amazon Kendra to use the change log than to scan all of your
+     * documents in SharePoint.</p>
      */
     inline bool GetUseChangeLog() const{ return m_useChangeLog; }
 
     /**
-     * <p>Set to <code>TRUE</code> to use the Microsoft SharePoint change log to
-     * determine the documents that need to be updated in the index. Depending on the
-     * size of the SharePoint change log, it may take longer for Amazon Kendra to use
-     * the change log than it takes it to determine the changed documents using the
-     * Amazon Kendra document crawler.</p>
+     * <p> <code>TRUE</code> to use the SharePoint change log to determine which
+     * documents require updating in the index. Depending on the change log's size, it
+     * may take longer for Amazon Kendra to use the change log than to scan all of your
+     * documents in SharePoint.</p>
      */
     inline bool UseChangeLogHasBeenSet() const { return m_useChangeLogHasBeenSet; }
 
     /**
-     * <p>Set to <code>TRUE</code> to use the Microsoft SharePoint change log to
-     * determine the documents that need to be updated in the index. Depending on the
-     * size of the SharePoint change log, it may take longer for Amazon Kendra to use
-     * the change log than it takes it to determine the changed documents using the
-     * Amazon Kendra document crawler.</p>
+     * <p> <code>TRUE</code> to use the SharePoint change log to determine which
+     * documents require updating in the index. Depending on the change log's size, it
+     * may take longer for Amazon Kendra to use the change log than to scan all of your
+     * documents in SharePoint.</p>
      */
     inline void SetUseChangeLog(bool value) { m_useChangeLogHasBeenSet = true; m_useChangeLog = value; }
 
     /**
-     * <p>Set to <code>TRUE</code> to use the Microsoft SharePoint change log to
-     * determine the documents that need to be updated in the index. Depending on the
-     * size of the SharePoint change log, it may take longer for Amazon Kendra to use
-     * the change log than it takes it to determine the changed documents using the
-     * Amazon Kendra document crawler.</p>
+     * <p> <code>TRUE</code> to use the SharePoint change log to determine which
+     * documents require updating in the index. Depending on the change log's size, it
+     * may take longer for Amazon Kendra to use the change log than to scan all of your
+     * documents in SharePoint.</p>
      */
     inline SharePointConfiguration& WithUseChangeLog(bool value) { SetUseChangeLog(value); return *this;}
 
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an inclusion pattern and an exclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the display URL of the SharePoint document.</p>
+     * <p>A list of regular expression patterns to include certain documents in your
+     * SharePoint. Documents that match the patterns are included in the index.
+     * Documents that don't match the patterns are excluded from the index. If a
+     * document matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the document isn't included in the index.</p> <p>The regex
+     * is applied to the display URL of the SharePoint document.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInclusionPatterns() const{ return m_inclusionPatterns; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an inclusion pattern and an exclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the display URL of the SharePoint document.</p>
+     * <p>A list of regular expression patterns to include certain documents in your
+     * SharePoint. Documents that match the patterns are included in the index.
+     * Documents that don't match the patterns are excluded from the index. If a
+     * document matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the document isn't included in the index.</p> <p>The regex
+     * is applied to the display URL of the SharePoint document.</p>
      */
     inline bool InclusionPatternsHasBeenSet() const { return m_inclusionPatternsHasBeenSet; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an inclusion pattern and an exclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the display URL of the SharePoint document.</p>
+     * <p>A list of regular expression patterns to include certain documents in your
+     * SharePoint. Documents that match the patterns are included in the index.
+     * Documents that don't match the patterns are excluded from the index. If a
+     * document matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the document isn't included in the index.</p> <p>The regex
+     * is applied to the display URL of the SharePoint document.</p>
      */
     inline void SetInclusionPatterns(const Aws::Vector<Aws::String>& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = value; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an inclusion pattern and an exclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the display URL of the SharePoint document.</p>
+     * <p>A list of regular expression patterns to include certain documents in your
+     * SharePoint. Documents that match the patterns are included in the index.
+     * Documents that don't match the patterns are excluded from the index. If a
+     * document matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the document isn't included in the index.</p> <p>The regex
+     * is applied to the display URL of the SharePoint document.</p>
      */
     inline void SetInclusionPatterns(Aws::Vector<Aws::String>&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = std::move(value); }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an inclusion pattern and an exclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the display URL of the SharePoint document.</p>
+     * <p>A list of regular expression patterns to include certain documents in your
+     * SharePoint. Documents that match the patterns are included in the index.
+     * Documents that don't match the patterns are excluded from the index. If a
+     * document matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the document isn't included in the index.</p> <p>The regex
+     * is applied to the display URL of the SharePoint document.</p>
      */
     inline SharePointConfiguration& WithInclusionPatterns(const Aws::Vector<Aws::String>& value) { SetInclusionPatterns(value); return *this;}
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an inclusion pattern and an exclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the display URL of the SharePoint document.</p>
+     * <p>A list of regular expression patterns to include certain documents in your
+     * SharePoint. Documents that match the patterns are included in the index.
+     * Documents that don't match the patterns are excluded from the index. If a
+     * document matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the document isn't included in the index.</p> <p>The regex
+     * is applied to the display URL of the SharePoint document.</p>
      */
     inline SharePointConfiguration& WithInclusionPatterns(Aws::Vector<Aws::String>&& value) { SetInclusionPatterns(std::move(value)); return *this;}
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an inclusion pattern and an exclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the display URL of the SharePoint document.</p>
+     * <p>A list of regular expression patterns to include certain documents in your
+     * SharePoint. Documents that match the patterns are included in the index.
+     * Documents that don't match the patterns are excluded from the index. If a
+     * document matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the document isn't included in the index.</p> <p>The regex
+     * is applied to the display URL of the SharePoint document.</p>
      */
     inline SharePointConfiguration& AddInclusionPatterns(const Aws::String& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an inclusion pattern and an exclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the display URL of the SharePoint document.</p>
+     * <p>A list of regular expression patterns to include certain documents in your
+     * SharePoint. Documents that match the patterns are included in the index.
+     * Documents that don't match the patterns are excluded from the index. If a
+     * document matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the document isn't included in the index.</p> <p>The regex
+     * is applied to the display URL of the SharePoint document.</p>
      */
     inline SharePointConfiguration& AddInclusionPatterns(Aws::String&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an inclusion pattern and an exclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the display URL of the SharePoint document.</p>
+     * <p>A list of regular expression patterns to include certain documents in your
+     * SharePoint. Documents that match the patterns are included in the index.
+     * Documents that don't match the patterns are excluded from the index. If a
+     * document matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the document isn't included in the index.</p> <p>The regex
+     * is applied to the display URL of the SharePoint document.</p>
      */
     inline SharePointConfiguration& AddInclusionPatterns(const char* value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
 
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the display URL of the SharePoint document.</p>
+     * <p>A list of regular expression patterns to exclude certain documents in your
+     * SharePoint. Documents that match the patterns are excluded from the index.
+     * Documents that don't match the patterns are included in the index. If a document
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the document isn't included in the index.</p> <p>The regex is
+     * applied to the display URL of the SharePoint document.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExclusionPatterns() const{ return m_exclusionPatterns; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the display URL of the SharePoint document.</p>
+     * <p>A list of regular expression patterns to exclude certain documents in your
+     * SharePoint. Documents that match the patterns are excluded from the index.
+     * Documents that don't match the patterns are included in the index. If a document
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the document isn't included in the index.</p> <p>The regex is
+     * applied to the display URL of the SharePoint document.</p>
      */
     inline bool ExclusionPatternsHasBeenSet() const { return m_exclusionPatternsHasBeenSet; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the display URL of the SharePoint document.</p>
+     * <p>A list of regular expression patterns to exclude certain documents in your
+     * SharePoint. Documents that match the patterns are excluded from the index.
+     * Documents that don't match the patterns are included in the index. If a document
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the document isn't included in the index.</p> <p>The regex is
+     * applied to the display URL of the SharePoint document.</p>
      */
     inline void SetExclusionPatterns(const Aws::Vector<Aws::String>& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = value; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the display URL of the SharePoint document.</p>
+     * <p>A list of regular expression patterns to exclude certain documents in your
+     * SharePoint. Documents that match the patterns are excluded from the index.
+     * Documents that don't match the patterns are included in the index. If a document
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the document isn't included in the index.</p> <p>The regex is
+     * applied to the display URL of the SharePoint document.</p>
      */
     inline void SetExclusionPatterns(Aws::Vector<Aws::String>&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = std::move(value); }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the display URL of the SharePoint document.</p>
+     * <p>A list of regular expression patterns to exclude certain documents in your
+     * SharePoint. Documents that match the patterns are excluded from the index.
+     * Documents that don't match the patterns are included in the index. If a document
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the document isn't included in the index.</p> <p>The regex is
+     * applied to the display URL of the SharePoint document.</p>
      */
     inline SharePointConfiguration& WithExclusionPatterns(const Aws::Vector<Aws::String>& value) { SetExclusionPatterns(value); return *this;}
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the display URL of the SharePoint document.</p>
+     * <p>A list of regular expression patterns to exclude certain documents in your
+     * SharePoint. Documents that match the patterns are excluded from the index.
+     * Documents that don't match the patterns are included in the index. If a document
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the document isn't included in the index.</p> <p>The regex is
+     * applied to the display URL of the SharePoint document.</p>
      */
     inline SharePointConfiguration& WithExclusionPatterns(Aws::Vector<Aws::String>&& value) { SetExclusionPatterns(std::move(value)); return *this;}
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the display URL of the SharePoint document.</p>
+     * <p>A list of regular expression patterns to exclude certain documents in your
+     * SharePoint. Documents that match the patterns are excluded from the index.
+     * Documents that don't match the patterns are included in the index. If a document
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the document isn't included in the index.</p> <p>The regex is
+     * applied to the display URL of the SharePoint document.</p>
      */
     inline SharePointConfiguration& AddExclusionPatterns(const Aws::String& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the display URL of the SharePoint document.</p>
+     * <p>A list of regular expression patterns to exclude certain documents in your
+     * SharePoint. Documents that match the patterns are excluded from the index.
+     * Documents that don't match the patterns are included in the index. If a document
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the document isn't included in the index.</p> <p>The regex is
+     * applied to the display URL of the SharePoint document.</p>
      */
     inline SharePointConfiguration& AddExclusionPatterns(Aws::String&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the display URL of the SharePoint document.</p>
+     * <p>A list of regular expression patterns to exclude certain documents in your
+     * SharePoint. Documents that match the patterns are excluded from the index.
+     * Documents that don't match the patterns are included in the index. If a document
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the document isn't included in the index.</p> <p>The regex is
+     * applied to the display URL of the SharePoint document.</p>
      */
     inline SharePointConfiguration& AddExclusionPatterns(const char* value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
 
@@ -481,81 +495,89 @@ namespace Model
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
-     * Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You
-     * must first create the index fields using the <code>UpdateIndex</code> API before
-     * you map SharePoint attributes. For more information, see <a
+     * SharePoint data source attributes or field names to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to SharePoint fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * Data Source Fields</a>.</p>
+     * data source fields</a>. The SharePoint data source field names must exist in
+     * your SharePoint custom metadata.</p>
      */
     inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetFieldMappings() const{ return m_fieldMappings; }
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
-     * Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You
-     * must first create the index fields using the <code>UpdateIndex</code> API before
-     * you map SharePoint attributes. For more information, see <a
+     * SharePoint data source attributes or field names to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to SharePoint fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * Data Source Fields</a>.</p>
+     * data source fields</a>. The SharePoint data source field names must exist in
+     * your SharePoint custom metadata.</p>
      */
     inline bool FieldMappingsHasBeenSet() const { return m_fieldMappingsHasBeenSet; }
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
-     * Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You
-     * must first create the index fields using the <code>UpdateIndex</code> API before
-     * you map SharePoint attributes. For more information, see <a
+     * SharePoint data source attributes or field names to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to SharePoint fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * Data Source Fields</a>.</p>
+     * data source fields</a>. The SharePoint data source field names must exist in
+     * your SharePoint custom metadata.</p>
      */
     inline void SetFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = value; }
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
-     * Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You
-     * must first create the index fields using the <code>UpdateIndex</code> API before
-     * you map SharePoint attributes. For more information, see <a
+     * SharePoint data source attributes or field names to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to SharePoint fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * Data Source Fields</a>.</p>
+     * data source fields</a>. The SharePoint data source field names must exist in
+     * your SharePoint custom metadata.</p>
      */
     inline void SetFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = std::move(value); }
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
-     * Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You
-     * must first create the index fields using the <code>UpdateIndex</code> API before
-     * you map SharePoint attributes. For more information, see <a
+     * SharePoint data source attributes or field names to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to SharePoint fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * Data Source Fields</a>.</p>
+     * data source fields</a>. The SharePoint data source field names must exist in
+     * your SharePoint custom metadata.</p>
      */
     inline SharePointConfiguration& WithFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetFieldMappings(value); return *this;}
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
-     * Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You
-     * must first create the index fields using the <code>UpdateIndex</code> API before
-     * you map SharePoint attributes. For more information, see <a
+     * SharePoint data source attributes or field names to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to SharePoint fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * Data Source Fields</a>.</p>
+     * data source fields</a>. The SharePoint data source field names must exist in
+     * your SharePoint custom metadata.</p>
      */
     inline SharePointConfiguration& WithFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetFieldMappings(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
-     * Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You
-     * must first create the index fields using the <code>UpdateIndex</code> API before
-     * you map SharePoint attributes. For more information, see <a
+     * SharePoint data source attributes or field names to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to SharePoint fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * Data Source Fields</a>.</p>
+     * data source fields</a>. The SharePoint data source field names must exist in
+     * your SharePoint custom metadata.</p>
      */
     inline SharePointConfiguration& AddFieldMappings(const DataSourceToIndexFieldMapping& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(value); return *this; }
 
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
-     * Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You
-     * must first create the index fields using the <code>UpdateIndex</code> API before
-     * you map SharePoint attributes. For more information, see <a
+     * SharePoint data source attributes or field names to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to SharePoint fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * Data Source Fields</a>.</p>
+     * data source fields</a>. The SharePoint data source field names must exist in
+     * your SharePoint custom metadata.</p>
      */
     inline SharePointConfiguration& AddFieldMappings(DataSourceToIndexFieldMapping&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(std::move(value)); return *this; }
 

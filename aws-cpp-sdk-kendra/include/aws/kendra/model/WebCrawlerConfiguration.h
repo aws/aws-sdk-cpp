@@ -266,129 +266,165 @@ namespace Model
 
 
     /**
-     * <p>The regular expression pattern to include certain URLs to crawl.</p> <p>If
-     * there is a regular expression pattern to exclude certain URLs that conflicts
-     * with the include pattern, the exclude pattern takes precedence.</p>
+     * <p>A list of regular expression patterns to include certain URLs to crawl. URLs
+     * that match the patterns are included in the index. URLs that don't match the
+     * patterns are excluded from the index. If a URL matches both an inclusion and
+     * exclusion pattern, the exclusion pattern takes precedence and the URL file isn't
+     * included in the index.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUrlInclusionPatterns() const{ return m_urlInclusionPatterns; }
 
     /**
-     * <p>The regular expression pattern to include certain URLs to crawl.</p> <p>If
-     * there is a regular expression pattern to exclude certain URLs that conflicts
-     * with the include pattern, the exclude pattern takes precedence.</p>
+     * <p>A list of regular expression patterns to include certain URLs to crawl. URLs
+     * that match the patterns are included in the index. URLs that don't match the
+     * patterns are excluded from the index. If a URL matches both an inclusion and
+     * exclusion pattern, the exclusion pattern takes precedence and the URL file isn't
+     * included in the index.</p>
      */
     inline bool UrlInclusionPatternsHasBeenSet() const { return m_urlInclusionPatternsHasBeenSet; }
 
     /**
-     * <p>The regular expression pattern to include certain URLs to crawl.</p> <p>If
-     * there is a regular expression pattern to exclude certain URLs that conflicts
-     * with the include pattern, the exclude pattern takes precedence.</p>
+     * <p>A list of regular expression patterns to include certain URLs to crawl. URLs
+     * that match the patterns are included in the index. URLs that don't match the
+     * patterns are excluded from the index. If a URL matches both an inclusion and
+     * exclusion pattern, the exclusion pattern takes precedence and the URL file isn't
+     * included in the index.</p>
      */
     inline void SetUrlInclusionPatterns(const Aws::Vector<Aws::String>& value) { m_urlInclusionPatternsHasBeenSet = true; m_urlInclusionPatterns = value; }
 
     /**
-     * <p>The regular expression pattern to include certain URLs to crawl.</p> <p>If
-     * there is a regular expression pattern to exclude certain URLs that conflicts
-     * with the include pattern, the exclude pattern takes precedence.</p>
+     * <p>A list of regular expression patterns to include certain URLs to crawl. URLs
+     * that match the patterns are included in the index. URLs that don't match the
+     * patterns are excluded from the index. If a URL matches both an inclusion and
+     * exclusion pattern, the exclusion pattern takes precedence and the URL file isn't
+     * included in the index.</p>
      */
     inline void SetUrlInclusionPatterns(Aws::Vector<Aws::String>&& value) { m_urlInclusionPatternsHasBeenSet = true; m_urlInclusionPatterns = std::move(value); }
 
     /**
-     * <p>The regular expression pattern to include certain URLs to crawl.</p> <p>If
-     * there is a regular expression pattern to exclude certain URLs that conflicts
-     * with the include pattern, the exclude pattern takes precedence.</p>
+     * <p>A list of regular expression patterns to include certain URLs to crawl. URLs
+     * that match the patterns are included in the index. URLs that don't match the
+     * patterns are excluded from the index. If a URL matches both an inclusion and
+     * exclusion pattern, the exclusion pattern takes precedence and the URL file isn't
+     * included in the index.</p>
      */
     inline WebCrawlerConfiguration& WithUrlInclusionPatterns(const Aws::Vector<Aws::String>& value) { SetUrlInclusionPatterns(value); return *this;}
 
     /**
-     * <p>The regular expression pattern to include certain URLs to crawl.</p> <p>If
-     * there is a regular expression pattern to exclude certain URLs that conflicts
-     * with the include pattern, the exclude pattern takes precedence.</p>
+     * <p>A list of regular expression patterns to include certain URLs to crawl. URLs
+     * that match the patterns are included in the index. URLs that don't match the
+     * patterns are excluded from the index. If a URL matches both an inclusion and
+     * exclusion pattern, the exclusion pattern takes precedence and the URL file isn't
+     * included in the index.</p>
      */
     inline WebCrawlerConfiguration& WithUrlInclusionPatterns(Aws::Vector<Aws::String>&& value) { SetUrlInclusionPatterns(std::move(value)); return *this;}
 
     /**
-     * <p>The regular expression pattern to include certain URLs to crawl.</p> <p>If
-     * there is a regular expression pattern to exclude certain URLs that conflicts
-     * with the include pattern, the exclude pattern takes precedence.</p>
+     * <p>A list of regular expression patterns to include certain URLs to crawl. URLs
+     * that match the patterns are included in the index. URLs that don't match the
+     * patterns are excluded from the index. If a URL matches both an inclusion and
+     * exclusion pattern, the exclusion pattern takes precedence and the URL file isn't
+     * included in the index.</p>
      */
     inline WebCrawlerConfiguration& AddUrlInclusionPatterns(const Aws::String& value) { m_urlInclusionPatternsHasBeenSet = true; m_urlInclusionPatterns.push_back(value); return *this; }
 
     /**
-     * <p>The regular expression pattern to include certain URLs to crawl.</p> <p>If
-     * there is a regular expression pattern to exclude certain URLs that conflicts
-     * with the include pattern, the exclude pattern takes precedence.</p>
+     * <p>A list of regular expression patterns to include certain URLs to crawl. URLs
+     * that match the patterns are included in the index. URLs that don't match the
+     * patterns are excluded from the index. If a URL matches both an inclusion and
+     * exclusion pattern, the exclusion pattern takes precedence and the URL file isn't
+     * included in the index.</p>
      */
     inline WebCrawlerConfiguration& AddUrlInclusionPatterns(Aws::String&& value) { m_urlInclusionPatternsHasBeenSet = true; m_urlInclusionPatterns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The regular expression pattern to include certain URLs to crawl.</p> <p>If
-     * there is a regular expression pattern to exclude certain URLs that conflicts
-     * with the include pattern, the exclude pattern takes precedence.</p>
+     * <p>A list of regular expression patterns to include certain URLs to crawl. URLs
+     * that match the patterns are included in the index. URLs that don't match the
+     * patterns are excluded from the index. If a URL matches both an inclusion and
+     * exclusion pattern, the exclusion pattern takes precedence and the URL file isn't
+     * included in the index.</p>
      */
     inline WebCrawlerConfiguration& AddUrlInclusionPatterns(const char* value) { m_urlInclusionPatternsHasBeenSet = true; m_urlInclusionPatterns.push_back(value); return *this; }
 
 
     /**
-     * <p>The regular expression pattern to exclude certain URLs to crawl.</p> <p>If
-     * there is a regular expression pattern to include certain URLs that conflicts
-     * with the exclude pattern, the exclude pattern takes precedence.</p>
+     * <p>A list of regular expression patterns to exclude certain URLs to crawl. URLs
+     * that match the patterns are excluded from the index. URLs that don't match the
+     * patterns are included in the index. If a URL matches both an inclusion and
+     * exclusion pattern, the exclusion pattern takes precedence and the URL file isn't
+     * included in the index.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUrlExclusionPatterns() const{ return m_urlExclusionPatterns; }
 
     /**
-     * <p>The regular expression pattern to exclude certain URLs to crawl.</p> <p>If
-     * there is a regular expression pattern to include certain URLs that conflicts
-     * with the exclude pattern, the exclude pattern takes precedence.</p>
+     * <p>A list of regular expression patterns to exclude certain URLs to crawl. URLs
+     * that match the patterns are excluded from the index. URLs that don't match the
+     * patterns are included in the index. If a URL matches both an inclusion and
+     * exclusion pattern, the exclusion pattern takes precedence and the URL file isn't
+     * included in the index.</p>
      */
     inline bool UrlExclusionPatternsHasBeenSet() const { return m_urlExclusionPatternsHasBeenSet; }
 
     /**
-     * <p>The regular expression pattern to exclude certain URLs to crawl.</p> <p>If
-     * there is a regular expression pattern to include certain URLs that conflicts
-     * with the exclude pattern, the exclude pattern takes precedence.</p>
+     * <p>A list of regular expression patterns to exclude certain URLs to crawl. URLs
+     * that match the patterns are excluded from the index. URLs that don't match the
+     * patterns are included in the index. If a URL matches both an inclusion and
+     * exclusion pattern, the exclusion pattern takes precedence and the URL file isn't
+     * included in the index.</p>
      */
     inline void SetUrlExclusionPatterns(const Aws::Vector<Aws::String>& value) { m_urlExclusionPatternsHasBeenSet = true; m_urlExclusionPatterns = value; }
 
     /**
-     * <p>The regular expression pattern to exclude certain URLs to crawl.</p> <p>If
-     * there is a regular expression pattern to include certain URLs that conflicts
-     * with the exclude pattern, the exclude pattern takes precedence.</p>
+     * <p>A list of regular expression patterns to exclude certain URLs to crawl. URLs
+     * that match the patterns are excluded from the index. URLs that don't match the
+     * patterns are included in the index. If a URL matches both an inclusion and
+     * exclusion pattern, the exclusion pattern takes precedence and the URL file isn't
+     * included in the index.</p>
      */
     inline void SetUrlExclusionPatterns(Aws::Vector<Aws::String>&& value) { m_urlExclusionPatternsHasBeenSet = true; m_urlExclusionPatterns = std::move(value); }
 
     /**
-     * <p>The regular expression pattern to exclude certain URLs to crawl.</p> <p>If
-     * there is a regular expression pattern to include certain URLs that conflicts
-     * with the exclude pattern, the exclude pattern takes precedence.</p>
+     * <p>A list of regular expression patterns to exclude certain URLs to crawl. URLs
+     * that match the patterns are excluded from the index. URLs that don't match the
+     * patterns are included in the index. If a URL matches both an inclusion and
+     * exclusion pattern, the exclusion pattern takes precedence and the URL file isn't
+     * included in the index.</p>
      */
     inline WebCrawlerConfiguration& WithUrlExclusionPatterns(const Aws::Vector<Aws::String>& value) { SetUrlExclusionPatterns(value); return *this;}
 
     /**
-     * <p>The regular expression pattern to exclude certain URLs to crawl.</p> <p>If
-     * there is a regular expression pattern to include certain URLs that conflicts
-     * with the exclude pattern, the exclude pattern takes precedence.</p>
+     * <p>A list of regular expression patterns to exclude certain URLs to crawl. URLs
+     * that match the patterns are excluded from the index. URLs that don't match the
+     * patterns are included in the index. If a URL matches both an inclusion and
+     * exclusion pattern, the exclusion pattern takes precedence and the URL file isn't
+     * included in the index.</p>
      */
     inline WebCrawlerConfiguration& WithUrlExclusionPatterns(Aws::Vector<Aws::String>&& value) { SetUrlExclusionPatterns(std::move(value)); return *this;}
 
     /**
-     * <p>The regular expression pattern to exclude certain URLs to crawl.</p> <p>If
-     * there is a regular expression pattern to include certain URLs that conflicts
-     * with the exclude pattern, the exclude pattern takes precedence.</p>
+     * <p>A list of regular expression patterns to exclude certain URLs to crawl. URLs
+     * that match the patterns are excluded from the index. URLs that don't match the
+     * patterns are included in the index. If a URL matches both an inclusion and
+     * exclusion pattern, the exclusion pattern takes precedence and the URL file isn't
+     * included in the index.</p>
      */
     inline WebCrawlerConfiguration& AddUrlExclusionPatterns(const Aws::String& value) { m_urlExclusionPatternsHasBeenSet = true; m_urlExclusionPatterns.push_back(value); return *this; }
 
     /**
-     * <p>The regular expression pattern to exclude certain URLs to crawl.</p> <p>If
-     * there is a regular expression pattern to include certain URLs that conflicts
-     * with the exclude pattern, the exclude pattern takes precedence.</p>
+     * <p>A list of regular expression patterns to exclude certain URLs to crawl. URLs
+     * that match the patterns are excluded from the index. URLs that don't match the
+     * patterns are included in the index. If a URL matches both an inclusion and
+     * exclusion pattern, the exclusion pattern takes precedence and the URL file isn't
+     * included in the index.</p>
      */
     inline WebCrawlerConfiguration& AddUrlExclusionPatterns(Aws::String&& value) { m_urlExclusionPatternsHasBeenSet = true; m_urlExclusionPatterns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The regular expression pattern to exclude certain URLs to crawl.</p> <p>If
-     * there is a regular expression pattern to include certain URLs that conflicts
-     * with the exclude pattern, the exclude pattern takes precedence.</p>
+     * <p>A list of regular expression patterns to exclude certain URLs to crawl. URLs
+     * that match the patterns are excluded from the index. URLs that don't match the
+     * patterns are included in the index. If a URL matches both an inclusion and
+     * exclusion pattern, the exclusion pattern takes precedence and the URL file isn't
+     * included in the index.</p>
      */
     inline WebCrawlerConfiguration& AddUrlExclusionPatterns(const char* value) { m_urlExclusionPatternsHasBeenSet = true; m_urlExclusionPatterns.push_back(value); return *this; }
 

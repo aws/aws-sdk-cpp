@@ -171,58 +171,82 @@ namespace Model
 
 
     /**
-     * <p>One or more objects that map fields in the standard object to Amazon Kendra
-     * index fields. The index field must exist before you can map a Salesforce field
-     * to it.</p>
+     * <p>Maps attributes or field names of the standard object to Amazon Kendra index
+     * field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Salesforce fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Salesforce data source field names must exist in
+     * your Salesforce custom metadata.</p>
      */
     inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetFieldMappings() const{ return m_fieldMappings; }
 
     /**
-     * <p>One or more objects that map fields in the standard object to Amazon Kendra
-     * index fields. The index field must exist before you can map a Salesforce field
-     * to it.</p>
+     * <p>Maps attributes or field names of the standard object to Amazon Kendra index
+     * field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Salesforce fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Salesforce data source field names must exist in
+     * your Salesforce custom metadata.</p>
      */
     inline bool FieldMappingsHasBeenSet() const { return m_fieldMappingsHasBeenSet; }
 
     /**
-     * <p>One or more objects that map fields in the standard object to Amazon Kendra
-     * index fields. The index field must exist before you can map a Salesforce field
-     * to it.</p>
+     * <p>Maps attributes or field names of the standard object to Amazon Kendra index
+     * field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Salesforce fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Salesforce data source field names must exist in
+     * your Salesforce custom metadata.</p>
      */
     inline void SetFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = value; }
 
     /**
-     * <p>One or more objects that map fields in the standard object to Amazon Kendra
-     * index fields. The index field must exist before you can map a Salesforce field
-     * to it.</p>
+     * <p>Maps attributes or field names of the standard object to Amazon Kendra index
+     * field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Salesforce fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Salesforce data source field names must exist in
+     * your Salesforce custom metadata.</p>
      */
     inline void SetFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = std::move(value); }
 
     /**
-     * <p>One or more objects that map fields in the standard object to Amazon Kendra
-     * index fields. The index field must exist before you can map a Salesforce field
-     * to it.</p>
+     * <p>Maps attributes or field names of the standard object to Amazon Kendra index
+     * field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Salesforce fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Salesforce data source field names must exist in
+     * your Salesforce custom metadata.</p>
      */
     inline SalesforceStandardObjectConfiguration& WithFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetFieldMappings(value); return *this;}
 
     /**
-     * <p>One or more objects that map fields in the standard object to Amazon Kendra
-     * index fields. The index field must exist before you can map a Salesforce field
-     * to it.</p>
+     * <p>Maps attributes or field names of the standard object to Amazon Kendra index
+     * field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Salesforce fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Salesforce data source field names must exist in
+     * your Salesforce custom metadata.</p>
      */
     inline SalesforceStandardObjectConfiguration& WithFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetFieldMappings(std::move(value)); return *this;}
 
     /**
-     * <p>One or more objects that map fields in the standard object to Amazon Kendra
-     * index fields. The index field must exist before you can map a Salesforce field
-     * to it.</p>
+     * <p>Maps attributes or field names of the standard object to Amazon Kendra index
+     * field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Salesforce fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Salesforce data source field names must exist in
+     * your Salesforce custom metadata.</p>
      */
     inline SalesforceStandardObjectConfiguration& AddFieldMappings(const DataSourceToIndexFieldMapping& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(value); return *this; }
 
     /**
-     * <p>One or more objects that map fields in the standard object to Amazon Kendra
-     * index fields. The index field must exist before you can map a Salesforce field
-     * to it.</p>
+     * <p>Maps attributes or field names of the standard object to Amazon Kendra index
+     * field names. To create custom fields, use the <code>UpdateIndex</code> API
+     * before you map to Salesforce fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Salesforce data source field names must exist in
+     * your Salesforce custom metadata.</p>
      */
     inline SalesforceStandardObjectConfiguration& AddFieldMappings(DataSourceToIndexFieldMapping&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(std::move(value)); return *this; }
 

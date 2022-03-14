@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides configuration information for connecting to a Salesforce data
+   * <p>Provides the configuration information to connect to Salesforce as your data
    * source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SalesforceConfiguration">AWS
    * API Reference</a></p>
@@ -214,122 +214,130 @@ namespace Model
 
 
     /**
-     * <p>Specifies the Salesforce standard objects that Amazon Kendra indexes.</p>
+     * <p>Configuration of the Salesforce standard objects that Amazon Kendra
+     * indexes.</p>
      */
     inline const Aws::Vector<SalesforceStandardObjectConfiguration>& GetStandardObjectConfigurations() const{ return m_standardObjectConfigurations; }
 
     /**
-     * <p>Specifies the Salesforce standard objects that Amazon Kendra indexes.</p>
+     * <p>Configuration of the Salesforce standard objects that Amazon Kendra
+     * indexes.</p>
      */
     inline bool StandardObjectConfigurationsHasBeenSet() const { return m_standardObjectConfigurationsHasBeenSet; }
 
     /**
-     * <p>Specifies the Salesforce standard objects that Amazon Kendra indexes.</p>
+     * <p>Configuration of the Salesforce standard objects that Amazon Kendra
+     * indexes.</p>
      */
     inline void SetStandardObjectConfigurations(const Aws::Vector<SalesforceStandardObjectConfiguration>& value) { m_standardObjectConfigurationsHasBeenSet = true; m_standardObjectConfigurations = value; }
 
     /**
-     * <p>Specifies the Salesforce standard objects that Amazon Kendra indexes.</p>
+     * <p>Configuration of the Salesforce standard objects that Amazon Kendra
+     * indexes.</p>
      */
     inline void SetStandardObjectConfigurations(Aws::Vector<SalesforceStandardObjectConfiguration>&& value) { m_standardObjectConfigurationsHasBeenSet = true; m_standardObjectConfigurations = std::move(value); }
 
     /**
-     * <p>Specifies the Salesforce standard objects that Amazon Kendra indexes.</p>
+     * <p>Configuration of the Salesforce standard objects that Amazon Kendra
+     * indexes.</p>
      */
     inline SalesforceConfiguration& WithStandardObjectConfigurations(const Aws::Vector<SalesforceStandardObjectConfiguration>& value) { SetStandardObjectConfigurations(value); return *this;}
 
     /**
-     * <p>Specifies the Salesforce standard objects that Amazon Kendra indexes.</p>
+     * <p>Configuration of the Salesforce standard objects that Amazon Kendra
+     * indexes.</p>
      */
     inline SalesforceConfiguration& WithStandardObjectConfigurations(Aws::Vector<SalesforceStandardObjectConfiguration>&& value) { SetStandardObjectConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the Salesforce standard objects that Amazon Kendra indexes.</p>
+     * <p>Configuration of the Salesforce standard objects that Amazon Kendra
+     * indexes.</p>
      */
     inline SalesforceConfiguration& AddStandardObjectConfigurations(const SalesforceStandardObjectConfiguration& value) { m_standardObjectConfigurationsHasBeenSet = true; m_standardObjectConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the Salesforce standard objects that Amazon Kendra indexes.</p>
+     * <p>Configuration of the Salesforce standard objects that Amazon Kendra
+     * indexes.</p>
      */
     inline SalesforceConfiguration& AddStandardObjectConfigurations(SalesforceStandardObjectConfiguration&& value) { m_standardObjectConfigurationsHasBeenSet = true; m_standardObjectConfigurations.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Specifies configuration information for the knowledge article types that
-     * Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the
-     * standard fields of knowledge articles, or the custom fields of custom knowledge
-     * articles, but not both.</p>
+     * <p>Configuration information for the knowledge article types that Amazon Kendra
+     * indexes. Amazon Kendra indexes standard knowledge articles and the standard
+     * fields of knowledge articles, or the custom fields of custom knowledge articles,
+     * but not both.</p>
      */
     inline const SalesforceKnowledgeArticleConfiguration& GetKnowledgeArticleConfiguration() const{ return m_knowledgeArticleConfiguration; }
 
     /**
-     * <p>Specifies configuration information for the knowledge article types that
-     * Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the
-     * standard fields of knowledge articles, or the custom fields of custom knowledge
-     * articles, but not both.</p>
+     * <p>Configuration information for the knowledge article types that Amazon Kendra
+     * indexes. Amazon Kendra indexes standard knowledge articles and the standard
+     * fields of knowledge articles, or the custom fields of custom knowledge articles,
+     * but not both.</p>
      */
     inline bool KnowledgeArticleConfigurationHasBeenSet() const { return m_knowledgeArticleConfigurationHasBeenSet; }
 
     /**
-     * <p>Specifies configuration information for the knowledge article types that
-     * Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the
-     * standard fields of knowledge articles, or the custom fields of custom knowledge
-     * articles, but not both.</p>
+     * <p>Configuration information for the knowledge article types that Amazon Kendra
+     * indexes. Amazon Kendra indexes standard knowledge articles and the standard
+     * fields of knowledge articles, or the custom fields of custom knowledge articles,
+     * but not both.</p>
      */
     inline void SetKnowledgeArticleConfiguration(const SalesforceKnowledgeArticleConfiguration& value) { m_knowledgeArticleConfigurationHasBeenSet = true; m_knowledgeArticleConfiguration = value; }
 
     /**
-     * <p>Specifies configuration information for the knowledge article types that
-     * Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the
-     * standard fields of knowledge articles, or the custom fields of custom knowledge
-     * articles, but not both.</p>
+     * <p>Configuration information for the knowledge article types that Amazon Kendra
+     * indexes. Amazon Kendra indexes standard knowledge articles and the standard
+     * fields of knowledge articles, or the custom fields of custom knowledge articles,
+     * but not both.</p>
      */
     inline void SetKnowledgeArticleConfiguration(SalesforceKnowledgeArticleConfiguration&& value) { m_knowledgeArticleConfigurationHasBeenSet = true; m_knowledgeArticleConfiguration = std::move(value); }
 
     /**
-     * <p>Specifies configuration information for the knowledge article types that
-     * Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the
-     * standard fields of knowledge articles, or the custom fields of custom knowledge
-     * articles, but not both.</p>
+     * <p>Configuration information for the knowledge article types that Amazon Kendra
+     * indexes. Amazon Kendra indexes standard knowledge articles and the standard
+     * fields of knowledge articles, or the custom fields of custom knowledge articles,
+     * but not both.</p>
      */
     inline SalesforceConfiguration& WithKnowledgeArticleConfiguration(const SalesforceKnowledgeArticleConfiguration& value) { SetKnowledgeArticleConfiguration(value); return *this;}
 
     /**
-     * <p>Specifies configuration information for the knowledge article types that
-     * Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the
-     * standard fields of knowledge articles, or the custom fields of custom knowledge
-     * articles, but not both.</p>
+     * <p>Configuration information for the knowledge article types that Amazon Kendra
+     * indexes. Amazon Kendra indexes standard knowledge articles and the standard
+     * fields of knowledge articles, or the custom fields of custom knowledge articles,
+     * but not both.</p>
      */
     inline SalesforceConfiguration& WithKnowledgeArticleConfiguration(SalesforceKnowledgeArticleConfiguration&& value) { SetKnowledgeArticleConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies configuration information for Salesforce chatter feeds.</p>
+     * <p>Configuration information for Salesforce chatter feeds.</p>
      */
     inline const SalesforceChatterFeedConfiguration& GetChatterFeedConfiguration() const{ return m_chatterFeedConfiguration; }
 
     /**
-     * <p>Specifies configuration information for Salesforce chatter feeds.</p>
+     * <p>Configuration information for Salesforce chatter feeds.</p>
      */
     inline bool ChatterFeedConfigurationHasBeenSet() const { return m_chatterFeedConfigurationHasBeenSet; }
 
     /**
-     * <p>Specifies configuration information for Salesforce chatter feeds.</p>
+     * <p>Configuration information for Salesforce chatter feeds.</p>
      */
     inline void SetChatterFeedConfiguration(const SalesforceChatterFeedConfiguration& value) { m_chatterFeedConfigurationHasBeenSet = true; m_chatterFeedConfiguration = value; }
 
     /**
-     * <p>Specifies configuration information for Salesforce chatter feeds.</p>
+     * <p>Configuration information for Salesforce chatter feeds.</p>
      */
     inline void SetChatterFeedConfiguration(SalesforceChatterFeedConfiguration&& value) { m_chatterFeedConfigurationHasBeenSet = true; m_chatterFeedConfiguration = std::move(value); }
 
     /**
-     * <p>Specifies configuration information for Salesforce chatter feeds.</p>
+     * <p>Configuration information for Salesforce chatter feeds.</p>
      */
     inline SalesforceConfiguration& WithChatterFeedConfiguration(const SalesforceChatterFeedConfiguration& value) { SetChatterFeedConfiguration(value); return *this;}
 
     /**
-     * <p>Specifies configuration information for Salesforce chatter feeds.</p>
+     * <p>Configuration information for Salesforce chatter feeds.</p>
      */
     inline SalesforceConfiguration& WithChatterFeedConfiguration(SalesforceChatterFeedConfiguration&& value) { SetChatterFeedConfiguration(std::move(value)); return *this;}
 
@@ -397,165 +405,183 @@ namespace Model
 
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an inclusion pattern and an exclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the name of the attached file.</p>
+     * <p>A list of regular expression patterns to include certain documents in your
+     * Salesforce. Documents that match the patterns are included in the index.
+     * Documents that don't match the patterns are excluded from the index. If a
+     * document matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the document isn't included in the index.</p> <p>The
+     * pattern is applied to the name of the attached file.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIncludeAttachmentFilePatterns() const{ return m_includeAttachmentFilePatterns; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an inclusion pattern and an exclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the name of the attached file.</p>
+     * <p>A list of regular expression patterns to include certain documents in your
+     * Salesforce. Documents that match the patterns are included in the index.
+     * Documents that don't match the patterns are excluded from the index. If a
+     * document matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the document isn't included in the index.</p> <p>The
+     * pattern is applied to the name of the attached file.</p>
      */
     inline bool IncludeAttachmentFilePatternsHasBeenSet() const { return m_includeAttachmentFilePatternsHasBeenSet; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an inclusion pattern and an exclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the name of the attached file.</p>
+     * <p>A list of regular expression patterns to include certain documents in your
+     * Salesforce. Documents that match the patterns are included in the index.
+     * Documents that don't match the patterns are excluded from the index. If a
+     * document matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the document isn't included in the index.</p> <p>The
+     * pattern is applied to the name of the attached file.</p>
      */
     inline void SetIncludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns = value; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an inclusion pattern and an exclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the name of the attached file.</p>
+     * <p>A list of regular expression patterns to include certain documents in your
+     * Salesforce. Documents that match the patterns are included in the index.
+     * Documents that don't match the patterns are excluded from the index. If a
+     * document matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the document isn't included in the index.</p> <p>The
+     * pattern is applied to the name of the attached file.</p>
      */
     inline void SetIncludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns = std::move(value); }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an inclusion pattern and an exclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the name of the attached file.</p>
+     * <p>A list of regular expression patterns to include certain documents in your
+     * Salesforce. Documents that match the patterns are included in the index.
+     * Documents that don't match the patterns are excluded from the index. If a
+     * document matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the document isn't included in the index.</p> <p>The
+     * pattern is applied to the name of the attached file.</p>
      */
     inline SalesforceConfiguration& WithIncludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { SetIncludeAttachmentFilePatterns(value); return *this;}
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an inclusion pattern and an exclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the name of the attached file.</p>
+     * <p>A list of regular expression patterns to include certain documents in your
+     * Salesforce. Documents that match the patterns are included in the index.
+     * Documents that don't match the patterns are excluded from the index. If a
+     * document matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the document isn't included in the index.</p> <p>The
+     * pattern is applied to the name of the attached file.</p>
      */
     inline SalesforceConfiguration& WithIncludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { SetIncludeAttachmentFilePatterns(std::move(value)); return *this;}
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an inclusion pattern and an exclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the name of the attached file.</p>
+     * <p>A list of regular expression patterns to include certain documents in your
+     * Salesforce. Documents that match the patterns are included in the index.
+     * Documents that don't match the patterns are excluded from the index. If a
+     * document matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the document isn't included in the index.</p> <p>The
+     * pattern is applied to the name of the attached file.</p>
      */
     inline SalesforceConfiguration& AddIncludeAttachmentFilePatterns(const Aws::String& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns.push_back(value); return *this; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an inclusion pattern and an exclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the name of the attached file.</p>
+     * <p>A list of regular expression patterns to include certain documents in your
+     * Salesforce. Documents that match the patterns are included in the index.
+     * Documents that don't match the patterns are excluded from the index. If a
+     * document matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the document isn't included in the index.</p> <p>The
+     * pattern is applied to the name of the attached file.</p>
      */
     inline SalesforceConfiguration& AddIncludeAttachmentFilePatterns(Aws::String&& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * included in the index. Documents that don't match the patterns are excluded from
-     * the index. If a document matches both an inclusion pattern and an exclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the name of the attached file.</p>
+     * <p>A list of regular expression patterns to include certain documents in your
+     * Salesforce. Documents that match the patterns are included in the index.
+     * Documents that don't match the patterns are excluded from the index. If a
+     * document matches both an inclusion and exclusion pattern, the exclusion pattern
+     * takes precedence and the document isn't included in the index.</p> <p>The
+     * pattern is applied to the name of the attached file.</p>
      */
     inline SalesforceConfiguration& AddIncludeAttachmentFilePatterns(const char* value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns.push_back(value); return *this; }
 
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the name of the attached file.</p>
+     * <p>A list of regular expression patterns to exclude certain documents in your
+     * Salesforce. Documents that match the patterns are excluded from the index.
+     * Documents that don't match the patterns are included in the index. If a document
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the document isn't included in the index.</p> <p>The pattern is
+     * applied to the name of the attached file.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExcludeAttachmentFilePatterns() const{ return m_excludeAttachmentFilePatterns; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the name of the attached file.</p>
+     * <p>A list of regular expression patterns to exclude certain documents in your
+     * Salesforce. Documents that match the patterns are excluded from the index.
+     * Documents that don't match the patterns are included in the index. If a document
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the document isn't included in the index.</p> <p>The pattern is
+     * applied to the name of the attached file.</p>
      */
     inline bool ExcludeAttachmentFilePatternsHasBeenSet() const { return m_excludeAttachmentFilePatternsHasBeenSet; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the name of the attached file.</p>
+     * <p>A list of regular expression patterns to exclude certain documents in your
+     * Salesforce. Documents that match the patterns are excluded from the index.
+     * Documents that don't match the patterns are included in the index. If a document
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the document isn't included in the index.</p> <p>The pattern is
+     * applied to the name of the attached file.</p>
      */
     inline void SetExcludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns = value; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the name of the attached file.</p>
+     * <p>A list of regular expression patterns to exclude certain documents in your
+     * Salesforce. Documents that match the patterns are excluded from the index.
+     * Documents that don't match the patterns are included in the index. If a document
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the document isn't included in the index.</p> <p>The pattern is
+     * applied to the name of the attached file.</p>
      */
     inline void SetExcludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns = std::move(value); }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the name of the attached file.</p>
+     * <p>A list of regular expression patterns to exclude certain documents in your
+     * Salesforce. Documents that match the patterns are excluded from the index.
+     * Documents that don't match the patterns are included in the index. If a document
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the document isn't included in the index.</p> <p>The pattern is
+     * applied to the name of the attached file.</p>
      */
     inline SalesforceConfiguration& WithExcludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { SetExcludeAttachmentFilePatterns(value); return *this;}
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the name of the attached file.</p>
+     * <p>A list of regular expression patterns to exclude certain documents in your
+     * Salesforce. Documents that match the patterns are excluded from the index.
+     * Documents that don't match the patterns are included in the index. If a document
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the document isn't included in the index.</p> <p>The pattern is
+     * applied to the name of the attached file.</p>
      */
     inline SalesforceConfiguration& WithExcludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { SetExcludeAttachmentFilePatterns(std::move(value)); return *this;}
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the name of the attached file.</p>
+     * <p>A list of regular expression patterns to exclude certain documents in your
+     * Salesforce. Documents that match the patterns are excluded from the index.
+     * Documents that don't match the patterns are included in the index. If a document
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the document isn't included in the index.</p> <p>The pattern is
+     * applied to the name of the attached file.</p>
      */
     inline SalesforceConfiguration& AddExcludeAttachmentFilePatterns(const Aws::String& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns.push_back(value); return *this; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the name of the attached file.</p>
+     * <p>A list of regular expression patterns to exclude certain documents in your
+     * Salesforce. Documents that match the patterns are excluded from the index.
+     * Documents that don't match the patterns are included in the index. If a document
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the document isn't included in the index.</p> <p>The pattern is
+     * applied to the name of the attached file.</p>
      */
     inline SalesforceConfiguration& AddExcludeAttachmentFilePatterns(Aws::String&& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of regular expression patterns. Documents that match the patterns are
-     * excluded from the index. Documents that don't match the patterns are included in
-     * the index. If a document matches both an exclusion pattern and an inclusion
-     * pattern, the document is not included in the index.</p> <p>The regex is applied
-     * to the name of the attached file.</p>
+     * <p>A list of regular expression patterns to exclude certain documents in your
+     * Salesforce. Documents that match the patterns are excluded from the index.
+     * Documents that don't match the patterns are included in the index. If a document
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the document isn't included in the index.</p> <p>The pattern is
+     * applied to the name of the attached file.</p>
      */
     inline SalesforceConfiguration& AddExcludeAttachmentFilePatterns(const char* value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns.push_back(value); return *this; }
 

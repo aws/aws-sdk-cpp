@@ -164,7 +164,7 @@ namespace Model
      * resource was discovered but its configuration was not recorded since the
      * recorder excludes the recording of resources of this type</p> </li> <li>
      * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
-     * <p>ResourceDeletedNotRecorded ��� The resource was deleted but its configuration
+     * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
      * was not recorded since the recorder excludes the recording of resources of this
      * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
      */
@@ -177,7 +177,7 @@ namespace Model
      * resource was discovered but its configuration was not recorded since the
      * recorder excludes the recording of resources of this type</p> </li> <li>
      * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
-     * <p>ResourceDeletedNotRecorded ��� The resource was deleted but its configuration
+     * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
      * was not recorded since the recorder excludes the recording of resources of this
      * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
      */
@@ -190,7 +190,7 @@ namespace Model
      * resource was discovered but its configuration was not recorded since the
      * recorder excludes the recording of resources of this type</p> </li> <li>
      * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
-     * <p>ResourceDeletedNotRecorded ��� The resource was deleted but its configuration
+     * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
      * was not recorded since the recorder excludes the recording of resources of this
      * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
      */
@@ -203,7 +203,7 @@ namespace Model
      * resource was discovered but its configuration was not recorded since the
      * recorder excludes the recording of resources of this type</p> </li> <li>
      * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
-     * <p>ResourceDeletedNotRecorded ��� The resource was deleted but its configuration
+     * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
      * was not recorded since the recorder excludes the recording of resources of this
      * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
      */
@@ -216,7 +216,7 @@ namespace Model
      * resource was discovered but its configuration was not recorded since the
      * recorder excludes the recording of resources of this type</p> </li> <li>
      * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
-     * <p>ResourceDeletedNotRecorded ��� The resource was deleted but its configuration
+     * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
      * was not recorded since the recorder excludes the recording of resources of this
      * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
      */
@@ -229,7 +229,7 @@ namespace Model
      * resource was discovered but its configuration was not recorded since the
      * recorder excludes the recording of resources of this type</p> </li> <li>
      * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
-     * <p>ResourceDeletedNotRecorded ��� The resource was deleted but its configuration
+     * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
      * was not recorded since the recorder excludes the recording of resources of this
      * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
      */
