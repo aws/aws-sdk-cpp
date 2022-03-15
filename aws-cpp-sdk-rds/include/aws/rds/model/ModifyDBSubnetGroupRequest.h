@@ -42,7 +42,7 @@ namespace Model
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase string.
-     * You can't modify the default subnet group. </p> <p>Constraints: Must match the
+     * You can't modify the default subnet group.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
      * <code>mydbsubnetgroup</code> </p>
      */
@@ -50,7 +50,7 @@ namespace Model
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase string.
-     * You can't modify the default subnet group. </p> <p>Constraints: Must match the
+     * You can't modify the default subnet group.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
      * <code>mydbsubnetgroup</code> </p>
      */
@@ -58,7 +58,7 @@ namespace Model
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase string.
-     * You can't modify the default subnet group. </p> <p>Constraints: Must match the
+     * You can't modify the default subnet group.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
      * <code>mydbsubnetgroup</code> </p>
      */
@@ -66,7 +66,7 @@ namespace Model
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase string.
-     * You can't modify the default subnet group. </p> <p>Constraints: Must match the
+     * You can't modify the default subnet group.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
      * <code>mydbsubnetgroup</code> </p>
      */
@@ -74,7 +74,7 @@ namespace Model
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase string.
-     * You can't modify the default subnet group. </p> <p>Constraints: Must match the
+     * You can't modify the default subnet group.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
      * <code>mydbsubnetgroup</code> </p>
      */
@@ -82,7 +82,7 @@ namespace Model
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase string.
-     * You can't modify the default subnet group. </p> <p>Constraints: Must match the
+     * You can't modify the default subnet group.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
      * <code>mydbsubnetgroup</code> </p>
      */
@@ -90,7 +90,7 @@ namespace Model
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase string.
-     * You can't modify the default subnet group. </p> <p>Constraints: Must match the
+     * You can't modify the default subnet group.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
      * <code>mydbsubnetgroup</code> </p>
      */
@@ -98,7 +98,7 @@ namespace Model
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase string.
-     * You can't modify the default subnet group. </p> <p>Constraints: Must match the
+     * You can't modify the default subnet group.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
      * <code>mydbsubnetgroup</code> </p>
      */

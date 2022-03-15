@@ -228,36 +228,36 @@ namespace Model
 
     /**
      * <p>The read/write throughput capacity mode for a table. The options are:</p>
-     * <ul> <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p> </li> <li>
-     * <p> <code>throughputMode:PROVISIONED</code>. </p> </li> </ul>
+     * <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p> <p>•
+     * <code>throughputMode:PROVISIONED</code> </p>
      */
     inline const CapacitySpecificationSummary& GetCapacitySpecification() const{ return m_capacitySpecification; }
 
     /**
      * <p>The read/write throughput capacity mode for a table. The options are:</p>
-     * <ul> <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p> </li> <li>
-     * <p> <code>throughputMode:PROVISIONED</code>. </p> </li> </ul>
+     * <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p> <p>•
+     * <code>throughputMode:PROVISIONED</code> </p>
      */
     inline void SetCapacitySpecification(const CapacitySpecificationSummary& value) { m_capacitySpecification = value; }
 
     /**
      * <p>The read/write throughput capacity mode for a table. The options are:</p>
-     * <ul> <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p> </li> <li>
-     * <p> <code>throughputMode:PROVISIONED</code>. </p> </li> </ul>
+     * <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p> <p>•
+     * <code>throughputMode:PROVISIONED</code> </p>
      */
     inline void SetCapacitySpecification(CapacitySpecificationSummary&& value) { m_capacitySpecification = std::move(value); }
 
     /**
      * <p>The read/write throughput capacity mode for a table. The options are:</p>
-     * <ul> <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p> </li> <li>
-     * <p> <code>throughputMode:PROVISIONED</code>. </p> </li> </ul>
+     * <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p> <p>•
+     * <code>throughputMode:PROVISIONED</code> </p>
      */
     inline GetTableResult& WithCapacitySpecification(const CapacitySpecificationSummary& value) { SetCapacitySpecification(value); return *this;}
 
     /**
      * <p>The read/write throughput capacity mode for a table. The options are:</p>
-     * <ul> <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p> </li> <li>
-     * <p> <code>throughputMode:PROVISIONED</code>. </p> </li> </ul>
+     * <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p> <p>•
+     * <code>throughputMode:PROVISIONED</code> </p>
      */
     inline GetTableResult& WithCapacitySpecification(CapacitySpecificationSummary&& value) { SetCapacitySpecification(std::move(value)); return *this;}
 

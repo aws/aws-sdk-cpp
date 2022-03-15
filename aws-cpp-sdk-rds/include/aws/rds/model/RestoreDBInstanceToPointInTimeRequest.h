@@ -221,33 +221,33 @@ namespace Model
 
 
     /**
-     * <p> A value that indicates whether the DB instance is restored from the latest
+     * <p>A value that indicates whether the DB instance is restored from the latest
      * backup time. By default, the DB instance isn't restored from the latest backup
-     * time. </p> <p>Constraints: Can't be specified if the <code>RestoreTime</code>
+     * time.</p> <p>Constraints: Can't be specified if the <code>RestoreTime</code>
      * parameter is provided.</p>
      */
     inline bool GetUseLatestRestorableTime() const{ return m_useLatestRestorableTime; }
 
     /**
-     * <p> A value that indicates whether the DB instance is restored from the latest
+     * <p>A value that indicates whether the DB instance is restored from the latest
      * backup time. By default, the DB instance isn't restored from the latest backup
-     * time. </p> <p>Constraints: Can't be specified if the <code>RestoreTime</code>
+     * time.</p> <p>Constraints: Can't be specified if the <code>RestoreTime</code>
      * parameter is provided.</p>
      */
     inline bool UseLatestRestorableTimeHasBeenSet() const { return m_useLatestRestorableTimeHasBeenSet; }
 
     /**
-     * <p> A value that indicates whether the DB instance is restored from the latest
+     * <p>A value that indicates whether the DB instance is restored from the latest
      * backup time. By default, the DB instance isn't restored from the latest backup
-     * time. </p> <p>Constraints: Can't be specified if the <code>RestoreTime</code>
+     * time.</p> <p>Constraints: Can't be specified if the <code>RestoreTime</code>
      * parameter is provided.</p>
      */
     inline void SetUseLatestRestorableTime(bool value) { m_useLatestRestorableTimeHasBeenSet = true; m_useLatestRestorableTime = value; }
 
     /**
-     * <p> A value that indicates whether the DB instance is restored from the latest
+     * <p>A value that indicates whether the DB instance is restored from the latest
      * backup time. By default, the DB instance isn't restored from the latest backup
-     * time. </p> <p>Constraints: Can't be specified if the <code>RestoreTime</code>
+     * time.</p> <p>Constraints: Can't be specified if the <code>RestoreTime</code>
      * parameter is provided.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithUseLatestRestorableTime(bool value) { SetUseLatestRestorableTime(value); return *this;}
@@ -259,8 +259,8 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
-     * same DBInstanceClass as the original DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
@@ -270,8 +270,8 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
-     * same DBInstanceClass as the original DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
@@ -281,8 +281,8 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
-     * same DBInstanceClass as the original DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
@@ -292,8 +292,8 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
-     * same DBInstanceClass as the original DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
@@ -303,8 +303,8 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
-     * same DBInstanceClass as the original DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
@@ -314,8 +314,8 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
-     * same DBInstanceClass as the original DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
@@ -325,8 +325,8 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
-     * same DBInstanceClass as the original DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
@@ -336,8 +336,8 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
-     * same DBInstanceClass as the original DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -614,7 +614,7 @@ namespace Model
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p> Valid
+     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
      * values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
@@ -622,7 +622,7 @@ namespace Model
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p> Valid
+     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
      * values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
@@ -630,7 +630,7 @@ namespace Model
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p> Valid
+     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
      * values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
@@ -638,7 +638,7 @@ namespace Model
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p> Valid
+     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
      * values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
@@ -646,7 +646,7 @@ namespace Model
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p> Valid
+     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
      * values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
@@ -654,7 +654,7 @@ namespace Model
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p> Valid
+     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
      * values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
@@ -662,7 +662,7 @@ namespace Model
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p> Valid
+     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
      * values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
@@ -670,7 +670,7 @@ namespace Model
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p> Valid
+     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
      * values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
@@ -1004,73 +1004,73 @@ namespace Model
 
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
@@ -1175,65 +1175,65 @@ namespace Model
 
 
     /**
-     * <p> A list of EC2 VPC security groups to associate with this DB instance. </p>
-     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
-     * </p>
+     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
 
     /**
-     * <p> A list of EC2 VPC security groups to associate with this DB instance. </p>
-     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
-     * </p>
+     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
 
     /**
-     * <p> A list of EC2 VPC security groups to associate with this DB instance. </p>
-     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
-     * </p>
+     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
 
     /**
-     * <p> A list of EC2 VPC security groups to associate with this DB instance. </p>
-     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
-     * </p>
+     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
 
     /**
-     * <p> A list of EC2 VPC security groups to associate with this DB instance. </p>
-     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
-     * </p>
+     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
 
     /**
-     * <p> A list of EC2 VPC security groups to associate with this DB instance. </p>
-     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
-     * </p>
+     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p> A list of EC2 VPC security groups to associate with this DB instance. </p>
-     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
-     * </p>
+     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p> A list of EC2 VPC security groups to associate with this DB instance. </p>
-     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
-     * </p>
+     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> A list of EC2 VPC security groups to associate with this DB instance. </p>
-     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
-     * </p>
+     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
@@ -1700,7 +1700,7 @@ namespace Model
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p>
+     * Deleting a DB Instance</a>.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
@@ -1709,7 +1709,7 @@ namespace Model
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p>
+     * Deleting a DB Instance</a>.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
@@ -1718,7 +1718,7 @@ namespace Model
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p>
+     * Deleting a DB Instance</a>.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
@@ -1727,7 +1727,7 @@ namespace Model
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p>
+     * Deleting a DB Instance</a>.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
@@ -1957,8 +1957,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline const Aws::String& GetCustomIamInstanceProfile() const{ return m_customIamInstanceProfile; }
 
@@ -1971,8 +1971,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline bool CustomIamInstanceProfileHasBeenSet() const { return m_customIamInstanceProfileHasBeenSet; }
 
@@ -1985,8 +1985,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline void SetCustomIamInstanceProfile(const Aws::String& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = value; }
 
@@ -1999,8 +1999,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline void SetCustomIamInstanceProfile(Aws::String&& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = std::move(value); }
 
@@ -2013,8 +2013,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline void SetCustomIamInstanceProfile(const char* value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile.assign(value); }
 
@@ -2027,8 +2027,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithCustomIamInstanceProfile(const Aws::String& value) { SetCustomIamInstanceProfile(value); return *this;}
 
@@ -2041,8 +2041,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithCustomIamInstanceProfile(Aws::String&& value) { SetCustomIamInstanceProfile(std::move(value)); return *this;}
 
@@ -2055,8 +2055,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithCustomIamInstanceProfile(const char* value) { SetCustomIamInstanceProfile(value); return *this;}
 

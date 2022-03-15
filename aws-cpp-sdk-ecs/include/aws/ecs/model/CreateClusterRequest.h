@@ -323,32 +323,32 @@ namespace Model
 
 
     /**
-     * <p>The execute command configuration for the cluster.</p>
+     * <p>The <code>execute</code> command configuration for the cluster.</p>
      */
     inline const ClusterConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>The execute command configuration for the cluster.</p>
+     * <p>The <code>execute</code> command configuration for the cluster.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
-     * <p>The execute command configuration for the cluster.</p>
+     * <p>The <code>execute</code> command configuration for the cluster.</p>
      */
     inline void SetConfiguration(const ClusterConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
-     * <p>The execute command configuration for the cluster.</p>
+     * <p>The <code>execute</code> command configuration for the cluster.</p>
      */
     inline void SetConfiguration(ClusterConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
-     * <p>The execute command configuration for the cluster.</p>
+     * <p>The <code>execute</code> command configuration for the cluster.</p>
      */
     inline CreateClusterRequest& WithConfiguration(const ClusterConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>The execute command configuration for the cluster.</p>
+     * <p>The <code>execute</code> command configuration for the cluster.</p>
      */
     inline CreateClusterRequest& WithConfiguration(ClusterConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 

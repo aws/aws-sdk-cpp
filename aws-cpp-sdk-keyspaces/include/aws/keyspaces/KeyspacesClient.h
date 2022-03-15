@@ -128,24 +128,23 @@ namespace Model
    * easy to migrate, run, and scale Cassandra workloads in the Amazon Web Services
    * Cloud. With just a few clicks on the Amazon Web Services Management Console or a
    * few lines of code, you can create keyspaces and tables in Amazon Keyspaces,
-   * without deploying any infrastructure or installing software. </p> <pre><code>
-   * &lt;p&gt;In addition to supporting Cassandra Query Language (CQL) requests via
-   * open-source Cassandra drivers, Amazon Keyspaces supports data definition
-   * language (DDL) operations to manage keyspaces and tables using the Amazon Web
-   * Services SDK and CLI. This API reference describes the supported DDL operations
-   * in detail. &lt;/p&gt; &lt;p&gt;For the list of all supported CQL APIs, see &lt;a
-   * href=&quot;https://docs.aws.amazon.com/keyspaces/latest/devguide/cassandra-apis.html&quot;&gt;Supported
-   * Cassandra APIs, operations, and data types in Amazon Keyspaces&lt;/a&gt; in the
-   * &lt;i&gt;Amazon Keyspaces Developer Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;To learn
-   * how Amazon Keyspaces API actions are tracked in CloudTrail, see &lt;a
-   * href=&quot;https://docs.aws.amazon.com/keyspaces/latest/devguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail&quot;&gt;Amazon
-   * Keyspaces information in CloudTrail&lt;/a&gt; in the &lt;i&gt;Amazon Keyspaces
-   * Developer Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about Amazon
-   * Web Services APIs, for example how to implement retry logic or how to sign
-   * Amazon Web Services API requests, see &lt;a
-   * href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws-apis.html&quot;&gt;Amazon
-   * Web Services APIs&lt;/a&gt; in the &lt;i&gt;General Reference&lt;/i&gt;.
-   * &lt;/p&gt; </code></pre>
+   * without deploying any infrastructure or installing software. </p> <p>In addition
+   * to supporting Cassandra Query Language (CQL) requests via open-source Cassandra
+   * drivers, Amazon Keyspaces supports data definition language (DDL) operations to
+   * manage keyspaces and tables using the Amazon Web Services SDK and CLI. This API
+   * reference describes the supported DDL operations in detail.</p> <p>For the list
+   * of all supported CQL APIs, see <a
+   * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cassandra-apis.html">Supported
+   * Cassandra APIs, operations, and data types in Amazon Keyspaces</a> in the
+   * <i>Amazon Keyspaces Developer Guide</i>.</p> <p>To learn how Amazon Keyspaces
+   * API actions are recorded with CloudTrail, see <a
+   * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail">Amazon
+   * Keyspaces information in CloudTrail</a> in the <i>Amazon Keyspaces Developer
+   * Guide</i>.</p> <p>For more information about Amazon Web Services APIs, for
+   * example how to implement retry logic or how to sign Amazon Web Services API
+   * requests, see <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/aws-apis.html">Amazon Web
+   * Services APIs</a> in the <i>General Reference</i>.</p>
    */
   class AWS_KEYSPACES_API KeyspacesClient : public Aws::Client::AWSJsonClient
   {
@@ -177,9 +176,9 @@ namespace Model
         /**
          * <p>The <code>CreateKeyspace</code> operation adds a new keyspace to your
          * account. In an Amazon Web Services account, keyspace names must be unique within
-         * each Region. </p> <p> <code>CreateKeyspace</code> is an asynchronous operation.
+         * each Region.</p> <p> <code>CreateKeyspace</code> is an asynchronous operation.
          * You can monitor the creation status of the new keyspace by using the
-         * <code>GetKeyspace</code> operation. </p> <p>For more information, see <a
+         * <code>GetKeyspace</code> operation.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/working-with-keyspaces.html#keyspaces-create">Creating
          * keyspaces</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -191,9 +190,9 @@ namespace Model
         /**
          * <p>The <code>CreateKeyspace</code> operation adds a new keyspace to your
          * account. In an Amazon Web Services account, keyspace names must be unique within
-         * each Region. </p> <p> <code>CreateKeyspace</code> is an asynchronous operation.
+         * each Region.</p> <p> <code>CreateKeyspace</code> is an asynchronous operation.
          * You can monitor the creation status of the new keyspace by using the
-         * <code>GetKeyspace</code> operation. </p> <p>For more information, see <a
+         * <code>GetKeyspace</code> operation.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/working-with-keyspaces.html#keyspaces-create">Creating
          * keyspaces</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -207,9 +206,9 @@ namespace Model
         /**
          * <p>The <code>CreateKeyspace</code> operation adds a new keyspace to your
          * account. In an Amazon Web Services account, keyspace names must be unique within
-         * each Region. </p> <p> <code>CreateKeyspace</code> is an asynchronous operation.
+         * each Region.</p> <p> <code>CreateKeyspace</code> is an asynchronous operation.
          * You can monitor the creation status of the new keyspace by using the
-         * <code>GetKeyspace</code> operation. </p> <p>For more information, see <a
+         * <code>GetKeyspace</code> operation.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/working-with-keyspaces.html#keyspaces-create">Creating
          * keyspaces</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -222,12 +221,12 @@ namespace Model
 
         /**
          * <p>The <code>CreateTable</code> operation adds a new table to the specified
-         * keyspace. Within a keyspace, table names must be unique. </p> <p>
+         * keyspace. Within a keyspace, table names must be unique.</p> <p>
          * <code>CreateTable</code> is an asynchronous operation. When the request is
          * received, the status of the table is set to <code>CREATING</code>. You can
          * monitor the creation status of the new table by using the <code>GetTable</code>
          * operation, which returns the current <code>status</code> of the table. You can
-         * start using a table when the status is <code>ACTIVE</code>. </p> <p>For more
+         * start using a table when the status is <code>ACTIVE</code>.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/working-with-tables.html#tables-create">Creating
          * tables</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p><p><h3>See
@@ -239,12 +238,12 @@ namespace Model
 
         /**
          * <p>The <code>CreateTable</code> operation adds a new table to the specified
-         * keyspace. Within a keyspace, table names must be unique. </p> <p>
+         * keyspace. Within a keyspace, table names must be unique.</p> <p>
          * <code>CreateTable</code> is an asynchronous operation. When the request is
          * received, the status of the table is set to <code>CREATING</code>. You can
          * monitor the creation status of the new table by using the <code>GetTable</code>
          * operation, which returns the current <code>status</code> of the table. You can
-         * start using a table when the status is <code>ACTIVE</code>. </p> <p>For more
+         * start using a table when the status is <code>ACTIVE</code>.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/working-with-tables.html#tables-create">Creating
          * tables</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p><p><h3>See
@@ -258,12 +257,12 @@ namespace Model
 
         /**
          * <p>The <code>CreateTable</code> operation adds a new table to the specified
-         * keyspace. Within a keyspace, table names must be unique. </p> <p>
+         * keyspace. Within a keyspace, table names must be unique.</p> <p>
          * <code>CreateTable</code> is an asynchronous operation. When the request is
          * received, the status of the table is set to <code>CREATING</code>. You can
          * monitor the creation status of the new table by using the <code>GetTable</code>
          * operation, which returns the current <code>status</code> of the table. You can
-         * start using a table when the status is <code>ACTIVE</code>. </p> <p>For more
+         * start using a table when the status is <code>ACTIVE</code>.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/working-with-tables.html#tables-create">Creating
          * tables</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p><p><h3>See
@@ -304,7 +303,7 @@ namespace Model
         virtual void DeleteKeyspaceAsync(const Model::DeleteKeyspaceRequest& request, const DeleteKeyspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> The <code>DeleteTable</code> operation deletes a table and all of its data.
+         * <p>The <code>DeleteTable</code> operation deletes a table and all of its data.
          * After a <code>DeleteTable</code> request is received, the specified table is in
          * the <code>DELETING</code> state until Amazon Keyspaces completes the deletion.
          * If the table is in the <code>ACTIVE</code> state, you can delete it. If a table
@@ -319,7 +318,7 @@ namespace Model
         virtual Model::DeleteTableOutcome DeleteTable(const Model::DeleteTableRequest& request) const;
 
         /**
-         * <p> The <code>DeleteTable</code> operation deletes a table and all of its data.
+         * <p>The <code>DeleteTable</code> operation deletes a table and all of its data.
          * After a <code>DeleteTable</code> request is received, the specified table is in
          * the <code>DELETING</code> state until Amazon Keyspaces completes the deletion.
          * If the table is in the <code>ACTIVE</code> state, you can delete it. If a table
@@ -336,7 +335,7 @@ namespace Model
         virtual Model::DeleteTableOutcomeCallable DeleteTableCallable(const Model::DeleteTableRequest& request) const;
 
         /**
-         * <p> The <code>DeleteTable</code> operation deletes a table and all of its data.
+         * <p>The <code>DeleteTable</code> operation deletes a table and all of its data.
          * After a <code>DeleteTable</code> request is received, the specified table is in
          * the <code>DELETING</code> state until Amazon Keyspaces completes the deletion.
          * If the table is in the <code>ACTIVE</code> state, you can delete it. If a table
@@ -504,7 +503,7 @@ namespace Model
          * information about restore points, see <a
          * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_window">
          * Time window for PITR continuous backups</a> in the <i>Amazon Keyspaces Developer
-         * Guide</i>. </p> <p> Any number of users can execute up to 4 concurrent restores
+         * Guide</i>. </p> <p>Any number of users can execute up to 4 concurrent restores
          * (any type of restore) in a given account.</p> <p>When you restore using point in
          * time recovery, Amazon Keyspaces restores your source table's schema and data to
          * the state based on the selected timestamp <code>(day:hour:minute:second)</code>
@@ -515,17 +514,16 @@ namespace Model
          * the table's schema data and TTL settings, which are restored based on the
          * selected timestamp, these settings are always restored based on the table's
          * settings as of the current time or when the table was deleted.</p> <p>You can
-         * also overwrite these settings during restore:</p> <ul> <li> <p>Read/write
-         * capacity mode</p> </li> <li> <p>Provisioned throughput capacity settings</p>
-         * </li> <li> <p>Point-in-time (PITR) settings</p> </li> <li> <p>Tags</p> </li>
-         * </ul> <p>For more information, see <a
+         * also overwrite these settings during restore:</p> <p>• Read/write capacity
+         * mode</p> <p>• Provisioned throughput capacity settings</p> <p>• Point-in-time
+         * (PITR) settings</p> <p>• Tags</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_settings">PITR
-         * restore settings</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> <p>The
-         * following settings are not restored, and you must configure them manually for
-         * the new table. </p> <ul> <li> <p>Automatic scaling policies (for tables that use
-         * provisioned capacity mode)</p> </li> <li> <p>Identity and Access Management
-         * (IAM) policies</p> </li> <li> <p>Amazon CloudWatch metrics and alarms</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * restore settings</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> <p>Note
+         * that the following settings are not restored, and you must configure them
+         * manually for the new table:</p> <p>• Automatic scaling policies (for tables that
+         * use provisioned capacity mode)</p> <p>• Identity and Access Management (IAM)
+         * policies</p> <p>• Amazon CloudWatch metrics and alarms</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/RestoreTable">AWS
          * API Reference</a></p>
          */
@@ -537,7 +535,7 @@ namespace Model
          * information about restore points, see <a
          * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_window">
          * Time window for PITR continuous backups</a> in the <i>Amazon Keyspaces Developer
-         * Guide</i>. </p> <p> Any number of users can execute up to 4 concurrent restores
+         * Guide</i>. </p> <p>Any number of users can execute up to 4 concurrent restores
          * (any type of restore) in a given account.</p> <p>When you restore using point in
          * time recovery, Amazon Keyspaces restores your source table's schema and data to
          * the state based on the selected timestamp <code>(day:hour:minute:second)</code>
@@ -548,17 +546,16 @@ namespace Model
          * the table's schema data and TTL settings, which are restored based on the
          * selected timestamp, these settings are always restored based on the table's
          * settings as of the current time or when the table was deleted.</p> <p>You can
-         * also overwrite these settings during restore:</p> <ul> <li> <p>Read/write
-         * capacity mode</p> </li> <li> <p>Provisioned throughput capacity settings</p>
-         * </li> <li> <p>Point-in-time (PITR) settings</p> </li> <li> <p>Tags</p> </li>
-         * </ul> <p>For more information, see <a
+         * also overwrite these settings during restore:</p> <p>• Read/write capacity
+         * mode</p> <p>• Provisioned throughput capacity settings</p> <p>• Point-in-time
+         * (PITR) settings</p> <p>• Tags</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_settings">PITR
-         * restore settings</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> <p>The
-         * following settings are not restored, and you must configure them manually for
-         * the new table. </p> <ul> <li> <p>Automatic scaling policies (for tables that use
-         * provisioned capacity mode)</p> </li> <li> <p>Identity and Access Management
-         * (IAM) policies</p> </li> <li> <p>Amazon CloudWatch metrics and alarms</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * restore settings</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> <p>Note
+         * that the following settings are not restored, and you must configure them
+         * manually for the new table:</p> <p>• Automatic scaling policies (for tables that
+         * use provisioned capacity mode)</p> <p>• Identity and Access Management (IAM)
+         * policies</p> <p>• Amazon CloudWatch metrics and alarms</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/RestoreTable">AWS
          * API Reference</a></p>
          *
@@ -572,7 +569,7 @@ namespace Model
          * information about restore points, see <a
          * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_window">
          * Time window for PITR continuous backups</a> in the <i>Amazon Keyspaces Developer
-         * Guide</i>. </p> <p> Any number of users can execute up to 4 concurrent restores
+         * Guide</i>. </p> <p>Any number of users can execute up to 4 concurrent restores
          * (any type of restore) in a given account.</p> <p>When you restore using point in
          * time recovery, Amazon Keyspaces restores your source table's schema and data to
          * the state based on the selected timestamp <code>(day:hour:minute:second)</code>
@@ -583,17 +580,16 @@ namespace Model
          * the table's schema data and TTL settings, which are restored based on the
          * selected timestamp, these settings are always restored based on the table's
          * settings as of the current time or when the table was deleted.</p> <p>You can
-         * also overwrite these settings during restore:</p> <ul> <li> <p>Read/write
-         * capacity mode</p> </li> <li> <p>Provisioned throughput capacity settings</p>
-         * </li> <li> <p>Point-in-time (PITR) settings</p> </li> <li> <p>Tags</p> </li>
-         * </ul> <p>For more information, see <a
+         * also overwrite these settings during restore:</p> <p>• Read/write capacity
+         * mode</p> <p>• Provisioned throughput capacity settings</p> <p>• Point-in-time
+         * (PITR) settings</p> <p>• Tags</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_settings">PITR
-         * restore settings</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> <p>The
-         * following settings are not restored, and you must configure them manually for
-         * the new table. </p> <ul> <li> <p>Automatic scaling policies (for tables that use
-         * provisioned capacity mode)</p> </li> <li> <p>Identity and Access Management
-         * (IAM) policies</p> </li> <li> <p>Amazon CloudWatch metrics and alarms</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * restore settings</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> <p>Note
+         * that the following settings are not restored, and you must configure them
+         * manually for the new table:</p> <p>• Automatic scaling policies (for tables that
+         * use provisioned capacity mode)</p> <p>• Identity and Access Management (IAM)
+         * policies</p> <p>• Amazon CloudWatch metrics and alarms</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/RestoreTable">AWS
          * API Reference</a></p>
          *

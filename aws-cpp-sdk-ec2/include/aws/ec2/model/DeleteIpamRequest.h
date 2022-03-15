@@ -109,6 +109,71 @@ namespace Model
      */
     inline DeleteIpamRequest& WithIpamId(const char* value) { SetIpamId(value); return *this;}
 
+
+    /**
+     * <p>Enables you to quickly delete an IPAM, private scopes, pools in private
+     * scopes, and any allocations in the pools in private scopes. You cannot delete
+     * the IPAM with this option if there is a pool in your public scope. If you use
+     * this option, IPAM does the following:</p> <ul> <li> <p>Deallocates any CIDRs
+     * allocated to VPC resources (such as VPCs) in pools in private scopes.</p> 
+     * <p>No VPC resources are deleted as a result of enabling this option. The CIDR
+     * associated with the resource will no longer be allocated from an IPAM pool, but
+     * the CIDR itself will remain unchanged.</p>  </li> <li> <p>Deprovisions
+     * all IPv4 CIDRs provisioned to IPAM pools in private scopes.</p> </li> <li>
+     * <p>Deletes all IPAM pools in private scopes.</p> </li> <li> <p>Deletes all
+     * non-default private scopes in the IPAM.</p> </li> <li> <p>Deletes the default
+     * public and private scopes and the IPAM.</p> </li> </ul>
+     */
+    inline bool GetCascade() const{ return m_cascade; }
+
+    /**
+     * <p>Enables you to quickly delete an IPAM, private scopes, pools in private
+     * scopes, and any allocations in the pools in private scopes. You cannot delete
+     * the IPAM with this option if there is a pool in your public scope. If you use
+     * this option, IPAM does the following:</p> <ul> <li> <p>Deallocates any CIDRs
+     * allocated to VPC resources (such as VPCs) in pools in private scopes.</p> 
+     * <p>No VPC resources are deleted as a result of enabling this option. The CIDR
+     * associated with the resource will no longer be allocated from an IPAM pool, but
+     * the CIDR itself will remain unchanged.</p>  </li> <li> <p>Deprovisions
+     * all IPv4 CIDRs provisioned to IPAM pools in private scopes.</p> </li> <li>
+     * <p>Deletes all IPAM pools in private scopes.</p> </li> <li> <p>Deletes all
+     * non-default private scopes in the IPAM.</p> </li> <li> <p>Deletes the default
+     * public and private scopes and the IPAM.</p> </li> </ul>
+     */
+    inline bool CascadeHasBeenSet() const { return m_cascadeHasBeenSet; }
+
+    /**
+     * <p>Enables you to quickly delete an IPAM, private scopes, pools in private
+     * scopes, and any allocations in the pools in private scopes. You cannot delete
+     * the IPAM with this option if there is a pool in your public scope. If you use
+     * this option, IPAM does the following:</p> <ul> <li> <p>Deallocates any CIDRs
+     * allocated to VPC resources (such as VPCs) in pools in private scopes.</p> 
+     * <p>No VPC resources are deleted as a result of enabling this option. The CIDR
+     * associated with the resource will no longer be allocated from an IPAM pool, but
+     * the CIDR itself will remain unchanged.</p>  </li> <li> <p>Deprovisions
+     * all IPv4 CIDRs provisioned to IPAM pools in private scopes.</p> </li> <li>
+     * <p>Deletes all IPAM pools in private scopes.</p> </li> <li> <p>Deletes all
+     * non-default private scopes in the IPAM.</p> </li> <li> <p>Deletes the default
+     * public and private scopes and the IPAM.</p> </li> </ul>
+     */
+    inline void SetCascade(bool value) { m_cascadeHasBeenSet = true; m_cascade = value; }
+
+    /**
+     * <p>Enables you to quickly delete an IPAM, private scopes, pools in private
+     * scopes, and any allocations in the pools in private scopes. You cannot delete
+     * the IPAM with this option if there is a pool in your public scope. If you use
+     * this option, IPAM does the following:</p> <ul> <li> <p>Deallocates any CIDRs
+     * allocated to VPC resources (such as VPCs) in pools in private scopes.</p> 
+     * <p>No VPC resources are deleted as a result of enabling this option. The CIDR
+     * associated with the resource will no longer be allocated from an IPAM pool, but
+     * the CIDR itself will remain unchanged.</p>  </li> <li> <p>Deprovisions
+     * all IPv4 CIDRs provisioned to IPAM pools in private scopes.</p> </li> <li>
+     * <p>Deletes all IPAM pools in private scopes.</p> </li> <li> <p>Deletes all
+     * non-default private scopes in the IPAM.</p> </li> <li> <p>Deletes the default
+     * public and private scopes and the IPAM.</p> </li> </ul>
+     */
+    inline DeleteIpamRequest& WithCascade(bool value) { SetCascade(value); return *this;}
+
   private:
 
     bool m_dryRun;
@@ -116,6 +181,9 @@ namespace Model
 
     Aws::String m_ipamId;
     bool m_ipamIdHasBeenSet;
+
+    bool m_cascade;
+    bool m_cascadeHasBeenSet;
   };
 
 } // namespace Model

@@ -26,7 +26,7 @@ namespace Model
   /**
    * <p>The partition key portion of the primary key is required and determines how
    * Amazon Keyspaces stores the data. The partition key can be a single column, or
-   * it can be a compound value composed of two or more columns. </p><p><h3>See
+   * it can be a compound value composed of two or more columns.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/PartitionKey">AWS
    * API Reference</a></p>

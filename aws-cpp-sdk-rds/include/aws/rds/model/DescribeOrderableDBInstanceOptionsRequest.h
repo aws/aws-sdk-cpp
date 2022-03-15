@@ -43,7 +43,7 @@ namespace Model
 
     /**
      * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
@@ -59,7 +59,7 @@ namespace Model
 
     /**
      * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
@@ -75,7 +75,7 @@ namespace Model
 
     /**
      * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
@@ -91,7 +91,7 @@ namespace Model
 
     /**
      * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
@@ -107,7 +107,7 @@ namespace Model
 
     /**
      * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
@@ -123,7 +123,7 @@ namespace Model
 
     /**
      * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
@@ -139,7 +139,7 @@ namespace Model
 
     /**
      * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
@@ -155,7 +155,7 @@ namespace Model
 
     /**
      * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
@@ -329,7 +329,7 @@ namespace Model
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
      * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p> <p> This setting doesn't apply to RDS Custom.</p>
+     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline const Aws::String& GetAvailabilityZoneGroup() const{ return m_availabilityZoneGroup; }
 
@@ -337,7 +337,7 @@ namespace Model
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
      * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p> <p> This setting doesn't apply to RDS Custom.</p>
+     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool AvailabilityZoneGroupHasBeenSet() const { return m_availabilityZoneGroupHasBeenSet; }
 
@@ -345,7 +345,7 @@ namespace Model
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
      * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p> <p> This setting doesn't apply to RDS Custom.</p>
+     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetAvailabilityZoneGroup(const Aws::String& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = value; }
 
@@ -353,7 +353,7 @@ namespace Model
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
      * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p> <p> This setting doesn't apply to RDS Custom.</p>
+     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetAvailabilityZoneGroup(Aws::String&& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = std::move(value); }
 
@@ -361,7 +361,7 @@ namespace Model
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
      * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p> <p> This setting doesn't apply to RDS Custom.</p>
+     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetAvailabilityZoneGroup(const char* value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup.assign(value); }
 
@@ -369,7 +369,7 @@ namespace Model
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
      * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p> <p> This setting doesn't apply to RDS Custom.</p>
+     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithAvailabilityZoneGroup(const Aws::String& value) { SetAvailabilityZoneGroup(value); return *this;}
 
@@ -377,7 +377,7 @@ namespace Model
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
      * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p> <p> This setting doesn't apply to RDS Custom.</p>
+     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithAvailabilityZoneGroup(Aws::String&& value) { SetAvailabilityZoneGroup(std::move(value)); return *this;}
 
@@ -385,7 +385,7 @@ namespace Model
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
      * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p> <p> This setting doesn't apply to RDS Custom.</p>
+     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithAvailabilityZoneGroup(const char* value) { SetAvailabilityZoneGroup(value); return *this;}
 
@@ -465,103 +465,103 @@ namespace Model
 
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 

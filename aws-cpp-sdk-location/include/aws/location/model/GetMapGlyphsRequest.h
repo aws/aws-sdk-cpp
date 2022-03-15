@@ -51,7 +51,11 @@ namespace Model
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a> styles: </p> <ul> <li> <p>VectorHereBerlin – <code>Fira GO
-     * Regular</code> | <code>Fira GO Bold</code> </p> </li> </ul>
+     * Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore,
+     * VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code>
+     * | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
+     * <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetFontStack() const{ return m_fontStack; }
 
@@ -74,7 +78,11 @@ namespace Model
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a> styles: </p> <ul> <li> <p>VectorHereBerlin – <code>Fira GO
-     * Regular</code> | <code>Fira GO Bold</code> </p> </li> </ul>
+     * Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore,
+     * VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code>
+     * | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
+     * <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p>
+     * </li> </ul>
      */
     inline bool FontStackHasBeenSet() const { return m_fontStackHasBeenSet; }
 
@@ -97,7 +105,11 @@ namespace Model
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a> styles: </p> <ul> <li> <p>VectorHereBerlin – <code>Fira GO
-     * Regular</code> | <code>Fira GO Bold</code> </p> </li> </ul>
+     * Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore,
+     * VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code>
+     * | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
+     * <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p>
+     * </li> </ul>
      */
     inline void SetFontStack(const Aws::String& value) { m_fontStackHasBeenSet = true; m_fontStack = value; }
 
@@ -120,7 +132,11 @@ namespace Model
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a> styles: </p> <ul> <li> <p>VectorHereBerlin – <code>Fira GO
-     * Regular</code> | <code>Fira GO Bold</code> </p> </li> </ul>
+     * Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore,
+     * VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code>
+     * | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
+     * <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p>
+     * </li> </ul>
      */
     inline void SetFontStack(Aws::String&& value) { m_fontStackHasBeenSet = true; m_fontStack = std::move(value); }
 
@@ -143,7 +159,11 @@ namespace Model
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a> styles: </p> <ul> <li> <p>VectorHereBerlin – <code>Fira GO
-     * Regular</code> | <code>Fira GO Bold</code> </p> </li> </ul>
+     * Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore,
+     * VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code>
+     * | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
+     * <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p>
+     * </li> </ul>
      */
     inline void SetFontStack(const char* value) { m_fontStackHasBeenSet = true; m_fontStack.assign(value); }
 
@@ -166,7 +186,11 @@ namespace Model
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a> styles: </p> <ul> <li> <p>VectorHereBerlin – <code>Fira GO
-     * Regular</code> | <code>Fira GO Bold</code> </p> </li> </ul>
+     * Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore,
+     * VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code>
+     * | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
+     * <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p>
+     * </li> </ul>
      */
     inline GetMapGlyphsRequest& WithFontStack(const Aws::String& value) { SetFontStack(value); return *this;}
 
@@ -189,7 +213,11 @@ namespace Model
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a> styles: </p> <ul> <li> <p>VectorHereBerlin – <code>Fira GO
-     * Regular</code> | <code>Fira GO Bold</code> </p> </li> </ul>
+     * Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore,
+     * VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code>
+     * | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
+     * <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p>
+     * </li> </ul>
      */
     inline GetMapGlyphsRequest& WithFontStack(Aws::String&& value) { SetFontStack(std::move(value)); return *this;}
 
@@ -212,7 +240,11 @@ namespace Model
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a> styles: </p> <ul> <li> <p>VectorHereBerlin – <code>Fira GO
-     * Regular</code> | <code>Fira GO Bold</code> </p> </li> </ul>
+     * Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore,
+     * VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code>
+     * | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
+     * <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p>
+     * </li> </ul>
      */
     inline GetMapGlyphsRequest& WithFontStack(const char* value) { SetFontStack(value); return *this;}
 

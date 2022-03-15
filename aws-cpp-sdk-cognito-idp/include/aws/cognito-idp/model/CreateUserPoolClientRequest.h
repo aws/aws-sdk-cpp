@@ -328,117 +328,117 @@ namespace Model
     /**
      * <p>The user pool attributes that the app client can write to.</p> <p>If your app
      * client allows users to sign in through an identity provider, this array must
-     * include all attributes that are mapped to identity provider attributes. Amazon
-     * Cognito updates mapped attributes when users sign in to your application through
-     * an identity provider. If your app client lacks write access to a mapped
-     * attribute, Amazon Cognito throws an error when it tries to update the attribute.
-     * For more information, see <a
+     * include all attributes that you have mapped to identity provider attributes.
+     * Amazon Cognito updates mapped attributes when users sign in to your application
+     * through an identity provider. If your app client does not have write access to a
+     * mapped attribute, Amazon Cognito throws an error when it tries to update the
+     * attribute. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
-     * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
+     * Identity Provider Attribute Mappings for Your user pool</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetWriteAttributes() const{ return m_writeAttributes; }
 
     /**
      * <p>The user pool attributes that the app client can write to.</p> <p>If your app
      * client allows users to sign in through an identity provider, this array must
-     * include all attributes that are mapped to identity provider attributes. Amazon
-     * Cognito updates mapped attributes when users sign in to your application through
-     * an identity provider. If your app client lacks write access to a mapped
-     * attribute, Amazon Cognito throws an error when it tries to update the attribute.
-     * For more information, see <a
+     * include all attributes that you have mapped to identity provider attributes.
+     * Amazon Cognito updates mapped attributes when users sign in to your application
+     * through an identity provider. If your app client does not have write access to a
+     * mapped attribute, Amazon Cognito throws an error when it tries to update the
+     * attribute. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
-     * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
+     * Identity Provider Attribute Mappings for Your user pool</a>.</p>
      */
     inline bool WriteAttributesHasBeenSet() const { return m_writeAttributesHasBeenSet; }
 
     /**
      * <p>The user pool attributes that the app client can write to.</p> <p>If your app
      * client allows users to sign in through an identity provider, this array must
-     * include all attributes that are mapped to identity provider attributes. Amazon
-     * Cognito updates mapped attributes when users sign in to your application through
-     * an identity provider. If your app client lacks write access to a mapped
-     * attribute, Amazon Cognito throws an error when it tries to update the attribute.
-     * For more information, see <a
+     * include all attributes that you have mapped to identity provider attributes.
+     * Amazon Cognito updates mapped attributes when users sign in to your application
+     * through an identity provider. If your app client does not have write access to a
+     * mapped attribute, Amazon Cognito throws an error when it tries to update the
+     * attribute. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
-     * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
+     * Identity Provider Attribute Mappings for Your user pool</a>.</p>
      */
     inline void SetWriteAttributes(const Aws::Vector<Aws::String>& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes = value; }
 
     /**
      * <p>The user pool attributes that the app client can write to.</p> <p>If your app
      * client allows users to sign in through an identity provider, this array must
-     * include all attributes that are mapped to identity provider attributes. Amazon
-     * Cognito updates mapped attributes when users sign in to your application through
-     * an identity provider. If your app client lacks write access to a mapped
-     * attribute, Amazon Cognito throws an error when it tries to update the attribute.
-     * For more information, see <a
+     * include all attributes that you have mapped to identity provider attributes.
+     * Amazon Cognito updates mapped attributes when users sign in to your application
+     * through an identity provider. If your app client does not have write access to a
+     * mapped attribute, Amazon Cognito throws an error when it tries to update the
+     * attribute. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
-     * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
+     * Identity Provider Attribute Mappings for Your user pool</a>.</p>
      */
     inline void SetWriteAttributes(Aws::Vector<Aws::String>&& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes = std::move(value); }
 
     /**
      * <p>The user pool attributes that the app client can write to.</p> <p>If your app
      * client allows users to sign in through an identity provider, this array must
-     * include all attributes that are mapped to identity provider attributes. Amazon
-     * Cognito updates mapped attributes when users sign in to your application through
-     * an identity provider. If your app client lacks write access to a mapped
-     * attribute, Amazon Cognito throws an error when it tries to update the attribute.
-     * For more information, see <a
+     * include all attributes that you have mapped to identity provider attributes.
+     * Amazon Cognito updates mapped attributes when users sign in to your application
+     * through an identity provider. If your app client does not have write access to a
+     * mapped attribute, Amazon Cognito throws an error when it tries to update the
+     * attribute. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
-     * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
+     * Identity Provider Attribute Mappings for Your user pool</a>.</p>
      */
     inline CreateUserPoolClientRequest& WithWriteAttributes(const Aws::Vector<Aws::String>& value) { SetWriteAttributes(value); return *this;}
 
     /**
      * <p>The user pool attributes that the app client can write to.</p> <p>If your app
      * client allows users to sign in through an identity provider, this array must
-     * include all attributes that are mapped to identity provider attributes. Amazon
-     * Cognito updates mapped attributes when users sign in to your application through
-     * an identity provider. If your app client lacks write access to a mapped
-     * attribute, Amazon Cognito throws an error when it tries to update the attribute.
-     * For more information, see <a
+     * include all attributes that you have mapped to identity provider attributes.
+     * Amazon Cognito updates mapped attributes when users sign in to your application
+     * through an identity provider. If your app client does not have write access to a
+     * mapped attribute, Amazon Cognito throws an error when it tries to update the
+     * attribute. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
-     * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
+     * Identity Provider Attribute Mappings for Your user pool</a>.</p>
      */
     inline CreateUserPoolClientRequest& WithWriteAttributes(Aws::Vector<Aws::String>&& value) { SetWriteAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The user pool attributes that the app client can write to.</p> <p>If your app
      * client allows users to sign in through an identity provider, this array must
-     * include all attributes that are mapped to identity provider attributes. Amazon
-     * Cognito updates mapped attributes when users sign in to your application through
-     * an identity provider. If your app client lacks write access to a mapped
-     * attribute, Amazon Cognito throws an error when it tries to update the attribute.
-     * For more information, see <a
+     * include all attributes that you have mapped to identity provider attributes.
+     * Amazon Cognito updates mapped attributes when users sign in to your application
+     * through an identity provider. If your app client does not have write access to a
+     * mapped attribute, Amazon Cognito throws an error when it tries to update the
+     * attribute. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
-     * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
+     * Identity Provider Attribute Mappings for Your user pool</a>.</p>
      */
     inline CreateUserPoolClientRequest& AddWriteAttributes(const Aws::String& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes.push_back(value); return *this; }
 
     /**
      * <p>The user pool attributes that the app client can write to.</p> <p>If your app
      * client allows users to sign in through an identity provider, this array must
-     * include all attributes that are mapped to identity provider attributes. Amazon
-     * Cognito updates mapped attributes when users sign in to your application through
-     * an identity provider. If your app client lacks write access to a mapped
-     * attribute, Amazon Cognito throws an error when it tries to update the attribute.
-     * For more information, see <a
+     * include all attributes that you have mapped to identity provider attributes.
+     * Amazon Cognito updates mapped attributes when users sign in to your application
+     * through an identity provider. If your app client does not have write access to a
+     * mapped attribute, Amazon Cognito throws an error when it tries to update the
+     * attribute. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
-     * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
+     * Identity Provider Attribute Mappings for Your user pool</a>.</p>
      */
     inline CreateUserPoolClientRequest& AddWriteAttributes(Aws::String&& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The user pool attributes that the app client can write to.</p> <p>If your app
      * client allows users to sign in through an identity provider, this array must
-     * include all attributes that are mapped to identity provider attributes. Amazon
-     * Cognito updates mapped attributes when users sign in to your application through
-     * an identity provider. If your app client lacks write access to a mapped
-     * attribute, Amazon Cognito throws an error when it tries to update the attribute.
-     * For more information, see <a
+     * include all attributes that you have mapped to identity provider attributes.
+     * Amazon Cognito updates mapped attributes when users sign in to your application
+     * through an identity provider. If your app client does not have write access to a
+     * mapped attribute, Amazon Cognito throws an error when it tries to update the
+     * attribute. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
-     * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
+     * Identity Provider Attribute Mappings for Your user pool</a>.</p>
      */
     inline CreateUserPoolClientRequest& AddWriteAttributes(const char* value) { m_writeAttributesHasBeenSet = true; m_writeAttributes.push_back(value); return *this; }
 
@@ -446,9 +446,9 @@ namespace Model
     /**
      * <p>The authentication flows that are supported by the user pool clients. Flow
      * names without the <code>ALLOW_</code> prefix are no longer supported, in favor
-     * of new names with the <code>ALLOW_</code> prefix. Note that values with
+     * of new names with the <code>ALLOW_</code> prefix.</p>  <p>Values with
      * <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code>
-     * prefix.</p> <p>Valid values include:</p> <ul> <li> <p>
+     * prefix.</p>  <p>Valid values include:</p> <ul> <li> <p>
      * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
      * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
      * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
@@ -467,9 +467,9 @@ namespace Model
     /**
      * <p>The authentication flows that are supported by the user pool clients. Flow
      * names without the <code>ALLOW_</code> prefix are no longer supported, in favor
-     * of new names with the <code>ALLOW_</code> prefix. Note that values with
+     * of new names with the <code>ALLOW_</code> prefix.</p>  <p>Values with
      * <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code>
-     * prefix.</p> <p>Valid values include:</p> <ul> <li> <p>
+     * prefix.</p>  <p>Valid values include:</p> <ul> <li> <p>
      * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
      * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
      * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
@@ -488,9 +488,9 @@ namespace Model
     /**
      * <p>The authentication flows that are supported by the user pool clients. Flow
      * names without the <code>ALLOW_</code> prefix are no longer supported, in favor
-     * of new names with the <code>ALLOW_</code> prefix. Note that values with
+     * of new names with the <code>ALLOW_</code> prefix.</p>  <p>Values with
      * <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code>
-     * prefix.</p> <p>Valid values include:</p> <ul> <li> <p>
+     * prefix.</p>  <p>Valid values include:</p> <ul> <li> <p>
      * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
      * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
      * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
@@ -509,9 +509,9 @@ namespace Model
     /**
      * <p>The authentication flows that are supported by the user pool clients. Flow
      * names without the <code>ALLOW_</code> prefix are no longer supported, in favor
-     * of new names with the <code>ALLOW_</code> prefix. Note that values with
+     * of new names with the <code>ALLOW_</code> prefix.</p>  <p>Values with
      * <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code>
-     * prefix.</p> <p>Valid values include:</p> <ul> <li> <p>
+     * prefix.</p>  <p>Valid values include:</p> <ul> <li> <p>
      * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
      * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
      * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
@@ -530,9 +530,9 @@ namespace Model
     /**
      * <p>The authentication flows that are supported by the user pool clients. Flow
      * names without the <code>ALLOW_</code> prefix are no longer supported, in favor
-     * of new names with the <code>ALLOW_</code> prefix. Note that values with
+     * of new names with the <code>ALLOW_</code> prefix.</p>  <p>Values with
      * <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code>
-     * prefix.</p> <p>Valid values include:</p> <ul> <li> <p>
+     * prefix.</p>  <p>Valid values include:</p> <ul> <li> <p>
      * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
      * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
      * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
@@ -551,9 +551,9 @@ namespace Model
     /**
      * <p>The authentication flows that are supported by the user pool clients. Flow
      * names without the <code>ALLOW_</code> prefix are no longer supported, in favor
-     * of new names with the <code>ALLOW_</code> prefix. Note that values with
+     * of new names with the <code>ALLOW_</code> prefix.</p>  <p>Values with
      * <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code>
-     * prefix.</p> <p>Valid values include:</p> <ul> <li> <p>
+     * prefix.</p>  <p>Valid values include:</p> <ul> <li> <p>
      * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
      * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
      * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
@@ -572,9 +572,9 @@ namespace Model
     /**
      * <p>The authentication flows that are supported by the user pool clients. Flow
      * names without the <code>ALLOW_</code> prefix are no longer supported, in favor
-     * of new names with the <code>ALLOW_</code> prefix. Note that values with
+     * of new names with the <code>ALLOW_</code> prefix.</p>  <p>Values with
      * <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code>
-     * prefix.</p> <p>Valid values include:</p> <ul> <li> <p>
+     * prefix.</p>  <p>Valid values include:</p> <ul> <li> <p>
      * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
      * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
      * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
@@ -593,9 +593,9 @@ namespace Model
     /**
      * <p>The authentication flows that are supported by the user pool clients. Flow
      * names without the <code>ALLOW_</code> prefix are no longer supported, in favor
-     * of new names with the <code>ALLOW_</code> prefix. Note that values with
+     * of new names with the <code>ALLOW_</code> prefix.</p>  <p>Values with
      * <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code>
-     * prefix.</p> <p>Valid values include:</p> <ul> <li> <p>
+     * prefix.</p>  <p>Valid values include:</p> <ul> <li> <p>
      * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
      * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
      * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
@@ -1133,62 +1133,62 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>In Amazon Web Services Regions where isn't available,
-     * User Pools only supports sending events to Amazon Pinpoint projects in Amazon
-     * Web Services Region us-east-1. In Regions where is available, User Pools will
-     * support sending events to Amazon Pinpoint projects within that same Region. </p>
-     * 
+     * <p>The user pool analytics configuration for collecting metrics and sending them
+     * to your Amazon Pinpoint campaign.</p>  <p>In Amazon Web Services Regions
+     * where Amazon Pinpoint isn't available, user pools only support sending events to
+     * Amazon Pinpoint projects in Amazon Web Services Region us-east-1. In Regions
+     * where Amazon Pinpoint is available, user pools support sending events to Amazon
+     * Pinpoint projects within that same Region.</p> 
      */
     inline const AnalyticsConfigurationType& GetAnalyticsConfiguration() const{ return m_analyticsConfiguration; }
 
     /**
-     * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>In Amazon Web Services Regions where isn't available,
-     * User Pools only supports sending events to Amazon Pinpoint projects in Amazon
-     * Web Services Region us-east-1. In Regions where is available, User Pools will
-     * support sending events to Amazon Pinpoint projects within that same Region. </p>
-     * 
+     * <p>The user pool analytics configuration for collecting metrics and sending them
+     * to your Amazon Pinpoint campaign.</p>  <p>In Amazon Web Services Regions
+     * where Amazon Pinpoint isn't available, user pools only support sending events to
+     * Amazon Pinpoint projects in Amazon Web Services Region us-east-1. In Regions
+     * where Amazon Pinpoint is available, user pools support sending events to Amazon
+     * Pinpoint projects within that same Region.</p> 
      */
     inline bool AnalyticsConfigurationHasBeenSet() const { return m_analyticsConfigurationHasBeenSet; }
 
     /**
-     * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>In Amazon Web Services Regions where isn't available,
-     * User Pools only supports sending events to Amazon Pinpoint projects in Amazon
-     * Web Services Region us-east-1. In Regions where is available, User Pools will
-     * support sending events to Amazon Pinpoint projects within that same Region. </p>
-     * 
+     * <p>The user pool analytics configuration for collecting metrics and sending them
+     * to your Amazon Pinpoint campaign.</p>  <p>In Amazon Web Services Regions
+     * where Amazon Pinpoint isn't available, user pools only support sending events to
+     * Amazon Pinpoint projects in Amazon Web Services Region us-east-1. In Regions
+     * where Amazon Pinpoint is available, user pools support sending events to Amazon
+     * Pinpoint projects within that same Region.</p> 
      */
     inline void SetAnalyticsConfiguration(const AnalyticsConfigurationType& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = value; }
 
     /**
-     * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>In Amazon Web Services Regions where isn't available,
-     * User Pools only supports sending events to Amazon Pinpoint projects in Amazon
-     * Web Services Region us-east-1. In Regions where is available, User Pools will
-     * support sending events to Amazon Pinpoint projects within that same Region. </p>
-     * 
+     * <p>The user pool analytics configuration for collecting metrics and sending them
+     * to your Amazon Pinpoint campaign.</p>  <p>In Amazon Web Services Regions
+     * where Amazon Pinpoint isn't available, user pools only support sending events to
+     * Amazon Pinpoint projects in Amazon Web Services Region us-east-1. In Regions
+     * where Amazon Pinpoint is available, user pools support sending events to Amazon
+     * Pinpoint projects within that same Region.</p> 
      */
     inline void SetAnalyticsConfiguration(AnalyticsConfigurationType&& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = std::move(value); }
 
     /**
-     * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>In Amazon Web Services Regions where isn't available,
-     * User Pools only supports sending events to Amazon Pinpoint projects in Amazon
-     * Web Services Region us-east-1. In Regions where is available, User Pools will
-     * support sending events to Amazon Pinpoint projects within that same Region. </p>
-     * 
+     * <p>The user pool analytics configuration for collecting metrics and sending them
+     * to your Amazon Pinpoint campaign.</p>  <p>In Amazon Web Services Regions
+     * where Amazon Pinpoint isn't available, user pools only support sending events to
+     * Amazon Pinpoint projects in Amazon Web Services Region us-east-1. In Regions
+     * where Amazon Pinpoint is available, user pools support sending events to Amazon
+     * Pinpoint projects within that same Region.</p> 
      */
     inline CreateUserPoolClientRequest& WithAnalyticsConfiguration(const AnalyticsConfigurationType& value) { SetAnalyticsConfiguration(value); return *this;}
 
     /**
-     * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>In Amazon Web Services Regions where isn't available,
-     * User Pools only supports sending events to Amazon Pinpoint projects in Amazon
-     * Web Services Region us-east-1. In Regions where is available, User Pools will
-     * support sending events to Amazon Pinpoint projects within that same Region. </p>
-     * 
+     * <p>The user pool analytics configuration for collecting metrics and sending them
+     * to your Amazon Pinpoint campaign.</p>  <p>In Amazon Web Services Regions
+     * where Amazon Pinpoint isn't available, user pools only support sending events to
+     * Amazon Pinpoint projects in Amazon Web Services Region us-east-1. In Regions
+     * where Amazon Pinpoint is available, user pools support sending events to Amazon
+     * Pinpoint projects within that same Region.</p> 
      */
     inline CreateUserPoolClientRequest& WithAnalyticsConfiguration(AnalyticsConfigurationType&& value) { SetAnalyticsConfiguration(std::move(value)); return *this;}
 

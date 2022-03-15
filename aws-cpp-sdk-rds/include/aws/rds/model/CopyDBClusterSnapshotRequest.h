@@ -52,7 +52,7 @@ namespace Model
      * valid DB cluster snapshot ARN. For more information, go to <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
      * Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora
-     * User Guide.</i> </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code>
+     * User Guide</i>.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code>
      * </p>
      */
     inline const Aws::String& GetSourceDBClusterSnapshotIdentifier() const{ return m_sourceDBClusterSnapshotIdentifier; }
@@ -68,7 +68,7 @@ namespace Model
      * valid DB cluster snapshot ARN. For more information, go to <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
      * Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora
-     * User Guide.</i> </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code>
+     * User Guide</i>.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code>
      * </p>
      */
     inline bool SourceDBClusterSnapshotIdentifierHasBeenSet() const { return m_sourceDBClusterSnapshotIdentifierHasBeenSet; }
@@ -84,7 +84,7 @@ namespace Model
      * valid DB cluster snapshot ARN. For more information, go to <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
      * Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora
-     * User Guide.</i> </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code>
+     * User Guide</i>.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code>
      * </p>
      */
     inline void SetSourceDBClusterSnapshotIdentifier(const Aws::String& value) { m_sourceDBClusterSnapshotIdentifierHasBeenSet = true; m_sourceDBClusterSnapshotIdentifier = value; }
@@ -100,7 +100,7 @@ namespace Model
      * valid DB cluster snapshot ARN. For more information, go to <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
      * Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora
-     * User Guide.</i> </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code>
+     * User Guide</i>.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code>
      * </p>
      */
     inline void SetSourceDBClusterSnapshotIdentifier(Aws::String&& value) { m_sourceDBClusterSnapshotIdentifierHasBeenSet = true; m_sourceDBClusterSnapshotIdentifier = std::move(value); }
@@ -116,7 +116,7 @@ namespace Model
      * valid DB cluster snapshot ARN. For more information, go to <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
      * Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora
-     * User Guide.</i> </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code>
+     * User Guide</i>.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code>
      * </p>
      */
     inline void SetSourceDBClusterSnapshotIdentifier(const char* value) { m_sourceDBClusterSnapshotIdentifierHasBeenSet = true; m_sourceDBClusterSnapshotIdentifier.assign(value); }
@@ -132,7 +132,7 @@ namespace Model
      * valid DB cluster snapshot ARN. For more information, go to <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
      * Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora
-     * User Guide.</i> </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code>
+     * User Guide</i>.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code>
      * </p>
      */
     inline CopyDBClusterSnapshotRequest& WithSourceDBClusterSnapshotIdentifier(const Aws::String& value) { SetSourceDBClusterSnapshotIdentifier(value); return *this;}
@@ -148,7 +148,7 @@ namespace Model
      * valid DB cluster snapshot ARN. For more information, go to <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
      * Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora
-     * User Guide.</i> </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code>
+     * User Guide</i>.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code>
      * </p>
      */
     inline CopyDBClusterSnapshotRequest& WithSourceDBClusterSnapshotIdentifier(Aws::String&& value) { SetSourceDBClusterSnapshotIdentifier(std::move(value)); return *this;}
@@ -164,7 +164,7 @@ namespace Model
      * valid DB cluster snapshot ARN. For more information, go to <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
      * Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora
-     * User Guide.</i> </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code>
+     * User Guide</i>.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code>
      * </p>
      */
     inline CopyDBClusterSnapshotRequest& WithSourceDBClusterSnapshotIdentifier(const char* value) { SetSourceDBClusterSnapshotIdentifier(value); return *this;}
@@ -259,9 +259,9 @@ namespace Model
      * specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS
      * key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of
      * the DB cluster snapshot is encrypted with the same KMS key as the source DB
-     * cluster snapshot. </p> <p>If you copy an encrypted DB cluster snapshot that is
+     * cluster snapshot.</p> <p>If you copy an encrypted DB cluster snapshot that is
      * shared from another Amazon Web Services account, then you must specify a value
-     * for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB cluster snapshot to
+     * for <code>KmsKeyId</code>.</p> <p>To copy an encrypted DB cluster snapshot to
      * another Amazon Web Services Region, you must set <code>KmsKeyId</code> to the
      * Amazon Web Services KMS key identifier you want to use to encrypt the copy of
      * the DB cluster snapshot in the destination Amazon Web Services Region. KMS keys
@@ -281,9 +281,9 @@ namespace Model
      * specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS
      * key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of
      * the DB cluster snapshot is encrypted with the same KMS key as the source DB
-     * cluster snapshot. </p> <p>If you copy an encrypted DB cluster snapshot that is
+     * cluster snapshot.</p> <p>If you copy an encrypted DB cluster snapshot that is
      * shared from another Amazon Web Services account, then you must specify a value
-     * for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB cluster snapshot to
+     * for <code>KmsKeyId</code>.</p> <p>To copy an encrypted DB cluster snapshot to
      * another Amazon Web Services Region, you must set <code>KmsKeyId</code> to the
      * Amazon Web Services KMS key identifier you want to use to encrypt the copy of
      * the DB cluster snapshot in the destination Amazon Web Services Region. KMS keys
@@ -303,9 +303,9 @@ namespace Model
      * specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS
      * key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of
      * the DB cluster snapshot is encrypted with the same KMS key as the source DB
-     * cluster snapshot. </p> <p>If you copy an encrypted DB cluster snapshot that is
+     * cluster snapshot.</p> <p>If you copy an encrypted DB cluster snapshot that is
      * shared from another Amazon Web Services account, then you must specify a value
-     * for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB cluster snapshot to
+     * for <code>KmsKeyId</code>.</p> <p>To copy an encrypted DB cluster snapshot to
      * another Amazon Web Services Region, you must set <code>KmsKeyId</code> to the
      * Amazon Web Services KMS key identifier you want to use to encrypt the copy of
      * the DB cluster snapshot in the destination Amazon Web Services Region. KMS keys
@@ -325,9 +325,9 @@ namespace Model
      * specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS
      * key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of
      * the DB cluster snapshot is encrypted with the same KMS key as the source DB
-     * cluster snapshot. </p> <p>If you copy an encrypted DB cluster snapshot that is
+     * cluster snapshot.</p> <p>If you copy an encrypted DB cluster snapshot that is
      * shared from another Amazon Web Services account, then you must specify a value
-     * for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB cluster snapshot to
+     * for <code>KmsKeyId</code>.</p> <p>To copy an encrypted DB cluster snapshot to
      * another Amazon Web Services Region, you must set <code>KmsKeyId</code> to the
      * Amazon Web Services KMS key identifier you want to use to encrypt the copy of
      * the DB cluster snapshot in the destination Amazon Web Services Region. KMS keys
@@ -347,9 +347,9 @@ namespace Model
      * specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS
      * key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of
      * the DB cluster snapshot is encrypted with the same KMS key as the source DB
-     * cluster snapshot. </p> <p>If you copy an encrypted DB cluster snapshot that is
+     * cluster snapshot.</p> <p>If you copy an encrypted DB cluster snapshot that is
      * shared from another Amazon Web Services account, then you must specify a value
-     * for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB cluster snapshot to
+     * for <code>KmsKeyId</code>.</p> <p>To copy an encrypted DB cluster snapshot to
      * another Amazon Web Services Region, you must set <code>KmsKeyId</code> to the
      * Amazon Web Services KMS key identifier you want to use to encrypt the copy of
      * the DB cluster snapshot in the destination Amazon Web Services Region. KMS keys
@@ -369,9 +369,9 @@ namespace Model
      * specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS
      * key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of
      * the DB cluster snapshot is encrypted with the same KMS key as the source DB
-     * cluster snapshot. </p> <p>If you copy an encrypted DB cluster snapshot that is
+     * cluster snapshot.</p> <p>If you copy an encrypted DB cluster snapshot that is
      * shared from another Amazon Web Services account, then you must specify a value
-     * for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB cluster snapshot to
+     * for <code>KmsKeyId</code>.</p> <p>To copy an encrypted DB cluster snapshot to
      * another Amazon Web Services Region, you must set <code>KmsKeyId</code> to the
      * Amazon Web Services KMS key identifier you want to use to encrypt the copy of
      * the DB cluster snapshot in the destination Amazon Web Services Region. KMS keys
@@ -391,9 +391,9 @@ namespace Model
      * specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS
      * key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of
      * the DB cluster snapshot is encrypted with the same KMS key as the source DB
-     * cluster snapshot. </p> <p>If you copy an encrypted DB cluster snapshot that is
+     * cluster snapshot.</p> <p>If you copy an encrypted DB cluster snapshot that is
      * shared from another Amazon Web Services account, then you must specify a value
-     * for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB cluster snapshot to
+     * for <code>KmsKeyId</code>.</p> <p>To copy an encrypted DB cluster snapshot to
      * another Amazon Web Services Region, you must set <code>KmsKeyId</code> to the
      * Amazon Web Services KMS key identifier you want to use to encrypt the copy of
      * the DB cluster snapshot in the destination Amazon Web Services Region. KMS keys
@@ -413,9 +413,9 @@ namespace Model
      * specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS
      * key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of
      * the DB cluster snapshot is encrypted with the same KMS key as the source DB
-     * cluster snapshot. </p> <p>If you copy an encrypted DB cluster snapshot that is
+     * cluster snapshot.</p> <p>If you copy an encrypted DB cluster snapshot that is
      * shared from another Amazon Web Services account, then you must specify a value
-     * for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB cluster snapshot to
+     * for <code>KmsKeyId</code>.</p> <p>To copy an encrypted DB cluster snapshot to
      * another Amazon Web Services Region, you must set <code>KmsKeyId</code> to the
      * Amazon Web Services KMS key identifier you want to use to encrypt the copy of
      * the DB cluster snapshot in the destination Amazon Web Services Region. KMS keys

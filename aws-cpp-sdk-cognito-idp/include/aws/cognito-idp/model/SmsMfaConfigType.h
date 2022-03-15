@@ -105,32 +105,62 @@ namespace Model
 
 
     /**
-     * <p>The SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To request Amazon SNS in the Amazon Web
+     * Services Region that you want, the Amazon Cognito user pool uses an Identity and
+     * Access Management (IAM) role that you provide for your Amazon Web Services
+     * account.</p>
      */
     inline const SmsConfigurationType& GetSmsConfiguration() const{ return m_smsConfiguration; }
 
     /**
-     * <p>The SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To request Amazon SNS in the Amazon Web
+     * Services Region that you want, the Amazon Cognito user pool uses an Identity and
+     * Access Management (IAM) role that you provide for your Amazon Web Services
+     * account.</p>
      */
     inline bool SmsConfigurationHasBeenSet() const { return m_smsConfigurationHasBeenSet; }
 
     /**
-     * <p>The SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To request Amazon SNS in the Amazon Web
+     * Services Region that you want, the Amazon Cognito user pool uses an Identity and
+     * Access Management (IAM) role that you provide for your Amazon Web Services
+     * account.</p>
      */
     inline void SetSmsConfiguration(const SmsConfigurationType& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = value; }
 
     /**
-     * <p>The SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To request Amazon SNS in the Amazon Web
+     * Services Region that you want, the Amazon Cognito user pool uses an Identity and
+     * Access Management (IAM) role that you provide for your Amazon Web Services
+     * account.</p>
      */
     inline void SetSmsConfiguration(SmsConfigurationType&& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = std::move(value); }
 
     /**
-     * <p>The SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To request Amazon SNS in the Amazon Web
+     * Services Region that you want, the Amazon Cognito user pool uses an Identity and
+     * Access Management (IAM) role that you provide for your Amazon Web Services
+     * account.</p>
      */
     inline SmsMfaConfigType& WithSmsConfiguration(const SmsConfigurationType& value) { SetSmsConfiguration(value); return *this;}
 
     /**
-     * <p>The SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To request Amazon SNS in the Amazon Web
+     * Services Region that you want, the Amazon Cognito user pool uses an Identity and
+     * Access Management (IAM) role that you provide for your Amazon Web Services
+     * account.</p>
      */
     inline SmsMfaConfigType& WithSmsConfiguration(SmsConfigurationType&& value) { SetSmsConfiguration(std::move(value)); return *this;}
 

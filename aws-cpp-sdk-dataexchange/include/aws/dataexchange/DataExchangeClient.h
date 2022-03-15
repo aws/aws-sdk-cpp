@@ -26,6 +26,7 @@
 #include <aws/dataexchange/model/ListJobsResult.h>
 #include <aws/dataexchange/model/ListRevisionAssetsResult.h>
 #include <aws/dataexchange/model/ListTagsForResourceResult.h>
+#include <aws/dataexchange/model/RevokeRevisionResult.h>
 #include <aws/dataexchange/model/SendApiAssetResult.h>
 #include <aws/dataexchange/model/StartJobResult.h>
 #include <aws/dataexchange/model/UpdateAssetResult.h>
@@ -92,6 +93,7 @@ namespace Model
         class ListJobsRequest;
         class ListRevisionAssetsRequest;
         class ListTagsForResourceRequest;
+        class RevokeRevisionRequest;
         class SendApiAssetRequest;
         class StartJobRequest;
         class TagResourceRequest;
@@ -121,6 +123,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListJobsResult, DataExchangeError> ListJobsOutcome;
         typedef Aws::Utils::Outcome<ListRevisionAssetsResult, DataExchangeError> ListRevisionAssetsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, DataExchangeError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<RevokeRevisionResult, DataExchangeError> RevokeRevisionOutcome;
         typedef Aws::Utils::Outcome<SendApiAssetResult, DataExchangeError> SendApiAssetOutcome;
         typedef Aws::Utils::Outcome<StartJobResult, DataExchangeError> StartJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> TagResourceOutcome;
@@ -150,6 +153,7 @@ namespace Model
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
         typedef std::future<ListRevisionAssetsOutcome> ListRevisionAssetsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<RevokeRevisionOutcome> RevokeRevisionOutcomeCallable;
         typedef std::future<SendApiAssetOutcome> SendApiAssetOutcomeCallable;
         typedef std::future<StartJobOutcome> StartJobOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -182,6 +186,7 @@ namespace Model
     typedef std::function<void(const DataExchangeClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::ListRevisionAssetsRequest&, const Model::ListRevisionAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRevisionAssetsResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const DataExchangeClient*, const Model::RevokeRevisionRequest&, const Model::RevokeRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeRevisionResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::SendApiAssetRequest&, Model::SendApiAssetOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendApiAssetResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::StartJobRequest&, const Model::StartJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartJobResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
@@ -774,6 +779,34 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>This operation revokes subscribers' access to a revision.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/RevokeRevision">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RevokeRevisionOutcome RevokeRevision(const Model::RevokeRevisionRequest& request) const;
+
+        /**
+         * <p>This operation revokes subscribers' access to a revision.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/RevokeRevision">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RevokeRevisionOutcomeCallable RevokeRevisionCallable(const Model::RevokeRevisionRequest& request) const;
+
+        /**
+         * <p>This operation revokes subscribers' access to a revision.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/RevokeRevision">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RevokeRevisionAsync(const Model::RevokeRevisionRequest& request, const RevokeRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>This operation invokes an API Gateway API asset. The request is proxied to
          * the provider’s API Gateway API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendApiAsset">AWS
@@ -1003,6 +1036,7 @@ namespace Model
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRevisionAssetsAsyncHelper(const Model::ListRevisionAssetsRequest& request, const ListRevisionAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RevokeRevisionAsyncHelper(const Model::RevokeRevisionRequest& request, const RevokeRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendApiAssetAsyncHelper(const Model::SendApiAssetRequest& request, const SendApiAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartJobAsyncHelper(const Model::StartJobRequest& request, const StartJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -41,7 +41,7 @@ namespace Model
 
     /**
      * <p>The identifier of the DB cluster read replica to promote. This parameter
-     * isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
      * identifier of an existing DB cluster read replica.</p> </li> </ul> <p>Example:
      * <code>my-cluster-replica1</code> </p>
      */
@@ -49,7 +49,7 @@ namespace Model
 
     /**
      * <p>The identifier of the DB cluster read replica to promote. This parameter
-     * isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
      * identifier of an existing DB cluster read replica.</p> </li> </ul> <p>Example:
      * <code>my-cluster-replica1</code> </p>
      */
@@ -57,7 +57,7 @@ namespace Model
 
     /**
      * <p>The identifier of the DB cluster read replica to promote. This parameter
-     * isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
      * identifier of an existing DB cluster read replica.</p> </li> </ul> <p>Example:
      * <code>my-cluster-replica1</code> </p>
      */
@@ -65,7 +65,7 @@ namespace Model
 
     /**
      * <p>The identifier of the DB cluster read replica to promote. This parameter
-     * isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
      * identifier of an existing DB cluster read replica.</p> </li> </ul> <p>Example:
      * <code>my-cluster-replica1</code> </p>
      */
@@ -73,7 +73,7 @@ namespace Model
 
     /**
      * <p>The identifier of the DB cluster read replica to promote. This parameter
-     * isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
      * identifier of an existing DB cluster read replica.</p> </li> </ul> <p>Example:
      * <code>my-cluster-replica1</code> </p>
      */
@@ -81,7 +81,7 @@ namespace Model
 
     /**
      * <p>The identifier of the DB cluster read replica to promote. This parameter
-     * isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
      * identifier of an existing DB cluster read replica.</p> </li> </ul> <p>Example:
      * <code>my-cluster-replica1</code> </p>
      */
@@ -89,7 +89,7 @@ namespace Model
 
     /**
      * <p>The identifier of the DB cluster read replica to promote. This parameter
-     * isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
      * identifier of an existing DB cluster read replica.</p> </li> </ul> <p>Example:
      * <code>my-cluster-replica1</code> </p>
      */
@@ -97,7 +97,7 @@ namespace Model
 
     /**
      * <p>The identifier of the DB cluster read replica to promote. This parameter
-     * isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
      * identifier of an existing DB cluster read replica.</p> </li> </ul> <p>Example:
      * <code>my-cluster-replica1</code> </p>
      */

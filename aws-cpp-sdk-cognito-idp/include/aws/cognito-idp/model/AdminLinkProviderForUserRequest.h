@@ -77,16 +77,16 @@ namespace Model
 
 
     /**
-     * <p>The existing user in the user pool to be linked to the external identity
-     * provider user account. Can be a native (Username + Password) Amazon Cognito User
-     * Pools user or a federated user (for example, a SAML or Facebook user). If the
-     * user doesn't exist, an exception is thrown. This is the user that is returned
-     * when the new user (with the linked identity provider attribute) signs in.</p>
-     * <p>For a native username + password user, the
-     * <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should
-     * be the username in the user pool. For a federated user, it should be the
-     * provider-specific <code>user_id</code>.</p> <p>The
-     * <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
+     * <p>The existing user in the user pool that you want to assign to the external
+     * identity provider user account. This user can be a native (Username + Password)
+     * Amazon Cognito user pools user or a federated user (for example, a SAML or
+     * Facebook user). If the user doesn't exist, Amazon Cognito generates an
+     * exception. Amazon Cognito returns this user when the new user (with the linked
+     * identity provider attribute) signs in.</p> <p>For a native username + password
+     * user, the <code>ProviderAttributeValue</code> for the
+     * <code>DestinationUser</code> should be the username in the user pool. For a
+     * federated user, it should be the provider-specific <code>user_id</code>.</p>
+     * <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
      * ignored.</p> <p>The <code>ProviderName</code> should be set to
      * <code>Cognito</code> for users in Cognito user pools.</p>  <p>All
      * attributes in the DestinationUser profile must be mutable. If you have assigned
@@ -96,16 +96,16 @@ namespace Model
     inline const ProviderUserIdentifierType& GetDestinationUser() const{ return m_destinationUser; }
 
     /**
-     * <p>The existing user in the user pool to be linked to the external identity
-     * provider user account. Can be a native (Username + Password) Amazon Cognito User
-     * Pools user or a federated user (for example, a SAML or Facebook user). If the
-     * user doesn't exist, an exception is thrown. This is the user that is returned
-     * when the new user (with the linked identity provider attribute) signs in.</p>
-     * <p>For a native username + password user, the
-     * <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should
-     * be the username in the user pool. For a federated user, it should be the
-     * provider-specific <code>user_id</code>.</p> <p>The
-     * <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
+     * <p>The existing user in the user pool that you want to assign to the external
+     * identity provider user account. This user can be a native (Username + Password)
+     * Amazon Cognito user pools user or a federated user (for example, a SAML or
+     * Facebook user). If the user doesn't exist, Amazon Cognito generates an
+     * exception. Amazon Cognito returns this user when the new user (with the linked
+     * identity provider attribute) signs in.</p> <p>For a native username + password
+     * user, the <code>ProviderAttributeValue</code> for the
+     * <code>DestinationUser</code> should be the username in the user pool. For a
+     * federated user, it should be the provider-specific <code>user_id</code>.</p>
+     * <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
      * ignored.</p> <p>The <code>ProviderName</code> should be set to
      * <code>Cognito</code> for users in Cognito user pools.</p>  <p>All
      * attributes in the DestinationUser profile must be mutable. If you have assigned
@@ -115,16 +115,16 @@ namespace Model
     inline bool DestinationUserHasBeenSet() const { return m_destinationUserHasBeenSet; }
 
     /**
-     * <p>The existing user in the user pool to be linked to the external identity
-     * provider user account. Can be a native (Username + Password) Amazon Cognito User
-     * Pools user or a federated user (for example, a SAML or Facebook user). If the
-     * user doesn't exist, an exception is thrown. This is the user that is returned
-     * when the new user (with the linked identity provider attribute) signs in.</p>
-     * <p>For a native username + password user, the
-     * <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should
-     * be the username in the user pool. For a federated user, it should be the
-     * provider-specific <code>user_id</code>.</p> <p>The
-     * <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
+     * <p>The existing user in the user pool that you want to assign to the external
+     * identity provider user account. This user can be a native (Username + Password)
+     * Amazon Cognito user pools user or a federated user (for example, a SAML or
+     * Facebook user). If the user doesn't exist, Amazon Cognito generates an
+     * exception. Amazon Cognito returns this user when the new user (with the linked
+     * identity provider attribute) signs in.</p> <p>For a native username + password
+     * user, the <code>ProviderAttributeValue</code> for the
+     * <code>DestinationUser</code> should be the username in the user pool. For a
+     * federated user, it should be the provider-specific <code>user_id</code>.</p>
+     * <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
      * ignored.</p> <p>The <code>ProviderName</code> should be set to
      * <code>Cognito</code> for users in Cognito user pools.</p>  <p>All
      * attributes in the DestinationUser profile must be mutable. If you have assigned
@@ -134,16 +134,16 @@ namespace Model
     inline void SetDestinationUser(const ProviderUserIdentifierType& value) { m_destinationUserHasBeenSet = true; m_destinationUser = value; }
 
     /**
-     * <p>The existing user in the user pool to be linked to the external identity
-     * provider user account. Can be a native (Username + Password) Amazon Cognito User
-     * Pools user or a federated user (for example, a SAML or Facebook user). If the
-     * user doesn't exist, an exception is thrown. This is the user that is returned
-     * when the new user (with the linked identity provider attribute) signs in.</p>
-     * <p>For a native username + password user, the
-     * <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should
-     * be the username in the user pool. For a federated user, it should be the
-     * provider-specific <code>user_id</code>.</p> <p>The
-     * <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
+     * <p>The existing user in the user pool that you want to assign to the external
+     * identity provider user account. This user can be a native (Username + Password)
+     * Amazon Cognito user pools user or a federated user (for example, a SAML or
+     * Facebook user). If the user doesn't exist, Amazon Cognito generates an
+     * exception. Amazon Cognito returns this user when the new user (with the linked
+     * identity provider attribute) signs in.</p> <p>For a native username + password
+     * user, the <code>ProviderAttributeValue</code> for the
+     * <code>DestinationUser</code> should be the username in the user pool. For a
+     * federated user, it should be the provider-specific <code>user_id</code>.</p>
+     * <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
      * ignored.</p> <p>The <code>ProviderName</code> should be set to
      * <code>Cognito</code> for users in Cognito user pools.</p>  <p>All
      * attributes in the DestinationUser profile must be mutable. If you have assigned
@@ -153,16 +153,16 @@ namespace Model
     inline void SetDestinationUser(ProviderUserIdentifierType&& value) { m_destinationUserHasBeenSet = true; m_destinationUser = std::move(value); }
 
     /**
-     * <p>The existing user in the user pool to be linked to the external identity
-     * provider user account. Can be a native (Username + Password) Amazon Cognito User
-     * Pools user or a federated user (for example, a SAML or Facebook user). If the
-     * user doesn't exist, an exception is thrown. This is the user that is returned
-     * when the new user (with the linked identity provider attribute) signs in.</p>
-     * <p>For a native username + password user, the
-     * <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should
-     * be the username in the user pool. For a federated user, it should be the
-     * provider-specific <code>user_id</code>.</p> <p>The
-     * <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
+     * <p>The existing user in the user pool that you want to assign to the external
+     * identity provider user account. This user can be a native (Username + Password)
+     * Amazon Cognito user pools user or a federated user (for example, a SAML or
+     * Facebook user). If the user doesn't exist, Amazon Cognito generates an
+     * exception. Amazon Cognito returns this user when the new user (with the linked
+     * identity provider attribute) signs in.</p> <p>For a native username + password
+     * user, the <code>ProviderAttributeValue</code> for the
+     * <code>DestinationUser</code> should be the username in the user pool. For a
+     * federated user, it should be the provider-specific <code>user_id</code>.</p>
+     * <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
      * ignored.</p> <p>The <code>ProviderName</code> should be set to
      * <code>Cognito</code> for users in Cognito user pools.</p>  <p>All
      * attributes in the DestinationUser profile must be mutable. If you have assigned
@@ -172,16 +172,16 @@ namespace Model
     inline AdminLinkProviderForUserRequest& WithDestinationUser(const ProviderUserIdentifierType& value) { SetDestinationUser(value); return *this;}
 
     /**
-     * <p>The existing user in the user pool to be linked to the external identity
-     * provider user account. Can be a native (Username + Password) Amazon Cognito User
-     * Pools user or a federated user (for example, a SAML or Facebook user). If the
-     * user doesn't exist, an exception is thrown. This is the user that is returned
-     * when the new user (with the linked identity provider attribute) signs in.</p>
-     * <p>For a native username + password user, the
-     * <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should
-     * be the username in the user pool. For a federated user, it should be the
-     * provider-specific <code>user_id</code>.</p> <p>The
-     * <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
+     * <p>The existing user in the user pool that you want to assign to the external
+     * identity provider user account. This user can be a native (Username + Password)
+     * Amazon Cognito user pools user or a federated user (for example, a SAML or
+     * Facebook user). If the user doesn't exist, Amazon Cognito generates an
+     * exception. Amazon Cognito returns this user when the new user (with the linked
+     * identity provider attribute) signs in.</p> <p>For a native username + password
+     * user, the <code>ProviderAttributeValue</code> for the
+     * <code>DestinationUser</code> should be the username in the user pool. For a
+     * federated user, it should be the provider-specific <code>user_id</code>.</p>
+     * <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
      * ignored.</p> <p>The <code>ProviderName</code> should be set to
      * <code>Cognito</code> for users in Cognito user pools.</p>  <p>All
      * attributes in the DestinationUser profile must be mutable. If you have assigned

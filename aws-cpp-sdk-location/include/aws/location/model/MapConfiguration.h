@@ -66,11 +66,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereBerlin</code> –
      * The HERE Berlin map style is a high contrast detailed base map of the world that
-     * blends 3D and 2D rendering.</p>  <p>When using HERE as your data provider,
-     * and selecting the Style <code>VectorHereBerlin</code>, you may not use HERE
-     * Technologies maps for Asset Management. See the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul>
+     * blends 3D and 2D rendering.</p> </li> <li> <p> <code>VectorHereExplore</code> –
+     * A default HERE map style containing a neutral, global map and its features
+     * including roads, buildings, landmarks, and water features. It also now includes
+     * a fully designed map of Japan.</p> </li> <li> <p>
+     * <code>VectorHereExploreTruck</code> – A global map containing truck restrictions
+     * and attributes (e.g. width / height / HAZMAT) symbolized with highlighted
+     * segments and icons on top of HERE Explore to support use cases within transport
+     * and logistics.</p> </li> </ul>
      */
     inline const Aws::String& GetStyle() const{ return m_style; }
 
@@ -102,11 +105,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereBerlin</code> –
      * The HERE Berlin map style is a high contrast detailed base map of the world that
-     * blends 3D and 2D rendering.</p>  <p>When using HERE as your data provider,
-     * and selecting the Style <code>VectorHereBerlin</code>, you may not use HERE
-     * Technologies maps for Asset Management. See the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul>
+     * blends 3D and 2D rendering.</p> </li> <li> <p> <code>VectorHereExplore</code> –
+     * A default HERE map style containing a neutral, global map and its features
+     * including roads, buildings, landmarks, and water features. It also now includes
+     * a fully designed map of Japan.</p> </li> <li> <p>
+     * <code>VectorHereExploreTruck</code> – A global map containing truck restrictions
+     * and attributes (e.g. width / height / HAZMAT) symbolized with highlighted
+     * segments and icons on top of HERE Explore to support use cases within transport
+     * and logistics.</p> </li> </ul>
      */
     inline bool StyleHasBeenSet() const { return m_styleHasBeenSet; }
 
@@ -138,11 +144,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereBerlin</code> –
      * The HERE Berlin map style is a high contrast detailed base map of the world that
-     * blends 3D and 2D rendering.</p>  <p>When using HERE as your data provider,
-     * and selecting the Style <code>VectorHereBerlin</code>, you may not use HERE
-     * Technologies maps for Asset Management. See the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul>
+     * blends 3D and 2D rendering.</p> </li> <li> <p> <code>VectorHereExplore</code> –
+     * A default HERE map style containing a neutral, global map and its features
+     * including roads, buildings, landmarks, and water features. It also now includes
+     * a fully designed map of Japan.</p> </li> <li> <p>
+     * <code>VectorHereExploreTruck</code> – A global map containing truck restrictions
+     * and attributes (e.g. width / height / HAZMAT) symbolized with highlighted
+     * segments and icons on top of HERE Explore to support use cases within transport
+     * and logistics.</p> </li> </ul>
      */
     inline void SetStyle(const Aws::String& value) { m_styleHasBeenSet = true; m_style = value; }
 
@@ -174,11 +183,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereBerlin</code> –
      * The HERE Berlin map style is a high contrast detailed base map of the world that
-     * blends 3D and 2D rendering.</p>  <p>When using HERE as your data provider,
-     * and selecting the Style <code>VectorHereBerlin</code>, you may not use HERE
-     * Technologies maps for Asset Management. See the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul>
+     * blends 3D and 2D rendering.</p> </li> <li> <p> <code>VectorHereExplore</code> –
+     * A default HERE map style containing a neutral, global map and its features
+     * including roads, buildings, landmarks, and water features. It also now includes
+     * a fully designed map of Japan.</p> </li> <li> <p>
+     * <code>VectorHereExploreTruck</code> – A global map containing truck restrictions
+     * and attributes (e.g. width / height / HAZMAT) symbolized with highlighted
+     * segments and icons on top of HERE Explore to support use cases within transport
+     * and logistics.</p> </li> </ul>
      */
     inline void SetStyle(Aws::String&& value) { m_styleHasBeenSet = true; m_style = std::move(value); }
 
@@ -210,11 +222,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereBerlin</code> –
      * The HERE Berlin map style is a high contrast detailed base map of the world that
-     * blends 3D and 2D rendering.</p>  <p>When using HERE as your data provider,
-     * and selecting the Style <code>VectorHereBerlin</code>, you may not use HERE
-     * Technologies maps for Asset Management. See the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul>
+     * blends 3D and 2D rendering.</p> </li> <li> <p> <code>VectorHereExplore</code> –
+     * A default HERE map style containing a neutral, global map and its features
+     * including roads, buildings, landmarks, and water features. It also now includes
+     * a fully designed map of Japan.</p> </li> <li> <p>
+     * <code>VectorHereExploreTruck</code> – A global map containing truck restrictions
+     * and attributes (e.g. width / height / HAZMAT) symbolized with highlighted
+     * segments and icons on top of HERE Explore to support use cases within transport
+     * and logistics.</p> </li> </ul>
      */
     inline void SetStyle(const char* value) { m_styleHasBeenSet = true; m_style.assign(value); }
 
@@ -246,11 +261,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereBerlin</code> –
      * The HERE Berlin map style is a high contrast detailed base map of the world that
-     * blends 3D and 2D rendering.</p>  <p>When using HERE as your data provider,
-     * and selecting the Style <code>VectorHereBerlin</code>, you may not use HERE
-     * Technologies maps for Asset Management. See the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul>
+     * blends 3D and 2D rendering.</p> </li> <li> <p> <code>VectorHereExplore</code> –
+     * A default HERE map style containing a neutral, global map and its features
+     * including roads, buildings, landmarks, and water features. It also now includes
+     * a fully designed map of Japan.</p> </li> <li> <p>
+     * <code>VectorHereExploreTruck</code> – A global map containing truck restrictions
+     * and attributes (e.g. width / height / HAZMAT) symbolized with highlighted
+     * segments and icons on top of HERE Explore to support use cases within transport
+     * and logistics.</p> </li> </ul>
      */
     inline MapConfiguration& WithStyle(const Aws::String& value) { SetStyle(value); return *this;}
 
@@ -282,11 +300,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereBerlin</code> –
      * The HERE Berlin map style is a high contrast detailed base map of the world that
-     * blends 3D and 2D rendering.</p>  <p>When using HERE as your data provider,
-     * and selecting the Style <code>VectorHereBerlin</code>, you may not use HERE
-     * Technologies maps for Asset Management. See the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul>
+     * blends 3D and 2D rendering.</p> </li> <li> <p> <code>VectorHereExplore</code> –
+     * A default HERE map style containing a neutral, global map and its features
+     * including roads, buildings, landmarks, and water features. It also now includes
+     * a fully designed map of Japan.</p> </li> <li> <p>
+     * <code>VectorHereExploreTruck</code> – A global map containing truck restrictions
+     * and attributes (e.g. width / height / HAZMAT) symbolized with highlighted
+     * segments and icons on top of HERE Explore to support use cases within transport
+     * and logistics.</p> </li> </ul>
      */
     inline MapConfiguration& WithStyle(Aws::String&& value) { SetStyle(std::move(value)); return *this;}
 
@@ -318,11 +339,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereBerlin</code> –
      * The HERE Berlin map style is a high contrast detailed base map of the world that
-     * blends 3D and 2D rendering.</p>  <p>When using HERE as your data provider,
-     * and selecting the Style <code>VectorHereBerlin</code>, you may not use HERE
-     * Technologies maps for Asset Management. See the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul>
+     * blends 3D and 2D rendering.</p> </li> <li> <p> <code>VectorHereExplore</code> –
+     * A default HERE map style containing a neutral, global map and its features
+     * including roads, buildings, landmarks, and water features. It also now includes
+     * a fully designed map of Japan.</p> </li> <li> <p>
+     * <code>VectorHereExploreTruck</code> – A global map containing truck restrictions
+     * and attributes (e.g. width / height / HAZMAT) symbolized with highlighted
+     * segments and icons on top of HERE Explore to support use cases within transport
+     * and logistics.</p> </li> </ul>
      */
     inline MapConfiguration& WithStyle(const char* value) { SetStyle(value); return *this;}
 

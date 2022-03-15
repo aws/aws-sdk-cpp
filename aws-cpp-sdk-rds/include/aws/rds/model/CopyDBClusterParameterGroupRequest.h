@@ -42,9 +42,9 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
-     * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
-     * group.</p> </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceDBClusterParameterGroupIdentifier() const{ return m_sourceDBClusterParameterGroupIdentifier; }
 
@@ -52,9 +52,9 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
-     * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
-     * group.</p> </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline bool SourceDBClusterParameterGroupIdentifierHasBeenSet() const { return m_sourceDBClusterParameterGroupIdentifierHasBeenSet; }
 
@@ -62,9 +62,9 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
-     * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
-     * group.</p> </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline void SetSourceDBClusterParameterGroupIdentifier(const Aws::String& value) { m_sourceDBClusterParameterGroupIdentifierHasBeenSet = true; m_sourceDBClusterParameterGroupIdentifier = value; }
 
@@ -72,9 +72,9 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
-     * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
-     * group.</p> </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline void SetSourceDBClusterParameterGroupIdentifier(Aws::String&& value) { m_sourceDBClusterParameterGroupIdentifierHasBeenSet = true; m_sourceDBClusterParameterGroupIdentifier = std::move(value); }
 
@@ -82,9 +82,9 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
-     * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
-     * group.</p> </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline void SetSourceDBClusterParameterGroupIdentifier(const char* value) { m_sourceDBClusterParameterGroupIdentifierHasBeenSet = true; m_sourceDBClusterParameterGroupIdentifier.assign(value); }
 
@@ -92,9 +92,9 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
-     * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
-     * group.</p> </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline CopyDBClusterParameterGroupRequest& WithSourceDBClusterParameterGroupIdentifier(const Aws::String& value) { SetSourceDBClusterParameterGroupIdentifier(value); return *this;}
 
@@ -102,9 +102,9 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
-     * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
-     * group.</p> </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline CopyDBClusterParameterGroupRequest& WithSourceDBClusterParameterGroupIdentifier(Aws::String&& value) { SetSourceDBClusterParameterGroupIdentifier(std::move(value)); return *this;}
 
@@ -112,9 +112,9 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
-     * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
-     * group.</p> </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline CopyDBClusterParameterGroupRequest& WithSourceDBClusterParameterGroupIdentifier(const char* value) { SetSourceDBClusterParameterGroupIdentifier(value); return *this;}
 

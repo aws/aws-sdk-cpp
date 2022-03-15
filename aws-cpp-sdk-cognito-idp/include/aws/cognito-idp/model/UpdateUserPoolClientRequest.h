@@ -1061,55 +1061,61 @@ namespace Model
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>In Amazon Web Services Regions where isn't available,
-     * User Pools only supports sending events to Amazon Pinpoint projects in
-     * us-east-1. In Regions where Pinpoint is available, User Pools will support
-     * sending events to Amazon Pinpoint projects within that same Region. </p> 
+     * user pool.</p>  <p>In Amazon Web Services Regions where Amazon Pinpoint
+     * isn't available, user pools only support sending events to Amazon Pinpoint
+     * projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools
+     * support sending events to Amazon Pinpoint projects within that same Region.</p>
+     * 
      */
     inline const AnalyticsConfigurationType& GetAnalyticsConfiguration() const{ return m_analyticsConfiguration; }
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>In Amazon Web Services Regions where isn't available,
-     * User Pools only supports sending events to Amazon Pinpoint projects in
-     * us-east-1. In Regions where Pinpoint is available, User Pools will support
-     * sending events to Amazon Pinpoint projects within that same Region. </p> 
+     * user pool.</p>  <p>In Amazon Web Services Regions where Amazon Pinpoint
+     * isn't available, user pools only support sending events to Amazon Pinpoint
+     * projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools
+     * support sending events to Amazon Pinpoint projects within that same Region.</p>
+     * 
      */
     inline bool AnalyticsConfigurationHasBeenSet() const { return m_analyticsConfigurationHasBeenSet; }
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>In Amazon Web Services Regions where isn't available,
-     * User Pools only supports sending events to Amazon Pinpoint projects in
-     * us-east-1. In Regions where Pinpoint is available, User Pools will support
-     * sending events to Amazon Pinpoint projects within that same Region. </p> 
+     * user pool.</p>  <p>In Amazon Web Services Regions where Amazon Pinpoint
+     * isn't available, user pools only support sending events to Amazon Pinpoint
+     * projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools
+     * support sending events to Amazon Pinpoint projects within that same Region.</p>
+     * 
      */
     inline void SetAnalyticsConfiguration(const AnalyticsConfigurationType& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = value; }
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>In Amazon Web Services Regions where isn't available,
-     * User Pools only supports sending events to Amazon Pinpoint projects in
-     * us-east-1. In Regions where Pinpoint is available, User Pools will support
-     * sending events to Amazon Pinpoint projects within that same Region. </p> 
+     * user pool.</p>  <p>In Amazon Web Services Regions where Amazon Pinpoint
+     * isn't available, user pools only support sending events to Amazon Pinpoint
+     * projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools
+     * support sending events to Amazon Pinpoint projects within that same Region.</p>
+     * 
      */
     inline void SetAnalyticsConfiguration(AnalyticsConfigurationType&& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = std::move(value); }
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>In Amazon Web Services Regions where isn't available,
-     * User Pools only supports sending events to Amazon Pinpoint projects in
-     * us-east-1. In Regions where Pinpoint is available, User Pools will support
-     * sending events to Amazon Pinpoint projects within that same Region. </p> 
+     * user pool.</p>  <p>In Amazon Web Services Regions where Amazon Pinpoint
+     * isn't available, user pools only support sending events to Amazon Pinpoint
+     * projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools
+     * support sending events to Amazon Pinpoint projects within that same Region.</p>
+     * 
      */
     inline UpdateUserPoolClientRequest& WithAnalyticsConfiguration(const AnalyticsConfigurationType& value) { SetAnalyticsConfiguration(value); return *this;}
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>In Amazon Web Services Regions where isn't available,
-     * User Pools only supports sending events to Amazon Pinpoint projects in
-     * us-east-1. In Regions where Pinpoint is available, User Pools will support
-     * sending events to Amazon Pinpoint projects within that same Region. </p> 
+     * user pool.</p>  <p>In Amazon Web Services Regions where Amazon Pinpoint
+     * isn't available, user pools only support sending events to Amazon Pinpoint
+     * projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools
+     * support sending events to Amazon Pinpoint projects within that same Region.</p>
+     * 
      */
     inline UpdateUserPoolClientRequest& WithAnalyticsConfiguration(AnalyticsConfigurationType&& value) { SetAnalyticsConfiguration(std::move(value)); return *this;}
 

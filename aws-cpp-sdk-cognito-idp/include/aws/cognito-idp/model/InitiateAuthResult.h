@@ -43,11 +43,12 @@ namespace Model
     /**
      * <p>The name of the challenge that you're responding to with this call. This name
      * is returned in the <code>AdminInitiateAuth</code> response if you must pass
-     * another challenge.</p> <p>Valid values include the following. Note that all of
-     * these challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if
-     * applicable) in the parameters.</p> <ul> <li> <p> <code>SMS_MFA</code>: Next
-     * challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p>
-     * </li> <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
+     * another challenge.</p> <p>Valid values include the following:</p>  <p>All
+     * of the following challenges require <code>USERNAME</code> and
+     * <code>SECRET_HASH</code> (if applicable) in the parameters.</p>  <ul>
+     * <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an
+     * <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li> <li> <p>
+     * <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
      * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
      * and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
      * <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom
@@ -76,11 +77,12 @@ namespace Model
     /**
      * <p>The name of the challenge that you're responding to with this call. This name
      * is returned in the <code>AdminInitiateAuth</code> response if you must pass
-     * another challenge.</p> <p>Valid values include the following. Note that all of
-     * these challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if
-     * applicable) in the parameters.</p> <ul> <li> <p> <code>SMS_MFA</code>: Next
-     * challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p>
-     * </li> <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
+     * another challenge.</p> <p>Valid values include the following:</p>  <p>All
+     * of the following challenges require <code>USERNAME</code> and
+     * <code>SECRET_HASH</code> (if applicable) in the parameters.</p>  <ul>
+     * <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an
+     * <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li> <li> <p>
+     * <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
      * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
      * and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
      * <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom
@@ -109,11 +111,12 @@ namespace Model
     /**
      * <p>The name of the challenge that you're responding to with this call. This name
      * is returned in the <code>AdminInitiateAuth</code> response if you must pass
-     * another challenge.</p> <p>Valid values include the following. Note that all of
-     * these challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if
-     * applicable) in the parameters.</p> <ul> <li> <p> <code>SMS_MFA</code>: Next
-     * challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p>
-     * </li> <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
+     * another challenge.</p> <p>Valid values include the following:</p>  <p>All
+     * of the following challenges require <code>USERNAME</code> and
+     * <code>SECRET_HASH</code> (if applicable) in the parameters.</p>  <ul>
+     * <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an
+     * <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li> <li> <p>
+     * <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
      * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
      * and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
      * <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom
@@ -142,11 +145,12 @@ namespace Model
     /**
      * <p>The name of the challenge that you're responding to with this call. This name
      * is returned in the <code>AdminInitiateAuth</code> response if you must pass
-     * another challenge.</p> <p>Valid values include the following. Note that all of
-     * these challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if
-     * applicable) in the parameters.</p> <ul> <li> <p> <code>SMS_MFA</code>: Next
-     * challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p>
-     * </li> <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
+     * another challenge.</p> <p>Valid values include the following:</p>  <p>All
+     * of the following challenges require <code>USERNAME</code> and
+     * <code>SECRET_HASH</code> (if applicable) in the parameters.</p>  <ul>
+     * <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an
+     * <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li> <li> <p>
+     * <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
      * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
      * and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
      * <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom
@@ -175,11 +179,12 @@ namespace Model
     /**
      * <p>The name of the challenge that you're responding to with this call. This name
      * is returned in the <code>AdminInitiateAuth</code> response if you must pass
-     * another challenge.</p> <p>Valid values include the following. Note that all of
-     * these challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if
-     * applicable) in the parameters.</p> <ul> <li> <p> <code>SMS_MFA</code>: Next
-     * challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p>
-     * </li> <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
+     * another challenge.</p> <p>Valid values include the following:</p>  <p>All
+     * of the following challenges require <code>USERNAME</code> and
+     * <code>SECRET_HASH</code> (if applicable) in the parameters.</p>  <ul>
+     * <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an
+     * <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li> <li> <p>
+     * <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
      * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
      * and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>
      * <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom

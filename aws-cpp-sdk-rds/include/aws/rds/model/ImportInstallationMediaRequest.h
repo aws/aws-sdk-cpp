@@ -86,82 +86,82 @@ namespace Model
 
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>The
-     * list only includes supported DB engines that require an on-premises customer
-     * provided license. </p> <p>Valid Values: </p> <ul> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <p>The name of the database engine to be used for this instance.</p> <p>The list
+     * only includes supported DB engines that require an on-premises customer provided
+     * license.</p> <p>Valid Values:</p> <ul> <li> <p> <code>sqlserver-ee</code> </p>
+     * </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>The
-     * list only includes supported DB engines that require an on-premises customer
-     * provided license. </p> <p>Valid Values: </p> <ul> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <p>The name of the database engine to be used for this instance.</p> <p>The list
+     * only includes supported DB engines that require an on-premises customer provided
+     * license.</p> <p>Valid Values:</p> <ul> <li> <p> <code>sqlserver-ee</code> </p>
+     * </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>The
-     * list only includes supported DB engines that require an on-premises customer
-     * provided license. </p> <p>Valid Values: </p> <ul> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <p>The name of the database engine to be used for this instance.</p> <p>The list
+     * only includes supported DB engines that require an on-premises customer provided
+     * license.</p> <p>Valid Values:</p> <ul> <li> <p> <code>sqlserver-ee</code> </p>
+     * </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>The
-     * list only includes supported DB engines that require an on-premises customer
-     * provided license. </p> <p>Valid Values: </p> <ul> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <p>The name of the database engine to be used for this instance.</p> <p>The list
+     * only includes supported DB engines that require an on-premises customer provided
+     * license.</p> <p>Valid Values:</p> <ul> <li> <p> <code>sqlserver-ee</code> </p>
+     * </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>The
-     * list only includes supported DB engines that require an on-premises customer
-     * provided license. </p> <p>Valid Values: </p> <ul> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <p>The name of the database engine to be used for this instance.</p> <p>The list
+     * only includes supported DB engines that require an on-premises customer provided
+     * license.</p> <p>Valid Values:</p> <ul> <li> <p> <code>sqlserver-ee</code> </p>
+     * </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>The
-     * list only includes supported DB engines that require an on-premises customer
-     * provided license. </p> <p>Valid Values: </p> <ul> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <p>The name of the database engine to be used for this instance.</p> <p>The list
+     * only includes supported DB engines that require an on-premises customer provided
+     * license.</p> <p>Valid Values:</p> <ul> <li> <p> <code>sqlserver-ee</code> </p>
+     * </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline ImportInstallationMediaRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>The
-     * list only includes supported DB engines that require an on-premises customer
-     * provided license. </p> <p>Valid Values: </p> <ul> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <p>The name of the database engine to be used for this instance.</p> <p>The list
+     * only includes supported DB engines that require an on-premises customer provided
+     * license.</p> <p>Valid Values:</p> <ul> <li> <p> <code>sqlserver-ee</code> </p>
+     * </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline ImportInstallationMediaRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>The
-     * list only includes supported DB engines that require an on-premises customer
-     * provided license. </p> <p>Valid Values: </p> <ul> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <p>The name of the database engine to be used for this instance.</p> <p>The list
+     * only includes supported DB engines that require an on-premises customer provided
+     * license.</p> <p>Valid Values:</p> <ul> <li> <p> <code>sqlserver-ee</code> </p>
+     * </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline ImportInstallationMediaRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -174,7 +174,7 @@ namespace Model
      * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">
      * Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User
-     * Guide.</i> </p>
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -186,7 +186,7 @@ namespace Model
      * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">
      * Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User
-     * Guide.</i> </p>
+     * Guide</i>.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
@@ -198,7 +198,7 @@ namespace Model
      * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">
      * Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User
-     * Guide.</i> </p>
+     * Guide</i>.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -210,7 +210,7 @@ namespace Model
      * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">
      * Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User
-     * Guide.</i> </p>
+     * Guide</i>.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -222,7 +222,7 @@ namespace Model
      * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">
      * Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User
-     * Guide.</i> </p>
+     * Guide</i>.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -234,7 +234,7 @@ namespace Model
      * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">
      * Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User
-     * Guide.</i> </p>
+     * Guide</i>.</p>
      */
     inline ImportInstallationMediaRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -246,7 +246,7 @@ namespace Model
      * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">
      * Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User
-     * Guide.</i> </p>
+     * Guide</i>.</p>
      */
     inline ImportInstallationMediaRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -258,7 +258,7 @@ namespace Model
      * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">
      * Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User
-     * Guide.</i> </p>
+     * Guide</i>.</p>
      */
     inline ImportInstallationMediaRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

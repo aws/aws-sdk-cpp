@@ -1950,56 +1950,50 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the tasks in the service. If no value is specified, the tags aren't
-     * propagated. Tags can only be propagated to the tasks within the service during
-     * service creation. To add tags to a task after service creation or task creation,
-     * use the <a>TagResource</a> API action.</p>
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags aren't propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.</p>
      */
     inline const PropagateTags& GetPropagateTags() const{ return m_propagateTags; }
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the tasks in the service. If no value is specified, the tags aren't
-     * propagated. Tags can only be propagated to the tasks within the service during
-     * service creation. To add tags to a task after service creation or task creation,
-     * use the <a>TagResource</a> API action.</p>
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags aren't propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.</p>
      */
     inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the tasks in the service. If no value is specified, the tags aren't
-     * propagated. Tags can only be propagated to the tasks within the service during
-     * service creation. To add tags to a task after service creation or task creation,
-     * use the <a>TagResource</a> API action.</p>
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags aren't propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.</p>
      */
     inline void SetPropagateTags(const PropagateTags& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the tasks in the service. If no value is specified, the tags aren't
-     * propagated. Tags can only be propagated to the tasks within the service during
-     * service creation. To add tags to a task after service creation or task creation,
-     * use the <a>TagResource</a> API action.</p>
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags aren't propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.</p>
      */
     inline void SetPropagateTags(PropagateTags&& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = std::move(value); }
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the tasks in the service. If no value is specified, the tags aren't
-     * propagated. Tags can only be propagated to the tasks within the service during
-     * service creation. To add tags to a task after service creation or task creation,
-     * use the <a>TagResource</a> API action.</p>
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags aren't propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.</p>
      */
     inline CreateServiceRequest& WithPropagateTags(const PropagateTags& value) { SetPropagateTags(value); return *this;}
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the tasks in the service. If no value is specified, the tags aren't
-     * propagated. Tags can only be propagated to the tasks within the service during
-     * service creation. To add tags to a task after service creation or task creation,
-     * use the <a>TagResource</a> API action.</p>
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags aren't propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.</p>
      */
     inline CreateServiceRequest& WithPropagateTags(PropagateTags&& value) { SetPropagateTags(std::move(value)); return *this;}
 

@@ -295,65 +295,65 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 
@@ -706,25 +706,25 @@ namespace Model
 
     /**
      * <p>The port number on which the instances in the restored DB cluster accept
-     * connections.</p> <p> Default: <code>3306</code> </p>
+     * connections.</p> <p>Default: <code>3306</code> </p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port number on which the instances in the restored DB cluster accept
-     * connections.</p> <p> Default: <code>3306</code> </p>
+     * connections.</p> <p>Default: <code>3306</code> </p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
      * <p>The port number on which the instances in the restored DB cluster accept
-     * connections.</p> <p> Default: <code>3306</code> </p>
+     * connections.</p> <p>Default: <code>3306</code> </p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port number on which the instances in the restored DB cluster accept
-     * connections.</p> <p> Default: <code>3306</code> </p>
+     * connections.</p> <p>Default: <code>3306</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithPort(int value) { SetPort(value); return *this;}
 
@@ -918,12 +918,12 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Web Services Region. To view the time blocks available, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
-     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
@@ -933,12 +933,12 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Web Services Region. To view the time blocks available, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
-     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
@@ -948,12 +948,12 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Web Services Region. To view the time blocks available, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
-     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
@@ -963,12 +963,12 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Web Services Region. To view the time blocks available, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
-     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
@@ -978,12 +978,12 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Web Services Region. To view the time blocks available, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
-     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
@@ -993,12 +993,12 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Web Services Region. To view the time blocks available, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
-     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
@@ -1008,12 +1008,12 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Web Services Region. To view the time blocks available, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
-     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
@@ -1023,12 +1023,12 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Web Services Region. To view the time blocks available, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
-     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
@@ -1045,7 +1045,7 @@ namespace Model
      * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
@@ -1058,7 +1058,7 @@ namespace Model
      * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
@@ -1071,7 +1071,7 @@ namespace Model
      * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
@@ -1084,7 +1084,7 @@ namespace Model
      * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
@@ -1097,7 +1097,7 @@ namespace Model
      * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
@@ -1110,7 +1110,7 @@ namespace Model
      * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline RestoreDBClusterFromS3Request& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
@@ -1123,7 +1123,7 @@ namespace Model
      * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline RestoreDBClusterFromS3Request& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
@@ -1136,7 +1136,7 @@ namespace Model
      * To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * Guide</i>.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline RestoreDBClusterFromS3Request& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
@@ -1298,7 +1298,7 @@ namespace Model
      * Identity and Access Management (IAM) accounts to database accounts. By default,
      * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
@@ -1307,7 +1307,7 @@ namespace Model
      * Identity and Access Management (IAM) accounts to database accounts. By default,
      * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
@@ -1316,7 +1316,7 @@ namespace Model
      * Identity and Access Management (IAM) accounts to database accounts. By default,
      * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
@@ -1325,112 +1325,112 @@ namespace Model
      * Identity and Access Management (IAM) accounts to database accounts. By default,
      * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline RestoreDBClusterFromS3Request& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
      */
     inline const Aws::String& GetSourceEngine() const{ return m_sourceEngine; }
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
      */
     inline bool SourceEngineHasBeenSet() const { return m_sourceEngineHasBeenSet; }
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
      */
     inline void SetSourceEngine(const Aws::String& value) { m_sourceEngineHasBeenSet = true; m_sourceEngine = value; }
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
      */
     inline void SetSourceEngine(Aws::String&& value) { m_sourceEngineHasBeenSet = true; m_sourceEngine = std::move(value); }
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
      */
     inline void SetSourceEngine(const char* value) { m_sourceEngineHasBeenSet = true; m_sourceEngine.assign(value); }
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngine(const Aws::String& value) { SetSourceEngine(value); return *this;}
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngine(Aws::String&& value) { SetSourceEngine(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngine(const char* value) { SetSourceEngine(value); return *this;}
 
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
      * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline const Aws::String& GetSourceEngineVersion() const{ return m_sourceEngineVersion; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
      * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline bool SourceEngineVersionHasBeenSet() const { return m_sourceEngineVersionHasBeenSet; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
      * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline void SetSourceEngineVersion(const Aws::String& value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion = value; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
      * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline void SetSourceEngineVersion(Aws::String&& value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion = std::move(value); }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
      * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline void SetSourceEngineVersion(const char* value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion.assign(value); }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
      * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(const Aws::String& value) { SetSourceEngineVersion(value); return *this;}
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
      * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(Aws::String&& value) { SetSourceEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
      * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(const char* value) { SetSourceEngineVersion(value); return *this;}
@@ -1774,28 +1774,28 @@ namespace Model
     /**
      * <p>A value that indicates whether the DB cluster has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled. </p>
+     * default, deletion protection isn't enabled.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
      * <p>A value that indicates whether the DB cluster has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled. </p>
+     * default, deletion protection isn't enabled.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
      * <p>A value that indicates whether the DB cluster has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled. </p>
+     * default, deletion protection isn't enabled.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
      * <p>A value that indicates whether the DB cluster has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled. </p>
+     * default, deletion protection isn't enabled.</p>
      */
     inline RestoreDBClusterFromS3Request& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
@@ -1827,81 +1827,81 @@ namespace Model
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline RestoreDBClusterFromS3Request& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline RestoreDBClusterFromS3Request& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline RestoreDBClusterFromS3Request& WithDomain(const char* value) { SetDomain(value); return *this;}
 

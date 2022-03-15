@@ -25,9 +25,12 @@ namespace Model
 {
 
   /**
-   * <p>The email configuration type.</p>  <p>Amazon Cognito has specific
-   * Regions for use with Amazon Simple Email Service. For more information on the
-   * supported Regions, see <a
+   * <p>The email configuration of your user pool. The email configuration type sets
+   * your preferred sending method, Amazon Web Services Region, and sender for
+   * messages from your user pool.</p>  <p>Amazon Cognito can send email
+   * messages with Amazon Simple Email Service resources in the Amazon Web Services
+   * Region where you created your user pool, and in alternate Regions in some cases.
+   * For more information on the supported Regions, see <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html">Email
    * settings for Amazon Cognito user pools</a>.</p> <p><h3>See Also:</h3>  
    * <a
@@ -51,7 +54,14 @@ namespace Model
      * the custom FROM address when it emails your users using its built-in email
      * account.</p> </li> <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito
      * emails your users with this address by calling Amazon SES on your behalf.</p>
-     * </li> </ul>
+     * </li> </ul> <p>The Region value of the <code>SourceArn</code> parameter must
+     * indicate a supported Amazon Web Services Region of your user pool. Typically,
+     * the Region in the <code>SourceArn</code> and the user pool Region are the same.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon
+     * SES email configuration regions</a> in the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     * Cognito Developer Guide</a>.</p>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
 
@@ -63,7 +73,14 @@ namespace Model
      * the custom FROM address when it emails your users using its built-in email
      * account.</p> </li> <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito
      * emails your users with this address by calling Amazon SES on your behalf.</p>
-     * </li> </ul>
+     * </li> </ul> <p>The Region value of the <code>SourceArn</code> parameter must
+     * indicate a supported Amazon Web Services Region of your user pool. Typically,
+     * the Region in the <code>SourceArn</code> and the user pool Region are the same.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon
+     * SES email configuration regions</a> in the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     * Cognito Developer Guide</a>.</p>
      */
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
 
@@ -75,7 +92,14 @@ namespace Model
      * the custom FROM address when it emails your users using its built-in email
      * account.</p> </li> <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito
      * emails your users with this address by calling Amazon SES on your behalf.</p>
-     * </li> </ul>
+     * </li> </ul> <p>The Region value of the <code>SourceArn</code> parameter must
+     * indicate a supported Amazon Web Services Region of your user pool. Typically,
+     * the Region in the <code>SourceArn</code> and the user pool Region are the same.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon
+     * SES email configuration regions</a> in the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     * Cognito Developer Guide</a>.</p>
      */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
 
@@ -87,7 +111,14 @@ namespace Model
      * the custom FROM address when it emails your users using its built-in email
      * account.</p> </li> <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito
      * emails your users with this address by calling Amazon SES on your behalf.</p>
-     * </li> </ul>
+     * </li> </ul> <p>The Region value of the <code>SourceArn</code> parameter must
+     * indicate a supported Amazon Web Services Region of your user pool. Typically,
+     * the Region in the <code>SourceArn</code> and the user pool Region are the same.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon
+     * SES email configuration regions</a> in the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     * Cognito Developer Guide</a>.</p>
      */
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
 
@@ -99,7 +130,14 @@ namespace Model
      * the custom FROM address when it emails your users using its built-in email
      * account.</p> </li> <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito
      * emails your users with this address by calling Amazon SES on your behalf.</p>
-     * </li> </ul>
+     * </li> </ul> <p>The Region value of the <code>SourceArn</code> parameter must
+     * indicate a supported Amazon Web Services Region of your user pool. Typically,
+     * the Region in the <code>SourceArn</code> and the user pool Region are the same.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon
+     * SES email configuration regions</a> in the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     * Cognito Developer Guide</a>.</p>
      */
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
 
@@ -111,7 +149,14 @@ namespace Model
      * the custom FROM address when it emails your users using its built-in email
      * account.</p> </li> <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito
      * emails your users with this address by calling Amazon SES on your behalf.</p>
-     * </li> </ul>
+     * </li> </ul> <p>The Region value of the <code>SourceArn</code> parameter must
+     * indicate a supported Amazon Web Services Region of your user pool. Typically,
+     * the Region in the <code>SourceArn</code> and the user pool Region are the same.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon
+     * SES email configuration regions</a> in the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     * Cognito Developer Guide</a>.</p>
      */
     inline EmailConfigurationType& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
 
@@ -123,7 +168,14 @@ namespace Model
      * the custom FROM address when it emails your users using its built-in email
      * account.</p> </li> <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito
      * emails your users with this address by calling Amazon SES on your behalf.</p>
-     * </li> </ul>
+     * </li> </ul> <p>The Region value of the <code>SourceArn</code> parameter must
+     * indicate a supported Amazon Web Services Region of your user pool. Typically,
+     * the Region in the <code>SourceArn</code> and the user pool Region are the same.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon
+     * SES email configuration regions</a> in the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     * Cognito Developer Guide</a>.</p>
      */
     inline EmailConfigurationType& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
 
@@ -135,7 +187,14 @@ namespace Model
      * the custom FROM address when it emails your users using its built-in email
      * account.</p> </li> <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito
      * emails your users with this address by calling Amazon SES on your behalf.</p>
-     * </li> </ul>
+     * </li> </ul> <p>The Region value of the <code>SourceArn</code> parameter must
+     * indicate a supported Amazon Web Services Region of your user pool. Typically,
+     * the Region in the <code>SourceArn</code> and the user pool Region are the same.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon
+     * SES email configuration regions</a> in the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     * Cognito Developer Guide</a>.</p>
      */
     inline EmailConfigurationType& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 
@@ -182,16 +241,16 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether Amazon Cognito emails your users by using its built-in
-     * email functionality or your Amazon Simple Email Service email configuration.
-     * Specify one of the following values:</p> <dl> <dt>COGNITO_DEFAULT</dt> <dd>
-     * <p>When Amazon Cognito emails your users, it uses its built-in email
-     * functionality. When you use the default option, Amazon Cognito allows only a
-     * limited number of emails each day for your user pool. For typical production
-     * environments, the default email limit is less than the required delivery volume.
-     * To achieve a higher delivery volume, specify DEVELOPER to use your Amazon SES
-     * email configuration.</p> <p>To look up the email delivery limit for the default
-     * option, see <a
+     * <p>Specifies whether Amazon Cognito uses its built-in functionality to send your
+     * users email messages, or uses your Amazon Simple Email Service email
+     * configuration. Specify one of the following values:</p> <dl>
+     * <dt>COGNITO_DEFAULT</dt> <dd> <p>When Amazon Cognito emails your users, it uses
+     * its built-in email functionality. When you use the default option, Amazon
+     * Cognito allows only a limited number of emails each day for your user pool. For
+     * typical production environments, the default email limit is less than the
+     * required delivery volume. To achieve a higher delivery volume, specify DEVELOPER
+     * to use your Amazon SES email configuration.</p> <p>To look up the email delivery
+     * limit for the default option, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits
      * in </a> in the <i> Developer Guide</i>.</p> <p>The default FROM address is
      * <code>no-reply@verificationemail.com</code>. To customize the FROM address,
@@ -226,16 +285,16 @@ namespace Model
     inline const EmailSendingAccountType& GetEmailSendingAccount() const{ return m_emailSendingAccount; }
 
     /**
-     * <p>Specifies whether Amazon Cognito emails your users by using its built-in
-     * email functionality or your Amazon Simple Email Service email configuration.
-     * Specify one of the following values:</p> <dl> <dt>COGNITO_DEFAULT</dt> <dd>
-     * <p>When Amazon Cognito emails your users, it uses its built-in email
-     * functionality. When you use the default option, Amazon Cognito allows only a
-     * limited number of emails each day for your user pool. For typical production
-     * environments, the default email limit is less than the required delivery volume.
-     * To achieve a higher delivery volume, specify DEVELOPER to use your Amazon SES
-     * email configuration.</p> <p>To look up the email delivery limit for the default
-     * option, see <a
+     * <p>Specifies whether Amazon Cognito uses its built-in functionality to send your
+     * users email messages, or uses your Amazon Simple Email Service email
+     * configuration. Specify one of the following values:</p> <dl>
+     * <dt>COGNITO_DEFAULT</dt> <dd> <p>When Amazon Cognito emails your users, it uses
+     * its built-in email functionality. When you use the default option, Amazon
+     * Cognito allows only a limited number of emails each day for your user pool. For
+     * typical production environments, the default email limit is less than the
+     * required delivery volume. To achieve a higher delivery volume, specify DEVELOPER
+     * to use your Amazon SES email configuration.</p> <p>To look up the email delivery
+     * limit for the default option, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits
      * in </a> in the <i> Developer Guide</i>.</p> <p>The default FROM address is
      * <code>no-reply@verificationemail.com</code>. To customize the FROM address,
@@ -270,16 +329,16 @@ namespace Model
     inline bool EmailSendingAccountHasBeenSet() const { return m_emailSendingAccountHasBeenSet; }
 
     /**
-     * <p>Specifies whether Amazon Cognito emails your users by using its built-in
-     * email functionality or your Amazon Simple Email Service email configuration.
-     * Specify one of the following values:</p> <dl> <dt>COGNITO_DEFAULT</dt> <dd>
-     * <p>When Amazon Cognito emails your users, it uses its built-in email
-     * functionality. When you use the default option, Amazon Cognito allows only a
-     * limited number of emails each day for your user pool. For typical production
-     * environments, the default email limit is less than the required delivery volume.
-     * To achieve a higher delivery volume, specify DEVELOPER to use your Amazon SES
-     * email configuration.</p> <p>To look up the email delivery limit for the default
-     * option, see <a
+     * <p>Specifies whether Amazon Cognito uses its built-in functionality to send your
+     * users email messages, or uses your Amazon Simple Email Service email
+     * configuration. Specify one of the following values:</p> <dl>
+     * <dt>COGNITO_DEFAULT</dt> <dd> <p>When Amazon Cognito emails your users, it uses
+     * its built-in email functionality. When you use the default option, Amazon
+     * Cognito allows only a limited number of emails each day for your user pool. For
+     * typical production environments, the default email limit is less than the
+     * required delivery volume. To achieve a higher delivery volume, specify DEVELOPER
+     * to use your Amazon SES email configuration.</p> <p>To look up the email delivery
+     * limit for the default option, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits
      * in </a> in the <i> Developer Guide</i>.</p> <p>The default FROM address is
      * <code>no-reply@verificationemail.com</code>. To customize the FROM address,
@@ -314,16 +373,16 @@ namespace Model
     inline void SetEmailSendingAccount(const EmailSendingAccountType& value) { m_emailSendingAccountHasBeenSet = true; m_emailSendingAccount = value; }
 
     /**
-     * <p>Specifies whether Amazon Cognito emails your users by using its built-in
-     * email functionality or your Amazon Simple Email Service email configuration.
-     * Specify one of the following values:</p> <dl> <dt>COGNITO_DEFAULT</dt> <dd>
-     * <p>When Amazon Cognito emails your users, it uses its built-in email
-     * functionality. When you use the default option, Amazon Cognito allows only a
-     * limited number of emails each day for your user pool. For typical production
-     * environments, the default email limit is less than the required delivery volume.
-     * To achieve a higher delivery volume, specify DEVELOPER to use your Amazon SES
-     * email configuration.</p> <p>To look up the email delivery limit for the default
-     * option, see <a
+     * <p>Specifies whether Amazon Cognito uses its built-in functionality to send your
+     * users email messages, or uses your Amazon Simple Email Service email
+     * configuration. Specify one of the following values:</p> <dl>
+     * <dt>COGNITO_DEFAULT</dt> <dd> <p>When Amazon Cognito emails your users, it uses
+     * its built-in email functionality. When you use the default option, Amazon
+     * Cognito allows only a limited number of emails each day for your user pool. For
+     * typical production environments, the default email limit is less than the
+     * required delivery volume. To achieve a higher delivery volume, specify DEVELOPER
+     * to use your Amazon SES email configuration.</p> <p>To look up the email delivery
+     * limit for the default option, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits
      * in </a> in the <i> Developer Guide</i>.</p> <p>The default FROM address is
      * <code>no-reply@verificationemail.com</code>. To customize the FROM address,
@@ -358,16 +417,16 @@ namespace Model
     inline void SetEmailSendingAccount(EmailSendingAccountType&& value) { m_emailSendingAccountHasBeenSet = true; m_emailSendingAccount = std::move(value); }
 
     /**
-     * <p>Specifies whether Amazon Cognito emails your users by using its built-in
-     * email functionality or your Amazon Simple Email Service email configuration.
-     * Specify one of the following values:</p> <dl> <dt>COGNITO_DEFAULT</dt> <dd>
-     * <p>When Amazon Cognito emails your users, it uses its built-in email
-     * functionality. When you use the default option, Amazon Cognito allows only a
-     * limited number of emails each day for your user pool. For typical production
-     * environments, the default email limit is less than the required delivery volume.
-     * To achieve a higher delivery volume, specify DEVELOPER to use your Amazon SES
-     * email configuration.</p> <p>To look up the email delivery limit for the default
-     * option, see <a
+     * <p>Specifies whether Amazon Cognito uses its built-in functionality to send your
+     * users email messages, or uses your Amazon Simple Email Service email
+     * configuration. Specify one of the following values:</p> <dl>
+     * <dt>COGNITO_DEFAULT</dt> <dd> <p>When Amazon Cognito emails your users, it uses
+     * its built-in email functionality. When you use the default option, Amazon
+     * Cognito allows only a limited number of emails each day for your user pool. For
+     * typical production environments, the default email limit is less than the
+     * required delivery volume. To achieve a higher delivery volume, specify DEVELOPER
+     * to use your Amazon SES email configuration.</p> <p>To look up the email delivery
+     * limit for the default option, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits
      * in </a> in the <i> Developer Guide</i>.</p> <p>The default FROM address is
      * <code>no-reply@verificationemail.com</code>. To customize the FROM address,
@@ -402,16 +461,16 @@ namespace Model
     inline EmailConfigurationType& WithEmailSendingAccount(const EmailSendingAccountType& value) { SetEmailSendingAccount(value); return *this;}
 
     /**
-     * <p>Specifies whether Amazon Cognito emails your users by using its built-in
-     * email functionality or your Amazon Simple Email Service email configuration.
-     * Specify one of the following values:</p> <dl> <dt>COGNITO_DEFAULT</dt> <dd>
-     * <p>When Amazon Cognito emails your users, it uses its built-in email
-     * functionality. When you use the default option, Amazon Cognito allows only a
-     * limited number of emails each day for your user pool. For typical production
-     * environments, the default email limit is less than the required delivery volume.
-     * To achieve a higher delivery volume, specify DEVELOPER to use your Amazon SES
-     * email configuration.</p> <p>To look up the email delivery limit for the default
-     * option, see <a
+     * <p>Specifies whether Amazon Cognito uses its built-in functionality to send your
+     * users email messages, or uses your Amazon Simple Email Service email
+     * configuration. Specify one of the following values:</p> <dl>
+     * <dt>COGNITO_DEFAULT</dt> <dd> <p>When Amazon Cognito emails your users, it uses
+     * its built-in email functionality. When you use the default option, Amazon
+     * Cognito allows only a limited number of emails each day for your user pool. For
+     * typical production environments, the default email limit is less than the
+     * required delivery volume. To achieve a higher delivery volume, specify DEVELOPER
+     * to use your Amazon SES email configuration.</p> <p>To look up the email delivery
+     * limit for the default option, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html">Limits
      * in </a> in the <i> Developer Guide</i>.</p> <p>The default FROM address is
      * <code>no-reply@verificationemail.com</code>. To customize the FROM address,
@@ -517,14 +576,14 @@ namespace Model
      * including a reference to the configuration set in the headers of the email. Once
      * applied, all of the rules in that configuration set are applied to the email.
      * Configuration sets can be used to apply the following types of rules to emails:
-     * </p> <ul> <li> <p>Event publishing – Amazon Simple Email Service can track the
-     * number of send, delivery, open, click, bounce, and complaint events for each
-     * email sent. Use event publishing to send information about these events to other
-     * Amazon Web Services services such as and Amazon CloudWatch.</p> </li> <li> <p>IP
-     * pool management – When leasing dedicated IP addresses with Amazon Simple Email
-     * Service, you can create groups of IP addresses, called dedicated IP pools. You
-     * can then associate the dedicated IP pools with configuration sets.</p> </li>
-     * </ul>
+     * </p> <dl> <dt>Event publishing</dt> <dd> <p>Amazon Simple Email Service can
+     * track the number of send, delivery, open, click, bounce, and complaint events
+     * for each email sent. Use event publishing to send information about these events
+     * to other Amazon Web Services services such as and Amazon CloudWatch</p> </dd>
+     * <dt>IP pool management</dt> <dd> <p>When leasing dedicated IP addresses with
+     * Amazon Simple Email Service, you can create groups of IP addresses, called
+     * dedicated IP pools. You can then associate the dedicated IP pools with
+     * configuration sets.</p> </dd> </dl>
      */
     inline const Aws::String& GetConfigurationSet() const{ return m_configurationSet; }
 
@@ -534,14 +593,14 @@ namespace Model
      * including a reference to the configuration set in the headers of the email. Once
      * applied, all of the rules in that configuration set are applied to the email.
      * Configuration sets can be used to apply the following types of rules to emails:
-     * </p> <ul> <li> <p>Event publishing – Amazon Simple Email Service can track the
-     * number of send, delivery, open, click, bounce, and complaint events for each
-     * email sent. Use event publishing to send information about these events to other
-     * Amazon Web Services services such as and Amazon CloudWatch.</p> </li> <li> <p>IP
-     * pool management – When leasing dedicated IP addresses with Amazon Simple Email
-     * Service, you can create groups of IP addresses, called dedicated IP pools. You
-     * can then associate the dedicated IP pools with configuration sets.</p> </li>
-     * </ul>
+     * </p> <dl> <dt>Event publishing</dt> <dd> <p>Amazon Simple Email Service can
+     * track the number of send, delivery, open, click, bounce, and complaint events
+     * for each email sent. Use event publishing to send information about these events
+     * to other Amazon Web Services services such as and Amazon CloudWatch</p> </dd>
+     * <dt>IP pool management</dt> <dd> <p>When leasing dedicated IP addresses with
+     * Amazon Simple Email Service, you can create groups of IP addresses, called
+     * dedicated IP pools. You can then associate the dedicated IP pools with
+     * configuration sets.</p> </dd> </dl>
      */
     inline bool ConfigurationSetHasBeenSet() const { return m_configurationSetHasBeenSet; }
 
@@ -551,14 +610,14 @@ namespace Model
      * including a reference to the configuration set in the headers of the email. Once
      * applied, all of the rules in that configuration set are applied to the email.
      * Configuration sets can be used to apply the following types of rules to emails:
-     * </p> <ul> <li> <p>Event publishing – Amazon Simple Email Service can track the
-     * number of send, delivery, open, click, bounce, and complaint events for each
-     * email sent. Use event publishing to send information about these events to other
-     * Amazon Web Services services such as and Amazon CloudWatch.</p> </li> <li> <p>IP
-     * pool management – When leasing dedicated IP addresses with Amazon Simple Email
-     * Service, you can create groups of IP addresses, called dedicated IP pools. You
-     * can then associate the dedicated IP pools with configuration sets.</p> </li>
-     * </ul>
+     * </p> <dl> <dt>Event publishing</dt> <dd> <p>Amazon Simple Email Service can
+     * track the number of send, delivery, open, click, bounce, and complaint events
+     * for each email sent. Use event publishing to send information about these events
+     * to other Amazon Web Services services such as and Amazon CloudWatch</p> </dd>
+     * <dt>IP pool management</dt> <dd> <p>When leasing dedicated IP addresses with
+     * Amazon Simple Email Service, you can create groups of IP addresses, called
+     * dedicated IP pools. You can then associate the dedicated IP pools with
+     * configuration sets.</p> </dd> </dl>
      */
     inline void SetConfigurationSet(const Aws::String& value) { m_configurationSetHasBeenSet = true; m_configurationSet = value; }
 
@@ -568,14 +627,14 @@ namespace Model
      * including a reference to the configuration set in the headers of the email. Once
      * applied, all of the rules in that configuration set are applied to the email.
      * Configuration sets can be used to apply the following types of rules to emails:
-     * </p> <ul> <li> <p>Event publishing – Amazon Simple Email Service can track the
-     * number of send, delivery, open, click, bounce, and complaint events for each
-     * email sent. Use event publishing to send information about these events to other
-     * Amazon Web Services services such as and Amazon CloudWatch.</p> </li> <li> <p>IP
-     * pool management – When leasing dedicated IP addresses with Amazon Simple Email
-     * Service, you can create groups of IP addresses, called dedicated IP pools. You
-     * can then associate the dedicated IP pools with configuration sets.</p> </li>
-     * </ul>
+     * </p> <dl> <dt>Event publishing</dt> <dd> <p>Amazon Simple Email Service can
+     * track the number of send, delivery, open, click, bounce, and complaint events
+     * for each email sent. Use event publishing to send information about these events
+     * to other Amazon Web Services services such as and Amazon CloudWatch</p> </dd>
+     * <dt>IP pool management</dt> <dd> <p>When leasing dedicated IP addresses with
+     * Amazon Simple Email Service, you can create groups of IP addresses, called
+     * dedicated IP pools. You can then associate the dedicated IP pools with
+     * configuration sets.</p> </dd> </dl>
      */
     inline void SetConfigurationSet(Aws::String&& value) { m_configurationSetHasBeenSet = true; m_configurationSet = std::move(value); }
 
@@ -585,14 +644,14 @@ namespace Model
      * including a reference to the configuration set in the headers of the email. Once
      * applied, all of the rules in that configuration set are applied to the email.
      * Configuration sets can be used to apply the following types of rules to emails:
-     * </p> <ul> <li> <p>Event publishing – Amazon Simple Email Service can track the
-     * number of send, delivery, open, click, bounce, and complaint events for each
-     * email sent. Use event publishing to send information about these events to other
-     * Amazon Web Services services such as and Amazon CloudWatch.</p> </li> <li> <p>IP
-     * pool management – When leasing dedicated IP addresses with Amazon Simple Email
-     * Service, you can create groups of IP addresses, called dedicated IP pools. You
-     * can then associate the dedicated IP pools with configuration sets.</p> </li>
-     * </ul>
+     * </p> <dl> <dt>Event publishing</dt> <dd> <p>Amazon Simple Email Service can
+     * track the number of send, delivery, open, click, bounce, and complaint events
+     * for each email sent. Use event publishing to send information about these events
+     * to other Amazon Web Services services such as and Amazon CloudWatch</p> </dd>
+     * <dt>IP pool management</dt> <dd> <p>When leasing dedicated IP addresses with
+     * Amazon Simple Email Service, you can create groups of IP addresses, called
+     * dedicated IP pools. You can then associate the dedicated IP pools with
+     * configuration sets.</p> </dd> </dl>
      */
     inline void SetConfigurationSet(const char* value) { m_configurationSetHasBeenSet = true; m_configurationSet.assign(value); }
 
@@ -602,14 +661,14 @@ namespace Model
      * including a reference to the configuration set in the headers of the email. Once
      * applied, all of the rules in that configuration set are applied to the email.
      * Configuration sets can be used to apply the following types of rules to emails:
-     * </p> <ul> <li> <p>Event publishing – Amazon Simple Email Service can track the
-     * number of send, delivery, open, click, bounce, and complaint events for each
-     * email sent. Use event publishing to send information about these events to other
-     * Amazon Web Services services such as and Amazon CloudWatch.</p> </li> <li> <p>IP
-     * pool management – When leasing dedicated IP addresses with Amazon Simple Email
-     * Service, you can create groups of IP addresses, called dedicated IP pools. You
-     * can then associate the dedicated IP pools with configuration sets.</p> </li>
-     * </ul>
+     * </p> <dl> <dt>Event publishing</dt> <dd> <p>Amazon Simple Email Service can
+     * track the number of send, delivery, open, click, bounce, and complaint events
+     * for each email sent. Use event publishing to send information about these events
+     * to other Amazon Web Services services such as and Amazon CloudWatch</p> </dd>
+     * <dt>IP pool management</dt> <dd> <p>When leasing dedicated IP addresses with
+     * Amazon Simple Email Service, you can create groups of IP addresses, called
+     * dedicated IP pools. You can then associate the dedicated IP pools with
+     * configuration sets.</p> </dd> </dl>
      */
     inline EmailConfigurationType& WithConfigurationSet(const Aws::String& value) { SetConfigurationSet(value); return *this;}
 
@@ -619,14 +678,14 @@ namespace Model
      * including a reference to the configuration set in the headers of the email. Once
      * applied, all of the rules in that configuration set are applied to the email.
      * Configuration sets can be used to apply the following types of rules to emails:
-     * </p> <ul> <li> <p>Event publishing – Amazon Simple Email Service can track the
-     * number of send, delivery, open, click, bounce, and complaint events for each
-     * email sent. Use event publishing to send information about these events to other
-     * Amazon Web Services services such as and Amazon CloudWatch.</p> </li> <li> <p>IP
-     * pool management – When leasing dedicated IP addresses with Amazon Simple Email
-     * Service, you can create groups of IP addresses, called dedicated IP pools. You
-     * can then associate the dedicated IP pools with configuration sets.</p> </li>
-     * </ul>
+     * </p> <dl> <dt>Event publishing</dt> <dd> <p>Amazon Simple Email Service can
+     * track the number of send, delivery, open, click, bounce, and complaint events
+     * for each email sent. Use event publishing to send information about these events
+     * to other Amazon Web Services services such as and Amazon CloudWatch</p> </dd>
+     * <dt>IP pool management</dt> <dd> <p>When leasing dedicated IP addresses with
+     * Amazon Simple Email Service, you can create groups of IP addresses, called
+     * dedicated IP pools. You can then associate the dedicated IP pools with
+     * configuration sets.</p> </dd> </dl>
      */
     inline EmailConfigurationType& WithConfigurationSet(Aws::String&& value) { SetConfigurationSet(std::move(value)); return *this;}
 
@@ -636,14 +695,14 @@ namespace Model
      * including a reference to the configuration set in the headers of the email. Once
      * applied, all of the rules in that configuration set are applied to the email.
      * Configuration sets can be used to apply the following types of rules to emails:
-     * </p> <ul> <li> <p>Event publishing – Amazon Simple Email Service can track the
-     * number of send, delivery, open, click, bounce, and complaint events for each
-     * email sent. Use event publishing to send information about these events to other
-     * Amazon Web Services services such as and Amazon CloudWatch.</p> </li> <li> <p>IP
-     * pool management – When leasing dedicated IP addresses with Amazon Simple Email
-     * Service, you can create groups of IP addresses, called dedicated IP pools. You
-     * can then associate the dedicated IP pools with configuration sets.</p> </li>
-     * </ul>
+     * </p> <dl> <dt>Event publishing</dt> <dd> <p>Amazon Simple Email Service can
+     * track the number of send, delivery, open, click, bounce, and complaint events
+     * for each email sent. Use event publishing to send information about these events
+     * to other Amazon Web Services services such as and Amazon CloudWatch</p> </dd>
+     * <dt>IP pool management</dt> <dd> <p>When leasing dedicated IP addresses with
+     * Amazon Simple Email Service, you can create groups of IP addresses, called
+     * dedicated IP pools. You can then associate the dedicated IP pools with
+     * configuration sets.</p> </dd> </dl>
      */
     inline EmailConfigurationType& WithConfigurationSet(const char* value) { SetConfigurationSet(value); return *this;}
 

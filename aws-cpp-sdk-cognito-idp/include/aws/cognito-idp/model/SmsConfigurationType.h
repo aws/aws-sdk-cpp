@@ -24,11 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>The SMS configuration type that includes the settings the Amazon Cognito User
-   * Pool must call for the Amazon Simple Notification Service service to send an SMS
-   * message from your Amazon Web Services account. The Amazon Cognito User Pool
-   * makes the request to the Amazon SNS Service by using an Identity and Access
-   * Management role that you provide for your Amazon Web Services
+   * <p>The SMS configuration type is the settings that your Amazon Cognito user pool
+   * must use to send an SMS message from your Amazon Web Services account through
+   * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
+   * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
+   * Identity and Access Management (IAM) role in your Amazon Web Services
    * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SmsConfigurationType">AWS
    * API Reference</a></p>
@@ -116,15 +116,16 @@ namespace Model
 
 
     /**
-     * <p>The external ID is a value that you should use to add security to your IAM
-     * role that is used to call Amazon SNS to send SMS messages for your user pool. If
-     * you provide an <code>ExternalId</code>, the Amazon Cognito User Pool will
-     * include it when attempting to assume your IAM role so that you can set your
-     * roles trust policy to require the <code>ExternalID</code>. If you use the Amazon
+     * <p>The external ID provides additional security for your IAM role. You can use
+     * an <code>ExternalId</code> with the IAM role that you use with Amazon SNS to
+     * send SMS messages for your user pool. If you provide an <code>ExternalId</code>,
+     * your Amazon Cognito user pool includes it in the request to assume your IAM
+     * role. You can configure the role trust policy to require that Amazon Cognito,
+     * and any principal, provide the <code>ExternalID</code>. If you use the Amazon
      * Cognito Management Console to create a role for SMS multi-factor authentication
-     * (MFA), Amazon Cognito will create a role with the required permissions and a
-     * trust policy that demonstrates use of the <code>ExternalId</code>.</p> <p>For
-     * more information about the <code>ExternalId</code> of a role, see <a
+     * (MFA), Amazon Cognito creates a role with the required permissions and a trust
+     * policy that demonstrates use of the <code>ExternalId</code>.</p> <p>For more
+     * information about the <code>ExternalId</code> of a role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to use an external ID when granting access to your Amazon Web Services resources
      * to a third party</a> </p>
@@ -132,15 +133,16 @@ namespace Model
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
 
     /**
-     * <p>The external ID is a value that you should use to add security to your IAM
-     * role that is used to call Amazon SNS to send SMS messages for your user pool. If
-     * you provide an <code>ExternalId</code>, the Amazon Cognito User Pool will
-     * include it when attempting to assume your IAM role so that you can set your
-     * roles trust policy to require the <code>ExternalID</code>. If you use the Amazon
+     * <p>The external ID provides additional security for your IAM role. You can use
+     * an <code>ExternalId</code> with the IAM role that you use with Amazon SNS to
+     * send SMS messages for your user pool. If you provide an <code>ExternalId</code>,
+     * your Amazon Cognito user pool includes it in the request to assume your IAM
+     * role. You can configure the role trust policy to require that Amazon Cognito,
+     * and any principal, provide the <code>ExternalID</code>. If you use the Amazon
      * Cognito Management Console to create a role for SMS multi-factor authentication
-     * (MFA), Amazon Cognito will create a role with the required permissions and a
-     * trust policy that demonstrates use of the <code>ExternalId</code>.</p> <p>For
-     * more information about the <code>ExternalId</code> of a role, see <a
+     * (MFA), Amazon Cognito creates a role with the required permissions and a trust
+     * policy that demonstrates use of the <code>ExternalId</code>.</p> <p>For more
+     * information about the <code>ExternalId</code> of a role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to use an external ID when granting access to your Amazon Web Services resources
      * to a third party</a> </p>
@@ -148,15 +150,16 @@ namespace Model
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
 
     /**
-     * <p>The external ID is a value that you should use to add security to your IAM
-     * role that is used to call Amazon SNS to send SMS messages for your user pool. If
-     * you provide an <code>ExternalId</code>, the Amazon Cognito User Pool will
-     * include it when attempting to assume your IAM role so that you can set your
-     * roles trust policy to require the <code>ExternalID</code>. If you use the Amazon
+     * <p>The external ID provides additional security for your IAM role. You can use
+     * an <code>ExternalId</code> with the IAM role that you use with Amazon SNS to
+     * send SMS messages for your user pool. If you provide an <code>ExternalId</code>,
+     * your Amazon Cognito user pool includes it in the request to assume your IAM
+     * role. You can configure the role trust policy to require that Amazon Cognito,
+     * and any principal, provide the <code>ExternalID</code>. If you use the Amazon
      * Cognito Management Console to create a role for SMS multi-factor authentication
-     * (MFA), Amazon Cognito will create a role with the required permissions and a
-     * trust policy that demonstrates use of the <code>ExternalId</code>.</p> <p>For
-     * more information about the <code>ExternalId</code> of a role, see <a
+     * (MFA), Amazon Cognito creates a role with the required permissions and a trust
+     * policy that demonstrates use of the <code>ExternalId</code>.</p> <p>For more
+     * information about the <code>ExternalId</code> of a role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to use an external ID when granting access to your Amazon Web Services resources
      * to a third party</a> </p>
@@ -164,15 +167,16 @@ namespace Model
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
     /**
-     * <p>The external ID is a value that you should use to add security to your IAM
-     * role that is used to call Amazon SNS to send SMS messages for your user pool. If
-     * you provide an <code>ExternalId</code>, the Amazon Cognito User Pool will
-     * include it when attempting to assume your IAM role so that you can set your
-     * roles trust policy to require the <code>ExternalID</code>. If you use the Amazon
+     * <p>The external ID provides additional security for your IAM role. You can use
+     * an <code>ExternalId</code> with the IAM role that you use with Amazon SNS to
+     * send SMS messages for your user pool. If you provide an <code>ExternalId</code>,
+     * your Amazon Cognito user pool includes it in the request to assume your IAM
+     * role. You can configure the role trust policy to require that Amazon Cognito,
+     * and any principal, provide the <code>ExternalID</code>. If you use the Amazon
      * Cognito Management Console to create a role for SMS multi-factor authentication
-     * (MFA), Amazon Cognito will create a role with the required permissions and a
-     * trust policy that demonstrates use of the <code>ExternalId</code>.</p> <p>For
-     * more information about the <code>ExternalId</code> of a role, see <a
+     * (MFA), Amazon Cognito creates a role with the required permissions and a trust
+     * policy that demonstrates use of the <code>ExternalId</code>.</p> <p>For more
+     * information about the <code>ExternalId</code> of a role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to use an external ID when granting access to your Amazon Web Services resources
      * to a third party</a> </p>
@@ -180,15 +184,16 @@ namespace Model
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
 
     /**
-     * <p>The external ID is a value that you should use to add security to your IAM
-     * role that is used to call Amazon SNS to send SMS messages for your user pool. If
-     * you provide an <code>ExternalId</code>, the Amazon Cognito User Pool will
-     * include it when attempting to assume your IAM role so that you can set your
-     * roles trust policy to require the <code>ExternalID</code>. If you use the Amazon
+     * <p>The external ID provides additional security for your IAM role. You can use
+     * an <code>ExternalId</code> with the IAM role that you use with Amazon SNS to
+     * send SMS messages for your user pool. If you provide an <code>ExternalId</code>,
+     * your Amazon Cognito user pool includes it in the request to assume your IAM
+     * role. You can configure the role trust policy to require that Amazon Cognito,
+     * and any principal, provide the <code>ExternalID</code>. If you use the Amazon
      * Cognito Management Console to create a role for SMS multi-factor authentication
-     * (MFA), Amazon Cognito will create a role with the required permissions and a
-     * trust policy that demonstrates use of the <code>ExternalId</code>.</p> <p>For
-     * more information about the <code>ExternalId</code> of a role, see <a
+     * (MFA), Amazon Cognito creates a role with the required permissions and a trust
+     * policy that demonstrates use of the <code>ExternalId</code>.</p> <p>For more
+     * information about the <code>ExternalId</code> of a role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to use an external ID when granting access to your Amazon Web Services resources
      * to a third party</a> </p>
@@ -196,15 +201,16 @@ namespace Model
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
 
     /**
-     * <p>The external ID is a value that you should use to add security to your IAM
-     * role that is used to call Amazon SNS to send SMS messages for your user pool. If
-     * you provide an <code>ExternalId</code>, the Amazon Cognito User Pool will
-     * include it when attempting to assume your IAM role so that you can set your
-     * roles trust policy to require the <code>ExternalID</code>. If you use the Amazon
+     * <p>The external ID provides additional security for your IAM role. You can use
+     * an <code>ExternalId</code> with the IAM role that you use with Amazon SNS to
+     * send SMS messages for your user pool. If you provide an <code>ExternalId</code>,
+     * your Amazon Cognito user pool includes it in the request to assume your IAM
+     * role. You can configure the role trust policy to require that Amazon Cognito,
+     * and any principal, provide the <code>ExternalID</code>. If you use the Amazon
      * Cognito Management Console to create a role for SMS multi-factor authentication
-     * (MFA), Amazon Cognito will create a role with the required permissions and a
-     * trust policy that demonstrates use of the <code>ExternalId</code>.</p> <p>For
-     * more information about the <code>ExternalId</code> of a role, see <a
+     * (MFA), Amazon Cognito creates a role with the required permissions and a trust
+     * policy that demonstrates use of the <code>ExternalId</code>.</p> <p>For more
+     * information about the <code>ExternalId</code> of a role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to use an external ID when granting access to your Amazon Web Services resources
      * to a third party</a> </p>
@@ -212,15 +218,16 @@ namespace Model
     inline SmsConfigurationType& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
 
     /**
-     * <p>The external ID is a value that you should use to add security to your IAM
-     * role that is used to call Amazon SNS to send SMS messages for your user pool. If
-     * you provide an <code>ExternalId</code>, the Amazon Cognito User Pool will
-     * include it when attempting to assume your IAM role so that you can set your
-     * roles trust policy to require the <code>ExternalID</code>. If you use the Amazon
+     * <p>The external ID provides additional security for your IAM role. You can use
+     * an <code>ExternalId</code> with the IAM role that you use with Amazon SNS to
+     * send SMS messages for your user pool. If you provide an <code>ExternalId</code>,
+     * your Amazon Cognito user pool includes it in the request to assume your IAM
+     * role. You can configure the role trust policy to require that Amazon Cognito,
+     * and any principal, provide the <code>ExternalID</code>. If you use the Amazon
      * Cognito Management Console to create a role for SMS multi-factor authentication
-     * (MFA), Amazon Cognito will create a role with the required permissions and a
-     * trust policy that demonstrates use of the <code>ExternalId</code>.</p> <p>For
-     * more information about the <code>ExternalId</code> of a role, see <a
+     * (MFA), Amazon Cognito creates a role with the required permissions and a trust
+     * policy that demonstrates use of the <code>ExternalId</code>.</p> <p>For more
+     * information about the <code>ExternalId</code> of a role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to use an external ID when granting access to your Amazon Web Services resources
      * to a third party</a> </p>
@@ -228,20 +235,110 @@ namespace Model
     inline SmsConfigurationType& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
 
     /**
-     * <p>The external ID is a value that you should use to add security to your IAM
-     * role that is used to call Amazon SNS to send SMS messages for your user pool. If
-     * you provide an <code>ExternalId</code>, the Amazon Cognito User Pool will
-     * include it when attempting to assume your IAM role so that you can set your
-     * roles trust policy to require the <code>ExternalID</code>. If you use the Amazon
+     * <p>The external ID provides additional security for your IAM role. You can use
+     * an <code>ExternalId</code> with the IAM role that you use with Amazon SNS to
+     * send SMS messages for your user pool. If you provide an <code>ExternalId</code>,
+     * your Amazon Cognito user pool includes it in the request to assume your IAM
+     * role. You can configure the role trust policy to require that Amazon Cognito,
+     * and any principal, provide the <code>ExternalID</code>. If you use the Amazon
      * Cognito Management Console to create a role for SMS multi-factor authentication
-     * (MFA), Amazon Cognito will create a role with the required permissions and a
-     * trust policy that demonstrates use of the <code>ExternalId</code>.</p> <p>For
-     * more information about the <code>ExternalId</code> of a role, see <a
+     * (MFA), Amazon Cognito creates a role with the required permissions and a trust
+     * policy that demonstrates use of the <code>ExternalId</code>.</p> <p>For more
+     * information about the <code>ExternalId</code> of a role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to use an external ID when granting access to your Amazon Web Services resources
      * to a third party</a> </p>
      */
     inline SmsConfigurationType& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Web Services Region to use with Amazon SNS integration. You can
+     * choose the same Region as your user pool, or a supported <b>Legacy Amazon SNS
+     * alternate Region</b>. </p> <p> Amazon Cognito resources in the Asia Pacific
+     * (Seoul) Amazon Web Services Region must use your Amazon SNS configuration in the
+     * Asia Pacific (Tokyo) Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">SMS
+     * message settings for Amazon Cognito user pools</a>.</p>
+     */
+    inline const Aws::String& GetSnsRegion() const{ return m_snsRegion; }
+
+    /**
+     * <p>The Amazon Web Services Region to use with Amazon SNS integration. You can
+     * choose the same Region as your user pool, or a supported <b>Legacy Amazon SNS
+     * alternate Region</b>. </p> <p> Amazon Cognito resources in the Asia Pacific
+     * (Seoul) Amazon Web Services Region must use your Amazon SNS configuration in the
+     * Asia Pacific (Tokyo) Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">SMS
+     * message settings for Amazon Cognito user pools</a>.</p>
+     */
+    inline bool SnsRegionHasBeenSet() const { return m_snsRegionHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services Region to use with Amazon SNS integration. You can
+     * choose the same Region as your user pool, or a supported <b>Legacy Amazon SNS
+     * alternate Region</b>. </p> <p> Amazon Cognito resources in the Asia Pacific
+     * (Seoul) Amazon Web Services Region must use your Amazon SNS configuration in the
+     * Asia Pacific (Tokyo) Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">SMS
+     * message settings for Amazon Cognito user pools</a>.</p>
+     */
+    inline void SetSnsRegion(const Aws::String& value) { m_snsRegionHasBeenSet = true; m_snsRegion = value; }
+
+    /**
+     * <p>The Amazon Web Services Region to use with Amazon SNS integration. You can
+     * choose the same Region as your user pool, or a supported <b>Legacy Amazon SNS
+     * alternate Region</b>. </p> <p> Amazon Cognito resources in the Asia Pacific
+     * (Seoul) Amazon Web Services Region must use your Amazon SNS configuration in the
+     * Asia Pacific (Tokyo) Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">SMS
+     * message settings for Amazon Cognito user pools</a>.</p>
+     */
+    inline void SetSnsRegion(Aws::String&& value) { m_snsRegionHasBeenSet = true; m_snsRegion = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services Region to use with Amazon SNS integration. You can
+     * choose the same Region as your user pool, or a supported <b>Legacy Amazon SNS
+     * alternate Region</b>. </p> <p> Amazon Cognito resources in the Asia Pacific
+     * (Seoul) Amazon Web Services Region must use your Amazon SNS configuration in the
+     * Asia Pacific (Tokyo) Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">SMS
+     * message settings for Amazon Cognito user pools</a>.</p>
+     */
+    inline void SetSnsRegion(const char* value) { m_snsRegionHasBeenSet = true; m_snsRegion.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services Region to use with Amazon SNS integration. You can
+     * choose the same Region as your user pool, or a supported <b>Legacy Amazon SNS
+     * alternate Region</b>. </p> <p> Amazon Cognito resources in the Asia Pacific
+     * (Seoul) Amazon Web Services Region must use your Amazon SNS configuration in the
+     * Asia Pacific (Tokyo) Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">SMS
+     * message settings for Amazon Cognito user pools</a>.</p>
+     */
+    inline SmsConfigurationType& WithSnsRegion(const Aws::String& value) { SetSnsRegion(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services Region to use with Amazon SNS integration. You can
+     * choose the same Region as your user pool, or a supported <b>Legacy Amazon SNS
+     * alternate Region</b>. </p> <p> Amazon Cognito resources in the Asia Pacific
+     * (Seoul) Amazon Web Services Region must use your Amazon SNS configuration in the
+     * Asia Pacific (Tokyo) Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">SMS
+     * message settings for Amazon Cognito user pools</a>.</p>
+     */
+    inline SmsConfigurationType& WithSnsRegion(Aws::String&& value) { SetSnsRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services Region to use with Amazon SNS integration. You can
+     * choose the same Region as your user pool, or a supported <b>Legacy Amazon SNS
+     * alternate Region</b>. </p> <p> Amazon Cognito resources in the Asia Pacific
+     * (Seoul) Amazon Web Services Region must use your Amazon SNS configuration in the
+     * Asia Pacific (Tokyo) Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">SMS
+     * message settings for Amazon Cognito user pools</a>.</p>
+     */
+    inline SmsConfigurationType& WithSnsRegion(const char* value) { SetSnsRegion(value); return *this;}
 
   private:
 
@@ -250,6 +347,9 @@ namespace Model
 
     Aws::String m_externalId;
     bool m_externalIdHasBeenSet;
+
+    Aws::String m_snsRegion;
+    bool m_snsRegionHasBeenSet;
   };
 
 } // namespace Model

@@ -20,13 +20,15 @@ namespace Model
 
 SmsConfigurationType::SmsConfigurationType() : 
     m_snsCallerArnHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+    m_externalIdHasBeenSet(false),
+    m_snsRegionHasBeenSet(false)
 {
 }
 
 SmsConfigurationType::SmsConfigurationType(JsonView jsonValue) : 
     m_snsCallerArnHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+    m_externalIdHasBeenSet(false),
+    m_snsRegionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ SmsConfigurationType& SmsConfigurationType::operator =(JsonView jsonValue)
     m_externalIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SnsRegion"))
+  {
+    m_snsRegion = jsonValue.GetString("SnsRegion");
+
+    m_snsRegionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue SmsConfigurationType::Jsonize() const
   if(m_externalIdHasBeenSet)
   {
    payload.WithString("ExternalId", m_externalId);
+
+  }
+
+  if(m_snsRegionHasBeenSet)
+  {
+   payload.WithString("SnsRegion", m_snsRegion);
 
   }
 

@@ -374,7 +374,7 @@ namespace Model
     /**
      * <p>A value that indicates whether to restore the DB cluster to the latest
      * restorable backup time. By default, the DB cluster isn't restored to the latest
-     * restorable backup time. </p> <p>Constraints: Can't be specified if
+     * restorable backup time.</p> <p>Constraints: Can't be specified if
      * <code>RestoreToTime</code> parameter is provided.</p> <p>Valid for: Aurora DB
      * clusters and Multi-AZ DB clusters</p>
      */
@@ -383,7 +383,7 @@ namespace Model
     /**
      * <p>A value that indicates whether to restore the DB cluster to the latest
      * restorable backup time. By default, the DB cluster isn't restored to the latest
-     * restorable backup time. </p> <p>Constraints: Can't be specified if
+     * restorable backup time.</p> <p>Constraints: Can't be specified if
      * <code>RestoreToTime</code> parameter is provided.</p> <p>Valid for: Aurora DB
      * clusters and Multi-AZ DB clusters</p>
      */
@@ -392,7 +392,7 @@ namespace Model
     /**
      * <p>A value that indicates whether to restore the DB cluster to the latest
      * restorable backup time. By default, the DB cluster isn't restored to the latest
-     * restorable backup time. </p> <p>Constraints: Can't be specified if
+     * restorable backup time.</p> <p>Constraints: Can't be specified if
      * <code>RestoreToTime</code> parameter is provided.</p> <p>Valid for: Aurora DB
      * clusters and Multi-AZ DB clusters</p>
      */
@@ -401,7 +401,7 @@ namespace Model
     /**
      * <p>A value that indicates whether to restore the DB cluster to the latest
      * restorable backup time. By default, the DB cluster isn't restored to the latest
-     * restorable backup time. </p> <p>Constraints: Can't be specified if
+     * restorable backup time.</p> <p>Constraints: Can't be specified if
      * <code>RestoreToTime</code> parameter is provided.</p> <p>Valid for: Aurora DB
      * clusters and Multi-AZ DB clusters</p>
      */
@@ -410,7 +410,7 @@ namespace Model
 
     /**
      * <p>The port number on which the new DB cluster accepts connections.</p>
-     * <p>Constraints: A value from <code>1150-65535</code>. </p> <p>Default: The
+     * <p>Constraints: A value from <code>1150-65535</code>.</p> <p>Default: The
      * default port for the engine.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
      * DB clusters</p>
      */
@@ -418,7 +418,7 @@ namespace Model
 
     /**
      * <p>The port number on which the new DB cluster accepts connections.</p>
-     * <p>Constraints: A value from <code>1150-65535</code>. </p> <p>Default: The
+     * <p>Constraints: A value from <code>1150-65535</code>.</p> <p>Default: The
      * default port for the engine.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
      * DB clusters</p>
      */
@@ -426,7 +426,7 @@ namespace Model
 
     /**
      * <p>The port number on which the new DB cluster accepts connections.</p>
-     * <p>Constraints: A value from <code>1150-65535</code>. </p> <p>Default: The
+     * <p>Constraints: A value from <code>1150-65535</code>.</p> <p>Default: The
      * default port for the engine.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
      * DB clusters</p>
      */
@@ -434,7 +434,7 @@ namespace Model
 
     /**
      * <p>The port number on which the new DB cluster accepts connections.</p>
-     * <p>Constraints: A value from <code>1150-65535</code>. </p> <p>Default: The
+     * <p>Constraints: A value from <code>1150-65535</code>.</p> <p>Default: The
      * default port for the engine.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
      * DB clusters</p>
      */
@@ -793,7 +793,7 @@ namespace Model
      * Identity and Access Management (IAM) accounts to database accounts. By default,
      * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Valid for: Aurora DB clusters only</p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
@@ -803,7 +803,7 @@ namespace Model
      * Identity and Access Management (IAM) accounts to database accounts. By default,
      * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Valid for: Aurora DB clusters only</p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
@@ -813,7 +813,7 @@ namespace Model
      * Identity and Access Management (IAM) accounts to database accounts. By default,
      * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Valid for: Aurora DB clusters only</p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
@@ -823,7 +823,7 @@ namespace Model
      * Identity and Access Management (IAM) accounts to database accounts. By default,
      * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Valid for: Aurora DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
@@ -874,9 +874,9 @@ namespace Model
      * is <code>postgresql</code>.</p> <p>For more information about exporting
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
-     * Service User Guide</i>.</p> <p>For more information about exporting CloudWatch
-     * Logs for Amazon Aurora, see <a
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
      * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -895,9 +895,9 @@ namespace Model
      * is <code>postgresql</code>.</p> <p>For more information about exporting
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
-     * Service User Guide</i>.</p> <p>For more information about exporting CloudWatch
-     * Logs for Amazon Aurora, see <a
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
      * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -916,9 +916,9 @@ namespace Model
      * is <code>postgresql</code>.</p> <p>For more information about exporting
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
-     * Service User Guide</i>.</p> <p>For more information about exporting CloudWatch
-     * Logs for Amazon Aurora, see <a
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
      * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -937,9 +937,9 @@ namespace Model
      * is <code>postgresql</code>.</p> <p>For more information about exporting
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
-     * Service User Guide</i>.</p> <p>For more information about exporting CloudWatch
-     * Logs for Amazon Aurora, see <a
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
      * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -958,9 +958,9 @@ namespace Model
      * is <code>postgresql</code>.</p> <p>For more information about exporting
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
-     * Service User Guide</i>.</p> <p>For more information about exporting CloudWatch
-     * Logs for Amazon Aurora, see <a
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
      * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -979,9 +979,9 @@ namespace Model
      * is <code>postgresql</code>.</p> <p>For more information about exporting
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
-     * Service User Guide</i>.</p> <p>For more information about exporting CloudWatch
-     * Logs for Amazon Aurora, see <a
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
      * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -1000,9 +1000,9 @@ namespace Model
      * is <code>postgresql</code>.</p> <p>For more information about exporting
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
-     * Service User Guide</i>.</p> <p>For more information about exporting CloudWatch
-     * Logs for Amazon Aurora, see <a
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
      * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -1021,9 +1021,9 @@ namespace Model
      * is <code>postgresql</code>.</p> <p>For more information about exporting
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
-     * Service User Guide</i>.</p> <p>For more information about exporting CloudWatch
-     * Logs for Amazon Aurora, see <a
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
      * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -1042,9 +1042,9 @@ namespace Model
      * is <code>postgresql</code>.</p> <p>For more information about exporting
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
-     * Service User Guide</i>.</p> <p>For more information about exporting CloudWatch
-     * Logs for Amazon Aurora, see <a
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
      * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -1213,88 +1213,88 @@ namespace Model
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p> <p>Valid for:
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for:
      * Aurora DB clusters only</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p> <p>Valid for:
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for:
      * Aurora DB clusters only</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p> <p>Valid for:
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for:
      * Aurora DB clusters only</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p> <p>Valid for:
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for:
      * Aurora DB clusters only</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p> <p>Valid for:
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for:
      * Aurora DB clusters only</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p> <p>Valid for:
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for:
      * Aurora DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p> <p>Valid for:
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for:
      * Aurora DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
+     * domain must be created prior to this operation.</p> <p>For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p> <p>Valid for:
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for:
      * Aurora DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
@@ -1389,88 +1389,88 @@ namespace Model
     /**
      * <p>The engine mode of the new cluster. Specify <code>provisioned</code> or
      * <code>serverless</code>, depending on the type of the cluster you are creating.
-     * You can create an Aurora Serverless clone from a provisioned cluster, or a
-     * provisioned clone from an Aurora Serverless cluster. To create a clone that is
-     * an Aurora Serverless cluster, the original cluster must be an Aurora Serverless
-     * cluster or an encrypted provisioned cluster.</p> <p>Valid for: Aurora DB
-     * clusters only</p>
+     * You can create an Aurora Serverless v1 clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless v1 cluster. To create a clone that
+     * is an Aurora Serverless v1 cluster, the original cluster must be an Aurora
+     * Serverless v1 cluster or an encrypted provisioned cluster.</p> <p>Valid for:
+     * Aurora DB clusters only</p>
      */
     inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
 
     /**
      * <p>The engine mode of the new cluster. Specify <code>provisioned</code> or
      * <code>serverless</code>, depending on the type of the cluster you are creating.
-     * You can create an Aurora Serverless clone from a provisioned cluster, or a
-     * provisioned clone from an Aurora Serverless cluster. To create a clone that is
-     * an Aurora Serverless cluster, the original cluster must be an Aurora Serverless
-     * cluster or an encrypted provisioned cluster.</p> <p>Valid for: Aurora DB
-     * clusters only</p>
+     * You can create an Aurora Serverless v1 clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless v1 cluster. To create a clone that
+     * is an Aurora Serverless v1 cluster, the original cluster must be an Aurora
+     * Serverless v1 cluster or an encrypted provisioned cluster.</p> <p>Valid for:
+     * Aurora DB clusters only</p>
      */
     inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
 
     /**
      * <p>The engine mode of the new cluster. Specify <code>provisioned</code> or
      * <code>serverless</code>, depending on the type of the cluster you are creating.
-     * You can create an Aurora Serverless clone from a provisioned cluster, or a
-     * provisioned clone from an Aurora Serverless cluster. To create a clone that is
-     * an Aurora Serverless cluster, the original cluster must be an Aurora Serverless
-     * cluster or an encrypted provisioned cluster.</p> <p>Valid for: Aurora DB
-     * clusters only</p>
+     * You can create an Aurora Serverless v1 clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless v1 cluster. To create a clone that
+     * is an Aurora Serverless v1 cluster, the original cluster must be an Aurora
+     * Serverless v1 cluster or an encrypted provisioned cluster.</p> <p>Valid for:
+     * Aurora DB clusters only</p>
      */
     inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
 
     /**
      * <p>The engine mode of the new cluster. Specify <code>provisioned</code> or
      * <code>serverless</code>, depending on the type of the cluster you are creating.
-     * You can create an Aurora Serverless clone from a provisioned cluster, or a
-     * provisioned clone from an Aurora Serverless cluster. To create a clone that is
-     * an Aurora Serverless cluster, the original cluster must be an Aurora Serverless
-     * cluster or an encrypted provisioned cluster.</p> <p>Valid for: Aurora DB
-     * clusters only</p>
+     * You can create an Aurora Serverless v1 clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless v1 cluster. To create a clone that
+     * is an Aurora Serverless v1 cluster, the original cluster must be an Aurora
+     * Serverless v1 cluster or an encrypted provisioned cluster.</p> <p>Valid for:
+     * Aurora DB clusters only</p>
      */
     inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
 
     /**
      * <p>The engine mode of the new cluster. Specify <code>provisioned</code> or
      * <code>serverless</code>, depending on the type of the cluster you are creating.
-     * You can create an Aurora Serverless clone from a provisioned cluster, or a
-     * provisioned clone from an Aurora Serverless cluster. To create a clone that is
-     * an Aurora Serverless cluster, the original cluster must be an Aurora Serverless
-     * cluster or an encrypted provisioned cluster.</p> <p>Valid for: Aurora DB
-     * clusters only</p>
+     * You can create an Aurora Serverless v1 clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless v1 cluster. To create a clone that
+     * is an Aurora Serverless v1 cluster, the original cluster must be an Aurora
+     * Serverless v1 cluster or an encrypted provisioned cluster.</p> <p>Valid for:
+     * Aurora DB clusters only</p>
      */
     inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
 
     /**
      * <p>The engine mode of the new cluster. Specify <code>provisioned</code> or
      * <code>serverless</code>, depending on the type of the cluster you are creating.
-     * You can create an Aurora Serverless clone from a provisioned cluster, or a
-     * provisioned clone from an Aurora Serverless cluster. To create a clone that is
-     * an Aurora Serverless cluster, the original cluster must be an Aurora Serverless
-     * cluster or an encrypted provisioned cluster.</p> <p>Valid for: Aurora DB
-     * clusters only</p>
+     * You can create an Aurora Serverless v1 clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless v1 cluster. To create a clone that
+     * is an Aurora Serverless v1 cluster, the original cluster must be an Aurora
+     * Serverless v1 cluster or an encrypted provisioned cluster.</p> <p>Valid for:
+     * Aurora DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
 
     /**
      * <p>The engine mode of the new cluster. Specify <code>provisioned</code> or
      * <code>serverless</code>, depending on the type of the cluster you are creating.
-     * You can create an Aurora Serverless clone from a provisioned cluster, or a
-     * provisioned clone from an Aurora Serverless cluster. To create a clone that is
-     * an Aurora Serverless cluster, the original cluster must be an Aurora Serverless
-     * cluster or an encrypted provisioned cluster.</p> <p>Valid for: Aurora DB
-     * clusters only</p>
+     * You can create an Aurora Serverless v1 clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless v1 cluster. To create a clone that
+     * is an Aurora Serverless v1 cluster, the original cluster must be an Aurora
+     * Serverless v1 cluster or an encrypted provisioned cluster.</p> <p>Valid for:
+     * Aurora DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
 
     /**
      * <p>The engine mode of the new cluster. Specify <code>provisioned</code> or
      * <code>serverless</code>, depending on the type of the cluster you are creating.
-     * You can create an Aurora Serverless clone from a provisioned cluster, or a
-     * provisioned clone from an Aurora Serverless cluster. To create a clone that is
-     * an Aurora Serverless cluster, the original cluster must be an Aurora Serverless
-     * cluster or an encrypted provisioned cluster.</p> <p>Valid for: Aurora DB
-     * clusters only</p>
+     * You can create an Aurora Serverless v1 clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless v1 cluster. To create a clone that
+     * is an Aurora Serverless v1 cluster, the original cluster must be an Aurora
+     * Serverless v1 cluster or an encrypted provisioned cluster.</p> <p>Valid for:
+     * Aurora DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithEngineMode(const char* value) { SetEngineMode(value); return *this;}
 
@@ -1566,65 +1566,65 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p> Valid values: <code>io1</code> </p> <p> When
-     * specified, a value for the <code>Iops</code> parameter is required. </p> <p>
-     * Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * Multi-AZ DB cluster.</p> <p>Valid values: <code>io1</code> </p> <p>When
+     * specified, a value for the <code>Iops</code> parameter is required.</p>
+     * <p>Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
      * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p> Valid values: <code>io1</code> </p> <p> When
-     * specified, a value for the <code>Iops</code> parameter is required. </p> <p>
-     * Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * Multi-AZ DB cluster.</p> <p>Valid values: <code>io1</code> </p> <p>When
+     * specified, a value for the <code>Iops</code> parameter is required.</p>
+     * <p>Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
      * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p> Valid values: <code>io1</code> </p> <p> When
-     * specified, a value for the <code>Iops</code> parameter is required. </p> <p>
-     * Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * Multi-AZ DB cluster.</p> <p>Valid values: <code>io1</code> </p> <p>When
+     * specified, a value for the <code>Iops</code> parameter is required.</p>
+     * <p>Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
      * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p> Valid values: <code>io1</code> </p> <p> When
-     * specified, a value for the <code>Iops</code> parameter is required. </p> <p>
-     * Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * Multi-AZ DB cluster.</p> <p>Valid values: <code>io1</code> </p> <p>When
+     * specified, a value for the <code>Iops</code> parameter is required.</p>
+     * <p>Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p> Valid values: <code>io1</code> </p> <p> When
-     * specified, a value for the <code>Iops</code> parameter is required. </p> <p>
-     * Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * Multi-AZ DB cluster.</p> <p>Valid values: <code>io1</code> </p> <p>When
+     * specified, a value for the <code>Iops</code> parameter is required.</p>
+     * <p>Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p> Valid values: <code>io1</code> </p> <p> When
-     * specified, a value for the <code>Iops</code> parameter is required. </p> <p>
-     * Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * Multi-AZ DB cluster.</p> <p>Valid values: <code>io1</code> </p> <p>When
+     * specified, a value for the <code>Iops</code> parameter is required.</p>
+     * <p>Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p> Valid values: <code>io1</code> </p> <p> When
-     * specified, a value for the <code>Iops</code> parameter is required. </p> <p>
-     * Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * Multi-AZ DB cluster.</p> <p>Valid values: <code>io1</code> </p> <p>When
+     * specified, a value for the <code>Iops</code> parameter is required.</p>
+     * <p>Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p> Valid values: <code>io1</code> </p> <p> When
-     * specified, a value for the <code>Iops</code> parameter is required. </p> <p>
-     * Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * Multi-AZ DB cluster.</p> <p>Valid values: <code>io1</code> </p> <p>When
+     * specified, a value for the <code>Iops</code> parameter is required.</p>
+     * <p>Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
@@ -1736,8 +1736,8 @@ namespace Model
      * information about valid <code>Iops</code> values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>Constraints: Must be a multiple between .5 and 50 of the
-     * storage amount for the DB instance. </p> <p>Valid for: Multi-AZ DB clusters
+     * User Guide</i>.</p> <p>Constraints: Must be a multiple between .5 and 50 of the
+     * storage amount for the DB instance.</p> <p>Valid for: Multi-AZ DB clusters
      * only</p>
      */
     inline int GetIops() const{ return m_iops; }
@@ -1748,8 +1748,8 @@ namespace Model
      * information about valid <code>Iops</code> values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>Constraints: Must be a multiple between .5 and 50 of the
-     * storage amount for the DB instance. </p> <p>Valid for: Multi-AZ DB clusters
+     * User Guide</i>.</p> <p>Constraints: Must be a multiple between .5 and 50 of the
+     * storage amount for the DB instance.</p> <p>Valid for: Multi-AZ DB clusters
      * only</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
@@ -1760,8 +1760,8 @@ namespace Model
      * information about valid <code>Iops</code> values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>Constraints: Must be a multiple between .5 and 50 of the
-     * storage amount for the DB instance. </p> <p>Valid for: Multi-AZ DB clusters
+     * User Guide</i>.</p> <p>Constraints: Must be a multiple between .5 and 50 of the
+     * storage amount for the DB instance.</p> <p>Valid for: Multi-AZ DB clusters
      * only</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
@@ -1772,8 +1772,8 @@ namespace Model
      * information about valid <code>Iops</code> values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>Constraints: Must be a multiple between .5 and 50 of the
-     * storage amount for the DB instance. </p> <p>Valid for: Multi-AZ DB clusters
+     * User Guide</i>.</p> <p>Constraints: Must be a multiple between .5 and 50 of the
+     * storage amount for the DB instance.</p> <p>Valid for: Multi-AZ DB clusters
      * only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithIops(int value) { SetIops(value); return *this;}

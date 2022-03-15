@@ -1156,49 +1156,49 @@ namespace Model
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for the user pool client.</p>
-     *  <p>Amazon Cognito User Pools only supports sending events to Amazon
+     *  <p>Amazon Cognito user pools only support sending events to Amazon
      * Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of
-     * the Region in which the user pool resides.</p> 
+     * the Region where the user pool resides.</p> 
      */
     inline const AnalyticsConfigurationType& GetAnalyticsConfiguration() const{ return m_analyticsConfiguration; }
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for the user pool client.</p>
-     *  <p>Amazon Cognito User Pools only supports sending events to Amazon
+     *  <p>Amazon Cognito user pools only support sending events to Amazon
      * Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of
-     * the Region in which the user pool resides.</p> 
+     * the Region where the user pool resides.</p> 
      */
     inline bool AnalyticsConfigurationHasBeenSet() const { return m_analyticsConfigurationHasBeenSet; }
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for the user pool client.</p>
-     *  <p>Amazon Cognito User Pools only supports sending events to Amazon
+     *  <p>Amazon Cognito user pools only support sending events to Amazon
      * Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of
-     * the Region in which the user pool resides.</p> 
+     * the Region where the user pool resides.</p> 
      */
     inline void SetAnalyticsConfiguration(const AnalyticsConfigurationType& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = value; }
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for the user pool client.</p>
-     *  <p>Amazon Cognito User Pools only supports sending events to Amazon
+     *  <p>Amazon Cognito user pools only support sending events to Amazon
      * Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of
-     * the Region in which the user pool resides.</p> 
+     * the Region where the user pool resides.</p> 
      */
     inline void SetAnalyticsConfiguration(AnalyticsConfigurationType&& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = std::move(value); }
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for the user pool client.</p>
-     *  <p>Amazon Cognito User Pools only supports sending events to Amazon
+     *  <p>Amazon Cognito user pools only support sending events to Amazon
      * Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of
-     * the Region in which the user pool resides.</p> 
+     * the Region where the user pool resides.</p> 
      */
     inline UserPoolClientType& WithAnalyticsConfiguration(const AnalyticsConfigurationType& value) { SetAnalyticsConfiguration(value); return *this;}
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for the user pool client.</p>
-     *  <p>Amazon Cognito User Pools only supports sending events to Amazon
+     *  <p>Amazon Cognito user pools only support sending events to Amazon
      * Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of
-     * the Region in which the user pool resides.</p> 
+     * the Region where the user pool resides.</p> 
      */
     inline UserPoolClientType& WithAnalyticsConfiguration(AnalyticsConfigurationType&& value) { SetAnalyticsConfiguration(std::move(value)); return *this;}
 

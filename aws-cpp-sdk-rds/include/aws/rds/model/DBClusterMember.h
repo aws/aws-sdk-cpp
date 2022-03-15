@@ -161,7 +161,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline int GetPromotionTier() const{ return m_promotionTier; }
 
@@ -171,7 +171,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline bool PromotionTierHasBeenSet() const { return m_promotionTierHasBeenSet; }
 
@@ -181,7 +181,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline void SetPromotionTier(int value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
 
@@ -191,7 +191,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline DBClusterMember& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
 

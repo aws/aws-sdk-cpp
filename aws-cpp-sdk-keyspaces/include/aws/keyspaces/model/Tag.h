@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Describes a tag. A tag is a key-value pair. You can add up to 50 tags to a
-   * single Amazon Keyspaces resource. </p> <p>Amazon Web Services-assigned tag names
+   * single Amazon Keyspaces resource.</p> <p>Amazon Web Services-assigned tag names
    * and values are automatically assigned the <code>aws:</code> prefix, which the
    * user cannot assign. Amazon Web Services-assigned tag names do not count towards
    * the tag limit of 50. User-assigned tag names have the prefix <code>user:</code>

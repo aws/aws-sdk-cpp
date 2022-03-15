@@ -25,11 +25,10 @@ namespace Model
 
   /**
    * <p>The Amazon Pinpoint analytics configuration for collecting metrics for a user
-   * pool.</p>  <p>In Regions where Pinpoint isn't available, User Pools only
-   * supports sending events to Amazon Pinpoint projects in us-east-1. In Regions
-   * where Pinpoint is available, User Pools will support sending events to Amazon
-   * Pinpoint projects within that same Region. </p> <p><h3>See Also:</h3>  
-   * <a
+   * pool.</p>  <p>In Regions where Amazon Pinpointisn't available, user pools
+   * only support sending events to Amazon Pinpoint projects in us-east-1. In Regions
+   * where Amazon Pinpoint is available, user pools support sending events to Amazon
+   * Pinpoint projects within that same Region.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AnalyticsConfigurationType">AWS
    * API Reference</a></p>
    */
@@ -85,7 +84,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
-     * Amazon Pinpoint project for integration with the chosen User Pool Client. Amazon
+     * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
      * Cognito publishes events to the Amazon Pinpointproject declared by the app
      * ARN.</p>
      */
@@ -93,7 +92,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
-     * Amazon Pinpoint project for integration with the chosen User Pool Client. Amazon
+     * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
      * Cognito publishes events to the Amazon Pinpointproject declared by the app
      * ARN.</p>
      */
@@ -101,7 +100,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
-     * Amazon Pinpoint project for integration with the chosen User Pool Client. Amazon
+     * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
      * Cognito publishes events to the Amazon Pinpointproject declared by the app
      * ARN.</p>
      */
@@ -109,7 +108,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
-     * Amazon Pinpoint project for integration with the chosen User Pool Client. Amazon
+     * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
      * Cognito publishes events to the Amazon Pinpointproject declared by the app
      * ARN.</p>
      */
@@ -117,7 +116,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
-     * Amazon Pinpoint project for integration with the chosen User Pool Client. Amazon
+     * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
      * Cognito publishes events to the Amazon Pinpointproject declared by the app
      * ARN.</p>
      */
@@ -125,7 +124,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
-     * Amazon Pinpoint project for integration with the chosen User Pool Client. Amazon
+     * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
      * Cognito publishes events to the Amazon Pinpointproject declared by the app
      * ARN.</p>
      */
@@ -133,7 +132,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
-     * Amazon Pinpoint project for integration with the chosen User Pool Client. Amazon
+     * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
      * Cognito publishes events to the Amazon Pinpointproject declared by the app
      * ARN.</p>
      */
@@ -141,7 +140,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
-     * Amazon Pinpoint project for integration with the chosen User Pool Client. Amazon
+     * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
      * Cognito publishes events to the Amazon Pinpointproject declared by the app
      * ARN.</p>
      */

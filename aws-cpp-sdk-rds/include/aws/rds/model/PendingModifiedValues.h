@@ -29,9 +29,9 @@ namespace Model
 {
 
   /**
-   * <p> This data type is used as a response element in the
+   * <p>This data type is used as a response element in the
    * <code>ModifyDBInstance</code> operation and contains changes that will be
-   * applied during the next maintenance window. </p><p><h3>See Also:</h3>   <a
+   * applied during the next maintenance window.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PendingModifiedValues">AWS
    * API Reference</a></p>
    */
@@ -654,42 +654,42 @@ namespace Model
     /**
      * <p>The number of minutes to pause the automation. When the time period ends, RDS
      * Custom resumes full automation. The minimum value is 60 (default). The maximum
-     * value is 1,440. </p>
+     * value is 1,440.</p>
      */
     inline const Aws::Utils::DateTime& GetResumeFullAutomationModeTime() const{ return m_resumeFullAutomationModeTime; }
 
     /**
      * <p>The number of minutes to pause the automation. When the time period ends, RDS
      * Custom resumes full automation. The minimum value is 60 (default). The maximum
-     * value is 1,440. </p>
+     * value is 1,440.</p>
      */
     inline bool ResumeFullAutomationModeTimeHasBeenSet() const { return m_resumeFullAutomationModeTimeHasBeenSet; }
 
     /**
      * <p>The number of minutes to pause the automation. When the time period ends, RDS
      * Custom resumes full automation. The minimum value is 60 (default). The maximum
-     * value is 1,440. </p>
+     * value is 1,440.</p>
      */
     inline void SetResumeFullAutomationModeTime(const Aws::Utils::DateTime& value) { m_resumeFullAutomationModeTimeHasBeenSet = true; m_resumeFullAutomationModeTime = value; }
 
     /**
      * <p>The number of minutes to pause the automation. When the time period ends, RDS
      * Custom resumes full automation. The minimum value is 60 (default). The maximum
-     * value is 1,440. </p>
+     * value is 1,440.</p>
      */
     inline void SetResumeFullAutomationModeTime(Aws::Utils::DateTime&& value) { m_resumeFullAutomationModeTimeHasBeenSet = true; m_resumeFullAutomationModeTime = std::move(value); }
 
     /**
      * <p>The number of minutes to pause the automation. When the time period ends, RDS
      * Custom resumes full automation. The minimum value is 60 (default). The maximum
-     * value is 1,440. </p>
+     * value is 1,440.</p>
      */
     inline PendingModifiedValues& WithResumeFullAutomationModeTime(const Aws::Utils::DateTime& value) { SetResumeFullAutomationModeTime(value); return *this;}
 
     /**
      * <p>The number of minutes to pause the automation. When the time period ends, RDS
      * Custom resumes full automation. The minimum value is 60 (default). The maximum
-     * value is 1,440. </p>
+     * value is 1,440.</p>
      */
     inline PendingModifiedValues& WithResumeFullAutomationModeTime(Aws::Utils::DateTime&& value) { SetResumeFullAutomationModeTime(std::move(value)); return *this;}
 

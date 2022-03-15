@@ -102,42 +102,42 @@ namespace Model
 
 
     /**
-     * <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.
-     * </p> <p>For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied must be
-     * at least 10% greater than the current value. Values that are not at least 10%
-     * greater than the existing value are rounded up so that they are 10% greater than
-     * the current value. </p> <p>For the valid values for allocated storage for each
-     * engine, see <code>CreateDBInstance</code>. </p>
+     * <p>The new amount of storage in gibibytes (GiB) to allocate for the DB
+     * instance.</p> <p>For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied
+     * must be at least 10% greater than the current value. Values that are not at
+     * least 10% greater than the existing value are rounded up so that they are 10%
+     * greater than the current value.</p> <p>For the valid values for allocated
+     * storage for each engine, see <code>CreateDBInstance</code>.</p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
-     * <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.
-     * </p> <p>For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied must be
-     * at least 10% greater than the current value. Values that are not at least 10%
-     * greater than the existing value are rounded up so that they are 10% greater than
-     * the current value. </p> <p>For the valid values for allocated storage for each
-     * engine, see <code>CreateDBInstance</code>. </p>
+     * <p>The new amount of storage in gibibytes (GiB) to allocate for the DB
+     * instance.</p> <p>For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied
+     * must be at least 10% greater than the current value. Values that are not at
+     * least 10% greater than the existing value are rounded up so that they are 10%
+     * greater than the current value.</p> <p>For the valid values for allocated
+     * storage for each engine, see <code>CreateDBInstance</code>.</p>
      */
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
 
     /**
-     * <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.
-     * </p> <p>For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied must be
-     * at least 10% greater than the current value. Values that are not at least 10%
-     * greater than the existing value are rounded up so that they are 10% greater than
-     * the current value. </p> <p>For the valid values for allocated storage for each
-     * engine, see <code>CreateDBInstance</code>. </p>
+     * <p>The new amount of storage in gibibytes (GiB) to allocate for the DB
+     * instance.</p> <p>For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied
+     * must be at least 10% greater than the current value. Values that are not at
+     * least 10% greater than the existing value are rounded up so that they are 10%
+     * greater than the current value.</p> <p>For the valid values for allocated
+     * storage for each engine, see <code>CreateDBInstance</code>.</p>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
-     * <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.
-     * </p> <p>For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied must be
-     * at least 10% greater than the current value. Values that are not at least 10%
-     * greater than the existing value are rounded up so that they are 10% greater than
-     * the current value. </p> <p>For the valid values for allocated storage for each
-     * engine, see <code>CreateDBInstance</code>. </p>
+     * <p>The new amount of storage in gibibytes (GiB) to allocate for the DB
+     * instance.</p> <p>For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied
+     * must be at least 10% greater than the current value. Values that are not at
+     * least 10% greater than the existing value are rounded up so that they are 10%
+     * greater than the current value.</p> <p>For the valid values for allocated
+     * storage for each engine, see <code>CreateDBInstance</code>.</p>
      */
     inline ModifyDBInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
@@ -148,10 +148,10 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
-     * the DB instance class, an outage occurs during the change. The change is applied
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>If you modify the
+     * DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom for
+     * enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
      * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
@@ -162,10 +162,10 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
-     * the DB instance class, an outage occurs during the change. The change is applied
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>If you modify the
+     * DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom for
+     * enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
      * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
@@ -176,10 +176,10 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
-     * the DB instance class, an outage occurs during the change. The change is applied
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>If you modify the
+     * DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom for
+     * enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
      * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
@@ -190,10 +190,10 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
-     * the DB instance class, an outage occurs during the change. The change is applied
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>If you modify the
+     * DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom for
+     * enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
      * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
@@ -204,10 +204,10 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
-     * the DB instance class, an outage occurs during the change. The change is applied
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>If you modify the
+     * DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom for
+     * enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
      * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
@@ -218,10 +218,10 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
-     * the DB instance class, an outage occurs during the change. The change is applied
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>If you modify the
+     * DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom for
+     * enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
      * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
@@ -232,10 +232,10 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
-     * the DB instance class, an outage occurs during the change. The change is applied
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>If you modify the
+     * DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom for
+     * enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
      * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
@@ -246,10 +246,10 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
-     * the DB instance class, an outage occurs during the change. The change is applied
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>If you modify the
+     * DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom for
+     * enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
      * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
@@ -261,10 +261,10 @@ namespace Model
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
-     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
-     * <code>ApplyImmediately</code>.</p> <p> This parameter doesn't apply to RDS
+     * <code>ApplyImmediately</code>.</p> <p>This parameter doesn't apply to RDS
      * Custom.</p> <p>Constraints: If supplied, must match the name of an existing
      * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
@@ -276,10 +276,10 @@ namespace Model
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
-     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
-     * <code>ApplyImmediately</code>.</p> <p> This parameter doesn't apply to RDS
+     * <code>ApplyImmediately</code>.</p> <p>This parameter doesn't apply to RDS
      * Custom.</p> <p>Constraints: If supplied, must match the name of an existing
      * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
@@ -291,10 +291,10 @@ namespace Model
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
-     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
-     * <code>ApplyImmediately</code>.</p> <p> This parameter doesn't apply to RDS
+     * <code>ApplyImmediately</code>.</p> <p>This parameter doesn't apply to RDS
      * Custom.</p> <p>Constraints: If supplied, must match the name of an existing
      * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
@@ -306,10 +306,10 @@ namespace Model
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
-     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
-     * <code>ApplyImmediately</code>.</p> <p> This parameter doesn't apply to RDS
+     * <code>ApplyImmediately</code>.</p> <p>This parameter doesn't apply to RDS
      * Custom.</p> <p>Constraints: If supplied, must match the name of an existing
      * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
@@ -321,10 +321,10 @@ namespace Model
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
-     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
-     * <code>ApplyImmediately</code>.</p> <p> This parameter doesn't apply to RDS
+     * <code>ApplyImmediately</code>.</p> <p>This parameter doesn't apply to RDS
      * Custom.</p> <p>Constraints: If supplied, must match the name of an existing
      * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
@@ -336,10 +336,10 @@ namespace Model
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
-     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
-     * <code>ApplyImmediately</code>.</p> <p> This parameter doesn't apply to RDS
+     * <code>ApplyImmediately</code>.</p> <p>This parameter doesn't apply to RDS
      * Custom.</p> <p>Constraints: If supplied, must match the name of an existing
      * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
@@ -351,10 +351,10 @@ namespace Model
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
-     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
-     * <code>ApplyImmediately</code>.</p> <p> This parameter doesn't apply to RDS
+     * <code>ApplyImmediately</code>.</p> <p>This parameter doesn't apply to RDS
      * Custom.</p> <p>Constraints: If supplied, must match the name of an existing
      * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
@@ -366,10 +366,10 @@ namespace Model
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
-     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
-     * <code>ApplyImmediately</code>.</p> <p> This parameter doesn't apply to RDS
+     * <code>ApplyImmediately</code>.</p> <p>This parameter doesn't apply to RDS
      * Custom.</p> <p>Constraints: If supplied, must match the name of an existing
      * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
@@ -562,7 +562,7 @@ namespace Model
      * <p>A value that indicates whether the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible, regardless
      * of the <code>PreferredMaintenanceWindow</code> setting for the DB instance. By
-     * default, this parameter is disabled.</p> <p> If this parameter is disabled,
+     * default, this parameter is disabled.</p> <p>If this parameter is disabled,
      * changes to the DB instance are applied during the next maintenance window. Some
      * parameter changes can cause an outage and are applied on the next call to
      * <a>RebootDBInstance</a>, or the next failure reboot. Review the table of
@@ -570,7 +570,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      * a DB Instance</a> in the <i>Amazon RDS User Guide</i> to see the impact of
      * enabling or disabling <code>ApplyImmediately</code> for each modified parameter
-     * and to determine when the changes are applied. </p>
+     * and to determine when the changes are applied.</p>
      */
     inline bool GetApplyImmediately() const{ return m_applyImmediately; }
 
@@ -578,7 +578,7 @@ namespace Model
      * <p>A value that indicates whether the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible, regardless
      * of the <code>PreferredMaintenanceWindow</code> setting for the DB instance. By
-     * default, this parameter is disabled.</p> <p> If this parameter is disabled,
+     * default, this parameter is disabled.</p> <p>If this parameter is disabled,
      * changes to the DB instance are applied during the next maintenance window. Some
      * parameter changes can cause an outage and are applied on the next call to
      * <a>RebootDBInstance</a>, or the next failure reboot. Review the table of
@@ -586,7 +586,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      * a DB Instance</a> in the <i>Amazon RDS User Guide</i> to see the impact of
      * enabling or disabling <code>ApplyImmediately</code> for each modified parameter
-     * and to determine when the changes are applied. </p>
+     * and to determine when the changes are applied.</p>
      */
     inline bool ApplyImmediatelyHasBeenSet() const { return m_applyImmediatelyHasBeenSet; }
 
@@ -594,7 +594,7 @@ namespace Model
      * <p>A value that indicates whether the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible, regardless
      * of the <code>PreferredMaintenanceWindow</code> setting for the DB instance. By
-     * default, this parameter is disabled.</p> <p> If this parameter is disabled,
+     * default, this parameter is disabled.</p> <p>If this parameter is disabled,
      * changes to the DB instance are applied during the next maintenance window. Some
      * parameter changes can cause an outage and are applied on the next call to
      * <a>RebootDBInstance</a>, or the next failure reboot. Review the table of
@@ -602,7 +602,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      * a DB Instance</a> in the <i>Amazon RDS User Guide</i> to see the impact of
      * enabling or disabling <code>ApplyImmediately</code> for each modified parameter
-     * and to determine when the changes are applied. </p>
+     * and to determine when the changes are applied.</p>
      */
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
 
@@ -610,7 +610,7 @@ namespace Model
      * <p>A value that indicates whether the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible, regardless
      * of the <code>PreferredMaintenanceWindow</code> setting for the DB instance. By
-     * default, this parameter is disabled.</p> <p> If this parameter is disabled,
+     * default, this parameter is disabled.</p> <p>If this parameter is disabled,
      * changes to the DB instance are applied during the next maintenance window. Some
      * parameter changes can cause an outage and are applied on the next call to
      * <a>RebootDBInstance</a>, or the next failure reboot. Review the table of
@@ -618,184 +618,184 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      * a DB Instance</a> in the <i>Amazon RDS User Guide</i> to see the impact of
      * enabling or disabling <code>ApplyImmediately</code> for each modified parameter
-     * and to determine when the changes are applied. </p>
+     * and to determine when the changes are applied.</p>
      */
     inline ModifyDBInstanceRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 
 
     /**
      * <p>The new password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Changing this parameter doesn't
+     * ASCII character except "/", """, or "@".</p> <p>Changing this parameter doesn't
      * result in an outage and the change is asynchronously applied as soon as
      * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
-     * <code>PendingModifiedValues</code> element of the operation response. </p>
+     * <code>PendingModifiedValues</code> element of the operation response.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon Aurora</b> </p>
      * <p>Not applicable. The password for the master user is managed by the DB
-     * cluster. For more information, see <code>ModifyDBCluster</code>. </p>
-     * <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p> <p>Constraints:
-     * Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
+     * cluster. For more information, see <code>ModifyDBCluster</code>.</p> <p>Default:
+     * Uses existing setting</p> <p> <b>MariaDB</b> </p> <p>Constraints: Must contain
+     * from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
      * <p>Constraints: Must contain from 8 to 128 characters.</p> <p> <b>MySQL</b> </p>
      * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
      * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
      * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>  <p>Amazon
      * RDS API actions never return the password, so this action provides a way to
      * regain access to a primary instance user if the password is lost. This includes
-     * restoring privileges that might have been accidentally revoked. </p> 
+     * restoring privileges that might have been accidentally revoked.</p> 
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
      * <p>The new password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Changing this parameter doesn't
+     * ASCII character except "/", """, or "@".</p> <p>Changing this parameter doesn't
      * result in an outage and the change is asynchronously applied as soon as
      * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
-     * <code>PendingModifiedValues</code> element of the operation response. </p>
+     * <code>PendingModifiedValues</code> element of the operation response.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon Aurora</b> </p>
      * <p>Not applicable. The password for the master user is managed by the DB
-     * cluster. For more information, see <code>ModifyDBCluster</code>. </p>
-     * <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p> <p>Constraints:
-     * Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
+     * cluster. For more information, see <code>ModifyDBCluster</code>.</p> <p>Default:
+     * Uses existing setting</p> <p> <b>MariaDB</b> </p> <p>Constraints: Must contain
+     * from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
      * <p>Constraints: Must contain from 8 to 128 characters.</p> <p> <b>MySQL</b> </p>
      * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
      * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
      * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>  <p>Amazon
      * RDS API actions never return the password, so this action provides a way to
      * regain access to a primary instance user if the password is lost. This includes
-     * restoring privileges that might have been accidentally revoked. </p> 
+     * restoring privileges that might have been accidentally revoked.</p> 
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
      * <p>The new password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Changing this parameter doesn't
+     * ASCII character except "/", """, or "@".</p> <p>Changing this parameter doesn't
      * result in an outage and the change is asynchronously applied as soon as
      * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
-     * <code>PendingModifiedValues</code> element of the operation response. </p>
+     * <code>PendingModifiedValues</code> element of the operation response.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon Aurora</b> </p>
      * <p>Not applicable. The password for the master user is managed by the DB
-     * cluster. For more information, see <code>ModifyDBCluster</code>. </p>
-     * <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p> <p>Constraints:
-     * Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
+     * cluster. For more information, see <code>ModifyDBCluster</code>.</p> <p>Default:
+     * Uses existing setting</p> <p> <b>MariaDB</b> </p> <p>Constraints: Must contain
+     * from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
      * <p>Constraints: Must contain from 8 to 128 characters.</p> <p> <b>MySQL</b> </p>
      * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
      * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
      * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>  <p>Amazon
      * RDS API actions never return the password, so this action provides a way to
      * regain access to a primary instance user if the password is lost. This includes
-     * restoring privileges that might have been accidentally revoked. </p> 
+     * restoring privileges that might have been accidentally revoked.</p> 
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
      * <p>The new password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Changing this parameter doesn't
+     * ASCII character except "/", """, or "@".</p> <p>Changing this parameter doesn't
      * result in an outage and the change is asynchronously applied as soon as
      * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
-     * <code>PendingModifiedValues</code> element of the operation response. </p>
+     * <code>PendingModifiedValues</code> element of the operation response.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon Aurora</b> </p>
      * <p>Not applicable. The password for the master user is managed by the DB
-     * cluster. For more information, see <code>ModifyDBCluster</code>. </p>
-     * <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p> <p>Constraints:
-     * Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
+     * cluster. For more information, see <code>ModifyDBCluster</code>.</p> <p>Default:
+     * Uses existing setting</p> <p> <b>MariaDB</b> </p> <p>Constraints: Must contain
+     * from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
      * <p>Constraints: Must contain from 8 to 128 characters.</p> <p> <b>MySQL</b> </p>
      * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
      * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
      * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>  <p>Amazon
      * RDS API actions never return the password, so this action provides a way to
      * regain access to a primary instance user if the password is lost. This includes
-     * restoring privileges that might have been accidentally revoked. </p> 
+     * restoring privileges that might have been accidentally revoked.</p> 
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
      * <p>The new password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Changing this parameter doesn't
+     * ASCII character except "/", """, or "@".</p> <p>Changing this parameter doesn't
      * result in an outage and the change is asynchronously applied as soon as
      * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
-     * <code>PendingModifiedValues</code> element of the operation response. </p>
+     * <code>PendingModifiedValues</code> element of the operation response.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon Aurora</b> </p>
      * <p>Not applicable. The password for the master user is managed by the DB
-     * cluster. For more information, see <code>ModifyDBCluster</code>. </p>
-     * <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p> <p>Constraints:
-     * Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
+     * cluster. For more information, see <code>ModifyDBCluster</code>.</p> <p>Default:
+     * Uses existing setting</p> <p> <b>MariaDB</b> </p> <p>Constraints: Must contain
+     * from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
      * <p>Constraints: Must contain from 8 to 128 characters.</p> <p> <b>MySQL</b> </p>
      * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
      * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
      * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>  <p>Amazon
      * RDS API actions never return the password, so this action provides a way to
      * regain access to a primary instance user if the password is lost. This includes
-     * restoring privileges that might have been accidentally revoked. </p> 
+     * restoring privileges that might have been accidentally revoked.</p> 
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
      * <p>The new password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Changing this parameter doesn't
+     * ASCII character except "/", """, or "@".</p> <p>Changing this parameter doesn't
      * result in an outage and the change is asynchronously applied as soon as
      * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
-     * <code>PendingModifiedValues</code> element of the operation response. </p>
+     * <code>PendingModifiedValues</code> element of the operation response.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon Aurora</b> </p>
      * <p>Not applicable. The password for the master user is managed by the DB
-     * cluster. For more information, see <code>ModifyDBCluster</code>. </p>
-     * <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p> <p>Constraints:
-     * Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
+     * cluster. For more information, see <code>ModifyDBCluster</code>.</p> <p>Default:
+     * Uses existing setting</p> <p> <b>MariaDB</b> </p> <p>Constraints: Must contain
+     * from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
      * <p>Constraints: Must contain from 8 to 128 characters.</p> <p> <b>MySQL</b> </p>
      * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
      * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
      * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>  <p>Amazon
      * RDS API actions never return the password, so this action provides a way to
      * regain access to a primary instance user if the password is lost. This includes
-     * restoring privileges that might have been accidentally revoked. </p> 
+     * restoring privileges that might have been accidentally revoked.</p> 
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
      * <p>The new password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Changing this parameter doesn't
+     * ASCII character except "/", """, or "@".</p> <p>Changing this parameter doesn't
      * result in an outage and the change is asynchronously applied as soon as
      * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
-     * <code>PendingModifiedValues</code> element of the operation response. </p>
+     * <code>PendingModifiedValues</code> element of the operation response.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon Aurora</b> </p>
      * <p>Not applicable. The password for the master user is managed by the DB
-     * cluster. For more information, see <code>ModifyDBCluster</code>. </p>
-     * <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p> <p>Constraints:
-     * Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
+     * cluster. For more information, see <code>ModifyDBCluster</code>.</p> <p>Default:
+     * Uses existing setting</p> <p> <b>MariaDB</b> </p> <p>Constraints: Must contain
+     * from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
      * <p>Constraints: Must contain from 8 to 128 characters.</p> <p> <b>MySQL</b> </p>
      * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
      * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
      * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>  <p>Amazon
      * RDS API actions never return the password, so this action provides a way to
      * regain access to a primary instance user if the password is lost. This includes
-     * restoring privileges that might have been accidentally revoked. </p> 
+     * restoring privileges that might have been accidentally revoked.</p> 
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
      * <p>The new password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Changing this parameter doesn't
+     * ASCII character except "/", """, or "@".</p> <p>Changing this parameter doesn't
      * result in an outage and the change is asynchronously applied as soon as
      * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
-     * <code>PendingModifiedValues</code> element of the operation response. </p>
+     * <code>PendingModifiedValues</code> element of the operation response.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon Aurora</b> </p>
      * <p>Not applicable. The password for the master user is managed by the DB
-     * cluster. For more information, see <code>ModifyDBCluster</code>. </p>
-     * <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p> <p>Constraints:
-     * Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
+     * cluster. For more information, see <code>ModifyDBCluster</code>.</p> <p>Default:
+     * Uses existing setting</p> <p> <b>MariaDB</b> </p> <p>Constraints: Must contain
+     * from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
      * <p>Constraints: Must contain from 8 to 128 characters.</p> <p> <b>MySQL</b> </p>
      * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
      * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
      * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>  <p>Amazon
      * RDS API actions never return the password, so this action provides a way to
      * regain access to a primary instance user if the password is lost. This includes
-     * restoring privileges that might have been accidentally revoked. </p> 
+     * restoring privileges that might have been accidentally revoked.</p> 
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -999,7 +999,7 @@ namespace Model
 
 
     /**
-     * <p> The daily time range during which automated backups are created if automated
+     * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter doesn't result in an outage and the change is
      * asynchronously applied as soon as possible. The default is a 30-minute window
@@ -1017,7 +1017,7 @@ namespace Model
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
     /**
-     * <p> The daily time range during which automated backups are created if automated
+     * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter doesn't result in an outage and the change is
      * asynchronously applied as soon as possible. The default is a 30-minute window
@@ -1035,7 +1035,7 @@ namespace Model
     inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
     /**
-     * <p> The daily time range during which automated backups are created if automated
+     * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter doesn't result in an outage and the change is
      * asynchronously applied as soon as possible. The default is a 30-minute window
@@ -1053,7 +1053,7 @@ namespace Model
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
     /**
-     * <p> The daily time range during which automated backups are created if automated
+     * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter doesn't result in an outage and the change is
      * asynchronously applied as soon as possible. The default is a 30-minute window
@@ -1071,7 +1071,7 @@ namespace Model
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
     /**
-     * <p> The daily time range during which automated backups are created if automated
+     * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter doesn't result in an outage and the change is
      * asynchronously applied as soon as possible. The default is a 30-minute window
@@ -1089,7 +1089,7 @@ namespace Model
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
     /**
-     * <p> The daily time range during which automated backups are created if automated
+     * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter doesn't result in an outage and the change is
      * asynchronously applied as soon as possible. The default is a 30-minute window
@@ -1107,7 +1107,7 @@ namespace Model
     inline ModifyDBInstanceRequest& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
     /**
-     * <p> The daily time range during which automated backups are created if automated
+     * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter doesn't result in an outage and the change is
      * asynchronously applied as soon as possible. The default is a 30-minute window
@@ -1125,7 +1125,7 @@ namespace Model
     inline ModifyDBInstanceRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
     /**
-     * <p> The daily time range during which automated backups are created if automated
+     * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter doesn't result in an outage and the change is
      * asynchronously applied as soon as possible. The default is a 30-minute window
@@ -1292,7 +1292,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is a Multi-AZ deployment.
      * Changing this parameter doesn't result in an outage. The change is applied
      * during the next maintenance window unless the <code>ApplyImmediately</code>
-     * parameter is enabled for this request. </p> <p>This setting doesn't apply to RDS
+     * parameter is enabled for this request.</p> <p>This setting doesn't apply to RDS
      * Custom.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
@@ -1301,7 +1301,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is a Multi-AZ deployment.
      * Changing this parameter doesn't result in an outage. The change is applied
      * during the next maintenance window unless the <code>ApplyImmediately</code>
-     * parameter is enabled for this request. </p> <p>This setting doesn't apply to RDS
+     * parameter is enabled for this request.</p> <p>This setting doesn't apply to RDS
      * Custom.</p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
@@ -1310,7 +1310,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is a Multi-AZ deployment.
      * Changing this parameter doesn't result in an outage. The change is applied
      * during the next maintenance window unless the <code>ApplyImmediately</code>
-     * parameter is enabled for this request. </p> <p>This setting doesn't apply to RDS
+     * parameter is enabled for this request.</p> <p>This setting doesn't apply to RDS
      * Custom.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
@@ -1319,17 +1319,17 @@ namespace Model
      * <p>A value that indicates whether the DB instance is a Multi-AZ deployment.
      * Changing this parameter doesn't result in an outage. The change is applied
      * during the next maintenance window unless the <code>ApplyImmediately</code>
-     * parameter is enabled for this request. </p> <p>This setting doesn't apply to RDS
+     * parameter is enabled for this request.</p> <p>This setting doesn't apply to RDS
      * Custom.</p>
      */
     inline ModifyDBInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
 
     /**
-     * <p> The version number of the database engine to upgrade to. Changing this
+     * <p>The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
-     * for this request. </p> <p>For major version upgrades, if a nondefault DB
+     * for this request.</p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
      * parameter group can be the default for that DB parameter group family.</p> <p>If
@@ -1338,15 +1338,15 @@ namespace Model
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
      * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
      * parameter is supported for read replicas only if they are in the
-     * <code>PATCH_DB_FAILURE</code> lifecycle. </p>
+     * <code>PATCH_DB_FAILURE</code> lifecycle.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p> The version number of the database engine to upgrade to. Changing this
+     * <p>The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
-     * for this request. </p> <p>For major version upgrades, if a nondefault DB
+     * for this request.</p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
      * parameter group can be the default for that DB parameter group family.</p> <p>If
@@ -1355,15 +1355,15 @@ namespace Model
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
      * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
      * parameter is supported for read replicas only if they are in the
-     * <code>PATCH_DB_FAILURE</code> lifecycle. </p>
+     * <code>PATCH_DB_FAILURE</code> lifecycle.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p> The version number of the database engine to upgrade to. Changing this
+     * <p>The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
-     * for this request. </p> <p>For major version upgrades, if a nondefault DB
+     * for this request.</p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
      * parameter group can be the default for that DB parameter group family.</p> <p>If
@@ -1372,15 +1372,15 @@ namespace Model
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
      * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
      * parameter is supported for read replicas only if they are in the
-     * <code>PATCH_DB_FAILURE</code> lifecycle. </p>
+     * <code>PATCH_DB_FAILURE</code> lifecycle.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p> The version number of the database engine to upgrade to. Changing this
+     * <p>The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
-     * for this request. </p> <p>For major version upgrades, if a nondefault DB
+     * for this request.</p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
      * parameter group can be the default for that DB parameter group family.</p> <p>If
@@ -1389,15 +1389,15 @@ namespace Model
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
      * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
      * parameter is supported for read replicas only if they are in the
-     * <code>PATCH_DB_FAILURE</code> lifecycle. </p>
+     * <code>PATCH_DB_FAILURE</code> lifecycle.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p> The version number of the database engine to upgrade to. Changing this
+     * <p>The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
-     * for this request. </p> <p>For major version upgrades, if a nondefault DB
+     * for this request.</p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
      * parameter group can be the default for that DB parameter group family.</p> <p>If
@@ -1406,15 +1406,15 @@ namespace Model
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
      * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
      * parameter is supported for read replicas only if they are in the
-     * <code>PATCH_DB_FAILURE</code> lifecycle. </p>
+     * <code>PATCH_DB_FAILURE</code> lifecycle.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p> The version number of the database engine to upgrade to. Changing this
+     * <p>The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
-     * for this request. </p> <p>For major version upgrades, if a nondefault DB
+     * for this request.</p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
      * parameter group can be the default for that DB parameter group family.</p> <p>If
@@ -1423,15 +1423,15 @@ namespace Model
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
      * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
      * parameter is supported for read replicas only if they are in the
-     * <code>PATCH_DB_FAILURE</code> lifecycle. </p>
+     * <code>PATCH_DB_FAILURE</code> lifecycle.</p>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> The version number of the database engine to upgrade to. Changing this
+     * <p>The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
-     * for this request. </p> <p>For major version upgrades, if a nondefault DB
+     * for this request.</p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
      * parameter group can be the default for that DB parameter group family.</p> <p>If
@@ -1440,15 +1440,15 @@ namespace Model
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
      * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
      * parameter is supported for read replicas only if they are in the
-     * <code>PATCH_DB_FAILURE</code> lifecycle. </p>
+     * <code>PATCH_DB_FAILURE</code> lifecycle.</p>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p> The version number of the database engine to upgrade to. Changing this
+     * <p>The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is enabled
-     * for this request. </p> <p>For major version upgrades, if a nondefault DB
+     * for this request.</p> <p>For major version upgrades, if a nondefault DB
      * parameter group is currently in use, a new DB parameter group in the DB
      * parameter group family for the new engine version must be specified. The new DB
      * parameter group can be the default for that DB parameter group family.</p> <p>If
@@ -1457,7 +1457,7 @@ namespace Model
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
      * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
      * parameter is supported for read replicas only if they are in the
-     * <code>PATCH_DB_FAILURE</code> lifecycle. </p>
+     * <code>PATCH_DB_FAILURE</code> lifecycle.</p>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -1615,105 +1615,109 @@ namespace Model
 
     /**
      * <p>The new Provisioned IOPS (I/O operations per second) value for the RDS
-     * instance. </p> <p>Changing this setting doesn't result in an outage and the
+     * instance.</p> <p>Changing this setting doesn't result in an outage and the
      * change is applied during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is enabled for this request. If you are
      * migrating from Provisioned IOPS to standard storage, set this value to 0. The DB
-     * instance will require a reboot for the change in storage type to take effect.
-     * </p> <p>If you choose to migrate your DB instance from using standard storage to
-     * using Provisioned IOPS, or from using Provisioned IOPS to using standard
-     * storage, the process can take time. The duration of the migration depends on
-     * several factors such as database load, storage size, storage type (standard or
-     * Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior
-     * scale storage operations. Typical migration times are under 24 hours, but the
-     * process can take up to several days in some cases. During the migration, the DB
-     * instance is available for use, but might experience performance degradation.
-     * While the migration takes place, nightly backups for the instance are suspended.
-     * No other Amazon RDS operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating
-     * a read replica for the instance, and creating a DB snapshot of the instance.
-     * </p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL, the value
-     * supplied must be at least 10% greater than the current value. Values that are
-     * not at least 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value. </p> <p>Default: Uses existing setting</p>
+     * instance will require a reboot for the change in storage type to take
+     * effect.</p> <p>If you choose to migrate your DB instance from using standard
+     * storage to using Provisioned IOPS, or from using Provisioned IOPS to using
+     * standard storage, the process can take time. The duration of the migration
+     * depends on several factors such as database load, storage size, storage type
+     * (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the
+     * number of prior scale storage operations. Typical migration times are under 24
+     * hours, but the process can take up to several days in some cases. During the
+     * migration, the DB instance is available for use, but might experience
+     * performance degradation. While the migration takes place, nightly backups for
+     * the instance are suspended. No other Amazon RDS operations can take place for
+     * the instance, including modifying the instance, rebooting the instance, deleting
+     * the instance, creating a read replica for the instance, and creating a DB
+     * snapshot of the instance.</p> <p>Constraints: For MariaDB, MySQL, Oracle, and
+     * PostgreSQL, the value supplied must be at least 10% greater than the current
+     * value. Values that are not at least 10% greater than the existing value are
+     * rounded up so that they are 10% greater than the current value.</p> <p>Default:
+     * Uses existing setting</p>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>The new Provisioned IOPS (I/O operations per second) value for the RDS
-     * instance. </p> <p>Changing this setting doesn't result in an outage and the
+     * instance.</p> <p>Changing this setting doesn't result in an outage and the
      * change is applied during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is enabled for this request. If you are
      * migrating from Provisioned IOPS to standard storage, set this value to 0. The DB
-     * instance will require a reboot for the change in storage type to take effect.
-     * </p> <p>If you choose to migrate your DB instance from using standard storage to
-     * using Provisioned IOPS, or from using Provisioned IOPS to using standard
-     * storage, the process can take time. The duration of the migration depends on
-     * several factors such as database load, storage size, storage type (standard or
-     * Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior
-     * scale storage operations. Typical migration times are under 24 hours, but the
-     * process can take up to several days in some cases. During the migration, the DB
-     * instance is available for use, but might experience performance degradation.
-     * While the migration takes place, nightly backups for the instance are suspended.
-     * No other Amazon RDS operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating
-     * a read replica for the instance, and creating a DB snapshot of the instance.
-     * </p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL, the value
-     * supplied must be at least 10% greater than the current value. Values that are
-     * not at least 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value. </p> <p>Default: Uses existing setting</p>
+     * instance will require a reboot for the change in storage type to take
+     * effect.</p> <p>If you choose to migrate your DB instance from using standard
+     * storage to using Provisioned IOPS, or from using Provisioned IOPS to using
+     * standard storage, the process can take time. The duration of the migration
+     * depends on several factors such as database load, storage size, storage type
+     * (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the
+     * number of prior scale storage operations. Typical migration times are under 24
+     * hours, but the process can take up to several days in some cases. During the
+     * migration, the DB instance is available for use, but might experience
+     * performance degradation. While the migration takes place, nightly backups for
+     * the instance are suspended. No other Amazon RDS operations can take place for
+     * the instance, including modifying the instance, rebooting the instance, deleting
+     * the instance, creating a read replica for the instance, and creating a DB
+     * snapshot of the instance.</p> <p>Constraints: For MariaDB, MySQL, Oracle, and
+     * PostgreSQL, the value supplied must be at least 10% greater than the current
+     * value. Values that are not at least 10% greater than the existing value are
+     * rounded up so that they are 10% greater than the current value.</p> <p>Default:
+     * Uses existing setting</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
      * <p>The new Provisioned IOPS (I/O operations per second) value for the RDS
-     * instance. </p> <p>Changing this setting doesn't result in an outage and the
+     * instance.</p> <p>Changing this setting doesn't result in an outage and the
      * change is applied during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is enabled for this request. If you are
      * migrating from Provisioned IOPS to standard storage, set this value to 0. The DB
-     * instance will require a reboot for the change in storage type to take effect.
-     * </p> <p>If you choose to migrate your DB instance from using standard storage to
-     * using Provisioned IOPS, or from using Provisioned IOPS to using standard
-     * storage, the process can take time. The duration of the migration depends on
-     * several factors such as database load, storage size, storage type (standard or
-     * Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior
-     * scale storage operations. Typical migration times are under 24 hours, but the
-     * process can take up to several days in some cases. During the migration, the DB
-     * instance is available for use, but might experience performance degradation.
-     * While the migration takes place, nightly backups for the instance are suspended.
-     * No other Amazon RDS operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating
-     * a read replica for the instance, and creating a DB snapshot of the instance.
-     * </p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL, the value
-     * supplied must be at least 10% greater than the current value. Values that are
-     * not at least 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value. </p> <p>Default: Uses existing setting</p>
+     * instance will require a reboot for the change in storage type to take
+     * effect.</p> <p>If you choose to migrate your DB instance from using standard
+     * storage to using Provisioned IOPS, or from using Provisioned IOPS to using
+     * standard storage, the process can take time. The duration of the migration
+     * depends on several factors such as database load, storage size, storage type
+     * (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the
+     * number of prior scale storage operations. Typical migration times are under 24
+     * hours, but the process can take up to several days in some cases. During the
+     * migration, the DB instance is available for use, but might experience
+     * performance degradation. While the migration takes place, nightly backups for
+     * the instance are suspended. No other Amazon RDS operations can take place for
+     * the instance, including modifying the instance, rebooting the instance, deleting
+     * the instance, creating a read replica for the instance, and creating a DB
+     * snapshot of the instance.</p> <p>Constraints: For MariaDB, MySQL, Oracle, and
+     * PostgreSQL, the value supplied must be at least 10% greater than the current
+     * value. Values that are not at least 10% greater than the existing value are
+     * rounded up so that they are 10% greater than the current value.</p> <p>Default:
+     * Uses existing setting</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>The new Provisioned IOPS (I/O operations per second) value for the RDS
-     * instance. </p> <p>Changing this setting doesn't result in an outage and the
+     * instance.</p> <p>Changing this setting doesn't result in an outage and the
      * change is applied during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is enabled for this request. If you are
      * migrating from Provisioned IOPS to standard storage, set this value to 0. The DB
-     * instance will require a reboot for the change in storage type to take effect.
-     * </p> <p>If you choose to migrate your DB instance from using standard storage to
-     * using Provisioned IOPS, or from using Provisioned IOPS to using standard
-     * storage, the process can take time. The duration of the migration depends on
-     * several factors such as database load, storage size, storage type (standard or
-     * Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior
-     * scale storage operations. Typical migration times are under 24 hours, but the
-     * process can take up to several days in some cases. During the migration, the DB
-     * instance is available for use, but might experience performance degradation.
-     * While the migration takes place, nightly backups for the instance are suspended.
-     * No other Amazon RDS operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating
-     * a read replica for the instance, and creating a DB snapshot of the instance.
-     * </p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL, the value
-     * supplied must be at least 10% greater than the current value. Values that are
-     * not at least 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value. </p> <p>Default: Uses existing setting</p>
+     * instance will require a reboot for the change in storage type to take
+     * effect.</p> <p>If you choose to migrate your DB instance from using standard
+     * storage to using Provisioned IOPS, or from using Provisioned IOPS to using
+     * standard storage, the process can take time. The duration of the migration
+     * depends on several factors such as database load, storage size, storage type
+     * (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the
+     * number of prior scale storage operations. Typical migration times are under 24
+     * hours, but the process can take up to several days in some cases. During the
+     * migration, the DB instance is available for use, but might experience
+     * performance degradation. While the migration takes place, nightly backups for
+     * the instance are suspended. No other Amazon RDS operations can take place for
+     * the instance, including modifying the instance, rebooting the instance, deleting
+     * the instance, creating a read replica for the instance, and creating a DB
+     * snapshot of the instance.</p> <p>Constraints: For MariaDB, MySQL, Oracle, and
+     * PostgreSQL, the value supplied must be at least 10% greater than the current
+     * value. Values that are not at least 10% greater than the existing value are
+     * rounded up so that they are 10% greater than the current value.</p> <p>Default:
+     * Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
 
@@ -1844,7 +1848,7 @@ namespace Model
      * instance. When you change the DB instance identifier, an instance reboot occurs
      * immediately if you enable <code>ApplyImmediately</code>, or will occur during
      * the next maintenance window if you disable Apply Immediately. This value is
-     * stored as a lowercase string. </p> <p>This setting doesn't apply to RDS
+     * stored as a lowercase string.</p> <p>This setting doesn't apply to RDS
      * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
      * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -1857,7 +1861,7 @@ namespace Model
      * instance. When you change the DB instance identifier, an instance reboot occurs
      * immediately if you enable <code>ApplyImmediately</code>, or will occur during
      * the next maintenance window if you disable Apply Immediately. This value is
-     * stored as a lowercase string. </p> <p>This setting doesn't apply to RDS
+     * stored as a lowercase string.</p> <p>This setting doesn't apply to RDS
      * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
      * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -1870,7 +1874,7 @@ namespace Model
      * instance. When you change the DB instance identifier, an instance reboot occurs
      * immediately if you enable <code>ApplyImmediately</code>, or will occur during
      * the next maintenance window if you disable Apply Immediately. This value is
-     * stored as a lowercase string. </p> <p>This setting doesn't apply to RDS
+     * stored as a lowercase string.</p> <p>This setting doesn't apply to RDS
      * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
      * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -1883,7 +1887,7 @@ namespace Model
      * instance. When you change the DB instance identifier, an instance reboot occurs
      * immediately if you enable <code>ApplyImmediately</code>, or will occur during
      * the next maintenance window if you disable Apply Immediately. This value is
-     * stored as a lowercase string. </p> <p>This setting doesn't apply to RDS
+     * stored as a lowercase string.</p> <p>This setting doesn't apply to RDS
      * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
      * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -1896,7 +1900,7 @@ namespace Model
      * instance. When you change the DB instance identifier, an instance reboot occurs
      * immediately if you enable <code>ApplyImmediately</code>, or will occur during
      * the next maintenance window if you disable Apply Immediately. This value is
-     * stored as a lowercase string. </p> <p>This setting doesn't apply to RDS
+     * stored as a lowercase string.</p> <p>This setting doesn't apply to RDS
      * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
      * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -1909,7 +1913,7 @@ namespace Model
      * instance. When you change the DB instance identifier, an instance reboot occurs
      * immediately if you enable <code>ApplyImmediately</code>, or will occur during
      * the next maintenance window if you disable Apply Immediately. This value is
-     * stored as a lowercase string. </p> <p>This setting doesn't apply to RDS
+     * stored as a lowercase string.</p> <p>This setting doesn't apply to RDS
      * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
      * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -1922,7 +1926,7 @@ namespace Model
      * instance. When you change the DB instance identifier, an instance reboot occurs
      * immediately if you enable <code>ApplyImmediately</code>, or will occur during
      * the next maintenance window if you disable Apply Immediately. This value is
-     * stored as a lowercase string. </p> <p>This setting doesn't apply to RDS
+     * stored as a lowercase string.</p> <p>This setting doesn't apply to RDS
      * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
      * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -1935,7 +1939,7 @@ namespace Model
      * instance. When you change the DB instance identifier, an instance reboot occurs
      * immediately if you enable <code>ApplyImmediately</code>, or will occur during
      * the next maintenance window if you disable Apply Immediately. This value is
-     * stored as a lowercase string. </p> <p>This setting doesn't apply to RDS
+     * stored as a lowercase string.</p> <p>This setting doesn't apply to RDS
      * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
      * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -1945,9 +1949,9 @@ namespace Model
 
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
+     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>If
      * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
-     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
+     * for the <code>Iops</code> parameter.</p> <p>If you choose to migrate your DB
      * instance from using standard storage to using Provisioned IOPS, or from using
      * Provisioned IOPS to using standard storage, the process can take time. The
      * duration of the migration depends on several factors such as database load,
@@ -1959,16 +1963,16 @@ namespace Model
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
      * instance, deleting the instance, creating a read replica for the instance, and
-     * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
+     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>standard |
      * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
+     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>If
      * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
-     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
+     * for the <code>Iops</code> parameter.</p> <p>If you choose to migrate your DB
      * instance from using standard storage to using Provisioned IOPS, or from using
      * Provisioned IOPS to using standard storage, the process can take time. The
      * duration of the migration depends on several factors such as database load,
@@ -1980,16 +1984,16 @@ namespace Model
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
      * instance, deleting the instance, creating a read replica for the instance, and
-     * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
+     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>standard |
      * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
+     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>If
      * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
-     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
+     * for the <code>Iops</code> parameter.</p> <p>If you choose to migrate your DB
      * instance from using standard storage to using Provisioned IOPS, or from using
      * Provisioned IOPS to using standard storage, the process can take time. The
      * duration of the migration depends on several factors such as database load,
@@ -2001,16 +2005,16 @@ namespace Model
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
      * instance, deleting the instance, creating a read replica for the instance, and
-     * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
+     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>standard |
      * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
+     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>If
      * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
-     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
+     * for the <code>Iops</code> parameter.</p> <p>If you choose to migrate your DB
      * instance from using standard storage to using Provisioned IOPS, or from using
      * Provisioned IOPS to using standard storage, the process can take time. The
      * duration of the migration depends on several factors such as database load,
@@ -2022,16 +2026,16 @@ namespace Model
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
      * instance, deleting the instance, creating a read replica for the instance, and
-     * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
+     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>standard |
      * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
+     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>If
      * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
-     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
+     * for the <code>Iops</code> parameter.</p> <p>If you choose to migrate your DB
      * instance from using standard storage to using Provisioned IOPS, or from using
      * Provisioned IOPS to using standard storage, the process can take time. The
      * duration of the migration depends on several factors such as database load,
@@ -2043,16 +2047,16 @@ namespace Model
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
      * instance, deleting the instance, creating a read replica for the instance, and
-     * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
+     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>standard |
      * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
+     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>If
      * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
-     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
+     * for the <code>Iops</code> parameter.</p> <p>If you choose to migrate your DB
      * instance from using standard storage to using Provisioned IOPS, or from using
      * Provisioned IOPS to using standard storage, the process can take time. The
      * duration of the migration depends on several factors such as database load,
@@ -2064,16 +2068,16 @@ namespace Model
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
      * instance, deleting the instance, creating a read replica for the instance, and
-     * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
+     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>standard |
      * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline ModifyDBInstanceRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
+     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>If
      * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
-     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
+     * for the <code>Iops</code> parameter.</p> <p>If you choose to migrate your DB
      * instance from using standard storage to using Provisioned IOPS, or from using
      * Provisioned IOPS to using standard storage, the process can take time. The
      * duration of the migration depends on several factors such as database load,
@@ -2085,16 +2089,16 @@ namespace Model
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
      * instance, deleting the instance, creating a read replica for the instance, and
-     * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
+     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>standard |
      * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline ModifyDBInstanceRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
+     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>If
      * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
-     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
+     * for the <code>Iops</code> parameter.</p> <p>If you choose to migrate your DB
      * instance from using standard storage to using Provisioned IOPS, or from using
      * Provisioned IOPS to using standard storage, the process can take time. The
      * duration of the migration depends on several factors such as database load,
@@ -2106,7 +2110,7 @@ namespace Model
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
      * instance, deleting the instance, creating a read replica for the instance, and
-     * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
+     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>standard |
      * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
      */
@@ -2441,17 +2445,17 @@ namespace Model
      * specified for options in the option group for the DB instance.</p> <p>If you
      * change the <code>DBPortNumber</code> value, your database restarts regardless of
      * the value of the <code>ApplyImmediately</code> parameter.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p> <b>MySQL</b> </p> <p> Default:
-     * <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p> <p>
-     * <b>MariaDB</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
-     * <code>1150-65535</code> </p> <p> <b>PostgreSQL</b> </p> <p> Default:
-     * <code>5432</code> </p> <p> Valid values: <code>1150-65535</code> </p> <p>Type:
-     * Integer</p> <p> <b>Oracle</b> </p> <p> Default: <code>1521</code> </p> <p> Valid
-     * values: <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p> Default:
-     * <code>1433</code> </p> <p> Valid values: <code>1150-65535</code> except
+     * doesn't apply to RDS Custom.</p> <p> <b>MySQL</b> </p> <p>Default:
+     * <code>3306</code> </p> <p>Valid values: <code>1150-65535</code> </p> <p>
+     * <b>MariaDB</b> </p> <p>Default: <code>3306</code> </p> <p>Valid values:
+     * <code>1150-65535</code> </p> <p> <b>PostgreSQL</b> </p> <p>Default:
+     * <code>5432</code> </p> <p>Valid values: <code>1150-65535</code> </p> <p>Type:
+     * Integer</p> <p> <b>Oracle</b> </p> <p>Default: <code>1521</code> </p> <p>Valid
+     * values: <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p>Default:
+     * <code>1433</code> </p> <p>Valid values: <code>1150-65535</code> except
      * <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>,
      * <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
+     * <b>Amazon Aurora</b> </p> <p>Default: <code>3306</code> </p> <p>Valid values:
      * <code>1150-65535</code> </p>
      */
     inline int GetDBPortNumber() const{ return m_dBPortNumber; }
@@ -2462,17 +2466,17 @@ namespace Model
      * specified for options in the option group for the DB instance.</p> <p>If you
      * change the <code>DBPortNumber</code> value, your database restarts regardless of
      * the value of the <code>ApplyImmediately</code> parameter.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p> <b>MySQL</b> </p> <p> Default:
-     * <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p> <p>
-     * <b>MariaDB</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
-     * <code>1150-65535</code> </p> <p> <b>PostgreSQL</b> </p> <p> Default:
-     * <code>5432</code> </p> <p> Valid values: <code>1150-65535</code> </p> <p>Type:
-     * Integer</p> <p> <b>Oracle</b> </p> <p> Default: <code>1521</code> </p> <p> Valid
-     * values: <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p> Default:
-     * <code>1433</code> </p> <p> Valid values: <code>1150-65535</code> except
+     * doesn't apply to RDS Custom.</p> <p> <b>MySQL</b> </p> <p>Default:
+     * <code>3306</code> </p> <p>Valid values: <code>1150-65535</code> </p> <p>
+     * <b>MariaDB</b> </p> <p>Default: <code>3306</code> </p> <p>Valid values:
+     * <code>1150-65535</code> </p> <p> <b>PostgreSQL</b> </p> <p>Default:
+     * <code>5432</code> </p> <p>Valid values: <code>1150-65535</code> </p> <p>Type:
+     * Integer</p> <p> <b>Oracle</b> </p> <p>Default: <code>1521</code> </p> <p>Valid
+     * values: <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p>Default:
+     * <code>1433</code> </p> <p>Valid values: <code>1150-65535</code> except
      * <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>,
      * <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
+     * <b>Amazon Aurora</b> </p> <p>Default: <code>3306</code> </p> <p>Valid values:
      * <code>1150-65535</code> </p>
      */
     inline bool DBPortNumberHasBeenSet() const { return m_dBPortNumberHasBeenSet; }
@@ -2483,17 +2487,17 @@ namespace Model
      * specified for options in the option group for the DB instance.</p> <p>If you
      * change the <code>DBPortNumber</code> value, your database restarts regardless of
      * the value of the <code>ApplyImmediately</code> parameter.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p> <b>MySQL</b> </p> <p> Default:
-     * <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p> <p>
-     * <b>MariaDB</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
-     * <code>1150-65535</code> </p> <p> <b>PostgreSQL</b> </p> <p> Default:
-     * <code>5432</code> </p> <p> Valid values: <code>1150-65535</code> </p> <p>Type:
-     * Integer</p> <p> <b>Oracle</b> </p> <p> Default: <code>1521</code> </p> <p> Valid
-     * values: <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p> Default:
-     * <code>1433</code> </p> <p> Valid values: <code>1150-65535</code> except
+     * doesn't apply to RDS Custom.</p> <p> <b>MySQL</b> </p> <p>Default:
+     * <code>3306</code> </p> <p>Valid values: <code>1150-65535</code> </p> <p>
+     * <b>MariaDB</b> </p> <p>Default: <code>3306</code> </p> <p>Valid values:
+     * <code>1150-65535</code> </p> <p> <b>PostgreSQL</b> </p> <p>Default:
+     * <code>5432</code> </p> <p>Valid values: <code>1150-65535</code> </p> <p>Type:
+     * Integer</p> <p> <b>Oracle</b> </p> <p>Default: <code>1521</code> </p> <p>Valid
+     * values: <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p>Default:
+     * <code>1433</code> </p> <p>Valid values: <code>1150-65535</code> except
      * <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>,
      * <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
+     * <b>Amazon Aurora</b> </p> <p>Default: <code>3306</code> </p> <p>Valid values:
      * <code>1150-65535</code> </p>
      */
     inline void SetDBPortNumber(int value) { m_dBPortNumberHasBeenSet = true; m_dBPortNumber = value; }
@@ -2504,24 +2508,24 @@ namespace Model
      * specified for options in the option group for the DB instance.</p> <p>If you
      * change the <code>DBPortNumber</code> value, your database restarts regardless of
      * the value of the <code>ApplyImmediately</code> parameter.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p> <b>MySQL</b> </p> <p> Default:
-     * <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p> <p>
-     * <b>MariaDB</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
-     * <code>1150-65535</code> </p> <p> <b>PostgreSQL</b> </p> <p> Default:
-     * <code>5432</code> </p> <p> Valid values: <code>1150-65535</code> </p> <p>Type:
-     * Integer</p> <p> <b>Oracle</b> </p> <p> Default: <code>1521</code> </p> <p> Valid
-     * values: <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p> Default:
-     * <code>1433</code> </p> <p> Valid values: <code>1150-65535</code> except
+     * doesn't apply to RDS Custom.</p> <p> <b>MySQL</b> </p> <p>Default:
+     * <code>3306</code> </p> <p>Valid values: <code>1150-65535</code> </p> <p>
+     * <b>MariaDB</b> </p> <p>Default: <code>3306</code> </p> <p>Valid values:
+     * <code>1150-65535</code> </p> <p> <b>PostgreSQL</b> </p> <p>Default:
+     * <code>5432</code> </p> <p>Valid values: <code>1150-65535</code> </p> <p>Type:
+     * Integer</p> <p> <b>Oracle</b> </p> <p>Default: <code>1521</code> </p> <p>Valid
+     * values: <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p>Default:
+     * <code>1433</code> </p> <p>Valid values: <code>1150-65535</code> except
      * <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>,
      * <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
+     * <b>Amazon Aurora</b> </p> <p>Default: <code>3306</code> </p> <p>Valid values:
      * <code>1150-65535</code> </p>
      */
     inline ModifyDBInstanceRequest& WithDBPortNumber(int value) { SetDBPortNumber(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. </p>
+     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
      * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
      * endpoint resolves to the private IP address from within the DB cluster's virtual
      * private cloud (VPC). It resolves to the public IP address from outside of the DB
@@ -2532,14 +2536,14 @@ namespace Model
      * private IP address.</p> <p> <code>PubliclyAccessible</code> only applies to DB
      * instances in a VPC. The DB instance must be part of a public subnet and
      * <code>PubliclyAccessible</code> must be enabled for it to be publicly
-     * accessible. </p> <p>Changes to the <code>PubliclyAccessible</code> parameter are
+     * accessible.</p> <p>Changes to the <code>PubliclyAccessible</code> parameter are
      * applied immediately regardless of the value of the <code>ApplyImmediately</code>
      * parameter.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. </p>
+     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
      * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
      * endpoint resolves to the private IP address from within the DB cluster's virtual
      * private cloud (VPC). It resolves to the public IP address from outside of the DB
@@ -2550,14 +2554,14 @@ namespace Model
      * private IP address.</p> <p> <code>PubliclyAccessible</code> only applies to DB
      * instances in a VPC. The DB instance must be part of a public subnet and
      * <code>PubliclyAccessible</code> must be enabled for it to be publicly
-     * accessible. </p> <p>Changes to the <code>PubliclyAccessible</code> parameter are
+     * accessible.</p> <p>Changes to the <code>PubliclyAccessible</code> parameter are
      * applied immediately regardless of the value of the <code>ApplyImmediately</code>
      * parameter.</p>
      */
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. </p>
+     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
      * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
      * endpoint resolves to the private IP address from within the DB cluster's virtual
      * private cloud (VPC). It resolves to the public IP address from outside of the DB
@@ -2568,14 +2572,14 @@ namespace Model
      * private IP address.</p> <p> <code>PubliclyAccessible</code> only applies to DB
      * instances in a VPC. The DB instance must be part of a public subnet and
      * <code>PubliclyAccessible</code> must be enabled for it to be publicly
-     * accessible. </p> <p>Changes to the <code>PubliclyAccessible</code> parameter are
+     * accessible.</p> <p>Changes to the <code>PubliclyAccessible</code> parameter are
      * applied immediately regardless of the value of the <code>ApplyImmediately</code>
      * parameter.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. </p>
+     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
      * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
      * endpoint resolves to the private IP address from within the DB cluster's virtual
      * private cloud (VPC). It resolves to the public IP address from outside of the DB
@@ -2586,7 +2590,7 @@ namespace Model
      * private IP address.</p> <p> <code>PubliclyAccessible</code> only applies to DB
      * instances in a VPC. The DB instance must be part of a public subnet and
      * <code>PubliclyAccessible</code> must be enabled for it to be publicly
-     * accessible. </p> <p>Changes to the <code>PubliclyAccessible</code> parameter are
+     * accessible.</p> <p>Changes to the <code>PubliclyAccessible</code> parameter are
      * applied immediately regardless of the value of the <code>ApplyImmediately</code>
      * parameter.</p>
      */
@@ -2753,7 +2757,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom. </p> <p>Default:
+     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default:
      * 1</p> <p>Valid Values: 0 - 15</p>
      */
     inline int GetPromotionTier() const{ return m_promotionTier; }
@@ -2764,7 +2768,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom. </p> <p>Default:
+     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default:
      * 1</p> <p>Valid Values: 0 - 15</p>
      */
     inline bool PromotionTierHasBeenSet() const { return m_promotionTierHasBeenSet; }
@@ -2775,7 +2779,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom. </p> <p>Default:
+     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default:
      * 1</p> <p>Valid Values: 0 - 15</p>
      */
     inline void SetPromotionTier(int value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
@@ -2786,7 +2790,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom. </p> <p>Default:
+     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default:
      * 1</p> <p>Valid Values: 0 - 15</p>
      */
     inline ModifyDBInstanceRequest& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
@@ -2849,8 +2853,8 @@ namespace Model
      * <p>A value that indicates whether to enable Performance Insights for the DB
      * instance.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
-     * User Guide</i>. </p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
@@ -2858,8 +2862,8 @@ namespace Model
      * <p>A value that indicates whether to enable Performance Insights for the DB
      * instance.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
-     * User Guide</i>. </p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
 
@@ -2867,8 +2871,8 @@ namespace Model
      * <p>A value that indicates whether to enable Performance Insights for the DB
      * instance.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
-     * User Guide</i>. </p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
@@ -2876,8 +2880,8 @@ namespace Model
      * <p>A value that indicates whether to enable Performance Insights for the DB
      * instance.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
-     * User Guide</i>. </p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline ModifyDBInstanceRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 
@@ -3154,7 +3158,7 @@ namespace Model
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p>
+     * Deleting a DB Instance</a>.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
@@ -3163,7 +3167,7 @@ namespace Model
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p>
+     * Deleting a DB Instance</a>.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
@@ -3172,7 +3176,7 @@ namespace Model
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p>
+     * Deleting a DB Instance</a>.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
@@ -3181,7 +3185,7 @@ namespace Model
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p>
+     * Deleting a DB Instance</a>.</p>
      */
     inline ModifyDBInstanceRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
@@ -3246,8 +3250,8 @@ namespace Model
      * </li> <li> <p>For more information about rotating your SSL/TLS certificate for
      * Aurora DB engines, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html">
-     * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide.</i>
-     * </p> </li> </ul> <p>This setting doesn't apply to RDS Custom.</p>
+     * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> </li> </ul> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool GetCertificateRotationRestart() const{ return m_certificateRotationRestart; }
 
@@ -3266,8 +3270,8 @@ namespace Model
      * </li> <li> <p>For more information about rotating your SSL/TLS certificate for
      * Aurora DB engines, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html">
-     * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide.</i>
-     * </p> </li> </ul> <p>This setting doesn't apply to RDS Custom.</p>
+     * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> </li> </ul> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool CertificateRotationRestartHasBeenSet() const { return m_certificateRotationRestartHasBeenSet; }
 
@@ -3286,8 +3290,8 @@ namespace Model
      * </li> <li> <p>For more information about rotating your SSL/TLS certificate for
      * Aurora DB engines, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html">
-     * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide.</i>
-     * </p> </li> </ul> <p>This setting doesn't apply to RDS Custom.</p>
+     * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> </li> </ul> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetCertificateRotationRestart(bool value) { m_certificateRotationRestartHasBeenSet = true; m_certificateRotationRestart = value; }
 
@@ -3306,8 +3310,8 @@ namespace Model
      * </li> <li> <p>For more information about rotating your SSL/TLS certificate for
      * Aurora DB engines, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html">
-     * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide.</i>
-     * </p> </li> </ul> <p>This setting doesn't apply to RDS Custom.</p>
+     * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> </li> </ul> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline ModifyDBInstanceRequest& WithCertificateRotationRestart(bool value) { SetCertificateRotationRestart(value); return *this;}
 
@@ -3571,28 +3575,28 @@ namespace Model
     /**
      * <p>The number of minutes to pause the automation. When the time period ends, RDS
      * Custom resumes full automation. The minimum value is <code>60</code> (default).
-     * The maximum value is <code>1,440</code>. </p>
+     * The maximum value is <code>1,440</code>.</p>
      */
     inline int GetResumeFullAutomationModeMinutes() const{ return m_resumeFullAutomationModeMinutes; }
 
     /**
      * <p>The number of minutes to pause the automation. When the time period ends, RDS
      * Custom resumes full automation. The minimum value is <code>60</code> (default).
-     * The maximum value is <code>1,440</code>. </p>
+     * The maximum value is <code>1,440</code>.</p>
      */
     inline bool ResumeFullAutomationModeMinutesHasBeenSet() const { return m_resumeFullAutomationModeMinutesHasBeenSet; }
 
     /**
      * <p>The number of minutes to pause the automation. When the time period ends, RDS
      * Custom resumes full automation. The minimum value is <code>60</code> (default).
-     * The maximum value is <code>1,440</code>. </p>
+     * The maximum value is <code>1,440</code>.</p>
      */
     inline void SetResumeFullAutomationModeMinutes(int value) { m_resumeFullAutomationModeMinutesHasBeenSet = true; m_resumeFullAutomationModeMinutes = value; }
 
     /**
      * <p>The number of minutes to pause the automation. When the time period ends, RDS
      * Custom resumes full automation. The minimum value is <code>60</code> (default).
-     * The maximum value is <code>1,440</code>. </p>
+     * The maximum value is <code>1,440</code>.</p>
      */
     inline ModifyDBInstanceRequest& WithResumeFullAutomationModeMinutes(int value) { SetResumeFullAutomationModeMinutes(value); return *this;}
 

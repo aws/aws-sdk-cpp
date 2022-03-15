@@ -65,11 +65,11 @@ namespace Model
      * </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created
      * DB instance. If you specify <code>null</code>, the default value
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
-     * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * reserved word, for <code>DBName</code>.</p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
      * </ul> <p> <b>Amazon RDS Custom for Oracle</b> </p> <p>The Oracle System ID (SID)
      * of the created RDS Custom DB instance. If you don't specify a value, the default
-     * value is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * value is <code>ORCL</code>.</p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
      * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
      * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>Amazon
@@ -115,11 +115,11 @@ namespace Model
      * </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created
      * DB instance. If you specify <code>null</code>, the default value
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
-     * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * reserved word, for <code>DBName</code>.</p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
      * </ul> <p> <b>Amazon RDS Custom for Oracle</b> </p> <p>The Oracle System ID (SID)
      * of the created RDS Custom DB instance. If you don't specify a value, the default
-     * value is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * value is <code>ORCL</code>.</p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
      * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
      * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>Amazon
@@ -165,11 +165,11 @@ namespace Model
      * </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created
      * DB instance. If you specify <code>null</code>, the default value
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
-     * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * reserved word, for <code>DBName</code>.</p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
      * </ul> <p> <b>Amazon RDS Custom for Oracle</b> </p> <p>The Oracle System ID (SID)
      * of the created RDS Custom DB instance. If you don't specify a value, the default
-     * value is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * value is <code>ORCL</code>.</p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
      * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
      * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>Amazon
@@ -215,11 +215,11 @@ namespace Model
      * </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created
      * DB instance. If you specify <code>null</code>, the default value
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
-     * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * reserved word, for <code>DBName</code>.</p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
      * </ul> <p> <b>Amazon RDS Custom for Oracle</b> </p> <p>The Oracle System ID (SID)
      * of the created RDS Custom DB instance. If you don't specify a value, the default
-     * value is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * value is <code>ORCL</code>.</p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
      * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
      * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>Amazon
@@ -265,11 +265,11 @@ namespace Model
      * </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created
      * DB instance. If you specify <code>null</code>, the default value
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
-     * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * reserved word, for <code>DBName</code>.</p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
      * </ul> <p> <b>Amazon RDS Custom for Oracle</b> </p> <p>The Oracle System ID (SID)
      * of the created RDS Custom DB instance. If you don't specify a value, the default
-     * value is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * value is <code>ORCL</code>.</p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
      * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
      * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>Amazon
@@ -315,11 +315,11 @@ namespace Model
      * </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created
      * DB instance. If you specify <code>null</code>, the default value
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
-     * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * reserved word, for <code>DBName</code>.</p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
      * </ul> <p> <b>Amazon RDS Custom for Oracle</b> </p> <p>The Oracle System ID (SID)
      * of the created RDS Custom DB instance. If you don't specify a value, the default
-     * value is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * value is <code>ORCL</code>.</p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
      * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
      * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>Amazon
@@ -365,11 +365,11 @@ namespace Model
      * </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created
      * DB instance. If you specify <code>null</code>, the default value
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
-     * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * reserved word, for <code>DBName</code>.</p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
      * </ul> <p> <b>Amazon RDS Custom for Oracle</b> </p> <p>The Oracle System ID (SID)
      * of the created RDS Custom DB instance. If you don't specify a value, the default
-     * value is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * value is <code>ORCL</code>.</p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
      * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
      * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>Amazon
@@ -415,11 +415,11 @@ namespace Model
      * </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created
      * DB instance. If you specify <code>null</code>, the default value
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
-     * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * reserved word, for <code>DBName</code>.</p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
      * </ul> <p> <b>Amazon RDS Custom for Oracle</b> </p> <p>The Oracle System ID (SID)
      * of the created RDS Custom DB instance. If you don't specify a value, the default
-     * value is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * value is <code>ORCL</code>.</p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
      * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
      * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>Amazon
@@ -522,33 +522,33 @@ namespace Model
      * cluster volumes automatically grow as the amount of data in your database
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>Amazon RDS Custom</b> </p> <p>Constraints to the
-     * amount of storage for each storage type are the following: </p> <ul> <li>
+     * amount of storage for each storage type are the following:</p> <ul> <li>
      * <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for
      * RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> <li>
      * <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS
      * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> </ul> <p>
      * <b>MySQL</b> </p> <p>Constraints to the amount of storage for each storage type
-     * are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must
-     * be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
-     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
+     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be
+     * an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1):
+     * Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
      * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
      * <b>MariaDB</b> </p> <p>Constraints to the amount of storage for each storage
-     * type are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
+     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
      * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
      * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
      * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
      * <b>PostgreSQL</b> </p> <p>Constraints to the amount of storage for each storage
-     * type are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
+     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
      * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
      * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
      * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p> <b>Oracle</b>
      * </p> <p>Constraints to the amount of storage for each storage type are the
-     * following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be an
+     * following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be an
      * integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must
      * be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage (standard):
      * Must be an integer from 10 to 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p>
-     * <p>Constraints to the amount of storage for each storage type are the following:
-     * </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):</p> <ul> <li>
+     * <p>Constraints to the amount of storage for each storage type are the
+     * following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):</p> <ul> <li>
      * <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p>
      * </li> <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p>
      * </li> </ul> </li> <li> <p>Provisioned IOPS storage (io1):</p> <ul> <li>
@@ -567,33 +567,33 @@ namespace Model
      * cluster volumes automatically grow as the amount of data in your database
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>Amazon RDS Custom</b> </p> <p>Constraints to the
-     * amount of storage for each storage type are the following: </p> <ul> <li>
+     * amount of storage for each storage type are the following:</p> <ul> <li>
      * <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for
      * RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> <li>
      * <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS
      * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> </ul> <p>
      * <b>MySQL</b> </p> <p>Constraints to the amount of storage for each storage type
-     * are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must
-     * be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
-     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
+     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be
+     * an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1):
+     * Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
      * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
      * <b>MariaDB</b> </p> <p>Constraints to the amount of storage for each storage
-     * type are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
+     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
      * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
      * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
      * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
      * <b>PostgreSQL</b> </p> <p>Constraints to the amount of storage for each storage
-     * type are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
+     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
      * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
      * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
      * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p> <b>Oracle</b>
      * </p> <p>Constraints to the amount of storage for each storage type are the
-     * following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be an
+     * following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be an
      * integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must
      * be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage (standard):
      * Must be an integer from 10 to 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p>
-     * <p>Constraints to the amount of storage for each storage type are the following:
-     * </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):</p> <ul> <li>
+     * <p>Constraints to the amount of storage for each storage type are the
+     * following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):</p> <ul> <li>
      * <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p>
      * </li> <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p>
      * </li> </ul> </li> <li> <p>Provisioned IOPS storage (io1):</p> <ul> <li>
@@ -612,33 +612,33 @@ namespace Model
      * cluster volumes automatically grow as the amount of data in your database
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>Amazon RDS Custom</b> </p> <p>Constraints to the
-     * amount of storage for each storage type are the following: </p> <ul> <li>
+     * amount of storage for each storage type are the following:</p> <ul> <li>
      * <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for
      * RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> <li>
      * <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS
      * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> </ul> <p>
      * <b>MySQL</b> </p> <p>Constraints to the amount of storage for each storage type
-     * are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must
-     * be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
-     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
+     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be
+     * an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1):
+     * Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
      * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
      * <b>MariaDB</b> </p> <p>Constraints to the amount of storage for each storage
-     * type are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
+     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
      * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
      * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
      * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
      * <b>PostgreSQL</b> </p> <p>Constraints to the amount of storage for each storage
-     * type are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
+     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
      * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
      * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
      * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p> <b>Oracle</b>
      * </p> <p>Constraints to the amount of storage for each storage type are the
-     * following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be an
+     * following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be an
      * integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must
      * be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage (standard):
      * Must be an integer from 10 to 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p>
-     * <p>Constraints to the amount of storage for each storage type are the following:
-     * </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):</p> <ul> <li>
+     * <p>Constraints to the amount of storage for each storage type are the
+     * following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):</p> <ul> <li>
      * <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p>
      * </li> <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p>
      * </li> </ul> </li> <li> <p>Provisioned IOPS storage (io1):</p> <ul> <li>
@@ -657,33 +657,33 @@ namespace Model
      * cluster volumes automatically grow as the amount of data in your database
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>Amazon RDS Custom</b> </p> <p>Constraints to the
-     * amount of storage for each storage type are the following: </p> <ul> <li>
+     * amount of storage for each storage type are the following:</p> <ul> <li>
      * <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for
      * RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> <li>
      * <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS
      * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> </ul> <p>
      * <b>MySQL</b> </p> <p>Constraints to the amount of storage for each storage type
-     * are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must
-     * be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
-     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
+     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be
+     * an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1):
+     * Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
      * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
      * <b>MariaDB</b> </p> <p>Constraints to the amount of storage for each storage
-     * type are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
+     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
      * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
      * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
      * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
      * <b>PostgreSQL</b> </p> <p>Constraints to the amount of storage for each storage
-     * type are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
+     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
      * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
      * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
      * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p> <b>Oracle</b>
      * </p> <p>Constraints to the amount of storage for each storage type are the
-     * following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be an
+     * following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be an
      * integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must
      * be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage (standard):
      * Must be an integer from 10 to 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p>
-     * <p>Constraints to the amount of storage for each storage type are the following:
-     * </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):</p> <ul> <li>
+     * <p>Constraints to the amount of storage for each storage type are the
+     * following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):</p> <ul> <li>
      * <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p>
      * </li> <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p>
      * </li> </ul> </li> <li> <p>Provisioned IOPS storage (io1):</p> <ul> <li>
@@ -703,7 +703,7 @@ namespace Model
      * for all database engines. For the full list of DB instance classes, and
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
@@ -713,7 +713,7 @@ namespace Model
      * for all database engines. For the full list of DB instance classes, and
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
@@ -723,7 +723,7 @@ namespace Model
      * for all database engines. For the full list of DB instance classes, and
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
@@ -733,7 +733,7 @@ namespace Model
      * for all database engines. For the full list of DB instance classes, and
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
@@ -743,7 +743,7 @@ namespace Model
      * for all database engines. For the full list of DB instance classes, and
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
@@ -753,7 +753,7 @@ namespace Model
      * for all database engines. For the full list of DB instance classes, and
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
@@ -763,7 +763,7 @@ namespace Model
      * for all database engines. For the full list of DB instance classes, and
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
@@ -773,17 +773,17 @@ namespace Model
      * for all database engines. For the full list of DB instance classes, and
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>Not
-     * every database engine is available for every Amazon Web Services Region. </p>
-     * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
-     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
-     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <p>The name of the database engine to be used for this instance.</p> <p>Not
+     * every database engine is available for every Amazon Web Services Region.</p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
      * RDS Custom for Oracle instances)</code> </p> </li> <li> <p>
      * <code>custom-sqlserver-ee (for RDS Custom for SQL Server instances)</code> </p>
@@ -801,11 +801,11 @@ namespace Model
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>Not
-     * every database engine is available for every Amazon Web Services Region. </p>
-     * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
-     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
-     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <p>The name of the database engine to be used for this instance.</p> <p>Not
+     * every database engine is available for every Amazon Web Services Region.</p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
      * RDS Custom for Oracle instances)</code> </p> </li> <li> <p>
      * <code>custom-sqlserver-ee (for RDS Custom for SQL Server instances)</code> </p>
@@ -823,11 +823,11 @@ namespace Model
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>Not
-     * every database engine is available for every Amazon Web Services Region. </p>
-     * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
-     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
-     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <p>The name of the database engine to be used for this instance.</p> <p>Not
+     * every database engine is available for every Amazon Web Services Region.</p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
      * RDS Custom for Oracle instances)</code> </p> </li> <li> <p>
      * <code>custom-sqlserver-ee (for RDS Custom for SQL Server instances)</code> </p>
@@ -845,11 +845,11 @@ namespace Model
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>Not
-     * every database engine is available for every Amazon Web Services Region. </p>
-     * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
-     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
-     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <p>The name of the database engine to be used for this instance.</p> <p>Not
+     * every database engine is available for every Amazon Web Services Region.</p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
      * RDS Custom for Oracle instances)</code> </p> </li> <li> <p>
      * <code>custom-sqlserver-ee (for RDS Custom for SQL Server instances)</code> </p>
@@ -867,11 +867,11 @@ namespace Model
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>Not
-     * every database engine is available for every Amazon Web Services Region. </p>
-     * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
-     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
-     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <p>The name of the database engine to be used for this instance.</p> <p>Not
+     * every database engine is available for every Amazon Web Services Region.</p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
      * RDS Custom for Oracle instances)</code> </p> </li> <li> <p>
      * <code>custom-sqlserver-ee (for RDS Custom for SQL Server instances)</code> </p>
@@ -889,11 +889,11 @@ namespace Model
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>Not
-     * every database engine is available for every Amazon Web Services Region. </p>
-     * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
-     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
-     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <p>The name of the database engine to be used for this instance.</p> <p>Not
+     * every database engine is available for every Amazon Web Services Region.</p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
      * RDS Custom for Oracle instances)</code> </p> </li> <li> <p>
      * <code>custom-sqlserver-ee (for RDS Custom for SQL Server instances)</code> </p>
@@ -911,11 +911,11 @@ namespace Model
     inline CreateDBInstanceRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>Not
-     * every database engine is available for every Amazon Web Services Region. </p>
-     * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
-     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
-     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <p>The name of the database engine to be used for this instance.</p> <p>Not
+     * every database engine is available for every Amazon Web Services Region.</p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
      * RDS Custom for Oracle instances)</code> </p> </li> <li> <p>
      * <code>custom-sqlserver-ee (for RDS Custom for SQL Server instances)</code> </p>
@@ -933,11 +933,11 @@ namespace Model
     inline CreateDBInstanceRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>Not
-     * every database engine is available for every Amazon Web Services Region. </p>
-     * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
-     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
-     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <p>The name of the database engine to be used for this instance.</p> <p>Not
+     * every database engine is available for every Amazon Web Services Region.</p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
      * RDS Custom for Oracle instances)</code> </p> </li> <li> <p>
      * <code>custom-sqlserver-ee (for RDS Custom for SQL Server instances)</code> </p>
@@ -957,7 +957,7 @@ namespace Model
 
     /**
      * <p>The name for the master user.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. The name for the master user is managed by the DB cluster. </p> <p>
+     * applicable. The name for the master user is managed by the DB cluster.</p> <p>
      * <b>Amazon RDS</b> </p> <p>Constraints:</p> <ul> <li> <p>Required.</p> </li> <li>
      * <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't be a reserved word for the
@@ -967,7 +967,7 @@ namespace Model
 
     /**
      * <p>The name for the master user.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. The name for the master user is managed by the DB cluster. </p> <p>
+     * applicable. The name for the master user is managed by the DB cluster.</p> <p>
      * <b>Amazon RDS</b> </p> <p>Constraints:</p> <ul> <li> <p>Required.</p> </li> <li>
      * <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't be a reserved word for the
@@ -977,7 +977,7 @@ namespace Model
 
     /**
      * <p>The name for the master user.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. The name for the master user is managed by the DB cluster. </p> <p>
+     * applicable. The name for the master user is managed by the DB cluster.</p> <p>
      * <b>Amazon RDS</b> </p> <p>Constraints:</p> <ul> <li> <p>Required.</p> </li> <li>
      * <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't be a reserved word for the
@@ -987,7 +987,7 @@ namespace Model
 
     /**
      * <p>The name for the master user.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. The name for the master user is managed by the DB cluster. </p> <p>
+     * applicable. The name for the master user is managed by the DB cluster.</p> <p>
      * <b>Amazon RDS</b> </p> <p>Constraints:</p> <ul> <li> <p>Required.</p> </li> <li>
      * <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't be a reserved word for the
@@ -997,7 +997,7 @@ namespace Model
 
     /**
      * <p>The name for the master user.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. The name for the master user is managed by the DB cluster. </p> <p>
+     * applicable. The name for the master user is managed by the DB cluster.</p> <p>
      * <b>Amazon RDS</b> </p> <p>Constraints:</p> <ul> <li> <p>Required.</p> </li> <li>
      * <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't be a reserved word for the
@@ -1007,7 +1007,7 @@ namespace Model
 
     /**
      * <p>The name for the master user.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. The name for the master user is managed by the DB cluster. </p> <p>
+     * applicable. The name for the master user is managed by the DB cluster.</p> <p>
      * <b>Amazon RDS</b> </p> <p>Constraints:</p> <ul> <li> <p>Required.</p> </li> <li>
      * <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't be a reserved word for the
@@ -1017,7 +1017,7 @@ namespace Model
 
     /**
      * <p>The name for the master user.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. The name for the master user is managed by the DB cluster. </p> <p>
+     * applicable. The name for the master user is managed by the DB cluster.</p> <p>
      * <b>Amazon RDS</b> </p> <p>Constraints:</p> <ul> <li> <p>Required.</p> </li> <li>
      * <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't be a reserved word for the
@@ -1027,7 +1027,7 @@ namespace Model
 
     /**
      * <p>The name for the master user.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. The name for the master user is managed by the DB cluster. </p> <p>
+     * applicable. The name for the master user is managed by the DB cluster.</p> <p>
      * <b>Amazon RDS</b> </p> <p>Constraints:</p> <ul> <li> <p>Required.</p> </li> <li>
      * <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't be a reserved word for the
@@ -1270,16 +1270,16 @@ namespace Model
 
 
     /**
-     * <p> The Availability Zone (AZ) where the database will be created. For
+     * <p>The Availability Zone (AZ) where the database will be created. For
      * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. Availability Zones are managed by the DB cluster. </p> <p>Default: A
-     * random, system-chosen Availability Zone in the endpoint's Amazon Web Services
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
+     * and Availability Zones</a>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * Availability Zones are managed by the DB cluster.</p> <p>Default: A random,
+     * system-chosen Availability Zone in the endpoint's Amazon Web Services
+     * Region.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
      * a Multi-AZ deployment. The specified Availability Zone must be in the same
-     * Amazon Web Services Region as the current endpoint. </p>  <p>If you're
+     * Amazon Web Services Region as the current endpoint.</p>  <p>If you're
      * creating a DB instance in an RDS on VMware environment, specify the identifier
      * of the custom Availability Zone to create the DB instance in.</p> <p>For more
      * information about RDS on VMware, see the <a
@@ -1289,16 +1289,16 @@ namespace Model
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p> The Availability Zone (AZ) where the database will be created. For
+     * <p>The Availability Zone (AZ) where the database will be created. For
      * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. Availability Zones are managed by the DB cluster. </p> <p>Default: A
-     * random, system-chosen Availability Zone in the endpoint's Amazon Web Services
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
+     * and Availability Zones</a>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * Availability Zones are managed by the DB cluster.</p> <p>Default: A random,
+     * system-chosen Availability Zone in the endpoint's Amazon Web Services
+     * Region.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
      * a Multi-AZ deployment. The specified Availability Zone must be in the same
-     * Amazon Web Services Region as the current endpoint. </p>  <p>If you're
+     * Amazon Web Services Region as the current endpoint.</p>  <p>If you're
      * creating a DB instance in an RDS on VMware environment, specify the identifier
      * of the custom Availability Zone to create the DB instance in.</p> <p>For more
      * information about RDS on VMware, see the <a
@@ -1308,16 +1308,16 @@ namespace Model
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
-     * <p> The Availability Zone (AZ) where the database will be created. For
+     * <p>The Availability Zone (AZ) where the database will be created. For
      * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. Availability Zones are managed by the DB cluster. </p> <p>Default: A
-     * random, system-chosen Availability Zone in the endpoint's Amazon Web Services
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
+     * and Availability Zones</a>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * Availability Zones are managed by the DB cluster.</p> <p>Default: A random,
+     * system-chosen Availability Zone in the endpoint's Amazon Web Services
+     * Region.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
      * a Multi-AZ deployment. The specified Availability Zone must be in the same
-     * Amazon Web Services Region as the current endpoint. </p>  <p>If you're
+     * Amazon Web Services Region as the current endpoint.</p>  <p>If you're
      * creating a DB instance in an RDS on VMware environment, specify the identifier
      * of the custom Availability Zone to create the DB instance in.</p> <p>For more
      * information about RDS on VMware, see the <a
@@ -1327,16 +1327,16 @@ namespace Model
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p> The Availability Zone (AZ) where the database will be created. For
+     * <p>The Availability Zone (AZ) where the database will be created. For
      * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. Availability Zones are managed by the DB cluster. </p> <p>Default: A
-     * random, system-chosen Availability Zone in the endpoint's Amazon Web Services
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
+     * and Availability Zones</a>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * Availability Zones are managed by the DB cluster.</p> <p>Default: A random,
+     * system-chosen Availability Zone in the endpoint's Amazon Web Services
+     * Region.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
      * a Multi-AZ deployment. The specified Availability Zone must be in the same
-     * Amazon Web Services Region as the current endpoint. </p>  <p>If you're
+     * Amazon Web Services Region as the current endpoint.</p>  <p>If you're
      * creating a DB instance in an RDS on VMware environment, specify the identifier
      * of the custom Availability Zone to create the DB instance in.</p> <p>For more
      * information about RDS on VMware, see the <a
@@ -1346,16 +1346,16 @@ namespace Model
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p> The Availability Zone (AZ) where the database will be created. For
+     * <p>The Availability Zone (AZ) where the database will be created. For
      * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. Availability Zones are managed by the DB cluster. </p> <p>Default: A
-     * random, system-chosen Availability Zone in the endpoint's Amazon Web Services
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
+     * and Availability Zones</a>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * Availability Zones are managed by the DB cluster.</p> <p>Default: A random,
+     * system-chosen Availability Zone in the endpoint's Amazon Web Services
+     * Region.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
      * a Multi-AZ deployment. The specified Availability Zone must be in the same
-     * Amazon Web Services Region as the current endpoint. </p>  <p>If you're
+     * Amazon Web Services Region as the current endpoint.</p>  <p>If you're
      * creating a DB instance in an RDS on VMware environment, specify the identifier
      * of the custom Availability Zone to create the DB instance in.</p> <p>For more
      * information about RDS on VMware, see the <a
@@ -1365,16 +1365,16 @@ namespace Model
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p> The Availability Zone (AZ) where the database will be created. For
+     * <p>The Availability Zone (AZ) where the database will be created. For
      * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. Availability Zones are managed by the DB cluster. </p> <p>Default: A
-     * random, system-chosen Availability Zone in the endpoint's Amazon Web Services
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
+     * and Availability Zones</a>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * Availability Zones are managed by the DB cluster.</p> <p>Default: A random,
+     * system-chosen Availability Zone in the endpoint's Amazon Web Services
+     * Region.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
      * a Multi-AZ deployment. The specified Availability Zone must be in the same
-     * Amazon Web Services Region as the current endpoint. </p>  <p>If you're
+     * Amazon Web Services Region as the current endpoint.</p>  <p>If you're
      * creating a DB instance in an RDS on VMware environment, specify the identifier
      * of the custom Availability Zone to create the DB instance in.</p> <p>For more
      * information about RDS on VMware, see the <a
@@ -1384,16 +1384,16 @@ namespace Model
     inline CreateDBInstanceRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p> The Availability Zone (AZ) where the database will be created. For
+     * <p>The Availability Zone (AZ) where the database will be created. For
      * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. Availability Zones are managed by the DB cluster. </p> <p>Default: A
-     * random, system-chosen Availability Zone in the endpoint's Amazon Web Services
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
+     * and Availability Zones</a>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * Availability Zones are managed by the DB cluster.</p> <p>Default: A random,
+     * system-chosen Availability Zone in the endpoint's Amazon Web Services
+     * Region.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
      * a Multi-AZ deployment. The specified Availability Zone must be in the same
-     * Amazon Web Services Region as the current endpoint. </p>  <p>If you're
+     * Amazon Web Services Region as the current endpoint.</p>  <p>If you're
      * creating a DB instance in an RDS on VMware environment, specify the identifier
      * of the custom Availability Zone to create the DB instance in.</p> <p>For more
      * information about RDS on VMware, see the <a
@@ -1403,16 +1403,16 @@ namespace Model
     inline CreateDBInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p> The Availability Zone (AZ) where the database will be created. For
+     * <p>The Availability Zone (AZ) where the database will be created. For
      * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. Availability Zones are managed by the DB cluster. </p> <p>Default: A
-     * random, system-chosen Availability Zone in the endpoint's Amazon Web Services
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
+     * and Availability Zones</a>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * Availability Zones are managed by the DB cluster.</p> <p>Default: A random,
+     * system-chosen Availability Zone in the endpoint's Amazon Web Services
+     * Region.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
      * a Multi-AZ deployment. The specified Availability Zone must be in the same
-     * Amazon Web Services Region as the current endpoint. </p>  <p>If you're
+     * Amazon Web Services Region as the current endpoint.</p>  <p>If you're
      * creating a DB instance in an RDS on VMware environment, specify the identifier
      * of the custom Availability Zone to create the DB instance in.</p> <p>For more
      * information about RDS on VMware, see the <a
@@ -1483,11 +1483,11 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
-     * RDS Maintenance Window</a>. </p> <p> Format:
-     * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each Amazon Web Services
-     * Region, occurring on a random day of the week. </p> <p>Valid Days: Mon, Tue,
-     * Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * RDS Maintenance Window</a>.</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * </p> <p>The default is a 30-minute window selected at random from an 8-hour
+     * block of time for each Amazon Web Services Region, occurring on a random day of
+     * the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
@@ -1495,11 +1495,11 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
-     * RDS Maintenance Window</a>. </p> <p> Format:
-     * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each Amazon Web Services
-     * Region, occurring on a random day of the week. </p> <p>Valid Days: Mon, Tue,
-     * Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * RDS Maintenance Window</a>.</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * </p> <p>The default is a 30-minute window selected at random from an 8-hour
+     * block of time for each Amazon Web Services Region, occurring on a random day of
+     * the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
@@ -1507,11 +1507,11 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
-     * RDS Maintenance Window</a>. </p> <p> Format:
-     * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each Amazon Web Services
-     * Region, occurring on a random day of the week. </p> <p>Valid Days: Mon, Tue,
-     * Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * RDS Maintenance Window</a>.</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * </p> <p>The default is a 30-minute window selected at random from an 8-hour
+     * block of time for each Amazon Web Services Region, occurring on a random day of
+     * the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
@@ -1519,11 +1519,11 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
-     * RDS Maintenance Window</a>. </p> <p> Format:
-     * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each Amazon Web Services
-     * Region, occurring on a random day of the week. </p> <p>Valid Days: Mon, Tue,
-     * Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * RDS Maintenance Window</a>.</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * </p> <p>The default is a 30-minute window selected at random from an 8-hour
+     * block of time for each Amazon Web Services Region, occurring on a random day of
+     * the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
@@ -1531,11 +1531,11 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
-     * RDS Maintenance Window</a>. </p> <p> Format:
-     * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each Amazon Web Services
-     * Region, occurring on a random day of the week. </p> <p>Valid Days: Mon, Tue,
-     * Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * RDS Maintenance Window</a>.</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * </p> <p>The default is a 30-minute window selected at random from an 8-hour
+     * block of time for each Amazon Web Services Region, occurring on a random day of
+     * the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
@@ -1543,11 +1543,11 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
-     * RDS Maintenance Window</a>. </p> <p> Format:
-     * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each Amazon Web Services
-     * Region, occurring on a random day of the week. </p> <p>Valid Days: Mon, Tue,
-     * Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * RDS Maintenance Window</a>.</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * </p> <p>The default is a 30-minute window selected at random from an 8-hour
+     * block of time for each Amazon Web Services Region, occurring on a random day of
+     * the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -1555,11 +1555,11 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
-     * RDS Maintenance Window</a>. </p> <p> Format:
-     * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each Amazon Web Services
-     * Region, occurring on a random day of the week. </p> <p>Valid Days: Mon, Tue,
-     * Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * RDS Maintenance Window</a>.</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * </p> <p>The default is a 30-minute window selected at random from an 8-hour
+     * block of time for each Amazon Web Services Region, occurring on a random day of
+     * the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
@@ -1567,11 +1567,11 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
-     * RDS Maintenance Window</a>. </p> <p> Format:
-     * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each Amazon Web Services
-     * Region, occurring on a random day of the week. </p> <p>Valid Days: Mon, Tue,
-     * Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * RDS Maintenance Window</a>.</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * </p> <p>The default is a 30-minute window selected at random from an 8-hour
+     * block of time for each Amazon Web Services Region, occurring on a random day of
+     * the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -1707,12 +1707,12 @@ namespace Model
 
 
     /**
-     * <p> The daily time range during which automated backups are created if automated
+     * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
      * default is a 30-minute window selected at random from an 8-hour block of time
      * for each Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
-     * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
+     * window</a> in the <i>Amazon RDS User Guide</i>.</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
      * managed by the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
@@ -1723,12 +1723,12 @@ namespace Model
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
     /**
-     * <p> The daily time range during which automated backups are created if automated
+     * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
      * default is a 30-minute window selected at random from an 8-hour block of time
      * for each Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
-     * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
+     * window</a> in the <i>Amazon RDS User Guide</i>.</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
      * managed by the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
@@ -1739,12 +1739,12 @@ namespace Model
     inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
     /**
-     * <p> The daily time range during which automated backups are created if automated
+     * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
      * default is a 30-minute window selected at random from an 8-hour block of time
      * for each Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
-     * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
+     * window</a> in the <i>Amazon RDS User Guide</i>.</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
      * managed by the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
@@ -1755,12 +1755,12 @@ namespace Model
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
     /**
-     * <p> The daily time range during which automated backups are created if automated
+     * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
      * default is a 30-minute window selected at random from an 8-hour block of time
      * for each Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
-     * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
+     * window</a> in the <i>Amazon RDS User Guide</i>.</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
      * managed by the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
@@ -1771,12 +1771,12 @@ namespace Model
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
     /**
-     * <p> The daily time range during which automated backups are created if automated
+     * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
      * default is a 30-minute window selected at random from an 8-hour block of time
      * for each Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
-     * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
+     * window</a> in the <i>Amazon RDS User Guide</i>.</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
      * managed by the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
@@ -1787,12 +1787,12 @@ namespace Model
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
     /**
-     * <p> The daily time range during which automated backups are created if automated
+     * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
      * default is a 30-minute window selected at random from an 8-hour block of time
      * for each Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
-     * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
+     * window</a> in the <i>Amazon RDS User Guide</i>.</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
      * managed by the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
@@ -1803,12 +1803,12 @@ namespace Model
     inline CreateDBInstanceRequest& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
     /**
-     * <p> The daily time range during which automated backups are created if automated
+     * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
      * default is a 30-minute window selected at random from an 8-hour block of time
      * for each Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
-     * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
+     * window</a> in the <i>Amazon RDS User Guide</i>.</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
      * managed by the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
@@ -1819,12 +1819,12 @@ namespace Model
     inline CreateDBInstanceRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
     /**
-     * <p> The daily time range during which automated backups are created if automated
+     * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
      * default is a 30-minute window selected at random from an 8-hour block of time
      * for each Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
-     * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
+     * window</a> in the <i>Amazon RDS User Guide</i>.</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
      * managed by the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
@@ -1837,68 +1837,68 @@ namespace Model
 
     /**
      * <p>The port number on which the database accepts connections.</p> <p>
-     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
-     * <code>1150-65535</code> </p> <p>Type: Integer</p> <p> <b>MariaDB</b> </p> <p>
-     * Default: <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p>
-     * <p>Type: Integer</p> <p> <b>PostgreSQL</b> </p> <p> Default: <code>5432</code>
-     * </p> <p> Valid values: <code>1150-65535</code> </p> <p>Type: Integer</p> <p>
-     * <b>Oracle</b> </p> <p> Default: <code>1521</code> </p> <p> Valid values:
-     * <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p> Default:
-     * <code>1433</code> </p> <p> Valid values: <code>1150-65535</code> except
+     * <b>MySQL</b> </p> <p>Default: <code>3306</code> </p> <p>Valid values:
+     * <code>1150-65535</code> </p> <p>Type: Integer</p> <p> <b>MariaDB</b> </p>
+     * <p>Default: <code>3306</code> </p> <p>Valid values: <code>1150-65535</code> </p>
+     * <p>Type: Integer</p> <p> <b>PostgreSQL</b> </p> <p>Default: <code>5432</code>
+     * </p> <p>Valid values: <code>1150-65535</code> </p> <p>Type: Integer</p> <p>
+     * <b>Oracle</b> </p> <p>Default: <code>1521</code> </p> <p>Valid values:
+     * <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p>Default:
+     * <code>1433</code> </p> <p>Valid values: <code>1150-65535</code> except
      * <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>,
      * <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
+     * <b>Amazon Aurora</b> </p> <p>Default: <code>3306</code> </p> <p>Valid values:
      * <code>1150-65535</code> </p> <p>Type: Integer</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port number on which the database accepts connections.</p> <p>
-     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
-     * <code>1150-65535</code> </p> <p>Type: Integer</p> <p> <b>MariaDB</b> </p> <p>
-     * Default: <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p>
-     * <p>Type: Integer</p> <p> <b>PostgreSQL</b> </p> <p> Default: <code>5432</code>
-     * </p> <p> Valid values: <code>1150-65535</code> </p> <p>Type: Integer</p> <p>
-     * <b>Oracle</b> </p> <p> Default: <code>1521</code> </p> <p> Valid values:
-     * <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p> Default:
-     * <code>1433</code> </p> <p> Valid values: <code>1150-65535</code> except
+     * <b>MySQL</b> </p> <p>Default: <code>3306</code> </p> <p>Valid values:
+     * <code>1150-65535</code> </p> <p>Type: Integer</p> <p> <b>MariaDB</b> </p>
+     * <p>Default: <code>3306</code> </p> <p>Valid values: <code>1150-65535</code> </p>
+     * <p>Type: Integer</p> <p> <b>PostgreSQL</b> </p> <p>Default: <code>5432</code>
+     * </p> <p>Valid values: <code>1150-65535</code> </p> <p>Type: Integer</p> <p>
+     * <b>Oracle</b> </p> <p>Default: <code>1521</code> </p> <p>Valid values:
+     * <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p>Default:
+     * <code>1433</code> </p> <p>Valid values: <code>1150-65535</code> except
      * <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>,
      * <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
+     * <b>Amazon Aurora</b> </p> <p>Default: <code>3306</code> </p> <p>Valid values:
      * <code>1150-65535</code> </p> <p>Type: Integer</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
      * <p>The port number on which the database accepts connections.</p> <p>
-     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
-     * <code>1150-65535</code> </p> <p>Type: Integer</p> <p> <b>MariaDB</b> </p> <p>
-     * Default: <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p>
-     * <p>Type: Integer</p> <p> <b>PostgreSQL</b> </p> <p> Default: <code>5432</code>
-     * </p> <p> Valid values: <code>1150-65535</code> </p> <p>Type: Integer</p> <p>
-     * <b>Oracle</b> </p> <p> Default: <code>1521</code> </p> <p> Valid values:
-     * <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p> Default:
-     * <code>1433</code> </p> <p> Valid values: <code>1150-65535</code> except
+     * <b>MySQL</b> </p> <p>Default: <code>3306</code> </p> <p>Valid values:
+     * <code>1150-65535</code> </p> <p>Type: Integer</p> <p> <b>MariaDB</b> </p>
+     * <p>Default: <code>3306</code> </p> <p>Valid values: <code>1150-65535</code> </p>
+     * <p>Type: Integer</p> <p> <b>PostgreSQL</b> </p> <p>Default: <code>5432</code>
+     * </p> <p>Valid values: <code>1150-65535</code> </p> <p>Type: Integer</p> <p>
+     * <b>Oracle</b> </p> <p>Default: <code>1521</code> </p> <p>Valid values:
+     * <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p>Default:
+     * <code>1433</code> </p> <p>Valid values: <code>1150-65535</code> except
      * <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>,
      * <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
+     * <b>Amazon Aurora</b> </p> <p>Default: <code>3306</code> </p> <p>Valid values:
      * <code>1150-65535</code> </p> <p>Type: Integer</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port number on which the database accepts connections.</p> <p>
-     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
-     * <code>1150-65535</code> </p> <p>Type: Integer</p> <p> <b>MariaDB</b> </p> <p>
-     * Default: <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p>
-     * <p>Type: Integer</p> <p> <b>PostgreSQL</b> </p> <p> Default: <code>5432</code>
-     * </p> <p> Valid values: <code>1150-65535</code> </p> <p>Type: Integer</p> <p>
-     * <b>Oracle</b> </p> <p> Default: <code>1521</code> </p> <p> Valid values:
-     * <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p> Default:
-     * <code>1433</code> </p> <p> Valid values: <code>1150-65535</code> except
+     * <b>MySQL</b> </p> <p>Default: <code>3306</code> </p> <p>Valid values:
+     * <code>1150-65535</code> </p> <p>Type: Integer</p> <p> <b>MariaDB</b> </p>
+     * <p>Default: <code>3306</code> </p> <p>Valid values: <code>1150-65535</code> </p>
+     * <p>Type: Integer</p> <p> <b>PostgreSQL</b> </p> <p>Default: <code>5432</code>
+     * </p> <p>Valid values: <code>1150-65535</code> </p> <p>Type: Integer</p> <p>
+     * <b>Oracle</b> </p> <p>Default: <code>1521</code> </p> <p>Valid values:
+     * <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p>Default:
+     * <code>1433</code> </p> <p>Valid values: <code>1150-65535</code> except
      * <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>,
      * <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
+     * <b>Amazon Aurora</b> </p> <p>Default: <code>3306</code> </p> <p>Valid values:
      * <code>1150-65535</code> </p> <p>Type: Integer</p>
      */
     inline CreateDBInstanceRequest& WithPort(int value) { SetPort(value); return *this;}
@@ -1947,25 +1947,25 @@ namespace Model
      * example identifier is <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
-     * Guide.</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
+     * Guide</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS
      * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p> <b>MariaDB</b> </p> <p>For information, see <a
+     * Guide</i>.</p> <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
-     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>Oracle</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
-     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
-     * Guide.</i> </p>
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -1983,25 +1983,25 @@ namespace Model
      * example identifier is <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
-     * Guide.</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
+     * Guide</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS
      * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p> <b>MariaDB</b> </p> <p>For information, see <a
+     * Guide</i>.</p> <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
-     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>Oracle</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
-     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
-     * Guide.</i> </p>
+     * Guide</i>.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
@@ -2019,25 +2019,25 @@ namespace Model
      * example identifier is <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
-     * Guide.</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
+     * Guide</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS
      * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p> <b>MariaDB</b> </p> <p>For information, see <a
+     * Guide</i>.</p> <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
-     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>Oracle</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
-     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
-     * Guide.</i> </p>
+     * Guide</i>.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -2055,25 +2055,25 @@ namespace Model
      * example identifier is <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
-     * Guide.</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
+     * Guide</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS
      * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p> <b>MariaDB</b> </p> <p>For information, see <a
+     * Guide</i>.</p> <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
-     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>Oracle</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
-     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
-     * Guide.</i> </p>
+     * Guide</i>.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -2091,25 +2091,25 @@ namespace Model
      * example identifier is <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
-     * Guide.</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
+     * Guide</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS
      * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p> <b>MariaDB</b> </p> <p>For information, see <a
+     * Guide</i>.</p> <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
-     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>Oracle</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
-     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
-     * Guide.</i> </p>
+     * Guide</i>.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -2127,25 +2127,25 @@ namespace Model
      * example identifier is <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
-     * Guide.</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
+     * Guide</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS
      * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p> <b>MariaDB</b> </p> <p>For information, see <a
+     * Guide</i>.</p> <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
-     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>Oracle</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
-     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
-     * Guide.</i> </p>
+     * Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -2163,25 +2163,25 @@ namespace Model
      * example identifier is <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
-     * Guide.</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
+     * Guide</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS
      * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p> <b>MariaDB</b> </p> <p>For information, see <a
+     * Guide</i>.</p> <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
-     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>Oracle</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
-     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
-     * Guide.</i> </p>
+     * Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -2199,25 +2199,25 @@ namespace Model
      * example identifier is <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
-     * Guide.</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
+     * Guide</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS
      * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p> <b>MariaDB</b> </p> <p>For information, see <a
+     * Guide</i>.</p> <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
-     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>Oracle</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
-     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide</i>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
-     * Guide.</i> </p>
+     * Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -2260,7 +2260,7 @@ namespace Model
 
 
     /**
-     * <p>License model information for this DB instance.</p> <p> Valid values:
+     * <p>License model information for this DB instance.</p> <p>Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
      * Custom.</p>
@@ -2268,7 +2268,7 @@ namespace Model
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
 
     /**
-     * <p>License model information for this DB instance.</p> <p> Valid values:
+     * <p>License model information for this DB instance.</p> <p>Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
      * Custom.</p>
@@ -2276,7 +2276,7 @@ namespace Model
     inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
-     * <p>License model information for this DB instance.</p> <p> Valid values:
+     * <p>License model information for this DB instance.</p> <p>Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
      * Custom.</p>
@@ -2284,7 +2284,7 @@ namespace Model
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /**
-     * <p>License model information for this DB instance.</p> <p> Valid values:
+     * <p>License model information for this DB instance.</p> <p>Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
      * Custom.</p>
@@ -2292,7 +2292,7 @@ namespace Model
     inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
 
     /**
-     * <p>License model information for this DB instance.</p> <p> Valid values:
+     * <p>License model information for this DB instance.</p> <p>Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
      * Custom.</p>
@@ -2300,7 +2300,7 @@ namespace Model
     inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
 
     /**
-     * <p>License model information for this DB instance.</p> <p> Valid values:
+     * <p>License model information for this DB instance.</p> <p>Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
      * Custom.</p>
@@ -2308,7 +2308,7 @@ namespace Model
     inline CreateDBInstanceRequest& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
 
     /**
-     * <p>License model information for this DB instance.</p> <p> Valid values:
+     * <p>License model information for this DB instance.</p> <p>Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
      * Custom.</p>
@@ -2316,7 +2316,7 @@ namespace Model
     inline CreateDBInstanceRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
 
     /**
-     * <p>License model information for this DB instance.</p> <p> Valid values:
+     * <p>License model information for this DB instance.</p> <p>Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
      * Custom.</p>
@@ -2330,10 +2330,10 @@ namespace Model
      * <code>Iops</code> values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
+     * User Guide</i>.</p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
      * DB instances, must be a multiple between .5 and 50 of the storage amount for the
      * DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of
-     * the storage amount for the DB instance. </p>
+     * the storage amount for the DB instance.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
@@ -2343,10 +2343,10 @@ namespace Model
      * <code>Iops</code> values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
+     * User Guide</i>.</p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
      * DB instances, must be a multiple between .5 and 50 of the storage amount for the
      * DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of
-     * the storage amount for the DB instance. </p>
+     * the storage amount for the DB instance.</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
@@ -2356,10 +2356,10 @@ namespace Model
      * <code>Iops</code> values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
+     * User Guide</i>.</p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
      * DB instances, must be a multiple between .5 and 50 of the storage amount for the
      * DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of
-     * the storage amount for the DB instance. </p>
+     * the storage amount for the DB instance.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
@@ -2369,10 +2369,10 @@ namespace Model
      * <code>Iops</code> values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
+     * User Guide</i>.</p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
      * DB instances, must be a multiple between .5 and 50 of the storage amount for the
      * DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of
-     * the storage amount for the DB instance. </p>
+     * the storage amount for the DB instance.</p>
      */
     inline CreateDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
 
@@ -2772,73 +2772,73 @@ namespace Model
 
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline CreateDBInstanceRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline CreateDBInstanceRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
-     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
      * is specified, otherwise <code>gp2</code> </p>
      */
     inline CreateDBInstanceRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
@@ -3455,7 +3455,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default:
+     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default:
      * 1</p> <p>Valid Values: 0 - 15</p>
      */
     inline int GetPromotionTier() const{ return m_promotionTier; }
@@ -3466,7 +3466,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default:
+     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default:
      * 1</p> <p>Valid Values: 0 - 15</p>
      */
     inline bool PromotionTierHasBeenSet() const { return m_promotionTierHasBeenSet; }
@@ -3477,7 +3477,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default:
+     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default:
      * 1</p> <p>Valid Values: 0 - 15</p>
      */
     inline void SetPromotionTier(int value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
@@ -3488,7 +3488,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default:
+     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default:
      * 1</p> <p>Valid Values: 0 - 15</p>
      */
     inline CreateDBInstanceRequest& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
@@ -3498,7 +3498,7 @@ namespace Model
      * <p>The time zone of the DB instance. The time zone parameter is currently
      * supported only by <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
-     * SQL Server</a>. </p>
+     * SQL Server</a>.</p>
      */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
 
@@ -3506,7 +3506,7 @@ namespace Model
      * <p>The time zone of the DB instance. The time zone parameter is currently
      * supported only by <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
-     * SQL Server</a>. </p>
+     * SQL Server</a>.</p>
      */
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
 
@@ -3514,7 +3514,7 @@ namespace Model
      * <p>The time zone of the DB instance. The time zone parameter is currently
      * supported only by <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
-     * SQL Server</a>. </p>
+     * SQL Server</a>.</p>
      */
     inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
 
@@ -3522,7 +3522,7 @@ namespace Model
      * <p>The time zone of the DB instance. The time zone parameter is currently
      * supported only by <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
-     * SQL Server</a>. </p>
+     * SQL Server</a>.</p>
      */
     inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
 
@@ -3530,7 +3530,7 @@ namespace Model
      * <p>The time zone of the DB instance. The time zone parameter is currently
      * supported only by <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
-     * SQL Server</a>. </p>
+     * SQL Server</a>.</p>
      */
     inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
 
@@ -3538,7 +3538,7 @@ namespace Model
      * <p>The time zone of the DB instance. The time zone parameter is currently
      * supported only by <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
-     * SQL Server</a>. </p>
+     * SQL Server</a>.</p>
      */
     inline CreateDBInstanceRequest& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
 
@@ -3546,7 +3546,7 @@ namespace Model
      * <p>The time zone of the DB instance. The time zone parameter is currently
      * supported only by <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
-     * SQL Server</a>. </p>
+     * SQL Server</a>.</p>
      */
     inline CreateDBInstanceRequest& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
 
@@ -3554,7 +3554,7 @@ namespace Model
      * <p>The time zone of the DB instance. The time zone parameter is currently
      * supported only by <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
-     * SQL Server</a>. </p>
+     * SQL Server</a>.</p>
      */
     inline CreateDBInstanceRequest& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 
@@ -3567,7 +3567,7 @@ namespace Model
      * is managed by the DB cluster.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
-     * User Guide.</i> </p>
+     * User Guide</i>.</p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
@@ -3579,7 +3579,7 @@ namespace Model
      * is managed by the DB cluster.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
-     * User Guide.</i> </p>
+     * User Guide</i>.</p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
@@ -3591,7 +3591,7 @@ namespace Model
      * is managed by the DB cluster.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
-     * User Guide.</i> </p>
+     * User Guide</i>.</p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
@@ -3603,7 +3603,7 @@ namespace Model
      * is managed by the DB cluster.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
-     * User Guide.</i> </p>
+     * User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
@@ -3612,8 +3612,8 @@ namespace Model
      * <p>A value that indicates whether to enable Performance Insights for the DB
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
-     * User Guide</i>. </p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
@@ -3621,8 +3621,8 @@ namespace Model
      * <p>A value that indicates whether to enable Performance Insights for the DB
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
-     * User Guide</i>. </p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p>
      */
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
 
@@ -3630,8 +3630,8 @@ namespace Model
      * <p>A value that indicates whether to enable Performance Insights for the DB
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
-     * User Guide</i>. </p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p>
      */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
@@ -3639,8 +3639,8 @@ namespace Model
      * <p>A value that indicates whether to enable Performance Insights for the DB
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
-     * User Guide</i>. </p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 
@@ -3775,20 +3775,20 @@ namespace Model
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
      * Logs. The values in the list depend on the DB engine. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
-     * Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
-     * CloudWatch Logs exports are managed by the DB cluster. </p> <p> <b>RDS
-     * Custom</b> </p> <p>Not applicable. </p> <p> <b>MariaDB</b> </p> <p>Possible
-     * values are <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
-     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">
+     * Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. CloudWatch Logs
+     * exports are managed by the DB cluster.</p> <p> <b>RDS Custom</b> </p> <p>Not
+     * applicable.</p> <p> <b>MariaDB</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>.</p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
+     * values are <code>agent</code> and <code>error</code>.</p> <p> <b>MySQL</b> </p>
      * <p>Possible values are <code>audit</code>, <code>error</code>,
-     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
+     * <code>general</code>, and <code>slowquery</code>.</p> <p> <b>Oracle</b> </p>
      * <p>Possible values are <code>alert</code>, <code>audit</code>,
-     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>. </p> <p>
+     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
-     * <code>upgrade</code>. </p>
+     * <code>upgrade</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
 
@@ -3796,20 +3796,20 @@ namespace Model
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
      * Logs. The values in the list depend on the DB engine. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
-     * Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
-     * CloudWatch Logs exports are managed by the DB cluster. </p> <p> <b>RDS
-     * Custom</b> </p> <p>Not applicable. </p> <p> <b>MariaDB</b> </p> <p>Possible
-     * values are <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
-     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">
+     * Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. CloudWatch Logs
+     * exports are managed by the DB cluster.</p> <p> <b>RDS Custom</b> </p> <p>Not
+     * applicable.</p> <p> <b>MariaDB</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>.</p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
+     * values are <code>agent</code> and <code>error</code>.</p> <p> <b>MySQL</b> </p>
      * <p>Possible values are <code>audit</code>, <code>error</code>,
-     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
+     * <code>general</code>, and <code>slowquery</code>.</p> <p> <b>Oracle</b> </p>
      * <p>Possible values are <code>alert</code>, <code>audit</code>,
-     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>. </p> <p>
+     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
-     * <code>upgrade</code>. </p>
+     * <code>upgrade</code>.</p>
      */
     inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
 
@@ -3817,20 +3817,20 @@ namespace Model
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
      * Logs. The values in the list depend on the DB engine. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
-     * Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
-     * CloudWatch Logs exports are managed by the DB cluster. </p> <p> <b>RDS
-     * Custom</b> </p> <p>Not applicable. </p> <p> <b>MariaDB</b> </p> <p>Possible
-     * values are <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
-     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">
+     * Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. CloudWatch Logs
+     * exports are managed by the DB cluster.</p> <p> <b>RDS Custom</b> </p> <p>Not
+     * applicable.</p> <p> <b>MariaDB</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>.</p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
+     * values are <code>agent</code> and <code>error</code>.</p> <p> <b>MySQL</b> </p>
      * <p>Possible values are <code>audit</code>, <code>error</code>,
-     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
+     * <code>general</code>, and <code>slowquery</code>.</p> <p> <b>Oracle</b> </p>
      * <p>Possible values are <code>alert</code>, <code>audit</code>,
-     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>. </p> <p>
+     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
-     * <code>upgrade</code>. </p>
+     * <code>upgrade</code>.</p>
      */
     inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
 
@@ -3838,20 +3838,20 @@ namespace Model
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
      * Logs. The values in the list depend on the DB engine. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
-     * Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
-     * CloudWatch Logs exports are managed by the DB cluster. </p> <p> <b>RDS
-     * Custom</b> </p> <p>Not applicable. </p> <p> <b>MariaDB</b> </p> <p>Possible
-     * values are <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
-     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">
+     * Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. CloudWatch Logs
+     * exports are managed by the DB cluster.</p> <p> <b>RDS Custom</b> </p> <p>Not
+     * applicable.</p> <p> <b>MariaDB</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>.</p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
+     * values are <code>agent</code> and <code>error</code>.</p> <p> <b>MySQL</b> </p>
      * <p>Possible values are <code>audit</code>, <code>error</code>,
-     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
+     * <code>general</code>, and <code>slowquery</code>.</p> <p> <b>Oracle</b> </p>
      * <p>Possible values are <code>alert</code>, <code>audit</code>,
-     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>. </p> <p>
+     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
-     * <code>upgrade</code>. </p>
+     * <code>upgrade</code>.</p>
      */
     inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
 
@@ -3859,20 +3859,20 @@ namespace Model
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
      * Logs. The values in the list depend on the DB engine. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
-     * Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
-     * CloudWatch Logs exports are managed by the DB cluster. </p> <p> <b>RDS
-     * Custom</b> </p> <p>Not applicable. </p> <p> <b>MariaDB</b> </p> <p>Possible
-     * values are <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
-     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">
+     * Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. CloudWatch Logs
+     * exports are managed by the DB cluster.</p> <p> <b>RDS Custom</b> </p> <p>Not
+     * applicable.</p> <p> <b>MariaDB</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>.</p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
+     * values are <code>agent</code> and <code>error</code>.</p> <p> <b>MySQL</b> </p>
      * <p>Possible values are <code>audit</code>, <code>error</code>,
-     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
+     * <code>general</code>, and <code>slowquery</code>.</p> <p> <b>Oracle</b> </p>
      * <p>Possible values are <code>alert</code>, <code>audit</code>,
-     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>. </p> <p>
+     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
-     * <code>upgrade</code>. </p>
+     * <code>upgrade</code>.</p>
      */
     inline CreateDBInstanceRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
 
@@ -3880,20 +3880,20 @@ namespace Model
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
      * Logs. The values in the list depend on the DB engine. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
-     * Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
-     * CloudWatch Logs exports are managed by the DB cluster. </p> <p> <b>RDS
-     * Custom</b> </p> <p>Not applicable. </p> <p> <b>MariaDB</b> </p> <p>Possible
-     * values are <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
-     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">
+     * Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. CloudWatch Logs
+     * exports are managed by the DB cluster.</p> <p> <b>RDS Custom</b> </p> <p>Not
+     * applicable.</p> <p> <b>MariaDB</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>.</p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
+     * values are <code>agent</code> and <code>error</code>.</p> <p> <b>MySQL</b> </p>
      * <p>Possible values are <code>audit</code>, <code>error</code>,
-     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
+     * <code>general</code>, and <code>slowquery</code>.</p> <p> <b>Oracle</b> </p>
      * <p>Possible values are <code>alert</code>, <code>audit</code>,
-     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>. </p> <p>
+     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
-     * <code>upgrade</code>. </p>
+     * <code>upgrade</code>.</p>
      */
     inline CreateDBInstanceRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
 
@@ -3901,20 +3901,20 @@ namespace Model
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
      * Logs. The values in the list depend on the DB engine. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
-     * Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
-     * CloudWatch Logs exports are managed by the DB cluster. </p> <p> <b>RDS
-     * Custom</b> </p> <p>Not applicable. </p> <p> <b>MariaDB</b> </p> <p>Possible
-     * values are <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
-     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">
+     * Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. CloudWatch Logs
+     * exports are managed by the DB cluster.</p> <p> <b>RDS Custom</b> </p> <p>Not
+     * applicable.</p> <p> <b>MariaDB</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>.</p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
+     * values are <code>agent</code> and <code>error</code>.</p> <p> <b>MySQL</b> </p>
      * <p>Possible values are <code>audit</code>, <code>error</code>,
-     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
+     * <code>general</code>, and <code>slowquery</code>.</p> <p> <b>Oracle</b> </p>
      * <p>Possible values are <code>alert</code>, <code>audit</code>,
-     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>. </p> <p>
+     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
-     * <code>upgrade</code>. </p>
+     * <code>upgrade</code>.</p>
      */
     inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
@@ -3922,20 +3922,20 @@ namespace Model
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
      * Logs. The values in the list depend on the DB engine. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
-     * Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
-     * CloudWatch Logs exports are managed by the DB cluster. </p> <p> <b>RDS
-     * Custom</b> </p> <p>Not applicable. </p> <p> <b>MariaDB</b> </p> <p>Possible
-     * values are <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
-     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">
+     * Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. CloudWatch Logs
+     * exports are managed by the DB cluster.</p> <p> <b>RDS Custom</b> </p> <p>Not
+     * applicable.</p> <p> <b>MariaDB</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>.</p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
+     * values are <code>agent</code> and <code>error</code>.</p> <p> <b>MySQL</b> </p>
      * <p>Possible values are <code>audit</code>, <code>error</code>,
-     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
+     * <code>general</code>, and <code>slowquery</code>.</p> <p> <b>Oracle</b> </p>
      * <p>Possible values are <code>alert</code>, <code>audit</code>,
-     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>. </p> <p>
+     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
-     * <code>upgrade</code>. </p>
+     * <code>upgrade</code>.</p>
      */
     inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
@@ -3943,20 +3943,20 @@ namespace Model
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
      * Logs. The values in the list depend on the DB engine. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
-     * Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
-     * CloudWatch Logs exports are managed by the DB cluster. </p> <p> <b>RDS
-     * Custom</b> </p> <p>Not applicable. </p> <p> <b>MariaDB</b> </p> <p>Possible
-     * values are <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
-     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">
+     * Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. CloudWatch Logs
+     * exports are managed by the DB cluster.</p> <p> <b>RDS Custom</b> </p> <p>Not
+     * applicable.</p> <p> <b>MariaDB</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>.</p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
+     * values are <code>agent</code> and <code>error</code>.</p> <p> <b>MySQL</b> </p>
      * <p>Possible values are <code>audit</code>, <code>error</code>,
-     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
+     * <code>general</code>, and <code>slowquery</code>.</p> <p> <b>Oracle</b> </p>
      * <p>Possible values are <code>alert</code>, <code>audit</code>,
-     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>. </p> <p>
+     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>.</p> <p>
      * <b>PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
-     * <code>upgrade</code>. </p>
+     * <code>upgrade</code>.</p>
      */
     inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
@@ -4023,11 +4023,10 @@ namespace Model
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. You can enable or disable deletion protection for the DB cluster.
-     * For more information, see <code>CreateDBCluster</code>. DB instances in a DB
-     * cluster can be deleted even when deletion protection is enabled for the DB
-     * cluster. </p>
+     * Deleting a DB Instance</a>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * You can enable or disable deletion protection for the DB cluster. For more
+     * information, see <code>CreateDBCluster</code>. DB instances in a DB cluster can
+     * be deleted even when deletion protection is enabled for the DB cluster.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
@@ -4036,11 +4035,10 @@ namespace Model
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. You can enable or disable deletion protection for the DB cluster.
-     * For more information, see <code>CreateDBCluster</code>. DB instances in a DB
-     * cluster can be deleted even when deletion protection is enabled for the DB
-     * cluster. </p>
+     * Deleting a DB Instance</a>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * You can enable or disable deletion protection for the DB cluster. For more
+     * information, see <code>CreateDBCluster</code>. DB instances in a DB cluster can
+     * be deleted even when deletion protection is enabled for the DB cluster.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
@@ -4049,11 +4047,10 @@ namespace Model
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. You can enable or disable deletion protection for the DB cluster.
-     * For more information, see <code>CreateDBCluster</code>. DB instances in a DB
-     * cluster can be deleted even when deletion protection is enabled for the DB
-     * cluster. </p>
+     * Deleting a DB Instance</a>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * You can enable or disable deletion protection for the DB cluster. For more
+     * information, see <code>CreateDBCluster</code>. DB instances in a DB cluster can
+     * be deleted even when deletion protection is enabled for the DB cluster.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
@@ -4062,11 +4059,10 @@ namespace Model
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. You can enable or disable deletion protection for the DB cluster.
-     * For more information, see <code>CreateDBCluster</code>. DB instances in a DB
-     * cluster can be deleted even when deletion protection is enabled for the DB
-     * cluster. </p>
+     * Deleting a DB Instance</a>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * You can enable or disable deletion protection for the DB cluster. For more
+     * information, see <code>CreateDBCluster</code>. DB instances in a DB cluster can
+     * be deleted even when deletion protection is enabled for the DB cluster.</p>
      */
     inline CreateDBInstanceRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
@@ -4186,8 +4182,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline const Aws::String& GetCustomIamInstanceProfile() const{ return m_customIamInstanceProfile; }
 
@@ -4200,8 +4196,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline bool CustomIamInstanceProfileHasBeenSet() const { return m_customIamInstanceProfileHasBeenSet; }
 
@@ -4214,8 +4210,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline void SetCustomIamInstanceProfile(const Aws::String& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = value; }
 
@@ -4228,8 +4224,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline void SetCustomIamInstanceProfile(Aws::String&& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = std::move(value); }
 
@@ -4242,8 +4238,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline void SetCustomIamInstanceProfile(const char* value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile.assign(value); }
 
@@ -4256,8 +4252,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithCustomIamInstanceProfile(const Aws::String& value) { SetCustomIamInstanceProfile(value); return *this;}
 
@@ -4270,8 +4266,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithCustomIamInstanceProfile(Aws::String&& value) { SetCustomIamInstanceProfile(std::move(value)); return *this;}
 
@@ -4284,8 +4280,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithCustomIamInstanceProfile(const char* value) { SetCustomIamInstanceProfile(value); return *this;}
 

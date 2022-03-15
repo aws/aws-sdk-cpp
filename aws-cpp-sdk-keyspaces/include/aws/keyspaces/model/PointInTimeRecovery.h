@@ -43,38 +43,38 @@ namespace Model
 
 
     /**
-     * <p>The options are:</p> <ul> <li> <p> <code>ENABLED</code> </p> </li> <li> <p>
-     * <code>DISABLED</code> </p> </li> </ul>
+     * <p>The options are:</p> <p>• <code>ENABLED</code> </p> <p>•
+     * <code>DISABLED</code> </p>
      */
     inline const PointInTimeRecoveryStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The options are:</p> <ul> <li> <p> <code>ENABLED</code> </p> </li> <li> <p>
-     * <code>DISABLED</code> </p> </li> </ul>
+     * <p>The options are:</p> <p>• <code>ENABLED</code> </p> <p>•
+     * <code>DISABLED</code> </p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The options are:</p> <ul> <li> <p> <code>ENABLED</code> </p> </li> <li> <p>
-     * <code>DISABLED</code> </p> </li> </ul>
+     * <p>The options are:</p> <p>• <code>ENABLED</code> </p> <p>•
+     * <code>DISABLED</code> </p>
      */
     inline void SetStatus(const PointInTimeRecoveryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The options are:</p> <ul> <li> <p> <code>ENABLED</code> </p> </li> <li> <p>
-     * <code>DISABLED</code> </p> </li> </ul>
+     * <p>The options are:</p> <p>• <code>ENABLED</code> </p> <p>•
+     * <code>DISABLED</code> </p>
      */
     inline void SetStatus(PointInTimeRecoveryStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The options are:</p> <ul> <li> <p> <code>ENABLED</code> </p> </li> <li> <p>
-     * <code>DISABLED</code> </p> </li> </ul>
+     * <p>The options are:</p> <p>• <code>ENABLED</code> </p> <p>•
+     * <code>DISABLED</code> </p>
      */
     inline PointInTimeRecovery& WithStatus(const PointInTimeRecoveryStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The options are:</p> <ul> <li> <p> <code>ENABLED</code> </p> </li> <li> <p>
-     * <code>DISABLED</code> </p> </li> </ul>
+     * <p>The options are:</p> <p>• <code>ENABLED</code> </p> <p>•
+     * <code>DISABLED</code> </p>
      */
     inline PointInTimeRecovery& WithStatus(PointInTimeRecoveryStatus&& value) { SetStatus(std::move(value)); return *this;}
 

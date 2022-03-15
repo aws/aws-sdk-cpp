@@ -41,37 +41,37 @@ namespace Model
 
 
     /**
-     * <p>A list of EventCategoriesMap data types.</p>
+     * <p>A list of <code>EventCategoriesMap</code> data types.</p>
      */
     inline const Aws::Vector<EventCategoriesMap>& GetEventCategoriesMapList() const{ return m_eventCategoriesMapList; }
 
     /**
-     * <p>A list of EventCategoriesMap data types.</p>
+     * <p>A list of <code>EventCategoriesMap</code> data types.</p>
      */
     inline void SetEventCategoriesMapList(const Aws::Vector<EventCategoriesMap>& value) { m_eventCategoriesMapList = value; }
 
     /**
-     * <p>A list of EventCategoriesMap data types.</p>
+     * <p>A list of <code>EventCategoriesMap</code> data types.</p>
      */
     inline void SetEventCategoriesMapList(Aws::Vector<EventCategoriesMap>&& value) { m_eventCategoriesMapList = std::move(value); }
 
     /**
-     * <p>A list of EventCategoriesMap data types.</p>
+     * <p>A list of <code>EventCategoriesMap</code> data types.</p>
      */
     inline DescribeEventCategoriesResult& WithEventCategoriesMapList(const Aws::Vector<EventCategoriesMap>& value) { SetEventCategoriesMapList(value); return *this;}
 
     /**
-     * <p>A list of EventCategoriesMap data types.</p>
+     * <p>A list of <code>EventCategoriesMap</code> data types.</p>
      */
     inline DescribeEventCategoriesResult& WithEventCategoriesMapList(Aws::Vector<EventCategoriesMap>&& value) { SetEventCategoriesMapList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of EventCategoriesMap data types.</p>
+     * <p>A list of <code>EventCategoriesMap</code> data types.</p>
      */
     inline DescribeEventCategoriesResult& AddEventCategoriesMapList(const EventCategoriesMap& value) { m_eventCategoriesMapList.push_back(value); return *this; }
 
     /**
-     * <p>A list of EventCategoriesMap data types.</p>
+     * <p>A list of <code>EventCategoriesMap</code> data types.</p>
      */
     inline DescribeEventCategoriesResult& AddEventCategoriesMapList(EventCategoriesMap&& value) { m_eventCategoriesMapList.push_back(std::move(value)); return *this; }
 

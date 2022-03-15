@@ -178,49 +178,49 @@ namespace Model
 
     /**
      * <p>The customer id of the instance that is/was associated with the automated
-     * backup. </p>
+     * backup.</p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
 
     /**
      * <p>The customer id of the instance that is/was associated with the automated
-     * backup. </p>
+     * backup.</p>
      */
     inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
 
     /**
      * <p>The customer id of the instance that is/was associated with the automated
-     * backup. </p>
+     * backup.</p>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
      * <p>The customer id of the instance that is/was associated with the automated
-     * backup. </p>
+     * backup.</p>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The customer id of the instance that is/was associated with the automated
-     * backup. </p>
+     * backup.</p>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /**
      * <p>The customer id of the instance that is/was associated with the automated
-     * backup. </p>
+     * backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
      * <p>The customer id of the instance that is/was associated with the automated
-     * backup. </p>
+     * backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The customer id of the instance that is/was associated with the automated
-     * backup. </p>
+     * backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
@@ -486,32 +486,32 @@ namespace Model
 
 
     /**
-     * <p>Provides the date and time that the DB instance was created. </p>
+     * <p>Provides the date and time that the DB instance was created.</p>
      */
     inline const Aws::Utils::DateTime& GetInstanceCreateTime() const{ return m_instanceCreateTime; }
 
     /**
-     * <p>Provides the date and time that the DB instance was created. </p>
+     * <p>Provides the date and time that the DB instance was created.</p>
      */
     inline bool InstanceCreateTimeHasBeenSet() const { return m_instanceCreateTimeHasBeenSet; }
 
     /**
-     * <p>Provides the date and time that the DB instance was created. </p>
+     * <p>Provides the date and time that the DB instance was created.</p>
      */
     inline void SetInstanceCreateTime(const Aws::Utils::DateTime& value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = value; }
 
     /**
-     * <p>Provides the date and time that the DB instance was created. </p>
+     * <p>Provides the date and time that the DB instance was created.</p>
      */
     inline void SetInstanceCreateTime(Aws::Utils::DateTime&& value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = std::move(value); }
 
     /**
-     * <p>Provides the date and time that the DB instance was created. </p>
+     * <p>Provides the date and time that the DB instance was created.</p>
      */
     inline DBInstanceAutomatedBackup& WithInstanceCreateTime(const Aws::Utils::DateTime& value) { SetInstanceCreateTime(value); return *this;}
 
     /**
-     * <p>Provides the date and time that the DB instance was created. </p>
+     * <p>Provides the date and time that the DB instance was created.</p>
      */
     inline DBInstanceAutomatedBackup& WithInstanceCreateTime(Aws::Utils::DateTime&& value) { SetInstanceCreateTime(std::move(value)); return *this;}
 
@@ -681,22 +681,22 @@ namespace Model
 
 
     /**
-     * <p>The IOPS (I/O operations per second) value for the automated backup. </p>
+     * <p>The IOPS (I/O operations per second) value for the automated backup.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
-     * <p>The IOPS (I/O operations per second) value for the automated backup. </p>
+     * <p>The IOPS (I/O operations per second) value for the automated backup.</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
-     * <p>The IOPS (I/O operations per second) value for the automated backup. </p>
+     * <p>The IOPS (I/O operations per second) value for the automated backup.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
-     * <p>The IOPS (I/O operations per second) value for the automated backup. </p>
+     * <p>The IOPS (I/O operations per second) value for the automated backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithIops(int value) { SetIops(value); return *this;}
 

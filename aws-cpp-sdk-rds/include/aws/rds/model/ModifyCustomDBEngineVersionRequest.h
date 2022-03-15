@@ -196,7 +196,7 @@ namespace Model
      * <code>inactive</code>, and from <code>inactive</code> back to
      * <code>available</code>. To change the availability status of the CEV, it must
      * not currently be in use by an RDS Custom instance, snapshot, or automated
-     * backup. </p>
+     * backup.</p>
      */
     inline const CustomEngineVersionStatus& GetStatus() const{ return m_status; }
 
@@ -212,7 +212,7 @@ namespace Model
      * <code>inactive</code>, and from <code>inactive</code> back to
      * <code>available</code>. To change the availability status of the CEV, it must
      * not currently be in use by an RDS Custom instance, snapshot, or automated
-     * backup. </p>
+     * backup.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -228,7 +228,7 @@ namespace Model
      * <code>inactive</code>, and from <code>inactive</code> back to
      * <code>available</code>. To change the availability status of the CEV, it must
      * not currently be in use by an RDS Custom instance, snapshot, or automated
-     * backup. </p>
+     * backup.</p>
      */
     inline void SetStatus(const CustomEngineVersionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -244,7 +244,7 @@ namespace Model
      * <code>inactive</code>, and from <code>inactive</code> back to
      * <code>available</code>. To change the availability status of the CEV, it must
      * not currently be in use by an RDS Custom instance, snapshot, or automated
-     * backup. </p>
+     * backup.</p>
      */
     inline void SetStatus(CustomEngineVersionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -260,7 +260,7 @@ namespace Model
      * <code>inactive</code>, and from <code>inactive</code> back to
      * <code>available</code>. To change the availability status of the CEV, it must
      * not currently be in use by an RDS Custom instance, snapshot, or automated
-     * backup. </p>
+     * backup.</p>
      */
     inline ModifyCustomDBEngineVersionRequest& WithStatus(const CustomEngineVersionStatus& value) { SetStatus(value); return *this;}
 
@@ -276,7 +276,7 @@ namespace Model
      * <code>inactive</code>, and from <code>inactive</code> back to
      * <code>available</code>. To change the availability status of the CEV, it must
      * not currently be in use by an RDS Custom instance, snapshot, or automated
-     * backup. </p>
+     * backup.</p>
      */
     inline ModifyCustomDBEngineVersionRequest& WithStatus(CustomEngineVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
 

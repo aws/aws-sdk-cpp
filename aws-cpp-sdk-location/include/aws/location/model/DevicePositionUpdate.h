@@ -116,50 +116,50 @@ namespace Model
 
     /**
      * <p>The latest device position defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[X or longitude, Y or latitude]</code>.</p>
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS
+     * 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
      */
     inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
 
     /**
      * <p>The latest device position defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[X or longitude, Y or latitude]</code>.</p>
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS
+     * 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
      */
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
 
     /**
      * <p>The latest device position defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[X or longitude, Y or latitude]</code>.</p>
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS
+     * 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
      */
     inline void SetPosition(const Aws::Vector<double>& value) { m_positionHasBeenSet = true; m_position = value; }
 
     /**
      * <p>The latest device position defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[X or longitude, Y or latitude]</code>.</p>
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS
+     * 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
      */
     inline void SetPosition(Aws::Vector<double>&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
      * <p>The latest device position defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[X or longitude, Y or latitude]</code>.</p>
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS
+     * 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
      */
     inline DevicePositionUpdate& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
 
     /**
      * <p>The latest device position defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[X or longitude, Y or latitude]</code>.</p>
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS
+     * 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
      */
     inline DevicePositionUpdate& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
 
     /**
      * <p>The latest device position defined in <a
-     * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[X or longitude, Y or latitude]</code>.</p>
+     * href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS
+     * 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
      */
     inline DevicePositionUpdate& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
 

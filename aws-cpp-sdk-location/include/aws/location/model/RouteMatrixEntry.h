@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The result for one <code>SnappedDeparturePosition</code>
-   * <code>SnappedDestinationPosition</code> pair.</p><p><h3>See Also:</h3>   <a
+   * <p>The result for the calculated route of one <code>DeparturePosition</code>
+   * <code>DestinationPosition</code> pair.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/RouteMatrixEntry">AWS
    * API Reference</a></p>
    */

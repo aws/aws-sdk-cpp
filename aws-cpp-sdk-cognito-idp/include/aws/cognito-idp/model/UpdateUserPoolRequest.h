@@ -514,63 +514,105 @@ namespace Model
 
 
     /**
-     * <p>Email configuration.</p>
+     * <p>The email configuration of your user pool. The email configuration type sets
+     * your preferred sending method, Amazon Web Services Region, and sender for email
+     * invitation and verification messages from your user pool.</p>
      */
     inline const EmailConfigurationType& GetEmailConfiguration() const{ return m_emailConfiguration; }
 
     /**
-     * <p>Email configuration.</p>
+     * <p>The email configuration of your user pool. The email configuration type sets
+     * your preferred sending method, Amazon Web Services Region, and sender for email
+     * invitation and verification messages from your user pool.</p>
      */
     inline bool EmailConfigurationHasBeenSet() const { return m_emailConfigurationHasBeenSet; }
 
     /**
-     * <p>Email configuration.</p>
+     * <p>The email configuration of your user pool. The email configuration type sets
+     * your preferred sending method, Amazon Web Services Region, and sender for email
+     * invitation and verification messages from your user pool.</p>
      */
     inline void SetEmailConfiguration(const EmailConfigurationType& value) { m_emailConfigurationHasBeenSet = true; m_emailConfiguration = value; }
 
     /**
-     * <p>Email configuration.</p>
+     * <p>The email configuration of your user pool. The email configuration type sets
+     * your preferred sending method, Amazon Web Services Region, and sender for email
+     * invitation and verification messages from your user pool.</p>
      */
     inline void SetEmailConfiguration(EmailConfigurationType&& value) { m_emailConfigurationHasBeenSet = true; m_emailConfiguration = std::move(value); }
 
     /**
-     * <p>Email configuration.</p>
+     * <p>The email configuration of your user pool. The email configuration type sets
+     * your preferred sending method, Amazon Web Services Region, and sender for email
+     * invitation and verification messages from your user pool.</p>
      */
     inline UpdateUserPoolRequest& WithEmailConfiguration(const EmailConfigurationType& value) { SetEmailConfiguration(value); return *this;}
 
     /**
-     * <p>Email configuration.</p>
+     * <p>The email configuration of your user pool. The email configuration type sets
+     * your preferred sending method, Amazon Web Services Region, and sender for email
+     * invitation and verification messages from your user pool.</p>
      */
     inline UpdateUserPoolRequest& WithEmailConfiguration(EmailConfigurationType&& value) { SetEmailConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
+     * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
+     * Identity and Access Management (IAM) role in your Amazon Web Services
+     * account.</p>
      */
     inline const SmsConfigurationType& GetSmsConfiguration() const{ return m_smsConfiguration; }
 
     /**
-     * <p>SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
+     * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
+     * Identity and Access Management (IAM) role in your Amazon Web Services
+     * account.</p>
      */
     inline bool SmsConfigurationHasBeenSet() const { return m_smsConfigurationHasBeenSet; }
 
     /**
-     * <p>SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
+     * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
+     * Identity and Access Management (IAM) role in your Amazon Web Services
+     * account.</p>
      */
     inline void SetSmsConfiguration(const SmsConfigurationType& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = value; }
 
     /**
-     * <p>SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
+     * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
+     * Identity and Access Management (IAM) role in your Amazon Web Services
+     * account.</p>
      */
     inline void SetSmsConfiguration(SmsConfigurationType&& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = std::move(value); }
 
     /**
-     * <p>SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
+     * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
+     * Identity and Access Management (IAM) role in your Amazon Web Services
+     * account.</p>
      */
     inline UpdateUserPoolRequest& WithSmsConfiguration(const SmsConfigurationType& value) { SetSmsConfiguration(value); return *this;}
 
     /**
-     * <p>SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
+     * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
+     * Identity and Access Management (IAM) role in your Amazon Web Services
+     * account.</p>
      */
     inline UpdateUserPoolRequest& WithSmsConfiguration(SmsConfigurationType&& value) { SetSmsConfiguration(std::move(value)); return *this;}
 
