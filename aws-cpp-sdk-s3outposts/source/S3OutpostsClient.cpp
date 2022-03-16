@@ -23,6 +23,7 @@
 #include <aws/s3outposts/model/CreateEndpointRequest.h>
 #include <aws/s3outposts/model/DeleteEndpointRequest.h>
 #include <aws/s3outposts/model/ListEndpointsRequest.h>
+#include <aws/s3outposts/model/ListSharedEndpointsRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -180,5 +181,35 @@ void S3OutpostsClient::ListEndpointsAsync(const ListEndpointsRequest& request, c
 void S3OutpostsClient::ListEndpointsAsyncHelper(const ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListEndpoints(request), context);
+}
+
+ListSharedEndpointsOutcome S3OutpostsClient::ListSharedEndpoints(const ListSharedEndpointsRequest& request) const
+{
+  if (!request.OutpostIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListSharedEndpoints", "Required field: OutpostId, is not set");
+    return ListSharedEndpointsOutcome(Aws::Client::AWSError<S3OutpostsErrors>(S3OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutpostId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/S3Outposts/ListSharedEndpoints");
+  return ListSharedEndpointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSharedEndpointsOutcomeCallable S3OutpostsClient::ListSharedEndpointsCallable(const ListSharedEndpointsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSharedEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSharedEndpoints(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3OutpostsClient::ListSharedEndpointsAsync(const ListSharedEndpointsRequest& request, const ListSharedEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSharedEndpointsAsyncHelper( request, handler, context ); } );
+}
+
+void S3OutpostsClient::ListSharedEndpointsAsyncHelper(const ListSharedEndpointsRequest& request, const ListSharedEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSharedEndpoints(request), context);
 }
 

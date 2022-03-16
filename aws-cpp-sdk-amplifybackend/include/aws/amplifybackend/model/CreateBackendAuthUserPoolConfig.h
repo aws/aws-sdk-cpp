@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/amplifybackend/model/SignInMethod.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/amplifybackend/model/CreateBackendAuthVerificationMessageConfig.h>
 #include <aws/amplifybackend/model/RequiredSignUpAttributesElement.h>
 #include <utility>
 
@@ -46,38 +47,38 @@ namespace Model
 
 
     /**
-     * <p>Describes the forgotten password policy for your Amazon Cognito user pool,
-     * configured as a part of your Amplify project.</p>
+     * <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon
+     * Cognito user pool, configured as a part of your Amplify project.</p>
      */
     inline const CreateBackendAuthForgotPasswordConfig& GetForgotPassword() const{ return m_forgotPassword; }
 
     /**
-     * <p>Describes the forgotten password policy for your Amazon Cognito user pool,
-     * configured as a part of your Amplify project.</p>
+     * <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon
+     * Cognito user pool, configured as a part of your Amplify project.</p>
      */
     inline bool ForgotPasswordHasBeenSet() const { return m_forgotPasswordHasBeenSet; }
 
     /**
-     * <p>Describes the forgotten password policy for your Amazon Cognito user pool,
-     * configured as a part of your Amplify project.</p>
+     * <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon
+     * Cognito user pool, configured as a part of your Amplify project.</p>
      */
     inline void SetForgotPassword(const CreateBackendAuthForgotPasswordConfig& value) { m_forgotPasswordHasBeenSet = true; m_forgotPassword = value; }
 
     /**
-     * <p>Describes the forgotten password policy for your Amazon Cognito user pool,
-     * configured as a part of your Amplify project.</p>
+     * <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon
+     * Cognito user pool, configured as a part of your Amplify project.</p>
      */
     inline void SetForgotPassword(CreateBackendAuthForgotPasswordConfig&& value) { m_forgotPasswordHasBeenSet = true; m_forgotPassword = std::move(value); }
 
     /**
-     * <p>Describes the forgotten password policy for your Amazon Cognito user pool,
-     * configured as a part of your Amplify project.</p>
+     * <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon
+     * Cognito user pool, configured as a part of your Amplify project.</p>
      */
     inline CreateBackendAuthUserPoolConfig& WithForgotPassword(const CreateBackendAuthForgotPasswordConfig& value) { SetForgotPassword(value); return *this;}
 
     /**
-     * <p>Describes the forgotten password policy for your Amazon Cognito user pool,
-     * configured as a part of your Amplify project.</p>
+     * <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon
+     * Cognito user pool, configured as a part of your Amplify project.</p>
      */
     inline CreateBackendAuthUserPoolConfig& WithForgotPassword(CreateBackendAuthForgotPasswordConfig&& value) { SetForgotPassword(std::move(value)); return *this;}
 
@@ -311,6 +312,43 @@ namespace Model
      */
     inline CreateBackendAuthUserPoolConfig& WithUserPoolName(const char* value) { SetUserPoolName(value); return *this;}
 
+
+    /**
+     * <p>Describes the email or SMS verification message for your Amazon Cognito user
+     * pool, configured as a part of your Amplify project.</p>
+     */
+    inline const CreateBackendAuthVerificationMessageConfig& GetVerificationMessage() const{ return m_verificationMessage; }
+
+    /**
+     * <p>Describes the email or SMS verification message for your Amazon Cognito user
+     * pool, configured as a part of your Amplify project.</p>
+     */
+    inline bool VerificationMessageHasBeenSet() const { return m_verificationMessageHasBeenSet; }
+
+    /**
+     * <p>Describes the email or SMS verification message for your Amazon Cognito user
+     * pool, configured as a part of your Amplify project.</p>
+     */
+    inline void SetVerificationMessage(const CreateBackendAuthVerificationMessageConfig& value) { m_verificationMessageHasBeenSet = true; m_verificationMessage = value; }
+
+    /**
+     * <p>Describes the email or SMS verification message for your Amazon Cognito user
+     * pool, configured as a part of your Amplify project.</p>
+     */
+    inline void SetVerificationMessage(CreateBackendAuthVerificationMessageConfig&& value) { m_verificationMessageHasBeenSet = true; m_verificationMessage = std::move(value); }
+
+    /**
+     * <p>Describes the email or SMS verification message for your Amazon Cognito user
+     * pool, configured as a part of your Amplify project.</p>
+     */
+    inline CreateBackendAuthUserPoolConfig& WithVerificationMessage(const CreateBackendAuthVerificationMessageConfig& value) { SetVerificationMessage(value); return *this;}
+
+    /**
+     * <p>Describes the email or SMS verification message for your Amazon Cognito user
+     * pool, configured as a part of your Amplify project.</p>
+     */
+    inline CreateBackendAuthUserPoolConfig& WithVerificationMessage(CreateBackendAuthVerificationMessageConfig&& value) { SetVerificationMessage(std::move(value)); return *this;}
+
   private:
 
     CreateBackendAuthForgotPasswordConfig m_forgotPassword;
@@ -333,6 +371,9 @@ namespace Model
 
     Aws::String m_userPoolName;
     bool m_userPoolNameHasBeenSet;
+
+    CreateBackendAuthVerificationMessageConfig m_verificationMessage;
+    bool m_verificationMessageHasBeenSet;
   };
 
 } // namespace Model

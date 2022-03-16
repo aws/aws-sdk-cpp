@@ -27,7 +27,7 @@ namespace Model
   /**
    * <p>Provides access information used by the <code>authorityInfoAccess</code> and
    * <code>subjectInfoAccess</code> extensions described in <a
-   * href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>.</p><p><h3>See
+   * href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/AccessDescription">AWS
    * API Reference</a></p>

@@ -22,7 +22,8 @@ Extensions::Extensions() :
     m_certificatePoliciesHasBeenSet(false),
     m_extendedKeyUsageHasBeenSet(false),
     m_keyUsageHasBeenSet(false),
-    m_subjectAlternativeNamesHasBeenSet(false)
+    m_subjectAlternativeNamesHasBeenSet(false),
+    m_customExtensionsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ Extensions::Extensions(JsonView jsonValue) :
     m_certificatePoliciesHasBeenSet(false),
     m_extendedKeyUsageHasBeenSet(false),
     m_keyUsageHasBeenSet(false),
-    m_subjectAlternativeNamesHasBeenSet(false)
+    m_subjectAlternativeNamesHasBeenSet(false),
+    m_customExtensionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -72,6 +74,16 @@ Extensions& Extensions::operator =(JsonView jsonValue)
       m_subjectAlternativeNames.push_back(subjectAlternativeNamesJsonList[subjectAlternativeNamesIndex].AsObject());
     }
     m_subjectAlternativeNamesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomExtensions"))
+  {
+    Array<JsonView> customExtensionsJsonList = jsonValue.GetArray("CustomExtensions");
+    for(unsigned customExtensionsIndex = 0; customExtensionsIndex < customExtensionsJsonList.GetLength(); ++customExtensionsIndex)
+    {
+      m_customExtensions.push_back(customExtensionsJsonList[customExtensionsIndex].AsObject());
+    }
+    m_customExtensionsHasBeenSet = true;
   }
 
   return *this;
@@ -117,6 +129,17 @@ JsonValue Extensions::Jsonize() const
      subjectAlternativeNamesJsonList[subjectAlternativeNamesIndex].AsObject(m_subjectAlternativeNames[subjectAlternativeNamesIndex].Jsonize());
    }
    payload.WithArray("SubjectAlternativeNames", std::move(subjectAlternativeNamesJsonList));
+
+  }
+
+  if(m_customExtensionsHasBeenSet)
+  {
+   Array<JsonValue> customExtensionsJsonList(m_customExtensions.size());
+   for(unsigned customExtensionsIndex = 0; customExtensionsIndex < customExtensionsJsonList.GetLength(); ++customExtensionsIndex)
+   {
+     customExtensionsJsonList[customExtensionsIndex].AsObject(m_customExtensions[customExtensionsIndex].Jsonize());
+   }
+   payload.WithArray("CustomExtensions", std::move(customExtensionsJsonList));
 
   }
 

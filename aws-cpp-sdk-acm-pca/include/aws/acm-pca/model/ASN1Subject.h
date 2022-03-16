@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/acm-pca/model/CustomAttribute.h>
 #include <utility>
 
 namespace Aws
@@ -727,6 +729,87 @@ namespace Model
      */
     inline ASN1Subject& WithGenerationQualifier(const char* value) { SetGenerationQualifier(value); return *this;}
 
+
+    /**
+     * <p/> <p>Contains a sequence of one or more X.500 relative distinguished names
+     * (RDNs), each of which consists of an object identifier (OID) and a value. For
+     * more information, see NIST’s definition of <a
+     * href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
+     * (OID)</a>.</p>  <p>Custom attributes cannot be used in combination with
+     * standard attributes.</p> 
+     */
+    inline const Aws::Vector<CustomAttribute>& GetCustomAttributes() const{ return m_customAttributes; }
+
+    /**
+     * <p/> <p>Contains a sequence of one or more X.500 relative distinguished names
+     * (RDNs), each of which consists of an object identifier (OID) and a value. For
+     * more information, see NIST’s definition of <a
+     * href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
+     * (OID)</a>.</p>  <p>Custom attributes cannot be used in combination with
+     * standard attributes.</p> 
+     */
+    inline bool CustomAttributesHasBeenSet() const { return m_customAttributesHasBeenSet; }
+
+    /**
+     * <p/> <p>Contains a sequence of one or more X.500 relative distinguished names
+     * (RDNs), each of which consists of an object identifier (OID) and a value. For
+     * more information, see NIST’s definition of <a
+     * href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
+     * (OID)</a>.</p>  <p>Custom attributes cannot be used in combination with
+     * standard attributes.</p> 
+     */
+    inline void SetCustomAttributes(const Aws::Vector<CustomAttribute>& value) { m_customAttributesHasBeenSet = true; m_customAttributes = value; }
+
+    /**
+     * <p/> <p>Contains a sequence of one or more X.500 relative distinguished names
+     * (RDNs), each of which consists of an object identifier (OID) and a value. For
+     * more information, see NIST’s definition of <a
+     * href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
+     * (OID)</a>.</p>  <p>Custom attributes cannot be used in combination with
+     * standard attributes.</p> 
+     */
+    inline void SetCustomAttributes(Aws::Vector<CustomAttribute>&& value) { m_customAttributesHasBeenSet = true; m_customAttributes = std::move(value); }
+
+    /**
+     * <p/> <p>Contains a sequence of one or more X.500 relative distinguished names
+     * (RDNs), each of which consists of an object identifier (OID) and a value. For
+     * more information, see NIST’s definition of <a
+     * href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
+     * (OID)</a>.</p>  <p>Custom attributes cannot be used in combination with
+     * standard attributes.</p> 
+     */
+    inline ASN1Subject& WithCustomAttributes(const Aws::Vector<CustomAttribute>& value) { SetCustomAttributes(value); return *this;}
+
+    /**
+     * <p/> <p>Contains a sequence of one or more X.500 relative distinguished names
+     * (RDNs), each of which consists of an object identifier (OID) and a value. For
+     * more information, see NIST’s definition of <a
+     * href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
+     * (OID)</a>.</p>  <p>Custom attributes cannot be used in combination with
+     * standard attributes.</p> 
+     */
+    inline ASN1Subject& WithCustomAttributes(Aws::Vector<CustomAttribute>&& value) { SetCustomAttributes(std::move(value)); return *this;}
+
+    /**
+     * <p/> <p>Contains a sequence of one or more X.500 relative distinguished names
+     * (RDNs), each of which consists of an object identifier (OID) and a value. For
+     * more information, see NIST’s definition of <a
+     * href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
+     * (OID)</a>.</p>  <p>Custom attributes cannot be used in combination with
+     * standard attributes.</p> 
+     */
+    inline ASN1Subject& AddCustomAttributes(const CustomAttribute& value) { m_customAttributesHasBeenSet = true; m_customAttributes.push_back(value); return *this; }
+
+    /**
+     * <p/> <p>Contains a sequence of one or more X.500 relative distinguished names
+     * (RDNs), each of which consists of an object identifier (OID) and a value. For
+     * more information, see NIST’s definition of <a
+     * href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
+     * (OID)</a>.</p>  <p>Custom attributes cannot be used in combination with
+     * standard attributes.</p> 
+     */
+    inline ASN1Subject& AddCustomAttributes(CustomAttribute&& value) { m_customAttributesHasBeenSet = true; m_customAttributes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_country;
@@ -770,6 +853,9 @@ namespace Model
 
     Aws::String m_generationQualifier;
     bool m_generationQualifierHasBeenSet;
+
+    Aws::Vector<CustomAttribute> m_customAttributes;
+    bool m_customAttributesHasBeenSet;
   };
 
 } // namespace Model

@@ -42,37 +42,43 @@ namespace Model
 
     /**
      * <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC
+     * 5280</a>.</p>
      */
     inline const ExtendedKeyUsageType& GetExtendedKeyUsageType() const{ return m_extendedKeyUsageType; }
 
     /**
      * <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC
+     * 5280</a>.</p>
      */
     inline bool ExtendedKeyUsageTypeHasBeenSet() const { return m_extendedKeyUsageTypeHasBeenSet; }
 
     /**
      * <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC
+     * 5280</a>.</p>
      */
     inline void SetExtendedKeyUsageType(const ExtendedKeyUsageType& value) { m_extendedKeyUsageTypeHasBeenSet = true; m_extendedKeyUsageType = value; }
 
     /**
      * <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC
+     * 5280</a>.</p>
      */
     inline void SetExtendedKeyUsageType(ExtendedKeyUsageType&& value) { m_extendedKeyUsageTypeHasBeenSet = true; m_extendedKeyUsageType = std::move(value); }
 
     /**
      * <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC
+     * 5280</a>.</p>
      */
     inline ExtendedKeyUsage& WithExtendedKeyUsageType(const ExtendedKeyUsageType& value) { SetExtendedKeyUsageType(value); return *this;}
 
     /**
      * <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC
+     * 5280</a>.</p>
      */
     inline ExtendedKeyUsage& WithExtendedKeyUsageType(ExtendedKeyUsageType&& value) { SetExtendedKeyUsageType(std::move(value)); return *this;}
 

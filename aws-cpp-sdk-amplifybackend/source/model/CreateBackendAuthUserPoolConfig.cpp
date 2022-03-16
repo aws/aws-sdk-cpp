@@ -26,7 +26,8 @@ CreateBackendAuthUserPoolConfig::CreateBackendAuthUserPoolConfig() :
     m_requiredSignUpAttributesHasBeenSet(false),
     m_signInMethod(SignInMethod::NOT_SET),
     m_signInMethodHasBeenSet(false),
-    m_userPoolNameHasBeenSet(false)
+    m_userPoolNameHasBeenSet(false),
+    m_verificationMessageHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ CreateBackendAuthUserPoolConfig::CreateBackendAuthUserPoolConfig(JsonView jsonVa
     m_requiredSignUpAttributesHasBeenSet(false),
     m_signInMethod(SignInMethod::NOT_SET),
     m_signInMethodHasBeenSet(false),
-    m_userPoolNameHasBeenSet(false)
+    m_userPoolNameHasBeenSet(false),
+    m_verificationMessageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -97,6 +99,13 @@ CreateBackendAuthUserPoolConfig& CreateBackendAuthUserPoolConfig::operator =(Jso
     m_userPoolNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("verificationMessage"))
+  {
+    m_verificationMessage = jsonValue.GetObject("verificationMessage");
+
+    m_verificationMessageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -147,6 +156,12 @@ JsonValue CreateBackendAuthUserPoolConfig::Jsonize() const
   if(m_userPoolNameHasBeenSet)
   {
    payload.WithString("userPoolName", m_userPoolName);
+
+  }
+
+  if(m_verificationMessageHasBeenSet)
+  {
+   payload.WithObject("verificationMessage", m_verificationMessage.Jsonize());
 
   }
 
