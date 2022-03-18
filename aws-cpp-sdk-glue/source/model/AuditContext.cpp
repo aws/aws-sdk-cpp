@@ -19,12 +19,18 @@ namespace Model
 {
 
 AuditContext::AuditContext() : 
-    m_additionalAuditContextHasBeenSet(false)
+    m_additionalAuditContextHasBeenSet(false),
+    m_requestedColumnsHasBeenSet(false),
+    m_allColumnsRequested(false),
+    m_allColumnsRequestedHasBeenSet(false)
 {
 }
 
 AuditContext::AuditContext(JsonView jsonValue) : 
-    m_additionalAuditContextHasBeenSet(false)
+    m_additionalAuditContextHasBeenSet(false),
+    m_requestedColumnsHasBeenSet(false),
+    m_allColumnsRequested(false),
+    m_allColumnsRequestedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +44,23 @@ AuditContext& AuditContext::operator =(JsonView jsonValue)
     m_additionalAuditContextHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RequestedColumns"))
+  {
+    Array<JsonView> requestedColumnsJsonList = jsonValue.GetArray("RequestedColumns");
+    for(unsigned requestedColumnsIndex = 0; requestedColumnsIndex < requestedColumnsJsonList.GetLength(); ++requestedColumnsIndex)
+    {
+      m_requestedColumns.push_back(requestedColumnsJsonList[requestedColumnsIndex].AsString());
+    }
+    m_requestedColumnsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AllColumnsRequested"))
+  {
+    m_allColumnsRequested = jsonValue.GetBool("AllColumnsRequested");
+
+    m_allColumnsRequestedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +71,23 @@ JsonValue AuditContext::Jsonize() const
   if(m_additionalAuditContextHasBeenSet)
   {
    payload.WithString("AdditionalAuditContext", m_additionalAuditContext);
+
+  }
+
+  if(m_requestedColumnsHasBeenSet)
+  {
+   Array<JsonValue> requestedColumnsJsonList(m_requestedColumns.size());
+   for(unsigned requestedColumnsIndex = 0; requestedColumnsIndex < requestedColumnsJsonList.GetLength(); ++requestedColumnsIndex)
+   {
+     requestedColumnsJsonList[requestedColumnsIndex].AsString(m_requestedColumns[requestedColumnsIndex]);
+   }
+   payload.WithArray("RequestedColumns", std::move(requestedColumnsJsonList));
+
+  }
+
+  if(m_allColumnsRequestedHasBeenSet)
+  {
+   payload.WithBool("AllColumnsRequested", m_allColumnsRequested);
 
   }
 

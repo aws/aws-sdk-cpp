@@ -35,6 +35,7 @@
 #include <aws/glue/model/BatchStopJobRunRequest.h>
 #include <aws/glue/model/BatchUpdatePartitionRequest.h>
 #include <aws/glue/model/CancelMLTaskRunRequest.h>
+#include <aws/glue/model/CancelStatementRequest.h>
 #include <aws/glue/model/CheckSchemaVersionValidityRequest.h>
 #include <aws/glue/model/CreateBlueprintRequest.h>
 #include <aws/glue/model/CreateClassifierRequest.h>
@@ -50,6 +51,7 @@
 #include <aws/glue/model/CreateSchemaRequest.h>
 #include <aws/glue/model/CreateScriptRequest.h>
 #include <aws/glue/model/CreateSecurityConfigurationRequest.h>
+#include <aws/glue/model/CreateSessionRequest.h>
 #include <aws/glue/model/CreateTableRequest.h>
 #include <aws/glue/model/CreateTriggerRequest.h>
 #include <aws/glue/model/CreateUserDefinedFunctionRequest.h>
@@ -71,6 +73,7 @@
 #include <aws/glue/model/DeleteSchemaRequest.h>
 #include <aws/glue/model/DeleteSchemaVersionsRequest.h>
 #include <aws/glue/model/DeleteSecurityConfigurationRequest.h>
+#include <aws/glue/model/DeleteSessionRequest.h>
 #include <aws/glue/model/DeleteTableRequest.h>
 #include <aws/glue/model/DeleteTableVersionRequest.h>
 #include <aws/glue/model/DeleteTriggerRequest.h>
@@ -118,6 +121,8 @@
 #include <aws/glue/model/GetSchemaVersionsDiffRequest.h>
 #include <aws/glue/model/GetSecurityConfigurationRequest.h>
 #include <aws/glue/model/GetSecurityConfigurationsRequest.h>
+#include <aws/glue/model/GetSessionRequest.h>
+#include <aws/glue/model/GetStatementRequest.h>
 #include <aws/glue/model/GetTableRequest.h>
 #include <aws/glue/model/GetTableVersionRequest.h>
 #include <aws/glue/model/GetTableVersionsRequest.h>
@@ -143,6 +148,8 @@
 #include <aws/glue/model/ListRegistriesRequest.h>
 #include <aws/glue/model/ListSchemaVersionsRequest.h>
 #include <aws/glue/model/ListSchemasRequest.h>
+#include <aws/glue/model/ListSessionsRequest.h>
+#include <aws/glue/model/ListStatementsRequest.h>
 #include <aws/glue/model/ListTriggersRequest.h>
 #include <aws/glue/model/ListWorkflowsRequest.h>
 #include <aws/glue/model/PutDataCatalogEncryptionSettingsRequest.h>
@@ -154,6 +161,7 @@
 #include <aws/glue/model/RemoveSchemaVersionMetadataRequest.h>
 #include <aws/glue/model/ResetJobBookmarkRequest.h>
 #include <aws/glue/model/ResumeWorkflowRunRequest.h>
+#include <aws/glue/model/RunStatementRequest.h>
 #include <aws/glue/model/SearchTablesRequest.h>
 #include <aws/glue/model/StartBlueprintRunRequest.h>
 #include <aws/glue/model/StartCrawlerRequest.h>
@@ -167,6 +175,7 @@
 #include <aws/glue/model/StartWorkflowRunRequest.h>
 #include <aws/glue/model/StopCrawlerRequest.h>
 #include <aws/glue/model/StopCrawlerScheduleRequest.h>
+#include <aws/glue/model/StopSessionRequest.h>
 #include <aws/glue/model/StopTriggerRequest.h>
 #include <aws/glue/model/StopWorkflowRunRequest.h>
 #include <aws/glue/model/TagResourceRequest.h>
@@ -623,6 +632,30 @@ void GlueClient::CancelMLTaskRunAsyncHelper(const CancelMLTaskRunRequest& reques
   handler(this, request, CancelMLTaskRun(request), context);
 }
 
+CancelStatementOutcome GlueClient::CancelStatement(const CancelStatementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CancelStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CancelStatementOutcomeCallable GlueClient::CancelStatementCallable(const CancelStatementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelStatement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::CancelStatementAsync(const CancelStatementRequest& request, const CancelStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelStatementAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::CancelStatementAsyncHelper(const CancelStatementRequest& request, const CancelStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelStatement(request), context);
+}
+
 CheckSchemaVersionValidityOutcome GlueClient::CheckSchemaVersionValidity(const CheckSchemaVersionValidityRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -981,6 +1014,30 @@ void GlueClient::CreateSecurityConfigurationAsync(const CreateSecurityConfigurat
 void GlueClient::CreateSecurityConfigurationAsyncHelper(const CreateSecurityConfigurationRequest& request, const CreateSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateSecurityConfiguration(request), context);
+}
+
+CreateSessionOutcome GlueClient::CreateSession(const CreateSessionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateSessionOutcomeCallable GlueClient::CreateSessionCallable(const CreateSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::CreateSessionAsync(const CreateSessionRequest& request, const CreateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateSessionAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::CreateSessionAsyncHelper(const CreateSessionRequest& request, const CreateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateSession(request), context);
 }
 
 CreateTableOutcome GlueClient::CreateTable(const CreateTableRequest& request) const
@@ -1485,6 +1542,30 @@ void GlueClient::DeleteSecurityConfigurationAsync(const DeleteSecurityConfigurat
 void GlueClient::DeleteSecurityConfigurationAsyncHelper(const DeleteSecurityConfigurationRequest& request, const DeleteSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteSecurityConfiguration(request), context);
+}
+
+DeleteSessionOutcome GlueClient::DeleteSession(const DeleteSessionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteSessionOutcomeCallable GlueClient::DeleteSessionCallable(const DeleteSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::DeleteSessionAsync(const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSessionAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::DeleteSessionAsyncHelper(const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteSession(request), context);
 }
 
 DeleteTableOutcome GlueClient::DeleteTable(const DeleteTableRequest& request) const
@@ -2615,6 +2696,54 @@ void GlueClient::GetSecurityConfigurationsAsyncHelper(const GetSecurityConfigura
   handler(this, request, GetSecurityConfigurations(request), context);
 }
 
+GetSessionOutcome GlueClient::GetSession(const GetSessionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetSessionOutcomeCallable GlueClient::GetSessionCallable(const GetSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetSessionAsync(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSessionAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetSessionAsyncHelper(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSession(request), context);
+}
+
+GetStatementOutcome GlueClient::GetStatement(const GetStatementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetStatementOutcomeCallable GlueClient::GetStatementCallable(const GetStatementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStatement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetStatementAsync(const GetStatementRequest& request, const GetStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetStatementAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetStatementAsyncHelper(const GetStatementRequest& request, const GetStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetStatement(request), context);
+}
+
 GetTableOutcome GlueClient::GetTable(const GetTableRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -3215,6 +3344,54 @@ void GlueClient::ListSchemasAsyncHelper(const ListSchemasRequest& request, const
   handler(this, request, ListSchemas(request), context);
 }
 
+ListSessionsOutcome GlueClient::ListSessions(const ListSessionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListSessionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSessionsOutcomeCallable GlueClient::ListSessionsCallable(const ListSessionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSessionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSessions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::ListSessionsAsync(const ListSessionsRequest& request, const ListSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSessionsAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::ListSessionsAsyncHelper(const ListSessionsRequest& request, const ListSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSessions(request), context);
+}
+
+ListStatementsOutcome GlueClient::ListStatements(const ListStatementsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListStatementsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListStatementsOutcomeCallable GlueClient::ListStatementsCallable(const ListStatementsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListStatementsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStatements(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::ListStatementsAsync(const ListStatementsRequest& request, const ListStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListStatementsAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::ListStatementsAsyncHelper(const ListStatementsRequest& request, const ListStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListStatements(request), context);
+}
+
 ListTriggersOutcome GlueClient::ListTriggers(const ListTriggersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -3477,6 +3654,30 @@ void GlueClient::ResumeWorkflowRunAsync(const ResumeWorkflowRunRequest& request,
 void GlueClient::ResumeWorkflowRunAsyncHelper(const ResumeWorkflowRunRequest& request, const ResumeWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ResumeWorkflowRun(request), context);
+}
+
+RunStatementOutcome GlueClient::RunStatement(const RunStatementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return RunStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RunStatementOutcomeCallable GlueClient::RunStatementCallable(const RunStatementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RunStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RunStatement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::RunStatementAsync(const RunStatementRequest& request, const RunStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RunStatementAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::RunStatementAsyncHelper(const RunStatementRequest& request, const RunStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RunStatement(request), context);
 }
 
 SearchTablesOutcome GlueClient::SearchTables(const SearchTablesRequest& request) const
@@ -3789,6 +3990,30 @@ void GlueClient::StopCrawlerScheduleAsync(const StopCrawlerScheduleRequest& requ
 void GlueClient::StopCrawlerScheduleAsyncHelper(const StopCrawlerScheduleRequest& request, const StopCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopCrawlerSchedule(request), context);
+}
+
+StopSessionOutcome GlueClient::StopSession(const StopSessionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StopSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopSessionOutcomeCallable GlueClient::StopSessionCallable(const StopSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::StopSessionAsync(const StopSessionRequest& request, const StopSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopSessionAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::StopSessionAsyncHelper(const StopSessionRequest& request, const StopSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopSession(request), context);
 }
 
 StopTriggerOutcome GlueClient::StopTrigger(const StopTriggerRequest& request) const

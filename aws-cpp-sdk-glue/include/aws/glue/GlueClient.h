@@ -26,6 +26,7 @@
 #include <aws/glue/model/BatchStopJobRunResult.h>
 #include <aws/glue/model/BatchUpdatePartitionResult.h>
 #include <aws/glue/model/CancelMLTaskRunResult.h>
+#include <aws/glue/model/CancelStatementResult.h>
 #include <aws/glue/model/CheckSchemaVersionValidityResult.h>
 #include <aws/glue/model/CreateBlueprintResult.h>
 #include <aws/glue/model/CreateClassifierResult.h>
@@ -41,6 +42,7 @@
 #include <aws/glue/model/CreateSchemaResult.h>
 #include <aws/glue/model/CreateScriptResult.h>
 #include <aws/glue/model/CreateSecurityConfigurationResult.h>
+#include <aws/glue/model/CreateSessionResult.h>
 #include <aws/glue/model/CreateTableResult.h>
 #include <aws/glue/model/CreateTriggerResult.h>
 #include <aws/glue/model/CreateUserDefinedFunctionResult.h>
@@ -62,6 +64,7 @@
 #include <aws/glue/model/DeleteSchemaResult.h>
 #include <aws/glue/model/DeleteSchemaVersionsResult.h>
 #include <aws/glue/model/DeleteSecurityConfigurationResult.h>
+#include <aws/glue/model/DeleteSessionResult.h>
 #include <aws/glue/model/DeleteTableResult.h>
 #include <aws/glue/model/DeleteTableVersionResult.h>
 #include <aws/glue/model/DeleteTriggerResult.h>
@@ -109,6 +112,8 @@
 #include <aws/glue/model/GetSchemaVersionsDiffResult.h>
 #include <aws/glue/model/GetSecurityConfigurationResult.h>
 #include <aws/glue/model/GetSecurityConfigurationsResult.h>
+#include <aws/glue/model/GetSessionResult.h>
+#include <aws/glue/model/GetStatementResult.h>
 #include <aws/glue/model/GetTableResult.h>
 #include <aws/glue/model/GetTableVersionResult.h>
 #include <aws/glue/model/GetTableVersionsResult.h>
@@ -134,6 +139,8 @@
 #include <aws/glue/model/ListRegistriesResult.h>
 #include <aws/glue/model/ListSchemaVersionsResult.h>
 #include <aws/glue/model/ListSchemasResult.h>
+#include <aws/glue/model/ListSessionsResult.h>
+#include <aws/glue/model/ListStatementsResult.h>
 #include <aws/glue/model/ListTriggersResult.h>
 #include <aws/glue/model/ListWorkflowsResult.h>
 #include <aws/glue/model/PutDataCatalogEncryptionSettingsResult.h>
@@ -145,6 +152,7 @@
 #include <aws/glue/model/RemoveSchemaVersionMetadataResult.h>
 #include <aws/glue/model/ResetJobBookmarkResult.h>
 #include <aws/glue/model/ResumeWorkflowRunResult.h>
+#include <aws/glue/model/RunStatementResult.h>
 #include <aws/glue/model/SearchTablesResult.h>
 #include <aws/glue/model/StartBlueprintRunResult.h>
 #include <aws/glue/model/StartCrawlerResult.h>
@@ -158,6 +166,7 @@
 #include <aws/glue/model/StartWorkflowRunResult.h>
 #include <aws/glue/model/StopCrawlerResult.h>
 #include <aws/glue/model/StopCrawlerScheduleResult.h>
+#include <aws/glue/model/StopSessionResult.h>
 #include <aws/glue/model/StopTriggerResult.h>
 #include <aws/glue/model/StopWorkflowRunResult.h>
 #include <aws/glue/model/TagResourceResult.h>
@@ -234,6 +243,7 @@ namespace Model
         class BatchStopJobRunRequest;
         class BatchUpdatePartitionRequest;
         class CancelMLTaskRunRequest;
+        class CancelStatementRequest;
         class CheckSchemaVersionValidityRequest;
         class CreateBlueprintRequest;
         class CreateClassifierRequest;
@@ -249,6 +259,7 @@ namespace Model
         class CreateSchemaRequest;
         class CreateScriptRequest;
         class CreateSecurityConfigurationRequest;
+        class CreateSessionRequest;
         class CreateTableRequest;
         class CreateTriggerRequest;
         class CreateUserDefinedFunctionRequest;
@@ -270,6 +281,7 @@ namespace Model
         class DeleteSchemaRequest;
         class DeleteSchemaVersionsRequest;
         class DeleteSecurityConfigurationRequest;
+        class DeleteSessionRequest;
         class DeleteTableRequest;
         class DeleteTableVersionRequest;
         class DeleteTriggerRequest;
@@ -317,6 +329,8 @@ namespace Model
         class GetSchemaVersionsDiffRequest;
         class GetSecurityConfigurationRequest;
         class GetSecurityConfigurationsRequest;
+        class GetSessionRequest;
+        class GetStatementRequest;
         class GetTableRequest;
         class GetTableVersionRequest;
         class GetTableVersionsRequest;
@@ -342,6 +356,8 @@ namespace Model
         class ListRegistriesRequest;
         class ListSchemaVersionsRequest;
         class ListSchemasRequest;
+        class ListSessionsRequest;
+        class ListStatementsRequest;
         class ListTriggersRequest;
         class ListWorkflowsRequest;
         class PutDataCatalogEncryptionSettingsRequest;
@@ -353,6 +369,7 @@ namespace Model
         class RemoveSchemaVersionMetadataRequest;
         class ResetJobBookmarkRequest;
         class ResumeWorkflowRunRequest;
+        class RunStatementRequest;
         class SearchTablesRequest;
         class StartBlueprintRunRequest;
         class StartCrawlerRequest;
@@ -366,6 +383,7 @@ namespace Model
         class StartWorkflowRunRequest;
         class StopCrawlerRequest;
         class StopCrawlerScheduleRequest;
+        class StopSessionRequest;
         class StopTriggerRequest;
         class StopWorkflowRunRequest;
         class TagResourceRequest;
@@ -404,6 +422,7 @@ namespace Model
         typedef Aws::Utils::Outcome<BatchStopJobRunResult, GlueError> BatchStopJobRunOutcome;
         typedef Aws::Utils::Outcome<BatchUpdatePartitionResult, GlueError> BatchUpdatePartitionOutcome;
         typedef Aws::Utils::Outcome<CancelMLTaskRunResult, GlueError> CancelMLTaskRunOutcome;
+        typedef Aws::Utils::Outcome<CancelStatementResult, GlueError> CancelStatementOutcome;
         typedef Aws::Utils::Outcome<CheckSchemaVersionValidityResult, GlueError> CheckSchemaVersionValidityOutcome;
         typedef Aws::Utils::Outcome<CreateBlueprintResult, GlueError> CreateBlueprintOutcome;
         typedef Aws::Utils::Outcome<CreateClassifierResult, GlueError> CreateClassifierOutcome;
@@ -419,6 +438,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateSchemaResult, GlueError> CreateSchemaOutcome;
         typedef Aws::Utils::Outcome<CreateScriptResult, GlueError> CreateScriptOutcome;
         typedef Aws::Utils::Outcome<CreateSecurityConfigurationResult, GlueError> CreateSecurityConfigurationOutcome;
+        typedef Aws::Utils::Outcome<CreateSessionResult, GlueError> CreateSessionOutcome;
         typedef Aws::Utils::Outcome<CreateTableResult, GlueError> CreateTableOutcome;
         typedef Aws::Utils::Outcome<CreateTriggerResult, GlueError> CreateTriggerOutcome;
         typedef Aws::Utils::Outcome<CreateUserDefinedFunctionResult, GlueError> CreateUserDefinedFunctionOutcome;
@@ -440,6 +460,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteSchemaResult, GlueError> DeleteSchemaOutcome;
         typedef Aws::Utils::Outcome<DeleteSchemaVersionsResult, GlueError> DeleteSchemaVersionsOutcome;
         typedef Aws::Utils::Outcome<DeleteSecurityConfigurationResult, GlueError> DeleteSecurityConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DeleteSessionResult, GlueError> DeleteSessionOutcome;
         typedef Aws::Utils::Outcome<DeleteTableResult, GlueError> DeleteTableOutcome;
         typedef Aws::Utils::Outcome<DeleteTableVersionResult, GlueError> DeleteTableVersionOutcome;
         typedef Aws::Utils::Outcome<DeleteTriggerResult, GlueError> DeleteTriggerOutcome;
@@ -487,6 +508,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetSchemaVersionsDiffResult, GlueError> GetSchemaVersionsDiffOutcome;
         typedef Aws::Utils::Outcome<GetSecurityConfigurationResult, GlueError> GetSecurityConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetSecurityConfigurationsResult, GlueError> GetSecurityConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<GetSessionResult, GlueError> GetSessionOutcome;
+        typedef Aws::Utils::Outcome<GetStatementResult, GlueError> GetStatementOutcome;
         typedef Aws::Utils::Outcome<GetTableResult, GlueError> GetTableOutcome;
         typedef Aws::Utils::Outcome<GetTableVersionResult, GlueError> GetTableVersionOutcome;
         typedef Aws::Utils::Outcome<GetTableVersionsResult, GlueError> GetTableVersionsOutcome;
@@ -512,6 +535,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ListRegistriesResult, GlueError> ListRegistriesOutcome;
         typedef Aws::Utils::Outcome<ListSchemaVersionsResult, GlueError> ListSchemaVersionsOutcome;
         typedef Aws::Utils::Outcome<ListSchemasResult, GlueError> ListSchemasOutcome;
+        typedef Aws::Utils::Outcome<ListSessionsResult, GlueError> ListSessionsOutcome;
+        typedef Aws::Utils::Outcome<ListStatementsResult, GlueError> ListStatementsOutcome;
         typedef Aws::Utils::Outcome<ListTriggersResult, GlueError> ListTriggersOutcome;
         typedef Aws::Utils::Outcome<ListWorkflowsResult, GlueError> ListWorkflowsOutcome;
         typedef Aws::Utils::Outcome<PutDataCatalogEncryptionSettingsResult, GlueError> PutDataCatalogEncryptionSettingsOutcome;
@@ -523,6 +548,7 @@ namespace Model
         typedef Aws::Utils::Outcome<RemoveSchemaVersionMetadataResult, GlueError> RemoveSchemaVersionMetadataOutcome;
         typedef Aws::Utils::Outcome<ResetJobBookmarkResult, GlueError> ResetJobBookmarkOutcome;
         typedef Aws::Utils::Outcome<ResumeWorkflowRunResult, GlueError> ResumeWorkflowRunOutcome;
+        typedef Aws::Utils::Outcome<RunStatementResult, GlueError> RunStatementOutcome;
         typedef Aws::Utils::Outcome<SearchTablesResult, GlueError> SearchTablesOutcome;
         typedef Aws::Utils::Outcome<StartBlueprintRunResult, GlueError> StartBlueprintRunOutcome;
         typedef Aws::Utils::Outcome<StartCrawlerResult, GlueError> StartCrawlerOutcome;
@@ -536,6 +562,7 @@ namespace Model
         typedef Aws::Utils::Outcome<StartWorkflowRunResult, GlueError> StartWorkflowRunOutcome;
         typedef Aws::Utils::Outcome<StopCrawlerResult, GlueError> StopCrawlerOutcome;
         typedef Aws::Utils::Outcome<StopCrawlerScheduleResult, GlueError> StopCrawlerScheduleOutcome;
+        typedef Aws::Utils::Outcome<StopSessionResult, GlueError> StopSessionOutcome;
         typedef Aws::Utils::Outcome<StopTriggerResult, GlueError> StopTriggerOutcome;
         typedef Aws::Utils::Outcome<StopWorkflowRunResult, GlueError> StopWorkflowRunOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, GlueError> TagResourceOutcome;
@@ -574,6 +601,7 @@ namespace Model
         typedef std::future<BatchStopJobRunOutcome> BatchStopJobRunOutcomeCallable;
         typedef std::future<BatchUpdatePartitionOutcome> BatchUpdatePartitionOutcomeCallable;
         typedef std::future<CancelMLTaskRunOutcome> CancelMLTaskRunOutcomeCallable;
+        typedef std::future<CancelStatementOutcome> CancelStatementOutcomeCallable;
         typedef std::future<CheckSchemaVersionValidityOutcome> CheckSchemaVersionValidityOutcomeCallable;
         typedef std::future<CreateBlueprintOutcome> CreateBlueprintOutcomeCallable;
         typedef std::future<CreateClassifierOutcome> CreateClassifierOutcomeCallable;
@@ -589,6 +617,7 @@ namespace Model
         typedef std::future<CreateSchemaOutcome> CreateSchemaOutcomeCallable;
         typedef std::future<CreateScriptOutcome> CreateScriptOutcomeCallable;
         typedef std::future<CreateSecurityConfigurationOutcome> CreateSecurityConfigurationOutcomeCallable;
+        typedef std::future<CreateSessionOutcome> CreateSessionOutcomeCallable;
         typedef std::future<CreateTableOutcome> CreateTableOutcomeCallable;
         typedef std::future<CreateTriggerOutcome> CreateTriggerOutcomeCallable;
         typedef std::future<CreateUserDefinedFunctionOutcome> CreateUserDefinedFunctionOutcomeCallable;
@@ -610,6 +639,7 @@ namespace Model
         typedef std::future<DeleteSchemaOutcome> DeleteSchemaOutcomeCallable;
         typedef std::future<DeleteSchemaVersionsOutcome> DeleteSchemaVersionsOutcomeCallable;
         typedef std::future<DeleteSecurityConfigurationOutcome> DeleteSecurityConfigurationOutcomeCallable;
+        typedef std::future<DeleteSessionOutcome> DeleteSessionOutcomeCallable;
         typedef std::future<DeleteTableOutcome> DeleteTableOutcomeCallable;
         typedef std::future<DeleteTableVersionOutcome> DeleteTableVersionOutcomeCallable;
         typedef std::future<DeleteTriggerOutcome> DeleteTriggerOutcomeCallable;
@@ -657,6 +687,8 @@ namespace Model
         typedef std::future<GetSchemaVersionsDiffOutcome> GetSchemaVersionsDiffOutcomeCallable;
         typedef std::future<GetSecurityConfigurationOutcome> GetSecurityConfigurationOutcomeCallable;
         typedef std::future<GetSecurityConfigurationsOutcome> GetSecurityConfigurationsOutcomeCallable;
+        typedef std::future<GetSessionOutcome> GetSessionOutcomeCallable;
+        typedef std::future<GetStatementOutcome> GetStatementOutcomeCallable;
         typedef std::future<GetTableOutcome> GetTableOutcomeCallable;
         typedef std::future<GetTableVersionOutcome> GetTableVersionOutcomeCallable;
         typedef std::future<GetTableVersionsOutcome> GetTableVersionsOutcomeCallable;
@@ -682,6 +714,8 @@ namespace Model
         typedef std::future<ListRegistriesOutcome> ListRegistriesOutcomeCallable;
         typedef std::future<ListSchemaVersionsOutcome> ListSchemaVersionsOutcomeCallable;
         typedef std::future<ListSchemasOutcome> ListSchemasOutcomeCallable;
+        typedef std::future<ListSessionsOutcome> ListSessionsOutcomeCallable;
+        typedef std::future<ListStatementsOutcome> ListStatementsOutcomeCallable;
         typedef std::future<ListTriggersOutcome> ListTriggersOutcomeCallable;
         typedef std::future<ListWorkflowsOutcome> ListWorkflowsOutcomeCallable;
         typedef std::future<PutDataCatalogEncryptionSettingsOutcome> PutDataCatalogEncryptionSettingsOutcomeCallable;
@@ -693,6 +727,7 @@ namespace Model
         typedef std::future<RemoveSchemaVersionMetadataOutcome> RemoveSchemaVersionMetadataOutcomeCallable;
         typedef std::future<ResetJobBookmarkOutcome> ResetJobBookmarkOutcomeCallable;
         typedef std::future<ResumeWorkflowRunOutcome> ResumeWorkflowRunOutcomeCallable;
+        typedef std::future<RunStatementOutcome> RunStatementOutcomeCallable;
         typedef std::future<SearchTablesOutcome> SearchTablesOutcomeCallable;
         typedef std::future<StartBlueprintRunOutcome> StartBlueprintRunOutcomeCallable;
         typedef std::future<StartCrawlerOutcome> StartCrawlerOutcomeCallable;
@@ -706,6 +741,7 @@ namespace Model
         typedef std::future<StartWorkflowRunOutcome> StartWorkflowRunOutcomeCallable;
         typedef std::future<StopCrawlerOutcome> StopCrawlerOutcomeCallable;
         typedef std::future<StopCrawlerScheduleOutcome> StopCrawlerScheduleOutcomeCallable;
+        typedef std::future<StopSessionOutcome> StopSessionOutcomeCallable;
         typedef std::future<StopTriggerOutcome> StopTriggerOutcomeCallable;
         typedef std::future<StopWorkflowRunOutcome> StopWorkflowRunOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -747,6 +783,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::BatchStopJobRunRequest&, const Model::BatchStopJobRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchStopJobRunResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::BatchUpdatePartitionRequest&, const Model::BatchUpdatePartitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdatePartitionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CancelMLTaskRunRequest&, const Model::CancelMLTaskRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelMLTaskRunResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::CancelStatementRequest&, const Model::CancelStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelStatementResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CheckSchemaVersionValidityRequest&, const Model::CheckSchemaVersionValidityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CheckSchemaVersionValidityResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateBlueprintRequest&, const Model::CreateBlueprintOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBlueprintResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateClassifierRequest&, const Model::CreateClassifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClassifierResponseReceivedHandler;
@@ -762,6 +799,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::CreateSchemaRequest&, const Model::CreateSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSchemaResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateScriptRequest&, const Model::CreateScriptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateScriptResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateSecurityConfigurationRequest&, const Model::CreateSecurityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSecurityConfigurationResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::CreateSessionRequest&, const Model::CreateSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSessionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateTableRequest&, const Model::CreateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTableResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateTriggerRequest&, const Model::CreateTriggerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTriggerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateUserDefinedFunctionRequest&, const Model::CreateUserDefinedFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserDefinedFunctionResponseReceivedHandler;
@@ -783,6 +821,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::DeleteSchemaRequest&, const Model::DeleteSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSchemaResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteSchemaVersionsRequest&, const Model::DeleteSchemaVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSchemaVersionsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteSecurityConfigurationRequest&, const Model::DeleteSecurityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSecurityConfigurationResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::DeleteSessionRequest&, const Model::DeleteSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSessionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteTableRequest&, const Model::DeleteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTableResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteTableVersionRequest&, const Model::DeleteTableVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTableVersionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteTriggerRequest&, const Model::DeleteTriggerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTriggerResponseReceivedHandler;
@@ -830,6 +869,8 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::GetSchemaVersionsDiffRequest&, const Model::GetSchemaVersionsDiffOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSchemaVersionsDiffResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetSecurityConfigurationRequest&, const Model::GetSecurityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSecurityConfigurationResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetSecurityConfigurationsRequest&, const Model::GetSecurityConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSecurityConfigurationsResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::GetSessionRequest&, const Model::GetSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSessionResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::GetStatementRequest&, const Model::GetStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStatementResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetTableRequest&, const Model::GetTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetTableVersionRequest&, const Model::GetTableVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableVersionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetTableVersionsRequest&, const Model::GetTableVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableVersionsResponseReceivedHandler;
@@ -855,6 +896,8 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::ListRegistriesRequest&, const Model::ListRegistriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRegistriesResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListSchemaVersionsRequest&, const Model::ListSchemaVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSchemaVersionsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListSchemasRequest&, const Model::ListSchemasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSchemasResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::ListSessionsRequest&, const Model::ListSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSessionsResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::ListStatementsRequest&, const Model::ListStatementsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStatementsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListTriggersRequest&, const Model::ListTriggersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTriggersResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListWorkflowsRequest&, const Model::ListWorkflowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkflowsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::PutDataCatalogEncryptionSettingsRequest&, const Model::PutDataCatalogEncryptionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDataCatalogEncryptionSettingsResponseReceivedHandler;
@@ -866,6 +909,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::RemoveSchemaVersionMetadataRequest&, const Model::RemoveSchemaVersionMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveSchemaVersionMetadataResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ResetJobBookmarkRequest&, const Model::ResetJobBookmarkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetJobBookmarkResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ResumeWorkflowRunRequest&, const Model::ResumeWorkflowRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeWorkflowRunResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::RunStatementRequest&, const Model::RunStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RunStatementResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::SearchTablesRequest&, const Model::SearchTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchTablesResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StartBlueprintRunRequest&, const Model::StartBlueprintRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartBlueprintRunResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StartCrawlerRequest&, const Model::StartCrawlerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCrawlerResponseReceivedHandler;
@@ -879,6 +923,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::StartWorkflowRunRequest&, const Model::StartWorkflowRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartWorkflowRunResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StopCrawlerRequest&, const Model::StopCrawlerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopCrawlerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StopCrawlerScheduleRequest&, const Model::StopCrawlerScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopCrawlerScheduleResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::StopSessionRequest&, const Model::StopSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopSessionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StopTriggerRequest&, const Model::StopTriggerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopTriggerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StopWorkflowRunRequest&, const Model::StopWorkflowRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopWorkflowRunResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
@@ -1429,6 +1474,31 @@ namespace Model
         virtual void CancelMLTaskRunAsync(const Model::CancelMLTaskRunRequest& request, const CancelMLTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Cancels the statement..</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelStatement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelStatementOutcome CancelStatement(const Model::CancelStatementRequest& request) const;
+
+        /**
+         * <p>Cancels the statement..</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelStatement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CancelStatementOutcomeCallable CancelStatementCallable(const Model::CancelStatementRequest& request) const;
+
+        /**
+         * <p>Cancels the statement..</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelStatement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CancelStatementAsync(const Model::CancelStatementRequest& request, const CancelStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Validates the supplied schema. This call has no side effects, it simply
          * validates using the supplied schema using <code>DataFormat</code> as the format.
          * Since it does not take a schema set name, no compatibility checks are
@@ -1922,6 +1992,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateSecurityConfigurationAsync(const Model::CreateSecurityConfigurationRequest& request, const CreateSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSessionOutcome CreateSession(const Model::CreateSessionRequest& request) const;
+
+        /**
+         * <p>Creates a new session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSession">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateSessionOutcomeCallable CreateSessionCallable(const Model::CreateSessionRequest& request) const;
+
+        /**
+         * <p>Creates a new session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSession">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateSessionAsync(const Model::CreateSessionRequest& request, const CreateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new table definition in the Data Catalog.</p><p><h3>See Also:</h3> 
@@ -2591,6 +2686,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteSecurityConfigurationAsync(const Model::DeleteSecurityConfigurationRequest& request, const DeleteSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSessionOutcome DeleteSession(const Model::DeleteSessionRequest& request) const;
+
+        /**
+         * <p>Deletes the session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSession">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteSessionOutcomeCallable DeleteSessionCallable(const Model::DeleteSessionRequest& request) const;
+
+        /**
+         * <p>Deletes the session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSession">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteSessionAsync(const Model::DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a table definition from the Data Catalog.</p>  <p>After
@@ -3978,6 +4098,56 @@ namespace Model
         virtual void GetSecurityConfigurationsAsync(const Model::GetSecurityConfigurationsRequest& request, const GetSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSession">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::GetSessionOutcome GetSession(const Model::GetSessionRequest& request) const;
+
+        /**
+         * <p>Retrieves the session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSession">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSessionOutcomeCallable GetSessionCallable(const Model::GetSessionRequest& request) const;
+
+        /**
+         * <p>Retrieves the session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSession">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSessionAsync(const Model::GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the statement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetStatement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetStatementOutcome GetStatement(const Model::GetStatementRequest& request) const;
+
+        /**
+         * <p>Retrieves the statement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetStatement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetStatementOutcomeCallable GetStatementCallable(const Model::GetStatementRequest& request) const;
+
+        /**
+         * <p>Retrieves the statement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetStatement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetStatementAsync(const Model::GetStatementRequest& request, const GetStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves the <code>Table</code> definition in a Data Catalog for a specified
          * table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTable">AWS API
@@ -4711,6 +4881,56 @@ namespace Model
         virtual void ListSchemasAsync(const Model::ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieve a session..</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSessions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSessionsOutcome ListSessions(const Model::ListSessionsRequest& request) const;
+
+        /**
+         * <p>Retrieve a session..</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSessions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSessionsOutcomeCallable ListSessionsCallable(const Model::ListSessionsRequest& request) const;
+
+        /**
+         * <p>Retrieve a session..</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSessions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSessionsAsync(const Model::ListSessionsRequest& request, const ListSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists statements for the session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListStatements">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStatementsOutcome ListStatements(const Model::ListStatementsRequest& request) const;
+
+        /**
+         * <p>Lists statements for the session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListStatements">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListStatementsOutcomeCallable ListStatementsCallable(const Model::ListStatementsRequest& request) const;
+
+        /**
+         * <p>Lists statements for the session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListStatements">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListStatementsAsync(const Model::ListStatementsRequest& request, const ListStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves the names of all trigger resources in this Amazon Web Services
          * account, or the resources with the specified tag. This operation allows you to
          * see which resources are available in your account, and their names.</p> <p>This
@@ -5074,6 +5294,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ResumeWorkflowRunAsync(const Model::ResumeWorkflowRunRequest& request, const ResumeWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Executes the statement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RunStatement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RunStatementOutcome RunStatement(const Model::RunStatementRequest& request) const;
+
+        /**
+         * <p>Executes the statement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RunStatement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RunStatementOutcomeCallable RunStatementCallable(const Model::RunStatementRequest& request) const;
+
+        /**
+         * <p>Executes the statement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RunStatement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RunStatementAsync(const Model::RunStatementRequest& request, const RunStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Searches a set of tables based on properties in the table metadata as well as
@@ -5603,6 +5848,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopCrawlerScheduleAsync(const Model::StopCrawlerScheduleRequest& request, const StopCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops the session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopSessionOutcome StopSession(const Model::StopSessionRequest& request) const;
+
+        /**
+         * <p>Stops the session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopSession">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopSessionOutcomeCallable StopSessionCallable(const Model::StopSessionRequest& request) const;
+
+        /**
+         * <p>Stops the session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopSession">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopSessionAsync(const Model::StopSessionRequest& request, const StopSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a specified trigger.</p><p><h3>See Also:</h3>   <a
@@ -6272,6 +6542,7 @@ namespace Model
         void BatchStopJobRunAsyncHelper(const Model::BatchStopJobRunRequest& request, const BatchStopJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchUpdatePartitionAsyncHelper(const Model::BatchUpdatePartitionRequest& request, const BatchUpdatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelMLTaskRunAsyncHelper(const Model::CancelMLTaskRunRequest& request, const CancelMLTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CancelStatementAsyncHelper(const Model::CancelStatementRequest& request, const CancelStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CheckSchemaVersionValidityAsyncHelper(const Model::CheckSchemaVersionValidityRequest& request, const CheckSchemaVersionValidityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBlueprintAsyncHelper(const Model::CreateBlueprintRequest& request, const CreateBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateClassifierAsyncHelper(const Model::CreateClassifierRequest& request, const CreateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6287,6 +6558,7 @@ namespace Model
         void CreateSchemaAsyncHelper(const Model::CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateScriptAsyncHelper(const Model::CreateScriptRequest& request, const CreateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSecurityConfigurationAsyncHelper(const Model::CreateSecurityConfigurationRequest& request, const CreateSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateSessionAsyncHelper(const Model::CreateSessionRequest& request, const CreateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTableAsyncHelper(const Model::CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTriggerAsyncHelper(const Model::CreateTriggerRequest& request, const CreateTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserDefinedFunctionAsyncHelper(const Model::CreateUserDefinedFunctionRequest& request, const CreateUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6308,6 +6580,7 @@ namespace Model
         void DeleteSchemaAsyncHelper(const Model::DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSchemaVersionsAsyncHelper(const Model::DeleteSchemaVersionsRequest& request, const DeleteSchemaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSecurityConfigurationAsyncHelper(const Model::DeleteSecurityConfigurationRequest& request, const DeleteSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteSessionAsyncHelper(const Model::DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTableAsyncHelper(const Model::DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTableVersionAsyncHelper(const Model::DeleteTableVersionRequest& request, const DeleteTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTriggerAsyncHelper(const Model::DeleteTriggerRequest& request, const DeleteTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6355,6 +6628,8 @@ namespace Model
         void GetSchemaVersionsDiffAsyncHelper(const Model::GetSchemaVersionsDiffRequest& request, const GetSchemaVersionsDiffResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSecurityConfigurationAsyncHelper(const Model::GetSecurityConfigurationRequest& request, const GetSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSecurityConfigurationsAsyncHelper(const Model::GetSecurityConfigurationsRequest& request, const GetSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSessionAsyncHelper(const Model::GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetStatementAsyncHelper(const Model::GetStatementRequest& request, const GetStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTableAsyncHelper(const Model::GetTableRequest& request, const GetTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTableVersionAsyncHelper(const Model::GetTableVersionRequest& request, const GetTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTableVersionsAsyncHelper(const Model::GetTableVersionsRequest& request, const GetTableVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6380,6 +6655,8 @@ namespace Model
         void ListRegistriesAsyncHelper(const Model::ListRegistriesRequest& request, const ListRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSchemaVersionsAsyncHelper(const Model::ListSchemaVersionsRequest& request, const ListSchemaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSchemasAsyncHelper(const Model::ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListSessionsAsyncHelper(const Model::ListSessionsRequest& request, const ListSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListStatementsAsyncHelper(const Model::ListStatementsRequest& request, const ListStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTriggersAsyncHelper(const Model::ListTriggersRequest& request, const ListTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWorkflowsAsyncHelper(const Model::ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDataCatalogEncryptionSettingsAsyncHelper(const Model::PutDataCatalogEncryptionSettingsRequest& request, const PutDataCatalogEncryptionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6391,6 +6668,7 @@ namespace Model
         void RemoveSchemaVersionMetadataAsyncHelper(const Model::RemoveSchemaVersionMetadataRequest& request, const RemoveSchemaVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetJobBookmarkAsyncHelper(const Model::ResetJobBookmarkRequest& request, const ResetJobBookmarkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResumeWorkflowRunAsyncHelper(const Model::ResumeWorkflowRunRequest& request, const ResumeWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RunStatementAsyncHelper(const Model::RunStatementRequest& request, const RunStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchTablesAsyncHelper(const Model::SearchTablesRequest& request, const SearchTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartBlueprintRunAsyncHelper(const Model::StartBlueprintRunRequest& request, const StartBlueprintRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartCrawlerAsyncHelper(const Model::StartCrawlerRequest& request, const StartCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6404,6 +6682,7 @@ namespace Model
         void StartWorkflowRunAsyncHelper(const Model::StartWorkflowRunRequest& request, const StartWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopCrawlerAsyncHelper(const Model::StopCrawlerRequest& request, const StopCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopCrawlerScheduleAsyncHelper(const Model::StopCrawlerScheduleRequest& request, const StopCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopSessionAsyncHelper(const Model::StopSessionRequest& request, const StopSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopTriggerAsyncHelper(const Model::StopTriggerRequest& request, const StopTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopWorkflowRunAsyncHelper(const Model::StopWorkflowRunRequest& request, const StopWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
