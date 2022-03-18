@@ -44,7 +44,7 @@ namespace Aws
             // TBI: controls for in-memory parts vs. resumable file-based parts with state serialization to/from file
         };
 
-        class PartState
+        class AWS_TRANSFER_API PartState
         {
             public:
                 PartState();
