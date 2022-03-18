@@ -29,6 +29,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/testing/TestingEnvironment.h>
+#include <aws/core/platform/Environment.h>
 
 using namespace Aws::CognitoIdentity;
 using namespace Aws::CognitoIdentity::Model;
@@ -252,10 +253,13 @@ TEST_F(IdentityPoolOperationTest, TestIdentityActions)
     ClientConfiguration clientConfig;
     clientConfig.region = Aws::Region::US_EAST_1;
 
-    auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, clientConfig);
-    Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, client);
-
-    getIdRequest.WithAccountId(accessManagementClient.GetAccountId());
+    auto accountId = Aws::Environment::GetEnv("TEST_ACCOUNT_ID");
+    if (accountId.empty()) {
+        auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, clientConfig);
+        Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, client);
+        accountId = accessManagementClient.GetAccountId();
+    }
+    getIdRequest.WithAccountId(accountId);
 
     GetIdOutcome getIdOutcome = client->GetId(getIdRequest);
     EXPECT_TRUE(getIdOutcome.IsSuccess());

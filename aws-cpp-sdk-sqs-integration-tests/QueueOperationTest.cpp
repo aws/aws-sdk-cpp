@@ -35,6 +35,7 @@
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/testing/TestingEnvironment.h>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/platform/Environment.h>
 
 using namespace Aws::Http;
 using namespace Aws;
@@ -149,10 +150,14 @@ protected:
 
     Aws::String GetAwsAccountId()
     {
-        auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, GetConfig());
-        auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, GetConfig());
-        Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
-        return accessManagementClient.GetAccountId();
+        auto accountId = Aws::Environment::GetEnv("TEST_ACCOUNT_ID");
+        if (accountId.empty()) {
+            auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, GetConfig());
+            auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, GetConfig());
+            Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
+            accountId = accessManagementClient.GetAccountId();
+        }
+        return accountId;
     }
 };
 

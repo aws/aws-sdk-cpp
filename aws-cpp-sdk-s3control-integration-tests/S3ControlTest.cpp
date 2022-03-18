@@ -84,11 +84,15 @@ namespace
             m_httpClient = Aws::Http::CreateHttpClient(config);
 
             // IAM client has to use us-east-1 in its signer.
-            config.region = Aws::Region::US_EAST_1;
-            auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, config);
-            auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, config);
-            Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
-            m_accountId = accessManagementClient.GetAccountId();
+            auto accountId = Aws::Environment::GetEnv("TEST_ACCOUNT_ID");
+            if(accountId.empty()) {
+                config.region = Aws::Region::US_EAST_1;
+                auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, config);
+                auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, config);
+                Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
+                accountId = accessManagementClient.GetAccountId();
+            }
+            m_accountId = accountId;
         }
 
     protected:
