@@ -44,11 +44,8 @@ TEST_F(EC2DualStackTests, TestDualStackMocked)
 
     Aws::Client::ClientConfiguration clientConfig;
     clientConfig.region = "us-east-1";
-    // Although SDK does not properly compute dualstack endpoints, let's keep this flag for future's backward compatibility
     clientConfig.useDualStack = true;
-    // TODO: remove next with proper endpoint generation support
-    // Use dualstack endpoint posted by EC2
-    clientConfig.endpointOverride = "api.ec2.us-east-1.aws";
+
     Aws::Auth::AWSCredentials mockCreds("accessKey", "secretKey", "sessionToken");
     Aws::EC2::EC2Client ec2Client(mockCreds, clientConfig);
 
@@ -73,11 +70,7 @@ TEST_F(EC2DualStackTests, TestDualStackEndpoint)
 {
     Aws::Client::ClientConfiguration clientConfig;
     clientConfig.region = "us-east-1";
-    // Although SDK does not properly compute dualstack endpoints, let's keep this flag for future's backward compatibility
     clientConfig.useDualStack = true;
-    // TODO: remove next with proper endpoint generation support
-    // Use dualstack endpoint posted by EC2
-    clientConfig.endpointOverride = "api.ec2.us-east-1.aws";
 
     Aws::EC2::EC2Client ec2Client(clientConfig);
 
