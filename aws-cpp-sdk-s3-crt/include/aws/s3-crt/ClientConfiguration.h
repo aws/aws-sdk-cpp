@@ -19,16 +19,9 @@ namespace Aws
     {
         struct AWS_S3CRT_API ClientConfiguration : Aws::Client::ClientConfiguration
         {
-            ClientConfiguration() :
+            ClientConfiguration() : Aws::Client::ClientConfiguration(),
                 partSize(5 * 1024 * 1024),
-                throughputTargetGbps(2.0)
-            {
-                /* Parent configuration settings: */
-                region = Aws::Region::US_EAST_1;
-                useDualStack = false;
-                enableHostPrefixInjection = true;
-                scheme = Aws::Http::Scheme::HTTPS;
-            }
+                throughputTargetGbps(2.0) {}
 
             /** Client bootstrap used for common staples such as event loop group, host resolver, etc..
              *  If this is nullptr, SDK will create a default one for you.
