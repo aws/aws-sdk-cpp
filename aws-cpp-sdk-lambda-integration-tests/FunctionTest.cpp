@@ -44,6 +44,7 @@
 #include <aws/cognito-identity/CognitoIdentityClient.h>
 #include <aws/testing/TestingEnvironment.h>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/platform/Environment.h>
 
 using namespace Aws::Auth;
 using namespace Aws::Http;
@@ -63,6 +64,7 @@ static const char BASE_SIMPLE_FUNCTION[] = "TestSimple";
 static const char BASE_UNHANDLED_ERROR_FUNCTION[] = "TestUnhandledError";
 static const char SIMPLE_FUNCTION_CODE[] = RESOURCES_DIR "/succeed.zip";
 static const char UNHANDLED_ERROR_FUNCTION_CODE[] = RESOURCES_DIR "/unhandled.zip";
+static const char TEST_LAMBDA_CODE_PATH[] = "TEST_LAMBDA_CODE_PATH";
 static const char ALLOCATION_TAG[] = "FunctionTest";
 static const char BASE_IAM_ROLE_NAME[] = "AWSNativeSDKLambdaIntegrationTestRole";
 
@@ -96,7 +98,8 @@ protected:
     void SetUp()
     {
         m_UUID = Aws::Utils::UUID::RandomUUID();
-        CreateFunction(BuildResourceName(BASE_SIMPLE_FUNCTION), SIMPLE_FUNCTION_CODE);
+        CreateFunction(BuildResourceName(BASE_SIMPLE_FUNCTION),
+                       getLambdaCodePathFromEnvIfExists(SIMPLE_FUNCTION_CODE, "/succeed.zip"));
     }
 
     void TearDown()
@@ -255,6 +258,16 @@ protected:
 
         WaitForFunctionStatus(functionName, Aws::Lambda::Model::State::Active);
     }
+
+    static Aws::String getLambdaCodePathFromEnvIfExists(const Aws::String& cmakePath, const Aws::String& filePath) {
+        Aws::String functionCodePath(Aws::Environment::GetEnv(TEST_LAMBDA_CODE_PATH));
+        if(functionCodePath.empty()) {
+            functionCodePath = cmakePath;
+        } else {
+            functionCodePath.append(filePath);
+        }
+        return functionCodePath;
+    }
 };
 
 std::shared_ptr<LambdaClient> FunctionTest::m_client(nullptr);
@@ -406,7 +419,8 @@ TEST_F(FunctionTest, TestInvokeSync)
 
 TEST_F(FunctionTest, TestInvokeSyncUnhandledFunctionError)
 {
-    CreateFunction(BuildResourceName(BASE_UNHANDLED_ERROR_FUNCTION), UNHANDLED_ERROR_FUNCTION_CODE);
+    CreateFunction(BuildResourceName(BASE_UNHANDLED_ERROR_FUNCTION),
+                   getLambdaCodePathFromEnvIfExists(UNHANDLED_ERROR_FUNCTION_CODE, "/unhandled.zip"));
 
     InvokeRequest invokeRequest;
     invokeRequest.SetFunctionName(BuildResourceName(BASE_UNHANDLED_ERROR_FUNCTION));
