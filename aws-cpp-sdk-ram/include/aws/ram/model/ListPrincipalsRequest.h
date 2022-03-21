@@ -36,49 +36,55 @@ namespace Model
 
     /**
      * <p>Specifies that you want to list information for only resource shares that
-     * match the following:</p> <ul> <li> <p> <b> <code>SELF</code> </b> – resources
-     * that you are sharing</p> </li> <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> –
-     * resources that other accounts share with you</p> </li> </ul>
+     * match the following:</p> <ul> <li> <p> <b> <code>SELF</code> </b> – principals
+     * that your account is sharing resources with</p> </li> <li> <p> <b>
+     * <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with
+     * your account</p> </li> </ul>
      */
     inline const ResourceOwner& GetResourceOwner() const{ return m_resourceOwner; }
 
     /**
      * <p>Specifies that you want to list information for only resource shares that
-     * match the following:</p> <ul> <li> <p> <b> <code>SELF</code> </b> – resources
-     * that you are sharing</p> </li> <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> –
-     * resources that other accounts share with you</p> </li> </ul>
+     * match the following:</p> <ul> <li> <p> <b> <code>SELF</code> </b> – principals
+     * that your account is sharing resources with</p> </li> <li> <p> <b>
+     * <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with
+     * your account</p> </li> </ul>
      */
     inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
 
     /**
      * <p>Specifies that you want to list information for only resource shares that
-     * match the following:</p> <ul> <li> <p> <b> <code>SELF</code> </b> – resources
-     * that you are sharing</p> </li> <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> –
-     * resources that other accounts share with you</p> </li> </ul>
+     * match the following:</p> <ul> <li> <p> <b> <code>SELF</code> </b> – principals
+     * that your account is sharing resources with</p> </li> <li> <p> <b>
+     * <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with
+     * your account</p> </li> </ul>
      */
     inline void SetResourceOwner(const ResourceOwner& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = value; }
 
     /**
      * <p>Specifies that you want to list information for only resource shares that
-     * match the following:</p> <ul> <li> <p> <b> <code>SELF</code> </b> – resources
-     * that you are sharing</p> </li> <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> –
-     * resources that other accounts share with you</p> </li> </ul>
+     * match the following:</p> <ul> <li> <p> <b> <code>SELF</code> </b> – principals
+     * that your account is sharing resources with</p> </li> <li> <p> <b>
+     * <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with
+     * your account</p> </li> </ul>
      */
     inline void SetResourceOwner(ResourceOwner&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::move(value); }
 
     /**
      * <p>Specifies that you want to list information for only resource shares that
-     * match the following:</p> <ul> <li> <p> <b> <code>SELF</code> </b> – resources
-     * that you are sharing</p> </li> <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> –
-     * resources that other accounts share with you</p> </li> </ul>
+     * match the following:</p> <ul> <li> <p> <b> <code>SELF</code> </b> – principals
+     * that your account is sharing resources with</p> </li> <li> <p> <b>
+     * <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with
+     * your account</p> </li> </ul>
      */
     inline ListPrincipalsRequest& WithResourceOwner(const ResourceOwner& value) { SetResourceOwner(value); return *this;}
 
     /**
      * <p>Specifies that you want to list information for only resource shares that
-     * match the following:</p> <ul> <li> <p> <b> <code>SELF</code> </b> – resources
-     * that you are sharing</p> </li> <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> –
-     * resources that other accounts share with you</p> </li> </ul>
+     * match the following:</p> <ul> <li> <p> <b> <code>SELF</code> </b> – principals
+     * that your account is sharing resources with</p> </li> <li> <p> <b>
+     * <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with
+     * your account</p> </li> </ul>
      */
     inline ListPrincipalsRequest& WithResourceOwner(ResourceOwner&& value) { SetResourceOwner(std::move(value)); return *this;}
 

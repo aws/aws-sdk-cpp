@@ -515,11 +515,11 @@ namespace Model
      * these restrictions. Currently, you need to create the profile names for custom
      * permission sets by using the Amazon QuickSight console. Then, you use the
      * <code>RegisterUser</code> API operation to assign the named set of permissions
-     * to a QuickSight user. </p> <p>Amazon QuickSight custom permissions are applied
-     * through IAM policies. Therefore, they override the permissions typically granted
-     * by assigning Amazon QuickSight users to one of the default security cohorts in
-     * Amazon QuickSight (admin, author, reader).</p> <p>This feature is available only
-     * to Amazon QuickSight Enterprise edition subscriptions.</p>
+     * to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are
+     * applied through IAM policies. Therefore, they override the permissions typically
+     * granted by assigning Amazon QuickSight users to one of the default security
+     * cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is
+     * available only to Amazon QuickSight Enterprise edition subscriptions.</p>
      */
     inline const Aws::String& GetCustomPermissionsName() const{ return m_customPermissionsName; }
 
@@ -536,11 +536,11 @@ namespace Model
      * these restrictions. Currently, you need to create the profile names for custom
      * permission sets by using the Amazon QuickSight console. Then, you use the
      * <code>RegisterUser</code> API operation to assign the named set of permissions
-     * to a QuickSight user. </p> <p>Amazon QuickSight custom permissions are applied
-     * through IAM policies. Therefore, they override the permissions typically granted
-     * by assigning Amazon QuickSight users to one of the default security cohorts in
-     * Amazon QuickSight (admin, author, reader).</p> <p>This feature is available only
-     * to Amazon QuickSight Enterprise edition subscriptions.</p>
+     * to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are
+     * applied through IAM policies. Therefore, they override the permissions typically
+     * granted by assigning Amazon QuickSight users to one of the default security
+     * cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is
+     * available only to Amazon QuickSight Enterprise edition subscriptions.</p>
      */
     inline bool CustomPermissionsNameHasBeenSet() const { return m_customPermissionsNameHasBeenSet; }
 
@@ -557,11 +557,11 @@ namespace Model
      * these restrictions. Currently, you need to create the profile names for custom
      * permission sets by using the Amazon QuickSight console. Then, you use the
      * <code>RegisterUser</code> API operation to assign the named set of permissions
-     * to a QuickSight user. </p> <p>Amazon QuickSight custom permissions are applied
-     * through IAM policies. Therefore, they override the permissions typically granted
-     * by assigning Amazon QuickSight users to one of the default security cohorts in
-     * Amazon QuickSight (admin, author, reader).</p> <p>This feature is available only
-     * to Amazon QuickSight Enterprise edition subscriptions.</p>
+     * to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are
+     * applied through IAM policies. Therefore, they override the permissions typically
+     * granted by assigning Amazon QuickSight users to one of the default security
+     * cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is
+     * available only to Amazon QuickSight Enterprise edition subscriptions.</p>
      */
     inline void SetCustomPermissionsName(const Aws::String& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = value; }
 
@@ -578,11 +578,11 @@ namespace Model
      * these restrictions. Currently, you need to create the profile names for custom
      * permission sets by using the Amazon QuickSight console. Then, you use the
      * <code>RegisterUser</code> API operation to assign the named set of permissions
-     * to a QuickSight user. </p> <p>Amazon QuickSight custom permissions are applied
-     * through IAM policies. Therefore, they override the permissions typically granted
-     * by assigning Amazon QuickSight users to one of the default security cohorts in
-     * Amazon QuickSight (admin, author, reader).</p> <p>This feature is available only
-     * to Amazon QuickSight Enterprise edition subscriptions.</p>
+     * to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are
+     * applied through IAM policies. Therefore, they override the permissions typically
+     * granted by assigning Amazon QuickSight users to one of the default security
+     * cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is
+     * available only to Amazon QuickSight Enterprise edition subscriptions.</p>
      */
     inline void SetCustomPermissionsName(Aws::String&& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = std::move(value); }
 
@@ -599,11 +599,11 @@ namespace Model
      * these restrictions. Currently, you need to create the profile names for custom
      * permission sets by using the Amazon QuickSight console. Then, you use the
      * <code>RegisterUser</code> API operation to assign the named set of permissions
-     * to a QuickSight user. </p> <p>Amazon QuickSight custom permissions are applied
-     * through IAM policies. Therefore, they override the permissions typically granted
-     * by assigning Amazon QuickSight users to one of the default security cohorts in
-     * Amazon QuickSight (admin, author, reader).</p> <p>This feature is available only
-     * to Amazon QuickSight Enterprise edition subscriptions.</p>
+     * to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are
+     * applied through IAM policies. Therefore, they override the permissions typically
+     * granted by assigning Amazon QuickSight users to one of the default security
+     * cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is
+     * available only to Amazon QuickSight Enterprise edition subscriptions.</p>
      */
     inline void SetCustomPermissionsName(const char* value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName.assign(value); }
 
@@ -620,11 +620,11 @@ namespace Model
      * these restrictions. Currently, you need to create the profile names for custom
      * permission sets by using the Amazon QuickSight console. Then, you use the
      * <code>RegisterUser</code> API operation to assign the named set of permissions
-     * to a QuickSight user. </p> <p>Amazon QuickSight custom permissions are applied
-     * through IAM policies. Therefore, they override the permissions typically granted
-     * by assigning Amazon QuickSight users to one of the default security cohorts in
-     * Amazon QuickSight (admin, author, reader).</p> <p>This feature is available only
-     * to Amazon QuickSight Enterprise edition subscriptions.</p>
+     * to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are
+     * applied through IAM policies. Therefore, they override the permissions typically
+     * granted by assigning Amazon QuickSight users to one of the default security
+     * cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is
+     * available only to Amazon QuickSight Enterprise edition subscriptions.</p>
      */
     inline RegisterUserRequest& WithCustomPermissionsName(const Aws::String& value) { SetCustomPermissionsName(value); return *this;}
 
@@ -641,11 +641,11 @@ namespace Model
      * these restrictions. Currently, you need to create the profile names for custom
      * permission sets by using the Amazon QuickSight console. Then, you use the
      * <code>RegisterUser</code> API operation to assign the named set of permissions
-     * to a QuickSight user. </p> <p>Amazon QuickSight custom permissions are applied
-     * through IAM policies. Therefore, they override the permissions typically granted
-     * by assigning Amazon QuickSight users to one of the default security cohorts in
-     * Amazon QuickSight (admin, author, reader).</p> <p>This feature is available only
-     * to Amazon QuickSight Enterprise edition subscriptions.</p>
+     * to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are
+     * applied through IAM policies. Therefore, they override the permissions typically
+     * granted by assigning Amazon QuickSight users to one of the default security
+     * cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is
+     * available only to Amazon QuickSight Enterprise edition subscriptions.</p>
      */
     inline RegisterUserRequest& WithCustomPermissionsName(Aws::String&& value) { SetCustomPermissionsName(std::move(value)); return *this;}
 
@@ -662,11 +662,11 @@ namespace Model
      * these restrictions. Currently, you need to create the profile names for custom
      * permission sets by using the Amazon QuickSight console. Then, you use the
      * <code>RegisterUser</code> API operation to assign the named set of permissions
-     * to a QuickSight user. </p> <p>Amazon QuickSight custom permissions are applied
-     * through IAM policies. Therefore, they override the permissions typically granted
-     * by assigning Amazon QuickSight users to one of the default security cohorts in
-     * Amazon QuickSight (admin, author, reader).</p> <p>This feature is available only
-     * to Amazon QuickSight Enterprise edition subscriptions.</p>
+     * to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are
+     * applied through IAM policies. Therefore, they override the permissions typically
+     * granted by assigning Amazon QuickSight users to one of the default security
+     * cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is
+     * available only to Amazon QuickSight Enterprise edition subscriptions.</p>
      */
     inline RegisterUserRequest& WithCustomPermissionsName(const char* value) { SetCustomPermissionsName(value); return *this;}
 

@@ -839,7 +839,7 @@ namespace Model
         virtual void ListResourceTypesAsync(const Model::ListResourceTypesRequest& request, const ListResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the resources that you added to a resource shares or the resources that
+         * <p>Lists the resources that you added to a resource share or the resources that
          * are shared with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResources">AWS
          * API Reference</a></p>
@@ -847,7 +847,7 @@ namespace Model
         virtual Model::ListResourcesOutcome ListResources(const Model::ListResourcesRequest& request) const;
 
         /**
-         * <p>Lists the resources that you added to a resource shares or the resources that
+         * <p>Lists the resources that you added to a resource share or the resources that
          * are shared with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResources">AWS
          * API Reference</a></p>
@@ -857,7 +857,7 @@ namespace Model
         virtual Model::ListResourcesOutcomeCallable ListResourcesCallable(const Model::ListResourcesRequest& request) const;
 
         /**
-         * <p>Lists the resources that you added to a resource shares or the resources that
+         * <p>Lists the resources that you added to a resource share or the resources that
          * are shared with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResources">AWS
          * API Reference</a></p>

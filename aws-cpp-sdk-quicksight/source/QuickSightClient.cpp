@@ -68,6 +68,7 @@
 #include <aws/quicksight/model/DescribeFolderPermissionsRequest.h>
 #include <aws/quicksight/model/DescribeFolderResolvedPermissionsRequest.h>
 #include <aws/quicksight/model/DescribeGroupRequest.h>
+#include <aws/quicksight/model/DescribeGroupMembershipRequest.h>
 #include <aws/quicksight/model/DescribeIAMPolicyAssignmentRequest.h>
 #include <aws/quicksight/model/DescribeIngestionRequest.h>
 #include <aws/quicksight/model/DescribeIpRestrictionRequest.h>
@@ -110,6 +111,7 @@
 #include <aws/quicksight/model/SearchAnalysesRequest.h>
 #include <aws/quicksight/model/SearchDashboardsRequest.h>
 #include <aws/quicksight/model/SearchFoldersRequest.h>
+#include <aws/quicksight/model/SearchGroupsRequest.h>
 #include <aws/quicksight/model/TagResourceRequest.h>
 #include <aws/quicksight/model/UntagResourceRequest.h>
 #include <aws/quicksight/model/UpdateAccountCustomizationRequest.h>
@@ -2129,6 +2131,58 @@ void QuickSightClient::DescribeGroupAsyncHelper(const DescribeGroupRequest& requ
   handler(this, request, DescribeGroup(request), context);
 }
 
+DescribeGroupMembershipOutcome QuickSightClient::DescribeGroupMembership(const DescribeGroupMembershipRequest& request) const
+{
+  if (!request.MemberNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeGroupMembership", "Required field: MemberName, is not set");
+    return DescribeGroupMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberName]", false));
+  }
+  if (!request.GroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeGroupMembership", "Required field: GroupName, is not set");
+    return DescribeGroupMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupName]", false));
+  }
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeGroupMembership", "Required field: AwsAccountId, is not set");
+    return DescribeGroupMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeGroupMembership", "Required field: Namespace, is not set");
+    return DescribeGroupMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/groups/");
+  uri.AddPathSegment(request.GetGroupName());
+  uri.AddPathSegments("/members/");
+  uri.AddPathSegment(request.GetMemberName());
+  return DescribeGroupMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeGroupMembershipOutcomeCallable QuickSightClient::DescribeGroupMembershipCallable(const DescribeGroupMembershipRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeGroupMembershipOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeGroupMembership(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DescribeGroupMembershipAsync(const DescribeGroupMembershipRequest& request, const DescribeGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeGroupMembershipAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DescribeGroupMembershipAsyncHelper(const DescribeGroupMembershipRequest& request, const DescribeGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeGroupMembership(request), context);
+}
+
 DescribeIAMPolicyAssignmentOutcome QuickSightClient::DescribeIAMPolicyAssignment(const DescribeIAMPolicyAssignmentRequest& request) const
 {
   if (!request.AwsAccountIdHasBeenSet())
@@ -3705,6 +3759,45 @@ void QuickSightClient::SearchFoldersAsync(const SearchFoldersRequest& request, c
 void QuickSightClient::SearchFoldersAsyncHelper(const SearchFoldersRequest& request, const SearchFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SearchFolders(request), context);
+}
+
+SearchGroupsOutcome QuickSightClient::SearchGroups(const SearchGroupsRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SearchGroups", "Required field: AwsAccountId, is not set");
+    return SearchGroupsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SearchGroups", "Required field: Namespace, is not set");
+    return SearchGroupsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/groups-search");
+  return SearchGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchGroupsOutcomeCallable QuickSightClient::SearchGroupsCallable(const SearchGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::SearchGroupsAsync(const SearchGroupsRequest& request, const SearchGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::SearchGroupsAsyncHelper(const SearchGroupsRequest& request, const SearchGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchGroups(request), context);
 }
 
 TagResourceOutcome QuickSightClient::TagResource(const TagResourceRequest& request) const

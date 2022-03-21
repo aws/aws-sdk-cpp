@@ -10,6 +10,7 @@
 #include <aws/mediaconnect/model/Source.h>
 #include <aws/mediaconnect/model/FailoverConfig.h>
 #include <aws/mediaconnect/model/Status.h>
+#include <aws/mediaconnect/model/Maintenance.h>
 #include <aws/mediaconnect/model/Entitlement.h>
 #include <aws/mediaconnect/model/MediaStream.h>
 #include <aws/mediaconnect/model/Output.h>
@@ -540,6 +541,25 @@ namespace Model
      */
     inline Flow& AddVpcInterfaces(VpcInterface&& value) { m_vpcInterfacesHasBeenSet = true; m_vpcInterfaces.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Maintenance& GetMaintenance() const{ return m_maintenance; }
+
+    
+    inline bool MaintenanceHasBeenSet() const { return m_maintenanceHasBeenSet; }
+
+    
+    inline void SetMaintenance(const Maintenance& value) { m_maintenanceHasBeenSet = true; m_maintenance = value; }
+
+    
+    inline void SetMaintenance(Maintenance&& value) { m_maintenanceHasBeenSet = true; m_maintenance = std::move(value); }
+
+    
+    inline Flow& WithMaintenance(const Maintenance& value) { SetMaintenance(value); return *this;}
+
+    
+    inline Flow& WithMaintenance(Maintenance&& value) { SetMaintenance(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_availabilityZone;
@@ -580,6 +600,9 @@ namespace Model
 
     Aws::Vector<VpcInterface> m_vpcInterfaces;
     bool m_vpcInterfacesHasBeenSet;
+
+    Maintenance m_maintenance;
+    bool m_maintenanceHasBeenSet;
   };
 
 } // namespace Model

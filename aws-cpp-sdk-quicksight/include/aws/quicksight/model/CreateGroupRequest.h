@@ -175,42 +175,42 @@ namespace Model
 
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace that you want the group to be a part of.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace that you want the group to be a part of.</p>
      */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace that you want the group to be a part of.</p>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace that you want the group to be a part of.</p>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace that you want the group to be a part of.</p>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace that you want the group to be a part of.</p>
      */
     inline CreateGroupRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace that you want the group to be a part of.</p>
      */
     inline CreateGroupRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace that you want the group to be a part of.</p>
      */
     inline CreateGroupRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 

@@ -32,7 +32,8 @@ Flow::Flow() :
     m_sourcesHasBeenSet(false),
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false),
-    m_vpcInterfacesHasBeenSet(false)
+    m_vpcInterfacesHasBeenSet(false),
+    m_maintenanceHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ Flow::Flow(JsonView jsonValue) :
     m_sourcesHasBeenSet(false),
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false),
-    m_vpcInterfacesHasBeenSet(false)
+    m_vpcInterfacesHasBeenSet(false),
+    m_maintenanceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -163,6 +165,13 @@ Flow& Flow::operator =(JsonView jsonValue)
     m_vpcInterfacesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("maintenance"))
+  {
+    m_maintenance = jsonValue.GetObject("maintenance");
+
+    m_maintenanceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -269,6 +278,12 @@ JsonValue Flow::Jsonize() const
      vpcInterfacesJsonList[vpcInterfacesIndex].AsObject(m_vpcInterfaces[vpcInterfacesIndex].Jsonize());
    }
    payload.WithArray("vpcInterfaces", std::move(vpcInterfacesJsonList));
+
+  }
+
+  if(m_maintenanceHasBeenSet)
+  {
+   payload.WithObject("maintenance", m_maintenance.Jsonize());
 
   }
 

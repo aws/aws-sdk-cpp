@@ -395,6 +395,55 @@ namespace Model
      */
     inline CreateMeetingWithAttendeesRequest& AddAttendees(CreateAttendeeRequestItem&& value) { m_attendeesHasBeenSet = true; m_attendees.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>When specified, replicates the media from the primary meeting to the new
+     * meeting.</p>
+     */
+    inline const Aws::String& GetPrimaryMeetingId() const{ return m_primaryMeetingId; }
+
+    /**
+     * <p>When specified, replicates the media from the primary meeting to the new
+     * meeting.</p>
+     */
+    inline bool PrimaryMeetingIdHasBeenSet() const { return m_primaryMeetingIdHasBeenSet; }
+
+    /**
+     * <p>When specified, replicates the media from the primary meeting to the new
+     * meeting.</p>
+     */
+    inline void SetPrimaryMeetingId(const Aws::String& value) { m_primaryMeetingIdHasBeenSet = true; m_primaryMeetingId = value; }
+
+    /**
+     * <p>When specified, replicates the media from the primary meeting to the new
+     * meeting.</p>
+     */
+    inline void SetPrimaryMeetingId(Aws::String&& value) { m_primaryMeetingIdHasBeenSet = true; m_primaryMeetingId = std::move(value); }
+
+    /**
+     * <p>When specified, replicates the media from the primary meeting to the new
+     * meeting.</p>
+     */
+    inline void SetPrimaryMeetingId(const char* value) { m_primaryMeetingIdHasBeenSet = true; m_primaryMeetingId.assign(value); }
+
+    /**
+     * <p>When specified, replicates the media from the primary meeting to the new
+     * meeting.</p>
+     */
+    inline CreateMeetingWithAttendeesRequest& WithPrimaryMeetingId(const Aws::String& value) { SetPrimaryMeetingId(value); return *this;}
+
+    /**
+     * <p>When specified, replicates the media from the primary meeting to the new
+     * meeting.</p>
+     */
+    inline CreateMeetingWithAttendeesRequest& WithPrimaryMeetingId(Aws::String&& value) { SetPrimaryMeetingId(std::move(value)); return *this;}
+
+    /**
+     * <p>When specified, replicates the media from the primary meeting to the new
+     * meeting.</p>
+     */
+    inline CreateMeetingWithAttendeesRequest& WithPrimaryMeetingId(const char* value) { SetPrimaryMeetingId(value); return *this;}
+
   private:
 
     Aws::String m_clientRequestToken;
@@ -417,6 +466,9 @@ namespace Model
 
     Aws::Vector<CreateAttendeeRequestItem> m_attendees;
     bool m_attendeesHasBeenSet;
+
+    Aws::String m_primaryMeetingId;
+    bool m_primaryMeetingIdHasBeenSet;
   };
 
 } // namespace Model
