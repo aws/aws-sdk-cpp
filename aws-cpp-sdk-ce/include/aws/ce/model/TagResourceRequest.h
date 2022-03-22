@@ -6,7 +6,7 @@
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/ce/CostExplorerRequest.h>
-#include <aws/ce/model/AnomalySubscription.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ce/model/ResourceTag.h>
 #include <utility>
@@ -20,16 +20,16 @@ namespace Model
 
   /**
    */
-  class AWS_COSTEXPLORER_API CreateAnomalySubscriptionRequest : public CostExplorerRequest
+  class AWS_COSTEXPLORER_API TagResourceRequest : public CostExplorerRequest
   {
   public:
-    CreateAnomalySubscriptionRequest();
+    TagResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
     // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "CreateAnomalySubscription"; }
+    inline virtual const char* GetServiceRequestName() const override { return "TagResource"; }
 
     Aws::String SerializePayload() const override;
 
@@ -37,41 +37,72 @@ namespace Model
 
 
     /**
-     * <p>The cost anomaly subscription object that you want to create. </p>
+     * <p>The Amazon Resource Name (ARN) of the resource. For a list of supported
+     * resources, see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>.
+     * </p>
      */
-    inline const AnomalySubscription& GetAnomalySubscription() const{ return m_anomalySubscription; }
+    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>The cost anomaly subscription object that you want to create. </p>
+     * <p>The Amazon Resource Name (ARN) of the resource. For a list of supported
+     * resources, see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>.
+     * </p>
      */
-    inline bool AnomalySubscriptionHasBeenSet() const { return m_anomalySubscriptionHasBeenSet; }
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p>The cost anomaly subscription object that you want to create. </p>
+     * <p>The Amazon Resource Name (ARN) of the resource. For a list of supported
+     * resources, see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>.
+     * </p>
      */
-    inline void SetAnomalySubscription(const AnomalySubscription& value) { m_anomalySubscriptionHasBeenSet = true; m_anomalySubscription = value; }
+    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>The cost anomaly subscription object that you want to create. </p>
+     * <p>The Amazon Resource Name (ARN) of the resource. For a list of supported
+     * resources, see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>.
+     * </p>
      */
-    inline void SetAnomalySubscription(AnomalySubscription&& value) { m_anomalySubscriptionHasBeenSet = true; m_anomalySubscription = std::move(value); }
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>The cost anomaly subscription object that you want to create. </p>
+     * <p>The Amazon Resource Name (ARN) of the resource. For a list of supported
+     * resources, see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>.
+     * </p>
      */
-    inline CreateAnomalySubscriptionRequest& WithAnomalySubscription(const AnomalySubscription& value) { SetAnomalySubscription(value); return *this;}
+    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>The cost anomaly subscription object that you want to create. </p>
+     * <p>The Amazon Resource Name (ARN) of the resource. For a list of supported
+     * resources, see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>.
+     * </p>
      */
-    inline CreateAnomalySubscriptionRequest& WithAnomalySubscription(AnomalySubscription&& value) { SetAnomalySubscription(std::move(value)); return *this;}
+    inline TagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource. For a list of supported
+     * resources, see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>.
+     * </p>
+     */
+    inline TagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource. For a list of supported
+     * resources, see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>.
+     * </p>
+     */
+    inline TagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
-     * <code>AnomalySubscription</code> </a>. You can use resource tags to control
-     * access to your <code>subscription</code> using IAM policies.</p> <p>Each tag
+     * <p> A list of tag key-value pairs to be added to the resource.</p> <p>Each tag
      * consists of a key and a value, and each key must be unique for the resource. The
      * following restrictions apply to resource tags:</p> <ul> <li> <p>Although the
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
@@ -87,10 +118,7 @@ namespace Model
     inline const Aws::Vector<ResourceTag>& GetResourceTags() const{ return m_resourceTags; }
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
-     * <code>AnomalySubscription</code> </a>. You can use resource tags to control
-     * access to your <code>subscription</code> using IAM policies.</p> <p>Each tag
+     * <p> A list of tag key-value pairs to be added to the resource.</p> <p>Each tag
      * consists of a key and a value, and each key must be unique for the resource. The
      * following restrictions apply to resource tags:</p> <ul> <li> <p>Although the
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
@@ -106,10 +134,7 @@ namespace Model
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
-     * <code>AnomalySubscription</code> </a>. You can use resource tags to control
-     * access to your <code>subscription</code> using IAM policies.</p> <p>Each tag
+     * <p> A list of tag key-value pairs to be added to the resource.</p> <p>Each tag
      * consists of a key and a value, and each key must be unique for the resource. The
      * following restrictions apply to resource tags:</p> <ul> <li> <p>Although the
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
@@ -125,10 +150,7 @@ namespace Model
     inline void SetResourceTags(const Aws::Vector<ResourceTag>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
-     * <code>AnomalySubscription</code> </a>. You can use resource tags to control
-     * access to your <code>subscription</code> using IAM policies.</p> <p>Each tag
+     * <p> A list of tag key-value pairs to be added to the resource.</p> <p>Each tag
      * consists of a key and a value, and each key must be unique for the resource. The
      * following restrictions apply to resource tags:</p> <ul> <li> <p>Although the
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
@@ -144,10 +166,7 @@ namespace Model
     inline void SetResourceTags(Aws::Vector<ResourceTag>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
-     * <code>AnomalySubscription</code> </a>. You can use resource tags to control
-     * access to your <code>subscription</code> using IAM policies.</p> <p>Each tag
+     * <p> A list of tag key-value pairs to be added to the resource.</p> <p>Each tag
      * consists of a key and a value, and each key must be unique for the resource. The
      * following restrictions apply to resource tags:</p> <ul> <li> <p>Although the
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
@@ -160,13 +179,10 @@ namespace Model
      * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
      * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
      */
-    inline CreateAnomalySubscriptionRequest& WithResourceTags(const Aws::Vector<ResourceTag>& value) { SetResourceTags(value); return *this;}
+    inline TagResourceRequest& WithResourceTags(const Aws::Vector<ResourceTag>& value) { SetResourceTags(value); return *this;}
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
-     * <code>AnomalySubscription</code> </a>. You can use resource tags to control
-     * access to your <code>subscription</code> using IAM policies.</p> <p>Each tag
+     * <p> A list of tag key-value pairs to be added to the resource.</p> <p>Each tag
      * consists of a key and a value, and each key must be unique for the resource. The
      * following restrictions apply to resource tags:</p> <ul> <li> <p>Although the
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
@@ -179,13 +195,10 @@ namespace Model
      * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
      * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
      */
-    inline CreateAnomalySubscriptionRequest& WithResourceTags(Aws::Vector<ResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
+    inline TagResourceRequest& WithResourceTags(Aws::Vector<ResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
-     * <code>AnomalySubscription</code> </a>. You can use resource tags to control
-     * access to your <code>subscription</code> using IAM policies.</p> <p>Each tag
+     * <p> A list of tag key-value pairs to be added to the resource.</p> <p>Each tag
      * consists of a key and a value, and each key must be unique for the resource. The
      * following restrictions apply to resource tags:</p> <ul> <li> <p>Although the
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
@@ -198,13 +211,10 @@ namespace Model
      * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
      * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
      */
-    inline CreateAnomalySubscriptionRequest& AddResourceTags(const ResourceTag& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
+    inline TagResourceRequest& AddResourceTags(const ResourceTag& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
-     * <code>AnomalySubscription</code> </a>. You can use resource tags to control
-     * access to your <code>subscription</code> using IAM policies.</p> <p>Each tag
+     * <p> A list of tag key-value pairs to be added to the resource.</p> <p>Each tag
      * consists of a key and a value, and each key must be unique for the resource. The
      * following restrictions apply to resource tags:</p> <ul> <li> <p>Although the
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
@@ -217,12 +227,12 @@ namespace Model
      * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
      * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
      */
-    inline CreateAnomalySubscriptionRequest& AddResourceTags(ResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
+    inline TagResourceRequest& AddResourceTags(ResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
 
   private:
 
-    AnomalySubscription m_anomalySubscription;
-    bool m_anomalySubscriptionHasBeenSet;
+    Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet;
 
     Aws::Vector<ResourceTag> m_resourceTags;
     bool m_resourceTagsHasBeenSet;

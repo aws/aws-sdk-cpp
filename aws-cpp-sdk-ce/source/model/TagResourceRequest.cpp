@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ce/model/CreateAnomalySubscriptionRequest.h>
+#include <aws/ce/model/TagResourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -12,19 +12,19 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAnomalySubscriptionRequest::CreateAnomalySubscriptionRequest() : 
-    m_anomalySubscriptionHasBeenSet(false),
+TagResourceRequest::TagResourceRequest() : 
+    m_resourceArnHasBeenSet(false),
     m_resourceTagsHasBeenSet(false)
 {
 }
 
-Aws::String CreateAnomalySubscriptionRequest::SerializePayload() const
+Aws::String TagResourceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_anomalySubscriptionHasBeenSet)
+  if(m_resourceArnHasBeenSet)
   {
-   payload.WithObject("AnomalySubscription", m_anomalySubscription.Jsonize());
+   payload.WithString("ResourceArn", m_resourceArn);
 
   }
 
@@ -42,10 +42,10 @@ Aws::String CreateAnomalySubscriptionRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateAnomalySubscriptionRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection TagResourceRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSInsightsIndexService.CreateAnomalySubscription"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSInsightsIndexService.TagResource"));
   return headers;
 
 }

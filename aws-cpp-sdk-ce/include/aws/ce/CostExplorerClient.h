@@ -37,7 +37,10 @@
 #include <aws/ce/model/GetTagsResult.h>
 #include <aws/ce/model/GetUsageForecastResult.h>
 #include <aws/ce/model/ListCostCategoryDefinitionsResult.h>
+#include <aws/ce/model/ListTagsForResourceResult.h>
 #include <aws/ce/model/ProvideAnomalyFeedbackResult.h>
+#include <aws/ce/model/TagResourceResult.h>
+#include <aws/ce/model/UntagResourceResult.h>
 #include <aws/ce/model/UpdateAnomalyMonitorResult.h>
 #include <aws/ce/model/UpdateAnomalySubscriptionResult.h>
 #include <aws/ce/model/UpdateCostCategoryDefinitionResult.h>
@@ -106,7 +109,10 @@ namespace Model
         class GetTagsRequest;
         class GetUsageForecastRequest;
         class ListCostCategoryDefinitionsRequest;
+        class ListTagsForResourceRequest;
         class ProvideAnomalyFeedbackRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateAnomalyMonitorRequest;
         class UpdateAnomalySubscriptionRequest;
         class UpdateCostCategoryDefinitionRequest;
@@ -137,7 +143,10 @@ namespace Model
         typedef Aws::Utils::Outcome<GetTagsResult, CostExplorerError> GetTagsOutcome;
         typedef Aws::Utils::Outcome<GetUsageForecastResult, CostExplorerError> GetUsageForecastOutcome;
         typedef Aws::Utils::Outcome<ListCostCategoryDefinitionsResult, CostExplorerError> ListCostCategoryDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CostExplorerError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ProvideAnomalyFeedbackResult, CostExplorerError> ProvideAnomalyFeedbackOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, CostExplorerError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, CostExplorerError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateAnomalyMonitorResult, CostExplorerError> UpdateAnomalyMonitorOutcome;
         typedef Aws::Utils::Outcome<UpdateAnomalySubscriptionResult, CostExplorerError> UpdateAnomalySubscriptionOutcome;
         typedef Aws::Utils::Outcome<UpdateCostCategoryDefinitionResult, CostExplorerError> UpdateCostCategoryDefinitionOutcome;
@@ -168,7 +177,10 @@ namespace Model
         typedef std::future<GetTagsOutcome> GetTagsOutcomeCallable;
         typedef std::future<GetUsageForecastOutcome> GetUsageForecastOutcomeCallable;
         typedef std::future<ListCostCategoryDefinitionsOutcome> ListCostCategoryDefinitionsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ProvideAnomalyFeedbackOutcome> ProvideAnomalyFeedbackOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateAnomalyMonitorOutcome> UpdateAnomalyMonitorOutcomeCallable;
         typedef std::future<UpdateAnomalySubscriptionOutcome> UpdateAnomalySubscriptionOutcomeCallable;
         typedef std::future<UpdateCostCategoryDefinitionOutcome> UpdateCostCategoryDefinitionOutcomeCallable;
@@ -202,7 +214,10 @@ namespace Model
     typedef std::function<void(const CostExplorerClient*, const Model::GetTagsRequest&, const Model::GetTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTagsResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetUsageForecastRequest&, const Model::GetUsageForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageForecastResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::ListCostCategoryDefinitionsRequest&, const Model::ListCostCategoryDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCostCategoryDefinitionsResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::ProvideAnomalyFeedbackRequest&, const Model::ProvideAnomalyFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvideAnomalyFeedbackResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::UpdateAnomalyMonitorRequest&, const Model::UpdateAnomalyMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAnomalyMonitorResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::UpdateAnomalySubscriptionRequest&, const Model::UpdateAnomalySubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAnomalySubscriptionResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::UpdateCostCategoryDefinitionRequest&, const Model::UpdateCostCategoryDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCostCategoryDefinitionResponseReceivedHandler;
@@ -1266,6 +1281,34 @@ namespace Model
         virtual void ListCostCategoryDefinitionsAsync(const Model::ListCostCategoryDefinitionsRequest& request, const ListCostCategoryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of resource tags associated with the resource specified by the
+         * Amazon Resource Name (ARN). </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Returns a list of resource tags associated with the resource specified by the
+         * Amazon Resource Name (ARN). </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Returns a list of resource tags associated with the resource specified by the
+         * Amazon Resource Name (ARN). </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies the feedback property of a given cost anomaly. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ProvideAnomalyFeedback">AWS
@@ -1294,8 +1337,82 @@ namespace Model
         virtual void ProvideAnomalyFeedbackAsync(const Model::ProvideAnomalyFeedbackRequest& request, const ProvideAnomalyFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>An API operation for adding one or more tags (key-value pairs) to a
+         * resource.</p> <p>You can use the <code>TagResource</code> operation with a
+         * resource that already has tags. If you specify a new tag key for the resource,
+         * this tag is appended to the list of tags associated with the resource. If you
+         * specify a tag key that is already associated with the resource, the new tag
+         * value you specify replaces the previous value for that tag.</p> <p> Although the
+         * maximum number of array members is 200, user-tag maximum is 50. The remaining
+         * are reserved for Amazon Web Services use.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TagResource">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>An API operation for adding one or more tags (key-value pairs) to a
+         * resource.</p> <p>You can use the <code>TagResource</code> operation with a
+         * resource that already has tags. If you specify a new tag key for the resource,
+         * this tag is appended to the list of tags associated with the resource. If you
+         * specify a tag key that is already associated with the resource, the new tag
+         * value you specify replaces the previous value for that tag.</p> <p> Although the
+         * maximum number of array members is 200, user-tag maximum is 50. The remaining
+         * are reserved for Amazon Web Services use.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TagResource">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>An API operation for adding one or more tags (key-value pairs) to a
+         * resource.</p> <p>You can use the <code>TagResource</code> operation with a
+         * resource that already has tags. If you specify a new tag key for the resource,
+         * this tag is appended to the list of tags associated with the resource. If you
+         * specify a tag key that is already associated with the resource, the new tag
+         * value you specify replaces the previous value for that tag.</p> <p> Although the
+         * maximum number of array members is 200, user-tag maximum is 50. The remaining
+         * are reserved for Amazon Web Services use.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TagResource">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Removes one or more tags from a resource. Specify only tag key(s) in your
+         * request. Do not specify the value. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p> Removes one or more tags from a resource. Specify only tag key(s) in your
+         * request. Do not specify the value. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p> Removes one or more tags from a resource. Specify only tag key(s) in your
+         * request. Do not specify the value. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an existing cost anomaly monitor. The changes made are applied going
-         * forward, and doesn'tt change anomalies detected in the past. </p><p><h3>See
+         * forward, and doesn't change anomalies detected in the past. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalyMonitor">AWS
          * API Reference</a></p>
@@ -1304,7 +1421,7 @@ namespace Model
 
         /**
          * <p>Updates an existing cost anomaly monitor. The changes made are applied going
-         * forward, and doesn'tt change anomalies detected in the past. </p><p><h3>See
+         * forward, and doesn't change anomalies detected in the past. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalyMonitor">AWS
          * API Reference</a></p>
@@ -1315,7 +1432,7 @@ namespace Model
 
         /**
          * <p>Updates an existing cost anomaly monitor. The changes made are applied going
-         * forward, and doesn'tt change anomalies detected in the past. </p><p><h3>See
+         * forward, and doesn't change anomalies detected in the past. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalyMonitor">AWS
          * API Reference</a></p>
@@ -1416,7 +1533,10 @@ namespace Model
         void GetTagsAsyncHelper(const Model::GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUsageForecastAsyncHelper(const Model::GetUsageForecastRequest& request, const GetUsageForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCostCategoryDefinitionsAsyncHelper(const Model::ListCostCategoryDefinitionsRequest& request, const ListCostCategoryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ProvideAnomalyFeedbackAsyncHelper(const Model::ProvideAnomalyFeedbackRequest& request, const ProvideAnomalyFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAnomalyMonitorAsyncHelper(const Model::UpdateAnomalyMonitorRequest& request, const UpdateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAnomalySubscriptionAsyncHelper(const Model::UpdateAnomalySubscriptionRequest& request, const UpdateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateCostCategoryDefinitionAsyncHelper(const Model::UpdateCostCategoryDefinitionRequest& request, const UpdateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
