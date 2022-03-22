@@ -1,32 +1,10 @@
 # AWS SDK for C++
-The AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).
+The AWS SDK for C++ provides a modern C++ (standard version C++11 or later) interface for Amazon Web Services (AWS). 
+It is meant to be highly portable by minimizing dependencies and providing abstractions to override components that are platform specific. 
+It includes implementations of those abstractions for popular platforms including Windows, OSX, Linux, FreeBSD, and mobile).
 
-AWS SDK for C++ is in now in General Availability and recommended for production use. We invite our customers to join
-the development efforts by submitting pull requests and sending us feedback and ideas via GitHub Issues.
-
-## Version 1.9 is now Available!
-
-This release introduces a new Amazon S3 client, providing high throughput for Amazon S3 GET and PUT operations. The all new S3 Client is implemented on the top of the AWS Common Runtime (CRT) libraries, and is aptly named the "S3 CRT client". Lastly, there are also configuration updates related to Endpoint Discovery.
-
-All CRT libraries are git submodules of SDK for C++. It requires changes in git syntax to get all source code.
-* New users: If you haven't downloaded the source code for SDK for C++, you can get all git submodules recursively by:
-   ```
-   git clone --recurse-submodules https://github.com/aws/aws-sdk-cpp
-   ```
-* Existing users: If you’ve already downloaded source code for SDK for C++, e.g. in directory `aws-sdk-cpp`, you can update the git submodule by:
-   ```
-   cd aws-sdk-cpp
-   git checkout main
-   git pull origin main
-   git submodule update --init --recursive
-   ```
-* Alternatively, if you downloaded the code bundle from GitHub website and have no installation of git, you can download all the dependencies running the `prefetch_crt_dependency.sh` script from the root of the repository. It will download bundles of all dependencies from github website using curl and expand them in the right locations.
-
-
-See Wiki page [Improving S3 Throughput with AWS SDK for CPP v1.9](https://github.com/aws/aws-sdk-cpp/wiki/Improving-S3-Throughput-with-AWS-SDK-for-CPP-v1.9) for more details, and create a new [issue](https://github.com/aws/aws-sdk-cpp/issues/new/choose) or [pull request](https://github.com/aws/aws-sdk-cpp/compare) if you have any feedback on this new version.
-
-## Upgrade Your SDK to Get Latest Security Patches
-The AWS SDK for C++ has a dependency on cJSON. This dependency was updated to version 1.7.14 in the recent SDK updates. We would recommend to upgrade your SDK to version 1.9.67 for 1.9.x or 1.8.187 for 1.8.x. Thank @dkalinowski for reporting this issue: https://github.com/aws/aws-sdk-cpp/issues/1594
+AWS SDK for C++ is in now in General Availability and recommended for production use. 
+We invite our customers to join the development efforts by submitting pull requests and sending us feedback and ideas via GitHub Issues.
 
 __Jump To:__
 * [Getting Started](#Getting-Started)
@@ -36,51 +14,90 @@ __Jump To:__
 
 # Getting Started
 
-## Building the SDK:
-
 ### Minimum Requirements:
 * Visual Studio 2015 or later
 * OR GNU Compiler Collection (GCC) 4.9 or later
 * OR Clang 3.3 or later
 * 4GB of RAM
-  * 4GB of RAM is required to build some of the larger clients. The SDK build may fail on EC2 instance types t2.micro, t2.small and other small instance types due to insufficient memory.
+    * 4GB of RAM is required to build some larger clients. The SDK build may fail on EC2 instance types t2.micro, t2.small and other small instance types due to insufficient memory.
 
-### Building From Source:
+### Dependencies
+* Crypto library, provided by the Operating System in most cases. If operating system doesn't provide it, it could be replaced by OpenSSL or [AWS-LibCrypto](https://github.com/awslabs/aws-lc).  
+* HttpClient library, provided by the Operating System in most cases. If operating system doesn't provide it, it could be replaced by libcurl or by adding a custom solution using the [HTTPClientFactory](https://github.com/aws/aws-sdk-cpp/blob/main/aws-cpp-sdk-core/include/aws/core/http/HttpClientFactory.h).   
+* AWS Common Runtime
 
-#### To create an **out-of-source build**:
-1. Install CMake and the relevant build tools for your platform. Ensure these are available in your executable path.
-2. Create your build directory. Replace <BUILD_DIR> with your build directory name:
+## Installing the AWS SDK for C++
+AWS SDK for C++ 1.10 includes a CMake scripts from building from source and producing distributable packages for many popular platforms.
+To build from source we offer a few different workflows that adapt to different building scenarios you may have to work with.
 
-3. Build the project:
+### Basic build and installation
 
-   * For Auto Make build systems:
-   ```sh
-   cd <BUILD_DIR>
-   cmake <path-to-root-of-this-source-code> -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=<path-to-install>
-   make
-   make install
-   ```
+The simplest way to install AWS SDK for C++ is to download the code from GitHub and run CMake to build and install the libraries. 
 
-   * For Visual Studio:
-   ```sh
-   cd <BUILD_DIR>
-   cmake <path-to-root-of-this-source-code> -G "Visual Studio 15 Win64" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=<path-to-install>
-   msbuild ALL_BUILD.vcxproj /p:Configuration=Debug
-   ```
+#### Obtaining latest source code
+Latest version can be downloaded from https://github.com/aws/aws-sdk-cpp/archive/refs/heads/main.zip and unzipped. 
+Also, the last version can be obtained by cloning GitHub repository with ```git clone https://github.com/aws/aws-sdk-cpp```.
 
-   * For macOS - Xcode:
-   ```sh
-   cmake <path-to-root-of-this-source-code> -G Xcode -DTARGET_ARCH="APPLE" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=<path-to-install>
-   xcodebuild -target ALL_BUILD
-   ```
-#### Other Dependencies:
-To compile in Linux, you must have the header files for libcurl, libopenssl. The packages are typically available in your package manager.
+#### Building with cmake
+After code is obtained. The following steps will produce a build of all services libraries and install them. 
+```shell
+mkdir aws-sdk-cpp-build
+cd aws-sdk-cpp-build
+cmake ../aws-sdk-cpp -DLEGACY_BUILD=OFF # configuration step
+cmake --build . # build step
+cmake --build . --target install # install step
+```
 
-Debian example:
-   `sudo apt-get install libcurl-dev`
+The flag `-DLEGACY_BUILD=OFF` is not required to build, but it is highly recommended. 
+In v1.10, we assume `-DLEGACY_BUILD=ON` if not passed to CMake to be backward compatible with v1.9 build process. 
+The v1.9 build scripts are marked as DEPRECATED and will no longer be available in v1.11.
 
-### Building for Android
-To build for Android, add `-DTARGET_ARCH=ANDROID` to your cmake command line. Currently we support Android APIs from 19 to 28 with Android NDK 19c and we are using build-in cmake toolchain file supplied by Android NDK, assuming you have the appropriate environment variables (ANDROID_NDK) set.
+In most projects only a subset of AWS SDK for C++ libraries are needed. 
+To limit what libraries to build and install the ```-DSERVICES``` flag can be passed to the configuration step. 
+For example, to build and install only S3, EC2, and DynamoDB libraries, we can do configuration step as follows:
+
+```shell
+cmake ../aws-sdk-cpp -DLEGACY_BUILD=OFF -DSERVICES='s3;ec2;dynamodb'
+```
+
+This build and install approach will check for dependencies in the build system. 
+If the Aws Common Runtime dependency is not found, it will be downloaded and built to fulfill that dependency. 
+Any other dependency missed will stop cmake configuration with a report of what needs to be done.
+
+Alternatively, when using git, dependencies can be pulled via git-submodules by running the command ```git submodule update --recursive --init``` in the root of the cloned repository. 
+This will clone all AWS Common Runtime as submodules of AWS SDK for C++ and use the downloaded version in place of downloading it during the build. 
+
+#### Removing the need of network access at build
+To build and install without need to have network access, all dependencies need to be installed before the build starts. 
+To download AWS Common Runtime, follow the installation steps for ```https://github.com/awslabs/aws-crt-cpp```.
+Once all dependencies are installed they will be found by CMake.  
+
+### Advanced build and install using packages 
+Sometimes, it is needed to install the AWS SDK for C++ in multiple machines, in those cases build from the source in each of them is inconvenient.
+To build once and install many times, CPack can be used to generate installation packages to distribute to other machines with similar platform. 
+We recommend being careful of not mixing up different AWS SDK for C++ libraries versions, since ABI issues may arise. 
+To create an installation package using CPack follow the following step.
+
+```shell
+mkdir aws-sdk-cpp-build
+cd aws-sdk-cpp-build
+cmake ../aws-sdk-cpp -DLEGACY_BUILD=OFF # configuration step
+cmake --build . # build step
+cmake --build . --target package # create a platform specific package
+```
+
+Once the package is created it can be copied and run in all the machines that need to install it without need to build form source again.
+The machines where the package is installed need to have all dependencies installed in advance. 
+
+### Legacy mode
+In v1.10 release the CMake scripts used to build, install, test, and package AWS SDK for C++ were redesigned. 
+Some new build options were added, some old build options were removed, and some were renamed or redefined to simplify the usage. 
+Customers upgrading from v1.9 to v1.10 will need to opt-in for the new cmake scripts by passing ```-DLEGACY_BUILD=OFF```. 
+By having opt-in option we are not breaking automated updates that pull v1.10 on machines that previously had v1.9.
+The only noticeable difference for customers not passing ```-DLEGACY_BUILD=OFF``` flag will be a  new requirement for ```cmake_min_req_version``` to be 3.12, and a deprecation message for the legacy build to be removed in v1.12.
+
+#### Building for Android in legacy build mode
+To build for Android, add `-DTARGET_ARCH=ANDROID` to your cmake command line. Currently, we support Android APIs from 19 to 28 with Android NDK 19c, and we are using build-in cmake toolchain file supplied by Android NDK, assuming you have the appropriate environment variables (ANDROID_NDK) set.
 
 ##### Android on Windows
 Building for Android on Windows requires some additional setup.  In particular, you will need to run cmake from a Visual Studio developer command prompt (2015 or higher). Additionally, you will need 'git' and 'patch' in your path.  If you have git installed on a Windows system, then patch is likely found in a sibling directory (.../Git/usr/bin/). Once you've verified these requirements, your cmake command line will change slightly to use nmake:
@@ -95,13 +112,12 @@ Nmake builds targets in a serial fashion.  To make things quicker, we recommend 
    cmake -G "NMake Makefiles JOM" `-DTARGET_ARCH=ANDROID` <other options> ..
    ```
 
-### Building for Docker
+#### Building for Docker in legacy build mode
 
 To build for Docker, ensure your container meets the [minimum requirements](#minimum-requirements). By default, Docker Desktop is set to use 2 GB runtime memory. We have provided [Dockerfiles](https://github.com/aws/aws-sdk-cpp/tree/master/CI/docker-file) as templates for building the SDK in a container.
 
-
-### Building and running an app on EC2
-Checkout this walk through on how to set up an environment and build the [AWS SDK for C++ on an EC2 instance](https://github.com/aws/aws-sdk-cpp/wiki/Building-the-SDK-from-source-on-EC2).
+#### Building and running an app on EC2 in legacy build mode
+Checkout this walk-through on how to set up an environment and build the [AWS SDK for C++ on an EC2 instance](https://github.com/aws/aws-sdk-cpp/wiki/Building-the-SDK-from-source-on-EC2).
 
 # Issues and Contributions
 We welcome all kinds of contributions, check [this guideline](./CONTRIBUTING.md) to learn how you can contribute or report issues.
