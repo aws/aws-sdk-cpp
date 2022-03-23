@@ -1,6 +1,6 @@
 {
     "version": "0.1",
-    "language": "en-US",
+    "language": "en-US,en-GB",
     "words": [
         // C++ STL
         "smatch",
