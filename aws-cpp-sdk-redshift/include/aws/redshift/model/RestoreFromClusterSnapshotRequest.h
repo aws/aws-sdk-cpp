@@ -1026,58 +1026,82 @@ namespace Model
 
 
     /**
-     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
-     * to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key to encrypt data
+     * in the cluster restored from a shared snapshot. You can also provide the key ID
+     * when you restore from an unencrypted snapshot to an encrypted cluster in the
+     * same account. Additionally, you can specify a new KMS key ID when you restore
+     * from an encrypted snapshot in the same account in order to change it. In that
+     * case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
-     * to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key to encrypt data
+     * in the cluster restored from a shared snapshot. You can also provide the key ID
+     * when you restore from an unencrypted snapshot to an encrypted cluster in the
+     * same account. Additionally, you can specify a new KMS key ID when you restore
+     * from an encrypted snapshot in the same account in order to change it. In that
+     * case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
-     * to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key to encrypt data
+     * in the cluster restored from a shared snapshot. You can also provide the key ID
+     * when you restore from an unencrypted snapshot to an encrypted cluster in the
+     * same account. Additionally, you can specify a new KMS key ID when you restore
+     * from an encrypted snapshot in the same account in order to change it. In that
+     * case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
-     * to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key to encrypt data
+     * in the cluster restored from a shared snapshot. You can also provide the key ID
+     * when you restore from an unencrypted snapshot to an encrypted cluster in the
+     * same account. Additionally, you can specify a new KMS key ID when you restore
+     * from an encrypted snapshot in the same account in order to change it. In that
+     * case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
-     * to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key to encrypt data
+     * in the cluster restored from a shared snapshot. You can also provide the key ID
+     * when you restore from an unencrypted snapshot to an encrypted cluster in the
+     * same account. Additionally, you can specify a new KMS key ID when you restore
+     * from an encrypted snapshot in the same account in order to change it. In that
+     * case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
-     * to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key to encrypt data
+     * in the cluster restored from a shared snapshot. You can also provide the key ID
+     * when you restore from an unencrypted snapshot to an encrypted cluster in the
+     * same account. Additionally, you can specify a new KMS key ID when you restore
+     * from an encrypted snapshot in the same account in order to change it. In that
+     * case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
-     * to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key to encrypt data
+     * in the cluster restored from a shared snapshot. You can also provide the key ID
+     * when you restore from an unencrypted snapshot to an encrypted cluster in the
+     * same account. Additionally, you can specify a new KMS key ID when you restore
+     * from an encrypted snapshot in the same account in order to change it. In that
+     * case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
-     * to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key to encrypt data
+     * in the cluster restored from a shared snapshot. You can also provide the key ID
+     * when you restore from an unencrypted snapshot to an encrypted cluster in the
+     * same account. Additionally, you can specify a new KMS key ID when you restore
+     * from an encrypted snapshot in the same account in order to change it. In that
+     * case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -1780,6 +1804,31 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithTargetReservedNodeOfferingId(const char* value) { SetTargetReservedNodeOfferingId(value); return *this;}
 
+
+    /**
+     * <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted
+     * with Key Management Service (KMS) and a CMK.</p>
+     */
+    inline bool GetEncrypted() const{ return m_encrypted; }
+
+    /**
+     * <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted
+     * with Key Management Service (KMS) and a CMK.</p>
+     */
+    inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
+
+    /**
+     * <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted
+     * with Key Management Service (KMS) and a CMK.</p>
+     */
+    inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
+
+    /**
+     * <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted
+     * with Key Management Service (KMS) and a CMK.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1874,6 +1923,9 @@ namespace Model
 
     Aws::String m_targetReservedNodeOfferingId;
     bool m_targetReservedNodeOfferingIdHasBeenSet;
+
+    bool m_encrypted;
+    bool m_encryptedHasBeenSet;
   };
 
 } // namespace Model

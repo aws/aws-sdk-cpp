@@ -96,11 +96,13 @@ namespace Model
      * <p>The resource ID you want to tag.</p> <p>Use the ID of the resource. Here are
      * some examples:</p> <p> <code>MaintenanceWindow</code>:
      * <code>mw-012345abcde</code> </p> <p> <code>PatchBaseline</code>:
-     * <code>pb-012345abcde</code> </p> <p> <code>OpsMetadata</code> object:
-     * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
-     * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
-     * strings that come after the word <code>opsmetadata</code> in the ARN. For
-     * example, an OpsMetadata object with an ARN of
+     * <code>pb-012345abcde</code> </p> <p> <code>Automation</code>:
+     * <code>example-c160-4567-8519-012345abcde</code> </p> <p>
+     * <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created
+     * from the Amazon Resource Name (ARN) for the object. Specifically,
+     * <code>ResourceID</code> is created from the strings that come after the word
+     * <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an
+     * ARN of
      * <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
      * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
      * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the
@@ -117,11 +119,13 @@ namespace Model
      * <p>The resource ID you want to tag.</p> <p>Use the ID of the resource. Here are
      * some examples:</p> <p> <code>MaintenanceWindow</code>:
      * <code>mw-012345abcde</code> </p> <p> <code>PatchBaseline</code>:
-     * <code>pb-012345abcde</code> </p> <p> <code>OpsMetadata</code> object:
-     * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
-     * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
-     * strings that come after the word <code>opsmetadata</code> in the ARN. For
-     * example, an OpsMetadata object with an ARN of
+     * <code>pb-012345abcde</code> </p> <p> <code>Automation</code>:
+     * <code>example-c160-4567-8519-012345abcde</code> </p> <p>
+     * <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created
+     * from the Amazon Resource Name (ARN) for the object. Specifically,
+     * <code>ResourceID</code> is created from the strings that come after the word
+     * <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an
+     * ARN of
      * <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
      * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
      * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the
@@ -138,11 +142,13 @@ namespace Model
      * <p>The resource ID you want to tag.</p> <p>Use the ID of the resource. Here are
      * some examples:</p> <p> <code>MaintenanceWindow</code>:
      * <code>mw-012345abcde</code> </p> <p> <code>PatchBaseline</code>:
-     * <code>pb-012345abcde</code> </p> <p> <code>OpsMetadata</code> object:
-     * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
-     * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
-     * strings that come after the word <code>opsmetadata</code> in the ARN. For
-     * example, an OpsMetadata object with an ARN of
+     * <code>pb-012345abcde</code> </p> <p> <code>Automation</code>:
+     * <code>example-c160-4567-8519-012345abcde</code> </p> <p>
+     * <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created
+     * from the Amazon Resource Name (ARN) for the object. Specifically,
+     * <code>ResourceID</code> is created from the strings that come after the word
+     * <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an
+     * ARN of
      * <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
      * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
      * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the
@@ -159,11 +165,13 @@ namespace Model
      * <p>The resource ID you want to tag.</p> <p>Use the ID of the resource. Here are
      * some examples:</p> <p> <code>MaintenanceWindow</code>:
      * <code>mw-012345abcde</code> </p> <p> <code>PatchBaseline</code>:
-     * <code>pb-012345abcde</code> </p> <p> <code>OpsMetadata</code> object:
-     * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
-     * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
-     * strings that come after the word <code>opsmetadata</code> in the ARN. For
-     * example, an OpsMetadata object with an ARN of
+     * <code>pb-012345abcde</code> </p> <p> <code>Automation</code>:
+     * <code>example-c160-4567-8519-012345abcde</code> </p> <p>
+     * <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created
+     * from the Amazon Resource Name (ARN) for the object. Specifically,
+     * <code>ResourceID</code> is created from the strings that come after the word
+     * <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an
+     * ARN of
      * <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
      * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
      * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the
@@ -180,11 +188,13 @@ namespace Model
      * <p>The resource ID you want to tag.</p> <p>Use the ID of the resource. Here are
      * some examples:</p> <p> <code>MaintenanceWindow</code>:
      * <code>mw-012345abcde</code> </p> <p> <code>PatchBaseline</code>:
-     * <code>pb-012345abcde</code> </p> <p> <code>OpsMetadata</code> object:
-     * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
-     * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
-     * strings that come after the word <code>opsmetadata</code> in the ARN. For
-     * example, an OpsMetadata object with an ARN of
+     * <code>pb-012345abcde</code> </p> <p> <code>Automation</code>:
+     * <code>example-c160-4567-8519-012345abcde</code> </p> <p>
+     * <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created
+     * from the Amazon Resource Name (ARN) for the object. Specifically,
+     * <code>ResourceID</code> is created from the strings that come after the word
+     * <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an
+     * ARN of
      * <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
      * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
      * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the
@@ -201,11 +211,13 @@ namespace Model
      * <p>The resource ID you want to tag.</p> <p>Use the ID of the resource. Here are
      * some examples:</p> <p> <code>MaintenanceWindow</code>:
      * <code>mw-012345abcde</code> </p> <p> <code>PatchBaseline</code>:
-     * <code>pb-012345abcde</code> </p> <p> <code>OpsMetadata</code> object:
-     * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
-     * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
-     * strings that come after the word <code>opsmetadata</code> in the ARN. For
-     * example, an OpsMetadata object with an ARN of
+     * <code>pb-012345abcde</code> </p> <p> <code>Automation</code>:
+     * <code>example-c160-4567-8519-012345abcde</code> </p> <p>
+     * <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created
+     * from the Amazon Resource Name (ARN) for the object. Specifically,
+     * <code>ResourceID</code> is created from the strings that come after the word
+     * <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an
+     * ARN of
      * <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
      * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
      * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the
@@ -222,11 +234,13 @@ namespace Model
      * <p>The resource ID you want to tag.</p> <p>Use the ID of the resource. Here are
      * some examples:</p> <p> <code>MaintenanceWindow</code>:
      * <code>mw-012345abcde</code> </p> <p> <code>PatchBaseline</code>:
-     * <code>pb-012345abcde</code> </p> <p> <code>OpsMetadata</code> object:
-     * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
-     * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
-     * strings that come after the word <code>opsmetadata</code> in the ARN. For
-     * example, an OpsMetadata object with an ARN of
+     * <code>pb-012345abcde</code> </p> <p> <code>Automation</code>:
+     * <code>example-c160-4567-8519-012345abcde</code> </p> <p>
+     * <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created
+     * from the Amazon Resource Name (ARN) for the object. Specifically,
+     * <code>ResourceID</code> is created from the strings that come after the word
+     * <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an
+     * ARN of
      * <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
      * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
      * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the
@@ -243,11 +257,13 @@ namespace Model
      * <p>The resource ID you want to tag.</p> <p>Use the ID of the resource. Here are
      * some examples:</p> <p> <code>MaintenanceWindow</code>:
      * <code>mw-012345abcde</code> </p> <p> <code>PatchBaseline</code>:
-     * <code>pb-012345abcde</code> </p> <p> <code>OpsMetadata</code> object:
-     * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
-     * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
-     * strings that come after the word <code>opsmetadata</code> in the ARN. For
-     * example, an OpsMetadata object with an ARN of
+     * <code>pb-012345abcde</code> </p> <p> <code>Automation</code>:
+     * <code>example-c160-4567-8519-012345abcde</code> </p> <p>
+     * <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created
+     * from the Amazon Resource Name (ARN) for the object. Specifically,
+     * <code>ResourceID</code> is created from the strings that come after the word
+     * <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an
+     * ARN of
      * <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
      * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
      * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the

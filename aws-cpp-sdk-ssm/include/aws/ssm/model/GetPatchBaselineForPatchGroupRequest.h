@@ -77,37 +77,37 @@ namespace Model
 
 
     /**
-     * <p>Returns he operating system rule specified for patch groups using the patch
+     * <p>Returns the operating system rule specified for patch groups using the patch
      * baseline.</p>
      */
     inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
 
     /**
-     * <p>Returns he operating system rule specified for patch groups using the patch
+     * <p>Returns the operating system rule specified for patch groups using the patch
      * baseline.</p>
      */
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
 
     /**
-     * <p>Returns he operating system rule specified for patch groups using the patch
+     * <p>Returns the operating system rule specified for patch groups using the patch
      * baseline.</p>
      */
     inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
 
     /**
-     * <p>Returns he operating system rule specified for patch groups using the patch
+     * <p>Returns the operating system rule specified for patch groups using the patch
      * baseline.</p>
      */
     inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
 
     /**
-     * <p>Returns he operating system rule specified for patch groups using the patch
+     * <p>Returns the operating system rule specified for patch groups using the patch
      * baseline.</p>
      */
     inline GetPatchBaselineForPatchGroupRequest& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
 
     /**
-     * <p>Returns he operating system rule specified for patch groups using the patch
+     * <p>Returns the operating system rule specified for patch groups using the patch
      * baseline.</p>
      */
     inline GetPatchBaselineForPatchGroupRequest& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}

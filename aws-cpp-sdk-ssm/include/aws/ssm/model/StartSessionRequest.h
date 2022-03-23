@@ -208,62 +208,74 @@ namespace Model
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The values you want to specify for the parameters defined in the Session
+     * document.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The values you want to specify for the parameters defined in the Session
+     * document.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The values you want to specify for the parameters defined in the Session
+     * document.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The values you want to specify for the parameters defined in the Session
+     * document.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The values you want to specify for the parameters defined in the Session
+     * document.</p>
      */
     inline StartSessionRequest& WithParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The values you want to specify for the parameters defined in the Session
+     * document.</p>
      */
     inline StartSessionRequest& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The values you want to specify for the parameters defined in the Session
+     * document.</p>
      */
     inline StartSessionRequest& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The values you want to specify for the parameters defined in the Session
+     * document.</p>
      */
     inline StartSessionRequest& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The values you want to specify for the parameters defined in the Session
+     * document.</p>
      */
     inline StartSessionRequest& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The values you want to specify for the parameters defined in the Session
+     * document.</p>
      */
     inline StartSessionRequest& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The values you want to specify for the parameters defined in the Session
+     * document.</p>
      */
     inline StartSessionRequest& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The values you want to specify for the parameters defined in the Session
+     * document.</p>
      */
     inline StartSessionRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
