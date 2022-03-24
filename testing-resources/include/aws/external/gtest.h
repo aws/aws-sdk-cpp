@@ -11864,8 +11864,6 @@ class ValueArray1 {
   }
 
  private:
-  // No implementation - assignment is unsupported.
-  void operator=(const ValueArray1& other);
 
   const T1 v1_;
 };
@@ -11882,9 +11880,6 @@ class ValueArray2 {
   }
 
  private:
-  // No implementation - assignment is unsupported.
-  void operator=(const ValueArray2&)=delete;
-
   const T1 v1_;
   const T2 v2_;
 };
