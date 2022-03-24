@@ -19,12 +19,16 @@ namespace Model
 {
 
 Subtitles::Subtitles() : 
-    m_formatsHasBeenSet(false)
+    m_formatsHasBeenSet(false),
+    m_outputStartIndex(0),
+    m_outputStartIndexHasBeenSet(false)
 {
 }
 
 Subtitles::Subtitles(JsonView jsonValue) : 
-    m_formatsHasBeenSet(false)
+    m_formatsHasBeenSet(false),
+    m_outputStartIndex(0),
+    m_outputStartIndexHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -39,6 +43,13 @@ Subtitles& Subtitles::operator =(JsonView jsonValue)
       m_formats.push_back(SubtitleFormatMapper::GetSubtitleFormatForName(formatsJsonList[formatsIndex].AsString()));
     }
     m_formatsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OutputStartIndex"))
+  {
+    m_outputStartIndex = jsonValue.GetInteger("OutputStartIndex");
+
+    m_outputStartIndexHasBeenSet = true;
   }
 
   return *this;
@@ -56,6 +67,12 @@ JsonValue Subtitles::Jsonize() const
      formatsJsonList[formatsIndex].AsString(SubtitleFormatMapper::GetNameForSubtitleFormat(m_formats[formatsIndex]));
    }
    payload.WithArray("Formats", std::move(formatsJsonList));
+
+  }
+
+  if(m_outputStartIndexHasBeenSet)
+  {
+   payload.WithInteger("OutputStartIndex", m_outputStartIndex);
 
   }
 

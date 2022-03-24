@@ -193,22 +193,22 @@ namespace Model
 
 
     /**
-     * <p>The sample rate, in Hertz, of the audio.</p>
+     * <p>The sample rate, in Hertz, of the input audio.</p>
      */
     inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio.</p>
+     * <p>The sample rate, in Hertz, of the input audio.</p>
      */
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio.</p>
+     * <p>The sample rate, in Hertz, of the input audio.</p>
      */
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio.</p>
+     * <p>The sample rate, in Hertz, of the input audio.</p>
      */
     inline CallAnalyticsJob& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
 

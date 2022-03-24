@@ -20,13 +20,17 @@ namespace Model
 
 SubtitlesOutput::SubtitlesOutput() : 
     m_formatsHasBeenSet(false),
-    m_subtitleFileUrisHasBeenSet(false)
+    m_subtitleFileUrisHasBeenSet(false),
+    m_outputStartIndex(0),
+    m_outputStartIndexHasBeenSet(false)
 {
 }
 
 SubtitlesOutput::SubtitlesOutput(JsonView jsonValue) : 
     m_formatsHasBeenSet(false),
-    m_subtitleFileUrisHasBeenSet(false)
+    m_subtitleFileUrisHasBeenSet(false),
+    m_outputStartIndex(0),
+    m_outputStartIndexHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +55,13 @@ SubtitlesOutput& SubtitlesOutput::operator =(JsonView jsonValue)
       m_subtitleFileUris.push_back(subtitleFileUrisJsonList[subtitleFileUrisIndex].AsString());
     }
     m_subtitleFileUrisHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OutputStartIndex"))
+  {
+    m_outputStartIndex = jsonValue.GetInteger("OutputStartIndex");
+
+    m_outputStartIndexHasBeenSet = true;
   }
 
   return *this;
@@ -79,6 +90,12 @@ JsonValue SubtitlesOutput::Jsonize() const
      subtitleFileUrisJsonList[subtitleFileUrisIndex].AsString(m_subtitleFileUris[subtitleFileUrisIndex]);
    }
    payload.WithArray("SubtitleFileUris", std::move(subtitleFileUrisJsonList));
+
+  }
+
+  if(m_outputStartIndexHasBeenSet)
+  {
+   payload.WithInteger("OutputStartIndex", m_outputStartIndex);
 
   }
 

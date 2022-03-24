@@ -42,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>Name of the config rule.</p>
+     * <p>Name of the Config rule.</p>
      */
     inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
 
     /**
-     * <p>Name of the config rule.</p>
+     * <p>Name of the Config rule.</p>
      */
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
 
     /**
-     * <p>Name of the config rule.</p>
+     * <p>Name of the Config rule.</p>
      */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**
-     * <p>Name of the config rule.</p>
+     * <p>Name of the Config rule.</p>
      */
     inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
 
     /**
-     * <p>Name of the config rule.</p>
+     * <p>Name of the Config rule.</p>
      */
     inline void SetConfigRuleName(const char* value) { m_configRuleNameHasBeenSet = true; m_configRuleName.assign(value); }
 
     /**
-     * <p>Name of the config rule.</p>
+     * <p>Name of the Config rule.</p>
      */
     inline ConformancePackRuleCompliance& WithConfigRuleName(const Aws::String& value) { SetConfigRuleName(value); return *this;}
 
     /**
-     * <p>Name of the config rule.</p>
+     * <p>Name of the Config rule.</p>
      */
     inline ConformancePackRuleCompliance& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the config rule.</p>
+     * <p>Name of the Config rule.</p>
      */
     inline ConformancePackRuleCompliance& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
 

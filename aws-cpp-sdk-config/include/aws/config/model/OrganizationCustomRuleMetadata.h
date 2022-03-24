@@ -46,42 +46,42 @@ namespace Model
 
 
     /**
-     * <p>The description that you provide for organization config rule.</p>
+     * <p>The description that you provide for your organization Config rule.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description that you provide for organization config rule.</p>
+     * <p>The description that you provide for your organization Config rule.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description that you provide for organization config rule.</p>
+     * <p>The description that you provide for your organization Config rule.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description that you provide for organization config rule.</p>
+     * <p>The description that you provide for your organization Config rule.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description that you provide for organization config rule.</p>
+     * <p>The description that you provide for your organization Config rule.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description that you provide for organization config rule.</p>
+     * <p>The description that you provide for your organization Config rule.</p>
      */
     inline OrganizationCustomRuleMetadata& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description that you provide for organization config rule.</p>
+     * <p>The description that you provide for your organization Config rule.</p>
      */
     inline OrganizationCustomRuleMetadata& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description that you provide for organization config rule.</p>
+     * <p>The description that you provide for your organization Config rule.</p>
      */
     inline OrganizationCustomRuleMetadata& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -241,50 +241,50 @@ namespace Model
 
 
     /**
-     * <p>A string, in JSON format, that is passed to organization config rule Lambda
-     * function.</p>
+     * <p>A string, in JSON format, that is passed to your organization Config rule
+     * Lambda function.</p>
      */
     inline const Aws::String& GetInputParameters() const{ return m_inputParameters; }
 
     /**
-     * <p>A string, in JSON format, that is passed to organization config rule Lambda
-     * function.</p>
+     * <p>A string, in JSON format, that is passed to your organization Config rule
+     * Lambda function.</p>
      */
     inline bool InputParametersHasBeenSet() const { return m_inputParametersHasBeenSet; }
 
     /**
-     * <p>A string, in JSON format, that is passed to organization config rule Lambda
-     * function.</p>
+     * <p>A string, in JSON format, that is passed to your organization Config rule
+     * Lambda function.</p>
      */
     inline void SetInputParameters(const Aws::String& value) { m_inputParametersHasBeenSet = true; m_inputParameters = value; }
 
     /**
-     * <p>A string, in JSON format, that is passed to organization config rule Lambda
-     * function.</p>
+     * <p>A string, in JSON format, that is passed to your organization Config rule
+     * Lambda function.</p>
      */
     inline void SetInputParameters(Aws::String&& value) { m_inputParametersHasBeenSet = true; m_inputParameters = std::move(value); }
 
     /**
-     * <p>A string, in JSON format, that is passed to organization config rule Lambda
-     * function.</p>
+     * <p>A string, in JSON format, that is passed to your organization Config rule
+     * Lambda function.</p>
      */
     inline void SetInputParameters(const char* value) { m_inputParametersHasBeenSet = true; m_inputParameters.assign(value); }
 
     /**
-     * <p>A string, in JSON format, that is passed to organization config rule Lambda
-     * function.</p>
+     * <p>A string, in JSON format, that is passed to your organization Config rule
+     * Lambda function.</p>
      */
     inline OrganizationCustomRuleMetadata& WithInputParameters(const Aws::String& value) { SetInputParameters(value); return *this;}
 
     /**
-     * <p>A string, in JSON format, that is passed to organization config rule Lambda
-     * function.</p>
+     * <p>A string, in JSON format, that is passed to your organization Config rule
+     * Lambda function.</p>
      */
     inline OrganizationCustomRuleMetadata& WithInputParameters(Aws::String&& value) { SetInputParameters(std::move(value)); return *this;}
 
     /**
-     * <p>A string, in JSON format, that is passed to organization config rule Lambda
-     * function.</p>
+     * <p>A string, in JSON format, that is passed to your organization Config rule
+     * Lambda function.</p>
      */
     inline OrganizationCustomRuleMetadata& WithInputParameters(const char* value) { SetInputParameters(value); return *this;}
 

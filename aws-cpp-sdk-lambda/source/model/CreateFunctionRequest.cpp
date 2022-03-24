@@ -38,7 +38,8 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_fileSystemConfigsHasBeenSet(false),
     m_imageConfigHasBeenSet(false),
     m_codeSigningConfigArnHasBeenSet(false),
-    m_architecturesHasBeenSet(false)
+    m_architecturesHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
 }
 
@@ -187,6 +188,12 @@ Aws::String CreateFunctionRequest::SerializePayload() const
      architecturesJsonList[architecturesIndex].AsString(ArchitectureMapper::GetNameForArchitecture(m_architectures[architecturesIndex]));
    }
    payload.WithArray("Architectures", std::move(architecturesJsonList));
+
+  }
+
+  if(m_ephemeralStorageHasBeenSet)
+  {
+   payload.WithObject("EphemeralStorage", m_ephemeralStorage.Jsonize());
 
   }
 

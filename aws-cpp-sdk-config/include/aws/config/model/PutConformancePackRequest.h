@@ -154,7 +154,7 @@ namespace Model
      * <p>A string containing full conformance pack template body. Structure containing
      * the template body with a minimum length of 1 byte and a maximum length of 51,200
      * bytes.</p>  <p>You can only use a YAML template with two resource types:
-     * config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
+     * Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
      * (<code>AWS::Config::RemediationConfiguration</code>).</p> 
      */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
@@ -163,7 +163,7 @@ namespace Model
      * <p>A string containing full conformance pack template body. Structure containing
      * the template body with a minimum length of 1 byte and a maximum length of 51,200
      * bytes.</p>  <p>You can only use a YAML template with two resource types:
-     * config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
+     * Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
      * (<code>AWS::Config::RemediationConfiguration</code>).</p> 
      */
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
@@ -172,7 +172,7 @@ namespace Model
      * <p>A string containing full conformance pack template body. Structure containing
      * the template body with a minimum length of 1 byte and a maximum length of 51,200
      * bytes.</p>  <p>You can only use a YAML template with two resource types:
-     * config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
+     * Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
      * (<code>AWS::Config::RemediationConfiguration</code>).</p> 
      */
     inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
@@ -181,7 +181,7 @@ namespace Model
      * <p>A string containing full conformance pack template body. Structure containing
      * the template body with a minimum length of 1 byte and a maximum length of 51,200
      * bytes.</p>  <p>You can only use a YAML template with two resource types:
-     * config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
+     * Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
      * (<code>AWS::Config::RemediationConfiguration</code>).</p> 
      */
     inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
@@ -190,7 +190,7 @@ namespace Model
      * <p>A string containing full conformance pack template body. Structure containing
      * the template body with a minimum length of 1 byte and a maximum length of 51,200
      * bytes.</p>  <p>You can only use a YAML template with two resource types:
-     * config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
+     * Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
      * (<code>AWS::Config::RemediationConfiguration</code>).</p> 
      */
     inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
@@ -199,7 +199,7 @@ namespace Model
      * <p>A string containing full conformance pack template body. Structure containing
      * the template body with a minimum length of 1 byte and a maximum length of 51,200
      * bytes.</p>  <p>You can only use a YAML template with two resource types:
-     * config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
+     * Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
      * (<code>AWS::Config::RemediationConfiguration</code>).</p> 
      */
     inline PutConformancePackRequest& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
@@ -208,7 +208,7 @@ namespace Model
      * <p>A string containing full conformance pack template body. Structure containing
      * the template body with a minimum length of 1 byte and a maximum length of 51,200
      * bytes.</p>  <p>You can only use a YAML template with two resource types:
-     * config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
+     * Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
      * (<code>AWS::Config::RemediationConfiguration</code>).</p> 
      */
     inline PutConformancePackRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
@@ -217,7 +217,7 @@ namespace Model
      * <p>A string containing full conformance pack template body. Structure containing
      * the template body with a minimum length of 1 byte and a maximum length of 51,200
      * bytes.</p>  <p>You can only use a YAML template with two resource types:
-     * config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
+     * Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
      * (<code>AWS::Config::RemediationConfiguration</code>).</p> 
      */
     inline PutConformancePackRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}

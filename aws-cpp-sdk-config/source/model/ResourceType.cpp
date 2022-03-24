@@ -137,6 +137,7 @@ namespace Aws
         static const int AWS_CodeDeploy_DeploymentGroup_HASH = HashingUtils::HashString("AWS::CodeDeploy::DeploymentGroup");
         static const int AWS_EC2_LaunchTemplate_HASH = HashingUtils::HashString("AWS::EC2::LaunchTemplate");
         static const int AWS_ECR_PublicRepository_HASH = HashingUtils::HashString("AWS::ECR::PublicRepository");
+        static const int AWS_GuardDuty_Detector_HASH = HashingUtils::HashString("AWS::GuardDuty::Detector");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -610,6 +611,10 @@ namespace Aws
           {
             return ResourceType::AWS_ECR_PublicRepository;
           }
+          else if (hashCode == AWS_GuardDuty_Detector_HASH)
+          {
+            return ResourceType::AWS_GuardDuty_Detector;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -858,6 +863,8 @@ namespace Aws
             return "AWS::EC2::LaunchTemplate";
           case ResourceType::AWS_ECR_PublicRepository:
             return "AWS::ECR::PublicRepository";
+          case ResourceType::AWS_GuardDuty_Detector:
+            return "AWS::GuardDuty::Detector";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -73,9 +73,11 @@
 #include <aws/config/model/GetComplianceSummaryByResourceTypeRequest.h>
 #include <aws/config/model/GetConformancePackComplianceDetailsRequest.h>
 #include <aws/config/model/GetConformancePackComplianceSummaryRequest.h>
+#include <aws/config/model/GetCustomRulePolicyRequest.h>
 #include <aws/config/model/GetDiscoveredResourceCountsRequest.h>
 #include <aws/config/model/GetOrganizationConfigRuleDetailedStatusRequest.h>
 #include <aws/config/model/GetOrganizationConformancePackDetailedStatusRequest.h>
+#include <aws/config/model/GetOrganizationCustomRulePolicyRequest.h>
 #include <aws/config/model/GetResourceConfigHistoryRequest.h>
 #include <aws/config/model/GetStoredQueryRequest.h>
 #include <aws/config/model/ListAggregateDiscoveredResourcesRequest.h>
@@ -1476,6 +1478,30 @@ void ConfigServiceClient::GetConformancePackComplianceSummaryAsyncHelper(const G
   handler(this, request, GetConformancePackComplianceSummary(request), context);
 }
 
+GetCustomRulePolicyOutcome ConfigServiceClient::GetCustomRulePolicy(const GetCustomRulePolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetCustomRulePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetCustomRulePolicyOutcomeCallable ConfigServiceClient::GetCustomRulePolicyCallable(const GetCustomRulePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCustomRulePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCustomRulePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::GetCustomRulePolicyAsync(const GetCustomRulePolicyRequest& request, const GetCustomRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCustomRulePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::GetCustomRulePolicyAsyncHelper(const GetCustomRulePolicyRequest& request, const GetCustomRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCustomRulePolicy(request), context);
+}
+
 GetDiscoveredResourceCountsOutcome ConfigServiceClient::GetDiscoveredResourceCounts(const GetDiscoveredResourceCountsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1546,6 +1572,30 @@ void ConfigServiceClient::GetOrganizationConformancePackDetailedStatusAsync(cons
 void ConfigServiceClient::GetOrganizationConformancePackDetailedStatusAsyncHelper(const GetOrganizationConformancePackDetailedStatusRequest& request, const GetOrganizationConformancePackDetailedStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetOrganizationConformancePackDetailedStatus(request), context);
+}
+
+GetOrganizationCustomRulePolicyOutcome ConfigServiceClient::GetOrganizationCustomRulePolicy(const GetOrganizationCustomRulePolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetOrganizationCustomRulePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetOrganizationCustomRulePolicyOutcomeCallable ConfigServiceClient::GetOrganizationCustomRulePolicyCallable(const GetOrganizationCustomRulePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetOrganizationCustomRulePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetOrganizationCustomRulePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::GetOrganizationCustomRulePolicyAsync(const GetOrganizationCustomRulePolicyRequest& request, const GetOrganizationCustomRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetOrganizationCustomRulePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::GetOrganizationCustomRulePolicyAsyncHelper(const GetOrganizationCustomRulePolicyRequest& request, const GetOrganizationCustomRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetOrganizationCustomRulePolicy(request), context);
 }
 
 GetResourceConfigHistoryOutcome ConfigServiceClient::GetResourceConfigHistory(const GetResourceConfigHistoryRequest& request) const

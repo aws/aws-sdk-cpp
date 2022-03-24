@@ -18,6 +18,7 @@
 #include <aws/lambda/model/LastUpdateStatusReasonCode.h>
 #include <aws/lambda/model/PackageType.h>
 #include <aws/lambda/model/ImageConfigResponse.h>
+#include <aws/lambda/model/EphemeralStorage.h>
 #include <aws/lambda/model/Layer.h>
 #include <aws/lambda/model/FileSystemConfig.h>
 #include <aws/lambda/model/Architecture.h>
@@ -1305,6 +1306,43 @@ namespace Model
      */
     inline FunctionConfiguration& AddArchitectures(Architecture&& value) { m_architecturesHasBeenSet = true; m_architectures.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
+     * but can be any whole number between 512 and 10240 MB.</p>
+     */
+    inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
+
+    /**
+     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
+     * but can be any whole number between 512 and 10240 MB.</p>
+     */
+    inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
+
+    /**
+     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
+     * but can be any whole number between 512 and 10240 MB.</p>
+     */
+    inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
+
+    /**
+     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
+     * but can be any whole number between 512 and 10240 MB.</p>
+     */
+    inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
+
+    /**
+     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
+     * but can be any whole number between 512 and 10240 MB.</p>
+     */
+    inline FunctionConfiguration& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
+
+    /**
+     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
+     * but can be any whole number between 512 and 10240 MB.</p>
+     */
+    inline FunctionConfiguration& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_functionName;
@@ -1402,6 +1440,9 @@ namespace Model
 
     Aws::Vector<Architecture> m_architectures;
     bool m_architecturesHasBeenSet;
+
+    EphemeralStorage m_ephemeralStorage;
+    bool m_ephemeralStorageHasBeenSet;
   };
 
 } // namespace Model

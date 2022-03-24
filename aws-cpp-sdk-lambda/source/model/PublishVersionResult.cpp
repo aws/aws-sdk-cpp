@@ -247,6 +247,12 @@ PublishVersionResult& PublishVersionResult::operator =(const Aws::AmazonWebServi
     }
   }
 
+  if(jsonValue.ValueExists("EphemeralStorage"))
+  {
+    m_ephemeralStorage = jsonValue.GetObject("EphemeralStorage");
+
+  }
+
 
 
   return *this;

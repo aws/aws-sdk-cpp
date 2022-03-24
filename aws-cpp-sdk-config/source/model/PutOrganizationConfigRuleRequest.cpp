@@ -16,7 +16,8 @@ PutOrganizationConfigRuleRequest::PutOrganizationConfigRuleRequest() :
     m_organizationConfigRuleNameHasBeenSet(false),
     m_organizationManagedRuleMetadataHasBeenSet(false),
     m_organizationCustomRuleMetadataHasBeenSet(false),
-    m_excludedAccountsHasBeenSet(false)
+    m_excludedAccountsHasBeenSet(false),
+    m_organizationCustomPolicyRuleMetadataHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,12 @@ Aws::String PutOrganizationConfigRuleRequest::SerializePayload() const
      excludedAccountsJsonList[excludedAccountsIndex].AsString(m_excludedAccounts[excludedAccountsIndex]);
    }
    payload.WithArray("ExcludedAccounts", std::move(excludedAccountsJsonList));
+
+  }
+
+  if(m_organizationCustomPolicyRuleMetadataHasBeenSet)
+  {
+   payload.WithObject("OrganizationCustomPolicyRuleMetadata", m_organizationCustomPolicyRuleMetadata.Jsonize());
 
   }
 

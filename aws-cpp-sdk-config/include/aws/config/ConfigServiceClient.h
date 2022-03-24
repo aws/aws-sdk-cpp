@@ -54,9 +54,11 @@
 #include <aws/config/model/GetComplianceSummaryByResourceTypeResult.h>
 #include <aws/config/model/GetConformancePackComplianceDetailsResult.h>
 #include <aws/config/model/GetConformancePackComplianceSummaryResult.h>
+#include <aws/config/model/GetCustomRulePolicyResult.h>
 #include <aws/config/model/GetDiscoveredResourceCountsResult.h>
 #include <aws/config/model/GetOrganizationConfigRuleDetailedStatusResult.h>
 #include <aws/config/model/GetOrganizationConformancePackDetailedStatusResult.h>
+#include <aws/config/model/GetOrganizationCustomRulePolicyResult.h>
 #include <aws/config/model/GetResourceConfigHistoryResult.h>
 #include <aws/config/model/GetStoredQueryResult.h>
 #include <aws/config/model/ListAggregateDiscoveredResourcesResult.h>
@@ -171,9 +173,11 @@ namespace Model
         class GetComplianceSummaryByResourceTypeRequest;
         class GetConformancePackComplianceDetailsRequest;
         class GetConformancePackComplianceSummaryRequest;
+        class GetCustomRulePolicyRequest;
         class GetDiscoveredResourceCountsRequest;
         class GetOrganizationConfigRuleDetailedStatusRequest;
         class GetOrganizationConformancePackDetailedStatusRequest;
+        class GetOrganizationCustomRulePolicyRequest;
         class GetResourceConfigHistoryRequest;
         class GetStoredQueryRequest;
         class ListAggregateDiscoveredResourcesRequest;
@@ -258,9 +262,11 @@ namespace Model
         typedef Aws::Utils::Outcome<GetComplianceSummaryByResourceTypeResult, ConfigServiceError> GetComplianceSummaryByResourceTypeOutcome;
         typedef Aws::Utils::Outcome<GetConformancePackComplianceDetailsResult, ConfigServiceError> GetConformancePackComplianceDetailsOutcome;
         typedef Aws::Utils::Outcome<GetConformancePackComplianceSummaryResult, ConfigServiceError> GetConformancePackComplianceSummaryOutcome;
+        typedef Aws::Utils::Outcome<GetCustomRulePolicyResult, ConfigServiceError> GetCustomRulePolicyOutcome;
         typedef Aws::Utils::Outcome<GetDiscoveredResourceCountsResult, ConfigServiceError> GetDiscoveredResourceCountsOutcome;
         typedef Aws::Utils::Outcome<GetOrganizationConfigRuleDetailedStatusResult, ConfigServiceError> GetOrganizationConfigRuleDetailedStatusOutcome;
         typedef Aws::Utils::Outcome<GetOrganizationConformancePackDetailedStatusResult, ConfigServiceError> GetOrganizationConformancePackDetailedStatusOutcome;
+        typedef Aws::Utils::Outcome<GetOrganizationCustomRulePolicyResult, ConfigServiceError> GetOrganizationCustomRulePolicyOutcome;
         typedef Aws::Utils::Outcome<GetResourceConfigHistoryResult, ConfigServiceError> GetResourceConfigHistoryOutcome;
         typedef Aws::Utils::Outcome<GetStoredQueryResult, ConfigServiceError> GetStoredQueryOutcome;
         typedef Aws::Utils::Outcome<ListAggregateDiscoveredResourcesResult, ConfigServiceError> ListAggregateDiscoveredResourcesOutcome;
@@ -345,9 +351,11 @@ namespace Model
         typedef std::future<GetComplianceSummaryByResourceTypeOutcome> GetComplianceSummaryByResourceTypeOutcomeCallable;
         typedef std::future<GetConformancePackComplianceDetailsOutcome> GetConformancePackComplianceDetailsOutcomeCallable;
         typedef std::future<GetConformancePackComplianceSummaryOutcome> GetConformancePackComplianceSummaryOutcomeCallable;
+        typedef std::future<GetCustomRulePolicyOutcome> GetCustomRulePolicyOutcomeCallable;
         typedef std::future<GetDiscoveredResourceCountsOutcome> GetDiscoveredResourceCountsOutcomeCallable;
         typedef std::future<GetOrganizationConfigRuleDetailedStatusOutcome> GetOrganizationConfigRuleDetailedStatusOutcomeCallable;
         typedef std::future<GetOrganizationConformancePackDetailedStatusOutcome> GetOrganizationConformancePackDetailedStatusOutcomeCallable;
+        typedef std::future<GetOrganizationCustomRulePolicyOutcome> GetOrganizationCustomRulePolicyOutcomeCallable;
         typedef std::future<GetResourceConfigHistoryOutcome> GetResourceConfigHistoryOutcomeCallable;
         typedef std::future<GetStoredQueryOutcome> GetStoredQueryOutcomeCallable;
         typedef std::future<ListAggregateDiscoveredResourcesOutcome> ListAggregateDiscoveredResourcesOutcomeCallable;
@@ -435,9 +443,11 @@ namespace Model
     typedef std::function<void(const ConfigServiceClient*, const Model::GetComplianceSummaryByResourceTypeRequest&, const Model::GetComplianceSummaryByResourceTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComplianceSummaryByResourceTypeResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetConformancePackComplianceDetailsRequest&, const Model::GetConformancePackComplianceDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConformancePackComplianceDetailsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetConformancePackComplianceSummaryRequest&, const Model::GetConformancePackComplianceSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConformancePackComplianceSummaryResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::GetCustomRulePolicyRequest&, const Model::GetCustomRulePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCustomRulePolicyResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetDiscoveredResourceCountsRequest&, const Model::GetDiscoveredResourceCountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiscoveredResourceCountsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetOrganizationConfigRuleDetailedStatusRequest&, const Model::GetOrganizationConfigRuleDetailedStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOrganizationConfigRuleDetailedStatusResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetOrganizationConformancePackDetailedStatusRequest&, const Model::GetOrganizationConformancePackDetailedStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOrganizationConformancePackDetailedStatusResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::GetOrganizationCustomRulePolicyRequest&, const Model::GetOrganizationCustomRulePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOrganizationCustomRulePolicyResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetResourceConfigHistoryRequest&, const Model::GetResourceConfigHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceConfigHistoryResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetStoredQueryRequest&, const Model::GetStoredQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStoredQueryResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::ListAggregateDiscoveredResourcesRequest&, const Model::ListAggregateDiscoveredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAggregateDiscoveredResourcesResponseReceivedHandler;
@@ -857,9 +867,9 @@ namespace Model
         virtual void DeleteEvaluationResultsAsync(const Model::DeleteEvaluationResultsRequest& request, const DeleteEvaluationResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified organization config rule and all of its evaluation
+         * <p>Deletes the specified organization Config rule and all of its evaluation
          * results from all member accounts in that organization. </p> <p>Only a master
-         * account and a delegated administrator account can delete an organization config
+         * account and a delegated administrator account can delete an organization Config
          * rule. When calling this API with a delegated administrator, you must ensure
          * Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
          * <p>Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is
@@ -871,9 +881,9 @@ namespace Model
         virtual Model::DeleteOrganizationConfigRuleOutcome DeleteOrganizationConfigRule(const Model::DeleteOrganizationConfigRuleRequest& request) const;
 
         /**
-         * <p>Deletes the specified organization config rule and all of its evaluation
+         * <p>Deletes the specified organization Config rule and all of its evaluation
          * results from all member accounts in that organization. </p> <p>Only a master
-         * account and a delegated administrator account can delete an organization config
+         * account and a delegated administrator account can delete an organization Config
          * rule. When calling this API with a delegated administrator, you must ensure
          * Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
          * <p>Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is
@@ -887,9 +897,9 @@ namespace Model
         virtual Model::DeleteOrganizationConfigRuleOutcomeCallable DeleteOrganizationConfigRuleCallable(const Model::DeleteOrganizationConfigRuleRequest& request) const;
 
         /**
-         * <p>Deletes the specified organization config rule and all of its evaluation
+         * <p>Deletes the specified organization Config rule and all of its evaluation
          * results from all member accounts in that organization. </p> <p>Only a master
-         * account and a delegated administrator account can delete an organization config
+         * account and a delegated administrator account can delete an organization Config
          * rule. When calling this API with a delegated administrator, you must ensure
          * Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
          * <p>Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is
@@ -903,7 +913,7 @@ namespace Model
         virtual void DeleteOrganizationConfigRuleAsync(const Model::DeleteOrganizationConfigRuleRequest& request, const DeleteOrganizationConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified organization conformance pack and all of the config
+         * <p>Deletes the specified organization conformance pack and all of the Config
          * rules and remediation actions from all member accounts in that organization.
          * </p> <p> Only a master account or a delegated administrator account can delete
          * an organization conformance pack. When calling this API with a delegated
@@ -918,7 +928,7 @@ namespace Model
         virtual Model::DeleteOrganizationConformancePackOutcome DeleteOrganizationConformancePack(const Model::DeleteOrganizationConformancePackRequest& request) const;
 
         /**
-         * <p>Deletes the specified organization conformance pack and all of the config
+         * <p>Deletes the specified organization conformance pack and all of the Config
          * rules and remediation actions from all member accounts in that organization.
          * </p> <p> Only a master account or a delegated administrator account can delete
          * an organization conformance pack. When calling this API with a delegated
@@ -935,7 +945,7 @@ namespace Model
         virtual Model::DeleteOrganizationConformancePackOutcomeCallable DeleteOrganizationConformancePackCallable(const Model::DeleteOrganizationConformancePackRequest& request) const;
 
         /**
-         * <p>Deletes the specified organization conformance pack and all of the config
+         * <p>Deletes the specified organization conformance pack and all of the Config
          * rules and remediation actions from all member accounts in that organization.
          * </p> <p> Only a master account or a delegated administrator account can delete
          * an organization conformance pack. When calling this API with a delegated
@@ -1803,26 +1813,26 @@ namespace Model
         virtual void DescribeDeliveryChannelsAsync(const Model::DescribeDeliveryChannelsRequest& request, const DescribeDeliveryChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides organization config rule deployment status for an organization.</p>
-         *  <p>The status is not considered successful until organization config rule
+         * <p>Provides organization Config rule deployment status for an organization.</p>
+         *  <p>The status is not considered successful until organization Config rule
          * is successfully deployed in all the member accounts with an exception of
          * excluded accounts.</p> <p>When you specify the limit and the next token, you
          * receive a paginated response. Limit and next token are not applicable if you
-         * specify organization config rule names. It is only applicable, when you request
-         * all the organization config rules.</p> <p><h3>See Also:</h3>   <a
+         * specify organization Config rule names. It is only applicable, when you request
+         * all the organization Config rules.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeOrganizationConfigRuleStatusesOutcome DescribeOrganizationConfigRuleStatuses(const Model::DescribeOrganizationConfigRuleStatusesRequest& request) const;
 
         /**
-         * <p>Provides organization config rule deployment status for an organization.</p>
-         *  <p>The status is not considered successful until organization config rule
+         * <p>Provides organization Config rule deployment status for an organization.</p>
+         *  <p>The status is not considered successful until organization Config rule
          * is successfully deployed in all the member accounts with an exception of
          * excluded accounts.</p> <p>When you specify the limit and the next token, you
          * receive a paginated response. Limit and next token are not applicable if you
-         * specify organization config rule names. It is only applicable, when you request
-         * all the organization config rules.</p> <p><h3>See Also:</h3>   <a
+         * specify organization Config rule names. It is only applicable, when you request
+         * all the organization Config rules.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">AWS
          * API Reference</a></p>
          *
@@ -1831,13 +1841,13 @@ namespace Model
         virtual Model::DescribeOrganizationConfigRuleStatusesOutcomeCallable DescribeOrganizationConfigRuleStatusesCallable(const Model::DescribeOrganizationConfigRuleStatusesRequest& request) const;
 
         /**
-         * <p>Provides organization config rule deployment status for an organization.</p>
-         *  <p>The status is not considered successful until organization config rule
+         * <p>Provides organization Config rule deployment status for an organization.</p>
+         *  <p>The status is not considered successful until organization Config rule
          * is successfully deployed in all the member accounts with an exception of
          * excluded accounts.</p> <p>When you specify the limit and the next token, you
          * receive a paginated response. Limit and next token are not applicable if you
-         * specify organization config rule names. It is only applicable, when you request
-         * all the organization config rules.</p> <p><h3>See Also:</h3>   <a
+         * specify organization Config rule names. It is only applicable, when you request
+         * all the organization Config rules.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">AWS
          * API Reference</a></p>
          *
@@ -1846,10 +1856,10 @@ namespace Model
         virtual void DescribeOrganizationConfigRuleStatusesAsync(const Model::DescribeOrganizationConfigRuleStatusesRequest& request, const DescribeOrganizationConfigRuleStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of organization config rules. </p>  <p>When you specify
+         * <p>Returns a list of organization Config rules. </p>  <p>When you specify
          * the limit and the next token, you receive a paginated response. Limit and next
-         * token are not applicable if you specify organization config rule names. It is
-         * only applicable, when you request all the organization config rules.</p>
+         * token are not applicable if you specify organization Config rule names. It is
+         * only applicable, when you request all the organization Config rules.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">AWS
          * API Reference</a></p>
@@ -1857,10 +1867,10 @@ namespace Model
         virtual Model::DescribeOrganizationConfigRulesOutcome DescribeOrganizationConfigRules(const Model::DescribeOrganizationConfigRulesRequest& request) const;
 
         /**
-         * <p>Returns a list of organization config rules. </p>  <p>When you specify
+         * <p>Returns a list of organization Config rules. </p>  <p>When you specify
          * the limit and the next token, you receive a paginated response. Limit and next
-         * token are not applicable if you specify organization config rule names. It is
-         * only applicable, when you request all the organization config rules.</p>
+         * token are not applicable if you specify organization Config rule names. It is
+         * only applicable, when you request all the organization Config rules.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">AWS
          * API Reference</a></p>
@@ -1870,10 +1880,10 @@ namespace Model
         virtual Model::DescribeOrganizationConfigRulesOutcomeCallable DescribeOrganizationConfigRulesCallable(const Model::DescribeOrganizationConfigRulesRequest& request) const;
 
         /**
-         * <p>Returns a list of organization config rules. </p>  <p>When you specify
+         * <p>Returns a list of organization Config rules. </p>  <p>When you specify
          * the limit and the next token, you receive a paginated response. Limit and next
-         * token are not applicable if you specify organization config rule names. It is
-         * only applicable, when you request all the organization config rules.</p>
+         * token are not applicable if you specify organization Config rule names. It is
+         * only applicable, when you request all the organization Config rules.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">AWS
          * API Reference</a></p>
@@ -2524,6 +2534,34 @@ namespace Model
         virtual void GetConformancePackComplianceSummaryAsync(const Model::GetConformancePackComplianceSummaryRequest& request, const GetConformancePackComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the policy definition containing the logic for your Config Custom
+         * Policy rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetCustomRulePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCustomRulePolicyOutcome GetCustomRulePolicy(const Model::GetCustomRulePolicyRequest& request) const;
+
+        /**
+         * <p>Returns the policy definition containing the logic for your Config Custom
+         * Policy rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetCustomRulePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetCustomRulePolicyOutcomeCallable GetCustomRulePolicyCallable(const Model::GetCustomRulePolicyRequest& request) const;
+
+        /**
+         * <p>Returns the policy definition containing the logic for your Config Custom
+         * Policy rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetCustomRulePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetCustomRulePolicyAsync(const Model::GetCustomRulePolicyRequest& request, const GetCustomRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the resource types, the number of each resource type, and the total
          * number of resources that Config is recording in this region for your Amazon Web
          * Services account. </p> <p class="title"> <b>Example</b> </p> <ol> <li> <p>Config
@@ -2613,7 +2651,7 @@ namespace Model
 
         /**
          * <p>Returns detailed status for each member account within an organization for a
-         * given organization config rule.</p><p><h3>See Also:</h3>   <a
+         * given organization Config rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">AWS
          * API Reference</a></p>
          */
@@ -2621,7 +2659,7 @@ namespace Model
 
         /**
          * <p>Returns detailed status for each member account within an organization for a
-         * given organization config rule.</p><p><h3>See Also:</h3>   <a
+         * given organization Config rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">AWS
          * API Reference</a></p>
          *
@@ -2631,7 +2669,7 @@ namespace Model
 
         /**
          * <p>Returns detailed status for each member account within an organization for a
-         * given organization config rule.</p><p><h3>See Also:</h3>   <a
+         * given organization Config rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">AWS
          * API Reference</a></p>
          *
@@ -2666,6 +2704,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetOrganizationConformancePackDetailedStatusAsync(const Model::GetOrganizationConformancePackDetailedStatusRequest& request, const GetOrganizationConformancePackDetailedStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the policy definition containing the logic for your organization
+         * Config Custom Policy rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationCustomRulePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetOrganizationCustomRulePolicyOutcome GetOrganizationCustomRulePolicy(const Model::GetOrganizationCustomRulePolicyRequest& request) const;
+
+        /**
+         * <p>Returns the policy definition containing the logic for your organization
+         * Config Custom Policy rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationCustomRulePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetOrganizationCustomRulePolicyOutcomeCallable GetOrganizationCustomRulePolicyCallable(const Model::GetOrganizationCustomRulePolicyRequest& request) const;
+
+        /**
+         * <p>Returns the policy definition containing the logic for your organization
+         * Config Custom Policy rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationCustomRulePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetOrganizationCustomRulePolicyAsync(const Model::GetOrganizationCustomRulePolicyRequest& request, const GetOrganizationCustomRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of <code>ConfigurationItems</code> for the specified resource.
@@ -3351,10 +3417,10 @@ namespace Model
         virtual void PutExternalEvaluationAsync(const Model::PutExternalEvaluationRequest& request, const PutExternalEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds or updates organization config rule for your entire organization
+         * <p>Adds or updates organization Config rule for your entire organization
          * evaluating whether your Amazon Web Services resources comply with your desired
          * configurations.</p> <p> Only a master account and a delegated administrator can
-         * create or update an organization config rule. When calling this API with a
+         * create or update an organization Config rule. When calling this API with a
          * delegated administrator, you must ensure Organizations
          * <code>ListDelegatedAdministrator</code> permissions are added. </p> <p>This API
          * enables organization service access through the
@@ -3375,7 +3441,7 @@ namespace Model
          * must specify the Amazon Resource Name (ARN) that Lambda assigns to the function.
          * If you are adding an Config managed rule, specify the rule's identifier for the
          * <code>RuleIdentifier</code> key.</p> <p>The maximum number of organization
-         * config rules that Config supports is 150 and 3 delegated administrator per
+         * Config rules that Config supports is 150 and 3 delegated administrator per
          * organization. </p>  <p>Prerequisite: Ensure you call
          * <code>EnableAllFeatures</code> API to enable all features in an
          * organization.</p> <p>Specify either <code>OrganizationCustomRuleMetadata</code>
@@ -3387,10 +3453,10 @@ namespace Model
         virtual Model::PutOrganizationConfigRuleOutcome PutOrganizationConfigRule(const Model::PutOrganizationConfigRuleRequest& request) const;
 
         /**
-         * <p>Adds or updates organization config rule for your entire organization
+         * <p>Adds or updates organization Config rule for your entire organization
          * evaluating whether your Amazon Web Services resources comply with your desired
          * configurations.</p> <p> Only a master account and a delegated administrator can
-         * create or update an organization config rule. When calling this API with a
+         * create or update an organization Config rule. When calling this API with a
          * delegated administrator, you must ensure Organizations
          * <code>ListDelegatedAdministrator</code> permissions are added. </p> <p>This API
          * enables organization service access through the
@@ -3411,7 +3477,7 @@ namespace Model
          * must specify the Amazon Resource Name (ARN) that Lambda assigns to the function.
          * If you are adding an Config managed rule, specify the rule's identifier for the
          * <code>RuleIdentifier</code> key.</p> <p>The maximum number of organization
-         * config rules that Config supports is 150 and 3 delegated administrator per
+         * Config rules that Config supports is 150 and 3 delegated administrator per
          * organization. </p>  <p>Prerequisite: Ensure you call
          * <code>EnableAllFeatures</code> API to enable all features in an
          * organization.</p> <p>Specify either <code>OrganizationCustomRuleMetadata</code>
@@ -3425,10 +3491,10 @@ namespace Model
         virtual Model::PutOrganizationConfigRuleOutcomeCallable PutOrganizationConfigRuleCallable(const Model::PutOrganizationConfigRuleRequest& request) const;
 
         /**
-         * <p>Adds or updates organization config rule for your entire organization
+         * <p>Adds or updates organization Config rule for your entire organization
          * evaluating whether your Amazon Web Services resources comply with your desired
          * configurations.</p> <p> Only a master account and a delegated administrator can
-         * create or update an organization config rule. When calling this API with a
+         * create or update an organization Config rule. When calling this API with a
          * delegated administrator, you must ensure Organizations
          * <code>ListDelegatedAdministrator</code> permissions are added. </p> <p>This API
          * enables organization service access through the
@@ -3449,7 +3515,7 @@ namespace Model
          * must specify the Amazon Resource Name (ARN) that Lambda assigns to the function.
          * If you are adding an Config managed rule, specify the rule's identifier for the
          * <code>RuleIdentifier</code> key.</p> <p>The maximum number of organization
-         * config rules that Config supports is 150 and 3 delegated administrator per
+         * Config rules that Config supports is 150 and 3 delegated administrator per
          * organization. </p>  <p>Prerequisite: Ensure you call
          * <code>EnableAllFeatures</code> API to enable all features in an
          * organization.</p> <p>Specify either <code>OrganizationCustomRuleMetadata</code>
@@ -4215,9 +4281,11 @@ namespace Model
         void GetComplianceSummaryByResourceTypeAsyncHelper(const Model::GetComplianceSummaryByResourceTypeRequest& request, const GetComplianceSummaryByResourceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConformancePackComplianceDetailsAsyncHelper(const Model::GetConformancePackComplianceDetailsRequest& request, const GetConformancePackComplianceDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConformancePackComplianceSummaryAsyncHelper(const Model::GetConformancePackComplianceSummaryRequest& request, const GetConformancePackComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetCustomRulePolicyAsyncHelper(const Model::GetCustomRulePolicyRequest& request, const GetCustomRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDiscoveredResourceCountsAsyncHelper(const Model::GetDiscoveredResourceCountsRequest& request, const GetDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetOrganizationConfigRuleDetailedStatusAsyncHelper(const Model::GetOrganizationConfigRuleDetailedStatusRequest& request, const GetOrganizationConfigRuleDetailedStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetOrganizationConformancePackDetailedStatusAsyncHelper(const Model::GetOrganizationConformancePackDetailedStatusRequest& request, const GetOrganizationConformancePackDetailedStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetOrganizationCustomRulePolicyAsyncHelper(const Model::GetOrganizationCustomRulePolicyRequest& request, const GetOrganizationCustomRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourceConfigHistoryAsyncHelper(const Model::GetResourceConfigHistoryRequest& request, const GetResourceConfigHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetStoredQueryAsyncHelper(const Model::GetStoredQueryRequest& request, const GetStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAggregateDiscoveredResourcesAsyncHelper(const Model::ListAggregateDiscoveredResourcesRequest& request, const ListAggregateDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

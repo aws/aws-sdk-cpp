@@ -120,44 +120,56 @@ namespace Model
 
 
     /**
-     * <p>The language code for the language used in the input media file.</p> <p>To
-     * transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file
-     * must be encoded at a sample rate of 16,000 Hz or higher.</p>
+     * <p>The language code for the language used in the input media file. You must
+     * include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in
+     * your request.</p> <p>To transcribe speech in Modern Standard Arabic (ar-SA),
+     * your audio or video file must be encoded at a sample rate of 16,000 Hz or
+     * higher.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language code for the language used in the input media file.</p> <p>To
-     * transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file
-     * must be encoded at a sample rate of 16,000 Hz or higher.</p>
+     * <p>The language code for the language used in the input media file. You must
+     * include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in
+     * your request.</p> <p>To transcribe speech in Modern Standard Arabic (ar-SA),
+     * your audio or video file must be encoded at a sample rate of 16,000 Hz or
+     * higher.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
-     * <p>The language code for the language used in the input media file.</p> <p>To
-     * transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file
-     * must be encoded at a sample rate of 16,000 Hz or higher.</p>
+     * <p>The language code for the language used in the input media file. You must
+     * include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in
+     * your request.</p> <p>To transcribe speech in Modern Standard Arabic (ar-SA),
+     * your audio or video file must be encoded at a sample rate of 16,000 Hz or
+     * higher.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p>The language code for the language used in the input media file.</p> <p>To
-     * transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file
-     * must be encoded at a sample rate of 16,000 Hz or higher.</p>
+     * <p>The language code for the language used in the input media file. You must
+     * include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in
+     * your request.</p> <p>To transcribe speech in Modern Standard Arabic (ar-SA),
+     * your audio or video file must be encoded at a sample rate of 16,000 Hz or
+     * higher.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p>The language code for the language used in the input media file.</p> <p>To
-     * transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file
-     * must be encoded at a sample rate of 16,000 Hz or higher.</p>
+     * <p>The language code for the language used in the input media file. You must
+     * include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in
+     * your request.</p> <p>To transcribe speech in Modern Standard Arabic (ar-SA),
+     * your audio or video file must be encoded at a sample rate of 16,000 Hz or
+     * higher.</p>
      */
     inline StartTranscriptionJobRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code for the language used in the input media file.</p> <p>To
-     * transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file
-     * must be encoded at a sample rate of 16,000 Hz or higher.</p>
+     * <p>The language code for the language used in the input media file. You must
+     * include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in
+     * your request.</p> <p>To transcribe speech in Modern Standard Arabic (ar-SA),
+     * your audio or video file must be encoded at a sample rate of 16,000 Hz or
+     * higher.</p>
      */
     inline StartTranscriptionJobRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
@@ -985,7 +997,8 @@ namespace Model
      * <p>Set this field to <code>true</code> to enable automatic language
      * identification. Automatic language identification is disabled by default. You
      * receive a <code>BadRequestException</code> error if you enter a value for a
-     * <code>LanguageCode</code>.</p>
+     * <code>LanguageCode</code>.</p> <p>You must include either
+     * <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request.</p>
      */
     inline bool GetIdentifyLanguage() const{ return m_identifyLanguage; }
 
@@ -993,7 +1006,8 @@ namespace Model
      * <p>Set this field to <code>true</code> to enable automatic language
      * identification. Automatic language identification is disabled by default. You
      * receive a <code>BadRequestException</code> error if you enter a value for a
-     * <code>LanguageCode</code>.</p>
+     * <code>LanguageCode</code>.</p> <p>You must include either
+     * <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request.</p>
      */
     inline bool IdentifyLanguageHasBeenSet() const { return m_identifyLanguageHasBeenSet; }
 
@@ -1001,7 +1015,8 @@ namespace Model
      * <p>Set this field to <code>true</code> to enable automatic language
      * identification. Automatic language identification is disabled by default. You
      * receive a <code>BadRequestException</code> error if you enter a value for a
-     * <code>LanguageCode</code>.</p>
+     * <code>LanguageCode</code>.</p> <p>You must include either
+     * <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request.</p>
      */
     inline void SetIdentifyLanguage(bool value) { m_identifyLanguageHasBeenSet = true; m_identifyLanguage = value; }
 
@@ -1009,7 +1024,8 @@ namespace Model
      * <p>Set this field to <code>true</code> to enable automatic language
      * identification. Automatic language identification is disabled by default. You
      * receive a <code>BadRequestException</code> error if you enter a value for a
-     * <code>LanguageCode</code>.</p>
+     * <code>LanguageCode</code>.</p> <p>You must include either
+     * <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request.</p>
      */
     inline StartTranscriptionJobRequest& WithIdentifyLanguage(bool value) { SetIdentifyLanguage(value); return *this;}
 
