@@ -26,7 +26,8 @@ namespace Model
     ORACLE_LINUX,
     DEBIAN,
     MACOS,
-    RASPBIAN
+    RASPBIAN,
+    ROCKY_LINUX
   };
 
 namespace OperatingSystemMapper

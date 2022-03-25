@@ -294,7 +294,10 @@ namespace Model
      * <p>The version of the document that you want to update. Currently, Systems
      * Manager supports updating only the latest version of the document. You can
      * specify the version number of the latest version or use the <code>$LATEST</code>
-     * variable.</p>
+     * variable.</p>  <p>If you change a document version for a State Manager
+     * association, Systems Manager immediately runs the association unless you
+     * previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
+     * 
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
 
@@ -302,7 +305,10 @@ namespace Model
      * <p>The version of the document that you want to update. Currently, Systems
      * Manager supports updating only the latest version of the document. You can
      * specify the version number of the latest version or use the <code>$LATEST</code>
-     * variable.</p>
+     * variable.</p>  <p>If you change a document version for a State Manager
+     * association, Systems Manager immediately runs the association unless you
+     * previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
+     * 
      */
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
@@ -310,7 +316,10 @@ namespace Model
      * <p>The version of the document that you want to update. Currently, Systems
      * Manager supports updating only the latest version of the document. You can
      * specify the version number of the latest version or use the <code>$LATEST</code>
-     * variable.</p>
+     * variable.</p>  <p>If you change a document version for a State Manager
+     * association, Systems Manager immediately runs the association unless you
+     * previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
+     * 
      */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
@@ -318,7 +327,10 @@ namespace Model
      * <p>The version of the document that you want to update. Currently, Systems
      * Manager supports updating only the latest version of the document. You can
      * specify the version number of the latest version or use the <code>$LATEST</code>
-     * variable.</p>
+     * variable.</p>  <p>If you change a document version for a State Manager
+     * association, Systems Manager immediately runs the association unless you
+     * previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
+     * 
      */
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
@@ -326,7 +338,10 @@ namespace Model
      * <p>The version of the document that you want to update. Currently, Systems
      * Manager supports updating only the latest version of the document. You can
      * specify the version number of the latest version or use the <code>$LATEST</code>
-     * variable.</p>
+     * variable.</p>  <p>If you change a document version for a State Manager
+     * association, Systems Manager immediately runs the association unless you
+     * previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
+     * 
      */
     inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
 
@@ -334,7 +349,10 @@ namespace Model
      * <p>The version of the document that you want to update. Currently, Systems
      * Manager supports updating only the latest version of the document. You can
      * specify the version number of the latest version or use the <code>$LATEST</code>
-     * variable.</p>
+     * variable.</p>  <p>If you change a document version for a State Manager
+     * association, Systems Manager immediately runs the association unless you
+     * previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
+     * 
      */
     inline UpdateDocumentRequest& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
 
@@ -342,7 +360,10 @@ namespace Model
      * <p>The version of the document that you want to update. Currently, Systems
      * Manager supports updating only the latest version of the document. You can
      * specify the version number of the latest version or use the <code>$LATEST</code>
-     * variable.</p>
+     * variable.</p>  <p>If you change a document version for a State Manager
+     * association, Systems Manager immediately runs the association unless you
+     * previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
+     * 
      */
     inline UpdateDocumentRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
@@ -350,7 +371,10 @@ namespace Model
      * <p>The version of the document that you want to update. Currently, Systems
      * Manager supports updating only the latest version of the document. You can
      * specify the version number of the latest version or use the <code>$LATEST</code>
-     * variable.</p>
+     * variable.</p>  <p>If you change a document version for a State Manager
+     * association, Systems Manager immediately runs the association unless you
+     * previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
+     * 
      */
     inline UpdateDocumentRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 

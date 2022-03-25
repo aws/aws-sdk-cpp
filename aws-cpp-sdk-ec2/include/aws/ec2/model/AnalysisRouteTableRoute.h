@@ -335,82 +335,74 @@ namespace Model
 
 
     /**
-     * <p>Describes how the route was created. The following are possible values:</p>
-     * <ul> <li> <p> <code>CreateRouteTable</code> - The route was automatically
-     * created when the route table was created.</p> </li> <li> <p>
-     * <code>CreateRoute</code> - The route was manually added to the route table.</p>
-     * </li> <li> <p> <code>EnableVgwRoutePropagation</code> - The route was propagated
-     * by route propagation.</p> </li> </ul>
+     * <p>Describes how the route was created. The following are the possible
+     * values:</p> <ul> <li> <p>CreateRouteTable - The route was automatically created
+     * when the route table was created.</p> </li> <li> <p>CreateRoute - The route was
+     * manually added to the route table.</p> </li> <li> <p>EnableVgwRoutePropagation -
+     * The route was propagated by route propagation.</p> </li> </ul>
      */
     inline const Aws::String& GetOrigin() const{ return m_origin; }
 
     /**
-     * <p>Describes how the route was created. The following are possible values:</p>
-     * <ul> <li> <p> <code>CreateRouteTable</code> - The route was automatically
-     * created when the route table was created.</p> </li> <li> <p>
-     * <code>CreateRoute</code> - The route was manually added to the route table.</p>
-     * </li> <li> <p> <code>EnableVgwRoutePropagation</code> - The route was propagated
-     * by route propagation.</p> </li> </ul>
+     * <p>Describes how the route was created. The following are the possible
+     * values:</p> <ul> <li> <p>CreateRouteTable - The route was automatically created
+     * when the route table was created.</p> </li> <li> <p>CreateRoute - The route was
+     * manually added to the route table.</p> </li> <li> <p>EnableVgwRoutePropagation -
+     * The route was propagated by route propagation.</p> </li> </ul>
      */
     inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
 
     /**
-     * <p>Describes how the route was created. The following are possible values:</p>
-     * <ul> <li> <p> <code>CreateRouteTable</code> - The route was automatically
-     * created when the route table was created.</p> </li> <li> <p>
-     * <code>CreateRoute</code> - The route was manually added to the route table.</p>
-     * </li> <li> <p> <code>EnableVgwRoutePropagation</code> - The route was propagated
-     * by route propagation.</p> </li> </ul>
+     * <p>Describes how the route was created. The following are the possible
+     * values:</p> <ul> <li> <p>CreateRouteTable - The route was automatically created
+     * when the route table was created.</p> </li> <li> <p>CreateRoute - The route was
+     * manually added to the route table.</p> </li> <li> <p>EnableVgwRoutePropagation -
+     * The route was propagated by route propagation.</p> </li> </ul>
      */
     inline void SetOrigin(const Aws::String& value) { m_originHasBeenSet = true; m_origin = value; }
 
     /**
-     * <p>Describes how the route was created. The following are possible values:</p>
-     * <ul> <li> <p> <code>CreateRouteTable</code> - The route was automatically
-     * created when the route table was created.</p> </li> <li> <p>
-     * <code>CreateRoute</code> - The route was manually added to the route table.</p>
-     * </li> <li> <p> <code>EnableVgwRoutePropagation</code> - The route was propagated
-     * by route propagation.</p> </li> </ul>
+     * <p>Describes how the route was created. The following are the possible
+     * values:</p> <ul> <li> <p>CreateRouteTable - The route was automatically created
+     * when the route table was created.</p> </li> <li> <p>CreateRoute - The route was
+     * manually added to the route table.</p> </li> <li> <p>EnableVgwRoutePropagation -
+     * The route was propagated by route propagation.</p> </li> </ul>
      */
     inline void SetOrigin(Aws::String&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
 
     /**
-     * <p>Describes how the route was created. The following are possible values:</p>
-     * <ul> <li> <p> <code>CreateRouteTable</code> - The route was automatically
-     * created when the route table was created.</p> </li> <li> <p>
-     * <code>CreateRoute</code> - The route was manually added to the route table.</p>
-     * </li> <li> <p> <code>EnableVgwRoutePropagation</code> - The route was propagated
-     * by route propagation.</p> </li> </ul>
+     * <p>Describes how the route was created. The following are the possible
+     * values:</p> <ul> <li> <p>CreateRouteTable - The route was automatically created
+     * when the route table was created.</p> </li> <li> <p>CreateRoute - The route was
+     * manually added to the route table.</p> </li> <li> <p>EnableVgwRoutePropagation -
+     * The route was propagated by route propagation.</p> </li> </ul>
      */
     inline void SetOrigin(const char* value) { m_originHasBeenSet = true; m_origin.assign(value); }
 
     /**
-     * <p>Describes how the route was created. The following are possible values:</p>
-     * <ul> <li> <p> <code>CreateRouteTable</code> - The route was automatically
-     * created when the route table was created.</p> </li> <li> <p>
-     * <code>CreateRoute</code> - The route was manually added to the route table.</p>
-     * </li> <li> <p> <code>EnableVgwRoutePropagation</code> - The route was propagated
-     * by route propagation.</p> </li> </ul>
+     * <p>Describes how the route was created. The following are the possible
+     * values:</p> <ul> <li> <p>CreateRouteTable - The route was automatically created
+     * when the route table was created.</p> </li> <li> <p>CreateRoute - The route was
+     * manually added to the route table.</p> </li> <li> <p>EnableVgwRoutePropagation -
+     * The route was propagated by route propagation.</p> </li> </ul>
      */
     inline AnalysisRouteTableRoute& WithOrigin(const Aws::String& value) { SetOrigin(value); return *this;}
 
     /**
-     * <p>Describes how the route was created. The following are possible values:</p>
-     * <ul> <li> <p> <code>CreateRouteTable</code> - The route was automatically
-     * created when the route table was created.</p> </li> <li> <p>
-     * <code>CreateRoute</code> - The route was manually added to the route table.</p>
-     * </li> <li> <p> <code>EnableVgwRoutePropagation</code> - The route was propagated
-     * by route propagation.</p> </li> </ul>
+     * <p>Describes how the route was created. The following are the possible
+     * values:</p> <ul> <li> <p>CreateRouteTable - The route was automatically created
+     * when the route table was created.</p> </li> <li> <p>CreateRoute - The route was
+     * manually added to the route table.</p> </li> <li> <p>EnableVgwRoutePropagation -
+     * The route was propagated by route propagation.</p> </li> </ul>
      */
     inline AnalysisRouteTableRoute& WithOrigin(Aws::String&& value) { SetOrigin(std::move(value)); return *this;}
 
     /**
-     * <p>Describes how the route was created. The following are possible values:</p>
-     * <ul> <li> <p> <code>CreateRouteTable</code> - The route was automatically
-     * created when the route table was created.</p> </li> <li> <p>
-     * <code>CreateRoute</code> - The route was manually added to the route table.</p>
-     * </li> <li> <p> <code>EnableVgwRoutePropagation</code> - The route was propagated
-     * by route propagation.</p> </li> </ul>
+     * <p>Describes how the route was created. The following are the possible
+     * values:</p> <ul> <li> <p>CreateRouteTable - The route was automatically created
+     * when the route table was created.</p> </li> <li> <p>CreateRoute - The route was
+     * manually added to the route table.</p> </li> <li> <p>EnableVgwRoutePropagation -
+     * The route was propagated by route propagation.</p> </li> </ul>
      */
     inline AnalysisRouteTableRoute& WithOrigin(const char* value) { SetOrigin(value); return *this;}
 

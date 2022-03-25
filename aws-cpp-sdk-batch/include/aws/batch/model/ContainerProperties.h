@@ -65,8 +65,12 @@ namespace Model
      * <p>Docker image architecture must match the processor architecture of the
      * compute resources that they're scheduled on. For example, ARM-based Docker
      * images can only run on ARM-based compute resources.</p>  <ul> <li>
-     * <p>Images in Amazon ECR repositories use the full registry and repository URI
-     * (for example,
+     * <p>Images in Amazon ECR Public repositories use the full
+     * <code>registry/repository[:tag]</code> or
+     * <code>registry/repository[@digest]</code> naming conventions. For example,
+     * <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i>
+     * </code>.</p> </li> <li> <p>Images in Amazon ECR repositories use the full
+     * registry and repository URI (for example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
@@ -93,8 +97,12 @@ namespace Model
      * <p>Docker image architecture must match the processor architecture of the
      * compute resources that they're scheduled on. For example, ARM-based Docker
      * images can only run on ARM-based compute resources.</p>  <ul> <li>
-     * <p>Images in Amazon ECR repositories use the full registry and repository URI
-     * (for example,
+     * <p>Images in Amazon ECR Public repositories use the full
+     * <code>registry/repository[:tag]</code> or
+     * <code>registry/repository[@digest]</code> naming conventions. For example,
+     * <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i>
+     * </code>.</p> </li> <li> <p>Images in Amazon ECR repositories use the full
+     * registry and repository URI (for example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
@@ -121,8 +129,12 @@ namespace Model
      * <p>Docker image architecture must match the processor architecture of the
      * compute resources that they're scheduled on. For example, ARM-based Docker
      * images can only run on ARM-based compute resources.</p>  <ul> <li>
-     * <p>Images in Amazon ECR repositories use the full registry and repository URI
-     * (for example,
+     * <p>Images in Amazon ECR Public repositories use the full
+     * <code>registry/repository[:tag]</code> or
+     * <code>registry/repository[@digest]</code> naming conventions. For example,
+     * <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i>
+     * </code>.</p> </li> <li> <p>Images in Amazon ECR repositories use the full
+     * registry and repository URI (for example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
@@ -149,8 +161,12 @@ namespace Model
      * <p>Docker image architecture must match the processor architecture of the
      * compute resources that they're scheduled on. For example, ARM-based Docker
      * images can only run on ARM-based compute resources.</p>  <ul> <li>
-     * <p>Images in Amazon ECR repositories use the full registry and repository URI
-     * (for example,
+     * <p>Images in Amazon ECR Public repositories use the full
+     * <code>registry/repository[:tag]</code> or
+     * <code>registry/repository[@digest]</code> naming conventions. For example,
+     * <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i>
+     * </code>.</p> </li> <li> <p>Images in Amazon ECR repositories use the full
+     * registry and repository URI (for example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
@@ -177,8 +193,12 @@ namespace Model
      * <p>Docker image architecture must match the processor architecture of the
      * compute resources that they're scheduled on. For example, ARM-based Docker
      * images can only run on ARM-based compute resources.</p>  <ul> <li>
-     * <p>Images in Amazon ECR repositories use the full registry and repository URI
-     * (for example,
+     * <p>Images in Amazon ECR Public repositories use the full
+     * <code>registry/repository[:tag]</code> or
+     * <code>registry/repository[@digest]</code> naming conventions. For example,
+     * <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i>
+     * </code>.</p> </li> <li> <p>Images in Amazon ECR repositories use the full
+     * registry and repository URI (for example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
@@ -205,8 +225,12 @@ namespace Model
      * <p>Docker image architecture must match the processor architecture of the
      * compute resources that they're scheduled on. For example, ARM-based Docker
      * images can only run on ARM-based compute resources.</p>  <ul> <li>
-     * <p>Images in Amazon ECR repositories use the full registry and repository URI
-     * (for example,
+     * <p>Images in Amazon ECR Public repositories use the full
+     * <code>registry/repository[:tag]</code> or
+     * <code>registry/repository[@digest]</code> naming conventions. For example,
+     * <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i>
+     * </code>.</p> </li> <li> <p>Images in Amazon ECR repositories use the full
+     * registry and repository URI (for example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
@@ -233,8 +257,12 @@ namespace Model
      * <p>Docker image architecture must match the processor architecture of the
      * compute resources that they're scheduled on. For example, ARM-based Docker
      * images can only run on ARM-based compute resources.</p>  <ul> <li>
-     * <p>Images in Amazon ECR repositories use the full registry and repository URI
-     * (for example,
+     * <p>Images in Amazon ECR Public repositories use the full
+     * <code>registry/repository[:tag]</code> or
+     * <code>registry/repository[@digest]</code> naming conventions. For example,
+     * <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i>
+     * </code>.</p> </li> <li> <p>Images in Amazon ECR repositories use the full
+     * registry and repository URI (for example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
@@ -261,8 +289,12 @@ namespace Model
      * <p>Docker image architecture must match the processor architecture of the
      * compute resources that they're scheduled on. For example, ARM-based Docker
      * images can only run on ARM-based compute resources.</p>  <ul> <li>
-     * <p>Images in Amazon ECR repositories use the full registry and repository URI
-     * (for example,
+     * <p>Images in Amazon ECR Public repositories use the full
+     * <code>registry/repository[:tag]</code> or
+     * <code>registry/repository[@digest]</code> naming conventions. For example,
+     * <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i>
+     * </code>.</p> </li> <li> <p>Images in Amazon ECR repositories use the full
+     * registry and repository URI (for example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>

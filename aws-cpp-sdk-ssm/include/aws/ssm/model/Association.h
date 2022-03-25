@@ -215,7 +215,10 @@ namespace Model
 
 
     /**
-     * <p>The version of the document used in the association.</p>  <p>State
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
      * Manager doesn't support running associations that use a new version of a
      * document if that document is shared from another account. State Manager always
      * runs the <code>default</code> version of a document if shared from another
@@ -227,7 +230,10 @@ namespace Model
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
 
     /**
-     * <p>The version of the document used in the association.</p>  <p>State
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
      * Manager doesn't support running associations that use a new version of a
      * document if that document is shared from another account. State Manager always
      * runs the <code>default</code> version of a document if shared from another
@@ -239,7 +245,10 @@ namespace Model
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
-     * <p>The version of the document used in the association.</p>  <p>State
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
      * Manager doesn't support running associations that use a new version of a
      * document if that document is shared from another account. State Manager always
      * runs the <code>default</code> version of a document if shared from another
@@ -251,7 +260,10 @@ namespace Model
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
-     * <p>The version of the document used in the association.</p>  <p>State
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
      * Manager doesn't support running associations that use a new version of a
      * document if that document is shared from another account. State Manager always
      * runs the <code>default</code> version of a document if shared from another
@@ -263,7 +275,10 @@ namespace Model
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
-     * <p>The version of the document used in the association.</p>  <p>State
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
      * Manager doesn't support running associations that use a new version of a
      * document if that document is shared from another account. State Manager always
      * runs the <code>default</code> version of a document if shared from another
@@ -275,7 +290,10 @@ namespace Model
     inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
 
     /**
-     * <p>The version of the document used in the association.</p>  <p>State
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
      * Manager doesn't support running associations that use a new version of a
      * document if that document is shared from another account. State Manager always
      * runs the <code>default</code> version of a document if shared from another
@@ -287,7 +305,10 @@ namespace Model
     inline Association& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
 
     /**
-     * <p>The version of the document used in the association.</p>  <p>State
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
      * Manager doesn't support running associations that use a new version of a
      * document if that document is shared from another account. State Manager always
      * runs the <code>default</code> version of a document if shared from another
@@ -299,7 +320,10 @@ namespace Model
     inline Association& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the document used in the association.</p>  <p>State
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
      * Manager doesn't support running associations that use a new version of a
      * document if that document is shared from another account. State Manager always
      * runs the <code>default</code> version of a document if shared from another

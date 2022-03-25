@@ -798,25 +798,25 @@ namespace Model
 
         /**
          * <p>Adds or overwrites one or more tags for the specified resource. Tags are
-         * metadata that you can assign to your automations, documents, managed nodes,
-         * maintenance windows, Parameter Store parameters, and patch baselines. Tags
-         * enable you to categorize your resources in different ways, for example, by
-         * purpose, owner, or environment. Each tag consists of a key and an optional
-         * value, both of which you define. For example, you could define a set of tags for
-         * your account's managed nodes that helps you track each node's owner and stack
-         * level. For example:</p> <ul> <li> <p> <code>Key=Owner,Value=DbAdmin</code> </p>
-         * </li> <li> <p> <code>Key=Owner,Value=SysAdmin</code> </p> </li> <li> <p>
+         * metadata that you can assign to your documents, managed nodes, maintenance
+         * windows, Parameter Store parameters, and patch baselines. Tags enable you to
+         * categorize your resources in different ways, for example, by purpose, owner, or
+         * environment. Each tag consists of a key and an optional value, both of which you
+         * define. For example, you could define a set of tags for your account's managed
+         * nodes that helps you track each node's owner and stack level. For example:</p>
+         * <ul> <li> <p> <code>Key=Owner,Value=DbAdmin</code> </p> </li> <li> <p>
+         * <code>Key=Owner,Value=SysAdmin</code> </p> </li> <li> <p>
          * <code>Key=Owner,Value=Dev</code> </p> </li> <li> <p>
          * <code>Key=Stack,Value=Production</code> </p> </li> <li> <p>
          * <code>Key=Stack,Value=Pre-Production</code> </p> </li> <li> <p>
-         * <code>Key=Stack,Value=Test</code> </p> </li> </ul> <p>Most resources can have a
-         * maximum of 50 tags. Automations can have a maximum of 5 tags.</p> <p>We
-         * recommend that you devise a set of tag keys that meets your needs for each
-         * resource type. Using a consistent set of tag keys makes it easier for you to
-         * manage your resources. You can search and filter the resources based on the tags
-         * you add. Tags don't have any semantic meaning to and are interpreted strictly as
-         * a string of characters.</p> <p>For more information about using tags with Amazon
-         * Elastic Compute Cloud (Amazon EC2) instances, see <a
+         * <code>Key=Stack,Value=Test</code> </p> </li> </ul> <p>Each resource can have a
+         * maximum of 50 tags.</p> <p>We recommend that you devise a set of tag keys that
+         * meets your needs for each resource type. Using a consistent set of tag keys
+         * makes it easier for you to manage your resources. You can search and filter the
+         * resources based on the tags you add. Tags don't have any semantic meaning to and
+         * are interpreted strictly as a string of characters. </p> <p>For more information
+         * about using tags with Amazon Elastic Compute Cloud (Amazon EC2) instances, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -827,25 +827,25 @@ namespace Model
 
         /**
          * <p>Adds or overwrites one or more tags for the specified resource. Tags are
-         * metadata that you can assign to your automations, documents, managed nodes,
-         * maintenance windows, Parameter Store parameters, and patch baselines. Tags
-         * enable you to categorize your resources in different ways, for example, by
-         * purpose, owner, or environment. Each tag consists of a key and an optional
-         * value, both of which you define. For example, you could define a set of tags for
-         * your account's managed nodes that helps you track each node's owner and stack
-         * level. For example:</p> <ul> <li> <p> <code>Key=Owner,Value=DbAdmin</code> </p>
-         * </li> <li> <p> <code>Key=Owner,Value=SysAdmin</code> </p> </li> <li> <p>
+         * metadata that you can assign to your documents, managed nodes, maintenance
+         * windows, Parameter Store parameters, and patch baselines. Tags enable you to
+         * categorize your resources in different ways, for example, by purpose, owner, or
+         * environment. Each tag consists of a key and an optional value, both of which you
+         * define. For example, you could define a set of tags for your account's managed
+         * nodes that helps you track each node's owner and stack level. For example:</p>
+         * <ul> <li> <p> <code>Key=Owner,Value=DbAdmin</code> </p> </li> <li> <p>
+         * <code>Key=Owner,Value=SysAdmin</code> </p> </li> <li> <p>
          * <code>Key=Owner,Value=Dev</code> </p> </li> <li> <p>
          * <code>Key=Stack,Value=Production</code> </p> </li> <li> <p>
          * <code>Key=Stack,Value=Pre-Production</code> </p> </li> <li> <p>
-         * <code>Key=Stack,Value=Test</code> </p> </li> </ul> <p>Most resources can have a
-         * maximum of 50 tags. Automations can have a maximum of 5 tags.</p> <p>We
-         * recommend that you devise a set of tag keys that meets your needs for each
-         * resource type. Using a consistent set of tag keys makes it easier for you to
-         * manage your resources. You can search and filter the resources based on the tags
-         * you add. Tags don't have any semantic meaning to and are interpreted strictly as
-         * a string of characters.</p> <p>For more information about using tags with Amazon
-         * Elastic Compute Cloud (Amazon EC2) instances, see <a
+         * <code>Key=Stack,Value=Test</code> </p> </li> </ul> <p>Each resource can have a
+         * maximum of 50 tags.</p> <p>We recommend that you devise a set of tag keys that
+         * meets your needs for each resource type. Using a consistent set of tag keys
+         * makes it easier for you to manage your resources. You can search and filter the
+         * resources based on the tags you add. Tags don't have any semantic meaning to and
+         * are interpreted strictly as a string of characters. </p> <p>For more information
+         * about using tags with Amazon Elastic Compute Cloud (Amazon EC2) instances, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -858,25 +858,25 @@ namespace Model
 
         /**
          * <p>Adds or overwrites one or more tags for the specified resource. Tags are
-         * metadata that you can assign to your automations, documents, managed nodes,
-         * maintenance windows, Parameter Store parameters, and patch baselines. Tags
-         * enable you to categorize your resources in different ways, for example, by
-         * purpose, owner, or environment. Each tag consists of a key and an optional
-         * value, both of which you define. For example, you could define a set of tags for
-         * your account's managed nodes that helps you track each node's owner and stack
-         * level. For example:</p> <ul> <li> <p> <code>Key=Owner,Value=DbAdmin</code> </p>
-         * </li> <li> <p> <code>Key=Owner,Value=SysAdmin</code> </p> </li> <li> <p>
+         * metadata that you can assign to your documents, managed nodes, maintenance
+         * windows, Parameter Store parameters, and patch baselines. Tags enable you to
+         * categorize your resources in different ways, for example, by purpose, owner, or
+         * environment. Each tag consists of a key and an optional value, both of which you
+         * define. For example, you could define a set of tags for your account's managed
+         * nodes that helps you track each node's owner and stack level. For example:</p>
+         * <ul> <li> <p> <code>Key=Owner,Value=DbAdmin</code> </p> </li> <li> <p>
+         * <code>Key=Owner,Value=SysAdmin</code> </p> </li> <li> <p>
          * <code>Key=Owner,Value=Dev</code> </p> </li> <li> <p>
          * <code>Key=Stack,Value=Production</code> </p> </li> <li> <p>
          * <code>Key=Stack,Value=Pre-Production</code> </p> </li> <li> <p>
-         * <code>Key=Stack,Value=Test</code> </p> </li> </ul> <p>Most resources can have a
-         * maximum of 50 tags. Automations can have a maximum of 5 tags.</p> <p>We
-         * recommend that you devise a set of tag keys that meets your needs for each
-         * resource type. Using a consistent set of tag keys makes it easier for you to
-         * manage your resources. You can search and filter the resources based on the tags
-         * you add. Tags don't have any semantic meaning to and are interpreted strictly as
-         * a string of characters.</p> <p>For more information about using tags with Amazon
-         * Elastic Compute Cloud (Amazon EC2) instances, see <a
+         * <code>Key=Stack,Value=Test</code> </p> </li> </ul> <p>Each resource can have a
+         * maximum of 50 tags.</p> <p>We recommend that you devise a set of tag keys that
+         * meets your needs for each resource type. Using a consistent set of tag keys
+         * makes it easier for you to manage your resources. You can search and filter the
+         * resources based on the tags you add. Tags don't have any semantic meaning to and
+         * are interpreted strictly as a string of characters. </p> <p>For more information
+         * about using tags with Amazon Elastic Compute Cloud (Amazon EC2) instances, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -3453,24 +3453,28 @@ namespace Model
         virtual void GetMaintenanceWindowExecutionTaskInvocationAsync(const Model::GetMaintenanceWindowExecutionTaskInvocationRequest& request, const GetMaintenanceWindowExecutionTaskInvocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tasks in a maintenance window.</p>  <p>For maintenance window
-         * tasks without a specified target, you can't supply values for
+         * <p>Retrieves the details of a maintenance window task.</p>  <p>For
+         * maintenance window tasks without a specified target, you can't supply values for
          * <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the
          * system inserts a placeholder value of <code>1</code>, which may be reported in
          * the response to this command. These values don't affect the running of your task
-         * and can be ignored.</p> <p><h3>See Also:</h3>   <a
+         * and can be ignored.</p>  <p>To retrieve a list of tasks in a maintenance
+         * window, instead use the <a>DescribeMaintenanceWindowTasks</a>
+         * command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMaintenanceWindowTaskOutcome GetMaintenanceWindowTask(const Model::GetMaintenanceWindowTaskRequest& request) const;
 
         /**
-         * <p>Lists the tasks in a maintenance window.</p>  <p>For maintenance window
-         * tasks without a specified target, you can't supply values for
+         * <p>Retrieves the details of a maintenance window task.</p>  <p>For
+         * maintenance window tasks without a specified target, you can't supply values for
          * <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the
          * system inserts a placeholder value of <code>1</code>, which may be reported in
          * the response to this command. These values don't affect the running of your task
-         * and can be ignored.</p> <p><h3>See Also:</h3>   <a
+         * and can be ignored.</p>  <p>To retrieve a list of tasks in a maintenance
+         * window, instead use the <a>DescribeMaintenanceWindowTasks</a>
+         * command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask">AWS
          * API Reference</a></p>
          *
@@ -3479,12 +3483,14 @@ namespace Model
         virtual Model::GetMaintenanceWindowTaskOutcomeCallable GetMaintenanceWindowTaskCallable(const Model::GetMaintenanceWindowTaskRequest& request) const;
 
         /**
-         * <p>Lists the tasks in a maintenance window.</p>  <p>For maintenance window
-         * tasks without a specified target, you can't supply values for
+         * <p>Retrieves the details of a maintenance window task.</p>  <p>For
+         * maintenance window tasks without a specified target, you can't supply values for
          * <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the
          * system inserts a placeholder value of <code>1</code>, which may be reported in
          * the response to this command. These values don't affect the running of your task
-         * and can be ignored.</p> <p><h3>See Also:</h3>   <a
+         * and can be ignored.</p>  <p>To retrieve a list of tasks in a maintenance
+         * window, instead use the <a>DescribeMaintenanceWindowTasks</a>
+         * command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask">AWS
          * API Reference</a></p>
          *
@@ -5361,14 +5367,22 @@ namespace Model
         virtual void UpdateDocumentAsync(const Model::UpdateDocumentRequest& request, const UpdateDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Set the default version of a document. </p><p><h3>See Also:</h3>   <a
+         * <p>Set the default version of a document. </p>  <p>If you change a
+         * document version for a State Manager association, Systems Manager immediately
+         * runs the association unless you previously specifed the
+         * <code>apply-only-at-cron-interval</code> parameter.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateDocumentDefaultVersionOutcome UpdateDocumentDefaultVersion(const Model::UpdateDocumentDefaultVersionRequest& request) const;
 
         /**
-         * <p>Set the default version of a document. </p><p><h3>See Also:</h3>   <a
+         * <p>Set the default version of a document. </p>  <p>If you change a
+         * document version for a State Manager association, Systems Manager immediately
+         * runs the association unless you previously specifed the
+         * <code>apply-only-at-cron-interval</code> parameter.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion">AWS
          * API Reference</a></p>
          *
@@ -5377,7 +5391,11 @@ namespace Model
         virtual Model::UpdateDocumentDefaultVersionOutcomeCallable UpdateDocumentDefaultVersionCallable(const Model::UpdateDocumentDefaultVersionRequest& request) const;
 
         /**
-         * <p>Set the default version of a document. </p><p><h3>See Also:</h3>   <a
+         * <p>Set the default version of a document. </p>  <p>If you change a
+         * document version for a State Manager association, Systems Manager immediately
+         * runs the association unless you previously specifed the
+         * <code>apply-only-at-cron-interval</code> parameter.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion">AWS
          * API Reference</a></p>
          *

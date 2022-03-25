@@ -14,6 +14,7 @@
 #include <aws/ec2/model/AnalysisLoadBalancerTarget.h>
 #include <aws/ec2/model/AnalysisRouteTableRoute.h>
 #include <aws/ec2/model/AnalysisSecurityGroupRule.h>
+#include <aws/ec2/model/TransitGatewayRouteTableRoute.h>
 #include <aws/ec2/model/PortRange.h>
 #include <utility>
 
@@ -447,50 +448,50 @@ namespace Model
 
 
     /**
-     * <p>The direction. The following are possible values:</p> <ul> <li> <p>egress</p>
-     * </li> <li> <p>ingress</p> </li> </ul>
+     * <p>The direction. The following are the possible values:</p> <ul> <li>
+     * <p>egress</p> </li> <li> <p>ingress</p> </li> </ul>
      */
     inline const Aws::String& GetDirection() const{ return m_direction; }
 
     /**
-     * <p>The direction. The following are possible values:</p> <ul> <li> <p>egress</p>
-     * </li> <li> <p>ingress</p> </li> </ul>
+     * <p>The direction. The following are the possible values:</p> <ul> <li>
+     * <p>egress</p> </li> <li> <p>ingress</p> </li> </ul>
      */
     inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
 
     /**
-     * <p>The direction. The following are possible values:</p> <ul> <li> <p>egress</p>
-     * </li> <li> <p>ingress</p> </li> </ul>
+     * <p>The direction. The following are the possible values:</p> <ul> <li>
+     * <p>egress</p> </li> <li> <p>ingress</p> </li> </ul>
      */
     inline void SetDirection(const Aws::String& value) { m_directionHasBeenSet = true; m_direction = value; }
 
     /**
-     * <p>The direction. The following are possible values:</p> <ul> <li> <p>egress</p>
-     * </li> <li> <p>ingress</p> </li> </ul>
+     * <p>The direction. The following are the possible values:</p> <ul> <li>
+     * <p>egress</p> </li> <li> <p>ingress</p> </li> </ul>
      */
     inline void SetDirection(Aws::String&& value) { m_directionHasBeenSet = true; m_direction = std::move(value); }
 
     /**
-     * <p>The direction. The following are possible values:</p> <ul> <li> <p>egress</p>
-     * </li> <li> <p>ingress</p> </li> </ul>
+     * <p>The direction. The following are the possible values:</p> <ul> <li>
+     * <p>egress</p> </li> <li> <p>ingress</p> </li> </ul>
      */
     inline void SetDirection(const char* value) { m_directionHasBeenSet = true; m_direction.assign(value); }
 
     /**
-     * <p>The direction. The following are possible values:</p> <ul> <li> <p>egress</p>
-     * </li> <li> <p>ingress</p> </li> </ul>
+     * <p>The direction. The following are the possible values:</p> <ul> <li>
+     * <p>egress</p> </li> <li> <p>ingress</p> </li> </ul>
      */
     inline Explanation& WithDirection(const Aws::String& value) { SetDirection(value); return *this;}
 
     /**
-     * <p>The direction. The following are possible values:</p> <ul> <li> <p>egress</p>
-     * </li> <li> <p>ingress</p> </li> </ul>
+     * <p>The direction. The following are the possible values:</p> <ul> <li>
+     * <p>egress</p> </li> <li> <p>ingress</p> </li> </ul>
      */
     inline Explanation& WithDirection(Aws::String&& value) { SetDirection(std::move(value)); return *this;}
 
     /**
-     * <p>The direction. The following are possible values:</p> <ul> <li> <p>egress</p>
-     * </li> <li> <p>ingress</p> </li> </ul>
+     * <p>The direction. The following are the possible values:</p> <ul> <li>
+     * <p>egress</p> </li> <li> <p>ingress</p> </li> </ul>
      */
     inline Explanation& WithDirection(const char* value) { SetDirection(value); return *this;}
 
@@ -1582,6 +1583,130 @@ namespace Model
      */
     inline Explanation& WithVpnGateway(AnalysisComponent&& value) { SetVpnGateway(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The transit gateway.</p>
+     */
+    inline const AnalysisComponent& GetTransitGateway() const{ return m_transitGateway; }
+
+    /**
+     * <p>The transit gateway.</p>
+     */
+    inline bool TransitGatewayHasBeenSet() const { return m_transitGatewayHasBeenSet; }
+
+    /**
+     * <p>The transit gateway.</p>
+     */
+    inline void SetTransitGateway(const AnalysisComponent& value) { m_transitGatewayHasBeenSet = true; m_transitGateway = value; }
+
+    /**
+     * <p>The transit gateway.</p>
+     */
+    inline void SetTransitGateway(AnalysisComponent&& value) { m_transitGatewayHasBeenSet = true; m_transitGateway = std::move(value); }
+
+    /**
+     * <p>The transit gateway.</p>
+     */
+    inline Explanation& WithTransitGateway(const AnalysisComponent& value) { SetTransitGateway(value); return *this;}
+
+    /**
+     * <p>The transit gateway.</p>
+     */
+    inline Explanation& WithTransitGateway(AnalysisComponent&& value) { SetTransitGateway(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The transit gateway route table.</p>
+     */
+    inline const AnalysisComponent& GetTransitGatewayRouteTable() const{ return m_transitGatewayRouteTable; }
+
+    /**
+     * <p>The transit gateway route table.</p>
+     */
+    inline bool TransitGatewayRouteTableHasBeenSet() const { return m_transitGatewayRouteTableHasBeenSet; }
+
+    /**
+     * <p>The transit gateway route table.</p>
+     */
+    inline void SetTransitGatewayRouteTable(const AnalysisComponent& value) { m_transitGatewayRouteTableHasBeenSet = true; m_transitGatewayRouteTable = value; }
+
+    /**
+     * <p>The transit gateway route table.</p>
+     */
+    inline void SetTransitGatewayRouteTable(AnalysisComponent&& value) { m_transitGatewayRouteTableHasBeenSet = true; m_transitGatewayRouteTable = std::move(value); }
+
+    /**
+     * <p>The transit gateway route table.</p>
+     */
+    inline Explanation& WithTransitGatewayRouteTable(const AnalysisComponent& value) { SetTransitGatewayRouteTable(value); return *this;}
+
+    /**
+     * <p>The transit gateway route table.</p>
+     */
+    inline Explanation& WithTransitGatewayRouteTable(AnalysisComponent&& value) { SetTransitGatewayRouteTable(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The transit gateway route table route.</p>
+     */
+    inline const TransitGatewayRouteTableRoute& GetTransitGatewayRouteTableRoute() const{ return m_transitGatewayRouteTableRoute; }
+
+    /**
+     * <p>The transit gateway route table route.</p>
+     */
+    inline bool TransitGatewayRouteTableRouteHasBeenSet() const { return m_transitGatewayRouteTableRouteHasBeenSet; }
+
+    /**
+     * <p>The transit gateway route table route.</p>
+     */
+    inline void SetTransitGatewayRouteTableRoute(const TransitGatewayRouteTableRoute& value) { m_transitGatewayRouteTableRouteHasBeenSet = true; m_transitGatewayRouteTableRoute = value; }
+
+    /**
+     * <p>The transit gateway route table route.</p>
+     */
+    inline void SetTransitGatewayRouteTableRoute(TransitGatewayRouteTableRoute&& value) { m_transitGatewayRouteTableRouteHasBeenSet = true; m_transitGatewayRouteTableRoute = std::move(value); }
+
+    /**
+     * <p>The transit gateway route table route.</p>
+     */
+    inline Explanation& WithTransitGatewayRouteTableRoute(const TransitGatewayRouteTableRoute& value) { SetTransitGatewayRouteTableRoute(value); return *this;}
+
+    /**
+     * <p>The transit gateway route table route.</p>
+     */
+    inline Explanation& WithTransitGatewayRouteTableRoute(TransitGatewayRouteTableRoute&& value) { SetTransitGatewayRouteTableRoute(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The transit gateway attachment.</p>
+     */
+    inline const AnalysisComponent& GetTransitGatewayAttachment() const{ return m_transitGatewayAttachment; }
+
+    /**
+     * <p>The transit gateway attachment.</p>
+     */
+    inline bool TransitGatewayAttachmentHasBeenSet() const { return m_transitGatewayAttachmentHasBeenSet; }
+
+    /**
+     * <p>The transit gateway attachment.</p>
+     */
+    inline void SetTransitGatewayAttachment(const AnalysisComponent& value) { m_transitGatewayAttachmentHasBeenSet = true; m_transitGatewayAttachment = value; }
+
+    /**
+     * <p>The transit gateway attachment.</p>
+     */
+    inline void SetTransitGatewayAttachment(AnalysisComponent&& value) { m_transitGatewayAttachmentHasBeenSet = true; m_transitGatewayAttachment = std::move(value); }
+
+    /**
+     * <p>The transit gateway attachment.</p>
+     */
+    inline Explanation& WithTransitGatewayAttachment(const AnalysisComponent& value) { SetTransitGatewayAttachment(value); return *this;}
+
+    /**
+     * <p>The transit gateway attachment.</p>
+     */
+    inline Explanation& WithTransitGatewayAttachment(AnalysisComponent&& value) { SetTransitGatewayAttachment(std::move(value)); return *this;}
+
   private:
 
     AnalysisComponent m_acl;
@@ -1718,6 +1843,18 @@ namespace Model
 
     AnalysisComponent m_vpnGateway;
     bool m_vpnGatewayHasBeenSet;
+
+    AnalysisComponent m_transitGateway;
+    bool m_transitGatewayHasBeenSet;
+
+    AnalysisComponent m_transitGatewayRouteTable;
+    bool m_transitGatewayRouteTableHasBeenSet;
+
+    TransitGatewayRouteTableRoute m_transitGatewayRouteTableRoute;
+    bool m_transitGatewayRouteTableRouteHasBeenSet;
+
+    AnalysisComponent m_transitGatewayAttachment;
+    bool m_transitGatewayAttachmentHasBeenSet;
   };
 
 } // namespace Model

@@ -173,33 +173,33 @@ namespace Model
 
 
     /**
-     * <p>For jobs run on EC2 resources that didn't specify memory requirements using
-     * <code>resourceRequirements</code>, the number of MiB of memory reserved for the
-     * job. For other jobs, including all run on Fargate resources, see
+     * <p>For jobs running on EC2 resources that didn't specify memory requirements
+     * using <code>resourceRequirements</code>, the number of MiB of memory reserved
+     * for the job. For other jobs, including all run on Fargate resources, see
      * <code>resourceRequirements</code>.</p>
      */
     inline int GetMemory() const{ return m_memory; }
 
     /**
-     * <p>For jobs run on EC2 resources that didn't specify memory requirements using
-     * <code>resourceRequirements</code>, the number of MiB of memory reserved for the
-     * job. For other jobs, including all run on Fargate resources, see
+     * <p>For jobs running on EC2 resources that didn't specify memory requirements
+     * using <code>resourceRequirements</code>, the number of MiB of memory reserved
+     * for the job. For other jobs, including all run on Fargate resources, see
      * <code>resourceRequirements</code>.</p>
      */
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
 
     /**
-     * <p>For jobs run on EC2 resources that didn't specify memory requirements using
-     * <code>resourceRequirements</code>, the number of MiB of memory reserved for the
-     * job. For other jobs, including all run on Fargate resources, see
+     * <p>For jobs running on EC2 resources that didn't specify memory requirements
+     * using <code>resourceRequirements</code>, the number of MiB of memory reserved
+     * for the job. For other jobs, including all run on Fargate resources, see
      * <code>resourceRequirements</code>.</p>
      */
     inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
 
     /**
-     * <p>For jobs run on EC2 resources that didn't specify memory requirements using
-     * <code>resourceRequirements</code>, the number of MiB of memory reserved for the
-     * job. For other jobs, including all run on Fargate resources, see
+     * <p>For jobs running on EC2 resources that didn't specify memory requirements
+     * using <code>resourceRequirements</code>, the number of MiB of memory reserved
+     * for the job. For other jobs, including all run on Fargate resources, see
      * <code>resourceRequirements</code>.</p>
      */
     inline ContainerDetail& WithMemory(int value) { SetMemory(value); return *this;}

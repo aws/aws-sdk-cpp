@@ -887,7 +887,7 @@ namespace Model
          * <code>resourceRequirements</code> objects in the job definition are the
          * exception. They can't be overridden this way using the <code>memory</code> and
          * <code>vcpus</code> parameters. Rather, you must specify updates to job
-         * definition parameters in a <code>ResourceRequirements</code> object that's
+         * definition parameters in a <code>resourceRequirements</code> object that's
          * included in the <code>containerOverrides</code> parameter.</p>  <p>Job
          * queues with a scheduling policy are limited to 500 active fair share identifiers
          * at a time. </p>   <p>Jobs that run on Fargate resources can't
@@ -906,7 +906,7 @@ namespace Model
          * <code>resourceRequirements</code> objects in the job definition are the
          * exception. They can't be overridden this way using the <code>memory</code> and
          * <code>vcpus</code> parameters. Rather, you must specify updates to job
-         * definition parameters in a <code>ResourceRequirements</code> object that's
+         * definition parameters in a <code>resourceRequirements</code> object that's
          * included in the <code>containerOverrides</code> parameter.</p>  <p>Job
          * queues with a scheduling policy are limited to 500 active fair share identifiers
          * at a time. </p>   <p>Jobs that run on Fargate resources can't
@@ -927,7 +927,7 @@ namespace Model
          * <code>resourceRequirements</code> objects in the job definition are the
          * exception. They can't be overridden this way using the <code>memory</code> and
          * <code>vcpus</code> parameters. Rather, you must specify updates to job
-         * definition parameters in a <code>ResourceRequirements</code> object that's
+         * definition parameters in a <code>resourceRequirements</code> object that's
          * included in the <code>containerOverrides</code> parameter.</p>  <p>Job
          * queues with a scheduling policy are limited to 500 active fair share identifiers
          * at a time. </p>   <p>Jobs that run on Fargate resources can't

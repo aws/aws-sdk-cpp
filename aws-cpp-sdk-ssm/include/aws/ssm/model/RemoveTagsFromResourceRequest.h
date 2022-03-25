@@ -94,8 +94,7 @@ namespace Model
     /**
      * <p>The ID of the resource from which you want to remove tags. For example:</p>
      * <p>ManagedInstance: mi-012345abcde</p> <p>MaintenanceWindow: mw-012345abcde</p>
-     * <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code>
-     * </p> <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
+     * <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
      * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
      * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
      * strings that come after the word <code>opsmetadata</code> in the ARN. For
@@ -113,8 +112,7 @@ namespace Model
     /**
      * <p>The ID of the resource from which you want to remove tags. For example:</p>
      * <p>ManagedInstance: mi-012345abcde</p> <p>MaintenanceWindow: mw-012345abcde</p>
-     * <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code>
-     * </p> <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
+     * <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
      * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
      * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
      * strings that come after the word <code>opsmetadata</code> in the ARN. For
@@ -132,8 +130,7 @@ namespace Model
     /**
      * <p>The ID of the resource from which you want to remove tags. For example:</p>
      * <p>ManagedInstance: mi-012345abcde</p> <p>MaintenanceWindow: mw-012345abcde</p>
-     * <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code>
-     * </p> <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
+     * <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
      * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
      * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
      * strings that come after the word <code>opsmetadata</code> in the ARN. For
@@ -151,8 +148,7 @@ namespace Model
     /**
      * <p>The ID of the resource from which you want to remove tags. For example:</p>
      * <p>ManagedInstance: mi-012345abcde</p> <p>MaintenanceWindow: mw-012345abcde</p>
-     * <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code>
-     * </p> <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
+     * <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
      * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
      * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
      * strings that come after the word <code>opsmetadata</code> in the ARN. For
@@ -170,8 +166,7 @@ namespace Model
     /**
      * <p>The ID of the resource from which you want to remove tags. For example:</p>
      * <p>ManagedInstance: mi-012345abcde</p> <p>MaintenanceWindow: mw-012345abcde</p>
-     * <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code>
-     * </p> <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
+     * <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
      * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
      * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
      * strings that come after the word <code>opsmetadata</code> in the ARN. For
@@ -189,8 +184,7 @@ namespace Model
     /**
      * <p>The ID of the resource from which you want to remove tags. For example:</p>
      * <p>ManagedInstance: mi-012345abcde</p> <p>MaintenanceWindow: mw-012345abcde</p>
-     * <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code>
-     * </p> <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
+     * <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
      * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
      * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
      * strings that come after the word <code>opsmetadata</code> in the ARN. For
@@ -208,8 +202,7 @@ namespace Model
     /**
      * <p>The ID of the resource from which you want to remove tags. For example:</p>
      * <p>ManagedInstance: mi-012345abcde</p> <p>MaintenanceWindow: mw-012345abcde</p>
-     * <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code>
-     * </p> <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
+     * <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
      * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
      * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
      * strings that come after the word <code>opsmetadata</code> in the ARN. For
@@ -227,8 +220,7 @@ namespace Model
     /**
      * <p>The ID of the resource from which you want to remove tags. For example:</p>
      * <p>ManagedInstance: mi-012345abcde</p> <p>MaintenanceWindow: mw-012345abcde</p>
-     * <p> <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code>
-     * </p> <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
+     * <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
      * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
      * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
      * strings that come after the word <code>opsmetadata</code> in the ARN. For
