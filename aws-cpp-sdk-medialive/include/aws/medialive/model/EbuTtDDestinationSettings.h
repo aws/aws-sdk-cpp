@@ -40,58 +40,50 @@ namespace Model
 
 
     /**
-     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in
-     * an output. Complete this field if you want to include the name of the copyright
-     * holder in the copyright metadata tag in the TTML
+     * Complete this field if you want to include the name of the copyright holder in
+     * the copyright tag in the captions metadata.
      */
     inline const Aws::String& GetCopyrightHolder() const{ return m_copyrightHolder; }
 
     /**
-     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in
-     * an output. Complete this field if you want to include the name of the copyright
-     * holder in the copyright metadata tag in the TTML
+     * Complete this field if you want to include the name of the copyright holder in
+     * the copyright tag in the captions metadata.
      */
     inline bool CopyrightHolderHasBeenSet() const { return m_copyrightHolderHasBeenSet; }
 
     /**
-     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in
-     * an output. Complete this field if you want to include the name of the copyright
-     * holder in the copyright metadata tag in the TTML
+     * Complete this field if you want to include the name of the copyright holder in
+     * the copyright tag in the captions metadata.
      */
     inline void SetCopyrightHolder(const Aws::String& value) { m_copyrightHolderHasBeenSet = true; m_copyrightHolder = value; }
 
     /**
-     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in
-     * an output. Complete this field if you want to include the name of the copyright
-     * holder in the copyright metadata tag in the TTML
+     * Complete this field if you want to include the name of the copyright holder in
+     * the copyright tag in the captions metadata.
      */
     inline void SetCopyrightHolder(Aws::String&& value) { m_copyrightHolderHasBeenSet = true; m_copyrightHolder = std::move(value); }
 
     /**
-     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in
-     * an output. Complete this field if you want to include the name of the copyright
-     * holder in the copyright metadata tag in the TTML
+     * Complete this field if you want to include the name of the copyright holder in
+     * the copyright tag in the captions metadata.
      */
     inline void SetCopyrightHolder(const char* value) { m_copyrightHolderHasBeenSet = true; m_copyrightHolder.assign(value); }
 
     /**
-     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in
-     * an output. Complete this field if you want to include the name of the copyright
-     * holder in the copyright metadata tag in the TTML
+     * Complete this field if you want to include the name of the copyright holder in
+     * the copyright tag in the captions metadata.
      */
     inline EbuTtDDestinationSettings& WithCopyrightHolder(const Aws::String& value) { SetCopyrightHolder(value); return *this;}
 
     /**
-     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in
-     * an output. Complete this field if you want to include the name of the copyright
-     * holder in the copyright metadata tag in the TTML
+     * Complete this field if you want to include the name of the copyright holder in
+     * the copyright tag in the captions metadata.
      */
     inline EbuTtDDestinationSettings& WithCopyrightHolder(Aws::String&& value) { SetCopyrightHolder(std::move(value)); return *this;}
 
     /**
-     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in
-     * an output. Complete this field if you want to include the name of the copyright
-     * holder in the copyright metadata tag in the TTML
+     * Complete this field if you want to include the name of the copyright holder in
+     * the copyright tag in the captions metadata.
      */
     inline EbuTtDDestinationSettings& WithCopyrightHolder(const char* value) { SetCopyrightHolder(value); return *this;}
 

@@ -163,7 +163,7 @@ namespace Model
     typedef std::function<void(const ACMPCAClient*, const Model::UpdateCertificateAuthorityRequest&, const Model::UpdateCertificateAuthorityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCertificateAuthorityResponseReceivedHandler;
 
   /**
-   * <p>This is the <i>Amazon Web Services Private Certificate Authority API
+   * <p>This is the <i>Certificate Manager Private Certificate Authority (PCA) API
    * Reference</i>. It provides descriptions, syntax, and usage examples for each of
    * the actions and data types involved in creating and managing a private
    * certificate authority (CA) for your organization.</p> <p>The documentation for
@@ -171,18 +171,16 @@ namespace Model
    * Alternatively, you can use one of the Amazon Web Services SDKs to access an API
    * that is tailored to the programming language or platform that you prefer. For
    * more information, see <a href="https://aws.amazon.com/tools/#SDKs">Amazon Web
-   * Services SDKs</a>.</p> <p>Each Amazon Web Services Private CA API operation has
-   * a quota that determines the number of times the operation can be called per
-   * second. Amazon Web Services Private CA throttles API requests at different rates
-   * depending on the operation. Throttling means that Amazon Web Services Private CA
-   * rejects an otherwise valid request because the request exceeds the operation's
-   * quota for the number of requests per second. When a request is throttled, Amazon
-   * Web Services Private CA returns a <a
+   * Services SDKs</a>.</p> <p>Each ACM Private CA API operation has a quota that
+   * determines the number of times the operation can be called per second. ACM
+   * Private CA throttles API requests at different rates depending on the operation.
+   * Throttling means that ACM Private CA rejects an otherwise valid request because
+   * the request exceeds the operation's quota for the number of requests per second.
+   * When a request is throttled, ACM Private CA returns a <a
    * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/CommonErrors.html">ThrottlingException</a>
-   * error. Amazon Web Services Private CA does not guarantee a minimum request rate
-   * for APIs. </p> <p>To see an up-to-date list of your Amazon Web Services Private
-   * CA quotas, or to request a quota increase, log into your Amazon Web Services
-   * account and visit the <a
+   * error. ACM Private CA does not guarantee a minimum request rate for APIs. </p>
+   * <p>To see an up-to-date list of your ACM Private CA quotas, or to request a
+   * quota increase, log into your Amazon Web Services account and visit the <a
    * href="https://console.aws.amazon.com/servicequotas/">Service Quotas</a>
    * console.</p>
    */
@@ -225,9 +223,8 @@ namespace Model
          * expiration period in days (the validity period of the CRL), the Amazon S3 bucket
          * that will contain the CRL, and a CNAME alias for the S3 bucket that is included
          * in certificates issued by the CA. If successful, this action returns the Amazon
-         * Resource Name (ARN) of the CA.</p> <p>Amazon Web Services Private CA assets that
-         * are stored in Amazon S3 can be protected with encryption. For more information,
-         * see <a
+         * Resource Name (ARN) of the CA.</p> <p>ACM Private CA assets that are stored in
+         * Amazon S3 can be protected with encryption. For more information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting
          * Your CRLs</a>.</p>  <p>Both PCA and the IAM principal must have permission
          * to write to the S3 bucket that you specify. If the IAM principal making the call
@@ -252,9 +249,8 @@ namespace Model
          * expiration period in days (the validity period of the CRL), the Amazon S3 bucket
          * that will contain the CRL, and a CNAME alias for the S3 bucket that is included
          * in certificates issued by the CA. If successful, this action returns the Amazon
-         * Resource Name (ARN) of the CA.</p> <p>Amazon Web Services Private CA assets that
-         * are stored in Amazon S3 can be protected with encryption. For more information,
-         * see <a
+         * Resource Name (ARN) of the CA.</p> <p>ACM Private CA assets that are stored in
+         * Amazon S3 can be protected with encryption. For more information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting
          * Your CRLs</a>.</p>  <p>Both PCA and the IAM principal must have permission
          * to write to the S3 bucket that you specify. If the IAM principal making the call
@@ -281,9 +277,8 @@ namespace Model
          * expiration period in days (the validity period of the CRL), the Amazon S3 bucket
          * that will contain the CRL, and a CNAME alias for the S3 bucket that is included
          * in certificates issued by the CA. If successful, this action returns the Amazon
-         * Resource Name (ARN) of the CA.</p> <p>Amazon Web Services Private CA assets that
-         * are stored in Amazon S3 can be protected with encryption. For more information,
-         * see <a
+         * Resource Name (ARN) of the CA.</p> <p>ACM Private CA assets that are stored in
+         * Amazon S3 can be protected with encryption. For more information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting
          * Your CRLs</a>.</p>  <p>Both PCA and the IAM principal must have permission
          * to write to the S3 bucket that you specify. If the IAM principal making the call
@@ -310,9 +305,9 @@ namespace Model
          * making the call does not have permission to write to the bucket, then an
          * exception is thrown. For more information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html#s3-policies">Access
-         * policies for CRLs in Amazon S3</a>.</p>  <p>Amazon Web Services Private
-         * CA assets that are stored in Amazon S3 can be protected with encryption. For
-         * more information, see <a
+         * policies for CRLs in Amazon S3</a>.</p>  <p>ACM Private CA assets that
+         * are stored in Amazon S3 can be protected with encryption. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuditReport.html#audit-report-encryption">Encrypting
          * Your Audit Reports</a>.</p>  <p>You can generate a maximum of one report
          * every 30 minutes.</p> <p><h3>See Also:</h3>   <a
@@ -333,9 +328,9 @@ namespace Model
          * making the call does not have permission to write to the bucket, then an
          * exception is thrown. For more information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html#s3-policies">Access
-         * policies for CRLs in Amazon S3</a>.</p>  <p>Amazon Web Services Private
-         * CA assets that are stored in Amazon S3 can be protected with encryption. For
-         * more information, see <a
+         * policies for CRLs in Amazon S3</a>.</p>  <p>ACM Private CA assets that
+         * are stored in Amazon S3 can be protected with encryption. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuditReport.html#audit-report-encryption">Encrypting
          * Your Audit Reports</a>.</p>  <p>You can generate a maximum of one report
          * every 30 minutes.</p> <p><h3>See Also:</h3>   <a
@@ -358,9 +353,9 @@ namespace Model
          * making the call does not have permission to write to the bucket, then an
          * exception is thrown. For more information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html#s3-policies">Access
-         * policies for CRLs in Amazon S3</a>.</p>  <p>Amazon Web Services Private
-         * CA assets that are stored in Amazon S3 can be protected with encryption. For
-         * more information, see <a
+         * policies for CRLs in Amazon S3</a>.</p>  <p>ACM Private CA assets that
+         * are stored in Amazon S3 can be protected with encryption. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuditReport.html#audit-report-encryption">Encrypting
          * Your Audit Reports</a>.</p>  <p>You can generate a maximum of one report
          * every 30 minutes.</p> <p><h3>See Also:</h3>   <a
@@ -390,8 +385,8 @@ namespace Model
          * resource-based policy to enable cross-account issuance and renewals. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
-         * Resource Based Policy with Amazon Web Services Private CA</a>.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * Resource Based Policy with ACM Private CA</a>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreatePermission">AWS
          * API Reference</a></p>
          */
@@ -416,8 +411,8 @@ namespace Model
          * resource-based policy to enable cross-account issuance and renewals. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
-         * Resource Based Policy with Amazon Web Services Private CA</a>.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * Resource Based Policy with ACM Private CA</a>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreatePermission">AWS
          * API Reference</a></p>
          *
@@ -444,8 +439,8 @@ namespace Model
          * resource-based policy to enable cross-account issuance and renewals. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
-         * Resource Based Policy with Amazon Web Services Private CA</a>.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * Resource Based Policy with ACM Private CA</a>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreatePermission">AWS
          * API Reference</a></p>
          *
@@ -466,9 +461,9 @@ namespace Model
          * <code>DISABLED</code>. </p> <p>Additionally, you can delete a CA if you are
          * waiting for it to be created (that is, the status of the CA is
          * <code>CREATING</code>). You can also delete it if the CA has been created but
-         * you haven't yet imported the signed certificate into Amazon Web Services Private
-         * CA (that is, the status of the CA is <code>PENDING_CERTIFICATE</code>). </p>
-         * <p>When you successfully call <a
+         * you haven't yet imported the signed certificate into ACM Private CA (that is,
+         * the status of the CA is <code>PENDING_CERTIFICATE</code>). </p> <p>When you
+         * successfully call <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthority.html">DeleteCertificateAuthority</a>,
          * the CA's status changes to <code>DELETED</code>. However, the CA won't be
          * permanently deleted until the restoration period has passed. By default, if you
@@ -498,9 +493,9 @@ namespace Model
          * <code>DISABLED</code>. </p> <p>Additionally, you can delete a CA if you are
          * waiting for it to be created (that is, the status of the CA is
          * <code>CREATING</code>). You can also delete it if the CA has been created but
-         * you haven't yet imported the signed certificate into Amazon Web Services Private
-         * CA (that is, the status of the CA is <code>PENDING_CERTIFICATE</code>). </p>
-         * <p>When you successfully call <a
+         * you haven't yet imported the signed certificate into ACM Private CA (that is,
+         * the status of the CA is <code>PENDING_CERTIFICATE</code>). </p> <p>When you
+         * successfully call <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthority.html">DeleteCertificateAuthority</a>,
          * the CA's status changes to <code>DELETED</code>. However, the CA won't be
          * permanently deleted until the restoration period has passed. By default, if you
@@ -532,9 +527,9 @@ namespace Model
          * <code>DISABLED</code>. </p> <p>Additionally, you can delete a CA if you are
          * waiting for it to be created (that is, the status of the CA is
          * <code>CREATING</code>). You can also delete it if the CA has been created but
-         * you haven't yet imported the signed certificate into Amazon Web Services Private
-         * CA (that is, the status of the CA is <code>PENDING_CERTIFICATE</code>). </p>
-         * <p>When you successfully call <a
+         * you haven't yet imported the signed certificate into ACM Private CA (that is,
+         * the status of the CA is <code>PENDING_CERTIFICATE</code>). </p> <p>When you
+         * successfully call <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthority.html">DeleteCertificateAuthority</a>,
          * the CA's status changes to <code>DELETED</code>. However, the CA won't be
          * permanently deleted until the restoration period has passed. By default, if you
@@ -574,8 +569,8 @@ namespace Model
          * resource-based policy to enable cross-account issuance and renewals. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
-         * Resource Based Policy with Amazon Web Services Private CA</a>.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * Resource Based Policy with ACM Private CA</a>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeletePermission">AWS
          * API Reference</a></p>
          */
@@ -602,8 +597,8 @@ namespace Model
          * resource-based policy to enable cross-account issuance and renewals. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
-         * Resource Based Policy with Amazon Web Services Private CA</a>.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * Resource Based Policy with ACM Private CA</a>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeletePermission">AWS
          * API Reference</a></p>
          *
@@ -632,8 +627,8 @@ namespace Model
          * resource-based policy to enable cross-account issuance and renewals. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
-         * Resource Based Policy with Amazon Web Services Private CA</a>.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * Resource Based Policy with ACM Private CA</a>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeletePermission">AWS
          * API Reference</a></p>
          *
@@ -659,13 +654,12 @@ namespace Model
          * Policies are under the control of a CA administrator. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
-         * Resource Based Policy with Amazon Web Services Private CA</a>.</p> </li> <li>
-         * <p>A policy permits a user of Certificate Manager (ACM) to issue ACM
-         * certificates signed by a CA in another account.</p> </li> <li> <p>For ACM to
-         * manage automatic renewal of these certificates, the ACM user must configure a
-         * Service Linked Role (SLR). The SLR allows the ACM service to assume the identity
-         * of the user, subject to confirmation against the Amazon Web Services Private CA
-         * policy. For more information, see <a
+         * Resource Based Policy with ACM Private CA</a>.</p> </li> <li> <p>A policy
+         * permits a user of Certificate Manager (ACM) to issue ACM certificates signed by
+         * a CA in another account.</p> </li> <li> <p>For ACM to manage automatic renewal
+         * of these certificates, the ACM user must configure a Service Linked Role (SLR).
+         * The SLR allows the ACM service to assume the identity of the user, subject to
+         * confirmation against the ACM Private CA policy. For more information, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a
          * Service Linked Role with ACM</a>.</p> </li> <li> <p>Updates made in Amazon Web
          * Services Resource Manager (RAM) are reflected in policies. For more information,
@@ -695,13 +689,12 @@ namespace Model
          * Policies are under the control of a CA administrator. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
-         * Resource Based Policy with Amazon Web Services Private CA</a>.</p> </li> <li>
-         * <p>A policy permits a user of Certificate Manager (ACM) to issue ACM
-         * certificates signed by a CA in another account.</p> </li> <li> <p>For ACM to
-         * manage automatic renewal of these certificates, the ACM user must configure a
-         * Service Linked Role (SLR). The SLR allows the ACM service to assume the identity
-         * of the user, subject to confirmation against the Amazon Web Services Private CA
-         * policy. For more information, see <a
+         * Resource Based Policy with ACM Private CA</a>.</p> </li> <li> <p>A policy
+         * permits a user of Certificate Manager (ACM) to issue ACM certificates signed by
+         * a CA in another account.</p> </li> <li> <p>For ACM to manage automatic renewal
+         * of these certificates, the ACM user must configure a Service Linked Role (SLR).
+         * The SLR allows the ACM service to assume the identity of the user, subject to
+         * confirmation against the ACM Private CA policy. For more information, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a
          * Service Linked Role with ACM</a>.</p> </li> <li> <p>Updates made in Amazon Web
          * Services Resource Manager (RAM) are reflected in policies. For more information,
@@ -733,13 +726,12 @@ namespace Model
          * Policies are under the control of a CA administrator. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
-         * Resource Based Policy with Amazon Web Services Private CA</a>.</p> </li> <li>
-         * <p>A policy permits a user of Certificate Manager (ACM) to issue ACM
-         * certificates signed by a CA in another account.</p> </li> <li> <p>For ACM to
-         * manage automatic renewal of these certificates, the ACM user must configure a
-         * Service Linked Role (SLR). The SLR allows the ACM service to assume the identity
-         * of the user, subject to confirmation against the Amazon Web Services Private CA
-         * policy. For more information, see <a
+         * Resource Based Policy with ACM Private CA</a>.</p> </li> <li> <p>A policy
+         * permits a user of Certificate Manager (ACM) to issue ACM certificates signed by
+         * a CA in another account.</p> </li> <li> <p>For ACM to manage automatic renewal
+         * of these certificates, the ACM user must configure a Service Linked Role (SLR).
+         * The SLR allows the ACM service to assume the identity of the user, subject to
+         * confirmation against the ACM Private CA policy. For more information, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a
          * Service Linked Role with ACM</a>.</p> </li> <li> <p>Updates made in Amazon Web
          * Services Resource Manager (RAM) are reflected in policies. For more information,
@@ -757,21 +749,21 @@ namespace Model
          * <p>Lists information about your private certificate authority (CA) or one that
          * has been shared with you. You specify the private CA on input by its ARN (Amazon
          * Resource Name). The output contains the status of your CA. This can be any of
-         * the following: </p> <ul> <li> <p> <code>CREATING</code> - Amazon Web Services
-         * Private CA is creating your private certificate authority.</p> </li> <li> <p>
+         * the following: </p> <ul> <li> <p> <code>CREATING</code> - ACM Private CA is
+         * creating your private certificate authority.</p> </li> <li> <p>
          * <code>PENDING_CERTIFICATE</code> - The certificate is pending. You must use your
-         * Amazon Web Services Private CA-hosted or on-premises root or subordinate CA to
-         * sign your private CA CSR and then import it into PCA. </p> </li> <li> <p>
-         * <code>ACTIVE</code> - Your private CA is active.</p> </li> <li> <p>
-         * <code>DISABLED</code> - Your private CA has been disabled.</p> </li> <li> <p>
-         * <code>EXPIRED</code> - Your private CA certificate has expired.</p> </li> <li>
-         * <p> <code>FAILED</code> - Your private CA has failed. Your CA can fail because
-         * of problems such a network outage or back-end Amazon Web Services failure or
-         * other errors. A failed CA can never return to the pending state. You must create
-         * a new CA. </p> </li> <li> <p> <code>DELETED</code> - Your private CA is within
-         * the restoration period, after which it is permanently deleted. The length of
-         * time remaining in the CA's restoration period is also included in this action's
-         * output.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * ACM Private CA-hosted or on-premises root or subordinate CA to sign your private
+         * CA CSR and then import it into PCA. </p> </li> <li> <p> <code>ACTIVE</code> -
+         * Your private CA is active.</p> </li> <li> <p> <code>DISABLED</code> - Your
+         * private CA has been disabled.</p> </li> <li> <p> <code>EXPIRED</code> - Your
+         * private CA certificate has expired.</p> </li> <li> <p> <code>FAILED</code> -
+         * Your private CA has failed. Your CA can fail because of problems such a network
+         * outage or back-end Amazon Web Services failure or other errors. A failed CA can
+         * never return to the pending state. You must create a new CA. </p> </li> <li> <p>
+         * <code>DELETED</code> - Your private CA is within the restoration period, after
+         * which it is permanently deleted. The length of time remaining in the CA's
+         * restoration period is also included in this action's output.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DescribeCertificateAuthority">AWS
          * API Reference</a></p>
          */
@@ -781,21 +773,21 @@ namespace Model
          * <p>Lists information about your private certificate authority (CA) or one that
          * has been shared with you. You specify the private CA on input by its ARN (Amazon
          * Resource Name). The output contains the status of your CA. This can be any of
-         * the following: </p> <ul> <li> <p> <code>CREATING</code> - Amazon Web Services
-         * Private CA is creating your private certificate authority.</p> </li> <li> <p>
+         * the following: </p> <ul> <li> <p> <code>CREATING</code> - ACM Private CA is
+         * creating your private certificate authority.</p> </li> <li> <p>
          * <code>PENDING_CERTIFICATE</code> - The certificate is pending. You must use your
-         * Amazon Web Services Private CA-hosted or on-premises root or subordinate CA to
-         * sign your private CA CSR and then import it into PCA. </p> </li> <li> <p>
-         * <code>ACTIVE</code> - Your private CA is active.</p> </li> <li> <p>
-         * <code>DISABLED</code> - Your private CA has been disabled.</p> </li> <li> <p>
-         * <code>EXPIRED</code> - Your private CA certificate has expired.</p> </li> <li>
-         * <p> <code>FAILED</code> - Your private CA has failed. Your CA can fail because
-         * of problems such a network outage or back-end Amazon Web Services failure or
-         * other errors. A failed CA can never return to the pending state. You must create
-         * a new CA. </p> </li> <li> <p> <code>DELETED</code> - Your private CA is within
-         * the restoration period, after which it is permanently deleted. The length of
-         * time remaining in the CA's restoration period is also included in this action's
-         * output.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * ACM Private CA-hosted or on-premises root or subordinate CA to sign your private
+         * CA CSR and then import it into PCA. </p> </li> <li> <p> <code>ACTIVE</code> -
+         * Your private CA is active.</p> </li> <li> <p> <code>DISABLED</code> - Your
+         * private CA has been disabled.</p> </li> <li> <p> <code>EXPIRED</code> - Your
+         * private CA certificate has expired.</p> </li> <li> <p> <code>FAILED</code> -
+         * Your private CA has failed. Your CA can fail because of problems such a network
+         * outage or back-end Amazon Web Services failure or other errors. A failed CA can
+         * never return to the pending state. You must create a new CA. </p> </li> <li> <p>
+         * <code>DELETED</code> - Your private CA is within the restoration period, after
+         * which it is permanently deleted. The length of time remaining in the CA's
+         * restoration period is also included in this action's output.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DescribeCertificateAuthority">AWS
          * API Reference</a></p>
          *
@@ -807,21 +799,21 @@ namespace Model
          * <p>Lists information about your private certificate authority (CA) or one that
          * has been shared with you. You specify the private CA on input by its ARN (Amazon
          * Resource Name). The output contains the status of your CA. This can be any of
-         * the following: </p> <ul> <li> <p> <code>CREATING</code> - Amazon Web Services
-         * Private CA is creating your private certificate authority.</p> </li> <li> <p>
+         * the following: </p> <ul> <li> <p> <code>CREATING</code> - ACM Private CA is
+         * creating your private certificate authority.</p> </li> <li> <p>
          * <code>PENDING_CERTIFICATE</code> - The certificate is pending. You must use your
-         * Amazon Web Services Private CA-hosted or on-premises root or subordinate CA to
-         * sign your private CA CSR and then import it into PCA. </p> </li> <li> <p>
-         * <code>ACTIVE</code> - Your private CA is active.</p> </li> <li> <p>
-         * <code>DISABLED</code> - Your private CA has been disabled.</p> </li> <li> <p>
-         * <code>EXPIRED</code> - Your private CA certificate has expired.</p> </li> <li>
-         * <p> <code>FAILED</code> - Your private CA has failed. Your CA can fail because
-         * of problems such a network outage or back-end Amazon Web Services failure or
-         * other errors. A failed CA can never return to the pending state. You must create
-         * a new CA. </p> </li> <li> <p> <code>DELETED</code> - Your private CA is within
-         * the restoration period, after which it is permanently deleted. The length of
-         * time remaining in the CA's restoration period is also included in this action's
-         * output.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * ACM Private CA-hosted or on-premises root or subordinate CA to sign your private
+         * CA CSR and then import it into PCA. </p> </li> <li> <p> <code>ACTIVE</code> -
+         * Your private CA is active.</p> </li> <li> <p> <code>DISABLED</code> - Your
+         * private CA has been disabled.</p> </li> <li> <p> <code>EXPIRED</code> - Your
+         * private CA certificate has expired.</p> </li> <li> <p> <code>FAILED</code> -
+         * Your private CA has failed. Your CA can fail because of problems such a network
+         * outage or back-end Amazon Web Services failure or other errors. A failed CA can
+         * never return to the pending state. You must create a new CA. </p> </li> <li> <p>
+         * <code>DELETED</code> - Your private CA is within the restoration period, after
+         * which it is permanently deleted. The length of time remaining in the CA's
+         * restoration period is also included in this action's output.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DescribeCertificateAuthority">AWS
          * API Reference</a></p>
          *
@@ -971,9 +963,9 @@ namespace Model
          * <p>Retrieves the certificate signing request (CSR) for your private certificate
          * authority (CA). The CSR is created when you call the <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
-         * action. Sign the CSR with your Amazon Web Services Private CA-hosted or
-         * on-premises root or subordinate CA. Then import the signed certificate back into
-         * Amazon Web Services Private CA by calling the <a
+         * action. Sign the CSR with your ACM Private CA-hosted or on-premises root or
+         * subordinate CA. Then import the signed certificate back into ACM Private CA by
+         * calling the <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a>
          * action. The CSR is returned as a base64 PEM-encoded string. </p><p><h3>See
          * Also:</h3>   <a
@@ -986,9 +978,9 @@ namespace Model
          * <p>Retrieves the certificate signing request (CSR) for your private certificate
          * authority (CA). The CSR is created when you call the <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
-         * action. Sign the CSR with your Amazon Web Services Private CA-hosted or
-         * on-premises root or subordinate CA. Then import the signed certificate back into
-         * Amazon Web Services Private CA by calling the <a
+         * action. Sign the CSR with your ACM Private CA-hosted or on-premises root or
+         * subordinate CA. Then import the signed certificate back into ACM Private CA by
+         * calling the <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a>
          * action. The CSR is returned as a base64 PEM-encoded string. </p><p><h3>See
          * Also:</h3>   <a
@@ -1003,9 +995,9 @@ namespace Model
          * <p>Retrieves the certificate signing request (CSR) for your private certificate
          * authority (CA). The CSR is created when you call the <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
-         * action. Sign the CSR with your Amazon Web Services Private CA-hosted or
-         * on-premises root or subordinate CA. Then import the signed certificate back into
-         * Amazon Web Services Private CA by calling the <a
+         * action. Sign the CSR with your ACM Private CA-hosted or on-premises root or
+         * subordinate CA. Then import the signed certificate back into ACM Private CA by
+         * calling the <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a>
          * action. The CSR is returned as a base64 PEM-encoded string. </p><p><h3>See
          * Also:</h3>   <a
@@ -1030,13 +1022,12 @@ namespace Model
          * Policies are under the control of a CA administrator. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
-         * Resource Based Policy with Amazon Web Services Private CA</a>.</p> </li> <li>
-         * <p>A policy permits a user of Certificate Manager (ACM) to issue ACM
-         * certificates signed by a CA in another account.</p> </li> <li> <p>For ACM to
-         * manage automatic renewal of these certificates, the ACM user must configure a
-         * Service Linked Role (SLR). The SLR allows the ACM service to assume the identity
-         * of the user, subject to confirmation against the Amazon Web Services Private CA
-         * policy. For more information, see <a
+         * Resource Based Policy with ACM Private CA</a>.</p> </li> <li> <p>A policy
+         * permits a user of Certificate Manager (ACM) to issue ACM certificates signed by
+         * a CA in another account.</p> </li> <li> <p>For ACM to manage automatic renewal
+         * of these certificates, the ACM user must configure a Service Linked Role (SLR).
+         * The SLR allows the ACM service to assume the identity of the user, subject to
+         * confirmation against the ACM Private CA policy. For more information, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a
          * Service Linked Role with ACM</a>.</p> </li> <li> <p>Updates made in Amazon Web
          * Services Resource Manager (RAM) are reflected in policies. For more information,
@@ -1062,13 +1053,12 @@ namespace Model
          * Policies are under the control of a CA administrator. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
-         * Resource Based Policy with Amazon Web Services Private CA</a>.</p> </li> <li>
-         * <p>A policy permits a user of Certificate Manager (ACM) to issue ACM
-         * certificates signed by a CA in another account.</p> </li> <li> <p>For ACM to
-         * manage automatic renewal of these certificates, the ACM user must configure a
-         * Service Linked Role (SLR). The SLR allows the ACM service to assume the identity
-         * of the user, subject to confirmation against the Amazon Web Services Private CA
-         * policy. For more information, see <a
+         * Resource Based Policy with ACM Private CA</a>.</p> </li> <li> <p>A policy
+         * permits a user of Certificate Manager (ACM) to issue ACM certificates signed by
+         * a CA in another account.</p> </li> <li> <p>For ACM to manage automatic renewal
+         * of these certificates, the ACM user must configure a Service Linked Role (SLR).
+         * The SLR allows the ACM service to assume the identity of the user, subject to
+         * confirmation against the ACM Private CA policy. For more information, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a
          * Service Linked Role with ACM</a>.</p> </li> <li> <p>Updates made in Amazon Web
          * Services Resource Manager (RAM) are reflected in policies. For more information,
@@ -1096,13 +1086,12 @@ namespace Model
          * Policies are under the control of a CA administrator. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
-         * Resource Based Policy with Amazon Web Services Private CA</a>.</p> </li> <li>
-         * <p>A policy permits a user of Certificate Manager (ACM) to issue ACM
-         * certificates signed by a CA in another account.</p> </li> <li> <p>For ACM to
-         * manage automatic renewal of these certificates, the ACM user must configure a
-         * Service Linked Role (SLR). The SLR allows the ACM service to assume the identity
-         * of the user, subject to confirmation against the Amazon Web Services Private CA
-         * policy. For more information, see <a
+         * Resource Based Policy with ACM Private CA</a>.</p> </li> <li> <p>A policy
+         * permits a user of Certificate Manager (ACM) to issue ACM certificates signed by
+         * a CA in another account.</p> </li> <li> <p>For ACM to manage automatic renewal
+         * of these certificates, the ACM user must configure a Service Linked Role (SLR).
+         * The SLR allows the ACM service to assume the identity of the user, subject to
+         * confirmation against the ACM Private CA policy. For more information, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a
          * Service Linked Role with ACM</a>.</p> </li> <li> <p>Updates made in Amazon Web
          * Services Resource Manager (RAM) are reflected in policies. For more information,
@@ -1117,11 +1106,10 @@ namespace Model
         virtual void GetPolicyAsync(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Imports a signed private CA certificate into Amazon Web Services Private CA.
-         * This action is used when you are using a chain of trust whose root is located
-         * outside Amazon Web Services Private CA. Before you can call this action, the
-         * following preparations must in place:</p> <ol> <li> <p>In Amazon Web Services
-         * Private CA, call the <a
+         * <p>Imports a signed private CA certificate into ACM Private CA. This action is
+         * used when you are using a chain of trust whose root is located outside ACM
+         * Private CA. Before you can call this action, the following preparations must in
+         * place:</p> <ol> <li> <p>In ACM Private CA, call the <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
          * action to create the private CA that you plan to back with the imported
          * certificate.</p> </li> <li> <p>Call the <a
@@ -1130,49 +1118,46 @@ namespace Model
          * the CSR using a root or intermediate CA hosted by either an on-premises PKI
          * hierarchy or by a commercial CA.</p> </li> <li> <p>Create a certificate chain
          * and copy the signed certificate and the certificate chain to your working
-         * directory.</p> </li> </ol> <p>Amazon Web Services Private CA supports three
-         * scenarios for installing a CA certificate:</p> <ul> <li> <p>Installing a
-         * certificate for a root CA hosted by Amazon Web Services Private CA.</p> </li>
-         * <li> <p>Installing a subordinate CA certificate whose parent authority is hosted
-         * by Amazon Web Services Private CA.</p> </li> <li> <p>Installing a subordinate CA
-         * certificate whose parent authority is externally hosted.</p> </li> </ul> <p>The
-         * following additional requirements apply when you import a CA certificate.</p>
-         * <ul> <li> <p>Only a self-signed certificate can be imported as a root CA.</p>
-         * </li> <li> <p>A self-signed certificate cannot be imported as a subordinate
-         * CA.</p> </li> <li> <p>Your certificate chain must not include the private CA
-         * certificate that you are importing.</p> </li> <li> <p>Your root CA must be the
-         * last certificate in your chain. The subordinate certificate, if any, that your
-         * root CA signed must be next to last. The subordinate certificate signed by the
-         * preceding subordinate CA must come next, and so on until your chain is built.
-         * </p> </li> <li> <p>The chain must be PEM-encoded.</p> </li> <li> <p>The maximum
-         * allowed size of a certificate is 32 KB.</p> </li> <li> <p>The maximum allowed
-         * size of a certificate chain is 2 MB.</p> </li> </ul> <p> <i>Enforcement of
-         * Critical Constraints</i> </p> <p>Amazon Web Services Private CA allows the
-         * following extensions to be marked critical in the imported CA certificate or
-         * chain.</p> <ul> <li> <p>Basic constraints (<i>must</i> be marked critical)</p>
-         * </li> <li> <p>Subject alternative names</p> </li> <li> <p>Key usage</p> </li>
-         * <li> <p>Extended key usage</p> </li> <li> <p>Authority key identifier</p> </li>
-         * <li> <p>Subject key identifier</p> </li> <li> <p>Issuer alternative name</p>
-         * </li> <li> <p>Subject directory attributes</p> </li> <li> <p>Subject information
-         * access</p> </li> <li> <p>Certificate policies</p> </li> <li> <p>Policy
-         * mappings</p> </li> <li> <p>Inhibit anyPolicy</p> </li> </ul> <p>Amazon Web
-         * Services Private CA rejects the following extensions when they are marked
-         * critical in an imported CA certificate or chain.</p> <ul> <li> <p>Name
-         * constraints</p> </li> <li> <p>Policy constraints</p> </li> <li> <p>CRL
-         * distribution points</p> </li> <li> <p>Authority information access</p> </li>
-         * <li> <p>Freshest CRL</p> </li> <li> <p>Any other extension</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * directory.</p> </li> </ol> <p>ACM Private CA supports three scenarios for
+         * installing a CA certificate:</p> <ul> <li> <p>Installing a certificate for a
+         * root CA hosted by ACM Private CA.</p> </li> <li> <p>Installing a subordinate CA
+         * certificate whose parent authority is hosted by ACM Private CA.</p> </li> <li>
+         * <p>Installing a subordinate CA certificate whose parent authority is externally
+         * hosted.</p> </li> </ul> <p>The following additional requirements apply when you
+         * import a CA certificate.</p> <ul> <li> <p>Only a self-signed certificate can be
+         * imported as a root CA.</p> </li> <li> <p>A self-signed certificate cannot be
+         * imported as a subordinate CA.</p> </li> <li> <p>Your certificate chain must not
+         * include the private CA certificate that you are importing.</p> </li> <li>
+         * <p>Your root CA must be the last certificate in your chain. The subordinate
+         * certificate, if any, that your root CA signed must be next to last. The
+         * subordinate certificate signed by the preceding subordinate CA must come next,
+         * and so on until your chain is built. </p> </li> <li> <p>The chain must be
+         * PEM-encoded.</p> </li> <li> <p>The maximum allowed size of a certificate is 32
+         * KB.</p> </li> <li> <p>The maximum allowed size of a certificate chain is 2
+         * MB.</p> </li> </ul> <p> <i>Enforcement of Critical Constraints</i> </p> <p>ACM
+         * Private CA allows the following extensions to be marked critical in the imported
+         * CA certificate or chain.</p> <ul> <li> <p>Basic constraints (<i>must</i> be
+         * marked critical)</p> </li> <li> <p>Subject alternative names</p> </li> <li>
+         * <p>Key usage</p> </li> <li> <p>Extended key usage</p> </li> <li> <p>Authority
+         * key identifier</p> </li> <li> <p>Subject key identifier</p> </li> <li> <p>Issuer
+         * alternative name</p> </li> <li> <p>Subject directory attributes</p> </li> <li>
+         * <p>Subject information access</p> </li> <li> <p>Certificate policies</p> </li>
+         * <li> <p>Policy mappings</p> </li> <li> <p>Inhibit anyPolicy</p> </li> </ul>
+         * <p>ACM Private CA rejects the following extensions when they are marked critical
+         * in an imported CA certificate or chain.</p> <ul> <li> <p>Name constraints</p>
+         * </li> <li> <p>Policy constraints</p> </li> <li> <p>CRL distribution points</p>
+         * </li> <li> <p>Authority information access</p> </li> <li> <p>Freshest CRL</p>
+         * </li> <li> <p>Any other extension</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ImportCertificateAuthorityCertificate">AWS
          * API Reference</a></p>
          */
         virtual Model::ImportCertificateAuthorityCertificateOutcome ImportCertificateAuthorityCertificate(const Model::ImportCertificateAuthorityCertificateRequest& request) const;
 
         /**
-         * <p>Imports a signed private CA certificate into Amazon Web Services Private CA.
-         * This action is used when you are using a chain of trust whose root is located
-         * outside Amazon Web Services Private CA. Before you can call this action, the
-         * following preparations must in place:</p> <ol> <li> <p>In Amazon Web Services
-         * Private CA, call the <a
+         * <p>Imports a signed private CA certificate into ACM Private CA. This action is
+         * used when you are using a chain of trust whose root is located outside ACM
+         * Private CA. Before you can call this action, the following preparations must in
+         * place:</p> <ol> <li> <p>In ACM Private CA, call the <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
          * action to create the private CA that you plan to back with the imported
          * certificate.</p> </li> <li> <p>Call the <a
@@ -1181,38 +1166,36 @@ namespace Model
          * the CSR using a root or intermediate CA hosted by either an on-premises PKI
          * hierarchy or by a commercial CA.</p> </li> <li> <p>Create a certificate chain
          * and copy the signed certificate and the certificate chain to your working
-         * directory.</p> </li> </ol> <p>Amazon Web Services Private CA supports three
-         * scenarios for installing a CA certificate:</p> <ul> <li> <p>Installing a
-         * certificate for a root CA hosted by Amazon Web Services Private CA.</p> </li>
-         * <li> <p>Installing a subordinate CA certificate whose parent authority is hosted
-         * by Amazon Web Services Private CA.</p> </li> <li> <p>Installing a subordinate CA
-         * certificate whose parent authority is externally hosted.</p> </li> </ul> <p>The
-         * following additional requirements apply when you import a CA certificate.</p>
-         * <ul> <li> <p>Only a self-signed certificate can be imported as a root CA.</p>
-         * </li> <li> <p>A self-signed certificate cannot be imported as a subordinate
-         * CA.</p> </li> <li> <p>Your certificate chain must not include the private CA
-         * certificate that you are importing.</p> </li> <li> <p>Your root CA must be the
-         * last certificate in your chain. The subordinate certificate, if any, that your
-         * root CA signed must be next to last. The subordinate certificate signed by the
-         * preceding subordinate CA must come next, and so on until your chain is built.
-         * </p> </li> <li> <p>The chain must be PEM-encoded.</p> </li> <li> <p>The maximum
-         * allowed size of a certificate is 32 KB.</p> </li> <li> <p>The maximum allowed
-         * size of a certificate chain is 2 MB.</p> </li> </ul> <p> <i>Enforcement of
-         * Critical Constraints</i> </p> <p>Amazon Web Services Private CA allows the
-         * following extensions to be marked critical in the imported CA certificate or
-         * chain.</p> <ul> <li> <p>Basic constraints (<i>must</i> be marked critical)</p>
-         * </li> <li> <p>Subject alternative names</p> </li> <li> <p>Key usage</p> </li>
-         * <li> <p>Extended key usage</p> </li> <li> <p>Authority key identifier</p> </li>
-         * <li> <p>Subject key identifier</p> </li> <li> <p>Issuer alternative name</p>
-         * </li> <li> <p>Subject directory attributes</p> </li> <li> <p>Subject information
-         * access</p> </li> <li> <p>Certificate policies</p> </li> <li> <p>Policy
-         * mappings</p> </li> <li> <p>Inhibit anyPolicy</p> </li> </ul> <p>Amazon Web
-         * Services Private CA rejects the following extensions when they are marked
-         * critical in an imported CA certificate or chain.</p> <ul> <li> <p>Name
-         * constraints</p> </li> <li> <p>Policy constraints</p> </li> <li> <p>CRL
-         * distribution points</p> </li> <li> <p>Authority information access</p> </li>
-         * <li> <p>Freshest CRL</p> </li> <li> <p>Any other extension</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * directory.</p> </li> </ol> <p>ACM Private CA supports three scenarios for
+         * installing a CA certificate:</p> <ul> <li> <p>Installing a certificate for a
+         * root CA hosted by ACM Private CA.</p> </li> <li> <p>Installing a subordinate CA
+         * certificate whose parent authority is hosted by ACM Private CA.</p> </li> <li>
+         * <p>Installing a subordinate CA certificate whose parent authority is externally
+         * hosted.</p> </li> </ul> <p>The following additional requirements apply when you
+         * import a CA certificate.</p> <ul> <li> <p>Only a self-signed certificate can be
+         * imported as a root CA.</p> </li> <li> <p>A self-signed certificate cannot be
+         * imported as a subordinate CA.</p> </li> <li> <p>Your certificate chain must not
+         * include the private CA certificate that you are importing.</p> </li> <li>
+         * <p>Your root CA must be the last certificate in your chain. The subordinate
+         * certificate, if any, that your root CA signed must be next to last. The
+         * subordinate certificate signed by the preceding subordinate CA must come next,
+         * and so on until your chain is built. </p> </li> <li> <p>The chain must be
+         * PEM-encoded.</p> </li> <li> <p>The maximum allowed size of a certificate is 32
+         * KB.</p> </li> <li> <p>The maximum allowed size of a certificate chain is 2
+         * MB.</p> </li> </ul> <p> <i>Enforcement of Critical Constraints</i> </p> <p>ACM
+         * Private CA allows the following extensions to be marked critical in the imported
+         * CA certificate or chain.</p> <ul> <li> <p>Basic constraints (<i>must</i> be
+         * marked critical)</p> </li> <li> <p>Subject alternative names</p> </li> <li>
+         * <p>Key usage</p> </li> <li> <p>Extended key usage</p> </li> <li> <p>Authority
+         * key identifier</p> </li> <li> <p>Subject key identifier</p> </li> <li> <p>Issuer
+         * alternative name</p> </li> <li> <p>Subject directory attributes</p> </li> <li>
+         * <p>Subject information access</p> </li> <li> <p>Certificate policies</p> </li>
+         * <li> <p>Policy mappings</p> </li> <li> <p>Inhibit anyPolicy</p> </li> </ul>
+         * <p>ACM Private CA rejects the following extensions when they are marked critical
+         * in an imported CA certificate or chain.</p> <ul> <li> <p>Name constraints</p>
+         * </li> <li> <p>Policy constraints</p> </li> <li> <p>CRL distribution points</p>
+         * </li> <li> <p>Authority information access</p> </li> <li> <p>Freshest CRL</p>
+         * </li> <li> <p>Any other extension</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ImportCertificateAuthorityCertificate">AWS
          * API Reference</a></p>
          *
@@ -1221,11 +1204,10 @@ namespace Model
         virtual Model::ImportCertificateAuthorityCertificateOutcomeCallable ImportCertificateAuthorityCertificateCallable(const Model::ImportCertificateAuthorityCertificateRequest& request) const;
 
         /**
-         * <p>Imports a signed private CA certificate into Amazon Web Services Private CA.
-         * This action is used when you are using a chain of trust whose root is located
-         * outside Amazon Web Services Private CA. Before you can call this action, the
-         * following preparations must in place:</p> <ol> <li> <p>In Amazon Web Services
-         * Private CA, call the <a
+         * <p>Imports a signed private CA certificate into ACM Private CA. This action is
+         * used when you are using a chain of trust whose root is located outside ACM
+         * Private CA. Before you can call this action, the following preparations must in
+         * place:</p> <ol> <li> <p>In ACM Private CA, call the <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
          * action to create the private CA that you plan to back with the imported
          * certificate.</p> </li> <li> <p>Call the <a
@@ -1234,38 +1216,36 @@ namespace Model
          * the CSR using a root or intermediate CA hosted by either an on-premises PKI
          * hierarchy or by a commercial CA.</p> </li> <li> <p>Create a certificate chain
          * and copy the signed certificate and the certificate chain to your working
-         * directory.</p> </li> </ol> <p>Amazon Web Services Private CA supports three
-         * scenarios for installing a CA certificate:</p> <ul> <li> <p>Installing a
-         * certificate for a root CA hosted by Amazon Web Services Private CA.</p> </li>
-         * <li> <p>Installing a subordinate CA certificate whose parent authority is hosted
-         * by Amazon Web Services Private CA.</p> </li> <li> <p>Installing a subordinate CA
-         * certificate whose parent authority is externally hosted.</p> </li> </ul> <p>The
-         * following additional requirements apply when you import a CA certificate.</p>
-         * <ul> <li> <p>Only a self-signed certificate can be imported as a root CA.</p>
-         * </li> <li> <p>A self-signed certificate cannot be imported as a subordinate
-         * CA.</p> </li> <li> <p>Your certificate chain must not include the private CA
-         * certificate that you are importing.</p> </li> <li> <p>Your root CA must be the
-         * last certificate in your chain. The subordinate certificate, if any, that your
-         * root CA signed must be next to last. The subordinate certificate signed by the
-         * preceding subordinate CA must come next, and so on until your chain is built.
-         * </p> </li> <li> <p>The chain must be PEM-encoded.</p> </li> <li> <p>The maximum
-         * allowed size of a certificate is 32 KB.</p> </li> <li> <p>The maximum allowed
-         * size of a certificate chain is 2 MB.</p> </li> </ul> <p> <i>Enforcement of
-         * Critical Constraints</i> </p> <p>Amazon Web Services Private CA allows the
-         * following extensions to be marked critical in the imported CA certificate or
-         * chain.</p> <ul> <li> <p>Basic constraints (<i>must</i> be marked critical)</p>
-         * </li> <li> <p>Subject alternative names</p> </li> <li> <p>Key usage</p> </li>
-         * <li> <p>Extended key usage</p> </li> <li> <p>Authority key identifier</p> </li>
-         * <li> <p>Subject key identifier</p> </li> <li> <p>Issuer alternative name</p>
-         * </li> <li> <p>Subject directory attributes</p> </li> <li> <p>Subject information
-         * access</p> </li> <li> <p>Certificate policies</p> </li> <li> <p>Policy
-         * mappings</p> </li> <li> <p>Inhibit anyPolicy</p> </li> </ul> <p>Amazon Web
-         * Services Private CA rejects the following extensions when they are marked
-         * critical in an imported CA certificate or chain.</p> <ul> <li> <p>Name
-         * constraints</p> </li> <li> <p>Policy constraints</p> </li> <li> <p>CRL
-         * distribution points</p> </li> <li> <p>Authority information access</p> </li>
-         * <li> <p>Freshest CRL</p> </li> <li> <p>Any other extension</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * directory.</p> </li> </ol> <p>ACM Private CA supports three scenarios for
+         * installing a CA certificate:</p> <ul> <li> <p>Installing a certificate for a
+         * root CA hosted by ACM Private CA.</p> </li> <li> <p>Installing a subordinate CA
+         * certificate whose parent authority is hosted by ACM Private CA.</p> </li> <li>
+         * <p>Installing a subordinate CA certificate whose parent authority is externally
+         * hosted.</p> </li> </ul> <p>The following additional requirements apply when you
+         * import a CA certificate.</p> <ul> <li> <p>Only a self-signed certificate can be
+         * imported as a root CA.</p> </li> <li> <p>A self-signed certificate cannot be
+         * imported as a subordinate CA.</p> </li> <li> <p>Your certificate chain must not
+         * include the private CA certificate that you are importing.</p> </li> <li>
+         * <p>Your root CA must be the last certificate in your chain. The subordinate
+         * certificate, if any, that your root CA signed must be next to last. The
+         * subordinate certificate signed by the preceding subordinate CA must come next,
+         * and so on until your chain is built. </p> </li> <li> <p>The chain must be
+         * PEM-encoded.</p> </li> <li> <p>The maximum allowed size of a certificate is 32
+         * KB.</p> </li> <li> <p>The maximum allowed size of a certificate chain is 2
+         * MB.</p> </li> </ul> <p> <i>Enforcement of Critical Constraints</i> </p> <p>ACM
+         * Private CA allows the following extensions to be marked critical in the imported
+         * CA certificate or chain.</p> <ul> <li> <p>Basic constraints (<i>must</i> be
+         * marked critical)</p> </li> <li> <p>Subject alternative names</p> </li> <li>
+         * <p>Key usage</p> </li> <li> <p>Extended key usage</p> </li> <li> <p>Authority
+         * key identifier</p> </li> <li> <p>Subject key identifier</p> </li> <li> <p>Issuer
+         * alternative name</p> </li> <li> <p>Subject directory attributes</p> </li> <li>
+         * <p>Subject information access</p> </li> <li> <p>Certificate policies</p> </li>
+         * <li> <p>Policy mappings</p> </li> <li> <p>Inhibit anyPolicy</p> </li> </ul>
+         * <p>ACM Private CA rejects the following extensions when they are marked critical
+         * in an imported CA certificate or chain.</p> <ul> <li> <p>Name constraints</p>
+         * </li> <li> <p>Policy constraints</p> </li> <li> <p>CRL distribution points</p>
+         * </li> <li> <p>Authority information access</p> </li> <li> <p>Freshest CRL</p>
+         * </li> <li> <p>Any other extension</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ImportCertificateAuthorityCertificate">AWS
          * API Reference</a></p>
          *
@@ -1281,8 +1261,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
          * action and specifying the ARN. </p>  <p>You cannot use the ACM
          * <b>ListCertificateAuthorities</b> action to retrieve the ARNs of the
-         * certificates that you issue by using Amazon Web Services Private CA.</p>
-         * <p><h3>See Also:</h3>   <a
+         * certificates that you issue by using ACM Private CA.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/IssueCertificate">AWS
          * API Reference</a></p>
          */
@@ -1296,8 +1276,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
          * action and specifying the ARN. </p>  <p>You cannot use the ACM
          * <b>ListCertificateAuthorities</b> action to retrieve the ARNs of the
-         * certificates that you issue by using Amazon Web Services Private CA.</p>
-         * <p><h3>See Also:</h3>   <a
+         * certificates that you issue by using ACM Private CA.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/IssueCertificate">AWS
          * API Reference</a></p>
          *
@@ -1313,8 +1293,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
          * action and specifying the ARN. </p>  <p>You cannot use the ACM
          * <b>ListCertificateAuthorities</b> action to retrieve the ARNs of the
-         * certificates that you issue by using Amazon Web Services Private CA.</p>
-         * <p><h3>See Also:</h3>   <a
+         * certificates that you issue by using ACM Private CA.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/IssueCertificate">AWS
          * API Reference</a></p>
          *
@@ -1372,8 +1352,8 @@ namespace Model
          * resource-based policy to enable cross-account issuance and renewals. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
-         * Resource Based Policy with Amazon Web Services Private CA</a>.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * Resource Based Policy with ACM Private CA</a>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListPermissions">AWS
          * API Reference</a></p>
          */
@@ -1398,8 +1378,8 @@ namespace Model
          * resource-based policy to enable cross-account issuance and renewals. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
-         * Resource Based Policy with Amazon Web Services Private CA</a>.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * Resource Based Policy with ACM Private CA</a>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListPermissions">AWS
          * API Reference</a></p>
          *
@@ -1426,8 +1406,8 @@ namespace Model
          * resource-based policy to enable cross-account issuance and renewals. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
-         * Resource Based Policy with Amazon Web Services Private CA</a>.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * Resource Based Policy with ACM Private CA</a>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListPermissions">AWS
          * API Reference</a></p>
          *
@@ -1494,13 +1474,12 @@ namespace Model
          * Policies are under the control of a CA administrator. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
-         * Resource Based Policy with Amazon Web Services Private CA</a>.</p> </li> <li>
-         * <p>A policy permits a user of Certificate Manager (ACM) to issue ACM
-         * certificates signed by a CA in another account.</p> </li> <li> <p>For ACM to
-         * manage automatic renewal of these certificates, the ACM user must configure a
-         * Service Linked Role (SLR). The SLR allows the ACM service to assume the identity
-         * of the user, subject to confirmation against the Amazon Web Services Private CA
-         * policy. For more information, see <a
+         * Resource Based Policy with ACM Private CA</a>.</p> </li> <li> <p>A policy
+         * permits a user of Certificate Manager (ACM) to issue ACM certificates signed by
+         * a CA in another account.</p> </li> <li> <p>For ACM to manage automatic renewal
+         * of these certificates, the ACM user must configure a Service Linked Role (SLR).
+         * The SLR allows the ACM service to assume the identity of the user, subject to
+         * confirmation against the ACM Private CA policy. For more information, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a
          * Service Linked Role with ACM</a>.</p> </li> <li> <p>Updates made in Amazon Web
          * Services Resource Manager (RAM) are reflected in policies. For more information,
@@ -1528,13 +1507,12 @@ namespace Model
          * Policies are under the control of a CA administrator. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
-         * Resource Based Policy with Amazon Web Services Private CA</a>.</p> </li> <li>
-         * <p>A policy permits a user of Certificate Manager (ACM) to issue ACM
-         * certificates signed by a CA in another account.</p> </li> <li> <p>For ACM to
-         * manage automatic renewal of these certificates, the ACM user must configure a
-         * Service Linked Role (SLR). The SLR allows the ACM service to assume the identity
-         * of the user, subject to confirmation against the Amazon Web Services Private CA
-         * policy. For more information, see <a
+         * Resource Based Policy with ACM Private CA</a>.</p> </li> <li> <p>A policy
+         * permits a user of Certificate Manager (ACM) to issue ACM certificates signed by
+         * a CA in another account.</p> </li> <li> <p>For ACM to manage automatic renewal
+         * of these certificates, the ACM user must configure a Service Linked Role (SLR).
+         * The SLR allows the ACM service to assume the identity of the user, subject to
+         * confirmation against the ACM Private CA policy. For more information, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a
          * Service Linked Role with ACM</a>.</p> </li> <li> <p>Updates made in Amazon Web
          * Services Resource Manager (RAM) are reflected in policies. For more information,
@@ -1564,13 +1542,12 @@ namespace Model
          * Policies are under the control of a CA administrator. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a
-         * Resource Based Policy with Amazon Web Services Private CA</a>.</p> </li> <li>
-         * <p>A policy permits a user of Certificate Manager (ACM) to issue ACM
-         * certificates signed by a CA in another account.</p> </li> <li> <p>For ACM to
-         * manage automatic renewal of these certificates, the ACM user must configure a
-         * Service Linked Role (SLR). The SLR allows the ACM service to assume the identity
-         * of the user, subject to confirmation against the Amazon Web Services Private CA
-         * policy. For more information, see <a
+         * Resource Based Policy with ACM Private CA</a>.</p> </li> <li> <p>A policy
+         * permits a user of Certificate Manager (ACM) to issue ACM certificates signed by
+         * a CA in another account.</p> </li> <li> <p>For ACM to manage automatic renewal
+         * of these certificates, the ACM user must configure a Service Linked Role (SLR).
+         * The SLR allows the ACM service to assume the identity of the user, subject to
+         * confirmation against the ACM Private CA policy. For more information, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using a
          * Service Linked Role with ACM</a>.</p> </li> <li> <p>Updates made in Amazon Web
          * Services Resource Manager (RAM) are reflected in policies. For more information,
@@ -1670,24 +1647,23 @@ namespace Model
         virtual void RestoreCertificateAuthorityAsync(const Model::RestoreCertificateAuthorityRequest& request, const RestoreCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Revokes a certificate that was issued inside Amazon Web Services Private CA.
-         * If you enable a certificate revocation list (CRL) when you create or update your
-         * private CA, information about the revoked certificates will be included in the
-         * CRL. Amazon Web Services Private CA writes the CRL to an S3 bucket that you
-         * specify. A CRL is typically updated approximately 30 minutes after a certificate
-         * is revoked. If for any reason the CRL update fails, Amazon Web Services Private
-         * CA attempts makes further attempts every 15 minutes. With Amazon CloudWatch, you
-         * can create alarms for the metrics <code>CRLGenerated</code> and
-         * <code>MisconfiguredCRLBucket</code>. For more information, see <a
+         * <p>Revokes a certificate that was issued inside ACM Private CA. If you enable a
+         * certificate revocation list (CRL) when you create or update your private CA,
+         * information about the revoked certificates will be included in the CRL. ACM
+         * Private CA writes the CRL to an S3 bucket that you specify. A CRL is typically
+         * updated approximately 30 minutes after a certificate is revoked. If for any
+         * reason the CRL update fails, ACM Private CA attempts makes further attempts
+         * every 15 minutes. With Amazon CloudWatch, you can create alarms for the metrics
+         * <code>CRLGenerated</code> and <code>MisconfiguredCRLBucket</code>. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCloudWatch.html">Supported
          * CloudWatch Metrics</a>.</p>  <p>Both PCA and the IAM principal must have
          * permission to write to the S3 bucket that you specify. If the IAM principal
          * making the call does not have permission to write to the bucket, then an
          * exception is thrown. For more information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html#s3-policies">Access
-         * policies for CRLs in Amazon S3</a>.</p>  <p>Amazon Web Services Private
-         * CA also writes revocation information to the audit report. For more information,
-         * see <a
+         * policies for CRLs in Amazon S3</a>.</p>  <p>ACM Private CA also writes
+         * revocation information to the audit report. For more information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a>.</p>
          *  <p>You cannot revoke a root CA self-signed certificate.</p>
          * <p><h3>See Also:</h3>   <a
@@ -1697,24 +1673,23 @@ namespace Model
         virtual Model::RevokeCertificateOutcome RevokeCertificate(const Model::RevokeCertificateRequest& request) const;
 
         /**
-         * <p>Revokes a certificate that was issued inside Amazon Web Services Private CA.
-         * If you enable a certificate revocation list (CRL) when you create or update your
-         * private CA, information about the revoked certificates will be included in the
-         * CRL. Amazon Web Services Private CA writes the CRL to an S3 bucket that you
-         * specify. A CRL is typically updated approximately 30 minutes after a certificate
-         * is revoked. If for any reason the CRL update fails, Amazon Web Services Private
-         * CA attempts makes further attempts every 15 minutes. With Amazon CloudWatch, you
-         * can create alarms for the metrics <code>CRLGenerated</code> and
-         * <code>MisconfiguredCRLBucket</code>. For more information, see <a
+         * <p>Revokes a certificate that was issued inside ACM Private CA. If you enable a
+         * certificate revocation list (CRL) when you create or update your private CA,
+         * information about the revoked certificates will be included in the CRL. ACM
+         * Private CA writes the CRL to an S3 bucket that you specify. A CRL is typically
+         * updated approximately 30 minutes after a certificate is revoked. If for any
+         * reason the CRL update fails, ACM Private CA attempts makes further attempts
+         * every 15 minutes. With Amazon CloudWatch, you can create alarms for the metrics
+         * <code>CRLGenerated</code> and <code>MisconfiguredCRLBucket</code>. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCloudWatch.html">Supported
          * CloudWatch Metrics</a>.</p>  <p>Both PCA and the IAM principal must have
          * permission to write to the S3 bucket that you specify. If the IAM principal
          * making the call does not have permission to write to the bucket, then an
          * exception is thrown. For more information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html#s3-policies">Access
-         * policies for CRLs in Amazon S3</a>.</p>  <p>Amazon Web Services Private
-         * CA also writes revocation information to the audit report. For more information,
-         * see <a
+         * policies for CRLs in Amazon S3</a>.</p>  <p>ACM Private CA also writes
+         * revocation information to the audit report. For more information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a>.</p>
          *  <p>You cannot revoke a root CA self-signed certificate.</p>
          * <p><h3>See Also:</h3>   <a
@@ -1726,24 +1701,23 @@ namespace Model
         virtual Model::RevokeCertificateOutcomeCallable RevokeCertificateCallable(const Model::RevokeCertificateRequest& request) const;
 
         /**
-         * <p>Revokes a certificate that was issued inside Amazon Web Services Private CA.
-         * If you enable a certificate revocation list (CRL) when you create or update your
-         * private CA, information about the revoked certificates will be included in the
-         * CRL. Amazon Web Services Private CA writes the CRL to an S3 bucket that you
-         * specify. A CRL is typically updated approximately 30 minutes after a certificate
-         * is revoked. If for any reason the CRL update fails, Amazon Web Services Private
-         * CA attempts makes further attempts every 15 minutes. With Amazon CloudWatch, you
-         * can create alarms for the metrics <code>CRLGenerated</code> and
-         * <code>MisconfiguredCRLBucket</code>. For more information, see <a
+         * <p>Revokes a certificate that was issued inside ACM Private CA. If you enable a
+         * certificate revocation list (CRL) when you create or update your private CA,
+         * information about the revoked certificates will be included in the CRL. ACM
+         * Private CA writes the CRL to an S3 bucket that you specify. A CRL is typically
+         * updated approximately 30 minutes after a certificate is revoked. If for any
+         * reason the CRL update fails, ACM Private CA attempts makes further attempts
+         * every 15 minutes. With Amazon CloudWatch, you can create alarms for the metrics
+         * <code>CRLGenerated</code> and <code>MisconfiguredCRLBucket</code>. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCloudWatch.html">Supported
          * CloudWatch Metrics</a>.</p>  <p>Both PCA and the IAM principal must have
          * permission to write to the S3 bucket that you specify. If the IAM principal
          * making the call does not have permission to write to the bucket, then an
          * exception is thrown. For more information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html#s3-policies">Access
-         * policies for CRLs in Amazon S3</a>.</p>  <p>Amazon Web Services Private
-         * CA also writes revocation information to the audit report. For more information,
-         * see <a
+         * policies for CRLs in Amazon S3</a>.</p>  <p>ACM Private CA also writes
+         * revocation information to the audit report. For more information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a>.</p>
          *  <p>You cannot revoke a root CA self-signed certificate.</p>
          * <p><h3>See Also:</h3>   <a

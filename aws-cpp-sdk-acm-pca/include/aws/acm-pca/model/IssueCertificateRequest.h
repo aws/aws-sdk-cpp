@@ -45,8 +45,7 @@ namespace Model
      * information about using these templates, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p> <p>If conflicting or duplicate certificate
-     * information is supplied during certificate issuance, Amazon Web Services Private
-     * CA applies <a
+     * information is supplied during certificate issuance, ACM Private CA applies <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order
      * of operation rules</a> to determine what information is used.</p>
      */
@@ -59,8 +58,7 @@ namespace Model
      * information about using these templates, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p> <p>If conflicting or duplicate certificate
-     * information is supplied during certificate issuance, Amazon Web Services Private
-     * CA applies <a
+     * information is supplied during certificate issuance, ACM Private CA applies <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order
      * of operation rules</a> to determine what information is used.</p>
      */
@@ -73,8 +71,7 @@ namespace Model
      * information about using these templates, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p> <p>If conflicting or duplicate certificate
-     * information is supplied during certificate issuance, Amazon Web Services Private
-     * CA applies <a
+     * information is supplied during certificate issuance, ACM Private CA applies <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order
      * of operation rules</a> to determine what information is used.</p>
      */
@@ -87,8 +84,7 @@ namespace Model
      * information about using these templates, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p> <p>If conflicting or duplicate certificate
-     * information is supplied during certificate issuance, Amazon Web Services Private
-     * CA applies <a
+     * information is supplied during certificate issuance, ACM Private CA applies <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order
      * of operation rules</a> to determine what information is used.</p>
      */
@@ -101,8 +97,7 @@ namespace Model
      * information about using these templates, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p> <p>If conflicting or duplicate certificate
-     * information is supplied during certificate issuance, Amazon Web Services Private
-     * CA applies <a
+     * information is supplied during certificate issuance, ACM Private CA applies <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order
      * of operation rules</a> to determine what information is used.</p>
      */
@@ -115,8 +110,7 @@ namespace Model
      * information about using these templates, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p> <p>If conflicting or duplicate certificate
-     * information is supplied during certificate issuance, Amazon Web Services Private
-     * CA applies <a
+     * information is supplied during certificate issuance, ACM Private CA applies <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order
      * of operation rules</a> to determine what information is used.</p>
      */
@@ -350,15 +344,14 @@ namespace Model
 
     /**
      * <p>Specifies a custom configuration template to use when issuing a certificate.
-     * If this parameter is not provided, Amazon Web Services Private CA defaults to
-     * the <code>EndEntityCertificate/V1</code> template. For CA certificates, you
-     * should choose the shortest path length that meets your needs. The path length is
+     * If this parameter is not provided, ACM Private CA defaults to the
+     * <code>EndEntityCertificate/V1</code> template. For CA certificates, you should
+     * choose the shortest path length that meets your needs. The path length is
      * indicated by the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA
      * depth</a>.</p> <p>Note: The CA depth configured on a subordinate CA certificate
      * must not exceed the limit set by its parents in the CA hierarchy.</p> <p>For a
-     * list of <code>TemplateArn</code> values supported by Amazon Web Services Private
-     * CA, see <a
+     * list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p>
      */
@@ -366,15 +359,14 @@ namespace Model
 
     /**
      * <p>Specifies a custom configuration template to use when issuing a certificate.
-     * If this parameter is not provided, Amazon Web Services Private CA defaults to
-     * the <code>EndEntityCertificate/V1</code> template. For CA certificates, you
-     * should choose the shortest path length that meets your needs. The path length is
+     * If this parameter is not provided, ACM Private CA defaults to the
+     * <code>EndEntityCertificate/V1</code> template. For CA certificates, you should
+     * choose the shortest path length that meets your needs. The path length is
      * indicated by the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA
      * depth</a>.</p> <p>Note: The CA depth configured on a subordinate CA certificate
      * must not exceed the limit set by its parents in the CA hierarchy.</p> <p>For a
-     * list of <code>TemplateArn</code> values supported by Amazon Web Services Private
-     * CA, see <a
+     * list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p>
      */
@@ -382,15 +374,14 @@ namespace Model
 
     /**
      * <p>Specifies a custom configuration template to use when issuing a certificate.
-     * If this parameter is not provided, Amazon Web Services Private CA defaults to
-     * the <code>EndEntityCertificate/V1</code> template. For CA certificates, you
-     * should choose the shortest path length that meets your needs. The path length is
+     * If this parameter is not provided, ACM Private CA defaults to the
+     * <code>EndEntityCertificate/V1</code> template. For CA certificates, you should
+     * choose the shortest path length that meets your needs. The path length is
      * indicated by the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA
      * depth</a>.</p> <p>Note: The CA depth configured on a subordinate CA certificate
      * must not exceed the limit set by its parents in the CA hierarchy.</p> <p>For a
-     * list of <code>TemplateArn</code> values supported by Amazon Web Services Private
-     * CA, see <a
+     * list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p>
      */
@@ -398,15 +389,14 @@ namespace Model
 
     /**
      * <p>Specifies a custom configuration template to use when issuing a certificate.
-     * If this parameter is not provided, Amazon Web Services Private CA defaults to
-     * the <code>EndEntityCertificate/V1</code> template. For CA certificates, you
-     * should choose the shortest path length that meets your needs. The path length is
+     * If this parameter is not provided, ACM Private CA defaults to the
+     * <code>EndEntityCertificate/V1</code> template. For CA certificates, you should
+     * choose the shortest path length that meets your needs. The path length is
      * indicated by the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA
      * depth</a>.</p> <p>Note: The CA depth configured on a subordinate CA certificate
      * must not exceed the limit set by its parents in the CA hierarchy.</p> <p>For a
-     * list of <code>TemplateArn</code> values supported by Amazon Web Services Private
-     * CA, see <a
+     * list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p>
      */
@@ -414,15 +404,14 @@ namespace Model
 
     /**
      * <p>Specifies a custom configuration template to use when issuing a certificate.
-     * If this parameter is not provided, Amazon Web Services Private CA defaults to
-     * the <code>EndEntityCertificate/V1</code> template. For CA certificates, you
-     * should choose the shortest path length that meets your needs. The path length is
+     * If this parameter is not provided, ACM Private CA defaults to the
+     * <code>EndEntityCertificate/V1</code> template. For CA certificates, you should
+     * choose the shortest path length that meets your needs. The path length is
      * indicated by the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA
      * depth</a>.</p> <p>Note: The CA depth configured on a subordinate CA certificate
      * must not exceed the limit set by its parents in the CA hierarchy.</p> <p>For a
-     * list of <code>TemplateArn</code> values supported by Amazon Web Services Private
-     * CA, see <a
+     * list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p>
      */
@@ -430,15 +419,14 @@ namespace Model
 
     /**
      * <p>Specifies a custom configuration template to use when issuing a certificate.
-     * If this parameter is not provided, Amazon Web Services Private CA defaults to
-     * the <code>EndEntityCertificate/V1</code> template. For CA certificates, you
-     * should choose the shortest path length that meets your needs. The path length is
+     * If this parameter is not provided, ACM Private CA defaults to the
+     * <code>EndEntityCertificate/V1</code> template. For CA certificates, you should
+     * choose the shortest path length that meets your needs. The path length is
      * indicated by the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA
      * depth</a>.</p> <p>Note: The CA depth configured on a subordinate CA certificate
      * must not exceed the limit set by its parents in the CA hierarchy.</p> <p>For a
-     * list of <code>TemplateArn</code> values supported by Amazon Web Services Private
-     * CA, see <a
+     * list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p>
      */
@@ -446,15 +434,14 @@ namespace Model
 
     /**
      * <p>Specifies a custom configuration template to use when issuing a certificate.
-     * If this parameter is not provided, Amazon Web Services Private CA defaults to
-     * the <code>EndEntityCertificate/V1</code> template. For CA certificates, you
-     * should choose the shortest path length that meets your needs. The path length is
+     * If this parameter is not provided, ACM Private CA defaults to the
+     * <code>EndEntityCertificate/V1</code> template. For CA certificates, you should
+     * choose the shortest path length that meets your needs. The path length is
      * indicated by the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA
      * depth</a>.</p> <p>Note: The CA depth configured on a subordinate CA certificate
      * must not exceed the limit set by its parents in the CA hierarchy.</p> <p>For a
-     * list of <code>TemplateArn</code> values supported by Amazon Web Services Private
-     * CA, see <a
+     * list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p>
      */
@@ -462,15 +449,14 @@ namespace Model
 
     /**
      * <p>Specifies a custom configuration template to use when issuing a certificate.
-     * If this parameter is not provided, Amazon Web Services Private CA defaults to
-     * the <code>EndEntityCertificate/V1</code> template. For CA certificates, you
-     * should choose the shortest path length that meets your needs. The path length is
+     * If this parameter is not provided, ACM Private CA defaults to the
+     * <code>EndEntityCertificate/V1</code> template. For CA certificates, you should
+     * choose the shortest path length that meets your needs. The path length is
      * indicated by the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA
      * depth</a>.</p> <p>Note: The CA depth configured on a subordinate CA certificate
      * must not exceed the limit set by its parents in the CA hierarchy.</p> <p>For a
-     * list of <code>TemplateArn</code> values supported by Amazon Web Services Private
-     * CA, see <a
+     * list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p>
      */
@@ -589,15 +575,14 @@ namespace Model
     /**
      * <p>Information describing the start of the validity period of the certificate.
      * This parameter sets the “Not Before" date for the certificate.</p> <p>By
-     * default, when issuing a certificate, Amazon Web Services Private CA sets the
-     * "Not Before" date to the issuance time minus 60 minutes. This compensates for
-     * clock inconsistencies across computer systems. The
-     * <code>ValidityNotBefore</code> parameter can be used to customize the “Not
-     * Before” value. </p> <p>Unlike the <code>Validity</code> parameter, the
-     * <code>ValidityNotBefore</code> parameter is optional.</p> <p>The
-     * <code>ValidityNotBefore</code> value is expressed as an explicit date and time,
-     * using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more
-     * information, see <a
+     * default, when issuing a certificate, ACM Private CA sets the "Not Before" date
+     * to the issuance time minus 60 minutes. This compensates for clock
+     * inconsistencies across computer systems. The <code>ValidityNotBefore</code>
+     * parameter can be used to customize the “Not Before” value. </p> <p>Unlike the
+     * <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is
+     * optional.</p> <p>The <code>ValidityNotBefore</code> value is expressed as an
+     * explicit date and time, using the <code>Validity</code> type value
+     * <code>ABSOLUTE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a>
      * in this API reference and <a
      * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
@@ -608,15 +593,14 @@ namespace Model
     /**
      * <p>Information describing the start of the validity period of the certificate.
      * This parameter sets the “Not Before" date for the certificate.</p> <p>By
-     * default, when issuing a certificate, Amazon Web Services Private CA sets the
-     * "Not Before" date to the issuance time minus 60 minutes. This compensates for
-     * clock inconsistencies across computer systems. The
-     * <code>ValidityNotBefore</code> parameter can be used to customize the “Not
-     * Before” value. </p> <p>Unlike the <code>Validity</code> parameter, the
-     * <code>ValidityNotBefore</code> parameter is optional.</p> <p>The
-     * <code>ValidityNotBefore</code> value is expressed as an explicit date and time,
-     * using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more
-     * information, see <a
+     * default, when issuing a certificate, ACM Private CA sets the "Not Before" date
+     * to the issuance time minus 60 minutes. This compensates for clock
+     * inconsistencies across computer systems. The <code>ValidityNotBefore</code>
+     * parameter can be used to customize the “Not Before” value. </p> <p>Unlike the
+     * <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is
+     * optional.</p> <p>The <code>ValidityNotBefore</code> value is expressed as an
+     * explicit date and time, using the <code>Validity</code> type value
+     * <code>ABSOLUTE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a>
      * in this API reference and <a
      * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
@@ -627,15 +611,14 @@ namespace Model
     /**
      * <p>Information describing the start of the validity period of the certificate.
      * This parameter sets the “Not Before" date for the certificate.</p> <p>By
-     * default, when issuing a certificate, Amazon Web Services Private CA sets the
-     * "Not Before" date to the issuance time minus 60 minutes. This compensates for
-     * clock inconsistencies across computer systems. The
-     * <code>ValidityNotBefore</code> parameter can be used to customize the “Not
-     * Before” value. </p> <p>Unlike the <code>Validity</code> parameter, the
-     * <code>ValidityNotBefore</code> parameter is optional.</p> <p>The
-     * <code>ValidityNotBefore</code> value is expressed as an explicit date and time,
-     * using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more
-     * information, see <a
+     * default, when issuing a certificate, ACM Private CA sets the "Not Before" date
+     * to the issuance time minus 60 minutes. This compensates for clock
+     * inconsistencies across computer systems. The <code>ValidityNotBefore</code>
+     * parameter can be used to customize the “Not Before” value. </p> <p>Unlike the
+     * <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is
+     * optional.</p> <p>The <code>ValidityNotBefore</code> value is expressed as an
+     * explicit date and time, using the <code>Validity</code> type value
+     * <code>ABSOLUTE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a>
      * in this API reference and <a
      * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
@@ -646,15 +629,14 @@ namespace Model
     /**
      * <p>Information describing the start of the validity period of the certificate.
      * This parameter sets the “Not Before" date for the certificate.</p> <p>By
-     * default, when issuing a certificate, Amazon Web Services Private CA sets the
-     * "Not Before" date to the issuance time minus 60 minutes. This compensates for
-     * clock inconsistencies across computer systems. The
-     * <code>ValidityNotBefore</code> parameter can be used to customize the “Not
-     * Before” value. </p> <p>Unlike the <code>Validity</code> parameter, the
-     * <code>ValidityNotBefore</code> parameter is optional.</p> <p>The
-     * <code>ValidityNotBefore</code> value is expressed as an explicit date and time,
-     * using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more
-     * information, see <a
+     * default, when issuing a certificate, ACM Private CA sets the "Not Before" date
+     * to the issuance time minus 60 minutes. This compensates for clock
+     * inconsistencies across computer systems. The <code>ValidityNotBefore</code>
+     * parameter can be used to customize the “Not Before” value. </p> <p>Unlike the
+     * <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is
+     * optional.</p> <p>The <code>ValidityNotBefore</code> value is expressed as an
+     * explicit date and time, using the <code>Validity</code> type value
+     * <code>ABSOLUTE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a>
      * in this API reference and <a
      * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
@@ -665,15 +647,14 @@ namespace Model
     /**
      * <p>Information describing the start of the validity period of the certificate.
      * This parameter sets the “Not Before" date for the certificate.</p> <p>By
-     * default, when issuing a certificate, Amazon Web Services Private CA sets the
-     * "Not Before" date to the issuance time minus 60 minutes. This compensates for
-     * clock inconsistencies across computer systems. The
-     * <code>ValidityNotBefore</code> parameter can be used to customize the “Not
-     * Before” value. </p> <p>Unlike the <code>Validity</code> parameter, the
-     * <code>ValidityNotBefore</code> parameter is optional.</p> <p>The
-     * <code>ValidityNotBefore</code> value is expressed as an explicit date and time,
-     * using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more
-     * information, see <a
+     * default, when issuing a certificate, ACM Private CA sets the "Not Before" date
+     * to the issuance time minus 60 minutes. This compensates for clock
+     * inconsistencies across computer systems. The <code>ValidityNotBefore</code>
+     * parameter can be used to customize the “Not Before” value. </p> <p>Unlike the
+     * <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is
+     * optional.</p> <p>The <code>ValidityNotBefore</code> value is expressed as an
+     * explicit date and time, using the <code>Validity</code> type value
+     * <code>ABSOLUTE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a>
      * in this API reference and <a
      * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
@@ -684,15 +665,14 @@ namespace Model
     /**
      * <p>Information describing the start of the validity period of the certificate.
      * This parameter sets the “Not Before" date for the certificate.</p> <p>By
-     * default, when issuing a certificate, Amazon Web Services Private CA sets the
-     * "Not Before" date to the issuance time minus 60 minutes. This compensates for
-     * clock inconsistencies across computer systems. The
-     * <code>ValidityNotBefore</code> parameter can be used to customize the “Not
-     * Before” value. </p> <p>Unlike the <code>Validity</code> parameter, the
-     * <code>ValidityNotBefore</code> parameter is optional.</p> <p>The
-     * <code>ValidityNotBefore</code> value is expressed as an explicit date and time,
-     * using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more
-     * information, see <a
+     * default, when issuing a certificate, ACM Private CA sets the "Not Before" date
+     * to the issuance time minus 60 minutes. This compensates for clock
+     * inconsistencies across computer systems. The <code>ValidityNotBefore</code>
+     * parameter can be used to customize the “Not Before” value. </p> <p>Unlike the
+     * <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is
+     * optional.</p> <p>The <code>ValidityNotBefore</code> value is expressed as an
+     * explicit date and time, using the <code>Validity</code> type value
+     * <code>ABSOLUTE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a>
      * in this API reference and <a
      * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
@@ -705,10 +685,10 @@ namespace Model
      * <p>Alphanumeric string that can be used to distinguish between calls to the
      * <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b>
      * time out after one minute. Therefore, if you call <b>IssueCertificate</b>
-     * multiple times with the same idempotency token within one minute, Amazon Web
-     * Services Private CA recognizes that you are requesting only one certificate and
-     * will issue only one. If you change the idempotency token for each call, PCA
-     * recognizes that you are requesting multiple certificates.</p>
+     * multiple times with the same idempotency token within one minute, ACM Private CA
+     * recognizes that you are requesting only one certificate and will issue only one.
+     * If you change the idempotency token for each call, PCA recognizes that you are
+     * requesting multiple certificates.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
@@ -716,10 +696,10 @@ namespace Model
      * <p>Alphanumeric string that can be used to distinguish between calls to the
      * <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b>
      * time out after one minute. Therefore, if you call <b>IssueCertificate</b>
-     * multiple times with the same idempotency token within one minute, Amazon Web
-     * Services Private CA recognizes that you are requesting only one certificate and
-     * will issue only one. If you change the idempotency token for each call, PCA
-     * recognizes that you are requesting multiple certificates.</p>
+     * multiple times with the same idempotency token within one minute, ACM Private CA
+     * recognizes that you are requesting only one certificate and will issue only one.
+     * If you change the idempotency token for each call, PCA recognizes that you are
+     * requesting multiple certificates.</p>
      */
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
@@ -727,10 +707,10 @@ namespace Model
      * <p>Alphanumeric string that can be used to distinguish between calls to the
      * <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b>
      * time out after one minute. Therefore, if you call <b>IssueCertificate</b>
-     * multiple times with the same idempotency token within one minute, Amazon Web
-     * Services Private CA recognizes that you are requesting only one certificate and
-     * will issue only one. If you change the idempotency token for each call, PCA
-     * recognizes that you are requesting multiple certificates.</p>
+     * multiple times with the same idempotency token within one minute, ACM Private CA
+     * recognizes that you are requesting only one certificate and will issue only one.
+     * If you change the idempotency token for each call, PCA recognizes that you are
+     * requesting multiple certificates.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
@@ -738,10 +718,10 @@ namespace Model
      * <p>Alphanumeric string that can be used to distinguish between calls to the
      * <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b>
      * time out after one minute. Therefore, if you call <b>IssueCertificate</b>
-     * multiple times with the same idempotency token within one minute, Amazon Web
-     * Services Private CA recognizes that you are requesting only one certificate and
-     * will issue only one. If you change the idempotency token for each call, PCA
-     * recognizes that you are requesting multiple certificates.</p>
+     * multiple times with the same idempotency token within one minute, ACM Private CA
+     * recognizes that you are requesting only one certificate and will issue only one.
+     * If you change the idempotency token for each call, PCA recognizes that you are
+     * requesting multiple certificates.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
@@ -749,10 +729,10 @@ namespace Model
      * <p>Alphanumeric string that can be used to distinguish between calls to the
      * <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b>
      * time out after one minute. Therefore, if you call <b>IssueCertificate</b>
-     * multiple times with the same idempotency token within one minute, Amazon Web
-     * Services Private CA recognizes that you are requesting only one certificate and
-     * will issue only one. If you change the idempotency token for each call, PCA
-     * recognizes that you are requesting multiple certificates.</p>
+     * multiple times with the same idempotency token within one minute, ACM Private CA
+     * recognizes that you are requesting only one certificate and will issue only one.
+     * If you change the idempotency token for each call, PCA recognizes that you are
+     * requesting multiple certificates.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
@@ -760,10 +740,10 @@ namespace Model
      * <p>Alphanumeric string that can be used to distinguish between calls to the
      * <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b>
      * time out after one minute. Therefore, if you call <b>IssueCertificate</b>
-     * multiple times with the same idempotency token within one minute, Amazon Web
-     * Services Private CA recognizes that you are requesting only one certificate and
-     * will issue only one. If you change the idempotency token for each call, PCA
-     * recognizes that you are requesting multiple certificates.</p>
+     * multiple times with the same idempotency token within one minute, ACM Private CA
+     * recognizes that you are requesting only one certificate and will issue only one.
+     * If you change the idempotency token for each call, PCA recognizes that you are
+     * requesting multiple certificates.</p>
      */
     inline IssueCertificateRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
@@ -771,10 +751,10 @@ namespace Model
      * <p>Alphanumeric string that can be used to distinguish between calls to the
      * <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b>
      * time out after one minute. Therefore, if you call <b>IssueCertificate</b>
-     * multiple times with the same idempotency token within one minute, Amazon Web
-     * Services Private CA recognizes that you are requesting only one certificate and
-     * will issue only one. If you change the idempotency token for each call, PCA
-     * recognizes that you are requesting multiple certificates.</p>
+     * multiple times with the same idempotency token within one minute, ACM Private CA
+     * recognizes that you are requesting only one certificate and will issue only one.
+     * If you change the idempotency token for each call, PCA recognizes that you are
+     * requesting multiple certificates.</p>
      */
     inline IssueCertificateRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
@@ -782,10 +762,10 @@ namespace Model
      * <p>Alphanumeric string that can be used to distinguish between calls to the
      * <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b>
      * time out after one minute. Therefore, if you call <b>IssueCertificate</b>
-     * multiple times with the same idempotency token within one minute, Amazon Web
-     * Services Private CA recognizes that you are requesting only one certificate and
-     * will issue only one. If you change the idempotency token for each call, PCA
-     * recognizes that you are requesting multiple certificates.</p>
+     * multiple times with the same idempotency token within one minute, ACM Private CA
+     * recognizes that you are requesting only one certificate and will issue only one.
+     * If you change the idempotency token for each call, PCA recognizes that you are
+     * requesting multiple certificates.</p>
      */
     inline IssueCertificateRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 

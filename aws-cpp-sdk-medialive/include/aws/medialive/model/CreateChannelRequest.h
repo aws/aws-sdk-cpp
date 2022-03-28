@@ -12,6 +12,7 @@
 #include <aws/medialive/model/EncoderSettings.h>
 #include <aws/medialive/model/InputSpecification.h>
 #include <aws/medialive/model/LogLevel.h>
+#include <aws/medialive/model/MaintenanceCreateSettings.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/VpcOutputSettings.h>
@@ -259,6 +260,37 @@ namespace Model
      * The log level to write to CloudWatch Logs.
      */
     inline CreateChannelRequest& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline const MaintenanceCreateSettings& GetMaintenance() const{ return m_maintenance; }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline bool MaintenanceHasBeenSet() const { return m_maintenanceHasBeenSet; }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline void SetMaintenance(const MaintenanceCreateSettings& value) { m_maintenanceHasBeenSet = true; m_maintenance = value; }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline void SetMaintenance(MaintenanceCreateSettings&& value) { m_maintenanceHasBeenSet = true; m_maintenance = std::move(value); }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline CreateChannelRequest& WithMaintenance(const MaintenanceCreateSettings& value) { SetMaintenance(value); return *this;}
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline CreateChannelRequest& WithMaintenance(MaintenanceCreateSettings&& value) { SetMaintenance(std::move(value)); return *this;}
 
 
     /**
@@ -534,6 +566,9 @@ creating multiple resources.
 
     LogLevel m_logLevel;
     bool m_logLevelHasBeenSet;
+
+    MaintenanceCreateSettings m_maintenance;
+    bool m_maintenanceHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

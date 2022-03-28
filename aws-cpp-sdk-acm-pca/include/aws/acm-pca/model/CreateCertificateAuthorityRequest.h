@@ -186,10 +186,10 @@ namespace Model
      * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
      * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
      * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
-     * token within five minutes, Amazon Web Services Private CA recognizes that you
-     * are requesting only certificate authority and will issue only one. If you change
-     * the idempotency token for each call, PCA recognizes that you are requesting
-     * multiple certificate authorities.</p>
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
@@ -198,10 +198,10 @@ namespace Model
      * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
      * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
      * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
-     * token within five minutes, Amazon Web Services Private CA recognizes that you
-     * are requesting only certificate authority and will issue only one. If you change
-     * the idempotency token for each call, PCA recognizes that you are requesting
-     * multiple certificate authorities.</p>
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
@@ -210,10 +210,10 @@ namespace Model
      * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
      * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
      * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
-     * token within five minutes, Amazon Web Services Private CA recognizes that you
-     * are requesting only certificate authority and will issue only one. If you change
-     * the idempotency token for each call, PCA recognizes that you are requesting
-     * multiple certificate authorities.</p>
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
@@ -222,10 +222,10 @@ namespace Model
      * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
      * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
      * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
-     * token within five minutes, Amazon Web Services Private CA recognizes that you
-     * are requesting only certificate authority and will issue only one. If you change
-     * the idempotency token for each call, PCA recognizes that you are requesting
-     * multiple certificate authorities.</p>
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
@@ -234,10 +234,10 @@ namespace Model
      * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
      * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
      * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
-     * token within five minutes, Amazon Web Services Private CA recognizes that you
-     * are requesting only certificate authority and will issue only one. If you change
-     * the idempotency token for each call, PCA recognizes that you are requesting
-     * multiple certificate authorities.</p>
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
@@ -246,10 +246,10 @@ namespace Model
      * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
      * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
      * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
-     * token within five minutes, Amazon Web Services Private CA recognizes that you
-     * are requesting only certificate authority and will issue only one. If you change
-     * the idempotency token for each call, PCA recognizes that you are requesting
-     * multiple certificate authorities.</p>
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline CreateCertificateAuthorityRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
@@ -258,10 +258,10 @@ namespace Model
      * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
      * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
      * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
-     * token within five minutes, Amazon Web Services Private CA recognizes that you
-     * are requesting only certificate authority and will issue only one. If you change
-     * the idempotency token for each call, PCA recognizes that you are requesting
-     * multiple certificate authorities.</p>
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline CreateCertificateAuthorityRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
@@ -270,10 +270,10 @@ namespace Model
      * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
      * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
      * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
-     * token within five minutes, Amazon Web Services Private CA recognizes that you
-     * are requesting only certificate authority and will issue only one. If you change
-     * the idempotency token for each call, PCA recognizes that you are requesting
-     * multiple certificate authorities.</p>
+     * token within five minutes, ACM Private CA recognizes that you are requesting
+     * only certificate authority and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
+     * certificate authorities.</p>
      */
     inline CreateCertificateAuthorityRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 

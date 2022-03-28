@@ -153,61 +153,61 @@ namespace Model
 
     /**
      * <p>A PEM-encoded file that contains all of your certificates, other than the
-     * certificate you're importing, chaining up to your root CA. Your Amazon Web
-     * Services Private CA-hosted or on-premises root certificate is the last in the
-     * chain, and each certificate in the chain signs the one preceding. </p> <p>This
-     * parameter must be supplied when you import a subordinate CA. When you import a
-     * root CA, there is no chain.</p>
+     * certificate you're importing, chaining up to your root CA. Your ACM Private
+     * CA-hosted or on-premises root certificate is the last in the chain, and each
+     * certificate in the chain signs the one preceding. </p> <p>This parameter must be
+     * supplied when you import a subordinate CA. When you import a root CA, there is
+     * no chain.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetCertificateChain() const{ return m_certificateChain; }
 
     /**
      * <p>A PEM-encoded file that contains all of your certificates, other than the
-     * certificate you're importing, chaining up to your root CA. Your Amazon Web
-     * Services Private CA-hosted or on-premises root certificate is the last in the
-     * chain, and each certificate in the chain signs the one preceding. </p> <p>This
-     * parameter must be supplied when you import a subordinate CA. When you import a
-     * root CA, there is no chain.</p>
+     * certificate you're importing, chaining up to your root CA. Your ACM Private
+     * CA-hosted or on-premises root certificate is the last in the chain, and each
+     * certificate in the chain signs the one preceding. </p> <p>This parameter must be
+     * supplied when you import a subordinate CA. When you import a root CA, there is
+     * no chain.</p>
      */
     inline bool CertificateChainHasBeenSet() const { return m_certificateChainHasBeenSet; }
 
     /**
      * <p>A PEM-encoded file that contains all of your certificates, other than the
-     * certificate you're importing, chaining up to your root CA. Your Amazon Web
-     * Services Private CA-hosted or on-premises root certificate is the last in the
-     * chain, and each certificate in the chain signs the one preceding. </p> <p>This
-     * parameter must be supplied when you import a subordinate CA. When you import a
-     * root CA, there is no chain.</p>
+     * certificate you're importing, chaining up to your root CA. Your ACM Private
+     * CA-hosted or on-premises root certificate is the last in the chain, and each
+     * certificate in the chain signs the one preceding. </p> <p>This parameter must be
+     * supplied when you import a subordinate CA. When you import a root CA, there is
+     * no chain.</p>
      */
     inline void SetCertificateChain(const Aws::Utils::ByteBuffer& value) { m_certificateChainHasBeenSet = true; m_certificateChain = value; }
 
     /**
      * <p>A PEM-encoded file that contains all of your certificates, other than the
-     * certificate you're importing, chaining up to your root CA. Your Amazon Web
-     * Services Private CA-hosted or on-premises root certificate is the last in the
-     * chain, and each certificate in the chain signs the one preceding. </p> <p>This
-     * parameter must be supplied when you import a subordinate CA. When you import a
-     * root CA, there is no chain.</p>
+     * certificate you're importing, chaining up to your root CA. Your ACM Private
+     * CA-hosted or on-premises root certificate is the last in the chain, and each
+     * certificate in the chain signs the one preceding. </p> <p>This parameter must be
+     * supplied when you import a subordinate CA. When you import a root CA, there is
+     * no chain.</p>
      */
     inline void SetCertificateChain(Aws::Utils::ByteBuffer&& value) { m_certificateChainHasBeenSet = true; m_certificateChain = std::move(value); }
 
     /**
      * <p>A PEM-encoded file that contains all of your certificates, other than the
-     * certificate you're importing, chaining up to your root CA. Your Amazon Web
-     * Services Private CA-hosted or on-premises root certificate is the last in the
-     * chain, and each certificate in the chain signs the one preceding. </p> <p>This
-     * parameter must be supplied when you import a subordinate CA. When you import a
-     * root CA, there is no chain.</p>
+     * certificate you're importing, chaining up to your root CA. Your ACM Private
+     * CA-hosted or on-premises root certificate is the last in the chain, and each
+     * certificate in the chain signs the one preceding. </p> <p>This parameter must be
+     * supplied when you import a subordinate CA. When you import a root CA, there is
+     * no chain.</p>
      */
     inline ImportCertificateAuthorityCertificateRequest& WithCertificateChain(const Aws::Utils::ByteBuffer& value) { SetCertificateChain(value); return *this;}
 
     /**
      * <p>A PEM-encoded file that contains all of your certificates, other than the
-     * certificate you're importing, chaining up to your root CA. Your Amazon Web
-     * Services Private CA-hosted or on-premises root certificate is the last in the
-     * chain, and each certificate in the chain signs the one preceding. </p> <p>This
-     * parameter must be supplied when you import a subordinate CA. When you import a
-     * root CA, there is no chain.</p>
+     * certificate you're importing, chaining up to your root CA. Your ACM Private
+     * CA-hosted or on-premises root certificate is the last in the chain, and each
+     * certificate in the chain signs the one preceding. </p> <p>This parameter must be
+     * supplied when you import a subordinate CA. When you import a root CA, there is
+     * no chain.</p>
      */
     inline ImportCertificateAuthorityCertificateRequest& WithCertificateChain(Aws::Utils::ByteBuffer&& value) { SetCertificateChain(std::move(value)); return *this;}
 

@@ -37,8 +37,8 @@ namespace Model
    * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html">RevokeCertificate</a>
    * and <a
    * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/revocation-setup.html">Setting
-   * up a certificate revocation method</a> in the <i>Amazon Web Services Private
-   * Certificate Authority User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * up a certificate revocation method</a> in the <i>Certificate Manager Private
+   * Certificate Authority (PCA) User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/RevocationConfiguration">AWS
    * API Reference</a></p>
    */
@@ -54,48 +54,48 @@ namespace Model
     /**
      * <p>Configuration of the certificate revocation list (CRL), if any, maintained by
      * your private CA. A CRL is typically updated approximately 30 minutes after a
-     * certificate is revoked. If for any reason a CRL update fails, Amazon Web
-     * Services Private CA makes further attempts every 15 minutes.</p>
+     * certificate is revoked. If for any reason a CRL update fails, ACM Private CA
+     * makes further attempts every 15 minutes.</p>
      */
     inline const CrlConfiguration& GetCrlConfiguration() const{ return m_crlConfiguration; }
 
     /**
      * <p>Configuration of the certificate revocation list (CRL), if any, maintained by
      * your private CA. A CRL is typically updated approximately 30 minutes after a
-     * certificate is revoked. If for any reason a CRL update fails, Amazon Web
-     * Services Private CA makes further attempts every 15 minutes.</p>
+     * certificate is revoked. If for any reason a CRL update fails, ACM Private CA
+     * makes further attempts every 15 minutes.</p>
      */
     inline bool CrlConfigurationHasBeenSet() const { return m_crlConfigurationHasBeenSet; }
 
     /**
      * <p>Configuration of the certificate revocation list (CRL), if any, maintained by
      * your private CA. A CRL is typically updated approximately 30 minutes after a
-     * certificate is revoked. If for any reason a CRL update fails, Amazon Web
-     * Services Private CA makes further attempts every 15 minutes.</p>
+     * certificate is revoked. If for any reason a CRL update fails, ACM Private CA
+     * makes further attempts every 15 minutes.</p>
      */
     inline void SetCrlConfiguration(const CrlConfiguration& value) { m_crlConfigurationHasBeenSet = true; m_crlConfiguration = value; }
 
     /**
      * <p>Configuration of the certificate revocation list (CRL), if any, maintained by
      * your private CA. A CRL is typically updated approximately 30 minutes after a
-     * certificate is revoked. If for any reason a CRL update fails, Amazon Web
-     * Services Private CA makes further attempts every 15 minutes.</p>
+     * certificate is revoked. If for any reason a CRL update fails, ACM Private CA
+     * makes further attempts every 15 minutes.</p>
      */
     inline void SetCrlConfiguration(CrlConfiguration&& value) { m_crlConfigurationHasBeenSet = true; m_crlConfiguration = std::move(value); }
 
     /**
      * <p>Configuration of the certificate revocation list (CRL), if any, maintained by
      * your private CA. A CRL is typically updated approximately 30 minutes after a
-     * certificate is revoked. If for any reason a CRL update fails, Amazon Web
-     * Services Private CA makes further attempts every 15 minutes.</p>
+     * certificate is revoked. If for any reason a CRL update fails, ACM Private CA
+     * makes further attempts every 15 minutes.</p>
      */
     inline RevocationConfiguration& WithCrlConfiguration(const CrlConfiguration& value) { SetCrlConfiguration(value); return *this;}
 
     /**
      * <p>Configuration of the certificate revocation list (CRL), if any, maintained by
      * your private CA. A CRL is typically updated approximately 30 minutes after a
-     * certificate is revoked. If for any reason a CRL update fails, Amazon Web
-     * Services Private CA makes further attempts every 15 minutes.</p>
+     * certificate is revoked. If for any reason a CRL update fails, ACM Private CA
+     * makes further attempts every 15 minutes.</p>
      */
     inline RevocationConfiguration& WithCrlConfiguration(CrlConfiguration&& value) { SetCrlConfiguration(std::move(value)); return *this;}
 
