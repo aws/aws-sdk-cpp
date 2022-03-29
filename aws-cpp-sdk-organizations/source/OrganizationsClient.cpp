@@ -23,6 +23,7 @@
 #include <aws/organizations/model/AcceptHandshakeRequest.h>
 #include <aws/organizations/model/AttachPolicyRequest.h>
 #include <aws/organizations/model/CancelHandshakeRequest.h>
+#include <aws/organizations/model/CloseAccountRequest.h>
 #include <aws/organizations/model/CreateAccountRequest.h>
 #include <aws/organizations/model/CreateGovCloudAccountRequest.h>
 #include <aws/organizations/model/CreateOrganizationRequest.h>
@@ -212,6 +213,30 @@ void OrganizationsClient::CancelHandshakeAsync(const CancelHandshakeRequest& req
 void OrganizationsClient::CancelHandshakeAsyncHelper(const CancelHandshakeRequest& request, const CancelHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CancelHandshake(request), context);
+}
+
+CloseAccountOutcome OrganizationsClient::CloseAccount(const CloseAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CloseAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CloseAccountOutcomeCallable OrganizationsClient::CloseAccountCallable(const CloseAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CloseAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CloseAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OrganizationsClient::CloseAccountAsync(const CloseAccountRequest& request, const CloseAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CloseAccountAsyncHelper( request, handler, context ); } );
+}
+
+void OrganizationsClient::CloseAccountAsyncHelper(const CloseAccountRequest& request, const CloseAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CloseAccount(request), context);
 }
 
 CreateAccountOutcome OrganizationsClient::CreateAccount(const CreateAccountRequest& request) const

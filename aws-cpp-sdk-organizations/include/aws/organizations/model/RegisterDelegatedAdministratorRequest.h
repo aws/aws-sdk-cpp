@@ -84,50 +84,50 @@ namespace Model
 
 
     /**
-     * <p>The service principal of the AWS service for which you want to make the
-     * member account a delegated administrator.</p>
+     * <p>The service principal of the Amazon Web Services service for which you want
+     * to make the member account a delegated administrator.</p>
      */
     inline const Aws::String& GetServicePrincipal() const{ return m_servicePrincipal; }
 
     /**
-     * <p>The service principal of the AWS service for which you want to make the
-     * member account a delegated administrator.</p>
+     * <p>The service principal of the Amazon Web Services service for which you want
+     * to make the member account a delegated administrator.</p>
      */
     inline bool ServicePrincipalHasBeenSet() const { return m_servicePrincipalHasBeenSet; }
 
     /**
-     * <p>The service principal of the AWS service for which you want to make the
-     * member account a delegated administrator.</p>
+     * <p>The service principal of the Amazon Web Services service for which you want
+     * to make the member account a delegated administrator.</p>
      */
     inline void SetServicePrincipal(const Aws::String& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = value; }
 
     /**
-     * <p>The service principal of the AWS service for which you want to make the
-     * member account a delegated administrator.</p>
+     * <p>The service principal of the Amazon Web Services service for which you want
+     * to make the member account a delegated administrator.</p>
      */
     inline void SetServicePrincipal(Aws::String&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::move(value); }
 
     /**
-     * <p>The service principal of the AWS service for which you want to make the
-     * member account a delegated administrator.</p>
+     * <p>The service principal of the Amazon Web Services service for which you want
+     * to make the member account a delegated administrator.</p>
      */
     inline void SetServicePrincipal(const char* value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal.assign(value); }
 
     /**
-     * <p>The service principal of the AWS service for which you want to make the
-     * member account a delegated administrator.</p>
+     * <p>The service principal of the Amazon Web Services service for which you want
+     * to make the member account a delegated administrator.</p>
      */
     inline RegisterDelegatedAdministratorRequest& WithServicePrincipal(const Aws::String& value) { SetServicePrincipal(value); return *this;}
 
     /**
-     * <p>The service principal of the AWS service for which you want to make the
-     * member account a delegated administrator.</p>
+     * <p>The service principal of the Amazon Web Services service for which you want
+     * to make the member account a delegated administrator.</p>
      */
     inline RegisterDelegatedAdministratorRequest& WithServicePrincipal(Aws::String&& value) { SetServicePrincipal(std::move(value)); return *this;}
 
     /**
-     * <p>The service principal of the AWS service for which you want to make the
-     * member account a delegated administrator.</p>
+     * <p>The service principal of the Amazon Web Services service for which you want
+     * to make the member account a delegated administrator.</p>
      */
     inline RegisterDelegatedAdministratorRequest& WithServicePrincipal(const char* value) { SetServicePrincipal(value); return *this;}
 

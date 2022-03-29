@@ -27,8 +27,8 @@ namespace Model
   /**
    * <p>The operation that you attempted requires you to have the
    * <code>iam:CreateServiceLinkedRole</code> for
-   * <code>organizations.amazonaws.com</code> permission so that AWS Organizations
-   * can create the required service-linked role. You don't have that
+   * <code>organizations.amazonaws.com</code> permission so that Organizations can
+   * create the required service-linked role. You don't have that
    * permission.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AccessDeniedForDependencyException">AWS
    * API Reference</a></p>

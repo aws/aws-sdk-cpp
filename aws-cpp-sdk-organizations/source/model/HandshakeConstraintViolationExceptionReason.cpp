@@ -29,6 +29,7 @@ namespace Aws
         static const int PAYMENT_INSTRUMENT_REQUIRED_HASH = HashingUtils::HashString("PAYMENT_INSTRUMENT_REQUIRED");
         static const int ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD_HASH = HashingUtils::HashString("ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD");
         static const int ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED");
+        static const int MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED_HASH = HashingUtils::HashString("MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED");
 
 
         HandshakeConstraintViolationExceptionReason GetHandshakeConstraintViolationExceptionReasonForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return HandshakeConstraintViolationExceptionReason::ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED;
           }
+          else if (hashCode == MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED_HASH)
+          {
+            return HandshakeConstraintViolationExceptionReason::MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -102,6 +107,8 @@ namespace Aws
             return "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD";
           case HandshakeConstraintViolationExceptionReason::ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED:
             return "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED";
+          case HandshakeConstraintViolationExceptionReason::MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED:
+            return "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

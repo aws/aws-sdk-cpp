@@ -33,11 +33,11 @@ namespace Model
    * still count toward your limit.</p>  <p>If you get this exception
    * immediately after creating the organization, wait one hour and try again. If
    * after an hour it continues to fail with this error, contact <a
-   * href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.</p>
-   *  </li> <li> <p>ALREADY_IN_AN_ORGANIZATION: The handshake request is
-   * invalid because the invited account is already a member of an organization.</p>
-   * </li> <li> <p>HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number
-   * of handshakes that you can send in one day.</p> </li> <li>
+   * href="https://docs.aws.amazon.com/support/home#/">Amazon Web Services
+   * Support</a>.</p>  </li> <li> <p>ALREADY_IN_AN_ORGANIZATION: The
+   * handshake request is invalid because the invited account is already a member of
+   * an organization.</p> </li> <li> <p>HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted
+   * to exceed the number of handshakes that you can send in one day.</p> </li> <li>
    * <p>INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES: You can't issue new invitations
    * to join an organization while it's in the process of enabling all features. You
    * can resume inviting accounts after you finalize the process when all accounts

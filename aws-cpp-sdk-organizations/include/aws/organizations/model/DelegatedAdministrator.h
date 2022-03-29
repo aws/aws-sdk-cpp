@@ -124,50 +124,50 @@ namespace Model
 
 
     /**
-     * <p>The email address that is associated with the delegated administrator's AWS
-     * account.</p>
+     * <p>The email address that is associated with the delegated administrator's
+     * Amazon Web Services account.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
 
     /**
-     * <p>The email address that is associated with the delegated administrator's AWS
-     * account.</p>
+     * <p>The email address that is associated with the delegated administrator's
+     * Amazon Web Services account.</p>
      */
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
 
     /**
-     * <p>The email address that is associated with the delegated administrator's AWS
-     * account.</p>
+     * <p>The email address that is associated with the delegated administrator's
+     * Amazon Web Services account.</p>
      */
     inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
 
     /**
-     * <p>The email address that is associated with the delegated administrator's AWS
-     * account.</p>
+     * <p>The email address that is associated with the delegated administrator's
+     * Amazon Web Services account.</p>
      */
     inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
 
     /**
-     * <p>The email address that is associated with the delegated administrator's AWS
-     * account.</p>
+     * <p>The email address that is associated with the delegated administrator's
+     * Amazon Web Services account.</p>
      */
     inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
 
     /**
-     * <p>The email address that is associated with the delegated administrator's AWS
-     * account.</p>
+     * <p>The email address that is associated with the delegated administrator's
+     * Amazon Web Services account.</p>
      */
     inline DelegatedAdministrator& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
 
     /**
-     * <p>The email address that is associated with the delegated administrator's AWS
-     * account.</p>
+     * <p>The email address that is associated with the delegated administrator's
+     * Amazon Web Services account.</p>
      */
     inline DelegatedAdministrator& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
 
     /**
-     * <p>The email address that is associated with the delegated administrator's AWS
-     * account.</p>
+     * <p>The email address that is associated with the delegated administrator's
+     * Amazon Web Services account.</p>
      */
     inline DelegatedAdministrator& WithEmail(const char* value) { SetEmail(value); return *this;}
 

@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>Contains details about an organizational unit (OU). An OU is a container of
-   * AWS accounts within a root of an organization. Policies that are attached to an
-   * OU apply to all accounts contained in that OU and in any child
+   * Amazon Web Services accounts within a root of an organization. Policies that are
+   * attached to an OU apply to all accounts contained in that OU and in any child
    * OUs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/OrganizationalUnit">AWS
    * API Reference</a></p>
@@ -117,8 +117,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of this OU.</p> <p>For more information about
      * ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
@@ -126,8 +126,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of this OU.</p> <p>For more information about
      * ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
@@ -135,8 +135,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of this OU.</p> <p>For more information about
      * ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
@@ -144,8 +144,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of this OU.</p> <p>For more information about
      * ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
@@ -153,8 +153,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of this OU.</p> <p>For more information about
      * ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
@@ -162,8 +162,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of this OU.</p> <p>For more information about
      * ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline OrganizationalUnit& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
@@ -171,8 +171,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of this OU.</p> <p>For more information about
      * ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline OrganizationalUnit& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
@@ -180,8 +180,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of this OU.</p> <p>For more information about
      * ARNs in Organizations, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Service Authorization
-     * Reference</i>.</p>
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline OrganizationalUnit& WithArn(const char* value) { SetArn(value); return *this;}
 
