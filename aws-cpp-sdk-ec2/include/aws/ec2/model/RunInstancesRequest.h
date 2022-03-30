@@ -22,6 +22,7 @@
 #include <aws/ec2/model/InstanceMetadataOptionsRequest.h>
 #include <aws/ec2/model/EnclaveOptionsRequest.h>
 #include <aws/ec2/model/PrivateDnsNameOptionsRequest.h>
+#include <aws/ec2/model/InstanceMaintenanceOptionsRequest.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
@@ -2226,6 +2227,37 @@ namespace Model
      */
     inline RunInstancesRequest& WithPrivateDnsNameOptions(PrivateDnsNameOptionsRequest&& value) { SetPrivateDnsNameOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The maintenance and recovery options for the instance.</p>
+     */
+    inline const InstanceMaintenanceOptionsRequest& GetMaintenanceOptions() const{ return m_maintenanceOptions; }
+
+    /**
+     * <p>The maintenance and recovery options for the instance.</p>
+     */
+    inline bool MaintenanceOptionsHasBeenSet() const { return m_maintenanceOptionsHasBeenSet; }
+
+    /**
+     * <p>The maintenance and recovery options for the instance.</p>
+     */
+    inline void SetMaintenanceOptions(const InstanceMaintenanceOptionsRequest& value) { m_maintenanceOptionsHasBeenSet = true; m_maintenanceOptions = value; }
+
+    /**
+     * <p>The maintenance and recovery options for the instance.</p>
+     */
+    inline void SetMaintenanceOptions(InstanceMaintenanceOptionsRequest&& value) { m_maintenanceOptionsHasBeenSet = true; m_maintenanceOptions = std::move(value); }
+
+    /**
+     * <p>The maintenance and recovery options for the instance.</p>
+     */
+    inline RunInstancesRequest& WithMaintenanceOptions(const InstanceMaintenanceOptionsRequest& value) { SetMaintenanceOptions(value); return *this;}
+
+    /**
+     * <p>The maintenance and recovery options for the instance.</p>
+     */
+    inline RunInstancesRequest& WithMaintenanceOptions(InstanceMaintenanceOptionsRequest&& value) { SetMaintenanceOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
@@ -2341,6 +2373,9 @@ namespace Model
 
     PrivateDnsNameOptionsRequest m_privateDnsNameOptions;
     bool m_privateDnsNameOptionsHasBeenSet;
+
+    InstanceMaintenanceOptionsRequest m_maintenanceOptions;
+    bool m_maintenanceOptionsHasBeenSet;
   };
 
 } // namespace Model

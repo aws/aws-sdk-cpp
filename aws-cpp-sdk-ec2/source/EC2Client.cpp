@@ -440,6 +440,7 @@
 #include <aws/ec2/model/ModifyInstanceCreditSpecificationRequest.h>
 #include <aws/ec2/model/ModifyInstanceEventStartTimeRequest.h>
 #include <aws/ec2/model/ModifyInstanceEventWindowRequest.h>
+#include <aws/ec2/model/ModifyInstanceMaintenanceOptionsRequest.h>
 #include <aws/ec2/model/ModifyInstanceMetadataOptionsRequest.h>
 #include <aws/ec2/model/ModifyInstancePlacementRequest.h>
 #include <aws/ec2/model/ModifyIpamRequest.h>
@@ -10694,6 +10695,30 @@ void EC2Client::ModifyInstanceEventWindowAsync(const ModifyInstanceEventWindowRe
 void EC2Client::ModifyInstanceEventWindowAsyncHelper(const ModifyInstanceEventWindowRequest& request, const ModifyInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyInstanceEventWindow(request), context);
+}
+
+ModifyInstanceMaintenanceOptionsOutcome EC2Client::ModifyInstanceMaintenanceOptions(const ModifyInstanceMaintenanceOptionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ModifyInstanceMaintenanceOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyInstanceMaintenanceOptionsOutcomeCallable EC2Client::ModifyInstanceMaintenanceOptionsCallable(const ModifyInstanceMaintenanceOptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyInstanceMaintenanceOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyInstanceMaintenanceOptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::ModifyInstanceMaintenanceOptionsAsync(const ModifyInstanceMaintenanceOptionsRequest& request, const ModifyInstanceMaintenanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyInstanceMaintenanceOptionsAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::ModifyInstanceMaintenanceOptionsAsyncHelper(const ModifyInstanceMaintenanceOptionsRequest& request, const ModifyInstanceMaintenanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyInstanceMaintenanceOptions(request), context);
 }
 
 ModifyInstanceMetadataOptionsOutcome EC2Client::ModifyInstanceMetadataOptions(const ModifyInstanceMetadataOptionsRequest& request) const

@@ -263,58 +263,42 @@ namespace Model
 
 
     /**
-     * <p>The <code>ResourceTag</code> objects associated with the resource.</p> <p>
-     * This option isn't available for the centralized deployment model when creating
-     * policies to configure Network Firewall. </p>
+     * <p>The <code>ResourceTag</code> objects associated with the resource.</p>
      */
     inline const Aws::Vector<Tag>& GetResourceTags() const{ return m_resourceTags; }
 
     /**
-     * <p>The <code>ResourceTag</code> objects associated with the resource.</p> <p>
-     * This option isn't available for the centralized deployment model when creating
-     * policies to configure Network Firewall. </p>
+     * <p>The <code>ResourceTag</code> objects associated with the resource.</p>
      */
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
 
     /**
-     * <p>The <code>ResourceTag</code> objects associated with the resource.</p> <p>
-     * This option isn't available for the centralized deployment model when creating
-     * policies to configure Network Firewall. </p>
+     * <p>The <code>ResourceTag</code> objects associated with the resource.</p>
      */
     inline void SetResourceTags(const Aws::Vector<Tag>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
 
     /**
-     * <p>The <code>ResourceTag</code> objects associated with the resource.</p> <p>
-     * This option isn't available for the centralized deployment model when creating
-     * policies to configure Network Firewall. </p>
+     * <p>The <code>ResourceTag</code> objects associated with the resource.</p>
      */
     inline void SetResourceTags(Aws::Vector<Tag>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
 
     /**
-     * <p>The <code>ResourceTag</code> objects associated with the resource.</p> <p>
-     * This option isn't available for the centralized deployment model when creating
-     * policies to configure Network Firewall. </p>
+     * <p>The <code>ResourceTag</code> objects associated with the resource.</p>
      */
     inline ViolationDetail& WithResourceTags(const Aws::Vector<Tag>& value) { SetResourceTags(value); return *this;}
 
     /**
-     * <p>The <code>ResourceTag</code> objects associated with the resource.</p> <p>
-     * This option isn't available for the centralized deployment model when creating
-     * policies to configure Network Firewall. </p>
+     * <p>The <code>ResourceTag</code> objects associated with the resource.</p>
      */
     inline ViolationDetail& WithResourceTags(Aws::Vector<Tag>&& value) { SetResourceTags(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>ResourceTag</code> objects associated with the resource.</p> <p>
-     * This option isn't available for the centralized deployment model when creating
-     * policies to configure Network Firewall. </p>
+     * <p>The <code>ResourceTag</code> objects associated with the resource.</p>
      */
     inline ViolationDetail& AddResourceTags(const Tag& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
 
     /**
-     * <p>The <code>ResourceTag</code> objects associated with the resource.</p> <p>
-     * This option isn't available for the centralized deployment model when creating
-     * policies to configure Network Firewall. </p>
+     * <p>The <code>ResourceTag</code> objects associated with the resource.</p>
      */
     inline ViolationDetail& AddResourceTags(Tag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
 

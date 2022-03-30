@@ -28,6 +28,7 @@
 #include <aws/ec2/model/EnclaveOptions.h>
 #include <aws/ec2/model/BootModeValues.h>
 #include <aws/ec2/model/PrivateDnsNameOptionsResponse.h>
+#include <aws/ec2/model/InstanceMaintenanceOptions.h>
 #include <aws/ec2/model/ProductCode.h>
 #include <aws/ec2/model/InstanceBlockDeviceMapping.h>
 #include <aws/ec2/model/ElasticGpuAssociation.h>
@@ -2193,6 +2194,43 @@ namespace Model
      */
     inline Instance& WithIpv6Address(const char* value) { SetIpv6Address(value); return *this;}
 
+
+    /**
+     * <p>Provides information on the recovery and maintenance options of your
+     * instance.</p>
+     */
+    inline const InstanceMaintenanceOptions& GetMaintenanceOptions() const{ return m_maintenanceOptions; }
+
+    /**
+     * <p>Provides information on the recovery and maintenance options of your
+     * instance.</p>
+     */
+    inline bool MaintenanceOptionsHasBeenSet() const { return m_maintenanceOptionsHasBeenSet; }
+
+    /**
+     * <p>Provides information on the recovery and maintenance options of your
+     * instance.</p>
+     */
+    inline void SetMaintenanceOptions(const InstanceMaintenanceOptions& value) { m_maintenanceOptionsHasBeenSet = true; m_maintenanceOptions = value; }
+
+    /**
+     * <p>Provides information on the recovery and maintenance options of your
+     * instance.</p>
+     */
+    inline void SetMaintenanceOptions(InstanceMaintenanceOptions&& value) { m_maintenanceOptionsHasBeenSet = true; m_maintenanceOptions = std::move(value); }
+
+    /**
+     * <p>Provides information on the recovery and maintenance options of your
+     * instance.</p>
+     */
+    inline Instance& WithMaintenanceOptions(const InstanceMaintenanceOptions& value) { SetMaintenanceOptions(value); return *this;}
+
+    /**
+     * <p>Provides information on the recovery and maintenance options of your
+     * instance.</p>
+     */
+    inline Instance& WithMaintenanceOptions(InstanceMaintenanceOptions&& value) { SetMaintenanceOptions(std::move(value)); return *this;}
+
   private:
 
     int m_amiLaunchIndex;
@@ -2356,6 +2394,9 @@ namespace Model
 
     Aws::String m_ipv6Address;
     bool m_ipv6AddressHasBeenSet;
+
+    InstanceMaintenanceOptions m_maintenanceOptions;
+    bool m_maintenanceOptionsHasBeenSet;
   };
 
 } // namespace Model

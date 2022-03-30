@@ -57,7 +57,8 @@ RunInstancesRequest::RunInstancesRequest() :
     m_licenseSpecificationsHasBeenSet(false),
     m_metadataOptionsHasBeenSet(false),
     m_enclaveOptionsHasBeenSet(false),
-    m_privateDnsNameOptionsHasBeenSet(false)
+    m_privateDnsNameOptionsHasBeenSet(false),
+    m_maintenanceOptionsHasBeenSet(false)
 {
 }
 
@@ -300,6 +301,11 @@ Aws::String RunInstancesRequest::SerializePayload() const
   if(m_privateDnsNameOptionsHasBeenSet)
   {
     m_privateDnsNameOptions.OutputToStream(ss, "PrivateDnsNameOptions");
+  }
+
+  if(m_maintenanceOptionsHasBeenSet)
+  {
+    m_maintenanceOptions.OutputToStream(ss, "MaintenanceOptions");
   }
 
   ss << "Version=2016-11-15";

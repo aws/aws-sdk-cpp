@@ -22,6 +22,7 @@
 #include <aws/ec2/model/LaunchTemplateEnclaveOptionsRequest.h>
 #include <aws/ec2/model/InstanceRequirementsRequest.h>
 #include <aws/ec2/model/LaunchTemplatePrivateDnsNameOptionsRequest.h>
+#include <aws/ec2/model/LaunchTemplateInstanceMaintenanceOptionsRequest.h>
 #include <aws/ec2/model/LaunchTemplateBlockDeviceMappingRequest.h>
 #include <aws/ec2/model/LaunchTemplateInstanceNetworkInterfaceSpecificationRequest.h>
 #include <aws/ec2/model/LaunchTemplateTagSpecificationRequest.h>
@@ -1570,6 +1571,37 @@ namespace Model
      */
     inline RequestLaunchTemplateData& WithPrivateDnsNameOptions(LaunchTemplatePrivateDnsNameOptionsRequest&& value) { SetPrivateDnsNameOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The maintenance options for the instance.</p>
+     */
+    inline const LaunchTemplateInstanceMaintenanceOptionsRequest& GetMaintenanceOptions() const{ return m_maintenanceOptions; }
+
+    /**
+     * <p>The maintenance options for the instance.</p>
+     */
+    inline bool MaintenanceOptionsHasBeenSet() const { return m_maintenanceOptionsHasBeenSet; }
+
+    /**
+     * <p>The maintenance options for the instance.</p>
+     */
+    inline void SetMaintenanceOptions(const LaunchTemplateInstanceMaintenanceOptionsRequest& value) { m_maintenanceOptionsHasBeenSet = true; m_maintenanceOptions = value; }
+
+    /**
+     * <p>The maintenance options for the instance.</p>
+     */
+    inline void SetMaintenanceOptions(LaunchTemplateInstanceMaintenanceOptionsRequest&& value) { m_maintenanceOptionsHasBeenSet = true; m_maintenanceOptions = std::move(value); }
+
+    /**
+     * <p>The maintenance options for the instance.</p>
+     */
+    inline RequestLaunchTemplateData& WithMaintenanceOptions(const LaunchTemplateInstanceMaintenanceOptionsRequest& value) { SetMaintenanceOptions(value); return *this;}
+
+    /**
+     * <p>The maintenance options for the instance.</p>
+     */
+    inline RequestLaunchTemplateData& WithMaintenanceOptions(LaunchTemplateInstanceMaintenanceOptionsRequest&& value) { SetMaintenanceOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_kernelId;
@@ -1658,6 +1690,9 @@ namespace Model
 
     LaunchTemplatePrivateDnsNameOptionsRequest m_privateDnsNameOptions;
     bool m_privateDnsNameOptionsHasBeenSet;
+
+    LaunchTemplateInstanceMaintenanceOptionsRequest m_maintenanceOptions;
+    bool m_maintenanceOptionsHasBeenSet;
   };
 
 } // namespace Model

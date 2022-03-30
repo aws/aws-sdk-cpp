@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int CENTRALIZED_HASH = HashingUtils::HashString("CENTRALIZED");
+        static const int DISTRIBUTED_HASH = HashingUtils::HashString("DISTRIBUTED");
 
 
         FirewallDeploymentModel GetFirewallDeploymentModelForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == CENTRALIZED_HASH)
           {
             return FirewallDeploymentModel::CENTRALIZED;
+          }
+          else if (hashCode == DISTRIBUTED_HASH)
+          {
+            return FirewallDeploymentModel::DISTRIBUTED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case FirewallDeploymentModel::CENTRALIZED:
             return "CENTRALIZED";
+          case FirewallDeploymentModel::DISTRIBUTED:
+            return "DISTRIBUTED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

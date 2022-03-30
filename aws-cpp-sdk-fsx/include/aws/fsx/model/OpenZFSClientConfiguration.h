@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies who can mount the file system and the options that can be used
+   * <p>Specifies who can mount an OpenZFS file system and the options available
    * while mounting the file system.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/OpenZFSClientConfiguration">AWS
    * API Reference</a></p>

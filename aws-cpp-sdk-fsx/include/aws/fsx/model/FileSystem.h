@@ -714,147 +714,139 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Key Management Service (KMS) key used to encrypt the file
-     * system's data for Amazon FSx for Windows File Server file systems, Amazon FSx
-     * for NetApp ONTAP file systems, and <code>PERSISTENT</code> Amazon FSx for Lustre
-     * file systems at rest. If this ID isn't specified, the Amazon FSx-managed key for
-     * your account is used. The scratch Amazon FSx for Lustre file systems are always
-     * encrypted at rest using the Amazon FSx-managed key for your account. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-     * in the <i>Key Management Service API Reference</i>.</p>
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt Amazon FSx
+     * file system data. Used as follows with Amazon FSx file system types:</p> <ul>
+     * <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and
+     * <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code>
+     * and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS
+     * key for your account.</p> </li> <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+     * <li> <p>Amazon FSx for OpenZFS</p> </li> <li> <p>Amazon FSx for Windows File
+     * Server</p> </li> </ul>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ID of the Key Management Service (KMS) key used to encrypt the file
-     * system's data for Amazon FSx for Windows File Server file systems, Amazon FSx
-     * for NetApp ONTAP file systems, and <code>PERSISTENT</code> Amazon FSx for Lustre
-     * file systems at rest. If this ID isn't specified, the Amazon FSx-managed key for
-     * your account is used. The scratch Amazon FSx for Lustre file systems are always
-     * encrypted at rest using the Amazon FSx-managed key for your account. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-     * in the <i>Key Management Service API Reference</i>.</p>
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt Amazon FSx
+     * file system data. Used as follows with Amazon FSx file system types:</p> <ul>
+     * <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and
+     * <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code>
+     * and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS
+     * key for your account.</p> </li> <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+     * <li> <p>Amazon FSx for OpenZFS</p> </li> <li> <p>Amazon FSx for Windows File
+     * Server</p> </li> </ul>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Key Management Service (KMS) key used to encrypt the file
-     * system's data for Amazon FSx for Windows File Server file systems, Amazon FSx
-     * for NetApp ONTAP file systems, and <code>PERSISTENT</code> Amazon FSx for Lustre
-     * file systems at rest. If this ID isn't specified, the Amazon FSx-managed key for
-     * your account is used. The scratch Amazon FSx for Lustre file systems are always
-     * encrypted at rest using the Amazon FSx-managed key for your account. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-     * in the <i>Key Management Service API Reference</i>.</p>
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt Amazon FSx
+     * file system data. Used as follows with Amazon FSx file system types:</p> <ul>
+     * <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and
+     * <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code>
+     * and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS
+     * key for your account.</p> </li> <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+     * <li> <p>Amazon FSx for OpenZFS</p> </li> <li> <p>Amazon FSx for Windows File
+     * Server</p> </li> </ul>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ID of the Key Management Service (KMS) key used to encrypt the file
-     * system's data for Amazon FSx for Windows File Server file systems, Amazon FSx
-     * for NetApp ONTAP file systems, and <code>PERSISTENT</code> Amazon FSx for Lustre
-     * file systems at rest. If this ID isn't specified, the Amazon FSx-managed key for
-     * your account is used. The scratch Amazon FSx for Lustre file systems are always
-     * encrypted at rest using the Amazon FSx-managed key for your account. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-     * in the <i>Key Management Service API Reference</i>.</p>
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt Amazon FSx
+     * file system data. Used as follows with Amazon FSx file system types:</p> <ul>
+     * <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and
+     * <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code>
+     * and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS
+     * key for your account.</p> </li> <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+     * <li> <p>Amazon FSx for OpenZFS</p> </li> <li> <p>Amazon FSx for Windows File
+     * Server</p> </li> </ul>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the Key Management Service (KMS) key used to encrypt the file
-     * system's data for Amazon FSx for Windows File Server file systems, Amazon FSx
-     * for NetApp ONTAP file systems, and <code>PERSISTENT</code> Amazon FSx for Lustre
-     * file systems at rest. If this ID isn't specified, the Amazon FSx-managed key for
-     * your account is used. The scratch Amazon FSx for Lustre file systems are always
-     * encrypted at rest using the Amazon FSx-managed key for your account. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-     * in the <i>Key Management Service API Reference</i>.</p>
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt Amazon FSx
+     * file system data. Used as follows with Amazon FSx file system types:</p> <ul>
+     * <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and
+     * <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code>
+     * and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS
+     * key for your account.</p> </li> <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+     * <li> <p>Amazon FSx for OpenZFS</p> </li> <li> <p>Amazon FSx for Windows File
+     * Server</p> </li> </ul>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the Key Management Service (KMS) key used to encrypt the file
-     * system's data for Amazon FSx for Windows File Server file systems, Amazon FSx
-     * for NetApp ONTAP file systems, and <code>PERSISTENT</code> Amazon FSx for Lustre
-     * file systems at rest. If this ID isn't specified, the Amazon FSx-managed key for
-     * your account is used. The scratch Amazon FSx for Lustre file systems are always
-     * encrypted at rest using the Amazon FSx-managed key for your account. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-     * in the <i>Key Management Service API Reference</i>.</p>
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt Amazon FSx
+     * file system data. Used as follows with Amazon FSx file system types:</p> <ul>
+     * <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and
+     * <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code>
+     * and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS
+     * key for your account.</p> </li> <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+     * <li> <p>Amazon FSx for OpenZFS</p> </li> <li> <p>Amazon FSx for Windows File
+     * Server</p> </li> </ul>
      */
     inline FileSystem& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the Key Management Service (KMS) key used to encrypt the file
-     * system's data for Amazon FSx for Windows File Server file systems, Amazon FSx
-     * for NetApp ONTAP file systems, and <code>PERSISTENT</code> Amazon FSx for Lustre
-     * file systems at rest. If this ID isn't specified, the Amazon FSx-managed key for
-     * your account is used. The scratch Amazon FSx for Lustre file systems are always
-     * encrypted at rest using the Amazon FSx-managed key for your account. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-     * in the <i>Key Management Service API Reference</i>.</p>
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt Amazon FSx
+     * file system data. Used as follows with Amazon FSx file system types:</p> <ul>
+     * <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and
+     * <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code>
+     * and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS
+     * key for your account.</p> </li> <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+     * <li> <p>Amazon FSx for OpenZFS</p> </li> <li> <p>Amazon FSx for Windows File
+     * Server</p> </li> </ul>
      */
     inline FileSystem& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Key Management Service (KMS) key used to encrypt the file
-     * system's data for Amazon FSx for Windows File Server file systems, Amazon FSx
-     * for NetApp ONTAP file systems, and <code>PERSISTENT</code> Amazon FSx for Lustre
-     * file systems at rest. If this ID isn't specified, the Amazon FSx-managed key for
-     * your account is used. The scratch Amazon FSx for Lustre file systems are always
-     * encrypted at rest using the Amazon FSx-managed key for your account. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-     * in the <i>Key Management Service API Reference</i>.</p>
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt Amazon FSx
+     * file system data. Used as follows with Amazon FSx file system types:</p> <ul>
+     * <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and
+     * <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code>
+     * and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS
+     * key for your account.</p> </li> <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+     * <li> <p>Amazon FSx for OpenZFS</p> </li> <li> <p>Amazon FSx for Windows File
+     * Server</p> </li> </ul>
      */
     inline FileSystem& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the file system resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the file system resource.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the file system resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the file system resource.</p>
      */
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the file system resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the file system resource.</p>
      */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the file system resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the file system resource.</p>
      */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the file system resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the file system resource.</p>
      */
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the file system resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the file system resource.</p>
      */
     inline FileSystem& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the file system resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the file system resource.</p>
      */
     inline FileSystem& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the file system resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the file system resource.</p>
      */
     inline FileSystem& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
 
@@ -917,32 +909,38 @@ namespace Model
 
 
     /**
-     * <p>The configuration for this FSx for Windows File Server file system.</p>
+     * <p>The configuration for this Amazon FSx for Windows File Server file
+     * system.</p>
      */
     inline const WindowsFileSystemConfiguration& GetWindowsConfiguration() const{ return m_windowsConfiguration; }
 
     /**
-     * <p>The configuration for this FSx for Windows File Server file system.</p>
+     * <p>The configuration for this Amazon FSx for Windows File Server file
+     * system.</p>
      */
     inline bool WindowsConfigurationHasBeenSet() const { return m_windowsConfigurationHasBeenSet; }
 
     /**
-     * <p>The configuration for this FSx for Windows File Server file system.</p>
+     * <p>The configuration for this Amazon FSx for Windows File Server file
+     * system.</p>
      */
     inline void SetWindowsConfiguration(const WindowsFileSystemConfiguration& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = value; }
 
     /**
-     * <p>The configuration for this FSx for Windows File Server file system.</p>
+     * <p>The configuration for this Amazon FSx for Windows File Server file
+     * system.</p>
      */
     inline void SetWindowsConfiguration(WindowsFileSystemConfiguration&& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration for this FSx for Windows File Server file system.</p>
+     * <p>The configuration for this Amazon FSx for Windows File Server file
+     * system.</p>
      */
     inline FileSystem& WithWindowsConfiguration(const WindowsFileSystemConfiguration& value) { SetWindowsConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration for this FSx for Windows File Server file system.</p>
+     * <p>The configuration for this Amazon FSx for Windows File Server file
+     * system.</p>
      */
     inline FileSystem& WithWindowsConfiguration(WindowsFileSystemConfiguration&& value) { SetWindowsConfiguration(std::move(value)); return *this;}
 
@@ -1032,32 +1030,32 @@ namespace Model
 
 
     /**
-     * <p>The configuration for this FSx for ONTAP file system.</p>
+     * <p>The configuration for this Amazon FSx for NetApp ONTAP file system.</p>
      */
     inline const OntapFileSystemConfiguration& GetOntapConfiguration() const{ return m_ontapConfiguration; }
 
     /**
-     * <p>The configuration for this FSx for ONTAP file system.</p>
+     * <p>The configuration for this Amazon FSx for NetApp ONTAP file system.</p>
      */
     inline bool OntapConfigurationHasBeenSet() const { return m_ontapConfigurationHasBeenSet; }
 
     /**
-     * <p>The configuration for this FSx for ONTAP file system.</p>
+     * <p>The configuration for this Amazon FSx for NetApp ONTAP file system.</p>
      */
     inline void SetOntapConfiguration(const OntapFileSystemConfiguration& value) { m_ontapConfigurationHasBeenSet = true; m_ontapConfiguration = value; }
 
     /**
-     * <p>The configuration for this FSx for ONTAP file system.</p>
+     * <p>The configuration for this Amazon FSx for NetApp ONTAP file system.</p>
      */
     inline void SetOntapConfiguration(OntapFileSystemConfiguration&& value) { m_ontapConfigurationHasBeenSet = true; m_ontapConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration for this FSx for ONTAP file system.</p>
+     * <p>The configuration for this Amazon FSx for NetApp ONTAP file system.</p>
      */
     inline FileSystem& WithOntapConfiguration(const OntapFileSystemConfiguration& value) { SetOntapConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration for this FSx for ONTAP file system.</p>
+     * <p>The configuration for this Amazon FSx for NetApp ONTAP file system.</p>
      */
     inline FileSystem& WithOntapConfiguration(OntapFileSystemConfiguration&& value) { SetOntapConfiguration(std::move(value)); return *this;}
 

@@ -53,7 +53,8 @@ RequestLaunchTemplateData::RequestLaunchTemplateData() :
     m_metadataOptionsHasBeenSet(false),
     m_enclaveOptionsHasBeenSet(false),
     m_instanceRequirementsHasBeenSet(false),
-    m_privateDnsNameOptionsHasBeenSet(false)
+    m_privateDnsNameOptionsHasBeenSet(false),
+    m_maintenanceOptionsHasBeenSet(false)
 {
 }
 
@@ -90,7 +91,8 @@ RequestLaunchTemplateData::RequestLaunchTemplateData(const XmlNode& xmlNode) :
     m_metadataOptionsHasBeenSet(false),
     m_enclaveOptionsHasBeenSet(false),
     m_instanceRequirementsHasBeenSet(false),
-    m_privateDnsNameOptionsHasBeenSet(false)
+    m_privateDnsNameOptionsHasBeenSet(false),
+    m_maintenanceOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -323,6 +325,12 @@ RequestLaunchTemplateData& RequestLaunchTemplateData::operator =(const XmlNode& 
       m_privateDnsNameOptions = privateDnsNameOptionsNode;
       m_privateDnsNameOptionsHasBeenSet = true;
     }
+    XmlNode maintenanceOptionsNode = resultNode.FirstChild("MaintenanceOptions");
+    if(!maintenanceOptionsNode.IsNull())
+    {
+      m_maintenanceOptions = maintenanceOptionsNode;
+      m_maintenanceOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -543,6 +551,13 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
       m_privateDnsNameOptions.OutputToStream(oStream, privateDnsNameOptionsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_maintenanceOptionsHasBeenSet)
+  {
+      Aws::StringStream maintenanceOptionsLocationAndMemberSs;
+      maintenanceOptionsLocationAndMemberSs << location << index << locationValue << ".MaintenanceOptions";
+      m_maintenanceOptions.OutputToStream(oStream, maintenanceOptionsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -730,6 +745,12 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
       Aws::String privateDnsNameOptionsLocationAndMember(location);
       privateDnsNameOptionsLocationAndMember += ".PrivateDnsNameOptions";
       m_privateDnsNameOptions.OutputToStream(oStream, privateDnsNameOptionsLocationAndMember.c_str());
+  }
+  if(m_maintenanceOptionsHasBeenSet)
+  {
+      Aws::String maintenanceOptionsLocationAndMember(location);
+      maintenanceOptionsLocationAndMember += ".MaintenanceOptions";
+      m_maintenanceOptions.OutputToStream(oStream, maintenanceOptionsLocationAndMember.c_str());
   }
 }
 

@@ -24,7 +24,9 @@ UpdateFileSystemOntapConfiguration::UpdateFileSystemOntapConfiguration() :
     m_dailyAutomaticBackupStartTimeHasBeenSet(false),
     m_fsxAdminPasswordHasBeenSet(false),
     m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_diskIopsConfigurationHasBeenSet(false)
+    m_diskIopsConfigurationHasBeenSet(false),
+    m_throughputCapacity(0),
+    m_throughputCapacityHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ UpdateFileSystemOntapConfiguration::UpdateFileSystemOntapConfiguration(JsonView 
     m_dailyAutomaticBackupStartTimeHasBeenSet(false),
     m_fsxAdminPasswordHasBeenSet(false),
     m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_diskIopsConfigurationHasBeenSet(false)
+    m_diskIopsConfigurationHasBeenSet(false),
+    m_throughputCapacity(0),
+    m_throughputCapacityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +80,13 @@ UpdateFileSystemOntapConfiguration& UpdateFileSystemOntapConfiguration::operator
     m_diskIopsConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ThroughputCapacity"))
+  {
+    m_throughputCapacity = jsonValue.GetInteger("ThroughputCapacity");
+
+    m_throughputCapacityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -110,6 +121,12 @@ JsonValue UpdateFileSystemOntapConfiguration::Jsonize() const
   if(m_diskIopsConfigurationHasBeenSet)
   {
    payload.WithObject("DiskIopsConfiguration", m_diskIopsConfiguration.Jsonize());
+
+  }
+
+  if(m_throughputCapacityHasBeenSet)
+  {
+   payload.WithInteger("ThroughputCapacity", m_throughputCapacity);
 
   }
 

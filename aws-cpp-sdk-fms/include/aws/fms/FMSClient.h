@@ -11,6 +11,8 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fms/model/AssociateThirdPartyFirewallResult.h>
+#include <aws/fms/model/DisassociateThirdPartyFirewallResult.h>
 #include <aws/fms/model/GetAdminAccountResult.h>
 #include <aws/fms/model/GetAppsListResult.h>
 #include <aws/fms/model/GetComplianceDetailResult.h>
@@ -18,6 +20,7 @@
 #include <aws/fms/model/GetPolicyResult.h>
 #include <aws/fms/model/GetProtectionStatusResult.h>
 #include <aws/fms/model/GetProtocolsListResult.h>
+#include <aws/fms/model/GetThirdPartyFirewallAssociationStatusResult.h>
 #include <aws/fms/model/GetViolationDetailsResult.h>
 #include <aws/fms/model/ListAppsListsResult.h>
 #include <aws/fms/model/ListComplianceStatusResult.h>
@@ -25,6 +28,7 @@
 #include <aws/fms/model/ListPoliciesResult.h>
 #include <aws/fms/model/ListProtocolsListsResult.h>
 #include <aws/fms/model/ListTagsForResourceResult.h>
+#include <aws/fms/model/ListThirdPartyFirewallFirewallPoliciesResult.h>
 #include <aws/fms/model/PutAppsListResult.h>
 #include <aws/fms/model/PutPolicyResult.h>
 #include <aws/fms/model/PutProtocolsListResult.h>
@@ -71,11 +75,13 @@ namespace FMS
 namespace Model
 {
         class AssociateAdminAccountRequest;
+        class AssociateThirdPartyFirewallRequest;
         class DeleteAppsListRequest;
         class DeleteNotificationChannelRequest;
         class DeletePolicyRequest;
         class DeleteProtocolsListRequest;
         class DisassociateAdminAccountRequest;
+        class DisassociateThirdPartyFirewallRequest;
         class GetAdminAccountRequest;
         class GetAppsListRequest;
         class GetComplianceDetailRequest;
@@ -83,6 +89,7 @@ namespace Model
         class GetPolicyRequest;
         class GetProtectionStatusRequest;
         class GetProtocolsListRequest;
+        class GetThirdPartyFirewallAssociationStatusRequest;
         class GetViolationDetailsRequest;
         class ListAppsListsRequest;
         class ListComplianceStatusRequest;
@@ -90,6 +97,7 @@ namespace Model
         class ListPoliciesRequest;
         class ListProtocolsListsRequest;
         class ListTagsForResourceRequest;
+        class ListThirdPartyFirewallFirewallPoliciesRequest;
         class PutAppsListRequest;
         class PutNotificationChannelRequest;
         class PutPolicyRequest;
@@ -98,11 +106,13 @@ namespace Model
         class UntagResourceRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, FMSError> AssociateAdminAccountOutcome;
+        typedef Aws::Utils::Outcome<AssociateThirdPartyFirewallResult, FMSError> AssociateThirdPartyFirewallOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, FMSError> DeleteAppsListOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, FMSError> DeleteNotificationChannelOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, FMSError> DeletePolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, FMSError> DeleteProtocolsListOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, FMSError> DisassociateAdminAccountOutcome;
+        typedef Aws::Utils::Outcome<DisassociateThirdPartyFirewallResult, FMSError> DisassociateThirdPartyFirewallOutcome;
         typedef Aws::Utils::Outcome<GetAdminAccountResult, FMSError> GetAdminAccountOutcome;
         typedef Aws::Utils::Outcome<GetAppsListResult, FMSError> GetAppsListOutcome;
         typedef Aws::Utils::Outcome<GetComplianceDetailResult, FMSError> GetComplianceDetailOutcome;
@@ -110,6 +120,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetPolicyResult, FMSError> GetPolicyOutcome;
         typedef Aws::Utils::Outcome<GetProtectionStatusResult, FMSError> GetProtectionStatusOutcome;
         typedef Aws::Utils::Outcome<GetProtocolsListResult, FMSError> GetProtocolsListOutcome;
+        typedef Aws::Utils::Outcome<GetThirdPartyFirewallAssociationStatusResult, FMSError> GetThirdPartyFirewallAssociationStatusOutcome;
         typedef Aws::Utils::Outcome<GetViolationDetailsResult, FMSError> GetViolationDetailsOutcome;
         typedef Aws::Utils::Outcome<ListAppsListsResult, FMSError> ListAppsListsOutcome;
         typedef Aws::Utils::Outcome<ListComplianceStatusResult, FMSError> ListComplianceStatusOutcome;
@@ -117,6 +128,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListPoliciesResult, FMSError> ListPoliciesOutcome;
         typedef Aws::Utils::Outcome<ListProtocolsListsResult, FMSError> ListProtocolsListsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, FMSError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListThirdPartyFirewallFirewallPoliciesResult, FMSError> ListThirdPartyFirewallFirewallPoliciesOutcome;
         typedef Aws::Utils::Outcome<PutAppsListResult, FMSError> PutAppsListOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, FMSError> PutNotificationChannelOutcome;
         typedef Aws::Utils::Outcome<PutPolicyResult, FMSError> PutPolicyOutcome;
@@ -125,11 +137,13 @@ namespace Model
         typedef Aws::Utils::Outcome<UntagResourceResult, FMSError> UntagResourceOutcome;
 
         typedef std::future<AssociateAdminAccountOutcome> AssociateAdminAccountOutcomeCallable;
+        typedef std::future<AssociateThirdPartyFirewallOutcome> AssociateThirdPartyFirewallOutcomeCallable;
         typedef std::future<DeleteAppsListOutcome> DeleteAppsListOutcomeCallable;
         typedef std::future<DeleteNotificationChannelOutcome> DeleteNotificationChannelOutcomeCallable;
         typedef std::future<DeletePolicyOutcome> DeletePolicyOutcomeCallable;
         typedef std::future<DeleteProtocolsListOutcome> DeleteProtocolsListOutcomeCallable;
         typedef std::future<DisassociateAdminAccountOutcome> DisassociateAdminAccountOutcomeCallable;
+        typedef std::future<DisassociateThirdPartyFirewallOutcome> DisassociateThirdPartyFirewallOutcomeCallable;
         typedef std::future<GetAdminAccountOutcome> GetAdminAccountOutcomeCallable;
         typedef std::future<GetAppsListOutcome> GetAppsListOutcomeCallable;
         typedef std::future<GetComplianceDetailOutcome> GetComplianceDetailOutcomeCallable;
@@ -137,6 +151,7 @@ namespace Model
         typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
         typedef std::future<GetProtectionStatusOutcome> GetProtectionStatusOutcomeCallable;
         typedef std::future<GetProtocolsListOutcome> GetProtocolsListOutcomeCallable;
+        typedef std::future<GetThirdPartyFirewallAssociationStatusOutcome> GetThirdPartyFirewallAssociationStatusOutcomeCallable;
         typedef std::future<GetViolationDetailsOutcome> GetViolationDetailsOutcomeCallable;
         typedef std::future<ListAppsListsOutcome> ListAppsListsOutcomeCallable;
         typedef std::future<ListComplianceStatusOutcome> ListComplianceStatusOutcomeCallable;
@@ -144,6 +159,7 @@ namespace Model
         typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
         typedef std::future<ListProtocolsListsOutcome> ListProtocolsListsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<ListThirdPartyFirewallFirewallPoliciesOutcome> ListThirdPartyFirewallFirewallPoliciesOutcomeCallable;
         typedef std::future<PutAppsListOutcome> PutAppsListOutcomeCallable;
         typedef std::future<PutNotificationChannelOutcome> PutNotificationChannelOutcomeCallable;
         typedef std::future<PutPolicyOutcome> PutPolicyOutcomeCallable;
@@ -155,11 +171,13 @@ namespace Model
   class FMSClient;
 
     typedef std::function<void(const FMSClient*, const Model::AssociateAdminAccountRequest&, const Model::AssociateAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateAdminAccountResponseReceivedHandler;
+    typedef std::function<void(const FMSClient*, const Model::AssociateThirdPartyFirewallRequest&, const Model::AssociateThirdPartyFirewallOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateThirdPartyFirewallResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::DeleteAppsListRequest&, const Model::DeleteAppsListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppsListResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::DeleteNotificationChannelRequest&, const Model::DeleteNotificationChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNotificationChannelResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::DeletePolicyRequest&, const Model::DeletePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePolicyResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::DeleteProtocolsListRequest&, const Model::DeleteProtocolsListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProtocolsListResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::DisassociateAdminAccountRequest&, const Model::DisassociateAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateAdminAccountResponseReceivedHandler;
+    typedef std::function<void(const FMSClient*, const Model::DisassociateThirdPartyFirewallRequest&, const Model::DisassociateThirdPartyFirewallOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateThirdPartyFirewallResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::GetAdminAccountRequest&, const Model::GetAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAdminAccountResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::GetAppsListRequest&, const Model::GetAppsListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAppsListResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::GetComplianceDetailRequest&, const Model::GetComplianceDetailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComplianceDetailResponseReceivedHandler;
@@ -167,6 +185,7 @@ namespace Model
     typedef std::function<void(const FMSClient*, const Model::GetPolicyRequest&, const Model::GetPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPolicyResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::GetProtectionStatusRequest&, const Model::GetProtectionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProtectionStatusResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::GetProtocolsListRequest&, const Model::GetProtocolsListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProtocolsListResponseReceivedHandler;
+    typedef std::function<void(const FMSClient*, const Model::GetThirdPartyFirewallAssociationStatusRequest&, const Model::GetThirdPartyFirewallAssociationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThirdPartyFirewallAssociationStatusResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::GetViolationDetailsRequest&, const Model::GetViolationDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetViolationDetailsResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::ListAppsListsRequest&, const Model::ListAppsListsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppsListsResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::ListComplianceStatusRequest&, const Model::ListComplianceStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComplianceStatusResponseReceivedHandler;
@@ -174,6 +193,7 @@ namespace Model
     typedef std::function<void(const FMSClient*, const Model::ListPoliciesRequest&, const Model::ListPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPoliciesResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::ListProtocolsListsRequest&, const Model::ListProtocolsListsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProtocolsListsResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const FMSClient*, const Model::ListThirdPartyFirewallFirewallPoliciesRequest&, const Model::ListThirdPartyFirewallFirewallPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThirdPartyFirewallFirewallPoliciesResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::PutAppsListRequest&, const Model::PutAppsListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAppsListResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::PutNotificationChannelRequest&, const Model::PutNotificationChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutNotificationChannelResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::PutPolicyRequest&, const Model::PutPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPolicyResponseReceivedHandler;
@@ -258,6 +278,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateAdminAccountAsync(const Model::AssociateAdminAccountRequest& request, const AssociateAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Sets the Firewall Manager policy administrator as a tenant administrator of a
+         * third-party firewall service. A tenant is an instance of the third-party
+         * firewall service that's associated with your Amazon Web Services customer
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateThirdPartyFirewall">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateThirdPartyFirewallOutcome AssociateThirdPartyFirewall(const Model::AssociateThirdPartyFirewallRequest& request) const;
+
+        /**
+         * <p>Sets the Firewall Manager policy administrator as a tenant administrator of a
+         * third-party firewall service. A tenant is an instance of the third-party
+         * firewall service that's associated with your Amazon Web Services customer
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateThirdPartyFirewall">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateThirdPartyFirewallOutcomeCallable AssociateThirdPartyFirewallCallable(const Model::AssociateThirdPartyFirewallRequest& request) const;
+
+        /**
+         * <p>Sets the Firewall Manager policy administrator as a tenant administrator of a
+         * third-party firewall service. A tenant is an instance of the third-party
+         * firewall service that's associated with your Amazon Web Services customer
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateThirdPartyFirewall">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateThirdPartyFirewallAsync(const Model::AssociateThirdPartyFirewallRequest& request, const AssociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Permanently deletes an Firewall Manager applications list.</p><p><h3>See
@@ -404,6 +458,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateAdminAccountAsync(const Model::DisassociateAdminAccountRequest& request, const DisassociateAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Disassociates a Firewall Manager policy administrator from a third-party
+         * firewall tenant. When you call <code>DisassociateThirdPartyFirewall</code>, the
+         * third-party firewall vendor deletes all of the firewalls that are associated
+         * with the account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DisassociateThirdPartyFirewall">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateThirdPartyFirewallOutcome DisassociateThirdPartyFirewall(const Model::DisassociateThirdPartyFirewallRequest& request) const;
+
+        /**
+         * <p>Disassociates a Firewall Manager policy administrator from a third-party
+         * firewall tenant. When you call <code>DisassociateThirdPartyFirewall</code>, the
+         * third-party firewall vendor deletes all of the firewalls that are associated
+         * with the account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DisassociateThirdPartyFirewall">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateThirdPartyFirewallOutcomeCallable DisassociateThirdPartyFirewallCallable(const Model::DisassociateThirdPartyFirewallRequest& request) const;
+
+        /**
+         * <p>Disassociates a Firewall Manager policy administrator from a third-party
+         * firewall tenant. When you call <code>DisassociateThirdPartyFirewall</code>, the
+         * third-party firewall vendor deletes all of the firewalls that are associated
+         * with the account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DisassociateThirdPartyFirewall">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateThirdPartyFirewallAsync(const Model::DisassociateThirdPartyFirewallRequest& request, const DisassociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the Organizations account that is associated with Firewall Manager as
@@ -644,6 +732,34 @@ namespace Model
         virtual void GetProtocolsListAsync(const Model::GetProtocolsListRequest& request, const GetProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>The onboarding status of a Firewall Manager admin account to third-party
+         * firewall vendor tenant.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetThirdPartyFirewallAssociationStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetThirdPartyFirewallAssociationStatusOutcome GetThirdPartyFirewallAssociationStatus(const Model::GetThirdPartyFirewallAssociationStatusRequest& request) const;
+
+        /**
+         * <p>The onboarding status of a Firewall Manager admin account to third-party
+         * firewall vendor tenant.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetThirdPartyFirewallAssociationStatus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetThirdPartyFirewallAssociationStatusOutcomeCallable GetThirdPartyFirewallAssociationStatusCallable(const Model::GetThirdPartyFirewallAssociationStatusRequest& request) const;
+
+        /**
+         * <p>The onboarding status of a Firewall Manager admin account to third-party
+         * firewall vendor tenant.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetThirdPartyFirewallAssociationStatus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetThirdPartyFirewallAssociationStatusAsync(const Model::GetThirdPartyFirewallAssociationStatusRequest& request, const GetThirdPartyFirewallAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves violations for a resource based on the specified Firewall Manager
          * policy and Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetViolationDetails">AWS
@@ -847,6 +963,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a list of all of the third-party firewall policies that are
+         * associated with the third-party firewall administrator's account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListThirdPartyFirewallFirewallPolicies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListThirdPartyFirewallFirewallPoliciesOutcome ListThirdPartyFirewallFirewallPolicies(const Model::ListThirdPartyFirewallFirewallPoliciesRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of all of the third-party firewall policies that are
+         * associated with the third-party firewall administrator's account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListThirdPartyFirewallFirewallPolicies">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListThirdPartyFirewallFirewallPoliciesOutcomeCallable ListThirdPartyFirewallFirewallPoliciesCallable(const Model::ListThirdPartyFirewallFirewallPoliciesRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of all of the third-party firewall policies that are
+         * associated with the third-party firewall administrator's account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListThirdPartyFirewallFirewallPolicies">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListThirdPartyFirewallFirewallPoliciesAsync(const Model::ListThirdPartyFirewallFirewallPoliciesRequest& request, const ListThirdPartyFirewallFirewallPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Firewall Manager applications list.</p><p><h3>See Also:</h3>   <a
@@ -1081,11 +1228,13 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AssociateAdminAccountAsyncHelper(const Model::AssociateAdminAccountRequest& request, const AssociateAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateThirdPartyFirewallAsyncHelper(const Model::AssociateThirdPartyFirewallRequest& request, const AssociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAppsListAsyncHelper(const Model::DeleteAppsListRequest& request, const DeleteAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNotificationChannelAsyncHelper(const Model::DeleteNotificationChannelRequest& request, const DeleteNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePolicyAsyncHelper(const Model::DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProtocolsListAsyncHelper(const Model::DeleteProtocolsListRequest& request, const DeleteProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateAdminAccountAsyncHelper(const Model::DisassociateAdminAccountRequest& request, const DisassociateAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateThirdPartyFirewallAsyncHelper(const Model::DisassociateThirdPartyFirewallRequest& request, const DisassociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAdminAccountAsyncHelper(const Model::GetAdminAccountRequest& request, const GetAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAppsListAsyncHelper(const Model::GetAppsListRequest& request, const GetAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetComplianceDetailAsyncHelper(const Model::GetComplianceDetailRequest& request, const GetComplianceDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1093,6 +1242,7 @@ namespace Model
         void GetPolicyAsyncHelper(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetProtectionStatusAsyncHelper(const Model::GetProtectionStatusRequest& request, const GetProtectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetProtocolsListAsyncHelper(const Model::GetProtocolsListRequest& request, const GetProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetThirdPartyFirewallAssociationStatusAsyncHelper(const Model::GetThirdPartyFirewallAssociationStatusRequest& request, const GetThirdPartyFirewallAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetViolationDetailsAsyncHelper(const Model::GetViolationDetailsRequest& request, const GetViolationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAppsListsAsyncHelper(const Model::ListAppsListsRequest& request, const ListAppsListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListComplianceStatusAsyncHelper(const Model::ListComplianceStatusRequest& request, const ListComplianceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1100,6 +1250,7 @@ namespace Model
         void ListPoliciesAsyncHelper(const Model::ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProtocolsListsAsyncHelper(const Model::ListProtocolsListsRequest& request, const ListProtocolsListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListThirdPartyFirewallFirewallPoliciesAsyncHelper(const Model::ListThirdPartyFirewallFirewallPoliciesRequest& request, const ListThirdPartyFirewallFirewallPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAppsListAsyncHelper(const Model::PutAppsListRequest& request, const PutAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutNotificationChannelAsyncHelper(const Model::PutNotificationChannelRequest& request, const PutNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutPolicyAsyncHelper(const Model::PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

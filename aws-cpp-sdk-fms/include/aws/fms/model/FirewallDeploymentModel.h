@@ -16,7 +16,8 @@ namespace Model
   enum class FirewallDeploymentModel
   {
     NOT_SET,
-    CENTRALIZED
+    CENTRALIZED,
+    DISTRIBUTED
   };
 
 namespace FirewallDeploymentModelMapper

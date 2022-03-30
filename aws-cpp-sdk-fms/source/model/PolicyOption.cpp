@@ -19,12 +19,14 @@ namespace Model
 {
 
 PolicyOption::PolicyOption() : 
-    m_networkFirewallPolicyHasBeenSet(false)
+    m_networkFirewallPolicyHasBeenSet(false),
+    m_thirdPartyFirewallPolicyHasBeenSet(false)
 {
 }
 
 PolicyOption::PolicyOption(JsonView jsonValue) : 
-    m_networkFirewallPolicyHasBeenSet(false)
+    m_networkFirewallPolicyHasBeenSet(false),
+    m_thirdPartyFirewallPolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ PolicyOption& PolicyOption::operator =(JsonView jsonValue)
     m_networkFirewallPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ThirdPartyFirewallPolicy"))
+  {
+    m_thirdPartyFirewallPolicy = jsonValue.GetObject("ThirdPartyFirewallPolicy");
+
+    m_thirdPartyFirewallPolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue PolicyOption::Jsonize() const
   if(m_networkFirewallPolicyHasBeenSet)
   {
    payload.WithObject("NetworkFirewallPolicy", m_networkFirewallPolicy.Jsonize());
+
+  }
+
+  if(m_thirdPartyFirewallPolicyHasBeenSet)
+  {
+   payload.WithObject("ThirdPartyFirewallPolicy", m_thirdPartyFirewallPolicy.Jsonize());
 
   }
 

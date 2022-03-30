@@ -37,7 +37,11 @@ ResourceViolation::ResourceViolation() :
     m_dnsRuleGroupLimitExceededViolationHasBeenSet(false),
     m_possibleRemediationActionsHasBeenSet(false),
     m_firewallSubnetIsOutOfScopeViolationHasBeenSet(false),
-    m_routeHasOutOfScopeEndpointViolationHasBeenSet(false)
+    m_routeHasOutOfScopeEndpointViolationHasBeenSet(false),
+    m_thirdPartyFirewallMissingFirewallViolationHasBeenSet(false),
+    m_thirdPartyFirewallMissingSubnetViolationHasBeenSet(false),
+    m_thirdPartyFirewallMissingExpectedRouteTableViolationHasBeenSet(false),
+    m_firewallSubnetMissingVPCEndpointViolationHasBeenSet(false)
 {
 }
 
@@ -60,7 +64,11 @@ ResourceViolation::ResourceViolation(JsonView jsonValue) :
     m_dnsRuleGroupLimitExceededViolationHasBeenSet(false),
     m_possibleRemediationActionsHasBeenSet(false),
     m_firewallSubnetIsOutOfScopeViolationHasBeenSet(false),
-    m_routeHasOutOfScopeEndpointViolationHasBeenSet(false)
+    m_routeHasOutOfScopeEndpointViolationHasBeenSet(false),
+    m_thirdPartyFirewallMissingFirewallViolationHasBeenSet(false),
+    m_thirdPartyFirewallMissingSubnetViolationHasBeenSet(false),
+    m_thirdPartyFirewallMissingExpectedRouteTableViolationHasBeenSet(false),
+    m_firewallSubnetMissingVPCEndpointViolationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -200,6 +208,34 @@ ResourceViolation& ResourceViolation::operator =(JsonView jsonValue)
     m_routeHasOutOfScopeEndpointViolationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ThirdPartyFirewallMissingFirewallViolation"))
+  {
+    m_thirdPartyFirewallMissingFirewallViolation = jsonValue.GetObject("ThirdPartyFirewallMissingFirewallViolation");
+
+    m_thirdPartyFirewallMissingFirewallViolationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ThirdPartyFirewallMissingSubnetViolation"))
+  {
+    m_thirdPartyFirewallMissingSubnetViolation = jsonValue.GetObject("ThirdPartyFirewallMissingSubnetViolation");
+
+    m_thirdPartyFirewallMissingSubnetViolationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ThirdPartyFirewallMissingExpectedRouteTableViolation"))
+  {
+    m_thirdPartyFirewallMissingExpectedRouteTableViolation = jsonValue.GetObject("ThirdPartyFirewallMissingExpectedRouteTableViolation");
+
+    m_thirdPartyFirewallMissingExpectedRouteTableViolationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FirewallSubnetMissingVPCEndpointViolation"))
+  {
+    m_firewallSubnetMissingVPCEndpointViolation = jsonValue.GetObject("FirewallSubnetMissingVPCEndpointViolation");
+
+    m_firewallSubnetMissingVPCEndpointViolationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -318,6 +354,30 @@ JsonValue ResourceViolation::Jsonize() const
   if(m_routeHasOutOfScopeEndpointViolationHasBeenSet)
   {
    payload.WithObject("RouteHasOutOfScopeEndpointViolation", m_routeHasOutOfScopeEndpointViolation.Jsonize());
+
+  }
+
+  if(m_thirdPartyFirewallMissingFirewallViolationHasBeenSet)
+  {
+   payload.WithObject("ThirdPartyFirewallMissingFirewallViolation", m_thirdPartyFirewallMissingFirewallViolation.Jsonize());
+
+  }
+
+  if(m_thirdPartyFirewallMissingSubnetViolationHasBeenSet)
+  {
+   payload.WithObject("ThirdPartyFirewallMissingSubnetViolation", m_thirdPartyFirewallMissingSubnetViolation.Jsonize());
+
+  }
+
+  if(m_thirdPartyFirewallMissingExpectedRouteTableViolationHasBeenSet)
+  {
+   payload.WithObject("ThirdPartyFirewallMissingExpectedRouteTableViolation", m_thirdPartyFirewallMissingExpectedRouteTableViolation.Jsonize());
+
+  }
+
+  if(m_firewallSubnetMissingVPCEndpointViolationHasBeenSet)
+  {
+   payload.WithObject("FirewallSubnetMissingVPCEndpointViolation", m_firewallSubnetMissingVPCEndpointViolation.Jsonize());
 
   }
 

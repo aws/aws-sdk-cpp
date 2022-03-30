@@ -34,6 +34,7 @@ namespace Aws
         static const int MISSING_FIREWALL_SUBNET_IN_AZ_HASH = HashingUtils::HashString("MISSING_FIREWALL_SUBNET_IN_AZ");
         static const int MISSING_EXPECTED_ROUTE_TABLE_HASH = HashingUtils::HashString("MISSING_EXPECTED_ROUTE_TABLE");
         static const int NETWORK_FIREWALL_POLICY_MODIFIED_HASH = HashingUtils::HashString("NETWORK_FIREWALL_POLICY_MODIFIED");
+        static const int FIREWALL_SUBNET_IS_OUT_OF_SCOPE_HASH = HashingUtils::HashString("FIREWALL_SUBNET_IS_OUT_OF_SCOPE");
         static const int INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE_HASH = HashingUtils::HashString("INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE");
         static const int FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE_HASH = HashingUtils::HashString("FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE");
         static const int UNEXPECTED_FIREWALL_ROUTES_HASH = HashingUtils::HashString("UNEXPECTED_FIREWALL_ROUTES");
@@ -45,8 +46,8 @@ namespace Aws
         static const int BLACK_HOLE_ROUTE_DETECTED_HASH = HashingUtils::HashString("BLACK_HOLE_ROUTE_DETECTED");
         static const int BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET_HASH = HashingUtils::HashString("BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET");
         static const int RESOURCE_MISSING_DNS_FIREWALL_HASH = HashingUtils::HashString("RESOURCE_MISSING_DNS_FIREWALL");
-        static const int FIREWALL_SUBNET_IS_OUT_OF_SCOPE_HASH = HashingUtils::HashString("FIREWALL_SUBNET_IS_OUT_OF_SCOPE");
         static const int ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT_HASH = HashingUtils::HashString("ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT");
+        static const int FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT_HASH = HashingUtils::HashString("FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT");
 
 
         ViolationReason GetViolationReasonForName(const Aws::String& name)
@@ -108,6 +109,10 @@ namespace Aws
           {
             return ViolationReason::NETWORK_FIREWALL_POLICY_MODIFIED;
           }
+          else if (hashCode == FIREWALL_SUBNET_IS_OUT_OF_SCOPE_HASH)
+          {
+            return ViolationReason::FIREWALL_SUBNET_IS_OUT_OF_SCOPE;
+          }
           else if (hashCode == INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE_HASH)
           {
             return ViolationReason::INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE;
@@ -152,13 +157,13 @@ namespace Aws
           {
             return ViolationReason::RESOURCE_MISSING_DNS_FIREWALL;
           }
-          else if (hashCode == FIREWALL_SUBNET_IS_OUT_OF_SCOPE_HASH)
-          {
-            return ViolationReason::FIREWALL_SUBNET_IS_OUT_OF_SCOPE;
-          }
           else if (hashCode == ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT_HASH)
           {
             return ViolationReason::ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT;
+          }
+          else if (hashCode == FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT_HASH)
+          {
+            return ViolationReason::FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -202,6 +207,8 @@ namespace Aws
             return "MISSING_EXPECTED_ROUTE_TABLE";
           case ViolationReason::NETWORK_FIREWALL_POLICY_MODIFIED:
             return "NETWORK_FIREWALL_POLICY_MODIFIED";
+          case ViolationReason::FIREWALL_SUBNET_IS_OUT_OF_SCOPE:
+            return "FIREWALL_SUBNET_IS_OUT_OF_SCOPE";
           case ViolationReason::INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE:
             return "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE";
           case ViolationReason::FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE:
@@ -224,10 +231,10 @@ namespace Aws
             return "BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET";
           case ViolationReason::RESOURCE_MISSING_DNS_FIREWALL:
             return "RESOURCE_MISSING_DNS_FIREWALL";
-          case ViolationReason::FIREWALL_SUBNET_IS_OUT_OF_SCOPE:
-            return "FIREWALL_SUBNET_IS_OUT_OF_SCOPE";
           case ViolationReason::ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT:
             return "ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT";
+          case ViolationReason::FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT:
+            return "FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

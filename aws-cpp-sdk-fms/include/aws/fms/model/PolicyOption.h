@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/fms/model/NetworkFirewallPolicy.h>
+#include <aws/fms/model/ThirdPartyFirewallPolicy.h>
 #include <utility>
 
 namespace Aws
@@ -68,10 +69,44 @@ namespace Model
      */
     inline PolicyOption& WithNetworkFirewallPolicy(NetworkFirewallPolicy&& value) { SetNetworkFirewallPolicy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Defines the policy options for a third-party firewall policy.</p>
+     */
+    inline const ThirdPartyFirewallPolicy& GetThirdPartyFirewallPolicy() const{ return m_thirdPartyFirewallPolicy; }
+
+    /**
+     * <p>Defines the policy options for a third-party firewall policy.</p>
+     */
+    inline bool ThirdPartyFirewallPolicyHasBeenSet() const { return m_thirdPartyFirewallPolicyHasBeenSet; }
+
+    /**
+     * <p>Defines the policy options for a third-party firewall policy.</p>
+     */
+    inline void SetThirdPartyFirewallPolicy(const ThirdPartyFirewallPolicy& value) { m_thirdPartyFirewallPolicyHasBeenSet = true; m_thirdPartyFirewallPolicy = value; }
+
+    /**
+     * <p>Defines the policy options for a third-party firewall policy.</p>
+     */
+    inline void SetThirdPartyFirewallPolicy(ThirdPartyFirewallPolicy&& value) { m_thirdPartyFirewallPolicyHasBeenSet = true; m_thirdPartyFirewallPolicy = std::move(value); }
+
+    /**
+     * <p>Defines the policy options for a third-party firewall policy.</p>
+     */
+    inline PolicyOption& WithThirdPartyFirewallPolicy(const ThirdPartyFirewallPolicy& value) { SetThirdPartyFirewallPolicy(value); return *this;}
+
+    /**
+     * <p>Defines the policy options for a third-party firewall policy.</p>
+     */
+    inline PolicyOption& WithThirdPartyFirewallPolicy(ThirdPartyFirewallPolicy&& value) { SetThirdPartyFirewallPolicy(std::move(value)); return *this;}
+
   private:
 
     NetworkFirewallPolicy m_networkFirewallPolicy;
     bool m_networkFirewallPolicyHasBeenSet;
+
+    ThirdPartyFirewallPolicy m_thirdPartyFirewallPolicy;
+    bool m_thirdPartyFirewallPolicyHasBeenSet;
   };
 
 } // namespace Model

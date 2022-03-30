@@ -182,8 +182,8 @@ namespace Model
          * <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html#awsiotfleethubfordevicemanagement-actions-as-permissions">GetRetainedMessage</a>
          * action.</p> <p>For more information about messaging costs, see <a
-         * href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT Core pricing -
-         * Messaging</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon Web Services IoT
+         * Core pricing - Messaging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/GetRetainedMessage">AWS
          * API Reference</a></p>
          */
@@ -198,8 +198,8 @@ namespace Model
          * <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html#awsiotfleethubfordevicemanagement-actions-as-permissions">GetRetainedMessage</a>
          * action.</p> <p>For more information about messaging costs, see <a
-         * href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT Core pricing -
-         * Messaging</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon Web Services IoT
+         * Core pricing - Messaging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/GetRetainedMessage">AWS
          * API Reference</a></p>
          *
@@ -216,8 +216,8 @@ namespace Model
          * <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html#awsiotfleethubfordevicemanagement-actions-as-permissions">GetRetainedMessage</a>
          * action.</p> <p>For more information about messaging costs, see <a
-         * href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT Core pricing -
-         * Messaging</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon Web Services IoT
+         * Core pricing - Messaging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/GetRetainedMessage">AWS
          * API Reference</a></p>
          *
@@ -310,8 +310,8 @@ namespace Model
          * access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html#awsiotfleethubfordevicemanagement-actions-as-permissions">ListRetainedMessages</a>
          * action.</p> <p>For more information about messaging costs, see <a
-         * href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT Core pricing -
-         * Messaging</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon Web Services IoT
+         * Core pricing - Messaging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/ListRetainedMessages">AWS
          * API Reference</a></p>
          */
@@ -328,8 +328,8 @@ namespace Model
          * access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html#awsiotfleethubfordevicemanagement-actions-as-permissions">ListRetainedMessages</a>
          * action.</p> <p>For more information about messaging costs, see <a
-         * href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT Core pricing -
-         * Messaging</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon Web Services IoT
+         * Core pricing - Messaging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/ListRetainedMessages">AWS
          * API Reference</a></p>
          *
@@ -348,8 +348,8 @@ namespace Model
          * access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html#awsiotfleethubfordevicemanagement-actions-as-permissions">ListRetainedMessages</a>
          * action.</p> <p>For more information about messaging costs, see <a
-         * href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT Core pricing -
-         * Messaging</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon Web Services IoT
+         * Core pricing - Messaging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/ListRetainedMessages">AWS
          * API Reference</a></p>
          *
@@ -364,8 +364,8 @@ namespace Model
          * href="http://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html">MQTT
          * Protocol</a> in the IoT Developer Guide.</p> <p>For more information about
          * messaging costs, see <a
-         * href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT Core pricing -
-         * Messaging</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon Web Services IoT
+         * Core pricing - Messaging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/Publish">AWS
          * API Reference</a></p>
          */
@@ -378,8 +378,8 @@ namespace Model
          * href="http://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html">MQTT
          * Protocol</a> in the IoT Developer Guide.</p> <p>For more information about
          * messaging costs, see <a
-         * href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT Core pricing -
-         * Messaging</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon Web Services IoT
+         * Core pricing - Messaging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/Publish">AWS
          * API Reference</a></p>
          *
@@ -394,8 +394,8 @@ namespace Model
          * href="http://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html">MQTT
          * Protocol</a> in the IoT Developer Guide.</p> <p>For more information about
          * messaging costs, see <a
-         * href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT Core pricing -
-         * Messaging</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon Web Services IoT
+         * Core pricing - Messaging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/Publish">AWS
          * API Reference</a></p>
          *

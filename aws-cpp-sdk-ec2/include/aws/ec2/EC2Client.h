@@ -392,6 +392,7 @@
 #include <aws/ec2/model/ModifyInstanceCreditSpecificationResponse.h>
 #include <aws/ec2/model/ModifyInstanceEventStartTimeResponse.h>
 #include <aws/ec2/model/ModifyInstanceEventWindowResponse.h>
+#include <aws/ec2/model/ModifyInstanceMaintenanceOptionsResponse.h>
 #include <aws/ec2/model/ModifyInstanceMetadataOptionsResponse.h>
 #include <aws/ec2/model/ModifyInstancePlacementResponse.h>
 #include <aws/ec2/model/ModifyIpamResponse.h>
@@ -943,6 +944,7 @@ namespace Model
         class ModifyInstanceCreditSpecificationRequest;
         class ModifyInstanceEventStartTimeRequest;
         class ModifyInstanceEventWindowRequest;
+        class ModifyInstanceMaintenanceOptionsRequest;
         class ModifyInstanceMetadataOptionsRequest;
         class ModifyInstancePlacementRequest;
         class ModifyIpamRequest;
@@ -1465,6 +1467,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyInstanceCreditSpecificationResponse, EC2Error> ModifyInstanceCreditSpecificationOutcome;
         typedef Aws::Utils::Outcome<ModifyInstanceEventStartTimeResponse, EC2Error> ModifyInstanceEventStartTimeOutcome;
         typedef Aws::Utils::Outcome<ModifyInstanceEventWindowResponse, EC2Error> ModifyInstanceEventWindowOutcome;
+        typedef Aws::Utils::Outcome<ModifyInstanceMaintenanceOptionsResponse, EC2Error> ModifyInstanceMaintenanceOptionsOutcome;
         typedef Aws::Utils::Outcome<ModifyInstanceMetadataOptionsResponse, EC2Error> ModifyInstanceMetadataOptionsOutcome;
         typedef Aws::Utils::Outcome<ModifyInstancePlacementResponse, EC2Error> ModifyInstancePlacementOutcome;
         typedef Aws::Utils::Outcome<ModifyIpamResponse, EC2Error> ModifyIpamOutcome;
@@ -1987,6 +1990,7 @@ namespace Model
         typedef std::future<ModifyInstanceCreditSpecificationOutcome> ModifyInstanceCreditSpecificationOutcomeCallable;
         typedef std::future<ModifyInstanceEventStartTimeOutcome> ModifyInstanceEventStartTimeOutcomeCallable;
         typedef std::future<ModifyInstanceEventWindowOutcome> ModifyInstanceEventWindowOutcomeCallable;
+        typedef std::future<ModifyInstanceMaintenanceOptionsOutcome> ModifyInstanceMaintenanceOptionsOutcomeCallable;
         typedef std::future<ModifyInstanceMetadataOptionsOutcome> ModifyInstanceMetadataOptionsOutcomeCallable;
         typedef std::future<ModifyInstancePlacementOutcome> ModifyInstancePlacementOutcomeCallable;
         typedef std::future<ModifyIpamOutcome> ModifyIpamOutcomeCallable;
@@ -2512,6 +2516,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceCreditSpecificationRequest&, const Model::ModifyInstanceCreditSpecificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceCreditSpecificationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceEventStartTimeRequest&, const Model::ModifyInstanceEventStartTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceEventStartTimeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceEventWindowRequest&, const Model::ModifyInstanceEventWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceEventWindowResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyInstanceMaintenanceOptionsRequest&, const Model::ModifyInstanceMaintenanceOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceMaintenanceOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceMetadataOptionsRequest&, const Model::ModifyInstanceMetadataOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceMetadataOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstancePlacementRequest&, const Model::ModifyInstancePlacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstancePlacementResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyIpamRequest&, const Model::ModifyIpamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyIpamResponseReceivedHandler;
@@ -19991,6 +19996,46 @@ namespace Model
         virtual void ModifyInstanceEventWindowAsync(const Model::ModifyInstanceEventWindowRequest& request, const ModifyInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies the recovery behavior of your instance to disable simplified
+         * automatic recovery or set the recovery behavior to default. The default
+         * configuration will not enable simplified automatic recovery for an unsupported
+         * instance type. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified
+         * automatic recovery</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMaintenanceOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyInstanceMaintenanceOptionsOutcome ModifyInstanceMaintenanceOptions(const Model::ModifyInstanceMaintenanceOptionsRequest& request) const;
+
+        /**
+         * <p>Modifies the recovery behavior of your instance to disable simplified
+         * automatic recovery or set the recovery behavior to default. The default
+         * configuration will not enable simplified automatic recovery for an unsupported
+         * instance type. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified
+         * automatic recovery</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMaintenanceOptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyInstanceMaintenanceOptionsOutcomeCallable ModifyInstanceMaintenanceOptionsCallable(const Model::ModifyInstanceMaintenanceOptionsRequest& request) const;
+
+        /**
+         * <p>Modifies the recovery behavior of your instance to disable simplified
+         * automatic recovery or set the recovery behavior to default. The default
+         * configuration will not enable simplified automatic recovery for an unsupported
+         * instance type. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified
+         * automatic recovery</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMaintenanceOptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyInstanceMaintenanceOptionsAsync(const Model::ModifyInstanceMaintenanceOptionsRequest& request, const ModifyInstanceMaintenanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modify the instance metadata parameters on a running or stopped instance.
          * When you modify the parameters on a stopped instance, they are applied when the
          * instance is started. When you modify the parameters on a running instance, the
@@ -25132,6 +25177,7 @@ namespace Model
         void ModifyInstanceCreditSpecificationAsyncHelper(const Model::ModifyInstanceCreditSpecificationRequest& request, const ModifyInstanceCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstanceEventStartTimeAsyncHelper(const Model::ModifyInstanceEventStartTimeRequest& request, const ModifyInstanceEventStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstanceEventWindowAsyncHelper(const Model::ModifyInstanceEventWindowRequest& request, const ModifyInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyInstanceMaintenanceOptionsAsyncHelper(const Model::ModifyInstanceMaintenanceOptionsRequest& request, const ModifyInstanceMaintenanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstanceMetadataOptionsAsyncHelper(const Model::ModifyInstanceMetadataOptionsRequest& request, const ModifyInstanceMetadataOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstancePlacementAsyncHelper(const Model::ModifyInstancePlacementRequest& request, const ModifyInstancePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyIpamAsyncHelper(const Model::ModifyIpamRequest& request, const ModifyIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
