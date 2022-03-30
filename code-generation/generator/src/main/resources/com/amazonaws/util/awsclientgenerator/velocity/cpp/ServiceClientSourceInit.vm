@@ -151,14 +151,14 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
 #end
   if (config.endpointOverride.empty())
   {
-#if($arnEndpointSupported || $vpcEndpointSupported)
+#if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
       m_useCustomEndpoint = false;
 #end
       m_baseUri = ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack${ForRegionExtraArgsString});
   }
   else
   {
-#if($arnEndpointSupported || $vpcEndpointSupported)
+#if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
       m_useCustomEndpoint = true;
 #end
       OverrideEndpoint(config.endpointOverride);
@@ -167,10 +167,16 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
   if (config.endpointOverride.empty())
   {
       m_uri = m_configScheme + "://" + ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack);
+#if($customEndpointUsed)
+      m_useCustomEndpoint = false;
+#end
   }
   else
   {
       OverrideEndpoint(config.endpointOverride);
+#if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
+      m_useCustomEndpoint = true;
+#end
   }
 #end
 #if($metadata.hasEndpointTrait)

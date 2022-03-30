@@ -1,4 +1,4 @@
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/serviceoperations/withrequest/OperationOutcome.vm")
+#parseOverrideOrDefault( $serviceModel.serviceName.concat("_").concat($operation.name).concat("_OperationOutcome") "com/amazonaws/util/awsclientgenerator/velocity/cpp/json/serviceoperations/withrequest/OperationOutcome.vm")
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/serviceoperations/withrequest/OperationOutcomeCallable.vm")
 

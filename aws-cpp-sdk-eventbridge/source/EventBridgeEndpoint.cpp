@@ -58,6 +58,41 @@ namespace EventBridgeEndpoint
     return ss.str();
   }
 
+  Aws::String GetEventBridgeSuffix(const Aws::String& regionName, bool useDualStack)
+  {
+    auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
+
+    Aws::StringStream ss;
+
+    ss << ".events.";
+
+    if(useDualStack)
+    {
+      ss << "api.aws";
+    }
+    else
+    {
+      if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
+      {
+        ss << "amazonaws.com.cn";
+      }
+      else if (hash == US_ISO_EAST_1_HASH)
+      {
+        ss << "c2s.ic.gov";
+      }
+      else if (hash == US_ISOB_EAST_1_HASH)
+      {
+        ss << "sc2s.sgov.gov";
+      }
+      else
+      {
+        ss << "amazonaws.com";
+      }
+    }
+
+    return ss.str();
+  }
+
 } // namespace EventBridgeEndpoint
 } // namespace EventBridge
 } // namespace Aws
