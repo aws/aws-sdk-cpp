@@ -44,6 +44,7 @@ WorkspaceDescription::WorkspaceDescription() :
     m_stackSetNameHasBeenSet(false),
     m_status(WorkspaceStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_workspaceRoleArnHasBeenSet(false)
 {
 }
@@ -74,6 +75,7 @@ WorkspaceDescription::WorkspaceDescription(JsonView jsonValue) :
     m_stackSetNameHasBeenSet(false),
     m_status(WorkspaceStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_workspaceRoleArnHasBeenSet(false)
 {
   *this = jsonValue;
@@ -230,6 +232,16 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("workspaceRoleArn"))
   {
     m_workspaceRoleArn = jsonValue.GetString("workspaceRoleArn");
@@ -369,6 +381,17 @@ JsonValue WorkspaceDescription::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", WorkspaceStatusMapper::GetNameForWorkspaceStatus(m_status));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
   }
 
   if(m_workspaceRoleArnHasBeenSet)

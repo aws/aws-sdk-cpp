@@ -118,7 +118,7 @@ namespace Model
      * value or a column name. These values are defined in the SubstitutionMap. If a
      * CheckExpression starts with a column reference, then ColumnSelectors in the rule
      * should be null. If ColumnSelectors has been defined, then there should be no
-     * columnn reference in the left side of a condition, for example, <code>is_between
+     * column reference in the left side of a condition, for example, <code>is_between
      * :val1 and :val2</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available
      * checks</a> </p>
@@ -135,7 +135,7 @@ namespace Model
      * value or a column name. These values are defined in the SubstitutionMap. If a
      * CheckExpression starts with a column reference, then ColumnSelectors in the rule
      * should be null. If ColumnSelectors has been defined, then there should be no
-     * columnn reference in the left side of a condition, for example, <code>is_between
+     * column reference in the left side of a condition, for example, <code>is_between
      * :val1 and :val2</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available
      * checks</a> </p>
@@ -152,7 +152,7 @@ namespace Model
      * value or a column name. These values are defined in the SubstitutionMap. If a
      * CheckExpression starts with a column reference, then ColumnSelectors in the rule
      * should be null. If ColumnSelectors has been defined, then there should be no
-     * columnn reference in the left side of a condition, for example, <code>is_between
+     * column reference in the left side of a condition, for example, <code>is_between
      * :val1 and :val2</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available
      * checks</a> </p>
@@ -169,7 +169,7 @@ namespace Model
      * value or a column name. These values are defined in the SubstitutionMap. If a
      * CheckExpression starts with a column reference, then ColumnSelectors in the rule
      * should be null. If ColumnSelectors has been defined, then there should be no
-     * columnn reference in the left side of a condition, for example, <code>is_between
+     * column reference in the left side of a condition, for example, <code>is_between
      * :val1 and :val2</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available
      * checks</a> </p>
@@ -186,7 +186,7 @@ namespace Model
      * value or a column name. These values are defined in the SubstitutionMap. If a
      * CheckExpression starts with a column reference, then ColumnSelectors in the rule
      * should be null. If ColumnSelectors has been defined, then there should be no
-     * columnn reference in the left side of a condition, for example, <code>is_between
+     * column reference in the left side of a condition, for example, <code>is_between
      * :val1 and :val2</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available
      * checks</a> </p>
@@ -203,7 +203,7 @@ namespace Model
      * value or a column name. These values are defined in the SubstitutionMap. If a
      * CheckExpression starts with a column reference, then ColumnSelectors in the rule
      * should be null. If ColumnSelectors has been defined, then there should be no
-     * columnn reference in the left side of a condition, for example, <code>is_between
+     * column reference in the left side of a condition, for example, <code>is_between
      * :val1 and :val2</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available
      * checks</a> </p>
@@ -220,7 +220,7 @@ namespace Model
      * value or a column name. These values are defined in the SubstitutionMap. If a
      * CheckExpression starts with a column reference, then ColumnSelectors in the rule
      * should be null. If ColumnSelectors has been defined, then there should be no
-     * columnn reference in the left side of a condition, for example, <code>is_between
+     * column reference in the left side of a condition, for example, <code>is_between
      * :val1 and :val2</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available
      * checks</a> </p>
@@ -237,7 +237,7 @@ namespace Model
      * value or a column name. These values are defined in the SubstitutionMap. If a
      * CheckExpression starts with a column reference, then ColumnSelectors in the rule
      * should be null. If ColumnSelectors has been defined, then there should be no
-     * columnn reference in the left side of a condition, for example, <code>is_between
+     * column reference in the left side of a condition, for example, <code>is_between
      * :val1 and :val2</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available
      * checks</a> </p>

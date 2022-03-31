@@ -49,7 +49,8 @@ enum class Route53RecoveryClusterErrors
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ENDPOINT_TEMPORARILY_UNAVAILABLE,
-  INTERNAL_SERVER
+  INTERNAL_SERVER,
+  SERVICE_LIMIT_EXCEEDED
 };
 
 class AWS_ROUTE53RECOVERYCLUSTER_API Route53RecoveryClusterError : public Aws::Client::AWSError<Route53RecoveryClusterErrors>

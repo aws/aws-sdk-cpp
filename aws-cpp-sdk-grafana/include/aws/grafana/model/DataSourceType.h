@@ -21,7 +21,9 @@ namespace Model
     PROMETHEUS,
     XRAY,
     TIMESTREAM,
-    SITEWISE
+    SITEWISE,
+    ATHENA,
+    REDSHIFT
   };
 
 namespace DataSourceTypeMapper

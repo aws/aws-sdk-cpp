@@ -11,6 +11,7 @@
 #include <aws/route53-recovery-cluster/model/InternalServerException.h>
 #include <aws/route53-recovery-cluster/model/ResourceNotFoundException.h>
 #include <aws/route53-recovery-cluster/model/ValidationException.h>
+#include <aws/route53-recovery-cluster/model/ServiceLimitExceededException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -51,12 +52,19 @@ template<> AWS_ROUTE53RECOVERYCLUSTER_API ValidationException Route53RecoveryClu
   return ValidationException(this->GetJsonPayload().View());
 }
 
+template<> AWS_ROUTE53RECOVERYCLUSTER_API ServiceLimitExceededException Route53RecoveryClusterError::GetModeledError()
+{
+  assert(this->GetErrorType() == Route53RecoveryClusterErrors::SERVICE_LIMIT_EXCEEDED);
+  return ServiceLimitExceededException(this->GetJsonPayload().View());
+}
+
 namespace Route53RecoveryClusterErrorMapper
 {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int ENDPOINT_TEMPORARILY_UNAVAILABLE_HASH = HashingUtils::HashString("EndpointTemporarilyUnavailableException");
+static const int SERVICE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ServiceLimitExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -74,6 +82,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ENDPOINT_TEMPORARILY_UNAVAILABLE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53RecoveryClusterErrors::ENDPOINT_TEMPORARILY_UNAVAILABLE), false);
+  }
+  else if (hashCode == SERVICE_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53RecoveryClusterErrors::SERVICE_LIMIT_EXCEEDED), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

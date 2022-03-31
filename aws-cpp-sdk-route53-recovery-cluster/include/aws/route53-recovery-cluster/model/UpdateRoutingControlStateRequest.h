@@ -37,49 +37,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Number (ARN) for the routing control that you want to
+     * <p>The Amazon Resource Name (ARN) for the routing control that you want to
      * update the state for.</p>
      */
     inline const Aws::String& GetRoutingControlArn() const{ return m_routingControlArn; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) for the routing control that you want to
+     * <p>The Amazon Resource Name (ARN) for the routing control that you want to
      * update the state for.</p>
      */
     inline bool RoutingControlArnHasBeenSet() const { return m_routingControlArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) for the routing control that you want to
+     * <p>The Amazon Resource Name (ARN) for the routing control that you want to
      * update the state for.</p>
      */
     inline void SetRoutingControlArn(const Aws::String& value) { m_routingControlArnHasBeenSet = true; m_routingControlArn = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) for the routing control that you want to
+     * <p>The Amazon Resource Name (ARN) for the routing control that you want to
      * update the state for.</p>
      */
     inline void SetRoutingControlArn(Aws::String&& value) { m_routingControlArnHasBeenSet = true; m_routingControlArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) for the routing control that you want to
+     * <p>The Amazon Resource Name (ARN) for the routing control that you want to
      * update the state for.</p>
      */
     inline void SetRoutingControlArn(const char* value) { m_routingControlArnHasBeenSet = true; m_routingControlArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) for the routing control that you want to
+     * <p>The Amazon Resource Name (ARN) for the routing control that you want to
      * update the state for.</p>
      */
     inline UpdateRoutingControlStateRequest& WithRoutingControlArn(const Aws::String& value) { SetRoutingControlArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) for the routing control that you want to
+     * <p>The Amazon Resource Name (ARN) for the routing control that you want to
      * update the state for.</p>
      */
     inline UpdateRoutingControlStateRequest& WithRoutingControlArn(Aws::String&& value) { SetRoutingControlArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) for the routing control that you want to
+     * <p>The Amazon Resource Name (ARN) for the routing control that you want to
      * update the state for.</p>
      */
     inline UpdateRoutingControlStateRequest& WithRoutingControlArn(const char* value) { SetRoutingControlArn(value); return *this;}
@@ -117,7 +117,7 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to
+     * <p>The Amazon Resource Names (ARNs) for the safety rules that you want to
      * override when you're updating the state of a routing control. You can override
      * one safety rule or multiple safety rules by including one or more ARNs,
      * separated by commas.</p> <p>For more information, see <a
@@ -128,7 +128,7 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetSafetyRulesToOverride() const{ return m_safetyRulesToOverride; }
 
     /**
-     * <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to
+     * <p>The Amazon Resource Names (ARNs) for the safety rules that you want to
      * override when you're updating the state of a routing control. You can override
      * one safety rule or multiple safety rules by including one or more ARNs,
      * separated by commas.</p> <p>For more information, see <a
@@ -139,7 +139,7 @@ namespace Model
     inline bool SafetyRulesToOverrideHasBeenSet() const { return m_safetyRulesToOverrideHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to
+     * <p>The Amazon Resource Names (ARNs) for the safety rules that you want to
      * override when you're updating the state of a routing control. You can override
      * one safety rule or multiple safety rules by including one or more ARNs,
      * separated by commas.</p> <p>For more information, see <a
@@ -150,7 +150,7 @@ namespace Model
     inline void SetSafetyRulesToOverride(const Aws::Vector<Aws::String>& value) { m_safetyRulesToOverrideHasBeenSet = true; m_safetyRulesToOverride = value; }
 
     /**
-     * <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to
+     * <p>The Amazon Resource Names (ARNs) for the safety rules that you want to
      * override when you're updating the state of a routing control. You can override
      * one safety rule or multiple safety rules by including one or more ARNs,
      * separated by commas.</p> <p>For more information, see <a
@@ -161,7 +161,7 @@ namespace Model
     inline void SetSafetyRulesToOverride(Aws::Vector<Aws::String>&& value) { m_safetyRulesToOverrideHasBeenSet = true; m_safetyRulesToOverride = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to
+     * <p>The Amazon Resource Names (ARNs) for the safety rules that you want to
      * override when you're updating the state of a routing control. You can override
      * one safety rule or multiple safety rules by including one or more ARNs,
      * separated by commas.</p> <p>For more information, see <a
@@ -172,7 +172,7 @@ namespace Model
     inline UpdateRoutingControlStateRequest& WithSafetyRulesToOverride(const Aws::Vector<Aws::String>& value) { SetSafetyRulesToOverride(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to
+     * <p>The Amazon Resource Names (ARNs) for the safety rules that you want to
      * override when you're updating the state of a routing control. You can override
      * one safety rule or multiple safety rules by including one or more ARNs,
      * separated by commas.</p> <p>For more information, see <a
@@ -183,7 +183,7 @@ namespace Model
     inline UpdateRoutingControlStateRequest& WithSafetyRulesToOverride(Aws::Vector<Aws::String>&& value) { SetSafetyRulesToOverride(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to
+     * <p>The Amazon Resource Names (ARNs) for the safety rules that you want to
      * override when you're updating the state of a routing control. You can override
      * one safety rule or multiple safety rules by including one or more ARNs,
      * separated by commas.</p> <p>For more information, see <a
@@ -194,7 +194,7 @@ namespace Model
     inline UpdateRoutingControlStateRequest& AddSafetyRulesToOverride(const Aws::String& value) { m_safetyRulesToOverrideHasBeenSet = true; m_safetyRulesToOverride.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to
+     * <p>The Amazon Resource Names (ARNs) for the safety rules that you want to
      * override when you're updating the state of a routing control. You can override
      * one safety rule or multiple safety rules by including one or more ARNs,
      * separated by commas.</p> <p>For more information, see <a
@@ -205,7 +205,7 @@ namespace Model
     inline UpdateRoutingControlStateRequest& AddSafetyRulesToOverride(Aws::String&& value) { m_safetyRulesToOverrideHasBeenSet = true; m_safetyRulesToOverride.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Numbers (ARNs) for the safety rules that you want to
+     * <p>The Amazon Resource Names (ARNs) for the safety rules that you want to
      * override when you're updating the state of a routing control. You can override
      * one safety rule or multiple safety rules by including one or more ARNs,
      * separated by commas.</p> <p>For more information, see <a

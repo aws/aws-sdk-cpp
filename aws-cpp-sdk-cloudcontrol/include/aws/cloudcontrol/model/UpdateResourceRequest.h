@@ -135,9 +135,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -152,9 +152,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -169,9 +169,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -186,9 +186,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -203,9 +203,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -220,9 +220,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -237,9 +237,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -254,9 +254,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -399,7 +399,7 @@ namespace Model
      * JSON.</p> <p>For compound primary identifiers (that is, one that consists of
      * multiple resource properties strung together), to specify the primary identifier
      * as a string, list the property values <i>in the order they are specified</i> in
-     * the primary identifier definition, separated by <code>|</code>. </p> <p>For more
+     * the primary identifier definition, separated by <code>|</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying
      * resources</a> in the <i>Amazon Web Services Cloud Control API User
@@ -415,7 +415,7 @@ namespace Model
      * JSON.</p> <p>For compound primary identifiers (that is, one that consists of
      * multiple resource properties strung together), to specify the primary identifier
      * as a string, list the property values <i>in the order they are specified</i> in
-     * the primary identifier definition, separated by <code>|</code>. </p> <p>For more
+     * the primary identifier definition, separated by <code>|</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying
      * resources</a> in the <i>Amazon Web Services Cloud Control API User
@@ -431,7 +431,7 @@ namespace Model
      * JSON.</p> <p>For compound primary identifiers (that is, one that consists of
      * multiple resource properties strung together), to specify the primary identifier
      * as a string, list the property values <i>in the order they are specified</i> in
-     * the primary identifier definition, separated by <code>|</code>. </p> <p>For more
+     * the primary identifier definition, separated by <code>|</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying
      * resources</a> in the <i>Amazon Web Services Cloud Control API User
@@ -447,7 +447,7 @@ namespace Model
      * JSON.</p> <p>For compound primary identifiers (that is, one that consists of
      * multiple resource properties strung together), to specify the primary identifier
      * as a string, list the property values <i>in the order they are specified</i> in
-     * the primary identifier definition, separated by <code>|</code>. </p> <p>For more
+     * the primary identifier definition, separated by <code>|</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying
      * resources</a> in the <i>Amazon Web Services Cloud Control API User
@@ -463,7 +463,7 @@ namespace Model
      * JSON.</p> <p>For compound primary identifiers (that is, one that consists of
      * multiple resource properties strung together), to specify the primary identifier
      * as a string, list the property values <i>in the order they are specified</i> in
-     * the primary identifier definition, separated by <code>|</code>. </p> <p>For more
+     * the primary identifier definition, separated by <code>|</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying
      * resources</a> in the <i>Amazon Web Services Cloud Control API User
@@ -479,7 +479,7 @@ namespace Model
      * JSON.</p> <p>For compound primary identifiers (that is, one that consists of
      * multiple resource properties strung together), to specify the primary identifier
      * as a string, list the property values <i>in the order they are specified</i> in
-     * the primary identifier definition, separated by <code>|</code>. </p> <p>For more
+     * the primary identifier definition, separated by <code>|</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying
      * resources</a> in the <i>Amazon Web Services Cloud Control API User
@@ -495,7 +495,7 @@ namespace Model
      * JSON.</p> <p>For compound primary identifiers (that is, one that consists of
      * multiple resource properties strung together), to specify the primary identifier
      * as a string, list the property values <i>in the order they are specified</i> in
-     * the primary identifier definition, separated by <code>|</code>. </p> <p>For more
+     * the primary identifier definition, separated by <code>|</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying
      * resources</a> in the <i>Amazon Web Services Cloud Control API User
@@ -511,7 +511,7 @@ namespace Model
      * JSON.</p> <p>For compound primary identifiers (that is, one that consists of
      * multiple resource properties strung together), to specify the primary identifier
      * as a string, list the property values <i>in the order they are specified</i> in
-     * the primary identifier definition, separated by <code>|</code>. </p> <p>For more
+     * the primary identifier definition, separated by <code>|</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying
      * resources</a> in the <i>Amazon Web Services Cloud Control API User

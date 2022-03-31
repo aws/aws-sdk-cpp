@@ -134,9 +134,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -151,9 +151,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -168,9 +168,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -185,9 +185,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -202,9 +202,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -219,9 +219,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -236,9 +236,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -253,9 +253,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -351,38 +351,22 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to be returned with a single call. If the
-     * number of available results exceeds this maximum, the response includes a
-     * <code>NextToken</code> value that you can assign to the <code>NextToken</code>
-     * request parameter to get the next set of results.</p> <p>The default is
-     * <code>20</code>.</p>
+     * <p>Reserved.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to be returned with a single call. If the
-     * number of available results exceeds this maximum, the response includes a
-     * <code>NextToken</code> value that you can assign to the <code>NextToken</code>
-     * request parameter to get the next set of results.</p> <p>The default is
-     * <code>20</code>.</p>
+     * <p>Reserved.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to be returned with a single call. If the
-     * number of available results exceeds this maximum, the response includes a
-     * <code>NextToken</code> value that you can assign to the <code>NextToken</code>
-     * request parameter to get the next set of results.</p> <p>The default is
-     * <code>20</code>.</p>
+     * <p>Reserved.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to be returned with a single call. If the
-     * number of available results exceeds this maximum, the response includes a
-     * <code>NextToken</code> value that you can assign to the <code>NextToken</code>
-     * request parameter to get the next set of results.</p> <p>The default is
-     * <code>20</code>.</p>
+     * <p>Reserved.</p>
      */
     inline ListResourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

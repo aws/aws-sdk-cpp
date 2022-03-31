@@ -24,6 +24,7 @@ namespace Aws
         static const int JSON_HASH = HashingUtils::HashString("JSON");
         static const int PARQUET_HASH = HashingUtils::HashString("PARQUET");
         static const int EXCEL_HASH = HashingUtils::HashString("EXCEL");
+        static const int ORC_HASH = HashingUtils::HashString("ORC");
 
 
         InputFormat GetInputFormatForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == EXCEL_HASH)
           {
             return InputFormat::EXCEL;
+          }
+          else if (hashCode == ORC_HASH)
+          {
+            return InputFormat::ORC;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "PARQUET";
           case InputFormat::EXCEL:
             return "EXCEL";
+          case InputFormat::ORC:
+            return "ORC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

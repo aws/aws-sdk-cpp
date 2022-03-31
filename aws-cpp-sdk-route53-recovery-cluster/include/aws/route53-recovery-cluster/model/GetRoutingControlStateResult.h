@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the response.</p>
+     * <p>The Amazon Resource Name (ARN) of the response.</p>
      */
     inline const Aws::String& GetRoutingControlArn() const{ return m_routingControlArn; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the response.</p>
+     * <p>The Amazon Resource Name (ARN) of the response.</p>
      */
     inline void SetRoutingControlArn(const Aws::String& value) { m_routingControlArn = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the response.</p>
+     * <p>The Amazon Resource Name (ARN) of the response.</p>
      */
     inline void SetRoutingControlArn(Aws::String&& value) { m_routingControlArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the response.</p>
+     * <p>The Amazon Resource Name (ARN) of the response.</p>
      */
     inline void SetRoutingControlArn(const char* value) { m_routingControlArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the response.</p>
+     * <p>The Amazon Resource Name (ARN) of the response.</p>
      */
     inline GetRoutingControlStateResult& WithRoutingControlArn(const Aws::String& value) { SetRoutingControlArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the response.</p>
+     * <p>The Amazon Resource Name (ARN) of the response.</p>
      */
     inline GetRoutingControlStateResult& WithRoutingControlArn(Aws::String&& value) { SetRoutingControlArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the response.</p>
+     * <p>The Amazon Resource Name (ARN) of the response.</p>
      */
     inline GetRoutingControlStateResult& WithRoutingControlArn(const char* value) { SetRoutingControlArn(value); return *this;}
 
@@ -94,11 +94,49 @@ namespace Model
      */
     inline GetRoutingControlStateResult& WithRoutingControlState(RoutingControlState&& value) { SetRoutingControlState(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The routing control name.</p>
+     */
+    inline const Aws::String& GetRoutingControlName() const{ return m_routingControlName; }
+
+    /**
+     * <p>The routing control name.</p>
+     */
+    inline void SetRoutingControlName(const Aws::String& value) { m_routingControlName = value; }
+
+    /**
+     * <p>The routing control name.</p>
+     */
+    inline void SetRoutingControlName(Aws::String&& value) { m_routingControlName = std::move(value); }
+
+    /**
+     * <p>The routing control name.</p>
+     */
+    inline void SetRoutingControlName(const char* value) { m_routingControlName.assign(value); }
+
+    /**
+     * <p>The routing control name.</p>
+     */
+    inline GetRoutingControlStateResult& WithRoutingControlName(const Aws::String& value) { SetRoutingControlName(value); return *this;}
+
+    /**
+     * <p>The routing control name.</p>
+     */
+    inline GetRoutingControlStateResult& WithRoutingControlName(Aws::String&& value) { SetRoutingControlName(std::move(value)); return *this;}
+
+    /**
+     * <p>The routing control name.</p>
+     */
+    inline GetRoutingControlStateResult& WithRoutingControlName(const char* value) { SetRoutingControlName(value); return *this;}
+
   private:
 
     Aws::String m_routingControlArn;
 
     RoutingControlState m_routingControlState;
+
+    Aws::String m_routingControlName;
   };
 
 } // namespace Model

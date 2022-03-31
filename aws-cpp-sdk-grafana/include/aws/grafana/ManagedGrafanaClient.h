@@ -18,7 +18,10 @@
 #include <aws/grafana/model/DescribeWorkspaceAuthenticationResult.h>
 #include <aws/grafana/model/DisassociateLicenseResult.h>
 #include <aws/grafana/model/ListPermissionsResult.h>
+#include <aws/grafana/model/ListTagsForResourceResult.h>
 #include <aws/grafana/model/ListWorkspacesResult.h>
+#include <aws/grafana/model/TagResourceResult.h>
+#include <aws/grafana/model/UntagResourceResult.h>
 #include <aws/grafana/model/UpdatePermissionsResult.h>
 #include <aws/grafana/model/UpdateWorkspaceResult.h>
 #include <aws/grafana/model/UpdateWorkspaceAuthenticationResult.h>
@@ -68,7 +71,10 @@ namespace Model
         class DescribeWorkspaceAuthenticationRequest;
         class DisassociateLicenseRequest;
         class ListPermissionsRequest;
+        class ListTagsForResourceRequest;
         class ListWorkspacesRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdatePermissionsRequest;
         class UpdateWorkspaceRequest;
         class UpdateWorkspaceAuthenticationRequest;
@@ -80,7 +86,10 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeWorkspaceAuthenticationResult, ManagedGrafanaError> DescribeWorkspaceAuthenticationOutcome;
         typedef Aws::Utils::Outcome<DisassociateLicenseResult, ManagedGrafanaError> DisassociateLicenseOutcome;
         typedef Aws::Utils::Outcome<ListPermissionsResult, ManagedGrafanaError> ListPermissionsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ManagedGrafanaError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListWorkspacesResult, ManagedGrafanaError> ListWorkspacesOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, ManagedGrafanaError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, ManagedGrafanaError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdatePermissionsResult, ManagedGrafanaError> UpdatePermissionsOutcome;
         typedef Aws::Utils::Outcome<UpdateWorkspaceResult, ManagedGrafanaError> UpdateWorkspaceOutcome;
         typedef Aws::Utils::Outcome<UpdateWorkspaceAuthenticationResult, ManagedGrafanaError> UpdateWorkspaceAuthenticationOutcome;
@@ -92,7 +101,10 @@ namespace Model
         typedef std::future<DescribeWorkspaceAuthenticationOutcome> DescribeWorkspaceAuthenticationOutcomeCallable;
         typedef std::future<DisassociateLicenseOutcome> DisassociateLicenseOutcomeCallable;
         typedef std::future<ListPermissionsOutcome> ListPermissionsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListWorkspacesOutcome> ListWorkspacesOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdatePermissionsOutcome> UpdatePermissionsOutcomeCallable;
         typedef std::future<UpdateWorkspaceOutcome> UpdateWorkspaceOutcomeCallable;
         typedef std::future<UpdateWorkspaceAuthenticationOutcome> UpdateWorkspaceAuthenticationOutcomeCallable;
@@ -107,7 +119,10 @@ namespace Model
     typedef std::function<void(const ManagedGrafanaClient*, const Model::DescribeWorkspaceAuthenticationRequest&, const Model::DescribeWorkspaceAuthenticationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceAuthenticationResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::DisassociateLicenseRequest&, const Model::DisassociateLicenseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateLicenseResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::ListPermissionsRequest&, const Model::ListPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPermissionsResponseReceivedHandler;
+    typedef std::function<void(const ManagedGrafanaClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::ListWorkspacesRequest&, const Model::ListWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkspacesResponseReceivedHandler;
+    typedef std::function<void(const ManagedGrafanaClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const ManagedGrafanaClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::UpdatePermissionsRequest&, const Model::UpdatePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePermissionsResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::UpdateWorkspaceRequest&, const Model::UpdateWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkspaceResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::UpdateWorkspaceAuthenticationRequest&, const Model::UpdateWorkspaceAuthenticationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkspaceAuthenticationResponseReceivedHandler;
@@ -380,6 +395,40 @@ namespace Model
         virtual void ListPermissionsAsync(const Model::ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>The <code>ListTagsForResource</code> operation returns the tags that are
+         * associated with the Amazon Managed Service for Grafana resource specified by the
+         * <code>resourceArn</code>. Currently, the only resource that can be tagged is a
+         * workspace. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>The <code>ListTagsForResource</code> operation returns the tags that are
+         * associated with the Amazon Managed Service for Grafana resource specified by the
+         * <code>resourceArn</code>. Currently, the only resource that can be tagged is a
+         * workspace. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>The <code>ListTagsForResource</code> operation returns the tags that are
+         * associated with the Amazon Managed Service for Grafana resource specified by the
+         * <code>resourceArn</code>. Currently, the only resource that can be tagged is a
+         * workspace. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of Amazon Managed Grafana workspaces in the account, with some
          * information about each workspace. For more complete information about one
          * workspace, use <a
@@ -415,6 +464,74 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListWorkspacesAsync(const Model::ListWorkspacesRequest& request, const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>The <code>TagResource</code> operation associates tags with an Amazon Managed
+         * Grafana resource. Currently, the only resource that can be tagged is workspaces.
+         * </p> <p>If you specify a new tag key for the resource, this tag is appended to
+         * the list of tags associated with the resource. If you specify a tag key that is
+         * already associated with the resource, the new tag value that you specify
+         * replaces the previous value for that tag.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>The <code>TagResource</code> operation associates tags with an Amazon Managed
+         * Grafana resource. Currently, the only resource that can be tagged is workspaces.
+         * </p> <p>If you specify a new tag key for the resource, this tag is appended to
+         * the list of tags associated with the resource. If you specify a tag key that is
+         * already associated with the resource, the new tag value that you specify
+         * replaces the previous value for that tag.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>The <code>TagResource</code> operation associates tags with an Amazon Managed
+         * Grafana resource. Currently, the only resource that can be tagged is workspaces.
+         * </p> <p>If you specify a new tag key for the resource, this tag is appended to
+         * the list of tags associated with the resource. If you specify a tag key that is
+         * already associated with the resource, the new tag value that you specify
+         * replaces the previous value for that tag.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>The <code>UntagResource</code> operation removes the association of the tag
+         * with the Amazon Managed Grafana resource. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>The <code>UntagResource</code> operation removes the association of the tag
+         * with the Amazon Managed Grafana resource. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>The <code>UntagResource</code> operation removes the association of the tag
+         * with the Amazon Managed Grafana resource. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates which users in a workspace have the Grafana <code>Admin</code> or
@@ -541,7 +658,10 @@ namespace Model
         void DescribeWorkspaceAuthenticationAsyncHelper(const Model::DescribeWorkspaceAuthenticationRequest& request, const DescribeWorkspaceAuthenticationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateLicenseAsyncHelper(const Model::DisassociateLicenseRequest& request, const DisassociateLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPermissionsAsyncHelper(const Model::ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWorkspacesAsyncHelper(const Model::ListWorkspacesRequest& request, const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePermissionsAsyncHelper(const Model::UpdatePermissionsRequest& request, const UpdatePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateWorkspaceAsyncHelper(const Model::UpdateWorkspaceRequest& request, const UpdateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateWorkspaceAuthenticationAsyncHelper(const Model::UpdateWorkspaceAuthenticationRequest& request, const UpdateWorkspaceAuthenticationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

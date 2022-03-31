@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/grafana/model/PermissionType.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/grafana/model/AuthenticationProviderTypes.h>
 #include <aws/grafana/model/DataSourceType.h>
 #include <aws/grafana/model/NotificationDestinationType.h>
@@ -280,98 +281,110 @@ namespace Model
 
 
     /**
-     * <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana
-     * automatically creates the IAM roles and provisions the permissions that the
-     * workspace needs to use Amazon Web Services data sources and notification
-     * channels.</p> <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage
-     * those roles and permissions yourself. If you are creating this workspace in a
-     * member account of an organization that is not a delegated administrator account,
-     * and you want the workspace to access data sources in other Amazon Web Services
-     * accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
-     * <p>For more information, see <a
+     * <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon
+     * Managed Grafana automatically creates the IAM roles and provisions the
+     * permissions that the workspace needs to use Amazon Web Services data sources and
+     * notification channels. In CLI mode, the permissionType
+     * <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p> <p>If you
+     * specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and
+     * permissions yourself. If you are creating this workspace in a member account of
+     * an organization that is not a delegated administrator account, and you want the
+     * workspace to access data sources in other Amazon Web Services accounts in the
+     * organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
      * Managed Grafana permissions and policies for Amazon Web Services data sources
-     * and notification channels</a> </p>
+     * and notification channels</a>.</p>
      */
     inline const PermissionType& GetPermissionType() const{ return m_permissionType; }
 
     /**
-     * <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana
-     * automatically creates the IAM roles and provisions the permissions that the
-     * workspace needs to use Amazon Web Services data sources and notification
-     * channels.</p> <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage
-     * those roles and permissions yourself. If you are creating this workspace in a
-     * member account of an organization that is not a delegated administrator account,
-     * and you want the workspace to access data sources in other Amazon Web Services
-     * accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
-     * <p>For more information, see <a
+     * <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon
+     * Managed Grafana automatically creates the IAM roles and provisions the
+     * permissions that the workspace needs to use Amazon Web Services data sources and
+     * notification channels. In CLI mode, the permissionType
+     * <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p> <p>If you
+     * specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and
+     * permissions yourself. If you are creating this workspace in a member account of
+     * an organization that is not a delegated administrator account, and you want the
+     * workspace to access data sources in other Amazon Web Services accounts in the
+     * organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
      * Managed Grafana permissions and policies for Amazon Web Services data sources
-     * and notification channels</a> </p>
+     * and notification channels</a>.</p>
      */
     inline bool PermissionTypeHasBeenSet() const { return m_permissionTypeHasBeenSet; }
 
     /**
-     * <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana
-     * automatically creates the IAM roles and provisions the permissions that the
-     * workspace needs to use Amazon Web Services data sources and notification
-     * channels.</p> <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage
-     * those roles and permissions yourself. If you are creating this workspace in a
-     * member account of an organization that is not a delegated administrator account,
-     * and you want the workspace to access data sources in other Amazon Web Services
-     * accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
-     * <p>For more information, see <a
+     * <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon
+     * Managed Grafana automatically creates the IAM roles and provisions the
+     * permissions that the workspace needs to use Amazon Web Services data sources and
+     * notification channels. In CLI mode, the permissionType
+     * <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p> <p>If you
+     * specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and
+     * permissions yourself. If you are creating this workspace in a member account of
+     * an organization that is not a delegated administrator account, and you want the
+     * workspace to access data sources in other Amazon Web Services accounts in the
+     * organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
      * Managed Grafana permissions and policies for Amazon Web Services data sources
-     * and notification channels</a> </p>
+     * and notification channels</a>.</p>
      */
     inline void SetPermissionType(const PermissionType& value) { m_permissionTypeHasBeenSet = true; m_permissionType = value; }
 
     /**
-     * <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana
-     * automatically creates the IAM roles and provisions the permissions that the
-     * workspace needs to use Amazon Web Services data sources and notification
-     * channels.</p> <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage
-     * those roles and permissions yourself. If you are creating this workspace in a
-     * member account of an organization that is not a delegated administrator account,
-     * and you want the workspace to access data sources in other Amazon Web Services
-     * accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
-     * <p>For more information, see <a
+     * <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon
+     * Managed Grafana automatically creates the IAM roles and provisions the
+     * permissions that the workspace needs to use Amazon Web Services data sources and
+     * notification channels. In CLI mode, the permissionType
+     * <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p> <p>If you
+     * specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and
+     * permissions yourself. If you are creating this workspace in a member account of
+     * an organization that is not a delegated administrator account, and you want the
+     * workspace to access data sources in other Amazon Web Services accounts in the
+     * organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
      * Managed Grafana permissions and policies for Amazon Web Services data sources
-     * and notification channels</a> </p>
+     * and notification channels</a>.</p>
      */
     inline void SetPermissionType(PermissionType&& value) { m_permissionTypeHasBeenSet = true; m_permissionType = std::move(value); }
 
     /**
-     * <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana
-     * automatically creates the IAM roles and provisions the permissions that the
-     * workspace needs to use Amazon Web Services data sources and notification
-     * channels.</p> <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage
-     * those roles and permissions yourself. If you are creating this workspace in a
-     * member account of an organization that is not a delegated administrator account,
-     * and you want the workspace to access data sources in other Amazon Web Services
-     * accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
-     * <p>For more information, see <a
+     * <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon
+     * Managed Grafana automatically creates the IAM roles and provisions the
+     * permissions that the workspace needs to use Amazon Web Services data sources and
+     * notification channels. In CLI mode, the permissionType
+     * <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p> <p>If you
+     * specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and
+     * permissions yourself. If you are creating this workspace in a member account of
+     * an organization that is not a delegated administrator account, and you want the
+     * workspace to access data sources in other Amazon Web Services accounts in the
+     * organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
      * Managed Grafana permissions and policies for Amazon Web Services data sources
-     * and notification channels</a> </p>
+     * and notification channels</a>.</p>
      */
     inline CreateWorkspaceRequest& WithPermissionType(const PermissionType& value) { SetPermissionType(value); return *this;}
 
     /**
-     * <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana
-     * automatically creates the IAM roles and provisions the permissions that the
-     * workspace needs to use Amazon Web Services data sources and notification
-     * channels.</p> <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage
-     * those roles and permissions yourself. If you are creating this workspace in a
-     * member account of an organization that is not a delegated administrator account,
-     * and you want the workspace to access data sources in other Amazon Web Services
-     * accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
-     * <p>For more information, see <a
+     * <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon
+     * Managed Grafana automatically creates the IAM roles and provisions the
+     * permissions that the workspace needs to use Amazon Web Services data sources and
+     * notification channels. In CLI mode, the permissionType
+     * <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p> <p>If you
+     * specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and
+     * permissions yourself. If you are creating this workspace in a member account of
+     * an organization that is not a delegated administrator account, and you want the
+     * workspace to access data sources in other Amazon Web Services accounts in the
+     * organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
      * Managed Grafana permissions and policies for Amazon Web Services data sources
-     * and notification channels</a> </p>
+     * and notification channels</a>.</p>
      */
     inline CreateWorkspaceRequest& WithPermissionType(PermissionType&& value) { SetPermissionType(std::move(value)); return *this;}
 
@@ -423,6 +436,72 @@ namespace Model
      * used for this workspace.</p>
      */
     inline CreateWorkspaceRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
+
+
+    /**
+     * <p>The list of tags associated with the workspace.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of tags associated with the workspace.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The list of tags associated with the workspace.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The list of tags associated with the workspace.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The list of tags associated with the workspace.</p>
+     */
+    inline CreateWorkspaceRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The list of tags associated with the workspace.</p>
+     */
+    inline CreateWorkspaceRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of tags associated with the workspace.</p>
+     */
+    inline CreateWorkspaceRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The list of tags associated with the workspace.</p>
+     */
+    inline CreateWorkspaceRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The list of tags associated with the workspace.</p>
+     */
+    inline CreateWorkspaceRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The list of tags associated with the workspace.</p>
+     */
+    inline CreateWorkspaceRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The list of tags associated with the workspace.</p>
+     */
+    inline CreateWorkspaceRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The list of tags associated with the workspace.</p>
+     */
+    inline CreateWorkspaceRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The list of tags associated with the workspace.</p>
+     */
+    inline CreateWorkspaceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
 
     /**
@@ -516,49 +595,57 @@ namespace Model
 
     /**
      * <p>A description for the workspace. This is used only to help you identify this
-     * workspace.</p>
+     * workspace.</p> <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code>
+     * </p>
      */
     inline const Aws::String& GetWorkspaceDescription() const{ return m_workspaceDescription; }
 
     /**
      * <p>A description for the workspace. This is used only to help you identify this
-     * workspace.</p>
+     * workspace.</p> <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code>
+     * </p>
      */
     inline bool WorkspaceDescriptionHasBeenSet() const { return m_workspaceDescriptionHasBeenSet; }
 
     /**
      * <p>A description for the workspace. This is used only to help you identify this
-     * workspace.</p>
+     * workspace.</p> <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code>
+     * </p>
      */
     inline void SetWorkspaceDescription(const Aws::String& value) { m_workspaceDescriptionHasBeenSet = true; m_workspaceDescription = value; }
 
     /**
      * <p>A description for the workspace. This is used only to help you identify this
-     * workspace.</p>
+     * workspace.</p> <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code>
+     * </p>
      */
     inline void SetWorkspaceDescription(Aws::String&& value) { m_workspaceDescriptionHasBeenSet = true; m_workspaceDescription = std::move(value); }
 
     /**
      * <p>A description for the workspace. This is used only to help you identify this
-     * workspace.</p>
+     * workspace.</p> <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code>
+     * </p>
      */
     inline void SetWorkspaceDescription(const char* value) { m_workspaceDescriptionHasBeenSet = true; m_workspaceDescription.assign(value); }
 
     /**
      * <p>A description for the workspace. This is used only to help you identify this
-     * workspace.</p>
+     * workspace.</p> <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code>
+     * </p>
      */
     inline CreateWorkspaceRequest& WithWorkspaceDescription(const Aws::String& value) { SetWorkspaceDescription(value); return *this;}
 
     /**
      * <p>A description for the workspace. This is used only to help you identify this
-     * workspace.</p>
+     * workspace.</p> <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code>
+     * </p>
      */
     inline CreateWorkspaceRequest& WithWorkspaceDescription(Aws::String&& value) { SetWorkspaceDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description for the workspace. This is used only to help you identify this
-     * workspace.</p>
+     * workspace.</p> <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code>
+     * </p>
      */
     inline CreateWorkspaceRequest& WithWorkspaceDescription(const char* value) { SetWorkspaceDescription(value); return *this;}
 
@@ -736,80 +823,64 @@ namespace Model
     /**
      * <p>The workspace needs an IAM role that grants permissions to the Amazon Web
      * Services resources that the workspace will view data from. If you already have a
-     * role that you want to use, specify it here. If you omit this field and you
-     * specify some Amazon Web Services resources in <code>workspaceDataSources</code>
-     * or <code>workspaceNotificationDestinations</code>, a new IAM role with the
-     * necessary permissions is automatically created.</p>
+     * role that you want to use, specify it here. The permission type should be set to
+     * <code>CUSTOMER_MANAGED</code>.</p>
      */
     inline const Aws::String& GetWorkspaceRoleArn() const{ return m_workspaceRoleArn; }
 
     /**
      * <p>The workspace needs an IAM role that grants permissions to the Amazon Web
      * Services resources that the workspace will view data from. If you already have a
-     * role that you want to use, specify it here. If you omit this field and you
-     * specify some Amazon Web Services resources in <code>workspaceDataSources</code>
-     * or <code>workspaceNotificationDestinations</code>, a new IAM role with the
-     * necessary permissions is automatically created.</p>
+     * role that you want to use, specify it here. The permission type should be set to
+     * <code>CUSTOMER_MANAGED</code>.</p>
      */
     inline bool WorkspaceRoleArnHasBeenSet() const { return m_workspaceRoleArnHasBeenSet; }
 
     /**
      * <p>The workspace needs an IAM role that grants permissions to the Amazon Web
      * Services resources that the workspace will view data from. If you already have a
-     * role that you want to use, specify it here. If you omit this field and you
-     * specify some Amazon Web Services resources in <code>workspaceDataSources</code>
-     * or <code>workspaceNotificationDestinations</code>, a new IAM role with the
-     * necessary permissions is automatically created.</p>
+     * role that you want to use, specify it here. The permission type should be set to
+     * <code>CUSTOMER_MANAGED</code>.</p>
      */
     inline void SetWorkspaceRoleArn(const Aws::String& value) { m_workspaceRoleArnHasBeenSet = true; m_workspaceRoleArn = value; }
 
     /**
      * <p>The workspace needs an IAM role that grants permissions to the Amazon Web
      * Services resources that the workspace will view data from. If you already have a
-     * role that you want to use, specify it here. If you omit this field and you
-     * specify some Amazon Web Services resources in <code>workspaceDataSources</code>
-     * or <code>workspaceNotificationDestinations</code>, a new IAM role with the
-     * necessary permissions is automatically created.</p>
+     * role that you want to use, specify it here. The permission type should be set to
+     * <code>CUSTOMER_MANAGED</code>.</p>
      */
     inline void SetWorkspaceRoleArn(Aws::String&& value) { m_workspaceRoleArnHasBeenSet = true; m_workspaceRoleArn = std::move(value); }
 
     /**
      * <p>The workspace needs an IAM role that grants permissions to the Amazon Web
      * Services resources that the workspace will view data from. If you already have a
-     * role that you want to use, specify it here. If you omit this field and you
-     * specify some Amazon Web Services resources in <code>workspaceDataSources</code>
-     * or <code>workspaceNotificationDestinations</code>, a new IAM role with the
-     * necessary permissions is automatically created.</p>
+     * role that you want to use, specify it here. The permission type should be set to
+     * <code>CUSTOMER_MANAGED</code>.</p>
      */
     inline void SetWorkspaceRoleArn(const char* value) { m_workspaceRoleArnHasBeenSet = true; m_workspaceRoleArn.assign(value); }
 
     /**
      * <p>The workspace needs an IAM role that grants permissions to the Amazon Web
      * Services resources that the workspace will view data from. If you already have a
-     * role that you want to use, specify it here. If you omit this field and you
-     * specify some Amazon Web Services resources in <code>workspaceDataSources</code>
-     * or <code>workspaceNotificationDestinations</code>, a new IAM role with the
-     * necessary permissions is automatically created.</p>
+     * role that you want to use, specify it here. The permission type should be set to
+     * <code>CUSTOMER_MANAGED</code>.</p>
      */
     inline CreateWorkspaceRequest& WithWorkspaceRoleArn(const Aws::String& value) { SetWorkspaceRoleArn(value); return *this;}
 
     /**
      * <p>The workspace needs an IAM role that grants permissions to the Amazon Web
      * Services resources that the workspace will view data from. If you already have a
-     * role that you want to use, specify it here. If you omit this field and you
-     * specify some Amazon Web Services resources in <code>workspaceDataSources</code>
-     * or <code>workspaceNotificationDestinations</code>, a new IAM role with the
-     * necessary permissions is automatically created.</p>
+     * role that you want to use, specify it here. The permission type should be set to
+     * <code>CUSTOMER_MANAGED</code>.</p>
      */
     inline CreateWorkspaceRequest& WithWorkspaceRoleArn(Aws::String&& value) { SetWorkspaceRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The workspace needs an IAM role that grants permissions to the Amazon Web
      * Services resources that the workspace will view data from. If you already have a
-     * role that you want to use, specify it here. If you omit this field and you
-     * specify some Amazon Web Services resources in <code>workspaceDataSources</code>
-     * or <code>workspaceNotificationDestinations</code>, a new IAM role with the
-     * necessary permissions is automatically created.</p>
+     * role that you want to use, specify it here. The permission type should be set to
+     * <code>CUSTOMER_MANAGED</code>.</p>
      */
     inline CreateWorkspaceRequest& WithWorkspaceRoleArn(const char* value) { SetWorkspaceRoleArn(value); return *this;}
 
@@ -832,6 +903,9 @@ namespace Model
 
     Aws::String m_stackSetName;
     bool m_stackSetNameHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
 
     Aws::Vector<DataSourceType> m_workspaceDataSources;
     bool m_workspaceDataSourcesHasBeenSet;

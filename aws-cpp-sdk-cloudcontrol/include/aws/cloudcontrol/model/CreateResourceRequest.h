@@ -135,9 +135,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -152,9 +152,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -169,9 +169,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -186,9 +186,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -203,9 +203,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -220,9 +220,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -237,9 +237,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -254,9 +254,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * for Cloud Control API to use when performing this resource operation. The role
-     * specified must have the permissions required for this operation. The necessary
-     * permissions for each event handler are defined in the <code> <a
+     * role for Cloud Control API to use when performing this resource operation. The
+     * role specified must have the permissions required for this operation. The
+     * necessary permissions for each event handler are defined in the <code> <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
      * </code> section of the <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
@@ -393,7 +393,7 @@ namespace Model
 
     /**
      * <p>Structured data format representing the desired state of the resource,
-     * consisting of that resource's properties and their desired values. </p> 
+     * consisting of that resource's properties and their desired values.</p> 
      * <p>Cloud Control API currently supports JSON as a structured data format.</p>
      *  <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A
      * JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON
@@ -403,14 +403,13 @@ namespace Model
      * Control API User Guide</i>.</p> <p>For more information about the properties of
      * a specific resource, refer to the related topic for the resource in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource
-     * and property types reference</a> in the <i>Amazon Web Services CloudFormation
-     * Users Guide</i>.</p>
+     * and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>
      */
     inline const Aws::String& GetDesiredState() const{ return m_desiredState; }
 
     /**
      * <p>Structured data format representing the desired state of the resource,
-     * consisting of that resource's properties and their desired values. </p> 
+     * consisting of that resource's properties and their desired values.</p> 
      * <p>Cloud Control API currently supports JSON as a structured data format.</p>
      *  <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A
      * JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON
@@ -420,14 +419,13 @@ namespace Model
      * Control API User Guide</i>.</p> <p>For more information about the properties of
      * a specific resource, refer to the related topic for the resource in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource
-     * and property types reference</a> in the <i>Amazon Web Services CloudFormation
-     * Users Guide</i>.</p>
+     * and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>
      */
     inline bool DesiredStateHasBeenSet() const { return m_desiredStateHasBeenSet; }
 
     /**
      * <p>Structured data format representing the desired state of the resource,
-     * consisting of that resource's properties and their desired values. </p> 
+     * consisting of that resource's properties and their desired values.</p> 
      * <p>Cloud Control API currently supports JSON as a structured data format.</p>
      *  <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A
      * JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON
@@ -437,14 +435,13 @@ namespace Model
      * Control API User Guide</i>.</p> <p>For more information about the properties of
      * a specific resource, refer to the related topic for the resource in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource
-     * and property types reference</a> in the <i>Amazon Web Services CloudFormation
-     * Users Guide</i>.</p>
+     * and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>
      */
     inline void SetDesiredState(const Aws::String& value) { m_desiredStateHasBeenSet = true; m_desiredState = value; }
 
     /**
      * <p>Structured data format representing the desired state of the resource,
-     * consisting of that resource's properties and their desired values. </p> 
+     * consisting of that resource's properties and their desired values.</p> 
      * <p>Cloud Control API currently supports JSON as a structured data format.</p>
      *  <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A
      * JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON
@@ -454,14 +451,13 @@ namespace Model
      * Control API User Guide</i>.</p> <p>For more information about the properties of
      * a specific resource, refer to the related topic for the resource in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource
-     * and property types reference</a> in the <i>Amazon Web Services CloudFormation
-     * Users Guide</i>.</p>
+     * and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>
      */
     inline void SetDesiredState(Aws::String&& value) { m_desiredStateHasBeenSet = true; m_desiredState = std::move(value); }
 
     /**
      * <p>Structured data format representing the desired state of the resource,
-     * consisting of that resource's properties and their desired values. </p> 
+     * consisting of that resource's properties and their desired values.</p> 
      * <p>Cloud Control API currently supports JSON as a structured data format.</p>
      *  <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A
      * JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON
@@ -471,14 +467,13 @@ namespace Model
      * Control API User Guide</i>.</p> <p>For more information about the properties of
      * a specific resource, refer to the related topic for the resource in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource
-     * and property types reference</a> in the <i>Amazon Web Services CloudFormation
-     * Users Guide</i>.</p>
+     * and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>
      */
     inline void SetDesiredState(const char* value) { m_desiredStateHasBeenSet = true; m_desiredState.assign(value); }
 
     /**
      * <p>Structured data format representing the desired state of the resource,
-     * consisting of that resource's properties and their desired values. </p> 
+     * consisting of that resource's properties and their desired values.</p> 
      * <p>Cloud Control API currently supports JSON as a structured data format.</p>
      *  <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A
      * JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON
@@ -488,14 +483,13 @@ namespace Model
      * Control API User Guide</i>.</p> <p>For more information about the properties of
      * a specific resource, refer to the related topic for the resource in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource
-     * and property types reference</a> in the <i>Amazon Web Services CloudFormation
-     * Users Guide</i>.</p>
+     * and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>
      */
     inline CreateResourceRequest& WithDesiredState(const Aws::String& value) { SetDesiredState(value); return *this;}
 
     /**
      * <p>Structured data format representing the desired state of the resource,
-     * consisting of that resource's properties and their desired values. </p> 
+     * consisting of that resource's properties and their desired values.</p> 
      * <p>Cloud Control API currently supports JSON as a structured data format.</p>
      *  <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A
      * JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON
@@ -505,14 +499,13 @@ namespace Model
      * Control API User Guide</i>.</p> <p>For more information about the properties of
      * a specific resource, refer to the related topic for the resource in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource
-     * and property types reference</a> in the <i>Amazon Web Services CloudFormation
-     * Users Guide</i>.</p>
+     * and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>
      */
     inline CreateResourceRequest& WithDesiredState(Aws::String&& value) { SetDesiredState(std::move(value)); return *this;}
 
     /**
      * <p>Structured data format representing the desired state of the resource,
-     * consisting of that resource's properties and their desired values. </p> 
+     * consisting of that resource's properties and their desired values.</p> 
      * <p>Cloud Control API currently supports JSON as a structured data format.</p>
      *  <p>Specify the desired state as one of the following:</p> <ul> <li> <p>A
      * JSON blob</p> </li> <li> <p>A local path containing the desired state in JSON
@@ -522,8 +515,7 @@ namespace Model
      * Control API User Guide</i>.</p> <p>For more information about the properties of
      * a specific resource, refer to the related topic for the resource in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource
-     * and property types reference</a> in the <i>Amazon Web Services CloudFormation
-     * Users Guide</i>.</p>
+     * and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>
      */
     inline CreateResourceRequest& WithDesiredState(const char* value) { SetDesiredState(value); return *this;}
 

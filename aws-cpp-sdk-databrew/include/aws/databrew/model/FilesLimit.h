@@ -107,42 +107,42 @@ namespace Model
     /**
      * <p>A criteria to use for Amazon S3 files sorting before their selection. By
      * default uses DESCENDING order, i.e. most recent files are selected first.
-     * Anotherpossible value is ASCENDING.</p>
+     * Another possible value is ASCENDING.</p>
      */
     inline const Order& GetOrder() const{ return m_order; }
 
     /**
      * <p>A criteria to use for Amazon S3 files sorting before their selection. By
      * default uses DESCENDING order, i.e. most recent files are selected first.
-     * Anotherpossible value is ASCENDING.</p>
+     * Another possible value is ASCENDING.</p>
      */
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
 
     /**
      * <p>A criteria to use for Amazon S3 files sorting before their selection. By
      * default uses DESCENDING order, i.e. most recent files are selected first.
-     * Anotherpossible value is ASCENDING.</p>
+     * Another possible value is ASCENDING.</p>
      */
     inline void SetOrder(const Order& value) { m_orderHasBeenSet = true; m_order = value; }
 
     /**
      * <p>A criteria to use for Amazon S3 files sorting before their selection. By
      * default uses DESCENDING order, i.e. most recent files are selected first.
-     * Anotherpossible value is ASCENDING.</p>
+     * Another possible value is ASCENDING.</p>
      */
     inline void SetOrder(Order&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
 
     /**
      * <p>A criteria to use for Amazon S3 files sorting before their selection. By
      * default uses DESCENDING order, i.e. most recent files are selected first.
-     * Anotherpossible value is ASCENDING.</p>
+     * Another possible value is ASCENDING.</p>
      */
     inline FilesLimit& WithOrder(const Order& value) { SetOrder(value); return *this;}
 
     /**
      * <p>A criteria to use for Amazon S3 files sorting before their selection. By
      * default uses DESCENDING order, i.e. most recent files are selected first.
-     * Anotherpossible value is ASCENDING.</p>
+     * Another possible value is ASCENDING.</p>
      */
     inline FilesLimit& WithOrder(Order&& value) { SetOrder(std::move(value)); return *this;}
 

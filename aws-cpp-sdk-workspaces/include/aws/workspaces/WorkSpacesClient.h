@@ -22,6 +22,7 @@
 #include <aws/workspaces/model/CreateUpdatedWorkspaceImageResult.h>
 #include <aws/workspaces/model/CreateWorkspaceBundleResult.h>
 #include <aws/workspaces/model/CreateWorkspacesResult.h>
+#include <aws/workspaces/model/DeleteClientBrandingResult.h>
 #include <aws/workspaces/model/DeleteConnectClientAddInResult.h>
 #include <aws/workspaces/model/DeleteConnectionAliasResult.h>
 #include <aws/workspaces/model/DeleteIpGroupResult.h>
@@ -31,6 +32,7 @@
 #include <aws/workspaces/model/DeregisterWorkspaceDirectoryResult.h>
 #include <aws/workspaces/model/DescribeAccountResult.h>
 #include <aws/workspaces/model/DescribeAccountModificationsResult.h>
+#include <aws/workspaces/model/DescribeClientBrandingResult.h>
 #include <aws/workspaces/model/DescribeClientPropertiesResult.h>
 #include <aws/workspaces/model/DescribeConnectClientAddInsResult.h>
 #include <aws/workspaces/model/DescribeConnectionAliasPermissionsResult.h>
@@ -46,6 +48,7 @@
 #include <aws/workspaces/model/DescribeWorkspacesConnectionStatusResult.h>
 #include <aws/workspaces/model/DisassociateConnectionAliasResult.h>
 #include <aws/workspaces/model/DisassociateIpGroupsResult.h>
+#include <aws/workspaces/model/ImportClientBrandingResult.h>
 #include <aws/workspaces/model/ImportWorkspaceImageResult.h>
 #include <aws/workspaces/model/ListAvailableManagementCidrRangesResult.h>
 #include <aws/workspaces/model/MigrateWorkspaceResult.h>
@@ -119,6 +122,7 @@ namespace Model
         class CreateUpdatedWorkspaceImageRequest;
         class CreateWorkspaceBundleRequest;
         class CreateWorkspacesRequest;
+        class DeleteClientBrandingRequest;
         class DeleteConnectClientAddInRequest;
         class DeleteConnectionAliasRequest;
         class DeleteIpGroupRequest;
@@ -128,6 +132,7 @@ namespace Model
         class DeregisterWorkspaceDirectoryRequest;
         class DescribeAccountRequest;
         class DescribeAccountModificationsRequest;
+        class DescribeClientBrandingRequest;
         class DescribeClientPropertiesRequest;
         class DescribeConnectClientAddInsRequest;
         class DescribeConnectionAliasPermissionsRequest;
@@ -143,6 +148,7 @@ namespace Model
         class DescribeWorkspacesConnectionStatusRequest;
         class DisassociateConnectionAliasRequest;
         class DisassociateIpGroupsRequest;
+        class ImportClientBrandingRequest;
         class ImportWorkspaceImageRequest;
         class ListAvailableManagementCidrRangesRequest;
         class MigrateWorkspaceRequest;
@@ -178,6 +184,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateUpdatedWorkspaceImageResult, WorkSpacesError> CreateUpdatedWorkspaceImageOutcome;
         typedef Aws::Utils::Outcome<CreateWorkspaceBundleResult, WorkSpacesError> CreateWorkspaceBundleOutcome;
         typedef Aws::Utils::Outcome<CreateWorkspacesResult, WorkSpacesError> CreateWorkspacesOutcome;
+        typedef Aws::Utils::Outcome<DeleteClientBrandingResult, WorkSpacesError> DeleteClientBrandingOutcome;
         typedef Aws::Utils::Outcome<DeleteConnectClientAddInResult, WorkSpacesError> DeleteConnectClientAddInOutcome;
         typedef Aws::Utils::Outcome<DeleteConnectionAliasResult, WorkSpacesError> DeleteConnectionAliasOutcome;
         typedef Aws::Utils::Outcome<DeleteIpGroupResult, WorkSpacesError> DeleteIpGroupOutcome;
@@ -187,6 +194,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeregisterWorkspaceDirectoryResult, WorkSpacesError> DeregisterWorkspaceDirectoryOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountResult, WorkSpacesError> DescribeAccountOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountModificationsResult, WorkSpacesError> DescribeAccountModificationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeClientBrandingResult, WorkSpacesError> DescribeClientBrandingOutcome;
         typedef Aws::Utils::Outcome<DescribeClientPropertiesResult, WorkSpacesError> DescribeClientPropertiesOutcome;
         typedef Aws::Utils::Outcome<DescribeConnectClientAddInsResult, WorkSpacesError> DescribeConnectClientAddInsOutcome;
         typedef Aws::Utils::Outcome<DescribeConnectionAliasPermissionsResult, WorkSpacesError> DescribeConnectionAliasPermissionsOutcome;
@@ -202,6 +210,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeWorkspacesConnectionStatusResult, WorkSpacesError> DescribeWorkspacesConnectionStatusOutcome;
         typedef Aws::Utils::Outcome<DisassociateConnectionAliasResult, WorkSpacesError> DisassociateConnectionAliasOutcome;
         typedef Aws::Utils::Outcome<DisassociateIpGroupsResult, WorkSpacesError> DisassociateIpGroupsOutcome;
+        typedef Aws::Utils::Outcome<ImportClientBrandingResult, WorkSpacesError> ImportClientBrandingOutcome;
         typedef Aws::Utils::Outcome<ImportWorkspaceImageResult, WorkSpacesError> ImportWorkspaceImageOutcome;
         typedef Aws::Utils::Outcome<ListAvailableManagementCidrRangesResult, WorkSpacesError> ListAvailableManagementCidrRangesOutcome;
         typedef Aws::Utils::Outcome<MigrateWorkspaceResult, WorkSpacesError> MigrateWorkspaceOutcome;
@@ -237,6 +246,7 @@ namespace Model
         typedef std::future<CreateUpdatedWorkspaceImageOutcome> CreateUpdatedWorkspaceImageOutcomeCallable;
         typedef std::future<CreateWorkspaceBundleOutcome> CreateWorkspaceBundleOutcomeCallable;
         typedef std::future<CreateWorkspacesOutcome> CreateWorkspacesOutcomeCallable;
+        typedef std::future<DeleteClientBrandingOutcome> DeleteClientBrandingOutcomeCallable;
         typedef std::future<DeleteConnectClientAddInOutcome> DeleteConnectClientAddInOutcomeCallable;
         typedef std::future<DeleteConnectionAliasOutcome> DeleteConnectionAliasOutcomeCallable;
         typedef std::future<DeleteIpGroupOutcome> DeleteIpGroupOutcomeCallable;
@@ -246,6 +256,7 @@ namespace Model
         typedef std::future<DeregisterWorkspaceDirectoryOutcome> DeregisterWorkspaceDirectoryOutcomeCallable;
         typedef std::future<DescribeAccountOutcome> DescribeAccountOutcomeCallable;
         typedef std::future<DescribeAccountModificationsOutcome> DescribeAccountModificationsOutcomeCallable;
+        typedef std::future<DescribeClientBrandingOutcome> DescribeClientBrandingOutcomeCallable;
         typedef std::future<DescribeClientPropertiesOutcome> DescribeClientPropertiesOutcomeCallable;
         typedef std::future<DescribeConnectClientAddInsOutcome> DescribeConnectClientAddInsOutcomeCallable;
         typedef std::future<DescribeConnectionAliasPermissionsOutcome> DescribeConnectionAliasPermissionsOutcomeCallable;
@@ -261,6 +272,7 @@ namespace Model
         typedef std::future<DescribeWorkspacesConnectionStatusOutcome> DescribeWorkspacesConnectionStatusOutcomeCallable;
         typedef std::future<DisassociateConnectionAliasOutcome> DisassociateConnectionAliasOutcomeCallable;
         typedef std::future<DisassociateIpGroupsOutcome> DisassociateIpGroupsOutcomeCallable;
+        typedef std::future<ImportClientBrandingOutcome> ImportClientBrandingOutcomeCallable;
         typedef std::future<ImportWorkspaceImageOutcome> ImportWorkspaceImageOutcomeCallable;
         typedef std::future<ListAvailableManagementCidrRangesOutcome> ListAvailableManagementCidrRangesOutcomeCallable;
         typedef std::future<MigrateWorkspaceOutcome> MigrateWorkspaceOutcomeCallable;
@@ -299,6 +311,7 @@ namespace Model
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateUpdatedWorkspaceImageRequest&, const Model::CreateUpdatedWorkspaceImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUpdatedWorkspaceImageResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateWorkspaceBundleRequest&, const Model::CreateWorkspaceBundleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspaceBundleResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateWorkspacesRequest&, const Model::CreateWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspacesResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::DeleteClientBrandingRequest&, const Model::DeleteClientBrandingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClientBrandingResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DeleteConnectClientAddInRequest&, const Model::DeleteConnectClientAddInOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectClientAddInResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DeleteConnectionAliasRequest&, const Model::DeleteConnectionAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectionAliasResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DeleteIpGroupRequest&, const Model::DeleteIpGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIpGroupResponseReceivedHandler;
@@ -308,6 +321,7 @@ namespace Model
     typedef std::function<void(const WorkSpacesClient*, const Model::DeregisterWorkspaceDirectoryRequest&, const Model::DeregisterWorkspaceDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterWorkspaceDirectoryResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeAccountRequest&, const Model::DescribeAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeAccountModificationsRequest&, const Model::DescribeAccountModificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountModificationsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::DescribeClientBrandingRequest&, const Model::DescribeClientBrandingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClientBrandingResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeClientPropertiesRequest&, const Model::DescribeClientPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClientPropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeConnectClientAddInsRequest&, const Model::DescribeConnectClientAddInsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectClientAddInsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeConnectionAliasPermissionsRequest&, const Model::DescribeConnectionAliasPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectionAliasPermissionsResponseReceivedHandler;
@@ -323,6 +337,7 @@ namespace Model
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspacesConnectionStatusRequest&, const Model::DescribeWorkspacesConnectionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspacesConnectionStatusResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DisassociateConnectionAliasRequest&, const Model::DisassociateConnectionAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateConnectionAliasResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DisassociateIpGroupsRequest&, const Model::DisassociateIpGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateIpGroupsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::ImportClientBrandingRequest&, const Model::ImportClientBrandingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportClientBrandingResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ImportWorkspaceImageRequest&, const Model::ImportWorkspaceImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportWorkspaceImageResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ListAvailableManagementCidrRangesRequest&, const Model::ListAvailableManagementCidrRangesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAvailableManagementCidrRangesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::MigrateWorkspaceRequest&, const Model::MigrateWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MigrateWorkspaceResponseReceivedHandler;
@@ -349,8 +364,28 @@ namespace Model
 
   /**
    * <fullname>Amazon WorkSpaces Service</fullname> <p>Amazon WorkSpaces enables you
-   * to provision virtual, cloud-based Microsoft Windows and Amazon Linux desktops
-   * for your users.</p>
+   * to provision virtual, cloud-based Microsoft Windows or Amazon Linux desktops for
+   * your users, known as <i>WorkSpaces</i>. WorkSpaces eliminates the need to
+   * procure and deploy hardware or install complex software. You can quickly add or
+   * remove users as your needs change. Users can access their virtual desktops from
+   * multiple devices or web browsers.</p> <p>This API Reference provides detailed
+   * information about the actions, data types, parameters, and errors of the
+   * WorkSpaces service. For more information about the supported Amazon Web Services
+   * Regions, endpoints, and service quotas of the Amazon WorkSpaces service, see <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/wsp.html">WorkSpaces
+   * endpoints and quotas</a> in the <i>Amazon Web Services General
+   * Reference</i>.</p> <p>You can also manage your WorkSpaces resources using the
+   * WorkSpaces console, Command Line Interface (CLI), and SDKs. For more information
+   * about administering WorkSpaces, see the <a
+   * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/">Amazon
+   * WorkSpaces Administration Guide</a>. For more information about using the Amazon
+   * WorkSpaces client application or web browser to access provisioned WorkSpaces,
+   * see the <a
+   * href="https://docs.aws.amazon.com/workspaces/latest/userguide/">Amazon
+   * WorkSpaces User Guide</a>. For more information about using the CLI to manage
+   * your WorkSpaces resources, see the <a
+   * href="https://docs.aws.amazon.com/cli/latest/reference/workspaces/index.html">WorkSpaces
+   * section of the CLI Reference</a>.</p>
    */
   class AWS_WORKSPACES_API WorkSpacesClient : public Aws::Client::AWSJsonClient
   {
@@ -826,6 +861,46 @@ namespace Model
         virtual void CreateWorkspacesAsync(const Model::CreateWorkspacesRequest& request, const CreateWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes customized client branding. Client branding allows you to customize
+         * your WorkSpace's client login portal. You can tailor your login portal company
+         * logo, the support email address, support link, link to reset password, and a
+         * custom message for users trying to sign in.</p> <p>After you delete your
+         * customized client branding, your login portal reverts to the default client
+         * branding.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteClientBranding">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteClientBrandingOutcome DeleteClientBranding(const Model::DeleteClientBrandingRequest& request) const;
+
+        /**
+         * <p>Deletes customized client branding. Client branding allows you to customize
+         * your WorkSpace's client login portal. You can tailor your login portal company
+         * logo, the support email address, support link, link to reset password, and a
+         * custom message for users trying to sign in.</p> <p>After you delete your
+         * customized client branding, your login portal reverts to the default client
+         * branding.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteClientBranding">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteClientBrandingOutcomeCallable DeleteClientBrandingCallable(const Model::DeleteClientBrandingRequest& request) const;
+
+        /**
+         * <p>Deletes customized client branding. Client branding allows you to customize
+         * your WorkSpace's client login portal. You can tailor your login portal company
+         * logo, the support email address, support link, link to reset password, and a
+         * custom message for users trying to sign in.</p> <p>After you delete your
+         * customized client branding, your login portal reverts to the default client
+         * branding.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteClientBranding">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteClientBrandingAsync(const Model::DeleteClientBrandingRequest& request, const DeleteClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a client-add-in for Amazon Connect that is configured within a
          * directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteConnectClientAddIn">AWS
@@ -1160,6 +1235,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAccountModificationsAsync(const Model::DescribeAccountModificationsRequest& request, const DescribeAccountModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the specified client branding. Client branding allows you to
+         * customize the log in page of various device types for your users. You can add
+         * your company logo, the support email address, support link, link to reset
+         * password, and a custom message for users trying to sign in.</p>  <p>Only
+         * device types that have branding information configured will be shown in the
+         * response.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientBranding">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeClientBrandingOutcome DescribeClientBranding(const Model::DescribeClientBrandingRequest& request) const;
+
+        /**
+         * <p>Describes the specified client branding. Client branding allows you to
+         * customize the log in page of various device types for your users. You can add
+         * your company logo, the support email address, support link, link to reset
+         * password, and a custom message for users trying to sign in.</p>  <p>Only
+         * device types that have branding information configured will be shown in the
+         * response.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientBranding">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeClientBrandingOutcomeCallable DescribeClientBrandingCallable(const Model::DescribeClientBrandingRequest& request) const;
+
+        /**
+         * <p>Describes the specified client branding. Client branding allows you to
+         * customize the log in page of various device types for your users. You can add
+         * your company logo, the support email address, support link, link to reset
+         * password, and a custom message for users trying to sign in.</p>  <p>Only
+         * device types that have branding information configured will be shown in the
+         * response.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientBranding">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeClientBrandingAsync(const Model::DescribeClientBrandingRequest& request, const DescribeClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list that describes one or more specified Amazon WorkSpaces
@@ -1631,6 +1746,70 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateIpGroupsAsync(const Model::DisassociateIpGroupsRequest& request, const DisassociateIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Imports client branding. Client branding allows you to customize your
+         * WorkSpace's client login portal. You can tailor your login portal company logo,
+         * the support email address, support link, link to reset password, and a custom
+         * message for users trying to sign in.</p> <p>After you import client branding,
+         * the default branding experience for the specified platform type is replaced with
+         * the imported experience</p>  <ul> <li> <p>You must specify at least one
+         * platform type when importing client branding.</p> </li> <li> <p>You can import
+         * up to 6 MB of data with each request. If your request exceeds this limit, you
+         * can import client branding for different platform types using separate
+         * requests.</p> </li> <li> <p>In each platform type, the <code>SupportEmail</code>
+         * and <code>SupportLink</code> parameters are mutually exclusive. You can specify
+         * only one parameter for each platform type, but not both.</p> </li> <li>
+         * <p>Imported data can take up to a minute to appear in the WorkSpaces client.</p>
+         * </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportClientBranding">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ImportClientBrandingOutcome ImportClientBranding(const Model::ImportClientBrandingRequest& request) const;
+
+        /**
+         * <p>Imports client branding. Client branding allows you to customize your
+         * WorkSpace's client login portal. You can tailor your login portal company logo,
+         * the support email address, support link, link to reset password, and a custom
+         * message for users trying to sign in.</p> <p>After you import client branding,
+         * the default branding experience for the specified platform type is replaced with
+         * the imported experience</p>  <ul> <li> <p>You must specify at least one
+         * platform type when importing client branding.</p> </li> <li> <p>You can import
+         * up to 6 MB of data with each request. If your request exceeds this limit, you
+         * can import client branding for different platform types using separate
+         * requests.</p> </li> <li> <p>In each platform type, the <code>SupportEmail</code>
+         * and <code>SupportLink</code> parameters are mutually exclusive. You can specify
+         * only one parameter for each platform type, but not both.</p> </li> <li>
+         * <p>Imported data can take up to a minute to appear in the WorkSpaces client.</p>
+         * </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportClientBranding">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ImportClientBrandingOutcomeCallable ImportClientBrandingCallable(const Model::ImportClientBrandingRequest& request) const;
+
+        /**
+         * <p>Imports client branding. Client branding allows you to customize your
+         * WorkSpace's client login portal. You can tailor your login portal company logo,
+         * the support email address, support link, link to reset password, and a custom
+         * message for users trying to sign in.</p> <p>After you import client branding,
+         * the default branding experience for the specified platform type is replaced with
+         * the imported experience</p>  <ul> <li> <p>You must specify at least one
+         * platform type when importing client branding.</p> </li> <li> <p>You can import
+         * up to 6 MB of data with each request. If your request exceeds this limit, you
+         * can import client branding for different platform types using separate
+         * requests.</p> </li> <li> <p>In each platform type, the <code>SupportEmail</code>
+         * and <code>SupportLink</code> parameters are mutually exclusive. You can specify
+         * only one parameter for each platform type, but not both.</p> </li> <li>
+         * <p>Imported data can take up to a minute to appear in the WorkSpaces client.</p>
+         * </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportClientBranding">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ImportClientBrandingAsync(const Model::ImportClientBrandingRequest& request, const ImportClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Imports the specified Windows 10 Bring Your Own License (BYOL) image into
@@ -2624,6 +2803,7 @@ namespace Model
         void CreateUpdatedWorkspaceImageAsyncHelper(const Model::CreateUpdatedWorkspaceImageRequest& request, const CreateUpdatedWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWorkspaceBundleAsyncHelper(const Model::CreateWorkspaceBundleRequest& request, const CreateWorkspaceBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWorkspacesAsyncHelper(const Model::CreateWorkspacesRequest& request, const CreateWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteClientBrandingAsyncHelper(const Model::DeleteClientBrandingRequest& request, const DeleteClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConnectClientAddInAsyncHelper(const Model::DeleteConnectClientAddInRequest& request, const DeleteConnectClientAddInResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConnectionAliasAsyncHelper(const Model::DeleteConnectionAliasRequest& request, const DeleteConnectionAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIpGroupAsyncHelper(const Model::DeleteIpGroupRequest& request, const DeleteIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2633,6 +2813,7 @@ namespace Model
         void DeregisterWorkspaceDirectoryAsyncHelper(const Model::DeregisterWorkspaceDirectoryRequest& request, const DeregisterWorkspaceDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountAsyncHelper(const Model::DescribeAccountRequest& request, const DescribeAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountModificationsAsyncHelper(const Model::DescribeAccountModificationsRequest& request, const DescribeAccountModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeClientBrandingAsyncHelper(const Model::DescribeClientBrandingRequest& request, const DescribeClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClientPropertiesAsyncHelper(const Model::DescribeClientPropertiesRequest& request, const DescribeClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConnectClientAddInsAsyncHelper(const Model::DescribeConnectClientAddInsRequest& request, const DescribeConnectClientAddInsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConnectionAliasPermissionsAsyncHelper(const Model::DescribeConnectionAliasPermissionsRequest& request, const DescribeConnectionAliasPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2648,6 +2829,7 @@ namespace Model
         void DescribeWorkspacesConnectionStatusAsyncHelper(const Model::DescribeWorkspacesConnectionStatusRequest& request, const DescribeWorkspacesConnectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateConnectionAliasAsyncHelper(const Model::DisassociateConnectionAliasRequest& request, const DisassociateConnectionAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateIpGroupsAsyncHelper(const Model::DisassociateIpGroupsRequest& request, const DisassociateIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ImportClientBrandingAsyncHelper(const Model::ImportClientBrandingRequest& request, const ImportClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportWorkspaceImageAsyncHelper(const Model::ImportWorkspaceImageRequest& request, const ImportWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAvailableManagementCidrRangesAsyncHelper(const Model::ListAvailableManagementCidrRangesRequest& request, const ListAvailableManagementCidrRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void MigrateWorkspaceAsyncHelper(const Model::MigrateWorkspaceRequest& request, const MigrateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

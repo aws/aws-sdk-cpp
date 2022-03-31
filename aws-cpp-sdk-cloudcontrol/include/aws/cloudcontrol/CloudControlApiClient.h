@@ -98,14 +98,7 @@ namespace Model
     typedef std::function<void(const CloudControlApiClient*, const Model::UpdateResourceRequest&, const Model::UpdateResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourceResponseReceivedHandler;
 
   /**
-   * <p>Use Amazon Web Services Cloud Control API to create, read, update, delete,
-   * and list (CRUD-L) your cloud resources that belong to a wide range of
-   * services--both Amazon Web Services and third-party. With the Cloud Control API
-   * standardized set of application programming interfaces (APIs), you can perform
-   * CRUD-L operations on any supported resources in your Amazon Web Services
-   * account. Using Cloud Control API, you won't have to generate code or scripts
-   * specific to each individual service responsible for those resources.</p> <p>For
-   * more information about Amazon Web Services Cloud Control API, see the <a
+   * <p>For more information about Amazon Web Services Cloud Control API, see the <a
    * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/what-is-cloudcontrolapi.html">Amazon
    * Web Services Cloud Control API User Guide</a>.</p>
    */
@@ -142,7 +135,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-cancel">Canceling
          * resource operation requests</a> in the <i>Amazon Web Services Cloud Control API
          * User Guide</i>.</p> <p>Only resource operations requests with a status of
-         * <code>PENDING</code> or <code>IN_PROGRESS</code> can be cancelled.</p><p><h3>See
+         * <code>PENDING</code> or <code>IN_PROGRESS</code> can be canceled.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/CancelResourceRequest">AWS
          * API Reference</a></p>
@@ -155,7 +148,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-cancel">Canceling
          * resource operation requests</a> in the <i>Amazon Web Services Cloud Control API
          * User Guide</i>.</p> <p>Only resource operations requests with a status of
-         * <code>PENDING</code> or <code>IN_PROGRESS</code> can be cancelled.</p><p><h3>See
+         * <code>PENDING</code> or <code>IN_PROGRESS</code> can be canceled.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/CancelResourceRequest">AWS
          * API Reference</a></p>
@@ -170,7 +163,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-cancel">Canceling
          * resource operation requests</a> in the <i>Amazon Web Services Cloud Control API
          * User Guide</i>.</p> <p>Only resource operations requests with a status of
-         * <code>PENDING</code> or <code>IN_PROGRESS</code> can be cancelled.</p><p><h3>See
+         * <code>PENDING</code> or <code>IN_PROGRESS</code> can be canceled.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/CancelResourceRequest">AWS
          * API Reference</a></p>
@@ -277,7 +270,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-read.html">Reading
          * a resource's current state</a>.</p> <p>You can use this action to return
          * information about an existing resource in your account and Amazon Web Services
-         * Region, whether or not those resources were provisioned using Cloud Control
+         * Region, whether those resources were provisioned using Cloud Control
          * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/GetResource">AWS
          * API Reference</a></p>
@@ -290,7 +283,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-read.html">Reading
          * a resource's current state</a>.</p> <p>You can use this action to return
          * information about an existing resource in your account and Amazon Web Services
-         * Region, whether or not those resources were provisioned using Cloud Control
+         * Region, whether those resources were provisioned using Cloud Control
          * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/GetResource">AWS
          * API Reference</a></p>
@@ -305,7 +298,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-read.html">Reading
          * a resource's current state</a>.</p> <p>You can use this action to return
          * information about an existing resource in your account and Amazon Web Services
-         * Region, whether or not those resources were provisioned using Cloud Control
+         * Region, whether those resources were provisioned using Cloud Control
          * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/GetResource">AWS
          * API Reference</a></p>
@@ -357,7 +350,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-list">Listing
          * active resource operation requests</a> in the <i>Amazon Web Services Cloud
          * Control API User Guide</i>.</p>  <p>Resource operation requests expire
-         * after seven days.</p> <p><h3>See Also:</h3>   <a
+         * after 7 days.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/ListResourceRequests">AWS
          * API Reference</a></p>
          */
@@ -369,7 +362,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-list">Listing
          * active resource operation requests</a> in the <i>Amazon Web Services Cloud
          * Control API User Guide</i>.</p>  <p>Resource operation requests expire
-         * after seven days.</p> <p><h3>See Also:</h3>   <a
+         * after 7 days.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/ListResourceRequests">AWS
          * API Reference</a></p>
          *
@@ -383,7 +376,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-list">Listing
          * active resource operation requests</a> in the <i>Amazon Web Services Cloud
          * Control API User Guide</i>.</p>  <p>Resource operation requests expire
-         * after seven days.</p> <p><h3>See Also:</h3>   <a
+         * after 7 days.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/ListResourceRequests">AWS
          * API Reference</a></p>
          *
@@ -394,10 +387,10 @@ namespace Model
         /**
          * <p>Returns information about the specified resources. For more information, see
          * <a
-         * href="cloudcontrolapi/latest/userguide/resource-operations-list.html">Discovering
+         * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-list.html">Discovering
          * resources</a> in the <i>Amazon Web Services Cloud Control API User
          * Guide</i>.</p> <p>You can use this action to return information about existing
-         * resources in your account and Amazon Web Services Region, whether or not those
+         * resources in your account and Amazon Web Services Region, whether those
          * resources were provisioned using Cloud Control API.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/ListResources">AWS
@@ -408,10 +401,10 @@ namespace Model
         /**
          * <p>Returns information about the specified resources. For more information, see
          * <a
-         * href="cloudcontrolapi/latest/userguide/resource-operations-list.html">Discovering
+         * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-list.html">Discovering
          * resources</a> in the <i>Amazon Web Services Cloud Control API User
          * Guide</i>.</p> <p>You can use this action to return information about existing
-         * resources in your account and Amazon Web Services Region, whether or not those
+         * resources in your account and Amazon Web Services Region, whether those
          * resources were provisioned using Cloud Control API.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/ListResources">AWS
@@ -424,10 +417,10 @@ namespace Model
         /**
          * <p>Returns information about the specified resources. For more information, see
          * <a
-         * href="cloudcontrolapi/latest/userguide/resource-operations-list.html">Discovering
+         * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-list.html">Discovering
          * resources</a> in the <i>Amazon Web Services Cloud Control API User
          * Guide</i>.</p> <p>You can use this action to return information about existing
-         * resources in your account and Amazon Web Services Region, whether or not those
+         * resources in your account and Amazon Web Services Region, whether those
          * resources were provisioned using Cloud Control API.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/ListResources">AWS
@@ -453,8 +446,8 @@ namespace Model
          * by <code>UpdateResource</code>.</p> <p>For more information about the properties
          * of a specific resource, refer to the related topic for the resource in the <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource
-         * and property types reference</a> in the <i>Amazon Web Services CloudFormation
-         * Users Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * and property types reference</a> in the <i>CloudFormation Users
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/UpdateResource">AWS
          * API Reference</a></p>
          */
@@ -476,8 +469,8 @@ namespace Model
          * by <code>UpdateResource</code>.</p> <p>For more information about the properties
          * of a specific resource, refer to the related topic for the resource in the <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource
-         * and property types reference</a> in the <i>Amazon Web Services CloudFormation
-         * Users Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * and property types reference</a> in the <i>CloudFormation Users
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/UpdateResource">AWS
          * API Reference</a></p>
          *
@@ -501,8 +494,8 @@ namespace Model
          * by <code>UpdateResource</code>.</p> <p>For more information about the properties
          * of a specific resource, refer to the related topic for the resource in the <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource
-         * and property types reference</a> in the <i>Amazon Web Services CloudFormation
-         * Users Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * and property types reference</a> in the <i>CloudFormation Users
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/UpdateResource">AWS
          * API Reference</a></p>
          *
