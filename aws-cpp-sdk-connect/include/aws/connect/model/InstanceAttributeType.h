@@ -22,7 +22,8 @@ namespace Model
     CONTACT_LENS,
     AUTO_RESOLVE_BEST_VOICES,
     USE_CUSTOM_TTS_VOICES,
-    EARLY_MEDIA
+    EARLY_MEDIA,
+    MULTI_PARTY_CONFERENCE
   };
 
 namespace InstanceAttributeTypeMapper

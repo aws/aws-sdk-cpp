@@ -3933,9 +3933,8 @@ namespace Model
 
         /**
          * <p>Ends the specified contact. This call does not work for the following
-         * initiation methods:</p> <ul> <li> <p>CALLBACK</p> </li> <li> <p>DISCONNECT</p>
-         * </li> <li> <p>TRANSFER</p> </li> <li> <p>QUEUE_TRANSFER</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * initiation methods:</p> <ul> <li> <p>DISCONNECT</p> </li> <li> <p>TRANSFER</p>
+         * </li> <li> <p>QUEUE_TRANSFER</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContact">AWS
          * API Reference</a></p>
          */
@@ -3943,9 +3942,8 @@ namespace Model
 
         /**
          * <p>Ends the specified contact. This call does not work for the following
-         * initiation methods:</p> <ul> <li> <p>CALLBACK</p> </li> <li> <p>DISCONNECT</p>
-         * </li> <li> <p>TRANSFER</p> </li> <li> <p>QUEUE_TRANSFER</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * initiation methods:</p> <ul> <li> <p>DISCONNECT</p> </li> <li> <p>TRANSFER</p>
+         * </li> <li> <p>QUEUE_TRANSFER</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContact">AWS
          * API Reference</a></p>
          *
@@ -3955,9 +3953,8 @@ namespace Model
 
         /**
          * <p>Ends the specified contact. This call does not work for the following
-         * initiation methods:</p> <ul> <li> <p>CALLBACK</p> </li> <li> <p>DISCONNECT</p>
-         * </li> <li> <p>TRANSFER</p> </li> <li> <p>QUEUE_TRANSFER</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * initiation methods:</p> <ul> <li> <p>DISCONNECT</p> </li> <li> <p>TRANSFER</p>
+         * </li> <li> <p>QUEUE_TRANSFER</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContact">AWS
          * API Reference</a></p>
          *
