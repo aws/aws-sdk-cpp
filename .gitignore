@@ -81,7 +81,7 @@ toolchains/android/
 code-generation/generator/target/
 
 #config output
-aws-cpp-sdk-core/include/aws/core/SDKConfig.h
+src/aws-cpp-sdk-core/include/aws/core/SDKConfig.h
 
 #nuget
 *.nupkg
