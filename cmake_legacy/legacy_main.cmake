@@ -102,7 +102,7 @@ set(PYTHON3_CMD ${PYTHON_EXECUTABLE})
 # CMAKE_MODULE_PATH is a CMAKE variable. It contains a list of paths
 # which could be used to search CMAKE modules by "include()" or "find_package()", but the default value is empty.
 # Add ${CMAKE_INSTALL_LIBDIR}/cmake and ${CMAKE_PREFIX_PATH}/lib/cmake to search list
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_legacy")
 set(AWS_MODULE_DIR "/${CMAKE_INSTALL_LIBDIR}/cmake")
 string(REPLACE ";" "${AWS_MODULE_DIR};" AWS_MODULE_PATH "${CMAKE_PREFIX_PATH}${AWS_MODULE_DIR}")
 list(APPEND CMAKE_MODULE_PATH ${AWS_MODULE_PATH})
