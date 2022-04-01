@@ -54,7 +54,11 @@ else()
     foreach(SDK IN LISTS TEMP_SDK_BUILD_LIST)
         set(REMOVE_SDK 0)
 
-        set(SDK_DIR "aws-cpp-sdk-${SDK}")
+        if(SDK STREQUAL "core")
+            set(SDK_DIR "aws-cpp-sdk-${SDK}")
+        else()
+            set(SDK_DIR "generated/aws-cpp-sdk-${SDK}")
+        endif()
 
         if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}" AND NOT REGENERATE_CLIENTS)
             set(REMOVE_SDK 1)
@@ -72,7 +76,7 @@ endif()
 # SDK_BUILD_LIST is now a list of present SDKs that can be processed unconditionally
 if(ADD_CUSTOM_CLIENTS OR REGENERATE_CLIENTS OR REGENERATE_DEFAULTS)
     execute_process(
-        COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --prepareTools
+            COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --prepareTools
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     )
 endif()
@@ -100,12 +104,12 @@ if(REGENERATE_CLIENTS)
             file(REMOVE_RECURSE "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-${SDK}")
 
             execute_process(
-                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ${SDK} --apiVersion ${C2J_DATE} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --outputLocation ./
-                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+                    COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ${SDK} --apiVersion ${C2J_DATE} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --outputLocation ./generated/
+                    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
             )
             message(STATUS "Generated service: ${SDK}, version: ${C2J_DATE}")
         else()
-           message(STATUS "Directory for ${SDK} is either missing a service definition, is a custom client, or it is not a generated client. Skipping.")
+            message(STATUS "Directory for ${SDK} is either missing a service definition, is a custom client, or it is not a generated client. Skipping.")
         endif()
     endforeach()
 endif()
@@ -113,9 +117,9 @@ endif()
 if(REGENERATE_DEFAULTS)
     message(STATUS "Regenerating default client configurations.")
 
-    if(TRUE )#EXISTS ${SDK_C2J_FILE})
+    if(TRUE)#EXISTS ${SDK_C2J_FILE})
         execute_process(
-                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --clientConfigDefaults "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/defaults/sdk-default-configuration.json" --outputLocation ./
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --clientConfigDefaults "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/defaults/sdk-default-configuration.json" --outputLocation ./generated/
                 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         )
         message(STATUS "Generated defaults into ${CMAKE_CURRENT_SOURCE_DIR}")
@@ -148,8 +152,8 @@ foreach(custom_client ${ADD_CUSTOM_CLIENTS})
         file(REMOVE_RECURSE "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-${C_SERVICE_NAME}")
         message(STATUS "generating client for ${C_SERVICE_NAME} version ${C_VERSION}")
         execute_process(
-            COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ${C_SERVICE_NAME} --apiVersion ${C_VERSION} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --outputLocation ./
-            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ${C_SERVICE_NAME} --apiVersion ${C_VERSION} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --outputLocation ./generated/
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         )
         LIST(APPEND SDK_BUILD_LIST ${C_SERVICE_NAME})
     endif()
@@ -162,25 +166,25 @@ if(BUILD_ONLY)
     foreach(SDK IN LISTS SDK_BUILD_LIST)
         set(SDK_DIR "aws-cpp-sdk-${SDK}")
 
-        if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
+        if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/generated/${SDK_DIR}")
             message(FATAL_ERROR "${SDK} is required for build, but ${SDK_DIR} directory is missing!")
         endif()
     endforeach()
 
     set(TEMP_SDK_DEPENDENCY_BUILD_LIST ${SDK_DEPENDENCY_BUILD_LIST})
-    foreach (SDK IN LISTS TEMP_SDK_DEPENDENCY_BUILD_LIST)
+    foreach(SDK IN LISTS TEMP_SDK_DEPENDENCY_BUILD_LIST)
         list(FIND SDK_BUILD_LIST ${SDK} DEPENDENCY_INDEX)
         if(DEPENDENCY_INDEX LESS 0)
             # test dependencies should also be built from source instead of locating by calling find_package
             # which may cause version conflicts as well as double targeting built targets
             set(SDK_DIR "aws-cpp-sdk-${SDK}")
-            if (NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
+            if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
                 message(FATAL_ERROR "${SDK} is required for build, but ${SDK_DIR} directory is missing!")
-            endif ()
-        else ()
+            endif()
+        else()
             list(REMOVE_ITEM SDK_DEPENDENCY_BUILD_LIST ${SDK})
-        endif ()
-    endforeach ()
+        endif()
+    endforeach()
 
     foreach (SDK IN LISTS SDK_DEPENDENCY_BUILD_LIST)
         list(APPEND SDK_BUILD_LIST "${SDK}")
@@ -193,9 +197,13 @@ LIST(REMOVE_DUPLICATES SDK_DEPENDENCY_BUILD_LIST)
 function(add_sdks)
     LIST(APPEND EXPORTS "")
     foreach(SDK IN LISTS SDK_BUILD_LIST)
+        message(STATUS "Adding ${SDK} to SDK build")
         set(SDK_DIR "aws-cpp-sdk-${SDK}")
-
-        add_subdirectory("${SDK_DIR}")
+        if(SDK STREQUAL "core")
+            add_subdirectory("${SDK_DIR}")
+        else()
+            add_subdirectory("generated/${SDK_DIR}")
+        endif()
         LIST(APPEND EXPORTS "${SDK_DIR}")
     endforeach()
 
@@ -209,8 +217,8 @@ function(add_sdks)
 
             # Generates SDK client based on aws-cpp-sdk-core-tests/resources/api-descriptions/document-test-2021-06-28.normal.json for functional testing.
             execute_process(
-                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --pathToApiDefinitions aws-cpp-sdk-core-tests/resources/api-descriptions --serviceName document-test --apiVersion 2021-06-28 --outputLocation ./ --prepareTool
-                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+                    COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --pathToApiDefinitions aws-cpp-sdk-core-tests/resources/api-descriptions --serviceName document-test --apiVersion 2021-06-28 --outputLocation ./generated/ --prepareTool
+                    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
             )
             message(STATUS "Generated service: document-test, version: 2021-06-28")
             add_subdirectory(aws-cpp-sdk-document-test)
@@ -226,12 +234,12 @@ function(add_sdks)
             foreach(SDK IN LISTS SDK_BUILD_LIST)
                 get_test_projects_for_service(${SDK} TEST_PROJECTS)
                 if(TEST_PROJECTS)
-                    if (NO_HTTP_CLIENT AND NOT "${SDK}" STREQUAL "core")
+                    if(NO_HTTP_CLIENT AND NOT "${SDK}" STREQUAL "core")
                         set(NO_HTTP_CLIENT_SKIP_INTEGRATION_TEST ON)
                         continue()
                     endif()
-                    if (NOT ENABLE_VIRTUAL_OPERATIONS)
-                        if ("${SDK}" STREQUAL "transfer" OR "${SDK}" STREQUAL "s3-encryption")
+                    if(NOT ENABLE_VIRTUAL_OPERATIONS)
+                        if("${SDK}" STREQUAL "transfer" OR "${SDK}" STREQUAL "s3-encryption")
                             message(STATUS "Skip building ${SDK} integration tests because some tests need to override service operations, but ENABLE_VIRTUAL_OPERATIONS is switched off.")
                             continue()
                         endif()
@@ -259,11 +267,11 @@ function(add_sdks)
                         endif()
                     endforeach()
                 endif()
-             endforeach()
-             if (NO_HTTP_CLIENT_SKIP_INTEGRATION_TEST)
-                 message(STATUS "No http client is specified, SDK will not build integration tests")
-             endif()
-             unset(NO_HTTP_CLIENT_SKIP_INTEGRATION_TEST)
+            endforeach()
+            if(NO_HTTP_CLIENT_SKIP_INTEGRATION_TEST)
+                message(STATUS "No http client is specified, SDK will not build integration tests")
+            endif()
+            unset(NO_HTTP_CLIENT_SKIP_INTEGRATION_TEST)
         endif()
     endif()
 
