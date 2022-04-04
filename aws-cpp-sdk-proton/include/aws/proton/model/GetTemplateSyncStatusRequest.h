@@ -108,42 +108,42 @@ namespace Model
 
 
     /**
-     * <p>The template version.</p>
+     * <p>The template major version.</p>
      */
     inline const Aws::String& GetTemplateVersion() const{ return m_templateVersion; }
 
     /**
-     * <p>The template version.</p>
+     * <p>The template major version.</p>
      */
     inline bool TemplateVersionHasBeenSet() const { return m_templateVersionHasBeenSet; }
 
     /**
-     * <p>The template version.</p>
+     * <p>The template major version.</p>
      */
     inline void SetTemplateVersion(const Aws::String& value) { m_templateVersionHasBeenSet = true; m_templateVersion = value; }
 
     /**
-     * <p>The template version.</p>
+     * <p>The template major version.</p>
      */
     inline void SetTemplateVersion(Aws::String&& value) { m_templateVersionHasBeenSet = true; m_templateVersion = std::move(value); }
 
     /**
-     * <p>The template version.</p>
+     * <p>The template major version.</p>
      */
     inline void SetTemplateVersion(const char* value) { m_templateVersionHasBeenSet = true; m_templateVersion.assign(value); }
 
     /**
-     * <p>The template version.</p>
+     * <p>The template major version.</p>
      */
     inline GetTemplateSyncStatusRequest& WithTemplateVersion(const Aws::String& value) { SetTemplateVersion(value); return *this;}
 
     /**
-     * <p>The template version.</p>
+     * <p>The template major version.</p>
      */
     inline GetTemplateSyncStatusRequest& WithTemplateVersion(Aws::String&& value) { SetTemplateVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The template version.</p>
+     * <p>The template major version.</p>
      */
     inline GetTemplateSyncStatusRequest& WithTemplateVersion(const char* value) { SetTemplateVersion(value); return *this;}
 

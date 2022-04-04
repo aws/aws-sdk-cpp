@@ -147,6 +147,7 @@
 #include <aws/iot/model/ListJobTemplatesResult.h>
 #include <aws/iot/model/ListJobsResult.h>
 #include <aws/iot/model/ListManagedJobTemplatesResult.h>
+#include <aws/iot/model/ListMetricValuesResult.h>
 #include <aws/iot/model/ListMitigationActionsResult.h>
 #include <aws/iot/model/ListOTAUpdatesResult.h>
 #include <aws/iot/model/ListOutgoingCertificatesResult.h>
@@ -409,6 +410,7 @@ namespace Model
         class ListJobTemplatesRequest;
         class ListJobsRequest;
         class ListManagedJobTemplatesRequest;
+        class ListMetricValuesRequest;
         class ListMitigationActionsRequest;
         class ListOTAUpdatesRequest;
         class ListOutgoingCertificatesRequest;
@@ -642,6 +644,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListJobTemplatesResult, IoTError> ListJobTemplatesOutcome;
         typedef Aws::Utils::Outcome<ListJobsResult, IoTError> ListJobsOutcome;
         typedef Aws::Utils::Outcome<ListManagedJobTemplatesResult, IoTError> ListManagedJobTemplatesOutcome;
+        typedef Aws::Utils::Outcome<ListMetricValuesResult, IoTError> ListMetricValuesOutcome;
         typedef Aws::Utils::Outcome<ListMitigationActionsResult, IoTError> ListMitigationActionsOutcome;
         typedef Aws::Utils::Outcome<ListOTAUpdatesResult, IoTError> ListOTAUpdatesOutcome;
         typedef Aws::Utils::Outcome<ListOutgoingCertificatesResult, IoTError> ListOutgoingCertificatesOutcome;
@@ -875,6 +878,7 @@ namespace Model
         typedef std::future<ListJobTemplatesOutcome> ListJobTemplatesOutcomeCallable;
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
         typedef std::future<ListManagedJobTemplatesOutcome> ListManagedJobTemplatesOutcomeCallable;
+        typedef std::future<ListMetricValuesOutcome> ListMetricValuesOutcomeCallable;
         typedef std::future<ListMitigationActionsOutcome> ListMitigationActionsOutcomeCallable;
         typedef std::future<ListOTAUpdatesOutcome> ListOTAUpdatesOutcomeCallable;
         typedef std::future<ListOutgoingCertificatesOutcome> ListOutgoingCertificatesOutcomeCallable;
@@ -1111,6 +1115,7 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::ListJobTemplatesRequest&, const Model::ListJobTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobTemplatesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListManagedJobTemplatesRequest&, const Model::ListManagedJobTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListManagedJobTemplatesResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::ListMetricValuesRequest&, const Model::ListMetricValuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMetricValuesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListMitigationActionsRequest&, const Model::ListMitigationActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMitigationActionsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListOTAUpdatesRequest&, const Model::ListOTAUpdatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOTAUpdatesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListOutgoingCertificatesRequest&, const Model::ListOutgoingCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOutgoingCertificatesResponseReceivedHandler;
@@ -6659,6 +6664,37 @@ namespace Model
         virtual void ListManagedJobTemplatesAsync(const Model::ListManagedJobTemplatesRequest& request, const ListManagedJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the values reported for an IoT Device Defender metric (device-side
+         * metric, cloud-side metric, or custom metric) by the given thing during the
+         * specified time period.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListMetricValues">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMetricValuesOutcome ListMetricValues(const Model::ListMetricValuesRequest& request) const;
+
+        /**
+         * <p>Lists the values reported for an IoT Device Defender metric (device-side
+         * metric, cloud-side metric, or custom metric) by the given thing during the
+         * specified time period.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListMetricValues">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMetricValuesOutcomeCallable ListMetricValuesCallable(const Model::ListMetricValuesRequest& request) const;
+
+        /**
+         * <p>Lists the values reported for an IoT Device Defender metric (device-side
+         * metric, cloud-side metric, or custom metric) by the given thing during the
+         * specified time period.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListMetricValues">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMetricValuesAsync(const Model::ListMetricValuesRequest& request, const ListMetricValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets a list of all mitigation actions that match the specified filter
          * criteria.</p> <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListMitigationActions</a>
@@ -9615,6 +9651,7 @@ namespace Model
         void ListJobTemplatesAsyncHelper(const Model::ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListManagedJobTemplatesAsyncHelper(const Model::ListManagedJobTemplatesRequest& request, const ListManagedJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListMetricValuesAsyncHelper(const Model::ListMetricValuesRequest& request, const ListMetricValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMitigationActionsAsyncHelper(const Model::ListMitigationActionsRequest& request, const ListMitigationActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOTAUpdatesAsyncHelper(const Model::ListOTAUpdatesRequest& request, const ListOTAUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOutgoingCertificatesAsyncHelper(const Model::ListOutgoingCertificatesRequest& request, const ListOutgoingCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

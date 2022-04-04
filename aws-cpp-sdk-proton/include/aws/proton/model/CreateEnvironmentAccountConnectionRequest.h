@@ -145,73 +145,73 @@ namespace Model
 
     /**
      * <p>The ID of the management account that accepts or rejects the environment
-     * account connection. You create an manage the Proton environment in this account.
-     * If the management account accepts the environment account connection, Proton can
-     * use the associated IAM role to provision environment infrastructure resources in
-     * the associated environment account.</p>
+     * account connection. You create and manage the Proton environment in this
+     * account. If the management account accepts the environment account connection,
+     * Proton can use the associated IAM role to provision environment infrastructure
+     * resources in the associated environment account.</p>
      */
     inline const Aws::String& GetManagementAccountId() const{ return m_managementAccountId; }
 
     /**
      * <p>The ID of the management account that accepts or rejects the environment
-     * account connection. You create an manage the Proton environment in this account.
-     * If the management account accepts the environment account connection, Proton can
-     * use the associated IAM role to provision environment infrastructure resources in
-     * the associated environment account.</p>
+     * account connection. You create and manage the Proton environment in this
+     * account. If the management account accepts the environment account connection,
+     * Proton can use the associated IAM role to provision environment infrastructure
+     * resources in the associated environment account.</p>
      */
     inline bool ManagementAccountIdHasBeenSet() const { return m_managementAccountIdHasBeenSet; }
 
     /**
      * <p>The ID of the management account that accepts or rejects the environment
-     * account connection. You create an manage the Proton environment in this account.
-     * If the management account accepts the environment account connection, Proton can
-     * use the associated IAM role to provision environment infrastructure resources in
-     * the associated environment account.</p>
+     * account connection. You create and manage the Proton environment in this
+     * account. If the management account accepts the environment account connection,
+     * Proton can use the associated IAM role to provision environment infrastructure
+     * resources in the associated environment account.</p>
      */
     inline void SetManagementAccountId(const Aws::String& value) { m_managementAccountIdHasBeenSet = true; m_managementAccountId = value; }
 
     /**
      * <p>The ID of the management account that accepts or rejects the environment
-     * account connection. You create an manage the Proton environment in this account.
-     * If the management account accepts the environment account connection, Proton can
-     * use the associated IAM role to provision environment infrastructure resources in
-     * the associated environment account.</p>
+     * account connection. You create and manage the Proton environment in this
+     * account. If the management account accepts the environment account connection,
+     * Proton can use the associated IAM role to provision environment infrastructure
+     * resources in the associated environment account.</p>
      */
     inline void SetManagementAccountId(Aws::String&& value) { m_managementAccountIdHasBeenSet = true; m_managementAccountId = std::move(value); }
 
     /**
      * <p>The ID of the management account that accepts or rejects the environment
-     * account connection. You create an manage the Proton environment in this account.
-     * If the management account accepts the environment account connection, Proton can
-     * use the associated IAM role to provision environment infrastructure resources in
-     * the associated environment account.</p>
+     * account connection. You create and manage the Proton environment in this
+     * account. If the management account accepts the environment account connection,
+     * Proton can use the associated IAM role to provision environment infrastructure
+     * resources in the associated environment account.</p>
      */
     inline void SetManagementAccountId(const char* value) { m_managementAccountIdHasBeenSet = true; m_managementAccountId.assign(value); }
 
     /**
      * <p>The ID of the management account that accepts or rejects the environment
-     * account connection. You create an manage the Proton environment in this account.
-     * If the management account accepts the environment account connection, Proton can
-     * use the associated IAM role to provision environment infrastructure resources in
-     * the associated environment account.</p>
+     * account connection. You create and manage the Proton environment in this
+     * account. If the management account accepts the environment account connection,
+     * Proton can use the associated IAM role to provision environment infrastructure
+     * resources in the associated environment account.</p>
      */
     inline CreateEnvironmentAccountConnectionRequest& WithManagementAccountId(const Aws::String& value) { SetManagementAccountId(value); return *this;}
 
     /**
      * <p>The ID of the management account that accepts or rejects the environment
-     * account connection. You create an manage the Proton environment in this account.
-     * If the management account accepts the environment account connection, Proton can
-     * use the associated IAM role to provision environment infrastructure resources in
-     * the associated environment account.</p>
+     * account connection. You create and manage the Proton environment in this
+     * account. If the management account accepts the environment account connection,
+     * Proton can use the associated IAM role to provision environment infrastructure
+     * resources in the associated environment account.</p>
      */
     inline CreateEnvironmentAccountConnectionRequest& WithManagementAccountId(Aws::String&& value) { SetManagementAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the management account that accepts or rejects the environment
-     * account connection. You create an manage the Proton environment in this account.
-     * If the management account accepts the environment account connection, Proton can
-     * use the associated IAM role to provision environment infrastructure resources in
-     * the associated environment account.</p>
+     * account connection. You create and manage the Proton environment in this
+     * account. If the management account accepts the environment account connection,
+     * Proton can use the associated IAM role to provision environment infrastructure
+     * resources in the associated environment account.</p>
      */
     inline CreateEnvironmentAccountConnectionRequest& WithManagementAccountId(const char* value) { SetManagementAccountId(value); return *this;}
 
@@ -274,56 +274,72 @@ namespace Model
 
 
     /**
-     * <p>Tags for your environment account connection. For more information, see <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment account connection. A tag is a key-value pair.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags for your environment account connection. For more information, see <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment account connection. A tag is a key-value pair.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Tags for your environment account connection. For more information, see <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment account connection. A tag is a key-value pair.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Tags for your environment account connection. For more information, see <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment account connection. A tag is a key-value pair.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Tags for your environment account connection. For more information, see <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment account connection. A tag is a key-value pair.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
      */
     inline CreateEnvironmentAccountConnectionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags for your environment account connection. For more information, see <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment account connection. A tag is a key-value pair.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
      */
     inline CreateEnvironmentAccountConnectionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags for your environment account connection. For more information, see <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment account connection. A tag is a key-value pair.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
      */
     inline CreateEnvironmentAccountConnectionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Tags for your environment account connection. For more information, see <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment account connection. A tag is a key-value pair.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
      */

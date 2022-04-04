@@ -81,96 +81,96 @@ namespace Model
     /**
      * <p>The ID of the environment account connection that you provide if you're
      * provisioning your environment infrastructure resources to an environment
-     * account. You must include either the <code>environmentAccountConnectionId</code>
-     * or <code>protonServiceRoleArn</code> parameter and value and omit the
-     * <code>provisioningRepository</code> parameter and values. For more information,
-     * see <a
+     * account. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>Proton Administrator guide</i>.</p>
+     * account connections</a> in the <i>Proton Administrator guide</i>.</p> <p>To use
+     * Amazon Web Services-managed provisioning for the environment, specify either the
+     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
+     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
      */
     inline const Aws::String& GetEnvironmentAccountConnectionId() const{ return m_environmentAccountConnectionId; }
 
     /**
      * <p>The ID of the environment account connection that you provide if you're
      * provisioning your environment infrastructure resources to an environment
-     * account. You must include either the <code>environmentAccountConnectionId</code>
-     * or <code>protonServiceRoleArn</code> parameter and value and omit the
-     * <code>provisioningRepository</code> parameter and values. For more information,
-     * see <a
+     * account. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>Proton Administrator guide</i>.</p>
+     * account connections</a> in the <i>Proton Administrator guide</i>.</p> <p>To use
+     * Amazon Web Services-managed provisioning for the environment, specify either the
+     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
+     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
      */
     inline bool EnvironmentAccountConnectionIdHasBeenSet() const { return m_environmentAccountConnectionIdHasBeenSet; }
 
     /**
      * <p>The ID of the environment account connection that you provide if you're
      * provisioning your environment infrastructure resources to an environment
-     * account. You must include either the <code>environmentAccountConnectionId</code>
-     * or <code>protonServiceRoleArn</code> parameter and value and omit the
-     * <code>provisioningRepository</code> parameter and values. For more information,
-     * see <a
+     * account. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>Proton Administrator guide</i>.</p>
+     * account connections</a> in the <i>Proton Administrator guide</i>.</p> <p>To use
+     * Amazon Web Services-managed provisioning for the environment, specify either the
+     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
+     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
      */
     inline void SetEnvironmentAccountConnectionId(const Aws::String& value) { m_environmentAccountConnectionIdHasBeenSet = true; m_environmentAccountConnectionId = value; }
 
     /**
      * <p>The ID of the environment account connection that you provide if you're
      * provisioning your environment infrastructure resources to an environment
-     * account. You must include either the <code>environmentAccountConnectionId</code>
-     * or <code>protonServiceRoleArn</code> parameter and value and omit the
-     * <code>provisioningRepository</code> parameter and values. For more information,
-     * see <a
+     * account. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>Proton Administrator guide</i>.</p>
+     * account connections</a> in the <i>Proton Administrator guide</i>.</p> <p>To use
+     * Amazon Web Services-managed provisioning for the environment, specify either the
+     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
+     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
      */
     inline void SetEnvironmentAccountConnectionId(Aws::String&& value) { m_environmentAccountConnectionIdHasBeenSet = true; m_environmentAccountConnectionId = std::move(value); }
 
     /**
      * <p>The ID of the environment account connection that you provide if you're
      * provisioning your environment infrastructure resources to an environment
-     * account. You must include either the <code>environmentAccountConnectionId</code>
-     * or <code>protonServiceRoleArn</code> parameter and value and omit the
-     * <code>provisioningRepository</code> parameter and values. For more information,
-     * see <a
+     * account. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>Proton Administrator guide</i>.</p>
+     * account connections</a> in the <i>Proton Administrator guide</i>.</p> <p>To use
+     * Amazon Web Services-managed provisioning for the environment, specify either the
+     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
+     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
      */
     inline void SetEnvironmentAccountConnectionId(const char* value) { m_environmentAccountConnectionIdHasBeenSet = true; m_environmentAccountConnectionId.assign(value); }
 
     /**
      * <p>The ID of the environment account connection that you provide if you're
      * provisioning your environment infrastructure resources to an environment
-     * account. You must include either the <code>environmentAccountConnectionId</code>
-     * or <code>protonServiceRoleArn</code> parameter and value and omit the
-     * <code>provisioningRepository</code> parameter and values. For more information,
-     * see <a
+     * account. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>Proton Administrator guide</i>.</p>
+     * account connections</a> in the <i>Proton Administrator guide</i>.</p> <p>To use
+     * Amazon Web Services-managed provisioning for the environment, specify either the
+     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
+     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
      */
     inline CreateEnvironmentRequest& WithEnvironmentAccountConnectionId(const Aws::String& value) { SetEnvironmentAccountConnectionId(value); return *this;}
 
     /**
      * <p>The ID of the environment account connection that you provide if you're
      * provisioning your environment infrastructure resources to an environment
-     * account. You must include either the <code>environmentAccountConnectionId</code>
-     * or <code>protonServiceRoleArn</code> parameter and value and omit the
-     * <code>provisioningRepository</code> parameter and values. For more information,
-     * see <a
+     * account. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>Proton Administrator guide</i>.</p>
+     * account connections</a> in the <i>Proton Administrator guide</i>.</p> <p>To use
+     * Amazon Web Services-managed provisioning for the environment, specify either the
+     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
+     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
      */
     inline CreateEnvironmentRequest& WithEnvironmentAccountConnectionId(Aws::String&& value) { SetEnvironmentAccountConnectionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the environment account connection that you provide if you're
      * provisioning your environment infrastructure resources to an environment
-     * account. You must include either the <code>environmentAccountConnectionId</code>
-     * or <code>protonServiceRoleArn</code> parameter and value and omit the
-     * <code>provisioningRepository</code> parameter and values. For more information,
-     * see <a
+     * account. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>Proton Administrator guide</i>.</p>
+     * account connections</a> in the <i>Proton Administrator guide</i>.</p> <p>To use
+     * Amazon Web Services-managed provisioning for the environment, specify either the
+     * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
+     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
      */
     inline CreateEnvironmentRequest& WithEnvironmentAccountConnectionId(const char* value) { SetEnvironmentAccountConnectionId(value); return *this;}
 
@@ -218,209 +218,191 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
-     * to make calls to other services on your behalf. You must include either the
+     * to make calls to other services on your behalf.</p> <p>To use Amazon Web
+     * Services-managed provisioning for the environment, specify either the
      * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and value and omit the <code>provisioningRepository</code> parameter
-     * when you use standard provisioning.</p>
+     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
      */
     inline const Aws::String& GetProtonServiceRoleArn() const{ return m_protonServiceRoleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
-     * to make calls to other services on your behalf. You must include either the
+     * to make calls to other services on your behalf.</p> <p>To use Amazon Web
+     * Services-managed provisioning for the environment, specify either the
      * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and value and omit the <code>provisioningRepository</code> parameter
-     * when you use standard provisioning.</p>
+     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
      */
     inline bool ProtonServiceRoleArnHasBeenSet() const { return m_protonServiceRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
-     * to make calls to other services on your behalf. You must include either the
+     * to make calls to other services on your behalf.</p> <p>To use Amazon Web
+     * Services-managed provisioning for the environment, specify either the
      * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and value and omit the <code>provisioningRepository</code> parameter
-     * when you use standard provisioning.</p>
+     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
      */
     inline void SetProtonServiceRoleArn(const Aws::String& value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
-     * to make calls to other services on your behalf. You must include either the
+     * to make calls to other services on your behalf.</p> <p>To use Amazon Web
+     * Services-managed provisioning for the environment, specify either the
      * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and value and omit the <code>provisioningRepository</code> parameter
-     * when you use standard provisioning.</p>
+     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
      */
     inline void SetProtonServiceRoleArn(Aws::String&& value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
-     * to make calls to other services on your behalf. You must include either the
+     * to make calls to other services on your behalf.</p> <p>To use Amazon Web
+     * Services-managed provisioning for the environment, specify either the
      * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and value and omit the <code>provisioningRepository</code> parameter
-     * when you use standard provisioning.</p>
+     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
      */
     inline void SetProtonServiceRoleArn(const char* value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
-     * to make calls to other services on your behalf. You must include either the
+     * to make calls to other services on your behalf.</p> <p>To use Amazon Web
+     * Services-managed provisioning for the environment, specify either the
      * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and value and omit the <code>provisioningRepository</code> parameter
-     * when you use standard provisioning.</p>
+     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
      */
     inline CreateEnvironmentRequest& WithProtonServiceRoleArn(const Aws::String& value) { SetProtonServiceRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
-     * to make calls to other services on your behalf. You must include either the
+     * to make calls to other services on your behalf.</p> <p>To use Amazon Web
+     * Services-managed provisioning for the environment, specify either the
      * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and value and omit the <code>provisioningRepository</code> parameter
-     * when you use standard provisioning.</p>
+     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
      */
     inline CreateEnvironmentRequest& WithProtonServiceRoleArn(Aws::String&& value) { SetProtonServiceRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
-     * to make calls to other services on your behalf. You must include either the
+     * to make calls to other services on your behalf.</p> <p>To use Amazon Web
+     * Services-managed provisioning for the environment, specify either the
      * <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-     * parameter and value and omit the <code>provisioningRepository</code> parameter
-     * when you use standard provisioning.</p>
+     * parameter and omit the <code>provisioningRepository</code> parameter.</p>
      */
     inline CreateEnvironmentRequest& WithProtonServiceRoleArn(const char* value) { SetProtonServiceRoleArn(value); return *this;}
 
 
     /**
-     * <p>The repository that you provide with pull request provisioning. If you
-     * provide this parameter, you must omit the
-     * <code>environmentAccountConnectionId</code> and
-     * <code>protonServiceRoleArn</code> parameters.</p>  <p>Provisioning by
-     * pull request is currently in feature preview and is only usable with Terraform
-     * based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The infrastructure repository that you use to host your rendered
+     * infrastructure templates for self-managed provisioning.</p> <p>To use
+     * self-managed provisioning for the environment, specify this parameter and omit
+     * the <code>environmentAccountConnectionId</code> and
+     * <code>protonServiceRoleArn</code> parameters.</p>
      */
     inline const RepositoryBranchInput& GetProvisioningRepository() const{ return m_provisioningRepository; }
 
     /**
-     * <p>The repository that you provide with pull request provisioning. If you
-     * provide this parameter, you must omit the
-     * <code>environmentAccountConnectionId</code> and
-     * <code>protonServiceRoleArn</code> parameters.</p>  <p>Provisioning by
-     * pull request is currently in feature preview and is only usable with Terraform
-     * based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The infrastructure repository that you use to host your rendered
+     * infrastructure templates for self-managed provisioning.</p> <p>To use
+     * self-managed provisioning for the environment, specify this parameter and omit
+     * the <code>environmentAccountConnectionId</code> and
+     * <code>protonServiceRoleArn</code> parameters.</p>
      */
     inline bool ProvisioningRepositoryHasBeenSet() const { return m_provisioningRepositoryHasBeenSet; }
 
     /**
-     * <p>The repository that you provide with pull request provisioning. If you
-     * provide this parameter, you must omit the
-     * <code>environmentAccountConnectionId</code> and
-     * <code>protonServiceRoleArn</code> parameters.</p>  <p>Provisioning by
-     * pull request is currently in feature preview and is only usable with Terraform
-     * based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The infrastructure repository that you use to host your rendered
+     * infrastructure templates for self-managed provisioning.</p> <p>To use
+     * self-managed provisioning for the environment, specify this parameter and omit
+     * the <code>environmentAccountConnectionId</code> and
+     * <code>protonServiceRoleArn</code> parameters.</p>
      */
     inline void SetProvisioningRepository(const RepositoryBranchInput& value) { m_provisioningRepositoryHasBeenSet = true; m_provisioningRepository = value; }
 
     /**
-     * <p>The repository that you provide with pull request provisioning. If you
-     * provide this parameter, you must omit the
-     * <code>environmentAccountConnectionId</code> and
-     * <code>protonServiceRoleArn</code> parameters.</p>  <p>Provisioning by
-     * pull request is currently in feature preview and is only usable with Terraform
-     * based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The infrastructure repository that you use to host your rendered
+     * infrastructure templates for self-managed provisioning.</p> <p>To use
+     * self-managed provisioning for the environment, specify this parameter and omit
+     * the <code>environmentAccountConnectionId</code> and
+     * <code>protonServiceRoleArn</code> parameters.</p>
      */
     inline void SetProvisioningRepository(RepositoryBranchInput&& value) { m_provisioningRepositoryHasBeenSet = true; m_provisioningRepository = std::move(value); }
 
     /**
-     * <p>The repository that you provide with pull request provisioning. If you
-     * provide this parameter, you must omit the
-     * <code>environmentAccountConnectionId</code> and
-     * <code>protonServiceRoleArn</code> parameters.</p>  <p>Provisioning by
-     * pull request is currently in feature preview and is only usable with Terraform
-     * based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The infrastructure repository that you use to host your rendered
+     * infrastructure templates for self-managed provisioning.</p> <p>To use
+     * self-managed provisioning for the environment, specify this parameter and omit
+     * the <code>environmentAccountConnectionId</code> and
+     * <code>protonServiceRoleArn</code> parameters.</p>
      */
     inline CreateEnvironmentRequest& WithProvisioningRepository(const RepositoryBranchInput& value) { SetProvisioningRepository(value); return *this;}
 
     /**
-     * <p>The repository that you provide with pull request provisioning. If you
-     * provide this parameter, you must omit the
-     * <code>environmentAccountConnectionId</code> and
-     * <code>protonServiceRoleArn</code> parameters.</p>  <p>Provisioning by
-     * pull request is currently in feature preview and is only usable with Terraform
-     * based Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The infrastructure repository that you use to host your rendered
+     * infrastructure templates for self-managed provisioning.</p> <p>To use
+     * self-managed provisioning for the environment, specify this parameter and omit
+     * the <code>environmentAccountConnectionId</code> and
+     * <code>protonServiceRoleArn</code> parameters.</p>
      */
     inline CreateEnvironmentRequest& WithProvisioningRepository(RepositoryBranchInput&& value) { SetProvisioningRepository(std::move(value)); return *this;}
 
 
     /**
-     * <p>A link to a YAML formatted spec file that provides inputs as defined in the
-     * environment template bundle schema file. For more information, see <a
+     * <p>A YAML formatted string that provides inputs as defined in the environment
+     * template bundle schema file. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
      * in the <i>Proton Administrator Guide</i>.</p>
      */
     inline const Aws::String& GetSpec() const{ return m_spec; }
 
     /**
-     * <p>A link to a YAML formatted spec file that provides inputs as defined in the
-     * environment template bundle schema file. For more information, see <a
+     * <p>A YAML formatted string that provides inputs as defined in the environment
+     * template bundle schema file. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
      * in the <i>Proton Administrator Guide</i>.</p>
      */
     inline bool SpecHasBeenSet() const { return m_specHasBeenSet; }
 
     /**
-     * <p>A link to a YAML formatted spec file that provides inputs as defined in the
-     * environment template bundle schema file. For more information, see <a
+     * <p>A YAML formatted string that provides inputs as defined in the environment
+     * template bundle schema file. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
      * in the <i>Proton Administrator Guide</i>.</p>
      */
     inline void SetSpec(const Aws::String& value) { m_specHasBeenSet = true; m_spec = value; }
 
     /**
-     * <p>A link to a YAML formatted spec file that provides inputs as defined in the
-     * environment template bundle schema file. For more information, see <a
+     * <p>A YAML formatted string that provides inputs as defined in the environment
+     * template bundle schema file. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
      * in the <i>Proton Administrator Guide</i>.</p>
      */
     inline void SetSpec(Aws::String&& value) { m_specHasBeenSet = true; m_spec = std::move(value); }
 
     /**
-     * <p>A link to a YAML formatted spec file that provides inputs as defined in the
-     * environment template bundle schema file. For more information, see <a
+     * <p>A YAML formatted string that provides inputs as defined in the environment
+     * template bundle schema file. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
      * in the <i>Proton Administrator Guide</i>.</p>
      */
     inline void SetSpec(const char* value) { m_specHasBeenSet = true; m_spec.assign(value); }
 
     /**
-     * <p>A link to a YAML formatted spec file that provides inputs as defined in the
-     * environment template bundle schema file. For more information, see <a
+     * <p>A YAML formatted string that provides inputs as defined in the environment
+     * template bundle schema file. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
      * in the <i>Proton Administrator Guide</i>.</p>
      */
     inline CreateEnvironmentRequest& WithSpec(const Aws::String& value) { SetSpec(value); return *this;}
 
     /**
-     * <p>A link to a YAML formatted spec file that provides inputs as defined in the
-     * environment template bundle schema file. For more information, see <a
+     * <p>A YAML formatted string that provides inputs as defined in the environment
+     * template bundle schema file. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
      * in the <i>Proton Administrator Guide</i>.</p>
      */
     inline CreateEnvironmentRequest& WithSpec(Aws::String&& value) { SetSpec(std::move(value)); return *this;}
 
     /**
-     * <p>A link to a YAML formatted spec file that provides inputs as defined in the
-     * environment template bundle schema file. For more information, see <a
+     * <p>A YAML formatted string that provides inputs as defined in the environment
+     * template bundle schema file. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
      * in the <i>Proton Administrator Guide</i>.</p>
      */
@@ -428,8 +410,9 @@ namespace Model
 
 
     /**
-     * <p>Create tags for your environment. For more information, see <i>Proton
-     * resources and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment. A tag is a key-value pair.</p> <p>For more information, see
+     * <i>Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -438,8 +421,9 @@ namespace Model
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Create tags for your environment. For more information, see <i>Proton
-     * resources and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment. A tag is a key-value pair.</p> <p>For more information, see
+     * <i>Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -448,8 +432,9 @@ namespace Model
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Create tags for your environment. For more information, see <i>Proton
-     * resources and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment. A tag is a key-value pair.</p> <p>For more information, see
+     * <i>Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -458,8 +443,9 @@ namespace Model
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Create tags for your environment. For more information, see <i>Proton
-     * resources and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment. A tag is a key-value pair.</p> <p>For more information, see
+     * <i>Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -468,8 +454,9 @@ namespace Model
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Create tags for your environment. For more information, see <i>Proton
-     * resources and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment. A tag is a key-value pair.</p> <p>For more information, see
+     * <i>Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -478,8 +465,9 @@ namespace Model
     inline CreateEnvironmentRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Create tags for your environment. For more information, see <i>Proton
-     * resources and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment. A tag is a key-value pair.</p> <p>For more information, see
+     * <i>Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -488,8 +476,9 @@ namespace Model
     inline CreateEnvironmentRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Create tags for your environment. For more information, see <i>Proton
-     * resources and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment. A tag is a key-value pair.</p> <p>For more information, see
+     * <i>Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -498,8 +487,9 @@ namespace Model
     inline CreateEnvironmentRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Create tags for your environment. For more information, see <i>Proton
-     * resources and tagging</i> in the <a
+     * <p>An optional list of metadata items that you can associate with the Proton
+     * environment. A tag is a key-value pair.</p> <p>For more information, see
+     * <i>Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
      * Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton

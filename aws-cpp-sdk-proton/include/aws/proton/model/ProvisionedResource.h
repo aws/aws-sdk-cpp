@@ -121,56 +121,62 @@ namespace Model
 
 
     /**
-     * <p>The resource provisioning engine.</p>  <p>Provisioning by pull
-     * request is currently in feature preview and is only usable with Terraform based
-     * Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code>
+     * can be used for Amazon Web Services-managed provisioning, and
+     * <code>TERRAFORM</code> can be used for self-managed provisioning.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+     * provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
      */
     inline const ProvisionedResourceEngine& GetProvisioningEngine() const{ return m_provisioningEngine; }
 
     /**
-     * <p>The resource provisioning engine.</p>  <p>Provisioning by pull
-     * request is currently in feature preview and is only usable with Terraform based
-     * Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code>
+     * can be used for Amazon Web Services-managed provisioning, and
+     * <code>TERRAFORM</code> can be used for self-managed provisioning.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+     * provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
      */
     inline bool ProvisioningEngineHasBeenSet() const { return m_provisioningEngineHasBeenSet; }
 
     /**
-     * <p>The resource provisioning engine.</p>  <p>Provisioning by pull
-     * request is currently in feature preview and is only usable with Terraform based
-     * Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code>
+     * can be used for Amazon Web Services-managed provisioning, and
+     * <code>TERRAFORM</code> can be used for self-managed provisioning.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+     * provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
      */
     inline void SetProvisioningEngine(const ProvisionedResourceEngine& value) { m_provisioningEngineHasBeenSet = true; m_provisioningEngine = value; }
 
     /**
-     * <p>The resource provisioning engine.</p>  <p>Provisioning by pull
-     * request is currently in feature preview and is only usable with Terraform based
-     * Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code>
+     * can be used for Amazon Web Services-managed provisioning, and
+     * <code>TERRAFORM</code> can be used for self-managed provisioning.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+     * provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
      */
     inline void SetProvisioningEngine(ProvisionedResourceEngine&& value) { m_provisioningEngineHasBeenSet = true; m_provisioningEngine = std::move(value); }
 
     /**
-     * <p>The resource provisioning engine.</p>  <p>Provisioning by pull
-     * request is currently in feature preview and is only usable with Terraform based
-     * Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code>
+     * can be used for Amazon Web Services-managed provisioning, and
+     * <code>TERRAFORM</code> can be used for self-managed provisioning.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+     * provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
      */
     inline ProvisionedResource& WithProvisioningEngine(const ProvisionedResourceEngine& value) { SetProvisioningEngine(value); return *this;}
 
     /**
-     * <p>The resource provisioning engine.</p>  <p>Provisioning by pull
-     * request is currently in feature preview and is only usable with Terraform based
-     * Proton Templates. To learn more about <a
-     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
-     * terms</a>, see section 2 on Beta and Previews.</p> 
+     * <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code>
+     * can be used for Amazon Web Services-managed provisioning, and
+     * <code>TERRAFORM</code> can be used for self-managed provisioning.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+     * provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
      */
     inline ProvisionedResource& WithProvisioningEngine(ProvisionedResourceEngine&& value) { SetProvisioningEngine(std::move(value)); return *this;}
 

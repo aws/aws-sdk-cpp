@@ -17,7 +17,8 @@ CreateRepositoryRequest::CreateRepositoryRequest() :
     m_encryptionKeyHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_provider(RepositoryProvider::NOT_SET),
-    m_providerHasBeenSet(false)
+    m_providerHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,17 @@ Aws::String CreateRepositoryRequest::SerializePayload() const
   if(m_providerHasBeenSet)
   {
    payload.WithString("provider", RepositoryProviderMapper::GetNameForRepositoryProvider(m_provider));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
   }
 
   return payload.View().WriteReadable();

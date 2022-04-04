@@ -71,43 +71,43 @@ namespace Model
 
 
     /**
-     * <p>A token to indicate the location of the next environment in the array of
+     * <p>A token that indicates the location of the next environment in the array of
      * environments, after the current requested list of environments.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token to indicate the location of the next environment in the array of
+     * <p>A token that indicates the location of the next environment in the array of
      * environments, after the current requested list of environments.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>A token to indicate the location of the next environment in the array of
+     * <p>A token that indicates the location of the next environment in the array of
      * environments, after the current requested list of environments.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>A token to indicate the location of the next environment in the array of
+     * <p>A token that indicates the location of the next environment in the array of
      * environments, after the current requested list of environments.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>A token to indicate the location of the next environment in the array of
+     * <p>A token that indicates the location of the next environment in the array of
      * environments, after the current requested list of environments.</p>
      */
     inline ListEnvironmentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token to indicate the location of the next environment in the array of
+     * <p>A token that indicates the location of the next environment in the array of
      * environments, after the current requested list of environments.</p>
      */
     inline ListEnvironmentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token to indicate the location of the next environment in the array of
+     * <p>A token that indicates the location of the next environment in the array of
      * environments, after the current requested list of environments.</p>
      */
     inline ListEnvironmentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

@@ -752,13 +752,16 @@ namespace Model
          * <p>Deploy a new environment. An Proton environment is created from an
          * environment template that defines infrastructure and resources that can be
          * shared across services.</p> <p class="title"> <b>You can provision environments
-         * using the following methods:</b> </p> <ul> <li> <p>Standard provisioning: Proton
-         * makes direct calls to provision your resources.</p> </li> <li> <p>Pull request
-         * provisioning: Proton makes pull requests on your repository to provide compiled
-         * infrastructure as code (IaC) files that your IaC engine uses to provision
-         * resources.</p> </li> </ul> <p>For more information, see the <a
+         * using the following methods:</b> </p> <ul> <li> <p>Amazon Web Services-managed
+         * provisioning: Proton makes direct calls to provision your resources.</p> </li>
+         * <li> <p>Self-managed provisioning: Proton makes pull requests on your repository
+         * to provide compiled infrastructure as code (IaC) files that your IaC engine uses
+         * to provision resources.</p> </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
-         * in the <i>Proton Administrator Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * and <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html">Provisioning
+         * methods</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironment">AWS
          * API Reference</a></p>
          */
@@ -768,13 +771,16 @@ namespace Model
          * <p>Deploy a new environment. An Proton environment is created from an
          * environment template that defines infrastructure and resources that can be
          * shared across services.</p> <p class="title"> <b>You can provision environments
-         * using the following methods:</b> </p> <ul> <li> <p>Standard provisioning: Proton
-         * makes direct calls to provision your resources.</p> </li> <li> <p>Pull request
-         * provisioning: Proton makes pull requests on your repository to provide compiled
-         * infrastructure as code (IaC) files that your IaC engine uses to provision
-         * resources.</p> </li> </ul> <p>For more information, see the <a
+         * using the following methods:</b> </p> <ul> <li> <p>Amazon Web Services-managed
+         * provisioning: Proton makes direct calls to provision your resources.</p> </li>
+         * <li> <p>Self-managed provisioning: Proton makes pull requests on your repository
+         * to provide compiled infrastructure as code (IaC) files that your IaC engine uses
+         * to provision resources.</p> </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
-         * in the <i>Proton Administrator Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * and <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html">Provisioning
+         * methods</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironment">AWS
          * API Reference</a></p>
          *
@@ -786,13 +792,16 @@ namespace Model
          * <p>Deploy a new environment. An Proton environment is created from an
          * environment template that defines infrastructure and resources that can be
          * shared across services.</p> <p class="title"> <b>You can provision environments
-         * using the following methods:</b> </p> <ul> <li> <p>Standard provisioning: Proton
-         * makes direct calls to provision your resources.</p> </li> <li> <p>Pull request
-         * provisioning: Proton makes pull requests on your repository to provide compiled
-         * infrastructure as code (IaC) files that your IaC engine uses to provision
-         * resources.</p> </li> </ul> <p>For more information, see the <a
+         * using the following methods:</b> </p> <ul> <li> <p>Amazon Web Services-managed
+         * provisioning: Proton makes direct calls to provision your resources.</p> </li>
+         * <li> <p>Self-managed provisioning: Proton makes pull requests on your repository
+         * to provide compiled infrastructure as code (IaC) files that your IaC engine uses
+         * to provision resources.</p> </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
-         * in the <i>Proton Administrator Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * and <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html">Provisioning
+         * methods</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironment">AWS
          * API Reference</a></p>
          *
@@ -951,10 +960,15 @@ namespace Model
         virtual void CreateEnvironmentTemplateVersionAsync(const Model::CreateEnvironmentTemplateVersionRequest& request, const CreateEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create and register a link to a repository that can be used with pull request
-         * provisioning or template sync configurations. For more information, see <a
+         * <p>Create and register a link to a repository that can be used with self-managed
+         * provisioning (infrastructure or pipelines) or for template sync configurations.
+         * When you create a repository link, Proton creates a <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/using-service-linked-roles.html">service-linked
+         * role</a> for you.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+         * provisioning</a>, <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template
-         * bundles</a> and <a
+         * bundles</a>, and <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
          * sync configurations</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -964,10 +978,15 @@ namespace Model
         virtual Model::CreateRepositoryOutcome CreateRepository(const Model::CreateRepositoryRequest& request) const;
 
         /**
-         * <p>Create and register a link to a repository that can be used with pull request
-         * provisioning or template sync configurations. For more information, see <a
+         * <p>Create and register a link to a repository that can be used with self-managed
+         * provisioning (infrastructure or pipelines) or for template sync configurations.
+         * When you create a repository link, Proton creates a <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/using-service-linked-roles.html">service-linked
+         * role</a> for you.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+         * provisioning</a>, <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template
-         * bundles</a> and <a
+         * bundles</a>, and <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
          * sync configurations</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -979,10 +998,15 @@ namespace Model
         virtual Model::CreateRepositoryOutcomeCallable CreateRepositoryCallable(const Model::CreateRepositoryRequest& request) const;
 
         /**
-         * <p>Create and register a link to a repository that can be used with pull request
-         * provisioning or template sync configurations. For more information, see <a
+         * <p>Create and register a link to a repository that can be used with self-managed
+         * provisioning (infrastructure or pipelines) or for template sync configurations.
+         * When you create a repository link, Proton creates a <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/using-service-linked-roles.html">service-linked
+         * role</a> for you.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+         * provisioning</a>, <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template
-         * bundles</a> and <a
+         * bundles</a>, and <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
          * sync configurations</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1038,7 +1062,7 @@ namespace Model
 
         /**
          * <p>Create a service template. The administrator creates a service template to
-         * define standardized infrastructure and an optional CICD service pipeline.
+         * define standardized infrastructure and an optional CI/CD service pipeline.
          * Developers, in turn, select the service template from Proton. If the selected
          * service template includes a service pipeline definition, they provide a link to
          * their source code repository. Proton then deploys and manages the infrastructure
@@ -1053,7 +1077,7 @@ namespace Model
 
         /**
          * <p>Create a service template. The administrator creates a service template to
-         * define standardized infrastructure and an optional CICD service pipeline.
+         * define standardized infrastructure and an optional CI/CD service pipeline.
          * Developers, in turn, select the service template from Proton. If the selected
          * service template includes a service pipeline definition, they provide a link to
          * their source code repository. Proton then deploys and manages the infrastructure
@@ -1070,7 +1094,7 @@ namespace Model
 
         /**
          * <p>Create a service template. The administrator creates a service template to
-         * define standardized infrastructure and an optional CICD service pipeline.
+         * define standardized infrastructure and an optional CI/CD service pipeline.
          * Developers, in turn, select the service template from Proton. If the selected
          * service template includes a service pipeline definition, they provide a link to
          * their source code repository. Proton then deploys and manages the infrastructure
@@ -1120,11 +1144,11 @@ namespace Model
         virtual void CreateServiceTemplateVersionAsync(const Model::CreateServiceTemplateVersionRequest& request, const CreateServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Set up a template for automated template version creation. When a commit is
-         * pushed to your registered <a
+         * <p>Set up a template to create new template versions automatically. When a
+         * commit is pushed to your registered <a
          * href="https://docs.aws.amazon.com/proton/latest/APIReference/API_Repository.html">repository</a>,
          * Proton checks for changes to your repository template bundles. If it detects a
-         * template bundle change, a new minor or major version of its template is created,
+         * template bundle change, a new major or minor version of its template is created,
          * if the version doesn’t already exist. For more information, see <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
          * sync configurations</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
@@ -1135,11 +1159,11 @@ namespace Model
         virtual Model::CreateTemplateSyncConfigOutcome CreateTemplateSyncConfig(const Model::CreateTemplateSyncConfigRequest& request) const;
 
         /**
-         * <p>Set up a template for automated template version creation. When a commit is
-         * pushed to your registered <a
+         * <p>Set up a template to create new template versions automatically. When a
+         * commit is pushed to your registered <a
          * href="https://docs.aws.amazon.com/proton/latest/APIReference/API_Repository.html">repository</a>,
          * Proton checks for changes to your repository template bundles. If it detects a
-         * template bundle change, a new minor or major version of its template is created,
+         * template bundle change, a new major or minor version of its template is created,
          * if the version doesn’t already exist. For more information, see <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
          * sync configurations</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
@@ -1152,11 +1176,11 @@ namespace Model
         virtual Model::CreateTemplateSyncConfigOutcomeCallable CreateTemplateSyncConfigCallable(const Model::CreateTemplateSyncConfigRequest& request) const;
 
         /**
-         * <p>Set up a template for automated template version creation. When a commit is
-         * pushed to your registered <a
+         * <p>Set up a template to create new template versions automatically. When a
+         * commit is pushed to your registered <a
          * href="https://docs.aws.amazon.com/proton/latest/APIReference/API_Repository.html">repository</a>,
          * Proton checks for changes to your repository template bundles. If it detects a
-         * template bundle change, a new minor or major version of its template is created,
+         * template bundle change, a new major or minor version of its template is created,
          * if the version doesn’t already exist. For more information, see <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
          * sync configurations</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
@@ -1652,14 +1676,30 @@ namespace Model
         virtual void GetRepositoryAsync(const Model::GetRepositoryRequest& request, const GetRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get the repository sync status.</p><p><h3>See Also:</h3>   <a
+         * <p>Get the sync status of a repository used for Proton template sync. For more
+         * information about template sync, see .</p>  <p>A repository sync status
+         * isn't tied to the Proton Repository resource (or any other Proton resource).
+         * Therefore, tags on an Proton Repository resource have no effect on this action.
+         * Specifically, you can't use these tags to control access to this action using
+         * Attribute-based access control (ABAC).</p> <p>For more information about ABAC,
+         * see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags">ABAC</a>
+         * in the <i>Proton Administrator Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetRepositorySyncStatus">AWS
          * API Reference</a></p>
          */
         virtual Model::GetRepositorySyncStatusOutcome GetRepositorySyncStatus(const Model::GetRepositorySyncStatusRequest& request) const;
 
         /**
-         * <p>Get the repository sync status.</p><p><h3>See Also:</h3>   <a
+         * <p>Get the sync status of a repository used for Proton template sync. For more
+         * information about template sync, see .</p>  <p>A repository sync status
+         * isn't tied to the Proton Repository resource (or any other Proton resource).
+         * Therefore, tags on an Proton Repository resource have no effect on this action.
+         * Specifically, you can't use these tags to control access to this action using
+         * Attribute-based access control (ABAC).</p> <p>For more information about ABAC,
+         * see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags">ABAC</a>
+         * in the <i>Proton Administrator Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetRepositorySyncStatus">AWS
          * API Reference</a></p>
          *
@@ -1668,7 +1708,15 @@ namespace Model
         virtual Model::GetRepositorySyncStatusOutcomeCallable GetRepositorySyncStatusCallable(const Model::GetRepositorySyncStatusRequest& request) const;
 
         /**
-         * <p>Get the repository sync status.</p><p><h3>See Also:</h3>   <a
+         * <p>Get the sync status of a repository used for Proton template sync. For more
+         * information about template sync, see .</p>  <p>A repository sync status
+         * isn't tied to the Proton Repository resource (or any other Proton resource).
+         * Therefore, tags on an Proton Repository resource have no effect on this action.
+         * Specifically, you can't use these tags to control access to this action using
+         * Attribute-based access control (ABAC).</p> <p>For more information about ABAC,
+         * see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags">ABAC</a>
+         * in the <i>Proton Administrator Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetRepositorySyncStatus">AWS
          * API Reference</a></p>
          *
@@ -1703,7 +1751,7 @@ namespace Model
 
         /**
          * <p>Get detail data for a service instance. A service instance is an
-         * instantiation of service template, which is running in a specific
+         * instantiation of service template and it runs in a specific
          * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstance">AWS
          * API Reference</a></p>
@@ -1712,7 +1760,7 @@ namespace Model
 
         /**
          * <p>Get detail data for a service instance. A service instance is an
-         * instantiation of service template, which is running in a specific
+         * instantiation of service template and it runs in a specific
          * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstance">AWS
          * API Reference</a></p>
@@ -1723,7 +1771,7 @@ namespace Model
 
         /**
          * <p>Get detail data for a service instance. A service instance is an
-         * instantiation of service template, which is running in a specific
+         * instantiation of service template and it runs in a specific
          * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstance">AWS
          * API Reference</a></p>
@@ -2321,28 +2369,22 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Notify Proton of status changes to a provisioned resource when you use pull
-         * request provisioning. For more information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template
-         * bundles</a>.</p>  <p>Provisioning by pull request is currently in
-         * feature preview and is only usable with Terraform based Proton Templates. To
-         * learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web
-         * Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Notify Proton of status changes to a provisioned resource when you use
+         * self-managed provisioning.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+         * provisioning</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/NotifyResourceDeploymentStatusChange">AWS
          * API Reference</a></p>
          */
         virtual Model::NotifyResourceDeploymentStatusChangeOutcome NotifyResourceDeploymentStatusChange(const Model::NotifyResourceDeploymentStatusChangeRequest& request) const;
 
         /**
-         * <p>Notify Proton of status changes to a provisioned resource when you use pull
-         * request provisioning. For more information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template
-         * bundles</a>.</p>  <p>Provisioning by pull request is currently in
-         * feature preview and is only usable with Terraform based Proton Templates. To
-         * learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web
-         * Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Notify Proton of status changes to a provisioned resource when you use
+         * self-managed provisioning.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+         * provisioning</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/NotifyResourceDeploymentStatusChange">AWS
          * API Reference</a></p>
          *
@@ -2351,14 +2393,11 @@ namespace Model
         virtual Model::NotifyResourceDeploymentStatusChangeOutcomeCallable NotifyResourceDeploymentStatusChangeCallable(const Model::NotifyResourceDeploymentStatusChangeRequest& request) const;
 
         /**
-         * <p>Notify Proton of status changes to a provisioned resource when you use pull
-         * request provisioning. For more information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template
-         * bundles</a>.</p>  <p>Provisioning by pull request is currently in
-         * feature preview and is only usable with Terraform based Proton Templates. To
-         * learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web
-         * Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Notify Proton of status changes to a provisioned resource when you use
+         * self-managed provisioning.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+         * provisioning</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/NotifyResourceDeploymentStatusChange">AWS
          * API Reference</a></p>
          *
@@ -2369,10 +2408,10 @@ namespace Model
         /**
          * <p>In a management account, reject an environment account connection from
          * another environment account.</p> <p>After you reject an environment account
-         * connection request, you <i>won’t</i> be able to accept or use the rejected
-         * environment account connection.</p> <p>You <i>can’t</i> reject an environment
-         * account connection that is connected to an environment.</p> <p>For more
-         * information, see <a
+         * connection request, you <i>can't</i> accept or use the rejected environment
+         * account connection.</p> <p>You <i>can’t</i> reject an environment account
+         * connection that's connected to an environment.</p> <p>For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>Proton Administrator guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2384,10 +2423,10 @@ namespace Model
         /**
          * <p>In a management account, reject an environment account connection from
          * another environment account.</p> <p>After you reject an environment account
-         * connection request, you <i>won’t</i> be able to accept or use the rejected
-         * environment account connection.</p> <p>You <i>can’t</i> reject an environment
-         * account connection that is connected to an environment.</p> <p>For more
-         * information, see <a
+         * connection request, you <i>can't</i> accept or use the rejected environment
+         * account connection.</p> <p>You <i>can’t</i> reject an environment account
+         * connection that's connected to an environment.</p> <p>For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>Proton Administrator guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2401,10 +2440,10 @@ namespace Model
         /**
          * <p>In a management account, reject an environment account connection from
          * another environment account.</p> <p>After you reject an environment account
-         * connection request, you <i>won’t</i> be able to accept or use the rejected
-         * environment account connection.</p> <p>You <i>can’t</i> reject an environment
-         * account connection that is connected to an environment.</p> <p>For more
-         * information, see <a
+         * connection request, you <i>can't</i> accept or use the rejected environment
+         * account connection.</p> <p>You <i>can’t</i> reject an environment account
+         * connection that's connected to an environment.</p> <p>For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>Proton Administrator guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2416,8 +2455,9 @@ namespace Model
         virtual void RejectEnvironmentAccountConnectionAsync(const Model::RejectEnvironmentAccountConnectionRequest& request, const RejectEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Tag a resource. For more information, see <i>Proton resources and tagging</i>
-         * in the <a
+         * <p>Tag a resource. A tag is a key-value pair of metadata that you associate with
+         * an Proton resource.</p> <p>For more information, see <i>Proton resources and
+         * tagging</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
          * Administrator Guide</a> or <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -2428,8 +2468,9 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Tag a resource. For more information, see <i>Proton resources and tagging</i>
-         * in the <a
+         * <p>Tag a resource. A tag is a key-value pair of metadata that you associate with
+         * an Proton resource.</p> <p>For more information, see <i>Proton resources and
+         * tagging</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
          * Administrator Guide</a> or <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -2442,8 +2483,9 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Tag a resource. For more information, see <i>Proton resources and tagging</i>
-         * in the <a
+         * <p>Tag a resource. A tag is a key-value pair of metadata that you associate with
+         * an Proton resource.</p> <p>For more information, see <i>Proton resources and
+         * tagging</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
          * Administrator Guide</a> or <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -2456,8 +2498,9 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Remove a tag from a resource. For more information, see <i>Proton resources
-         * and tagging</i> in the <a
+         * <p>Remove a customer tag from a resource. A tag is a key-value pair of metadata
+         * associated with an Proton resource.</p> <p>For more information, see <i>Proton
+         * resources and tagging</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
          * Administrator Guide</a> or <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -2468,8 +2511,9 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Remove a tag from a resource. For more information, see <i>Proton resources
-         * and tagging</i> in the <a
+         * <p>Remove a customer tag from a resource. A tag is a key-value pair of metadata
+         * associated with an Proton resource.</p> <p>For more information, see <i>Proton
+         * resources and tagging</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
          * Administrator Guide</a> or <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -2482,8 +2526,9 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Remove a tag from a resource. For more information, see <i>Proton resources
-         * and tagging</i> in the <a
+         * <p>Remove a customer tag from a resource. A tag is a key-value pair of metadata
+         * associated with an Proton resource.</p> <p>For more information, see <i>Proton
+         * resources and tagging</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
          * Administrator Guide</a> or <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
@@ -2528,37 +2573,43 @@ namespace Model
          * environment account connection, <i>don't</i> update or include the
          * <code>protonServiceRoleArn</code> and <code>provisioningRepository</code>
          * parameter to update or connect to an environment account connection.</p> <p>You
-         * can only update to a new environment account connection if it was created in the
-         * same environment account that the current environment account connection was
-         * created in and is associated with the current environment.</p> <p>If the
-         * environment <i>isn't</i> associated with an environment account connection,
-         * <i>don't</i> update or include the <code>environmentAccountConnectionId</code>
-         * parameter to update or connect to an environment account connection.</p> <p>You
-         * can update either the <code>environmentAccountConnectionId</code> or
+         * can only update to a new environment account connection if that connection was
+         * created in the same environment account that the current environment account
+         * connection was created in. The account connection must also be associated with
+         * the current environment.</p> <p>If the environment <i>isn't</i> associated with
+         * an environment account connection, <i>don't</i> update or include the
+         * <code>environmentAccountConnectionId</code> parameter. You <i>can't</i> update
+         * or connect the environment to an environment account connection if it
+         * <i>isn't</i> already associated with an environment connection.</p> <p>You can
+         * update either the <code>environmentAccountConnectionId</code> or
          * <code>protonServiceRoleArn</code> parameter and value. You can’t update
-         * both.</p> <p>If the environment was provisioned with pull request provisioning,
-         * include the <code>provisioningRepository</code> parameter and omit the
+         * both.</p> <p>If the environment was configured for Amazon Web Services-managed
+         * provisioning, omit the <code>provisioningRepository</code> parameter.</p> <p>If
+         * the environment was configured for self-managed provisioning, specify the
+         * <code>provisioningRepository</code> parameter and omit the
          * <code>protonServiceRoleArn</code> and
-         * <code>environmentAccountConnectionId</code> parameters.</p> <p>If the
-         * environment wasn't provisioned with pull request provisioning, omit the
-         * <code>provisioningRepository</code> parameter.</p> <p>There are four modes for
-         * updating an environment as described in the following. The
-         * <code>deploymentType</code> field defines the mode.</p> <dl> <dt/> <dd> <p>
-         * <code>NONE</code> </p> <p>In this mode, a deployment <i>doesn't</i> occur. Only
-         * the requested metadata parameters are updated.</p> </dd> <dt/> <dd> <p>
-         * <code>CURRENT_VERSION</code> </p> <p>In this mode, the environment is deployed
-         * and updated with the new spec that you provide. Only requested parameters are
-         * updated. <i>Don’t</i> include minor or major version parameters when you use
-         * this <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
-         * <code>MINOR_VERSION</code> </p> <p>In this mode, the environment is deployed and
-         * updated with the published, recommended (latest) minor version of the current
-         * major version in use, by default. You can also specify a different minor version
-         * of the current major version in use.</p> </dd> <dt/> <dd> <p>
-         * <code>MAJOR_VERSION</code> </p> <p>In this mode, the environment is deployed and
-         * updated with the published, recommended (latest) major and minor version of the
-         * current template, by default. You can also specify a different major version
-         * that's higher than the major version in use and a minor version (optional).</p>
-         * </dd> </dl><p><h3>See Also:</h3>   <a
+         * <code>environmentAccountConnectionId</code> parameters.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html">Provisioning
+         * methods</a> in the <i>Proton Administrator Guide</i>.</p> <p>There are four
+         * modes for updating an environment. The <code>deploymentType</code> field defines
+         * the mode.</p> <dl> <dt/> <dd> <p> <code>NONE</code> </p> <p>In this mode, a
+         * deployment <i>doesn't</i> occur. Only the requested metadata parameters are
+         * updated.</p> </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In this
+         * mode, the environment is deployed and updated with the new spec that you
+         * provide. Only requested parameters are updated. <i>Don’t</i> include minor or
+         * major version parameters when you use this <code>deployment-type</code>.</p>
+         * </dd> <dt/> <dd> <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the
+         * environment is deployed and updated with the published, recommended (latest)
+         * minor version of the current major version in use, by default. You can also
+         * specify a different minor version of the current major version in use.</p> </dd>
+         * <dt/> <dd> <p> <code>MAJOR_VERSION</code> </p> <p>In this mode, the environment
+         * is deployed and updated with the published, recommended (latest) major and minor
+         * version of the current template, by default. You can also specify a different
+         * major version that's higher than the major version in use and a minor
+         * version.</p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironment">AWS
          * API Reference</a></p>
          */
@@ -2569,37 +2620,43 @@ namespace Model
          * environment account connection, <i>don't</i> update or include the
          * <code>protonServiceRoleArn</code> and <code>provisioningRepository</code>
          * parameter to update or connect to an environment account connection.</p> <p>You
-         * can only update to a new environment account connection if it was created in the
-         * same environment account that the current environment account connection was
-         * created in and is associated with the current environment.</p> <p>If the
-         * environment <i>isn't</i> associated with an environment account connection,
-         * <i>don't</i> update or include the <code>environmentAccountConnectionId</code>
-         * parameter to update or connect to an environment account connection.</p> <p>You
-         * can update either the <code>environmentAccountConnectionId</code> or
+         * can only update to a new environment account connection if that connection was
+         * created in the same environment account that the current environment account
+         * connection was created in. The account connection must also be associated with
+         * the current environment.</p> <p>If the environment <i>isn't</i> associated with
+         * an environment account connection, <i>don't</i> update or include the
+         * <code>environmentAccountConnectionId</code> parameter. You <i>can't</i> update
+         * or connect the environment to an environment account connection if it
+         * <i>isn't</i> already associated with an environment connection.</p> <p>You can
+         * update either the <code>environmentAccountConnectionId</code> or
          * <code>protonServiceRoleArn</code> parameter and value. You can’t update
-         * both.</p> <p>If the environment was provisioned with pull request provisioning,
-         * include the <code>provisioningRepository</code> parameter and omit the
+         * both.</p> <p>If the environment was configured for Amazon Web Services-managed
+         * provisioning, omit the <code>provisioningRepository</code> parameter.</p> <p>If
+         * the environment was configured for self-managed provisioning, specify the
+         * <code>provisioningRepository</code> parameter and omit the
          * <code>protonServiceRoleArn</code> and
-         * <code>environmentAccountConnectionId</code> parameters.</p> <p>If the
-         * environment wasn't provisioned with pull request provisioning, omit the
-         * <code>provisioningRepository</code> parameter.</p> <p>There are four modes for
-         * updating an environment as described in the following. The
-         * <code>deploymentType</code> field defines the mode.</p> <dl> <dt/> <dd> <p>
-         * <code>NONE</code> </p> <p>In this mode, a deployment <i>doesn't</i> occur. Only
-         * the requested metadata parameters are updated.</p> </dd> <dt/> <dd> <p>
-         * <code>CURRENT_VERSION</code> </p> <p>In this mode, the environment is deployed
-         * and updated with the new spec that you provide. Only requested parameters are
-         * updated. <i>Don’t</i> include minor or major version parameters when you use
-         * this <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
-         * <code>MINOR_VERSION</code> </p> <p>In this mode, the environment is deployed and
-         * updated with the published, recommended (latest) minor version of the current
-         * major version in use, by default. You can also specify a different minor version
-         * of the current major version in use.</p> </dd> <dt/> <dd> <p>
-         * <code>MAJOR_VERSION</code> </p> <p>In this mode, the environment is deployed and
-         * updated with the published, recommended (latest) major and minor version of the
-         * current template, by default. You can also specify a different major version
-         * that's higher than the major version in use and a minor version (optional).</p>
-         * </dd> </dl><p><h3>See Also:</h3>   <a
+         * <code>environmentAccountConnectionId</code> parameters.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html">Provisioning
+         * methods</a> in the <i>Proton Administrator Guide</i>.</p> <p>There are four
+         * modes for updating an environment. The <code>deploymentType</code> field defines
+         * the mode.</p> <dl> <dt/> <dd> <p> <code>NONE</code> </p> <p>In this mode, a
+         * deployment <i>doesn't</i> occur. Only the requested metadata parameters are
+         * updated.</p> </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In this
+         * mode, the environment is deployed and updated with the new spec that you
+         * provide. Only requested parameters are updated. <i>Don’t</i> include minor or
+         * major version parameters when you use this <code>deployment-type</code>.</p>
+         * </dd> <dt/> <dd> <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the
+         * environment is deployed and updated with the published, recommended (latest)
+         * minor version of the current major version in use, by default. You can also
+         * specify a different minor version of the current major version in use.</p> </dd>
+         * <dt/> <dd> <p> <code>MAJOR_VERSION</code> </p> <p>In this mode, the environment
+         * is deployed and updated with the published, recommended (latest) major and minor
+         * version of the current template, by default. You can also specify a different
+         * major version that's higher than the major version in use and a minor
+         * version.</p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironment">AWS
          * API Reference</a></p>
          *
@@ -2612,37 +2669,43 @@ namespace Model
          * environment account connection, <i>don't</i> update or include the
          * <code>protonServiceRoleArn</code> and <code>provisioningRepository</code>
          * parameter to update or connect to an environment account connection.</p> <p>You
-         * can only update to a new environment account connection if it was created in the
-         * same environment account that the current environment account connection was
-         * created in and is associated with the current environment.</p> <p>If the
-         * environment <i>isn't</i> associated with an environment account connection,
-         * <i>don't</i> update or include the <code>environmentAccountConnectionId</code>
-         * parameter to update or connect to an environment account connection.</p> <p>You
-         * can update either the <code>environmentAccountConnectionId</code> or
+         * can only update to a new environment account connection if that connection was
+         * created in the same environment account that the current environment account
+         * connection was created in. The account connection must also be associated with
+         * the current environment.</p> <p>If the environment <i>isn't</i> associated with
+         * an environment account connection, <i>don't</i> update or include the
+         * <code>environmentAccountConnectionId</code> parameter. You <i>can't</i> update
+         * or connect the environment to an environment account connection if it
+         * <i>isn't</i> already associated with an environment connection.</p> <p>You can
+         * update either the <code>environmentAccountConnectionId</code> or
          * <code>protonServiceRoleArn</code> parameter and value. You can’t update
-         * both.</p> <p>If the environment was provisioned with pull request provisioning,
-         * include the <code>provisioningRepository</code> parameter and omit the
+         * both.</p> <p>If the environment was configured for Amazon Web Services-managed
+         * provisioning, omit the <code>provisioningRepository</code> parameter.</p> <p>If
+         * the environment was configured for self-managed provisioning, specify the
+         * <code>provisioningRepository</code> parameter and omit the
          * <code>protonServiceRoleArn</code> and
-         * <code>environmentAccountConnectionId</code> parameters.</p> <p>If the
-         * environment wasn't provisioned with pull request provisioning, omit the
-         * <code>provisioningRepository</code> parameter.</p> <p>There are four modes for
-         * updating an environment as described in the following. The
-         * <code>deploymentType</code> field defines the mode.</p> <dl> <dt/> <dd> <p>
-         * <code>NONE</code> </p> <p>In this mode, a deployment <i>doesn't</i> occur. Only
-         * the requested metadata parameters are updated.</p> </dd> <dt/> <dd> <p>
-         * <code>CURRENT_VERSION</code> </p> <p>In this mode, the environment is deployed
-         * and updated with the new spec that you provide. Only requested parameters are
-         * updated. <i>Don’t</i> include minor or major version parameters when you use
-         * this <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
-         * <code>MINOR_VERSION</code> </p> <p>In this mode, the environment is deployed and
-         * updated with the published, recommended (latest) minor version of the current
-         * major version in use, by default. You can also specify a different minor version
-         * of the current major version in use.</p> </dd> <dt/> <dd> <p>
-         * <code>MAJOR_VERSION</code> </p> <p>In this mode, the environment is deployed and
-         * updated with the published, recommended (latest) major and minor version of the
-         * current template, by default. You can also specify a different major version
-         * that's higher than the major version in use and a minor version (optional).</p>
-         * </dd> </dl><p><h3>See Also:</h3>   <a
+         * <code>environmentAccountConnectionId</code> parameters.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html">Provisioning
+         * methods</a> in the <i>Proton Administrator Guide</i>.</p> <p>There are four
+         * modes for updating an environment. The <code>deploymentType</code> field defines
+         * the mode.</p> <dl> <dt/> <dd> <p> <code>NONE</code> </p> <p>In this mode, a
+         * deployment <i>doesn't</i> occur. Only the requested metadata parameters are
+         * updated.</p> </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In this
+         * mode, the environment is deployed and updated with the new spec that you
+         * provide. Only requested parameters are updated. <i>Don’t</i> include minor or
+         * major version parameters when you use this <code>deployment-type</code>.</p>
+         * </dd> <dt/> <dd> <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the
+         * environment is deployed and updated with the published, recommended (latest)
+         * minor version of the current major version in use, by default. You can also
+         * specify a different minor version of the current major version in use.</p> </dd>
+         * <dt/> <dd> <p> <code>MAJOR_VERSION</code> </p> <p>In this mode, the environment
+         * is deployed and updated with the published, recommended (latest) major and minor
+         * version of the current template, by default. You can also specify a different
+         * major version that's higher than the major version in use and a minor
+         * version.</p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironment">AWS
          * API Reference</a></p>
          *
@@ -2782,22 +2845,22 @@ namespace Model
 
         /**
          * <p>Update a service instance.</p> <p>There are four modes for updating a service
-         * instance as described in the following. The <code>deploymentType</code> field
-         * defines the mode.</p> <dl> <dt/> <dd> <p> <code>NONE</code> </p> <p>In this
-         * mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters
-         * are updated.</p> </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In
-         * this mode, the service instance is deployed and updated with the new spec that
-         * you provide. Only requested parameters are updated. <i>Don’t</i> include minor
-         * or major version parameters when you use this <code>deployment-type</code>.</p>
-         * </dd> <dt/> <dd> <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the
-         * service instance is deployed and updated with the published, recommended
-         * (latest) minor version of the current major version in use, by default. You can
-         * also specify a different minor version of the current major version in use.</p>
-         * </dd> <dt/> <dd> <p> <code>MAJOR_VERSION</code> </p> <p>In this mode, the
-         * service instance is deployed and updated with the published, recommended
-         * (latest) major and minor version of the current template, by default. You can
-         * also specify a different major version that is higher than the major version in
-         * use and a minor version (optional).</p> </dd> </dl><p><h3>See Also:</h3>   <a
+         * instance. The <code>deploymentType</code> field defines the mode.</p> <dl> <dt/>
+         * <dd> <p> <code>NONE</code> </p> <p>In this mode, a deployment <i>doesn't</i>
+         * occur. Only the requested metadata parameters are updated.</p> </dd> <dt/> <dd>
+         * <p> <code>CURRENT_VERSION</code> </p> <p>In this mode, the service instance is
+         * deployed and updated with the new spec that you provide. Only requested
+         * parameters are updated. <i>Don’t</i> include minor or major version parameters
+         * when you use this <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
+         * <code>MINOR_VERSION</code> </p> <p>In this mode, the service instance is
+         * deployed and updated with the published, recommended (latest) minor version of
+         * the current major version in use, by default. You can also specify a different
+         * minor version of the current major version in use.</p> </dd> <dt/> <dd> <p>
+         * <code>MAJOR_VERSION</code> </p> <p>In this mode, the service instance is
+         * deployed and updated with the published, recommended (latest) major and minor
+         * version of the current template, by default. You can also specify a different
+         * major version that's higher than the major version in use and a minor
+         * version.</p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceInstance">AWS
          * API Reference</a></p>
          */
@@ -2805,22 +2868,22 @@ namespace Model
 
         /**
          * <p>Update a service instance.</p> <p>There are four modes for updating a service
-         * instance as described in the following. The <code>deploymentType</code> field
-         * defines the mode.</p> <dl> <dt/> <dd> <p> <code>NONE</code> </p> <p>In this
-         * mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters
-         * are updated.</p> </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In
-         * this mode, the service instance is deployed and updated with the new spec that
-         * you provide. Only requested parameters are updated. <i>Don’t</i> include minor
-         * or major version parameters when you use this <code>deployment-type</code>.</p>
-         * </dd> <dt/> <dd> <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the
-         * service instance is deployed and updated with the published, recommended
-         * (latest) minor version of the current major version in use, by default. You can
-         * also specify a different minor version of the current major version in use.</p>
-         * </dd> <dt/> <dd> <p> <code>MAJOR_VERSION</code> </p> <p>In this mode, the
-         * service instance is deployed and updated with the published, recommended
-         * (latest) major and minor version of the current template, by default. You can
-         * also specify a different major version that is higher than the major version in
-         * use and a minor version (optional).</p> </dd> </dl><p><h3>See Also:</h3>   <a
+         * instance. The <code>deploymentType</code> field defines the mode.</p> <dl> <dt/>
+         * <dd> <p> <code>NONE</code> </p> <p>In this mode, a deployment <i>doesn't</i>
+         * occur. Only the requested metadata parameters are updated.</p> </dd> <dt/> <dd>
+         * <p> <code>CURRENT_VERSION</code> </p> <p>In this mode, the service instance is
+         * deployed and updated with the new spec that you provide. Only requested
+         * parameters are updated. <i>Don’t</i> include minor or major version parameters
+         * when you use this <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
+         * <code>MINOR_VERSION</code> </p> <p>In this mode, the service instance is
+         * deployed and updated with the published, recommended (latest) minor version of
+         * the current major version in use, by default. You can also specify a different
+         * minor version of the current major version in use.</p> </dd> <dt/> <dd> <p>
+         * <code>MAJOR_VERSION</code> </p> <p>In this mode, the service instance is
+         * deployed and updated with the published, recommended (latest) major and minor
+         * version of the current template, by default. You can also specify a different
+         * major version that's higher than the major version in use and a minor
+         * version.</p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceInstance">AWS
          * API Reference</a></p>
          *
@@ -2830,22 +2893,22 @@ namespace Model
 
         /**
          * <p>Update a service instance.</p> <p>There are four modes for updating a service
-         * instance as described in the following. The <code>deploymentType</code> field
-         * defines the mode.</p> <dl> <dt/> <dd> <p> <code>NONE</code> </p> <p>In this
-         * mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters
-         * are updated.</p> </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In
-         * this mode, the service instance is deployed and updated with the new spec that
-         * you provide. Only requested parameters are updated. <i>Don’t</i> include minor
-         * or major version parameters when you use this <code>deployment-type</code>.</p>
-         * </dd> <dt/> <dd> <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the
-         * service instance is deployed and updated with the published, recommended
-         * (latest) minor version of the current major version in use, by default. You can
-         * also specify a different minor version of the current major version in use.</p>
-         * </dd> <dt/> <dd> <p> <code>MAJOR_VERSION</code> </p> <p>In this mode, the
-         * service instance is deployed and updated with the published, recommended
-         * (latest) major and minor version of the current template, by default. You can
-         * also specify a different major version that is higher than the major version in
-         * use and a minor version (optional).</p> </dd> </dl><p><h3>See Also:</h3>   <a
+         * instance. The <code>deploymentType</code> field defines the mode.</p> <dl> <dt/>
+         * <dd> <p> <code>NONE</code> </p> <p>In this mode, a deployment <i>doesn't</i>
+         * occur. Only the requested metadata parameters are updated.</p> </dd> <dt/> <dd>
+         * <p> <code>CURRENT_VERSION</code> </p> <p>In this mode, the service instance is
+         * deployed and updated with the new spec that you provide. Only requested
+         * parameters are updated. <i>Don’t</i> include minor or major version parameters
+         * when you use this <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
+         * <code>MINOR_VERSION</code> </p> <p>In this mode, the service instance is
+         * deployed and updated with the published, recommended (latest) minor version of
+         * the current major version in use, by default. You can also specify a different
+         * minor version of the current major version in use.</p> </dd> <dt/> <dd> <p>
+         * <code>MAJOR_VERSION</code> </p> <p>In this mode, the service instance is
+         * deployed and updated with the published, recommended (latest) major and minor
+         * version of the current template, by default. You can also specify a different
+         * major version that's higher than the major version in use and a minor
+         * version.</p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceInstance">AWS
          * API Reference</a></p>
          *
@@ -2855,23 +2918,22 @@ namespace Model
 
         /**
          * <p>Update the service pipeline.</p> <p>There are four modes for updating a
-         * service pipeline as described in the following. The <code>deploymentType</code>
-         * field defines the mode.</p> <dl> <dt/> <dd> <p> <code>NONE</code> </p> <p>In
-         * this mode, a deployment <i>doesn't</i> occur. Only the requested metadata
-         * parameters are updated.</p> </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code>
-         * </p> <p>In this mode, the service pipeline is deployed and updated with the new
-         * spec that you provide. Only requested parameters are updated. <i>Don’t</i>
-         * include minor or major version parameters when you use this
-         * <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
-         * <code>MINOR_VERSION</code> </p> <p>In this mode, the service pipeline is
-         * deployed and updated with the published, recommended (latest) minor version of
-         * the current major version in use, by default. You can also specify a different
-         * minor version of the current major version in use.</p> </dd> <dt/> <dd> <p>
-         * <code>MAJOR_VERSION</code> </p> <p>In this mode, the service pipeline is
-         * deployed and updated with the published, recommended (latest) major and minor
-         * version of the current template by default. You can also specify a different
-         * major version that is higher than the major version in use and a minor version
-         * (optional).</p> </dd> </dl><p><h3>See Also:</h3>   <a
+         * service pipeline. The <code>deploymentType</code> field defines the mode.</p>
+         * <dl> <dt/> <dd> <p> <code>NONE</code> </p> <p>In this mode, a deployment
+         * <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
+         * </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In this mode, the
+         * service pipeline is deployed and updated with the new spec that you provide.
+         * Only requested parameters are updated. <i>Don’t</i> include major or minor
+         * version parameters when you use this <code>deployment-type</code>.</p> </dd>
+         * <dt/> <dd> <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the service
+         * pipeline is deployed and updated with the published, recommended (latest) minor
+         * version of the current major version in use, by default. You can specify a
+         * different minor version of the current major version in use.</p> </dd> <dt/>
+         * <dd> <p> <code>MAJOR_VERSION</code> </p> <p>In this mode, the service pipeline
+         * is deployed and updated with the published, recommended (latest) major and minor
+         * version of the current template by default. You can specify a different major
+         * version that's higher than the major version in use and a minor version.</p>
+         * </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServicePipeline">AWS
          * API Reference</a></p>
          */
@@ -2879,23 +2941,22 @@ namespace Model
 
         /**
          * <p>Update the service pipeline.</p> <p>There are four modes for updating a
-         * service pipeline as described in the following. The <code>deploymentType</code>
-         * field defines the mode.</p> <dl> <dt/> <dd> <p> <code>NONE</code> </p> <p>In
-         * this mode, a deployment <i>doesn't</i> occur. Only the requested metadata
-         * parameters are updated.</p> </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code>
-         * </p> <p>In this mode, the service pipeline is deployed and updated with the new
-         * spec that you provide. Only requested parameters are updated. <i>Don’t</i>
-         * include minor or major version parameters when you use this
-         * <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
-         * <code>MINOR_VERSION</code> </p> <p>In this mode, the service pipeline is
-         * deployed and updated with the published, recommended (latest) minor version of
-         * the current major version in use, by default. You can also specify a different
-         * minor version of the current major version in use.</p> </dd> <dt/> <dd> <p>
-         * <code>MAJOR_VERSION</code> </p> <p>In this mode, the service pipeline is
-         * deployed and updated with the published, recommended (latest) major and minor
-         * version of the current template by default. You can also specify a different
-         * major version that is higher than the major version in use and a minor version
-         * (optional).</p> </dd> </dl><p><h3>See Also:</h3>   <a
+         * service pipeline. The <code>deploymentType</code> field defines the mode.</p>
+         * <dl> <dt/> <dd> <p> <code>NONE</code> </p> <p>In this mode, a deployment
+         * <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
+         * </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In this mode, the
+         * service pipeline is deployed and updated with the new spec that you provide.
+         * Only requested parameters are updated. <i>Don’t</i> include major or minor
+         * version parameters when you use this <code>deployment-type</code>.</p> </dd>
+         * <dt/> <dd> <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the service
+         * pipeline is deployed and updated with the published, recommended (latest) minor
+         * version of the current major version in use, by default. You can specify a
+         * different minor version of the current major version in use.</p> </dd> <dt/>
+         * <dd> <p> <code>MAJOR_VERSION</code> </p> <p>In this mode, the service pipeline
+         * is deployed and updated with the published, recommended (latest) major and minor
+         * version of the current template by default. You can specify a different major
+         * version that's higher than the major version in use and a minor version.</p>
+         * </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServicePipeline">AWS
          * API Reference</a></p>
          *
@@ -2905,23 +2966,22 @@ namespace Model
 
         /**
          * <p>Update the service pipeline.</p> <p>There are four modes for updating a
-         * service pipeline as described in the following. The <code>deploymentType</code>
-         * field defines the mode.</p> <dl> <dt/> <dd> <p> <code>NONE</code> </p> <p>In
-         * this mode, a deployment <i>doesn't</i> occur. Only the requested metadata
-         * parameters are updated.</p> </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code>
-         * </p> <p>In this mode, the service pipeline is deployed and updated with the new
-         * spec that you provide. Only requested parameters are updated. <i>Don’t</i>
-         * include minor or major version parameters when you use this
-         * <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
-         * <code>MINOR_VERSION</code> </p> <p>In this mode, the service pipeline is
-         * deployed and updated with the published, recommended (latest) minor version of
-         * the current major version in use, by default. You can also specify a different
-         * minor version of the current major version in use.</p> </dd> <dt/> <dd> <p>
-         * <code>MAJOR_VERSION</code> </p> <p>In this mode, the service pipeline is
-         * deployed and updated with the published, recommended (latest) major and minor
-         * version of the current template by default. You can also specify a different
-         * major version that is higher than the major version in use and a minor version
-         * (optional).</p> </dd> </dl><p><h3>See Also:</h3>   <a
+         * service pipeline. The <code>deploymentType</code> field defines the mode.</p>
+         * <dl> <dt/> <dd> <p> <code>NONE</code> </p> <p>In this mode, a deployment
+         * <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
+         * </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In this mode, the
+         * service pipeline is deployed and updated with the new spec that you provide.
+         * Only requested parameters are updated. <i>Don’t</i> include major or minor
+         * version parameters when you use this <code>deployment-type</code>.</p> </dd>
+         * <dt/> <dd> <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the service
+         * pipeline is deployed and updated with the published, recommended (latest) minor
+         * version of the current major version in use, by default. You can specify a
+         * different minor version of the current major version in use.</p> </dd> <dt/>
+         * <dd> <p> <code>MAJOR_VERSION</code> </p> <p>In this mode, the service pipeline
+         * is deployed and updated with the published, recommended (latest) major and minor
+         * version of the current template by default. You can specify a different major
+         * version that's higher than the major version in use and a minor version.</p>
+         * </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServicePipeline">AWS
          * API Reference</a></p>
          *
