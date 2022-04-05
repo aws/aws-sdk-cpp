@@ -206,29 +206,29 @@ namespace Model
 
     /**
      * <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in
-     * megabytes per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048,
-     * 3072, or 4096 MB/s.</p>
+     * megabytes per second (MBps). Valid values are 128, 256, 512, 1024, or 2048
+     * MB/s.</p>
      */
     inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
 
     /**
      * <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in
-     * megabytes per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048,
-     * 3072, or 4096 MB/s.</p>
+     * megabytes per second (MBps). Valid values are 128, 256, 512, 1024, or 2048
+     * MB/s.</p>
      */
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
 
     /**
      * <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in
-     * megabytes per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048,
-     * 3072, or 4096 MB/s.</p>
+     * megabytes per second (MBps). Valid values are 128, 256, 512, 1024, or 2048
+     * MB/s.</p>
      */
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
 
     /**
      * <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in
-     * megabytes per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048,
-     * 3072, or 4096 MB/s.</p>
+     * megabytes per second (MBps). Valid values are 128, 256, 512, 1024, or 2048
+     * MB/s.</p>
      */
     inline UpdateFileSystemOntapConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
 

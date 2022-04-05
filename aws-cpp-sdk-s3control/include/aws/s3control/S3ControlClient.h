@@ -4005,7 +4005,7 @@ namespace Aws
          * </li> </ul> </li> </ul>  <p/> <p>To use this action, you must have
          * permission to perform the <code>s3:PutJobTagging</code> action.</p> <p>Related
          * actions include:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreatJob</a>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreateJob</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html">GetJobTagging</a>
          * </p> </li> <li> <p> <a
@@ -4047,7 +4047,7 @@ namespace Aws
          * </li> </ul> </li> </ul>  <p/> <p>To use this action, you must have
          * permission to perform the <code>s3:PutJobTagging</code> action.</p> <p>Related
          * actions include:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreatJob</a>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreateJob</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html">GetJobTagging</a>
          * </p> </li> <li> <p> <a
@@ -4091,7 +4091,7 @@ namespace Aws
          * </li> </ul> </li> </ul>  <p/> <p>To use this action, you must have
          * permission to perform the <code>s3:PutJobTagging</code> action.</p> <p>Related
          * actions include:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreatJob</a>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreateJob</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html">GetJobTagging</a>
          * </p> </li> <li> <p> <a

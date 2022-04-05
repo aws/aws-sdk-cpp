@@ -103,15 +103,16 @@ namespace Model
      * array that contains a list of locations when the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
      * operation is called.</p> <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
-     * <p>TYPE designates the type of location. Valid values: NFS | EFS | S3.</p>
-     * <p>GLOBAL_ID is the globally unique identifier of the resource that backs the
-     * location. An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example
-     * for Amazon S3 is the bucket name, such as <code>myBucket</code>. An example for
-     * NFS is a valid IPv4 address or a host name compliant with Domain Name Service
-     * (DNS).</p> <p>SUBDIR is a valid file system path, delimited by forward slashes
-     * as is the *nix convention. For NFS and Amazon EFS, it's the export path to mount
-     * the location. For Amazon S3, it's the prefix path that you mount to and treat as
-     * the root of the location.</p> <p/>
+     * <p>TYPE designates the type of location (for example, <code>nfs</code> or
+     * <code>s3</code>).</p> <p>GLOBAL_ID is the globally unique identifier of the
+     * resource that backs the location. An example for EFS is
+     * <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket name,
+     * such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a
+     * hostname that is compliant with Domain Name Service (DNS).</p> <p>SUBDIR is a
+     * valid file system path, delimited by forward slashes as is the *nix convention.
+     * For NFS and Amazon EFS, it's the export path to mount the location. For Amazon
+     * S3, it's the prefix path that you mount to and treat as the root of the
+     * location.</p> <p/>
      */
     inline const Aws::String& GetLocationUri() const{ return m_locationUri; }
 
@@ -120,15 +121,16 @@ namespace Model
      * array that contains a list of locations when the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
      * operation is called.</p> <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
-     * <p>TYPE designates the type of location. Valid values: NFS | EFS | S3.</p>
-     * <p>GLOBAL_ID is the globally unique identifier of the resource that backs the
-     * location. An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example
-     * for Amazon S3 is the bucket name, such as <code>myBucket</code>. An example for
-     * NFS is a valid IPv4 address or a host name compliant with Domain Name Service
-     * (DNS).</p> <p>SUBDIR is a valid file system path, delimited by forward slashes
-     * as is the *nix convention. For NFS and Amazon EFS, it's the export path to mount
-     * the location. For Amazon S3, it's the prefix path that you mount to and treat as
-     * the root of the location.</p> <p/>
+     * <p>TYPE designates the type of location (for example, <code>nfs</code> or
+     * <code>s3</code>).</p> <p>GLOBAL_ID is the globally unique identifier of the
+     * resource that backs the location. An example for EFS is
+     * <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket name,
+     * such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a
+     * hostname that is compliant with Domain Name Service (DNS).</p> <p>SUBDIR is a
+     * valid file system path, delimited by forward slashes as is the *nix convention.
+     * For NFS and Amazon EFS, it's the export path to mount the location. For Amazon
+     * S3, it's the prefix path that you mount to and treat as the root of the
+     * location.</p> <p/>
      */
     inline bool LocationUriHasBeenSet() const { return m_locationUriHasBeenSet; }
 
@@ -137,15 +139,16 @@ namespace Model
      * array that contains a list of locations when the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
      * operation is called.</p> <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
-     * <p>TYPE designates the type of location. Valid values: NFS | EFS | S3.</p>
-     * <p>GLOBAL_ID is the globally unique identifier of the resource that backs the
-     * location. An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example
-     * for Amazon S3 is the bucket name, such as <code>myBucket</code>. An example for
-     * NFS is a valid IPv4 address or a host name compliant with Domain Name Service
-     * (DNS).</p> <p>SUBDIR is a valid file system path, delimited by forward slashes
-     * as is the *nix convention. For NFS and Amazon EFS, it's the export path to mount
-     * the location. For Amazon S3, it's the prefix path that you mount to and treat as
-     * the root of the location.</p> <p/>
+     * <p>TYPE designates the type of location (for example, <code>nfs</code> or
+     * <code>s3</code>).</p> <p>GLOBAL_ID is the globally unique identifier of the
+     * resource that backs the location. An example for EFS is
+     * <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket name,
+     * such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a
+     * hostname that is compliant with Domain Name Service (DNS).</p> <p>SUBDIR is a
+     * valid file system path, delimited by forward slashes as is the *nix convention.
+     * For NFS and Amazon EFS, it's the export path to mount the location. For Amazon
+     * S3, it's the prefix path that you mount to and treat as the root of the
+     * location.</p> <p/>
      */
     inline void SetLocationUri(const Aws::String& value) { m_locationUriHasBeenSet = true; m_locationUri = value; }
 
@@ -154,15 +157,16 @@ namespace Model
      * array that contains a list of locations when the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
      * operation is called.</p> <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
-     * <p>TYPE designates the type of location. Valid values: NFS | EFS | S3.</p>
-     * <p>GLOBAL_ID is the globally unique identifier of the resource that backs the
-     * location. An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example
-     * for Amazon S3 is the bucket name, such as <code>myBucket</code>. An example for
-     * NFS is a valid IPv4 address or a host name compliant with Domain Name Service
-     * (DNS).</p> <p>SUBDIR is a valid file system path, delimited by forward slashes
-     * as is the *nix convention. For NFS and Amazon EFS, it's the export path to mount
-     * the location. For Amazon S3, it's the prefix path that you mount to and treat as
-     * the root of the location.</p> <p/>
+     * <p>TYPE designates the type of location (for example, <code>nfs</code> or
+     * <code>s3</code>).</p> <p>GLOBAL_ID is the globally unique identifier of the
+     * resource that backs the location. An example for EFS is
+     * <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket name,
+     * such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a
+     * hostname that is compliant with Domain Name Service (DNS).</p> <p>SUBDIR is a
+     * valid file system path, delimited by forward slashes as is the *nix convention.
+     * For NFS and Amazon EFS, it's the export path to mount the location. For Amazon
+     * S3, it's the prefix path that you mount to and treat as the root of the
+     * location.</p> <p/>
      */
     inline void SetLocationUri(Aws::String&& value) { m_locationUriHasBeenSet = true; m_locationUri = std::move(value); }
 
@@ -171,15 +175,16 @@ namespace Model
      * array that contains a list of locations when the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
      * operation is called.</p> <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
-     * <p>TYPE designates the type of location. Valid values: NFS | EFS | S3.</p>
-     * <p>GLOBAL_ID is the globally unique identifier of the resource that backs the
-     * location. An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example
-     * for Amazon S3 is the bucket name, such as <code>myBucket</code>. An example for
-     * NFS is a valid IPv4 address or a host name compliant with Domain Name Service
-     * (DNS).</p> <p>SUBDIR is a valid file system path, delimited by forward slashes
-     * as is the *nix convention. For NFS and Amazon EFS, it's the export path to mount
-     * the location. For Amazon S3, it's the prefix path that you mount to and treat as
-     * the root of the location.</p> <p/>
+     * <p>TYPE designates the type of location (for example, <code>nfs</code> or
+     * <code>s3</code>).</p> <p>GLOBAL_ID is the globally unique identifier of the
+     * resource that backs the location. An example for EFS is
+     * <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket name,
+     * such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a
+     * hostname that is compliant with Domain Name Service (DNS).</p> <p>SUBDIR is a
+     * valid file system path, delimited by forward slashes as is the *nix convention.
+     * For NFS and Amazon EFS, it's the export path to mount the location. For Amazon
+     * S3, it's the prefix path that you mount to and treat as the root of the
+     * location.</p> <p/>
      */
     inline void SetLocationUri(const char* value) { m_locationUriHasBeenSet = true; m_locationUri.assign(value); }
 
@@ -188,15 +193,16 @@ namespace Model
      * array that contains a list of locations when the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
      * operation is called.</p> <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
-     * <p>TYPE designates the type of location. Valid values: NFS | EFS | S3.</p>
-     * <p>GLOBAL_ID is the globally unique identifier of the resource that backs the
-     * location. An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example
-     * for Amazon S3 is the bucket name, such as <code>myBucket</code>. An example for
-     * NFS is a valid IPv4 address or a host name compliant with Domain Name Service
-     * (DNS).</p> <p>SUBDIR is a valid file system path, delimited by forward slashes
-     * as is the *nix convention. For NFS and Amazon EFS, it's the export path to mount
-     * the location. For Amazon S3, it's the prefix path that you mount to and treat as
-     * the root of the location.</p> <p/>
+     * <p>TYPE designates the type of location (for example, <code>nfs</code> or
+     * <code>s3</code>).</p> <p>GLOBAL_ID is the globally unique identifier of the
+     * resource that backs the location. An example for EFS is
+     * <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket name,
+     * such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a
+     * hostname that is compliant with Domain Name Service (DNS).</p> <p>SUBDIR is a
+     * valid file system path, delimited by forward slashes as is the *nix convention.
+     * For NFS and Amazon EFS, it's the export path to mount the location. For Amazon
+     * S3, it's the prefix path that you mount to and treat as the root of the
+     * location.</p> <p/>
      */
     inline LocationListEntry& WithLocationUri(const Aws::String& value) { SetLocationUri(value); return *this;}
 
@@ -205,15 +211,16 @@ namespace Model
      * array that contains a list of locations when the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
      * operation is called.</p> <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
-     * <p>TYPE designates the type of location. Valid values: NFS | EFS | S3.</p>
-     * <p>GLOBAL_ID is the globally unique identifier of the resource that backs the
-     * location. An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example
-     * for Amazon S3 is the bucket name, such as <code>myBucket</code>. An example for
-     * NFS is a valid IPv4 address or a host name compliant with Domain Name Service
-     * (DNS).</p> <p>SUBDIR is a valid file system path, delimited by forward slashes
-     * as is the *nix convention. For NFS and Amazon EFS, it's the export path to mount
-     * the location. For Amazon S3, it's the prefix path that you mount to and treat as
-     * the root of the location.</p> <p/>
+     * <p>TYPE designates the type of location (for example, <code>nfs</code> or
+     * <code>s3</code>).</p> <p>GLOBAL_ID is the globally unique identifier of the
+     * resource that backs the location. An example for EFS is
+     * <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket name,
+     * such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a
+     * hostname that is compliant with Domain Name Service (DNS).</p> <p>SUBDIR is a
+     * valid file system path, delimited by forward slashes as is the *nix convention.
+     * For NFS and Amazon EFS, it's the export path to mount the location. For Amazon
+     * S3, it's the prefix path that you mount to and treat as the root of the
+     * location.</p> <p/>
      */
     inline LocationListEntry& WithLocationUri(Aws::String&& value) { SetLocationUri(std::move(value)); return *this;}
 
@@ -222,15 +229,16 @@ namespace Model
      * array that contains a list of locations when the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
      * operation is called.</p> <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
-     * <p>TYPE designates the type of location. Valid values: NFS | EFS | S3.</p>
-     * <p>GLOBAL_ID is the globally unique identifier of the resource that backs the
-     * location. An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example
-     * for Amazon S3 is the bucket name, such as <code>myBucket</code>. An example for
-     * NFS is a valid IPv4 address or a host name compliant with Domain Name Service
-     * (DNS).</p> <p>SUBDIR is a valid file system path, delimited by forward slashes
-     * as is the *nix convention. For NFS and Amazon EFS, it's the export path to mount
-     * the location. For Amazon S3, it's the prefix path that you mount to and treat as
-     * the root of the location.</p> <p/>
+     * <p>TYPE designates the type of location (for example, <code>nfs</code> or
+     * <code>s3</code>).</p> <p>GLOBAL_ID is the globally unique identifier of the
+     * resource that backs the location. An example for EFS is
+     * <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket name,
+     * such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a
+     * hostname that is compliant with Domain Name Service (DNS).</p> <p>SUBDIR is a
+     * valid file system path, delimited by forward slashes as is the *nix convention.
+     * For NFS and Amazon EFS, it's the export path to mount the location. For Amazon
+     * S3, it's the prefix path that you mount to and treat as the root of the
+     * location.</p> <p/>
      */
     inline LocationListEntry& WithLocationUri(const char* value) { SetLocationUri(value); return *this;}
 

@@ -80,7 +80,8 @@ ResourceDetails::ResourceDetails() :
     m_awsEksClusterHasBeenSet(false),
     m_awsNetworkFirewallFirewallPolicyHasBeenSet(false),
     m_awsNetworkFirewallFirewallHasBeenSet(false),
-    m_awsNetworkFirewallRuleGroupHasBeenSet(false)
+    m_awsNetworkFirewallRuleGroupHasBeenSet(false),
+    m_awsRdsDbSecurityGroupHasBeenSet(false)
 {
 }
 
@@ -146,7 +147,8 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsEksClusterHasBeenSet(false),
     m_awsNetworkFirewallFirewallPolicyHasBeenSet(false),
     m_awsNetworkFirewallFirewallHasBeenSet(false),
-    m_awsNetworkFirewallRuleGroupHasBeenSet(false)
+    m_awsNetworkFirewallRuleGroupHasBeenSet(false),
+    m_awsRdsDbSecurityGroupHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -590,6 +592,13 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsNetworkFirewallRuleGroupHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AwsRdsDbSecurityGroup"))
+  {
+    m_awsRdsDbSecurityGroup = jsonValue.GetObject("AwsRdsDbSecurityGroup");
+
+    m_awsRdsDbSecurityGroupHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -971,6 +980,12 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsNetworkFirewallRuleGroupHasBeenSet)
   {
    payload.WithObject("AwsNetworkFirewallRuleGroup", m_awsNetworkFirewallRuleGroup.Jsonize());
+
+  }
+
+  if(m_awsRdsDbSecurityGroupHasBeenSet)
+  {
+   payload.WithObject("AwsRdsDbSecurityGroup", m_awsRdsDbSecurityGroup.Jsonize());
 
   }
 

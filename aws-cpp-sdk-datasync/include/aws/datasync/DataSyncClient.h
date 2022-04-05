@@ -15,6 +15,7 @@
 #include <aws/datasync/model/CreateAgentResult.h>
 #include <aws/datasync/model/CreateLocationEfsResult.h>
 #include <aws/datasync/model/CreateLocationFsxLustreResult.h>
+#include <aws/datasync/model/CreateLocationFsxOpenZfsResult.h>
 #include <aws/datasync/model/CreateLocationFsxWindowsResult.h>
 #include <aws/datasync/model/CreateLocationHdfsResult.h>
 #include <aws/datasync/model/CreateLocationNfsResult.h>
@@ -28,6 +29,7 @@
 #include <aws/datasync/model/DescribeAgentResult.h>
 #include <aws/datasync/model/DescribeLocationEfsResult.h>
 #include <aws/datasync/model/DescribeLocationFsxLustreResult.h>
+#include <aws/datasync/model/DescribeLocationFsxOpenZfsResult.h>
 #include <aws/datasync/model/DescribeLocationFsxWindowsResult.h>
 #include <aws/datasync/model/DescribeLocationHdfsResult.h>
 #include <aws/datasync/model/DescribeLocationNfsResult.h>
@@ -94,6 +96,7 @@ namespace Model
         class CreateAgentRequest;
         class CreateLocationEfsRequest;
         class CreateLocationFsxLustreRequest;
+        class CreateLocationFsxOpenZfsRequest;
         class CreateLocationFsxWindowsRequest;
         class CreateLocationHdfsRequest;
         class CreateLocationNfsRequest;
@@ -107,6 +110,7 @@ namespace Model
         class DescribeAgentRequest;
         class DescribeLocationEfsRequest;
         class DescribeLocationFsxLustreRequest;
+        class DescribeLocationFsxOpenZfsRequest;
         class DescribeLocationFsxWindowsRequest;
         class DescribeLocationHdfsRequest;
         class DescribeLocationNfsRequest;
@@ -135,6 +139,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateAgentResult, DataSyncError> CreateAgentOutcome;
         typedef Aws::Utils::Outcome<CreateLocationEfsResult, DataSyncError> CreateLocationEfsOutcome;
         typedef Aws::Utils::Outcome<CreateLocationFsxLustreResult, DataSyncError> CreateLocationFsxLustreOutcome;
+        typedef Aws::Utils::Outcome<CreateLocationFsxOpenZfsResult, DataSyncError> CreateLocationFsxOpenZfsOutcome;
         typedef Aws::Utils::Outcome<CreateLocationFsxWindowsResult, DataSyncError> CreateLocationFsxWindowsOutcome;
         typedef Aws::Utils::Outcome<CreateLocationHdfsResult, DataSyncError> CreateLocationHdfsOutcome;
         typedef Aws::Utils::Outcome<CreateLocationNfsResult, DataSyncError> CreateLocationNfsOutcome;
@@ -148,6 +153,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeAgentResult, DataSyncError> DescribeAgentOutcome;
         typedef Aws::Utils::Outcome<DescribeLocationEfsResult, DataSyncError> DescribeLocationEfsOutcome;
         typedef Aws::Utils::Outcome<DescribeLocationFsxLustreResult, DataSyncError> DescribeLocationFsxLustreOutcome;
+        typedef Aws::Utils::Outcome<DescribeLocationFsxOpenZfsResult, DataSyncError> DescribeLocationFsxOpenZfsOutcome;
         typedef Aws::Utils::Outcome<DescribeLocationFsxWindowsResult, DataSyncError> DescribeLocationFsxWindowsOutcome;
         typedef Aws::Utils::Outcome<DescribeLocationHdfsResult, DataSyncError> DescribeLocationHdfsOutcome;
         typedef Aws::Utils::Outcome<DescribeLocationNfsResult, DataSyncError> DescribeLocationNfsOutcome;
@@ -176,6 +182,7 @@ namespace Model
         typedef std::future<CreateAgentOutcome> CreateAgentOutcomeCallable;
         typedef std::future<CreateLocationEfsOutcome> CreateLocationEfsOutcomeCallable;
         typedef std::future<CreateLocationFsxLustreOutcome> CreateLocationFsxLustreOutcomeCallable;
+        typedef std::future<CreateLocationFsxOpenZfsOutcome> CreateLocationFsxOpenZfsOutcomeCallable;
         typedef std::future<CreateLocationFsxWindowsOutcome> CreateLocationFsxWindowsOutcomeCallable;
         typedef std::future<CreateLocationHdfsOutcome> CreateLocationHdfsOutcomeCallable;
         typedef std::future<CreateLocationNfsOutcome> CreateLocationNfsOutcomeCallable;
@@ -189,6 +196,7 @@ namespace Model
         typedef std::future<DescribeAgentOutcome> DescribeAgentOutcomeCallable;
         typedef std::future<DescribeLocationEfsOutcome> DescribeLocationEfsOutcomeCallable;
         typedef std::future<DescribeLocationFsxLustreOutcome> DescribeLocationFsxLustreOutcomeCallable;
+        typedef std::future<DescribeLocationFsxOpenZfsOutcome> DescribeLocationFsxOpenZfsOutcomeCallable;
         typedef std::future<DescribeLocationFsxWindowsOutcome> DescribeLocationFsxWindowsOutcomeCallable;
         typedef std::future<DescribeLocationHdfsOutcome> DescribeLocationHdfsOutcomeCallable;
         typedef std::future<DescribeLocationNfsOutcome> DescribeLocationNfsOutcomeCallable;
@@ -220,6 +228,7 @@ namespace Model
     typedef std::function<void(const DataSyncClient*, const Model::CreateAgentRequest&, const Model::CreateAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAgentResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::CreateLocationEfsRequest&, const Model::CreateLocationEfsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocationEfsResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::CreateLocationFsxLustreRequest&, const Model::CreateLocationFsxLustreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocationFsxLustreResponseReceivedHandler;
+    typedef std::function<void(const DataSyncClient*, const Model::CreateLocationFsxOpenZfsRequest&, const Model::CreateLocationFsxOpenZfsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocationFsxOpenZfsResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::CreateLocationFsxWindowsRequest&, const Model::CreateLocationFsxWindowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocationFsxWindowsResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::CreateLocationHdfsRequest&, const Model::CreateLocationHdfsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocationHdfsResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::CreateLocationNfsRequest&, const Model::CreateLocationNfsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocationNfsResponseReceivedHandler;
@@ -233,6 +242,7 @@ namespace Model
     typedef std::function<void(const DataSyncClient*, const Model::DescribeAgentRequest&, const Model::DescribeAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAgentResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::DescribeLocationEfsRequest&, const Model::DescribeLocationEfsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocationEfsResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::DescribeLocationFsxLustreRequest&, const Model::DescribeLocationFsxLustreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocationFsxLustreResponseReceivedHandler;
+    typedef std::function<void(const DataSyncClient*, const Model::DescribeLocationFsxOpenZfsRequest&, const Model::DescribeLocationFsxOpenZfsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocationFsxOpenZfsResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::DescribeLocationFsxWindowsRequest&, const Model::DescribeLocationFsxWindowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocationFsxWindowsResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::DescribeLocationHdfsRequest&, const Model::DescribeLocationHdfsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocationHdfsResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::DescribeLocationNfsRequest&, const Model::DescribeLocationNfsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocationNfsResponseReceivedHandler;
@@ -460,6 +470,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateLocationFsxLustreAsync(const Model::CreateLocationFsxLustreRequest& request, const CreateLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an endpoint for an Amazon FSx for OpenZFS file system.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxOpenZfs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLocationFsxOpenZfsOutcome CreateLocationFsxOpenZfs(const Model::CreateLocationFsxOpenZfsRequest& request) const;
+
+        /**
+         * <p>Creates an endpoint for an Amazon FSx for OpenZFS file system.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxOpenZfs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateLocationFsxOpenZfsOutcomeCallable CreateLocationFsxOpenZfsCallable(const Model::CreateLocationFsxOpenZfsRequest& request) const;
+
+        /**
+         * <p>Creates an endpoint for an Amazon FSx for OpenZFS file system.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxOpenZfs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateLocationFsxOpenZfsAsync(const Model::CreateLocationFsxOpenZfsRequest& request, const CreateLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an endpoint for an Amazon FSx for Windows File Server file
@@ -867,16 +905,16 @@ namespace Model
         virtual void DescribeLocationEfsAsync(const Model::DescribeLocationEfsRequest& request, const DescribeLocationEfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns metadata, such as the path information about an Amazon FSx for Lustre
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns metadata about an Amazon FSx for Lustre location, such as information
+         * about its path.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxLustre">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeLocationFsxLustreOutcome DescribeLocationFsxLustre(const Model::DescribeLocationFsxLustreRequest& request) const;
 
         /**
-         * <p>Returns metadata, such as the path information about an Amazon FSx for Lustre
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns metadata about an Amazon FSx for Lustre location, such as information
+         * about its path.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxLustre">AWS
          * API Reference</a></p>
          *
@@ -885,8 +923,8 @@ namespace Model
         virtual Model::DescribeLocationFsxLustreOutcomeCallable DescribeLocationFsxLustreCallable(const Model::DescribeLocationFsxLustreRequest& request) const;
 
         /**
-         * <p>Returns metadata, such as the path information about an Amazon FSx for Lustre
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns metadata about an Amazon FSx for Lustre location, such as information
+         * about its path.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxLustre">AWS
          * API Reference</a></p>
          *
@@ -895,16 +933,44 @@ namespace Model
         virtual void DescribeLocationFsxLustreAsync(const Model::DescribeLocationFsxLustreRequest& request, const DescribeLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns metadata, such as the path information about an Amazon FSx for
-         * Windows File Server location.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns metadata about an Amazon FSx for OpenZFS location, such as
+         * information about its path.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxOpenZfs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeLocationFsxOpenZfsOutcome DescribeLocationFsxOpenZfs(const Model::DescribeLocationFsxOpenZfsRequest& request) const;
+
+        /**
+         * <p>Returns metadata about an Amazon FSx for OpenZFS location, such as
+         * information about its path.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxOpenZfs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeLocationFsxOpenZfsOutcomeCallable DescribeLocationFsxOpenZfsCallable(const Model::DescribeLocationFsxOpenZfsRequest& request) const;
+
+        /**
+         * <p>Returns metadata about an Amazon FSx for OpenZFS location, such as
+         * information about its path.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxOpenZfs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeLocationFsxOpenZfsAsync(const Model::DescribeLocationFsxOpenZfsRequest& request, const DescribeLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns metadata about an Amazon FSx for Windows File Server location, such
+         * as information about its path.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxWindows">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeLocationFsxWindowsOutcome DescribeLocationFsxWindows(const Model::DescribeLocationFsxWindowsRequest& request) const;
 
         /**
-         * <p>Returns metadata, such as the path information about an Amazon FSx for
-         * Windows File Server location.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns metadata about an Amazon FSx for Windows File Server location, such
+         * as information about its path.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxWindows">AWS
          * API Reference</a></p>
          *
@@ -913,8 +979,8 @@ namespace Model
         virtual Model::DescribeLocationFsxWindowsOutcomeCallable DescribeLocationFsxWindowsCallable(const Model::DescribeLocationFsxWindowsRequest& request) const;
 
         /**
-         * <p>Returns metadata, such as the path information about an Amazon FSx for
-         * Windows File Server location.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns metadata about an Amazon FSx for Windows File Server location, such
+         * as information about its path.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxWindows">AWS
          * API Reference</a></p>
          *
@@ -1624,6 +1690,7 @@ namespace Model
         void CreateAgentAsyncHelper(const Model::CreateAgentRequest& request, const CreateAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLocationEfsAsyncHelper(const Model::CreateLocationEfsRequest& request, const CreateLocationEfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLocationFsxLustreAsyncHelper(const Model::CreateLocationFsxLustreRequest& request, const CreateLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateLocationFsxOpenZfsAsyncHelper(const Model::CreateLocationFsxOpenZfsRequest& request, const CreateLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLocationFsxWindowsAsyncHelper(const Model::CreateLocationFsxWindowsRequest& request, const CreateLocationFsxWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLocationHdfsAsyncHelper(const Model::CreateLocationHdfsRequest& request, const CreateLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLocationNfsAsyncHelper(const Model::CreateLocationNfsRequest& request, const CreateLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1637,6 +1704,7 @@ namespace Model
         void DescribeAgentAsyncHelper(const Model::DescribeAgentRequest& request, const DescribeAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLocationEfsAsyncHelper(const Model::DescribeLocationEfsRequest& request, const DescribeLocationEfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLocationFsxLustreAsyncHelper(const Model::DescribeLocationFsxLustreRequest& request, const DescribeLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeLocationFsxOpenZfsAsyncHelper(const Model::DescribeLocationFsxOpenZfsRequest& request, const DescribeLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLocationFsxWindowsAsyncHelper(const Model::DescribeLocationFsxWindowsRequest& request, const DescribeLocationFsxWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLocationHdfsAsyncHelper(const Model::DescribeLocationHdfsRequest& request, const DescribeLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLocationNfsAsyncHelper(const Model::DescribeLocationNfsRequest& request, const DescribeLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

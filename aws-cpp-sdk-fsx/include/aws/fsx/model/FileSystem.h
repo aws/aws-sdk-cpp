@@ -231,8 +231,11 @@ namespace Model
      * experienced an unrecoverable failure. When creating a new file system, Amazon
      * FSx was unable to create the file system.</p> </li> <li> <p>
      * <code>MISCONFIGURED</code> - The file system is in a failed but recoverable
-     * state.</p> </li> <li> <p> <code>UPDATING</code> - The file system is undergoing
-     * a customer-initiated update.</p> </li> </ul>
+     * state.</p> </li> <li> <p> <code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx
+     * for Windows File Server only) The file system is currently unavailable due to a
+     * change in your Active Directory configuration.</p> </li> <li> <p>
+     * <code>UPDATING</code> - The file system is undergoing a customer-initiated
+     * update.</p> </li> </ul>
      */
     inline const FileSystemLifecycle& GetLifecycle() const{ return m_lifecycle; }
 
@@ -246,8 +249,11 @@ namespace Model
      * experienced an unrecoverable failure. When creating a new file system, Amazon
      * FSx was unable to create the file system.</p> </li> <li> <p>
      * <code>MISCONFIGURED</code> - The file system is in a failed but recoverable
-     * state.</p> </li> <li> <p> <code>UPDATING</code> - The file system is undergoing
-     * a customer-initiated update.</p> </li> </ul>
+     * state.</p> </li> <li> <p> <code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx
+     * for Windows File Server only) The file system is currently unavailable due to a
+     * change in your Active Directory configuration.</p> </li> <li> <p>
+     * <code>UPDATING</code> - The file system is undergoing a customer-initiated
+     * update.</p> </li> </ul>
      */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
@@ -261,8 +267,11 @@ namespace Model
      * experienced an unrecoverable failure. When creating a new file system, Amazon
      * FSx was unable to create the file system.</p> </li> <li> <p>
      * <code>MISCONFIGURED</code> - The file system is in a failed but recoverable
-     * state.</p> </li> <li> <p> <code>UPDATING</code> - The file system is undergoing
-     * a customer-initiated update.</p> </li> </ul>
+     * state.</p> </li> <li> <p> <code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx
+     * for Windows File Server only) The file system is currently unavailable due to a
+     * change in your Active Directory configuration.</p> </li> <li> <p>
+     * <code>UPDATING</code> - The file system is undergoing a customer-initiated
+     * update.</p> </li> </ul>
      */
     inline void SetLifecycle(const FileSystemLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
@@ -276,8 +285,11 @@ namespace Model
      * experienced an unrecoverable failure. When creating a new file system, Amazon
      * FSx was unable to create the file system.</p> </li> <li> <p>
      * <code>MISCONFIGURED</code> - The file system is in a failed but recoverable
-     * state.</p> </li> <li> <p> <code>UPDATING</code> - The file system is undergoing
-     * a customer-initiated update.</p> </li> </ul>
+     * state.</p> </li> <li> <p> <code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx
+     * for Windows File Server only) The file system is currently unavailable due to a
+     * change in your Active Directory configuration.</p> </li> <li> <p>
+     * <code>UPDATING</code> - The file system is undergoing a customer-initiated
+     * update.</p> </li> </ul>
      */
     inline void SetLifecycle(FileSystemLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
 
@@ -291,8 +303,11 @@ namespace Model
      * experienced an unrecoverable failure. When creating a new file system, Amazon
      * FSx was unable to create the file system.</p> </li> <li> <p>
      * <code>MISCONFIGURED</code> - The file system is in a failed but recoverable
-     * state.</p> </li> <li> <p> <code>UPDATING</code> - The file system is undergoing
-     * a customer-initiated update.</p> </li> </ul>
+     * state.</p> </li> <li> <p> <code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx
+     * for Windows File Server only) The file system is currently unavailable due to a
+     * change in your Active Directory configuration.</p> </li> <li> <p>
+     * <code>UPDATING</code> - The file system is undergoing a customer-initiated
+     * update.</p> </li> </ul>
      */
     inline FileSystem& WithLifecycle(const FileSystemLifecycle& value) { SetLifecycle(value); return *this;}
 
@@ -306,8 +321,11 @@ namespace Model
      * experienced an unrecoverable failure. When creating a new file system, Amazon
      * FSx was unable to create the file system.</p> </li> <li> <p>
      * <code>MISCONFIGURED</code> - The file system is in a failed but recoverable
-     * state.</p> </li> <li> <p> <code>UPDATING</code> - The file system is undergoing
-     * a customer-initiated update.</p> </li> </ul>
+     * state.</p> </li> <li> <p> <code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx
+     * for Windows File Server only) The file system is currently unavailable due to a
+     * change in your Active Directory configuration.</p> </li> <li> <p>
+     * <code>UPDATING</code> - The file system is undergoing a customer-initiated
+     * update.</p> </li> </ul>
      */
     inline FileSystem& WithLifecycle(FileSystemLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 

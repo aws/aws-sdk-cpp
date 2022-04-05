@@ -510,57 +510,57 @@ namespace Model
 
     /**
      * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named "Folder1" in the
-     * destination bucket, set the TargetKeyPrefix to "Folder1/".</p>
+     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
+     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
      */
     inline const Aws::String& GetTargetKeyPrefix() const{ return m_targetKeyPrefix; }
 
     /**
      * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named "Folder1" in the
-     * destination bucket, set the TargetKeyPrefix to "Folder1/".</p>
+     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
+     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
      */
     inline bool TargetKeyPrefixHasBeenSet() const { return m_targetKeyPrefixHasBeenSet; }
 
     /**
      * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named "Folder1" in the
-     * destination bucket, set the TargetKeyPrefix to "Folder1/".</p>
+     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
+     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
      */
     inline void SetTargetKeyPrefix(const Aws::String& value) { m_targetKeyPrefixHasBeenSet = true; m_targetKeyPrefix = value; }
 
     /**
      * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named "Folder1" in the
-     * destination bucket, set the TargetKeyPrefix to "Folder1/".</p>
+     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
+     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
      */
     inline void SetTargetKeyPrefix(Aws::String&& value) { m_targetKeyPrefixHasBeenSet = true; m_targetKeyPrefix = std::move(value); }
 
     /**
      * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named "Folder1" in the
-     * destination bucket, set the TargetKeyPrefix to "Folder1/".</p>
+     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
+     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
      */
     inline void SetTargetKeyPrefix(const char* value) { m_targetKeyPrefixHasBeenSet = true; m_targetKeyPrefix.assign(value); }
 
     /**
      * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named "Folder1" in the
-     * destination bucket, set the TargetKeyPrefix to "Folder1/".</p>
+     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
+     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
      */
     inline S3CopyObjectOperation& WithTargetKeyPrefix(const Aws::String& value) { SetTargetKeyPrefix(value); return *this;}
 
     /**
      * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named "Folder1" in the
-     * destination bucket, set the TargetKeyPrefix to "Folder1/".</p>
+     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
+     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
      */
     inline S3CopyObjectOperation& WithTargetKeyPrefix(Aws::String&& value) { SetTargetKeyPrefix(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named "Folder1" in the
-     * destination bucket, set the TargetKeyPrefix to "Folder1/".</p>
+     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
+     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
      */
     inline S3CopyObjectOperation& WithTargetKeyPrefix(const char* value) { SetTargetKeyPrefix(value); return *this;}
 

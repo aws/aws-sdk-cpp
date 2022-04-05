@@ -24,17 +24,16 @@ namespace Model
 {
 
   /**
-   * <p>Details about the launch template to use for a mixed instances
-   * policy.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification">AWS
+   * <p>Details about the launch template to use.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification
+  class AWS_SECURITYHUB_API AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification
   {
   public:
-    AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification();
-    AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification(Aws::Utils::Json::JsonView jsonValue);
-    AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification();
+    AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -72,19 +71,19 @@ namespace Model
      * <p>The identifier of the launch template. You must specify either
      * <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
      */
-    inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification& WithLaunchTemplateId(const Aws::String& value) { SetLaunchTemplateId(value); return *this;}
+    inline AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification& WithLaunchTemplateId(const Aws::String& value) { SetLaunchTemplateId(value); return *this;}
 
     /**
      * <p>The identifier of the launch template. You must specify either
      * <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
      */
-    inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification& WithLaunchTemplateId(Aws::String&& value) { SetLaunchTemplateId(std::move(value)); return *this;}
+    inline AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification& WithLaunchTemplateId(Aws::String&& value) { SetLaunchTemplateId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the launch template. You must specify either
      * <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
      */
-    inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification& WithLaunchTemplateId(const char* value) { SetLaunchTemplateId(value); return *this;}
+    inline AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification& WithLaunchTemplateId(const char* value) { SetLaunchTemplateId(value); return *this;}
 
 
     /**
@@ -121,19 +120,19 @@ namespace Model
      * <p>The name of the launch template. You must specify either
      * <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
      */
-    inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification& WithLaunchTemplateName(const Aws::String& value) { SetLaunchTemplateName(value); return *this;}
+    inline AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification& WithLaunchTemplateName(const Aws::String& value) { SetLaunchTemplateName(value); return *this;}
 
     /**
      * <p>The name of the launch template. You must specify either
      * <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
      */
-    inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification& WithLaunchTemplateName(Aws::String&& value) { SetLaunchTemplateName(std::move(value)); return *this;}
+    inline AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification& WithLaunchTemplateName(Aws::String&& value) { SetLaunchTemplateName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the launch template. You must specify either
      * <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
      */
-    inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification& WithLaunchTemplateName(const char* value) { SetLaunchTemplateName(value); return *this;}
+    inline AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification& WithLaunchTemplateName(const char* value) { SetLaunchTemplateName(value); return *this;}
 
 
     /**
@@ -170,19 +169,19 @@ namespace Model
      * <p>Identifies the version of the launch template. You can specify a version
      * identifier, or use the values <code>$Latest</code> or <code>$Default</code>.</p>
      */
-    inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+    inline AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
      * <p>Identifies the version of the launch template. You can specify a version
      * identifier, or use the values <code>$Latest</code> or <code>$Default</code>.</p>
      */
-    inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
+    inline AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>Identifies the version of the launch template. You can specify a version
      * identifier, or use the values <code>$Latest</code> or <code>$Default</code>.</p>
      */
-    inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification& WithVersion(const char* value) { SetVersion(value); return *this;}
+    inline AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
 

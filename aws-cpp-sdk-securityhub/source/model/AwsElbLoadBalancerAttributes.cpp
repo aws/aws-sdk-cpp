@@ -22,7 +22,8 @@ AwsElbLoadBalancerAttributes::AwsElbLoadBalancerAttributes() :
     m_accessLogHasBeenSet(false),
     m_connectionDrainingHasBeenSet(false),
     m_connectionSettingsHasBeenSet(false),
-    m_crossZoneLoadBalancingHasBeenSet(false)
+    m_crossZoneLoadBalancingHasBeenSet(false),
+    m_additionalAttributesHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ AwsElbLoadBalancerAttributes::AwsElbLoadBalancerAttributes(JsonView jsonValue) :
     m_accessLogHasBeenSet(false),
     m_connectionDrainingHasBeenSet(false),
     m_connectionSettingsHasBeenSet(false),
-    m_crossZoneLoadBalancingHasBeenSet(false)
+    m_crossZoneLoadBalancingHasBeenSet(false),
+    m_additionalAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +67,16 @@ AwsElbLoadBalancerAttributes& AwsElbLoadBalancerAttributes::operator =(JsonView 
     m_crossZoneLoadBalancingHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdditionalAttributes"))
+  {
+    Array<JsonView> additionalAttributesJsonList = jsonValue.GetArray("AdditionalAttributes");
+    for(unsigned additionalAttributesIndex = 0; additionalAttributesIndex < additionalAttributesJsonList.GetLength(); ++additionalAttributesIndex)
+    {
+      m_additionalAttributes.push_back(additionalAttributesJsonList[additionalAttributesIndex].AsObject());
+    }
+    m_additionalAttributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +105,17 @@ JsonValue AwsElbLoadBalancerAttributes::Jsonize() const
   if(m_crossZoneLoadBalancingHasBeenSet)
   {
    payload.WithObject("CrossZoneLoadBalancing", m_crossZoneLoadBalancing.Jsonize());
+
+  }
+
+  if(m_additionalAttributesHasBeenSet)
+  {
+   Array<JsonValue> additionalAttributesJsonList(m_additionalAttributes.size());
+   for(unsigned additionalAttributesIndex = 0; additionalAttributesIndex < additionalAttributesJsonList.GetLength(); ++additionalAttributesIndex)
+   {
+     additionalAttributesJsonList[additionalAttributesIndex].AsObject(m_additionalAttributes[additionalAttributesIndex].Jsonize());
+   }
+   payload.WithArray("AdditionalAttributes", std::move(additionalAttributesJsonList));
 
   }
 

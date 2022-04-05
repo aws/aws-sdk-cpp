@@ -448,48 +448,48 @@ namespace Model
     /**
      * <p>The Kerberos key table (keytab) that contains mappings between the defined
      * Kerberos principal and the encrypted keys. You can load the keytab from a file
-     * by providing the file's address. If you use the AWS CLI, it performs base64
-     * encoding for you. Otherwise, provide the base64-encoded text.</p>
+     * by providing the file's address. If you use the CLI, it performs base64 encoding
+     * for you. Otherwise, provide the base64-encoded text.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetKerberosKeytab() const{ return m_kerberosKeytab; }
 
     /**
      * <p>The Kerberos key table (keytab) that contains mappings between the defined
      * Kerberos principal and the encrypted keys. You can load the keytab from a file
-     * by providing the file's address. If you use the AWS CLI, it performs base64
-     * encoding for you. Otherwise, provide the base64-encoded text.</p>
+     * by providing the file's address. If you use the CLI, it performs base64 encoding
+     * for you. Otherwise, provide the base64-encoded text.</p>
      */
     inline bool KerberosKeytabHasBeenSet() const { return m_kerberosKeytabHasBeenSet; }
 
     /**
      * <p>The Kerberos key table (keytab) that contains mappings between the defined
      * Kerberos principal and the encrypted keys. You can load the keytab from a file
-     * by providing the file's address. If you use the AWS CLI, it performs base64
-     * encoding for you. Otherwise, provide the base64-encoded text.</p>
+     * by providing the file's address. If you use the CLI, it performs base64 encoding
+     * for you. Otherwise, provide the base64-encoded text.</p>
      */
     inline void SetKerberosKeytab(const Aws::Utils::ByteBuffer& value) { m_kerberosKeytabHasBeenSet = true; m_kerberosKeytab = value; }
 
     /**
      * <p>The Kerberos key table (keytab) that contains mappings between the defined
      * Kerberos principal and the encrypted keys. You can load the keytab from a file
-     * by providing the file's address. If you use the AWS CLI, it performs base64
-     * encoding for you. Otherwise, provide the base64-encoded text.</p>
+     * by providing the file's address. If you use the CLI, it performs base64 encoding
+     * for you. Otherwise, provide the base64-encoded text.</p>
      */
     inline void SetKerberosKeytab(Aws::Utils::ByteBuffer&& value) { m_kerberosKeytabHasBeenSet = true; m_kerberosKeytab = std::move(value); }
 
     /**
      * <p>The Kerberos key table (keytab) that contains mappings between the defined
      * Kerberos principal and the encrypted keys. You can load the keytab from a file
-     * by providing the file's address. If you use the AWS CLI, it performs base64
-     * encoding for you. Otherwise, provide the base64-encoded text.</p>
+     * by providing the file's address. If you use the CLI, it performs base64 encoding
+     * for you. Otherwise, provide the base64-encoded text.</p>
      */
     inline UpdateLocationHdfsRequest& WithKerberosKeytab(const Aws::Utils::ByteBuffer& value) { SetKerberosKeytab(value); return *this;}
 
     /**
      * <p>The Kerberos key table (keytab) that contains mappings between the defined
      * Kerberos principal and the encrypted keys. You can load the keytab from a file
-     * by providing the file's address. If you use the AWS CLI, it performs base64
-     * encoding for you. Otherwise, provide the base64-encoded text.</p>
+     * by providing the file's address. If you use the CLI, it performs base64 encoding
+     * for you. Otherwise, provide the base64-encoded text.</p>
      */
     inline UpdateLocationHdfsRequest& WithKerberosKeytab(Aws::Utils::ByteBuffer&& value) { SetKerberosKeytab(std::move(value)); return *this;}
 
@@ -497,7 +497,7 @@ namespace Model
     /**
      * <p>The <code>krb5.conf</code> file that contains the Kerberos configuration
      * information. You can load the <code>krb5.conf</code> file by providing the
-     * file's address. If you're using the AWS CLI, it performs the base64 encoding for
+     * file's address. If you're using the CLI, it performs the base64 encoding for
      * you. Otherwise, provide the base64-encoded text.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetKerberosKrb5Conf() const{ return m_kerberosKrb5Conf; }
@@ -505,7 +505,7 @@ namespace Model
     /**
      * <p>The <code>krb5.conf</code> file that contains the Kerberos configuration
      * information. You can load the <code>krb5.conf</code> file by providing the
-     * file's address. If you're using the AWS CLI, it performs the base64 encoding for
+     * file's address. If you're using the CLI, it performs the base64 encoding for
      * you. Otherwise, provide the base64-encoded text.</p>
      */
     inline bool KerberosKrb5ConfHasBeenSet() const { return m_kerberosKrb5ConfHasBeenSet; }
@@ -513,7 +513,7 @@ namespace Model
     /**
      * <p>The <code>krb5.conf</code> file that contains the Kerberos configuration
      * information. You can load the <code>krb5.conf</code> file by providing the
-     * file's address. If you're using the AWS CLI, it performs the base64 encoding for
+     * file's address. If you're using the CLI, it performs the base64 encoding for
      * you. Otherwise, provide the base64-encoded text.</p>
      */
     inline void SetKerberosKrb5Conf(const Aws::Utils::ByteBuffer& value) { m_kerberosKrb5ConfHasBeenSet = true; m_kerberosKrb5Conf = value; }
@@ -521,7 +521,7 @@ namespace Model
     /**
      * <p>The <code>krb5.conf</code> file that contains the Kerberos configuration
      * information. You can load the <code>krb5.conf</code> file by providing the
-     * file's address. If you're using the AWS CLI, it performs the base64 encoding for
+     * file's address. If you're using the CLI, it performs the base64 encoding for
      * you. Otherwise, provide the base64-encoded text.</p>
      */
     inline void SetKerberosKrb5Conf(Aws::Utils::ByteBuffer&& value) { m_kerberosKrb5ConfHasBeenSet = true; m_kerberosKrb5Conf = std::move(value); }
@@ -529,7 +529,7 @@ namespace Model
     /**
      * <p>The <code>krb5.conf</code> file that contains the Kerberos configuration
      * information. You can load the <code>krb5.conf</code> file by providing the
-     * file's address. If you're using the AWS CLI, it performs the base64 encoding for
+     * file's address. If you're using the CLI, it performs the base64 encoding for
      * you. Otherwise, provide the base64-encoded text.</p>
      */
     inline UpdateLocationHdfsRequest& WithKerberosKrb5Conf(const Aws::Utils::ByteBuffer& value) { SetKerberosKrb5Conf(value); return *this;}
@@ -537,7 +537,7 @@ namespace Model
     /**
      * <p>The <code>krb5.conf</code> file that contains the Kerberos configuration
      * information. You can load the <code>krb5.conf</code> file by providing the
-     * file's address. If you're using the AWS CLI, it performs the base64 encoding for
+     * file's address. If you're using the CLI, it performs the base64 encoding for
      * you. Otherwise, provide the base64-encoded text.</p>
      */
     inline UpdateLocationHdfsRequest& WithKerberosKrb5Conf(Aws::Utils::ByteBuffer&& value) { SetKerberosKrb5Conf(std::move(value)); return *this;}

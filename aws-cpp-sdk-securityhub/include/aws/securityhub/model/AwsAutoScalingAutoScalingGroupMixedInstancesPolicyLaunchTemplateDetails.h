@@ -41,32 +41,32 @@ namespace Model
 
 
     /**
-     * <p>The launch template to use.</p>
+     * <p>The launch template to use for a mixed instances policy.</p>
      */
     inline const AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification& GetLaunchTemplateSpecification() const{ return m_launchTemplateSpecification; }
 
     /**
-     * <p>The launch template to use.</p>
+     * <p>The launch template to use for a mixed instances policy.</p>
      */
     inline bool LaunchTemplateSpecificationHasBeenSet() const { return m_launchTemplateSpecificationHasBeenSet; }
 
     /**
-     * <p>The launch template to use.</p>
+     * <p>The launch template to use for a mixed instances policy.</p>
      */
     inline void SetLaunchTemplateSpecification(const AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = value; }
 
     /**
-     * <p>The launch template to use.</p>
+     * <p>The launch template to use for a mixed instances policy.</p>
      */
     inline void SetLaunchTemplateSpecification(AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification&& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = std::move(value); }
 
     /**
-     * <p>The launch template to use.</p>
+     * <p>The launch template to use for a mixed instances policy.</p>
      */
     inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails& WithLaunchTemplateSpecification(const AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification& value) { SetLaunchTemplateSpecification(value); return *this;}
 
     /**
-     * <p>The launch template to use.</p>
+     * <p>The launch template to use for a mixed instances policy.</p>
      */
     inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails& WithLaunchTemplateSpecification(AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification&& value) { SetLaunchTemplateSpecification(std::move(value)); return *this;}
 
