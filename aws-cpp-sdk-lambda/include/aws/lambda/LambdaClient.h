@@ -17,6 +17,7 @@
 #include <aws/lambda/model/CreateCodeSigningConfigResult.h>
 #include <aws/lambda/model/CreateEventSourceMappingResult.h>
 #include <aws/lambda/model/CreateFunctionResult.h>
+#include <aws/lambda/model/CreateFunctionUrlConfigResult.h>
 #include <aws/lambda/model/DeleteCodeSigningConfigResult.h>
 #include <aws/lambda/model/DeleteEventSourceMappingResult.h>
 #include <aws/lambda/model/GetAccountSettingsResult.h>
@@ -28,6 +29,7 @@
 #include <aws/lambda/model/GetFunctionConcurrencyResult.h>
 #include <aws/lambda/model/GetFunctionConfigurationResult.h>
 #include <aws/lambda/model/GetFunctionEventInvokeConfigResult.h>
+#include <aws/lambda/model/GetFunctionUrlConfigResult.h>
 #include <aws/lambda/model/GetLayerVersionResult.h>
 #include <aws/lambda/model/GetLayerVersionByArnResult.h>
 #include <aws/lambda/model/GetLayerVersionPolicyResult.h>
@@ -38,6 +40,7 @@
 #include <aws/lambda/model/ListCodeSigningConfigsResult.h>
 #include <aws/lambda/model/ListEventSourceMappingsResult.h>
 #include <aws/lambda/model/ListFunctionEventInvokeConfigsResult.h>
+#include <aws/lambda/model/ListFunctionUrlConfigsResult.h>
 #include <aws/lambda/model/ListFunctionsResult.h>
 #include <aws/lambda/model/ListFunctionsByCodeSigningConfigResult.h>
 #include <aws/lambda/model/ListLayerVersionsResult.h>
@@ -57,6 +60,7 @@
 #include <aws/lambda/model/UpdateFunctionCodeResult.h>
 #include <aws/lambda/model/UpdateFunctionConfigurationResult.h>
 #include <aws/lambda/model/UpdateFunctionEventInvokeConfigResult.h>
+#include <aws/lambda/model/UpdateFunctionUrlConfigResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -103,6 +107,7 @@ namespace Model
         class CreateCodeSigningConfigRequest;
         class CreateEventSourceMappingRequest;
         class CreateFunctionRequest;
+        class CreateFunctionUrlConfigRequest;
         class DeleteAliasRequest;
         class DeleteCodeSigningConfigRequest;
         class DeleteEventSourceMappingRequest;
@@ -110,6 +115,7 @@ namespace Model
         class DeleteFunctionCodeSigningConfigRequest;
         class DeleteFunctionConcurrencyRequest;
         class DeleteFunctionEventInvokeConfigRequest;
+        class DeleteFunctionUrlConfigRequest;
         class DeleteLayerVersionRequest;
         class DeleteProvisionedConcurrencyConfigRequest;
         class GetAccountSettingsRequest;
@@ -121,6 +127,7 @@ namespace Model
         class GetFunctionConcurrencyRequest;
         class GetFunctionConfigurationRequest;
         class GetFunctionEventInvokeConfigRequest;
+        class GetFunctionUrlConfigRequest;
         class GetLayerVersionRequest;
         class GetLayerVersionByArnRequest;
         class GetLayerVersionPolicyRequest;
@@ -131,6 +138,7 @@ namespace Model
         class ListCodeSigningConfigsRequest;
         class ListEventSourceMappingsRequest;
         class ListFunctionEventInvokeConfigsRequest;
+        class ListFunctionUrlConfigsRequest;
         class ListFunctionsRequest;
         class ListFunctionsByCodeSigningConfigRequest;
         class ListLayerVersionsRequest;
@@ -154,6 +162,7 @@ namespace Model
         class UpdateFunctionCodeRequest;
         class UpdateFunctionConfigurationRequest;
         class UpdateFunctionEventInvokeConfigRequest;
+        class UpdateFunctionUrlConfigRequest;
 
         typedef Aws::Utils::Outcome<AddLayerVersionPermissionResult, LambdaError> AddLayerVersionPermissionOutcome;
         typedef Aws::Utils::Outcome<AddPermissionResult, LambdaError> AddPermissionOutcome;
@@ -161,6 +170,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateCodeSigningConfigResult, LambdaError> CreateCodeSigningConfigOutcome;
         typedef Aws::Utils::Outcome<CreateEventSourceMappingResult, LambdaError> CreateEventSourceMappingOutcome;
         typedef Aws::Utils::Outcome<CreateFunctionResult, LambdaError> CreateFunctionOutcome;
+        typedef Aws::Utils::Outcome<CreateFunctionUrlConfigResult, LambdaError> CreateFunctionUrlConfigOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteAliasOutcome;
         typedef Aws::Utils::Outcome<DeleteCodeSigningConfigResult, LambdaError> DeleteCodeSigningConfigOutcome;
         typedef Aws::Utils::Outcome<DeleteEventSourceMappingResult, LambdaError> DeleteEventSourceMappingOutcome;
@@ -168,6 +178,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteFunctionCodeSigningConfigOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteFunctionConcurrencyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteFunctionEventInvokeConfigOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteFunctionUrlConfigOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteLayerVersionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteProvisionedConcurrencyConfigOutcome;
         typedef Aws::Utils::Outcome<GetAccountSettingsResult, LambdaError> GetAccountSettingsOutcome;
@@ -179,6 +190,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetFunctionConcurrencyResult, LambdaError> GetFunctionConcurrencyOutcome;
         typedef Aws::Utils::Outcome<GetFunctionConfigurationResult, LambdaError> GetFunctionConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetFunctionEventInvokeConfigResult, LambdaError> GetFunctionEventInvokeConfigOutcome;
+        typedef Aws::Utils::Outcome<GetFunctionUrlConfigResult, LambdaError> GetFunctionUrlConfigOutcome;
         typedef Aws::Utils::Outcome<GetLayerVersionResult, LambdaError> GetLayerVersionOutcome;
         typedef Aws::Utils::Outcome<GetLayerVersionByArnResult, LambdaError> GetLayerVersionByArnOutcome;
         typedef Aws::Utils::Outcome<GetLayerVersionPolicyResult, LambdaError> GetLayerVersionPolicyOutcome;
@@ -189,6 +201,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListCodeSigningConfigsResult, LambdaError> ListCodeSigningConfigsOutcome;
         typedef Aws::Utils::Outcome<ListEventSourceMappingsResult, LambdaError> ListEventSourceMappingsOutcome;
         typedef Aws::Utils::Outcome<ListFunctionEventInvokeConfigsResult, LambdaError> ListFunctionEventInvokeConfigsOutcome;
+        typedef Aws::Utils::Outcome<ListFunctionUrlConfigsResult, LambdaError> ListFunctionUrlConfigsOutcome;
         typedef Aws::Utils::Outcome<ListFunctionsResult, LambdaError> ListFunctionsOutcome;
         typedef Aws::Utils::Outcome<ListFunctionsByCodeSigningConfigResult, LambdaError> ListFunctionsByCodeSigningConfigOutcome;
         typedef Aws::Utils::Outcome<ListLayerVersionsResult, LambdaError> ListLayerVersionsOutcome;
@@ -212,6 +225,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateFunctionCodeResult, LambdaError> UpdateFunctionCodeOutcome;
         typedef Aws::Utils::Outcome<UpdateFunctionConfigurationResult, LambdaError> UpdateFunctionConfigurationOutcome;
         typedef Aws::Utils::Outcome<UpdateFunctionEventInvokeConfigResult, LambdaError> UpdateFunctionEventInvokeConfigOutcome;
+        typedef Aws::Utils::Outcome<UpdateFunctionUrlConfigResult, LambdaError> UpdateFunctionUrlConfigOutcome;
 
         typedef std::future<AddLayerVersionPermissionOutcome> AddLayerVersionPermissionOutcomeCallable;
         typedef std::future<AddPermissionOutcome> AddPermissionOutcomeCallable;
@@ -219,6 +233,7 @@ namespace Model
         typedef std::future<CreateCodeSigningConfigOutcome> CreateCodeSigningConfigOutcomeCallable;
         typedef std::future<CreateEventSourceMappingOutcome> CreateEventSourceMappingOutcomeCallable;
         typedef std::future<CreateFunctionOutcome> CreateFunctionOutcomeCallable;
+        typedef std::future<CreateFunctionUrlConfigOutcome> CreateFunctionUrlConfigOutcomeCallable;
         typedef std::future<DeleteAliasOutcome> DeleteAliasOutcomeCallable;
         typedef std::future<DeleteCodeSigningConfigOutcome> DeleteCodeSigningConfigOutcomeCallable;
         typedef std::future<DeleteEventSourceMappingOutcome> DeleteEventSourceMappingOutcomeCallable;
@@ -226,6 +241,7 @@ namespace Model
         typedef std::future<DeleteFunctionCodeSigningConfigOutcome> DeleteFunctionCodeSigningConfigOutcomeCallable;
         typedef std::future<DeleteFunctionConcurrencyOutcome> DeleteFunctionConcurrencyOutcomeCallable;
         typedef std::future<DeleteFunctionEventInvokeConfigOutcome> DeleteFunctionEventInvokeConfigOutcomeCallable;
+        typedef std::future<DeleteFunctionUrlConfigOutcome> DeleteFunctionUrlConfigOutcomeCallable;
         typedef std::future<DeleteLayerVersionOutcome> DeleteLayerVersionOutcomeCallable;
         typedef std::future<DeleteProvisionedConcurrencyConfigOutcome> DeleteProvisionedConcurrencyConfigOutcomeCallable;
         typedef std::future<GetAccountSettingsOutcome> GetAccountSettingsOutcomeCallable;
@@ -237,6 +253,7 @@ namespace Model
         typedef std::future<GetFunctionConcurrencyOutcome> GetFunctionConcurrencyOutcomeCallable;
         typedef std::future<GetFunctionConfigurationOutcome> GetFunctionConfigurationOutcomeCallable;
         typedef std::future<GetFunctionEventInvokeConfigOutcome> GetFunctionEventInvokeConfigOutcomeCallable;
+        typedef std::future<GetFunctionUrlConfigOutcome> GetFunctionUrlConfigOutcomeCallable;
         typedef std::future<GetLayerVersionOutcome> GetLayerVersionOutcomeCallable;
         typedef std::future<GetLayerVersionByArnOutcome> GetLayerVersionByArnOutcomeCallable;
         typedef std::future<GetLayerVersionPolicyOutcome> GetLayerVersionPolicyOutcomeCallable;
@@ -247,6 +264,7 @@ namespace Model
         typedef std::future<ListCodeSigningConfigsOutcome> ListCodeSigningConfigsOutcomeCallable;
         typedef std::future<ListEventSourceMappingsOutcome> ListEventSourceMappingsOutcomeCallable;
         typedef std::future<ListFunctionEventInvokeConfigsOutcome> ListFunctionEventInvokeConfigsOutcomeCallable;
+        typedef std::future<ListFunctionUrlConfigsOutcome> ListFunctionUrlConfigsOutcomeCallable;
         typedef std::future<ListFunctionsOutcome> ListFunctionsOutcomeCallable;
         typedef std::future<ListFunctionsByCodeSigningConfigOutcome> ListFunctionsByCodeSigningConfigOutcomeCallable;
         typedef std::future<ListLayerVersionsOutcome> ListLayerVersionsOutcomeCallable;
@@ -270,6 +288,7 @@ namespace Model
         typedef std::future<UpdateFunctionCodeOutcome> UpdateFunctionCodeOutcomeCallable;
         typedef std::future<UpdateFunctionConfigurationOutcome> UpdateFunctionConfigurationOutcomeCallable;
         typedef std::future<UpdateFunctionEventInvokeConfigOutcome> UpdateFunctionEventInvokeConfigOutcomeCallable;
+        typedef std::future<UpdateFunctionUrlConfigOutcome> UpdateFunctionUrlConfigOutcomeCallable;
 } // namespace Model
 
   class LambdaClient;
@@ -280,6 +299,7 @@ namespace Model
     typedef std::function<void(const LambdaClient*, const Model::CreateCodeSigningConfigRequest&, const Model::CreateCodeSigningConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCodeSigningConfigResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::CreateEventSourceMappingRequest&, const Model::CreateEventSourceMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventSourceMappingResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::CreateFunctionRequest&, const Model::CreateFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFunctionResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::CreateFunctionUrlConfigRequest&, const Model::CreateFunctionUrlConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFunctionUrlConfigResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::DeleteAliasRequest&, const Model::DeleteAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAliasResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::DeleteCodeSigningConfigRequest&, const Model::DeleteCodeSigningConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCodeSigningConfigResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::DeleteEventSourceMappingRequest&, const Model::DeleteEventSourceMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventSourceMappingResponseReceivedHandler;
@@ -287,6 +307,7 @@ namespace Model
     typedef std::function<void(const LambdaClient*, const Model::DeleteFunctionCodeSigningConfigRequest&, const Model::DeleteFunctionCodeSigningConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFunctionCodeSigningConfigResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::DeleteFunctionConcurrencyRequest&, const Model::DeleteFunctionConcurrencyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFunctionConcurrencyResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::DeleteFunctionEventInvokeConfigRequest&, const Model::DeleteFunctionEventInvokeConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFunctionEventInvokeConfigResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::DeleteFunctionUrlConfigRequest&, const Model::DeleteFunctionUrlConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFunctionUrlConfigResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::DeleteLayerVersionRequest&, const Model::DeleteLayerVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLayerVersionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::DeleteProvisionedConcurrencyConfigRequest&, const Model::DeleteProvisionedConcurrencyConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProvisionedConcurrencyConfigResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetAccountSettingsRequest&, const Model::GetAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountSettingsResponseReceivedHandler;
@@ -298,6 +319,7 @@ namespace Model
     typedef std::function<void(const LambdaClient*, const Model::GetFunctionConcurrencyRequest&, const Model::GetFunctionConcurrencyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionConcurrencyResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetFunctionConfigurationRequest&, const Model::GetFunctionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionConfigurationResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetFunctionEventInvokeConfigRequest&, const Model::GetFunctionEventInvokeConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionEventInvokeConfigResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::GetFunctionUrlConfigRequest&, const Model::GetFunctionUrlConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionUrlConfigResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetLayerVersionRequest&, const Model::GetLayerVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLayerVersionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetLayerVersionByArnRequest&, const Model::GetLayerVersionByArnOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLayerVersionByArnResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetLayerVersionPolicyRequest&, const Model::GetLayerVersionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLayerVersionPolicyResponseReceivedHandler;
@@ -308,6 +330,7 @@ namespace Model
     typedef std::function<void(const LambdaClient*, const Model::ListCodeSigningConfigsRequest&, const Model::ListCodeSigningConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCodeSigningConfigsResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::ListEventSourceMappingsRequest&, const Model::ListEventSourceMappingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventSourceMappingsResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::ListFunctionEventInvokeConfigsRequest&, const Model::ListFunctionEventInvokeConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFunctionEventInvokeConfigsResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::ListFunctionUrlConfigsRequest&, const Model::ListFunctionUrlConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFunctionUrlConfigsResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::ListFunctionsRequest&, const Model::ListFunctionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFunctionsResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::ListFunctionsByCodeSigningConfigRequest&, const Model::ListFunctionsByCodeSigningConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFunctionsByCodeSigningConfigResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::ListLayerVersionsRequest&, const Model::ListLayerVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLayerVersionsResponseReceivedHandler;
@@ -331,6 +354,7 @@ namespace Model
     typedef std::function<void(const LambdaClient*, const Model::UpdateFunctionCodeRequest&, const Model::UpdateFunctionCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFunctionCodeResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::UpdateFunctionConfigurationRequest&, const Model::UpdateFunctionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFunctionConfigurationResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::UpdateFunctionEventInvokeConfigRequest&, const Model::UpdateFunctionEventInvokeConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFunctionEventInvokeConfigResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::UpdateFunctionUrlConfigRequest&, const Model::UpdateFunctionUrlConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFunctionUrlConfigResponseReceivedHandler;
 
   /**
    * <fullname>Lambda</fullname> <p> <b>Overview</b> </p> <p>Lambda is a compute
@@ -954,6 +978,37 @@ namespace Model
         virtual void CreateFunctionAsync(const Model::CreateFunctionRequest& request, const CreateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a Lambda function URL with the specified configuration parameters. A
+         * function URL is a dedicated HTTP(S) endpoint that you can use to invoke your
+         * function.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunctionUrlConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFunctionUrlConfigOutcome CreateFunctionUrlConfig(const Model::CreateFunctionUrlConfigRequest& request) const;
+
+        /**
+         * <p>Creates a Lambda function URL with the specified configuration parameters. A
+         * function URL is a dedicated HTTP(S) endpoint that you can use to invoke your
+         * function.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunctionUrlConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateFunctionUrlConfigOutcomeCallable CreateFunctionUrlConfigCallable(const Model::CreateFunctionUrlConfigRequest& request) const;
+
+        /**
+         * <p>Creates a Lambda function URL with the specified configuration parameters. A
+         * function URL is a dedicated HTTP(S) endpoint that you can use to invoke your
+         * function.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunctionUrlConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateFunctionUrlConfigAsync(const Model::CreateFunctionUrlConfigRequest& request, const CreateFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a Lambda function <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1178,6 +1233,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteFunctionEventInvokeConfigAsync(const Model::DeleteFunctionEventInvokeConfigRequest& request, const DeleteFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a Lambda function URL. When you delete a function URL, you can't
+         * recover it. Creating a new function URL results in a different URL
+         * address.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionUrlConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFunctionUrlConfigOutcome DeleteFunctionUrlConfig(const Model::DeleteFunctionUrlConfigRequest& request) const;
+
+        /**
+         * <p>Deletes a Lambda function URL. When you delete a function URL, you can't
+         * recover it. Creating a new function URL results in a different URL
+         * address.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionUrlConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFunctionUrlConfigOutcomeCallable DeleteFunctionUrlConfigCallable(const Model::DeleteFunctionUrlConfigRequest& request) const;
+
+        /**
+         * <p>Deletes a Lambda function URL. When you delete a function URL, you can't
+         * recover it. Creating a new function URL results in a different URL
+         * address.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionUrlConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFunctionUrlConfigAsync(const Model::DeleteFunctionUrlConfigRequest& request, const DeleteFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a version of an <a
@@ -1525,6 +1611,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetFunctionEventInvokeConfigAsync(const Model::GetFunctionEventInvokeConfigRequest& request, const GetFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns details about a Lambda function URL.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionUrlConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFunctionUrlConfigOutcome GetFunctionUrlConfig(const Model::GetFunctionUrlConfigRequest& request) const;
+
+        /**
+         * <p>Returns details about a Lambda function URL.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionUrlConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetFunctionUrlConfigOutcomeCallable GetFunctionUrlConfigCallable(const Model::GetFunctionUrlConfigRequest& request) const;
+
+        /**
+         * <p>Returns details about a Lambda function URL.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionUrlConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetFunctionUrlConfigAsync(const Model::GetFunctionUrlConfigRequest& request, const GetFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a version of an <a
@@ -1955,6 +2066,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListFunctionEventInvokeConfigsAsync(const Model::ListFunctionEventInvokeConfigsRequest& request, const ListFunctionEventInvokeConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of Lambda function URLs for the specified
+         * function.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionUrlConfigs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFunctionUrlConfigsOutcome ListFunctionUrlConfigs(const Model::ListFunctionUrlConfigsRequest& request) const;
+
+        /**
+         * <p>Returns a list of Lambda function URLs for the specified
+         * function.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionUrlConfigs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListFunctionUrlConfigsOutcomeCallable ListFunctionUrlConfigsCallable(const Model::ListFunctionUrlConfigsRequest& request) const;
+
+        /**
+         * <p>Returns a list of Lambda function URLs for the specified
+         * function.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionUrlConfigs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListFunctionUrlConfigsAsync(const Model::ListFunctionUrlConfigsRequest& request, const ListFunctionUrlConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of Lambda functions, with the version-specific configuration
@@ -3026,6 +3165,34 @@ namespace Model
          */
         virtual void UpdateFunctionEventInvokeConfigAsync(const Model::UpdateFunctionEventInvokeConfigRequest& request, const UpdateFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates the configuration for a Lambda function URL.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionUrlConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFunctionUrlConfigOutcome UpdateFunctionUrlConfig(const Model::UpdateFunctionUrlConfigRequest& request) const;
+
+        /**
+         * <p>Updates the configuration for a Lambda function URL.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionUrlConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateFunctionUrlConfigOutcomeCallable UpdateFunctionUrlConfigCallable(const Model::UpdateFunctionUrlConfigRequest& request) const;
+
+        /**
+         * <p>Updates the configuration for a Lambda function URL.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionUrlConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateFunctionUrlConfigAsync(const Model::UpdateFunctionUrlConfigRequest& request, const UpdateFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -3036,6 +3203,7 @@ namespace Model
         void CreateCodeSigningConfigAsyncHelper(const Model::CreateCodeSigningConfigRequest& request, const CreateCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEventSourceMappingAsyncHelper(const Model::CreateEventSourceMappingRequest& request, const CreateEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFunctionAsyncHelper(const Model::CreateFunctionRequest& request, const CreateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateFunctionUrlConfigAsyncHelper(const Model::CreateFunctionUrlConfigRequest& request, const CreateFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAliasAsyncHelper(const Model::DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCodeSigningConfigAsyncHelper(const Model::DeleteCodeSigningConfigRequest& request, const DeleteCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventSourceMappingAsyncHelper(const Model::DeleteEventSourceMappingRequest& request, const DeleteEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3043,6 +3211,7 @@ namespace Model
         void DeleteFunctionCodeSigningConfigAsyncHelper(const Model::DeleteFunctionCodeSigningConfigRequest& request, const DeleteFunctionCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFunctionConcurrencyAsyncHelper(const Model::DeleteFunctionConcurrencyRequest& request, const DeleteFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFunctionEventInvokeConfigAsyncHelper(const Model::DeleteFunctionEventInvokeConfigRequest& request, const DeleteFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteFunctionUrlConfigAsyncHelper(const Model::DeleteFunctionUrlConfigRequest& request, const DeleteFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteLayerVersionAsyncHelper(const Model::DeleteLayerVersionRequest& request, const DeleteLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProvisionedConcurrencyConfigAsyncHelper(const Model::DeleteProvisionedConcurrencyConfigRequest& request, const DeleteProvisionedConcurrencyConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccountSettingsAsyncHelper(const Model::GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3054,6 +3223,7 @@ namespace Model
         void GetFunctionConcurrencyAsyncHelper(const Model::GetFunctionConcurrencyRequest& request, const GetFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFunctionConfigurationAsyncHelper(const Model::GetFunctionConfigurationRequest& request, const GetFunctionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFunctionEventInvokeConfigAsyncHelper(const Model::GetFunctionEventInvokeConfigRequest& request, const GetFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetFunctionUrlConfigAsyncHelper(const Model::GetFunctionUrlConfigRequest& request, const GetFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLayerVersionAsyncHelper(const Model::GetLayerVersionRequest& request, const GetLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLayerVersionByArnAsyncHelper(const Model::GetLayerVersionByArnRequest& request, const GetLayerVersionByArnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLayerVersionPolicyAsyncHelper(const Model::GetLayerVersionPolicyRequest& request, const GetLayerVersionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3064,6 +3234,7 @@ namespace Model
         void ListCodeSigningConfigsAsyncHelper(const Model::ListCodeSigningConfigsRequest& request, const ListCodeSigningConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEventSourceMappingsAsyncHelper(const Model::ListEventSourceMappingsRequest& request, const ListEventSourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFunctionEventInvokeConfigsAsyncHelper(const Model::ListFunctionEventInvokeConfigsRequest& request, const ListFunctionEventInvokeConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListFunctionUrlConfigsAsyncHelper(const Model::ListFunctionUrlConfigsRequest& request, const ListFunctionUrlConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFunctionsAsyncHelper(const Model::ListFunctionsRequest& request, const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFunctionsByCodeSigningConfigAsyncHelper(const Model::ListFunctionsByCodeSigningConfigRequest& request, const ListFunctionsByCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLayerVersionsAsyncHelper(const Model::ListLayerVersionsRequest& request, const ListLayerVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3087,6 +3258,7 @@ namespace Model
         void UpdateFunctionCodeAsyncHelper(const Model::UpdateFunctionCodeRequest& request, const UpdateFunctionCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFunctionConfigurationAsyncHelper(const Model::UpdateFunctionConfigurationRequest& request, const UpdateFunctionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFunctionEventInvokeConfigAsyncHelper(const Model::UpdateFunctionEventInvokeConfigRequest& request, const UpdateFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateFunctionUrlConfigAsyncHelper(const Model::UpdateFunctionUrlConfigRequest& request, const UpdateFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

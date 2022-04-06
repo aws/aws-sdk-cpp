@@ -25,7 +25,9 @@ AddPermissionRequest::AddPermissionRequest() :
     m_eventSourceTokenHasBeenSet(false),
     m_qualifierHasBeenSet(false),
     m_revisionIdHasBeenSet(false),
-    m_principalOrgIDHasBeenSet(false)
+    m_principalOrgIDHasBeenSet(false),
+    m_functionUrlAuthType(FunctionUrlAuthType::NOT_SET),
+    m_functionUrlAuthTypeHasBeenSet(false)
 {
 }
 
@@ -79,6 +81,11 @@ Aws::String AddPermissionRequest::SerializePayload() const
   {
    payload.WithString("PrincipalOrgID", m_principalOrgID);
 
+  }
+
+  if(m_functionUrlAuthTypeHasBeenSet)
+  {
+   payload.WithString("FunctionUrlAuthType", FunctionUrlAuthTypeMapper::GetNameForFunctionUrlAuthType(m_functionUrlAuthType));
   }
 
   return payload.View().WriteReadable();

@@ -30,6 +30,7 @@ namespace Aws
         static const int REMOVAL_IN_PROGRESS_HASH = HashingUtils::HashString("REMOVAL_IN_PROGRESS");
         static const int REMOVAL_FAILED_HASH = HashingUtils::HashString("REMOVAL_FAILED");
         static const int REMOVAL_SUCCEEDED_HASH = HashingUtils::HashString("REMOVAL_SUCCEEDED");
+        static const int DEPLOYMENT_FAILED_HASH = HashingUtils::HashString("DEPLOYMENT_FAILED");
 
 
         ApplicationInstanceStatus GetApplicationInstanceStatusForName(const Aws::String& name)
@@ -75,6 +76,10 @@ namespace Aws
           {
             return ApplicationInstanceStatus::REMOVAL_SUCCEEDED;
           }
+          else if (hashCode == DEPLOYMENT_FAILED_HASH)
+          {
+            return ApplicationInstanceStatus::DEPLOYMENT_FAILED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -109,6 +114,8 @@ namespace Aws
             return "REMOVAL_FAILED";
           case ApplicationInstanceStatus::REMOVAL_SUCCEEDED:
             return "REMOVAL_SUCCEEDED";
+          case ApplicationInstanceStatus::DEPLOYMENT_FAILED:
+            return "DEPLOYMENT_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

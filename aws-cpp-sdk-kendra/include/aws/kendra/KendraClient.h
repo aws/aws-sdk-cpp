@@ -1207,14 +1207,14 @@ namespace Model
         virtual void DescribeFaqAsync(const Model::DescribeFaqRequest& request, const DescribeFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes an existing Amazon Kendra index</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an existing Amazon Kendra index.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeIndex">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeIndexOutcome DescribeIndex(const Model::DescribeIndexRequest& request) const;
 
         /**
-         * <p>Describes an existing Amazon Kendra index</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an existing Amazon Kendra index.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeIndex">AWS
          * API Reference</a></p>
          *
@@ -1223,7 +1223,7 @@ namespace Model
         virtual Model::DescribeIndexOutcomeCallable DescribeIndexCallable(const Model::DescribeIndexRequest& request) const;
 
         /**
-         * <p>Describes an existing Amazon Kendra index</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an existing Amazon Kendra index.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeIndex">AWS
          * API Reference</a></p>
          *
@@ -1730,16 +1730,16 @@ namespace Model
         virtual void ListGroupsOlderThanOrderingIdAsync(const Model::ListGroupsOlderThanOrderingIdRequest& request, const ListGroupsOlderThanOrderingIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the Amazon Kendra indexes that you have created.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the Amazon Kendra indexes that you created.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListIndices">AWS
          * API Reference</a></p>
          */
         virtual Model::ListIndicesOutcome ListIndices(const Model::ListIndicesRequest& request) const;
 
         /**
-         * <p>Lists the Amazon Kendra indexes that you have created.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the Amazon Kendra indexes that you created.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListIndices">AWS
          * API Reference</a></p>
          *
@@ -1748,8 +1748,8 @@ namespace Model
         virtual Model::ListIndicesOutcomeCallable ListIndicesCallable(const Model::ListIndicesRequest& request) const;
 
         /**
-         * <p>Lists the Amazon Kendra indexes that you have created.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the Amazon Kendra indexes that you created.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListIndices">AWS
          * API Reference</a></p>
          *

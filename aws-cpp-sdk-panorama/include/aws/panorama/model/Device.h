@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
+#include <aws/panorama/model/DeviceBrand.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/panorama/model/DeviceStatus.h>
@@ -37,6 +38,37 @@ namespace Model
     Device(Aws::Utils::Json::JsonView jsonValue);
     Device& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The device's maker.</p>
+     */
+    inline const DeviceBrand& GetBrand() const{ return m_brand; }
+
+    /**
+     * <p>The device's maker.</p>
+     */
+    inline bool BrandHasBeenSet() const { return m_brandHasBeenSet; }
+
+    /**
+     * <p>The device's maker.</p>
+     */
+    inline void SetBrand(const DeviceBrand& value) { m_brandHasBeenSet = true; m_brand = value; }
+
+    /**
+     * <p>The device's maker.</p>
+     */
+    inline void SetBrand(DeviceBrand&& value) { m_brandHasBeenSet = true; m_brand = std::move(value); }
+
+    /**
+     * <p>The device's maker.</p>
+     */
+    inline Device& WithBrand(const DeviceBrand& value) { SetBrand(value); return *this;}
+
+    /**
+     * <p>The device's maker.</p>
+     */
+    inline Device& WithBrand(DeviceBrand&& value) { SetBrand(std::move(value)); return *this;}
 
 
     /**
@@ -245,6 +277,9 @@ namespace Model
     inline Device& WithProvisioningStatus(DeviceStatus&& value) { SetProvisioningStatus(std::move(value)); return *this;}
 
   private:
+
+    DeviceBrand m_brand;
+    bool m_brandHasBeenSet;
 
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;

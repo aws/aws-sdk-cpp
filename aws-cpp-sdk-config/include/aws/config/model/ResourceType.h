@@ -133,7 +133,9 @@ namespace Model
     AWS_CodeDeploy_DeploymentGroup,
     AWS_EC2_LaunchTemplate,
     AWS_ECR_PublicRepository,
-    AWS_GuardDuty_Detector
+    AWS_GuardDuty_Detector,
+    AWS_EMR_SecurityConfiguration,
+    AWS_SageMaker_CodeRepository
   };
 
 namespace ResourceTypeMapper

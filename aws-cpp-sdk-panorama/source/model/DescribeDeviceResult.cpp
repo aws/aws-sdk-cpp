@@ -17,6 +17,7 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeDeviceResult::DescribeDeviceResult() : 
+    m_brand(DeviceBrand::NOT_SET),
     m_deviceConnectionStatus(DeviceConnectionStatus::NOT_SET),
     m_provisioningStatus(DeviceStatus::NOT_SET),
     m_type(DeviceType::NOT_SET)
@@ -24,6 +25,7 @@ DescribeDeviceResult::DescribeDeviceResult() :
 }
 
 DescribeDeviceResult::DescribeDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_brand(DeviceBrand::NOT_SET),
     m_deviceConnectionStatus(DeviceConnectionStatus::NOT_SET),
     m_provisioningStatus(DeviceStatus::NOT_SET),
     m_type(DeviceType::NOT_SET)
@@ -46,6 +48,12 @@ DescribeDeviceResult& DescribeDeviceResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
+
+  }
+
+  if(jsonValue.ValueExists("Brand"))
+  {
+    m_brand = DeviceBrandMapper::GetDeviceBrandForName(jsonValue.GetString("Brand"));
 
   }
 

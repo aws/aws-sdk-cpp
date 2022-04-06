@@ -17,6 +17,7 @@
 #include <aws/kendra/model/WorkDocsConfiguration.h>
 #include <aws/kendra/model/FsxConfiguration.h>
 #include <aws/kendra/model/SlackConfiguration.h>
+#include <aws/kendra/model/BoxConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -474,6 +475,43 @@ namespace Model
      */
     inline DataSourceConfiguration& WithSlackConfiguration(SlackConfiguration&& value) { SetSlackConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides the configuration information to connect to Box as your data
+     * source.</p>
+     */
+    inline const BoxConfiguration& GetBoxConfiguration() const{ return m_boxConfiguration; }
+
+    /**
+     * <p>Provides the configuration information to connect to Box as your data
+     * source.</p>
+     */
+    inline bool BoxConfigurationHasBeenSet() const { return m_boxConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides the configuration information to connect to Box as your data
+     * source.</p>
+     */
+    inline void SetBoxConfiguration(const BoxConfiguration& value) { m_boxConfigurationHasBeenSet = true; m_boxConfiguration = value; }
+
+    /**
+     * <p>Provides the configuration information to connect to Box as your data
+     * source.</p>
+     */
+    inline void SetBoxConfiguration(BoxConfiguration&& value) { m_boxConfigurationHasBeenSet = true; m_boxConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides the configuration information to connect to Box as your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithBoxConfiguration(const BoxConfiguration& value) { SetBoxConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides the configuration information to connect to Box as your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithBoxConfiguration(BoxConfiguration&& value) { SetBoxConfiguration(std::move(value)); return *this;}
+
   private:
 
     S3DataSourceConfiguration m_s3Configuration;
@@ -511,6 +549,9 @@ namespace Model
 
     SlackConfiguration m_slackConfiguration;
     bool m_slackConfigurationHasBeenSet;
+
+    BoxConfiguration m_boxConfiguration;
+    bool m_boxConfigurationHasBeenSet;
   };
 
 } // namespace Model

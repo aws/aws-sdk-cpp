@@ -7,6 +7,7 @@
 #include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/panorama/model/DeviceBrand.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/panorama/model/NetworkStatus.h>
 #include <aws/panorama/model/DeviceConnectionStatus.h>
@@ -111,6 +112,32 @@ namespace Model
      * <p>The device's ARN.</p>
      */
     inline DescribeDeviceResult& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>The device's maker.</p>
+     */
+    inline const DeviceBrand& GetBrand() const{ return m_brand; }
+
+    /**
+     * <p>The device's maker.</p>
+     */
+    inline void SetBrand(const DeviceBrand& value) { m_brand = value; }
+
+    /**
+     * <p>The device's maker.</p>
+     */
+    inline void SetBrand(DeviceBrand&& value) { m_brand = std::move(value); }
+
+    /**
+     * <p>The device's maker.</p>
+     */
+    inline DescribeDeviceResult& WithBrand(const DeviceBrand& value) { SetBrand(value); return *this;}
+
+    /**
+     * <p>The device's maker.</p>
+     */
+    inline DescribeDeviceResult& WithBrand(DeviceBrand&& value) { SetBrand(std::move(value)); return *this;}
 
 
     /**
@@ -612,6 +639,8 @@ namespace Model
     Aws::Vector<AlternateSoftwareMetadata> m_alternateSoftwares;
 
     Aws::String m_arn;
+
+    DeviceBrand m_brand;
 
     Aws::Utils::DateTime m_createdTime;
 

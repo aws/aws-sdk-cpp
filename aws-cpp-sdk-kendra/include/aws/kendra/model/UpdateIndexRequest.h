@@ -254,50 +254,56 @@ namespace Model
 
 
     /**
-     * <p>Sets the number of additional storage and query capacity units that should be
-     * used by the index. You can change the capacity of the index up to 5 times per
-     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
-     * capacity below that required to meet the storage needs for your index.</p>
+     * <p>Sets the number of additional document storage and query capacity units that
+     * should be used by the index. You can change the capacity of the index up to 5
+     * times per day, or make 5 API calls.</p> <p>If you are using extra storage units,
+     * you can't reduce the storage capacity below what is required to meet the storage
+     * needs for your index.</p>
      */
     inline const CapacityUnitsConfiguration& GetCapacityUnits() const{ return m_capacityUnits; }
 
     /**
-     * <p>Sets the number of additional storage and query capacity units that should be
-     * used by the index. You can change the capacity of the index up to 5 times per
-     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
-     * capacity below that required to meet the storage needs for your index.</p>
+     * <p>Sets the number of additional document storage and query capacity units that
+     * should be used by the index. You can change the capacity of the index up to 5
+     * times per day, or make 5 API calls.</p> <p>If you are using extra storage units,
+     * you can't reduce the storage capacity below what is required to meet the storage
+     * needs for your index.</p>
      */
     inline bool CapacityUnitsHasBeenSet() const { return m_capacityUnitsHasBeenSet; }
 
     /**
-     * <p>Sets the number of additional storage and query capacity units that should be
-     * used by the index. You can change the capacity of the index up to 5 times per
-     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
-     * capacity below that required to meet the storage needs for your index.</p>
+     * <p>Sets the number of additional document storage and query capacity units that
+     * should be used by the index. You can change the capacity of the index up to 5
+     * times per day, or make 5 API calls.</p> <p>If you are using extra storage units,
+     * you can't reduce the storage capacity below what is required to meet the storage
+     * needs for your index.</p>
      */
     inline void SetCapacityUnits(const CapacityUnitsConfiguration& value) { m_capacityUnitsHasBeenSet = true; m_capacityUnits = value; }
 
     /**
-     * <p>Sets the number of additional storage and query capacity units that should be
-     * used by the index. You can change the capacity of the index up to 5 times per
-     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
-     * capacity below that required to meet the storage needs for your index.</p>
+     * <p>Sets the number of additional document storage and query capacity units that
+     * should be used by the index. You can change the capacity of the index up to 5
+     * times per day, or make 5 API calls.</p> <p>If you are using extra storage units,
+     * you can't reduce the storage capacity below what is required to meet the storage
+     * needs for your index.</p>
      */
     inline void SetCapacityUnits(CapacityUnitsConfiguration&& value) { m_capacityUnitsHasBeenSet = true; m_capacityUnits = std::move(value); }
 
     /**
-     * <p>Sets the number of additional storage and query capacity units that should be
-     * used by the index. You can change the capacity of the index up to 5 times per
-     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
-     * capacity below that required to meet the storage needs for your index.</p>
+     * <p>Sets the number of additional document storage and query capacity units that
+     * should be used by the index. You can change the capacity of the index up to 5
+     * times per day, or make 5 API calls.</p> <p>If you are using extra storage units,
+     * you can't reduce the storage capacity below what is required to meet the storage
+     * needs for your index.</p>
      */
     inline UpdateIndexRequest& WithCapacityUnits(const CapacityUnitsConfiguration& value) { SetCapacityUnits(value); return *this;}
 
     /**
-     * <p>Sets the number of additional storage and query capacity units that should be
-     * used by the index. You can change the capacity of the index up to 5 times per
-     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
-     * capacity below that required to meet the storage needs for your index.</p>
+     * <p>Sets the number of additional document storage and query capacity units that
+     * should be used by the index. You can change the capacity of the index up to 5
+     * times per day, or make 5 API calls.</p> <p>If you are using extra storage units,
+     * you can't reduce the storage capacity below what is required to meet the storage
+     * needs for your index.</p>
      */
     inline UpdateIndexRequest& WithCapacityUnits(CapacityUnitsConfiguration&& value) { SetCapacityUnits(std::move(value)); return *this;}
 

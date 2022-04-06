@@ -19,6 +19,8 @@ namespace Model
 {
 
 Device::Device() : 
+    m_brand(DeviceBrand::NOT_SET),
+    m_brandHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_deviceIdHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
@@ -30,6 +32,8 @@ Device::Device() :
 }
 
 Device::Device(JsonView jsonValue) : 
+    m_brand(DeviceBrand::NOT_SET),
+    m_brandHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_deviceIdHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
@@ -43,6 +47,13 @@ Device::Device(JsonView jsonValue) :
 
 Device& Device::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Brand"))
+  {
+    m_brand = DeviceBrandMapper::GetDeviceBrandForName(jsonValue.GetString("Brand"));
+
+    m_brandHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
@@ -91,6 +102,11 @@ Device& Device::operator =(JsonView jsonValue)
 JsonValue Device::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_brandHasBeenSet)
+  {
+   payload.WithString("Brand", DeviceBrandMapper::GetNameForDeviceBrand(m_brand));
+  }
 
   if(m_createdTimeHasBeenSet)
   {

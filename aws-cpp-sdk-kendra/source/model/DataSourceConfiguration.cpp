@@ -30,7 +30,8 @@ DataSourceConfiguration::DataSourceConfiguration() :
     m_webCrawlerConfigurationHasBeenSet(false),
     m_workDocsConfigurationHasBeenSet(false),
     m_fsxConfigurationHasBeenSet(false),
-    m_slackConfigurationHasBeenSet(false)
+    m_slackConfigurationHasBeenSet(false),
+    m_boxConfigurationHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue) :
     m_webCrawlerConfigurationHasBeenSet(false),
     m_workDocsConfigurationHasBeenSet(false),
     m_fsxConfigurationHasBeenSet(false),
-    m_slackConfigurationHasBeenSet(false)
+    m_slackConfigurationHasBeenSet(false),
+    m_boxConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -137,6 +139,13 @@ DataSourceConfiguration& DataSourceConfiguration::operator =(JsonView jsonValue)
     m_slackConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BoxConfiguration"))
+  {
+    m_boxConfiguration = jsonValue.GetObject("BoxConfiguration");
+
+    m_boxConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -213,6 +222,12 @@ JsonValue DataSourceConfiguration::Jsonize() const
   if(m_slackConfigurationHasBeenSet)
   {
    payload.WithObject("SlackConfiguration", m_slackConfiguration.Jsonize());
+
+  }
+
+  if(m_boxConfigurationHasBeenSet)
+  {
+   payload.WithObject("BoxConfiguration", m_boxConfiguration.Jsonize());
 
   }
 

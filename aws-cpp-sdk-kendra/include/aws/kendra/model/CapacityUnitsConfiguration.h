@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies capacity units configured for your enterprise edition index. You
-   * can add and remove capacity units to tune an index to your
+   * <p>Specifies additional capacity units configured for your Enterprise Edition
+   * index. You can add and remove capacity units to fit your usage
    * requirements.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CapacityUnitsConfiguration">AWS
    * API Reference</a></p>

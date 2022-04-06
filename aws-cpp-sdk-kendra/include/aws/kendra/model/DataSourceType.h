@@ -28,7 +28,8 @@ namespace Model
     WEBCRAWLER,
     WORKDOCS,
     FSX,
-    SLACK
+    SLACK,
+    BOX
   };
 
 namespace DataSourceTypeMapper
