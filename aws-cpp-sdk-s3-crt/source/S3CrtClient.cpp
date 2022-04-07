@@ -200,7 +200,7 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config, const Aws::Auth
 
   // initialize aws_s3_client;
   aws_s3_client_config s3CrtConfig;
-  memset(&s3CrtConfig, 0, sizeof(s3CrtConfig));
+  AWS_ZERO_STRUCT(s3CrtConfig);
   s3CrtConfig.region = Aws::Crt::ByteCursorFromCString(config.region.c_str());
   Aws::Crt::Io::ClientBootstrap* clientBootstrap = config.clientBootstrap ? config.clientBootstrap.get() : Aws::GetDefaultClientBootstrap();
   s3CrtConfig.client_bootstrap = clientBootstrap->GetUnderlyingHandle();
@@ -230,7 +230,7 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config, const Aws::Auth
 
   Aws::Crt::Io::TlsConnectionOptions* tlsConnectionOptions = config.tlsConnectionOptions ? config.tlsConnectionOptions.get() : Aws::GetDefaultTlsConnectionOptions();
   aws_tls_connection_options tlsOptions;
-  memset(&tlsOptions, 0, sizeof(tlsOptions));
+  AWS_ZERO_STRUCT(tlsOptions);
   if (tlsConnectionOptions)
   {
     aws_tls_connection_options_copy(&tlsOptions, tlsConnectionOptions->GetUnderlyingHandle());
