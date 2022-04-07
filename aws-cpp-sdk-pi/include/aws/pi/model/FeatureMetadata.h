@@ -41,85 +41,85 @@ namespace Model
 
     /**
      * <p>The status of the feature on the DB instance. Possible values include the
-     * following: </p> <ul> <li> <p> <code>ENABLED</code>: the feature is enabled on
-     * the instance.</p> </li> <li> <p> <code>DISABLED</code>: the feature is disabled
-     * on the instance.</p> </li> <li> <p> <code>UNSUPPORTED</code>: the feature isn't
+     * following:</p> <ul> <li> <p> <code>ENABLED</code> - The feature is enabled on
+     * the instance.</p> </li> <li> <p> <code>DISABLED</code> - The feature is disabled
+     * on the instance.</p> </li> <li> <p> <code>UNSUPPORTED</code> - The feature isn't
      * supported on the instance.</p> </li> <li> <p>
-     * <code>ENABLED_PENDING_REBOOT</code>: the feature is enabled on the instance but
+     * <code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but
      * requires a reboot to take effect.</p> </li> <li> <p>
-     * <code>DISABLED_PENDING_REBOOT</code>: the feature is disabled on the instance
-     * but requires a reboot to take effect.</p> </li> <li> <p> <code>UNKNOWN</code>:
-     * the feature status couldn't be determined.</p> </li> </ul>
+     * <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance
+     * but requires a reboot to take effect.</p> </li> <li> <p> <code>UNKNOWN</code> -
+     * The feature status couldn't be determined.</p> </li> </ul>
      */
     inline const FeatureStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the feature on the DB instance. Possible values include the
-     * following: </p> <ul> <li> <p> <code>ENABLED</code>: the feature is enabled on
-     * the instance.</p> </li> <li> <p> <code>DISABLED</code>: the feature is disabled
-     * on the instance.</p> </li> <li> <p> <code>UNSUPPORTED</code>: the feature isn't
+     * following:</p> <ul> <li> <p> <code>ENABLED</code> - The feature is enabled on
+     * the instance.</p> </li> <li> <p> <code>DISABLED</code> - The feature is disabled
+     * on the instance.</p> </li> <li> <p> <code>UNSUPPORTED</code> - The feature isn't
      * supported on the instance.</p> </li> <li> <p>
-     * <code>ENABLED_PENDING_REBOOT</code>: the feature is enabled on the instance but
+     * <code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but
      * requires a reboot to take effect.</p> </li> <li> <p>
-     * <code>DISABLED_PENDING_REBOOT</code>: the feature is disabled on the instance
-     * but requires a reboot to take effect.</p> </li> <li> <p> <code>UNKNOWN</code>:
-     * the feature status couldn't be determined.</p> </li> </ul>
+     * <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance
+     * but requires a reboot to take effect.</p> </li> <li> <p> <code>UNKNOWN</code> -
+     * The feature status couldn't be determined.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the feature on the DB instance. Possible values include the
-     * following: </p> <ul> <li> <p> <code>ENABLED</code>: the feature is enabled on
-     * the instance.</p> </li> <li> <p> <code>DISABLED</code>: the feature is disabled
-     * on the instance.</p> </li> <li> <p> <code>UNSUPPORTED</code>: the feature isn't
+     * following:</p> <ul> <li> <p> <code>ENABLED</code> - The feature is enabled on
+     * the instance.</p> </li> <li> <p> <code>DISABLED</code> - The feature is disabled
+     * on the instance.</p> </li> <li> <p> <code>UNSUPPORTED</code> - The feature isn't
      * supported on the instance.</p> </li> <li> <p>
-     * <code>ENABLED_PENDING_REBOOT</code>: the feature is enabled on the instance but
+     * <code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but
      * requires a reboot to take effect.</p> </li> <li> <p>
-     * <code>DISABLED_PENDING_REBOOT</code>: the feature is disabled on the instance
-     * but requires a reboot to take effect.</p> </li> <li> <p> <code>UNKNOWN</code>:
-     * the feature status couldn't be determined.</p> </li> </ul>
+     * <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance
+     * but requires a reboot to take effect.</p> </li> <li> <p> <code>UNKNOWN</code> -
+     * The feature status couldn't be determined.</p> </li> </ul>
      */
     inline void SetStatus(const FeatureStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the feature on the DB instance. Possible values include the
-     * following: </p> <ul> <li> <p> <code>ENABLED</code>: the feature is enabled on
-     * the instance.</p> </li> <li> <p> <code>DISABLED</code>: the feature is disabled
-     * on the instance.</p> </li> <li> <p> <code>UNSUPPORTED</code>: the feature isn't
+     * following:</p> <ul> <li> <p> <code>ENABLED</code> - The feature is enabled on
+     * the instance.</p> </li> <li> <p> <code>DISABLED</code> - The feature is disabled
+     * on the instance.</p> </li> <li> <p> <code>UNSUPPORTED</code> - The feature isn't
      * supported on the instance.</p> </li> <li> <p>
-     * <code>ENABLED_PENDING_REBOOT</code>: the feature is enabled on the instance but
+     * <code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but
      * requires a reboot to take effect.</p> </li> <li> <p>
-     * <code>DISABLED_PENDING_REBOOT</code>: the feature is disabled on the instance
-     * but requires a reboot to take effect.</p> </li> <li> <p> <code>UNKNOWN</code>:
-     * the feature status couldn't be determined.</p> </li> </ul>
+     * <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance
+     * but requires a reboot to take effect.</p> </li> <li> <p> <code>UNKNOWN</code> -
+     * The feature status couldn't be determined.</p> </li> </ul>
      */
     inline void SetStatus(FeatureStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the feature on the DB instance. Possible values include the
-     * following: </p> <ul> <li> <p> <code>ENABLED</code>: the feature is enabled on
-     * the instance.</p> </li> <li> <p> <code>DISABLED</code>: the feature is disabled
-     * on the instance.</p> </li> <li> <p> <code>UNSUPPORTED</code>: the feature isn't
+     * following:</p> <ul> <li> <p> <code>ENABLED</code> - The feature is enabled on
+     * the instance.</p> </li> <li> <p> <code>DISABLED</code> - The feature is disabled
+     * on the instance.</p> </li> <li> <p> <code>UNSUPPORTED</code> - The feature isn't
      * supported on the instance.</p> </li> <li> <p>
-     * <code>ENABLED_PENDING_REBOOT</code>: the feature is enabled on the instance but
+     * <code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but
      * requires a reboot to take effect.</p> </li> <li> <p>
-     * <code>DISABLED_PENDING_REBOOT</code>: the feature is disabled on the instance
-     * but requires a reboot to take effect.</p> </li> <li> <p> <code>UNKNOWN</code>:
-     * the feature status couldn't be determined.</p> </li> </ul>
+     * <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance
+     * but requires a reboot to take effect.</p> </li> <li> <p> <code>UNKNOWN</code> -
+     * The feature status couldn't be determined.</p> </li> </ul>
      */
     inline FeatureMetadata& WithStatus(const FeatureStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the feature on the DB instance. Possible values include the
-     * following: </p> <ul> <li> <p> <code>ENABLED</code>: the feature is enabled on
-     * the instance.</p> </li> <li> <p> <code>DISABLED</code>: the feature is disabled
-     * on the instance.</p> </li> <li> <p> <code>UNSUPPORTED</code>: the feature isn't
+     * following:</p> <ul> <li> <p> <code>ENABLED</code> - The feature is enabled on
+     * the instance.</p> </li> <li> <p> <code>DISABLED</code> - The feature is disabled
+     * on the instance.</p> </li> <li> <p> <code>UNSUPPORTED</code> - The feature isn't
      * supported on the instance.</p> </li> <li> <p>
-     * <code>ENABLED_PENDING_REBOOT</code>: the feature is enabled on the instance but
+     * <code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but
      * requires a reboot to take effect.</p> </li> <li> <p>
-     * <code>DISABLED_PENDING_REBOOT</code>: the feature is disabled on the instance
-     * but requires a reboot to take effect.</p> </li> <li> <p> <code>UNKNOWN</code>:
-     * the feature status couldn't be determined.</p> </li> </ul>
+     * <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance
+     * but requires a reboot to take effect.</p> </li> <li> <p> <code>UNKNOWN</code> -
+     * The feature status couldn't be determined.</p> </li> </ul>
      */
     inline FeatureMetadata& WithStatus(FeatureStatus&& value) { SetStatus(std::move(value)); return *this;}
 

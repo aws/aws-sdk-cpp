@@ -40,107 +40,139 @@ namespace Model
 
 
     /**
-     * <p>The value of the dimension detail data. For the <code>db.sql.statement</code>
-     * dimension, this value is either the full or truncated SQL query, depending on
-     * the return status.</p>
+     * <p>The value of the dimension detail data. Depending on the return status, this
+     * value is either the full or truncated SQL query for the following
+     * dimensions:</p> <ul> <li> <p> <code>db.query.statement</code> (Amazon
+     * DocumentDB)</p> </li> <li> <p> <code>db.sql.statement</code> (Amazon RDS and
+     * Aurora)</p> </li> </ul>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The value of the dimension detail data. For the <code>db.sql.statement</code>
-     * dimension, this value is either the full or truncated SQL query, depending on
-     * the return status.</p>
+     * <p>The value of the dimension detail data. Depending on the return status, this
+     * value is either the full or truncated SQL query for the following
+     * dimensions:</p> <ul> <li> <p> <code>db.query.statement</code> (Amazon
+     * DocumentDB)</p> </li> <li> <p> <code>db.sql.statement</code> (Amazon RDS and
+     * Aurora)</p> </li> </ul>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The value of the dimension detail data. For the <code>db.sql.statement</code>
-     * dimension, this value is either the full or truncated SQL query, depending on
-     * the return status.</p>
+     * <p>The value of the dimension detail data. Depending on the return status, this
+     * value is either the full or truncated SQL query for the following
+     * dimensions:</p> <ul> <li> <p> <code>db.query.statement</code> (Amazon
+     * DocumentDB)</p> </li> <li> <p> <code>db.sql.statement</code> (Amazon RDS and
+     * Aurora)</p> </li> </ul>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The value of the dimension detail data. For the <code>db.sql.statement</code>
-     * dimension, this value is either the full or truncated SQL query, depending on
-     * the return status.</p>
+     * <p>The value of the dimension detail data. Depending on the return status, this
+     * value is either the full or truncated SQL query for the following
+     * dimensions:</p> <ul> <li> <p> <code>db.query.statement</code> (Amazon
+     * DocumentDB)</p> </li> <li> <p> <code>db.sql.statement</code> (Amazon RDS and
+     * Aurora)</p> </li> </ul>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The value of the dimension detail data. For the <code>db.sql.statement</code>
-     * dimension, this value is either the full or truncated SQL query, depending on
-     * the return status.</p>
+     * <p>The value of the dimension detail data. Depending on the return status, this
+     * value is either the full or truncated SQL query for the following
+     * dimensions:</p> <ul> <li> <p> <code>db.query.statement</code> (Amazon
+     * DocumentDB)</p> </li> <li> <p> <code>db.sql.statement</code> (Amazon RDS and
+     * Aurora)</p> </li> </ul>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The value of the dimension detail data. For the <code>db.sql.statement</code>
-     * dimension, this value is either the full or truncated SQL query, depending on
-     * the return status.</p>
+     * <p>The value of the dimension detail data. Depending on the return status, this
+     * value is either the full or truncated SQL query for the following
+     * dimensions:</p> <ul> <li> <p> <code>db.query.statement</code> (Amazon
+     * DocumentDB)</p> </li> <li> <p> <code>db.sql.statement</code> (Amazon RDS and
+     * Aurora)</p> </li> </ul>
      */
     inline DimensionKeyDetail& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The value of the dimension detail data. For the <code>db.sql.statement</code>
-     * dimension, this value is either the full or truncated SQL query, depending on
-     * the return status.</p>
+     * <p>The value of the dimension detail data. Depending on the return status, this
+     * value is either the full or truncated SQL query for the following
+     * dimensions:</p> <ul> <li> <p> <code>db.query.statement</code> (Amazon
+     * DocumentDB)</p> </li> <li> <p> <code>db.sql.statement</code> (Amazon RDS and
+     * Aurora)</p> </li> </ul>
      */
     inline DimensionKeyDetail& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The value of the dimension detail data. For the <code>db.sql.statement</code>
-     * dimension, this value is either the full or truncated SQL query, depending on
-     * the return status.</p>
+     * <p>The value of the dimension detail data. Depending on the return status, this
+     * value is either the full or truncated SQL query for the following
+     * dimensions:</p> <ul> <li> <p> <code>db.query.statement</code> (Amazon
+     * DocumentDB)</p> </li> <li> <p> <code>db.sql.statement</code> (Amazon RDS and
+     * Aurora)</p> </li> </ul>
      */
     inline DimensionKeyDetail& WithValue(const char* value) { SetValue(value); return *this;}
 
 
     /**
      * <p>The full name of the dimension. The full name includes the group name and key
-     * name. The only valid value is <code>db.sql.statement</code>. </p>
+     * name. The following values are valid:</p> <ul> <li> <p>
+     * <code>db.query.statement</code> (Amazon DocumentDB)</p> </li> <li> <p>
+     * <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li> </ul>
      */
     inline const Aws::String& GetDimension() const{ return m_dimension; }
 
     /**
      * <p>The full name of the dimension. The full name includes the group name and key
-     * name. The only valid value is <code>db.sql.statement</code>. </p>
+     * name. The following values are valid:</p> <ul> <li> <p>
+     * <code>db.query.statement</code> (Amazon DocumentDB)</p> </li> <li> <p>
+     * <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li> </ul>
      */
     inline bool DimensionHasBeenSet() const { return m_dimensionHasBeenSet; }
 
     /**
      * <p>The full name of the dimension. The full name includes the group name and key
-     * name. The only valid value is <code>db.sql.statement</code>. </p>
+     * name. The following values are valid:</p> <ul> <li> <p>
+     * <code>db.query.statement</code> (Amazon DocumentDB)</p> </li> <li> <p>
+     * <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li> </ul>
      */
     inline void SetDimension(const Aws::String& value) { m_dimensionHasBeenSet = true; m_dimension = value; }
 
     /**
      * <p>The full name of the dimension. The full name includes the group name and key
-     * name. The only valid value is <code>db.sql.statement</code>. </p>
+     * name. The following values are valid:</p> <ul> <li> <p>
+     * <code>db.query.statement</code> (Amazon DocumentDB)</p> </li> <li> <p>
+     * <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li> </ul>
      */
     inline void SetDimension(Aws::String&& value) { m_dimensionHasBeenSet = true; m_dimension = std::move(value); }
 
     /**
      * <p>The full name of the dimension. The full name includes the group name and key
-     * name. The only valid value is <code>db.sql.statement</code>. </p>
+     * name. The following values are valid:</p> <ul> <li> <p>
+     * <code>db.query.statement</code> (Amazon DocumentDB)</p> </li> <li> <p>
+     * <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li> </ul>
      */
     inline void SetDimension(const char* value) { m_dimensionHasBeenSet = true; m_dimension.assign(value); }
 
     /**
      * <p>The full name of the dimension. The full name includes the group name and key
-     * name. The only valid value is <code>db.sql.statement</code>. </p>
+     * name. The following values are valid:</p> <ul> <li> <p>
+     * <code>db.query.statement</code> (Amazon DocumentDB)</p> </li> <li> <p>
+     * <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li> </ul>
      */
     inline DimensionKeyDetail& WithDimension(const Aws::String& value) { SetDimension(value); return *this;}
 
     /**
      * <p>The full name of the dimension. The full name includes the group name and key
-     * name. The only valid value is <code>db.sql.statement</code>. </p>
+     * name. The following values are valid:</p> <ul> <li> <p>
+     * <code>db.query.statement</code> (Amazon DocumentDB)</p> </li> <li> <p>
+     * <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li> </ul>
      */
     inline DimensionKeyDetail& WithDimension(Aws::String&& value) { SetDimension(std::move(value)); return *this;}
 
     /**
      * <p>The full name of the dimension. The full name includes the group name and key
-     * name. The only valid value is <code>db.sql.statement</code>. </p>
+     * name. The following values are valid:</p> <ul> <li> <p>
+     * <code>db.query.statement</code> (Amazon DocumentDB)</p> </li> <li> <p>
+     * <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li> </ul>
      */
     inline DimensionKeyDetail& WithDimension(const char* value) { SetDimension(value); return *this;}
 
@@ -150,10 +182,10 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>AVAILABLE</code> - The dimension detail data
      * is ready to be retrieved.</p> </li> <li> <p> <code>PROCESSING</code> - The
      * dimension detail data isn't ready to be retrieved because more processing time
-     * is required. If the requested detail data for <code>db.sql.statement</code> has
-     * the status <code>PROCESSING</code>, Performance Insights returns the truncated
-     * query.</p> </li> <li> <p> <code>UNAVAILABLE</code> - The dimension detail data
-     * could not be collected successfully.</p> </li> </ul>
+     * is required. If the requested detail data has the status
+     * <code>PROCESSING</code>, Performance Insights returns the truncated query.</p>
+     * </li> <li> <p> <code>UNAVAILABLE</code> - The dimension detail data could not be
+     * collected successfully.</p> </li> </ul>
      */
     inline const DetailStatus& GetStatus() const{ return m_status; }
 
@@ -162,10 +194,10 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>AVAILABLE</code> - The dimension detail data
      * is ready to be retrieved.</p> </li> <li> <p> <code>PROCESSING</code> - The
      * dimension detail data isn't ready to be retrieved because more processing time
-     * is required. If the requested detail data for <code>db.sql.statement</code> has
-     * the status <code>PROCESSING</code>, Performance Insights returns the truncated
-     * query.</p> </li> <li> <p> <code>UNAVAILABLE</code> - The dimension detail data
-     * could not be collected successfully.</p> </li> </ul>
+     * is required. If the requested detail data has the status
+     * <code>PROCESSING</code>, Performance Insights returns the truncated query.</p>
+     * </li> <li> <p> <code>UNAVAILABLE</code> - The dimension detail data could not be
+     * collected successfully.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -174,10 +206,10 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>AVAILABLE</code> - The dimension detail data
      * is ready to be retrieved.</p> </li> <li> <p> <code>PROCESSING</code> - The
      * dimension detail data isn't ready to be retrieved because more processing time
-     * is required. If the requested detail data for <code>db.sql.statement</code> has
-     * the status <code>PROCESSING</code>, Performance Insights returns the truncated
-     * query.</p> </li> <li> <p> <code>UNAVAILABLE</code> - The dimension detail data
-     * could not be collected successfully.</p> </li> </ul>
+     * is required. If the requested detail data has the status
+     * <code>PROCESSING</code>, Performance Insights returns the truncated query.</p>
+     * </li> <li> <p> <code>UNAVAILABLE</code> - The dimension detail data could not be
+     * collected successfully.</p> </li> </ul>
      */
     inline void SetStatus(const DetailStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -186,10 +218,10 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>AVAILABLE</code> - The dimension detail data
      * is ready to be retrieved.</p> </li> <li> <p> <code>PROCESSING</code> - The
      * dimension detail data isn't ready to be retrieved because more processing time
-     * is required. If the requested detail data for <code>db.sql.statement</code> has
-     * the status <code>PROCESSING</code>, Performance Insights returns the truncated
-     * query.</p> </li> <li> <p> <code>UNAVAILABLE</code> - The dimension detail data
-     * could not be collected successfully.</p> </li> </ul>
+     * is required. If the requested detail data has the status
+     * <code>PROCESSING</code>, Performance Insights returns the truncated query.</p>
+     * </li> <li> <p> <code>UNAVAILABLE</code> - The dimension detail data could not be
+     * collected successfully.</p> </li> </ul>
      */
     inline void SetStatus(DetailStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -198,10 +230,10 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>AVAILABLE</code> - The dimension detail data
      * is ready to be retrieved.</p> </li> <li> <p> <code>PROCESSING</code> - The
      * dimension detail data isn't ready to be retrieved because more processing time
-     * is required. If the requested detail data for <code>db.sql.statement</code> has
-     * the status <code>PROCESSING</code>, Performance Insights returns the truncated
-     * query.</p> </li> <li> <p> <code>UNAVAILABLE</code> - The dimension detail data
-     * could not be collected successfully.</p> </li> </ul>
+     * is required. If the requested detail data has the status
+     * <code>PROCESSING</code>, Performance Insights returns the truncated query.</p>
+     * </li> <li> <p> <code>UNAVAILABLE</code> - The dimension detail data could not be
+     * collected successfully.</p> </li> </ul>
      */
     inline DimensionKeyDetail& WithStatus(const DetailStatus& value) { SetStatus(value); return *this;}
 
@@ -210,10 +242,10 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>AVAILABLE</code> - The dimension detail data
      * is ready to be retrieved.</p> </li> <li> <p> <code>PROCESSING</code> - The
      * dimension detail data isn't ready to be retrieved because more processing time
-     * is required. If the requested detail data for <code>db.sql.statement</code> has
-     * the status <code>PROCESSING</code>, Performance Insights returns the truncated
-     * query.</p> </li> <li> <p> <code>UNAVAILABLE</code> - The dimension detail data
-     * could not be collected successfully.</p> </li> </ul>
+     * is required. If the requested detail data has the status
+     * <code>PROCESSING</code>, Performance Insights returns the truncated query.</p>
+     * </li> <li> <p> <code>UNAVAILABLE</code> - The dimension detail data could not be
+     * collected successfully.</p> </li> </ul>
      */
     inline DimensionKeyDetail& WithStatus(DetailStatus&& value) { SetStatus(std::move(value)); return *this;}
 

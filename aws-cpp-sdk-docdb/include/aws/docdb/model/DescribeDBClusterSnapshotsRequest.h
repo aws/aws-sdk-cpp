@@ -199,11 +199,12 @@ namespace Model
     /**
      * <p>The type of cluster snapshots to be returned. You can specify one of the
      * following values:</p> <ul> <li> <p> <code>automated</code> - Return all cluster
-     * snapshots that Amazon DocumentDB has automatically created for your account.</p>
-     * </li> <li> <p> <code>manual</code> - Return all cluster snapshots that you have
-     * manually created for your account.</p> </li> <li> <p> <code>shared</code> -
-     * Return all manual cluster snapshots that have been shared to your account.</p>
-     * </li> <li> <p> <code>public</code> - Return all cluster snapshots that have been
+     * snapshots that Amazon DocumentDB has automatically created for your Amazon Web
+     * Services account.</p> </li> <li> <p> <code>manual</code> - Return all cluster
+     * snapshots that you have manually created for your Amazon Web Services
+     * account.</p> </li> <li> <p> <code>shared</code> - Return all manual cluster
+     * snapshots that have been shared to your Amazon Web Services account.</p> </li>
+     * <li> <p> <code>public</code> - Return all cluster snapshots that have been
      * marked as public.</p> </li> </ul> <p>If you don't specify a
      * <code>SnapshotType</code> value, then both automated and manual cluster
      * snapshots are returned. You can include shared cluster snapshots with these
@@ -222,11 +223,12 @@ namespace Model
     /**
      * <p>The type of cluster snapshots to be returned. You can specify one of the
      * following values:</p> <ul> <li> <p> <code>automated</code> - Return all cluster
-     * snapshots that Amazon DocumentDB has automatically created for your account.</p>
-     * </li> <li> <p> <code>manual</code> - Return all cluster snapshots that you have
-     * manually created for your account.</p> </li> <li> <p> <code>shared</code> -
-     * Return all manual cluster snapshots that have been shared to your account.</p>
-     * </li> <li> <p> <code>public</code> - Return all cluster snapshots that have been
+     * snapshots that Amazon DocumentDB has automatically created for your Amazon Web
+     * Services account.</p> </li> <li> <p> <code>manual</code> - Return all cluster
+     * snapshots that you have manually created for your Amazon Web Services
+     * account.</p> </li> <li> <p> <code>shared</code> - Return all manual cluster
+     * snapshots that have been shared to your Amazon Web Services account.</p> </li>
+     * <li> <p> <code>public</code> - Return all cluster snapshots that have been
      * marked as public.</p> </li> </ul> <p>If you don't specify a
      * <code>SnapshotType</code> value, then both automated and manual cluster
      * snapshots are returned. You can include shared cluster snapshots with these
@@ -245,11 +247,12 @@ namespace Model
     /**
      * <p>The type of cluster snapshots to be returned. You can specify one of the
      * following values:</p> <ul> <li> <p> <code>automated</code> - Return all cluster
-     * snapshots that Amazon DocumentDB has automatically created for your account.</p>
-     * </li> <li> <p> <code>manual</code> - Return all cluster snapshots that you have
-     * manually created for your account.</p> </li> <li> <p> <code>shared</code> -
-     * Return all manual cluster snapshots that have been shared to your account.</p>
-     * </li> <li> <p> <code>public</code> - Return all cluster snapshots that have been
+     * snapshots that Amazon DocumentDB has automatically created for your Amazon Web
+     * Services account.</p> </li> <li> <p> <code>manual</code> - Return all cluster
+     * snapshots that you have manually created for your Amazon Web Services
+     * account.</p> </li> <li> <p> <code>shared</code> - Return all manual cluster
+     * snapshots that have been shared to your Amazon Web Services account.</p> </li>
+     * <li> <p> <code>public</code> - Return all cluster snapshots that have been
      * marked as public.</p> </li> </ul> <p>If you don't specify a
      * <code>SnapshotType</code> value, then both automated and manual cluster
      * snapshots are returned. You can include shared cluster snapshots with these
@@ -268,11 +271,12 @@ namespace Model
     /**
      * <p>The type of cluster snapshots to be returned. You can specify one of the
      * following values:</p> <ul> <li> <p> <code>automated</code> - Return all cluster
-     * snapshots that Amazon DocumentDB has automatically created for your account.</p>
-     * </li> <li> <p> <code>manual</code> - Return all cluster snapshots that you have
-     * manually created for your account.</p> </li> <li> <p> <code>shared</code> -
-     * Return all manual cluster snapshots that have been shared to your account.</p>
-     * </li> <li> <p> <code>public</code> - Return all cluster snapshots that have been
+     * snapshots that Amazon DocumentDB has automatically created for your Amazon Web
+     * Services account.</p> </li> <li> <p> <code>manual</code> - Return all cluster
+     * snapshots that you have manually created for your Amazon Web Services
+     * account.</p> </li> <li> <p> <code>shared</code> - Return all manual cluster
+     * snapshots that have been shared to your Amazon Web Services account.</p> </li>
+     * <li> <p> <code>public</code> - Return all cluster snapshots that have been
      * marked as public.</p> </li> </ul> <p>If you don't specify a
      * <code>SnapshotType</code> value, then both automated and manual cluster
      * snapshots are returned. You can include shared cluster snapshots with these
@@ -291,11 +295,12 @@ namespace Model
     /**
      * <p>The type of cluster snapshots to be returned. You can specify one of the
      * following values:</p> <ul> <li> <p> <code>automated</code> - Return all cluster
-     * snapshots that Amazon DocumentDB has automatically created for your account.</p>
-     * </li> <li> <p> <code>manual</code> - Return all cluster snapshots that you have
-     * manually created for your account.</p> </li> <li> <p> <code>shared</code> -
-     * Return all manual cluster snapshots that have been shared to your account.</p>
-     * </li> <li> <p> <code>public</code> - Return all cluster snapshots that have been
+     * snapshots that Amazon DocumentDB has automatically created for your Amazon Web
+     * Services account.</p> </li> <li> <p> <code>manual</code> - Return all cluster
+     * snapshots that you have manually created for your Amazon Web Services
+     * account.</p> </li> <li> <p> <code>shared</code> - Return all manual cluster
+     * snapshots that have been shared to your Amazon Web Services account.</p> </li>
+     * <li> <p> <code>public</code> - Return all cluster snapshots that have been
      * marked as public.</p> </li> </ul> <p>If you don't specify a
      * <code>SnapshotType</code> value, then both automated and manual cluster
      * snapshots are returned. You can include shared cluster snapshots with these
@@ -314,11 +319,12 @@ namespace Model
     /**
      * <p>The type of cluster snapshots to be returned. You can specify one of the
      * following values:</p> <ul> <li> <p> <code>automated</code> - Return all cluster
-     * snapshots that Amazon DocumentDB has automatically created for your account.</p>
-     * </li> <li> <p> <code>manual</code> - Return all cluster snapshots that you have
-     * manually created for your account.</p> </li> <li> <p> <code>shared</code> -
-     * Return all manual cluster snapshots that have been shared to your account.</p>
-     * </li> <li> <p> <code>public</code> - Return all cluster snapshots that have been
+     * snapshots that Amazon DocumentDB has automatically created for your Amazon Web
+     * Services account.</p> </li> <li> <p> <code>manual</code> - Return all cluster
+     * snapshots that you have manually created for your Amazon Web Services
+     * account.</p> </li> <li> <p> <code>shared</code> - Return all manual cluster
+     * snapshots that have been shared to your Amazon Web Services account.</p> </li>
+     * <li> <p> <code>public</code> - Return all cluster snapshots that have been
      * marked as public.</p> </li> </ul> <p>If you don't specify a
      * <code>SnapshotType</code> value, then both automated and manual cluster
      * snapshots are returned. You can include shared cluster snapshots with these
@@ -337,11 +343,12 @@ namespace Model
     /**
      * <p>The type of cluster snapshots to be returned. You can specify one of the
      * following values:</p> <ul> <li> <p> <code>automated</code> - Return all cluster
-     * snapshots that Amazon DocumentDB has automatically created for your account.</p>
-     * </li> <li> <p> <code>manual</code> - Return all cluster snapshots that you have
-     * manually created for your account.</p> </li> <li> <p> <code>shared</code> -
-     * Return all manual cluster snapshots that have been shared to your account.</p>
-     * </li> <li> <p> <code>public</code> - Return all cluster snapshots that have been
+     * snapshots that Amazon DocumentDB has automatically created for your Amazon Web
+     * Services account.</p> </li> <li> <p> <code>manual</code> - Return all cluster
+     * snapshots that you have manually created for your Amazon Web Services
+     * account.</p> </li> <li> <p> <code>shared</code> - Return all manual cluster
+     * snapshots that have been shared to your Amazon Web Services account.</p> </li>
+     * <li> <p> <code>public</code> - Return all cluster snapshots that have been
      * marked as public.</p> </li> </ul> <p>If you don't specify a
      * <code>SnapshotType</code> value, then both automated and manual cluster
      * snapshots are returned. You can include shared cluster snapshots with these
@@ -360,11 +367,12 @@ namespace Model
     /**
      * <p>The type of cluster snapshots to be returned. You can specify one of the
      * following values:</p> <ul> <li> <p> <code>automated</code> - Return all cluster
-     * snapshots that Amazon DocumentDB has automatically created for your account.</p>
-     * </li> <li> <p> <code>manual</code> - Return all cluster snapshots that you have
-     * manually created for your account.</p> </li> <li> <p> <code>shared</code> -
-     * Return all manual cluster snapshots that have been shared to your account.</p>
-     * </li> <li> <p> <code>public</code> - Return all cluster snapshots that have been
+     * snapshots that Amazon DocumentDB has automatically created for your Amazon Web
+     * Services account.</p> </li> <li> <p> <code>manual</code> - Return all cluster
+     * snapshots that you have manually created for your Amazon Web Services
+     * account.</p> </li> <li> <p> <code>shared</code> - Return all manual cluster
+     * snapshots that have been shared to your Amazon Web Services account.</p> </li>
+     * <li> <p> <code>public</code> - Return all cluster snapshots that have been
      * marked as public.</p> </li> </ul> <p>If you don't specify a
      * <code>SnapshotType</code> value, then both automated and manual cluster
      * snapshots are returned. You can include shared cluster snapshots with these
@@ -514,58 +522,62 @@ namespace Model
 
     /**
      * <p>Set to <code>true</code> to include shared manual cluster snapshots from
-     * other accounts that this account has been given permission to copy or restore,
-     * and otherwise <code>false</code>. The default is <code>false</code>.</p>
+     * other Amazon Web Services accounts that this Amazon Web Services account has
+     * been given permission to copy or restore, and otherwise <code>false</code>. The
+     * default is <code>false</code>.</p>
      */
     inline bool GetIncludeShared() const{ return m_includeShared; }
 
     /**
      * <p>Set to <code>true</code> to include shared manual cluster snapshots from
-     * other accounts that this account has been given permission to copy or restore,
-     * and otherwise <code>false</code>. The default is <code>false</code>.</p>
+     * other Amazon Web Services accounts that this Amazon Web Services account has
+     * been given permission to copy or restore, and otherwise <code>false</code>. The
+     * default is <code>false</code>.</p>
      */
     inline bool IncludeSharedHasBeenSet() const { return m_includeSharedHasBeenSet; }
 
     /**
      * <p>Set to <code>true</code> to include shared manual cluster snapshots from
-     * other accounts that this account has been given permission to copy or restore,
-     * and otherwise <code>false</code>. The default is <code>false</code>.</p>
+     * other Amazon Web Services accounts that this Amazon Web Services account has
+     * been given permission to copy or restore, and otherwise <code>false</code>. The
+     * default is <code>false</code>.</p>
      */
     inline void SetIncludeShared(bool value) { m_includeSharedHasBeenSet = true; m_includeShared = value; }
 
     /**
      * <p>Set to <code>true</code> to include shared manual cluster snapshots from
-     * other accounts that this account has been given permission to copy or restore,
-     * and otherwise <code>false</code>. The default is <code>false</code>.</p>
+     * other Amazon Web Services accounts that this Amazon Web Services account has
+     * been given permission to copy or restore, and otherwise <code>false</code>. The
+     * default is <code>false</code>.</p>
      */
     inline DescribeDBClusterSnapshotsRequest& WithIncludeShared(bool value) { SetIncludeShared(value); return *this;}
 
 
     /**
      * <p>Set to <code>true</code> to include manual cluster snapshots that are public
-     * and can be copied or restored by any account, and otherwise <code>false</code>.
-     * The default is <code>false</code>.</p>
+     * and can be copied or restored by any Amazon Web Services account, and otherwise
+     * <code>false</code>. The default is <code>false</code>.</p>
      */
     inline bool GetIncludePublic() const{ return m_includePublic; }
 
     /**
      * <p>Set to <code>true</code> to include manual cluster snapshots that are public
-     * and can be copied or restored by any account, and otherwise <code>false</code>.
-     * The default is <code>false</code>.</p>
+     * and can be copied or restored by any Amazon Web Services account, and otherwise
+     * <code>false</code>. The default is <code>false</code>.</p>
      */
     inline bool IncludePublicHasBeenSet() const { return m_includePublicHasBeenSet; }
 
     /**
      * <p>Set to <code>true</code> to include manual cluster snapshots that are public
-     * and can be copied or restored by any account, and otherwise <code>false</code>.
-     * The default is <code>false</code>.</p>
+     * and can be copied or restored by any Amazon Web Services account, and otherwise
+     * <code>false</code>. The default is <code>false</code>.</p>
      */
     inline void SetIncludePublic(bool value) { m_includePublicHasBeenSet = true; m_includePublic = value; }
 
     /**
      * <p>Set to <code>true</code> to include manual cluster snapshots that are public
-     * and can be copied or restored by any account, and otherwise <code>false</code>.
-     * The default is <code>false</code>.</p>
+     * and can be copied or restored by any Amazon Web Services account, and otherwise
+     * <code>false</code>. The default is <code>false</code>.</p>
      */
     inline DescribeDBClusterSnapshotsRequest& WithIncludePublic(bool value) { SetIncludePublic(value); return *this;}
 

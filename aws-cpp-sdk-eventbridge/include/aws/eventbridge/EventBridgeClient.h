@@ -15,15 +15,18 @@
 #include <aws/eventbridge/model/CreateApiDestinationResult.h>
 #include <aws/eventbridge/model/CreateArchiveResult.h>
 #include <aws/eventbridge/model/CreateConnectionResult.h>
+#include <aws/eventbridge/model/CreateEndpointResult.h>
 #include <aws/eventbridge/model/CreateEventBusResult.h>
 #include <aws/eventbridge/model/CreatePartnerEventSourceResult.h>
 #include <aws/eventbridge/model/DeauthorizeConnectionResult.h>
 #include <aws/eventbridge/model/DeleteApiDestinationResult.h>
 #include <aws/eventbridge/model/DeleteArchiveResult.h>
 #include <aws/eventbridge/model/DeleteConnectionResult.h>
+#include <aws/eventbridge/model/DeleteEndpointResult.h>
 #include <aws/eventbridge/model/DescribeApiDestinationResult.h>
 #include <aws/eventbridge/model/DescribeArchiveResult.h>
 #include <aws/eventbridge/model/DescribeConnectionResult.h>
+#include <aws/eventbridge/model/DescribeEndpointResult.h>
 #include <aws/eventbridge/model/DescribeEventBusResult.h>
 #include <aws/eventbridge/model/DescribeEventSourceResult.h>
 #include <aws/eventbridge/model/DescribePartnerEventSourceResult.h>
@@ -32,6 +35,7 @@
 #include <aws/eventbridge/model/ListApiDestinationsResult.h>
 #include <aws/eventbridge/model/ListArchivesResult.h>
 #include <aws/eventbridge/model/ListConnectionsResult.h>
+#include <aws/eventbridge/model/ListEndpointsResult.h>
 #include <aws/eventbridge/model/ListEventBusesResult.h>
 #include <aws/eventbridge/model/ListEventSourcesResult.h>
 #include <aws/eventbridge/model/ListPartnerEventSourceAccountsResult.h>
@@ -53,6 +57,7 @@
 #include <aws/eventbridge/model/UpdateApiDestinationResult.h>
 #include <aws/eventbridge/model/UpdateArchiveResult.h>
 #include <aws/eventbridge/model/UpdateConnectionResult.h>
+#include <aws/eventbridge/model/UpdateEndpointResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -98,6 +103,7 @@ namespace Model
         class CreateApiDestinationRequest;
         class CreateArchiveRequest;
         class CreateConnectionRequest;
+        class CreateEndpointRequest;
         class CreateEventBusRequest;
         class CreatePartnerEventSourceRequest;
         class DeactivateEventSourceRequest;
@@ -105,12 +111,14 @@ namespace Model
         class DeleteApiDestinationRequest;
         class DeleteArchiveRequest;
         class DeleteConnectionRequest;
+        class DeleteEndpointRequest;
         class DeleteEventBusRequest;
         class DeletePartnerEventSourceRequest;
         class DeleteRuleRequest;
         class DescribeApiDestinationRequest;
         class DescribeArchiveRequest;
         class DescribeConnectionRequest;
+        class DescribeEndpointRequest;
         class DescribeEventBusRequest;
         class DescribeEventSourceRequest;
         class DescribePartnerEventSourceRequest;
@@ -121,6 +129,7 @@ namespace Model
         class ListApiDestinationsRequest;
         class ListArchivesRequest;
         class ListConnectionsRequest;
+        class ListEndpointsRequest;
         class ListEventBusesRequest;
         class ListEventSourcesRequest;
         class ListPartnerEventSourceAccountsRequest;
@@ -144,12 +153,14 @@ namespace Model
         class UpdateApiDestinationRequest;
         class UpdateArchiveRequest;
         class UpdateConnectionRequest;
+        class UpdateEndpointRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> ActivateEventSourceOutcome;
         typedef Aws::Utils::Outcome<CancelReplayResult, EventBridgeError> CancelReplayOutcome;
         typedef Aws::Utils::Outcome<CreateApiDestinationResult, EventBridgeError> CreateApiDestinationOutcome;
         typedef Aws::Utils::Outcome<CreateArchiveResult, EventBridgeError> CreateArchiveOutcome;
         typedef Aws::Utils::Outcome<CreateConnectionResult, EventBridgeError> CreateConnectionOutcome;
+        typedef Aws::Utils::Outcome<CreateEndpointResult, EventBridgeError> CreateEndpointOutcome;
         typedef Aws::Utils::Outcome<CreateEventBusResult, EventBridgeError> CreateEventBusOutcome;
         typedef Aws::Utils::Outcome<CreatePartnerEventSourceResult, EventBridgeError> CreatePartnerEventSourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> DeactivateEventSourceOutcome;
@@ -157,12 +168,14 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteApiDestinationResult, EventBridgeError> DeleteApiDestinationOutcome;
         typedef Aws::Utils::Outcome<DeleteArchiveResult, EventBridgeError> DeleteArchiveOutcome;
         typedef Aws::Utils::Outcome<DeleteConnectionResult, EventBridgeError> DeleteConnectionOutcome;
+        typedef Aws::Utils::Outcome<DeleteEndpointResult, EventBridgeError> DeleteEndpointOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> DeleteEventBusOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> DeletePartnerEventSourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> DeleteRuleOutcome;
         typedef Aws::Utils::Outcome<DescribeApiDestinationResult, EventBridgeError> DescribeApiDestinationOutcome;
         typedef Aws::Utils::Outcome<DescribeArchiveResult, EventBridgeError> DescribeArchiveOutcome;
         typedef Aws::Utils::Outcome<DescribeConnectionResult, EventBridgeError> DescribeConnectionOutcome;
+        typedef Aws::Utils::Outcome<DescribeEndpointResult, EventBridgeError> DescribeEndpointOutcome;
         typedef Aws::Utils::Outcome<DescribeEventBusResult, EventBridgeError> DescribeEventBusOutcome;
         typedef Aws::Utils::Outcome<DescribeEventSourceResult, EventBridgeError> DescribeEventSourceOutcome;
         typedef Aws::Utils::Outcome<DescribePartnerEventSourceResult, EventBridgeError> DescribePartnerEventSourceOutcome;
@@ -173,6 +186,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListApiDestinationsResult, EventBridgeError> ListApiDestinationsOutcome;
         typedef Aws::Utils::Outcome<ListArchivesResult, EventBridgeError> ListArchivesOutcome;
         typedef Aws::Utils::Outcome<ListConnectionsResult, EventBridgeError> ListConnectionsOutcome;
+        typedef Aws::Utils::Outcome<ListEndpointsResult, EventBridgeError> ListEndpointsOutcome;
         typedef Aws::Utils::Outcome<ListEventBusesResult, EventBridgeError> ListEventBusesOutcome;
         typedef Aws::Utils::Outcome<ListEventSourcesResult, EventBridgeError> ListEventSourcesOutcome;
         typedef Aws::Utils::Outcome<ListPartnerEventSourceAccountsResult, EventBridgeError> ListPartnerEventSourceAccountsOutcome;
@@ -196,12 +210,14 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateApiDestinationResult, EventBridgeError> UpdateApiDestinationOutcome;
         typedef Aws::Utils::Outcome<UpdateArchiveResult, EventBridgeError> UpdateArchiveOutcome;
         typedef Aws::Utils::Outcome<UpdateConnectionResult, EventBridgeError> UpdateConnectionOutcome;
+        typedef Aws::Utils::Outcome<UpdateEndpointResult, EventBridgeError> UpdateEndpointOutcome;
 
         typedef std::future<ActivateEventSourceOutcome> ActivateEventSourceOutcomeCallable;
         typedef std::future<CancelReplayOutcome> CancelReplayOutcomeCallable;
         typedef std::future<CreateApiDestinationOutcome> CreateApiDestinationOutcomeCallable;
         typedef std::future<CreateArchiveOutcome> CreateArchiveOutcomeCallable;
         typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
+        typedef std::future<CreateEndpointOutcome> CreateEndpointOutcomeCallable;
         typedef std::future<CreateEventBusOutcome> CreateEventBusOutcomeCallable;
         typedef std::future<CreatePartnerEventSourceOutcome> CreatePartnerEventSourceOutcomeCallable;
         typedef std::future<DeactivateEventSourceOutcome> DeactivateEventSourceOutcomeCallable;
@@ -209,12 +225,14 @@ namespace Model
         typedef std::future<DeleteApiDestinationOutcome> DeleteApiDestinationOutcomeCallable;
         typedef std::future<DeleteArchiveOutcome> DeleteArchiveOutcomeCallable;
         typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
+        typedef std::future<DeleteEndpointOutcome> DeleteEndpointOutcomeCallable;
         typedef std::future<DeleteEventBusOutcome> DeleteEventBusOutcomeCallable;
         typedef std::future<DeletePartnerEventSourceOutcome> DeletePartnerEventSourceOutcomeCallable;
         typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
         typedef std::future<DescribeApiDestinationOutcome> DescribeApiDestinationOutcomeCallable;
         typedef std::future<DescribeArchiveOutcome> DescribeArchiveOutcomeCallable;
         typedef std::future<DescribeConnectionOutcome> DescribeConnectionOutcomeCallable;
+        typedef std::future<DescribeEndpointOutcome> DescribeEndpointOutcomeCallable;
         typedef std::future<DescribeEventBusOutcome> DescribeEventBusOutcomeCallable;
         typedef std::future<DescribeEventSourceOutcome> DescribeEventSourceOutcomeCallable;
         typedef std::future<DescribePartnerEventSourceOutcome> DescribePartnerEventSourceOutcomeCallable;
@@ -225,6 +243,7 @@ namespace Model
         typedef std::future<ListApiDestinationsOutcome> ListApiDestinationsOutcomeCallable;
         typedef std::future<ListArchivesOutcome> ListArchivesOutcomeCallable;
         typedef std::future<ListConnectionsOutcome> ListConnectionsOutcomeCallable;
+        typedef std::future<ListEndpointsOutcome> ListEndpointsOutcomeCallable;
         typedef std::future<ListEventBusesOutcome> ListEventBusesOutcomeCallable;
         typedef std::future<ListEventSourcesOutcome> ListEventSourcesOutcomeCallable;
         typedef std::future<ListPartnerEventSourceAccountsOutcome> ListPartnerEventSourceAccountsOutcomeCallable;
@@ -248,6 +267,7 @@ namespace Model
         typedef std::future<UpdateApiDestinationOutcome> UpdateApiDestinationOutcomeCallable;
         typedef std::future<UpdateArchiveOutcome> UpdateArchiveOutcomeCallable;
         typedef std::future<UpdateConnectionOutcome> UpdateConnectionOutcomeCallable;
+        typedef std::future<UpdateEndpointOutcome> UpdateEndpointOutcomeCallable;
 } // namespace Model
 
   class EventBridgeClient;
@@ -257,6 +277,7 @@ namespace Model
     typedef std::function<void(const EventBridgeClient*, const Model::CreateApiDestinationRequest&, const Model::CreateApiDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApiDestinationResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::CreateArchiveRequest&, const Model::CreateArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateArchiveResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::CreateConnectionRequest&, const Model::CreateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectionResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::CreateEndpointRequest&, const Model::CreateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEndpointResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::CreateEventBusRequest&, const Model::CreateEventBusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventBusResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::CreatePartnerEventSourceRequest&, const Model::CreatePartnerEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePartnerEventSourceResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DeactivateEventSourceRequest&, const Model::DeactivateEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeactivateEventSourceResponseReceivedHandler;
@@ -264,12 +285,14 @@ namespace Model
     typedef std::function<void(const EventBridgeClient*, const Model::DeleteApiDestinationRequest&, const Model::DeleteApiDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApiDestinationResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DeleteArchiveRequest&, const Model::DeleteArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteArchiveResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DeleteConnectionRequest&, const Model::DeleteConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectionResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::DeleteEndpointRequest&, const Model::DeleteEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DeleteEventBusRequest&, const Model::DeleteEventBusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventBusResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DeletePartnerEventSourceRequest&, const Model::DeletePartnerEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePartnerEventSourceResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DeleteRuleRequest&, const Model::DeleteRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DescribeApiDestinationRequest&, const Model::DescribeApiDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApiDestinationResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DescribeArchiveRequest&, const Model::DescribeArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeArchiveResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DescribeConnectionRequest&, const Model::DescribeConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectionResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::DescribeEndpointRequest&, const Model::DescribeEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DescribeEventBusRequest&, const Model::DescribeEventBusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventBusResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DescribeEventSourceRequest&, const Model::DescribeEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventSourceResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DescribePartnerEventSourceRequest&, const Model::DescribePartnerEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePartnerEventSourceResponseReceivedHandler;
@@ -280,6 +303,7 @@ namespace Model
     typedef std::function<void(const EventBridgeClient*, const Model::ListApiDestinationsRequest&, const Model::ListApiDestinationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApiDestinationsResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::ListArchivesRequest&, const Model::ListArchivesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListArchivesResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::ListConnectionsRequest&, const Model::ListConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConnectionsResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::ListEndpointsRequest&, const Model::ListEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEndpointsResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::ListEventBusesRequest&, const Model::ListEventBusesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventBusesResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::ListEventSourcesRequest&, const Model::ListEventSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventSourcesResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::ListPartnerEventSourceAccountsRequest&, const Model::ListPartnerEventSourceAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPartnerEventSourceAccountsResponseReceivedHandler;
@@ -303,6 +327,7 @@ namespace Model
     typedef std::function<void(const EventBridgeClient*, const Model::UpdateApiDestinationRequest&, const Model::UpdateApiDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApiDestinationResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::UpdateArchiveRequest&, const Model::UpdateArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateArchiveResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::UpdateConnectionRequest&, const Model::UpdateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectionResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::UpdateEndpointRequest&, const Model::UpdateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEndpointResponseReceivedHandler;
 
   /**
    * <p>Amazon EventBridge helps you to respond to state changes in your Amazon Web
@@ -501,6 +526,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateConnectionAsync(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a global endpoint. Global endpoints improve your application's
+         * availability by making it regional-fault tolerant. To do this, you define a
+         * primary and secondary Region with event buses in each Region. You also create a
+         * Amazon Route 53 health check that will tell EventBridge to route events to the
+         * secondary Region when an "unhealthy" state is encountered and events will be
+         * routed back to the primary Region when the health check reports a "healthy"
+         * state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateEndpointOutcome CreateEndpoint(const Model::CreateEndpointRequest& request) const;
+
+        /**
+         * <p>Creates a global endpoint. Global endpoints improve your application's
+         * availability by making it regional-fault tolerant. To do this, you define a
+         * primary and secondary Region with event buses in each Region. You also create a
+         * Amazon Route 53 health check that will tell EventBridge to route events to the
+         * secondary Region when an "unhealthy" state is encountered and events will be
+         * routed back to the primary Region when the health check reports a "healthy"
+         * state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateEndpoint">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateEndpointOutcomeCallable CreateEndpointCallable(const Model::CreateEndpointRequest& request) const;
+
+        /**
+         * <p>Creates a global endpoint. Global endpoints improve your application's
+         * availability by making it regional-fault tolerant. To do this, you define a
+         * primary and secondary Region with event buses in each Region. You also create a
+         * Amazon Route 53 health check that will tell EventBridge to route events to the
+         * secondary Region when an "unhealthy" state is encountered and events will be
+         * routed back to the primary Region when the health check reports a "healthy"
+         * state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateEndpoint">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateEndpointAsync(const Model::CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new event bus within your account. This can be a custom event bus
@@ -768,6 +836,46 @@ namespace Model
         virtual void DeleteConnectionAsync(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Delete an existing global endpoint. For more information about global
+         * endpoints, see <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+         * applications Regional-fault tolerant with global endpoints and event
+         * replication</a> in the Amazon EventBridge User Guide.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEndpointOutcome DeleteEndpoint(const Model::DeleteEndpointRequest& request) const;
+
+        /**
+         * <p>Delete an existing global endpoint. For more information about global
+         * endpoints, see <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+         * applications Regional-fault tolerant with global endpoints and event
+         * replication</a> in the Amazon EventBridge User Guide.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteEndpoint">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteEndpointOutcomeCallable DeleteEndpointCallable(const Model::DeleteEndpointRequest& request) const;
+
+        /**
+         * <p>Delete an existing global endpoint. For more information about global
+         * endpoints, see <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+         * applications Regional-fault tolerant with global endpoints and event
+         * replication</a> in the Amazon EventBridge User Guide.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteEndpoint">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteEndpointAsync(const Model::DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified custom event bus or partner event bus. All rules
          * associated with this event bus need to be deleted. You can't delete your
          * account's default event bus.</p><p><h3>See Also:</h3>   <a
@@ -970,6 +1078,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeConnectionAsync(const Model::DescribeConnectionRequest& request, const DescribeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Get the information about an existing global endpoint. For more information
+         * about global endpoints, see <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+         * applications Regional-fault tolerant with global endpoints and event
+         * replication</a> in the Amazon EventBridge User Guide..</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEndpointOutcome DescribeEndpoint(const Model::DescribeEndpointRequest& request) const;
+
+        /**
+         * <p>Get the information about an existing global endpoint. For more information
+         * about global endpoints, see <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+         * applications Regional-fault tolerant with global endpoints and event
+         * replication</a> in the Amazon EventBridge User Guide..</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeEndpoint">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeEndpointOutcomeCallable DescribeEndpointCallable(const Model::DescribeEndpointRequest& request) const;
+
+        /**
+         * <p>Get the information about an existing global endpoint. For more information
+         * about global endpoints, see <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+         * applications Regional-fault tolerant with global endpoints and event
+         * replication</a> in the Amazon EventBridge User Guide..</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeEndpoint">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeEndpointAsync(const Model::DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays details about an event bus in your account. This can include the
@@ -1333,6 +1481,46 @@ namespace Model
         virtual void ListConnectionsAsync(const Model::ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>List the global endpoints associated with this account. For more information
+         * about global endpoints, see <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+         * applications Regional-fault tolerant with global endpoints and event
+         * replication</a> in the Amazon EventBridge User Guide..</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEndpoints">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEndpointsOutcome ListEndpoints(const Model::ListEndpointsRequest& request) const;
+
+        /**
+         * <p>List the global endpoints associated with this account. For more information
+         * about global endpoints, see <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+         * applications Regional-fault tolerant with global endpoints and event
+         * replication</a> in the Amazon EventBridge User Guide..</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEndpoints">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListEndpointsOutcomeCallable ListEndpointsCallable(const Model::ListEndpointsRequest& request) const;
+
+        /**
+         * <p>List the global endpoints associated with this account. For more information
+         * about global endpoints, see <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+         * applications Regional-fault tolerant with global endpoints and event
+         * replication</a> in the Amazon EventBridge User Guide..</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEndpoints">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListEndpointsAsync(const Model::ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists all the event buses in your account, including the default event bus,
          * custom event buses, and partner event buses.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEventBuses">AWS
@@ -1619,7 +1807,8 @@ namespace Model
 
         /**
          * <p>Sends custom events to Amazon EventBridge so that they can be matched to
-         * rules.</p><p><h3>See Also:</h3>   <a
+         * rules.</p>  <p>PutEvents will only process nested JSON up to 1100 levels
+         * deep.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutEvents">AWS
          * API Reference</a></p>
          */
@@ -1627,7 +1816,8 @@ namespace Model
 
         /**
          * <p>Sends custom events to Amazon EventBridge so that they can be matched to
-         * rules.</p><p><h3>See Also:</h3>   <a
+         * rules.</p>  <p>PutEvents will only process nested JSON up to 1100 levels
+         * deep.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutEvents">AWS
          * API Reference</a></p>
          *
@@ -1637,7 +1827,8 @@ namespace Model
 
         /**
          * <p>Sends custom events to Amazon EventBridge so that they can be matched to
-         * rules.</p><p><h3>See Also:</h3>   <a
+         * rules.</p>  <p>PutEvents will only process nested JSON up to 1100 levels
+         * deep.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutEvents">AWS
          * API Reference</a></p>
          *
@@ -1934,40 +2125,42 @@ namespace Model
          * five (5) targets associated with it at one time.</p>  <p>You can
          * configure the following as targets for Events:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html">API
-         * destination</a> </p> </li> <li> <p>Amazon API Gateway REST API endpoints</p>
-         * </li> <li> <p>API Gateway</p> </li> <li> <p>Batch job queue</p> </li> <li>
-         * <p>CloudWatch Logs group</p> </li> <li> <p>CodeBuild project</p> </li> <li>
-         * <p>CodePipeline</p> </li> <li> <p>Amazon EC2 <code>CreateSnapshot</code> API
-         * call</p> </li> <li> <p>EC2 Image Builder</p> </li> <li> <p>Amazon EC2
-         * <code>RebootInstances</code> API call</p> </li> <li> <p>Amazon EC2
-         * <code>StopInstances</code> API call</p> </li> <li> <p>Amazon EC2
-         * <code>TerminateInstances</code> API call</p> </li> <li> <p>Amazon ECS tasks</p>
-         * </li> <li> <p>Event bus in a different Amazon Web Services account or
-         * Region.</p> <p>You can use an event bus in the US East (N. Virginia) us-east-1,
-         * US West (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as a target
-         * for a rule.</p> </li> <li> <p>Firehose delivery stream (Kinesis Data
-         * Firehose)</p> </li> <li> <p>Inspector assessment template (Amazon Inspector)</p>
-         * </li> <li> <p>Kinesis stream (Kinesis Data Stream)</p> </li> <li> <p>Lambda
-         * function</p> </li> <li> <p>Redshift clusters (Data API statement execution)</p>
-         * </li> <li> <p>Amazon SNS topic</p> </li> <li> <p>Amazon SQS queues (includes
-         * FIFO queues)</p> </li> <li> <p>SSM Automation</p> </li> <li> <p>SSM OpsItem</p>
-         * </li> <li> <p>SSM Run Command</p> </li> <li> <p>Step Functions state
-         * machines</p> </li> </ul> <p>Creating rules with built-in targets is supported
-         * only in the Amazon Web Services Management Console. The built-in targets are
-         * <code>EC2 CreateSnapshot API call</code>, <code>EC2 RebootInstances API
-         * call</code>, <code>EC2 StopInstances API call</code>, and <code>EC2
-         * TerminateInstances API call</code>. </p> <p>For some target types,
-         * <code>PutTargets</code> provides target-specific parameters. If the target is a
-         * Kinesis data stream, you can optionally specify which shard the event goes to by
-         * using the <code>KinesisParameters</code> argument. To invoke a command on
-         * multiple EC2 instances with one rule, you can use the
-         * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
-         * against the resources that you own, Amazon EventBridge needs the appropriate
-         * permissions. For Lambda and Amazon SNS resources, EventBridge relies on
-         * resource-based policies. For EC2 instances, Kinesis Data Streams, Step Functions
-         * state machines and API Gateway REST APIs, EventBridge relies on IAM roles that
-         * you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For
-         * more information, see <a
+         * destination</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-gateway-target.html">API
+         * Gateway</a> </p> </li> <li> <p>Batch job queue</p> </li> <li> <p>CloudWatch
+         * group</p> </li> <li> <p>CodeBuild project</p> </li> <li> <p>CodePipeline</p>
+         * </li> <li> <p>EC2 <code>CreateSnapshot</code> API call</p> </li> <li> <p>EC2
+         * Image Builder</p> </li> <li> <p>EC2 <code>RebootInstances</code> API call</p>
+         * </li> <li> <p>EC2 <code>StopInstances</code> API call</p> </li> <li> <p>EC2
+         * <code>TerminateInstances</code> API call</p> </li> <li> <p>ECS task</p> </li>
+         * <li> <p> <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html">Event
+         * bus in a different account or Region</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-bus-to-bus.html">Event
+         * bus in the same account and Region</a> </p> </li> <li> <p>Firehose delivery
+         * stream</p> </li> <li> <p>Glue workflow</p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-creation.html#incident-tracking-auto-eventbridge">Incident
+         * Manager response plan</a> </p> </li> <li> <p>Inspector assessment template</p>
+         * </li> <li> <p>Kinesis stream</p> </li> <li> <p>Lambda function</p> </li> <li>
+         * <p>Redshift cluster</p> </li> <li> <p>SageMaker Pipeline</p> </li> <li> <p>SNS
+         * topic</p> </li> <li> <p>SQS queue</p> </li> <li> <p>Step Functions state
+         * machine</p> </li> <li> <p>Systems Manager Automation</p> </li> <li> <p>Systems
+         * Manager OpsItem</p> </li> <li> <p>Systems Manager Run Command</p> </li> </ul>
+         * <p>Creating rules with built-in targets is supported only in the Amazon Web
+         * Services Management Console. The built-in targets are <code>EC2 CreateSnapshot
+         * API call</code>, <code>EC2 RebootInstances API call</code>, <code>EC2
+         * StopInstances API call</code>, and <code>EC2 TerminateInstances API call</code>.
+         * </p> <p>For some target types, <code>PutTargets</code> provides target-specific
+         * parameters. If the target is a Kinesis data stream, you can optionally specify
+         * which shard the event goes to by using the <code>KinesisParameters</code>
+         * argument. To invoke a command on multiple EC2 instances with one rule, you can
+         * use the <code>RunCommandParameters</code> field.</p> <p>To be able to make API
+         * calls against the resources that you own, Amazon EventBridge needs the
+         * appropriate permissions. For Lambda and Amazon SNS resources, EventBridge relies
+         * on resource-based policies. For EC2 instances, Kinesis Data Streams, Step
+         * Functions state machines and API Gateway REST APIs, EventBridge relies on IAM
+         * roles that you specify in the <code>RoleARN</code> argument in
+         * <code>PutTargets</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
          * and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.</p> <p>If
          * another Amazon Web Services account is in the same region and has granted you
@@ -2026,40 +2219,42 @@ namespace Model
          * five (5) targets associated with it at one time.</p>  <p>You can
          * configure the following as targets for Events:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html">API
-         * destination</a> </p> </li> <li> <p>Amazon API Gateway REST API endpoints</p>
-         * </li> <li> <p>API Gateway</p> </li> <li> <p>Batch job queue</p> </li> <li>
-         * <p>CloudWatch Logs group</p> </li> <li> <p>CodeBuild project</p> </li> <li>
-         * <p>CodePipeline</p> </li> <li> <p>Amazon EC2 <code>CreateSnapshot</code> API
-         * call</p> </li> <li> <p>EC2 Image Builder</p> </li> <li> <p>Amazon EC2
-         * <code>RebootInstances</code> API call</p> </li> <li> <p>Amazon EC2
-         * <code>StopInstances</code> API call</p> </li> <li> <p>Amazon EC2
-         * <code>TerminateInstances</code> API call</p> </li> <li> <p>Amazon ECS tasks</p>
-         * </li> <li> <p>Event bus in a different Amazon Web Services account or
-         * Region.</p> <p>You can use an event bus in the US East (N. Virginia) us-east-1,
-         * US West (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as a target
-         * for a rule.</p> </li> <li> <p>Firehose delivery stream (Kinesis Data
-         * Firehose)</p> </li> <li> <p>Inspector assessment template (Amazon Inspector)</p>
-         * </li> <li> <p>Kinesis stream (Kinesis Data Stream)</p> </li> <li> <p>Lambda
-         * function</p> </li> <li> <p>Redshift clusters (Data API statement execution)</p>
-         * </li> <li> <p>Amazon SNS topic</p> </li> <li> <p>Amazon SQS queues (includes
-         * FIFO queues)</p> </li> <li> <p>SSM Automation</p> </li> <li> <p>SSM OpsItem</p>
-         * </li> <li> <p>SSM Run Command</p> </li> <li> <p>Step Functions state
-         * machines</p> </li> </ul> <p>Creating rules with built-in targets is supported
-         * only in the Amazon Web Services Management Console. The built-in targets are
-         * <code>EC2 CreateSnapshot API call</code>, <code>EC2 RebootInstances API
-         * call</code>, <code>EC2 StopInstances API call</code>, and <code>EC2
-         * TerminateInstances API call</code>. </p> <p>For some target types,
-         * <code>PutTargets</code> provides target-specific parameters. If the target is a
-         * Kinesis data stream, you can optionally specify which shard the event goes to by
-         * using the <code>KinesisParameters</code> argument. To invoke a command on
-         * multiple EC2 instances with one rule, you can use the
-         * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
-         * against the resources that you own, Amazon EventBridge needs the appropriate
-         * permissions. For Lambda and Amazon SNS resources, EventBridge relies on
-         * resource-based policies. For EC2 instances, Kinesis Data Streams, Step Functions
-         * state machines and API Gateway REST APIs, EventBridge relies on IAM roles that
-         * you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For
-         * more information, see <a
+         * destination</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-gateway-target.html">API
+         * Gateway</a> </p> </li> <li> <p>Batch job queue</p> </li> <li> <p>CloudWatch
+         * group</p> </li> <li> <p>CodeBuild project</p> </li> <li> <p>CodePipeline</p>
+         * </li> <li> <p>EC2 <code>CreateSnapshot</code> API call</p> </li> <li> <p>EC2
+         * Image Builder</p> </li> <li> <p>EC2 <code>RebootInstances</code> API call</p>
+         * </li> <li> <p>EC2 <code>StopInstances</code> API call</p> </li> <li> <p>EC2
+         * <code>TerminateInstances</code> API call</p> </li> <li> <p>ECS task</p> </li>
+         * <li> <p> <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html">Event
+         * bus in a different account or Region</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-bus-to-bus.html">Event
+         * bus in the same account and Region</a> </p> </li> <li> <p>Firehose delivery
+         * stream</p> </li> <li> <p>Glue workflow</p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-creation.html#incident-tracking-auto-eventbridge">Incident
+         * Manager response plan</a> </p> </li> <li> <p>Inspector assessment template</p>
+         * </li> <li> <p>Kinesis stream</p> </li> <li> <p>Lambda function</p> </li> <li>
+         * <p>Redshift cluster</p> </li> <li> <p>SageMaker Pipeline</p> </li> <li> <p>SNS
+         * topic</p> </li> <li> <p>SQS queue</p> </li> <li> <p>Step Functions state
+         * machine</p> </li> <li> <p>Systems Manager Automation</p> </li> <li> <p>Systems
+         * Manager OpsItem</p> </li> <li> <p>Systems Manager Run Command</p> </li> </ul>
+         * <p>Creating rules with built-in targets is supported only in the Amazon Web
+         * Services Management Console. The built-in targets are <code>EC2 CreateSnapshot
+         * API call</code>, <code>EC2 RebootInstances API call</code>, <code>EC2
+         * StopInstances API call</code>, and <code>EC2 TerminateInstances API call</code>.
+         * </p> <p>For some target types, <code>PutTargets</code> provides target-specific
+         * parameters. If the target is a Kinesis data stream, you can optionally specify
+         * which shard the event goes to by using the <code>KinesisParameters</code>
+         * argument. To invoke a command on multiple EC2 instances with one rule, you can
+         * use the <code>RunCommandParameters</code> field.</p> <p>To be able to make API
+         * calls against the resources that you own, Amazon EventBridge needs the
+         * appropriate permissions. For Lambda and Amazon SNS resources, EventBridge relies
+         * on resource-based policies. For EC2 instances, Kinesis Data Streams, Step
+         * Functions state machines and API Gateway REST APIs, EventBridge relies on IAM
+         * roles that you specify in the <code>RoleARN</code> argument in
+         * <code>PutTargets</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
          * and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.</p> <p>If
          * another Amazon Web Services account is in the same region and has granted you
@@ -2120,40 +2315,42 @@ namespace Model
          * five (5) targets associated with it at one time.</p>  <p>You can
          * configure the following as targets for Events:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html">API
-         * destination</a> </p> </li> <li> <p>Amazon API Gateway REST API endpoints</p>
-         * </li> <li> <p>API Gateway</p> </li> <li> <p>Batch job queue</p> </li> <li>
-         * <p>CloudWatch Logs group</p> </li> <li> <p>CodeBuild project</p> </li> <li>
-         * <p>CodePipeline</p> </li> <li> <p>Amazon EC2 <code>CreateSnapshot</code> API
-         * call</p> </li> <li> <p>EC2 Image Builder</p> </li> <li> <p>Amazon EC2
-         * <code>RebootInstances</code> API call</p> </li> <li> <p>Amazon EC2
-         * <code>StopInstances</code> API call</p> </li> <li> <p>Amazon EC2
-         * <code>TerminateInstances</code> API call</p> </li> <li> <p>Amazon ECS tasks</p>
-         * </li> <li> <p>Event bus in a different Amazon Web Services account or
-         * Region.</p> <p>You can use an event bus in the US East (N. Virginia) us-east-1,
-         * US West (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as a target
-         * for a rule.</p> </li> <li> <p>Firehose delivery stream (Kinesis Data
-         * Firehose)</p> </li> <li> <p>Inspector assessment template (Amazon Inspector)</p>
-         * </li> <li> <p>Kinesis stream (Kinesis Data Stream)</p> </li> <li> <p>Lambda
-         * function</p> </li> <li> <p>Redshift clusters (Data API statement execution)</p>
-         * </li> <li> <p>Amazon SNS topic</p> </li> <li> <p>Amazon SQS queues (includes
-         * FIFO queues)</p> </li> <li> <p>SSM Automation</p> </li> <li> <p>SSM OpsItem</p>
-         * </li> <li> <p>SSM Run Command</p> </li> <li> <p>Step Functions state
-         * machines</p> </li> </ul> <p>Creating rules with built-in targets is supported
-         * only in the Amazon Web Services Management Console. The built-in targets are
-         * <code>EC2 CreateSnapshot API call</code>, <code>EC2 RebootInstances API
-         * call</code>, <code>EC2 StopInstances API call</code>, and <code>EC2
-         * TerminateInstances API call</code>. </p> <p>For some target types,
-         * <code>PutTargets</code> provides target-specific parameters. If the target is a
-         * Kinesis data stream, you can optionally specify which shard the event goes to by
-         * using the <code>KinesisParameters</code> argument. To invoke a command on
-         * multiple EC2 instances with one rule, you can use the
-         * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
-         * against the resources that you own, Amazon EventBridge needs the appropriate
-         * permissions. For Lambda and Amazon SNS resources, EventBridge relies on
-         * resource-based policies. For EC2 instances, Kinesis Data Streams, Step Functions
-         * state machines and API Gateway REST APIs, EventBridge relies on IAM roles that
-         * you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For
-         * more information, see <a
+         * destination</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-gateway-target.html">API
+         * Gateway</a> </p> </li> <li> <p>Batch job queue</p> </li> <li> <p>CloudWatch
+         * group</p> </li> <li> <p>CodeBuild project</p> </li> <li> <p>CodePipeline</p>
+         * </li> <li> <p>EC2 <code>CreateSnapshot</code> API call</p> </li> <li> <p>EC2
+         * Image Builder</p> </li> <li> <p>EC2 <code>RebootInstances</code> API call</p>
+         * </li> <li> <p>EC2 <code>StopInstances</code> API call</p> </li> <li> <p>EC2
+         * <code>TerminateInstances</code> API call</p> </li> <li> <p>ECS task</p> </li>
+         * <li> <p> <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html">Event
+         * bus in a different account or Region</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-bus-to-bus.html">Event
+         * bus in the same account and Region</a> </p> </li> <li> <p>Firehose delivery
+         * stream</p> </li> <li> <p>Glue workflow</p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-creation.html#incident-tracking-auto-eventbridge">Incident
+         * Manager response plan</a> </p> </li> <li> <p>Inspector assessment template</p>
+         * </li> <li> <p>Kinesis stream</p> </li> <li> <p>Lambda function</p> </li> <li>
+         * <p>Redshift cluster</p> </li> <li> <p>SageMaker Pipeline</p> </li> <li> <p>SNS
+         * topic</p> </li> <li> <p>SQS queue</p> </li> <li> <p>Step Functions state
+         * machine</p> </li> <li> <p>Systems Manager Automation</p> </li> <li> <p>Systems
+         * Manager OpsItem</p> </li> <li> <p>Systems Manager Run Command</p> </li> </ul>
+         * <p>Creating rules with built-in targets is supported only in the Amazon Web
+         * Services Management Console. The built-in targets are <code>EC2 CreateSnapshot
+         * API call</code>, <code>EC2 RebootInstances API call</code>, <code>EC2
+         * StopInstances API call</code>, and <code>EC2 TerminateInstances API call</code>.
+         * </p> <p>For some target types, <code>PutTargets</code> provides target-specific
+         * parameters. If the target is a Kinesis data stream, you can optionally specify
+         * which shard the event goes to by using the <code>KinesisParameters</code>
+         * argument. To invoke a command on multiple EC2 instances with one rule, you can
+         * use the <code>RunCommandParameters</code> field.</p> <p>To be able to make API
+         * calls against the resources that you own, Amazon EventBridge needs the
+         * appropriate permissions. For Lambda and Amazon SNS resources, EventBridge relies
+         * on resource-based policies. For EC2 instances, Kinesis Data Streams, Step
+         * Functions state machines and API Gateway REST APIs, EventBridge relies on IAM
+         * roles that you specify in the <code>RoleARN</code> argument in
+         * <code>PutTargets</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
          * and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.</p> <p>If
          * another Amazon Web Services account is in the same region and has granted you
@@ -2561,6 +2758,46 @@ namespace Model
          */
         virtual void UpdateConnectionAsync(const Model::UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Update an existing endpoint. For more information about global endpoints, see
+         * <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+         * applications Regional-fault tolerant with global endpoints and event
+         * replication</a> in the Amazon EventBridge User Guide..</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateEndpointOutcome UpdateEndpoint(const Model::UpdateEndpointRequest& request) const;
+
+        /**
+         * <p>Update an existing endpoint. For more information about global endpoints, see
+         * <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+         * applications Regional-fault tolerant with global endpoints and event
+         * replication</a> in the Amazon EventBridge User Guide..</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateEndpoint">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateEndpointOutcomeCallable UpdateEndpointCallable(const Model::UpdateEndpointRequest& request) const;
+
+        /**
+         * <p>Update an existing endpoint. For more information about global endpoints, see
+         * <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
+         * applications Regional-fault tolerant with global endpoints and event
+         * replication</a> in the Amazon EventBridge User Guide..</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateEndpoint">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateEndpointAsync(const Model::UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -2570,6 +2807,7 @@ namespace Model
         void CreateApiDestinationAsyncHelper(const Model::CreateApiDestinationRequest& request, const CreateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateArchiveAsyncHelper(const Model::CreateArchiveRequest& request, const CreateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateConnectionAsyncHelper(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateEndpointAsyncHelper(const Model::CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEventBusAsyncHelper(const Model::CreateEventBusRequest& request, const CreateEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePartnerEventSourceAsyncHelper(const Model::CreatePartnerEventSourceRequest& request, const CreatePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeactivateEventSourceAsyncHelper(const Model::DeactivateEventSourceRequest& request, const DeactivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2577,12 +2815,14 @@ namespace Model
         void DeleteApiDestinationAsyncHelper(const Model::DeleteApiDestinationRequest& request, const DeleteApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteArchiveAsyncHelper(const Model::DeleteArchiveRequest& request, const DeleteArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConnectionAsyncHelper(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteEndpointAsyncHelper(const Model::DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventBusAsyncHelper(const Model::DeleteEventBusRequest& request, const DeleteEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePartnerEventSourceAsyncHelper(const Model::DeletePartnerEventSourceRequest& request, const DeletePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRuleAsyncHelper(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeApiDestinationAsyncHelper(const Model::DescribeApiDestinationRequest& request, const DescribeApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeArchiveAsyncHelper(const Model::DescribeArchiveRequest& request, const DescribeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConnectionAsyncHelper(const Model::DescribeConnectionRequest& request, const DescribeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeEndpointAsyncHelper(const Model::DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventBusAsyncHelper(const Model::DescribeEventBusRequest& request, const DescribeEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventSourceAsyncHelper(const Model::DescribeEventSourceRequest& request, const DescribeEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePartnerEventSourceAsyncHelper(const Model::DescribePartnerEventSourceRequest& request, const DescribePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2593,6 +2833,7 @@ namespace Model
         void ListApiDestinationsAsyncHelper(const Model::ListApiDestinationsRequest& request, const ListApiDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListArchivesAsyncHelper(const Model::ListArchivesRequest& request, const ListArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListConnectionsAsyncHelper(const Model::ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListEndpointsAsyncHelper(const Model::ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEventBusesAsyncHelper(const Model::ListEventBusesRequest& request, const ListEventBusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEventSourcesAsyncHelper(const Model::ListEventSourcesRequest& request, const ListEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPartnerEventSourceAccountsAsyncHelper(const Model::ListPartnerEventSourceAccountsRequest& request, const ListPartnerEventSourceAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2616,6 +2857,7 @@ namespace Model
         void UpdateApiDestinationAsyncHelper(const Model::UpdateApiDestinationRequest& request, const UpdateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateArchiveAsyncHelper(const Model::UpdateArchiveRequest& request, const UpdateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConnectionAsyncHelper(const Model::UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateEndpointAsyncHelper(const Model::UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

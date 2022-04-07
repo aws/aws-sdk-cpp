@@ -26,8 +26,9 @@ namespace Model
 
   /**
    * <p>Provides a summary of the properties of a dataset export job. For a complete
-   * listing, call the <a>DescribeDatasetExportJob</a> API.</p><p><h3>See Also:</h3> 
-   * <a
+   * listing, call the <a
+   * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetExportJob.html">DescribeDatasetExportJob</a>
+   * API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DatasetExportJobSummary">AWS
    * API Reference</a></p>
    */

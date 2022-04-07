@@ -268,64 +268,72 @@ namespace Model
     /**
      * <p>Specifies the type of item interactions to filter out of recommendation
      * results. The filter expression must follow specific format rules. For
-     * information about filter expression structure and syntax, see
-     * <a>filter-expressions</a>.</p>
+     * information about filter expression structure and syntax, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter
+     * expressions</a>.</p>
      */
     inline const Aws::String& GetFilterExpression() const{ return m_filterExpression; }
 
     /**
      * <p>Specifies the type of item interactions to filter out of recommendation
      * results. The filter expression must follow specific format rules. For
-     * information about filter expression structure and syntax, see
-     * <a>filter-expressions</a>.</p>
+     * information about filter expression structure and syntax, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter
+     * expressions</a>.</p>
      */
     inline bool FilterExpressionHasBeenSet() const { return m_filterExpressionHasBeenSet; }
 
     /**
      * <p>Specifies the type of item interactions to filter out of recommendation
      * results. The filter expression must follow specific format rules. For
-     * information about filter expression structure and syntax, see
-     * <a>filter-expressions</a>.</p>
+     * information about filter expression structure and syntax, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter
+     * expressions</a>.</p>
      */
     inline void SetFilterExpression(const Aws::String& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = value; }
 
     /**
      * <p>Specifies the type of item interactions to filter out of recommendation
      * results. The filter expression must follow specific format rules. For
-     * information about filter expression structure and syntax, see
-     * <a>filter-expressions</a>.</p>
+     * information about filter expression structure and syntax, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter
+     * expressions</a>.</p>
      */
     inline void SetFilterExpression(Aws::String&& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = std::move(value); }
 
     /**
      * <p>Specifies the type of item interactions to filter out of recommendation
      * results. The filter expression must follow specific format rules. For
-     * information about filter expression structure and syntax, see
-     * <a>filter-expressions</a>.</p>
+     * information about filter expression structure and syntax, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter
+     * expressions</a>.</p>
      */
     inline void SetFilterExpression(const char* value) { m_filterExpressionHasBeenSet = true; m_filterExpression.assign(value); }
 
     /**
      * <p>Specifies the type of item interactions to filter out of recommendation
      * results. The filter expression must follow specific format rules. For
-     * information about filter expression structure and syntax, see
-     * <a>filter-expressions</a>.</p>
+     * information about filter expression structure and syntax, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter
+     * expressions</a>.</p>
      */
     inline Filter& WithFilterExpression(const Aws::String& value) { SetFilterExpression(value); return *this;}
 
     /**
      * <p>Specifies the type of item interactions to filter out of recommendation
      * results. The filter expression must follow specific format rules. For
-     * information about filter expression structure and syntax, see
-     * <a>filter-expressions</a>.</p>
+     * information about filter expression structure and syntax, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter
+     * expressions</a>.</p>
      */
     inline Filter& WithFilterExpression(Aws::String&& value) { SetFilterExpression(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the type of item interactions to filter out of recommendation
      * results. The filter expression must follow specific format rules. For
-     * information about filter expression structure and syntax, see
-     * <a>filter-expressions</a>.</p>
+     * information about filter expression structure and syntax, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter
+     * expressions</a>.</p>
      */
     inline Filter& WithFilterExpression(const char* value) { SetFilterExpression(value); return *this;}
 

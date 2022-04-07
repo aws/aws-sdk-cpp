@@ -1166,58 +1166,58 @@ namespace Model
 
 
     /**
-     * <p>The Region-unique, immutable identifier for the cluster. This identifier is
-     * found in CloudTrail log entries whenever the KMS key for the cluster is
-     * accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the cluster.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * cluster is accessed.</p>
      */
     inline const Aws::String& GetDbClusterResourceId() const{ return m_dbClusterResourceId; }
 
     /**
-     * <p>The Region-unique, immutable identifier for the cluster. This identifier is
-     * found in CloudTrail log entries whenever the KMS key for the cluster is
-     * accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the cluster.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * cluster is accessed.</p>
      */
     inline bool DbClusterResourceIdHasBeenSet() const { return m_dbClusterResourceIdHasBeenSet; }
 
     /**
-     * <p>The Region-unique, immutable identifier for the cluster. This identifier is
-     * found in CloudTrail log entries whenever the KMS key for the cluster is
-     * accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the cluster.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(const Aws::String& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = value; }
 
     /**
-     * <p>The Region-unique, immutable identifier for the cluster. This identifier is
-     * found in CloudTrail log entries whenever the KMS key for the cluster is
-     * accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the cluster.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(Aws::String&& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = std::move(value); }
 
     /**
-     * <p>The Region-unique, immutable identifier for the cluster. This identifier is
-     * found in CloudTrail log entries whenever the KMS key for the cluster is
-     * accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the cluster.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(const char* value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId.assign(value); }
 
     /**
-     * <p>The Region-unique, immutable identifier for the cluster. This identifier is
-     * found in CloudTrail log entries whenever the KMS key for the cluster is
-     * accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the cluster.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(const Aws::String& value) { SetDbClusterResourceId(value); return *this;}
 
     /**
-     * <p>The Region-unique, immutable identifier for the cluster. This identifier is
-     * found in CloudTrail log entries whenever the KMS key for the cluster is
-     * accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the cluster.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(Aws::String&& value) { SetDbClusterResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The Region-unique, immutable identifier for the cluster. This identifier is
-     * found in CloudTrail log entries whenever the KMS key for the cluster is
-     * accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the cluster.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(const char* value) { SetDbClusterResourceId(value); return *this;}
 

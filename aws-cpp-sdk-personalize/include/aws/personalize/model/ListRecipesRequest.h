@@ -140,42 +140,42 @@ namespace Model
     /**
      * <p> Filters returned recipes by domain for a Domain dataset group. Only recipes
      * (Domain dataset group use cases) for this domain are included in the response.
-     * If you don't specify a domain, only non-domain recipes are returned. </p>
+     * If you don't specify a domain, all recipes are returned. </p>
      */
     inline const Domain& GetDomain() const{ return m_domain; }
 
     /**
      * <p> Filters returned recipes by domain for a Domain dataset group. Only recipes
      * (Domain dataset group use cases) for this domain are included in the response.
-     * If you don't specify a domain, only non-domain recipes are returned. </p>
+     * If you don't specify a domain, all recipes are returned. </p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
      * <p> Filters returned recipes by domain for a Domain dataset group. Only recipes
      * (Domain dataset group use cases) for this domain are included in the response.
-     * If you don't specify a domain, only non-domain recipes are returned. </p>
+     * If you don't specify a domain, all recipes are returned. </p>
      */
     inline void SetDomain(const Domain& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
      * <p> Filters returned recipes by domain for a Domain dataset group. Only recipes
      * (Domain dataset group use cases) for this domain are included in the response.
-     * If you don't specify a domain, only non-domain recipes are returned. </p>
+     * If you don't specify a domain, all recipes are returned. </p>
      */
     inline void SetDomain(Domain&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p> Filters returned recipes by domain for a Domain dataset group. Only recipes
      * (Domain dataset group use cases) for this domain are included in the response.
-     * If you don't specify a domain, only non-domain recipes are returned. </p>
+     * If you don't specify a domain, all recipes are returned. </p>
      */
     inline ListRecipesRequest& WithDomain(const Domain& value) { SetDomain(value); return *this;}
 
     /**
      * <p> Filters returned recipes by domain for a Domain dataset group. Only recipes
      * (Domain dataset group use cases) for this domain are included in the response.
-     * If you don't specify a domain, only non-domain recipes are returned. </p>
+     * If you don't specify a domain, all recipes are returned. </p>
      */
     inline ListRecipesRequest& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
 

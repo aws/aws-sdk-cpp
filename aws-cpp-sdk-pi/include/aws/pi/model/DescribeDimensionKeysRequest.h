@@ -41,37 +41,43 @@ namespace Model
 
     /**
      * <p>The Amazon Web Services service for which Performance Insights will return
-     * metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>. </p>
+     * metrics. Valid values are as follows:</p> <ul> <li> <p> <code>RDS</code> </p>
+     * </li> <li> <p> <code>DOCDB</code> </p> </li> </ul>
      */
     inline const ServiceType& GetServiceType() const{ return m_serviceType; }
 
     /**
      * <p>The Amazon Web Services service for which Performance Insights will return
-     * metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>. </p>
+     * metrics. Valid values are as follows:</p> <ul> <li> <p> <code>RDS</code> </p>
+     * </li> <li> <p> <code>DOCDB</code> </p> </li> </ul>
      */
     inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
 
     /**
      * <p>The Amazon Web Services service for which Performance Insights will return
-     * metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>. </p>
+     * metrics. Valid values are as follows:</p> <ul> <li> <p> <code>RDS</code> </p>
+     * </li> <li> <p> <code>DOCDB</code> </p> </li> </ul>
      */
     inline void SetServiceType(const ServiceType& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
 
     /**
      * <p>The Amazon Web Services service for which Performance Insights will return
-     * metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>. </p>
+     * metrics. Valid values are as follows:</p> <ul> <li> <p> <code>RDS</code> </p>
+     * </li> <li> <p> <code>DOCDB</code> </p> </li> </ul>
      */
     inline void SetServiceType(ServiceType&& value) { m_serviceTypeHasBeenSet = true; m_serviceType = std::move(value); }
 
     /**
      * <p>The Amazon Web Services service for which Performance Insights will return
-     * metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>. </p>
+     * metrics. Valid values are as follows:</p> <ul> <li> <p> <code>RDS</code> </p>
+     * </li> <li> <p> <code>DOCDB</code> </p> </li> </ul>
      */
     inline DescribeDimensionKeysRequest& WithServiceType(const ServiceType& value) { SetServiceType(value); return *this;}
 
     /**
      * <p>The Amazon Web Services service for which Performance Insights will return
-     * metrics. The only valid value for <i>ServiceType</i> is <code>RDS</code>. </p>
+     * metrics. Valid values are as follows:</p> <ul> <li> <p> <code>RDS</code> </p>
+     * </li> <li> <p> <code>DOCDB</code> </p> </li> </ul>
      */
     inline DescribeDimensionKeysRequest& WithServiceType(ServiceType&& value) { SetServiceType(std::move(value)); return *this;}
 
@@ -259,9 +265,9 @@ namespace Model
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
      * scaled representation of the number of active sessions for the database engine.
-     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of active
+     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of active
      * sessions for the database engine. </p> </li> </ul> <p>If the number of active
      * sessions is less than an internal Performance Insights threshold,
      * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
@@ -275,9 +281,9 @@ namespace Model
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
      * scaled representation of the number of active sessions for the database engine.
-     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of active
+     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of active
      * sessions for the database engine. </p> </li> </ul> <p>If the number of active
      * sessions is less than an internal Performance Insights threshold,
      * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
@@ -291,9 +297,9 @@ namespace Model
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
      * scaled representation of the number of active sessions for the database engine.
-     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of active
+     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of active
      * sessions for the database engine. </p> </li> </ul> <p>If the number of active
      * sessions is less than an internal Performance Insights threshold,
      * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
@@ -307,9 +313,9 @@ namespace Model
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
      * scaled representation of the number of active sessions for the database engine.
-     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of active
+     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of active
      * sessions for the database engine. </p> </li> </ul> <p>If the number of active
      * sessions is less than an internal Performance Insights threshold,
      * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
@@ -323,9 +329,9 @@ namespace Model
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
      * scaled representation of the number of active sessions for the database engine.
-     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of active
+     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of active
      * sessions for the database engine. </p> </li> </ul> <p>If the number of active
      * sessions is less than an internal Performance Insights threshold,
      * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
@@ -339,9 +345,9 @@ namespace Model
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
      * scaled representation of the number of active sessions for the database engine.
-     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of active
+     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of active
      * sessions for the database engine. </p> </li> </ul> <p>If the number of active
      * sessions is less than an internal Performance Insights threshold,
      * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
@@ -355,9 +361,9 @@ namespace Model
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
      * scaled representation of the number of active sessions for the database engine.
-     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of active
+     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of active
      * sessions for the database engine. </p> </li> </ul> <p>If the number of active
      * sessions is less than an internal Performance Insights threshold,
      * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
@@ -371,9 +377,9 @@ namespace Model
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
-     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - A
      * scaled representation of the number of active sessions for the database engine.
-     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of active
+     * </p> </li> <li> <p> <code>db.sampledload.avg</code> - The raw number of active
      * sessions for the database engine. </p> </li> </ul> <p>If the number of active
      * sessions is less than an internal Performance Insights threshold,
      * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value.
@@ -498,9 +504,8 @@ namespace Model
      * <p>Additional metrics for the top <code>N</code> dimension keys. If the
      * specified dimension group in the <code>GroupBy</code> parameter is
      * <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values
-     * for the top <code>N</code> SQL digests. The response syntax is
+     * for the top <code>N</code> SQL digests. The response syntax is as follows:
      * <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
-     * <p/>
      */
     inline const Aws::Vector<Aws::String>& GetAdditionalMetrics() const{ return m_additionalMetrics; }
 
@@ -508,9 +513,8 @@ namespace Model
      * <p>Additional metrics for the top <code>N</code> dimension keys. If the
      * specified dimension group in the <code>GroupBy</code> parameter is
      * <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values
-     * for the top <code>N</code> SQL digests. The response syntax is
+     * for the top <code>N</code> SQL digests. The response syntax is as follows:
      * <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
-     * <p/>
      */
     inline bool AdditionalMetricsHasBeenSet() const { return m_additionalMetricsHasBeenSet; }
 
@@ -518,9 +522,8 @@ namespace Model
      * <p>Additional metrics for the top <code>N</code> dimension keys. If the
      * specified dimension group in the <code>GroupBy</code> parameter is
      * <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values
-     * for the top <code>N</code> SQL digests. The response syntax is
+     * for the top <code>N</code> SQL digests. The response syntax is as follows:
      * <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
-     * <p/>
      */
     inline void SetAdditionalMetrics(const Aws::Vector<Aws::String>& value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics = value; }
 
@@ -528,9 +531,8 @@ namespace Model
      * <p>Additional metrics for the top <code>N</code> dimension keys. If the
      * specified dimension group in the <code>GroupBy</code> parameter is
      * <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values
-     * for the top <code>N</code> SQL digests. The response syntax is
+     * for the top <code>N</code> SQL digests. The response syntax is as follows:
      * <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
-     * <p/>
      */
     inline void SetAdditionalMetrics(Aws::Vector<Aws::String>&& value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics = std::move(value); }
 
@@ -538,9 +540,8 @@ namespace Model
      * <p>Additional metrics for the top <code>N</code> dimension keys. If the
      * specified dimension group in the <code>GroupBy</code> parameter is
      * <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values
-     * for the top <code>N</code> SQL digests. The response syntax is
+     * for the top <code>N</code> SQL digests. The response syntax is as follows:
      * <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
-     * <p/>
      */
     inline DescribeDimensionKeysRequest& WithAdditionalMetrics(const Aws::Vector<Aws::String>& value) { SetAdditionalMetrics(value); return *this;}
 
@@ -548,9 +549,8 @@ namespace Model
      * <p>Additional metrics for the top <code>N</code> dimension keys. If the
      * specified dimension group in the <code>GroupBy</code> parameter is
      * <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values
-     * for the top <code>N</code> SQL digests. The response syntax is
+     * for the top <code>N</code> SQL digests. The response syntax is as follows:
      * <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
-     * <p/>
      */
     inline DescribeDimensionKeysRequest& WithAdditionalMetrics(Aws::Vector<Aws::String>&& value) { SetAdditionalMetrics(std::move(value)); return *this;}
 
@@ -558,9 +558,8 @@ namespace Model
      * <p>Additional metrics for the top <code>N</code> dimension keys. If the
      * specified dimension group in the <code>GroupBy</code> parameter is
      * <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values
-     * for the top <code>N</code> SQL digests. The response syntax is
+     * for the top <code>N</code> SQL digests. The response syntax is as follows:
      * <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
-     * <p/>
      */
     inline DescribeDimensionKeysRequest& AddAdditionalMetrics(const Aws::String& value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics.push_back(value); return *this; }
 
@@ -568,9 +567,8 @@ namespace Model
      * <p>Additional metrics for the top <code>N</code> dimension keys. If the
      * specified dimension group in the <code>GroupBy</code> parameter is
      * <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values
-     * for the top <code>N</code> SQL digests. The response syntax is
+     * for the top <code>N</code> SQL digests. The response syntax is as follows:
      * <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
-     * <p/>
      */
     inline DescribeDimensionKeysRequest& AddAdditionalMetrics(Aws::String&& value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics.push_back(std::move(value)); return *this; }
 
@@ -578,9 +576,8 @@ namespace Model
      * <p>Additional metrics for the top <code>N</code> dimension keys. If the
      * specified dimension group in the <code>GroupBy</code> parameter is
      * <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values
-     * for the top <code>N</code> SQL digests. The response syntax is
+     * for the top <code>N</code> SQL digests. The response syntax is as follows:
      * <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
-     * <p/>
      */
     inline DescribeDimensionKeysRequest& AddAdditionalMetrics(const char* value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics.push_back(value); return *this; }
 
@@ -759,56 +756,56 @@ namespace Model
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDimensionKeysRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDimensionKeysRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDimensionKeysRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

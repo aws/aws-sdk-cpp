@@ -18,7 +18,8 @@ CreateDatasetExportJobRequest::CreateDatasetExportJobRequest() :
     m_ingestionMode(IngestionMode::NOT_SET),
     m_ingestionModeHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_jobOutputHasBeenSet(false)
+    m_jobOutputHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,17 @@ Aws::String CreateDatasetExportJobRequest::SerializePayload() const
   if(m_jobOutputHasBeenSet)
   {
    payload.WithObject("jobOutput", m_jobOutput.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

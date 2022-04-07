@@ -16,7 +16,8 @@ CreateRecommenderRequest::CreateRecommenderRequest() :
     m_nameHasBeenSet(false),
     m_datasetGroupArnHasBeenSet(false),
     m_recipeArnHasBeenSet(false),
-    m_recommenderConfigHasBeenSet(false)
+    m_recommenderConfigHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,17 @@ Aws::String CreateRecommenderRequest::SerializePayload() const
   if(m_recommenderConfigHasBeenSet)
   {
    payload.WithObject("recommenderConfig", m_recommenderConfig.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

@@ -249,49 +249,49 @@ namespace Model
 
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * <p>A valid JSON object. There is no other schema imposed. The JSON object may
      * contain fields and nested subobjects.</p>
      */
     inline const Aws::String& GetDetail() const{ return m_detail; }
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * <p>A valid JSON object. There is no other schema imposed. The JSON object may
      * contain fields and nested subobjects.</p>
      */
     inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * <p>A valid JSON object. There is no other schema imposed. The JSON object may
      * contain fields and nested subobjects.</p>
      */
     inline void SetDetail(const Aws::String& value) { m_detailHasBeenSet = true; m_detail = value; }
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * <p>A valid JSON object. There is no other schema imposed. The JSON object may
      * contain fields and nested subobjects.</p>
      */
     inline void SetDetail(Aws::String&& value) { m_detailHasBeenSet = true; m_detail = std::move(value); }
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * <p>A valid JSON object. There is no other schema imposed. The JSON object may
      * contain fields and nested subobjects.</p>
      */
     inline void SetDetail(const char* value) { m_detailHasBeenSet = true; m_detail.assign(value); }
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * <p>A valid JSON object. There is no other schema imposed. The JSON object may
      * contain fields and nested subobjects.</p>
      */
     inline PutEventsRequestEntry& WithDetail(const Aws::String& value) { SetDetail(value); return *this;}
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * <p>A valid JSON object. There is no other schema imposed. The JSON object may
      * contain fields and nested subobjects.</p>
      */
     inline PutEventsRequestEntry& WithDetail(Aws::String&& value) { SetDetail(std::move(value)); return *this;}
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * <p>A valid JSON object. There is no other schema imposed. The JSON object may
      * contain fields and nested subobjects.</p>
      */
     inline PutEventsRequestEntry& WithDetail(const char* value) { SetDetail(value); return *this;}
@@ -300,56 +300,88 @@ namespace Model
     /**
      * <p>The name or ARN of the event bus to receive the event. Only the rules that
      * are associated with this event bus are used to match the event. If you omit
-     * this, the default event bus is used.</p>
+     * this, the default event bus is used.</p>  <p>If you're using a global
+     * endpoint with a custom bus, you must enter the name, not the ARN, of the event
+     * bus in either the primary or secondary Region here and the corresponding event
+     * bus in the other Region will be determined based on the endpoint referenced by
+     * the <code>EndpointId</code>.</p> 
      */
     inline const Aws::String& GetEventBusName() const{ return m_eventBusName; }
 
     /**
      * <p>The name or ARN of the event bus to receive the event. Only the rules that
      * are associated with this event bus are used to match the event. If you omit
-     * this, the default event bus is used.</p>
+     * this, the default event bus is used.</p>  <p>If you're using a global
+     * endpoint with a custom bus, you must enter the name, not the ARN, of the event
+     * bus in either the primary or secondary Region here and the corresponding event
+     * bus in the other Region will be determined based on the endpoint referenced by
+     * the <code>EndpointId</code>.</p> 
      */
     inline bool EventBusNameHasBeenSet() const { return m_eventBusNameHasBeenSet; }
 
     /**
      * <p>The name or ARN of the event bus to receive the event. Only the rules that
      * are associated with this event bus are used to match the event. If you omit
-     * this, the default event bus is used.</p>
+     * this, the default event bus is used.</p>  <p>If you're using a global
+     * endpoint with a custom bus, you must enter the name, not the ARN, of the event
+     * bus in either the primary or secondary Region here and the corresponding event
+     * bus in the other Region will be determined based on the endpoint referenced by
+     * the <code>EndpointId</code>.</p> 
      */
     inline void SetEventBusName(const Aws::String& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = value; }
 
     /**
      * <p>The name or ARN of the event bus to receive the event. Only the rules that
      * are associated with this event bus are used to match the event. If you omit
-     * this, the default event bus is used.</p>
+     * this, the default event bus is used.</p>  <p>If you're using a global
+     * endpoint with a custom bus, you must enter the name, not the ARN, of the event
+     * bus in either the primary or secondary Region here and the corresponding event
+     * bus in the other Region will be determined based on the endpoint referenced by
+     * the <code>EndpointId</code>.</p> 
      */
     inline void SetEventBusName(Aws::String&& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = std::move(value); }
 
     /**
      * <p>The name or ARN of the event bus to receive the event. Only the rules that
      * are associated with this event bus are used to match the event. If you omit
-     * this, the default event bus is used.</p>
+     * this, the default event bus is used.</p>  <p>If you're using a global
+     * endpoint with a custom bus, you must enter the name, not the ARN, of the event
+     * bus in either the primary or secondary Region here and the corresponding event
+     * bus in the other Region will be determined based on the endpoint referenced by
+     * the <code>EndpointId</code>.</p> 
      */
     inline void SetEventBusName(const char* value) { m_eventBusNameHasBeenSet = true; m_eventBusName.assign(value); }
 
     /**
      * <p>The name or ARN of the event bus to receive the event. Only the rules that
      * are associated with this event bus are used to match the event. If you omit
-     * this, the default event bus is used.</p>
+     * this, the default event bus is used.</p>  <p>If you're using a global
+     * endpoint with a custom bus, you must enter the name, not the ARN, of the event
+     * bus in either the primary or secondary Region here and the corresponding event
+     * bus in the other Region will be determined based on the endpoint referenced by
+     * the <code>EndpointId</code>.</p> 
      */
     inline PutEventsRequestEntry& WithEventBusName(const Aws::String& value) { SetEventBusName(value); return *this;}
 
     /**
      * <p>The name or ARN of the event bus to receive the event. Only the rules that
      * are associated with this event bus are used to match the event. If you omit
-     * this, the default event bus is used.</p>
+     * this, the default event bus is used.</p>  <p>If you're using a global
+     * endpoint with a custom bus, you must enter the name, not the ARN, of the event
+     * bus in either the primary or secondary Region here and the corresponding event
+     * bus in the other Region will be determined based on the endpoint referenced by
+     * the <code>EndpointId</code>.</p> 
      */
     inline PutEventsRequestEntry& WithEventBusName(Aws::String&& value) { SetEventBusName(std::move(value)); return *this;}
 
     /**
      * <p>The name or ARN of the event bus to receive the event. Only the rules that
      * are associated with this event bus are used to match the event. If you omit
-     * this, the default event bus is used.</p>
+     * this, the default event bus is used.</p>  <p>If you're using a global
+     * endpoint with a custom bus, you must enter the name, not the ARN, of the event
+     * bus in either the primary or secondary Region here and the corresponding event
+     * bus in the other Region will be determined based on the endpoint referenced by
+     * the <code>EndpointId</code>.</p> 
      */
     inline PutEventsRequestEntry& WithEventBusName(const char* value) { SetEventBusName(value); return *this;}
 

@@ -485,8 +485,8 @@ namespace Model
          * shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
          * must be the Amazon Resource Name (ARN) of the shared cluster snapshot. You can
          * only copy a shared DB cluster snapshot, whether encrypted or not, in the same
-         * Region.</p> <p>To cancel the copy operation after it is in progress, delete the
-         * target cluster snapshot identified by
+         * Amazon Web Services Region.</p> <p>To cancel the copy operation after it is in
+         * progress, delete the target cluster snapshot identified by
          * <code>TargetDBClusterSnapshotIdentifier</code> while that cluster snapshot is in
          * the <i>copying</i> status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterSnapshot">AWS
@@ -499,8 +499,8 @@ namespace Model
          * shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
          * must be the Amazon Resource Name (ARN) of the shared cluster snapshot. You can
          * only copy a shared DB cluster snapshot, whether encrypted or not, in the same
-         * Region.</p> <p>To cancel the copy operation after it is in progress, delete the
-         * target cluster snapshot identified by
+         * Amazon Web Services Region.</p> <p>To cancel the copy operation after it is in
+         * progress, delete the target cluster snapshot identified by
          * <code>TargetDBClusterSnapshotIdentifier</code> while that cluster snapshot is in
          * the <i>copying</i> status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterSnapshot">AWS
@@ -515,8 +515,8 @@ namespace Model
          * shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
          * must be the Amazon Resource Name (ARN) of the shared cluster snapshot. You can
          * only copy a shared DB cluster snapshot, whether encrypted or not, in the same
-         * Region.</p> <p>To cancel the copy operation after it is in progress, delete the
-         * target cluster snapshot identified by
+         * Amazon Web Services Region.</p> <p>To cancel the copy operation after it is in
+         * progress, delete the target cluster snapshot identified by
          * <code>TargetDBClusterSnapshotIdentifier</code> while that cluster snapshot is in
          * the <i>copying</i> status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterSnapshot">AWS
@@ -676,7 +676,8 @@ namespace Model
 
         /**
          * <p>Creates a new subnet group. subnet groups must contain at least one subnet in
-         * at least two Availability Zones in the Region.</p><p><h3>See Also:</h3>   <a
+         * at least two Availability Zones in the Amazon Web Services Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBSubnetGroup">AWS
          * API Reference</a></p>
          */
@@ -684,7 +685,8 @@ namespace Model
 
         /**
          * <p>Creates a new subnet group. subnet groups must contain at least one subnet in
-         * at least two Availability Zones in the Region.</p><p><h3>See Also:</h3>   <a
+         * at least two Availability Zones in the Amazon Web Services Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBSubnetGroup">AWS
          * API Reference</a></p>
          *
@@ -694,7 +696,8 @@ namespace Model
 
         /**
          * <p>Creates a new subnet group. subnet groups must contain at least one subnet in
-         * at least two Availability Zones in the Region.</p><p><h3>See Also:</h3>   <a
+         * at least two Availability Zones in the Amazon Web Services Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBSubnetGroup">AWS
          * API Reference</a></p>
          *
@@ -789,15 +792,15 @@ namespace Model
 
         /**
          * <p>Creates an Amazon DocumentDB global cluster that can span multiple multiple
-         * Regions. The global cluster contains one primary cluster with read-write
-         * capability, and up-to give read-only secondary clusters. Global clusters uses
-         * storage-based fast replication across regions with latencies less than one
-         * second, using dedicated infrastructure with no impact to your workload’s
-         * performance.</p> <p/> <p>You can create a global cluster that is initially
-         * empty, and then add a primary and a secondary to it. Or you can specify an
-         * existing cluster during the create operation, and this cluster becomes the
-         * primary of the global cluster. </p>  <p>This action only applies to Amazon
-         * DocumentDB clusters.</p> <p><h3>See Also:</h3>   <a
+         * Amazon Web Services Regions. The global cluster contains one primary cluster
+         * with read-write capability, and up-to give read-only secondary clusters. Global
+         * clusters uses storage-based fast replication across regions with latencies less
+         * than one second, using dedicated infrastructure with no impact to your
+         * workload’s performance.</p> <p/> <p>You can create a global cluster that is
+         * initially empty, and then add a primary and a secondary to it. Or you can
+         * specify an existing cluster during the create operation, and this cluster
+         * becomes the primary of the global cluster. </p>  <p>This action only
+         * applies to Amazon DocumentDB clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateGlobalCluster">AWS
          * API Reference</a></p>
          */
@@ -805,15 +808,15 @@ namespace Model
 
         /**
          * <p>Creates an Amazon DocumentDB global cluster that can span multiple multiple
-         * Regions. The global cluster contains one primary cluster with read-write
-         * capability, and up-to give read-only secondary clusters. Global clusters uses
-         * storage-based fast replication across regions with latencies less than one
-         * second, using dedicated infrastructure with no impact to your workload’s
-         * performance.</p> <p/> <p>You can create a global cluster that is initially
-         * empty, and then add a primary and a secondary to it. Or you can specify an
-         * existing cluster during the create operation, and this cluster becomes the
-         * primary of the global cluster. </p>  <p>This action only applies to Amazon
-         * DocumentDB clusters.</p> <p><h3>See Also:</h3>   <a
+         * Amazon Web Services Regions. The global cluster contains one primary cluster
+         * with read-write capability, and up-to give read-only secondary clusters. Global
+         * clusters uses storage-based fast replication across regions with latencies less
+         * than one second, using dedicated infrastructure with no impact to your
+         * workload’s performance.</p> <p/> <p>You can create a global cluster that is
+         * initially empty, and then add a primary and a secondary to it. Or you can
+         * specify an existing cluster during the create operation, and this cluster
+         * becomes the primary of the global cluster. </p>  <p>This action only
+         * applies to Amazon DocumentDB clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateGlobalCluster">AWS
          * API Reference</a></p>
          *
@@ -823,15 +826,15 @@ namespace Model
 
         /**
          * <p>Creates an Amazon DocumentDB global cluster that can span multiple multiple
-         * Regions. The global cluster contains one primary cluster with read-write
-         * capability, and up-to give read-only secondary clusters. Global clusters uses
-         * storage-based fast replication across regions with latencies less than one
-         * second, using dedicated infrastructure with no impact to your workload’s
-         * performance.</p> <p/> <p>You can create a global cluster that is initially
-         * empty, and then add a primary and a secondary to it. Or you can specify an
-         * existing cluster during the create operation, and this cluster becomes the
-         * primary of the global cluster. </p>  <p>This action only applies to Amazon
-         * DocumentDB clusters.</p> <p><h3>See Also:</h3>   <a
+         * Amazon Web Services Regions. The global cluster contains one primary cluster
+         * with read-write capability, and up-to give read-only secondary clusters. Global
+         * clusters uses storage-based fast replication across regions with latencies less
+         * than one second, using dedicated infrastructure with no impact to your
+         * workload’s performance.</p> <p/> <p>You can create a global cluster that is
+         * initially empty, and then add a primary and a secondary to it. Or you can
+         * specify an existing cluster during the create operation, and this cluster
+         * becomes the primary of the global cluster. </p>  <p>This action only
+         * applies to Amazon DocumentDB clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateGlobalCluster">AWS
          * API Reference</a></p>
          *
@@ -1055,7 +1058,7 @@ namespace Model
 
         /**
          * <p>Returns a list of certificate authority (CA) certificates provided by Amazon
-         * DocumentDB for this account.</p><p><h3>See Also:</h3>   <a
+         * DocumentDB for this Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates">AWS
          * API Reference</a></p>
          */
@@ -1063,7 +1066,7 @@ namespace Model
 
         /**
          * <p>Returns a list of certificate authority (CA) certificates provided by Amazon
-         * DocumentDB for this account.</p><p><h3>See Also:</h3>   <a
+         * DocumentDB for this Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates">AWS
          * API Reference</a></p>
          *
@@ -1073,7 +1076,7 @@ namespace Model
 
         /**
          * <p>Returns a list of certificate authority (CA) certificates provided by Amazon
-         * DocumentDB for this account.</p><p><h3>See Also:</h3>   <a
+         * DocumentDB for this Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates">AWS
          * API Reference</a></p>
          *
@@ -1145,13 +1148,13 @@ namespace Model
 
         /**
          * <p>Returns a list of cluster snapshot attribute names and values for a manual DB
-         * cluster snapshot.</p> <p>When you share snapshots with other accounts,
-         * <code>DescribeDBClusterSnapshotAttributes</code> returns the
-         * <code>restore</code> attribute and a list of IDs for the accounts that are
-         * authorized to copy or restore the manual cluster snapshot. If <code>all</code>
-         * is included in the list of values for the <code>restore</code> attribute, then
-         * the manual cluster snapshot is public and can be copied or restored by all
-         * accounts.</p><p><h3>See Also:</h3>   <a
+         * cluster snapshot.</p> <p>When you share snapshots with other Amazon Web Services
+         * accounts, <code>DescribeDBClusterSnapshotAttributes</code> returns the
+         * <code>restore</code> attribute and a list of IDs for the Amazon Web Services
+         * accounts that are authorized to copy or restore the manual cluster snapshot. If
+         * <code>all</code> is included in the list of values for the <code>restore</code>
+         * attribute, then the manual cluster snapshot is public and can be copied or
+         * restored by all Amazon Web Services accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterSnapshotAttributes">AWS
          * API Reference</a></p>
          */
@@ -1159,13 +1162,13 @@ namespace Model
 
         /**
          * <p>Returns a list of cluster snapshot attribute names and values for a manual DB
-         * cluster snapshot.</p> <p>When you share snapshots with other accounts,
-         * <code>DescribeDBClusterSnapshotAttributes</code> returns the
-         * <code>restore</code> attribute and a list of IDs for the accounts that are
-         * authorized to copy or restore the manual cluster snapshot. If <code>all</code>
-         * is included in the list of values for the <code>restore</code> attribute, then
-         * the manual cluster snapshot is public and can be copied or restored by all
-         * accounts.</p><p><h3>See Also:</h3>   <a
+         * cluster snapshot.</p> <p>When you share snapshots with other Amazon Web Services
+         * accounts, <code>DescribeDBClusterSnapshotAttributes</code> returns the
+         * <code>restore</code> attribute and a list of IDs for the Amazon Web Services
+         * accounts that are authorized to copy or restore the manual cluster snapshot. If
+         * <code>all</code> is included in the list of values for the <code>restore</code>
+         * attribute, then the manual cluster snapshot is public and can be copied or
+         * restored by all Amazon Web Services accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterSnapshotAttributes">AWS
          * API Reference</a></p>
          *
@@ -1175,13 +1178,13 @@ namespace Model
 
         /**
          * <p>Returns a list of cluster snapshot attribute names and values for a manual DB
-         * cluster snapshot.</p> <p>When you share snapshots with other accounts,
-         * <code>DescribeDBClusterSnapshotAttributes</code> returns the
-         * <code>restore</code> attribute and a list of IDs for the accounts that are
-         * authorized to copy or restore the manual cluster snapshot. If <code>all</code>
-         * is included in the list of values for the <code>restore</code> attribute, then
-         * the manual cluster snapshot is public and can be copied or restored by all
-         * accounts.</p><p><h3>See Also:</h3>   <a
+         * cluster snapshot.</p> <p>When you share snapshots with other Amazon Web Services
+         * accounts, <code>DescribeDBClusterSnapshotAttributes</code> returns the
+         * <code>restore</code> attribute and a list of IDs for the Amazon Web Services
+         * accounts that are authorized to copy or restore the manual cluster snapshot. If
+         * <code>all</code> is included in the list of values for the <code>restore</code>
+         * attribute, then the manual cluster snapshot is public and can be copied or
+         * restored by all Amazon Web Services accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterSnapshotAttributes">AWS
          * API Reference</a></p>
          *
@@ -1733,16 +1736,18 @@ namespace Model
         /**
          * <p>Adds an attribute and values to, or removes an attribute and values from, a
          * manual cluster snapshot.</p> <p>To share a manual cluster snapshot with other
-         * accounts, specify <code>restore</code> as the <code>AttributeName</code>, and
-         * use the <code>ValuesToAdd</code> parameter to add a list of IDs of the accounts
-         * that are authorized to restore the manual cluster snapshot. Use the value
-         * <code>all</code> to make the manual cluster snapshot public, which means that it
-         * can be copied or restored by all accounts. Do not add the <code>all</code> value
-         * for any manual cluster snapshots that contain private information that you don't
-         * want available to all accounts. If a manual cluster snapshot is encrypted, it
-         * can be shared, but only by specifying a list of authorized account IDs for the
-         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
-         * for that parameter in this case.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services accounts, specify <code>restore</code> as the
+         * <code>AttributeName</code>, and use the <code>ValuesToAdd</code> parameter to
+         * add a list of IDs of the Amazon Web Services accounts that are authorized to
+         * restore the manual cluster snapshot. Use the value <code>all</code> to make the
+         * manual cluster snapshot public, which means that it can be copied or restored by
+         * all Amazon Web Services accounts. Do not add the <code>all</code> value for any
+         * manual cluster snapshots that contain private information that you don't want
+         * available to all Amazon Web Services accounts. If a manual cluster snapshot is
+         * encrypted, it can be shared, but only by specifying a list of authorized Amazon
+         * Web Services account IDs for the <code>ValuesToAdd</code> parameter. You can't
+         * use <code>all</code> as a value for that parameter in this case.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterSnapshotAttribute">AWS
          * API Reference</a></p>
          */
@@ -1751,16 +1756,18 @@ namespace Model
         /**
          * <p>Adds an attribute and values to, or removes an attribute and values from, a
          * manual cluster snapshot.</p> <p>To share a manual cluster snapshot with other
-         * accounts, specify <code>restore</code> as the <code>AttributeName</code>, and
-         * use the <code>ValuesToAdd</code> parameter to add a list of IDs of the accounts
-         * that are authorized to restore the manual cluster snapshot. Use the value
-         * <code>all</code> to make the manual cluster snapshot public, which means that it
-         * can be copied or restored by all accounts. Do not add the <code>all</code> value
-         * for any manual cluster snapshots that contain private information that you don't
-         * want available to all accounts. If a manual cluster snapshot is encrypted, it
-         * can be shared, but only by specifying a list of authorized account IDs for the
-         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
-         * for that parameter in this case.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services accounts, specify <code>restore</code> as the
+         * <code>AttributeName</code>, and use the <code>ValuesToAdd</code> parameter to
+         * add a list of IDs of the Amazon Web Services accounts that are authorized to
+         * restore the manual cluster snapshot. Use the value <code>all</code> to make the
+         * manual cluster snapshot public, which means that it can be copied or restored by
+         * all Amazon Web Services accounts. Do not add the <code>all</code> value for any
+         * manual cluster snapshots that contain private information that you don't want
+         * available to all Amazon Web Services accounts. If a manual cluster snapshot is
+         * encrypted, it can be shared, but only by specifying a list of authorized Amazon
+         * Web Services account IDs for the <code>ValuesToAdd</code> parameter. You can't
+         * use <code>all</code> as a value for that parameter in this case.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterSnapshotAttribute">AWS
          * API Reference</a></p>
          *
@@ -1771,16 +1778,18 @@ namespace Model
         /**
          * <p>Adds an attribute and values to, or removes an attribute and values from, a
          * manual cluster snapshot.</p> <p>To share a manual cluster snapshot with other
-         * accounts, specify <code>restore</code> as the <code>AttributeName</code>, and
-         * use the <code>ValuesToAdd</code> parameter to add a list of IDs of the accounts
-         * that are authorized to restore the manual cluster snapshot. Use the value
-         * <code>all</code> to make the manual cluster snapshot public, which means that it
-         * can be copied or restored by all accounts. Do not add the <code>all</code> value
-         * for any manual cluster snapshots that contain private information that you don't
-         * want available to all accounts. If a manual cluster snapshot is encrypted, it
-         * can be shared, but only by specifying a list of authorized account IDs for the
-         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
-         * for that parameter in this case.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services accounts, specify <code>restore</code> as the
+         * <code>AttributeName</code>, and use the <code>ValuesToAdd</code> parameter to
+         * add a list of IDs of the Amazon Web Services accounts that are authorized to
+         * restore the manual cluster snapshot. Use the value <code>all</code> to make the
+         * manual cluster snapshot public, which means that it can be copied or restored by
+         * all Amazon Web Services accounts. Do not add the <code>all</code> value for any
+         * manual cluster snapshots that contain private information that you don't want
+         * available to all Amazon Web Services accounts. If a manual cluster snapshot is
+         * encrypted, it can be shared, but only by specifying a list of authorized Amazon
+         * Web Services account IDs for the <code>ValuesToAdd</code> parameter. You can't
+         * use <code>all</code> as a value for that parameter in this case.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterSnapshotAttribute">AWS
          * API Reference</a></p>
          *
@@ -1821,8 +1830,8 @@ namespace Model
 
         /**
          * <p>Modifies an existing subnet group. subnet groups must contain at least one
-         * subnet in at least two Availability Zones in the Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * subnet in at least two Availability Zones in the Amazon Web Services
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBSubnetGroup">AWS
          * API Reference</a></p>
          */
@@ -1830,8 +1839,8 @@ namespace Model
 
         /**
          * <p>Modifies an existing subnet group. subnet groups must contain at least one
-         * subnet in at least two Availability Zones in the Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * subnet in at least two Availability Zones in the Amazon Web Services
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBSubnetGroup">AWS
          * API Reference</a></p>
          *
@@ -1841,8 +1850,8 @@ namespace Model
 
         /**
          * <p>Modifies an existing subnet group. subnet groups must contain at least one
-         * subnet in at least two Availability Zones in the Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * subnet in at least two Availability Zones in the Amazon Web Services
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBSubnetGroup">AWS
          * API Reference</a></p>
          *
