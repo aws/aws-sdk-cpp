@@ -230,6 +230,7 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config, const Aws::Auth
 
   Aws::Crt::Io::TlsConnectionOptions* tlsConnectionOptions = config.tlsConnectionOptions ? config.tlsConnectionOptions.get() : Aws::GetDefaultTlsConnectionOptions();
   aws_tls_connection_options tlsOptions;
+  memset(&tlsOptions, 0, sizeof(tlsOptions));
   if (tlsConnectionOptions)
   {
     aws_tls_connection_options_copy(&tlsOptions, tlsConnectionOptions->GetUnderlyingHandle());
