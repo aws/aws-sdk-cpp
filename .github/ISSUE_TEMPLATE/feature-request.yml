@@ -45,17 +45,3 @@ body:
           required: false
         - label: This feature might incur a breaking change
           required: false
-  - type: input
-    id: cpp-sdk-version
-    attributes:
-      label: AWS C++ SDK version used
-    validations:
-      required: true
-
-  - type: input
-    id: cpp-version
-    attributes:
-      label: Compiler and Version used
-      description: gcc --version / Visual Studio / clang --version
-    validations:
-      required: true
