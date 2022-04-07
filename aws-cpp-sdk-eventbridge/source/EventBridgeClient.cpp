@@ -91,7 +91,7 @@ static const char* ALLOCATION_TAG = "EventBridgeClient";
 
 EventBridgeClient::EventBridgeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<EventBridgeErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
@@ -101,7 +101,7 @@ EventBridgeClient::EventBridgeClient(const Client::ClientConfiguration& clientCo
 
 EventBridgeClient::EventBridgeClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<EventBridgeErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
@@ -112,7 +112,7 @@ EventBridgeClient::EventBridgeClient(const AWSCredentials& credentials, const Cl
 EventBridgeClient::EventBridgeClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
+    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider,
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<EventBridgeErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
@@ -131,10 +131,12 @@ void EventBridgeClient::init(const Client::ClientConfiguration& config)
   if (config.endpointOverride.empty())
   {
       m_uri = m_configScheme + "://" + EventBridgeEndpoint::ForRegion(config.region, config.useDualStack);
+      m_useCustomEndpoint = false;
   }
   else
   {
       OverrideEndpoint(config.endpointOverride);
+      m_useCustomEndpoint = true;
   }
 }
 
@@ -1134,10 +1136,40 @@ void EventBridgeClient::ListTargetsByRuleAsyncHelper(const ListTargetsByRuleRequ
   handler(this, request, ListTargetsByRule(request), context);
 }
 
+/**
+ * The following API function EventBridgeClient::PutEvents has been generated using a customized template
+ * in order to accommodate the support of multi-regional endpoints.
+ */
 PutEventsOutcome EventBridgeClient::PutEvents(const PutEventsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return PutEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (request.EndpointIdHasBeenSet())
+  {
+    Aws::Http::URI uri;
+    if (m_useCustomEndpoint) {
+      // SDK must send the PutEvents API operation to the custom endpoint if one has been configured
+      uri = m_uri;
+    } else {
+      if(request.GetEndpointId().empty()) {
+        return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "EndpointId must not be a zero length string", false/*retryable*/));
+      }
+      Aws::String uriStr = request.GetEndpointId() + ".endpoint" + EventBridgeEndpoint::GetEventBridgeSuffix(m_region, false);
+      if(!Utils::IsValidHost(uriStr)) {
+        // The SDK must validate and throw an exception if EndpointId is not a valid DNS hostname component
+        return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Invalid EventBridge EndpointId DNS hostname", false/*retryable*/));
+      }
+      uri = m_configScheme + "://" + uriStr;
+    }
+    // EventBridge multi-region endpoints must be signed using SigV4a authentication
+    const char* signerName = Aws::Auth::ASYMMETRIC_SIGV4_SIGNER;
+    // SDK must sign the requests with a region value of "*" since the primary and secondary failover regions is not known to the SDK at request time
+    const char* signerRegionOverride = "*";
+    return PutEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, signerName, signerRegionOverride));
+  }
+  else
+  {
+    Aws::Http::URI uri = m_uri;
+    return PutEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  }
 }
 
 PutEventsOutcomeCallable EventBridgeClient::PutEventsCallable(const PutEventsRequest& request) const
