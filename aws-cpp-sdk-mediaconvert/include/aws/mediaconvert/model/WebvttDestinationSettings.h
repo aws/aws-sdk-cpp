@@ -125,62 +125,80 @@ namespace Model
 
 
     /**
-     * Set Style passthrough (StylePassthrough) to ENABLED to use the available style,
-     * color, and position information from your input captions. MediaConvert uses
-     * default settings for any missing style and position information in your input
-     * captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style
+     * To use the available style, color, and position information from your input
+     * captions: Set Style passthrough (stylePassthrough) to Enabled (ENABLED).
+     * MediaConvert uses default settings when style and position information is
+     * missing from your input captions. To recreate the input captions exactly: Set
+     * Style passthrough to Strict (STRICT). MediaConvert automatically applies timing
+     * adjustments, including adjustments for frame rate conversion, ad avails, and
+     * input clipping. Your input captions format must be WebVTT. To ignore the style
      * and position information from your input captions and use simplified output
-     * captions.
+     * captions: Set Style passthrough to Disabled (DISABLED), or leave blank.
      */
     inline const WebvttStylePassthrough& GetStylePassthrough() const{ return m_stylePassthrough; }
 
     /**
-     * Set Style passthrough (StylePassthrough) to ENABLED to use the available style,
-     * color, and position information from your input captions. MediaConvert uses
-     * default settings for any missing style and position information in your input
-     * captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style
+     * To use the available style, color, and position information from your input
+     * captions: Set Style passthrough (stylePassthrough) to Enabled (ENABLED).
+     * MediaConvert uses default settings when style and position information is
+     * missing from your input captions. To recreate the input captions exactly: Set
+     * Style passthrough to Strict (STRICT). MediaConvert automatically applies timing
+     * adjustments, including adjustments for frame rate conversion, ad avails, and
+     * input clipping. Your input captions format must be WebVTT. To ignore the style
      * and position information from your input captions and use simplified output
-     * captions.
+     * captions: Set Style passthrough to Disabled (DISABLED), or leave blank.
      */
     inline bool StylePassthroughHasBeenSet() const { return m_stylePassthroughHasBeenSet; }
 
     /**
-     * Set Style passthrough (StylePassthrough) to ENABLED to use the available style,
-     * color, and position information from your input captions. MediaConvert uses
-     * default settings for any missing style and position information in your input
-     * captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style
+     * To use the available style, color, and position information from your input
+     * captions: Set Style passthrough (stylePassthrough) to Enabled (ENABLED).
+     * MediaConvert uses default settings when style and position information is
+     * missing from your input captions. To recreate the input captions exactly: Set
+     * Style passthrough to Strict (STRICT). MediaConvert automatically applies timing
+     * adjustments, including adjustments for frame rate conversion, ad avails, and
+     * input clipping. Your input captions format must be WebVTT. To ignore the style
      * and position information from your input captions and use simplified output
-     * captions.
+     * captions: Set Style passthrough to Disabled (DISABLED), or leave blank.
      */
     inline void SetStylePassthrough(const WebvttStylePassthrough& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = value; }
 
     /**
-     * Set Style passthrough (StylePassthrough) to ENABLED to use the available style,
-     * color, and position information from your input captions. MediaConvert uses
-     * default settings for any missing style and position information in your input
-     * captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style
+     * To use the available style, color, and position information from your input
+     * captions: Set Style passthrough (stylePassthrough) to Enabled (ENABLED).
+     * MediaConvert uses default settings when style and position information is
+     * missing from your input captions. To recreate the input captions exactly: Set
+     * Style passthrough to Strict (STRICT). MediaConvert automatically applies timing
+     * adjustments, including adjustments for frame rate conversion, ad avails, and
+     * input clipping. Your input captions format must be WebVTT. To ignore the style
      * and position information from your input captions and use simplified output
-     * captions.
+     * captions: Set Style passthrough to Disabled (DISABLED), or leave blank.
      */
     inline void SetStylePassthrough(WebvttStylePassthrough&& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = std::move(value); }
 
     /**
-     * Set Style passthrough (StylePassthrough) to ENABLED to use the available style,
-     * color, and position information from your input captions. MediaConvert uses
-     * default settings for any missing style and position information in your input
-     * captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style
+     * To use the available style, color, and position information from your input
+     * captions: Set Style passthrough (stylePassthrough) to Enabled (ENABLED).
+     * MediaConvert uses default settings when style and position information is
+     * missing from your input captions. To recreate the input captions exactly: Set
+     * Style passthrough to Strict (STRICT). MediaConvert automatically applies timing
+     * adjustments, including adjustments for frame rate conversion, ad avails, and
+     * input clipping. Your input captions format must be WebVTT. To ignore the style
      * and position information from your input captions and use simplified output
-     * captions.
+     * captions: Set Style passthrough to Disabled (DISABLED), or leave blank.
      */
     inline WebvttDestinationSettings& WithStylePassthrough(const WebvttStylePassthrough& value) { SetStylePassthrough(value); return *this;}
 
     /**
-     * Set Style passthrough (StylePassthrough) to ENABLED to use the available style,
-     * color, and position information from your input captions. MediaConvert uses
-     * default settings for any missing style and position information in your input
-     * captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style
+     * To use the available style, color, and position information from your input
+     * captions: Set Style passthrough (stylePassthrough) to Enabled (ENABLED).
+     * MediaConvert uses default settings when style and position information is
+     * missing from your input captions. To recreate the input captions exactly: Set
+     * Style passthrough to Strict (STRICT). MediaConvert automatically applies timing
+     * adjustments, including adjustments for frame rate conversion, ad avails, and
+     * input clipping. Your input captions format must be WebVTT. To ignore the style
      * and position information from your input captions and use simplified output
-     * captions.
+     * captions: Set Style passthrough to Disabled (DISABLED), or leave blank.
      */
     inline WebvttDestinationSettings& WithStylePassthrough(WebvttStylePassthrough&& value) { SetStylePassthrough(std::move(value)); return *this;}
 

@@ -8,6 +8,7 @@
 #include <aws/mediaconvert/model/MpdAccessibilityCaptionHints.h>
 #include <aws/mediaconvert/model/MpdAudioDuration.h>
 #include <aws/mediaconvert/model/MpdCaptionContainerType.h>
+#include <aws/mediaconvert/model/MpdKlvMetadata.h>
 #include <aws/mediaconvert/model/MpdScte35Esam.h>
 #include <aws/mediaconvert/model/MpdScte35Source.h>
 #include <aws/mediaconvert/model/MpdTimedMetadata.h>
@@ -275,6 +276,43 @@ namespace Model
 
 
     /**
+     * Applies to DASH ISO outputs. Use this setting to specify whether the service
+     * inserts the KLV metadata from the input in this output.
+     */
+    inline const MpdKlvMetadata& GetKlvMetadata() const{ return m_klvMetadata; }
+
+    /**
+     * Applies to DASH ISO outputs. Use this setting to specify whether the service
+     * inserts the KLV metadata from the input in this output.
+     */
+    inline bool KlvMetadataHasBeenSet() const { return m_klvMetadataHasBeenSet; }
+
+    /**
+     * Applies to DASH ISO outputs. Use this setting to specify whether the service
+     * inserts the KLV metadata from the input in this output.
+     */
+    inline void SetKlvMetadata(const MpdKlvMetadata& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = value; }
+
+    /**
+     * Applies to DASH ISO outputs. Use this setting to specify whether the service
+     * inserts the KLV metadata from the input in this output.
+     */
+    inline void SetKlvMetadata(MpdKlvMetadata&& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = std::move(value); }
+
+    /**
+     * Applies to DASH ISO outputs. Use this setting to specify whether the service
+     * inserts the KLV metadata from the input in this output.
+     */
+    inline MpdSettings& WithKlvMetadata(const MpdKlvMetadata& value) { SetKlvMetadata(value); return *this;}
+
+    /**
+     * Applies to DASH ISO outputs. Use this setting to specify whether the service
+     * inserts the KLV metadata from the input in this output.
+     */
+    inline MpdSettings& WithKlvMetadata(MpdKlvMetadata&& value) { SetKlvMetadata(std::move(value)); return *this;}
+
+
+    /**
      * Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT
      * to put SCTE-35 markers in this output at the insertion points that you specify
      * in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
@@ -430,6 +468,9 @@ namespace Model
 
     MpdCaptionContainerType m_captionContainerType;
     bool m_captionContainerTypeHasBeenSet;
+
+    MpdKlvMetadata m_klvMetadata;
+    bool m_klvMetadataHasBeenSet;
 
     MpdScte35Esam m_scte35Esam;
     bool m_scte35EsamHasBeenSet;

@@ -26,6 +26,8 @@ DashManifest::DashManifest() :
     m_minBufferTimeSecondsHasBeenSet(false),
     m_profile(Profile::NOT_SET),
     m_profileHasBeenSet(false),
+    m_scteMarkersSource(ScteMarkersSource::NOT_SET),
+    m_scteMarkersSourceHasBeenSet(false),
     m_streamSelectionHasBeenSet(false)
 {
 }
@@ -38,6 +40,8 @@ DashManifest::DashManifest(JsonView jsonValue) :
     m_minBufferTimeSecondsHasBeenSet(false),
     m_profile(Profile::NOT_SET),
     m_profileHasBeenSet(false),
+    m_scteMarkersSource(ScteMarkersSource::NOT_SET),
+    m_scteMarkersSourceHasBeenSet(false),
     m_streamSelectionHasBeenSet(false)
 {
   *this = jsonValue;
@@ -71,6 +75,13 @@ DashManifest& DashManifest::operator =(JsonView jsonValue)
     m_profile = ProfileMapper::GetProfileForName(jsonValue.GetString("profile"));
 
     m_profileHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("scteMarkersSource"))
+  {
+    m_scteMarkersSource = ScteMarkersSourceMapper::GetScteMarkersSourceForName(jsonValue.GetString("scteMarkersSource"));
+
+    m_scteMarkersSourceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("streamSelection"))
@@ -107,6 +118,11 @@ JsonValue DashManifest::Jsonize() const
   if(m_profileHasBeenSet)
   {
    payload.WithString("profile", ProfileMapper::GetNameForProfile(m_profile));
+  }
+
+  if(m_scteMarkersSourceHasBeenSet)
+  {
+   payload.WithString("scteMarkersSource", ScteMarkersSourceMapper::GetNameForScteMarkersSource(m_scteMarkersSource));
   }
 
   if(m_streamSelectionHasBeenSet)

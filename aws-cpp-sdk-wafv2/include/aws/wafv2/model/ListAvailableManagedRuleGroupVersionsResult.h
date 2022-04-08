@@ -140,11 +140,49 @@ namespace Model
      */
     inline ListAvailableManagedRuleGroupVersionsResult& AddVersions(ManagedRuleGroupVersion&& value) { m_versions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The name of the version that's currently set as the default. </p>
+     */
+    inline const Aws::String& GetCurrentDefaultVersion() const{ return m_currentDefaultVersion; }
+
+    /**
+     * <p>The name of the version that's currently set as the default. </p>
+     */
+    inline void SetCurrentDefaultVersion(const Aws::String& value) { m_currentDefaultVersion = value; }
+
+    /**
+     * <p>The name of the version that's currently set as the default. </p>
+     */
+    inline void SetCurrentDefaultVersion(Aws::String&& value) { m_currentDefaultVersion = std::move(value); }
+
+    /**
+     * <p>The name of the version that's currently set as the default. </p>
+     */
+    inline void SetCurrentDefaultVersion(const char* value) { m_currentDefaultVersion.assign(value); }
+
+    /**
+     * <p>The name of the version that's currently set as the default. </p>
+     */
+    inline ListAvailableManagedRuleGroupVersionsResult& WithCurrentDefaultVersion(const Aws::String& value) { SetCurrentDefaultVersion(value); return *this;}
+
+    /**
+     * <p>The name of the version that's currently set as the default. </p>
+     */
+    inline ListAvailableManagedRuleGroupVersionsResult& WithCurrentDefaultVersion(Aws::String&& value) { SetCurrentDefaultVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the version that's currently set as the default. </p>
+     */
+    inline ListAvailableManagedRuleGroupVersionsResult& WithCurrentDefaultVersion(const char* value) { SetCurrentDefaultVersion(value); return *this;}
+
   private:
 
     Aws::String m_nextMarker;
 
     Aws::Vector<ManagedRuleGroupVersion> m_versions;
+
+    Aws::String m_currentDefaultVersion;
   };
 
 } // namespace Model

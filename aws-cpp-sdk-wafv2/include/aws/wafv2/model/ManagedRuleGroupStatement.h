@@ -343,7 +343,14 @@ namespace Model
      * <p>Additional information that's used by a managed rule group. Most managed rule
      * groups don't require this.</p> <p>Use this for the account takeover prevention
      * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
-     * information about the sign-in page of your application. </p>
+     * information about the sign-in page of your application. </p> <p>You can provide
+     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
+     * group configuration, for example <code>UsernameField</code> and
+     * <code>PasswordField</code>. The configuration that you provide depends on the
+     * needs of the managed rule group. For the ATP managed rule group, you provide the
+     * following individual configuration objects: <code>LoginPath</code>,
+     * <code>PasswordField</code>, <code>PayloadType</code> and
+     * <code>UsernameField</code>.</p>
      */
     inline const Aws::Vector<ManagedRuleGroupConfig>& GetManagedRuleGroupConfigs() const{ return m_managedRuleGroupConfigs; }
 
@@ -351,7 +358,14 @@ namespace Model
      * <p>Additional information that's used by a managed rule group. Most managed rule
      * groups don't require this.</p> <p>Use this for the account takeover prevention
      * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
-     * information about the sign-in page of your application. </p>
+     * information about the sign-in page of your application. </p> <p>You can provide
+     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
+     * group configuration, for example <code>UsernameField</code> and
+     * <code>PasswordField</code>. The configuration that you provide depends on the
+     * needs of the managed rule group. For the ATP managed rule group, you provide the
+     * following individual configuration objects: <code>LoginPath</code>,
+     * <code>PasswordField</code>, <code>PayloadType</code> and
+     * <code>UsernameField</code>.</p>
      */
     inline bool ManagedRuleGroupConfigsHasBeenSet() const { return m_managedRuleGroupConfigsHasBeenSet; }
 
@@ -359,7 +373,14 @@ namespace Model
      * <p>Additional information that's used by a managed rule group. Most managed rule
      * groups don't require this.</p> <p>Use this for the account takeover prevention
      * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
-     * information about the sign-in page of your application. </p>
+     * information about the sign-in page of your application. </p> <p>You can provide
+     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
+     * group configuration, for example <code>UsernameField</code> and
+     * <code>PasswordField</code>. The configuration that you provide depends on the
+     * needs of the managed rule group. For the ATP managed rule group, you provide the
+     * following individual configuration objects: <code>LoginPath</code>,
+     * <code>PasswordField</code>, <code>PayloadType</code> and
+     * <code>UsernameField</code>.</p>
      */
     inline void SetManagedRuleGroupConfigs(const Aws::Vector<ManagedRuleGroupConfig>& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs = value; }
 
@@ -367,7 +388,14 @@ namespace Model
      * <p>Additional information that's used by a managed rule group. Most managed rule
      * groups don't require this.</p> <p>Use this for the account takeover prevention
      * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
-     * information about the sign-in page of your application. </p>
+     * information about the sign-in page of your application. </p> <p>You can provide
+     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
+     * group configuration, for example <code>UsernameField</code> and
+     * <code>PasswordField</code>. The configuration that you provide depends on the
+     * needs of the managed rule group. For the ATP managed rule group, you provide the
+     * following individual configuration objects: <code>LoginPath</code>,
+     * <code>PasswordField</code>, <code>PayloadType</code> and
+     * <code>UsernameField</code>.</p>
      */
     inline void SetManagedRuleGroupConfigs(Aws::Vector<ManagedRuleGroupConfig>&& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs = std::move(value); }
 
@@ -375,7 +403,14 @@ namespace Model
      * <p>Additional information that's used by a managed rule group. Most managed rule
      * groups don't require this.</p> <p>Use this for the account takeover prevention
      * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
-     * information about the sign-in page of your application. </p>
+     * information about the sign-in page of your application. </p> <p>You can provide
+     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
+     * group configuration, for example <code>UsernameField</code> and
+     * <code>PasswordField</code>. The configuration that you provide depends on the
+     * needs of the managed rule group. For the ATP managed rule group, you provide the
+     * following individual configuration objects: <code>LoginPath</code>,
+     * <code>PasswordField</code>, <code>PayloadType</code> and
+     * <code>UsernameField</code>.</p>
      */
     inline ManagedRuleGroupStatement& WithManagedRuleGroupConfigs(const Aws::Vector<ManagedRuleGroupConfig>& value) { SetManagedRuleGroupConfigs(value); return *this;}
 
@@ -383,7 +418,14 @@ namespace Model
      * <p>Additional information that's used by a managed rule group. Most managed rule
      * groups don't require this.</p> <p>Use this for the account takeover prevention
      * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
-     * information about the sign-in page of your application. </p>
+     * information about the sign-in page of your application. </p> <p>You can provide
+     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
+     * group configuration, for example <code>UsernameField</code> and
+     * <code>PasswordField</code>. The configuration that you provide depends on the
+     * needs of the managed rule group. For the ATP managed rule group, you provide the
+     * following individual configuration objects: <code>LoginPath</code>,
+     * <code>PasswordField</code>, <code>PayloadType</code> and
+     * <code>UsernameField</code>.</p>
      */
     inline ManagedRuleGroupStatement& WithManagedRuleGroupConfigs(Aws::Vector<ManagedRuleGroupConfig>&& value) { SetManagedRuleGroupConfigs(std::move(value)); return *this;}
 
@@ -391,7 +433,14 @@ namespace Model
      * <p>Additional information that's used by a managed rule group. Most managed rule
      * groups don't require this.</p> <p>Use this for the account takeover prevention
      * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
-     * information about the sign-in page of your application. </p>
+     * information about the sign-in page of your application. </p> <p>You can provide
+     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
+     * group configuration, for example <code>UsernameField</code> and
+     * <code>PasswordField</code>. The configuration that you provide depends on the
+     * needs of the managed rule group. For the ATP managed rule group, you provide the
+     * following individual configuration objects: <code>LoginPath</code>,
+     * <code>PasswordField</code>, <code>PayloadType</code> and
+     * <code>UsernameField</code>.</p>
      */
     inline ManagedRuleGroupStatement& AddManagedRuleGroupConfigs(const ManagedRuleGroupConfig& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs.push_back(value); return *this; }
 
@@ -399,7 +448,14 @@ namespace Model
      * <p>Additional information that's used by a managed rule group. Most managed rule
      * groups don't require this.</p> <p>Use this for the account takeover prevention
      * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
-     * information about the sign-in page of your application. </p>
+     * information about the sign-in page of your application. </p> <p>You can provide
+     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
+     * group configuration, for example <code>UsernameField</code> and
+     * <code>PasswordField</code>. The configuration that you provide depends on the
+     * needs of the managed rule group. For the ATP managed rule group, you provide the
+     * following individual configuration objects: <code>LoginPath</code>,
+     * <code>PasswordField</code>, <code>PayloadType</code> and
+     * <code>UsernameField</code>.</p>
      */
     inline ManagedRuleGroupStatement& AddManagedRuleGroupConfigs(ManagedRuleGroupConfig&& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs.push_back(std::move(value)); return *this; }
 

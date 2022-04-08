@@ -10,6 +10,7 @@
 #include <aws/mediaconvert/model/CmfcAudioTrackType.h>
 #include <aws/mediaconvert/model/CmfcDescriptiveVideoServiceFlag.h>
 #include <aws/mediaconvert/model/CmfcIFrameOnlyManifest.h>
+#include <aws/mediaconvert/model/CmfcKlvMetadata.h>
 #include <aws/mediaconvert/model/CmfcScte35Esam.h>
 #include <aws/mediaconvert/model/CmfcScte35Source.h>
 #include <aws/mediaconvert/model/CmfcTimedMetadata.h>
@@ -670,6 +671,43 @@ namespace Model
 
 
     /**
+     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
+     * the KLV metadata from the input in this output.
+     */
+    inline const CmfcKlvMetadata& GetKlvMetadata() const{ return m_klvMetadata; }
+
+    /**
+     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
+     * the KLV metadata from the input in this output.
+     */
+    inline bool KlvMetadataHasBeenSet() const { return m_klvMetadataHasBeenSet; }
+
+    /**
+     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
+     * the KLV metadata from the input in this output.
+     */
+    inline void SetKlvMetadata(const CmfcKlvMetadata& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = value; }
+
+    /**
+     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
+     * the KLV metadata from the input in this output.
+     */
+    inline void SetKlvMetadata(CmfcKlvMetadata&& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = std::move(value); }
+
+    /**
+     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
+     * the KLV metadata from the input in this output.
+     */
+    inline CmfcSettings& WithKlvMetadata(const CmfcKlvMetadata& value) { SetKlvMetadata(value); return *this;}
+
+    /**
+     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
+     * the KLV metadata from the input in this output.
+     */
+    inline CmfcSettings& WithKlvMetadata(CmfcKlvMetadata&& value) { SetKlvMetadata(std::move(value)); return *this;}
+
+
+    /**
      * Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT
      * to put SCTE-35 markers in this output at the insertion points that you specify
      * in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
@@ -834,6 +872,9 @@ namespace Model
 
     CmfcIFrameOnlyManifest m_iFrameOnlyManifest;
     bool m_iFrameOnlyManifestHasBeenSet;
+
+    CmfcKlvMetadata m_klvMetadata;
+    bool m_klvMetadataHasBeenSet;
 
     CmfcScte35Esam m_scte35Esam;
     bool m_scte35EsamHasBeenSet;

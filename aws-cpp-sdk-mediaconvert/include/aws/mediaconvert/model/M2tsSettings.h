@@ -17,6 +17,7 @@
 #include <aws/mediaconvert/model/M2tsEbpPlacement.h>
 #include <aws/mediaconvert/model/M2tsEsRateInPes.h>
 #include <aws/mediaconvert/model/M2tsForceTsVideoEbpOrder.h>
+#include <aws/mediaconvert/model/M2tsKlvMetadata.h>
 #include <aws/mediaconvert/model/M2tsNielsenId3.h>
 #include <aws/mediaconvert/model/M2tsPcrControl.h>
 #include <aws/mediaconvert/model/M2tsRateMode.h>
@@ -814,6 +815,43 @@ namespace Model
      * The length, in seconds, of each fragment. Only used with EBP markers.
      */
     inline M2tsSettings& WithFragmentTime(double value) { SetFragmentTime(value); return *this;}
+
+
+    /**
+     * Applies to MPEG-TS outputs. Use this setting to specify whether the service
+     * inserts the KLV metadata from the input in this output.
+     */
+    inline const M2tsKlvMetadata& GetKlvMetadata() const{ return m_klvMetadata; }
+
+    /**
+     * Applies to MPEG-TS outputs. Use this setting to specify whether the service
+     * inserts the KLV metadata from the input in this output.
+     */
+    inline bool KlvMetadataHasBeenSet() const { return m_klvMetadataHasBeenSet; }
+
+    /**
+     * Applies to MPEG-TS outputs. Use this setting to specify whether the service
+     * inserts the KLV metadata from the input in this output.
+     */
+    inline void SetKlvMetadata(const M2tsKlvMetadata& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = value; }
+
+    /**
+     * Applies to MPEG-TS outputs. Use this setting to specify whether the service
+     * inserts the KLV metadata from the input in this output.
+     */
+    inline void SetKlvMetadata(M2tsKlvMetadata&& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = std::move(value); }
+
+    /**
+     * Applies to MPEG-TS outputs. Use this setting to specify whether the service
+     * inserts the KLV metadata from the input in this output.
+     */
+    inline M2tsSettings& WithKlvMetadata(const M2tsKlvMetadata& value) { SetKlvMetadata(value); return *this;}
+
+    /**
+     * Applies to MPEG-TS outputs. Use this setting to specify whether the service
+     * inserts the KLV metadata from the input in this output.
+     */
+    inline M2tsSettings& WithKlvMetadata(M2tsKlvMetadata&& value) { SetKlvMetadata(std::move(value)); return *this;}
 
 
     /**
@@ -1638,6 +1676,9 @@ namespace Model
 
     double m_fragmentTime;
     bool m_fragmentTimeHasBeenSet;
+
+    M2tsKlvMetadata m_klvMetadata;
+    bool m_klvMetadataHasBeenSet;
 
     int m_maxPcrInterval;
     bool m_maxPcrIntervalHasBeenSet;

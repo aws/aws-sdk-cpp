@@ -143,6 +143,35 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether the managed rule group is versioned. If it is, you can
+     * retrieve the versions list by calling
+     * <a>ListAvailableManagedRuleGroupVersions</a>. </p>
+     */
+    inline bool GetVersioningSupported() const{ return m_versioningSupported; }
+
+    /**
+     * <p>Indicates whether the managed rule group is versioned. If it is, you can
+     * retrieve the versions list by calling
+     * <a>ListAvailableManagedRuleGroupVersions</a>. </p>
+     */
+    inline bool VersioningSupportedHasBeenSet() const { return m_versioningSupportedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the managed rule group is versioned. If it is, you can
+     * retrieve the versions list by calling
+     * <a>ListAvailableManagedRuleGroupVersions</a>. </p>
+     */
+    inline void SetVersioningSupported(bool value) { m_versioningSupportedHasBeenSet = true; m_versioningSupported = value; }
+
+    /**
+     * <p>Indicates whether the managed rule group is versioned. If it is, you can
+     * retrieve the versions list by calling
+     * <a>ListAvailableManagedRuleGroupVersions</a>. </p>
+     */
+    inline ManagedRuleGroupSummary& WithVersioningSupported(bool value) { SetVersioningSupported(value); return *this;}
+
+
+    /**
      * <p>The description of the managed rule group, provided by Amazon Web Services
      * Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
      */
@@ -197,6 +226,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    bool m_versioningSupported;
+    bool m_versioningSupportedHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;

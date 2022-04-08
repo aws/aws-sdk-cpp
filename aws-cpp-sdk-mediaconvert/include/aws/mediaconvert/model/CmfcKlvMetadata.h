@@ -13,20 +13,19 @@ namespace MediaConvert
 {
 namespace Model
 {
-  enum class WebvttStylePassthrough
+  enum class CmfcKlvMetadata
   {
     NOT_SET,
-    ENABLED,
-    DISABLED,
-    STRICT
+    PASSTHROUGH,
+    NONE
   };
 
-namespace WebvttStylePassthroughMapper
+namespace CmfcKlvMetadataMapper
 {
-AWS_MEDIACONVERT_API WebvttStylePassthrough GetWebvttStylePassthroughForName(const Aws::String& name);
+AWS_MEDIACONVERT_API CmfcKlvMetadata GetCmfcKlvMetadataForName(const Aws::String& name);
 
-AWS_MEDIACONVERT_API Aws::String GetNameForWebvttStylePassthrough(WebvttStylePassthrough value);
-} // namespace WebvttStylePassthroughMapper
+AWS_MEDIACONVERT_API Aws::String GetNameForCmfcKlvMetadata(CmfcKlvMetadata value);
+} // namespace CmfcKlvMetadataMapper
 } // namespace Model
 } // namespace MediaConvert
 } // namespace Aws
