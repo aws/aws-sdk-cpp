@@ -33,7 +33,8 @@ Service::Service() :
     m_encryptionConfigurationHasBeenSet(false),
     m_healthCheckConfigurationHasBeenSet(false),
     m_autoScalingConfigurationSummaryHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false)
+    m_networkConfigurationHasBeenSet(false),
+    m_observabilityConfigurationHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ Service::Service(JsonView jsonValue) :
     m_encryptionConfigurationHasBeenSet(false),
     m_healthCheckConfigurationHasBeenSet(false),
     m_autoScalingConfigurationSummaryHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false)
+    m_networkConfigurationHasBeenSet(false),
+    m_observabilityConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -157,6 +159,13 @@ Service& Service::operator =(JsonView jsonValue)
     m_networkConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ObservabilityConfiguration"))
+  {
+    m_observabilityConfiguration = jsonValue.GetObject("ObservabilityConfiguration");
+
+    m_observabilityConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -241,6 +250,12 @@ JsonValue Service::Jsonize() const
   if(m_networkConfigurationHasBeenSet)
   {
    payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
+
+  }
+
+  if(m_observabilityConfigurationHasBeenSet)
+  {
+   payload.WithObject("ObservabilityConfiguration", m_observabilityConfiguration.Jsonize());
 
   }
 

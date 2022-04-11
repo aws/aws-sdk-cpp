@@ -23,7 +23,8 @@ ComponentChild::ComponentChild() :
     m_componentTypeHasBeenSet(false),
     m_eventsHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+    m_propertiesHasBeenSet(false),
+    m_sourceIdHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ ComponentChild::ComponentChild(JsonView jsonValue) :
     m_componentTypeHasBeenSet(false),
     m_eventsHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+    m_propertiesHasBeenSet(false),
+    m_sourceIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -81,6 +83,13 @@ ComponentChild& ComponentChild::operator =(JsonView jsonValue)
       m_properties[propertiesItem.first] = propertiesItem.second.AsObject();
     }
     m_propertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sourceId"))
+  {
+    m_sourceId = jsonValue.GetString("sourceId");
+
+    m_sourceIdHasBeenSet = true;
   }
 
   return *this;
@@ -132,6 +141,12 @@ JsonValue ComponentChild::Jsonize() const
      propertiesJsonMap.WithObject(propertiesItem.first, propertiesItem.second.Jsonize());
    }
    payload.WithObject("properties", std::move(propertiesJsonMap));
+
+  }
+
+  if(m_sourceIdHasBeenSet)
+  {
+   payload.WithString("sourceId", m_sourceId);
 
   }
 

@@ -83,6 +83,55 @@ namespace Model
 
 
     /**
+     * <p>Binds an event to an action on a component. When you specify a
+     * <code>bindingEvent</code>, the event is called when the action is performed.</p>
+     */
+    inline const Aws::String& GetBindingEvent() const{ return m_bindingEvent; }
+
+    /**
+     * <p>Binds an event to an action on a component. When you specify a
+     * <code>bindingEvent</code>, the event is called when the action is performed.</p>
+     */
+    inline bool BindingEventHasBeenSet() const { return m_bindingEventHasBeenSet; }
+
+    /**
+     * <p>Binds an event to an action on a component. When you specify a
+     * <code>bindingEvent</code>, the event is called when the action is performed.</p>
+     */
+    inline void SetBindingEvent(const Aws::String& value) { m_bindingEventHasBeenSet = true; m_bindingEvent = value; }
+
+    /**
+     * <p>Binds an event to an action on a component. When you specify a
+     * <code>bindingEvent</code>, the event is called when the action is performed.</p>
+     */
+    inline void SetBindingEvent(Aws::String&& value) { m_bindingEventHasBeenSet = true; m_bindingEvent = std::move(value); }
+
+    /**
+     * <p>Binds an event to an action on a component. When you specify a
+     * <code>bindingEvent</code>, the event is called when the action is performed.</p>
+     */
+    inline void SetBindingEvent(const char* value) { m_bindingEventHasBeenSet = true; m_bindingEvent.assign(value); }
+
+    /**
+     * <p>Binds an event to an action on a component. When you specify a
+     * <code>bindingEvent</code>, the event is called when the action is performed.</p>
+     */
+    inline ComponentEvent& WithBindingEvent(const Aws::String& value) { SetBindingEvent(value); return *this;}
+
+    /**
+     * <p>Binds an event to an action on a component. When you specify a
+     * <code>bindingEvent</code>, the event is called when the action is performed.</p>
+     */
+    inline ComponentEvent& WithBindingEvent(Aws::String&& value) { SetBindingEvent(std::move(value)); return *this;}
+
+    /**
+     * <p>Binds an event to an action on a component. When you specify a
+     * <code>bindingEvent</code>, the event is called when the action is performed.</p>
+     */
+    inline ComponentEvent& WithBindingEvent(const char* value) { SetBindingEvent(value); return *this;}
+
+
+    /**
      * <p>Describes information about the action.</p>
      */
     inline const ActionParameters& GetParameters() const{ return m_parameters; }
@@ -116,6 +165,9 @@ namespace Model
 
     Aws::String m_action;
     bool m_actionHasBeenSet;
+
+    Aws::String m_bindingEvent;
+    bool m_bindingEventHasBeenSet;
 
     ActionParameters m_parameters;
     bool m_parametersHasBeenSet;

@@ -20,12 +20,14 @@ namespace Model
 
 ComponentEvent::ComponentEvent() : 
     m_actionHasBeenSet(false),
+    m_bindingEventHasBeenSet(false),
     m_parametersHasBeenSet(false)
 {
 }
 
 ComponentEvent::ComponentEvent(JsonView jsonValue) : 
     m_actionHasBeenSet(false),
+    m_bindingEventHasBeenSet(false),
     m_parametersHasBeenSet(false)
 {
   *this = jsonValue;
@@ -38,6 +40,13 @@ ComponentEvent& ComponentEvent::operator =(JsonView jsonValue)
     m_action = jsonValue.GetString("action");
 
     m_actionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("bindingEvent"))
+  {
+    m_bindingEvent = jsonValue.GetString("bindingEvent");
+
+    m_bindingEventHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("parameters"))
@@ -57,6 +66,12 @@ JsonValue ComponentEvent::Jsonize() const
   if(m_actionHasBeenSet)
   {
    payload.WithString("action", m_action);
+
+  }
+
+  if(m_bindingEventHasBeenSet)
+  {
+   payload.WithString("bindingEvent", m_bindingEvent);
 
   }
 

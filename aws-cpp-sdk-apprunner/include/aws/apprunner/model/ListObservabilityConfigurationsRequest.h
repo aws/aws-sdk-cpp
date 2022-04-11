@@ -18,16 +18,16 @@ namespace Model
 
   /**
    */
-  class AWS_APPRUNNER_API ListAutoScalingConfigurationsRequest : public AppRunnerRequest
+  class AWS_APPRUNNER_API ListObservabilityConfigurationsRequest : public AppRunnerRequest
   {
   public:
-    ListAutoScalingConfigurationsRequest();
+    ListObservabilityConfigurationsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
     // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListAutoScalingConfigurations"; }
+    inline virtual const char* GetServiceRequestName() const override { return "ListObservabilityConfigurations"; }
 
     Aws::String SerializePayload() const override;
 
@@ -35,60 +35,60 @@ namespace Model
 
 
     /**
-     * <p>The name of the App Runner auto scaling configuration that you want to list.
+     * <p>The name of the App Runner observability configuration that you want to list.
      * If specified, App Runner lists revisions that share this name. If not specified,
      * App Runner returns revisions of all active configurations.</p>
      */
-    inline const Aws::String& GetAutoScalingConfigurationName() const{ return m_autoScalingConfigurationName; }
+    inline const Aws::String& GetObservabilityConfigurationName() const{ return m_observabilityConfigurationName; }
 
     /**
-     * <p>The name of the App Runner auto scaling configuration that you want to list.
+     * <p>The name of the App Runner observability configuration that you want to list.
      * If specified, App Runner lists revisions that share this name. If not specified,
      * App Runner returns revisions of all active configurations.</p>
      */
-    inline bool AutoScalingConfigurationNameHasBeenSet() const { return m_autoScalingConfigurationNameHasBeenSet; }
+    inline bool ObservabilityConfigurationNameHasBeenSet() const { return m_observabilityConfigurationNameHasBeenSet; }
 
     /**
-     * <p>The name of the App Runner auto scaling configuration that you want to list.
+     * <p>The name of the App Runner observability configuration that you want to list.
      * If specified, App Runner lists revisions that share this name. If not specified,
      * App Runner returns revisions of all active configurations.</p>
      */
-    inline void SetAutoScalingConfigurationName(const Aws::String& value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName = value; }
+    inline void SetObservabilityConfigurationName(const Aws::String& value) { m_observabilityConfigurationNameHasBeenSet = true; m_observabilityConfigurationName = value; }
 
     /**
-     * <p>The name of the App Runner auto scaling configuration that you want to list.
+     * <p>The name of the App Runner observability configuration that you want to list.
      * If specified, App Runner lists revisions that share this name. If not specified,
      * App Runner returns revisions of all active configurations.</p>
      */
-    inline void SetAutoScalingConfigurationName(Aws::String&& value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName = std::move(value); }
+    inline void SetObservabilityConfigurationName(Aws::String&& value) { m_observabilityConfigurationNameHasBeenSet = true; m_observabilityConfigurationName = std::move(value); }
 
     /**
-     * <p>The name of the App Runner auto scaling configuration that you want to list.
+     * <p>The name of the App Runner observability configuration that you want to list.
      * If specified, App Runner lists revisions that share this name. If not specified,
      * App Runner returns revisions of all active configurations.</p>
      */
-    inline void SetAutoScalingConfigurationName(const char* value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName.assign(value); }
+    inline void SetObservabilityConfigurationName(const char* value) { m_observabilityConfigurationNameHasBeenSet = true; m_observabilityConfigurationName.assign(value); }
 
     /**
-     * <p>The name of the App Runner auto scaling configuration that you want to list.
+     * <p>The name of the App Runner observability configuration that you want to list.
      * If specified, App Runner lists revisions that share this name. If not specified,
      * App Runner returns revisions of all active configurations.</p>
      */
-    inline ListAutoScalingConfigurationsRequest& WithAutoScalingConfigurationName(const Aws::String& value) { SetAutoScalingConfigurationName(value); return *this;}
+    inline ListObservabilityConfigurationsRequest& WithObservabilityConfigurationName(const Aws::String& value) { SetObservabilityConfigurationName(value); return *this;}
 
     /**
-     * <p>The name of the App Runner auto scaling configuration that you want to list.
+     * <p>The name of the App Runner observability configuration that you want to list.
      * If specified, App Runner lists revisions that share this name. If not specified,
      * App Runner returns revisions of all active configurations.</p>
      */
-    inline ListAutoScalingConfigurationsRequest& WithAutoScalingConfigurationName(Aws::String&& value) { SetAutoScalingConfigurationName(std::move(value)); return *this;}
+    inline ListObservabilityConfigurationsRequest& WithObservabilityConfigurationName(Aws::String&& value) { SetObservabilityConfigurationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the App Runner auto scaling configuration that you want to list.
+     * <p>The name of the App Runner observability configuration that you want to list.
      * If specified, App Runner lists revisions that share this name. If not specified,
      * App Runner returns revisions of all active configurations.</p>
      */
-    inline ListAutoScalingConfigurationsRequest& WithAutoScalingConfigurationName(const char* value) { SetAutoScalingConfigurationName(value); return *this;}
+    inline ListObservabilityConfigurationsRequest& WithObservabilityConfigurationName(const char* value) { SetObservabilityConfigurationName(value); return *this;}
 
 
     /**
@@ -117,7 +117,7 @@ namespace Model
      * configuration name.</p> <p>Set to <code>false</code> to list all revisions for
      * each requested configuration name.</p> <p>Default: <code>true</code> </p>
      */
-    inline ListAutoScalingConfigurationsRequest& WithLatestOnly(bool value) { SetLatestOnly(value); return *this;}
+    inline ListObservabilityConfigurationsRequest& WithLatestOnly(bool value) { SetLatestOnly(value); return *this;}
 
 
     /**
@@ -150,7 +150,7 @@ namespace Model
      * <code>MaxResults</code>, the request retrieves all available results in a single
      * response.</p>
      */
-    inline ListAutoScalingConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline ListObservabilityConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
@@ -205,7 +205,7 @@ namespace Model
      * don't specify <code>NextToken</code>, the request retrieves the first result
      * page.</p>
      */
-    inline ListAutoScalingConfigurationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListObservabilityConfigurationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>A token from a previous result page. It's used for a paginated request. The
@@ -214,7 +214,7 @@ namespace Model
      * don't specify <code>NextToken</code>, the request retrieves the first result
      * page.</p>
      */
-    inline ListAutoScalingConfigurationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline ListObservabilityConfigurationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A token from a previous result page. It's used for a paginated request. The
@@ -223,12 +223,12 @@ namespace Model
      * don't specify <code>NextToken</code>, the request retrieves the first result
      * page.</p>
      */
-    inline ListAutoScalingConfigurationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline ListObservabilityConfigurationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
 
-    Aws::String m_autoScalingConfigurationName;
-    bool m_autoScalingConfigurationNameHasBeenSet;
+    Aws::String m_observabilityConfigurationName;
+    bool m_observabilityConfigurationNameHasBeenSet;
 
     bool m_latestOnly;
     bool m_latestOnlyHasBeenSet;

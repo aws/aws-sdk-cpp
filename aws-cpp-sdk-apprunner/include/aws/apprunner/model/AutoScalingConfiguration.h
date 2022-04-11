@@ -168,28 +168,32 @@ namespace Model
     /**
      * <p>It's set to <code>true</code> for the configuration with the highest
      * <code>Revision</code> among all configurations that share the same
-     * <code>Name</code>. It's set to <code>false</code> otherwise.</p>
+     * <code>AutoScalingConfigurationName</code>. It's set to <code>false</code>
+     * otherwise.</p>
      */
     inline bool GetLatest() const{ return m_latest; }
 
     /**
      * <p>It's set to <code>true</code> for the configuration with the highest
      * <code>Revision</code> among all configurations that share the same
-     * <code>Name</code>. It's set to <code>false</code> otherwise.</p>
+     * <code>AutoScalingConfigurationName</code>. It's set to <code>false</code>
+     * otherwise.</p>
      */
     inline bool LatestHasBeenSet() const { return m_latestHasBeenSet; }
 
     /**
      * <p>It's set to <code>true</code> for the configuration with the highest
      * <code>Revision</code> among all configurations that share the same
-     * <code>Name</code>. It's set to <code>false</code> otherwise.</p>
+     * <code>AutoScalingConfigurationName</code>. It's set to <code>false</code>
+     * otherwise.</p>
      */
     inline void SetLatest(bool value) { m_latestHasBeenSet = true; m_latest = value; }
 
     /**
      * <p>It's set to <code>true</code> for the configuration with the highest
      * <code>Revision</code> among all configurations that share the same
-     * <code>Name</code>. It's set to <code>false</code> otherwise.</p>
+     * <code>AutoScalingConfigurationName</code>. It's set to <code>false</code>
+     * otherwise.</p>
      */
     inline AutoScalingConfiguration& WithLatest(bool value) { SetLatest(value); return *this;}
 

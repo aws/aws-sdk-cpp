@@ -11,6 +11,7 @@
 #include <aws/apprunner/model/InstanceConfiguration.h>
 #include <aws/apprunner/model/HealthCheckConfiguration.h>
 #include <aws/apprunner/model/NetworkConfiguration.h>
+#include <aws/apprunner/model/ServiceObservabilityConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -161,38 +162,38 @@ namespace Model
 
 
     /**
-     * <p>The runtime configuration to apply to instances (scaling units) of the App
-     * Runner service.</p>
+     * <p>The runtime configuration to apply to instances (scaling units) of your
+     * service.</p>
      */
     inline const InstanceConfiguration& GetInstanceConfiguration() const{ return m_instanceConfiguration; }
 
     /**
-     * <p>The runtime configuration to apply to instances (scaling units) of the App
-     * Runner service.</p>
+     * <p>The runtime configuration to apply to instances (scaling units) of your
+     * service.</p>
      */
     inline bool InstanceConfigurationHasBeenSet() const { return m_instanceConfigurationHasBeenSet; }
 
     /**
-     * <p>The runtime configuration to apply to instances (scaling units) of the App
-     * Runner service.</p>
+     * <p>The runtime configuration to apply to instances (scaling units) of your
+     * service.</p>
      */
     inline void SetInstanceConfiguration(const InstanceConfiguration& value) { m_instanceConfigurationHasBeenSet = true; m_instanceConfiguration = value; }
 
     /**
-     * <p>The runtime configuration to apply to instances (scaling units) of the App
-     * Runner service.</p>
+     * <p>The runtime configuration to apply to instances (scaling units) of your
+     * service.</p>
      */
     inline void SetInstanceConfiguration(InstanceConfiguration&& value) { m_instanceConfigurationHasBeenSet = true; m_instanceConfiguration = std::move(value); }
 
     /**
-     * <p>The runtime configuration to apply to instances (scaling units) of the App
-     * Runner service.</p>
+     * <p>The runtime configuration to apply to instances (scaling units) of your
+     * service.</p>
      */
     inline UpdateServiceRequest& WithInstanceConfiguration(const InstanceConfiguration& value) { SetInstanceConfiguration(value); return *this;}
 
     /**
-     * <p>The runtime configuration to apply to instances (scaling units) of the App
-     * Runner service.</p>
+     * <p>The runtime configuration to apply to instances (scaling units) of your
+     * service.</p>
      */
     inline UpdateServiceRequest& WithInstanceConfiguration(InstanceConfiguration&& value) { SetInstanceConfiguration(std::move(value)); return *this;}
 
@@ -327,6 +328,37 @@ namespace Model
      */
     inline UpdateServiceRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The observability configuration of your service.</p>
+     */
+    inline const ServiceObservabilityConfiguration& GetObservabilityConfiguration() const{ return m_observabilityConfiguration; }
+
+    /**
+     * <p>The observability configuration of your service.</p>
+     */
+    inline bool ObservabilityConfigurationHasBeenSet() const { return m_observabilityConfigurationHasBeenSet; }
+
+    /**
+     * <p>The observability configuration of your service.</p>
+     */
+    inline void SetObservabilityConfiguration(const ServiceObservabilityConfiguration& value) { m_observabilityConfigurationHasBeenSet = true; m_observabilityConfiguration = value; }
+
+    /**
+     * <p>The observability configuration of your service.</p>
+     */
+    inline void SetObservabilityConfiguration(ServiceObservabilityConfiguration&& value) { m_observabilityConfigurationHasBeenSet = true; m_observabilityConfiguration = std::move(value); }
+
+    /**
+     * <p>The observability configuration of your service.</p>
+     */
+    inline UpdateServiceRequest& WithObservabilityConfiguration(const ServiceObservabilityConfiguration& value) { SetObservabilityConfiguration(value); return *this;}
+
+    /**
+     * <p>The observability configuration of your service.</p>
+     */
+    inline UpdateServiceRequest& WithObservabilityConfiguration(ServiceObservabilityConfiguration&& value) { SetObservabilityConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serviceArn;
@@ -346,6 +378,9 @@ namespace Model
 
     NetworkConfiguration m_networkConfiguration;
     bool m_networkConfigurationHasBeenSet;
+
+    ServiceObservabilityConfiguration m_observabilityConfiguration;
+    bool m_observabilityConfigurationHasBeenSet;
   };
 
 } // namespace Model

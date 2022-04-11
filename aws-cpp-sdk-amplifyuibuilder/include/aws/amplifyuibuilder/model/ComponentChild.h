@@ -323,6 +323,55 @@ namespace Model
      */
     inline ComponentChild& AddProperties(const char* key, const ComponentProperty& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The unique ID of the child component in its original source system, such as
+     * Figma.</p>
+     */
+    inline const Aws::String& GetSourceId() const{ return m_sourceId; }
+
+    /**
+     * <p>The unique ID of the child component in its original source system, such as
+     * Figma.</p>
+     */
+    inline bool SourceIdHasBeenSet() const { return m_sourceIdHasBeenSet; }
+
+    /**
+     * <p>The unique ID of the child component in its original source system, such as
+     * Figma.</p>
+     */
+    inline void SetSourceId(const Aws::String& value) { m_sourceIdHasBeenSet = true; m_sourceId = value; }
+
+    /**
+     * <p>The unique ID of the child component in its original source system, such as
+     * Figma.</p>
+     */
+    inline void SetSourceId(Aws::String&& value) { m_sourceIdHasBeenSet = true; m_sourceId = std::move(value); }
+
+    /**
+     * <p>The unique ID of the child component in its original source system, such as
+     * Figma.</p>
+     */
+    inline void SetSourceId(const char* value) { m_sourceIdHasBeenSet = true; m_sourceId.assign(value); }
+
+    /**
+     * <p>The unique ID of the child component in its original source system, such as
+     * Figma.</p>
+     */
+    inline ComponentChild& WithSourceId(const Aws::String& value) { SetSourceId(value); return *this;}
+
+    /**
+     * <p>The unique ID of the child component in its original source system, such as
+     * Figma.</p>
+     */
+    inline ComponentChild& WithSourceId(Aws::String&& value) { SetSourceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique ID of the child component in its original source system, such as
+     * Figma.</p>
+     */
+    inline ComponentChild& WithSourceId(const char* value) { SetSourceId(value); return *this;}
+
   private:
 
     Aws::Vector<ComponentChild> m_children;
@@ -339,6 +388,9 @@ namespace Model
 
     Aws::Map<Aws::String, ComponentProperty> m_properties;
     bool m_propertiesHasBeenSet;
+
+    Aws::String m_sourceId;
+    bool m_sourceIdHasBeenSet;
   };
 
 } // namespace Model

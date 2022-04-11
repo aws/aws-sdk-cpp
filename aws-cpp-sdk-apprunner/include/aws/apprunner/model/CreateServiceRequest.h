@@ -13,6 +13,7 @@
 #include <aws/apprunner/model/EncryptionConfiguration.h>
 #include <aws/apprunner/model/HealthCheckConfiguration.h>
 #include <aws/apprunner/model/NetworkConfiguration.h>
+#include <aws/apprunner/model/ServiceObservabilityConfiguration.h>
 #include <aws/apprunner/model/Tag.h>
 #include <utility>
 
@@ -136,38 +137,32 @@ namespace Model
 
 
     /**
-     * <p>The runtime configuration of instances (scaling units) of the App Runner
-     * service.</p>
+     * <p>The runtime configuration of instances (scaling units) of your service.</p>
      */
     inline const InstanceConfiguration& GetInstanceConfiguration() const{ return m_instanceConfiguration; }
 
     /**
-     * <p>The runtime configuration of instances (scaling units) of the App Runner
-     * service.</p>
+     * <p>The runtime configuration of instances (scaling units) of your service.</p>
      */
     inline bool InstanceConfigurationHasBeenSet() const { return m_instanceConfigurationHasBeenSet; }
 
     /**
-     * <p>The runtime configuration of instances (scaling units) of the App Runner
-     * service.</p>
+     * <p>The runtime configuration of instances (scaling units) of your service.</p>
      */
     inline void SetInstanceConfiguration(const InstanceConfiguration& value) { m_instanceConfigurationHasBeenSet = true; m_instanceConfiguration = value; }
 
     /**
-     * <p>The runtime configuration of instances (scaling units) of the App Runner
-     * service.</p>
+     * <p>The runtime configuration of instances (scaling units) of your service.</p>
      */
     inline void SetInstanceConfiguration(InstanceConfiguration&& value) { m_instanceConfigurationHasBeenSet = true; m_instanceConfiguration = std::move(value); }
 
     /**
-     * <p>The runtime configuration of instances (scaling units) of the App Runner
-     * service.</p>
+     * <p>The runtime configuration of instances (scaling units) of your service.</p>
      */
     inline CreateServiceRequest& WithInstanceConfiguration(const InstanceConfiguration& value) { SetInstanceConfiguration(value); return *this;}
 
     /**
-     * <p>The runtime configuration of instances (scaling units) of the App Runner
-     * service.</p>
+     * <p>The runtime configuration of instances (scaling units) of your service.</p>
      */
     inline CreateServiceRequest& WithInstanceConfiguration(InstanceConfiguration&& value) { SetInstanceConfiguration(std::move(value)); return *this;}
 
@@ -303,65 +298,105 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
-     * configuration resource that you want to associate with the App Runner service.
-     * If not provided, App Runner associates the latest revision of a default auto
-     * scaling configuration.</p>
+     * configuration resource that you want to associate with your service. If not
+     * provided, App Runner associates the latest revision of a default auto scaling
+     * configuration.</p> <p>Specify an ARN with a name and a revision number to
+     * associate that revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code>
+     * </p> <p>Specify just the name to associate the latest revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code>
+     * </p>
      */
     inline const Aws::String& GetAutoScalingConfigurationArn() const{ return m_autoScalingConfigurationArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
-     * configuration resource that you want to associate with the App Runner service.
-     * If not provided, App Runner associates the latest revision of a default auto
-     * scaling configuration.</p>
+     * configuration resource that you want to associate with your service. If not
+     * provided, App Runner associates the latest revision of a default auto scaling
+     * configuration.</p> <p>Specify an ARN with a name and a revision number to
+     * associate that revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code>
+     * </p> <p>Specify just the name to associate the latest revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code>
+     * </p>
      */
     inline bool AutoScalingConfigurationArnHasBeenSet() const { return m_autoScalingConfigurationArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
-     * configuration resource that you want to associate with the App Runner service.
-     * If not provided, App Runner associates the latest revision of a default auto
-     * scaling configuration.</p>
+     * configuration resource that you want to associate with your service. If not
+     * provided, App Runner associates the latest revision of a default auto scaling
+     * configuration.</p> <p>Specify an ARN with a name and a revision number to
+     * associate that revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code>
+     * </p> <p>Specify just the name to associate the latest revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code>
+     * </p>
      */
     inline void SetAutoScalingConfigurationArn(const Aws::String& value) { m_autoScalingConfigurationArnHasBeenSet = true; m_autoScalingConfigurationArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
-     * configuration resource that you want to associate with the App Runner service.
-     * If not provided, App Runner associates the latest revision of a default auto
-     * scaling configuration.</p>
+     * configuration resource that you want to associate with your service. If not
+     * provided, App Runner associates the latest revision of a default auto scaling
+     * configuration.</p> <p>Specify an ARN with a name and a revision number to
+     * associate that revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code>
+     * </p> <p>Specify just the name to associate the latest revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code>
+     * </p>
      */
     inline void SetAutoScalingConfigurationArn(Aws::String&& value) { m_autoScalingConfigurationArnHasBeenSet = true; m_autoScalingConfigurationArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
-     * configuration resource that you want to associate with the App Runner service.
-     * If not provided, App Runner associates the latest revision of a default auto
-     * scaling configuration.</p>
+     * configuration resource that you want to associate with your service. If not
+     * provided, App Runner associates the latest revision of a default auto scaling
+     * configuration.</p> <p>Specify an ARN with a name and a revision number to
+     * associate that revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code>
+     * </p> <p>Specify just the name to associate the latest revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code>
+     * </p>
      */
     inline void SetAutoScalingConfigurationArn(const char* value) { m_autoScalingConfigurationArnHasBeenSet = true; m_autoScalingConfigurationArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
-     * configuration resource that you want to associate with the App Runner service.
-     * If not provided, App Runner associates the latest revision of a default auto
-     * scaling configuration.</p>
+     * configuration resource that you want to associate with your service. If not
+     * provided, App Runner associates the latest revision of a default auto scaling
+     * configuration.</p> <p>Specify an ARN with a name and a revision number to
+     * associate that revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code>
+     * </p> <p>Specify just the name to associate the latest revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code>
+     * </p>
      */
     inline CreateServiceRequest& WithAutoScalingConfigurationArn(const Aws::String& value) { SetAutoScalingConfigurationArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
-     * configuration resource that you want to associate with the App Runner service.
-     * If not provided, App Runner associates the latest revision of a default auto
-     * scaling configuration.</p>
+     * configuration resource that you want to associate with your service. If not
+     * provided, App Runner associates the latest revision of a default auto scaling
+     * configuration.</p> <p>Specify an ARN with a name and a revision number to
+     * associate that revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code>
+     * </p> <p>Specify just the name to associate the latest revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code>
+     * </p>
      */
     inline CreateServiceRequest& WithAutoScalingConfigurationArn(Aws::String&& value) { SetAutoScalingConfigurationArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling
-     * configuration resource that you want to associate with the App Runner service.
-     * If not provided, App Runner associates the latest revision of a default auto
-     * scaling configuration.</p>
+     * configuration resource that you want to associate with your service. If not
+     * provided, App Runner associates the latest revision of a default auto scaling
+     * configuration.</p> <p>Specify an ARN with a name and a revision number to
+     * associate that revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code>
+     * </p> <p>Specify just the name to associate the latest revision. For example:
+     * <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code>
+     * </p>
      */
     inline CreateServiceRequest& WithAutoScalingConfigurationArn(const char* value) { SetAutoScalingConfigurationArn(value); return *this;}
 
@@ -402,6 +437,37 @@ namespace Model
      */
     inline CreateServiceRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The observability configuration of your service.</p>
+     */
+    inline const ServiceObservabilityConfiguration& GetObservabilityConfiguration() const{ return m_observabilityConfiguration; }
+
+    /**
+     * <p>The observability configuration of your service.</p>
+     */
+    inline bool ObservabilityConfigurationHasBeenSet() const { return m_observabilityConfigurationHasBeenSet; }
+
+    /**
+     * <p>The observability configuration of your service.</p>
+     */
+    inline void SetObservabilityConfiguration(const ServiceObservabilityConfiguration& value) { m_observabilityConfigurationHasBeenSet = true; m_observabilityConfiguration = value; }
+
+    /**
+     * <p>The observability configuration of your service.</p>
+     */
+    inline void SetObservabilityConfiguration(ServiceObservabilityConfiguration&& value) { m_observabilityConfigurationHasBeenSet = true; m_observabilityConfiguration = std::move(value); }
+
+    /**
+     * <p>The observability configuration of your service.</p>
+     */
+    inline CreateServiceRequest& WithObservabilityConfiguration(const ServiceObservabilityConfiguration& value) { SetObservabilityConfiguration(value); return *this;}
+
+    /**
+     * <p>The observability configuration of your service.</p>
+     */
+    inline CreateServiceRequest& WithObservabilityConfiguration(ServiceObservabilityConfiguration&& value) { SetObservabilityConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serviceName;
@@ -427,6 +493,9 @@ namespace Model
 
     NetworkConfiguration m_networkConfiguration;
     bool m_networkConfigurationHasBeenSet;
+
+    ServiceObservabilityConfiguration m_observabilityConfiguration;
+    bool m_observabilityConfigurationHasBeenSet;
   };
 
 } // namespace Model

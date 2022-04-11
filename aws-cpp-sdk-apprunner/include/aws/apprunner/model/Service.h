@@ -14,6 +14,7 @@
 #include <aws/apprunner/model/HealthCheckConfiguration.h>
 #include <aws/apprunner/model/AutoScalingConfigurationSummary.h>
 #include <aws/apprunner/model/NetworkConfiguration.h>
+#include <aws/apprunner/model/ServiceObservabilityConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -654,6 +655,37 @@ namespace Model
      */
     inline Service& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The observability configuration of this service.</p>
+     */
+    inline const ServiceObservabilityConfiguration& GetObservabilityConfiguration() const{ return m_observabilityConfiguration; }
+
+    /**
+     * <p>The observability configuration of this service.</p>
+     */
+    inline bool ObservabilityConfigurationHasBeenSet() const { return m_observabilityConfigurationHasBeenSet; }
+
+    /**
+     * <p>The observability configuration of this service.</p>
+     */
+    inline void SetObservabilityConfiguration(const ServiceObservabilityConfiguration& value) { m_observabilityConfigurationHasBeenSet = true; m_observabilityConfiguration = value; }
+
+    /**
+     * <p>The observability configuration of this service.</p>
+     */
+    inline void SetObservabilityConfiguration(ServiceObservabilityConfiguration&& value) { m_observabilityConfigurationHasBeenSet = true; m_observabilityConfiguration = std::move(value); }
+
+    /**
+     * <p>The observability configuration of this service.</p>
+     */
+    inline Service& WithObservabilityConfiguration(const ServiceObservabilityConfiguration& value) { SetObservabilityConfiguration(value); return *this;}
+
+    /**
+     * <p>The observability configuration of this service.</p>
+     */
+    inline Service& WithObservabilityConfiguration(ServiceObservabilityConfiguration&& value) { SetObservabilityConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serviceName;
@@ -697,6 +729,9 @@ namespace Model
 
     NetworkConfiguration m_networkConfiguration;
     bool m_networkConfigurationHasBeenSet;
+
+    ServiceObservabilityConfiguration m_observabilityConfiguration;
+    bool m_observabilityConfigurationHasBeenSet;
   };
 
 } // namespace Model

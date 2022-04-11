@@ -19,6 +19,7 @@ namespace Model
     BYOL_REGULAR,
     BYOL_GRAPHICS,
     BYOL_GRAPHICSPRO,
+    BYOL_GRAPHICS_G4DN,
     BYOL_REGULAR_WSP
   };
 
