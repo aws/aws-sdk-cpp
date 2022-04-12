@@ -2100,6 +2100,10 @@ template <bool>
       msg[static_cast<bool>(expr) ? 1 : -1] GTEST_ATTRIBUTE_UNUSED_
 #endif  // !GTEST_LANG_CXX11
 
+#if GTEST_LANG_CXX11
+        inline void PrintTo(std::nullptr_t, ::std::ostream* os) { *os << "(nullptr)"; }
+#endif // GTEST_LANG_CXX11
+
 // Implementation details of GTEST_COMPILE_ASSERT_:
 //
 // (In C++11, we simply use static_assert instead of the following)

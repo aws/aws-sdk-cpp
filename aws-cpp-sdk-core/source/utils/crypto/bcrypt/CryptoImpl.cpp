@@ -11,6 +11,7 @@
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/crypto/Hash.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 #include <atomic>
 #include <bcrypt.h>
 #include <winternl.h>
@@ -127,7 +128,7 @@ namespace Aws
                 NTSTATUS status = BCryptOpenAlgorithmProvider(&m_algorithmHandle, algorithmName, MS_PRIMITIVE_PROVIDER, isHMAC ? BCRYPT_ALG_HANDLE_HMAC_FLAG : 0);
                 if (!NT_SUCCESS(status))
                 {
-                    AWS_LOGSTREAM_ERROR(logTag, "Failed initializing BCryptOpenAlgorithmProvider for " << algorithmName);
+                    AWS_LOGSTREAM_ERROR(logTag, "Failed initializing BCryptOpenAlgorithmProvider for " << Aws::Utils::StringUtils::FromWString(algorithmName));
                     return;
                 }
 

@@ -5,7 +5,7 @@
         // C++ STL
         "smatch",
         // General
-        "SDK's", "sdks", "awssdk", "executables", "debuggable",
+        "SDK's", "sdks", "awssdk", "executables", "debuggable", "sdkutils",
         // AWS general
         "Arns", "AMZN", "amzn", "Paulo", "Ningxia", "ISOB", "isob",
         // AWS Signature
