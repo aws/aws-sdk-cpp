@@ -41,32 +41,56 @@ namespace Model
 
 
     /**
-     * <p>Describes the status of the destination Amazon EFS file system.</p>
+     * <p>Describes the status of the destination Amazon EFS file system. If the status
+     * is <code>ERROR</code>, the destination file system in the replication
+     * configuration is in a failed state and is unrecoverable. To access the file
+     * system data, restore a backup of the failed file system to a new file
+     * system.</p>
      */
     inline const ReplicationStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Describes the status of the destination Amazon EFS file system.</p>
+     * <p>Describes the status of the destination Amazon EFS file system. If the status
+     * is <code>ERROR</code>, the destination file system in the replication
+     * configuration is in a failed state and is unrecoverable. To access the file
+     * system data, restore a backup of the failed file system to a new file
+     * system.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Describes the status of the destination Amazon EFS file system.</p>
+     * <p>Describes the status of the destination Amazon EFS file system. If the status
+     * is <code>ERROR</code>, the destination file system in the replication
+     * configuration is in a failed state and is unrecoverable. To access the file
+     * system data, restore a backup of the failed file system to a new file
+     * system.</p>
      */
     inline void SetStatus(const ReplicationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Describes the status of the destination Amazon EFS file system.</p>
+     * <p>Describes the status of the destination Amazon EFS file system. If the status
+     * is <code>ERROR</code>, the destination file system in the replication
+     * configuration is in a failed state and is unrecoverable. To access the file
+     * system data, restore a backup of the failed file system to a new file
+     * system.</p>
      */
     inline void SetStatus(ReplicationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Describes the status of the destination Amazon EFS file system.</p>
+     * <p>Describes the status of the destination Amazon EFS file system. If the status
+     * is <code>ERROR</code>, the destination file system in the replication
+     * configuration is in a failed state and is unrecoverable. To access the file
+     * system data, restore a backup of the failed file system to a new file
+     * system.</p>
      */
     inline Destination& WithStatus(const ReplicationStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Describes the status of the destination Amazon EFS file system.</p>
+     * <p>Describes the status of the destination Amazon EFS file system. If the status
+     * is <code>ERROR</code>, the destination file system in the replication
+     * configuration is in a failed state and is unrecoverable. To access the file
+     * system data, restore a backup of the failed file system to a new file
+     * system.</p>
      */
     inline Destination& WithStatus(ReplicationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -162,50 +186,56 @@ namespace Model
 
 
     /**
-     * <p>The time when the most recent sync successfully completed on the destination
-     * file system. Any changes to data on the source file system that occurred prior
-     * to this time were successfully replicated to the destination file system. Any
-     * changes that occurred after this time might not be fully replicated.</p>
+     * <p>The time when the most recent sync was successfully completed on the
+     * destination file system. Any changes to data on the source file system that
+     * occurred before this time have been successfully replicated to the destination
+     * file system. Any changes that occurred after this time might not be fully
+     * replicated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastReplicatedTimestamp() const{ return m_lastReplicatedTimestamp; }
 
     /**
-     * <p>The time when the most recent sync successfully completed on the destination
-     * file system. Any changes to data on the source file system that occurred prior
-     * to this time were successfully replicated to the destination file system. Any
-     * changes that occurred after this time might not be fully replicated.</p>
+     * <p>The time when the most recent sync was successfully completed on the
+     * destination file system. Any changes to data on the source file system that
+     * occurred before this time have been successfully replicated to the destination
+     * file system. Any changes that occurred after this time might not be fully
+     * replicated.</p>
      */
     inline bool LastReplicatedTimestampHasBeenSet() const { return m_lastReplicatedTimestampHasBeenSet; }
 
     /**
-     * <p>The time when the most recent sync successfully completed on the destination
-     * file system. Any changes to data on the source file system that occurred prior
-     * to this time were successfully replicated to the destination file system. Any
-     * changes that occurred after this time might not be fully replicated.</p>
+     * <p>The time when the most recent sync was successfully completed on the
+     * destination file system. Any changes to data on the source file system that
+     * occurred before this time have been successfully replicated to the destination
+     * file system. Any changes that occurred after this time might not be fully
+     * replicated.</p>
      */
     inline void SetLastReplicatedTimestamp(const Aws::Utils::DateTime& value) { m_lastReplicatedTimestampHasBeenSet = true; m_lastReplicatedTimestamp = value; }
 
     /**
-     * <p>The time when the most recent sync successfully completed on the destination
-     * file system. Any changes to data on the source file system that occurred prior
-     * to this time were successfully replicated to the destination file system. Any
-     * changes that occurred after this time might not be fully replicated.</p>
+     * <p>The time when the most recent sync was successfully completed on the
+     * destination file system. Any changes to data on the source file system that
+     * occurred before this time have been successfully replicated to the destination
+     * file system. Any changes that occurred after this time might not be fully
+     * replicated.</p>
      */
     inline void SetLastReplicatedTimestamp(Aws::Utils::DateTime&& value) { m_lastReplicatedTimestampHasBeenSet = true; m_lastReplicatedTimestamp = std::move(value); }
 
     /**
-     * <p>The time when the most recent sync successfully completed on the destination
-     * file system. Any changes to data on the source file system that occurred prior
-     * to this time were successfully replicated to the destination file system. Any
-     * changes that occurred after this time might not be fully replicated.</p>
+     * <p>The time when the most recent sync was successfully completed on the
+     * destination file system. Any changes to data on the source file system that
+     * occurred before this time have been successfully replicated to the destination
+     * file system. Any changes that occurred after this time might not be fully
+     * replicated.</p>
      */
     inline Destination& WithLastReplicatedTimestamp(const Aws::Utils::DateTime& value) { SetLastReplicatedTimestamp(value); return *this;}
 
     /**
-     * <p>The time when the most recent sync successfully completed on the destination
-     * file system. Any changes to data on the source file system that occurred prior
-     * to this time were successfully replicated to the destination file system. Any
-     * changes that occurred after this time might not be fully replicated.</p>
+     * <p>The time when the most recent sync was successfully completed on the
+     * destination file system. Any changes to data on the source file system that
+     * occurred before this time have been successfully replicated to the destination
+     * file system. Any changes that occurred after this time might not be fully
+     * replicated.</p>
      */
     inline Destination& WithLastReplicatedTimestamp(Aws::Utils::DateTime&& value) { SetLastReplicatedTimestamp(std::move(value)); return *this;}
 

@@ -30,6 +30,7 @@
 #include <aws/elasticfilesystem/model/MountTargetConflict.h>
 #include <aws/elasticfilesystem/model/InvalidPolicyException.h>
 #include <aws/elasticfilesystem/model/ThroughputLimitExceeded.h>
+#include <aws/elasticfilesystem/model/ThrottlingException.h>
 #include <aws/elasticfilesystem/model/FileSystemInUse.h>
 #include <aws/elasticfilesystem/model/NetworkInterfaceLimitExceeded.h>
 #include <aws/elasticfilesystem/model/TooManyRequests.h>
@@ -187,6 +188,12 @@ template<> AWS_EFS_API ThroughputLimitExceeded EFSError::GetModeledError()
 {
   assert(this->GetErrorType() == EFSErrors::THROUGHPUT_LIMIT_EXCEEDED);
   return ThroughputLimitExceeded(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API ThrottlingException EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::THROTTLING);
+  return ThrottlingException(this->GetJsonPayload().View());
 }
 
 template<> AWS_EFS_API FileSystemInUse EFSError::GetModeledError()

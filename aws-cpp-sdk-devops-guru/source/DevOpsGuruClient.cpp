@@ -21,6 +21,7 @@
 #include <aws/devops-guru/DevOpsGuruEndpoint.h>
 #include <aws/devops-guru/DevOpsGuruErrorMarshaller.h>
 #include <aws/devops-guru/model/AddNotificationChannelRequest.h>
+#include <aws/devops-guru/model/DeleteInsightRequest.h>
 #include <aws/devops-guru/model/DescribeAccountHealthRequest.h>
 #include <aws/devops-guru/model/DescribeAccountOverviewRequest.h>
 #include <aws/devops-guru/model/DescribeAnomalyRequest.h>
@@ -145,6 +146,37 @@ void DevOpsGuruClient::AddNotificationChannelAsync(const AddNotificationChannelR
 void DevOpsGuruClient::AddNotificationChannelAsyncHelper(const AddNotificationChannelRequest& request, const AddNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AddNotificationChannel(request), context);
+}
+
+DeleteInsightOutcome DevOpsGuruClient::DeleteInsight(const DeleteInsightRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteInsight", "Required field: Id, is not set");
+    return DeleteInsightOutcome(Aws::Client::AWSError<DevOpsGuruErrors>(DevOpsGuruErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/insights/");
+  uri.AddPathSegment(request.GetId());
+  return DeleteInsightOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteInsightOutcomeCallable DevOpsGuruClient::DeleteInsightCallable(const DeleteInsightRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteInsightOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteInsight(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DevOpsGuruClient::DeleteInsightAsync(const DeleteInsightRequest& request, const DeleteInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteInsightAsyncHelper( request, handler, context ); } );
+}
+
+void DevOpsGuruClient::DeleteInsightAsyncHelper(const DeleteInsightRequest& request, const DeleteInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteInsight(request), context);
 }
 
 DescribeAccountHealthOutcome DevOpsGuruClient::DescribeAccountHealth(const DescribeAccountHealthRequest& request) const

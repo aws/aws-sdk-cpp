@@ -24,7 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the event sources.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the integration of DevOps Guru as consumer with another AWS
+   * service, such as AWS CodeGuru Profiler via EventBridge.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/EventSourcesConfig">AWS
    * API Reference</a></p>
    */
@@ -38,32 +40,38 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Information about whether DevOps Guru is configured to consume
+     * recommendations which are generated from AWS CodeGuru Profiler.</p>
      */
     inline const AmazonCodeGuruProfilerIntegration& GetAmazonCodeGuruProfiler() const{ return m_amazonCodeGuruProfiler; }
 
     /**
-     * <p/>
+     * <p>Information about whether DevOps Guru is configured to consume
+     * recommendations which are generated from AWS CodeGuru Profiler.</p>
      */
     inline bool AmazonCodeGuruProfilerHasBeenSet() const { return m_amazonCodeGuruProfilerHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Information about whether DevOps Guru is configured to consume
+     * recommendations which are generated from AWS CodeGuru Profiler.</p>
      */
     inline void SetAmazonCodeGuruProfiler(const AmazonCodeGuruProfilerIntegration& value) { m_amazonCodeGuruProfilerHasBeenSet = true; m_amazonCodeGuruProfiler = value; }
 
     /**
-     * <p/>
+     * <p>Information about whether DevOps Guru is configured to consume
+     * recommendations which are generated from AWS CodeGuru Profiler.</p>
      */
     inline void SetAmazonCodeGuruProfiler(AmazonCodeGuruProfilerIntegration&& value) { m_amazonCodeGuruProfilerHasBeenSet = true; m_amazonCodeGuruProfiler = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Information about whether DevOps Guru is configured to consume
+     * recommendations which are generated from AWS CodeGuru Profiler.</p>
      */
     inline EventSourcesConfig& WithAmazonCodeGuruProfiler(const AmazonCodeGuruProfilerIntegration& value) { SetAmazonCodeGuruProfiler(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Information about whether DevOps Guru is configured to consume
+     * recommendations which are generated from AWS CodeGuru Profiler.</p>
      */
     inline EventSourcesConfig& WithAmazonCodeGuruProfiler(AmazonCodeGuruProfilerIntegration&& value) { SetAmazonCodeGuruProfiler(std::move(value)); return *this;}
 

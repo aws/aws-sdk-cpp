@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The collection of replication configurations returned.</p>
+     * <p>The collection of replication configurations that is returned.</p>
      */
     inline const Aws::Vector<ReplicationConfigurationDescription>& GetReplications() const{ return m_replications; }
 
     /**
-     * <p>The collection of replication configurations returned.</p>
+     * <p>The collection of replication configurations that is returned.</p>
      */
     inline void SetReplications(const Aws::Vector<ReplicationConfigurationDescription>& value) { m_replications = value; }
 
     /**
-     * <p>The collection of replication configurations returned.</p>
+     * <p>The collection of replication configurations that is returned.</p>
      */
     inline void SetReplications(Aws::Vector<ReplicationConfigurationDescription>&& value) { m_replications = std::move(value); }
 
     /**
-     * <p>The collection of replication configurations returned.</p>
+     * <p>The collection of replication configurations that is returned.</p>
      */
     inline DescribeReplicationConfigurationsResult& WithReplications(const Aws::Vector<ReplicationConfigurationDescription>& value) { SetReplications(value); return *this;}
 
     /**
-     * <p>The collection of replication configurations returned.</p>
+     * <p>The collection of replication configurations that is returned.</p>
      */
     inline DescribeReplicationConfigurationsResult& WithReplications(Aws::Vector<ReplicationConfigurationDescription>&& value) { SetReplications(std::move(value)); return *this;}
 
     /**
-     * <p>The collection of replication configurations returned.</p>
+     * <p>The collection of replication configurations that is returned.</p>
      */
     inline DescribeReplicationConfigurationsResult& AddReplications(const ReplicationConfigurationDescription& value) { m_replications.push_back(value); return *this; }
 
     /**
-     * <p>The collection of replication configurations returned.</p>
+     * <p>The collection of replication configurations that is returned.</p>
      */
     inline DescribeReplicationConfigurationsResult& AddReplications(ReplicationConfigurationDescription&& value) { m_replications.push_back(std::move(value)); return *this; }
 

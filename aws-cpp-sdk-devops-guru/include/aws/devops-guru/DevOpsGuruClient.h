@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/devops-guru/model/AddNotificationChannelResult.h>
+#include <aws/devops-guru/model/DeleteInsightResult.h>
 #include <aws/devops-guru/model/DescribeAccountHealthResult.h>
 #include <aws/devops-guru/model/DescribeAccountOverviewResult.h>
 #include <aws/devops-guru/model/DescribeAnomalyResult.h>
@@ -79,6 +80,7 @@ namespace DevOpsGuru
 namespace Model
 {
         class AddNotificationChannelRequest;
+        class DeleteInsightRequest;
         class DescribeAccountHealthRequest;
         class DescribeAccountOverviewRequest;
         class DescribeAnomalyRequest;
@@ -108,6 +110,7 @@ namespace Model
         class UpdateServiceIntegrationRequest;
 
         typedef Aws::Utils::Outcome<AddNotificationChannelResult, DevOpsGuruError> AddNotificationChannelOutcome;
+        typedef Aws::Utils::Outcome<DeleteInsightResult, DevOpsGuruError> DeleteInsightOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountHealthResult, DevOpsGuruError> DescribeAccountHealthOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountOverviewResult, DevOpsGuruError> DescribeAccountOverviewOutcome;
         typedef Aws::Utils::Outcome<DescribeAnomalyResult, DevOpsGuruError> DescribeAnomalyOutcome;
@@ -137,6 +140,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateServiceIntegrationResult, DevOpsGuruError> UpdateServiceIntegrationOutcome;
 
         typedef std::future<AddNotificationChannelOutcome> AddNotificationChannelOutcomeCallable;
+        typedef std::future<DeleteInsightOutcome> DeleteInsightOutcomeCallable;
         typedef std::future<DescribeAccountHealthOutcome> DescribeAccountHealthOutcomeCallable;
         typedef std::future<DescribeAccountOverviewOutcome> DescribeAccountOverviewOutcomeCallable;
         typedef std::future<DescribeAnomalyOutcome> DescribeAnomalyOutcomeCallable;
@@ -169,6 +173,7 @@ namespace Model
   class DevOpsGuruClient;
 
     typedef std::function<void(const DevOpsGuruClient*, const Model::AddNotificationChannelRequest&, const Model::AddNotificationChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddNotificationChannelResponseReceivedHandler;
+    typedef std::function<void(const DevOpsGuruClient*, const Model::DeleteInsightRequest&, const Model::DeleteInsightOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInsightResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::DescribeAccountHealthRequest&, const Model::DescribeAccountHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountHealthResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::DescribeAccountOverviewRequest&, const Model::DescribeAccountOverviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountOverviewResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::DescribeAnomalyRequest&, const Model::DescribeAnomalyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAnomalyResponseReceivedHandler;
@@ -250,12 +255,17 @@ namespace Model
          * generated. </p> <p>If you use an Amazon SNS topic in another account, you must
          * attach a policy to it that grants DevOps Guru permission to it notifications.
          * DevOps Guru adds the required policy on your behalf to send notifications using
-         * Amazon SNS in your account. For more information, see <a
+         * Amazon SNS in your account. DevOps Guru only supports standard SNS topics. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
          * for cross account Amazon SNS topics</a>.</p> <p>If you use an Amazon SNS topic
-         * that is encrypted by an Amazon Web Services Key Management Service
-         * customer-managed key (CMK), then you must add permissions to the CMK. For more
-         * information, see <a
+         * in another account, you must attach a policy to it that grants DevOps Guru
+         * permission to it notifications. DevOps Guru adds the required policy on your
+         * behalf to send notifications using Amazon SNS in your account. For more
+         * information, see Permissions for cross account Amazon SNS topics.</p> <p>If you
+         * use an Amazon SNS topic that is encrypted by an Amazon Web Services Key
+         * Management Service customer-managed key (CMK), then you must add permissions to
+         * the CMK. For more information, see <a
          * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions
          * for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -270,12 +280,17 @@ namespace Model
          * generated. </p> <p>If you use an Amazon SNS topic in another account, you must
          * attach a policy to it that grants DevOps Guru permission to it notifications.
          * DevOps Guru adds the required policy on your behalf to send notifications using
-         * Amazon SNS in your account. For more information, see <a
+         * Amazon SNS in your account. DevOps Guru only supports standard SNS topics. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
          * for cross account Amazon SNS topics</a>.</p> <p>If you use an Amazon SNS topic
-         * that is encrypted by an Amazon Web Services Key Management Service
-         * customer-managed key (CMK), then you must add permissions to the CMK. For more
-         * information, see <a
+         * in another account, you must attach a policy to it that grants DevOps Guru
+         * permission to it notifications. DevOps Guru adds the required policy on your
+         * behalf to send notifications using Amazon SNS in your account. For more
+         * information, see Permissions for cross account Amazon SNS topics.</p> <p>If you
+         * use an Amazon SNS topic that is encrypted by an Amazon Web Services Key
+         * Management Service customer-managed key (CMK), then you must add permissions to
+         * the CMK. For more information, see <a
          * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions
          * for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -292,12 +307,17 @@ namespace Model
          * generated. </p> <p>If you use an Amazon SNS topic in another account, you must
          * attach a policy to it that grants DevOps Guru permission to it notifications.
          * DevOps Guru adds the required policy on your behalf to send notifications using
-         * Amazon SNS in your account. For more information, see <a
+         * Amazon SNS in your account. DevOps Guru only supports standard SNS topics. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
          * for cross account Amazon SNS topics</a>.</p> <p>If you use an Amazon SNS topic
-         * that is encrypted by an Amazon Web Services Key Management Service
-         * customer-managed key (CMK), then you must add permissions to the CMK. For more
-         * information, see <a
+         * in another account, you must attach a policy to it that grants DevOps Guru
+         * permission to it notifications. DevOps Guru adds the required policy on your
+         * behalf to send notifications using Amazon SNS in your account. For more
+         * information, see Permissions for cross account Amazon SNS topics.</p> <p>If you
+         * use an Amazon SNS topic that is encrypted by an Amazon Web Services Key
+         * Management Service customer-managed key (CMK), then you must add permissions to
+         * the CMK. For more information, see <a
          * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions
          * for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -307,6 +327,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AddNotificationChannelAsync(const Model::AddNotificationChannelRequest& request, const AddNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the insight along with the associated anomalies, events and
+         * recommendations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DeleteInsight">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteInsightOutcome DeleteInsight(const Model::DeleteInsightRequest& request) const;
+
+        /**
+         * <p>Deletes the insight along with the associated anomalies, events and
+         * recommendations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DeleteInsight">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteInsightOutcomeCallable DeleteInsightCallable(const Model::DeleteInsightRequest& request) const;
+
+        /**
+         * <p>Deletes the insight along with the associated anomalies, events and
+         * recommendations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DeleteInsight">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteInsightAsync(const Model::DeleteInsightRequest& request, const DeleteInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the number of open reactive insights, the number of open proactive
@@ -405,16 +453,22 @@ namespace Model
         virtual void DescribeAnomalyAsync(const Model::DescribeAnomalyRequest& request, const DescribeAnomalyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This operation lists details about a DevOps Guru event source that is shared
-         * with your&#x2028; account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the integration status of services that are integrated with DevOps
+         * Guru as Consumer via EventBridge. The one service that can be integrated with
+         * DevOps Guru is Amazon CodeGuru Profiler, which can produce proactive
+         * recommendations which can be stored and viewed in DevOps Guru.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeEventSourcesConfig">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeEventSourcesConfigOutcome DescribeEventSourcesConfig(const Model::DescribeEventSourcesConfigRequest& request) const;
 
         /**
-         * <p>This operation lists details about a DevOps Guru event source that is shared
-         * with your&#x2028; account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the integration status of services that are integrated with DevOps
+         * Guru as Consumer via EventBridge. The one service that can be integrated with
+         * DevOps Guru is Amazon CodeGuru Profiler, which can produce proactive
+         * recommendations which can be stored and viewed in DevOps Guru.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeEventSourcesConfig">AWS
          * API Reference</a></p>
          *
@@ -423,8 +477,11 @@ namespace Model
         virtual Model::DescribeEventSourcesConfigOutcomeCallable DescribeEventSourcesConfigCallable(const Model::DescribeEventSourcesConfigRequest& request) const;
 
         /**
-         * <p>This operation lists details about a DevOps Guru event source that is shared
-         * with your&#x2028; account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the integration status of services that are integrated with DevOps
+         * Guru as Consumer via EventBridge. The one service that can be integrated with
+         * DevOps Guru is Amazon CodeGuru Profiler, which can produce proactive
+         * recommendations which can be stored and viewed in DevOps Guru.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeEventSourcesConfig">AWS
          * API Reference</a></p>
          *
@@ -1116,14 +1173,20 @@ namespace Model
         virtual void StartCostEstimationAsync(const Model::StartCostEstimationRequest& request, const StartCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the event source configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables or disables integration with a service that can be integrated with
+         * DevOps Guru. The one service that can be integrated with DevOps Guru is Amazon
+         * CodeGuru Profiler, which can produce proactive recommendations which can be
+         * stored and viewed in DevOps Guru.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateEventSourcesConfig">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateEventSourcesConfigOutcome UpdateEventSourcesConfig(const Model::UpdateEventSourcesConfigRequest& request) const;
 
         /**
-         * <p>Updates the event source configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables or disables integration with a service that can be integrated with
+         * DevOps Guru. The one service that can be integrated with DevOps Guru is Amazon
+         * CodeGuru Profiler, which can produce proactive recommendations which can be
+         * stored and viewed in DevOps Guru.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateEventSourcesConfig">AWS
          * API Reference</a></p>
          *
@@ -1132,7 +1195,10 @@ namespace Model
         virtual Model::UpdateEventSourcesConfigOutcomeCallable UpdateEventSourcesConfigCallable(const Model::UpdateEventSourcesConfigRequest& request) const;
 
         /**
-         * <p>Updates the event source configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables or disables integration with a service that can be integrated with
+         * DevOps Guru. The one service that can be integrated with DevOps Guru is Amazon
+         * CodeGuru Profiler, which can produce proactive recommendations which can be
+         * stored and viewed in DevOps Guru.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateEventSourcesConfig">AWS
          * API Reference</a></p>
          *
@@ -1225,6 +1291,7 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AddNotificationChannelAsyncHelper(const Model::AddNotificationChannelRequest& request, const AddNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteInsightAsyncHelper(const Model::DeleteInsightRequest& request, const DeleteInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountHealthAsyncHelper(const Model::DescribeAccountHealthRequest& request, const DescribeAccountHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountOverviewAsyncHelper(const Model::DescribeAccountOverviewRequest& request, const DescribeAccountOverviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAnomalyAsyncHelper(const Model::DescribeAnomalyRequest& request, const DescribeAnomalyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

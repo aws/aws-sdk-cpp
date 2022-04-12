@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Metadata about an anomaly. The anomaly is detected using analysis of the
-   * metric data&#x2028; over a period of time</p><p><h3>See Also:</h3>   <a
+   * <p>Metadata about the detection source that generates proactive anomalies. The
+   * anomaly is detected using analysis of the metric data&#x2028; over a period of
+   * time</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/AnomalySourceMetadata">AWS
    * API Reference</a></p>
    */

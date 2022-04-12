@@ -188,13 +188,12 @@ namespace Model
     typedef std::function<void(const IoTTwinMakerClient*, const Model::UpdateWorkspaceRequest&, const Model::UpdateWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkspaceResponseReceivedHandler;
 
   /**
-   *  <p> TwinMaker is in public preview and is subject to change. </p>
-   *  <p>IoT TwinMaker is a service that enables you to build operational
-   * digital twins of physical systems. IoT TwinMaker overlays measurements and
-   * analysis from real-world sensors, cameras, and enterprise applications so you
-   * can create data visualizations to monitor your physical factory, building, or
-   * industrial plant. You can use this real-world data to monitor operations and
-   * diagnose and repair errors.</p>
+   * <p>IoT TwinMaker is a service that enables you to build operational digital
+   * twins of physical systems. IoT TwinMaker overlays measurements and analysis from
+   * real-world sensors, cameras, and enterprise applications so you can create data
+   * visualizations to monitor your physical factory, building, or industrial plant.
+   * You can use this real-world data to monitor operations and diagnose and repair
+   * errors.</p>
    */
   class AWS_IOTTWINMAKER_API IoTTwinMakerClient : public Aws::Client::AWSJsonClient
   {
@@ -252,16 +251,14 @@ namespace Model
         virtual void BatchPutPropertyValuesAsync(const Model::BatchPutPropertyValuesRequest& request, const BatchPutPropertyValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a component type.</p>  <p> TwinMaker is in public preview
-         * and is subject to change. </p> <p><h3>See Also:</h3>   <a
+         * <p>Creates a component type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateComponentType">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateComponentTypeOutcome CreateComponentType(const Model::CreateComponentTypeRequest& request) const;
 
         /**
-         * <p>Creates a component type.</p>  <p> TwinMaker is in public preview
-         * and is subject to change. </p> <p><h3>See Also:</h3>   <a
+         * <p>Creates a component type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateComponentType">AWS
          * API Reference</a></p>
          *
@@ -270,8 +267,7 @@ namespace Model
         virtual Model::CreateComponentTypeOutcomeCallable CreateComponentTypeCallable(const Model::CreateComponentTypeRequest& request) const;
 
         /**
-         * <p>Creates a component type.</p>  <p> TwinMaker is in public preview
-         * and is subject to change. </p> <p><h3>See Also:</h3>   <a
+         * <p>Creates a component type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateComponentType">AWS
          * API Reference</a></p>
          *

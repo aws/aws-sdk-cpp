@@ -20,12 +20,14 @@ namespace Model
 
 ListEntitiesFilter::ListEntitiesFilter() : 
     m_componentTypeIdHasBeenSet(false),
+    m_externalIdHasBeenSet(false),
     m_parentEntityIdHasBeenSet(false)
 {
 }
 
 ListEntitiesFilter::ListEntitiesFilter(JsonView jsonValue) : 
     m_componentTypeIdHasBeenSet(false),
+    m_externalIdHasBeenSet(false),
     m_parentEntityIdHasBeenSet(false)
 {
   *this = jsonValue;
@@ -38,6 +40,13 @@ ListEntitiesFilter& ListEntitiesFilter::operator =(JsonView jsonValue)
     m_componentTypeId = jsonValue.GetString("componentTypeId");
 
     m_componentTypeIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("externalId"))
+  {
+    m_externalId = jsonValue.GetString("externalId");
+
+    m_externalIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("parentEntityId"))
@@ -57,6 +66,12 @@ JsonValue ListEntitiesFilter::Jsonize() const
   if(m_componentTypeIdHasBeenSet)
   {
    payload.WithString("componentTypeId", m_componentTypeId);
+
+  }
+
+  if(m_externalIdHasBeenSet)
+  {
+   payload.WithString("externalId", m_externalId);
 
   }
 

@@ -126,50 +126,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the current source file system in the replication
-     * configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the current source file system in the
+     * replication configuration.</p>
      */
     inline const Aws::String& GetSourceFileSystemArn() const{ return m_sourceFileSystemArn; }
 
     /**
-     * <p>The ARN of the current source file system in the replication
-     * configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the current source file system in the
+     * replication configuration.</p>
      */
     inline bool SourceFileSystemArnHasBeenSet() const { return m_sourceFileSystemArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the current source file system in the replication
-     * configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the current source file system in the
+     * replication configuration.</p>
      */
     inline void SetSourceFileSystemArn(const Aws::String& value) { m_sourceFileSystemArnHasBeenSet = true; m_sourceFileSystemArn = value; }
 
     /**
-     * <p>The ARN of the current source file system in the replication
-     * configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the current source file system in the
+     * replication configuration.</p>
      */
     inline void SetSourceFileSystemArn(Aws::String&& value) { m_sourceFileSystemArnHasBeenSet = true; m_sourceFileSystemArn = std::move(value); }
 
     /**
-     * <p>The ARN of the current source file system in the replication
-     * configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the current source file system in the
+     * replication configuration.</p>
      */
     inline void SetSourceFileSystemArn(const char* value) { m_sourceFileSystemArnHasBeenSet = true; m_sourceFileSystemArn.assign(value); }
 
     /**
-     * <p>The ARN of the current source file system in the replication
-     * configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the current source file system in the
+     * replication configuration.</p>
      */
     inline ReplicationConfigurationDescription& WithSourceFileSystemArn(const Aws::String& value) { SetSourceFileSystemArn(value); return *this;}
 
     /**
-     * <p>The ARN of the current source file system in the replication
-     * configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the current source file system in the
+     * replication configuration.</p>
      */
     inline ReplicationConfigurationDescription& WithSourceFileSystemArn(Aws::String&& value) { SetSourceFileSystemArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the current source file system in the replication
-     * configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the current source file system in the
+     * replication configuration.</p>
      */
     inline ReplicationConfigurationDescription& WithSourceFileSystemArn(const char* value) { SetSourceFileSystemArn(value); return *this;}
 
@@ -255,42 +255,50 @@ namespace Model
 
 
     /**
-     * <p>Array of destination objects. Only one destination object is supported.</p>
+     * <p>An array of destination objects. Only one destination object is
+     * supported.</p>
      */
     inline const Aws::Vector<Destination>& GetDestinations() const{ return m_destinations; }
 
     /**
-     * <p>Array of destination objects. Only one destination object is supported.</p>
+     * <p>An array of destination objects. Only one destination object is
+     * supported.</p>
      */
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
 
     /**
-     * <p>Array of destination objects. Only one destination object is supported.</p>
+     * <p>An array of destination objects. Only one destination object is
+     * supported.</p>
      */
     inline void SetDestinations(const Aws::Vector<Destination>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
 
     /**
-     * <p>Array of destination objects. Only one destination object is supported.</p>
+     * <p>An array of destination objects. Only one destination object is
+     * supported.</p>
      */
     inline void SetDestinations(Aws::Vector<Destination>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
 
     /**
-     * <p>Array of destination objects. Only one destination object is supported.</p>
+     * <p>An array of destination objects. Only one destination object is
+     * supported.</p>
      */
     inline ReplicationConfigurationDescription& WithDestinations(const Aws::Vector<Destination>& value) { SetDestinations(value); return *this;}
 
     /**
-     * <p>Array of destination objects. Only one destination object is supported.</p>
+     * <p>An array of destination objects. Only one destination object is
+     * supported.</p>
      */
     inline ReplicationConfigurationDescription& WithDestinations(Aws::Vector<Destination>&& value) { SetDestinations(std::move(value)); return *this;}
 
     /**
-     * <p>Array of destination objects. Only one destination object is supported.</p>
+     * <p>An array of destination objects. Only one destination object is
+     * supported.</p>
      */
     inline ReplicationConfigurationDescription& AddDestinations(const Destination& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
 
     /**
-     * <p>Array of destination objects. Only one destination object is supported.</p>
+     * <p>An array of destination objects. Only one destination object is
+     * supported.</p>
      */
     inline ReplicationConfigurationDescription& AddDestinations(Destination&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
 

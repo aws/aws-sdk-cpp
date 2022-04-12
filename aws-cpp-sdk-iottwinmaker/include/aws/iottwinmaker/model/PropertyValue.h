@@ -5,7 +5,7 @@
 
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iottwinmaker/model/DataValue.h>
 #include <utility>
 
@@ -39,35 +39,29 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    /**
-     * <p>The timestamp of a value for a time series property.</p>
-     */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    
+    inline const Aws::String& GetTime() const{ return m_time; }
 
-    /**
-     * <p>The timestamp of a value for a time series property.</p>
-     */
-    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+    
+    inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
 
-    /**
-     * <p>The timestamp of a value for a time series property.</p>
-     */
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    
+    inline void SetTime(const Aws::String& value) { m_timeHasBeenSet = true; m_time = value; }
 
-    /**
-     * <p>The timestamp of a value for a time series property.</p>
-     */
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
+    
+    inline void SetTime(Aws::String&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
 
-    /**
-     * <p>The timestamp of a value for a time series property.</p>
-     */
-    inline PropertyValue& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
+    
+    inline void SetTime(const char* value) { m_timeHasBeenSet = true; m_time.assign(value); }
 
-    /**
-     * <p>The timestamp of a value for a time series property.</p>
-     */
-    inline PropertyValue& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    
+    inline PropertyValue& WithTime(const Aws::String& value) { SetTime(value); return *this;}
+
+    
+    inline PropertyValue& WithTime(Aws::String&& value) { SetTime(std::move(value)); return *this;}
+
+    
+    inline PropertyValue& WithTime(const char* value) { SetTime(value); return *this;}
 
 
     /**
@@ -102,8 +96,8 @@ namespace Model
 
   private:
 
-    Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    Aws::String m_time;
+    bool m_timeHasBeenSet;
 
     DataValue m_value;
     bool m_valueHasBeenSet;

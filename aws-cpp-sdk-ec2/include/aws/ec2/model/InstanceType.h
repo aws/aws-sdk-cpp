@@ -500,7 +500,29 @@ namespace Model
     z1d_3xlarge,
     z1d_6xlarge,
     z1d_12xlarge,
-    z1d_metal
+    z1d_metal,
+    x2idn_16xlarge,
+    x2idn_24xlarge,
+    x2idn_32xlarge,
+    x2iedn_xlarge,
+    x2iedn_2xlarge,
+    x2iedn_4xlarge,
+    x2iedn_8xlarge,
+    x2iedn_16xlarge,
+    x2iedn_24xlarge,
+    x2iedn_32xlarge,
+    c6a_large,
+    c6a_xlarge,
+    c6a_2xlarge,
+    c6a_4xlarge,
+    c6a_8xlarge,
+    c6a_12xlarge,
+    c6a_16xlarge,
+    c6a_24xlarge,
+    c6a_32xlarge,
+    c6a_48xlarge,
+    c6a_metal,
+    m6a_metal
   };
 
 namespace InstanceTypeMapper

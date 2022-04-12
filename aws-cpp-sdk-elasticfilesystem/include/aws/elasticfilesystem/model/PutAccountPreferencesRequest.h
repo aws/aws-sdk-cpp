@@ -38,8 +38,8 @@ namespace Model
      * <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8
      * characters).</p>  <p>Starting in October, 2021, you will receive an error
      * when setting the account preference to <code>SHORT_ID</code>. Contact Amazon Web
-     * Services support if you receive an error and need to use short IDs for file
-     * system and mount target resources.</p> 
+     * Services support if you receive an error and must use short IDs for file system
+     * and mount target resources.</p> 
      */
     inline const ResourceIdType& GetResourceIdType() const{ return m_resourceIdType; }
 
@@ -49,8 +49,8 @@ namespace Model
      * <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8
      * characters).</p>  <p>Starting in October, 2021, you will receive an error
      * when setting the account preference to <code>SHORT_ID</code>. Contact Amazon Web
-     * Services support if you receive an error and need to use short IDs for file
-     * system and mount target resources.</p> 
+     * Services support if you receive an error and must use short IDs for file system
+     * and mount target resources.</p> 
      */
     inline bool ResourceIdTypeHasBeenSet() const { return m_resourceIdTypeHasBeenSet; }
 
@@ -60,8 +60,8 @@ namespace Model
      * <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8
      * characters).</p>  <p>Starting in October, 2021, you will receive an error
      * when setting the account preference to <code>SHORT_ID</code>. Contact Amazon Web
-     * Services support if you receive an error and need to use short IDs for file
-     * system and mount target resources.</p> 
+     * Services support if you receive an error and must use short IDs for file system
+     * and mount target resources.</p> 
      */
     inline void SetResourceIdType(const ResourceIdType& value) { m_resourceIdTypeHasBeenSet = true; m_resourceIdType = value; }
 
@@ -71,8 +71,8 @@ namespace Model
      * <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8
      * characters).</p>  <p>Starting in October, 2021, you will receive an error
      * when setting the account preference to <code>SHORT_ID</code>. Contact Amazon Web
-     * Services support if you receive an error and need to use short IDs for file
-     * system and mount target resources.</p> 
+     * Services support if you receive an error and must use short IDs for file system
+     * and mount target resources.</p> 
      */
     inline void SetResourceIdType(ResourceIdType&& value) { m_resourceIdTypeHasBeenSet = true; m_resourceIdType = std::move(value); }
 
@@ -82,8 +82,8 @@ namespace Model
      * <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8
      * characters).</p>  <p>Starting in October, 2021, you will receive an error
      * when setting the account preference to <code>SHORT_ID</code>. Contact Amazon Web
-     * Services support if you receive an error and need to use short IDs for file
-     * system and mount target resources.</p> 
+     * Services support if you receive an error and must use short IDs for file system
+     * and mount target resources.</p> 
      */
     inline PutAccountPreferencesRequest& WithResourceIdType(const ResourceIdType& value) { SetResourceIdType(value); return *this;}
 
@@ -93,8 +93,8 @@ namespace Model
      * <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8
      * characters).</p>  <p>Starting in October, 2021, you will receive an error
      * when setting the account preference to <code>SHORT_ID</code>. Contact Amazon Web
-     * Services support if you receive an error and need to use short IDs for file
-     * system and mount target resources.</p> 
+     * Services support if you receive an error and must use short IDs for file system
+     * and mount target resources.</p> 
      */
     inline PutAccountPreferencesRequest& WithResourceIdType(ResourceIdType&& value) { SetResourceIdType(std::move(value)); return *this;}
 

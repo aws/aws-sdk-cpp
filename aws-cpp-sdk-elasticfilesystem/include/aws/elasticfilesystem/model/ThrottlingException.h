@@ -24,19 +24,18 @@ namespace Model
 {
 
   /**
-   * <p>Returned if the <code>FileSystemPolicy</code> is malformed or contains an
-   * error such as a parameter value that is not valid or a missing required
-   * parameter. Returned in the case of a policy lockout safety check
-   * error.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/InvalidPolicyException">AWS
+   * <p>Returned when the <code>CreateAccessPoint</code> API action is called too
+   * quickly and the number of Access Points in the account is nearing the limit of
+   * 120.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ThrottlingException">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API InvalidPolicyException
+  class AWS_EFS_API ThrottlingException
   {
   public:
-    InvalidPolicyException();
-    InvalidPolicyException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidPolicyException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    ThrottlingException();
+    ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
+    ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -56,13 +55,13 @@ namespace Model
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
 
     
-    inline InvalidPolicyException& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
+    inline ThrottlingException& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
 
     
-    inline InvalidPolicyException& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline ThrottlingException& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     
-    inline InvalidPolicyException& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    inline ThrottlingException& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 
 
     
@@ -81,13 +80,13 @@ namespace Model
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     
-    inline InvalidPolicyException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline ThrottlingException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     
-    inline InvalidPolicyException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+    inline ThrottlingException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     
-    inline InvalidPolicyException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline ThrottlingException& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
 

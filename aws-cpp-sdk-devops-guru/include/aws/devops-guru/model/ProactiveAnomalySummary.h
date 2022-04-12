@@ -411,32 +411,32 @@ namespace Model
 
 
     /**
-     * <p>Returns the metadata of the source.</p>
+     * <p>The metadata of the source which detects proactive anomalies.</p>
      */
     inline const AnomalySourceMetadata& GetSourceMetadata() const{ return m_sourceMetadata; }
 
     /**
-     * <p>Returns the metadata of the source.</p>
+     * <p>The metadata of the source which detects proactive anomalies.</p>
      */
     inline bool SourceMetadataHasBeenSet() const { return m_sourceMetadataHasBeenSet; }
 
     /**
-     * <p>Returns the metadata of the source.</p>
+     * <p>The metadata of the source which detects proactive anomalies.</p>
      */
     inline void SetSourceMetadata(const AnomalySourceMetadata& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = value; }
 
     /**
-     * <p>Returns the metadata of the source.</p>
+     * <p>The metadata of the source which detects proactive anomalies.</p>
      */
     inline void SetSourceMetadata(AnomalySourceMetadata&& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = std::move(value); }
 
     /**
-     * <p>Returns the metadata of the source.</p>
+     * <p>The metadata of the source which detects proactive anomalies.</p>
      */
     inline ProactiveAnomalySummary& WithSourceMetadata(const AnomalySourceMetadata& value) { SetSourceMetadata(value); return *this;}
 
     /**
-     * <p>Returns the metadata of the source.</p>
+     * <p>The metadata of the source which detects proactive anomalies.</p>
      */
     inline ProactiveAnomalySummary& WithSourceMetadata(AnomalySourceMetadata&& value) { SetSourceMetadata(std::move(value)); return *this;}
 

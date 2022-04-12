@@ -19,13 +19,13 @@ namespace Model
 {
 
 PropertyValue::PropertyValue() : 
-    m_timestampHasBeenSet(false),
+    m_timeHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
 }
 
 PropertyValue::PropertyValue(JsonView jsonValue) : 
-    m_timestampHasBeenSet(false),
+    m_timeHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
   *this = jsonValue;
@@ -33,11 +33,11 @@ PropertyValue::PropertyValue(JsonView jsonValue) :
 
 PropertyValue& PropertyValue::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("timestamp"))
+  if(jsonValue.ValueExists("time"))
   {
-    m_timestamp = jsonValue.GetDouble("timestamp");
+    m_time = jsonValue.GetString("time");
 
-    m_timestampHasBeenSet = true;
+    m_timeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("value"))
@@ -54,9 +54,10 @@ JsonValue PropertyValue::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_timestampHasBeenSet)
+  if(m_timeHasBeenSet)
   {
-   payload.WithDouble("timestamp", m_timestamp.SecondsWithMSPrecision());
+   payload.WithString("time", m_time);
+
   }
 
   if(m_valueHasBeenSet)

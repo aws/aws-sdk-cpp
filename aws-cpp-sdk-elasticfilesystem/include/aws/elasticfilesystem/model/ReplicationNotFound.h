@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Returned if the specified file system did not have a replication
+   * <p>Returned if the specified file system does not have a replication
    * configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ReplicationNotFound">AWS
    * API Reference</a></p>

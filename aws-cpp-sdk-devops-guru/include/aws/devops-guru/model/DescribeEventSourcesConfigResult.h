@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The name of the event source.</p>
+     * <p>Lists the event sources in the configuration.</p>
      */
     inline const EventSourcesConfig& GetEventSources() const{ return m_eventSources; }
 
     /**
-     * <p>The name of the event source.</p>
+     * <p>Lists the event sources in the configuration.</p>
      */
     inline void SetEventSources(const EventSourcesConfig& value) { m_eventSources = value; }
 
     /**
-     * <p>The name of the event source.</p>
+     * <p>Lists the event sources in the configuration.</p>
      */
     inline void SetEventSources(EventSourcesConfig&& value) { m_eventSources = std::move(value); }
 
     /**
-     * <p>The name of the event source.</p>
+     * <p>Lists the event sources in the configuration.</p>
      */
     inline DescribeEventSourcesConfigResult& WithEventSources(const EventSourcesConfig& value) { SetEventSources(value); return *this;}
 
     /**
-     * <p>The name of the event source.</p>
+     * <p>Lists the event sources in the configuration.</p>
      */
     inline DescribeEventSourcesConfigResult& WithEventSources(EventSourcesConfig&& value) { SetEventSources(std::move(value)); return *this;}
 
