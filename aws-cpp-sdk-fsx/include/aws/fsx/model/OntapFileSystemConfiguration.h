@@ -81,105 +81,153 @@ namespace Model
 
 
     /**
-     * <p>The ONTAP file system deployment type.</p>
+     * <p>Specifies the FSx for ONTAP file system deployment type in use in the file
+     * system. </p> <ul> <li> <p> <code>MULTI_AZ_1</code> - (Default) A high
+     * availability file system configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability. </p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ
+     * redundancy.</p> </li> </ul> <p>For information about the use cases for Multi-AZ
+     * and Single-AZ deployments, refer to <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing
+     * Multi-AZ or Single-AZ file system deployment</a>. </p>
      */
     inline const OntapDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
 
     /**
-     * <p>The ONTAP file system deployment type.</p>
+     * <p>Specifies the FSx for ONTAP file system deployment type in use in the file
+     * system. </p> <ul> <li> <p> <code>MULTI_AZ_1</code> - (Default) A high
+     * availability file system configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability. </p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ
+     * redundancy.</p> </li> </ul> <p>For information about the use cases for Multi-AZ
+     * and Single-AZ deployments, refer to <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing
+     * Multi-AZ or Single-AZ file system deployment</a>. </p>
      */
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
 
     /**
-     * <p>The ONTAP file system deployment type.</p>
+     * <p>Specifies the FSx for ONTAP file system deployment type in use in the file
+     * system. </p> <ul> <li> <p> <code>MULTI_AZ_1</code> - (Default) A high
+     * availability file system configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability. </p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ
+     * redundancy.</p> </li> </ul> <p>For information about the use cases for Multi-AZ
+     * and Single-AZ deployments, refer to <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing
+     * Multi-AZ or Single-AZ file system deployment</a>. </p>
      */
     inline void SetDeploymentType(const OntapDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
-     * <p>The ONTAP file system deployment type.</p>
+     * <p>Specifies the FSx for ONTAP file system deployment type in use in the file
+     * system. </p> <ul> <li> <p> <code>MULTI_AZ_1</code> - (Default) A high
+     * availability file system configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability. </p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ
+     * redundancy.</p> </li> </ul> <p>For information about the use cases for Multi-AZ
+     * and Single-AZ deployments, refer to <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing
+     * Multi-AZ or Single-AZ file system deployment</a>. </p>
      */
     inline void SetDeploymentType(OntapDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
     /**
-     * <p>The ONTAP file system deployment type.</p>
+     * <p>Specifies the FSx for ONTAP file system deployment type in use in the file
+     * system. </p> <ul> <li> <p> <code>MULTI_AZ_1</code> - (Default) A high
+     * availability file system configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability. </p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ
+     * redundancy.</p> </li> </ul> <p>For information about the use cases for Multi-AZ
+     * and Single-AZ deployments, refer to <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing
+     * Multi-AZ or Single-AZ file system deployment</a>. </p>
      */
     inline OntapFileSystemConfiguration& WithDeploymentType(const OntapDeploymentType& value) { SetDeploymentType(value); return *this;}
 
     /**
-     * <p>The ONTAP file system deployment type.</p>
+     * <p>Specifies the FSx for ONTAP file system deployment type in use in the file
+     * system. </p> <ul> <li> <p> <code>MULTI_AZ_1</code> - (Default) A high
+     * availability file system configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability. </p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ
+     * redundancy.</p> </li> </ul> <p>For information about the use cases for Multi-AZ
+     * and Single-AZ deployments, refer to <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing
+     * Multi-AZ or Single-AZ file system deployment</a>. </p>
      */
     inline OntapFileSystemConfiguration& WithDeploymentType(OntapDeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The IP address range in which the endpoints to access your file system are
-     * created.</p>  <p>The Endpoint IP address range you select for your
-     * file system must exist outside the VPC's CIDR range and must be at least /30 or
-     * larger. If you do not specify this optional parameter, Amazon FSx will
-     * automatically select a CIDR block for you.</p> 
+     * <p>(Multi-AZ only) The IP address range in which the endpoints to access your
+     * file system are created.</p>  <p>The Endpoint IP address range you
+     * select for your file system must exist outside the VPC's CIDR range and must be
+     * at least /30 or larger. If you do not specify this optional parameter, Amazon
+     * FSx will automatically select a CIDR block for you.</p> 
      */
     inline const Aws::String& GetEndpointIpAddressRange() const{ return m_endpointIpAddressRange; }
 
     /**
-     * <p>The IP address range in which the endpoints to access your file system are
-     * created.</p>  <p>The Endpoint IP address range you select for your
-     * file system must exist outside the VPC's CIDR range and must be at least /30 or
-     * larger. If you do not specify this optional parameter, Amazon FSx will
-     * automatically select a CIDR block for you.</p> 
+     * <p>(Multi-AZ only) The IP address range in which the endpoints to access your
+     * file system are created.</p>  <p>The Endpoint IP address range you
+     * select for your file system must exist outside the VPC's CIDR range and must be
+     * at least /30 or larger. If you do not specify this optional parameter, Amazon
+     * FSx will automatically select a CIDR block for you.</p> 
      */
     inline bool EndpointIpAddressRangeHasBeenSet() const { return m_endpointIpAddressRangeHasBeenSet; }
 
     /**
-     * <p>The IP address range in which the endpoints to access your file system are
-     * created.</p>  <p>The Endpoint IP address range you select for your
-     * file system must exist outside the VPC's CIDR range and must be at least /30 or
-     * larger. If you do not specify this optional parameter, Amazon FSx will
-     * automatically select a CIDR block for you.</p> 
+     * <p>(Multi-AZ only) The IP address range in which the endpoints to access your
+     * file system are created.</p>  <p>The Endpoint IP address range you
+     * select for your file system must exist outside the VPC's CIDR range and must be
+     * at least /30 or larger. If you do not specify this optional parameter, Amazon
+     * FSx will automatically select a CIDR block for you.</p> 
      */
     inline void SetEndpointIpAddressRange(const Aws::String& value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange = value; }
 
     /**
-     * <p>The IP address range in which the endpoints to access your file system are
-     * created.</p>  <p>The Endpoint IP address range you select for your
-     * file system must exist outside the VPC's CIDR range and must be at least /30 or
-     * larger. If you do not specify this optional parameter, Amazon FSx will
-     * automatically select a CIDR block for you.</p> 
+     * <p>(Multi-AZ only) The IP address range in which the endpoints to access your
+     * file system are created.</p>  <p>The Endpoint IP address range you
+     * select for your file system must exist outside the VPC's CIDR range and must be
+     * at least /30 or larger. If you do not specify this optional parameter, Amazon
+     * FSx will automatically select a CIDR block for you.</p> 
      */
     inline void SetEndpointIpAddressRange(Aws::String&& value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange = std::move(value); }
 
     /**
-     * <p>The IP address range in which the endpoints to access your file system are
-     * created.</p>  <p>The Endpoint IP address range you select for your
-     * file system must exist outside the VPC's CIDR range and must be at least /30 or
-     * larger. If you do not specify this optional parameter, Amazon FSx will
-     * automatically select a CIDR block for you.</p> 
+     * <p>(Multi-AZ only) The IP address range in which the endpoints to access your
+     * file system are created.</p>  <p>The Endpoint IP address range you
+     * select for your file system must exist outside the VPC's CIDR range and must be
+     * at least /30 or larger. If you do not specify this optional parameter, Amazon
+     * FSx will automatically select a CIDR block for you.</p> 
      */
     inline void SetEndpointIpAddressRange(const char* value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange.assign(value); }
 
     /**
-     * <p>The IP address range in which the endpoints to access your file system are
-     * created.</p>  <p>The Endpoint IP address range you select for your
-     * file system must exist outside the VPC's CIDR range and must be at least /30 or
-     * larger. If you do not specify this optional parameter, Amazon FSx will
-     * automatically select a CIDR block for you.</p> 
+     * <p>(Multi-AZ only) The IP address range in which the endpoints to access your
+     * file system are created.</p>  <p>The Endpoint IP address range you
+     * select for your file system must exist outside the VPC's CIDR range and must be
+     * at least /30 or larger. If you do not specify this optional parameter, Amazon
+     * FSx will automatically select a CIDR block for you.</p> 
      */
     inline OntapFileSystemConfiguration& WithEndpointIpAddressRange(const Aws::String& value) { SetEndpointIpAddressRange(value); return *this;}
 
     /**
-     * <p>The IP address range in which the endpoints to access your file system are
-     * created.</p>  <p>The Endpoint IP address range you select for your
-     * file system must exist outside the VPC's CIDR range and must be at least /30 or
-     * larger. If you do not specify this optional parameter, Amazon FSx will
-     * automatically select a CIDR block for you.</p> 
+     * <p>(Multi-AZ only) The IP address range in which the endpoints to access your
+     * file system are created.</p>  <p>The Endpoint IP address range you
+     * select for your file system must exist outside the VPC's CIDR range and must be
+     * at least /30 or larger. If you do not specify this optional parameter, Amazon
+     * FSx will automatically select a CIDR block for you.</p> 
      */
     inline OntapFileSystemConfiguration& WithEndpointIpAddressRange(Aws::String&& value) { SetEndpointIpAddressRange(std::move(value)); return *this;}
 
     /**
-     * <p>The IP address range in which the endpoints to access your file system are
-     * created.</p>  <p>The Endpoint IP address range you select for your
-     * file system must exist outside the VPC's CIDR range and must be at least /30 or
-     * larger. If you do not specify this optional parameter, Amazon FSx will
-     * automatically select a CIDR block for you.</p> 
+     * <p>(Multi-AZ only) The IP address range in which the endpoints to access your
+     * file system are created.</p>  <p>The Endpoint IP address range you
+     * select for your file system must exist outside the VPC's CIDR range and must be
+     * at least /30 or larger. If you do not specify this optional parameter, Amazon
+     * FSx will automatically select a CIDR block for you.</p> 
      */
     inline OntapFileSystemConfiguration& WithEndpointIpAddressRange(const char* value) { SetEndpointIpAddressRange(value); return *this;}
 
@@ -290,47 +338,56 @@ namespace Model
 
 
     /**
-     * <p>The VPC route tables in which your file system's endpoints are created.</p>
+     * <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints
+     * are created.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRouteTableIds() const{ return m_routeTableIds; }
 
     /**
-     * <p>The VPC route tables in which your file system's endpoints are created.</p>
+     * <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints
+     * are created.</p>
      */
     inline bool RouteTableIdsHasBeenSet() const { return m_routeTableIdsHasBeenSet; }
 
     /**
-     * <p>The VPC route tables in which your file system's endpoints are created.</p>
+     * <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints
+     * are created.</p>
      */
     inline void SetRouteTableIds(const Aws::Vector<Aws::String>& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = value; }
 
     /**
-     * <p>The VPC route tables in which your file system's endpoints are created.</p>
+     * <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints
+     * are created.</p>
      */
     inline void SetRouteTableIds(Aws::Vector<Aws::String>&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = std::move(value); }
 
     /**
-     * <p>The VPC route tables in which your file system's endpoints are created.</p>
+     * <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints
+     * are created.</p>
      */
     inline OntapFileSystemConfiguration& WithRouteTableIds(const Aws::Vector<Aws::String>& value) { SetRouteTableIds(value); return *this;}
 
     /**
-     * <p>The VPC route tables in which your file system's endpoints are created.</p>
+     * <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints
+     * are created.</p>
      */
     inline OntapFileSystemConfiguration& WithRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRouteTableIds(std::move(value)); return *this;}
 
     /**
-     * <p>The VPC route tables in which your file system's endpoints are created.</p>
+     * <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints
+     * are created.</p>
      */
     inline OntapFileSystemConfiguration& AddRouteTableIds(const Aws::String& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
 
     /**
-     * <p>The VPC route tables in which your file system's endpoints are created.</p>
+     * <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints
+     * are created.</p>
      */
     inline OntapFileSystemConfiguration& AddRouteTableIds(Aws::String&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The VPC route tables in which your file system's endpoints are created.</p>
+     * <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints
+     * are created.</p>
      */
     inline OntapFileSystemConfiguration& AddRouteTableIds(const char* value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
 

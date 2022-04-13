@@ -927,78 +927,114 @@ namespace Model
         virtual void GetInsightRuleReportAsync(const Model::GetInsightRuleReportRequest& request, const GetInsightRuleReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>You can use the <code>GetMetricData</code> API to retrieve as many as 500
-         * different metrics in a single request, with a total of as many as 100,800 data
-         * points. You can also optionally perform math expressions on the values of the
-         * returned statistics, to create new time series that represent new insights into
-         * your data. For example, using Lambda metrics, you could divide the Errors metric
-         * by the Invocations metric to get an error rate time series. For more information
+         * <p>You can use the <code>GetMetricData</code> API to retrieve CloudWatch metric
+         * values. The operation can also include a CloudWatch Metrics Insights query, and
+         * one or more metric math functions.</p> <p>A <code>GetMetricData</code> operation
+         * that does not include a query can retrieve as many as 500 different metrics in a
+         * single request, with a total of as many as 100,800 data points. You can also
+         * optionally perform metric math expressions on the values of the returned
+         * statistics, to create new time series that represent new insights into your
+         * data. For example, using Lambda metrics, you could divide the Errors metric by
+         * the Invocations metric to get an error rate time series. For more information
          * about metric math expressions, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
          * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-         * <p>Calls to the <code>GetMetricData</code> API have a different pricing
-         * structure than calls to <code>GetMetricStatistics</code>. For more information
-         * about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
-         * CloudWatch Pricing</a>.</p> <p>Amazon CloudWatch retains metric data as
-         * follows:</p> <ul> <li> <p>Data points with a period of less than 60 seconds are
-         * available for 3 hours. These data points are high-resolution metrics and are
-         * available only for custom metrics that have been defined with a
-         * <code>StorageResolution</code> of 1.</p> </li> <li> <p>Data points with a period
-         * of 60 seconds (1-minute) are available for 15 days.</p> </li> <li> <p>Data
-         * points with a period of 300 seconds (5-minute) are available for 63 days.</p>
-         * </li> <li> <p>Data points with a period of 3600 seconds (1 hour) are available
-         * for 455 days (15 months).</p> </li> </ul> <p>Data points that are initially
-         * published with a shorter period are aggregated together for long-term storage.
-         * For example, if you collect data using a period of 1 minute, the data remains
-         * available for 15 days with 1-minute resolution. After 15 days, this data is
-         * still available, but is aggregated and retrievable only with a resolution of 5
-         * minutes. After 63 days, the data is further aggregated and is available with a
-         * resolution of 1 hour.</p> <p>If you omit <code>Unit</code> in your request, all
-         * data that was collected with any unit is returned, along with the corresponding
-         * units that were specified when the data was reported to CloudWatch. If you
-         * specify a unit, the operation returns only data that was collected with that
-         * unit specified. If you specify a unit that does not match the data collected,
-         * the results of the operation are null. CloudWatch does not perform unit
-         * conversions.</p><p><h3>See Also:</h3>   <a
+         * <p>If you include a Metrics Insights query, each <code>GetMetricData</code>
+         * operation can include only one query. But the same <code>GetMetricData</code>
+         * operation can also retrieve other metrics. Metrics Insights queries can query
+         * only the most recent three hours of metric data. For more information about
+         * Metrics Insights, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/query_with_cloudwatch-metrics-insights.html">Query
+         * your metrics with CloudWatch Metrics Insights</a>.</p> <p>Calls to the
+         * <code>GetMetricData</code> API have a different pricing structure than calls to
+         * <code>GetMetricStatistics</code>. For more information about pricing, see <a
+         * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+         * Pricing</a>.</p> <p>Amazon CloudWatch retains metric data as follows:</p> <ul>
+         * <li> <p>Data points with a period of less than 60 seconds are available for 3
+         * hours. These data points are high-resolution metrics and are available only for
+         * custom metrics that have been defined with a <code>StorageResolution</code> of
+         * 1.</p> </li> <li> <p>Data points with a period of 60 seconds (1-minute) are
+         * available for 15 days.</p> </li> <li> <p>Data points with a period of 300
+         * seconds (5-minute) are available for 63 days.</p> </li> <li> <p>Data points with
+         * a period of 3600 seconds (1 hour) are available for 455 days (15 months).</p>
+         * </li> </ul> <p>Data points that are initially published with a shorter period
+         * are aggregated together for long-term storage. For example, if you collect data
+         * using a period of 1 minute, the data remains available for 15 days with 1-minute
+         * resolution. After 15 days, this data is still available, but is aggregated and
+         * retrievable only with a resolution of 5 minutes. After 63 days, the data is
+         * further aggregated and is available with a resolution of 1 hour.</p> <p>If you
+         * omit <code>Unit</code> in your request, all data that was collected with any
+         * unit is returned, along with the corresponding units that were specified when
+         * the data was reported to CloudWatch. If you specify a unit, the operation
+         * returns only data that was collected with that unit specified. If you specify a
+         * unit that does not match the data collected, the results of the operation are
+         * null. CloudWatch does not perform unit conversions.</p> <p> <b>Using Metrics
+         * Insights queries with metric math</b> </p> <p>You can't mix a Metric Insights
+         * query and metric math syntax in the same expression, but you can reference
+         * results from a Metrics Insights query within other Metric math expressions. A
+         * Metrics Insights query without a <b>GROUP BY</b> clause returns a single
+         * time-series (TS), and can be used as input for a metric math expression that
+         * expects a single time series. A Metrics Insights query with a <b>GROUP BY</b>
+         * clause returns an array of time-series (TS[]), and can be used as input for a
+         * metric math expression that expects an array of time series. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMetricDataOutcome GetMetricData(const Model::GetMetricDataRequest& request) const;
 
         /**
-         * <p>You can use the <code>GetMetricData</code> API to retrieve as many as 500
-         * different metrics in a single request, with a total of as many as 100,800 data
-         * points. You can also optionally perform math expressions on the values of the
-         * returned statistics, to create new time series that represent new insights into
-         * your data. For example, using Lambda metrics, you could divide the Errors metric
-         * by the Invocations metric to get an error rate time series. For more information
+         * <p>You can use the <code>GetMetricData</code> API to retrieve CloudWatch metric
+         * values. The operation can also include a CloudWatch Metrics Insights query, and
+         * one or more metric math functions.</p> <p>A <code>GetMetricData</code> operation
+         * that does not include a query can retrieve as many as 500 different metrics in a
+         * single request, with a total of as many as 100,800 data points. You can also
+         * optionally perform metric math expressions on the values of the returned
+         * statistics, to create new time series that represent new insights into your
+         * data. For example, using Lambda metrics, you could divide the Errors metric by
+         * the Invocations metric to get an error rate time series. For more information
          * about metric math expressions, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
          * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-         * <p>Calls to the <code>GetMetricData</code> API have a different pricing
-         * structure than calls to <code>GetMetricStatistics</code>. For more information
-         * about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
-         * CloudWatch Pricing</a>.</p> <p>Amazon CloudWatch retains metric data as
-         * follows:</p> <ul> <li> <p>Data points with a period of less than 60 seconds are
-         * available for 3 hours. These data points are high-resolution metrics and are
-         * available only for custom metrics that have been defined with a
-         * <code>StorageResolution</code> of 1.</p> </li> <li> <p>Data points with a period
-         * of 60 seconds (1-minute) are available for 15 days.</p> </li> <li> <p>Data
-         * points with a period of 300 seconds (5-minute) are available for 63 days.</p>
-         * </li> <li> <p>Data points with a period of 3600 seconds (1 hour) are available
-         * for 455 days (15 months).</p> </li> </ul> <p>Data points that are initially
-         * published with a shorter period are aggregated together for long-term storage.
-         * For example, if you collect data using a period of 1 minute, the data remains
-         * available for 15 days with 1-minute resolution. After 15 days, this data is
-         * still available, but is aggregated and retrievable only with a resolution of 5
-         * minutes. After 63 days, the data is further aggregated and is available with a
-         * resolution of 1 hour.</p> <p>If you omit <code>Unit</code> in your request, all
-         * data that was collected with any unit is returned, along with the corresponding
-         * units that were specified when the data was reported to CloudWatch. If you
-         * specify a unit, the operation returns only data that was collected with that
-         * unit specified. If you specify a unit that does not match the data collected,
-         * the results of the operation are null. CloudWatch does not perform unit
-         * conversions.</p><p><h3>See Also:</h3>   <a
+         * <p>If you include a Metrics Insights query, each <code>GetMetricData</code>
+         * operation can include only one query. But the same <code>GetMetricData</code>
+         * operation can also retrieve other metrics. Metrics Insights queries can query
+         * only the most recent three hours of metric data. For more information about
+         * Metrics Insights, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/query_with_cloudwatch-metrics-insights.html">Query
+         * your metrics with CloudWatch Metrics Insights</a>.</p> <p>Calls to the
+         * <code>GetMetricData</code> API have a different pricing structure than calls to
+         * <code>GetMetricStatistics</code>. For more information about pricing, see <a
+         * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+         * Pricing</a>.</p> <p>Amazon CloudWatch retains metric data as follows:</p> <ul>
+         * <li> <p>Data points with a period of less than 60 seconds are available for 3
+         * hours. These data points are high-resolution metrics and are available only for
+         * custom metrics that have been defined with a <code>StorageResolution</code> of
+         * 1.</p> </li> <li> <p>Data points with a period of 60 seconds (1-minute) are
+         * available for 15 days.</p> </li> <li> <p>Data points with a period of 300
+         * seconds (5-minute) are available for 63 days.</p> </li> <li> <p>Data points with
+         * a period of 3600 seconds (1 hour) are available for 455 days (15 months).</p>
+         * </li> </ul> <p>Data points that are initially published with a shorter period
+         * are aggregated together for long-term storage. For example, if you collect data
+         * using a period of 1 minute, the data remains available for 15 days with 1-minute
+         * resolution. After 15 days, this data is still available, but is aggregated and
+         * retrievable only with a resolution of 5 minutes. After 63 days, the data is
+         * further aggregated and is available with a resolution of 1 hour.</p> <p>If you
+         * omit <code>Unit</code> in your request, all data that was collected with any
+         * unit is returned, along with the corresponding units that were specified when
+         * the data was reported to CloudWatch. If you specify a unit, the operation
+         * returns only data that was collected with that unit specified. If you specify a
+         * unit that does not match the data collected, the results of the operation are
+         * null. CloudWatch does not perform unit conversions.</p> <p> <b>Using Metrics
+         * Insights queries with metric math</b> </p> <p>You can't mix a Metric Insights
+         * query and metric math syntax in the same expression, but you can reference
+         * results from a Metrics Insights query within other Metric math expressions. A
+         * Metrics Insights query without a <b>GROUP BY</b> clause returns a single
+         * time-series (TS), and can be used as input for a metric math expression that
+         * expects a single time series. A Metrics Insights query with a <b>GROUP BY</b>
+         * clause returns an array of time-series (TS[]), and can be used as input for a
+         * metric math expression that expects an array of time series. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">AWS
          * API Reference</a></p>
          *
@@ -1007,39 +1043,57 @@ namespace Model
         virtual Model::GetMetricDataOutcomeCallable GetMetricDataCallable(const Model::GetMetricDataRequest& request) const;
 
         /**
-         * <p>You can use the <code>GetMetricData</code> API to retrieve as many as 500
-         * different metrics in a single request, with a total of as many as 100,800 data
-         * points. You can also optionally perform math expressions on the values of the
-         * returned statistics, to create new time series that represent new insights into
-         * your data. For example, using Lambda metrics, you could divide the Errors metric
-         * by the Invocations metric to get an error rate time series. For more information
+         * <p>You can use the <code>GetMetricData</code> API to retrieve CloudWatch metric
+         * values. The operation can also include a CloudWatch Metrics Insights query, and
+         * one or more metric math functions.</p> <p>A <code>GetMetricData</code> operation
+         * that does not include a query can retrieve as many as 500 different metrics in a
+         * single request, with a total of as many as 100,800 data points. You can also
+         * optionally perform metric math expressions on the values of the returned
+         * statistics, to create new time series that represent new insights into your
+         * data. For example, using Lambda metrics, you could divide the Errors metric by
+         * the Invocations metric to get an error rate time series. For more information
          * about metric math expressions, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
          * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-         * <p>Calls to the <code>GetMetricData</code> API have a different pricing
-         * structure than calls to <code>GetMetricStatistics</code>. For more information
-         * about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
-         * CloudWatch Pricing</a>.</p> <p>Amazon CloudWatch retains metric data as
-         * follows:</p> <ul> <li> <p>Data points with a period of less than 60 seconds are
-         * available for 3 hours. These data points are high-resolution metrics and are
-         * available only for custom metrics that have been defined with a
-         * <code>StorageResolution</code> of 1.</p> </li> <li> <p>Data points with a period
-         * of 60 seconds (1-minute) are available for 15 days.</p> </li> <li> <p>Data
-         * points with a period of 300 seconds (5-minute) are available for 63 days.</p>
-         * </li> <li> <p>Data points with a period of 3600 seconds (1 hour) are available
-         * for 455 days (15 months).</p> </li> </ul> <p>Data points that are initially
-         * published with a shorter period are aggregated together for long-term storage.
-         * For example, if you collect data using a period of 1 minute, the data remains
-         * available for 15 days with 1-minute resolution. After 15 days, this data is
-         * still available, but is aggregated and retrievable only with a resolution of 5
-         * minutes. After 63 days, the data is further aggregated and is available with a
-         * resolution of 1 hour.</p> <p>If you omit <code>Unit</code> in your request, all
-         * data that was collected with any unit is returned, along with the corresponding
-         * units that were specified when the data was reported to CloudWatch. If you
-         * specify a unit, the operation returns only data that was collected with that
-         * unit specified. If you specify a unit that does not match the data collected,
-         * the results of the operation are null. CloudWatch does not perform unit
-         * conversions.</p><p><h3>See Also:</h3>   <a
+         * <p>If you include a Metrics Insights query, each <code>GetMetricData</code>
+         * operation can include only one query. But the same <code>GetMetricData</code>
+         * operation can also retrieve other metrics. Metrics Insights queries can query
+         * only the most recent three hours of metric data. For more information about
+         * Metrics Insights, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/query_with_cloudwatch-metrics-insights.html">Query
+         * your metrics with CloudWatch Metrics Insights</a>.</p> <p>Calls to the
+         * <code>GetMetricData</code> API have a different pricing structure than calls to
+         * <code>GetMetricStatistics</code>. For more information about pricing, see <a
+         * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+         * Pricing</a>.</p> <p>Amazon CloudWatch retains metric data as follows:</p> <ul>
+         * <li> <p>Data points with a period of less than 60 seconds are available for 3
+         * hours. These data points are high-resolution metrics and are available only for
+         * custom metrics that have been defined with a <code>StorageResolution</code> of
+         * 1.</p> </li> <li> <p>Data points with a period of 60 seconds (1-minute) are
+         * available for 15 days.</p> </li> <li> <p>Data points with a period of 300
+         * seconds (5-minute) are available for 63 days.</p> </li> <li> <p>Data points with
+         * a period of 3600 seconds (1 hour) are available for 455 days (15 months).</p>
+         * </li> </ul> <p>Data points that are initially published with a shorter period
+         * are aggregated together for long-term storage. For example, if you collect data
+         * using a period of 1 minute, the data remains available for 15 days with 1-minute
+         * resolution. After 15 days, this data is still available, but is aggregated and
+         * retrievable only with a resolution of 5 minutes. After 63 days, the data is
+         * further aggregated and is available with a resolution of 1 hour.</p> <p>If you
+         * omit <code>Unit</code> in your request, all data that was collected with any
+         * unit is returned, along with the corresponding units that were specified when
+         * the data was reported to CloudWatch. If you specify a unit, the operation
+         * returns only data that was collected with that unit specified. If you specify a
+         * unit that does not match the data collected, the results of the operation are
+         * null. CloudWatch does not perform unit conversions.</p> <p> <b>Using Metrics
+         * Insights queries with metric math</b> </p> <p>You can't mix a Metric Insights
+         * query and metric math syntax in the same expression, but you can reference
+         * results from a Metrics Insights query within other Metric math expressions. A
+         * Metrics Insights query without a <b>GROUP BY</b> clause returns a single
+         * time-series (TS), and can be used as input for a metric math expression that
+         * expects a single time series. A Metrics Insights query with a <b>GROUP BY</b>
+         * clause returns an array of time-series (TS[]), and can be used as input for a
+         * metric math expression that expects an array of time series. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">AWS
          * API Reference</a></p>
          *
@@ -1478,31 +1532,33 @@ namespace Model
          * alarm states of other alarms that you have created. The composite alarm goes
          * into ALARM state only if all conditions of the rule are met.</p> <p>The alarms
          * specified in a composite alarm's rule expression can include metric alarms and
-         * other composite alarms.</p> <p>Using composite alarms can reduce alarm noise.
-         * You can create multiple metric alarms, and also create a composite alarm and set
-         * up alerts only for the composite alarm. For example, you could create a
-         * composite alarm that goes into ALARM state only when more than one of the
-         * underlying metric alarms are in ALARM state.</p> <p>Currently, the only alarm
-         * actions that can be taken by composite alarms are notifying SNS topics.</p>
-         *  <p>It is possible to create a loop or cycle of composite alarms, where
-         * composite alarm A depends on composite alarm B, and composite alarm B also
-         * depends on composite alarm A. In this scenario, you can't delete any composite
-         * alarm that is part of the cycle because there is always still a composite alarm
-         * that depends on that alarm that you want to delete.</p> <p>To get out of such a
-         * situation, you must break the cycle by changing the rule of one of the composite
-         * alarms in the cycle to remove a dependency that creates the cycle. The simplest
-         * change to make to break a cycle is to change the <code>AlarmRule</code> of one
-         * of the alarms to <code>False</code>. </p> <p>Additionally, the evaluation of
-         * composite alarms stops if CloudWatch detects a cycle in the evaluation path.
-         * </p>  <p>When this operation creates an alarm, the alarm state is
-         * immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated
-         * and its state is set appropriately. Any actions associated with the new state
-         * are then executed. For a composite alarm, this initial time after creation is
-         * the only time that the alarm can be in <code>INSUFFICIENT_DATA</code> state.</p>
-         * <p>When you update an existing alarm, its state is left unchanged, but the
-         * update completely overwrites the previous configuration of the alarm.</p> <p>To
-         * use this operation, you must be signed on with the
-         * <code>cloudwatch:PutCompositeAlarm</code> permission that is scoped to
+         * other composite alarms. The rule expression of a composite alarm can include as
+         * many as 100 underlying alarms. Any single alarm can be included in the rule
+         * expressions of as many as 150 composite alarms.</p> <p>Using composite alarms
+         * can reduce alarm noise. You can create multiple metric alarms, and also create a
+         * composite alarm and set up alerts only for the composite alarm. For example, you
+         * could create a composite alarm that goes into ALARM state only when more than
+         * one of the underlying metric alarms are in ALARM state.</p> <p>Currently, the
+         * only alarm actions that can be taken by composite alarms are notifying SNS
+         * topics.</p>  <p>It is possible to create a loop or cycle of composite
+         * alarms, where composite alarm A depends on composite alarm B, and composite
+         * alarm B also depends on composite alarm A. In this scenario, you can't delete
+         * any composite alarm that is part of the cycle because there is always still a
+         * composite alarm that depends on that alarm that you want to delete.</p> <p>To
+         * get out of such a situation, you must break the cycle by changing the rule of
+         * one of the composite alarms in the cycle to remove a dependency that creates the
+         * cycle. The simplest change to make to break a cycle is to change the
+         * <code>AlarmRule</code> of one of the alarms to <code>False</code>. </p>
+         * <p>Additionally, the evaluation of composite alarms stops if CloudWatch detects
+         * a cycle in the evaluation path. </p>  <p>When this operation creates an
+         * alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The
+         * alarm is then evaluated and its state is set appropriately. Any actions
+         * associated with the new state are then executed. For a composite alarm, this
+         * initial time after creation is the only time that the alarm can be in
+         * <code>INSUFFICIENT_DATA</code> state.</p> <p>When you update an existing alarm,
+         * its state is left unchanged, but the update completely overwrites the previous
+         * configuration of the alarm.</p> <p>To use this operation, you must be signed on
+         * with the <code>cloudwatch:PutCompositeAlarm</code> permission that is scoped to
          * <code>*</code>. You can't create a composite alarms if your
          * <code>cloudwatch:PutCompositeAlarm</code> permission has a narrower scope.</p>
          * <p>If you are an IAM user, you must have
@@ -1519,31 +1575,33 @@ namespace Model
          * alarm states of other alarms that you have created. The composite alarm goes
          * into ALARM state only if all conditions of the rule are met.</p> <p>The alarms
          * specified in a composite alarm's rule expression can include metric alarms and
-         * other composite alarms.</p> <p>Using composite alarms can reduce alarm noise.
-         * You can create multiple metric alarms, and also create a composite alarm and set
-         * up alerts only for the composite alarm. For example, you could create a
-         * composite alarm that goes into ALARM state only when more than one of the
-         * underlying metric alarms are in ALARM state.</p> <p>Currently, the only alarm
-         * actions that can be taken by composite alarms are notifying SNS topics.</p>
-         *  <p>It is possible to create a loop or cycle of composite alarms, where
-         * composite alarm A depends on composite alarm B, and composite alarm B also
-         * depends on composite alarm A. In this scenario, you can't delete any composite
-         * alarm that is part of the cycle because there is always still a composite alarm
-         * that depends on that alarm that you want to delete.</p> <p>To get out of such a
-         * situation, you must break the cycle by changing the rule of one of the composite
-         * alarms in the cycle to remove a dependency that creates the cycle. The simplest
-         * change to make to break a cycle is to change the <code>AlarmRule</code> of one
-         * of the alarms to <code>False</code>. </p> <p>Additionally, the evaluation of
-         * composite alarms stops if CloudWatch detects a cycle in the evaluation path.
-         * </p>  <p>When this operation creates an alarm, the alarm state is
-         * immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated
-         * and its state is set appropriately. Any actions associated with the new state
-         * are then executed. For a composite alarm, this initial time after creation is
-         * the only time that the alarm can be in <code>INSUFFICIENT_DATA</code> state.</p>
-         * <p>When you update an existing alarm, its state is left unchanged, but the
-         * update completely overwrites the previous configuration of the alarm.</p> <p>To
-         * use this operation, you must be signed on with the
-         * <code>cloudwatch:PutCompositeAlarm</code> permission that is scoped to
+         * other composite alarms. The rule expression of a composite alarm can include as
+         * many as 100 underlying alarms. Any single alarm can be included in the rule
+         * expressions of as many as 150 composite alarms.</p> <p>Using composite alarms
+         * can reduce alarm noise. You can create multiple metric alarms, and also create a
+         * composite alarm and set up alerts only for the composite alarm. For example, you
+         * could create a composite alarm that goes into ALARM state only when more than
+         * one of the underlying metric alarms are in ALARM state.</p> <p>Currently, the
+         * only alarm actions that can be taken by composite alarms are notifying SNS
+         * topics.</p>  <p>It is possible to create a loop or cycle of composite
+         * alarms, where composite alarm A depends on composite alarm B, and composite
+         * alarm B also depends on composite alarm A. In this scenario, you can't delete
+         * any composite alarm that is part of the cycle because there is always still a
+         * composite alarm that depends on that alarm that you want to delete.</p> <p>To
+         * get out of such a situation, you must break the cycle by changing the rule of
+         * one of the composite alarms in the cycle to remove a dependency that creates the
+         * cycle. The simplest change to make to break a cycle is to change the
+         * <code>AlarmRule</code> of one of the alarms to <code>False</code>. </p>
+         * <p>Additionally, the evaluation of composite alarms stops if CloudWatch detects
+         * a cycle in the evaluation path. </p>  <p>When this operation creates an
+         * alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The
+         * alarm is then evaluated and its state is set appropriately. Any actions
+         * associated with the new state are then executed. For a composite alarm, this
+         * initial time after creation is the only time that the alarm can be in
+         * <code>INSUFFICIENT_DATA</code> state.</p> <p>When you update an existing alarm,
+         * its state is left unchanged, but the update completely overwrites the previous
+         * configuration of the alarm.</p> <p>To use this operation, you must be signed on
+         * with the <code>cloudwatch:PutCompositeAlarm</code> permission that is scoped to
          * <code>*</code>. You can't create a composite alarms if your
          * <code>cloudwatch:PutCompositeAlarm</code> permission has a narrower scope.</p>
          * <p>If you are an IAM user, you must have
@@ -1562,31 +1620,33 @@ namespace Model
          * alarm states of other alarms that you have created. The composite alarm goes
          * into ALARM state only if all conditions of the rule are met.</p> <p>The alarms
          * specified in a composite alarm's rule expression can include metric alarms and
-         * other composite alarms.</p> <p>Using composite alarms can reduce alarm noise.
-         * You can create multiple metric alarms, and also create a composite alarm and set
-         * up alerts only for the composite alarm. For example, you could create a
-         * composite alarm that goes into ALARM state only when more than one of the
-         * underlying metric alarms are in ALARM state.</p> <p>Currently, the only alarm
-         * actions that can be taken by composite alarms are notifying SNS topics.</p>
-         *  <p>It is possible to create a loop or cycle of composite alarms, where
-         * composite alarm A depends on composite alarm B, and composite alarm B also
-         * depends on composite alarm A. In this scenario, you can't delete any composite
-         * alarm that is part of the cycle because there is always still a composite alarm
-         * that depends on that alarm that you want to delete.</p> <p>To get out of such a
-         * situation, you must break the cycle by changing the rule of one of the composite
-         * alarms in the cycle to remove a dependency that creates the cycle. The simplest
-         * change to make to break a cycle is to change the <code>AlarmRule</code> of one
-         * of the alarms to <code>False</code>. </p> <p>Additionally, the evaluation of
-         * composite alarms stops if CloudWatch detects a cycle in the evaluation path.
-         * </p>  <p>When this operation creates an alarm, the alarm state is
-         * immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated
-         * and its state is set appropriately. Any actions associated with the new state
-         * are then executed. For a composite alarm, this initial time after creation is
-         * the only time that the alarm can be in <code>INSUFFICIENT_DATA</code> state.</p>
-         * <p>When you update an existing alarm, its state is left unchanged, but the
-         * update completely overwrites the previous configuration of the alarm.</p> <p>To
-         * use this operation, you must be signed on with the
-         * <code>cloudwatch:PutCompositeAlarm</code> permission that is scoped to
+         * other composite alarms. The rule expression of a composite alarm can include as
+         * many as 100 underlying alarms. Any single alarm can be included in the rule
+         * expressions of as many as 150 composite alarms.</p> <p>Using composite alarms
+         * can reduce alarm noise. You can create multiple metric alarms, and also create a
+         * composite alarm and set up alerts only for the composite alarm. For example, you
+         * could create a composite alarm that goes into ALARM state only when more than
+         * one of the underlying metric alarms are in ALARM state.</p> <p>Currently, the
+         * only alarm actions that can be taken by composite alarms are notifying SNS
+         * topics.</p>  <p>It is possible to create a loop or cycle of composite
+         * alarms, where composite alarm A depends on composite alarm B, and composite
+         * alarm B also depends on composite alarm A. In this scenario, you can't delete
+         * any composite alarm that is part of the cycle because there is always still a
+         * composite alarm that depends on that alarm that you want to delete.</p> <p>To
+         * get out of such a situation, you must break the cycle by changing the rule of
+         * one of the composite alarms in the cycle to remove a dependency that creates the
+         * cycle. The simplest change to make to break a cycle is to change the
+         * <code>AlarmRule</code> of one of the alarms to <code>False</code>. </p>
+         * <p>Additionally, the evaluation of composite alarms stops if CloudWatch detects
+         * a cycle in the evaluation path. </p>  <p>When this operation creates an
+         * alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The
+         * alarm is then evaluated and its state is set appropriately. Any actions
+         * associated with the new state are then executed. For a composite alarm, this
+         * initial time after creation is the only time that the alarm can be in
+         * <code>INSUFFICIENT_DATA</code> state.</p> <p>When you update an existing alarm,
+         * its state is left unchanged, but the update completely overwrites the previous
+         * configuration of the alarm.</p> <p>To use this operation, you must be signed on
+         * with the <code>cloudwatch:PutCompositeAlarm</code> permission that is scoped to
          * <code>*</code>. You can't create a composite alarms if your
          * <code>cloudwatch:PutCompositeAlarm</code> permission has a narrower scope.</p>
          * <p>If you are an IAM user, you must have
@@ -2016,10 +2076,17 @@ namespace Model
          * metrics from all metric namespaces in the account, except for the namespaces
          * that you list in <code>ExcludeFilters</code>.</p> </li> <li> <p>Stream metrics
          * from only the metric namespaces that you list in
-         * <code>IncludeFilters</code>.</p> </li> </ul> <p>When you use
-         * <code>PutMetricStream</code> to create a new metric stream, the stream is
-         * created in the <code>running</code> state. If you use it to update an existing
-         * stream, the state of the stream is not changed.</p><p><h3>See Also:</h3>   <a
+         * <code>IncludeFilters</code>.</p> </li> </ul> <p>By default, a metric stream
+         * always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and
+         * <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can
+         * use the <code>StatisticsConfigurations</code> parameter to have the metric
+         * stream also send extended statistics in the stream. Streaming extended
+         * statistics incurs additional costs. For more information, see <a
+         * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+         * </p> <p>When you use <code>PutMetricStream</code> to create a new metric stream,
+         * the stream is created in the <code>running</code> state. If you use it to update
+         * an existing stream, the state of the stream is not changed.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricStream">AWS
          * API Reference</a></p>
          */
@@ -2039,10 +2106,17 @@ namespace Model
          * metrics from all metric namespaces in the account, except for the namespaces
          * that you list in <code>ExcludeFilters</code>.</p> </li> <li> <p>Stream metrics
          * from only the metric namespaces that you list in
-         * <code>IncludeFilters</code>.</p> </li> </ul> <p>When you use
-         * <code>PutMetricStream</code> to create a new metric stream, the stream is
-         * created in the <code>running</code> state. If you use it to update an existing
-         * stream, the state of the stream is not changed.</p><p><h3>See Also:</h3>   <a
+         * <code>IncludeFilters</code>.</p> </li> </ul> <p>By default, a metric stream
+         * always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and
+         * <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can
+         * use the <code>StatisticsConfigurations</code> parameter to have the metric
+         * stream also send extended statistics in the stream. Streaming extended
+         * statistics incurs additional costs. For more information, see <a
+         * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+         * </p> <p>When you use <code>PutMetricStream</code> to create a new metric stream,
+         * the stream is created in the <code>running</code> state. If you use it to update
+         * an existing stream, the state of the stream is not changed.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricStream">AWS
          * API Reference</a></p>
          *
@@ -2064,10 +2138,17 @@ namespace Model
          * metrics from all metric namespaces in the account, except for the namespaces
          * that you list in <code>ExcludeFilters</code>.</p> </li> <li> <p>Stream metrics
          * from only the metric namespaces that you list in
-         * <code>IncludeFilters</code>.</p> </li> </ul> <p>When you use
-         * <code>PutMetricStream</code> to create a new metric stream, the stream is
-         * created in the <code>running</code> state. If you use it to update an existing
-         * stream, the state of the stream is not changed.</p><p><h3>See Also:</h3>   <a
+         * <code>IncludeFilters</code>.</p> </li> </ul> <p>By default, a metric stream
+         * always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and
+         * <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can
+         * use the <code>StatisticsConfigurations</code> parameter to have the metric
+         * stream also send extended statistics in the stream. Streaming extended
+         * statistics incurs additional costs. For more information, see <a
+         * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+         * </p> <p>When you use <code>PutMetricStream</code> to create a new metric stream,
+         * the stream is created in the <code>running</code> state. If you use it to update
+         * an existing stream, the state of the stream is not changed.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricStream">AWS
          * API Reference</a></p>
          *
