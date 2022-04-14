@@ -611,8 +611,8 @@ namespace Model
          * <p>Describes one or more of your compute environments.</p> <p>If you're using an
          * unmanaged compute environment, you can use the
          * <code>DescribeComputeEnvironment</code> operation to determine the
-         * <code>ecsClusterArn</code> that you should launch your Amazon ECS container
-         * instances into.</p><p><h3>See Also:</h3>   <a
+         * <code>ecsClusterArn</code> that you launch your Amazon ECS container instances
+         * into.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments">AWS
          * API Reference</a></p>
          */
@@ -622,8 +622,8 @@ namespace Model
          * <p>Describes one or more of your compute environments.</p> <p>If you're using an
          * unmanaged compute environment, you can use the
          * <code>DescribeComputeEnvironment</code> operation to determine the
-         * <code>ecsClusterArn</code> that you should launch your Amazon ECS container
-         * instances into.</p><p><h3>See Also:</h3>   <a
+         * <code>ecsClusterArn</code> that you launch your Amazon ECS container instances
+         * into.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments">AWS
          * API Reference</a></p>
          *
@@ -635,8 +635,8 @@ namespace Model
          * <p>Describes one or more of your compute environments.</p> <p>If you're using an
          * unmanaged compute environment, you can use the
          * <code>DescribeComputeEnvironment</code> operation to determine the
-         * <code>ecsClusterArn</code> that you should launch your Amazon ECS container
-         * instances into.</p><p><h3>See Also:</h3>   <a
+         * <code>ecsClusterArn</code> that you launch your Amazon ECS container instances
+         * into.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments">AWS
          * API Reference</a></p>
          *

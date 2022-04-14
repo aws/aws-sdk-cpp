@@ -90,11 +90,9 @@ namespace Model
      * Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p> </li>
      * <li> <p> <code>local-gateway-id</code> - The ID of the local gateway.</p> </li>
      * <li> <p> <code>local-gateway-virtual-interface-id</code> - The ID of the virtual
-     * interface.</p> </li> <li> <p>
-     * <code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual
-     * interface group.</p> </li> <li> <p> <code>owner-id</code> - The ID of the Amazon
-     * Web Services account that owns the local gateway virtual interface.</p> </li>
-     * <li> <p> <code>peer-address</code> - The peer address.</p> </li> <li> <p>
+     * interface.</p> </li> <li> <p> <code>owner-id</code> - The ID of the Amazon Web
+     * Services account that owns the local gateway virtual interface.</p> </li> <li>
+     * <p> <code>peer-address</code> - The peer address.</p> </li> <li> <p>
      * <code>peer-bgp-asn</code> - The peer BGP ASN.</p> </li> <li> <p>
      * <code>vlan</code> - The ID of the VLAN.</p> </li> </ul>
      */
@@ -106,11 +104,9 @@ namespace Model
      * Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p> </li>
      * <li> <p> <code>local-gateway-id</code> - The ID of the local gateway.</p> </li>
      * <li> <p> <code>local-gateway-virtual-interface-id</code> - The ID of the virtual
-     * interface.</p> </li> <li> <p>
-     * <code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual
-     * interface group.</p> </li> <li> <p> <code>owner-id</code> - The ID of the Amazon
-     * Web Services account that owns the local gateway virtual interface.</p> </li>
-     * <li> <p> <code>peer-address</code> - The peer address.</p> </li> <li> <p>
+     * interface.</p> </li> <li> <p> <code>owner-id</code> - The ID of the Amazon Web
+     * Services account that owns the local gateway virtual interface.</p> </li> <li>
+     * <p> <code>peer-address</code> - The peer address.</p> </li> <li> <p>
      * <code>peer-bgp-asn</code> - The peer BGP ASN.</p> </li> <li> <p>
      * <code>vlan</code> - The ID of the VLAN.</p> </li> </ul>
      */
@@ -122,11 +118,9 @@ namespace Model
      * Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p> </li>
      * <li> <p> <code>local-gateway-id</code> - The ID of the local gateway.</p> </li>
      * <li> <p> <code>local-gateway-virtual-interface-id</code> - The ID of the virtual
-     * interface.</p> </li> <li> <p>
-     * <code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual
-     * interface group.</p> </li> <li> <p> <code>owner-id</code> - The ID of the Amazon
-     * Web Services account that owns the local gateway virtual interface.</p> </li>
-     * <li> <p> <code>peer-address</code> - The peer address.</p> </li> <li> <p>
+     * interface.</p> </li> <li> <p> <code>owner-id</code> - The ID of the Amazon Web
+     * Services account that owns the local gateway virtual interface.</p> </li> <li>
+     * <p> <code>peer-address</code> - The peer address.</p> </li> <li> <p>
      * <code>peer-bgp-asn</code> - The peer BGP ASN.</p> </li> <li> <p>
      * <code>vlan</code> - The ID of the VLAN.</p> </li> </ul>
      */
@@ -138,11 +132,9 @@ namespace Model
      * Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p> </li>
      * <li> <p> <code>local-gateway-id</code> - The ID of the local gateway.</p> </li>
      * <li> <p> <code>local-gateway-virtual-interface-id</code> - The ID of the virtual
-     * interface.</p> </li> <li> <p>
-     * <code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual
-     * interface group.</p> </li> <li> <p> <code>owner-id</code> - The ID of the Amazon
-     * Web Services account that owns the local gateway virtual interface.</p> </li>
-     * <li> <p> <code>peer-address</code> - The peer address.</p> </li> <li> <p>
+     * interface.</p> </li> <li> <p> <code>owner-id</code> - The ID of the Amazon Web
+     * Services account that owns the local gateway virtual interface.</p> </li> <li>
+     * <p> <code>peer-address</code> - The peer address.</p> </li> <li> <p>
      * <code>peer-bgp-asn</code> - The peer BGP ASN.</p> </li> <li> <p>
      * <code>vlan</code> - The ID of the VLAN.</p> </li> </ul>
      */
@@ -154,11 +146,9 @@ namespace Model
      * Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p> </li>
      * <li> <p> <code>local-gateway-id</code> - The ID of the local gateway.</p> </li>
      * <li> <p> <code>local-gateway-virtual-interface-id</code> - The ID of the virtual
-     * interface.</p> </li> <li> <p>
-     * <code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual
-     * interface group.</p> </li> <li> <p> <code>owner-id</code> - The ID of the Amazon
-     * Web Services account that owns the local gateway virtual interface.</p> </li>
-     * <li> <p> <code>peer-address</code> - The peer address.</p> </li> <li> <p>
+     * interface.</p> </li> <li> <p> <code>owner-id</code> - The ID of the Amazon Web
+     * Services account that owns the local gateway virtual interface.</p> </li> <li>
+     * <p> <code>peer-address</code> - The peer address.</p> </li> <li> <p>
      * <code>peer-bgp-asn</code> - The peer BGP ASN.</p> </li> <li> <p>
      * <code>vlan</code> - The ID of the VLAN.</p> </li> </ul>
      */
@@ -170,11 +160,9 @@ namespace Model
      * Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p> </li>
      * <li> <p> <code>local-gateway-id</code> - The ID of the local gateway.</p> </li>
      * <li> <p> <code>local-gateway-virtual-interface-id</code> - The ID of the virtual
-     * interface.</p> </li> <li> <p>
-     * <code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual
-     * interface group.</p> </li> <li> <p> <code>owner-id</code> - The ID of the Amazon
-     * Web Services account that owns the local gateway virtual interface.</p> </li>
-     * <li> <p> <code>peer-address</code> - The peer address.</p> </li> <li> <p>
+     * interface.</p> </li> <li> <p> <code>owner-id</code> - The ID of the Amazon Web
+     * Services account that owns the local gateway virtual interface.</p> </li> <li>
+     * <p> <code>peer-address</code> - The peer address.</p> </li> <li> <p>
      * <code>peer-bgp-asn</code> - The peer BGP ASN.</p> </li> <li> <p>
      * <code>vlan</code> - The ID of the VLAN.</p> </li> </ul>
      */
@@ -186,11 +174,9 @@ namespace Model
      * Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p> </li>
      * <li> <p> <code>local-gateway-id</code> - The ID of the local gateway.</p> </li>
      * <li> <p> <code>local-gateway-virtual-interface-id</code> - The ID of the virtual
-     * interface.</p> </li> <li> <p>
-     * <code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual
-     * interface group.</p> </li> <li> <p> <code>owner-id</code> - The ID of the Amazon
-     * Web Services account that owns the local gateway virtual interface.</p> </li>
-     * <li> <p> <code>peer-address</code> - The peer address.</p> </li> <li> <p>
+     * interface.</p> </li> <li> <p> <code>owner-id</code> - The ID of the Amazon Web
+     * Services account that owns the local gateway virtual interface.</p> </li> <li>
+     * <p> <code>peer-address</code> - The peer address.</p> </li> <li> <p>
      * <code>peer-bgp-asn</code> - The peer BGP ASN.</p> </li> <li> <p>
      * <code>vlan</code> - The ID of the VLAN.</p> </li> </ul>
      */
@@ -202,11 +188,9 @@ namespace Model
      * Protocol (BGP) Autonomous System Number (ASN) of the local gateway.</p> </li>
      * <li> <p> <code>local-gateway-id</code> - The ID of the local gateway.</p> </li>
      * <li> <p> <code>local-gateway-virtual-interface-id</code> - The ID of the virtual
-     * interface.</p> </li> <li> <p>
-     * <code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual
-     * interface group.</p> </li> <li> <p> <code>owner-id</code> - The ID of the Amazon
-     * Web Services account that owns the local gateway virtual interface.</p> </li>
-     * <li> <p> <code>peer-address</code> - The peer address.</p> </li> <li> <p>
+     * interface.</p> </li> <li> <p> <code>owner-id</code> - The ID of the Amazon Web
+     * Services account that owns the local gateway virtual interface.</p> </li> <li>
+     * <p> <code>peer-address</code> - The peer address.</p> </li> <li> <p>
      * <code>peer-bgp-asn</code> - The peer BGP ASN.</p> </li> <li> <p>
      * <code>vlan</code> - The ID of the VLAN.</p> </li> </ul>
      */

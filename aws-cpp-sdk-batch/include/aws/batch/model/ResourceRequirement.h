@@ -69,7 +69,7 @@ namespace Model
      * <p>If you're trying to maximize your resource utilization by providing your jobs
      * as much memory as possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
+     * management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
      * running on Fargate resources, then <code>value</code> is the hard limit (in
      * MiB), and must match one of the supported values and the <code>VCPU</code>
      * values must be one of the values supported for that memory value.</p> <dl>
@@ -138,7 +138,7 @@ namespace Model
      * <p>If you're trying to maximize your resource utilization by providing your jobs
      * as much memory as possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
+     * management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
      * running on Fargate resources, then <code>value</code> is the hard limit (in
      * MiB), and must match one of the supported values and the <code>VCPU</code>
      * values must be one of the values supported for that memory value.</p> <dl>
@@ -207,7 +207,7 @@ namespace Model
      * <p>If you're trying to maximize your resource utilization by providing your jobs
      * as much memory as possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
+     * management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
      * running on Fargate resources, then <code>value</code> is the hard limit (in
      * MiB), and must match one of the supported values and the <code>VCPU</code>
      * values must be one of the values supported for that memory value.</p> <dl>
@@ -276,7 +276,7 @@ namespace Model
      * <p>If you're trying to maximize your resource utilization by providing your jobs
      * as much memory as possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
+     * management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
      * running on Fargate resources, then <code>value</code> is the hard limit (in
      * MiB), and must match one of the supported values and the <code>VCPU</code>
      * values must be one of the values supported for that memory value.</p> <dl>
@@ -345,7 +345,7 @@ namespace Model
      * <p>If you're trying to maximize your resource utilization by providing your jobs
      * as much memory as possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
+     * management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
      * running on Fargate resources, then <code>value</code> is the hard limit (in
      * MiB), and must match one of the supported values and the <code>VCPU</code>
      * values must be one of the values supported for that memory value.</p> <dl>
@@ -414,7 +414,7 @@ namespace Model
      * <p>If you're trying to maximize your resource utilization by providing your jobs
      * as much memory as possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
+     * management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
      * running on Fargate resources, then <code>value</code> is the hard limit (in
      * MiB), and must match one of the supported values and the <code>VCPU</code>
      * values must be one of the values supported for that memory value.</p> <dl>
@@ -483,7 +483,7 @@ namespace Model
      * <p>If you're trying to maximize your resource utilization by providing your jobs
      * as much memory as possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
+     * management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
      * running on Fargate resources, then <code>value</code> is the hard limit (in
      * MiB), and must match one of the supported values and the <code>VCPU</code>
      * values must be one of the values supported for that memory value.</p> <dl>
@@ -552,7 +552,7 @@ namespace Model
      * <p>If you're trying to maximize your resource utilization by providing your jobs
      * as much memory as possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
+     * management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
      * running on Fargate resources, then <code>value</code> is the hard limit (in
      * MiB), and must match one of the supported values and the <code>VCPU</code>
      * values must be one of the values supported for that memory value.</p> <dl>

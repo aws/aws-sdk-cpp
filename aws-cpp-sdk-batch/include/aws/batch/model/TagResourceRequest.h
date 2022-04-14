@@ -18,6 +18,10 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for <code>TagResource</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TagResourceRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_BATCH_API TagResourceRequest : public BatchRequest
   {

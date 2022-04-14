@@ -123,43 +123,37 @@ namespace Model
 
     /**
      * <p>The type of key pair. Note that ED25519 keys are not supported for Windows
-     * instances, EC2 Instance Connect, and EC2 Serial Console.</p> <p>Default:
-     * <code>rsa</code> </p>
+     * instances.</p> <p>Default: <code>rsa</code> </p>
      */
     inline const KeyType& GetKeyType() const{ return m_keyType; }
 
     /**
      * <p>The type of key pair. Note that ED25519 keys are not supported for Windows
-     * instances, EC2 Instance Connect, and EC2 Serial Console.</p> <p>Default:
-     * <code>rsa</code> </p>
+     * instances.</p> <p>Default: <code>rsa</code> </p>
      */
     inline bool KeyTypeHasBeenSet() const { return m_keyTypeHasBeenSet; }
 
     /**
      * <p>The type of key pair. Note that ED25519 keys are not supported for Windows
-     * instances, EC2 Instance Connect, and EC2 Serial Console.</p> <p>Default:
-     * <code>rsa</code> </p>
+     * instances.</p> <p>Default: <code>rsa</code> </p>
      */
     inline void SetKeyType(const KeyType& value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
 
     /**
      * <p>The type of key pair. Note that ED25519 keys are not supported for Windows
-     * instances, EC2 Instance Connect, and EC2 Serial Console.</p> <p>Default:
-     * <code>rsa</code> </p>
+     * instances.</p> <p>Default: <code>rsa</code> </p>
      */
     inline void SetKeyType(KeyType&& value) { m_keyTypeHasBeenSet = true; m_keyType = std::move(value); }
 
     /**
      * <p>The type of key pair. Note that ED25519 keys are not supported for Windows
-     * instances, EC2 Instance Connect, and EC2 Serial Console.</p> <p>Default:
-     * <code>rsa</code> </p>
+     * instances.</p> <p>Default: <code>rsa</code> </p>
      */
     inline CreateKeyPairRequest& WithKeyType(const KeyType& value) { SetKeyType(value); return *this;}
 
     /**
      * <p>The type of key pair. Note that ED25519 keys are not supported for Windows
-     * instances, EC2 Instance Connect, and EC2 Serial Console.</p> <p>Default:
-     * <code>rsa</code> </p>
+     * instances.</p> <p>Default: <code>rsa</code> </p>
      */
     inline CreateKeyPairRequest& WithKeyType(KeyType&& value) { SetKeyType(std::move(value)); return *this;}
 

@@ -544,60 +544,60 @@ namespace Model
 
     /**
      * <p>A list of container overrides in the JSON format that specify the name of a
-     * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container, which is specified in the
-     * job definition or the Docker image, with a <code>command</code> override. You
-     * can also override existing environment variables on a container or add new
+     * container in the specified job definition and the overrides it receives. You can
+     * override the default command for a container, which is specified in the job
+     * definition or the Docker image, with a <code>command</code> override. You can
+     * also override existing environment variables on a container or add new
      * environment variables to it with an <code>environment</code> override.</p>
      */
     inline const ContainerOverrides& GetContainerOverrides() const{ return m_containerOverrides; }
 
     /**
      * <p>A list of container overrides in the JSON format that specify the name of a
-     * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container, which is specified in the
-     * job definition or the Docker image, with a <code>command</code> override. You
-     * can also override existing environment variables on a container or add new
+     * container in the specified job definition and the overrides it receives. You can
+     * override the default command for a container, which is specified in the job
+     * definition or the Docker image, with a <code>command</code> override. You can
+     * also override existing environment variables on a container or add new
      * environment variables to it with an <code>environment</code> override.</p>
      */
     inline bool ContainerOverridesHasBeenSet() const { return m_containerOverridesHasBeenSet; }
 
     /**
      * <p>A list of container overrides in the JSON format that specify the name of a
-     * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container, which is specified in the
-     * job definition or the Docker image, with a <code>command</code> override. You
-     * can also override existing environment variables on a container or add new
+     * container in the specified job definition and the overrides it receives. You can
+     * override the default command for a container, which is specified in the job
+     * definition or the Docker image, with a <code>command</code> override. You can
+     * also override existing environment variables on a container or add new
      * environment variables to it with an <code>environment</code> override.</p>
      */
     inline void SetContainerOverrides(const ContainerOverrides& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = value; }
 
     /**
      * <p>A list of container overrides in the JSON format that specify the name of a
-     * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container, which is specified in the
-     * job definition or the Docker image, with a <code>command</code> override. You
-     * can also override existing environment variables on a container or add new
+     * container in the specified job definition and the overrides it receives. You can
+     * override the default command for a container, which is specified in the job
+     * definition or the Docker image, with a <code>command</code> override. You can
+     * also override existing environment variables on a container or add new
      * environment variables to it with an <code>environment</code> override.</p>
      */
     inline void SetContainerOverrides(ContainerOverrides&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = std::move(value); }
 
     /**
      * <p>A list of container overrides in the JSON format that specify the name of a
-     * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container, which is specified in the
-     * job definition or the Docker image, with a <code>command</code> override. You
-     * can also override existing environment variables on a container or add new
+     * container in the specified job definition and the overrides it receives. You can
+     * override the default command for a container, which is specified in the job
+     * definition or the Docker image, with a <code>command</code> override. You can
+     * also override existing environment variables on a container or add new
      * environment variables to it with an <code>environment</code> override.</p>
      */
     inline SubmitJobRequest& WithContainerOverrides(const ContainerOverrides& value) { SetContainerOverrides(value); return *this;}
 
     /**
      * <p>A list of container overrides in the JSON format that specify the name of a
-     * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container, which is specified in the
-     * job definition or the Docker image, with a <code>command</code> override. You
-     * can also override existing environment variables on a container or add new
+     * container in the specified job definition and the overrides it receives. You can
+     * override the default command for a container, which is specified in the job
+     * definition or the Docker image, with a <code>command</code> override. You can
+     * also override existing environment variables on a container or add new
      * environment variables to it with an <code>environment</code> override.</p>
      */
     inline SubmitJobRequest& WithContainerOverrides(ContainerOverrides&& value) { SetContainerOverrides(std::move(value)); return *this;}

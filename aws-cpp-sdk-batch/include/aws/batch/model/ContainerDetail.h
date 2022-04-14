@@ -1231,7 +1231,7 @@ namespace Model
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-     * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
+     * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
      */
     inline const LogConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
@@ -1266,7 +1266,7 @@ namespace Model
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-     * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
+     * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
      */
     inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
@@ -1301,7 +1301,7 @@ namespace Model
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-     * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
+     * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
      */
     inline void SetLogConfiguration(const LogConfiguration& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
@@ -1336,7 +1336,7 @@ namespace Model
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-     * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
+     * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
      */
     inline void SetLogConfiguration(LogConfiguration&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
@@ -1371,7 +1371,7 @@ namespace Model
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-     * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
+     * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
      */
     inline ContainerDetail& WithLogConfiguration(const LogConfiguration& value) { SetLogConfiguration(value); return *this;}
@@ -1406,7 +1406,7 @@ namespace Model
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-     * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
+     * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
      */
     inline ContainerDetail& WithLogConfiguration(LogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}

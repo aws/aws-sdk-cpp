@@ -1126,6 +1126,59 @@ namespace Model
      */
     inline JobRun& WithGlueVersion(const char* value) { SetGlueVersion(value); return *this;}
 
+
+    /**
+     * <p>This field populates only when an Auto Scaling job run completes, and
+     * represents the total time each executor ran during the lifecycle of a job run in
+     * seconds, multiplied by a DPU factor (1 for <code>G.1X</code> and 2 for
+     * <code>G.2X</code> workers). This value may be different than the
+     * <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of
+     * Auto Scaling jobs, as the number of executors running at a given time may be
+     * less than the <code>MaxCapacity</code>. Therefore, it is possible that the value
+     * of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> *
+     * <code>MaxCapacity</code>.</p>
+     */
+    inline double GetDPUSeconds() const{ return m_dPUSeconds; }
+
+    /**
+     * <p>This field populates only when an Auto Scaling job run completes, and
+     * represents the total time each executor ran during the lifecycle of a job run in
+     * seconds, multiplied by a DPU factor (1 for <code>G.1X</code> and 2 for
+     * <code>G.2X</code> workers). This value may be different than the
+     * <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of
+     * Auto Scaling jobs, as the number of executors running at a given time may be
+     * less than the <code>MaxCapacity</code>. Therefore, it is possible that the value
+     * of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> *
+     * <code>MaxCapacity</code>.</p>
+     */
+    inline bool DPUSecondsHasBeenSet() const { return m_dPUSecondsHasBeenSet; }
+
+    /**
+     * <p>This field populates only when an Auto Scaling job run completes, and
+     * represents the total time each executor ran during the lifecycle of a job run in
+     * seconds, multiplied by a DPU factor (1 for <code>G.1X</code> and 2 for
+     * <code>G.2X</code> workers). This value may be different than the
+     * <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of
+     * Auto Scaling jobs, as the number of executors running at a given time may be
+     * less than the <code>MaxCapacity</code>. Therefore, it is possible that the value
+     * of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> *
+     * <code>MaxCapacity</code>.</p>
+     */
+    inline void SetDPUSeconds(double value) { m_dPUSecondsHasBeenSet = true; m_dPUSeconds = value; }
+
+    /**
+     * <p>This field populates only when an Auto Scaling job run completes, and
+     * represents the total time each executor ran during the lifecycle of a job run in
+     * seconds, multiplied by a DPU factor (1 for <code>G.1X</code> and 2 for
+     * <code>G.2X</code> workers). This value may be different than the
+     * <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of
+     * Auto Scaling jobs, as the number of executors running at a given time may be
+     * less than the <code>MaxCapacity</code>. Therefore, it is possible that the value
+     * of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> *
+     * <code>MaxCapacity</code>.</p>
+     */
+    inline JobRun& WithDPUSeconds(double value) { SetDPUSeconds(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -1190,6 +1243,9 @@ namespace Model
 
     Aws::String m_glueVersion;
     bool m_glueVersionHasBeenSet;
+
+    double m_dPUSeconds;
+    bool m_dPUSecondsHasBeenSet;
   };
 
 } // namespace Model

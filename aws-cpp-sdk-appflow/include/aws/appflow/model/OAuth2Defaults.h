@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appflow/model/OAuth2GrantType.h>
+#include <aws/appflow/model/OAuth2CustomParameter.h>
 #include <utility>
 
 namespace Aws
@@ -218,6 +219,47 @@ namespace Model
      */
     inline OAuth2Defaults& AddOauth2GrantTypesSupported(OAuth2GrantType&& value) { m_oauth2GrantTypesSupportedHasBeenSet = true; m_oauth2GrantTypesSupported.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>List of custom parameters required for OAuth 2.0 authentication.</p>
+     */
+    inline const Aws::Vector<OAuth2CustomParameter>& GetOauth2CustomProperties() const{ return m_oauth2CustomProperties; }
+
+    /**
+     * <p>List of custom parameters required for OAuth 2.0 authentication.</p>
+     */
+    inline bool Oauth2CustomPropertiesHasBeenSet() const { return m_oauth2CustomPropertiesHasBeenSet; }
+
+    /**
+     * <p>List of custom parameters required for OAuth 2.0 authentication.</p>
+     */
+    inline void SetOauth2CustomProperties(const Aws::Vector<OAuth2CustomParameter>& value) { m_oauth2CustomPropertiesHasBeenSet = true; m_oauth2CustomProperties = value; }
+
+    /**
+     * <p>List of custom parameters required for OAuth 2.0 authentication.</p>
+     */
+    inline void SetOauth2CustomProperties(Aws::Vector<OAuth2CustomParameter>&& value) { m_oauth2CustomPropertiesHasBeenSet = true; m_oauth2CustomProperties = std::move(value); }
+
+    /**
+     * <p>List of custom parameters required for OAuth 2.0 authentication.</p>
+     */
+    inline OAuth2Defaults& WithOauth2CustomProperties(const Aws::Vector<OAuth2CustomParameter>& value) { SetOauth2CustomProperties(value); return *this;}
+
+    /**
+     * <p>List of custom parameters required for OAuth 2.0 authentication.</p>
+     */
+    inline OAuth2Defaults& WithOauth2CustomProperties(Aws::Vector<OAuth2CustomParameter>&& value) { SetOauth2CustomProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>List of custom parameters required for OAuth 2.0 authentication.</p>
+     */
+    inline OAuth2Defaults& AddOauth2CustomProperties(const OAuth2CustomParameter& value) { m_oauth2CustomPropertiesHasBeenSet = true; m_oauth2CustomProperties.push_back(value); return *this; }
+
+    /**
+     * <p>List of custom parameters required for OAuth 2.0 authentication.</p>
+     */
+    inline OAuth2Defaults& AddOauth2CustomProperties(OAuth2CustomParameter&& value) { m_oauth2CustomPropertiesHasBeenSet = true; m_oauth2CustomProperties.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<Aws::String> m_oauthScopes;
@@ -231,6 +273,9 @@ namespace Model
 
     Aws::Vector<OAuth2GrantType> m_oauth2GrantTypesSupported;
     bool m_oauth2GrantTypesSupportedHasBeenSet;
+
+    Aws::Vector<OAuth2CustomParameter> m_oauth2CustomProperties;
+    bool m_oauth2CustomPropertiesHasBeenSet;
   };
 
 } // namespace Model

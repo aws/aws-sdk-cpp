@@ -33,7 +33,8 @@ ComputeEnvironmentDetail::ComputeEnvironmentDetail() :
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_computeResourcesHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false)
+    m_serviceRoleHasBeenSet(false),
+    m_updatePolicyHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ ComputeEnvironmentDetail::ComputeEnvironmentDetail(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_computeResourcesHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false)
+    m_serviceRoleHasBeenSet(false),
+    m_updatePolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -139,6 +141,13 @@ ComputeEnvironmentDetail& ComputeEnvironmentDetail::operator =(JsonView jsonValu
     m_serviceRoleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("updatePolicy"))
+  {
+    m_updatePolicy = jsonValue.GetObject("updatePolicy");
+
+    m_updatePolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -211,6 +220,12 @@ JsonValue ComputeEnvironmentDetail::Jsonize() const
   if(m_serviceRoleHasBeenSet)
   {
    payload.WithString("serviceRole", m_serviceRole);
+
+  }
+
+  if(m_updatePolicyHasBeenSet)
+  {
+   payload.WithObject("updatePolicy", m_updatePolicy.Jsonize());
 
   }
 

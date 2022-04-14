@@ -428,7 +428,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
      * for Amazon Web Services permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
-     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * roles for tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline const Aws::String& GetJobRoleArn() const{ return m_jobRoleArn; }
@@ -437,7 +437,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
      * for Amazon Web Services permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
-     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * roles for tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline bool JobRoleArnHasBeenSet() const { return m_jobRoleArnHasBeenSet; }
@@ -446,7 +446,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
      * for Amazon Web Services permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
-     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * roles for tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetJobRoleArn(const Aws::String& value) { m_jobRoleArnHasBeenSet = true; m_jobRoleArn = value; }
@@ -455,7 +455,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
      * for Amazon Web Services permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
-     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * roles for tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetJobRoleArn(Aws::String&& value) { m_jobRoleArnHasBeenSet = true; m_jobRoleArn = std::move(value); }
@@ -464,7 +464,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
      * for Amazon Web Services permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
-     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * roles for tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetJobRoleArn(const char* value) { m_jobRoleArnHasBeenSet = true; m_jobRoleArn.assign(value); }
@@ -473,7 +473,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
      * for Amazon Web Services permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
-     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * roles for tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline ContainerProperties& WithJobRoleArn(const Aws::String& value) { SetJobRoleArn(value); return *this;}
@@ -482,7 +482,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
      * for Amazon Web Services permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
-     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * roles for tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline ContainerProperties& WithJobRoleArn(Aws::String&& value) { SetJobRoleArn(std::move(value)); return *this;}
@@ -491,7 +491,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
      * for Amazon Web Services permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
-     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * roles for tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline ContainerProperties& WithJobRoleArn(const char* value) { SetJobRoleArn(value); return *this;}
@@ -1312,7 +1312,7 @@ namespace Model
      * variable before containers placed on that instance can use these log
      * configuration options. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-     * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
+     * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
      */
     inline const LogConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
@@ -1345,7 +1345,7 @@ namespace Model
      * variable before containers placed on that instance can use these log
      * configuration options. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-     * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
+     * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
      */
     inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
@@ -1378,7 +1378,7 @@ namespace Model
      * variable before containers placed on that instance can use these log
      * configuration options. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-     * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
+     * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
      */
     inline void SetLogConfiguration(const LogConfiguration& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
@@ -1411,7 +1411,7 @@ namespace Model
      * variable before containers placed on that instance can use these log
      * configuration options. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-     * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
+     * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
      */
     inline void SetLogConfiguration(LogConfiguration&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
@@ -1444,7 +1444,7 @@ namespace Model
      * variable before containers placed on that instance can use these log
      * configuration options. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-     * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
+     * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
      */
     inline ContainerProperties& WithLogConfiguration(const LogConfiguration& value) { SetLogConfiguration(value); return *this;}
@@ -1477,7 +1477,7 @@ namespace Model
      * variable before containers placed on that instance can use these log
      * configuration options. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-     * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
+     * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
      */
     inline ContainerProperties& WithLogConfiguration(LogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}

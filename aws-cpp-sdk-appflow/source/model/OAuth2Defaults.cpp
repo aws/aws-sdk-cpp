@@ -22,7 +22,8 @@ OAuth2Defaults::OAuth2Defaults() :
     m_oauthScopesHasBeenSet(false),
     m_tokenUrlsHasBeenSet(false),
     m_authCodeUrlsHasBeenSet(false),
-    m_oauth2GrantTypesSupportedHasBeenSet(false)
+    m_oauth2GrantTypesSupportedHasBeenSet(false),
+    m_oauth2CustomPropertiesHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ OAuth2Defaults::OAuth2Defaults(JsonView jsonValue) :
     m_oauthScopesHasBeenSet(false),
     m_tokenUrlsHasBeenSet(false),
     m_authCodeUrlsHasBeenSet(false),
-    m_oauth2GrantTypesSupportedHasBeenSet(false)
+    m_oauth2GrantTypesSupportedHasBeenSet(false),
+    m_oauth2CustomPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -75,6 +77,16 @@ OAuth2Defaults& OAuth2Defaults::operator =(JsonView jsonValue)
       m_oauth2GrantTypesSupported.push_back(OAuth2GrantTypeMapper::GetOAuth2GrantTypeForName(oauth2GrantTypesSupportedJsonList[oauth2GrantTypesSupportedIndex].AsString()));
     }
     m_oauth2GrantTypesSupportedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("oauth2CustomProperties"))
+  {
+    Array<JsonView> oauth2CustomPropertiesJsonList = jsonValue.GetArray("oauth2CustomProperties");
+    for(unsigned oauth2CustomPropertiesIndex = 0; oauth2CustomPropertiesIndex < oauth2CustomPropertiesJsonList.GetLength(); ++oauth2CustomPropertiesIndex)
+    {
+      m_oauth2CustomProperties.push_back(oauth2CustomPropertiesJsonList[oauth2CustomPropertiesIndex].AsObject());
+    }
+    m_oauth2CustomPropertiesHasBeenSet = true;
   }
 
   return *this;
@@ -125,6 +137,17 @@ JsonValue OAuth2Defaults::Jsonize() const
      oauth2GrantTypesSupportedJsonList[oauth2GrantTypesSupportedIndex].AsString(OAuth2GrantTypeMapper::GetNameForOAuth2GrantType(m_oauth2GrantTypesSupported[oauth2GrantTypesSupportedIndex]));
    }
    payload.WithArray("oauth2GrantTypesSupported", std::move(oauth2GrantTypesSupportedJsonList));
+
+  }
+
+  if(m_oauth2CustomPropertiesHasBeenSet)
+  {
+   Array<JsonValue> oauth2CustomPropertiesJsonList(m_oauth2CustomProperties.size());
+   for(unsigned oauth2CustomPropertiesIndex = 0; oauth2CustomPropertiesIndex < oauth2CustomPropertiesJsonList.GetLength(); ++oauth2CustomPropertiesIndex)
+   {
+     oauth2CustomPropertiesJsonList[oauth2CustomPropertiesIndex].AsObject(m_oauth2CustomProperties[oauth2CustomPropertiesIndex].Jsonize());
+   }
+   payload.WithArray("oauth2CustomProperties", std::move(oauth2CustomPropertiesJsonList));
 
   }
 

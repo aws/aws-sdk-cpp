@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>This object contains the information for one metric that is to streamed with
-   * extended statistics.</p><p><h3>See Also:</h3>   <a
+   * <p>This object contains the information for one metric that is to be streamed
+   * with additional statistics.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/MetricStreamStatisticsMetric">AWS
    * API Reference</a></p>
    */
@@ -41,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The metric namespace for the metric.</p>
+     * <p>The namespace of the metric.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p>The metric namespace for the metric.</p>
+     * <p>The namespace of the metric.</p>
      */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
-     * <p>The metric namespace for the metric.</p>
+     * <p>The namespace of the metric.</p>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p>The metric namespace for the metric.</p>
+     * <p>The namespace of the metric.</p>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
-     * <p>The metric namespace for the metric.</p>
+     * <p>The namespace of the metric.</p>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p>The metric namespace for the metric.</p>
+     * <p>The namespace of the metric.</p>
      */
     inline MetricStreamStatisticsMetric& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The metric namespace for the metric.</p>
+     * <p>The namespace of the metric.</p>
      */
     inline MetricStreamStatisticsMetric& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>The metric namespace for the metric.</p>
+     * <p>The namespace of the metric.</p>
      */
     inline MetricStreamStatisticsMetric& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 

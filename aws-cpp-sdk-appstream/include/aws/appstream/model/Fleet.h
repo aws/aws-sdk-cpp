@@ -15,6 +15,7 @@
 #include <aws/appstream/model/DomainJoinInfo.h>
 #include <aws/appstream/model/StreamView.h>
 #include <aws/appstream/model/PlatformType.h>
+#include <aws/appstream/model/S3Location.h>
 #include <aws/appstream/model/FleetError.h>
 #include <utility>
 
@@ -1268,6 +1269,43 @@ namespace Model
      */
     inline Fleet& AddUsbDeviceFilterStrings(const char* value) { m_usbDeviceFilterStringsHasBeenSet = true; m_usbDeviceFilterStrings.push_back(value); return *this; }
 
+
+    /**
+     * <p>The S3 location of the session scripts configuration zip file. This only
+     * applies to Elastic fleets.</p>
+     */
+    inline const S3Location& GetSessionScriptS3Location() const{ return m_sessionScriptS3Location; }
+
+    /**
+     * <p>The S3 location of the session scripts configuration zip file. This only
+     * applies to Elastic fleets.</p>
+     */
+    inline bool SessionScriptS3LocationHasBeenSet() const { return m_sessionScriptS3LocationHasBeenSet; }
+
+    /**
+     * <p>The S3 location of the session scripts configuration zip file. This only
+     * applies to Elastic fleets.</p>
+     */
+    inline void SetSessionScriptS3Location(const S3Location& value) { m_sessionScriptS3LocationHasBeenSet = true; m_sessionScriptS3Location = value; }
+
+    /**
+     * <p>The S3 location of the session scripts configuration zip file. This only
+     * applies to Elastic fleets.</p>
+     */
+    inline void SetSessionScriptS3Location(S3Location&& value) { m_sessionScriptS3LocationHasBeenSet = true; m_sessionScriptS3Location = std::move(value); }
+
+    /**
+     * <p>The S3 location of the session scripts configuration zip file. This only
+     * applies to Elastic fleets.</p>
+     */
+    inline Fleet& WithSessionScriptS3Location(const S3Location& value) { SetSessionScriptS3Location(value); return *this;}
+
+    /**
+     * <p>The S3 location of the session scripts configuration zip file. This only
+     * applies to Elastic fleets.</p>
+     */
+    inline Fleet& WithSessionScriptS3Location(S3Location&& value) { SetSessionScriptS3Location(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -1338,6 +1376,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_usbDeviceFilterStrings;
     bool m_usbDeviceFilterStringsHasBeenSet;
+
+    S3Location m_sessionScriptS3Location;
+    bool m_sessionScriptS3LocationHasBeenSet;
   };
 
 } // namespace Model

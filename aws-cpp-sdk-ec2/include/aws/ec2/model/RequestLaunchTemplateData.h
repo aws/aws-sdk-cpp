@@ -46,8 +46,9 @@ namespace Model
 {
 
   /**
-   * <p>The information to include in the launch template.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The information to include in the launch template.</p>  <p>You must
+   * specify at least one parameter for the launch template data.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestLaunchTemplateData">AWS
    * API Reference</a></p>
    */

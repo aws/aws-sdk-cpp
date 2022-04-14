@@ -53,7 +53,7 @@ namespace Model
      * drivers.</p>  <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon
      * CloudWatch Logs logging driver. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
-     * the awslogs Log Driver</a> in the <i>Batch User Guide</i> and <a
+     * the awslogs log driver</a> in the <i>Batch User Guide</i> and <a
      * href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
      * CloudWatch Logs logging driver</a> in the Docker documentation.</p> </dd>
      * <dt>fluentd</dt> <dd> <p>Specifies the Fluentd logging driver. For more
@@ -104,7 +104,7 @@ namespace Model
      * drivers.</p>  <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon
      * CloudWatch Logs logging driver. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
-     * the awslogs Log Driver</a> in the <i>Batch User Guide</i> and <a
+     * the awslogs log driver</a> in the <i>Batch User Guide</i> and <a
      * href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
      * CloudWatch Logs logging driver</a> in the Docker documentation.</p> </dd>
      * <dt>fluentd</dt> <dd> <p>Specifies the Fluentd logging driver. For more
@@ -155,7 +155,7 @@ namespace Model
      * drivers.</p>  <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon
      * CloudWatch Logs logging driver. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
-     * the awslogs Log Driver</a> in the <i>Batch User Guide</i> and <a
+     * the awslogs log driver</a> in the <i>Batch User Guide</i> and <a
      * href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
      * CloudWatch Logs logging driver</a> in the Docker documentation.</p> </dd>
      * <dt>fluentd</dt> <dd> <p>Specifies the Fluentd logging driver. For more
@@ -206,7 +206,7 @@ namespace Model
      * drivers.</p>  <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon
      * CloudWatch Logs logging driver. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
-     * the awslogs Log Driver</a> in the <i>Batch User Guide</i> and <a
+     * the awslogs log driver</a> in the <i>Batch User Guide</i> and <a
      * href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
      * CloudWatch Logs logging driver</a> in the Docker documentation.</p> </dd>
      * <dt>fluentd</dt> <dd> <p>Specifies the Fluentd logging driver. For more
@@ -257,7 +257,7 @@ namespace Model
      * drivers.</p>  <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon
      * CloudWatch Logs logging driver. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
-     * the awslogs Log Driver</a> in the <i>Batch User Guide</i> and <a
+     * the awslogs log driver</a> in the <i>Batch User Guide</i> and <a
      * href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
      * CloudWatch Logs logging driver</a> in the Docker documentation.</p> </dd>
      * <dt>fluentd</dt> <dd> <p>Specifies the Fluentd logging driver. For more
@@ -308,7 +308,7 @@ namespace Model
      * drivers.</p>  <dl> <dt>awslogs</dt> <dd> <p>Specifies the Amazon
      * CloudWatch Logs logging driver. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
-     * the awslogs Log Driver</a> in the <i>Batch User Guide</i> and <a
+     * the awslogs log driver</a> in the <i>Batch User Guide</i> and <a
      * href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
      * CloudWatch Logs logging driver</a> in the Docker documentation.</p> </dd>
      * <dt>fluentd</dt> <dd> <p>Specifies the Fluentd logging driver. For more
@@ -470,56 +470,56 @@ namespace Model
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Batch User Guide</i>.</p>
+     * sensitive data</a> in the <i>Batch User Guide</i>.</p>
      */
     inline const Aws::Vector<Secret>& GetSecretOptions() const{ return m_secretOptions; }
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Batch User Guide</i>.</p>
+     * sensitive data</a> in the <i>Batch User Guide</i>.</p>
      */
     inline bool SecretOptionsHasBeenSet() const { return m_secretOptionsHasBeenSet; }
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Batch User Guide</i>.</p>
+     * sensitive data</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetSecretOptions(const Aws::Vector<Secret>& value) { m_secretOptionsHasBeenSet = true; m_secretOptions = value; }
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Batch User Guide</i>.</p>
+     * sensitive data</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetSecretOptions(Aws::Vector<Secret>&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions = std::move(value); }
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Batch User Guide</i>.</p>
+     * sensitive data</a> in the <i>Batch User Guide</i>.</p>
      */
     inline LogConfiguration& WithSecretOptions(const Aws::Vector<Secret>& value) { SetSecretOptions(value); return *this;}
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Batch User Guide</i>.</p>
+     * sensitive data</a> in the <i>Batch User Guide</i>.</p>
      */
     inline LogConfiguration& WithSecretOptions(Aws::Vector<Secret>&& value) { SetSecretOptions(std::move(value)); return *this;}
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Batch User Guide</i>.</p>
+     * sensitive data</a> in the <i>Batch User Guide</i>.</p>
      */
     inline LogConfiguration& AddSecretOptions(const Secret& value) { m_secretOptionsHasBeenSet = true; m_secretOptions.push_back(value); return *this; }
 
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Batch User Guide</i>.</p>
+     * sensitive data</a> in the <i>Batch User Guide</i>.</p>
      */
     inline LogConfiguration& AddSecretOptions(Secret&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions.push_back(std::move(value)); return *this; }
 

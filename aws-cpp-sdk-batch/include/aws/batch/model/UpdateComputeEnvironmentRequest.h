@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/batch/model/CEState.h>
 #include <aws/batch/model/ComputeResourceUpdate.h>
+#include <aws/batch/model/UpdatePolicy.h>
 #include <utility>
 
 namespace Aws
@@ -186,37 +187,37 @@ namespace Model
 
     /**
      * <p>The maximum number of vCPUs expected to be used for an unmanaged compute
-     * environment. This parameter should not be specified for a managed compute
-     * environment. This parameter is only used for fair share scheduling to reserve
-     * vCPU capacity for new share identifiers. If this parameter is not provided for a
-     * fair share job queue, no vCPU capacity will be reserved.</p>
+     * environment. Do not specify this parameter for a managed compute environment.
+     * This parameter is only used for fair share scheduling to reserve vCPU capacity
+     * for new share identifiers. If this parameter is not provided for a fair share
+     * job queue, no vCPU capacity will be reserved.</p>
      */
     inline int GetUnmanagedvCpus() const{ return m_unmanagedvCpus; }
 
     /**
      * <p>The maximum number of vCPUs expected to be used for an unmanaged compute
-     * environment. This parameter should not be specified for a managed compute
-     * environment. This parameter is only used for fair share scheduling to reserve
-     * vCPU capacity for new share identifiers. If this parameter is not provided for a
-     * fair share job queue, no vCPU capacity will be reserved.</p>
+     * environment. Do not specify this parameter for a managed compute environment.
+     * This parameter is only used for fair share scheduling to reserve vCPU capacity
+     * for new share identifiers. If this parameter is not provided for a fair share
+     * job queue, no vCPU capacity will be reserved.</p>
      */
     inline bool UnmanagedvCpusHasBeenSet() const { return m_unmanagedvCpusHasBeenSet; }
 
     /**
      * <p>The maximum number of vCPUs expected to be used for an unmanaged compute
-     * environment. This parameter should not be specified for a managed compute
-     * environment. This parameter is only used for fair share scheduling to reserve
-     * vCPU capacity for new share identifiers. If this parameter is not provided for a
-     * fair share job queue, no vCPU capacity will be reserved.</p>
+     * environment. Do not specify this parameter for a managed compute environment.
+     * This parameter is only used for fair share scheduling to reserve vCPU capacity
+     * for new share identifiers. If this parameter is not provided for a fair share
+     * job queue, no vCPU capacity will be reserved.</p>
      */
     inline void SetUnmanagedvCpus(int value) { m_unmanagedvCpusHasBeenSet = true; m_unmanagedvCpus = value; }
 
     /**
      * <p>The maximum number of vCPUs expected to be used for an unmanaged compute
-     * environment. This parameter should not be specified for a managed compute
-     * environment. This parameter is only used for fair share scheduling to reserve
-     * vCPU capacity for new share identifiers. If this parameter is not provided for a
-     * fair share job queue, no vCPU capacity will be reserved.</p>
+     * environment. Do not specify this parameter for a managed compute environment.
+     * This parameter is only used for fair share scheduling to reserve vCPU capacity
+     * for new share identifiers. If this parameter is not provided for a fair share
+     * job queue, no vCPU capacity will be reserved.</p>
      */
     inline UpdateComputeEnvironmentRequest& WithUnmanagedvCpus(int value) { SetUnmanagedvCpus(value); return *this;}
 
@@ -278,9 +279,14 @@ namespace Model
      * service IAM role</a> in the <i>Batch User Guide</i>.</p>  <p>If the
      * compute environment has a service-linked role, it can't be changed to use a
      * regular IAM role. Likewise, if the compute environment has a regular IAM role,
-     * it can't be changed to use a service-linked role.</p>  <p>If your
-     * specified role has a path other than <code>/</code>, then you must either
-     * specify the full role ARN (this is recommended) or prefix the role name with the
+     * it can't be changed to use a service-linked role. To update the parameters for
+     * the compute environment that require an infrastructure update to change, the
+     * <b>AWSServiceRoleForBatch</b> service-linked role must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>If
+     * your specified role has a path other than <code>/</code>, then you must either
+     * specify the full role ARN (recommended) or prefix the role name with the
      * path.</p>  <p>Depending on how you created your Batch service role, its
      * ARN might contain the <code>service-role</code> path prefix. When you only
      * specify the name of the service role, Batch assumes that your ARN doesn't use
@@ -298,9 +304,14 @@ namespace Model
      * service IAM role</a> in the <i>Batch User Guide</i>.</p>  <p>If the
      * compute environment has a service-linked role, it can't be changed to use a
      * regular IAM role. Likewise, if the compute environment has a regular IAM role,
-     * it can't be changed to use a service-linked role.</p>  <p>If your
-     * specified role has a path other than <code>/</code>, then you must either
-     * specify the full role ARN (this is recommended) or prefix the role name with the
+     * it can't be changed to use a service-linked role. To update the parameters for
+     * the compute environment that require an infrastructure update to change, the
+     * <b>AWSServiceRoleForBatch</b> service-linked role must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>If
+     * your specified role has a path other than <code>/</code>, then you must either
+     * specify the full role ARN (recommended) or prefix the role name with the
      * path.</p>  <p>Depending on how you created your Batch service role, its
      * ARN might contain the <code>service-role</code> path prefix. When you only
      * specify the name of the service role, Batch assumes that your ARN doesn't use
@@ -318,9 +329,14 @@ namespace Model
      * service IAM role</a> in the <i>Batch User Guide</i>.</p>  <p>If the
      * compute environment has a service-linked role, it can't be changed to use a
      * regular IAM role. Likewise, if the compute environment has a regular IAM role,
-     * it can't be changed to use a service-linked role.</p>  <p>If your
-     * specified role has a path other than <code>/</code>, then you must either
-     * specify the full role ARN (this is recommended) or prefix the role name with the
+     * it can't be changed to use a service-linked role. To update the parameters for
+     * the compute environment that require an infrastructure update to change, the
+     * <b>AWSServiceRoleForBatch</b> service-linked role must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>If
+     * your specified role has a path other than <code>/</code>, then you must either
+     * specify the full role ARN (recommended) or prefix the role name with the
      * path.</p>  <p>Depending on how you created your Batch service role, its
      * ARN might contain the <code>service-role</code> path prefix. When you only
      * specify the name of the service role, Batch assumes that your ARN doesn't use
@@ -338,9 +354,14 @@ namespace Model
      * service IAM role</a> in the <i>Batch User Guide</i>.</p>  <p>If the
      * compute environment has a service-linked role, it can't be changed to use a
      * regular IAM role. Likewise, if the compute environment has a regular IAM role,
-     * it can't be changed to use a service-linked role.</p>  <p>If your
-     * specified role has a path other than <code>/</code>, then you must either
-     * specify the full role ARN (this is recommended) or prefix the role name with the
+     * it can't be changed to use a service-linked role. To update the parameters for
+     * the compute environment that require an infrastructure update to change, the
+     * <b>AWSServiceRoleForBatch</b> service-linked role must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>If
+     * your specified role has a path other than <code>/</code>, then you must either
+     * specify the full role ARN (recommended) or prefix the role name with the
      * path.</p>  <p>Depending on how you created your Batch service role, its
      * ARN might contain the <code>service-role</code> path prefix. When you only
      * specify the name of the service role, Batch assumes that your ARN doesn't use
@@ -358,9 +379,14 @@ namespace Model
      * service IAM role</a> in the <i>Batch User Guide</i>.</p>  <p>If the
      * compute environment has a service-linked role, it can't be changed to use a
      * regular IAM role. Likewise, if the compute environment has a regular IAM role,
-     * it can't be changed to use a service-linked role.</p>  <p>If your
-     * specified role has a path other than <code>/</code>, then you must either
-     * specify the full role ARN (this is recommended) or prefix the role name with the
+     * it can't be changed to use a service-linked role. To update the parameters for
+     * the compute environment that require an infrastructure update to change, the
+     * <b>AWSServiceRoleForBatch</b> service-linked role must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>If
+     * your specified role has a path other than <code>/</code>, then you must either
+     * specify the full role ARN (recommended) or prefix the role name with the
      * path.</p>  <p>Depending on how you created your Batch service role, its
      * ARN might contain the <code>service-role</code> path prefix. When you only
      * specify the name of the service role, Batch assumes that your ARN doesn't use
@@ -378,9 +404,14 @@ namespace Model
      * service IAM role</a> in the <i>Batch User Guide</i>.</p>  <p>If the
      * compute environment has a service-linked role, it can't be changed to use a
      * regular IAM role. Likewise, if the compute environment has a regular IAM role,
-     * it can't be changed to use a service-linked role.</p>  <p>If your
-     * specified role has a path other than <code>/</code>, then you must either
-     * specify the full role ARN (this is recommended) or prefix the role name with the
+     * it can't be changed to use a service-linked role. To update the parameters for
+     * the compute environment that require an infrastructure update to change, the
+     * <b>AWSServiceRoleForBatch</b> service-linked role must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>If
+     * your specified role has a path other than <code>/</code>, then you must either
+     * specify the full role ARN (recommended) or prefix the role name with the
      * path.</p>  <p>Depending on how you created your Batch service role, its
      * ARN might contain the <code>service-role</code> path prefix. When you only
      * specify the name of the service role, Batch assumes that your ARN doesn't use
@@ -398,9 +429,14 @@ namespace Model
      * service IAM role</a> in the <i>Batch User Guide</i>.</p>  <p>If the
      * compute environment has a service-linked role, it can't be changed to use a
      * regular IAM role. Likewise, if the compute environment has a regular IAM role,
-     * it can't be changed to use a service-linked role.</p>  <p>If your
-     * specified role has a path other than <code>/</code>, then you must either
-     * specify the full role ARN (this is recommended) or prefix the role name with the
+     * it can't be changed to use a service-linked role. To update the parameters for
+     * the compute environment that require an infrastructure update to change, the
+     * <b>AWSServiceRoleForBatch</b> service-linked role must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>If
+     * your specified role has a path other than <code>/</code>, then you must either
+     * specify the full role ARN (recommended) or prefix the role name with the
      * path.</p>  <p>Depending on how you created your Batch service role, its
      * ARN might contain the <code>service-role</code> path prefix. When you only
      * specify the name of the service role, Batch assumes that your ARN doesn't use
@@ -418,9 +454,14 @@ namespace Model
      * service IAM role</a> in the <i>Batch User Guide</i>.</p>  <p>If the
      * compute environment has a service-linked role, it can't be changed to use a
      * regular IAM role. Likewise, if the compute environment has a regular IAM role,
-     * it can't be changed to use a service-linked role.</p>  <p>If your
-     * specified role has a path other than <code>/</code>, then you must either
-     * specify the full role ARN (this is recommended) or prefix the role name with the
+     * it can't be changed to use a service-linked role. To update the parameters for
+     * the compute environment that require an infrastructure update to change, the
+     * <b>AWSServiceRoleForBatch</b> service-linked role must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>  <p>If
+     * your specified role has a path other than <code>/</code>, then you must either
+     * specify the full role ARN (recommended) or prefix the role name with the
      * path.</p>  <p>Depending on how you created your Batch service role, its
      * ARN might contain the <code>service-role</code> path prefix. When you only
      * specify the name of the service role, Batch assumes that your ARN doesn't use
@@ -429,6 +470,55 @@ namespace Model
      * environments.</p> 
      */
     inline UpdateComputeEnvironmentRequest& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
+
+
+    /**
+     * <p>Specifies the updated infrastructure update policy for the compute
+     * environment. For more information about infrastructure updates, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     */
+    inline const UpdatePolicy& GetUpdatePolicy() const{ return m_updatePolicy; }
+
+    /**
+     * <p>Specifies the updated infrastructure update policy for the compute
+     * environment. For more information about infrastructure updates, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     */
+    inline bool UpdatePolicyHasBeenSet() const { return m_updatePolicyHasBeenSet; }
+
+    /**
+     * <p>Specifies the updated infrastructure update policy for the compute
+     * environment. For more information about infrastructure updates, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     */
+    inline void SetUpdatePolicy(const UpdatePolicy& value) { m_updatePolicyHasBeenSet = true; m_updatePolicy = value; }
+
+    /**
+     * <p>Specifies the updated infrastructure update policy for the compute
+     * environment. For more information about infrastructure updates, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     */
+    inline void SetUpdatePolicy(UpdatePolicy&& value) { m_updatePolicyHasBeenSet = true; m_updatePolicy = std::move(value); }
+
+    /**
+     * <p>Specifies the updated infrastructure update policy for the compute
+     * environment. For more information about infrastructure updates, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     */
+    inline UpdateComputeEnvironmentRequest& WithUpdatePolicy(const UpdatePolicy& value) { SetUpdatePolicy(value); return *this;}
+
+    /**
+     * <p>Specifies the updated infrastructure update policy for the compute
+     * environment. For more information about infrastructure updates, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>.</p>
+     */
+    inline UpdateComputeEnvironmentRequest& WithUpdatePolicy(UpdatePolicy&& value) { SetUpdatePolicy(std::move(value)); return *this;}
 
   private:
 
@@ -446,6 +536,9 @@ namespace Model
 
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet;
+
+    UpdatePolicy m_updatePolicy;
+    bool m_updatePolicyHasBeenSet;
   };
 
 } // namespace Model

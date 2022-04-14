@@ -7,6 +7,7 @@
 #include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appflow/model/OAuth2GrantType.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -110,6 +111,98 @@ namespace Model
      */
     inline OAuth2Properties& WithOAuth2GrantType(OAuth2GrantType&& value) { SetOAuth2GrantType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Associates your token URL with a map of properties that you define. Use this
+     * parameter to provide any additional details that the connector requires to
+     * authenticate your request.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTokenUrlCustomProperties() const{ return m_tokenUrlCustomProperties; }
+
+    /**
+     * <p>Associates your token URL with a map of properties that you define. Use this
+     * parameter to provide any additional details that the connector requires to
+     * authenticate your request.</p>
+     */
+    inline bool TokenUrlCustomPropertiesHasBeenSet() const { return m_tokenUrlCustomPropertiesHasBeenSet; }
+
+    /**
+     * <p>Associates your token URL with a map of properties that you define. Use this
+     * parameter to provide any additional details that the connector requires to
+     * authenticate your request.</p>
+     */
+    inline void SetTokenUrlCustomProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_tokenUrlCustomPropertiesHasBeenSet = true; m_tokenUrlCustomProperties = value; }
+
+    /**
+     * <p>Associates your token URL with a map of properties that you define. Use this
+     * parameter to provide any additional details that the connector requires to
+     * authenticate your request.</p>
+     */
+    inline void SetTokenUrlCustomProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_tokenUrlCustomPropertiesHasBeenSet = true; m_tokenUrlCustomProperties = std::move(value); }
+
+    /**
+     * <p>Associates your token URL with a map of properties that you define. Use this
+     * parameter to provide any additional details that the connector requires to
+     * authenticate your request.</p>
+     */
+    inline OAuth2Properties& WithTokenUrlCustomProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetTokenUrlCustomProperties(value); return *this;}
+
+    /**
+     * <p>Associates your token URL with a map of properties that you define. Use this
+     * parameter to provide any additional details that the connector requires to
+     * authenticate your request.</p>
+     */
+    inline OAuth2Properties& WithTokenUrlCustomProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetTokenUrlCustomProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>Associates your token URL with a map of properties that you define. Use this
+     * parameter to provide any additional details that the connector requires to
+     * authenticate your request.</p>
+     */
+    inline OAuth2Properties& AddTokenUrlCustomProperties(const Aws::String& key, const Aws::String& value) { m_tokenUrlCustomPropertiesHasBeenSet = true; m_tokenUrlCustomProperties.emplace(key, value); return *this; }
+
+    /**
+     * <p>Associates your token URL with a map of properties that you define. Use this
+     * parameter to provide any additional details that the connector requires to
+     * authenticate your request.</p>
+     */
+    inline OAuth2Properties& AddTokenUrlCustomProperties(Aws::String&& key, const Aws::String& value) { m_tokenUrlCustomPropertiesHasBeenSet = true; m_tokenUrlCustomProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Associates your token URL with a map of properties that you define. Use this
+     * parameter to provide any additional details that the connector requires to
+     * authenticate your request.</p>
+     */
+    inline OAuth2Properties& AddTokenUrlCustomProperties(const Aws::String& key, Aws::String&& value) { m_tokenUrlCustomPropertiesHasBeenSet = true; m_tokenUrlCustomProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Associates your token URL with a map of properties that you define. Use this
+     * parameter to provide any additional details that the connector requires to
+     * authenticate your request.</p>
+     */
+    inline OAuth2Properties& AddTokenUrlCustomProperties(Aws::String&& key, Aws::String&& value) { m_tokenUrlCustomPropertiesHasBeenSet = true; m_tokenUrlCustomProperties.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Associates your token URL with a map of properties that you define. Use this
+     * parameter to provide any additional details that the connector requires to
+     * authenticate your request.</p>
+     */
+    inline OAuth2Properties& AddTokenUrlCustomProperties(const char* key, Aws::String&& value) { m_tokenUrlCustomPropertiesHasBeenSet = true; m_tokenUrlCustomProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Associates your token URL with a map of properties that you define. Use this
+     * parameter to provide any additional details that the connector requires to
+     * authenticate your request.</p>
+     */
+    inline OAuth2Properties& AddTokenUrlCustomProperties(Aws::String&& key, const char* value) { m_tokenUrlCustomPropertiesHasBeenSet = true; m_tokenUrlCustomProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Associates your token URL with a map of properties that you define. Use this
+     * parameter to provide any additional details that the connector requires to
+     * authenticate your request.</p>
+     */
+    inline OAuth2Properties& AddTokenUrlCustomProperties(const char* key, const char* value) { m_tokenUrlCustomPropertiesHasBeenSet = true; m_tokenUrlCustomProperties.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_tokenUrl;
@@ -117,6 +210,9 @@ namespace Model
 
     OAuth2GrantType m_oAuth2GrantType;
     bool m_oAuth2GrantTypeHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tokenUrlCustomProperties;
+    bool m_tokenUrlCustomPropertiesHasBeenSet;
   };
 
 } // namespace Model

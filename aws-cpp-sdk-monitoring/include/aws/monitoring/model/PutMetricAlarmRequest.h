@@ -1447,7 +1447,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline const Aws::String& GetTreatMissingData() const{ return m_treatMissingData; }
 
@@ -1457,7 +1462,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline bool TreatMissingDataHasBeenSet() const { return m_treatMissingDataHasBeenSet; }
 
@@ -1467,7 +1477,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline void SetTreatMissingData(const Aws::String& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = value; }
 
@@ -1477,7 +1492,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline void SetTreatMissingData(Aws::String&& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = std::move(value); }
 
@@ -1487,7 +1507,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline void SetTreatMissingData(const char* value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData.assign(value); }
 
@@ -1497,7 +1522,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline PutMetricAlarmRequest& WithTreatMissingData(const Aws::String& value) { SetTreatMissingData(value); return *this;}
 
@@ -1507,7 +1537,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline PutMetricAlarmRequest& WithTreatMissingData(Aws::String&& value) { SetTreatMissingData(std::move(value)); return *this;}
 
@@ -1517,7 +1552,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline PutMetricAlarmRequest& WithTreatMissingData(const char* value) { SetTreatMissingData(value); return *this;}
 

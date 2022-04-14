@@ -956,7 +956,8 @@ namespace Model
 
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The user data script to make available to the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
      * commands on your Linux instance at launch</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
@@ -968,7 +969,8 @@ namespace Model
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The user data script to make available to the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
      * commands on your Linux instance at launch</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
@@ -980,7 +982,8 @@ namespace Model
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The user data script to make available to the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
      * commands on your Linux instance at launch</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
@@ -992,7 +995,8 @@ namespace Model
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The user data script to make available to the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
      * commands on your Linux instance at launch</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
@@ -1004,7 +1008,8 @@ namespace Model
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The user data script to make available to the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
      * commands on your Linux instance at launch</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
@@ -1016,7 +1021,8 @@ namespace Model
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The user data script to make available to the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
      * commands on your Linux instance at launch</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
@@ -1028,7 +1034,8 @@ namespace Model
     inline RunInstancesRequest& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The user data script to make available to the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
      * commands on your Linux instance at launch</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
@@ -1040,7 +1047,8 @@ namespace Model
     inline RunInstancesRequest& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
-     * <p>The user data to make available to the instance. For more information, see <a
+     * <p>The user data script to make available to the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
      * commands on your Linux instance at launch</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run

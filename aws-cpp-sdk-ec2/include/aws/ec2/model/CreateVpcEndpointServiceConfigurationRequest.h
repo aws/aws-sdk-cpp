@@ -73,29 +73,25 @@ namespace Model
 
     /**
      * <p>Indicates whether requests from service consumers to create an endpoint to
-     * your service must be accepted. To accept a request, use
-     * <a>AcceptVpcEndpointConnections</a>.</p>
+     * your service must be accepted manually.</p>
      */
     inline bool GetAcceptanceRequired() const{ return m_acceptanceRequired; }
 
     /**
      * <p>Indicates whether requests from service consumers to create an endpoint to
-     * your service must be accepted. To accept a request, use
-     * <a>AcceptVpcEndpointConnections</a>.</p>
+     * your service must be accepted manually.</p>
      */
     inline bool AcceptanceRequiredHasBeenSet() const { return m_acceptanceRequiredHasBeenSet; }
 
     /**
      * <p>Indicates whether requests from service consumers to create an endpoint to
-     * your service must be accepted. To accept a request, use
-     * <a>AcceptVpcEndpointConnections</a>.</p>
+     * your service must be accepted manually.</p>
      */
     inline void SetAcceptanceRequired(bool value) { m_acceptanceRequiredHasBeenSet = true; m_acceptanceRequired = value; }
 
     /**
      * <p>Indicates whether requests from service consumers to create an endpoint to
-     * your service must be accepted. To accept a request, use
-     * <a>AcceptVpcEndpointConnections</a>.</p>
+     * your service must be accepted manually.</p>
      */
     inline CreateVpcEndpointServiceConfigurationRequest& WithAcceptanceRequired(bool value) { SetAcceptanceRequired(value); return *this;}
 
