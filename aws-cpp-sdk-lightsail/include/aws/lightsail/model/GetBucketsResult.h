@@ -7,6 +7,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/model/AccountLevelBpaSync.h>
 #include <aws/lightsail/model/Bucket.h>
 #include <utility>
 
@@ -133,11 +134,59 @@ namespace Model
      */
     inline GetBucketsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
+
+    /**
+     * <p>An object that describes the synchronization status of the Amazon S3
+     * account-level block public access feature for your Lightsail buckets.</p> <p>For
+     * more information about this feature and how it affects Lightsail buckets, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block
+     * public access for buckets in Amazon Lightsail</a>.</p>
+     */
+    inline const AccountLevelBpaSync& GetAccountLevelBpaSync() const{ return m_accountLevelBpaSync; }
+
+    /**
+     * <p>An object that describes the synchronization status of the Amazon S3
+     * account-level block public access feature for your Lightsail buckets.</p> <p>For
+     * more information about this feature and how it affects Lightsail buckets, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block
+     * public access for buckets in Amazon Lightsail</a>.</p>
+     */
+    inline void SetAccountLevelBpaSync(const AccountLevelBpaSync& value) { m_accountLevelBpaSync = value; }
+
+    /**
+     * <p>An object that describes the synchronization status of the Amazon S3
+     * account-level block public access feature for your Lightsail buckets.</p> <p>For
+     * more information about this feature and how it affects Lightsail buckets, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block
+     * public access for buckets in Amazon Lightsail</a>.</p>
+     */
+    inline void SetAccountLevelBpaSync(AccountLevelBpaSync&& value) { m_accountLevelBpaSync = std::move(value); }
+
+    /**
+     * <p>An object that describes the synchronization status of the Amazon S3
+     * account-level block public access feature for your Lightsail buckets.</p> <p>For
+     * more information about this feature and how it affects Lightsail buckets, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block
+     * public access for buckets in Amazon Lightsail</a>.</p>
+     */
+    inline GetBucketsResult& WithAccountLevelBpaSync(const AccountLevelBpaSync& value) { SetAccountLevelBpaSync(value); return *this;}
+
+    /**
+     * <p>An object that describes the synchronization status of the Amazon S3
+     * account-level block public access feature for your Lightsail buckets.</p> <p>For
+     * more information about this feature and how it affects Lightsail buckets, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block
+     * public access for buckets in Amazon Lightsail</a>.</p>
+     */
+    inline GetBucketsResult& WithAccountLevelBpaSync(AccountLevelBpaSync&& value) { SetAccountLevelBpaSync(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Bucket> m_buckets;
 
     Aws::String m_nextPageToken;
+
+    AccountLevelBpaSync m_accountLevelBpaSync;
   };
 
 } // namespace Model

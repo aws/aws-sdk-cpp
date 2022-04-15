@@ -1517,7 +1517,7 @@ namespace Model
          * will serve as the public endpoint of the deployment and its settings, such as
          * the HTTP or HTTPS port to use, and the health check configuration.</p> <p>You
          * can deploy containers to your container service using container images from a
-         * public registry like Docker Hub, or from your local machine. For more
+         * public registry such as Amazon ECR Public, or from your local machine. For more
          * information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images">Creating
          * container images for your Amazon Lightsail container services</a> in the
@@ -1535,7 +1535,7 @@ namespace Model
          * will serve as the public endpoint of the deployment and its settings, such as
          * the HTTP or HTTPS port to use, and the health check configuration.</p> <p>You
          * can deploy containers to your container service using container images from a
-         * public registry like Docker Hub, or from your local machine. For more
+         * public registry such as Amazon ECR Public, or from your local machine. For more
          * information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images">Creating
          * container images for your Amazon Lightsail container services</a> in the
@@ -1555,7 +1555,7 @@ namespace Model
          * will serve as the public endpoint of the deployment and its settings, such as
          * the HTTP or HTTPS port to use, and the health check configuration.</p> <p>You
          * can deploy containers to your container service using container images from a
-         * public registry like Docker Hub, or from your local machine. For more
+         * public registry such as Amazon ECR Public, or from your local machine. For more
          * information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images">Creating
          * container images for your Amazon Lightsail container services</a> in the
@@ -3801,22 +3801,26 @@ namespace Model
         virtual void GetBucketMetricDataAsync(const Model::GetBucketMetricDataRequest& request, const GetBucketMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about one or more Amazon Lightsail buckets.</p> <p>For
-         * more information about buckets, see <a
+         * <p>Returns information about one or more Amazon Lightsail buckets. The
+         * information returned includes the synchronization status of the Amazon Simple
+         * Storage Service (Amazon S3) account-level block public access feature for your
+         * Lightsail buckets.</p> <p>For more information about buckets, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets
          * in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
-         * Guide</i>..</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBuckets">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBucketsOutcome GetBuckets(const Model::GetBucketsRequest& request) const;
 
         /**
-         * <p>Returns information about one or more Amazon Lightsail buckets.</p> <p>For
-         * more information about buckets, see <a
+         * <p>Returns information about one or more Amazon Lightsail buckets. The
+         * information returned includes the synchronization status of the Amazon Simple
+         * Storage Service (Amazon S3) account-level block public access feature for your
+         * Lightsail buckets.</p> <p>For more information about buckets, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets
          * in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
-         * Guide</i>..</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBuckets">AWS
          * API Reference</a></p>
          *
@@ -3825,11 +3829,13 @@ namespace Model
         virtual Model::GetBucketsOutcomeCallable GetBucketsCallable(const Model::GetBucketsRequest& request) const;
 
         /**
-         * <p>Returns information about one or more Amazon Lightsail buckets.</p> <p>For
-         * more information about buckets, see <a
+         * <p>Returns information about one or more Amazon Lightsail buckets. The
+         * information returned includes the synchronization status of the Amazon Simple
+         * Storage Service (Amazon S3) account-level block public access feature for your
+         * Lightsail buckets.</p> <p>For more information about buckets, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets
          * in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
-         * Guide</i>..</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBuckets">AWS
          * API Reference</a></p>
          *
@@ -4369,7 +4375,7 @@ namespace Model
          * <p>Returns the bundles that can be applied to your Amazon Lightsail content
          * delivery network (CDN) distributions.</p> <p>A distribution bundle specifies the
          * monthly network transfer quota and monthly cost of your
-         * dsitribution.</p><p><h3>See Also:</h3>   <a
+         * distribution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionBundles">AWS
          * API Reference</a></p>
          */
@@ -4379,7 +4385,7 @@ namespace Model
          * <p>Returns the bundles that can be applied to your Amazon Lightsail content
          * delivery network (CDN) distributions.</p> <p>A distribution bundle specifies the
          * monthly network transfer quota and monthly cost of your
-         * dsitribution.</p><p><h3>See Also:</h3>   <a
+         * distribution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionBundles">AWS
          * API Reference</a></p>
          *
@@ -4391,7 +4397,7 @@ namespace Model
          * <p>Returns the bundles that can be applied to your Amazon Lightsail content
          * delivery network (CDN) distributions.</p> <p>A distribution bundle specifies the
          * monthly network transfer quota and monthly cost of your
-         * dsitribution.</p><p><h3>See Also:</h3>   <a
+         * distribution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionBundles">AWS
          * API Reference</a></p>
          *
@@ -6683,7 +6689,7 @@ namespace Model
         /**
          * <p>Updates the bundle of your Amazon Lightsail content delivery network (CDN)
          * distribution.</p> <p>A distribution bundle specifies the monthly network
-         * transfer quota and monthly cost of your dsitribution.</p> <p>Update your
+         * transfer quota and monthly cost of your distribution.</p> <p>Update your
          * distribution's bundle if your distribution is going over its monthly network
          * transfer quota and is incurring an overage fee.</p> <p>You can update your
          * distribution's bundle only one time within your monthly AWS billing cycle. To
@@ -6699,7 +6705,7 @@ namespace Model
         /**
          * <p>Updates the bundle of your Amazon Lightsail content delivery network (CDN)
          * distribution.</p> <p>A distribution bundle specifies the monthly network
-         * transfer quota and monthly cost of your dsitribution.</p> <p>Update your
+         * transfer quota and monthly cost of your distribution.</p> <p>Update your
          * distribution's bundle if your distribution is going over its monthly network
          * transfer quota and is incurring an overage fee.</p> <p>You can update your
          * distribution's bundle only one time within your monthly AWS billing cycle. To
@@ -6717,7 +6723,7 @@ namespace Model
         /**
          * <p>Updates the bundle of your Amazon Lightsail content delivery network (CDN)
          * distribution.</p> <p>A distribution bundle specifies the monthly network
-         * transfer quota and monthly cost of your dsitribution.</p> <p>Update your
+         * transfer quota and monthly cost of your distribution.</p> <p>Update your
          * distribution's bundle if your distribution is going over its monthly network
          * transfer quota and is incurring an overage fee.</p> <p>You can update your
          * distribution's bundle only one time within your monthly AWS billing cycle. To

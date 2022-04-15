@@ -22,7 +22,10 @@ AthenaError::AthenaError() :
     m_errorCategory(0),
     m_errorCategoryHasBeenSet(false),
     m_errorType(0),
-    m_errorTypeHasBeenSet(false)
+    m_errorTypeHasBeenSet(false),
+    m_retryable(false),
+    m_retryableHasBeenSet(false),
+    m_errorMessageHasBeenSet(false)
 {
 }
 
@@ -30,7 +33,10 @@ AthenaError::AthenaError(JsonView jsonValue) :
     m_errorCategory(0),
     m_errorCategoryHasBeenSet(false),
     m_errorType(0),
-    m_errorTypeHasBeenSet(false)
+    m_errorTypeHasBeenSet(false),
+    m_retryable(false),
+    m_retryableHasBeenSet(false),
+    m_errorMessageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +57,20 @@ AthenaError& AthenaError::operator =(JsonView jsonValue)
     m_errorTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Retryable"))
+  {
+    m_retryable = jsonValue.GetBool("Retryable");
+
+    m_retryableHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ErrorMessage"))
+  {
+    m_errorMessage = jsonValue.GetString("ErrorMessage");
+
+    m_errorMessageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -67,6 +87,18 @@ JsonValue AthenaError::Jsonize() const
   if(m_errorTypeHasBeenSet)
   {
    payload.WithInteger("ErrorType", m_errorType);
+
+  }
+
+  if(m_retryableHasBeenSet)
+  {
+   payload.WithBool("Retryable", m_retryable);
+
+  }
+
+  if(m_errorMessageHasBeenSet)
+  {
+   payload.WithString("ErrorMessage", m_errorMessage);
 
   }
 

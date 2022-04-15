@@ -42,42 +42,306 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the DB parameter group family.</p>
+     * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
+     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
+     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql10</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql11</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql12</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql13</code> </p> </li> <li> <p> <code>mariadb10.2</code>
+     * </p> </li> <li> <p> <code>mariadb10.3</code> </p> </li> <li> <p>
+     * <code>mariadb10.4</code> </p> </li> <li> <p> <code>mariadb10.5</code> </p> </li>
+     * <li> <p> <code>mariadb10.6</code> </p> </li> <li> <p> <code>mysql5.7</code> </p>
+     * </li> <li> <p> <code>mysql8.0</code> </p> </li> <li> <p> <code>postgres10</code>
+     * </p> </li> <li> <p> <code>postgres11</code> </p> </li> <li> <p>
+     * <code>postgres12</code> </p> </li> <li> <p> <code>postgres13</code> </p> </li>
+     * <li> <p> <code>postgres14</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-15.0</code> </p> </li> </ul>
      */
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
 
     /**
-     * <p>The name of the DB parameter group family.</p>
+     * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
+     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
+     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql10</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql11</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql12</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql13</code> </p> </li> <li> <p> <code>mariadb10.2</code>
+     * </p> </li> <li> <p> <code>mariadb10.3</code> </p> </li> <li> <p>
+     * <code>mariadb10.4</code> </p> </li> <li> <p> <code>mariadb10.5</code> </p> </li>
+     * <li> <p> <code>mariadb10.6</code> </p> </li> <li> <p> <code>mysql5.7</code> </p>
+     * </li> <li> <p> <code>mysql8.0</code> </p> </li> <li> <p> <code>postgres10</code>
+     * </p> </li> <li> <p> <code>postgres11</code> </p> </li> <li> <p>
+     * <code>postgres12</code> </p> </li> <li> <p> <code>postgres13</code> </p> </li>
+     * <li> <p> <code>postgres14</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-15.0</code> </p> </li> </ul>
      */
     inline bool DBParameterGroupFamilyHasBeenSet() const { return m_dBParameterGroupFamilyHasBeenSet; }
 
     /**
-     * <p>The name of the DB parameter group family.</p>
+     * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
+     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
+     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql10</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql11</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql12</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql13</code> </p> </li> <li> <p> <code>mariadb10.2</code>
+     * </p> </li> <li> <p> <code>mariadb10.3</code> </p> </li> <li> <p>
+     * <code>mariadb10.4</code> </p> </li> <li> <p> <code>mariadb10.5</code> </p> </li>
+     * <li> <p> <code>mariadb10.6</code> </p> </li> <li> <p> <code>mysql5.7</code> </p>
+     * </li> <li> <p> <code>mysql8.0</code> </p> </li> <li> <p> <code>postgres10</code>
+     * </p> </li> <li> <p> <code>postgres11</code> </p> </li> <li> <p>
+     * <code>postgres12</code> </p> </li> <li> <p> <code>postgres13</code> </p> </li>
+     * <li> <p> <code>postgres14</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-15.0</code> </p> </li> </ul>
      */
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /**
-     * <p>The name of the DB parameter group family.</p>
+     * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
+     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
+     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql10</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql11</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql12</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql13</code> </p> </li> <li> <p> <code>mariadb10.2</code>
+     * </p> </li> <li> <p> <code>mariadb10.3</code> </p> </li> <li> <p>
+     * <code>mariadb10.4</code> </p> </li> <li> <p> <code>mariadb10.5</code> </p> </li>
+     * <li> <p> <code>mariadb10.6</code> </p> </li> <li> <p> <code>mysql5.7</code> </p>
+     * </li> <li> <p> <code>mysql8.0</code> </p> </li> <li> <p> <code>postgres10</code>
+     * </p> </li> <li> <p> <code>postgres11</code> </p> </li> <li> <p>
+     * <code>postgres12</code> </p> </li> <li> <p> <code>postgres13</code> </p> </li>
+     * <li> <p> <code>postgres14</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-15.0</code> </p> </li> </ul>
      */
     inline void SetDBParameterGroupFamily(Aws::String&& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = std::move(value); }
 
     /**
-     * <p>The name of the DB parameter group family.</p>
+     * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
+     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
+     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql10</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql11</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql12</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql13</code> </p> </li> <li> <p> <code>mariadb10.2</code>
+     * </p> </li> <li> <p> <code>mariadb10.3</code> </p> </li> <li> <p>
+     * <code>mariadb10.4</code> </p> </li> <li> <p> <code>mariadb10.5</code> </p> </li>
+     * <li> <p> <code>mariadb10.6</code> </p> </li> <li> <p> <code>mysql5.7</code> </p>
+     * </li> <li> <p> <code>mysql8.0</code> </p> </li> <li> <p> <code>postgres10</code>
+     * </p> </li> <li> <p> <code>postgres11</code> </p> </li> <li> <p>
+     * <code>postgres12</code> </p> </li> <li> <p> <code>postgres13</code> </p> </li>
+     * <li> <p> <code>postgres14</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-15.0</code> </p> </li> </ul>
      */
     inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily.assign(value); }
 
     /**
-     * <p>The name of the DB parameter group family.</p>
+     * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
+     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
+     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql10</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql11</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql12</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql13</code> </p> </li> <li> <p> <code>mariadb10.2</code>
+     * </p> </li> <li> <p> <code>mariadb10.3</code> </p> </li> <li> <p>
+     * <code>mariadb10.4</code> </p> </li> <li> <p> <code>mariadb10.5</code> </p> </li>
+     * <li> <p> <code>mariadb10.6</code> </p> </li> <li> <p> <code>mysql5.7</code> </p>
+     * </li> <li> <p> <code>mysql8.0</code> </p> </li> <li> <p> <code>postgres10</code>
+     * </p> </li> <li> <p> <code>postgres11</code> </p> </li> <li> <p>
+     * <code>postgres12</code> </p> </li> <li> <p> <code>postgres13</code> </p> </li>
+     * <li> <p> <code>postgres14</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-15.0</code> </p> </li> </ul>
      */
     inline DescribeEngineDefaultParametersRequest& WithDBParameterGroupFamily(const Aws::String& value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
-     * <p>The name of the DB parameter group family.</p>
+     * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
+     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
+     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql10</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql11</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql12</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql13</code> </p> </li> <li> <p> <code>mariadb10.2</code>
+     * </p> </li> <li> <p> <code>mariadb10.3</code> </p> </li> <li> <p>
+     * <code>mariadb10.4</code> </p> </li> <li> <p> <code>mariadb10.5</code> </p> </li>
+     * <li> <p> <code>mariadb10.6</code> </p> </li> <li> <p> <code>mysql5.7</code> </p>
+     * </li> <li> <p> <code>mysql8.0</code> </p> </li> <li> <p> <code>postgres10</code>
+     * </p> </li> <li> <p> <code>postgres11</code> </p> </li> <li> <p>
+     * <code>postgres12</code> </p> </li> <li> <p> <code>postgres13</code> </p> </li>
+     * <li> <p> <code>postgres14</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-15.0</code> </p> </li> </ul>
      */
     inline DescribeEngineDefaultParametersRequest& WithDBParameterGroupFamily(Aws::String&& value) { SetDBParameterGroupFamily(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the DB parameter group family.</p>
+     * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
+     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
+     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql10</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql11</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql12</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql13</code> </p> </li> <li> <p> <code>mariadb10.2</code>
+     * </p> </li> <li> <p> <code>mariadb10.3</code> </p> </li> <li> <p>
+     * <code>mariadb10.4</code> </p> </li> <li> <p> <code>mariadb10.5</code> </p> </li>
+     * <li> <p> <code>mariadb10.6</code> </p> </li> <li> <p> <code>mysql5.7</code> </p>
+     * </li> <li> <p> <code>mysql8.0</code> </p> </li> <li> <p> <code>postgres10</code>
+     * </p> </li> <li> <p> <code>postgres11</code> </p> </li> <li> <p>
+     * <code>postgres12</code> </p> </li> <li> <p> <code>postgres13</code> </p> </li>
+     * <li> <p> <code>postgres14</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-se-15.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-11.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-12.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-13.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-14.0</code> </p> </li> <li> <p>
+     * <code>sqlserver-web-15.0</code> </p> </li> </ul>
      */
     inline DescribeEngineDefaultParametersRequest& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 

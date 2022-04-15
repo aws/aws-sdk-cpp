@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/athena/Athena_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -101,6 +103,68 @@ namespace Model
      */
     inline AthenaError& WithErrorType(int value) { SetErrorType(value); return *this;}
 
+
+    /**
+     * <p>True if the query might succeed if resubmitted.</p>
+     */
+    inline bool GetRetryable() const{ return m_retryable; }
+
+    /**
+     * <p>True if the query might succeed if resubmitted.</p>
+     */
+    inline bool RetryableHasBeenSet() const { return m_retryableHasBeenSet; }
+
+    /**
+     * <p>True if the query might succeed if resubmitted.</p>
+     */
+    inline void SetRetryable(bool value) { m_retryableHasBeenSet = true; m_retryable = value; }
+
+    /**
+     * <p>True if the query might succeed if resubmitted.</p>
+     */
+    inline AthenaError& WithRetryable(bool value) { SetRetryable(value); return *this;}
+
+
+    /**
+     * <p>Contains a short description of the error that occurred.</p>
+     */
+    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>Contains a short description of the error that occurred.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+
+    /**
+     * <p>Contains a short description of the error that occurred.</p>
+     */
+    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
+
+    /**
+     * <p>Contains a short description of the error that occurred.</p>
+     */
+    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
+
+    /**
+     * <p>Contains a short description of the error that occurred.</p>
+     */
+    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
+
+    /**
+     * <p>Contains a short description of the error that occurred.</p>
+     */
+    inline AthenaError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
+
+    /**
+     * <p>Contains a short description of the error that occurred.</p>
+     */
+    inline AthenaError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains a short description of the error that occurred.</p>
+     */
+    inline AthenaError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+
   private:
 
     int m_errorCategory;
@@ -108,6 +172,12 @@ namespace Model
 
     int m_errorType;
     bool m_errorTypeHasBeenSet;
+
+    bool m_retryable;
+    bool m_retryableHasBeenSet;
+
+    Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet;
   };
 
 } // namespace Model

@@ -157,7 +157,7 @@ namespace Model
 
     /**
      * <p>If query results are encrypted in Amazon S3, indicates the encryption option
-     * used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key
+     * used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key
      * information. This is a client-side setting. If workgroup settings override
      * client-side settings, then the query uses the encryption configuration that is
      * specified for the workgroup, and also uses the location for storing query
@@ -170,7 +170,7 @@ namespace Model
 
     /**
      * <p>If query results are encrypted in Amazon S3, indicates the encryption option
-     * used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key
+     * used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key
      * information. This is a client-side setting. If workgroup settings override
      * client-side settings, then the query uses the encryption configuration that is
      * specified for the workgroup, and also uses the location for storing query
@@ -183,7 +183,7 @@ namespace Model
 
     /**
      * <p>If query results are encrypted in Amazon S3, indicates the encryption option
-     * used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key
+     * used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key
      * information. This is a client-side setting. If workgroup settings override
      * client-side settings, then the query uses the encryption configuration that is
      * specified for the workgroup, and also uses the location for storing query
@@ -196,7 +196,7 @@ namespace Model
 
     /**
      * <p>If query results are encrypted in Amazon S3, indicates the encryption option
-     * used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key
+     * used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key
      * information. This is a client-side setting. If workgroup settings override
      * client-side settings, then the query uses the encryption configuration that is
      * specified for the workgroup, and also uses the location for storing query
@@ -209,7 +209,7 @@ namespace Model
 
     /**
      * <p>If query results are encrypted in Amazon S3, indicates the encryption option
-     * used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key
+     * used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key
      * information. This is a client-side setting. If workgroup settings override
      * client-side settings, then the query uses the encryption configuration that is
      * specified for the workgroup, and also uses the location for storing query
@@ -222,7 +222,7 @@ namespace Model
 
     /**
      * <p>If query results are encrypted in Amazon S3, indicates the encryption option
-     * used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key
+     * used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key
      * information. This is a client-side setting. If workgroup settings override
      * client-side settings, then the query uses the encryption configuration that is
      * specified for the workgroup, and also uses the location for storing query
