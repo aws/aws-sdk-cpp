@@ -412,46 +412,46 @@ namespace Model
 
 
     /**
-     * <p>The duration of the policy's cooldown period, in seconds. When a cooldown
-     * period is specified here, it overrides the default cooldown period defined for
-     * the Auto Scaling group.</p> <p>Valid only if the policy type is
-     * <code>SimpleScaling</code>. For more information, see <a
+     * <p>A cooldown period, in seconds, that applies to a specific simple scaling
+     * policy. When a cooldown period is specified here, it overrides the default
+     * cooldown.</p> <p>Valid only if the policy type is <code>SimpleScaling</code>.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>Default: None</p>
      */
     inline int GetCooldown() const{ return m_cooldown; }
 
     /**
-     * <p>The duration of the policy's cooldown period, in seconds. When a cooldown
-     * period is specified here, it overrides the default cooldown period defined for
-     * the Auto Scaling group.</p> <p>Valid only if the policy type is
-     * <code>SimpleScaling</code>. For more information, see <a
+     * <p>A cooldown period, in seconds, that applies to a specific simple scaling
+     * policy. When a cooldown period is specified here, it overrides the default
+     * cooldown.</p> <p>Valid only if the policy type is <code>SimpleScaling</code>.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>Default: None</p>
      */
     inline bool CooldownHasBeenSet() const { return m_cooldownHasBeenSet; }
 
     /**
-     * <p>The duration of the policy's cooldown period, in seconds. When a cooldown
-     * period is specified here, it overrides the default cooldown period defined for
-     * the Auto Scaling group.</p> <p>Valid only if the policy type is
-     * <code>SimpleScaling</code>. For more information, see <a
+     * <p>A cooldown period, in seconds, that applies to a specific simple scaling
+     * policy. When a cooldown period is specified here, it overrides the default
+     * cooldown.</p> <p>Valid only if the policy type is <code>SimpleScaling</code>.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>Default: None</p>
      */
     inline void SetCooldown(int value) { m_cooldownHasBeenSet = true; m_cooldown = value; }
 
     /**
-     * <p>The duration of the policy's cooldown period, in seconds. When a cooldown
-     * period is specified here, it overrides the default cooldown period defined for
-     * the Auto Scaling group.</p> <p>Valid only if the policy type is
-     * <code>SimpleScaling</code>. For more information, see <a
+     * <p>A cooldown period, in seconds, that applies to a specific simple scaling
+     * policy. When a cooldown period is specified here, it overrides the default
+     * cooldown.</p> <p>Valid only if the policy type is <code>SimpleScaling</code>.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>Default: None</p>
      */
     inline PutScalingPolicyRequest& WithCooldown(int value) { SetCooldown(value); return *this;}
 
@@ -579,38 +579,58 @@ namespace Model
 
 
     /**
-     * <p>The estimated time, in seconds, until a newly launched instance can
-     * contribute to the CloudWatch metrics. If not provided, the default is to use the
-     * value from the default cooldown period for the Auto Scaling group.</p> <p>Valid
-     * only if the policy type is <code>TargetTrackingScaling</code> or
-     * <code>StepScaling</code>.</p>
+     * <p> <i>Not needed if the default instance warmup is defined for the group.</i>
+     * </p> <p>The estimated time, in seconds, until a newly launched instance can
+     * contribute to the CloudWatch metrics. This warm-up period applies to instances
+     * launched due to a specific target tracking or step scaling policy. When a
+     * warm-up period is specified here, it overrides the default instance warmup.</p>
+     * <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or
+     * <code>StepScaling</code>.</p>  <p>The default is to use the value for the
+     * default instance warmup defined for the group. If default instance warmup is
+     * null, then <code>EstimatedInstanceWarmup</code> falls back to the value of
+     * default cooldown.</p> 
      */
     inline int GetEstimatedInstanceWarmup() const{ return m_estimatedInstanceWarmup; }
 
     /**
-     * <p>The estimated time, in seconds, until a newly launched instance can
-     * contribute to the CloudWatch metrics. If not provided, the default is to use the
-     * value from the default cooldown period for the Auto Scaling group.</p> <p>Valid
-     * only if the policy type is <code>TargetTrackingScaling</code> or
-     * <code>StepScaling</code>.</p>
+     * <p> <i>Not needed if the default instance warmup is defined for the group.</i>
+     * </p> <p>The estimated time, in seconds, until a newly launched instance can
+     * contribute to the CloudWatch metrics. This warm-up period applies to instances
+     * launched due to a specific target tracking or step scaling policy. When a
+     * warm-up period is specified here, it overrides the default instance warmup.</p>
+     * <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or
+     * <code>StepScaling</code>.</p>  <p>The default is to use the value for the
+     * default instance warmup defined for the group. If default instance warmup is
+     * null, then <code>EstimatedInstanceWarmup</code> falls back to the value of
+     * default cooldown.</p> 
      */
     inline bool EstimatedInstanceWarmupHasBeenSet() const { return m_estimatedInstanceWarmupHasBeenSet; }
 
     /**
-     * <p>The estimated time, in seconds, until a newly launched instance can
-     * contribute to the CloudWatch metrics. If not provided, the default is to use the
-     * value from the default cooldown period for the Auto Scaling group.</p> <p>Valid
-     * only if the policy type is <code>TargetTrackingScaling</code> or
-     * <code>StepScaling</code>.</p>
+     * <p> <i>Not needed if the default instance warmup is defined for the group.</i>
+     * </p> <p>The estimated time, in seconds, until a newly launched instance can
+     * contribute to the CloudWatch metrics. This warm-up period applies to instances
+     * launched due to a specific target tracking or step scaling policy. When a
+     * warm-up period is specified here, it overrides the default instance warmup.</p>
+     * <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or
+     * <code>StepScaling</code>.</p>  <p>The default is to use the value for the
+     * default instance warmup defined for the group. If default instance warmup is
+     * null, then <code>EstimatedInstanceWarmup</code> falls back to the value of
+     * default cooldown.</p> 
      */
     inline void SetEstimatedInstanceWarmup(int value) { m_estimatedInstanceWarmupHasBeenSet = true; m_estimatedInstanceWarmup = value; }
 
     /**
-     * <p>The estimated time, in seconds, until a newly launched instance can
-     * contribute to the CloudWatch metrics. If not provided, the default is to use the
-     * value from the default cooldown period for the Auto Scaling group.</p> <p>Valid
-     * only if the policy type is <code>TargetTrackingScaling</code> or
-     * <code>StepScaling</code>.</p>
+     * <p> <i>Not needed if the default instance warmup is defined for the group.</i>
+     * </p> <p>The estimated time, in seconds, until a newly launched instance can
+     * contribute to the CloudWatch metrics. This warm-up period applies to instances
+     * launched due to a specific target tracking or step scaling policy. When a
+     * warm-up period is specified here, it overrides the default instance warmup.</p>
+     * <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or
+     * <code>StepScaling</code>.</p>  <p>The default is to use the value for the
+     * default instance warmup defined for the group. If default instance warmup is
+     * null, then <code>EstimatedInstanceWarmup</code> falls back to the value of
+     * default cooldown.</p> 
      */
     inline PutScalingPolicyRequest& WithEstimatedInstanceWarmup(int value) { SetEstimatedInstanceWarmup(value); return *this;}
 

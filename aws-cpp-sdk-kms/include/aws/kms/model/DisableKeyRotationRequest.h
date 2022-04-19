@@ -35,10 +35,12 @@ namespace Model
 
 
     /**
-     * <p>Identifies a symmetric KMS key. You cannot enable or disable automatic
-     * rotation of <a
+     * <p>Identifies a symmetric encryption KMS key. You cannot enable or disable
+     * automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
-     * KMS keys</a>, KMS keys with <a
+     * KMS keys</a>, <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS
+     * keys</a>, KMS keys with <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
      * key material</a>, or KMS keys in a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
@@ -52,10 +54,12 @@ namespace Model
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>Identifies a symmetric KMS key. You cannot enable or disable automatic
-     * rotation of <a
+     * <p>Identifies a symmetric encryption KMS key. You cannot enable or disable
+     * automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
-     * KMS keys</a>, KMS keys with <a
+     * KMS keys</a>, <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS
+     * keys</a>, KMS keys with <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
      * key material</a>, or KMS keys in a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
@@ -69,10 +73,12 @@ namespace Model
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>Identifies a symmetric KMS key. You cannot enable or disable automatic
-     * rotation of <a
+     * <p>Identifies a symmetric encryption KMS key. You cannot enable or disable
+     * automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
-     * KMS keys</a>, KMS keys with <a
+     * KMS keys</a>, <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS
+     * keys</a>, KMS keys with <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
      * key material</a>, or KMS keys in a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
@@ -86,10 +92,12 @@ namespace Model
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>Identifies a symmetric KMS key. You cannot enable or disable automatic
-     * rotation of <a
+     * <p>Identifies a symmetric encryption KMS key. You cannot enable or disable
+     * automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
-     * KMS keys</a>, KMS keys with <a
+     * KMS keys</a>, <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS
+     * keys</a>, KMS keys with <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
      * key material</a>, or KMS keys in a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
@@ -103,10 +111,12 @@ namespace Model
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>Identifies a symmetric KMS key. You cannot enable or disable automatic
-     * rotation of <a
+     * <p>Identifies a symmetric encryption KMS key. You cannot enable or disable
+     * automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
-     * KMS keys</a>, KMS keys with <a
+     * KMS keys</a>, <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS
+     * keys</a>, KMS keys with <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
      * key material</a>, or KMS keys in a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
@@ -120,10 +130,12 @@ namespace Model
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>Identifies a symmetric KMS key. You cannot enable or disable automatic
-     * rotation of <a
+     * <p>Identifies a symmetric encryption KMS key. You cannot enable or disable
+     * automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
-     * KMS keys</a>, KMS keys with <a
+     * KMS keys</a>, <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS
+     * keys</a>, KMS keys with <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
      * key material</a>, or KMS keys in a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
@@ -137,10 +149,12 @@ namespace Model
     inline DisableKeyRotationRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>Identifies a symmetric KMS key. You cannot enable or disable automatic
-     * rotation of <a
+     * <p>Identifies a symmetric encryption KMS key. You cannot enable or disable
+     * automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
-     * KMS keys</a>, KMS keys with <a
+     * KMS keys</a>, <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS
+     * keys</a>, KMS keys with <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
      * key material</a>, or KMS keys in a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
@@ -154,10 +168,12 @@ namespace Model
     inline DisableKeyRotationRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Identifies a symmetric KMS key. You cannot enable or disable automatic
-     * rotation of <a
+     * <p>Identifies a symmetric encryption KMS key. You cannot enable or disable
+     * automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
-     * KMS keys</a>, KMS keys with <a
+     * KMS keys</a>, <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS
+     * keys</a>, KMS keys with <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
      * key material</a>, or KMS keys in a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom

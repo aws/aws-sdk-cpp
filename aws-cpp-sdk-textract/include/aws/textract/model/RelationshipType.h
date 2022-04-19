@@ -20,7 +20,8 @@ namespace Model
     CHILD,
     COMPLEX_FEATURES,
     MERGED_CELL,
-    TITLE
+    TITLE,
+    ANSWER
   };
 
 namespace RelationshipTypeMapper

@@ -543,6 +543,27 @@ namespace Model
      */
     inline Association& WithAssociationName(const char* value) { SetAssociationName(value); return *this;}
 
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association.</p>
+     */
+    inline int GetScheduleOffset() const{ return m_scheduleOffset; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association.</p>
+     */
+    inline bool ScheduleOffsetHasBeenSet() const { return m_scheduleOffsetHasBeenSet; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association.</p>
+     */
+    inline void SetScheduleOffset(int value) { m_scheduleOffsetHasBeenSet = true; m_scheduleOffset = value; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association.</p>
+     */
+    inline Association& WithScheduleOffset(int value) { SetScheduleOffset(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -574,6 +595,9 @@ namespace Model
 
     Aws::String m_associationName;
     bool m_associationNameHasBeenSet;
+
+    int m_scheduleOffset;
+    bool m_scheduleOffsetHasBeenSet;
   };
 
 } // namespace Model

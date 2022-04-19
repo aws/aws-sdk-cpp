@@ -28,7 +28,9 @@ Association::Association() :
     m_lastExecutionDateHasBeenSet(false),
     m_overviewHasBeenSet(false),
     m_scheduleExpressionHasBeenSet(false),
-    m_associationNameHasBeenSet(false)
+    m_associationNameHasBeenSet(false),
+    m_scheduleOffset(0),
+    m_scheduleOffsetHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ Association::Association(JsonView jsonValue) :
     m_lastExecutionDateHasBeenSet(false),
     m_overviewHasBeenSet(false),
     m_scheduleExpressionHasBeenSet(false),
-    m_associationNameHasBeenSet(false)
+    m_associationNameHasBeenSet(false),
+    m_scheduleOffset(0),
+    m_scheduleOffsetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -122,6 +126,13 @@ Association& Association::operator =(JsonView jsonValue)
     m_associationNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ScheduleOffset"))
+  {
+    m_scheduleOffset = jsonValue.GetInteger("ScheduleOffset");
+
+    m_scheduleOffsetHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -190,6 +201,12 @@ JsonValue Association::Jsonize() const
   if(m_associationNameHasBeenSet)
   {
    payload.WithString("AssociationName", m_associationName);
+
+  }
+
+  if(m_scheduleOffsetHasBeenSet)
+  {
+   payload.WithInteger("ScheduleOffset", m_scheduleOffset);
 
   }
 

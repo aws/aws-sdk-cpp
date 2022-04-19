@@ -19,7 +19,8 @@ StartDocumentAnalysisRequest::StartDocumentAnalysisRequest() :
     m_jobTagHasBeenSet(false),
     m_notificationChannelHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
-    m_kMSKeyIdHasBeenSet(false)
+    m_kMSKeyIdHasBeenSet(false),
+    m_queriesConfigHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,12 @@ Aws::String StartDocumentAnalysisRequest::SerializePayload() const
   if(m_kMSKeyIdHasBeenSet)
   {
    payload.WithString("KMSKeyId", m_kMSKeyId);
+
+  }
+
+  if(m_queriesConfigHasBeenSet)
+  {
+   payload.WithObject("QueriesConfig", m_queriesConfig.Jsonize());
 
   }
 

@@ -81,9 +81,9 @@ namespace Model
     /**
      * <p>Specifies the details for the steps that are in the specified workflow.</p>
      * <p> The <code>TYPE</code> specifies which of the following actions is being
-     * taken for this step. </p> <ul> <li> <p> <i>Copy</i>: copy the file to another
-     * location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda target</p>
-     * </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p> <i>Tag</i>: add
+     * taken for this step. </p> <ul> <li> <p> <i>COPY</i>: copy the file to another
+     * location</p> </li> <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p>
+     * </li> <li> <p> <i>DELETE</i>: delete the file</p> </li> <li> <p> <i>TAG</i>: add
      * a tag to the file</p> </li> </ul>  <p> Currently, copying and tagging are
      * supported only on S3. </p>  <p> For file location, you specify either the
      * S3 bucket and key, or the EFS filesystem ID and path. </p>
@@ -93,9 +93,9 @@ namespace Model
     /**
      * <p>Specifies the details for the steps that are in the specified workflow.</p>
      * <p> The <code>TYPE</code> specifies which of the following actions is being
-     * taken for this step. </p> <ul> <li> <p> <i>Copy</i>: copy the file to another
-     * location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda target</p>
-     * </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p> <i>Tag</i>: add
+     * taken for this step. </p> <ul> <li> <p> <i>COPY</i>: copy the file to another
+     * location</p> </li> <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p>
+     * </li> <li> <p> <i>DELETE</i>: delete the file</p> </li> <li> <p> <i>TAG</i>: add
      * a tag to the file</p> </li> </ul>  <p> Currently, copying and tagging are
      * supported only on S3. </p>  <p> For file location, you specify either the
      * S3 bucket and key, or the EFS filesystem ID and path. </p>
@@ -105,9 +105,9 @@ namespace Model
     /**
      * <p>Specifies the details for the steps that are in the specified workflow.</p>
      * <p> The <code>TYPE</code> specifies which of the following actions is being
-     * taken for this step. </p> <ul> <li> <p> <i>Copy</i>: copy the file to another
-     * location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda target</p>
-     * </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p> <i>Tag</i>: add
+     * taken for this step. </p> <ul> <li> <p> <i>COPY</i>: copy the file to another
+     * location</p> </li> <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p>
+     * </li> <li> <p> <i>DELETE</i>: delete the file</p> </li> <li> <p> <i>TAG</i>: add
      * a tag to the file</p> </li> </ul>  <p> Currently, copying and tagging are
      * supported only on S3. </p>  <p> For file location, you specify either the
      * S3 bucket and key, or the EFS filesystem ID and path. </p>
@@ -117,9 +117,9 @@ namespace Model
     /**
      * <p>Specifies the details for the steps that are in the specified workflow.</p>
      * <p> The <code>TYPE</code> specifies which of the following actions is being
-     * taken for this step. </p> <ul> <li> <p> <i>Copy</i>: copy the file to another
-     * location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda target</p>
-     * </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p> <i>Tag</i>: add
+     * taken for this step. </p> <ul> <li> <p> <i>COPY</i>: copy the file to another
+     * location</p> </li> <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p>
+     * </li> <li> <p> <i>DELETE</i>: delete the file</p> </li> <li> <p> <i>TAG</i>: add
      * a tag to the file</p> </li> </ul>  <p> Currently, copying and tagging are
      * supported only on S3. </p>  <p> For file location, you specify either the
      * S3 bucket and key, or the EFS filesystem ID and path. </p>
@@ -129,9 +129,9 @@ namespace Model
     /**
      * <p>Specifies the details for the steps that are in the specified workflow.</p>
      * <p> The <code>TYPE</code> specifies which of the following actions is being
-     * taken for this step. </p> <ul> <li> <p> <i>Copy</i>: copy the file to another
-     * location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda target</p>
-     * </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p> <i>Tag</i>: add
+     * taken for this step. </p> <ul> <li> <p> <i>COPY</i>: copy the file to another
+     * location</p> </li> <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p>
+     * </li> <li> <p> <i>DELETE</i>: delete the file</p> </li> <li> <p> <i>TAG</i>: add
      * a tag to the file</p> </li> </ul>  <p> Currently, copying and tagging are
      * supported only on S3. </p>  <p> For file location, you specify either the
      * S3 bucket and key, or the EFS filesystem ID and path. </p>
@@ -141,9 +141,9 @@ namespace Model
     /**
      * <p>Specifies the details for the steps that are in the specified workflow.</p>
      * <p> The <code>TYPE</code> specifies which of the following actions is being
-     * taken for this step. </p> <ul> <li> <p> <i>Copy</i>: copy the file to another
-     * location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda target</p>
-     * </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p> <i>Tag</i>: add
+     * taken for this step. </p> <ul> <li> <p> <i>COPY</i>: copy the file to another
+     * location</p> </li> <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p>
+     * </li> <li> <p> <i>DELETE</i>: delete the file</p> </li> <li> <p> <i>TAG</i>: add
      * a tag to the file</p> </li> </ul>  <p> Currently, copying and tagging are
      * supported only on S3. </p>  <p> For file location, you specify either the
      * S3 bucket and key, or the EFS filesystem ID and path. </p>
@@ -153,9 +153,9 @@ namespace Model
     /**
      * <p>Specifies the details for the steps that are in the specified workflow.</p>
      * <p> The <code>TYPE</code> specifies which of the following actions is being
-     * taken for this step. </p> <ul> <li> <p> <i>Copy</i>: copy the file to another
-     * location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda target</p>
-     * </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p> <i>Tag</i>: add
+     * taken for this step. </p> <ul> <li> <p> <i>COPY</i>: copy the file to another
+     * location</p> </li> <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p>
+     * </li> <li> <p> <i>DELETE</i>: delete the file</p> </li> <li> <p> <i>TAG</i>: add
      * a tag to the file</p> </li> </ul>  <p> Currently, copying and tagging are
      * supported only on S3. </p>  <p> For file location, you specify either the
      * S3 bucket and key, or the EFS filesystem ID and path. </p>
@@ -165,9 +165,9 @@ namespace Model
     /**
      * <p>Specifies the details for the steps that are in the specified workflow.</p>
      * <p> The <code>TYPE</code> specifies which of the following actions is being
-     * taken for this step. </p> <ul> <li> <p> <i>Copy</i>: copy the file to another
-     * location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda target</p>
-     * </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p> <i>Tag</i>: add
+     * taken for this step. </p> <ul> <li> <p> <i>COPY</i>: copy the file to another
+     * location</p> </li> <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p>
+     * </li> <li> <p> <i>DELETE</i>: delete the file</p> </li> <li> <p> <i>TAG</i>: add
      * a tag to the file</p> </li> </ul>  <p> Currently, copying and tagging are
      * supported only on S3. </p>  <p> For file location, you specify either the
      * S3 bucket and key, or the EFS filesystem ID and path. </p>

@@ -34,6 +34,8 @@ namespace Aws
         static const int DescribeKey_HASH = HashingUtils::HashString("DescribeKey");
         static const int GenerateDataKeyPair_HASH = HashingUtils::HashString("GenerateDataKeyPair");
         static const int GenerateDataKeyPairWithoutPlaintext_HASH = HashingUtils::HashString("GenerateDataKeyPairWithoutPlaintext");
+        static const int GenerateMac_HASH = HashingUtils::HashString("GenerateMac");
+        static const int VerifyMac_HASH = HashingUtils::HashString("VerifyMac");
 
 
         GrantOperation GetGrantOperationForName(const Aws::String& name)
@@ -95,6 +97,14 @@ namespace Aws
           {
             return GrantOperation::GenerateDataKeyPairWithoutPlaintext;
           }
+          else if (hashCode == GenerateMac_HASH)
+          {
+            return GrantOperation::GenerateMac;
+          }
+          else if (hashCode == VerifyMac_HASH)
+          {
+            return GrantOperation::VerifyMac;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -137,6 +147,10 @@ namespace Aws
             return "GenerateDataKeyPair";
           case GrantOperation::GenerateDataKeyPairWithoutPlaintext:
             return "GenerateDataKeyPairWithoutPlaintext";
+          case GrantOperation::GenerateMac:
+            return "GenerateMac";
+          case GrantOperation::VerifyMac:
+            return "VerifyMac";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

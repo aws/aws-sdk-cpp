@@ -17,6 +17,7 @@
 #include <aws/kms/model/MultiRegionConfiguration.h>
 #include <aws/kms/model/EncryptionAlgorithmSpec.h>
 #include <aws/kms/model/SigningAlgorithmSpec.h>
+#include <aws/kms/model/MacAlgorithmSpec.h>
 #include <utility>
 
 namespace Aws
@@ -349,8 +350,7 @@ namespace Model
      * <p>The current status of the KMS key.</p> <p>For more information about how key
      * state affects the use of a KMS key, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-     * state: Effect on your KMS key</a> in the <i>Key Management Service Developer
-     * Guide</i>.</p>
+     * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline const KeyState& GetKeyState() const{ return m_keyState; }
 
@@ -358,8 +358,7 @@ namespace Model
      * <p>The current status of the KMS key.</p> <p>For more information about how key
      * state affects the use of a KMS key, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-     * state: Effect on your KMS key</a> in the <i>Key Management Service Developer
-     * Guide</i>.</p>
+     * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline bool KeyStateHasBeenSet() const { return m_keyStateHasBeenSet; }
 
@@ -367,8 +366,7 @@ namespace Model
      * <p>The current status of the KMS key.</p> <p>For more information about how key
      * state affects the use of a KMS key, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-     * state: Effect on your KMS key</a> in the <i>Key Management Service Developer
-     * Guide</i>.</p>
+     * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline void SetKeyState(const KeyState& value) { m_keyStateHasBeenSet = true; m_keyState = value; }
 
@@ -376,8 +374,7 @@ namespace Model
      * <p>The current status of the KMS key.</p> <p>For more information about how key
      * state affects the use of a KMS key, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-     * state: Effect on your KMS key</a> in the <i>Key Management Service Developer
-     * Guide</i>.</p>
+     * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline void SetKeyState(KeyState&& value) { m_keyStateHasBeenSet = true; m_keyState = std::move(value); }
 
@@ -385,8 +382,7 @@ namespace Model
      * <p>The current status of the KMS key.</p> <p>For more information about how key
      * state affects the use of a KMS key, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-     * state: Effect on your KMS key</a> in the <i>Key Management Service Developer
-     * Guide</i>.</p>
+     * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline KeyMetadata& WithKeyState(const KeyState& value) { SetKeyState(value); return *this;}
 
@@ -394,8 +390,7 @@ namespace Model
      * <p>The current status of the KMS key.</p> <p>For more information about how key
      * state affects the use of a KMS key, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-     * state: Effect on your KMS key</a> in the <i>Key Management Service Developer
-     * Guide</i>.</p>
+     * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline KeyMetadata& WithKeyState(KeyState&& value) { SetKeyState(std::move(value)); return *this;}
 
@@ -979,8 +974,8 @@ namespace Model
      * regional (<code>False</code>) key. This value is <code>True</code> for
      * multi-Region primary and replica keys and <code>False</code> for regional KMS
      * keys.</p> <p>For more information about multi-Region keys, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
-     * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region
+     * keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline bool GetMultiRegion() const{ return m_multiRegion; }
 
@@ -989,8 +984,8 @@ namespace Model
      * regional (<code>False</code>) key. This value is <code>True</code> for
      * multi-Region primary and replica keys and <code>False</code> for regional KMS
      * keys.</p> <p>For more information about multi-Region keys, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
-     * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region
+     * keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline bool MultiRegionHasBeenSet() const { return m_multiRegionHasBeenSet; }
 
@@ -999,8 +994,8 @@ namespace Model
      * regional (<code>False</code>) key. This value is <code>True</code> for
      * multi-Region primary and replica keys and <code>False</code> for regional KMS
      * keys.</p> <p>For more information about multi-Region keys, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
-     * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region
+     * keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline void SetMultiRegion(bool value) { m_multiRegionHasBeenSet = true; m_multiRegion = value; }
 
@@ -1009,8 +1004,8 @@ namespace Model
      * regional (<code>False</code>) key. This value is <code>True</code> for
      * multi-Region primary and replica keys and <code>False</code> for regional KMS
      * keys.</p> <p>For more information about multi-Region keys, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
-     * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region
+     * keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline KeyMetadata& WithMultiRegion(bool value) { SetMultiRegion(value); return *this;}
 
@@ -1172,6 +1167,63 @@ namespace Model
      */
     inline KeyMetadata& WithPendingDeletionWindowInDays(int value) { SetPendingDeletionWindowInDays(value); return *this;}
 
+
+    /**
+     * <p>The message authentication code (MAC) algorithm that the HMAC KMS key
+     * supports.</p> <p>This value is present only when the <code>KeyUsage</code> of
+     * the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
+     */
+    inline const Aws::Vector<MacAlgorithmSpec>& GetMacAlgorithms() const{ return m_macAlgorithms; }
+
+    /**
+     * <p>The message authentication code (MAC) algorithm that the HMAC KMS key
+     * supports.</p> <p>This value is present only when the <code>KeyUsage</code> of
+     * the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
+     */
+    inline bool MacAlgorithmsHasBeenSet() const { return m_macAlgorithmsHasBeenSet; }
+
+    /**
+     * <p>The message authentication code (MAC) algorithm that the HMAC KMS key
+     * supports.</p> <p>This value is present only when the <code>KeyUsage</code> of
+     * the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
+     */
+    inline void SetMacAlgorithms(const Aws::Vector<MacAlgorithmSpec>& value) { m_macAlgorithmsHasBeenSet = true; m_macAlgorithms = value; }
+
+    /**
+     * <p>The message authentication code (MAC) algorithm that the HMAC KMS key
+     * supports.</p> <p>This value is present only when the <code>KeyUsage</code> of
+     * the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
+     */
+    inline void SetMacAlgorithms(Aws::Vector<MacAlgorithmSpec>&& value) { m_macAlgorithmsHasBeenSet = true; m_macAlgorithms = std::move(value); }
+
+    /**
+     * <p>The message authentication code (MAC) algorithm that the HMAC KMS key
+     * supports.</p> <p>This value is present only when the <code>KeyUsage</code> of
+     * the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
+     */
+    inline KeyMetadata& WithMacAlgorithms(const Aws::Vector<MacAlgorithmSpec>& value) { SetMacAlgorithms(value); return *this;}
+
+    /**
+     * <p>The message authentication code (MAC) algorithm that the HMAC KMS key
+     * supports.</p> <p>This value is present only when the <code>KeyUsage</code> of
+     * the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
+     */
+    inline KeyMetadata& WithMacAlgorithms(Aws::Vector<MacAlgorithmSpec>&& value) { SetMacAlgorithms(std::move(value)); return *this;}
+
+    /**
+     * <p>The message authentication code (MAC) algorithm that the HMAC KMS key
+     * supports.</p> <p>This value is present only when the <code>KeyUsage</code> of
+     * the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
+     */
+    inline KeyMetadata& AddMacAlgorithms(const MacAlgorithmSpec& value) { m_macAlgorithmsHasBeenSet = true; m_macAlgorithms.push_back(value); return *this; }
+
+    /**
+     * <p>The message authentication code (MAC) algorithm that the HMAC KMS key
+     * supports.</p> <p>This value is present only when the <code>KeyUsage</code> of
+     * the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
+     */
+    inline KeyMetadata& AddMacAlgorithms(MacAlgorithmSpec&& value) { m_macAlgorithmsHasBeenSet = true; m_macAlgorithms.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_aWSAccountId;
@@ -1236,6 +1288,9 @@ namespace Model
 
     int m_pendingDeletionWindowInDays;
     bool m_pendingDeletionWindowInDaysHasBeenSet;
+
+    Aws::Vector<MacAlgorithmSpec> m_macAlgorithms;
+    bool m_macAlgorithmsHasBeenSet;
   };
 
 } // namespace Model

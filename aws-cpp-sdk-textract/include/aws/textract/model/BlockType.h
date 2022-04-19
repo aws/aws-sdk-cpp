@@ -24,7 +24,9 @@ namespace Model
     CELL,
     SELECTION_ELEMENT,
     MERGED_CELL,
-    TITLE
+    TITLE,
+    QUERY,
+    QUERY_RESULT
   };
 
 namespace BlockTypeMapper

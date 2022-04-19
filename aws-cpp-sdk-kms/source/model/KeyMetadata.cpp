@@ -48,7 +48,8 @@ KeyMetadata::KeyMetadata() :
     m_multiRegionHasBeenSet(false),
     m_multiRegionConfigurationHasBeenSet(false),
     m_pendingDeletionWindowInDays(0),
-    m_pendingDeletionWindowInDaysHasBeenSet(false)
+    m_pendingDeletionWindowInDaysHasBeenSet(false),
+    m_macAlgorithmsHasBeenSet(false)
 {
 }
 
@@ -82,7 +83,8 @@ KeyMetadata::KeyMetadata(JsonView jsonValue) :
     m_multiRegionHasBeenSet(false),
     m_multiRegionConfigurationHasBeenSet(false),
     m_pendingDeletionWindowInDays(0),
-    m_pendingDeletionWindowInDaysHasBeenSet(false)
+    m_pendingDeletionWindowInDaysHasBeenSet(false),
+    m_macAlgorithmsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -242,6 +244,16 @@ KeyMetadata& KeyMetadata::operator =(JsonView jsonValue)
     m_pendingDeletionWindowInDaysHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MacAlgorithms"))
+  {
+    Array<JsonView> macAlgorithmsJsonList = jsonValue.GetArray("MacAlgorithms");
+    for(unsigned macAlgorithmsIndex = 0; macAlgorithmsIndex < macAlgorithmsJsonList.GetLength(); ++macAlgorithmsIndex)
+    {
+      m_macAlgorithms.push_back(MacAlgorithmSpecMapper::GetMacAlgorithmSpecForName(macAlgorithmsJsonList[macAlgorithmsIndex].AsString()));
+    }
+    m_macAlgorithmsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -373,6 +385,17 @@ JsonValue KeyMetadata::Jsonize() const
   if(m_pendingDeletionWindowInDaysHasBeenSet)
   {
    payload.WithInteger("PendingDeletionWindowInDays", m_pendingDeletionWindowInDays);
+
+  }
+
+  if(m_macAlgorithmsHasBeenSet)
+  {
+   Array<JsonValue> macAlgorithmsJsonList(m_macAlgorithms.size());
+   for(unsigned macAlgorithmsIndex = 0; macAlgorithmsIndex < macAlgorithmsJsonList.GetLength(); ++macAlgorithmsIndex)
+   {
+     macAlgorithmsJsonList[macAlgorithmsIndex].AsString(MacAlgorithmSpecMapper::GetNameForMacAlgorithmSpec(m_macAlgorithms[macAlgorithmsIndex]));
+   }
+   payload.WithArray("MacAlgorithms", std::move(macAlgorithmsJsonList));
 
   }
 

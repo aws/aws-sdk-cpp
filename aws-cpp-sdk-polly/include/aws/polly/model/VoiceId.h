@@ -81,7 +81,8 @@ namespace Model
     Zhiyu,
     Aria,
     Ayanda,
-    Arlet
+    Arlet,
+    Hannah
   };
 
 namespace VoiceIdMapper

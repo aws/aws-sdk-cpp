@@ -152,12 +152,15 @@ namespace Model
          * <p>Lines and words of text. A LINE <code>Block</code> object contains one or
          * more WORD <code>Block</code> objects. All lines and words that are detected in
          * the document are returned (including text that doesn't have a relationship with
-         * the value of <code>FeatureTypes</code>). </p> </li> </ul> <p>Selection elements
-         * such as check boxes and option buttons (radio buttons) can be detected in form
-         * data and in tables. A SELECTION_ELEMENT <code>Block</code> object contains
-         * information about a selection element, including the selection status.</p>
-         * <p>You can choose which type of analysis to perform by specifying the
-         * <code>FeatureTypes</code> list. </p> <p>The output is returned in a list of
+         * the value of <code>FeatureTypes</code>). </p> </li> <li> <p>Queries.A
+         * QUERIES_RESULT Block object contains the answer to the query, the alias
+         * associated and an ID that connect it to the query asked. This Block also
+         * contains a location and attached confidence score.</p> </li> </ul> <p>Selection
+         * elements such as check boxes and option buttons (radio buttons) can be detected
+         * in form data and in tables. A SELECTION_ELEMENT <code>Block</code> object
+         * contains information about a selection element, including the selection
+         * status.</p> <p>You can choose which type of analysis to perform by specifying
+         * the <code>FeatureTypes</code> list. </p> <p>The output is returned in a list of
          * <code>Block</code> objects.</p> <p> <code>AnalyzeDocument</code> is a
          * synchronous operation. To analyze documents asynchronously, use
          * <a>StartDocumentAnalysis</a>.</p> <p>For more information, see <a
@@ -181,12 +184,15 @@ namespace Model
          * <p>Lines and words of text. A LINE <code>Block</code> object contains one or
          * more WORD <code>Block</code> objects. All lines and words that are detected in
          * the document are returned (including text that doesn't have a relationship with
-         * the value of <code>FeatureTypes</code>). </p> </li> </ul> <p>Selection elements
-         * such as check boxes and option buttons (radio buttons) can be detected in form
-         * data and in tables. A SELECTION_ELEMENT <code>Block</code> object contains
-         * information about a selection element, including the selection status.</p>
-         * <p>You can choose which type of analysis to perform by specifying the
-         * <code>FeatureTypes</code> list. </p> <p>The output is returned in a list of
+         * the value of <code>FeatureTypes</code>). </p> </li> <li> <p>Queries.A
+         * QUERIES_RESULT Block object contains the answer to the query, the alias
+         * associated and an ID that connect it to the query asked. This Block also
+         * contains a location and attached confidence score.</p> </li> </ul> <p>Selection
+         * elements such as check boxes and option buttons (radio buttons) can be detected
+         * in form data and in tables. A SELECTION_ELEMENT <code>Block</code> object
+         * contains information about a selection element, including the selection
+         * status.</p> <p>You can choose which type of analysis to perform by specifying
+         * the <code>FeatureTypes</code> list. </p> <p>The output is returned in a list of
          * <code>Block</code> objects.</p> <p> <code>AnalyzeDocument</code> is a
          * synchronous operation. To analyze documents asynchronously, use
          * <a>StartDocumentAnalysis</a>.</p> <p>For more information, see <a
@@ -212,12 +218,15 @@ namespace Model
          * <p>Lines and words of text. A LINE <code>Block</code> object contains one or
          * more WORD <code>Block</code> objects. All lines and words that are detected in
          * the document are returned (including text that doesn't have a relationship with
-         * the value of <code>FeatureTypes</code>). </p> </li> </ul> <p>Selection elements
-         * such as check boxes and option buttons (radio buttons) can be detected in form
-         * data and in tables. A SELECTION_ELEMENT <code>Block</code> object contains
-         * information about a selection element, including the selection status.</p>
-         * <p>You can choose which type of analysis to perform by specifying the
-         * <code>FeatureTypes</code> list. </p> <p>The output is returned in a list of
+         * the value of <code>FeatureTypes</code>). </p> </li> <li> <p>Queries.A
+         * QUERIES_RESULT Block object contains the answer to the query, the alias
+         * associated and an ID that connect it to the query asked. This Block also
+         * contains a location and attached confidence score.</p> </li> </ul> <p>Selection
+         * elements such as check boxes and option buttons (radio buttons) can be detected
+         * in form data and in tables. A SELECTION_ELEMENT <code>Block</code> object
+         * contains information about a selection element, including the selection
+         * status.</p> <p>You can choose which type of analysis to perform by specifying
+         * the <code>FeatureTypes</code> list. </p> <p>The output is returned in a list of
          * <code>Block</code> objects.</p> <p> <code>AnalyzeDocument</code> is a
          * synchronous operation. To analyze documents asynchronously, use
          * <a>StartDocumentAnalysis</a>.</p> <p>For more information, see <a
@@ -279,8 +288,9 @@ namespace Model
         /**
          * <p>Analyzes identity documents for relevant information. This information is
          * extracted and returned as <code>IdentityDocumentFields</code>, which records
-         * both the normalized field and value of the extracted text.</p><p><h3>See
-         * Also:</h3>   <a
+         * both the normalized field and value of the extracted text.Unlike other Amazon
+         * Textract operations, <code>AnalyzeID</code> doesn't return any Geometry
+         * data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeID">AWS
          * API Reference</a></p>
          */
@@ -289,8 +299,9 @@ namespace Model
         /**
          * <p>Analyzes identity documents for relevant information. This information is
          * extracted and returned as <code>IdentityDocumentFields</code>, which records
-         * both the normalized field and value of the extracted text.</p><p><h3>See
-         * Also:</h3>   <a
+         * both the normalized field and value of the extracted text.Unlike other Amazon
+         * Textract operations, <code>AnalyzeID</code> doesn't return any Geometry
+         * data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeID">AWS
          * API Reference</a></p>
          *
@@ -301,8 +312,9 @@ namespace Model
         /**
          * <p>Analyzes identity documents for relevant information. This information is
          * extracted and returned as <code>IdentityDocumentFields</code>, which records
-         * both the normalized field and value of the extracted text.</p><p><h3>See
-         * Also:</h3>   <a
+         * both the normalized field and value of the extracted text.Unlike other Amazon
+         * Textract operations, <code>AnalyzeID</code> doesn't return any Geometry
+         * data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeID">AWS
          * API Reference</a></p>
          *
@@ -313,14 +325,14 @@ namespace Model
         /**
          * <p>Detects text in the input document. Amazon Textract can detect lines of text
          * and the words that make up a line of text. The input document must be an image
-         * in JPEG or PNG format. <code>DetectDocumentText</code> returns the detected text
-         * in an array of <a>Block</a> objects. </p> <p>Each document page has as an
-         * associated <code>Block</code> of type PAGE. Each PAGE <code>Block</code> object
-         * is the parent of LINE <code>Block</code> objects that represent the lines of
-         * detected text on a page. A LINE <code>Block</code> object is a parent for each
-         * word that makes up the line. Words are represented by <code>Block</code> objects
-         * of type WORD.</p> <p> <code>DetectDocumentText</code> is a synchronous
-         * operation. To analyze documents asynchronously, use
+         * in JPEG, PNG, PDF, or TIFF format. <code>DetectDocumentText</code> returns the
+         * detected text in an array of <a>Block</a> objects. </p> <p>Each document page
+         * has as an associated <code>Block</code> of type PAGE. Each PAGE
+         * <code>Block</code> object is the parent of LINE <code>Block</code> objects that
+         * represent the lines of detected text on a page. A LINE <code>Block</code> object
+         * is a parent for each word that makes up the line. Words are represented by
+         * <code>Block</code> objects of type WORD.</p> <p> <code>DetectDocumentText</code>
+         * is a synchronous operation. To analyze documents asynchronously, use
          * <a>StartDocumentTextDetection</a>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document
          * Text Detection</a>.</p><p><h3>See Also:</h3>   <a
@@ -332,14 +344,14 @@ namespace Model
         /**
          * <p>Detects text in the input document. Amazon Textract can detect lines of text
          * and the words that make up a line of text. The input document must be an image
-         * in JPEG or PNG format. <code>DetectDocumentText</code> returns the detected text
-         * in an array of <a>Block</a> objects. </p> <p>Each document page has as an
-         * associated <code>Block</code> of type PAGE. Each PAGE <code>Block</code> object
-         * is the parent of LINE <code>Block</code> objects that represent the lines of
-         * detected text on a page. A LINE <code>Block</code> object is a parent for each
-         * word that makes up the line. Words are represented by <code>Block</code> objects
-         * of type WORD.</p> <p> <code>DetectDocumentText</code> is a synchronous
-         * operation. To analyze documents asynchronously, use
+         * in JPEG, PNG, PDF, or TIFF format. <code>DetectDocumentText</code> returns the
+         * detected text in an array of <a>Block</a> objects. </p> <p>Each document page
+         * has as an associated <code>Block</code> of type PAGE. Each PAGE
+         * <code>Block</code> object is the parent of LINE <code>Block</code> objects that
+         * represent the lines of detected text on a page. A LINE <code>Block</code> object
+         * is a parent for each word that makes up the line. Words are represented by
+         * <code>Block</code> objects of type WORD.</p> <p> <code>DetectDocumentText</code>
+         * is a synchronous operation. To analyze documents asynchronously, use
          * <a>StartDocumentTextDetection</a>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document
          * Text Detection</a>.</p><p><h3>See Also:</h3>   <a
@@ -353,14 +365,14 @@ namespace Model
         /**
          * <p>Detects text in the input document. Amazon Textract can detect lines of text
          * and the words that make up a line of text. The input document must be an image
-         * in JPEG or PNG format. <code>DetectDocumentText</code> returns the detected text
-         * in an array of <a>Block</a> objects. </p> <p>Each document page has as an
-         * associated <code>Block</code> of type PAGE. Each PAGE <code>Block</code> object
-         * is the parent of LINE <code>Block</code> objects that represent the lines of
-         * detected text on a page. A LINE <code>Block</code> object is a parent for each
-         * word that makes up the line. Words are represented by <code>Block</code> objects
-         * of type WORD.</p> <p> <code>DetectDocumentText</code> is a synchronous
-         * operation. To analyze documents asynchronously, use
+         * in JPEG, PNG, PDF, or TIFF format. <code>DetectDocumentText</code> returns the
+         * detected text in an array of <a>Block</a> objects. </p> <p>Each document page
+         * has as an associated <code>Block</code> of type PAGE. Each PAGE
+         * <code>Block</code> object is the parent of LINE <code>Block</code> objects that
+         * represent the lines of detected text on a page. A LINE <code>Block</code> object
+         * is a parent for each word that makes up the line. Words are represented by
+         * <code>Block</code> objects of type WORD.</p> <p> <code>DetectDocumentText</code>
+         * is a synchronous operation. To analyze documents asynchronously, use
          * <a>StartDocumentTextDetection</a>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document
          * Text Detection</a>.</p><p><h3>See Also:</h3>   <a
@@ -396,8 +408,11 @@ namespace Model
          * <code>Block</code> objects. All lines and words that are detected in the
          * document are returned (including text that doesn't have a relationship with the
          * value of the <code>StartDocumentAnalysis</code> <code>FeatureTypes</code> input
-         * parameter). </p> </li> </ul> <p>Selection elements such as check boxes and
-         * option buttons (radio buttons) can be detected in form data and in tables. A
+         * parameter). </p> </li> <li> <p>Queries. A QUERIES_RESULT Block object contains
+         * the answer to the query, the alias associated and an ID that connect it to the
+         * query asked. This Block also contains a location and attached confidence
+         * score</p> </li> </ul> <p>Selection elements such as check boxes and option
+         * buttons (radio buttons) can be detected in form data and in tables. A
          * SELECTION_ELEMENT <code>Block</code> object contains information about a
          * selection element, including the selection status.</p> <p>Use the
          * <code>MaxResults</code> parameter to limit the number of blocks that are
@@ -440,8 +455,11 @@ namespace Model
          * <code>Block</code> objects. All lines and words that are detected in the
          * document are returned (including text that doesn't have a relationship with the
          * value of the <code>StartDocumentAnalysis</code> <code>FeatureTypes</code> input
-         * parameter). </p> </li> </ul> <p>Selection elements such as check boxes and
-         * option buttons (radio buttons) can be detected in form data and in tables. A
+         * parameter). </p> </li> <li> <p>Queries. A QUERIES_RESULT Block object contains
+         * the answer to the query, the alias associated and an ID that connect it to the
+         * query asked. This Block also contains a location and attached confidence
+         * score</p> </li> </ul> <p>Selection elements such as check boxes and option
+         * buttons (radio buttons) can be detected in form data and in tables. A
          * SELECTION_ELEMENT <code>Block</code> object contains information about a
          * selection element, including the selection status.</p> <p>Use the
          * <code>MaxResults</code> parameter to limit the number of blocks that are
@@ -486,8 +504,11 @@ namespace Model
          * <code>Block</code> objects. All lines and words that are detected in the
          * document are returned (including text that doesn't have a relationship with the
          * value of the <code>StartDocumentAnalysis</code> <code>FeatureTypes</code> input
-         * parameter). </p> </li> </ul> <p>Selection elements such as check boxes and
-         * option buttons (radio buttons) can be detected in form data and in tables. A
+         * parameter). </p> </li> <li> <p>Queries. A QUERIES_RESULT Block object contains
+         * the answer to the query, the alias associated and an ID that connect it to the
+         * query asked. This Block also contains a location and attached confidence
+         * score</p> </li> </ul> <p>Selection elements such as check boxes and option
+         * buttons (radio buttons) can be detected in form data and in tables. A
          * SELECTION_ELEMENT <code>Block</code> object contains information about a
          * selection element, including the selection status.</p> <p>Use the
          * <code>MaxResults</code> parameter to limit the number of blocks that are

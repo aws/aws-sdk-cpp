@@ -25,6 +25,7 @@ namespace Aws
         static const int COMPLEX_FEATURES_HASH = HashingUtils::HashString("COMPLEX_FEATURES");
         static const int MERGED_CELL_HASH = HashingUtils::HashString("MERGED_CELL");
         static const int TITLE_HASH = HashingUtils::HashString("TITLE");
+        static const int ANSWER_HASH = HashingUtils::HashString("ANSWER");
 
 
         RelationshipType GetRelationshipTypeForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return RelationshipType::TITLE;
           }
+          else if (hashCode == ANSWER_HASH)
+          {
+            return RelationshipType::ANSWER;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "MERGED_CELL";
           case RelationshipType::TITLE:
             return "TITLE";
+          case RelationshipType::ANSWER:
+            return "ANSWER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

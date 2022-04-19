@@ -73,6 +73,8 @@
 #include <aws/personalize/model/ListSolutionVersionsRequest.h>
 #include <aws/personalize/model/ListSolutionsRequest.h>
 #include <aws/personalize/model/ListTagsForResourceRequest.h>
+#include <aws/personalize/model/StartRecommenderRequest.h>
+#include <aws/personalize/model/StopRecommenderRequest.h>
 #include <aws/personalize/model/StopSolutionVersionCreationRequest.h>
 #include <aws/personalize/model/TagResourceRequest.h>
 #include <aws/personalize/model/UntagResourceRequest.h>
@@ -1422,6 +1424,54 @@ void PersonalizeClient::ListTagsForResourceAsync(const ListTagsForResourceReques
 void PersonalizeClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+StartRecommenderOutcome PersonalizeClient::StartRecommender(const StartRecommenderRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StartRecommenderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartRecommenderOutcomeCallable PersonalizeClient::StartRecommenderCallable(const StartRecommenderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartRecommenderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartRecommender(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::StartRecommenderAsync(const StartRecommenderRequest& request, const StartRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartRecommenderAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::StartRecommenderAsyncHelper(const StartRecommenderRequest& request, const StartRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartRecommender(request), context);
+}
+
+StopRecommenderOutcome PersonalizeClient::StopRecommender(const StopRecommenderRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StopRecommenderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopRecommenderOutcomeCallable PersonalizeClient::StopRecommenderCallable(const StopRecommenderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopRecommenderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopRecommender(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::StopRecommenderAsync(const StopRecommenderRequest& request, const StopRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopRecommenderAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::StopRecommenderAsyncHelper(const StopRecommenderRequest& request, const StopRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopRecommender(request), context);
 }
 
 StopSolutionVersionCreationOutcome PersonalizeClient::StopSolutionVersionCreation(const StopSolutionVersionCreationRequest& request) const

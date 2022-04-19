@@ -29,7 +29,8 @@ namespace Model
     WORKDOCS,
     FSX,
     SLACK,
-    BOX
+    BOX,
+    QUIP
   };
 
 namespace DataSourceTypeMapper

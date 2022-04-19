@@ -872,7 +872,7 @@ namespace Model
     /**
      * <p>Configuration information for an Amazon VPC to connect to your Box. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/endra/latest/dg/vpc-configuration.html">Configuring
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
      * a VPC</a>.</p>
      */
     inline const DataSourceVpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
@@ -880,7 +880,7 @@ namespace Model
     /**
      * <p>Configuration information for an Amazon VPC to connect to your Box. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/endra/latest/dg/vpc-configuration.html">Configuring
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
      * a VPC</a>.</p>
      */
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
@@ -888,7 +888,7 @@ namespace Model
     /**
      * <p>Configuration information for an Amazon VPC to connect to your Box. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/endra/latest/dg/vpc-configuration.html">Configuring
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
      * a VPC</a>.</p>
      */
     inline void SetVpcConfiguration(const DataSourceVpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
@@ -896,7 +896,7 @@ namespace Model
     /**
      * <p>Configuration information for an Amazon VPC to connect to your Box. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/endra/latest/dg/vpc-configuration.html">Configuring
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
      * a VPC</a>.</p>
      */
     inline void SetVpcConfiguration(DataSourceVpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
@@ -904,7 +904,7 @@ namespace Model
     /**
      * <p>Configuration information for an Amazon VPC to connect to your Box. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/endra/latest/dg/vpc-configuration.html">Configuring
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
      * a VPC</a>.</p>
      */
     inline BoxConfiguration& WithVpcConfiguration(const DataSourceVpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
@@ -912,7 +912,7 @@ namespace Model
     /**
      * <p>Configuration information for an Amazon VPC to connect to your Box. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/endra/latest/dg/vpc-configuration.html">Configuring
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
      * a VPC</a>.</p>
      */
     inline BoxConfiguration& WithVpcConfiguration(DataSourceVpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}

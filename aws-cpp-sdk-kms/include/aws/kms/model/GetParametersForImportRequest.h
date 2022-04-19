@@ -37,8 +37,8 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the symmetric KMS key into which you will import key
-     * material. The <code>Origin</code> of the KMS key must be
+     * <p>The identifier of the symmetric encryption KMS key into which you will import
+     * key material. The <code>Origin</code> of the KMS key must be
      * <code>EXTERNAL</code>.</p> <p>Specify the key ID or key ARN of the KMS key.</p>
      * <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
@@ -49,8 +49,8 @@ namespace Model
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The identifier of the symmetric KMS key into which you will import key
-     * material. The <code>Origin</code> of the KMS key must be
+     * <p>The identifier of the symmetric encryption KMS key into which you will import
+     * key material. The <code>Origin</code> of the KMS key must be
      * <code>EXTERNAL</code>.</p> <p>Specify the key ID or key ARN of the KMS key.</p>
      * <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
@@ -61,8 +61,8 @@ namespace Model
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the symmetric KMS key into which you will import key
-     * material. The <code>Origin</code> of the KMS key must be
+     * <p>The identifier of the symmetric encryption KMS key into which you will import
+     * key material. The <code>Origin</code> of the KMS key must be
      * <code>EXTERNAL</code>.</p> <p>Specify the key ID or key ARN of the KMS key.</p>
      * <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
@@ -73,8 +73,8 @@ namespace Model
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>The identifier of the symmetric KMS key into which you will import key
-     * material. The <code>Origin</code> of the KMS key must be
+     * <p>The identifier of the symmetric encryption KMS key into which you will import
+     * key material. The <code>Origin</code> of the KMS key must be
      * <code>EXTERNAL</code>.</p> <p>Specify the key ID or key ARN of the KMS key.</p>
      * <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
@@ -85,8 +85,8 @@ namespace Model
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>The identifier of the symmetric KMS key into which you will import key
-     * material. The <code>Origin</code> of the KMS key must be
+     * <p>The identifier of the symmetric encryption KMS key into which you will import
+     * key material. The <code>Origin</code> of the KMS key must be
      * <code>EXTERNAL</code>.</p> <p>Specify the key ID or key ARN of the KMS key.</p>
      * <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
@@ -97,8 +97,8 @@ namespace Model
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>The identifier of the symmetric KMS key into which you will import key
-     * material. The <code>Origin</code> of the KMS key must be
+     * <p>The identifier of the symmetric encryption KMS key into which you will import
+     * key material. The <code>Origin</code> of the KMS key must be
      * <code>EXTERNAL</code>.</p> <p>Specify the key ID or key ARN of the KMS key.</p>
      * <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
@@ -109,8 +109,8 @@ namespace Model
     inline GetParametersForImportRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The identifier of the symmetric KMS key into which you will import key
-     * material. The <code>Origin</code> of the KMS key must be
+     * <p>The identifier of the symmetric encryption KMS key into which you will import
+     * key material. The <code>Origin</code> of the KMS key must be
      * <code>EXTERNAL</code>.</p> <p>Specify the key ID or key ARN of the KMS key.</p>
      * <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
@@ -121,8 +121,8 @@ namespace Model
     inline GetParametersForImportRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the symmetric KMS key into which you will import key
-     * material. The <code>Origin</code> of the KMS key must be
+     * <p>The identifier of the symmetric encryption KMS key into which you will import
+     * key material. The <code>Origin</code> of the KMS key must be
      * <code>EXTERNAL</code>.</p> <p>Specify the key ID or key ARN of the KMS key.</p>
      * <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:

@@ -357,10 +357,12 @@ namespace Model
      * <p>Determines the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> for which you can use the KMS key. The default value is
-     * <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric KMS
-     * keys. You can't change the <code>KeyUsage</code> value after the KMS key is
-     * created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For symmetric KMS
-     * keys, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li>
+     * <code>ENCRYPT_DECRYPT</code>. This parameter is optional when you are creating a
+     * symmetric encryption KMS key; otherwise, it is required. You can't change the
+     * <code>KeyUsage</code> value after the KMS key is created.</p> <p>Select only one
+     * valid value.</p> <ul> <li> <p>For symmetric encryption KMS keys, omit the
+     * parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li> <p>For HMAC
+     * KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p> </li> <li>
      * <p>For asymmetric KMS keys with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
@@ -372,10 +374,12 @@ namespace Model
      * <p>Determines the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> for which you can use the KMS key. The default value is
-     * <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric KMS
-     * keys. You can't change the <code>KeyUsage</code> value after the KMS key is
-     * created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For symmetric KMS
-     * keys, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li>
+     * <code>ENCRYPT_DECRYPT</code>. This parameter is optional when you are creating a
+     * symmetric encryption KMS key; otherwise, it is required. You can't change the
+     * <code>KeyUsage</code> value after the KMS key is created.</p> <p>Select only one
+     * valid value.</p> <ul> <li> <p>For symmetric encryption KMS keys, omit the
+     * parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li> <p>For HMAC
+     * KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p> </li> <li>
      * <p>For asymmetric KMS keys with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
@@ -387,10 +391,12 @@ namespace Model
      * <p>Determines the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> for which you can use the KMS key. The default value is
-     * <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric KMS
-     * keys. You can't change the <code>KeyUsage</code> value after the KMS key is
-     * created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For symmetric KMS
-     * keys, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li>
+     * <code>ENCRYPT_DECRYPT</code>. This parameter is optional when you are creating a
+     * symmetric encryption KMS key; otherwise, it is required. You can't change the
+     * <code>KeyUsage</code> value after the KMS key is created.</p> <p>Select only one
+     * valid value.</p> <ul> <li> <p>For symmetric encryption KMS keys, omit the
+     * parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li> <p>For HMAC
+     * KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p> </li> <li>
      * <p>For asymmetric KMS keys with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
@@ -402,10 +408,12 @@ namespace Model
      * <p>Determines the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> for which you can use the KMS key. The default value is
-     * <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric KMS
-     * keys. You can't change the <code>KeyUsage</code> value after the KMS key is
-     * created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For symmetric KMS
-     * keys, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li>
+     * <code>ENCRYPT_DECRYPT</code>. This parameter is optional when you are creating a
+     * symmetric encryption KMS key; otherwise, it is required. You can't change the
+     * <code>KeyUsage</code> value after the KMS key is created.</p> <p>Select only one
+     * valid value.</p> <ul> <li> <p>For symmetric encryption KMS keys, omit the
+     * parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li> <p>For HMAC
+     * KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p> </li> <li>
      * <p>For asymmetric KMS keys with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
@@ -417,10 +425,12 @@ namespace Model
      * <p>Determines the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> for which you can use the KMS key. The default value is
-     * <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric KMS
-     * keys. You can't change the <code>KeyUsage</code> value after the KMS key is
-     * created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For symmetric KMS
-     * keys, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li>
+     * <code>ENCRYPT_DECRYPT</code>. This parameter is optional when you are creating a
+     * symmetric encryption KMS key; otherwise, it is required. You can't change the
+     * <code>KeyUsage</code> value after the KMS key is created.</p> <p>Select only one
+     * valid value.</p> <ul> <li> <p>For symmetric encryption KMS keys, omit the
+     * parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li> <p>For HMAC
+     * KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p> </li> <li>
      * <p>For asymmetric KMS keys with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
@@ -432,10 +442,12 @@ namespace Model
      * <p>Determines the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> for which you can use the KMS key. The default value is
-     * <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric KMS
-     * keys. You can't change the <code>KeyUsage</code> value after the KMS key is
-     * created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For symmetric KMS
-     * keys, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li>
+     * <code>ENCRYPT_DECRYPT</code>. This parameter is optional when you are creating a
+     * symmetric encryption KMS key; otherwise, it is required. You can't change the
+     * <code>KeyUsage</code> value after the KMS key is created.</p> <p>Select only one
+     * valid value.</p> <ul> <li> <p>For symmetric encryption KMS keys, omit the
+     * parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li> <p>For HMAC
+     * KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p> </li> <li>
      * <p>For asymmetric KMS keys with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
@@ -449,33 +461,35 @@ namespace Model
      * <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit symmetric key
      * for encryption and decryption. For help choosing a key spec for your KMS key,
      * see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-choose.html">How
-     * to Choose Your KMS key Configuration</a> in the <i> <i>Key Management Service
-     * Developer Guide</i> </i>.</p> <p>The <code>KeySpec</code> determines whether the
-     * KMS key contains a symmetric key or an asymmetric key pair. It also determines
-     * the encryption algorithms or signing algorithms that the KMS key supports. You
-     * can't change the <code>KeySpec</code> after the KMS key is created. To further
-     * restrict the algorithms that can be used with the KMS key, use a condition key
-     * in its key policy or IAM policy. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing
+     * a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i>
+     * </i>.</p> <p>The <code>KeySpec</code> determines whether the KMS key contains a
+     * symmetric key or an asymmetric key pair. It also determines the algorithms that
+     * the KMS key supports. You can't change the <code>KeySpec</code> after the KMS
+     * key is created. To further restrict the algorithms that can be used with the KMS
+     * key, use a condition key in its key policy or IAM policy. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a>
      * or <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing
      * Algorithm</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
      *  <p> <a
      * href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">Amazon Web
-     * Services services that are integrated with KMS</a> use symmetric KMS keys to
-     * protect your data. These services do not support asymmetric KMS keys. For help
-     * determining whether a KMS key is symmetric or asymmetric, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying
-     * Symmetric and Asymmetric KMS keys</a> in the <i>Key Management Service Developer
-     * Guide</i>.</p>  <p>KMS supports the following key specs for KMS
-     * keys:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
-     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
-     * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
-     * <li> <p> <code>RSA_3072</code> </p> </li> <li> <p> <code>RSA_4096</code> </p>
-     * </li> </ul> </li> <li> <p>Asymmetric NIST-recommended elliptic curve key
-     * pairs</p> <ul> <li> <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li> <li>
-     * <p> <code>ECC_NIST_P384</code> (secp384r1)</p> </li> <li> <p>
+     * Services services that are integrated with KMS</a> use symmetric encryption KMS
+     * keys to protect your data. These services do not support asymmetric KMS keys or
+     * HMAC KMS keys.</p>  <p>KMS supports the following key specs for KMS
+     * keys:</p> <ul> <li> <p>Symmetric encryption key (default)</p> <ul> <li> <p>
+     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li> <p>HMAC
+     * keys (symmetric)</p> <ul> <li> <p> <code>HMAC_224</code> </p> </li> <li> <p>
+     * <code>HMAC_256</code> </p> </li> <li> <p> <code>HMAC_384</code> </p> </li> <li>
+     * <p> <code>HMAC_512</code> </p> </li> </ul> </li> <li> <p>Asymmetric RSA key
+     * pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li> <li> <p>
+     * <code>RSA_3072</code> </p> </li> <li> <p> <code>RSA_4096</code> </p> </li> </ul>
+     * </li> <li> <p>Asymmetric NIST-recommended elliptic curve key pairs</p> <ul> <li>
+     * <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li> <li> <p>
+     * <code>ECC_NIST_P384</code> (secp384r1)</p> </li> <li> <p>
      * <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li> <p>Other
      * asymmetric elliptic curve key pairs</p> <ul> <li> <p>
      * <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
@@ -488,33 +502,35 @@ namespace Model
      * <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit symmetric key
      * for encryption and decryption. For help choosing a key spec for your KMS key,
      * see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-choose.html">How
-     * to Choose Your KMS key Configuration</a> in the <i> <i>Key Management Service
-     * Developer Guide</i> </i>.</p> <p>The <code>KeySpec</code> determines whether the
-     * KMS key contains a symmetric key or an asymmetric key pair. It also determines
-     * the encryption algorithms or signing algorithms that the KMS key supports. You
-     * can't change the <code>KeySpec</code> after the KMS key is created. To further
-     * restrict the algorithms that can be used with the KMS key, use a condition key
-     * in its key policy or IAM policy. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing
+     * a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i>
+     * </i>.</p> <p>The <code>KeySpec</code> determines whether the KMS key contains a
+     * symmetric key or an asymmetric key pair. It also determines the algorithms that
+     * the KMS key supports. You can't change the <code>KeySpec</code> after the KMS
+     * key is created. To further restrict the algorithms that can be used with the KMS
+     * key, use a condition key in its key policy or IAM policy. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a>
      * or <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing
      * Algorithm</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
      *  <p> <a
      * href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">Amazon Web
-     * Services services that are integrated with KMS</a> use symmetric KMS keys to
-     * protect your data. These services do not support asymmetric KMS keys. For help
-     * determining whether a KMS key is symmetric or asymmetric, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying
-     * Symmetric and Asymmetric KMS keys</a> in the <i>Key Management Service Developer
-     * Guide</i>.</p>  <p>KMS supports the following key specs for KMS
-     * keys:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
-     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
-     * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
-     * <li> <p> <code>RSA_3072</code> </p> </li> <li> <p> <code>RSA_4096</code> </p>
-     * </li> </ul> </li> <li> <p>Asymmetric NIST-recommended elliptic curve key
-     * pairs</p> <ul> <li> <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li> <li>
-     * <p> <code>ECC_NIST_P384</code> (secp384r1)</p> </li> <li> <p>
+     * Services services that are integrated with KMS</a> use symmetric encryption KMS
+     * keys to protect your data. These services do not support asymmetric KMS keys or
+     * HMAC KMS keys.</p>  <p>KMS supports the following key specs for KMS
+     * keys:</p> <ul> <li> <p>Symmetric encryption key (default)</p> <ul> <li> <p>
+     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li> <p>HMAC
+     * keys (symmetric)</p> <ul> <li> <p> <code>HMAC_224</code> </p> </li> <li> <p>
+     * <code>HMAC_256</code> </p> </li> <li> <p> <code>HMAC_384</code> </p> </li> <li>
+     * <p> <code>HMAC_512</code> </p> </li> </ul> </li> <li> <p>Asymmetric RSA key
+     * pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li> <li> <p>
+     * <code>RSA_3072</code> </p> </li> <li> <p> <code>RSA_4096</code> </p> </li> </ul>
+     * </li> <li> <p>Asymmetric NIST-recommended elliptic curve key pairs</p> <ul> <li>
+     * <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li> <li> <p>
+     * <code>ECC_NIST_P384</code> (secp384r1)</p> </li> <li> <p>
      * <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li> <p>Other
      * asymmetric elliptic curve key pairs</p> <ul> <li> <p>
      * <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
@@ -527,33 +543,35 @@ namespace Model
      * <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit symmetric key
      * for encryption and decryption. For help choosing a key spec for your KMS key,
      * see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-choose.html">How
-     * to Choose Your KMS key Configuration</a> in the <i> <i>Key Management Service
-     * Developer Guide</i> </i>.</p> <p>The <code>KeySpec</code> determines whether the
-     * KMS key contains a symmetric key or an asymmetric key pair. It also determines
-     * the encryption algorithms or signing algorithms that the KMS key supports. You
-     * can't change the <code>KeySpec</code> after the KMS key is created. To further
-     * restrict the algorithms that can be used with the KMS key, use a condition key
-     * in its key policy or IAM policy. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing
+     * a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i>
+     * </i>.</p> <p>The <code>KeySpec</code> determines whether the KMS key contains a
+     * symmetric key or an asymmetric key pair. It also determines the algorithms that
+     * the KMS key supports. You can't change the <code>KeySpec</code> after the KMS
+     * key is created. To further restrict the algorithms that can be used with the KMS
+     * key, use a condition key in its key policy or IAM policy. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a>
      * or <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing
      * Algorithm</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
      *  <p> <a
      * href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">Amazon Web
-     * Services services that are integrated with KMS</a> use symmetric KMS keys to
-     * protect your data. These services do not support asymmetric KMS keys. For help
-     * determining whether a KMS key is symmetric or asymmetric, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying
-     * Symmetric and Asymmetric KMS keys</a> in the <i>Key Management Service Developer
-     * Guide</i>.</p>  <p>KMS supports the following key specs for KMS
-     * keys:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
-     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
-     * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
-     * <li> <p> <code>RSA_3072</code> </p> </li> <li> <p> <code>RSA_4096</code> </p>
-     * </li> </ul> </li> <li> <p>Asymmetric NIST-recommended elliptic curve key
-     * pairs</p> <ul> <li> <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li> <li>
-     * <p> <code>ECC_NIST_P384</code> (secp384r1)</p> </li> <li> <p>
+     * Services services that are integrated with KMS</a> use symmetric encryption KMS
+     * keys to protect your data. These services do not support asymmetric KMS keys or
+     * HMAC KMS keys.</p>  <p>KMS supports the following key specs for KMS
+     * keys:</p> <ul> <li> <p>Symmetric encryption key (default)</p> <ul> <li> <p>
+     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li> <p>HMAC
+     * keys (symmetric)</p> <ul> <li> <p> <code>HMAC_224</code> </p> </li> <li> <p>
+     * <code>HMAC_256</code> </p> </li> <li> <p> <code>HMAC_384</code> </p> </li> <li>
+     * <p> <code>HMAC_512</code> </p> </li> </ul> </li> <li> <p>Asymmetric RSA key
+     * pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li> <li> <p>
+     * <code>RSA_3072</code> </p> </li> <li> <p> <code>RSA_4096</code> </p> </li> </ul>
+     * </li> <li> <p>Asymmetric NIST-recommended elliptic curve key pairs</p> <ul> <li>
+     * <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li> <li> <p>
+     * <code>ECC_NIST_P384</code> (secp384r1)</p> </li> <li> <p>
      * <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li> <p>Other
      * asymmetric elliptic curve key pairs</p> <ul> <li> <p>
      * <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
@@ -566,33 +584,35 @@ namespace Model
      * <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit symmetric key
      * for encryption and decryption. For help choosing a key spec for your KMS key,
      * see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-choose.html">How
-     * to Choose Your KMS key Configuration</a> in the <i> <i>Key Management Service
-     * Developer Guide</i> </i>.</p> <p>The <code>KeySpec</code> determines whether the
-     * KMS key contains a symmetric key or an asymmetric key pair. It also determines
-     * the encryption algorithms or signing algorithms that the KMS key supports. You
-     * can't change the <code>KeySpec</code> after the KMS key is created. To further
-     * restrict the algorithms that can be used with the KMS key, use a condition key
-     * in its key policy or IAM policy. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing
+     * a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i>
+     * </i>.</p> <p>The <code>KeySpec</code> determines whether the KMS key contains a
+     * symmetric key or an asymmetric key pair. It also determines the algorithms that
+     * the KMS key supports. You can't change the <code>KeySpec</code> after the KMS
+     * key is created. To further restrict the algorithms that can be used with the KMS
+     * key, use a condition key in its key policy or IAM policy. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a>
      * or <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing
      * Algorithm</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
      *  <p> <a
      * href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">Amazon Web
-     * Services services that are integrated with KMS</a> use symmetric KMS keys to
-     * protect your data. These services do not support asymmetric KMS keys. For help
-     * determining whether a KMS key is symmetric or asymmetric, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying
-     * Symmetric and Asymmetric KMS keys</a> in the <i>Key Management Service Developer
-     * Guide</i>.</p>  <p>KMS supports the following key specs for KMS
-     * keys:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
-     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
-     * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
-     * <li> <p> <code>RSA_3072</code> </p> </li> <li> <p> <code>RSA_4096</code> </p>
-     * </li> </ul> </li> <li> <p>Asymmetric NIST-recommended elliptic curve key
-     * pairs</p> <ul> <li> <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li> <li>
-     * <p> <code>ECC_NIST_P384</code> (secp384r1)</p> </li> <li> <p>
+     * Services services that are integrated with KMS</a> use symmetric encryption KMS
+     * keys to protect your data. These services do not support asymmetric KMS keys or
+     * HMAC KMS keys.</p>  <p>KMS supports the following key specs for KMS
+     * keys:</p> <ul> <li> <p>Symmetric encryption key (default)</p> <ul> <li> <p>
+     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li> <p>HMAC
+     * keys (symmetric)</p> <ul> <li> <p> <code>HMAC_224</code> </p> </li> <li> <p>
+     * <code>HMAC_256</code> </p> </li> <li> <p> <code>HMAC_384</code> </p> </li> <li>
+     * <p> <code>HMAC_512</code> </p> </li> </ul> </li> <li> <p>Asymmetric RSA key
+     * pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li> <li> <p>
+     * <code>RSA_3072</code> </p> </li> <li> <p> <code>RSA_4096</code> </p> </li> </ul>
+     * </li> <li> <p>Asymmetric NIST-recommended elliptic curve key pairs</p> <ul> <li>
+     * <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li> <li> <p>
+     * <code>ECC_NIST_P384</code> (secp384r1)</p> </li> <li> <p>
      * <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li> <p>Other
      * asymmetric elliptic curve key pairs</p> <ul> <li> <p>
      * <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
@@ -605,33 +625,35 @@ namespace Model
      * <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit symmetric key
      * for encryption and decryption. For help choosing a key spec for your KMS key,
      * see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-choose.html">How
-     * to Choose Your KMS key Configuration</a> in the <i> <i>Key Management Service
-     * Developer Guide</i> </i>.</p> <p>The <code>KeySpec</code> determines whether the
-     * KMS key contains a symmetric key or an asymmetric key pair. It also determines
-     * the encryption algorithms or signing algorithms that the KMS key supports. You
-     * can't change the <code>KeySpec</code> after the KMS key is created. To further
-     * restrict the algorithms that can be used with the KMS key, use a condition key
-     * in its key policy or IAM policy. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing
+     * a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i>
+     * </i>.</p> <p>The <code>KeySpec</code> determines whether the KMS key contains a
+     * symmetric key or an asymmetric key pair. It also determines the algorithms that
+     * the KMS key supports. You can't change the <code>KeySpec</code> after the KMS
+     * key is created. To further restrict the algorithms that can be used with the KMS
+     * key, use a condition key in its key policy or IAM policy. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a>
      * or <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing
      * Algorithm</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
      *  <p> <a
      * href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">Amazon Web
-     * Services services that are integrated with KMS</a> use symmetric KMS keys to
-     * protect your data. These services do not support asymmetric KMS keys. For help
-     * determining whether a KMS key is symmetric or asymmetric, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying
-     * Symmetric and Asymmetric KMS keys</a> in the <i>Key Management Service Developer
-     * Guide</i>.</p>  <p>KMS supports the following key specs for KMS
-     * keys:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
-     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
-     * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
-     * <li> <p> <code>RSA_3072</code> </p> </li> <li> <p> <code>RSA_4096</code> </p>
-     * </li> </ul> </li> <li> <p>Asymmetric NIST-recommended elliptic curve key
-     * pairs</p> <ul> <li> <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li> <li>
-     * <p> <code>ECC_NIST_P384</code> (secp384r1)</p> </li> <li> <p>
+     * Services services that are integrated with KMS</a> use symmetric encryption KMS
+     * keys to protect your data. These services do not support asymmetric KMS keys or
+     * HMAC KMS keys.</p>  <p>KMS supports the following key specs for KMS
+     * keys:</p> <ul> <li> <p>Symmetric encryption key (default)</p> <ul> <li> <p>
+     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li> <p>HMAC
+     * keys (symmetric)</p> <ul> <li> <p> <code>HMAC_224</code> </p> </li> <li> <p>
+     * <code>HMAC_256</code> </p> </li> <li> <p> <code>HMAC_384</code> </p> </li> <li>
+     * <p> <code>HMAC_512</code> </p> </li> </ul> </li> <li> <p>Asymmetric RSA key
+     * pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li> <li> <p>
+     * <code>RSA_3072</code> </p> </li> <li> <p> <code>RSA_4096</code> </p> </li> </ul>
+     * </li> <li> <p>Asymmetric NIST-recommended elliptic curve key pairs</p> <ul> <li>
+     * <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li> <li> <p>
+     * <code>ECC_NIST_P384</code> (secp384r1)</p> </li> <li> <p>
      * <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li> <p>Other
      * asymmetric elliptic curve key pairs</p> <ul> <li> <p>
      * <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
@@ -644,33 +666,35 @@ namespace Model
      * <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit symmetric key
      * for encryption and decryption. For help choosing a key spec for your KMS key,
      * see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-choose.html">How
-     * to Choose Your KMS key Configuration</a> in the <i> <i>Key Management Service
-     * Developer Guide</i> </i>.</p> <p>The <code>KeySpec</code> determines whether the
-     * KMS key contains a symmetric key or an asymmetric key pair. It also determines
-     * the encryption algorithms or signing algorithms that the KMS key supports. You
-     * can't change the <code>KeySpec</code> after the KMS key is created. To further
-     * restrict the algorithms that can be used with the KMS key, use a condition key
-     * in its key policy or IAM policy. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing
+     * a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i>
+     * </i>.</p> <p>The <code>KeySpec</code> determines whether the KMS key contains a
+     * symmetric key or an asymmetric key pair. It also determines the algorithms that
+     * the KMS key supports. You can't change the <code>KeySpec</code> after the KMS
+     * key is created. To further restrict the algorithms that can be used with the KMS
+     * key, use a condition key in its key policy or IAM policy. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a>
      * or <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing
      * Algorithm</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
      *  <p> <a
      * href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">Amazon Web
-     * Services services that are integrated with KMS</a> use symmetric KMS keys to
-     * protect your data. These services do not support asymmetric KMS keys. For help
-     * determining whether a KMS key is symmetric or asymmetric, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying
-     * Symmetric and Asymmetric KMS keys</a> in the <i>Key Management Service Developer
-     * Guide</i>.</p>  <p>KMS supports the following key specs for KMS
-     * keys:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
-     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
-     * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
-     * <li> <p> <code>RSA_3072</code> </p> </li> <li> <p> <code>RSA_4096</code> </p>
-     * </li> </ul> </li> <li> <p>Asymmetric NIST-recommended elliptic curve key
-     * pairs</p> <ul> <li> <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li> <li>
-     * <p> <code>ECC_NIST_P384</code> (secp384r1)</p> </li> <li> <p>
+     * Services services that are integrated with KMS</a> use symmetric encryption KMS
+     * keys to protect your data. These services do not support asymmetric KMS keys or
+     * HMAC KMS keys.</p>  <p>KMS supports the following key specs for KMS
+     * keys:</p> <ul> <li> <p>Symmetric encryption key (default)</p> <ul> <li> <p>
+     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li> <p>HMAC
+     * keys (symmetric)</p> <ul> <li> <p> <code>HMAC_224</code> </p> </li> <li> <p>
+     * <code>HMAC_256</code> </p> </li> <li> <p> <code>HMAC_384</code> </p> </li> <li>
+     * <p> <code>HMAC_512</code> </p> </li> </ul> </li> <li> <p>Asymmetric RSA key
+     * pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li> <li> <p>
+     * <code>RSA_3072</code> </p> </li> <li> <p> <code>RSA_4096</code> </p> </li> </ul>
+     * </li> <li> <p>Asymmetric NIST-recommended elliptic curve key pairs</p> <ul> <li>
+     * <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li> <li> <p>
+     * <code>ECC_NIST_P384</code> (secp384r1)</p> </li> <li> <p>
      * <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li> <p>Other
      * asymmetric elliptic curve key pairs</p> <ul> <li> <p>
      * <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
@@ -687,13 +711,13 @@ namespace Model
      * For more information about importing key material into KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
      * Key Material</a> in the <i>Key Management Service Developer Guide</i>. This
-     * value is valid only for symmetric KMS keys.</p> <p>To create a KMS key in an KMS
-     * <a
+     * value is valid only for symmetric encryption KMS keys.</p> <p>To create a KMS
+     * key in an KMS <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a> and create its key material in the associated CloudHSM cluster,
      * set this value to <code>AWS_CLOUDHSM</code>. You must also use the
      * <code>CustomKeyStoreId</code> parameter to identify the custom key store. This
-     * value is valid only for symmetric KMS keys.</p>
+     * value is valid only for symmetric encryption KMS keys.</p>
      */
     inline const OriginType& GetOrigin() const{ return m_origin; }
 
@@ -705,13 +729,13 @@ namespace Model
      * For more information about importing key material into KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
      * Key Material</a> in the <i>Key Management Service Developer Guide</i>. This
-     * value is valid only for symmetric KMS keys.</p> <p>To create a KMS key in an KMS
-     * <a
+     * value is valid only for symmetric encryption KMS keys.</p> <p>To create a KMS
+     * key in an KMS <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a> and create its key material in the associated CloudHSM cluster,
      * set this value to <code>AWS_CLOUDHSM</code>. You must also use the
      * <code>CustomKeyStoreId</code> parameter to identify the custom key store. This
-     * value is valid only for symmetric KMS keys.</p>
+     * value is valid only for symmetric encryption KMS keys.</p>
      */
     inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
 
@@ -723,13 +747,13 @@ namespace Model
      * For more information about importing key material into KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
      * Key Material</a> in the <i>Key Management Service Developer Guide</i>. This
-     * value is valid only for symmetric KMS keys.</p> <p>To create a KMS key in an KMS
-     * <a
+     * value is valid only for symmetric encryption KMS keys.</p> <p>To create a KMS
+     * key in an KMS <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a> and create its key material in the associated CloudHSM cluster,
      * set this value to <code>AWS_CLOUDHSM</code>. You must also use the
      * <code>CustomKeyStoreId</code> parameter to identify the custom key store. This
-     * value is valid only for symmetric KMS keys.</p>
+     * value is valid only for symmetric encryption KMS keys.</p>
      */
     inline void SetOrigin(const OriginType& value) { m_originHasBeenSet = true; m_origin = value; }
 
@@ -741,13 +765,13 @@ namespace Model
      * For more information about importing key material into KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
      * Key Material</a> in the <i>Key Management Service Developer Guide</i>. This
-     * value is valid only for symmetric KMS keys.</p> <p>To create a KMS key in an KMS
-     * <a
+     * value is valid only for symmetric encryption KMS keys.</p> <p>To create a KMS
+     * key in an KMS <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a> and create its key material in the associated CloudHSM cluster,
      * set this value to <code>AWS_CLOUDHSM</code>. You must also use the
      * <code>CustomKeyStoreId</code> parameter to identify the custom key store. This
-     * value is valid only for symmetric KMS keys.</p>
+     * value is valid only for symmetric encryption KMS keys.</p>
      */
     inline void SetOrigin(OriginType&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
 
@@ -759,13 +783,13 @@ namespace Model
      * For more information about importing key material into KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
      * Key Material</a> in the <i>Key Management Service Developer Guide</i>. This
-     * value is valid only for symmetric KMS keys.</p> <p>To create a KMS key in an KMS
-     * <a
+     * value is valid only for symmetric encryption KMS keys.</p> <p>To create a KMS
+     * key in an KMS <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a> and create its key material in the associated CloudHSM cluster,
      * set this value to <code>AWS_CLOUDHSM</code>. You must also use the
      * <code>CustomKeyStoreId</code> parameter to identify the custom key store. This
-     * value is valid only for symmetric KMS keys.</p>
+     * value is valid only for symmetric encryption KMS keys.</p>
      */
     inline CreateKeyRequest& WithOrigin(const OriginType& value) { SetOrigin(value); return *this;}
 
@@ -777,13 +801,13 @@ namespace Model
      * For more information about importing key material into KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
      * Key Material</a> in the <i>Key Management Service Developer Guide</i>. This
-     * value is valid only for symmetric KMS keys.</p> <p>To create a KMS key in an KMS
-     * <a
+     * value is valid only for symmetric encryption KMS keys.</p> <p>To create a KMS
+     * key in an KMS <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a> and create its key material in the associated CloudHSM cluster,
      * set this value to <code>AWS_CLOUDHSM</code>. You must also use the
      * <code>CustomKeyStoreId</code> parameter to identify the custom key store. This
-     * value is valid only for symmetric KMS keys.</p>
+     * value is valid only for symmetric encryption KMS keys.</p>
      */
     inline CreateKeyRequest& WithOrigin(OriginType&& value) { SetOrigin(std::move(value)); return *this;}
 
@@ -796,11 +820,11 @@ namespace Model
      * parameter with a value of <code>AWS_CLOUDHSM</code>. The CloudHSM cluster that
      * is associated with the custom key store must have at least two active HSMs, each
      * in a different Availability Zone in the Region.</p> <p>This parameter is valid
-     * only for symmetric KMS keys and regional KMS keys. You cannot create an
-     * asymmetric KMS key or a multi-Region key in a custom key store.</p> <p>To find
-     * the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
-     * operation.</p> <p>The response includes the custom key store ID and the ID of
-     * the CloudHSM cluster.</p> <p>This operation is part of the <a
+     * only for symmetric encryption KMS keys in a single Region. You cannot create any
+     * other type of KMS key in a custom key store.</p> <p>To find the ID of a custom
+     * key store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
+     * includes the custom key store ID and the ID of the CloudHSM cluster.</p> <p>This
+     * operation is part of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
      * Key Store feature</a> feature in KMS, which combines the convenience and
      * extensive integration of KMS with the isolation and control of a single-tenant
@@ -816,11 +840,11 @@ namespace Model
      * parameter with a value of <code>AWS_CLOUDHSM</code>. The CloudHSM cluster that
      * is associated with the custom key store must have at least two active HSMs, each
      * in a different Availability Zone in the Region.</p> <p>This parameter is valid
-     * only for symmetric KMS keys and regional KMS keys. You cannot create an
-     * asymmetric KMS key or a multi-Region key in a custom key store.</p> <p>To find
-     * the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
-     * operation.</p> <p>The response includes the custom key store ID and the ID of
-     * the CloudHSM cluster.</p> <p>This operation is part of the <a
+     * only for symmetric encryption KMS keys in a single Region. You cannot create any
+     * other type of KMS key in a custom key store.</p> <p>To find the ID of a custom
+     * key store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
+     * includes the custom key store ID and the ID of the CloudHSM cluster.</p> <p>This
+     * operation is part of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
      * Key Store feature</a> feature in KMS, which combines the convenience and
      * extensive integration of KMS with the isolation and control of a single-tenant
@@ -836,11 +860,11 @@ namespace Model
      * parameter with a value of <code>AWS_CLOUDHSM</code>. The CloudHSM cluster that
      * is associated with the custom key store must have at least two active HSMs, each
      * in a different Availability Zone in the Region.</p> <p>This parameter is valid
-     * only for symmetric KMS keys and regional KMS keys. You cannot create an
-     * asymmetric KMS key or a multi-Region key in a custom key store.</p> <p>To find
-     * the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
-     * operation.</p> <p>The response includes the custom key store ID and the ID of
-     * the CloudHSM cluster.</p> <p>This operation is part of the <a
+     * only for symmetric encryption KMS keys in a single Region. You cannot create any
+     * other type of KMS key in a custom key store.</p> <p>To find the ID of a custom
+     * key store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
+     * includes the custom key store ID and the ID of the CloudHSM cluster.</p> <p>This
+     * operation is part of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
      * Key Store feature</a> feature in KMS, which combines the convenience and
      * extensive integration of KMS with the isolation and control of a single-tenant
@@ -856,11 +880,11 @@ namespace Model
      * parameter with a value of <code>AWS_CLOUDHSM</code>. The CloudHSM cluster that
      * is associated with the custom key store must have at least two active HSMs, each
      * in a different Availability Zone in the Region.</p> <p>This parameter is valid
-     * only for symmetric KMS keys and regional KMS keys. You cannot create an
-     * asymmetric KMS key or a multi-Region key in a custom key store.</p> <p>To find
-     * the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
-     * operation.</p> <p>The response includes the custom key store ID and the ID of
-     * the CloudHSM cluster.</p> <p>This operation is part of the <a
+     * only for symmetric encryption KMS keys in a single Region. You cannot create any
+     * other type of KMS key in a custom key store.</p> <p>To find the ID of a custom
+     * key store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
+     * includes the custom key store ID and the ID of the CloudHSM cluster.</p> <p>This
+     * operation is part of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
      * Key Store feature</a> feature in KMS, which combines the convenience and
      * extensive integration of KMS with the isolation and control of a single-tenant
@@ -876,11 +900,11 @@ namespace Model
      * parameter with a value of <code>AWS_CLOUDHSM</code>. The CloudHSM cluster that
      * is associated with the custom key store must have at least two active HSMs, each
      * in a different Availability Zone in the Region.</p> <p>This parameter is valid
-     * only for symmetric KMS keys and regional KMS keys. You cannot create an
-     * asymmetric KMS key or a multi-Region key in a custom key store.</p> <p>To find
-     * the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
-     * operation.</p> <p>The response includes the custom key store ID and the ID of
-     * the CloudHSM cluster.</p> <p>This operation is part of the <a
+     * only for symmetric encryption KMS keys in a single Region. You cannot create any
+     * other type of KMS key in a custom key store.</p> <p>To find the ID of a custom
+     * key store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
+     * includes the custom key store ID and the ID of the CloudHSM cluster.</p> <p>This
+     * operation is part of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
      * Key Store feature</a> feature in KMS, which combines the convenience and
      * extensive integration of KMS with the isolation and control of a single-tenant
@@ -896,11 +920,11 @@ namespace Model
      * parameter with a value of <code>AWS_CLOUDHSM</code>. The CloudHSM cluster that
      * is associated with the custom key store must have at least two active HSMs, each
      * in a different Availability Zone in the Region.</p> <p>This parameter is valid
-     * only for symmetric KMS keys and regional KMS keys. You cannot create an
-     * asymmetric KMS key or a multi-Region key in a custom key store.</p> <p>To find
-     * the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
-     * operation.</p> <p>The response includes the custom key store ID and the ID of
-     * the CloudHSM cluster.</p> <p>This operation is part of the <a
+     * only for symmetric encryption KMS keys in a single Region. You cannot create any
+     * other type of KMS key in a custom key store.</p> <p>To find the ID of a custom
+     * key store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
+     * includes the custom key store ID and the ID of the CloudHSM cluster.</p> <p>This
+     * operation is part of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
      * Key Store feature</a> feature in KMS, which combines the convenience and
      * extensive integration of KMS with the isolation and control of a single-tenant
@@ -916,11 +940,11 @@ namespace Model
      * parameter with a value of <code>AWS_CLOUDHSM</code>. The CloudHSM cluster that
      * is associated with the custom key store must have at least two active HSMs, each
      * in a different Availability Zone in the Region.</p> <p>This parameter is valid
-     * only for symmetric KMS keys and regional KMS keys. You cannot create an
-     * asymmetric KMS key or a multi-Region key in a custom key store.</p> <p>To find
-     * the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
-     * operation.</p> <p>The response includes the custom key store ID and the ID of
-     * the CloudHSM cluster.</p> <p>This operation is part of the <a
+     * only for symmetric encryption KMS keys in a single Region. You cannot create any
+     * other type of KMS key in a custom key store.</p> <p>To find the ID of a custom
+     * key store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
+     * includes the custom key store ID and the ID of the CloudHSM cluster.</p> <p>This
+     * operation is part of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
      * Key Store feature</a> feature in KMS, which combines the convenience and
      * extensive integration of KMS with the isolation and control of a single-tenant
@@ -936,11 +960,11 @@ namespace Model
      * parameter with a value of <code>AWS_CLOUDHSM</code>. The CloudHSM cluster that
      * is associated with the custom key store must have at least two active HSMs, each
      * in a different Availability Zone in the Region.</p> <p>This parameter is valid
-     * only for symmetric KMS keys and regional KMS keys. You cannot create an
-     * asymmetric KMS key or a multi-Region key in a custom key store.</p> <p>To find
-     * the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
-     * operation.</p> <p>The response includes the custom key store ID and the ID of
-     * the CloudHSM cluster.</p> <p>This operation is part of the <a
+     * only for symmetric encryption KMS keys in a single Region. You cannot create any
+     * other type of KMS key in a custom key store.</p> <p>To find the ID of a custom
+     * key store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
+     * includes the custom key store ID and the ID of the CloudHSM cluster.</p> <p>This
+     * operation is part of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
      * Key Store feature</a> feature in KMS, which combines the convenience and
      * extensive integration of KMS with the isolation and control of a single-tenant
@@ -1011,9 +1035,9 @@ namespace Model
      * key when it is created. To tag an existing KMS key, use the <a>TagResource</a>
      * operation.</p>  <p>Tagging or untagging a KMS key can allow or deny
      * permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-     * ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     *  <p>To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
+     * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
      * permission in an IAM policy.</p> <p>Each tag consists of a tag key and a tag
      * value. Both the tag key and the tag value are required, but the tag value can be
@@ -1033,9 +1057,9 @@ namespace Model
      * key when it is created. To tag an existing KMS key, use the <a>TagResource</a>
      * operation.</p>  <p>Tagging or untagging a KMS key can allow or deny
      * permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-     * ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     *  <p>To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
+     * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
      * permission in an IAM policy.</p> <p>Each tag consists of a tag key and a tag
      * value. Both the tag key and the tag value are required, but the tag value can be
@@ -1055,9 +1079,9 @@ namespace Model
      * key when it is created. To tag an existing KMS key, use the <a>TagResource</a>
      * operation.</p>  <p>Tagging or untagging a KMS key can allow or deny
      * permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-     * ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     *  <p>To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
+     * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
      * permission in an IAM policy.</p> <p>Each tag consists of a tag key and a tag
      * value. Both the tag key and the tag value are required, but the tag value can be
@@ -1077,9 +1101,9 @@ namespace Model
      * key when it is created. To tag an existing KMS key, use the <a>TagResource</a>
      * operation.</p>  <p>Tagging or untagging a KMS key can allow or deny
      * permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-     * ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     *  <p>To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
+     * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
      * permission in an IAM policy.</p> <p>Each tag consists of a tag key and a tag
      * value. Both the tag key and the tag value are required, but the tag value can be
@@ -1099,9 +1123,9 @@ namespace Model
      * key when it is created. To tag an existing KMS key, use the <a>TagResource</a>
      * operation.</p>  <p>Tagging or untagging a KMS key can allow or deny
      * permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-     * ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     *  <p>To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
+     * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
      * permission in an IAM policy.</p> <p>Each tag consists of a tag key and a tag
      * value. Both the tag key and the tag value are required, but the tag value can be
@@ -1121,9 +1145,9 @@ namespace Model
      * key when it is created. To tag an existing KMS key, use the <a>TagResource</a>
      * operation.</p>  <p>Tagging or untagging a KMS key can allow or deny
      * permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-     * ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     *  <p>To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
+     * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
      * permission in an IAM policy.</p> <p>Each tag consists of a tag key and a tag
      * value. Both the tag key and the tag value are required, but the tag value can be
@@ -1143,9 +1167,9 @@ namespace Model
      * key when it is created. To tag an existing KMS key, use the <a>TagResource</a>
      * operation.</p>  <p>Tagging or untagging a KMS key can allow or deny
      * permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-     * ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     *  <p>To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
+     * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
      * permission in an IAM policy.</p> <p>Each tag consists of a tag key and a tag
      * value. Both the tag key and the tag value are required, but the tag value can be
@@ -1165,9 +1189,9 @@ namespace Model
      * key when it is created. To tag an existing KMS key, use the <a>TagResource</a>
      * operation.</p>  <p>Tagging or untagging a KMS key can allow or deny
      * permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-     * ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     *  <p>To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
+     * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
      * permission in an IAM policy.</p> <p>Each tag consists of a tag key and a tag
      * value. Both the tag key and the tag value are required, but the tag value can be
@@ -1196,8 +1220,8 @@ namespace Model
      * decrypt it in a different Amazon Web Services Region without re-encrypting the
      * data or making a cross-Region call. For more information about multi-Region
      * keys, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
-     * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region
+     * keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
      * <p>This value creates a <i>primary key</i>, not a replica. To create a
      * <i>replica key</i>, use the <a>ReplicateKey</a> operation. </p> <p>You can
      * create a symmetric or asymmetric multi-Region key, and you can create a
@@ -1219,8 +1243,8 @@ namespace Model
      * decrypt it in a different Amazon Web Services Region without re-encrypting the
      * data or making a cross-Region call. For more information about multi-Region
      * keys, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
-     * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region
+     * keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
      * <p>This value creates a <i>primary key</i>, not a replica. To create a
      * <i>replica key</i>, use the <a>ReplicateKey</a> operation. </p> <p>You can
      * create a symmetric or asymmetric multi-Region key, and you can create a
@@ -1242,8 +1266,8 @@ namespace Model
      * decrypt it in a different Amazon Web Services Region without re-encrypting the
      * data or making a cross-Region call. For more information about multi-Region
      * keys, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
-     * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region
+     * keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
      * <p>This value creates a <i>primary key</i>, not a replica. To create a
      * <i>replica key</i>, use the <a>ReplicateKey</a> operation. </p> <p>You can
      * create a symmetric or asymmetric multi-Region key, and you can create a
@@ -1265,8 +1289,8 @@ namespace Model
      * decrypt it in a different Amazon Web Services Region without re-encrypting the
      * data or making a cross-Region call. For more information about multi-Region
      * keys, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
-     * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region
+     * keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
      * <p>This value creates a <i>primary key</i>, not a replica. To create a
      * <i>replica key</i>, use the <a>ReplicateKey</a> operation. </p> <p>You can
      * create a symmetric or asymmetric multi-Region key, and you can create a

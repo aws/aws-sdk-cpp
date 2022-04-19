@@ -1276,6 +1276,63 @@ namespace Model
      */
     inline UpdateAssociationRequest& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association. For
+     * example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>,
+     * you could specify an offset of 3 to run the association each Sunday after the
+     * second Thursday of the month. For more information about cron schedules for
+     * associations, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference:
+     * Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>. </p>  <p>To use offsets, you must specify
+     * the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system
+     * not to run an association immediately after you create it. </p> 
+     */
+    inline int GetScheduleOffset() const{ return m_scheduleOffset; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association. For
+     * example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>,
+     * you could specify an offset of 3 to run the association each Sunday after the
+     * second Thursday of the month. For more information about cron schedules for
+     * associations, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference:
+     * Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>. </p>  <p>To use offsets, you must specify
+     * the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system
+     * not to run an association immediately after you create it. </p> 
+     */
+    inline bool ScheduleOffsetHasBeenSet() const { return m_scheduleOffsetHasBeenSet; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association. For
+     * example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>,
+     * you could specify an offset of 3 to run the association each Sunday after the
+     * second Thursday of the month. For more information about cron schedules for
+     * associations, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference:
+     * Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>. </p>  <p>To use offsets, you must specify
+     * the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system
+     * not to run an association immediately after you create it. </p> 
+     */
+    inline void SetScheduleOffset(int value) { m_scheduleOffsetHasBeenSet = true; m_scheduleOffset = value; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association. For
+     * example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>,
+     * you could specify an offset of 3 to run the association each Sunday after the
+     * second Thursday of the month. For more information about cron schedules for
+     * associations, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference:
+     * Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>. </p>  <p>To use offsets, you must specify
+     * the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system
+     * not to run an association immediately after you create it. </p> 
+     */
+    inline UpdateAssociationRequest& WithScheduleOffset(int value) { SetScheduleOffset(value); return *this;}
+
   private:
 
     Aws::String m_associationId;
@@ -1328,6 +1385,9 @@ namespace Model
 
     Aws::Vector<TargetLocation> m_targetLocations;
     bool m_targetLocationsHasBeenSet;
+
+    int m_scheduleOffset;
+    bool m_scheduleOffsetHasBeenSet;
   };
 
 } // namespace Model

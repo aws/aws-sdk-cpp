@@ -31,7 +31,9 @@ CreateAssociationRequest::CreateAssociationRequest() :
     m_applyOnlyAtCronInterval(false),
     m_applyOnlyAtCronIntervalHasBeenSet(false),
     m_calendarNamesHasBeenSet(false),
-    m_targetLocationsHasBeenSet(false)
+    m_targetLocationsHasBeenSet(false),
+    m_scheduleOffset(0),
+    m_scheduleOffsetHasBeenSet(false)
 {
 }
 
@@ -155,6 +157,12 @@ Aws::String CreateAssociationRequest::SerializePayload() const
      targetLocationsJsonList[targetLocationsIndex].AsObject(m_targetLocations[targetLocationsIndex].Jsonize());
    }
    payload.WithArray("TargetLocations", std::move(targetLocationsJsonList));
+
+  }
+
+  if(m_scheduleOffsetHasBeenSet)
+  {
+   payload.WithInteger("ScheduleOffset", m_scheduleOffset);
 
   }
 

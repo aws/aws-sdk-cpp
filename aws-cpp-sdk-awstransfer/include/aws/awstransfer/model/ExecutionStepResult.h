@@ -41,50 +41,50 @@ namespace Model
 
 
     /**
-     * <p>One of the available step types.</p> <ul> <li> <p> <i>Copy</i>: copy the file
-     * to another location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda
-     * target</p> </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p>
-     * <i>Tag</i>: add a tag to the file</p> </li> </ul>
+     * <p>One of the available step types.</p> <ul> <li> <p> <i>COPY</i>: copy the file
+     * to another location</p> </li> <li> <p> <i>CUSTOM</i>: custom step with a lambda
+     * target</p> </li> <li> <p> <i>DELETE</i>: delete the file</p> </li> <li> <p>
+     * <i>TAG</i>: add a tag to the file</p> </li> </ul>
      */
     inline const WorkflowStepType& GetStepType() const{ return m_stepType; }
 
     /**
-     * <p>One of the available step types.</p> <ul> <li> <p> <i>Copy</i>: copy the file
-     * to another location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda
-     * target</p> </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p>
-     * <i>Tag</i>: add a tag to the file</p> </li> </ul>
+     * <p>One of the available step types.</p> <ul> <li> <p> <i>COPY</i>: copy the file
+     * to another location</p> </li> <li> <p> <i>CUSTOM</i>: custom step with a lambda
+     * target</p> </li> <li> <p> <i>DELETE</i>: delete the file</p> </li> <li> <p>
+     * <i>TAG</i>: add a tag to the file</p> </li> </ul>
      */
     inline bool StepTypeHasBeenSet() const { return m_stepTypeHasBeenSet; }
 
     /**
-     * <p>One of the available step types.</p> <ul> <li> <p> <i>Copy</i>: copy the file
-     * to another location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda
-     * target</p> </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p>
-     * <i>Tag</i>: add a tag to the file</p> </li> </ul>
+     * <p>One of the available step types.</p> <ul> <li> <p> <i>COPY</i>: copy the file
+     * to another location</p> </li> <li> <p> <i>CUSTOM</i>: custom step with a lambda
+     * target</p> </li> <li> <p> <i>DELETE</i>: delete the file</p> </li> <li> <p>
+     * <i>TAG</i>: add a tag to the file</p> </li> </ul>
      */
     inline void SetStepType(const WorkflowStepType& value) { m_stepTypeHasBeenSet = true; m_stepType = value; }
 
     /**
-     * <p>One of the available step types.</p> <ul> <li> <p> <i>Copy</i>: copy the file
-     * to another location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda
-     * target</p> </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p>
-     * <i>Tag</i>: add a tag to the file</p> </li> </ul>
+     * <p>One of the available step types.</p> <ul> <li> <p> <i>COPY</i>: copy the file
+     * to another location</p> </li> <li> <p> <i>CUSTOM</i>: custom step with a lambda
+     * target</p> </li> <li> <p> <i>DELETE</i>: delete the file</p> </li> <li> <p>
+     * <i>TAG</i>: add a tag to the file</p> </li> </ul>
      */
     inline void SetStepType(WorkflowStepType&& value) { m_stepTypeHasBeenSet = true; m_stepType = std::move(value); }
 
     /**
-     * <p>One of the available step types.</p> <ul> <li> <p> <i>Copy</i>: copy the file
-     * to another location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda
-     * target</p> </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p>
-     * <i>Tag</i>: add a tag to the file</p> </li> </ul>
+     * <p>One of the available step types.</p> <ul> <li> <p> <i>COPY</i>: copy the file
+     * to another location</p> </li> <li> <p> <i>CUSTOM</i>: custom step with a lambda
+     * target</p> </li> <li> <p> <i>DELETE</i>: delete the file</p> </li> <li> <p>
+     * <i>TAG</i>: add a tag to the file</p> </li> </ul>
      */
     inline ExecutionStepResult& WithStepType(const WorkflowStepType& value) { SetStepType(value); return *this;}
 
     /**
-     * <p>One of the available step types.</p> <ul> <li> <p> <i>Copy</i>: copy the file
-     * to another location</p> </li> <li> <p> <i>Custom</i>: custom step with a lambda
-     * target</p> </li> <li> <p> <i>Delete</i>: delete the file</p> </li> <li> <p>
-     * <i>Tag</i>: add a tag to the file</p> </li> </ul>
+     * <p>One of the available step types.</p> <ul> <li> <p> <i>COPY</i>: copy the file
+     * to another location</p> </li> <li> <p> <i>CUSTOM</i>: custom step with a lambda
+     * target</p> </li> <li> <p> <i>DELETE</i>: delete the file</p> </li> <li> <p>
+     * <i>TAG</i>: add a tag to the file</p> </li> </ul>
      */
     inline ExecutionStepResult& WithStepType(WorkflowStepType&& value) { SetStepType(std::move(value)); return *this;}
 

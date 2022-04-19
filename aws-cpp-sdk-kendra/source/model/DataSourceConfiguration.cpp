@@ -31,7 +31,8 @@ DataSourceConfiguration::DataSourceConfiguration() :
     m_workDocsConfigurationHasBeenSet(false),
     m_fsxConfigurationHasBeenSet(false),
     m_slackConfigurationHasBeenSet(false),
-    m_boxConfigurationHasBeenSet(false)
+    m_boxConfigurationHasBeenSet(false),
+    m_quipConfigurationHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue) :
     m_workDocsConfigurationHasBeenSet(false),
     m_fsxConfigurationHasBeenSet(false),
     m_slackConfigurationHasBeenSet(false),
-    m_boxConfigurationHasBeenSet(false)
+    m_boxConfigurationHasBeenSet(false),
+    m_quipConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -146,6 +148,13 @@ DataSourceConfiguration& DataSourceConfiguration::operator =(JsonView jsonValue)
     m_boxConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("QuipConfiguration"))
+  {
+    m_quipConfiguration = jsonValue.GetObject("QuipConfiguration");
+
+    m_quipConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -228,6 +237,12 @@ JsonValue DataSourceConfiguration::Jsonize() const
   if(m_boxConfigurationHasBeenSet)
   {
    payload.WithObject("BoxConfiguration", m_boxConfiguration.Jsonize());
+
+  }
+
+  if(m_quipConfigurationHasBeenSet)
+  {
+   payload.WithObject("QuipConfiguration", m_quipConfiguration.Jsonize());
 
   }
 

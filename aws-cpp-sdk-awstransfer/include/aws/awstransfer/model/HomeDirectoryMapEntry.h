@@ -27,7 +27,7 @@ namespace Model
    * <p>Represents an object that contains entries and targets for
    * <code>HomeDirectoryMappings</code>.</p> <p>The following is an
    * <code>Entry</code> and <code>Target</code> pair example for
-   * <code>chroot</code>.</p> <p> <code>[ { "Entry:": "/", "Target":
+   * <code>chroot</code>.</p> <p> <code>[ { "Entry": "/", "Target":
    * "/bucket_name/home/mydirectory" } ]</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/HomeDirectoryMapEntry">AWS
    * API Reference</a></p>

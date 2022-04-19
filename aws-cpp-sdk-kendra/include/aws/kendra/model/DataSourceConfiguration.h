@@ -18,6 +18,7 @@
 #include <aws/kendra/model/FsxConfiguration.h>
 #include <aws/kendra/model/SlackConfiguration.h>
 #include <aws/kendra/model/BoxConfiguration.h>
+#include <aws/kendra/model/QuipConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -512,6 +513,43 @@ namespace Model
      */
     inline DataSourceConfiguration& WithBoxConfiguration(BoxConfiguration&& value) { SetBoxConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides the configuration information to connect to Quip as your data
+     * source.</p>
+     */
+    inline const QuipConfiguration& GetQuipConfiguration() const{ return m_quipConfiguration; }
+
+    /**
+     * <p>Provides the configuration information to connect to Quip as your data
+     * source.</p>
+     */
+    inline bool QuipConfigurationHasBeenSet() const { return m_quipConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides the configuration information to connect to Quip as your data
+     * source.</p>
+     */
+    inline void SetQuipConfiguration(const QuipConfiguration& value) { m_quipConfigurationHasBeenSet = true; m_quipConfiguration = value; }
+
+    /**
+     * <p>Provides the configuration information to connect to Quip as your data
+     * source.</p>
+     */
+    inline void SetQuipConfiguration(QuipConfiguration&& value) { m_quipConfigurationHasBeenSet = true; m_quipConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides the configuration information to connect to Quip as your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithQuipConfiguration(const QuipConfiguration& value) { SetQuipConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides the configuration information to connect to Quip as your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithQuipConfiguration(QuipConfiguration&& value) { SetQuipConfiguration(std::move(value)); return *this;}
+
   private:
 
     S3DataSourceConfiguration m_s3Configuration;
@@ -552,6 +590,9 @@ namespace Model
 
     BoxConfiguration m_boxConfiguration;
     bool m_boxConfigurationHasBeenSet;
+
+    QuipConfiguration m_quipConfiguration;
+    bool m_quipConfigurationHasBeenSet;
   };
 
 } // namespace Model

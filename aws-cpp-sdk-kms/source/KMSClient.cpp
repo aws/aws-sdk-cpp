@@ -42,6 +42,7 @@
 #include <aws/kms/model/GenerateDataKeyPairRequest.h>
 #include <aws/kms/model/GenerateDataKeyPairWithoutPlaintextRequest.h>
 #include <aws/kms/model/GenerateDataKeyWithoutPlaintextRequest.h>
+#include <aws/kms/model/GenerateMacRequest.h>
 #include <aws/kms/model/GenerateRandomRequest.h>
 #include <aws/kms/model/GetKeyPolicyRequest.h>
 #include <aws/kms/model/GetKeyRotationStatusRequest.h>
@@ -68,6 +69,7 @@
 #include <aws/kms/model/UpdateKeyDescriptionRequest.h>
 #include <aws/kms/model/UpdatePrimaryRegionRequest.h>
 #include <aws/kms/model/VerifyRequest.h>
+#include <aws/kms/model/VerifyMacRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -668,6 +670,30 @@ void KMSClient::GenerateDataKeyWithoutPlaintextAsync(const GenerateDataKeyWithou
 void KMSClient::GenerateDataKeyWithoutPlaintextAsyncHelper(const GenerateDataKeyWithoutPlaintextRequest& request, const GenerateDataKeyWithoutPlaintextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GenerateDataKeyWithoutPlaintext(request), context);
+}
+
+GenerateMacOutcome KMSClient::GenerateMac(const GenerateMacRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GenerateMacOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GenerateMacOutcomeCallable KMSClient::GenerateMacCallable(const GenerateMacRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GenerateMacOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GenerateMac(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KMSClient::GenerateMacAsync(const GenerateMacRequest& request, const GenerateMacResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GenerateMacAsyncHelper( request, handler, context ); } );
+}
+
+void KMSClient::GenerateMacAsyncHelper(const GenerateMacRequest& request, const GenerateMacResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GenerateMac(request), context);
 }
 
 GenerateRandomOutcome KMSClient::GenerateRandom(const GenerateRandomRequest& request) const
@@ -1292,5 +1318,29 @@ void KMSClient::VerifyAsync(const VerifyRequest& request, const VerifyResponseRe
 void KMSClient::VerifyAsyncHelper(const VerifyRequest& request, const VerifyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, Verify(request), context);
+}
+
+VerifyMacOutcome KMSClient::VerifyMac(const VerifyMacRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return VerifyMacOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+VerifyMacOutcomeCallable KMSClient::VerifyMacCallable(const VerifyMacRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< VerifyMacOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->VerifyMac(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KMSClient::VerifyMacAsync(const VerifyMacRequest& request, const VerifyMacResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->VerifyMacAsyncHelper( request, handler, context ); } );
+}
+
+void KMSClient::VerifyMacAsyncHelper(const VerifyMacRequest& request, const VerifyMacResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, VerifyMac(request), context);
 }
 

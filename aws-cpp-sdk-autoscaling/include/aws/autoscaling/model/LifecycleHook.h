@@ -374,34 +374,30 @@ namespace Model
 
 
     /**
-     * <p>The maximum time, in seconds, that an instance can remain in a
-     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The maximum is
-     * 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever
-     * is smaller.</p>
+     * <p>The maximum time, in seconds, that an instance can remain in a wait state.
+     * The maximum is 172800 seconds (48 hours) or 100 times
+     * <code>HeartbeatTimeout</code>, whichever is smaller.</p>
      */
     inline int GetGlobalTimeout() const{ return m_globalTimeout; }
 
     /**
-     * <p>The maximum time, in seconds, that an instance can remain in a
-     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The maximum is
-     * 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever
-     * is smaller.</p>
+     * <p>The maximum time, in seconds, that an instance can remain in a wait state.
+     * The maximum is 172800 seconds (48 hours) or 100 times
+     * <code>HeartbeatTimeout</code>, whichever is smaller.</p>
      */
     inline bool GlobalTimeoutHasBeenSet() const { return m_globalTimeoutHasBeenSet; }
 
     /**
-     * <p>The maximum time, in seconds, that an instance can remain in a
-     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The maximum is
-     * 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever
-     * is smaller.</p>
+     * <p>The maximum time, in seconds, that an instance can remain in a wait state.
+     * The maximum is 172800 seconds (48 hours) or 100 times
+     * <code>HeartbeatTimeout</code>, whichever is smaller.</p>
      */
     inline void SetGlobalTimeout(int value) { m_globalTimeoutHasBeenSet = true; m_globalTimeout = value; }
 
     /**
-     * <p>The maximum time, in seconds, that an instance can remain in a
-     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The maximum is
-     * 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever
-     * is smaller.</p>
+     * <p>The maximum time, in seconds, that an instance can remain in a wait state.
+     * The maximum is 172800 seconds (48 hours) or 100 times
+     * <code>HeartbeatTimeout</code>, whichever is smaller.</p>
      */
     inline LifecycleHook& WithGlobalTimeout(int value) { SetGlobalTimeout(value); return *this;}
 

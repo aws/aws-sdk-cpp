@@ -56,6 +56,8 @@
 #include <aws/personalize/model/ListSolutionVersionsResult.h>
 #include <aws/personalize/model/ListSolutionsResult.h>
 #include <aws/personalize/model/ListTagsForResourceResult.h>
+#include <aws/personalize/model/StartRecommenderResult.h>
+#include <aws/personalize/model/StopRecommenderResult.h>
 #include <aws/personalize/model/TagResourceResult.h>
 #include <aws/personalize/model/UntagResourceResult.h>
 #include <aws/personalize/model/UpdateCampaignResult.h>
@@ -153,6 +155,8 @@ namespace Model
         class ListSolutionVersionsRequest;
         class ListSolutionsRequest;
         class ListTagsForResourceRequest;
+        class StartRecommenderRequest;
+        class StopRecommenderRequest;
         class StopSolutionVersionCreationRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
@@ -212,6 +216,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ListSolutionVersionsResult, PersonalizeError> ListSolutionVersionsOutcome;
         typedef Aws::Utils::Outcome<ListSolutionsResult, PersonalizeError> ListSolutionsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, PersonalizeError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<StartRecommenderResult, PersonalizeError> StartRecommenderOutcome;
+        typedef Aws::Utils::Outcome<StopRecommenderResult, PersonalizeError> StopRecommenderOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> StopSolutionVersionCreationOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, PersonalizeError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, PersonalizeError> UntagResourceOutcome;
@@ -271,6 +277,8 @@ namespace Model
         typedef std::future<ListSolutionVersionsOutcome> ListSolutionVersionsOutcomeCallable;
         typedef std::future<ListSolutionsOutcome> ListSolutionsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<StartRecommenderOutcome> StartRecommenderOutcomeCallable;
+        typedef std::future<StopRecommenderOutcome> StopRecommenderOutcomeCallable;
         typedef std::future<StopSolutionVersionCreationOutcome> StopSolutionVersionCreationOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -333,6 +341,8 @@ namespace Model
     typedef std::function<void(const PersonalizeClient*, const Model::ListSolutionVersionsRequest&, const Model::ListSolutionVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSolutionVersionsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListSolutionsRequest&, const Model::ListSolutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSolutionsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::StartRecommenderRequest&, const Model::StartRecommenderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartRecommenderResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::StopRecommenderRequest&, const Model::StopRecommenderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopRecommenderResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::StopSolutionVersionCreationRequest&, const Model::StopSolutionVersionCreationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopSolutionVersionCreationResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -2938,6 +2948,65 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts a recommender that is INACTIVE. Starting a recommender does not create
+         * any new models, but resumes billing and automatic retraining for the
+         * recommender.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StartRecommender">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartRecommenderOutcome StartRecommender(const Model::StartRecommenderRequest& request) const;
+
+        /**
+         * <p>Starts a recommender that is INACTIVE. Starting a recommender does not create
+         * any new models, but resumes billing and automatic retraining for the
+         * recommender.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StartRecommender">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartRecommenderOutcomeCallable StartRecommenderCallable(const Model::StartRecommenderRequest& request) const;
+
+        /**
+         * <p>Starts a recommender that is INACTIVE. Starting a recommender does not create
+         * any new models, but resumes billing and automatic retraining for the
+         * recommender.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StartRecommender">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartRecommenderAsync(const Model::StartRecommenderRequest& request, const StartRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops a recommender that is ACTIVE. Stopping a recommender halts billing and
+         * automatic retraining for the recommender.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopRecommender">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopRecommenderOutcome StopRecommender(const Model::StopRecommenderRequest& request) const;
+
+        /**
+         * <p>Stops a recommender that is ACTIVE. Stopping a recommender halts billing and
+         * automatic retraining for the recommender.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopRecommender">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopRecommenderOutcomeCallable StopRecommenderCallable(const Model::StopRecommenderRequest& request) const;
+
+        /**
+         * <p>Stops a recommender that is ACTIVE. Stopping a recommender halts billing and
+         * automatic retraining for the recommender.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopRecommender">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopRecommenderAsync(const Model::StopRecommenderRequest& request, const StopRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Stops creating a solution version that is in a state of CREATE_PENDING or
          * CREATE IN_PROGRESS. </p> <p>Depending on the current state of the solution
          * version, the solution version state changes as follows:</p> <ul> <li>
@@ -3045,9 +3114,11 @@ namespace Model
          * campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the
          * campaign status using the <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>
-         * operation.</p>  <p>You must wait until the <code>status</code> of the
-         * updated campaign is <code>ACTIVE</code> before asking the campaign for
-         * recommendations.</p>  <p>For more information on campaigns, see <a
+         * operation.</p>  <p>You can still get recommendations from a campaign while
+         * an update is in progress. The campaign will use the previous solution version
+         * and campaign configuration to generate recommendations until the latest campaign
+         * update status is <code>Active</code>. </p>  <p>For more information on
+         * campaigns, see <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateCampaign">AWS
@@ -3061,9 +3132,11 @@ namespace Model
          * campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the
          * campaign status using the <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>
-         * operation.</p>  <p>You must wait until the <code>status</code> of the
-         * updated campaign is <code>ACTIVE</code> before asking the campaign for
-         * recommendations.</p>  <p>For more information on campaigns, see <a
+         * operation.</p>  <p>You can still get recommendations from a campaign while
+         * an update is in progress. The campaign will use the previous solution version
+         * and campaign configuration to generate recommendations until the latest campaign
+         * update status is <code>Active</code>. </p>  <p>For more information on
+         * campaigns, see <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateCampaign">AWS
@@ -3079,9 +3152,11 @@ namespace Model
          * campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the
          * campaign status using the <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>
-         * operation.</p>  <p>You must wait until the <code>status</code> of the
-         * updated campaign is <code>ACTIVE</code> before asking the campaign for
-         * recommendations.</p>  <p>For more information on campaigns, see <a
+         * operation.</p>  <p>You can still get recommendations from a campaign while
+         * an update is in progress. The campaign will use the previous solution version
+         * and campaign configuration to generate recommendations until the latest campaign
+         * update status is <code>Active</code>. </p>  <p>For more information on
+         * campaigns, see <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateCampaign">AWS
@@ -3176,6 +3251,8 @@ namespace Model
         void ListSolutionVersionsAsyncHelper(const Model::ListSolutionVersionsRequest& request, const ListSolutionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSolutionsAsyncHelper(const Model::ListSolutionsRequest& request, const ListSolutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartRecommenderAsyncHelper(const Model::StartRecommenderRequest& request, const StartRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopRecommenderAsyncHelper(const Model::StopRecommenderRequest& request, const StopRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopSolutionVersionCreationAsyncHelper(const Model::StopSolutionVersionCreationRequest& request, const StopSolutionVersionCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

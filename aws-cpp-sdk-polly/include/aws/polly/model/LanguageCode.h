@@ -47,7 +47,8 @@ namespace Model
     tr_TR,
     en_NZ,
     en_ZA,
-    ca_ES
+    ca_ES,
+    de_AT
   };
 
 namespace LanguageCodeMapper
