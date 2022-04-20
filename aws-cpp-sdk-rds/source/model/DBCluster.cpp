@@ -110,7 +110,8 @@ DBCluster::DBCluster() :
     m_performanceInsightsEnabledHasBeenSet(false),
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
     m_performanceInsightsRetentionPeriod(0),
-    m_performanceInsightsRetentionPeriodHasBeenSet(false)
+    m_performanceInsightsRetentionPeriodHasBeenSet(false),
+    m_serverlessV2ScalingConfigurationHasBeenSet(false)
 {
 }
 
@@ -204,7 +205,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_performanceInsightsEnabledHasBeenSet(false),
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
     m_performanceInsightsRetentionPeriod(0),
-    m_performanceInsightsRetentionPeriodHasBeenSet(false)
+    m_performanceInsightsRetentionPeriodHasBeenSet(false),
+    m_serverlessV2ScalingConfigurationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -677,6 +679,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_performanceInsightsRetentionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(performanceInsightsRetentionPeriodNode.GetText()).c_str()).c_str());
       m_performanceInsightsRetentionPeriodHasBeenSet = true;
     }
+    XmlNode serverlessV2ScalingConfigurationNode = resultNode.FirstChild("ServerlessV2ScalingConfiguration");
+    if(!serverlessV2ScalingConfigurationNode.IsNull())
+    {
+      m_serverlessV2ScalingConfiguration = serverlessV2ScalingConfigurationNode;
+      m_serverlessV2ScalingConfigurationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1075,6 +1083,13 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".PerformanceInsightsRetentionPeriod=" << m_performanceInsightsRetentionPeriod << "&";
   }
 
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  {
+      Aws::StringStream serverlessV2ScalingConfigurationLocationAndMemberSs;
+      serverlessV2ScalingConfigurationLocationAndMemberSs << location << index << locationValue << ".ServerlessV2ScalingConfiguration";
+      m_serverlessV2ScalingConfiguration.OutputToStream(oStream, serverlessV2ScalingConfigurationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1402,6 +1417,12 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_performanceInsightsRetentionPeriodHasBeenSet)
   {
       oStream << location << ".PerformanceInsightsRetentionPeriod=" << m_performanceInsightsRetentionPeriod << "&";
+  }
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  {
+      Aws::String serverlessV2ScalingConfigurationLocationAndMember(location);
+      serverlessV2ScalingConfigurationLocationAndMember += ".ServerlessV2ScalingConfiguration";
+      m_serverlessV2ScalingConfiguration.OutputToStream(oStream, serverlessV2ScalingConfigurationLocationAndMember.c_str());
   }
 }
 

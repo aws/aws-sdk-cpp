@@ -130,6 +130,27 @@ namespace Model
 
 
     /**
+     * <p>Exceeded the service quota value.</p>
+     */
+    inline int GetQuotaValue() const{ return m_quotaValue; }
+
+    /**
+     * <p>Exceeded the service quota value.</p>
+     */
+    inline bool QuotaValueHasBeenSet() const { return m_quotaValueHasBeenSet; }
+
+    /**
+     * <p>Exceeded the service quota value.</p>
+     */
+    inline void SetQuotaValue(int value) { m_quotaValueHasBeenSet = true; m_quotaValue = value; }
+
+    /**
+     * <p>Exceeded the service quota value.</p>
+     */
+    inline ServiceQuotaExceededException& WithQuotaValue(int value) { SetQuotaValue(value); return *this;}
+
+
+    /**
      * <p>Exceeded the service quota resource ID.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
@@ -261,6 +282,9 @@ namespace Model
 
     Aws::String m_quotaCode;
     bool m_quotaCodeHasBeenSet;
+
+    int m_quotaValue;
+    bool m_quotaValueHasBeenSet;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;

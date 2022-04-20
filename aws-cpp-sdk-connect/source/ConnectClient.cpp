@@ -26,9 +26,11 @@
 #include <aws/connect/model/AssociateInstanceStorageConfigRequest.h>
 #include <aws/connect/model/AssociateLambdaFunctionRequest.h>
 #include <aws/connect/model/AssociateLexBotRequest.h>
+#include <aws/connect/model/AssociatePhoneNumberContactFlowRequest.h>
 #include <aws/connect/model/AssociateQueueQuickConnectsRequest.h>
 #include <aws/connect/model/AssociateRoutingProfileQueuesRequest.h>
 #include <aws/connect/model/AssociateSecurityKeyRequest.h>
+#include <aws/connect/model/ClaimPhoneNumberRequest.h>
 #include <aws/connect/model/CreateAgentStatusRequest.h>
 #include <aws/connect/model/CreateContactFlowRequest.h>
 #include <aws/connect/model/CreateContactFlowModuleRequest.h>
@@ -62,6 +64,7 @@
 #include <aws/connect/model/DescribeInstanceRequest.h>
 #include <aws/connect/model/DescribeInstanceAttributeRequest.h>
 #include <aws/connect/model/DescribeInstanceStorageConfigRequest.h>
+#include <aws/connect/model/DescribePhoneNumberRequest.h>
 #include <aws/connect/model/DescribeQueueRequest.h>
 #include <aws/connect/model/DescribeQuickConnectRequest.h>
 #include <aws/connect/model/DescribeRoutingProfileRequest.h>
@@ -75,6 +78,7 @@
 #include <aws/connect/model/DisassociateInstanceStorageConfigRequest.h>
 #include <aws/connect/model/DisassociateLambdaFunctionRequest.h>
 #include <aws/connect/model/DisassociateLexBotRequest.h>
+#include <aws/connect/model/DisassociatePhoneNumberContactFlowRequest.h>
 #include <aws/connect/model/DisassociateQueueQuickConnectsRequest.h>
 #include <aws/connect/model/DisassociateRoutingProfileQueuesRequest.h>
 #include <aws/connect/model/DisassociateSecurityKeyRequest.h>
@@ -97,6 +101,7 @@
 #include <aws/connect/model/ListLambdaFunctionsRequest.h>
 #include <aws/connect/model/ListLexBotsRequest.h>
 #include <aws/connect/model/ListPhoneNumbersRequest.h>
+#include <aws/connect/model/ListPhoneNumbersV2Request.h>
 #include <aws/connect/model/ListPromptsRequest.h>
 #include <aws/connect/model/ListQueueQuickConnectsRequest.h>
 #include <aws/connect/model/ListQueuesRequest.h>
@@ -110,7 +115,9 @@
 #include <aws/connect/model/ListUseCasesRequest.h>
 #include <aws/connect/model/ListUserHierarchyGroupsRequest.h>
 #include <aws/connect/model/ListUsersRequest.h>
+#include <aws/connect/model/ReleasePhoneNumberRequest.h>
 #include <aws/connect/model/ResumeContactRecordingRequest.h>
+#include <aws/connect/model/SearchAvailablePhoneNumbersRequest.h>
 #include <aws/connect/model/SearchVocabulariesRequest.h>
 #include <aws/connect/model/StartChatContactRequest.h>
 #include <aws/connect/model/StartContactRecordingRequest.h>
@@ -135,6 +142,7 @@
 #include <aws/connect/model/UpdateHoursOfOperationRequest.h>
 #include <aws/connect/model/UpdateInstanceAttributeRequest.h>
 #include <aws/connect/model/UpdateInstanceStorageConfigRequest.h>
+#include <aws/connect/model/UpdatePhoneNumberRequest.h>
 #include <aws/connect/model/UpdateQueueHoursOfOperationRequest.h>
 #include <aws/connect/model/UpdateQueueMaxContactsRequest.h>
 #include <aws/connect/model/UpdateQueueNameRequest.h>
@@ -425,6 +433,38 @@ void ConnectClient::AssociateLexBotAsyncHelper(const AssociateLexBotRequest& req
   handler(this, request, AssociateLexBot(request), context);
 }
 
+AssociatePhoneNumberContactFlowOutcome ConnectClient::AssociatePhoneNumberContactFlow(const AssociatePhoneNumberContactFlowRequest& request) const
+{
+  if (!request.PhoneNumberIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociatePhoneNumberContactFlow", "Required field: PhoneNumberId, is not set");
+    return AssociatePhoneNumberContactFlowOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PhoneNumberId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/phone-number/");
+  uri.AddPathSegment(request.GetPhoneNumberId());
+  uri.AddPathSegments("/contact-flow");
+  return AssociatePhoneNumberContactFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociatePhoneNumberContactFlowOutcomeCallable ConnectClient::AssociatePhoneNumberContactFlowCallable(const AssociatePhoneNumberContactFlowRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociatePhoneNumberContactFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociatePhoneNumberContactFlow(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::AssociatePhoneNumberContactFlowAsync(const AssociatePhoneNumberContactFlowRequest& request, const AssociatePhoneNumberContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociatePhoneNumberContactFlowAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::AssociatePhoneNumberContactFlowAsyncHelper(const AssociatePhoneNumberContactFlowRequest& request, const AssociatePhoneNumberContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociatePhoneNumberContactFlow(request), context);
+}
+
 AssociateQueueQuickConnectsOutcome ConnectClient::AssociateQueueQuickConnects(const AssociateQueueQuickConnectsRequest& request) const
 {
   if (!request.InstanceIdHasBeenSet())
@@ -531,6 +571,31 @@ void ConnectClient::AssociateSecurityKeyAsync(const AssociateSecurityKeyRequest&
 void ConnectClient::AssociateSecurityKeyAsyncHelper(const AssociateSecurityKeyRequest& request, const AssociateSecurityKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociateSecurityKey(request), context);
+}
+
+ClaimPhoneNumberOutcome ConnectClient::ClaimPhoneNumber(const ClaimPhoneNumberRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/phone-number/claim");
+  return ClaimPhoneNumberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ClaimPhoneNumberOutcomeCallable ConnectClient::ClaimPhoneNumberCallable(const ClaimPhoneNumberRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ClaimPhoneNumberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ClaimPhoneNumber(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::ClaimPhoneNumberAsync(const ClaimPhoneNumberRequest& request, const ClaimPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ClaimPhoneNumberAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::ClaimPhoneNumberAsyncHelper(const ClaimPhoneNumberRequest& request, const ClaimPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ClaimPhoneNumber(request), context);
 }
 
 CreateAgentStatusOutcome ConnectClient::CreateAgentStatus(const CreateAgentStatusRequest& request) const
@@ -1677,6 +1742,37 @@ void ConnectClient::DescribeInstanceStorageConfigAsyncHelper(const DescribeInsta
   handler(this, request, DescribeInstanceStorageConfig(request), context);
 }
 
+DescribePhoneNumberOutcome ConnectClient::DescribePhoneNumber(const DescribePhoneNumberRequest& request) const
+{
+  if (!request.PhoneNumberIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribePhoneNumber", "Required field: PhoneNumberId, is not set");
+    return DescribePhoneNumberOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PhoneNumberId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/phone-number/");
+  uri.AddPathSegment(request.GetPhoneNumberId());
+  return DescribePhoneNumberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribePhoneNumberOutcomeCallable ConnectClient::DescribePhoneNumberCallable(const DescribePhoneNumberRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribePhoneNumberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePhoneNumber(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::DescribePhoneNumberAsync(const DescribePhoneNumberRequest& request, const DescribePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePhoneNumberAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::DescribePhoneNumberAsyncHelper(const DescribePhoneNumberRequest& request, const DescribePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribePhoneNumber(request), context);
+}
+
 DescribeQueueOutcome ConnectClient::DescribeQueue(const DescribeQueueRequest& request) const
 {
   if (!request.InstanceIdHasBeenSet())
@@ -2156,6 +2252,43 @@ void ConnectClient::DisassociateLexBotAsync(const DisassociateLexBotRequest& req
 void ConnectClient::DisassociateLexBotAsyncHelper(const DisassociateLexBotRequest& request, const DisassociateLexBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DisassociateLexBot(request), context);
+}
+
+DisassociatePhoneNumberContactFlowOutcome ConnectClient::DisassociatePhoneNumberContactFlow(const DisassociatePhoneNumberContactFlowRequest& request) const
+{
+  if (!request.PhoneNumberIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociatePhoneNumberContactFlow", "Required field: PhoneNumberId, is not set");
+    return DisassociatePhoneNumberContactFlowOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PhoneNumberId]", false));
+  }
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociatePhoneNumberContactFlow", "Required field: InstanceId, is not set");
+    return DisassociatePhoneNumberContactFlowOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/phone-number/");
+  uri.AddPathSegment(request.GetPhoneNumberId());
+  uri.AddPathSegments("/contact-flow");
+  return DisassociatePhoneNumberContactFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociatePhoneNumberContactFlowOutcomeCallable ConnectClient::DisassociatePhoneNumberContactFlowCallable(const DisassociatePhoneNumberContactFlowRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociatePhoneNumberContactFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociatePhoneNumberContactFlow(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::DisassociatePhoneNumberContactFlowAsync(const DisassociatePhoneNumberContactFlowRequest& request, const DisassociatePhoneNumberContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociatePhoneNumberContactFlowAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::DisassociatePhoneNumberContactFlowAsyncHelper(const DisassociatePhoneNumberContactFlowRequest& request, const DisassociatePhoneNumberContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociatePhoneNumberContactFlow(request), context);
 }
 
 DisassociateQueueQuickConnectsOutcome ConnectClient::DisassociateQueueQuickConnects(const DisassociateQueueQuickConnectsRequest& request) const
@@ -2889,6 +3022,31 @@ void ConnectClient::ListPhoneNumbersAsyncHelper(const ListPhoneNumbersRequest& r
   handler(this, request, ListPhoneNumbers(request), context);
 }
 
+ListPhoneNumbersV2Outcome ConnectClient::ListPhoneNumbersV2(const ListPhoneNumbersV2Request& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/phone-number/list");
+  return ListPhoneNumbersV2Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListPhoneNumbersV2OutcomeCallable ConnectClient::ListPhoneNumbersV2Callable(const ListPhoneNumbersV2Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPhoneNumbersV2Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPhoneNumbersV2(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::ListPhoneNumbersV2Async(const ListPhoneNumbersV2Request& request, const ListPhoneNumbersV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPhoneNumbersV2AsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::ListPhoneNumbersV2AsyncHelper(const ListPhoneNumbersV2Request& request, const ListPhoneNumbersV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPhoneNumbersV2(request), context);
+}
+
 ListPromptsOutcome ConnectClient::ListPrompts(const ListPromptsRequest& request) const
 {
   if (!request.InstanceIdHasBeenSet())
@@ -3321,6 +3479,37 @@ void ConnectClient::ListUsersAsyncHelper(const ListUsersRequest& request, const 
   handler(this, request, ListUsers(request), context);
 }
 
+ReleasePhoneNumberOutcome ConnectClient::ReleasePhoneNumber(const ReleasePhoneNumberRequest& request) const
+{
+  if (!request.PhoneNumberIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ReleasePhoneNumber", "Required field: PhoneNumberId, is not set");
+    return ReleasePhoneNumberOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PhoneNumberId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/phone-number/");
+  uri.AddPathSegment(request.GetPhoneNumberId());
+  return ReleasePhoneNumberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+ReleasePhoneNumberOutcomeCallable ConnectClient::ReleasePhoneNumberCallable(const ReleasePhoneNumberRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ReleasePhoneNumberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ReleasePhoneNumber(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::ReleasePhoneNumberAsync(const ReleasePhoneNumberRequest& request, const ReleasePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ReleasePhoneNumberAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::ReleasePhoneNumberAsyncHelper(const ReleasePhoneNumberRequest& request, const ReleasePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ReleasePhoneNumber(request), context);
+}
+
 ResumeContactRecordingOutcome ConnectClient::ResumeContactRecording(const ResumeContactRecordingRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -3344,6 +3533,31 @@ void ConnectClient::ResumeContactRecordingAsync(const ResumeContactRecordingRequ
 void ConnectClient::ResumeContactRecordingAsyncHelper(const ResumeContactRecordingRequest& request, const ResumeContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ResumeContactRecording(request), context);
+}
+
+SearchAvailablePhoneNumbersOutcome ConnectClient::SearchAvailablePhoneNumbers(const SearchAvailablePhoneNumbersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/phone-number/search-available");
+  return SearchAvailablePhoneNumbersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchAvailablePhoneNumbersOutcomeCallable ConnectClient::SearchAvailablePhoneNumbersCallable(const SearchAvailablePhoneNumbersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchAvailablePhoneNumbersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchAvailablePhoneNumbers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::SearchAvailablePhoneNumbersAsync(const SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchAvailablePhoneNumbersAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::SearchAvailablePhoneNumbersAsyncHelper(const SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchAvailablePhoneNumbers(request), context);
 }
 
 SearchVocabulariesOutcome ConnectClient::SearchVocabularies(const SearchVocabulariesRequest& request) const
@@ -4099,6 +4313,37 @@ void ConnectClient::UpdateInstanceStorageConfigAsync(const UpdateInstanceStorage
 void ConnectClient::UpdateInstanceStorageConfigAsyncHelper(const UpdateInstanceStorageConfigRequest& request, const UpdateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateInstanceStorageConfig(request), context);
+}
+
+UpdatePhoneNumberOutcome ConnectClient::UpdatePhoneNumber(const UpdatePhoneNumberRequest& request) const
+{
+  if (!request.PhoneNumberIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePhoneNumber", "Required field: PhoneNumberId, is not set");
+    return UpdatePhoneNumberOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PhoneNumberId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/phone-number/");
+  uri.AddPathSegment(request.GetPhoneNumberId());
+  return UpdatePhoneNumberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdatePhoneNumberOutcomeCallable ConnectClient::UpdatePhoneNumberCallable(const UpdatePhoneNumberRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePhoneNumberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePhoneNumber(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::UpdatePhoneNumberAsync(const UpdatePhoneNumberRequest& request, const UpdatePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePhoneNumberAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::UpdatePhoneNumberAsyncHelper(const UpdatePhoneNumberRequest& request, const UpdatePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePhoneNumber(request), context);
 }
 
 UpdateQueueHoursOfOperationOutcome ConnectClient::UpdateQueueHoursOfOperation(const UpdateQueueHoursOfOperationRequest& request) const

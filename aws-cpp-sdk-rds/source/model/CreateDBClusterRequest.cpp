@@ -71,6 +71,7 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
     m_performanceInsightsRetentionPeriod(0),
     m_performanceInsightsRetentionPeriodHasBeenSet(false),
+    m_serverlessV2ScalingConfigurationHasBeenSet(false),
     m_sourceRegionHasBeenSet(false)
 {
 }
@@ -320,6 +321,11 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_performanceInsightsRetentionPeriodHasBeenSet)
   {
     ss << "PerformanceInsightsRetentionPeriod=" << m_performanceInsightsRetentionPeriod << "&";
+  }
+
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  {
+    m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
   }
 
   ss << "Version=2014-10-31";

@@ -43,7 +43,8 @@ RestoreDBClusterToPointInTimeRequest::RestoreDBClusterToPointInTimeRequest() :
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
     m_iops(0),
-    m_iopsHasBeenSet(false)
+    m_iopsHasBeenSet(false),
+    m_serverlessV2ScalingConfigurationHasBeenSet(false)
 {
 }
 
@@ -191,6 +192,11 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
   if(m_iopsHasBeenSet)
   {
     ss << "Iops=" << m_iops << "&";
+  }
+
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  {
+    m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
   }
 
   ss << "Version=2014-10-31";
