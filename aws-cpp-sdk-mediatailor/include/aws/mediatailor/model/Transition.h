@@ -39,6 +39,27 @@ namespace Model
 
 
     /**
+     * <p>The duration of the live program in seconds.</p>
+     */
+    inline long long GetDurationMillis() const{ return m_durationMillis; }
+
+    /**
+     * <p>The duration of the live program in seconds.</p>
+     */
+    inline bool DurationMillisHasBeenSet() const { return m_durationMillisHasBeenSet; }
+
+    /**
+     * <p>The duration of the live program in seconds.</p>
+     */
+    inline void SetDurationMillis(long long value) { m_durationMillisHasBeenSet = true; m_durationMillis = value; }
+
+    /**
+     * <p>The duration of the live program in seconds.</p>
+     */
+    inline Transition& WithDurationMillis(long long value) { SetDurationMillis(value); return *this;}
+
+
+    /**
      * <p>The position where this program will be inserted relative to the
      * RelativePosition.</p>
      */
@@ -262,6 +283,9 @@ namespace Model
     inline Transition& WithType(const char* value) { SetType(value); return *this;}
 
   private:
+
+    long long m_durationMillis;
+    bool m_durationMillisHasBeenSet;
 
     RelativePosition m_relativePosition;
     bool m_relativePositionHasBeenSet;

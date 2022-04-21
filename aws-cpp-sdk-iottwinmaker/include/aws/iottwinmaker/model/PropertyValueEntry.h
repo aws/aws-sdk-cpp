@@ -26,8 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>An object that specifies information about time series property
-   * values.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that specifies information about time series property values. This
+   * object is used and consumed by the <a
+   * href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_BatchPutPropertyValues.html">BatchPutPropertyValues</a>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/PropertyValueEntry">AWS
    * API Reference</a></p>
    */

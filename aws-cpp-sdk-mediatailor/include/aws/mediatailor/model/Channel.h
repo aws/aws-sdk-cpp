@@ -441,6 +441,55 @@ namespace Model
      */
     inline Channel& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The tier for this channel. STANDARD tier channels can contain live
+     * programs.</p>
+     */
+    inline const Aws::String& GetTier() const{ return m_tier; }
+
+    /**
+     * <p>The tier for this channel. STANDARD tier channels can contain live
+     * programs.</p>
+     */
+    inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
+
+    /**
+     * <p>The tier for this channel. STANDARD tier channels can contain live
+     * programs.</p>
+     */
+    inline void SetTier(const Aws::String& value) { m_tierHasBeenSet = true; m_tier = value; }
+
+    /**
+     * <p>The tier for this channel. STANDARD tier channels can contain live
+     * programs.</p>
+     */
+    inline void SetTier(Aws::String&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
+
+    /**
+     * <p>The tier for this channel. STANDARD tier channels can contain live
+     * programs.</p>
+     */
+    inline void SetTier(const char* value) { m_tierHasBeenSet = true; m_tier.assign(value); }
+
+    /**
+     * <p>The tier for this channel. STANDARD tier channels can contain live
+     * programs.</p>
+     */
+    inline Channel& WithTier(const Aws::String& value) { SetTier(value); return *this;}
+
+    /**
+     * <p>The tier for this channel. STANDARD tier channels can contain live
+     * programs.</p>
+     */
+    inline Channel& WithTier(Aws::String&& value) { SetTier(std::move(value)); return *this;}
+
+    /**
+     * <p>The tier for this channel. STANDARD tier channels can contain live
+     * programs.</p>
+     */
+    inline Channel& WithTier(const char* value) { SetTier(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -469,6 +518,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_tier;
+    bool m_tierHasBeenSet;
   };
 
 } // namespace Model

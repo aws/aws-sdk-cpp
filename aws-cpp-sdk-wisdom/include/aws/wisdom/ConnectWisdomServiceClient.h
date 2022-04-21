@@ -213,11 +213,11 @@ namespace Model
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::UpdateKnowledgeBaseTemplateUriRequest&, const Model::UpdateKnowledgeBaseTemplateUriOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateKnowledgeBaseTemplateUriResponseReceivedHandler;
 
   /**
-   * <p>All Amazon Connect Wisdom functionality is accessible using the API. For
-   * example, you can create an assistant and a knowledge base.</p> <pre><code>
-   * &lt;p&gt;Some more advanced features are only accessible using the Wisdom API.
-   * For example, you can manually manage content by uploading custom files and
-   * control their lifecycle. &lt;/p&gt; </code></pre>
+   * <p>Amazon Connect Wisdom delivers agents the information they need to solve
+   * customer issues as they're actively speaking with customers. Agents can search
+   * across connected repositories from within their agent desktop to find answers
+   * quickly. Use the Amazon Connect Wisdom APIs to create an assistant and a
+   * knowledge base, for example, or manage content by uploading custom files.</p>
    */
   class AWS_CONNECTWISDOMSERVICE_API ConnectWisdomServiceClient : public Aws::Client::AWSJsonClient
   {

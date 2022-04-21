@@ -351,6 +351,42 @@ namespace Model
      */
     inline CreateChannelResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The channel's tier.</p>
+     */
+    inline const Aws::String& GetTier() const{ return m_tier; }
+
+    /**
+     * <p>The channel's tier.</p>
+     */
+    inline void SetTier(const Aws::String& value) { m_tier = value; }
+
+    /**
+     * <p>The channel's tier.</p>
+     */
+    inline void SetTier(Aws::String&& value) { m_tier = std::move(value); }
+
+    /**
+     * <p>The channel's tier.</p>
+     */
+    inline void SetTier(const char* value) { m_tier.assign(value); }
+
+    /**
+     * <p>The channel's tier.</p>
+     */
+    inline CreateChannelResult& WithTier(const Aws::String& value) { SetTier(value); return *this;}
+
+    /**
+     * <p>The channel's tier.</p>
+     */
+    inline CreateChannelResult& WithTier(Aws::String&& value) { SetTier(std::move(value)); return *this;}
+
+    /**
+     * <p>The channel's tier.</p>
+     */
+    inline CreateChannelResult& WithTier(const char* value) { SetTier(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -370,6 +406,8 @@ namespace Model
     Aws::String m_playbackMode;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Aws::String m_tier;
   };
 
 } // namespace Model

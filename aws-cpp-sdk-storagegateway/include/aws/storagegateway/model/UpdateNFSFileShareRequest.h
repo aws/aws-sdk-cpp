@@ -209,73 +209,65 @@ namespace Model
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
-     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
-     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
-     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
-     * <code>S3_ONEZONE_IA</code> </p>
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline const Aws::String& GetDefaultStorageClass() const{ return m_defaultStorageClass; }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
-     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
-     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
-     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
-     * <code>S3_ONEZONE_IA</code> </p>
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline bool DefaultStorageClassHasBeenSet() const { return m_defaultStorageClassHasBeenSet; }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
-     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
-     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
-     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
-     * <code>S3_ONEZONE_IA</code> </p>
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline void SetDefaultStorageClass(const Aws::String& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = value; }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
-     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
-     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
-     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
-     * <code>S3_ONEZONE_IA</code> </p>
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline void SetDefaultStorageClass(Aws::String&& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = std::move(value); }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
-     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
-     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
-     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
-     * <code>S3_ONEZONE_IA</code> </p>
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline void SetDefaultStorageClass(const char* value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass.assign(value); }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
-     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
-     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
-     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
-     * <code>S3_ONEZONE_IA</code> </p>
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline UpdateNFSFileShareRequest& WithDefaultStorageClass(const Aws::String& value) { SetDefaultStorageClass(value); return *this;}
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
-     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
-     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
-     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
-     * <code>S3_ONEZONE_IA</code> </p>
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline UpdateNFSFileShareRequest& WithDefaultStorageClass(Aws::String&& value) { SetDefaultStorageClass(std::move(value)); return *this;}
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
-     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
-     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
-     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
-     * <code>S3_ONEZONE_IA</code> </p>
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline UpdateNFSFileShareRequest& WithDefaultStorageClass(const char* value) { SetDefaultStorageClass(value); return *this;}
 

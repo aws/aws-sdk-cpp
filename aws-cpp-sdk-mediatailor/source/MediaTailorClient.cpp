@@ -22,18 +22,21 @@
 #include <aws/mediatailor/MediaTailorErrorMarshaller.h>
 #include <aws/mediatailor/model/ConfigureLogsForPlaybackConfigurationRequest.h>
 #include <aws/mediatailor/model/CreateChannelRequest.h>
+#include <aws/mediatailor/model/CreateLiveSourceRequest.h>
 #include <aws/mediatailor/model/CreatePrefetchScheduleRequest.h>
 #include <aws/mediatailor/model/CreateProgramRequest.h>
 #include <aws/mediatailor/model/CreateSourceLocationRequest.h>
 #include <aws/mediatailor/model/CreateVodSourceRequest.h>
 #include <aws/mediatailor/model/DeleteChannelRequest.h>
 #include <aws/mediatailor/model/DeleteChannelPolicyRequest.h>
+#include <aws/mediatailor/model/DeleteLiveSourceRequest.h>
 #include <aws/mediatailor/model/DeletePlaybackConfigurationRequest.h>
 #include <aws/mediatailor/model/DeletePrefetchScheduleRequest.h>
 #include <aws/mediatailor/model/DeleteProgramRequest.h>
 #include <aws/mediatailor/model/DeleteSourceLocationRequest.h>
 #include <aws/mediatailor/model/DeleteVodSourceRequest.h>
 #include <aws/mediatailor/model/DescribeChannelRequest.h>
+#include <aws/mediatailor/model/DescribeLiveSourceRequest.h>
 #include <aws/mediatailor/model/DescribeProgramRequest.h>
 #include <aws/mediatailor/model/DescribeSourceLocationRequest.h>
 #include <aws/mediatailor/model/DescribeVodSourceRequest.h>
@@ -43,6 +46,7 @@
 #include <aws/mediatailor/model/GetPrefetchScheduleRequest.h>
 #include <aws/mediatailor/model/ListAlertsRequest.h>
 #include <aws/mediatailor/model/ListChannelsRequest.h>
+#include <aws/mediatailor/model/ListLiveSourcesRequest.h>
 #include <aws/mediatailor/model/ListPlaybackConfigurationsRequest.h>
 #include <aws/mediatailor/model/ListPrefetchSchedulesRequest.h>
 #include <aws/mediatailor/model/ListSourceLocationsRequest.h>
@@ -55,6 +59,7 @@
 #include <aws/mediatailor/model/TagResourceRequest.h>
 #include <aws/mediatailor/model/UntagResourceRequest.h>
 #include <aws/mediatailor/model/UpdateChannelRequest.h>
+#include <aws/mediatailor/model/UpdateLiveSourceRequest.h>
 #include <aws/mediatailor/model/UpdateSourceLocationRequest.h>
 #include <aws/mediatailor/model/UpdateVodSourceRequest.h>
 
@@ -185,6 +190,44 @@ void MediaTailorClient::CreateChannelAsync(const CreateChannelRequest& request, 
 void MediaTailorClient::CreateChannelAsyncHelper(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateChannel(request), context);
+}
+
+CreateLiveSourceOutcome MediaTailorClient::CreateLiveSource(const CreateLiveSourceRequest& request) const
+{
+  if (!request.LiveSourceNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateLiveSource", "Required field: LiveSourceName, is not set");
+    return CreateLiveSourceOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LiveSourceName]", false));
+  }
+  if (!request.SourceLocationNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateLiveSource", "Required field: SourceLocationName, is not set");
+    return CreateLiveSourceOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SourceLocationName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/sourceLocation/");
+  uri.AddPathSegment(request.GetSourceLocationName());
+  uri.AddPathSegments("/liveSource/");
+  uri.AddPathSegment(request.GetLiveSourceName());
+  return CreateLiveSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateLiveSourceOutcomeCallable MediaTailorClient::CreateLiveSourceCallable(const CreateLiveSourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLiveSourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLiveSource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaTailorClient::CreateLiveSourceAsync(const CreateLiveSourceRequest& request, const CreateLiveSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLiveSourceAsyncHelper( request, handler, context ); } );
+}
+
+void MediaTailorClient::CreateLiveSourceAsyncHelper(const CreateLiveSourceRequest& request, const CreateLiveSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLiveSource(request), context);
 }
 
 CreatePrefetchScheduleOutcome MediaTailorClient::CreatePrefetchSchedule(const CreatePrefetchScheduleRequest& request) const
@@ -394,6 +437,44 @@ void MediaTailorClient::DeleteChannelPolicyAsyncHelper(const DeleteChannelPolicy
   handler(this, request, DeleteChannelPolicy(request), context);
 }
 
+DeleteLiveSourceOutcome MediaTailorClient::DeleteLiveSource(const DeleteLiveSourceRequest& request) const
+{
+  if (!request.LiveSourceNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteLiveSource", "Required field: LiveSourceName, is not set");
+    return DeleteLiveSourceOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LiveSourceName]", false));
+  }
+  if (!request.SourceLocationNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteLiveSource", "Required field: SourceLocationName, is not set");
+    return DeleteLiveSourceOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SourceLocationName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/sourceLocation/");
+  uri.AddPathSegment(request.GetSourceLocationName());
+  uri.AddPathSegments("/liveSource/");
+  uri.AddPathSegment(request.GetLiveSourceName());
+  return DeleteLiveSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteLiveSourceOutcomeCallable MediaTailorClient::DeleteLiveSourceCallable(const DeleteLiveSourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLiveSourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLiveSource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaTailorClient::DeleteLiveSourceAsync(const DeleteLiveSourceRequest& request, const DeleteLiveSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteLiveSourceAsyncHelper( request, handler, context ); } );
+}
+
+void MediaTailorClient::DeleteLiveSourceAsyncHelper(const DeleteLiveSourceRequest& request, const DeleteLiveSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteLiveSource(request), context);
+}
+
 DeletePlaybackConfigurationOutcome MediaTailorClient::DeletePlaybackConfiguration(const DeletePlaybackConfigurationRequest& request) const
 {
   if (!request.NameHasBeenSet())
@@ -598,6 +679,44 @@ void MediaTailorClient::DescribeChannelAsync(const DescribeChannelRequest& reque
 void MediaTailorClient::DescribeChannelAsyncHelper(const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeChannel(request), context);
+}
+
+DescribeLiveSourceOutcome MediaTailorClient::DescribeLiveSource(const DescribeLiveSourceRequest& request) const
+{
+  if (!request.LiveSourceNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeLiveSource", "Required field: LiveSourceName, is not set");
+    return DescribeLiveSourceOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LiveSourceName]", false));
+  }
+  if (!request.SourceLocationNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeLiveSource", "Required field: SourceLocationName, is not set");
+    return DescribeLiveSourceOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SourceLocationName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/sourceLocation/");
+  uri.AddPathSegment(request.GetSourceLocationName());
+  uri.AddPathSegments("/liveSource/");
+  uri.AddPathSegment(request.GetLiveSourceName());
+  return DescribeLiveSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeLiveSourceOutcomeCallable MediaTailorClient::DescribeLiveSourceCallable(const DescribeLiveSourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLiveSourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLiveSource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaTailorClient::DescribeLiveSourceAsync(const DescribeLiveSourceRequest& request, const DescribeLiveSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLiveSourceAsyncHelper( request, handler, context ); } );
+}
+
+void MediaTailorClient::DescribeLiveSourceAsyncHelper(const DescribeLiveSourceRequest& request, const DescribeLiveSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLiveSource(request), context);
 }
 
 DescribeProgramOutcome MediaTailorClient::DescribeProgram(const DescribeProgramRequest& request) const
@@ -892,6 +1011,38 @@ void MediaTailorClient::ListChannelsAsync(const ListChannelsRequest& request, co
 void MediaTailorClient::ListChannelsAsyncHelper(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListChannels(request), context);
+}
+
+ListLiveSourcesOutcome MediaTailorClient::ListLiveSources(const ListLiveSourcesRequest& request) const
+{
+  if (!request.SourceLocationNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListLiveSources", "Required field: SourceLocationName, is not set");
+    return ListLiveSourcesOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SourceLocationName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/sourceLocation/");
+  uri.AddPathSegment(request.GetSourceLocationName());
+  uri.AddPathSegments("/liveSources");
+  return ListLiveSourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListLiveSourcesOutcomeCallable MediaTailorClient::ListLiveSourcesCallable(const ListLiveSourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListLiveSourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLiveSources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaTailorClient::ListLiveSourcesAsync(const ListLiveSourcesRequest& request, const ListLiveSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListLiveSourcesAsyncHelper( request, handler, context ); } );
+}
+
+void MediaTailorClient::ListLiveSourcesAsyncHelper(const ListLiveSourcesRequest& request, const ListLiveSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListLiveSources(request), context);
 }
 
 ListPlaybackConfigurationsOutcome MediaTailorClient::ListPlaybackConfigurations(const ListPlaybackConfigurationsRequest& request) const
@@ -1255,6 +1406,44 @@ void MediaTailorClient::UpdateChannelAsync(const UpdateChannelRequest& request, 
 void MediaTailorClient::UpdateChannelAsyncHelper(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateChannel(request), context);
+}
+
+UpdateLiveSourceOutcome MediaTailorClient::UpdateLiveSource(const UpdateLiveSourceRequest& request) const
+{
+  if (!request.LiveSourceNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateLiveSource", "Required field: LiveSourceName, is not set");
+    return UpdateLiveSourceOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LiveSourceName]", false));
+  }
+  if (!request.SourceLocationNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateLiveSource", "Required field: SourceLocationName, is not set");
+    return UpdateLiveSourceOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SourceLocationName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/sourceLocation/");
+  uri.AddPathSegment(request.GetSourceLocationName());
+  uri.AddPathSegments("/liveSource/");
+  uri.AddPathSegment(request.GetLiveSourceName());
+  return UpdateLiveSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateLiveSourceOutcomeCallable MediaTailorClient::UpdateLiveSourceCallable(const UpdateLiveSourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLiveSourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLiveSource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaTailorClient::UpdateLiveSourceAsync(const UpdateLiveSourceRequest& request, const UpdateLiveSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateLiveSourceAsyncHelper( request, handler, context ); } );
+}
+
+void MediaTailorClient::UpdateLiveSourceAsyncHelper(const UpdateLiveSourceRequest& request, const UpdateLiveSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateLiveSource(request), context);
 }
 
 UpdateSourceLocationOutcome MediaTailorClient::UpdateSourceLocation(const UpdateSourceLocationRequest& request) const

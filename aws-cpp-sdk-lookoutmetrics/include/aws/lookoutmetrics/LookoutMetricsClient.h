@@ -23,6 +23,7 @@
 #include <aws/lookoutmetrics/model/DescribeAnomalyDetectionExecutionsResult.h>
 #include <aws/lookoutmetrics/model/DescribeAnomalyDetectorResult.h>
 #include <aws/lookoutmetrics/model/DescribeMetricSetResult.h>
+#include <aws/lookoutmetrics/model/DetectMetricSetConfigResult.h>
 #include <aws/lookoutmetrics/model/GetAnomalyGroupResult.h>
 #include <aws/lookoutmetrics/model/GetFeedbackResult.h>
 #include <aws/lookoutmetrics/model/GetSampleDataResult.h>
@@ -89,6 +90,7 @@ namespace Model
         class DescribeAnomalyDetectionExecutionsRequest;
         class DescribeAnomalyDetectorRequest;
         class DescribeMetricSetRequest;
+        class DetectMetricSetConfigRequest;
         class GetAnomalyGroupRequest;
         class GetFeedbackRequest;
         class GetSampleDataRequest;
@@ -117,6 +119,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeAnomalyDetectionExecutionsResult, LookoutMetricsError> DescribeAnomalyDetectionExecutionsOutcome;
         typedef Aws::Utils::Outcome<DescribeAnomalyDetectorResult, LookoutMetricsError> DescribeAnomalyDetectorOutcome;
         typedef Aws::Utils::Outcome<DescribeMetricSetResult, LookoutMetricsError> DescribeMetricSetOutcome;
+        typedef Aws::Utils::Outcome<DetectMetricSetConfigResult, LookoutMetricsError> DetectMetricSetConfigOutcome;
         typedef Aws::Utils::Outcome<GetAnomalyGroupResult, LookoutMetricsError> GetAnomalyGroupOutcome;
         typedef Aws::Utils::Outcome<GetFeedbackResult, LookoutMetricsError> GetFeedbackOutcome;
         typedef Aws::Utils::Outcome<GetSampleDataResult, LookoutMetricsError> GetSampleDataOutcome;
@@ -145,6 +148,7 @@ namespace Model
         typedef std::future<DescribeAnomalyDetectionExecutionsOutcome> DescribeAnomalyDetectionExecutionsOutcomeCallable;
         typedef std::future<DescribeAnomalyDetectorOutcome> DescribeAnomalyDetectorOutcomeCallable;
         typedef std::future<DescribeMetricSetOutcome> DescribeMetricSetOutcomeCallable;
+        typedef std::future<DetectMetricSetConfigOutcome> DetectMetricSetConfigOutcomeCallable;
         typedef std::future<GetAnomalyGroupOutcome> GetAnomalyGroupOutcomeCallable;
         typedef std::future<GetFeedbackOutcome> GetFeedbackOutcomeCallable;
         typedef std::future<GetSampleDataOutcome> GetSampleDataOutcomeCallable;
@@ -176,6 +180,7 @@ namespace Model
     typedef std::function<void(const LookoutMetricsClient*, const Model::DescribeAnomalyDetectionExecutionsRequest&, const Model::DescribeAnomalyDetectionExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAnomalyDetectionExecutionsResponseReceivedHandler;
     typedef std::function<void(const LookoutMetricsClient*, const Model::DescribeAnomalyDetectorRequest&, const Model::DescribeAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAnomalyDetectorResponseReceivedHandler;
     typedef std::function<void(const LookoutMetricsClient*, const Model::DescribeMetricSetRequest&, const Model::DescribeMetricSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMetricSetResponseReceivedHandler;
+    typedef std::function<void(const LookoutMetricsClient*, const Model::DetectMetricSetConfigRequest&, const Model::DetectMetricSetConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectMetricSetConfigResponseReceivedHandler;
     typedef std::function<void(const LookoutMetricsClient*, const Model::GetAnomalyGroupRequest&, const Model::GetAnomalyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAnomalyGroupResponseReceivedHandler;
     typedef std::function<void(const LookoutMetricsClient*, const Model::GetFeedbackRequest&, const Model::GetFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFeedbackResponseReceivedHandler;
     typedef std::function<void(const LookoutMetricsClient*, const Model::GetSampleDataRequest&, const Model::GetSampleDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSampleDataResponseReceivedHandler;
@@ -563,6 +568,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeMetricSetAsync(const Model::DescribeMetricSetRequest& request, const DescribeMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Detects an Amazon S3 dataset's file format, interval, and
+         * offset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DetectMetricSetConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DetectMetricSetConfigOutcome DetectMetricSetConfig(const Model::DetectMetricSetConfigRequest& request) const;
+
+        /**
+         * <p>Detects an Amazon S3 dataset's file format, interval, and
+         * offset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DetectMetricSetConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DetectMetricSetConfigOutcomeCallable DetectMetricSetConfigCallable(const Model::DetectMetricSetConfigRequest& request) const;
+
+        /**
+         * <p>Detects an Amazon S3 dataset's file format, interval, and
+         * offset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DetectMetricSetConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DetectMetricSetConfigAsync(const Model::DetectMetricSetConfigRequest& request, const DetectMetricSetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns details about a group of anomalous metrics.</p><p><h3>See Also:</h3> 
@@ -1015,6 +1048,7 @@ namespace Model
         void DescribeAnomalyDetectionExecutionsAsyncHelper(const Model::DescribeAnomalyDetectionExecutionsRequest& request, const DescribeAnomalyDetectionExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAnomalyDetectorAsyncHelper(const Model::DescribeAnomalyDetectorRequest& request, const DescribeAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMetricSetAsyncHelper(const Model::DescribeMetricSetRequest& request, const DescribeMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DetectMetricSetConfigAsyncHelper(const Model::DetectMetricSetConfigRequest& request, const DetectMetricSetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAnomalyGroupAsyncHelper(const Model::GetAnomalyGroupRequest& request, const GetAnomalyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFeedbackAsyncHelper(const Model::GetFeedbackRequest& request, const GetFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSampleDataAsyncHelper(const Model::GetSampleDataRequest& request, const GetSampleDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -241,28 +241,44 @@ namespace Model
     inline SourceLocation& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The segment delivery configurations for the source location.</p>
+     */
     inline const Aws::Vector<SegmentDeliveryConfiguration>& GetSegmentDeliveryConfigurations() const{ return m_segmentDeliveryConfigurations; }
 
-    
+    /**
+     * <p>The segment delivery configurations for the source location.</p>
+     */
     inline bool SegmentDeliveryConfigurationsHasBeenSet() const { return m_segmentDeliveryConfigurationsHasBeenSet; }
 
-    
+    /**
+     * <p>The segment delivery configurations for the source location.</p>
+     */
     inline void SetSegmentDeliveryConfigurations(const Aws::Vector<SegmentDeliveryConfiguration>& value) { m_segmentDeliveryConfigurationsHasBeenSet = true; m_segmentDeliveryConfigurations = value; }
 
-    
+    /**
+     * <p>The segment delivery configurations for the source location.</p>
+     */
     inline void SetSegmentDeliveryConfigurations(Aws::Vector<SegmentDeliveryConfiguration>&& value) { m_segmentDeliveryConfigurationsHasBeenSet = true; m_segmentDeliveryConfigurations = std::move(value); }
 
-    
+    /**
+     * <p>The segment delivery configurations for the source location.</p>
+     */
     inline SourceLocation& WithSegmentDeliveryConfigurations(const Aws::Vector<SegmentDeliveryConfiguration>& value) { SetSegmentDeliveryConfigurations(value); return *this;}
 
-    
+    /**
+     * <p>The segment delivery configurations for the source location.</p>
+     */
     inline SourceLocation& WithSegmentDeliveryConfigurations(Aws::Vector<SegmentDeliveryConfiguration>&& value) { SetSegmentDeliveryConfigurations(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The segment delivery configurations for the source location.</p>
+     */
     inline SourceLocation& AddSegmentDeliveryConfigurations(const SegmentDeliveryConfiguration& value) { m_segmentDeliveryConfigurationsHasBeenSet = true; m_segmentDeliveryConfigurations.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The segment delivery configurations for the source location.</p>
+     */
     inline SourceLocation& AddSegmentDeliveryConfigurations(SegmentDeliveryConfiguration&& value) { m_segmentDeliveryConfigurationsHasBeenSet = true; m_segmentDeliveryConfigurations.push_back(std::move(value)); return *this; }
 
 

@@ -39,56 +39,80 @@ namespace Model
     /**
      * <p>The identifier for the secret to attach tags to. You can specify either the
      * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <p>For an
-     * ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+     * ARN, we recommend that you specify a complete ARN rather than a partial ARN. See
+     * <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p>
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
      * <p>The identifier for the secret to attach tags to. You can specify either the
      * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <p>For an
-     * ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+     * ARN, we recommend that you specify a complete ARN rather than a partial ARN. See
+     * <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p>
      */
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
 
     /**
      * <p>The identifier for the secret to attach tags to. You can specify either the
      * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <p>For an
-     * ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+     * ARN, we recommend that you specify a complete ARN rather than a partial ARN. See
+     * <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p>
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
      * <p>The identifier for the secret to attach tags to. You can specify either the
      * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <p>For an
-     * ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+     * ARN, we recommend that you specify a complete ARN rather than a partial ARN. See
+     * <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p>
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
      * <p>The identifier for the secret to attach tags to. You can specify either the
      * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <p>For an
-     * ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+     * ARN, we recommend that you specify a complete ARN rather than a partial ARN. See
+     * <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p>
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
      * <p>The identifier for the secret to attach tags to. You can specify either the
      * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <p>For an
-     * ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+     * ARN, we recommend that you specify a complete ARN rather than a partial ARN. See
+     * <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p>
      */
     inline TagResourceRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
      * <p>The identifier for the secret to attach tags to. You can specify either the
      * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <p>For an
-     * ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+     * ARN, we recommend that you specify a complete ARN rather than a partial ARN. See
+     * <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p>
      */
     inline TagResourceRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the secret to attach tags to. You can specify either the
      * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <p>For an
-     * ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+     * ARN, we recommend that you specify a complete ARN rather than a partial ARN. See
+     * <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
+     * a secret from a partial ARN</a>.</p>
      */
     inline TagResourceRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
 

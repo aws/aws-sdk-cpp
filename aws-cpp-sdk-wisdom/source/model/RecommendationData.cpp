@@ -24,7 +24,9 @@ RecommendationData::RecommendationData() :
     m_relevanceLevel(RelevanceLevel::NOT_SET),
     m_relevanceLevelHasBeenSet(false),
     m_relevanceScore(0.0),
-    m_relevanceScoreHasBeenSet(false)
+    m_relevanceScoreHasBeenSet(false),
+    m_type(RecommendationType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ RecommendationData::RecommendationData(JsonView jsonValue) :
     m_relevanceLevel(RelevanceLevel::NOT_SET),
     m_relevanceLevelHasBeenSet(false),
     m_relevanceScore(0.0),
-    m_relevanceScoreHasBeenSet(false)
+    m_relevanceScoreHasBeenSet(false),
+    m_type(RecommendationType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +73,13 @@ RecommendationData& RecommendationData::operator =(JsonView jsonValue)
     m_relevanceScoreHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = RecommendationTypeMapper::GetRecommendationTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -97,6 +108,11 @@ JsonValue RecommendationData::Jsonize() const
   {
    payload.WithDouble("relevanceScore", m_relevanceScore);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", RecommendationTypeMapper::GetNameForRecommendationType(m_type));
   }
 
   return payload;

@@ -13,6 +13,9 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotsitewise/model/BatchAssociateProjectAssetsResult.h>
 #include <aws/iotsitewise/model/BatchDisassociateProjectAssetsResult.h>
+#include <aws/iotsitewise/model/BatchGetAssetPropertyAggregatesResult.h>
+#include <aws/iotsitewise/model/BatchGetAssetPropertyValueResult.h>
+#include <aws/iotsitewise/model/BatchGetAssetPropertyValueHistoryResult.h>
 #include <aws/iotsitewise/model/BatchPutAssetPropertyValueResult.h>
 #include <aws/iotsitewise/model/CreateAccessPolicyResult.h>
 #include <aws/iotsitewise/model/CreateAssetResult.h>
@@ -112,6 +115,9 @@ namespace Model
         class AssociateTimeSeriesToAssetPropertyRequest;
         class BatchAssociateProjectAssetsRequest;
         class BatchDisassociateProjectAssetsRequest;
+        class BatchGetAssetPropertyAggregatesRequest;
+        class BatchGetAssetPropertyValueRequest;
+        class BatchGetAssetPropertyValueHistoryRequest;
         class BatchPutAssetPropertyValueRequest;
         class CreateAccessPolicyRequest;
         class CreateAssetRequest;
@@ -178,6 +184,9 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, IoTSiteWiseError> AssociateTimeSeriesToAssetPropertyOutcome;
         typedef Aws::Utils::Outcome<BatchAssociateProjectAssetsResult, IoTSiteWiseError> BatchAssociateProjectAssetsOutcome;
         typedef Aws::Utils::Outcome<BatchDisassociateProjectAssetsResult, IoTSiteWiseError> BatchDisassociateProjectAssetsOutcome;
+        typedef Aws::Utils::Outcome<BatchGetAssetPropertyAggregatesResult, IoTSiteWiseError> BatchGetAssetPropertyAggregatesOutcome;
+        typedef Aws::Utils::Outcome<BatchGetAssetPropertyValueResult, IoTSiteWiseError> BatchGetAssetPropertyValueOutcome;
+        typedef Aws::Utils::Outcome<BatchGetAssetPropertyValueHistoryResult, IoTSiteWiseError> BatchGetAssetPropertyValueHistoryOutcome;
         typedef Aws::Utils::Outcome<BatchPutAssetPropertyValueResult, IoTSiteWiseError> BatchPutAssetPropertyValueOutcome;
         typedef Aws::Utils::Outcome<CreateAccessPolicyResult, IoTSiteWiseError> CreateAccessPolicyOutcome;
         typedef Aws::Utils::Outcome<CreateAssetResult, IoTSiteWiseError> CreateAssetOutcome;
@@ -244,6 +253,9 @@ namespace Model
         typedef std::future<AssociateTimeSeriesToAssetPropertyOutcome> AssociateTimeSeriesToAssetPropertyOutcomeCallable;
         typedef std::future<BatchAssociateProjectAssetsOutcome> BatchAssociateProjectAssetsOutcomeCallable;
         typedef std::future<BatchDisassociateProjectAssetsOutcome> BatchDisassociateProjectAssetsOutcomeCallable;
+        typedef std::future<BatchGetAssetPropertyAggregatesOutcome> BatchGetAssetPropertyAggregatesOutcomeCallable;
+        typedef std::future<BatchGetAssetPropertyValueOutcome> BatchGetAssetPropertyValueOutcomeCallable;
+        typedef std::future<BatchGetAssetPropertyValueHistoryOutcome> BatchGetAssetPropertyValueHistoryOutcomeCallable;
         typedef std::future<BatchPutAssetPropertyValueOutcome> BatchPutAssetPropertyValueOutcomeCallable;
         typedef std::future<CreateAccessPolicyOutcome> CreateAccessPolicyOutcomeCallable;
         typedef std::future<CreateAssetOutcome> CreateAssetOutcomeCallable;
@@ -313,6 +325,9 @@ namespace Model
     typedef std::function<void(const IoTSiteWiseClient*, const Model::AssociateTimeSeriesToAssetPropertyRequest&, const Model::AssociateTimeSeriesToAssetPropertyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTimeSeriesToAssetPropertyResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::BatchAssociateProjectAssetsRequest&, const Model::BatchAssociateProjectAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchAssociateProjectAssetsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::BatchDisassociateProjectAssetsRequest&, const Model::BatchDisassociateProjectAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDisassociateProjectAssetsResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::BatchGetAssetPropertyAggregatesRequest&, const Model::BatchGetAssetPropertyAggregatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetAssetPropertyAggregatesResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::BatchGetAssetPropertyValueRequest&, const Model::BatchGetAssetPropertyValueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetAssetPropertyValueResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::BatchGetAssetPropertyValueHistoryRequest&, const Model::BatchGetAssetPropertyValueHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetAssetPropertyValueHistoryResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::BatchPutAssetPropertyValueRequest&, const Model::BatchPutAssetPropertyValueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutAssetPropertyValueResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::CreateAccessPolicyRequest&, const Model::CreateAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccessPolicyResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::CreateAssetRequest&, const Model::CreateAssetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAssetResponseReceivedHandler;
@@ -530,6 +545,117 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchDisassociateProjectAssetsAsync(const Model::BatchDisassociateProjectAssetsRequest& request, const BatchDisassociateProjectAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets aggregated values (for example, average, minimum, and maximum) for one
+         * or more asset properties. For more information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
+         * aggregates</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyAggregates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetAssetPropertyAggregatesOutcome BatchGetAssetPropertyAggregates(const Model::BatchGetAssetPropertyAggregatesRequest& request) const;
+
+        /**
+         * <p>Gets aggregated values (for example, average, minimum, and maximum) for one
+         * or more asset properties. For more information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
+         * aggregates</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyAggregates">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetAssetPropertyAggregatesOutcomeCallable BatchGetAssetPropertyAggregatesCallable(const Model::BatchGetAssetPropertyAggregatesRequest& request) const;
+
+        /**
+         * <p>Gets aggregated values (for example, average, minimum, and maximum) for one
+         * or more asset properties. For more information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
+         * aggregates</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyAggregates">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetAssetPropertyAggregatesAsync(const Model::BatchGetAssetPropertyAggregatesRequest& request, const BatchGetAssetPropertyAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the current value for one or more asset properties. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying
+         * current values</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValue">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetAssetPropertyValueOutcome BatchGetAssetPropertyValue(const Model::BatchGetAssetPropertyValueRequest& request) const;
+
+        /**
+         * <p>Gets the current value for one or more asset properties. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying
+         * current values</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValue">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetAssetPropertyValueOutcomeCallable BatchGetAssetPropertyValueCallable(const Model::BatchGetAssetPropertyValueRequest& request) const;
+
+        /**
+         * <p>Gets the current value for one or more asset properties. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying
+         * current values</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValue">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetAssetPropertyValueAsync(const Model::BatchGetAssetPropertyValueRequest& request, const BatchGetAssetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the historical values for one or more asset properties. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying
+         * historical values</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValueHistory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetAssetPropertyValueHistoryOutcome BatchGetAssetPropertyValueHistory(const Model::BatchGetAssetPropertyValueHistoryRequest& request) const;
+
+        /**
+         * <p>Gets the historical values for one or more asset properties. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying
+         * historical values</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValueHistory">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetAssetPropertyValueHistoryOutcomeCallable BatchGetAssetPropertyValueHistoryCallable(const Model::BatchGetAssetPropertyValueHistoryRequest& request) const;
+
+        /**
+         * <p>Gets the historical values for one or more asset properties. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying
+         * historical values</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValueHistory">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetAssetPropertyValueHistoryAsync(const Model::BatchGetAssetPropertyValueHistoryRequest& request, const BatchGetAssetPropertyValueHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends a list of asset property values to IoT SiteWise. Each value is a
@@ -2667,6 +2793,9 @@ namespace Model
         void AssociateTimeSeriesToAssetPropertyAsyncHelper(const Model::AssociateTimeSeriesToAssetPropertyRequest& request, const AssociateTimeSeriesToAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchAssociateProjectAssetsAsyncHelper(const Model::BatchAssociateProjectAssetsRequest& request, const BatchAssociateProjectAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchDisassociateProjectAssetsAsyncHelper(const Model::BatchDisassociateProjectAssetsRequest& request, const BatchDisassociateProjectAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchGetAssetPropertyAggregatesAsyncHelper(const Model::BatchGetAssetPropertyAggregatesRequest& request, const BatchGetAssetPropertyAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchGetAssetPropertyValueAsyncHelper(const Model::BatchGetAssetPropertyValueRequest& request, const BatchGetAssetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchGetAssetPropertyValueHistoryAsyncHelper(const Model::BatchGetAssetPropertyValueHistoryRequest& request, const BatchGetAssetPropertyValueHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchPutAssetPropertyValueAsyncHelper(const Model::BatchPutAssetPropertyValueRequest& request, const BatchPutAssetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAccessPolicyAsyncHelper(const Model::CreateAccessPolicyRequest& request, const CreateAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAssetAsyncHelper(const Model::CreateAssetRequest& request, const CreateAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

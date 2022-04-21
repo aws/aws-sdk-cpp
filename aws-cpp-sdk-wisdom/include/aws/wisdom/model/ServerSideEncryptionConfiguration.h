@@ -40,64 +40,56 @@ namespace Model
     /**
      * <p>The KMS key. For information about valid ID values, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
-     * identifiers (KeyId)</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p>
+     * identifiers (KeyId)</a>.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>The KMS key. For information about valid ID values, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
-     * identifiers (KeyId)</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p>
+     * identifiers (KeyId)</a>.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The KMS key. For information about valid ID values, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
-     * identifiers (KeyId)</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p>
+     * identifiers (KeyId)</a>.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>The KMS key. For information about valid ID values, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
-     * identifiers (KeyId)</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p>
+     * identifiers (KeyId)</a>.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The KMS key. For information about valid ID values, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
-     * identifiers (KeyId)</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p>
+     * identifiers (KeyId)</a>.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>The KMS key. For information about valid ID values, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
-     * identifiers (KeyId)</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p>
+     * identifiers (KeyId)</a>.</p>
      */
     inline ServerSideEncryptionConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>The KMS key. For information about valid ID values, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
-     * identifiers (KeyId)</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p>
+     * identifiers (KeyId)</a>.</p>
      */
     inline ServerSideEncryptionConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The KMS key. For information about valid ID values, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
-     * identifiers (KeyId)</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p>
+     * identifiers (KeyId)</a>.</p>
      */
     inline ServerSideEncryptionConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

@@ -55,6 +55,12 @@ DescribeProgramResult& DescribeProgramResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("LiveSourceName"))
+  {
+    m_liveSourceName = jsonValue.GetString("LiveSourceName");
+
+  }
+
   if(jsonValue.ValueExists("ProgramName"))
   {
     m_programName = jsonValue.GetString("ProgramName");

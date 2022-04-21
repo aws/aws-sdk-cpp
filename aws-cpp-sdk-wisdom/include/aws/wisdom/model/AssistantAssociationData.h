@@ -41,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+     * <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
      */
     inline const Aws::String& GetAssistantArn() const{ return m_assistantArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+     * <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
      */
     inline bool AssistantArnHasBeenSet() const { return m_assistantArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+     * <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
      */
     inline void SetAssistantArn(const Aws::String& value) { m_assistantArnHasBeenSet = true; m_assistantArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+     * <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
      */
     inline void SetAssistantArn(Aws::String&& value) { m_assistantArnHasBeenSet = true; m_assistantArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+     * <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
      */
     inline void SetAssistantArn(const char* value) { m_assistantArnHasBeenSet = true; m_assistantArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+     * <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
      */
     inline AssistantAssociationData& WithAssistantArn(const Aws::String& value) { SetAssistantArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+     * <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
      */
     inline AssistantAssociationData& WithAssistantArn(Aws::String&& value) { SetAssistantArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+     * <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
      */
     inline AssistantAssociationData& WithAssistantArn(const char* value) { SetAssistantArn(value); return *this;}
 

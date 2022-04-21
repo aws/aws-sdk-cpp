@@ -100,7 +100,7 @@ namespace Model
      * ServiceNow</a>, you must include at least <code>number</code>,
      * <code>short_description</code>, <code>sys_mod_count</code>,
      * <code>workflow_state</code>, and <code>active</code>. </p> </li> </ul> <p>Make
-     * sure to include additional field(s); these are indexed and used to source
+     * sure to include additional fields. These fields are indexed and used to source
      * recommendations. </p>
      */
     inline const Aws::Vector<Aws::String>& GetObjectFields() const{ return m_objectFields; }
@@ -117,7 +117,7 @@ namespace Model
      * ServiceNow</a>, you must include at least <code>number</code>,
      * <code>short_description</code>, <code>sys_mod_count</code>,
      * <code>workflow_state</code>, and <code>active</code>. </p> </li> </ul> <p>Make
-     * sure to include additional field(s); these are indexed and used to source
+     * sure to include additional fields. These fields are indexed and used to source
      * recommendations. </p>
      */
     inline bool ObjectFieldsHasBeenSet() const { return m_objectFieldsHasBeenSet; }
@@ -134,7 +134,7 @@ namespace Model
      * ServiceNow</a>, you must include at least <code>number</code>,
      * <code>short_description</code>, <code>sys_mod_count</code>,
      * <code>workflow_state</code>, and <code>active</code>. </p> </li> </ul> <p>Make
-     * sure to include additional field(s); these are indexed and used to source
+     * sure to include additional fields. These fields are indexed and used to source
      * recommendations. </p>
      */
     inline void SetObjectFields(const Aws::Vector<Aws::String>& value) { m_objectFieldsHasBeenSet = true; m_objectFields = value; }
@@ -151,7 +151,7 @@ namespace Model
      * ServiceNow</a>, you must include at least <code>number</code>,
      * <code>short_description</code>, <code>sys_mod_count</code>,
      * <code>workflow_state</code>, and <code>active</code>. </p> </li> </ul> <p>Make
-     * sure to include additional field(s); these are indexed and used to source
+     * sure to include additional fields. These fields are indexed and used to source
      * recommendations. </p>
      */
     inline void SetObjectFields(Aws::Vector<Aws::String>&& value) { m_objectFieldsHasBeenSet = true; m_objectFields = std::move(value); }
@@ -168,7 +168,7 @@ namespace Model
      * ServiceNow</a>, you must include at least <code>number</code>,
      * <code>short_description</code>, <code>sys_mod_count</code>,
      * <code>workflow_state</code>, and <code>active</code>. </p> </li> </ul> <p>Make
-     * sure to include additional field(s); these are indexed and used to source
+     * sure to include additional fields. These fields are indexed and used to source
      * recommendations. </p>
      */
     inline AppIntegrationsConfiguration& WithObjectFields(const Aws::Vector<Aws::String>& value) { SetObjectFields(value); return *this;}
@@ -185,7 +185,7 @@ namespace Model
      * ServiceNow</a>, you must include at least <code>number</code>,
      * <code>short_description</code>, <code>sys_mod_count</code>,
      * <code>workflow_state</code>, and <code>active</code>. </p> </li> </ul> <p>Make
-     * sure to include additional field(s); these are indexed and used to source
+     * sure to include additional fields. These fields are indexed and used to source
      * recommendations. </p>
      */
     inline AppIntegrationsConfiguration& WithObjectFields(Aws::Vector<Aws::String>&& value) { SetObjectFields(std::move(value)); return *this;}
@@ -202,7 +202,7 @@ namespace Model
      * ServiceNow</a>, you must include at least <code>number</code>,
      * <code>short_description</code>, <code>sys_mod_count</code>,
      * <code>workflow_state</code>, and <code>active</code>. </p> </li> </ul> <p>Make
-     * sure to include additional field(s); these are indexed and used to source
+     * sure to include additional fields. These fields are indexed and used to source
      * recommendations. </p>
      */
     inline AppIntegrationsConfiguration& AddObjectFields(const Aws::String& value) { m_objectFieldsHasBeenSet = true; m_objectFields.push_back(value); return *this; }
@@ -219,7 +219,7 @@ namespace Model
      * ServiceNow</a>, you must include at least <code>number</code>,
      * <code>short_description</code>, <code>sys_mod_count</code>,
      * <code>workflow_state</code>, and <code>active</code>. </p> </li> </ul> <p>Make
-     * sure to include additional field(s); these are indexed and used to source
+     * sure to include additional fields. These fields are indexed and used to source
      * recommendations. </p>
      */
     inline AppIntegrationsConfiguration& AddObjectFields(Aws::String&& value) { m_objectFieldsHasBeenSet = true; m_objectFields.push_back(std::move(value)); return *this; }
@@ -236,7 +236,7 @@ namespace Model
      * ServiceNow</a>, you must include at least <code>number</code>,
      * <code>short_description</code>, <code>sys_mod_count</code>,
      * <code>workflow_state</code>, and <code>active</code>. </p> </li> </ul> <p>Make
-     * sure to include additional field(s); these are indexed and used to source
+     * sure to include additional fields. These fields are indexed and used to source
      * recommendations. </p>
      */
     inline AppIntegrationsConfiguration& AddObjectFields(const char* value) { m_objectFieldsHasBeenSet = true; m_objectFields.push_back(value); return *this; }

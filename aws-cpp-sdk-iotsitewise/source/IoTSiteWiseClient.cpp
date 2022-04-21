@@ -24,6 +24,9 @@
 #include <aws/iotsitewise/model/AssociateTimeSeriesToAssetPropertyRequest.h>
 #include <aws/iotsitewise/model/BatchAssociateProjectAssetsRequest.h>
 #include <aws/iotsitewise/model/BatchDisassociateProjectAssetsRequest.h>
+#include <aws/iotsitewise/model/BatchGetAssetPropertyAggregatesRequest.h>
+#include <aws/iotsitewise/model/BatchGetAssetPropertyValueRequest.h>
+#include <aws/iotsitewise/model/BatchGetAssetPropertyValueHistoryRequest.h>
 #include <aws/iotsitewise/model/BatchPutAssetPropertyValueRequest.h>
 #include <aws/iotsitewise/model/CreateAccessPolicyRequest.h>
 #include <aws/iotsitewise/model/CreateAssetRequest.h>
@@ -338,6 +341,108 @@ void IoTSiteWiseClient::BatchDisassociateProjectAssetsAsync(const BatchDisassoci
 void IoTSiteWiseClient::BatchDisassociateProjectAssetsAsyncHelper(const BatchDisassociateProjectAssetsRequest& request, const BatchDisassociateProjectAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchDisassociateProjectAssets(request), context);
+}
+
+BatchGetAssetPropertyAggregatesOutcome IoTSiteWiseClient::BatchGetAssetPropertyAggregates(const BatchGetAssetPropertyAggregatesRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("data." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("BatchGetAssetPropertyAggregates", "Invalid DNS host: " << uri.GetAuthority());
+      return BatchGetAssetPropertyAggregatesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/properties/batch/aggregates");
+  return BatchGetAssetPropertyAggregatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchGetAssetPropertyAggregatesOutcomeCallable IoTSiteWiseClient::BatchGetAssetPropertyAggregatesCallable(const BatchGetAssetPropertyAggregatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetAssetPropertyAggregatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetAssetPropertyAggregates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSiteWiseClient::BatchGetAssetPropertyAggregatesAsync(const BatchGetAssetPropertyAggregatesRequest& request, const BatchGetAssetPropertyAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchGetAssetPropertyAggregatesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTSiteWiseClient::BatchGetAssetPropertyAggregatesAsyncHelper(const BatchGetAssetPropertyAggregatesRequest& request, const BatchGetAssetPropertyAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchGetAssetPropertyAggregates(request), context);
+}
+
+BatchGetAssetPropertyValueOutcome IoTSiteWiseClient::BatchGetAssetPropertyValue(const BatchGetAssetPropertyValueRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("data." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("BatchGetAssetPropertyValue", "Invalid DNS host: " << uri.GetAuthority());
+      return BatchGetAssetPropertyValueOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/properties/batch/latest");
+  return BatchGetAssetPropertyValueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchGetAssetPropertyValueOutcomeCallable IoTSiteWiseClient::BatchGetAssetPropertyValueCallable(const BatchGetAssetPropertyValueRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetAssetPropertyValueOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetAssetPropertyValue(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSiteWiseClient::BatchGetAssetPropertyValueAsync(const BatchGetAssetPropertyValueRequest& request, const BatchGetAssetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchGetAssetPropertyValueAsyncHelper( request, handler, context ); } );
+}
+
+void IoTSiteWiseClient::BatchGetAssetPropertyValueAsyncHelper(const BatchGetAssetPropertyValueRequest& request, const BatchGetAssetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchGetAssetPropertyValue(request), context);
+}
+
+BatchGetAssetPropertyValueHistoryOutcome IoTSiteWiseClient::BatchGetAssetPropertyValueHistory(const BatchGetAssetPropertyValueHistoryRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("data." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("BatchGetAssetPropertyValueHistory", "Invalid DNS host: " << uri.GetAuthority());
+      return BatchGetAssetPropertyValueHistoryOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/properties/batch/history");
+  return BatchGetAssetPropertyValueHistoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchGetAssetPropertyValueHistoryOutcomeCallable IoTSiteWiseClient::BatchGetAssetPropertyValueHistoryCallable(const BatchGetAssetPropertyValueHistoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetAssetPropertyValueHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetAssetPropertyValueHistory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSiteWiseClient::BatchGetAssetPropertyValueHistoryAsync(const BatchGetAssetPropertyValueHistoryRequest& request, const BatchGetAssetPropertyValueHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchGetAssetPropertyValueHistoryAsyncHelper( request, handler, context ); } );
+}
+
+void IoTSiteWiseClient::BatchGetAssetPropertyValueHistoryAsyncHelper(const BatchGetAssetPropertyValueHistoryRequest& request, const BatchGetAssetPropertyValueHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchGetAssetPropertyValueHistory(request), context);
 }
 
 BatchPutAssetPropertyValueOutcome IoTSiteWiseClient::BatchPutAssetPropertyValue(const BatchPutAssetPropertyValueRequest& request) const

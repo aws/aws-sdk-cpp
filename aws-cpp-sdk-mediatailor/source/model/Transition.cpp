@@ -19,6 +19,8 @@ namespace Model
 {
 
 Transition::Transition() : 
+    m_durationMillis(0),
+    m_durationMillisHasBeenSet(false),
     m_relativePosition(RelativePosition::NOT_SET),
     m_relativePositionHasBeenSet(false),
     m_relativeProgramHasBeenSet(false),
@@ -29,6 +31,8 @@ Transition::Transition() :
 }
 
 Transition::Transition(JsonView jsonValue) : 
+    m_durationMillis(0),
+    m_durationMillisHasBeenSet(false),
     m_relativePosition(RelativePosition::NOT_SET),
     m_relativePositionHasBeenSet(false),
     m_relativeProgramHasBeenSet(false),
@@ -41,6 +45,13 @@ Transition::Transition(JsonView jsonValue) :
 
 Transition& Transition::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("DurationMillis"))
+  {
+    m_durationMillis = jsonValue.GetInt64("DurationMillis");
+
+    m_durationMillisHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("RelativePosition"))
   {
     m_relativePosition = RelativePositionMapper::GetRelativePositionForName(jsonValue.GetString("RelativePosition"));
@@ -75,6 +86,12 @@ Transition& Transition::operator =(JsonView jsonValue)
 JsonValue Transition::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_durationMillisHasBeenSet)
+  {
+   payload.WithInt64("DurationMillis", m_durationMillis);
+
+  }
 
   if(m_relativePositionHasBeenSet)
   {

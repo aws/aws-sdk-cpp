@@ -18,6 +18,7 @@
 #include <aws/glue/model/BatchDeleteTableVersionResult.h>
 #include <aws/glue/model/BatchGetBlueprintsResult.h>
 #include <aws/glue/model/BatchGetCrawlersResult.h>
+#include <aws/glue/model/BatchGetCustomEntityTypesResult.h>
 #include <aws/glue/model/BatchGetDevEndpointsResult.h>
 #include <aws/glue/model/BatchGetJobsResult.h>
 #include <aws/glue/model/BatchGetPartitionResult.h>
@@ -32,6 +33,7 @@
 #include <aws/glue/model/CreateClassifierResult.h>
 #include <aws/glue/model/CreateConnectionResult.h>
 #include <aws/glue/model/CreateCrawlerResult.h>
+#include <aws/glue/model/CreateCustomEntityTypeResult.h>
 #include <aws/glue/model/CreateDatabaseResult.h>
 #include <aws/glue/model/CreateDevEndpointResult.h>
 #include <aws/glue/model/CreateJobResult.h>
@@ -53,6 +55,7 @@
 #include <aws/glue/model/DeleteColumnStatisticsForTableResult.h>
 #include <aws/glue/model/DeleteConnectionResult.h>
 #include <aws/glue/model/DeleteCrawlerResult.h>
+#include <aws/glue/model/DeleteCustomEntityTypeResult.h>
 #include <aws/glue/model/DeleteDatabaseResult.h>
 #include <aws/glue/model/DeleteDevEndpointResult.h>
 #include <aws/glue/model/DeleteJobResult.h>
@@ -83,6 +86,7 @@
 #include <aws/glue/model/GetCrawlerResult.h>
 #include <aws/glue/model/GetCrawlerMetricsResult.h>
 #include <aws/glue/model/GetCrawlersResult.h>
+#include <aws/glue/model/GetCustomEntityTypeResult.h>
 #include <aws/glue/model/GetDataCatalogEncryptionSettingsResult.h>
 #include <aws/glue/model/GetDatabaseResult.h>
 #include <aws/glue/model/GetDatabasesResult.h>
@@ -133,6 +137,7 @@
 #include <aws/glue/model/ImportCatalogToGlueResult.h>
 #include <aws/glue/model/ListBlueprintsResult.h>
 #include <aws/glue/model/ListCrawlersResult.h>
+#include <aws/glue/model/ListCustomEntityTypesResult.h>
 #include <aws/glue/model/ListDevEndpointsResult.h>
 #include <aws/glue/model/ListJobsResult.h>
 #include <aws/glue/model/ListMLTransformsResult.h>
@@ -235,6 +240,7 @@ namespace Model
         class BatchDeleteTableVersionRequest;
         class BatchGetBlueprintsRequest;
         class BatchGetCrawlersRequest;
+        class BatchGetCustomEntityTypesRequest;
         class BatchGetDevEndpointsRequest;
         class BatchGetJobsRequest;
         class BatchGetPartitionRequest;
@@ -249,6 +255,7 @@ namespace Model
         class CreateClassifierRequest;
         class CreateConnectionRequest;
         class CreateCrawlerRequest;
+        class CreateCustomEntityTypeRequest;
         class CreateDatabaseRequest;
         class CreateDevEndpointRequest;
         class CreateJobRequest;
@@ -270,6 +277,7 @@ namespace Model
         class DeleteColumnStatisticsForTableRequest;
         class DeleteConnectionRequest;
         class DeleteCrawlerRequest;
+        class DeleteCustomEntityTypeRequest;
         class DeleteDatabaseRequest;
         class DeleteDevEndpointRequest;
         class DeleteJobRequest;
@@ -300,6 +308,7 @@ namespace Model
         class GetCrawlerRequest;
         class GetCrawlerMetricsRequest;
         class GetCrawlersRequest;
+        class GetCustomEntityTypeRequest;
         class GetDataCatalogEncryptionSettingsRequest;
         class GetDatabaseRequest;
         class GetDatabasesRequest;
@@ -350,6 +359,7 @@ namespace Model
         class ImportCatalogToGlueRequest;
         class ListBlueprintsRequest;
         class ListCrawlersRequest;
+        class ListCustomEntityTypesRequest;
         class ListDevEndpointsRequest;
         class ListJobsRequest;
         class ListMLTransformsRequest;
@@ -414,6 +424,7 @@ namespace Model
         typedef Aws::Utils::Outcome<BatchDeleteTableVersionResult, GlueError> BatchDeleteTableVersionOutcome;
         typedef Aws::Utils::Outcome<BatchGetBlueprintsResult, GlueError> BatchGetBlueprintsOutcome;
         typedef Aws::Utils::Outcome<BatchGetCrawlersResult, GlueError> BatchGetCrawlersOutcome;
+        typedef Aws::Utils::Outcome<BatchGetCustomEntityTypesResult, GlueError> BatchGetCustomEntityTypesOutcome;
         typedef Aws::Utils::Outcome<BatchGetDevEndpointsResult, GlueError> BatchGetDevEndpointsOutcome;
         typedef Aws::Utils::Outcome<BatchGetJobsResult, GlueError> BatchGetJobsOutcome;
         typedef Aws::Utils::Outcome<BatchGetPartitionResult, GlueError> BatchGetPartitionOutcome;
@@ -428,6 +439,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateClassifierResult, GlueError> CreateClassifierOutcome;
         typedef Aws::Utils::Outcome<CreateConnectionResult, GlueError> CreateConnectionOutcome;
         typedef Aws::Utils::Outcome<CreateCrawlerResult, GlueError> CreateCrawlerOutcome;
+        typedef Aws::Utils::Outcome<CreateCustomEntityTypeResult, GlueError> CreateCustomEntityTypeOutcome;
         typedef Aws::Utils::Outcome<CreateDatabaseResult, GlueError> CreateDatabaseOutcome;
         typedef Aws::Utils::Outcome<CreateDevEndpointResult, GlueError> CreateDevEndpointOutcome;
         typedef Aws::Utils::Outcome<CreateJobResult, GlueError> CreateJobOutcome;
@@ -449,6 +461,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteColumnStatisticsForTableResult, GlueError> DeleteColumnStatisticsForTableOutcome;
         typedef Aws::Utils::Outcome<DeleteConnectionResult, GlueError> DeleteConnectionOutcome;
         typedef Aws::Utils::Outcome<DeleteCrawlerResult, GlueError> DeleteCrawlerOutcome;
+        typedef Aws::Utils::Outcome<DeleteCustomEntityTypeResult, GlueError> DeleteCustomEntityTypeOutcome;
         typedef Aws::Utils::Outcome<DeleteDatabaseResult, GlueError> DeleteDatabaseOutcome;
         typedef Aws::Utils::Outcome<DeleteDevEndpointResult, GlueError> DeleteDevEndpointOutcome;
         typedef Aws::Utils::Outcome<DeleteJobResult, GlueError> DeleteJobOutcome;
@@ -479,6 +492,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetCrawlerResult, GlueError> GetCrawlerOutcome;
         typedef Aws::Utils::Outcome<GetCrawlerMetricsResult, GlueError> GetCrawlerMetricsOutcome;
         typedef Aws::Utils::Outcome<GetCrawlersResult, GlueError> GetCrawlersOutcome;
+        typedef Aws::Utils::Outcome<GetCustomEntityTypeResult, GlueError> GetCustomEntityTypeOutcome;
         typedef Aws::Utils::Outcome<GetDataCatalogEncryptionSettingsResult, GlueError> GetDataCatalogEncryptionSettingsOutcome;
         typedef Aws::Utils::Outcome<GetDatabaseResult, GlueError> GetDatabaseOutcome;
         typedef Aws::Utils::Outcome<GetDatabasesResult, GlueError> GetDatabasesOutcome;
@@ -529,6 +543,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ImportCatalogToGlueResult, GlueError> ImportCatalogToGlueOutcome;
         typedef Aws::Utils::Outcome<ListBlueprintsResult, GlueError> ListBlueprintsOutcome;
         typedef Aws::Utils::Outcome<ListCrawlersResult, GlueError> ListCrawlersOutcome;
+        typedef Aws::Utils::Outcome<ListCustomEntityTypesResult, GlueError> ListCustomEntityTypesOutcome;
         typedef Aws::Utils::Outcome<ListDevEndpointsResult, GlueError> ListDevEndpointsOutcome;
         typedef Aws::Utils::Outcome<ListJobsResult, GlueError> ListJobsOutcome;
         typedef Aws::Utils::Outcome<ListMLTransformsResult, GlueError> ListMLTransformsOutcome;
@@ -593,6 +608,7 @@ namespace Model
         typedef std::future<BatchDeleteTableVersionOutcome> BatchDeleteTableVersionOutcomeCallable;
         typedef std::future<BatchGetBlueprintsOutcome> BatchGetBlueprintsOutcomeCallable;
         typedef std::future<BatchGetCrawlersOutcome> BatchGetCrawlersOutcomeCallable;
+        typedef std::future<BatchGetCustomEntityTypesOutcome> BatchGetCustomEntityTypesOutcomeCallable;
         typedef std::future<BatchGetDevEndpointsOutcome> BatchGetDevEndpointsOutcomeCallable;
         typedef std::future<BatchGetJobsOutcome> BatchGetJobsOutcomeCallable;
         typedef std::future<BatchGetPartitionOutcome> BatchGetPartitionOutcomeCallable;
@@ -607,6 +623,7 @@ namespace Model
         typedef std::future<CreateClassifierOutcome> CreateClassifierOutcomeCallable;
         typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
         typedef std::future<CreateCrawlerOutcome> CreateCrawlerOutcomeCallable;
+        typedef std::future<CreateCustomEntityTypeOutcome> CreateCustomEntityTypeOutcomeCallable;
         typedef std::future<CreateDatabaseOutcome> CreateDatabaseOutcomeCallable;
         typedef std::future<CreateDevEndpointOutcome> CreateDevEndpointOutcomeCallable;
         typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
@@ -628,6 +645,7 @@ namespace Model
         typedef std::future<DeleteColumnStatisticsForTableOutcome> DeleteColumnStatisticsForTableOutcomeCallable;
         typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
         typedef std::future<DeleteCrawlerOutcome> DeleteCrawlerOutcomeCallable;
+        typedef std::future<DeleteCustomEntityTypeOutcome> DeleteCustomEntityTypeOutcomeCallable;
         typedef std::future<DeleteDatabaseOutcome> DeleteDatabaseOutcomeCallable;
         typedef std::future<DeleteDevEndpointOutcome> DeleteDevEndpointOutcomeCallable;
         typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
@@ -658,6 +676,7 @@ namespace Model
         typedef std::future<GetCrawlerOutcome> GetCrawlerOutcomeCallable;
         typedef std::future<GetCrawlerMetricsOutcome> GetCrawlerMetricsOutcomeCallable;
         typedef std::future<GetCrawlersOutcome> GetCrawlersOutcomeCallable;
+        typedef std::future<GetCustomEntityTypeOutcome> GetCustomEntityTypeOutcomeCallable;
         typedef std::future<GetDataCatalogEncryptionSettingsOutcome> GetDataCatalogEncryptionSettingsOutcomeCallable;
         typedef std::future<GetDatabaseOutcome> GetDatabaseOutcomeCallable;
         typedef std::future<GetDatabasesOutcome> GetDatabasesOutcomeCallable;
@@ -708,6 +727,7 @@ namespace Model
         typedef std::future<ImportCatalogToGlueOutcome> ImportCatalogToGlueOutcomeCallable;
         typedef std::future<ListBlueprintsOutcome> ListBlueprintsOutcomeCallable;
         typedef std::future<ListCrawlersOutcome> ListCrawlersOutcomeCallable;
+        typedef std::future<ListCustomEntityTypesOutcome> ListCustomEntityTypesOutcomeCallable;
         typedef std::future<ListDevEndpointsOutcome> ListDevEndpointsOutcomeCallable;
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
         typedef std::future<ListMLTransformsOutcome> ListMLTransformsOutcomeCallable;
@@ -775,6 +795,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::BatchDeleteTableVersionRequest&, const Model::BatchDeleteTableVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteTableVersionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::BatchGetBlueprintsRequest&, const Model::BatchGetBlueprintsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetBlueprintsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::BatchGetCrawlersRequest&, const Model::BatchGetCrawlersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetCrawlersResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::BatchGetCustomEntityTypesRequest&, const Model::BatchGetCustomEntityTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetCustomEntityTypesResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::BatchGetDevEndpointsRequest&, const Model::BatchGetDevEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetDevEndpointsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::BatchGetJobsRequest&, const Model::BatchGetJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetJobsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::BatchGetPartitionRequest&, const Model::BatchGetPartitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetPartitionResponseReceivedHandler;
@@ -789,6 +810,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::CreateClassifierRequest&, const Model::CreateClassifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClassifierResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateConnectionRequest&, const Model::CreateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateCrawlerRequest&, const Model::CreateCrawlerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCrawlerResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::CreateCustomEntityTypeRequest&, const Model::CreateCustomEntityTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomEntityTypeResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateDatabaseRequest&, const Model::CreateDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatabaseResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateDevEndpointRequest&, const Model::CreateDevEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDevEndpointResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateJobRequest&, const Model::CreateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobResponseReceivedHandler;
@@ -810,6 +832,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::DeleteColumnStatisticsForTableRequest&, const Model::DeleteColumnStatisticsForTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteColumnStatisticsForTableResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteConnectionRequest&, const Model::DeleteConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteCrawlerRequest&, const Model::DeleteCrawlerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCrawlerResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::DeleteCustomEntityTypeRequest&, const Model::DeleteCustomEntityTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomEntityTypeResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteDatabaseRequest&, const Model::DeleteDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatabaseResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteDevEndpointRequest&, const Model::DeleteDevEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDevEndpointResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteJobRequest&, const Model::DeleteJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobResponseReceivedHandler;
@@ -840,6 +863,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::GetCrawlerRequest&, const Model::GetCrawlerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCrawlerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetCrawlerMetricsRequest&, const Model::GetCrawlerMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCrawlerMetricsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetCrawlersRequest&, const Model::GetCrawlersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCrawlersResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::GetCustomEntityTypeRequest&, const Model::GetCustomEntityTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCustomEntityTypeResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetDataCatalogEncryptionSettingsRequest&, const Model::GetDataCatalogEncryptionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataCatalogEncryptionSettingsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetDatabaseRequest&, const Model::GetDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDatabaseResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetDatabasesRequest&, const Model::GetDatabasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDatabasesResponseReceivedHandler;
@@ -890,6 +914,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::ImportCatalogToGlueRequest&, const Model::ImportCatalogToGlueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportCatalogToGlueResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListBlueprintsRequest&, const Model::ListBlueprintsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBlueprintsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListCrawlersRequest&, const Model::ListCrawlersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCrawlersResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::ListCustomEntityTypesRequest&, const Model::ListCustomEntityTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomEntityTypesResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListDevEndpointsRequest&, const Model::ListDevEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevEndpointsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListMLTransformsRequest&, const Model::ListMLTransformsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMLTransformsResponseReceivedHandler;
@@ -1203,6 +1228,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchGetCrawlersAsync(const Model::BatchGetCrawlersRequest& request, const BatchGetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::BatchGetCustomEntityTypesOutcome BatchGetCustomEntityTypes(const Model::BatchGetCustomEntityTypesRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetCustomEntityTypesOutcomeCallable BatchGetCustomEntityTypesCallable(const Model::BatchGetCustomEntityTypesRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetCustomEntityTypesAsync(const Model::BatchGetCustomEntityTypesRequest& request, const BatchGetCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of resource metadata for a given list of development endpoint
@@ -1652,6 +1696,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateCrawlerAsync(const Model::CreateCrawlerRequest& request, const CreateCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::CreateCustomEntityTypeOutcome CreateCustomEntityType(const Model::CreateCustomEntityTypeRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateCustomEntityTypeOutcomeCallable CreateCustomEntityTypeCallable(const Model::CreateCustomEntityTypeRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateCustomEntityTypeAsync(const Model::CreateCustomEntityTypeRequest& request, const CreateCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new database in a Data Catalog.</p><p><h3>See Also:</h3>   <a
@@ -2285,6 +2348,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteCrawlerAsync(const Model::DeleteCrawlerRequest& request, const DeleteCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::DeleteCustomEntityTypeOutcome DeleteCustomEntityType(const Model::DeleteCustomEntityTypeRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteCustomEntityTypeOutcomeCallable DeleteCustomEntityTypeCallable(const Model::DeleteCustomEntityTypeRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteCustomEntityTypeAsync(const Model::DeleteCustomEntityTypeRequest& request, const DeleteCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a specified database from a Data Catalog.</p>  <p>After
@@ -3218,6 +3300,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCrawlersAsync(const Model::GetCrawlersRequest& request, const GetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::GetCustomEntityTypeOutcome GetCustomEntityType(const Model::GetCustomEntityTypeRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetCustomEntityTypeOutcomeCallable GetCustomEntityTypeCallable(const Model::GetCustomEntityTypeRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetCustomEntityTypeAsync(const Model::GetCustomEntityTypeRequest& request, const GetCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the security configuration for a specified catalog.</p><p><h3>See
@@ -4648,6 +4749,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListCrawlersAsync(const Model::ListCrawlersRequest& request, const ListCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::ListCustomEntityTypesOutcome ListCustomEntityTypes(const Model::ListCustomEntityTypesRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListCustomEntityTypesOutcomeCallable ListCustomEntityTypesCallable(const Model::ListCustomEntityTypesRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListCustomEntityTypesAsync(const Model::ListCustomEntityTypesRequest& request, const ListCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the names of all <code>DevEndpoint</code> resources in this Amazon
@@ -6534,6 +6654,7 @@ namespace Model
         void BatchDeleteTableVersionAsyncHelper(const Model::BatchDeleteTableVersionRequest& request, const BatchDeleteTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetBlueprintsAsyncHelper(const Model::BatchGetBlueprintsRequest& request, const BatchGetBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetCrawlersAsyncHelper(const Model::BatchGetCrawlersRequest& request, const BatchGetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchGetCustomEntityTypesAsyncHelper(const Model::BatchGetCustomEntityTypesRequest& request, const BatchGetCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetDevEndpointsAsyncHelper(const Model::BatchGetDevEndpointsRequest& request, const BatchGetDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetJobsAsyncHelper(const Model::BatchGetJobsRequest& request, const BatchGetJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetPartitionAsyncHelper(const Model::BatchGetPartitionRequest& request, const BatchGetPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6548,6 +6669,7 @@ namespace Model
         void CreateClassifierAsyncHelper(const Model::CreateClassifierRequest& request, const CreateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateConnectionAsyncHelper(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCrawlerAsyncHelper(const Model::CreateCrawlerRequest& request, const CreateCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateCustomEntityTypeAsyncHelper(const Model::CreateCustomEntityTypeRequest& request, const CreateCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDatabaseAsyncHelper(const Model::CreateDatabaseRequest& request, const CreateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDevEndpointAsyncHelper(const Model::CreateDevEndpointRequest& request, const CreateDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateJobAsyncHelper(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6569,6 +6691,7 @@ namespace Model
         void DeleteColumnStatisticsForTableAsyncHelper(const Model::DeleteColumnStatisticsForTableRequest& request, const DeleteColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConnectionAsyncHelper(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCrawlerAsyncHelper(const Model::DeleteCrawlerRequest& request, const DeleteCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteCustomEntityTypeAsyncHelper(const Model::DeleteCustomEntityTypeRequest& request, const DeleteCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDatabaseAsyncHelper(const Model::DeleteDatabaseRequest& request, const DeleteDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDevEndpointAsyncHelper(const Model::DeleteDevEndpointRequest& request, const DeleteDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteJobAsyncHelper(const Model::DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6599,6 +6722,7 @@ namespace Model
         void GetCrawlerAsyncHelper(const Model::GetCrawlerRequest& request, const GetCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCrawlerMetricsAsyncHelper(const Model::GetCrawlerMetricsRequest& request, const GetCrawlerMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCrawlersAsyncHelper(const Model::GetCrawlersRequest& request, const GetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetCustomEntityTypeAsyncHelper(const Model::GetCustomEntityTypeRequest& request, const GetCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDataCatalogEncryptionSettingsAsyncHelper(const Model::GetDataCatalogEncryptionSettingsRequest& request, const GetDataCatalogEncryptionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDatabaseAsyncHelper(const Model::GetDatabaseRequest& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDatabasesAsyncHelper(const Model::GetDatabasesRequest& request, const GetDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6649,6 +6773,7 @@ namespace Model
         void ImportCatalogToGlueAsyncHelper(const Model::ImportCatalogToGlueRequest& request, const ImportCatalogToGlueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBlueprintsAsyncHelper(const Model::ListBlueprintsRequest& request, const ListBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCrawlersAsyncHelper(const Model::ListCrawlersRequest& request, const ListCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListCustomEntityTypesAsyncHelper(const Model::ListCustomEntityTypesRequest& request, const ListCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDevEndpointsAsyncHelper(const Model::ListDevEndpointsRequest& request, const ListDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMLTransformsAsyncHelper(const Model::ListMLTransformsRequest& request, const ListMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

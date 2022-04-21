@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>An array of alerts that are associated with this resource.</p>
+     * <p>A list of alerts that are associated with this resource.</p>
      */
     inline const Aws::Vector<Alert>& GetItems() const{ return m_items; }
 
     /**
-     * <p>An array of alerts that are associated with this resource.</p>
+     * <p>A list of alerts that are associated with this resource.</p>
      */
     inline void SetItems(const Aws::Vector<Alert>& value) { m_items = value; }
 
     /**
-     * <p>An array of alerts that are associated with this resource.</p>
+     * <p>A list of alerts that are associated with this resource.</p>
      */
     inline void SetItems(Aws::Vector<Alert>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>An array of alerts that are associated with this resource.</p>
+     * <p>A list of alerts that are associated with this resource.</p>
      */
     inline ListAlertsResult& WithItems(const Aws::Vector<Alert>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>An array of alerts that are associated with this resource.</p>
+     * <p>A list of alerts that are associated with this resource.</p>
      */
     inline ListAlertsResult& WithItems(Aws::Vector<Alert>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>An array of alerts that are associated with this resource.</p>
+     * <p>A list of alerts that are associated with this resource.</p>
      */
     inline ListAlertsResult& AddItems(const Alert& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>An array of alerts that are associated with this resource.</p>
+     * <p>A list of alerts that are associated with this resource.</p>
      */
     inline ListAlertsResult& AddItems(Alert&& value) { m_items.push_back(std::move(value)); return *this; }
 

@@ -118,28 +118,60 @@ namespace Model
     inline GetPropertyValueHistoryRequest& WithComponentTypeId(const char* value) { SetComponentTypeId(value); return *this;}
 
 
-    
+    /**
+     * <p>The ISO8601 DateTime of the latest property value to return.</p> <p>For more
+     * information about the ISO8601 DateTime format, see the data type <a
+     * href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+     */
     inline const Aws::String& GetEndTime() const{ return m_endTime; }
 
-    
+    /**
+     * <p>The ISO8601 DateTime of the latest property value to return.</p> <p>For more
+     * information about the ISO8601 DateTime format, see the data type <a
+     * href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+     */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
-    
+    /**
+     * <p>The ISO8601 DateTime of the latest property value to return.</p> <p>For more
+     * information about the ISO8601 DateTime format, see the data type <a
+     * href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+     */
     inline void SetEndTime(const Aws::String& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
-    
+    /**
+     * <p>The ISO8601 DateTime of the latest property value to return.</p> <p>For more
+     * information about the ISO8601 DateTime format, see the data type <a
+     * href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+     */
     inline void SetEndTime(Aws::String&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
-    
+    /**
+     * <p>The ISO8601 DateTime of the latest property value to return.</p> <p>For more
+     * information about the ISO8601 DateTime format, see the data type <a
+     * href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+     */
     inline void SetEndTime(const char* value) { m_endTimeHasBeenSet = true; m_endTime.assign(value); }
 
-    
+    /**
+     * <p>The ISO8601 DateTime of the latest property value to return.</p> <p>For more
+     * information about the ISO8601 DateTime format, see the data type <a
+     * href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+     */
     inline GetPropertyValueHistoryRequest& WithEndTime(const Aws::String& value) { SetEndTime(value); return *this;}
 
-    
+    /**
+     * <p>The ISO8601 DateTime of the latest property value to return.</p> <p>For more
+     * information about the ISO8601 DateTime format, see the data type <a
+     * href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+     */
     inline GetPropertyValueHistoryRequest& WithEndTime(Aws::String&& value) { SetEndTime(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ISO8601 DateTime of the latest property value to return.</p> <p>For more
+     * information about the ISO8601 DateTime format, see the data type <a
+     * href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+     */
     inline GetPropertyValueHistoryRequest& WithEndTime(const char* value) { SetEndTime(value); return *this;}
 
 
@@ -401,28 +433,60 @@ namespace Model
     inline GetPropertyValueHistoryRequest& AddSelectedProperties(const char* value) { m_selectedPropertiesHasBeenSet = true; m_selectedProperties.push_back(value); return *this; }
 
 
-    
+    /**
+     * <p>The ISO8601 DateTime of the earliest property value to return.</p> <p>For
+     * more information about the ISO8601 DateTime format, see the data type <a
+     * href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+     */
     inline const Aws::String& GetStartTime() const{ return m_startTime; }
 
-    
+    /**
+     * <p>The ISO8601 DateTime of the earliest property value to return.</p> <p>For
+     * more information about the ISO8601 DateTime format, see the data type <a
+     * href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+     */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
-    
+    /**
+     * <p>The ISO8601 DateTime of the earliest property value to return.</p> <p>For
+     * more information about the ISO8601 DateTime format, see the data type <a
+     * href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+     */
     inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
-    
+    /**
+     * <p>The ISO8601 DateTime of the earliest property value to return.</p> <p>For
+     * more information about the ISO8601 DateTime format, see the data type <a
+     * href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+     */
     inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
-    
+    /**
+     * <p>The ISO8601 DateTime of the earliest property value to return.</p> <p>For
+     * more information about the ISO8601 DateTime format, see the data type <a
+     * href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+     */
     inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
 
-    
+    /**
+     * <p>The ISO8601 DateTime of the earliest property value to return.</p> <p>For
+     * more information about the ISO8601 DateTime format, see the data type <a
+     * href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+     */
     inline GetPropertyValueHistoryRequest& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
 
-    
+    /**
+     * <p>The ISO8601 DateTime of the earliest property value to return.</p> <p>For
+     * more information about the ISO8601 DateTime format, see the data type <a
+     * href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+     */
     inline GetPropertyValueHistoryRequest& WithStartTime(Aws::String&& value) { SetStartTime(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ISO8601 DateTime of the earliest property value to return.</p> <p>For
+     * more information about the ISO8601 DateTime format, see the data type <a
+     * href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.</p>
+     */
     inline GetPropertyValueHistoryRequest& WithStartTime(const char* value) { SetStartTime(value); return *this;}
 
 

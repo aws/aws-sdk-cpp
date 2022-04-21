@@ -135,27 +135,27 @@ namespace Model
 
 
     /**
-     * <p>The ARN for the VOD source.</p>
+     * <p>The last modified time of the VOD source.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The ARN for the VOD source.</p>
+     * <p>The last modified time of the VOD source.</p>
      */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
 
     /**
-     * <p>The ARN for the VOD source.</p>
+     * <p>The last modified time of the VOD source.</p>
      */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
 
     /**
-     * <p>The ARN for the VOD source.</p>
+     * <p>The last modified time of the VOD source.</p>
      */
     inline UpdateVodSourceResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * <p>The ARN for the VOD source.</p>
+     * <p>The last modified time of the VOD source.</p>
      */
     inline UpdateVodSourceResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 

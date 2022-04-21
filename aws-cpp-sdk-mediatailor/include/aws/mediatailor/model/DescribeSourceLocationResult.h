@@ -205,25 +205,46 @@ namespace Model
     inline DescribeSourceLocationResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>A list of the segment delivery configurations associated with this
+     * resource.</p>
+     */
     inline const Aws::Vector<SegmentDeliveryConfiguration>& GetSegmentDeliveryConfigurations() const{ return m_segmentDeliveryConfigurations; }
 
-    
+    /**
+     * <p>A list of the segment delivery configurations associated with this
+     * resource.</p>
+     */
     inline void SetSegmentDeliveryConfigurations(const Aws::Vector<SegmentDeliveryConfiguration>& value) { m_segmentDeliveryConfigurations = value; }
 
-    
+    /**
+     * <p>A list of the segment delivery configurations associated with this
+     * resource.</p>
+     */
     inline void SetSegmentDeliveryConfigurations(Aws::Vector<SegmentDeliveryConfiguration>&& value) { m_segmentDeliveryConfigurations = std::move(value); }
 
-    
+    /**
+     * <p>A list of the segment delivery configurations associated with this
+     * resource.</p>
+     */
     inline DescribeSourceLocationResult& WithSegmentDeliveryConfigurations(const Aws::Vector<SegmentDeliveryConfiguration>& value) { SetSegmentDeliveryConfigurations(value); return *this;}
 
-    
+    /**
+     * <p>A list of the segment delivery configurations associated with this
+     * resource.</p>
+     */
     inline DescribeSourceLocationResult& WithSegmentDeliveryConfigurations(Aws::Vector<SegmentDeliveryConfiguration>&& value) { SetSegmentDeliveryConfigurations(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A list of the segment delivery configurations associated with this
+     * resource.</p>
+     */
     inline DescribeSourceLocationResult& AddSegmentDeliveryConfigurations(const SegmentDeliveryConfiguration& value) { m_segmentDeliveryConfigurations.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A list of the segment delivery configurations associated with this
+     * resource.</p>
+     */
     inline DescribeSourceLocationResult& AddSegmentDeliveryConfigurations(SegmentDeliveryConfiguration&& value) { m_segmentDeliveryConfigurations.push_back(std::move(value)); return *this; }
 
 

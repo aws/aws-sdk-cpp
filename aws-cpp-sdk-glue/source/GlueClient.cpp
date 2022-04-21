@@ -27,6 +27,7 @@
 #include <aws/glue/model/BatchDeleteTableVersionRequest.h>
 #include <aws/glue/model/BatchGetBlueprintsRequest.h>
 #include <aws/glue/model/BatchGetCrawlersRequest.h>
+#include <aws/glue/model/BatchGetCustomEntityTypesRequest.h>
 #include <aws/glue/model/BatchGetDevEndpointsRequest.h>
 #include <aws/glue/model/BatchGetJobsRequest.h>
 #include <aws/glue/model/BatchGetPartitionRequest.h>
@@ -41,6 +42,7 @@
 #include <aws/glue/model/CreateClassifierRequest.h>
 #include <aws/glue/model/CreateConnectionRequest.h>
 #include <aws/glue/model/CreateCrawlerRequest.h>
+#include <aws/glue/model/CreateCustomEntityTypeRequest.h>
 #include <aws/glue/model/CreateDatabaseRequest.h>
 #include <aws/glue/model/CreateDevEndpointRequest.h>
 #include <aws/glue/model/CreateJobRequest.h>
@@ -62,6 +64,7 @@
 #include <aws/glue/model/DeleteColumnStatisticsForTableRequest.h>
 #include <aws/glue/model/DeleteConnectionRequest.h>
 #include <aws/glue/model/DeleteCrawlerRequest.h>
+#include <aws/glue/model/DeleteCustomEntityTypeRequest.h>
 #include <aws/glue/model/DeleteDatabaseRequest.h>
 #include <aws/glue/model/DeleteDevEndpointRequest.h>
 #include <aws/glue/model/DeleteJobRequest.h>
@@ -92,6 +95,7 @@
 #include <aws/glue/model/GetCrawlerRequest.h>
 #include <aws/glue/model/GetCrawlerMetricsRequest.h>
 #include <aws/glue/model/GetCrawlersRequest.h>
+#include <aws/glue/model/GetCustomEntityTypeRequest.h>
 #include <aws/glue/model/GetDataCatalogEncryptionSettingsRequest.h>
 #include <aws/glue/model/GetDatabaseRequest.h>
 #include <aws/glue/model/GetDatabasesRequest.h>
@@ -142,6 +146,7 @@
 #include <aws/glue/model/ImportCatalogToGlueRequest.h>
 #include <aws/glue/model/ListBlueprintsRequest.h>
 #include <aws/glue/model/ListCrawlersRequest.h>
+#include <aws/glue/model/ListCustomEntityTypesRequest.h>
 #include <aws/glue/model/ListDevEndpointsRequest.h>
 #include <aws/glue/model/ListJobsRequest.h>
 #include <aws/glue/model/ListMLTransformsRequest.h>
@@ -438,6 +443,30 @@ void GlueClient::BatchGetCrawlersAsync(const BatchGetCrawlersRequest& request, c
 void GlueClient::BatchGetCrawlersAsyncHelper(const BatchGetCrawlersRequest& request, const BatchGetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchGetCrawlers(request), context);
+}
+
+BatchGetCustomEntityTypesOutcome GlueClient::BatchGetCustomEntityTypes(const BatchGetCustomEntityTypesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return BatchGetCustomEntityTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchGetCustomEntityTypesOutcomeCallable GlueClient::BatchGetCustomEntityTypesCallable(const BatchGetCustomEntityTypesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetCustomEntityTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetCustomEntityTypes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::BatchGetCustomEntityTypesAsync(const BatchGetCustomEntityTypesRequest& request, const BatchGetCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchGetCustomEntityTypesAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::BatchGetCustomEntityTypesAsyncHelper(const BatchGetCustomEntityTypesRequest& request, const BatchGetCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchGetCustomEntityTypes(request), context);
 }
 
 BatchGetDevEndpointsOutcome GlueClient::BatchGetDevEndpoints(const BatchGetDevEndpointsRequest& request) const
@@ -774,6 +803,30 @@ void GlueClient::CreateCrawlerAsync(const CreateCrawlerRequest& request, const C
 void GlueClient::CreateCrawlerAsyncHelper(const CreateCrawlerRequest& request, const CreateCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateCrawler(request), context);
+}
+
+CreateCustomEntityTypeOutcome GlueClient::CreateCustomEntityType(const CreateCustomEntityTypeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateCustomEntityTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateCustomEntityTypeOutcomeCallable GlueClient::CreateCustomEntityTypeCallable(const CreateCustomEntityTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateCustomEntityTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCustomEntityType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::CreateCustomEntityTypeAsync(const CreateCustomEntityTypeRequest& request, const CreateCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateCustomEntityTypeAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::CreateCustomEntityTypeAsyncHelper(const CreateCustomEntityTypeRequest& request, const CreateCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateCustomEntityType(request), context);
 }
 
 CreateDatabaseOutcome GlueClient::CreateDatabase(const CreateDatabaseRequest& request) const
@@ -1278,6 +1331,30 @@ void GlueClient::DeleteCrawlerAsync(const DeleteCrawlerRequest& request, const D
 void GlueClient::DeleteCrawlerAsyncHelper(const DeleteCrawlerRequest& request, const DeleteCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteCrawler(request), context);
+}
+
+DeleteCustomEntityTypeOutcome GlueClient::DeleteCustomEntityType(const DeleteCustomEntityTypeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteCustomEntityTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteCustomEntityTypeOutcomeCallable GlueClient::DeleteCustomEntityTypeCallable(const DeleteCustomEntityTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCustomEntityTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCustomEntityType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::DeleteCustomEntityTypeAsync(const DeleteCustomEntityTypeRequest& request, const DeleteCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomEntityTypeAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::DeleteCustomEntityTypeAsyncHelper(const DeleteCustomEntityTypeRequest& request, const DeleteCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteCustomEntityType(request), context);
 }
 
 DeleteDatabaseOutcome GlueClient::DeleteDatabase(const DeleteDatabaseRequest& request) const
@@ -1998,6 +2075,30 @@ void GlueClient::GetCrawlersAsync(const GetCrawlersRequest& request, const GetCr
 void GlueClient::GetCrawlersAsyncHelper(const GetCrawlersRequest& request, const GetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetCrawlers(request), context);
+}
+
+GetCustomEntityTypeOutcome GlueClient::GetCustomEntityType(const GetCustomEntityTypeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetCustomEntityTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetCustomEntityTypeOutcomeCallable GlueClient::GetCustomEntityTypeCallable(const GetCustomEntityTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCustomEntityTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCustomEntityType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetCustomEntityTypeAsync(const GetCustomEntityTypeRequest& request, const GetCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCustomEntityTypeAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetCustomEntityTypeAsyncHelper(const GetCustomEntityTypeRequest& request, const GetCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCustomEntityType(request), context);
 }
 
 GetDataCatalogEncryptionSettingsOutcome GlueClient::GetDataCatalogEncryptionSettings(const GetDataCatalogEncryptionSettingsRequest& request) const
@@ -3198,6 +3299,30 @@ void GlueClient::ListCrawlersAsync(const ListCrawlersRequest& request, const Lis
 void GlueClient::ListCrawlersAsyncHelper(const ListCrawlersRequest& request, const ListCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListCrawlers(request), context);
+}
+
+ListCustomEntityTypesOutcome GlueClient::ListCustomEntityTypes(const ListCustomEntityTypesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListCustomEntityTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListCustomEntityTypesOutcomeCallable GlueClient::ListCustomEntityTypesCallable(const ListCustomEntityTypesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCustomEntityTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCustomEntityTypes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::ListCustomEntityTypesAsync(const ListCustomEntityTypesRequest& request, const ListCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListCustomEntityTypesAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::ListCustomEntityTypesAsyncHelper(const ListCustomEntityTypesRequest& request, const ListCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListCustomEntityTypes(request), context);
 }
 
 ListDevEndpointsOutcome GlueClient::ListDevEndpoints(const ListDevEndpointsRequest& request) const
