@@ -24,7 +24,7 @@ namespace Aws
         static const char* const CONFIG_LOADER_TAG = "Aws::Config::AWSProfileConfigLoader";
         static const char* const INTERNAL_EXCEPTION_PHRASE = "InternalServiceException";
         static const int64_t FIVE_MINUTE_MILLIS = 60000 * 5;
-        static const int64_t FIFTEEN_MINUTE_MILLIS = 60000 * 15;
+        static const int64_t TEN_MINUTE_MILLIS = 60000 * 10;
 
         #ifdef _MSC_VER
             // VS2015 compiler's bug, warning s_CoreErrorsMapper: symbol will be dynamically initialized (implementation limitation)
@@ -438,7 +438,7 @@ namespace Aws
         int64_t EC2InstanceProfileConfigLoader::calculateRetryTime() const {
             std::random_device rd;
             std::mt19937_64 gen(rd());
-            std::uniform_int_distribution<int64_t> dist(FIVE_MINUTE_MILLIS, FIFTEEN_MINUTE_MILLIS);
+            std::uniform_int_distribution<int64_t> dist(FIVE_MINUTE_MILLIS, TEN_MINUTE_MILLIS);
             return dist(gen);
         }
 
