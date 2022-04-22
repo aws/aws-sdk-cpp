@@ -86,9 +86,9 @@ namespace Model
     /**
      * <p>If you used <a>CreateKeyPair</a> to create the key pair:</p> <ul> <li> <p>For
      * RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded
-     * private key. </p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is
-     * the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting
-     * with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+     * private key.</p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is the
+     * base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with
+     * <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
      * </ul> <p>If you used <a>ImportKeyPair</a> to provide Amazon Web Services the
      * public key:</p> <ul> <li> <p>For RSA key pairs, the key fingerprint is the MD5
      * public key fingerprint as specified in section 4 of RFC4716.</p> </li> <li>
@@ -101,9 +101,9 @@ namespace Model
     /**
      * <p>If you used <a>CreateKeyPair</a> to create the key pair:</p> <ul> <li> <p>For
      * RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded
-     * private key. </p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is
-     * the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting
-     * with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+     * private key.</p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is the
+     * base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with
+     * <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
      * </ul> <p>If you used <a>ImportKeyPair</a> to provide Amazon Web Services the
      * public key:</p> <ul> <li> <p>For RSA key pairs, the key fingerprint is the MD5
      * public key fingerprint as specified in section 4 of RFC4716.</p> </li> <li>
@@ -116,9 +116,9 @@ namespace Model
     /**
      * <p>If you used <a>CreateKeyPair</a> to create the key pair:</p> <ul> <li> <p>For
      * RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded
-     * private key. </p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is
-     * the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting
-     * with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+     * private key.</p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is the
+     * base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with
+     * <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
      * </ul> <p>If you used <a>ImportKeyPair</a> to provide Amazon Web Services the
      * public key:</p> <ul> <li> <p>For RSA key pairs, the key fingerprint is the MD5
      * public key fingerprint as specified in section 4 of RFC4716.</p> </li> <li>
@@ -131,9 +131,9 @@ namespace Model
     /**
      * <p>If you used <a>CreateKeyPair</a> to create the key pair:</p> <ul> <li> <p>For
      * RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded
-     * private key. </p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is
-     * the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting
-     * with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+     * private key.</p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is the
+     * base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with
+     * <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
      * </ul> <p>If you used <a>ImportKeyPair</a> to provide Amazon Web Services the
      * public key:</p> <ul> <li> <p>For RSA key pairs, the key fingerprint is the MD5
      * public key fingerprint as specified in section 4 of RFC4716.</p> </li> <li>
@@ -146,9 +146,9 @@ namespace Model
     /**
      * <p>If you used <a>CreateKeyPair</a> to create the key pair:</p> <ul> <li> <p>For
      * RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded
-     * private key. </p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is
-     * the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting
-     * with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+     * private key.</p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is the
+     * base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with
+     * <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
      * </ul> <p>If you used <a>ImportKeyPair</a> to provide Amazon Web Services the
      * public key:</p> <ul> <li> <p>For RSA key pairs, the key fingerprint is the MD5
      * public key fingerprint as specified in section 4 of RFC4716.</p> </li> <li>
@@ -161,9 +161,9 @@ namespace Model
     /**
      * <p>If you used <a>CreateKeyPair</a> to create the key pair:</p> <ul> <li> <p>For
      * RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded
-     * private key. </p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is
-     * the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting
-     * with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+     * private key.</p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is the
+     * base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with
+     * <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
      * </ul> <p>If you used <a>ImportKeyPair</a> to provide Amazon Web Services the
      * public key:</p> <ul> <li> <p>For RSA key pairs, the key fingerprint is the MD5
      * public key fingerprint as specified in section 4 of RFC4716.</p> </li> <li>
@@ -176,9 +176,9 @@ namespace Model
     /**
      * <p>If you used <a>CreateKeyPair</a> to create the key pair:</p> <ul> <li> <p>For
      * RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded
-     * private key. </p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is
-     * the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting
-     * with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+     * private key.</p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is the
+     * base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with
+     * <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
      * </ul> <p>If you used <a>ImportKeyPair</a> to provide Amazon Web Services the
      * public key:</p> <ul> <li> <p>For RSA key pairs, the key fingerprint is the MD5
      * public key fingerprint as specified in section 4 of RFC4716.</p> </li> <li>
@@ -191,9 +191,9 @@ namespace Model
     /**
      * <p>If you used <a>CreateKeyPair</a> to create the key pair:</p> <ul> <li> <p>For
      * RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded
-     * private key. </p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is
-     * the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting
-     * with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+     * private key.</p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is the
+     * base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with
+     * <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
      * </ul> <p>If you used <a>ImportKeyPair</a> to provide Amazon Web Services the
      * public key:</p> <ul> <li> <p>For RSA key pairs, the key fingerprint is the MD5
      * public key fingerprint as specified in section 4 of RFC4716.</p> </li> <li>

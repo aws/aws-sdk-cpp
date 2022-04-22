@@ -41,37 +41,58 @@ namespace Model
 
 
     /**
-     * <p>The SHA-1 digest of the DER encoded private key.</p>
+     * <ul> <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the
+     * DER encoded private key.</p> </li> <li> <p>For ED25519 key pairs, the key
+     * fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with OpenSSH 6.8.</p> </li> </ul>
      */
     inline const Aws::String& GetKeyFingerprint() const{ return m_keyFingerprint; }
 
     /**
-     * <p>The SHA-1 digest of the DER encoded private key.</p>
+     * <ul> <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the
+     * DER encoded private key.</p> </li> <li> <p>For ED25519 key pairs, the key
+     * fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with OpenSSH 6.8.</p> </li> </ul>
      */
     inline void SetKeyFingerprint(const Aws::String& value) { m_keyFingerprint = value; }
 
     /**
-     * <p>The SHA-1 digest of the DER encoded private key.</p>
+     * <ul> <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the
+     * DER encoded private key.</p> </li> <li> <p>For ED25519 key pairs, the key
+     * fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with OpenSSH 6.8.</p> </li> </ul>
      */
     inline void SetKeyFingerprint(Aws::String&& value) { m_keyFingerprint = std::move(value); }
 
     /**
-     * <p>The SHA-1 digest of the DER encoded private key.</p>
+     * <ul> <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the
+     * DER encoded private key.</p> </li> <li> <p>For ED25519 key pairs, the key
+     * fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with OpenSSH 6.8.</p> </li> </ul>
      */
     inline void SetKeyFingerprint(const char* value) { m_keyFingerprint.assign(value); }
 
     /**
-     * <p>The SHA-1 digest of the DER encoded private key.</p>
+     * <ul> <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the
+     * DER encoded private key.</p> </li> <li> <p>For ED25519 key pairs, the key
+     * fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with OpenSSH 6.8.</p> </li> </ul>
      */
     inline CreateKeyPairResponse& WithKeyFingerprint(const Aws::String& value) { SetKeyFingerprint(value); return *this;}
 
     /**
-     * <p>The SHA-1 digest of the DER encoded private key.</p>
+     * <ul> <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the
+     * DER encoded private key.</p> </li> <li> <p>For ED25519 key pairs, the key
+     * fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with OpenSSH 6.8.</p> </li> </ul>
      */
     inline CreateKeyPairResponse& WithKeyFingerprint(Aws::String&& value) { SetKeyFingerprint(std::move(value)); return *this;}
 
     /**
-     * <p>The SHA-1 digest of the DER encoded private key.</p>
+     * <ul> <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the
+     * DER encoded private key.</p> </li> <li> <p>For ED25519 key pairs, the key
+     * fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with OpenSSH 6.8.</p> </li> </ul>
      */
     inline CreateKeyPairResponse& WithKeyFingerprint(const char* value) { SetKeyFingerprint(value); return *this;}
 

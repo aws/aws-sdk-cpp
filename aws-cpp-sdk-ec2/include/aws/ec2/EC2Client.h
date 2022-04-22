@@ -22939,8 +22939,13 @@ namespace Model
          * <code>instance</code> resource types are supported.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
-         * Fleet requests</a> in the <i>Amazon EC2 User Guide for Linux
-         * Instances</i>.</p><p><h3>See Also:</h3>   <a
+         * Fleet requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+         *  <p>We strongly discourage using the RequestSpotFleet API because it
+         * is a legacy API with no planned investment. For options for requesting Spot
+         * Instances, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use">Which
+         * is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for
+         * Linux Instances</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">AWS
          * API Reference</a></p>
          */
@@ -22965,8 +22970,13 @@ namespace Model
          * <code>instance</code> resource types are supported.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
-         * Fleet requests</a> in the <i>Amazon EC2 User Guide for Linux
-         * Instances</i>.</p><p><h3>See Also:</h3>   <a
+         * Fleet requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+         *  <p>We strongly discourage using the RequestSpotFleet API because it
+         * is a legacy API with no planned investment. For options for requesting Spot
+         * Instances, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use">Which
+         * is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for
+         * Linux Instances</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">AWS
          * API Reference</a></p>
          *
@@ -22993,8 +23003,13 @@ namespace Model
          * <code>instance</code> resource types are supported.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
-         * Fleet requests</a> in the <i>Amazon EC2 User Guide for Linux
-         * Instances</i>.</p><p><h3>See Also:</h3>   <a
+         * Fleet requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+         *  <p>We strongly discourage using the RequestSpotFleet API because it
+         * is a legacy API with no planned investment. For options for requesting Spot
+         * Instances, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use">Which
+         * is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for
+         * Linux Instances</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">AWS
          * API Reference</a></p>
          *
@@ -23006,7 +23021,12 @@ namespace Model
          * <p>Creates a Spot Instance request.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
          * Instance requests</a> in the <i>Amazon EC2 User Guide for Linux
-         * Instances</i>.</p><p><h3>See Also:</h3>   <a
+         * Instances</i>.</p>  <p>We strongly discourage using the
+         * RequestSpotInstances API because it is a legacy API with no planned investment.
+         * For options for requesting Spot Instances, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use">Which
+         * is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for
+         * Linux Instances</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">AWS
          * API Reference</a></p>
          */
@@ -23016,7 +23036,12 @@ namespace Model
          * <p>Creates a Spot Instance request.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
          * Instance requests</a> in the <i>Amazon EC2 User Guide for Linux
-         * Instances</i>.</p><p><h3>See Also:</h3>   <a
+         * Instances</i>.</p>  <p>We strongly discourage using the
+         * RequestSpotInstances API because it is a legacy API with no planned investment.
+         * For options for requesting Spot Instances, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use">Which
+         * is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for
+         * Linux Instances</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">AWS
          * API Reference</a></p>
          *
@@ -23028,7 +23053,12 @@ namespace Model
          * <p>Creates a Spot Instance request.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
          * Instance requests</a> in the <i>Amazon EC2 User Guide for Linux
-         * Instances</i>.</p><p><h3>See Also:</h3>   <a
+         * Instances</i>.</p>  <p>We strongly discourage using the
+         * RequestSpotInstances API because it is a legacy API with no planned investment.
+         * For options for requesting Spot Instances, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use">Which
+         * is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for
+         * Linux Instances</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">AWS
          * API Reference</a></p>
          *

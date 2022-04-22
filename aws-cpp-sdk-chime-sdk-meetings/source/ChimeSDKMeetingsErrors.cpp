@@ -7,9 +7,11 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsErrors.h>
 #include <aws/chime-sdk-meetings/model/ServiceUnavailableException.h>
+#include <aws/chime-sdk-meetings/model/ThrottlingException.h>
 #include <aws/chime-sdk-meetings/model/NotFoundException.h>
-#include <aws/chime-sdk-meetings/model/UnauthorizedException.h>
+#include <aws/chime-sdk-meetings/model/ServiceFailureException.h>
 #include <aws/chime-sdk-meetings/model/ForbiddenException.h>
+#include <aws/chime-sdk-meetings/model/UnauthorizedException.h>
 #include <aws/chime-sdk-meetings/model/LimitExceededException.h>
 #include <aws/chime-sdk-meetings/model/UnprocessableEntityException.h>
 #include <aws/chime-sdk-meetings/model/BadRequestException.h>
@@ -29,22 +31,34 @@ template<> AWS_CHIMESDKMEETINGS_API ServiceUnavailableException ChimeSDKMeetings
   return ServiceUnavailableException(this->GetJsonPayload().View());
 }
 
+template<> AWS_CHIMESDKMEETINGS_API ThrottlingException ChimeSDKMeetingsError::GetModeledError()
+{
+  assert(this->GetErrorType() == ChimeSDKMeetingsErrors::THROTTLING);
+  return ThrottlingException(this->GetJsonPayload().View());
+}
+
 template<> AWS_CHIMESDKMEETINGS_API NotFoundException ChimeSDKMeetingsError::GetModeledError()
 {
   assert(this->GetErrorType() == ChimeSDKMeetingsErrors::NOT_FOUND);
   return NotFoundException(this->GetJsonPayload().View());
 }
 
-template<> AWS_CHIMESDKMEETINGS_API UnauthorizedException ChimeSDKMeetingsError::GetModeledError()
+template<> AWS_CHIMESDKMEETINGS_API ServiceFailureException ChimeSDKMeetingsError::GetModeledError()
 {
-  assert(this->GetErrorType() == ChimeSDKMeetingsErrors::UNAUTHORIZED);
-  return UnauthorizedException(this->GetJsonPayload().View());
+  assert(this->GetErrorType() == ChimeSDKMeetingsErrors::SERVICE_FAILURE);
+  return ServiceFailureException(this->GetJsonPayload().View());
 }
 
 template<> AWS_CHIMESDKMEETINGS_API ForbiddenException ChimeSDKMeetingsError::GetModeledError()
 {
   assert(this->GetErrorType() == ChimeSDKMeetingsErrors::FORBIDDEN);
   return ForbiddenException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CHIMESDKMEETINGS_API UnauthorizedException ChimeSDKMeetingsError::GetModeledError()
+{
+  assert(this->GetErrorType() == ChimeSDKMeetingsErrors::UNAUTHORIZED);
+  return UnauthorizedException(this->GetJsonPayload().View());
 }
 
 template<> AWS_CHIMESDKMEETINGS_API LimitExceededException ChimeSDKMeetingsError::GetModeledError()
@@ -69,8 +83,9 @@ namespace ChimeSDKMeetingsErrorMapper
 {
 
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
+static const int SERVICE_FAILURE_HASH = HashingUtils::HashString("ServiceFailureException");
 static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
+static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int UNPROCESSABLE_ENTITY_HASH = HashingUtils::HashString("UnprocessableEntityException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
@@ -84,13 +99,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::NOT_FOUND), false);
   }
-  else if (hashCode == UNAUTHORIZED_HASH)
+  else if (hashCode == SERVICE_FAILURE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::UNAUTHORIZED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::SERVICE_FAILURE), false);
   }
   else if (hashCode == FORBIDDEN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::FORBIDDEN), false);
+  }
+  else if (hashCode == UNAUTHORIZED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::UNAUTHORIZED), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {

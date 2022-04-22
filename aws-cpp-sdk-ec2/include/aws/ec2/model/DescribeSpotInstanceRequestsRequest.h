@@ -99,7 +99,7 @@ namespace Model
      * <code>cancelled</code> | <code>failed</code>). Spot request status information
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
      * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
@@ -176,7 +176,7 @@ namespace Model
      * <code>cancelled</code> | <code>failed</code>). Spot request status information
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
      * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
@@ -253,7 +253,7 @@ namespace Model
      * <code>cancelled</code> | <code>failed</code>). Spot request status information
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
      * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
@@ -330,7 +330,7 @@ namespace Model
      * <code>cancelled</code> | <code>failed</code>). Spot request status information
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
      * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
@@ -407,7 +407,7 @@ namespace Model
      * <code>cancelled</code> | <code>failed</code>). Spot request status information
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
      * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
@@ -484,7 +484,7 @@ namespace Model
      * <code>cancelled</code> | <code>failed</code>). Spot request status information
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
      * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
@@ -561,7 +561,7 @@ namespace Model
      * <code>cancelled</code> | <code>failed</code>). Spot request status information
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
      * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
@@ -638,7 +638,7 @@ namespace Model
      * <code>cancelled</code> | <code>failed</code>). Spot request status information
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
      * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
