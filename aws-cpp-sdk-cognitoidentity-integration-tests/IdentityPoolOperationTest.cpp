@@ -6,6 +6,7 @@
 #include <aws/external/gtest.h>
 #include <aws/testing/MemoryTesting.h>
 #include <algorithm>
+#include <thread>
 
 #include <aws/cognito-identity/CognitoIdentityClient.h>
 #include <aws/cognito-identity/CognitoIdentityErrors.h>
