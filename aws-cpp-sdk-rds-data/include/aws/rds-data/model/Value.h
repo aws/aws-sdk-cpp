@@ -30,8 +30,11 @@ namespace Model
 
   /**
    * <p>Contains the value of a column.</p> <pre><code> &lt;important&gt;
-   * &lt;p&gt;This data type is deprecated.&lt;/p&gt; &lt;/important&gt;
-   * </code></pre><p><h3>See Also:</h3>   <a
+   * &lt;p&gt;This data structure is only used with the deprecated
+   * &lt;code&gt;ExecuteSql&lt;/code&gt; operation. Use the
+   * &lt;code&gt;BatchExecuteStatement&lt;/code&gt; or
+   * &lt;code&gt;ExecuteStatement&lt;/code&gt; operation instead.&lt;/p&gt;
+   * &lt;/important&gt; </code></pre><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/Value">AWS API
    * Reference</a></p>
    */

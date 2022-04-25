@@ -152,10 +152,10 @@ namespace Model
      * <code>VerificationState</code> are as follows.</p> <ul> <li> <p>
      * <code>UNKNOWN</code> – The default disposition of a security finding</p> </li>
      * <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p>
-     * </li> <li> <p> <code>FALSE_POSITIVE</code> ��� The security finding was
-     * determined to be a false alarm</p> </li> <li> <p> <code>BENIGN_POSITIVE</code> –
-     * A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any
-     * threat, is expected, or both</p> </li> </ul>
+     * </li> <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined
+     * to be a false alarm</p> </li> <li> <p> <code>BENIGN_POSITIVE</code> – A special
+     * case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is
+     * expected, or both</p> </li> </ul>
      */
     inline const VerificationState& GetVerificationState() const{ return m_verificationState; }
 
@@ -164,10 +164,10 @@ namespace Model
      * <code>VerificationState</code> are as follows.</p> <ul> <li> <p>
      * <code>UNKNOWN</code> – The default disposition of a security finding</p> </li>
      * <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p>
-     * </li> <li> <p> <code>FALSE_POSITIVE</code> ��� The security finding was
-     * determined to be a false alarm</p> </li> <li> <p> <code>BENIGN_POSITIVE</code> –
-     * A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any
-     * threat, is expected, or both</p> </li> </ul>
+     * </li> <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined
+     * to be a false alarm</p> </li> <li> <p> <code>BENIGN_POSITIVE</code> – A special
+     * case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is
+     * expected, or both</p> </li> </ul>
      */
     inline bool VerificationStateHasBeenSet() const { return m_verificationStateHasBeenSet; }
 
@@ -176,10 +176,10 @@ namespace Model
      * <code>VerificationState</code> are as follows.</p> <ul> <li> <p>
      * <code>UNKNOWN</code> – The default disposition of a security finding</p> </li>
      * <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p>
-     * </li> <li> <p> <code>FALSE_POSITIVE</code> ��� The security finding was
-     * determined to be a false alarm</p> </li> <li> <p> <code>BENIGN_POSITIVE</code> –
-     * A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any
-     * threat, is expected, or both</p> </li> </ul>
+     * </li> <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined
+     * to be a false alarm</p> </li> <li> <p> <code>BENIGN_POSITIVE</code> – A special
+     * case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is
+     * expected, or both</p> </li> </ul>
      */
     inline void SetVerificationState(const VerificationState& value) { m_verificationStateHasBeenSet = true; m_verificationState = value; }
 
@@ -188,10 +188,10 @@ namespace Model
      * <code>VerificationState</code> are as follows.</p> <ul> <li> <p>
      * <code>UNKNOWN</code> – The default disposition of a security finding</p> </li>
      * <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p>
-     * </li> <li> <p> <code>FALSE_POSITIVE</code> ��� The security finding was
-     * determined to be a false alarm</p> </li> <li> <p> <code>BENIGN_POSITIVE</code> –
-     * A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any
-     * threat, is expected, or both</p> </li> </ul>
+     * </li> <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined
+     * to be a false alarm</p> </li> <li> <p> <code>BENIGN_POSITIVE</code> – A special
+     * case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is
+     * expected, or both</p> </li> </ul>
      */
     inline void SetVerificationState(VerificationState&& value) { m_verificationStateHasBeenSet = true; m_verificationState = std::move(value); }
 
@@ -200,10 +200,10 @@ namespace Model
      * <code>VerificationState</code> are as follows.</p> <ul> <li> <p>
      * <code>UNKNOWN</code> – The default disposition of a security finding</p> </li>
      * <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p>
-     * </li> <li> <p> <code>FALSE_POSITIVE</code> ��� The security finding was
-     * determined to be a false alarm</p> </li> <li> <p> <code>BENIGN_POSITIVE</code> –
-     * A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any
-     * threat, is expected, or both</p> </li> </ul>
+     * </li> <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined
+     * to be a false alarm</p> </li> <li> <p> <code>BENIGN_POSITIVE</code> – A special
+     * case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is
+     * expected, or both</p> </li> </ul>
      */
     inline BatchUpdateFindingsRequest& WithVerificationState(const VerificationState& value) { SetVerificationState(value); return *this;}
 
@@ -212,10 +212,10 @@ namespace Model
      * <code>VerificationState</code> are as follows.</p> <ul> <li> <p>
      * <code>UNKNOWN</code> – The default disposition of a security finding</p> </li>
      * <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p>
-     * </li> <li> <p> <code>FALSE_POSITIVE</code> ��� The security finding was
-     * determined to be a false alarm</p> </li> <li> <p> <code>BENIGN_POSITIVE</code> –
-     * A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any
-     * threat, is expected, or both</p> </li> </ul>
+     * </li> <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined
+     * to be a false alarm</p> </li> <li> <p> <code>BENIGN_POSITIVE</code> – A special
+     * case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is
+     * expected, or both</p> </li> </ul>
      */
     inline BatchUpdateFindingsRequest& WithVerificationState(VerificationState&& value) { SetVerificationState(std::move(value)); return *this;}
 

@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 UpdateOrganizationConfigurationRequest::UpdateOrganizationConfigurationRequest() : 
     m_autoEnable(false),
-    m_autoEnableHasBeenSet(false)
+    m_autoEnableHasBeenSet(false),
+    m_autoEnableStandards(AutoEnableStandards::NOT_SET),
+    m_autoEnableStandardsHasBeenSet(false)
 {
 }
 
@@ -26,6 +28,11 @@ Aws::String UpdateOrganizationConfigurationRequest::SerializePayload() const
   {
    payload.WithBool("AutoEnable", m_autoEnable);
 
+  }
+
+  if(m_autoEnableStandardsHasBeenSet)
+  {
+   payload.WithString("AutoEnableStandards", AutoEnableStandardsMapper::GetNameForAutoEnableStandards(m_autoEnableStandards));
   }
 
   return payload.View().WriteReadable();

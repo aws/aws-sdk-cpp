@@ -38,7 +38,7 @@ namespace Model
      * uploaded from an S3 bucket under your account, the storage location reflects the
      * information that was provided in the <i>CreateScript</i> request; (2) If the
      * script file was uploaded from a local zip file, the storage location reflects an
-     * S3 location controls by the Amazon Web Services service.</p>
+     * S3 location controls by the Amazon GameLift service.</p>
      */
     inline const Script& GetScript() const{ return m_script; }
 
@@ -48,7 +48,7 @@ namespace Model
      * uploaded from an S3 bucket under your account, the storage location reflects the
      * information that was provided in the <i>CreateScript</i> request; (2) If the
      * script file was uploaded from a local zip file, the storage location reflects an
-     * S3 location controls by the Amazon Web Services service.</p>
+     * S3 location controls by the Amazon GameLift service.</p>
      */
     inline void SetScript(const Script& value) { m_script = value; }
 
@@ -58,7 +58,7 @@ namespace Model
      * uploaded from an S3 bucket under your account, the storage location reflects the
      * information that was provided in the <i>CreateScript</i> request; (2) If the
      * script file was uploaded from a local zip file, the storage location reflects an
-     * S3 location controls by the Amazon Web Services service.</p>
+     * S3 location controls by the Amazon GameLift service.</p>
      */
     inline void SetScript(Script&& value) { m_script = std::move(value); }
 
@@ -68,7 +68,7 @@ namespace Model
      * uploaded from an S3 bucket under your account, the storage location reflects the
      * information that was provided in the <i>CreateScript</i> request; (2) If the
      * script file was uploaded from a local zip file, the storage location reflects an
-     * S3 location controls by the Amazon Web Services service.</p>
+     * S3 location controls by the Amazon GameLift service.</p>
      */
     inline CreateScriptResult& WithScript(const Script& value) { SetScript(value); return *this;}
 
@@ -78,7 +78,7 @@ namespace Model
      * uploaded from an S3 bucket under your account, the storage location reflects the
      * information that was provided in the <i>CreateScript</i> request; (2) If the
      * script file was uploaded from a local zip file, the storage location reflects an
-     * S3 location controls by the Amazon Web Services service.</p>
+     * S3 location controls by the Amazon GameLift service.</p>
      */
     inline CreateScriptResult& WithScript(Script&& value) { SetScript(std::move(value)); return *this;}
 

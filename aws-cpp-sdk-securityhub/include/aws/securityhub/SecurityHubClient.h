@@ -329,18 +329,18 @@ namespace Model
    * security standards. Security Hub collects security data from Amazon Web Services
    * accounts, services, and integrated third-party products and helps you analyze
    * security trends in your environment to identify the highest priority security
-   * issues. For more information about Security Hub, see the <i>Security Hub<a
-   * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">User
-   * Guide</a> </i>.</p> <p>When you use operations in the Security Hub API, the
-   * requests are executed only in the Amazon Web Services Region that is currently
-   * active or in the specific Amazon Web Services Region that you specify in your
-   * request. Any configuration or settings change that results from the operation is
-   * applied only to that Region. To make the same change in other Regions, execute
-   * the same command for each Region to apply the change to.</p> <p>For example, if
-   * your Region is set to <code>us-west-2</code>, when you use
-   * <code>CreateMembers</code> to add a member account to Security Hub, the
-   * association of the member account with the administrator account is created only
-   * in the <code>us-west-2</code> Region. Security Hub must be enabled for the
+   * issues. For more information about Security Hub, see the <a
+   * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">
+   * <i>Security HubUser Guide</i> </a>.</p> <p>When you use operations in the
+   * Security Hub API, the requests are executed only in the Amazon Web Services
+   * Region that is currently active or in the specific Amazon Web Services Region
+   * that you specify in your request. Any configuration or settings change that
+   * results from the operation is applied only to that Region. To make the same
+   * change in other Regions, execute the same command for each Region to apply the
+   * change to.</p> <p>For example, if your Region is set to <code>us-west-2</code>,
+   * when you use <code>CreateMembers</code> to add a member account to Security Hub,
+   * the association of the member account with the administrator account is created
+   * only in the <code>us-west-2</code> Region. Security Hub must be enabled for the
    * member account in the same Region that the invitation was sent from.</p> <p>The
    * following throttling limits apply to using Security Hub API operations.</p> <ul>
    * <li> <p> <code>BatchEnableStandards</code> - <code>RateLimit</code> of 1 request
@@ -696,9 +696,9 @@ namespace Model
         /**
          * <p>Used to enable finding aggregation. Must be called from the aggregation
          * Region.</p> <p>For more details about cross-Region replication, see <a
-         * href="securityhub/latest/userguide/finding-aggregation.html">Configuring finding
-         * aggregation</a> in the <i>Security Hub User Guide</i>. </p><p><h3>See Also:</h3>
-         * <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-aggregation.html">Configuring
+         * finding aggregation</a> in the <i>Security Hub User Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateFindingAggregator">AWS
          * API Reference</a></p>
          */
@@ -707,9 +707,9 @@ namespace Model
         /**
          * <p>Used to enable finding aggregation. Must be called from the aggregation
          * Region.</p> <p>For more details about cross-Region replication, see <a
-         * href="securityhub/latest/userguide/finding-aggregation.html">Configuring finding
-         * aggregation</a> in the <i>Security Hub User Guide</i>. </p><p><h3>See Also:</h3>
-         * <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-aggregation.html">Configuring
+         * finding aggregation</a> in the <i>Security Hub User Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateFindingAggregator">AWS
          * API Reference</a></p>
          *
@@ -720,9 +720,9 @@ namespace Model
         /**
          * <p>Used to enable finding aggregation. Must be called from the aggregation
          * Region.</p> <p>For more details about cross-Region replication, see <a
-         * href="securityhub/latest/userguide/finding-aggregation.html">Configuring finding
-         * aggregation</a> in the <i>Security Hub User Guide</i>. </p><p><h3>See Also:</h3>
-         * <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-aggregation.html">Configuring
+         * finding aggregation</a> in the <i>Security Hub User Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateFindingAggregator">AWS
          * API Reference</a></p>
          *

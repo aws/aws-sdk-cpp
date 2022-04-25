@@ -88,8 +88,7 @@ namespace Model
    * these statements, you work with the Data Service API.</p> <p>For more
    * information about the Data Service API, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-   * the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User
-   * Guide</i>.</p></p>
+   * the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p></p>
    */
   class AWS_RDSDATASERVICE_API RDSDataServiceClient : public Aws::Client::AWSJsonClient
   {
@@ -245,8 +244,8 @@ namespace Model
          * <p>Runs a SQL statement against a database.</p>  <p>If a call isn't
          * part of a transaction because it doesn't include the <code>transactionID</code>
          * parameter, changes that result from the call are committed automatically.</p>
-         *  <p>The response size limit is 1 MB. If the call returns more than 1
-         * MB of response data, the call is terminated.</p><p><h3>See Also:</h3>   <a
+         *  <p>If the binary response data from the database is more than 1 MB,
+         * the call is terminated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteStatement">AWS
          * API Reference</a></p>
          */
@@ -256,8 +255,8 @@ namespace Model
          * <p>Runs a SQL statement against a database.</p>  <p>If a call isn't
          * part of a transaction because it doesn't include the <code>transactionID</code>
          * parameter, changes that result from the call are committed automatically.</p>
-         *  <p>The response size limit is 1 MB. If the call returns more than 1
-         * MB of response data, the call is terminated.</p><p><h3>See Also:</h3>   <a
+         *  <p>If the binary response data from the database is more than 1 MB,
+         * the call is terminated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteStatement">AWS
          * API Reference</a></p>
          *
@@ -269,8 +268,8 @@ namespace Model
          * <p>Runs a SQL statement against a database.</p>  <p>If a call isn't
          * part of a transaction because it doesn't include the <code>transactionID</code>
          * parameter, changes that result from the call are committed automatically.</p>
-         *  <p>The response size limit is 1 MB. If the call returns more than 1
-         * MB of response data, the call is terminated.</p><p><h3>See Also:</h3>   <a
+         *  <p>If the binary response data from the database is more than 1 MB,
+         * the call is terminated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteStatement">AWS
          * API Reference</a></p>
          *

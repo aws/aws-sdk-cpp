@@ -26,8 +26,8 @@ namespace Model
 
   /**
    * <p>Represents a peering connection between a VPC on one of your Amazon Web
-   * Services accounts and the VPC for your Amazon Web Services fleets. This record
-   * may be for an active peering connection or a pending connection that has not yet
+   * Services accounts and the VPC for your Amazon GameLift fleets. This record may
+   * be for an active peering connection or a pending connection that has not yet
    * been established.</p> <p> <b>Related actions</b> </p> <p>
    * <a>CreateVpcPeeringAuthorization</a> | <a>DescribeVpcPeeringAuthorizations</a> |
    * <a>DeleteVpcPeeringAuthorization</a> | <a>CreateVpcPeeringConnection</a> |
@@ -48,49 +48,49 @@ namespace Model
 
     /**
      * <p>A unique identifier for the fleet. This ID determines the ID of the Amazon
-     * Web Services VPC for your fleet.</p>
+     * GameLift VPC for your fleet.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
      * <p>A unique identifier for the fleet. This ID determines the ID of the Amazon
-     * Web Services VPC for your fleet.</p>
+     * GameLift VPC for your fleet.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
      * <p>A unique identifier for the fleet. This ID determines the ID of the Amazon
-     * Web Services VPC for your fleet.</p>
+     * GameLift VPC for your fleet.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
      * <p>A unique identifier for the fleet. This ID determines the ID of the Amazon
-     * Web Services VPC for your fleet.</p>
+     * GameLift VPC for your fleet.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
      * <p>A unique identifier for the fleet. This ID determines the ID of the Amazon
-     * Web Services VPC for your fleet.</p>
+     * GameLift VPC for your fleet.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
      * <p>A unique identifier for the fleet. This ID determines the ID of the Amazon
-     * Web Services VPC for your fleet.</p>
+     * GameLift VPC for your fleet.</p>
      */
     inline VpcPeeringConnection& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
      * <p>A unique identifier for the fleet. This ID determines the ID of the Amazon
-     * Web Services VPC for your fleet.</p>
+     * GameLift VPC for your fleet.</p>
      */
     inline VpcPeeringConnection& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the fleet. This ID determines the ID of the Amazon
-     * Web Services VPC for your fleet.</p>
+     * GameLift VPC for your fleet.</p>
      */
     inline VpcPeeringConnection& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
@@ -385,58 +385,58 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the VPC that contains the Amazon Web Services fleet
-     * for this connection. This VPC is managed by Amazon Web Services and does not
-     * appear in your Amazon Web Services account. </p>
+     * <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for
+     * this connection. This VPC is managed by Amazon GameLift and does not appear in
+     * your Amazon Web Services account. </p>
      */
     inline const Aws::String& GetGameLiftVpcId() const{ return m_gameLiftVpcId; }
 
     /**
-     * <p>A unique identifier for the VPC that contains the Amazon Web Services fleet
-     * for this connection. This VPC is managed by Amazon Web Services and does not
-     * appear in your Amazon Web Services account. </p>
+     * <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for
+     * this connection. This VPC is managed by Amazon GameLift and does not appear in
+     * your Amazon Web Services account. </p>
      */
     inline bool GameLiftVpcIdHasBeenSet() const { return m_gameLiftVpcIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the VPC that contains the Amazon Web Services fleet
-     * for this connection. This VPC is managed by Amazon Web Services and does not
-     * appear in your Amazon Web Services account. </p>
+     * <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for
+     * this connection. This VPC is managed by Amazon GameLift and does not appear in
+     * your Amazon Web Services account. </p>
      */
     inline void SetGameLiftVpcId(const Aws::String& value) { m_gameLiftVpcIdHasBeenSet = true; m_gameLiftVpcId = value; }
 
     /**
-     * <p>A unique identifier for the VPC that contains the Amazon Web Services fleet
-     * for this connection. This VPC is managed by Amazon Web Services and does not
-     * appear in your Amazon Web Services account. </p>
+     * <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for
+     * this connection. This VPC is managed by Amazon GameLift and does not appear in
+     * your Amazon Web Services account. </p>
      */
     inline void SetGameLiftVpcId(Aws::String&& value) { m_gameLiftVpcIdHasBeenSet = true; m_gameLiftVpcId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the VPC that contains the Amazon Web Services fleet
-     * for this connection. This VPC is managed by Amazon Web Services and does not
-     * appear in your Amazon Web Services account. </p>
+     * <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for
+     * this connection. This VPC is managed by Amazon GameLift and does not appear in
+     * your Amazon Web Services account. </p>
      */
     inline void SetGameLiftVpcId(const char* value) { m_gameLiftVpcIdHasBeenSet = true; m_gameLiftVpcId.assign(value); }
 
     /**
-     * <p>A unique identifier for the VPC that contains the Amazon Web Services fleet
-     * for this connection. This VPC is managed by Amazon Web Services and does not
-     * appear in your Amazon Web Services account. </p>
+     * <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for
+     * this connection. This VPC is managed by Amazon GameLift and does not appear in
+     * your Amazon Web Services account. </p>
      */
     inline VpcPeeringConnection& WithGameLiftVpcId(const Aws::String& value) { SetGameLiftVpcId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the VPC that contains the Amazon Web Services fleet
-     * for this connection. This VPC is managed by Amazon Web Services and does not
-     * appear in your Amazon Web Services account. </p>
+     * <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for
+     * this connection. This VPC is managed by Amazon GameLift and does not appear in
+     * your Amazon Web Services account. </p>
      */
     inline VpcPeeringConnection& WithGameLiftVpcId(Aws::String&& value) { SetGameLiftVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the VPC that contains the Amazon Web Services fleet
-     * for this connection. This VPC is managed by Amazon Web Services and does not
-     * appear in your Amazon Web Services account. </p>
+     * <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for
+     * this connection. This VPC is managed by Amazon GameLift and does not appear in
+     * your Amazon Web Services account. </p>
      */
     inline VpcPeeringConnection& WithGameLiftVpcId(const char* value) { SetGameLiftVpcId(value); return *this;}
 

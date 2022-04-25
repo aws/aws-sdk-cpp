@@ -83,6 +83,7 @@
 #include <aws/connect/model/ListUsersResult.h>
 #include <aws/connect/model/ResumeContactRecordingResult.h>
 #include <aws/connect/model/SearchAvailablePhoneNumbersResult.h>
+#include <aws/connect/model/SearchUsersResult.h>
 #include <aws/connect/model/SearchVocabulariesResult.h>
 #include <aws/connect/model/StartChatContactResult.h>
 #include <aws/connect/model/StartContactRecordingResult.h>
@@ -237,6 +238,7 @@ namespace Model
         class ReleasePhoneNumberRequest;
         class ResumeContactRecordingRequest;
         class SearchAvailablePhoneNumbersRequest;
+        class SearchUsersRequest;
         class SearchVocabulariesRequest;
         class StartChatContactRequest;
         class StartContactRecordingRequest;
@@ -380,6 +382,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> ReleasePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<ResumeContactRecordingResult, ConnectError> ResumeContactRecordingOutcome;
         typedef Aws::Utils::Outcome<SearchAvailablePhoneNumbersResult, ConnectError> SearchAvailablePhoneNumbersOutcome;
+        typedef Aws::Utils::Outcome<SearchUsersResult, ConnectError> SearchUsersOutcome;
         typedef Aws::Utils::Outcome<SearchVocabulariesResult, ConnectError> SearchVocabulariesOutcome;
         typedef Aws::Utils::Outcome<StartChatContactResult, ConnectError> StartChatContactOutcome;
         typedef Aws::Utils::Outcome<StartContactRecordingResult, ConnectError> StartContactRecordingOutcome;
@@ -523,6 +526,7 @@ namespace Model
         typedef std::future<ReleasePhoneNumberOutcome> ReleasePhoneNumberOutcomeCallable;
         typedef std::future<ResumeContactRecordingOutcome> ResumeContactRecordingOutcomeCallable;
         typedef std::future<SearchAvailablePhoneNumbersOutcome> SearchAvailablePhoneNumbersOutcomeCallable;
+        typedef std::future<SearchUsersOutcome> SearchUsersOutcomeCallable;
         typedef std::future<SearchVocabulariesOutcome> SearchVocabulariesOutcomeCallable;
         typedef std::future<StartChatContactOutcome> StartChatContactOutcomeCallable;
         typedef std::future<StartContactRecordingOutcome> StartContactRecordingOutcomeCallable;
@@ -669,6 +673,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::ReleasePhoneNumberRequest&, const Model::ReleasePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReleasePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ResumeContactRecordingRequest&, const Model::ResumeContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeContactRecordingResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchAvailablePhoneNumbersRequest&, const Model::SearchAvailablePhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAvailablePhoneNumbersResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::SearchUsersRequest&, const Model::SearchUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchUsersResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchVocabulariesRequest&, const Model::SearchVocabulariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchVocabulariesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StartChatContactRequest&, const Model::StartChatContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartChatContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StartContactRecordingRequest&, const Model::StartContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartContactRecordingResponseReceivedHandler;
@@ -3862,6 +3867,34 @@ namespace Model
         virtual void SearchAvailablePhoneNumbersAsync(const Model::SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Searches users in an Amazon Connect instance, with optional
+         * filtering.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchUsers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchUsersOutcome SearchUsers(const Model::SearchUsersRequest& request) const;
+
+        /**
+         * <p>Searches users in an Amazon Connect instance, with optional
+         * filtering.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchUsers">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchUsersOutcomeCallable SearchUsersCallable(const Model::SearchUsersRequest& request) const;
+
+        /**
+         * <p>Searches users in an Amazon Connect instance, with optional
+         * filtering.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchUsers">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchUsersAsync(const Model::SearchUsersRequest& request, const SearchUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Searches for vocabularies within a specific Amazon Connect instance using
          * <code>State</code>, <code>NameStartsWith</code>, and
          * <code>LanguageCode</code>.</p><p><h3>See Also:</h3>   <a
@@ -5519,6 +5552,7 @@ namespace Model
         void ReleasePhoneNumberAsyncHelper(const Model::ReleasePhoneNumberRequest& request, const ReleasePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResumeContactRecordingAsyncHelper(const Model::ResumeContactRecordingRequest& request, const ResumeContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchAvailablePhoneNumbersAsyncHelper(const Model::SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SearchUsersAsyncHelper(const Model::SearchUsersRequest& request, const SearchUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchVocabulariesAsyncHelper(const Model::SearchVocabulariesRequest& request, const SearchVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartChatContactAsyncHelper(const Model::StartChatContactRequest& request, const StartChatContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartContactRecordingAsyncHelper(const Model::StartContactRecordingRequest& request, const StartContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

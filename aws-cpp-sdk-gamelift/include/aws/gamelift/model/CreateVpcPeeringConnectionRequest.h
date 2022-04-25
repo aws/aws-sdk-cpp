@@ -39,106 +39,106 @@ namespace Model
 
     /**
      * <p>A unique identifier for the fleet. You can use either the fleet ID or ARN
-     * value. This tells Amazon Web Services which GameLift VPC to peer with. </p>
+     * value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
      * <p>A unique identifier for the fleet. You can use either the fleet ID or ARN
-     * value. This tells Amazon Web Services which GameLift VPC to peer with. </p>
+     * value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
      * <p>A unique identifier for the fleet. You can use either the fleet ID or ARN
-     * value. This tells Amazon Web Services which GameLift VPC to peer with. </p>
+     * value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
      * <p>A unique identifier for the fleet. You can use either the fleet ID or ARN
-     * value. This tells Amazon Web Services which GameLift VPC to peer with. </p>
+     * value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
      * <p>A unique identifier for the fleet. You can use either the fleet ID or ARN
-     * value. This tells Amazon Web Services which GameLift VPC to peer with. </p>
+     * value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
      * <p>A unique identifier for the fleet. You can use either the fleet ID or ARN
-     * value. This tells Amazon Web Services which GameLift VPC to peer with. </p>
+     * value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
      */
     inline CreateVpcPeeringConnectionRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
      * <p>A unique identifier for the fleet. You can use either the fleet ID or ARN
-     * value. This tells Amazon Web Services which GameLift VPC to peer with. </p>
+     * value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
      */
     inline CreateVpcPeeringConnectionRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the fleet. You can use either the fleet ID or ARN
-     * value. This tells Amazon Web Services which GameLift VPC to peer with. </p>
+     * value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
      */
     inline CreateVpcPeeringConnectionRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
 
     /**
      * <p>A unique identifier for the Amazon Web Services account with the VPC that you
-     * want to peer your Amazon Web Services fleet with. You can find your Account ID
-     * in the Amazon Web Services Management Console under account settings.</p>
+     * want to peer your Amazon GameLift fleet with. You can find your Account ID in
+     * the Amazon Web Services Management Console under account settings.</p>
      */
     inline const Aws::String& GetPeerVpcAwsAccountId() const{ return m_peerVpcAwsAccountId; }
 
     /**
      * <p>A unique identifier for the Amazon Web Services account with the VPC that you
-     * want to peer your Amazon Web Services fleet with. You can find your Account ID
-     * in the Amazon Web Services Management Console under account settings.</p>
+     * want to peer your Amazon GameLift fleet with. You can find your Account ID in
+     * the Amazon Web Services Management Console under account settings.</p>
      */
     inline bool PeerVpcAwsAccountIdHasBeenSet() const { return m_peerVpcAwsAccountIdHasBeenSet; }
 
     /**
      * <p>A unique identifier for the Amazon Web Services account with the VPC that you
-     * want to peer your Amazon Web Services fleet with. You can find your Account ID
-     * in the Amazon Web Services Management Console under account settings.</p>
+     * want to peer your Amazon GameLift fleet with. You can find your Account ID in
+     * the Amazon Web Services Management Console under account settings.</p>
      */
     inline void SetPeerVpcAwsAccountId(const Aws::String& value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId = value; }
 
     /**
      * <p>A unique identifier for the Amazon Web Services account with the VPC that you
-     * want to peer your Amazon Web Services fleet with. You can find your Account ID
-     * in the Amazon Web Services Management Console under account settings.</p>
+     * want to peer your Amazon GameLift fleet with. You can find your Account ID in
+     * the Amazon Web Services Management Console under account settings.</p>
      */
     inline void SetPeerVpcAwsAccountId(Aws::String&& value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId = std::move(value); }
 
     /**
      * <p>A unique identifier for the Amazon Web Services account with the VPC that you
-     * want to peer your Amazon Web Services fleet with. You can find your Account ID
-     * in the Amazon Web Services Management Console under account settings.</p>
+     * want to peer your Amazon GameLift fleet with. You can find your Account ID in
+     * the Amazon Web Services Management Console under account settings.</p>
      */
     inline void SetPeerVpcAwsAccountId(const char* value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId.assign(value); }
 
     /**
      * <p>A unique identifier for the Amazon Web Services account with the VPC that you
-     * want to peer your Amazon Web Services fleet with. You can find your Account ID
-     * in the Amazon Web Services Management Console under account settings.</p>
+     * want to peer your Amazon GameLift fleet with. You can find your Account ID in
+     * the Amazon Web Services Management Console under account settings.</p>
      */
     inline CreateVpcPeeringConnectionRequest& WithPeerVpcAwsAccountId(const Aws::String& value) { SetPeerVpcAwsAccountId(value); return *this;}
 
     /**
      * <p>A unique identifier for the Amazon Web Services account with the VPC that you
-     * want to peer your Amazon Web Services fleet with. You can find your Account ID
-     * in the Amazon Web Services Management Console under account settings.</p>
+     * want to peer your Amazon GameLift fleet with. You can find your Account ID in
+     * the Amazon Web Services Management Console under account settings.</p>
      */
     inline CreateVpcPeeringConnectionRequest& WithPeerVpcAwsAccountId(Aws::String&& value) { SetPeerVpcAwsAccountId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the Amazon Web Services account with the VPC that you
-     * want to peer your Amazon Web Services fleet with. You can find your Account ID
-     * in the Amazon Web Services Management Console under account settings.</p>
+     * want to peer your Amazon GameLift fleet with. You can find your Account ID in
+     * the Amazon Web Services Management Console under account settings.</p>
      */
     inline CreateVpcPeeringConnectionRequest& WithPeerVpcAwsAccountId(const char* value) { SetPeerVpcAwsAccountId(value); return *this;}
 

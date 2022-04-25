@@ -152,10 +152,10 @@ namespace Model
      * parameter only when creating a build with files stored in an Amazon S3 bucket
      * that you own. The storage location must specify an Amazon S3 bucket name and
      * key. The location must also specify a role ARN that you set up to allow Amazon
-     * Web Services to access your Amazon S3 bucket. The S3 bucket and your new build
-     * must be in the same Region.</p> <p>If a <code>StorageLocation</code> is
-     * specified, the size of your file can be found in your Amazon S3 bucket. Amazon
-     * Web Services will report a <code>SizeOnDisk</code> of 0. </p>
+     * GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must
+     * be in the same Region.</p> <p>If a <code>StorageLocation</code> is specified,
+     * the size of your file can be found in your Amazon S3 bucket. Amazon GameLift
+     * will report a <code>SizeOnDisk</code> of 0. </p>
      */
     inline const S3Location& GetStorageLocation() const{ return m_storageLocation; }
 
@@ -164,10 +164,10 @@ namespace Model
      * parameter only when creating a build with files stored in an Amazon S3 bucket
      * that you own. The storage location must specify an Amazon S3 bucket name and
      * key. The location must also specify a role ARN that you set up to allow Amazon
-     * Web Services to access your Amazon S3 bucket. The S3 bucket and your new build
-     * must be in the same Region.</p> <p>If a <code>StorageLocation</code> is
-     * specified, the size of your file can be found in your Amazon S3 bucket. Amazon
-     * Web Services will report a <code>SizeOnDisk</code> of 0. </p>
+     * GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must
+     * be in the same Region.</p> <p>If a <code>StorageLocation</code> is specified,
+     * the size of your file can be found in your Amazon S3 bucket. Amazon GameLift
+     * will report a <code>SizeOnDisk</code> of 0. </p>
      */
     inline bool StorageLocationHasBeenSet() const { return m_storageLocationHasBeenSet; }
 
@@ -176,10 +176,10 @@ namespace Model
      * parameter only when creating a build with files stored in an Amazon S3 bucket
      * that you own. The storage location must specify an Amazon S3 bucket name and
      * key. The location must also specify a role ARN that you set up to allow Amazon
-     * Web Services to access your Amazon S3 bucket. The S3 bucket and your new build
-     * must be in the same Region.</p> <p>If a <code>StorageLocation</code> is
-     * specified, the size of your file can be found in your Amazon S3 bucket. Amazon
-     * Web Services will report a <code>SizeOnDisk</code> of 0. </p>
+     * GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must
+     * be in the same Region.</p> <p>If a <code>StorageLocation</code> is specified,
+     * the size of your file can be found in your Amazon S3 bucket. Amazon GameLift
+     * will report a <code>SizeOnDisk</code> of 0. </p>
      */
     inline void SetStorageLocation(const S3Location& value) { m_storageLocationHasBeenSet = true; m_storageLocation = value; }
 
@@ -188,10 +188,10 @@ namespace Model
      * parameter only when creating a build with files stored in an Amazon S3 bucket
      * that you own. The storage location must specify an Amazon S3 bucket name and
      * key. The location must also specify a role ARN that you set up to allow Amazon
-     * Web Services to access your Amazon S3 bucket. The S3 bucket and your new build
-     * must be in the same Region.</p> <p>If a <code>StorageLocation</code> is
-     * specified, the size of your file can be found in your Amazon S3 bucket. Amazon
-     * Web Services will report a <code>SizeOnDisk</code> of 0. </p>
+     * GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must
+     * be in the same Region.</p> <p>If a <code>StorageLocation</code> is specified,
+     * the size of your file can be found in your Amazon S3 bucket. Amazon GameLift
+     * will report a <code>SizeOnDisk</code> of 0. </p>
      */
     inline void SetStorageLocation(S3Location&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = std::move(value); }
 
@@ -200,10 +200,10 @@ namespace Model
      * parameter only when creating a build with files stored in an Amazon S3 bucket
      * that you own. The storage location must specify an Amazon S3 bucket name and
      * key. The location must also specify a role ARN that you set up to allow Amazon
-     * Web Services to access your Amazon S3 bucket. The S3 bucket and your new build
-     * must be in the same Region.</p> <p>If a <code>StorageLocation</code> is
-     * specified, the size of your file can be found in your Amazon S3 bucket. Amazon
-     * Web Services will report a <code>SizeOnDisk</code> of 0. </p>
+     * GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must
+     * be in the same Region.</p> <p>If a <code>StorageLocation</code> is specified,
+     * the size of your file can be found in your Amazon S3 bucket. Amazon GameLift
+     * will report a <code>SizeOnDisk</code> of 0. </p>
      */
     inline CreateBuildRequest& WithStorageLocation(const S3Location& value) { SetStorageLocation(value); return *this;}
 
@@ -212,10 +212,10 @@ namespace Model
      * parameter only when creating a build with files stored in an Amazon S3 bucket
      * that you own. The storage location must specify an Amazon S3 bucket name and
      * key. The location must also specify a role ARN that you set up to allow Amazon
-     * Web Services to access your Amazon S3 bucket. The S3 bucket and your new build
-     * must be in the same Region.</p> <p>If a <code>StorageLocation</code> is
-     * specified, the size of your file can be found in your Amazon S3 bucket. Amazon
-     * Web Services will report a <code>SizeOnDisk</code> of 0. </p>
+     * GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must
+     * be in the same Region.</p> <p>If a <code>StorageLocation</code> is specified,
+     * the size of your file can be found in your Amazon S3 bucket. Amazon GameLift
+     * will report a <code>SizeOnDisk</code> of 0. </p>
      */
     inline CreateBuildRequest& WithStorageLocation(S3Location&& value) { SetStorageLocation(std::move(value)); return *this;}
 

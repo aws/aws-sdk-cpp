@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the phone number.</p>
+     * <p>A unique identifier for the phone number.</p>
      */
     inline const Aws::String& GetPhoneNumberId() const{ return m_phoneNumberId; }
 
     /**
-     * <p>The identifier of the phone number.</p>
+     * <p>A unique identifier for the phone number.</p>
      */
     inline void SetPhoneNumberId(const Aws::String& value) { m_phoneNumberId = value; }
 
     /**
-     * <p>The identifier of the phone number.</p>
+     * <p>A unique identifier for the phone number.</p>
      */
     inline void SetPhoneNumberId(Aws::String&& value) { m_phoneNumberId = std::move(value); }
 
     /**
-     * <p>The identifier of the phone number.</p>
+     * <p>A unique identifier for the phone number.</p>
      */
     inline void SetPhoneNumberId(const char* value) { m_phoneNumberId.assign(value); }
 
     /**
-     * <p>The identifier of the phone number.</p>
+     * <p>A unique identifier for the phone number.</p>
      */
     inline UpdatePhoneNumberResult& WithPhoneNumberId(const Aws::String& value) { SetPhoneNumberId(value); return *this;}
 
     /**
-     * <p>The identifier of the phone number.</p>
+     * <p>A unique identifier for the phone number.</p>
      */
     inline UpdatePhoneNumberResult& WithPhoneNumberId(Aws::String&& value) { SetPhoneNumberId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the phone number.</p>
+     * <p>A unique identifier for the phone number.</p>
      */
     inline UpdatePhoneNumberResult& WithPhoneNumberId(const char* value) { SetPhoneNumberId(value); return *this;}
 

@@ -46,29 +46,25 @@ namespace Model
 
     /**
      * <p>A starting value for a range of allowed port numbers.</p> <p>For fleets using
-     * Linux builds, only port 22, 443, 1026-60000 are valid. For fleets using Windows
-     * builds, only port 443, 1026-60000 are valid.</p>
+     * Windows and Linux builds, only ports 1026-60000 are valid.</p>
      */
     inline int GetFromPort() const{ return m_fromPort; }
 
     /**
      * <p>A starting value for a range of allowed port numbers.</p> <p>For fleets using
-     * Linux builds, only port 22, 443, 1026-60000 are valid. For fleets using Windows
-     * builds, only port 443, 1026-60000 are valid.</p>
+     * Windows and Linux builds, only ports 1026-60000 are valid.</p>
      */
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
 
     /**
      * <p>A starting value for a range of allowed port numbers.</p> <p>For fleets using
-     * Linux builds, only port 22, 443, 1026-60000 are valid. For fleets using Windows
-     * builds, only port 443, 1026-60000 are valid.</p>
+     * Windows and Linux builds, only ports 1026-60000 are valid.</p>
      */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
      * <p>A starting value for a range of allowed port numbers.</p> <p>For fleets using
-     * Linux builds, only port 22, 443, 1026-60000 are valid. For fleets using Windows
-     * builds, only port 443, 1026-60000 are valid.</p>
+     * Windows and Linux builds, only ports 1026-60000 are valid.</p>
      */
     inline IpPermission& WithFromPort(int value) { SetFromPort(value); return *this;}
 
@@ -76,32 +72,28 @@ namespace Model
     /**
      * <p>An ending value for a range of allowed port numbers. Port numbers are
      * end-inclusive. This value must be higher than <code>FromPort</code>.</p> <p>For
-     * fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets
-     * using Windows builds, only port 443, 1026-60000 are valid.</p>
+     * fleets using Windows and Linux builds, only ports 1026-60000 are valid.</p>
      */
     inline int GetToPort() const{ return m_toPort; }
 
     /**
      * <p>An ending value for a range of allowed port numbers. Port numbers are
      * end-inclusive. This value must be higher than <code>FromPort</code>.</p> <p>For
-     * fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets
-     * using Windows builds, only port 443, 1026-60000 are valid.</p>
+     * fleets using Windows and Linux builds, only ports 1026-60000 are valid.</p>
      */
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
 
     /**
      * <p>An ending value for a range of allowed port numbers. Port numbers are
      * end-inclusive. This value must be higher than <code>FromPort</code>.</p> <p>For
-     * fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets
-     * using Windows builds, only port 443, 1026-60000 are valid.</p>
+     * fleets using Windows and Linux builds, only ports 1026-60000 are valid.</p>
      */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
      * <p>An ending value for a range of allowed port numbers. Port numbers are
      * end-inclusive. This value must be higher than <code>FromPort</code>.</p> <p>For
-     * fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets
-     * using Windows builds, only port 443, 1026-60000 are valid.</p>
+     * fleets using Windows and Linux builds, only ports 1026-60000 are valid.</p>
      */
     inline IpPermission& WithToPort(int value) { SetToPort(value); return *this;}
 
