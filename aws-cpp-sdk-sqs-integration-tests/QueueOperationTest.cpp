@@ -36,6 +36,7 @@
 #include <aws/testing/TestingEnvironment.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/platform/Environment.h>
+#include <thread>
 
 using namespace Aws::Http;
 using namespace Aws;
