@@ -42,6 +42,7 @@
 #include <aws/cognito-identity/CognitoIdentityClient.h>
 #include <aws/sts/STSClient.h>
 #include <aws/sts/model/AssumeRoleRequest.h>
+#include <thread>
 
 using namespace Aws;
 using namespace Aws::Http;
