@@ -197,56 +197,65 @@ namespace Model
 
 
     /**
-     * <p>An array of strings to specify the AWS account IDs that can access the
-     * bucket.</p> <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
+     * <p>An array of strings to specify the Amazon Web Services account IDs that can
+     * access the bucket.</p> <p>You can give a maximum of 10 Amazon Web Services
+     * accounts access to a bucket.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReadonlyAccessAccounts() const{ return m_readonlyAccessAccounts; }
 
     /**
-     * <p>An array of strings to specify the AWS account IDs that can access the
-     * bucket.</p> <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
+     * <p>An array of strings to specify the Amazon Web Services account IDs that can
+     * access the bucket.</p> <p>You can give a maximum of 10 Amazon Web Services
+     * accounts access to a bucket.</p>
      */
     inline bool ReadonlyAccessAccountsHasBeenSet() const { return m_readonlyAccessAccountsHasBeenSet; }
 
     /**
-     * <p>An array of strings to specify the AWS account IDs that can access the
-     * bucket.</p> <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
+     * <p>An array of strings to specify the Amazon Web Services account IDs that can
+     * access the bucket.</p> <p>You can give a maximum of 10 Amazon Web Services
+     * accounts access to a bucket.</p>
      */
     inline void SetReadonlyAccessAccounts(const Aws::Vector<Aws::String>& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts = value; }
 
     /**
-     * <p>An array of strings to specify the AWS account IDs that can access the
-     * bucket.</p> <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
+     * <p>An array of strings to specify the Amazon Web Services account IDs that can
+     * access the bucket.</p> <p>You can give a maximum of 10 Amazon Web Services
+     * accounts access to a bucket.</p>
      */
     inline void SetReadonlyAccessAccounts(Aws::Vector<Aws::String>&& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts = std::move(value); }
 
     /**
-     * <p>An array of strings to specify the AWS account IDs that can access the
-     * bucket.</p> <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
+     * <p>An array of strings to specify the Amazon Web Services account IDs that can
+     * access the bucket.</p> <p>You can give a maximum of 10 Amazon Web Services
+     * accounts access to a bucket.</p>
      */
     inline UpdateBucketRequest& WithReadonlyAccessAccounts(const Aws::Vector<Aws::String>& value) { SetReadonlyAccessAccounts(value); return *this;}
 
     /**
-     * <p>An array of strings to specify the AWS account IDs that can access the
-     * bucket.</p> <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
+     * <p>An array of strings to specify the Amazon Web Services account IDs that can
+     * access the bucket.</p> <p>You can give a maximum of 10 Amazon Web Services
+     * accounts access to a bucket.</p>
      */
     inline UpdateBucketRequest& WithReadonlyAccessAccounts(Aws::Vector<Aws::String>&& value) { SetReadonlyAccessAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>An array of strings to specify the AWS account IDs that can access the
-     * bucket.</p> <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
+     * <p>An array of strings to specify the Amazon Web Services account IDs that can
+     * access the bucket.</p> <p>You can give a maximum of 10 Amazon Web Services
+     * accounts access to a bucket.</p>
      */
     inline UpdateBucketRequest& AddReadonlyAccessAccounts(const Aws::String& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts.push_back(value); return *this; }
 
     /**
-     * <p>An array of strings to specify the AWS account IDs that can access the
-     * bucket.</p> <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
+     * <p>An array of strings to specify the Amazon Web Services account IDs that can
+     * access the bucket.</p> <p>You can give a maximum of 10 Amazon Web Services
+     * accounts access to a bucket.</p>
      */
     inline UpdateBucketRequest& AddReadonlyAccessAccounts(Aws::String&& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of strings to specify the AWS account IDs that can access the
-     * bucket.</p> <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
+     * <p>An array of strings to specify the Amazon Web Services account IDs that can
+     * access the bucket.</p> <p>You can give a maximum of 10 Amazon Web Services
+     * accounts access to a bucket.</p>
      */
     inline UpdateBucketRequest& AddReadonlyAccessAccounts(const char* value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts.push_back(value); return *this; }
 

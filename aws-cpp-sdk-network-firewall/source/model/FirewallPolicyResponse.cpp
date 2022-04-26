@@ -31,7 +31,8 @@ FirewallPolicyResponse::FirewallPolicyResponse() :
     m_consumedStatefulRuleCapacity(0),
     m_consumedStatefulRuleCapacityHasBeenSet(false),
     m_numberOfAssociations(0),
-    m_numberOfAssociationsHasBeenSet(false)
+    m_numberOfAssociationsHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ FirewallPolicyResponse::FirewallPolicyResponse(JsonView jsonValue) :
     m_consumedStatefulRuleCapacity(0),
     m_consumedStatefulRuleCapacityHasBeenSet(false),
     m_numberOfAssociations(0),
-    m_numberOfAssociationsHasBeenSet(false)
+    m_numberOfAssociationsHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -121,6 +123,13 @@ FirewallPolicyResponse& FirewallPolicyResponse::operator =(JsonView jsonValue)
     m_numberOfAssociationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EncryptionConfiguration"))
+  {
+    m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
+
+    m_encryptionConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +192,12 @@ JsonValue FirewallPolicyResponse::Jsonize() const
   if(m_numberOfAssociationsHasBeenSet)
   {
    payload.WithInteger("NumberOfAssociations", m_numberOfAssociations);
+
+  }
+
+  if(m_encryptionConfigurationHasBeenSet)
+  {
+   payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
 
   }
 

@@ -311,22 +311,40 @@ namespace Model
     inline Bucket& WithUrl(const char* value) { SetUrl(value); return *this;}
 
 
-    
+    /**
+     * <p>An object that describes the location of the bucket, such as the Amazon Web
+     * Services Region and Availability Zone.</p>
+     */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
 
-    
+    /**
+     * <p>An object that describes the location of the bucket, such as the Amazon Web
+     * Services Region and Availability Zone.</p>
+     */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
-    
+    /**
+     * <p>An object that describes the location of the bucket, such as the Amazon Web
+     * Services Region and Availability Zone.</p>
+     */
     inline void SetLocation(const ResourceLocation& value) { m_locationHasBeenSet = true; m_location = value; }
 
-    
+    /**
+     * <p>An object that describes the location of the bucket, such as the Amazon Web
+     * Services Region and Availability Zone.</p>
+     */
     inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
-    
+    /**
+     * <p>An object that describes the location of the bucket, such as the Amazon Web
+     * Services Region and Availability Zone.</p>
+     */
     inline Bucket& WithLocation(const ResourceLocation& value) { SetLocation(value); return *this;}
 
-    
+    /**
+     * <p>An object that describes the location of the bucket, such as the Amazon Web
+     * Services Region and Availability Zone.</p>
+     */
     inline Bucket& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 
 
@@ -569,7 +587,7 @@ namespace Model
     /**
      * <p>Indicates whether the bundle that is currently applied to a bucket can be
      * changed to another bundle.</p> <p>You can update a bucket's bundle only one time
-     * within a monthly AWS billing cycle.</p> <p>Use the <a
+     * within a monthly Amazon Web Services billing cycle.</p> <p>Use the <a
      * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
      * action to change a bucket's bundle.</p>
      */
@@ -578,7 +596,7 @@ namespace Model
     /**
      * <p>Indicates whether the bundle that is currently applied to a bucket can be
      * changed to another bundle.</p> <p>You can update a bucket's bundle only one time
-     * within a monthly AWS billing cycle.</p> <p>Use the <a
+     * within a monthly Amazon Web Services billing cycle.</p> <p>Use the <a
      * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
      * action to change a bucket's bundle.</p>
      */
@@ -587,7 +605,7 @@ namespace Model
     /**
      * <p>Indicates whether the bundle that is currently applied to a bucket can be
      * changed to another bundle.</p> <p>You can update a bucket's bundle only one time
-     * within a monthly AWS billing cycle.</p> <p>Use the <a
+     * within a monthly Amazon Web Services billing cycle.</p> <p>Use the <a
      * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
      * action to change a bucket's bundle.</p>
      */
@@ -596,7 +614,7 @@ namespace Model
     /**
      * <p>Indicates whether the bundle that is currently applied to a bucket can be
      * changed to another bundle.</p> <p>You can update a bucket's bundle only one time
-     * within a monthly AWS billing cycle.</p> <p>Use the <a
+     * within a monthly Amazon Web Services billing cycle.</p> <p>Use the <a
      * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
      * action to change a bucket's bundle.</p>
      */
@@ -604,56 +622,56 @@ namespace Model
 
 
     /**
-     * <p>An array of strings that specify the AWS account IDs that have read-only
-     * access to the bucket.</p>
+     * <p>An array of strings that specify the Amazon Web Services account IDs that
+     * have read-only access to the bucket.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReadonlyAccessAccounts() const{ return m_readonlyAccessAccounts; }
 
     /**
-     * <p>An array of strings that specify the AWS account IDs that have read-only
-     * access to the bucket.</p>
+     * <p>An array of strings that specify the Amazon Web Services account IDs that
+     * have read-only access to the bucket.</p>
      */
     inline bool ReadonlyAccessAccountsHasBeenSet() const { return m_readonlyAccessAccountsHasBeenSet; }
 
     /**
-     * <p>An array of strings that specify the AWS account IDs that have read-only
-     * access to the bucket.</p>
+     * <p>An array of strings that specify the Amazon Web Services account IDs that
+     * have read-only access to the bucket.</p>
      */
     inline void SetReadonlyAccessAccounts(const Aws::Vector<Aws::String>& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts = value; }
 
     /**
-     * <p>An array of strings that specify the AWS account IDs that have read-only
-     * access to the bucket.</p>
+     * <p>An array of strings that specify the Amazon Web Services account IDs that
+     * have read-only access to the bucket.</p>
      */
     inline void SetReadonlyAccessAccounts(Aws::Vector<Aws::String>&& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts = std::move(value); }
 
     /**
-     * <p>An array of strings that specify the AWS account IDs that have read-only
-     * access to the bucket.</p>
+     * <p>An array of strings that specify the Amazon Web Services account IDs that
+     * have read-only access to the bucket.</p>
      */
     inline Bucket& WithReadonlyAccessAccounts(const Aws::Vector<Aws::String>& value) { SetReadonlyAccessAccounts(value); return *this;}
 
     /**
-     * <p>An array of strings that specify the AWS account IDs that have read-only
-     * access to the bucket.</p>
+     * <p>An array of strings that specify the Amazon Web Services account IDs that
+     * have read-only access to the bucket.</p>
      */
     inline Bucket& WithReadonlyAccessAccounts(Aws::Vector<Aws::String>&& value) { SetReadonlyAccessAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>An array of strings that specify the AWS account IDs that have read-only
-     * access to the bucket.</p>
+     * <p>An array of strings that specify the Amazon Web Services account IDs that
+     * have read-only access to the bucket.</p>
      */
     inline Bucket& AddReadonlyAccessAccounts(const Aws::String& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts.push_back(value); return *this; }
 
     /**
-     * <p>An array of strings that specify the AWS account IDs that have read-only
-     * access to the bucket.</p>
+     * <p>An array of strings that specify the Amazon Web Services account IDs that
+     * have read-only access to the bucket.</p>
      */
     inline Bucket& AddReadonlyAccessAccounts(Aws::String&& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of strings that specify the AWS account IDs that have read-only
-     * access to the bucket.</p>
+     * <p>An array of strings that specify the Amazon Web Services account IDs that
+     * have read-only access to the bucket.</p>
      */
     inline Bucket& AddReadonlyAccessAccounts(const char* value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts.push_back(value); return *this; }
 

@@ -10,6 +10,7 @@
 #include <aws/network-firewall/model/RuleGroup.h>
 #include <aws/network-firewall/model/RuleGroupType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/network-firewall/model/EncryptionConfiguration.h>
 #include <aws/network-firewall/model/Tag.h>
 #include <utility>
 
@@ -525,6 +526,43 @@ namespace Model
      */
     inline CreateRuleGroupRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>A complex type that contains settings for encryption of your rule group
+     * resources.</p>
+     */
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+
+    /**
+     * <p>A complex type that contains settings for encryption of your rule group
+     * resources.</p>
+     */
+    inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains settings for encryption of your rule group
+     * resources.</p>
+     */
+    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
+
+    /**
+     * <p>A complex type that contains settings for encryption of your rule group
+     * resources.</p>
+     */
+    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
+
+    /**
+     * <p>A complex type that contains settings for encryption of your rule group
+     * resources.</p>
+     */
+    inline CreateRuleGroupRequest& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
+
+    /**
+     * <p>A complex type that contains settings for encryption of your rule group
+     * resources.</p>
+     */
+    inline CreateRuleGroupRequest& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_ruleGroupName;
@@ -550,6 +588,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    EncryptionConfiguration m_encryptionConfiguration;
+    bool m_encryptionConfigurationHasBeenSet;
   };
 
 } // namespace Model

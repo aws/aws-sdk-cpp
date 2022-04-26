@@ -84,7 +84,7 @@ namespace Model
    * provide cost benefit analysis that compare your internal workloads with Amazon
    * Web Services.</p> <p>Use <code>GetServices</code> without a service code to
    * retrieve the service codes for all AWS services, then <code>GetServices</code>
-   * with a service code to retreive the attribute names for that service. After you
+   * with a service code to retrieve the attribute names for that service. After you
    * have the service code and attribute names, you can use
    * <code>GetAttributeValues</code> to see what values are available for an
    * attribute. With the service code and an attribute name and value, you can use
@@ -169,8 +169,8 @@ namespace Model
         virtual void DescribeServicesAsync(const Model::DescribeServicesRequest& request, const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of attribute values. Attibutes are similar to the details in a
-         * Price List API offer file. For a list of available attributes, see <a
+         * <p>Returns a list of attribute values. Attributes are similar to the details in
+         * a Price List API offer file. For a list of available attributes, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/reading-an-offer.html#pps-defs">Offer
          * File Definitions</a> in the <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">Amazon
@@ -182,8 +182,8 @@ namespace Model
         virtual Model::GetAttributeValuesOutcome GetAttributeValues(const Model::GetAttributeValuesRequest& request) const;
 
         /**
-         * <p>Returns a list of attribute values. Attibutes are similar to the details in a
-         * Price List API offer file. For a list of available attributes, see <a
+         * <p>Returns a list of attribute values. Attributes are similar to the details in
+         * a Price List API offer file. For a list of available attributes, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/reading-an-offer.html#pps-defs">Offer
          * File Definitions</a> in the <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">Amazon
@@ -197,8 +197,8 @@ namespace Model
         virtual Model::GetAttributeValuesOutcomeCallable GetAttributeValuesCallable(const Model::GetAttributeValuesRequest& request) const;
 
         /**
-         * <p>Returns a list of attribute values. Attibutes are similar to the details in a
-         * Price List API offer file. For a list of available attributes, see <a
+         * <p>Returns a list of attribute values. Attributes are similar to the details in
+         * a Price List API offer file. For a list of available attributes, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/reading-an-offer.html#pps-defs">Offer
          * File Definitions</a> in the <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">Amazon

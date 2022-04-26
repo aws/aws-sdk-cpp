@@ -33,7 +33,8 @@ RuleGroupResponse::RuleGroupResponse() :
     m_consumedCapacity(0),
     m_consumedCapacityHasBeenSet(false),
     m_numberOfAssociations(0),
-    m_numberOfAssociationsHasBeenSet(false)
+    m_numberOfAssociationsHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ RuleGroupResponse::RuleGroupResponse(JsonView jsonValue) :
     m_consumedCapacity(0),
     m_consumedCapacityHasBeenSet(false),
     m_numberOfAssociations(0),
-    m_numberOfAssociationsHasBeenSet(false)
+    m_numberOfAssociationsHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -132,6 +134,13 @@ RuleGroupResponse& RuleGroupResponse::operator =(JsonView jsonValue)
     m_numberOfAssociationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EncryptionConfiguration"))
+  {
+    m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
+
+    m_encryptionConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -199,6 +208,12 @@ JsonValue RuleGroupResponse::Jsonize() const
   if(m_numberOfAssociationsHasBeenSet)
   {
    payload.WithInteger("NumberOfAssociations", m_numberOfAssociations);
+
+  }
+
+  if(m_encryptionConfigurationHasBeenSet)
+  {
+   payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
 
   }
 

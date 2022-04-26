@@ -36,6 +36,7 @@
 #include <aws/network-firewall/model/UntagResourceResult.h>
 #include <aws/network-firewall/model/UpdateFirewallDeleteProtectionResult.h>
 #include <aws/network-firewall/model/UpdateFirewallDescriptionResult.h>
+#include <aws/network-firewall/model/UpdateFirewallEncryptionConfigurationResult.h>
 #include <aws/network-firewall/model/UpdateFirewallPolicyResult.h>
 #include <aws/network-firewall/model/UpdateFirewallPolicyChangeProtectionResult.h>
 #include <aws/network-firewall/model/UpdateLoggingConfigurationResult.h>
@@ -105,6 +106,7 @@ namespace Model
         class UntagResourceRequest;
         class UpdateFirewallDeleteProtectionRequest;
         class UpdateFirewallDescriptionRequest;
+        class UpdateFirewallEncryptionConfigurationRequest;
         class UpdateFirewallPolicyRequest;
         class UpdateFirewallPolicyChangeProtectionRequest;
         class UpdateLoggingConfigurationRequest;
@@ -136,6 +138,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UntagResourceResult, NetworkFirewallError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateFirewallDeleteProtectionResult, NetworkFirewallError> UpdateFirewallDeleteProtectionOutcome;
         typedef Aws::Utils::Outcome<UpdateFirewallDescriptionResult, NetworkFirewallError> UpdateFirewallDescriptionOutcome;
+        typedef Aws::Utils::Outcome<UpdateFirewallEncryptionConfigurationResult, NetworkFirewallError> UpdateFirewallEncryptionConfigurationOutcome;
         typedef Aws::Utils::Outcome<UpdateFirewallPolicyResult, NetworkFirewallError> UpdateFirewallPolicyOutcome;
         typedef Aws::Utils::Outcome<UpdateFirewallPolicyChangeProtectionResult, NetworkFirewallError> UpdateFirewallPolicyChangeProtectionOutcome;
         typedef Aws::Utils::Outcome<UpdateLoggingConfigurationResult, NetworkFirewallError> UpdateLoggingConfigurationOutcome;
@@ -167,6 +170,7 @@ namespace Model
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateFirewallDeleteProtectionOutcome> UpdateFirewallDeleteProtectionOutcomeCallable;
         typedef std::future<UpdateFirewallDescriptionOutcome> UpdateFirewallDescriptionOutcomeCallable;
+        typedef std::future<UpdateFirewallEncryptionConfigurationOutcome> UpdateFirewallEncryptionConfigurationOutcomeCallable;
         typedef std::future<UpdateFirewallPolicyOutcome> UpdateFirewallPolicyOutcomeCallable;
         typedef std::future<UpdateFirewallPolicyChangeProtectionOutcome> UpdateFirewallPolicyChangeProtectionOutcomeCallable;
         typedef std::future<UpdateLoggingConfigurationOutcome> UpdateLoggingConfigurationOutcomeCallable;
@@ -201,6 +205,7 @@ namespace Model
     typedef std::function<void(const NetworkFirewallClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::UpdateFirewallDeleteProtectionRequest&, const Model::UpdateFirewallDeleteProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFirewallDeleteProtectionResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::UpdateFirewallDescriptionRequest&, const Model::UpdateFirewallDescriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFirewallDescriptionResponseReceivedHandler;
+    typedef std::function<void(const NetworkFirewallClient*, const Model::UpdateFirewallEncryptionConfigurationRequest&, const Model::UpdateFirewallEncryptionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFirewallEncryptionConfigurationResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::UpdateFirewallPolicyRequest&, const Model::UpdateFirewallPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFirewallPolicyResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::UpdateFirewallPolicyChangeProtectionRequest&, const Model::UpdateFirewallPolicyChangeProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFirewallPolicyChangeProtectionResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::UpdateLoggingConfigurationRequest&, const Model::UpdateLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLoggingConfigurationResponseReceivedHandler;
@@ -208,18 +213,20 @@ namespace Model
     typedef std::function<void(const NetworkFirewallClient*, const Model::UpdateSubnetChangeProtectionRequest&, const Model::UpdateSubnetChangeProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSubnetChangeProtectionResponseReceivedHandler;
 
   /**
-   * <p>This is the API Reference for AWS Network Firewall. This guide is for
-   * developers who need detailed information about the Network Firewall API actions,
-   * data types, and errors. </p> <ul> <li> <p>The REST API requires you to handle
+   * <p>This is the API Reference for Network Firewall. This guide is for developers
+   * who need detailed information about the Network Firewall API actions, data
+   * types, and errors. </p> <ul> <li> <p>The REST API requires you to handle
    * connection details, such as calculating signatures, handling request retries,
-   * and error handling. For general information about using the AWS REST APIs, see
-   * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-apis.html">AWS
-   * APIs</a>. </p> <p>To access Network Firewall using the REST API endpoint:
-   * <code>https://network-firewall.&lt;region&gt;.amazonaws.com </code> </p> </li>
-   * <li> <p>Alternatively, you can use one of the AWS SDKs to access an API that's
-   * tailored to the programming language or platform that you're using. For more
-   * information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.</p>
-   * </li> <li> <p>For descriptions of Network Firewall features, including and
+   * and error handling. For general information about using the Amazon Web Services
+   * REST APIs, see <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/aws-apis.html">Amazon Web
+   * Services APIs</a>. </p> <p>To access Network Firewall using the REST API
+   * endpoint: <code>https://network-firewall.&lt;region&gt;.amazonaws.com </code>
+   * </p> </li> <li> <p>Alternatively, you can use one of the Amazon Web Services
+   * SDKs to access an API that's tailored to the programming language or platform
+   * that you're using. For more information, see <a
+   * href="http://aws.amazon.com/tools/#SDKs">Amazon Web Services SDKs</a>.</p> </li>
+   * <li> <p>For descriptions of Network Firewall features, including and
    * step-by-step instructions on how to use them through the Network Firewall
    * console, see the <a
    * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/">Network
@@ -227,21 +234,21 @@ namespace Model
    * managed, network firewall and intrusion detection and prevention service for
    * Amazon Virtual Private Cloud (Amazon VPC). With Network Firewall, you can filter
    * traffic at the perimeter of your VPC. This includes filtering traffic going to
-   * and coming from an internet gateway, NAT gateway, or over VPN or AWS Direct
-   * Connect. Network Firewall uses rules that are compatible with Suricata, a free,
-   * open source intrusion detection system (IDS) engine. AWS Network Firewall
-   * supports Suricata version 5.0.2. For information about Suricata, see the <a
+   * and coming from an internet gateway, NAT gateway, or over VPN or Direct Connect.
+   * Network Firewall uses rules that are compatible with Suricata, a free, open
+   * source intrusion detection system (IDS) engine. Network Firewall supports
+   * Suricata version 5.0.2. For information about Suricata, see the <a
    * href="https://suricata-ids.org/">Suricata website</a>.</p> <p>You can use
    * Network Firewall to monitor and protect your VPC traffic in a number of ways.
    * The following are just a few examples: </p> <ul> <li> <p>Allow domains or IP
-   * addresses for known AWS service endpoints, such as Amazon S3, and block all
-   * other forms of traffic.</p> </li> <li> <p>Use custom lists of known bad domains
-   * to limit the types of domain names that your applications can access.</p> </li>
-   * <li> <p>Perform deep packet inspection on traffic entering or leaving your
-   * VPC.</p> </li> <li> <p>Use stateful protocol detection to filter protocols like
-   * HTTPS, regardless of the port used.</p> </li> </ul> <p>To enable Network
-   * Firewall for your VPCs, you perform steps in both Amazon VPC and in Network
-   * Firewall. For information about using Amazon VPC, see <a
+   * addresses for known Amazon Web Services service endpoints, such as Amazon S3,
+   * and block all other forms of traffic.</p> </li> <li> <p>Use custom lists of
+   * known bad domains to limit the types of domain names that your applications can
+   * access.</p> </li> <li> <p>Perform deep packet inspection on traffic entering or
+   * leaving your VPC.</p> </li> <li> <p>Use stateful protocol detection to filter
+   * protocols like HTTPS, regardless of the port used.</p> </li> </ul> <p>To enable
+   * Network Firewall for your VPCs, you perform steps in both Amazon VPC and in
+   * Network Firewall. For information about using Amazon VPC, see <a
    * href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon VPC User
    * Guide</a>.</p> <p>To start using Network Firewall, do the following: </p> <ol>
    * <li> <p>(Optional) If you don't already have a VPC that you want to protect,
@@ -325,7 +332,7 @@ namespace Model
         /**
          * <p>Associates the specified subnets in the Amazon VPC to the firewall. You can
          * specify one subnet for each of the Availability Zones that the VPC spans. </p>
-         * <p>This request creates an AWS Network Firewall firewall endpoint in each of the
+         * <p>This request creates an Network Firewall firewall endpoint in each of the
          * subnets. To enable the firewall's protections, you must also modify the VPC's
          * route tables for each subnet's Availability Zone, to redirect the traffic that's
          * coming into and going out of the zone through the firewall endpoint.
@@ -338,7 +345,7 @@ namespace Model
         /**
          * <p>Associates the specified subnets in the Amazon VPC to the firewall. You can
          * specify one subnet for each of the Availability Zones that the VPC spans. </p>
-         * <p>This request creates an AWS Network Firewall firewall endpoint in each of the
+         * <p>This request creates an Network Firewall firewall endpoint in each of the
          * subnets. To enable the firewall's protections, you must also modify the VPC's
          * route tables for each subnet's Availability Zone, to redirect the traffic that's
          * coming into and going out of the zone through the firewall endpoint.
@@ -353,7 +360,7 @@ namespace Model
         /**
          * <p>Associates the specified subnets in the Amazon VPC to the firewall. You can
          * specify one subnet for each of the Availability Zones that the VPC spans. </p>
-         * <p>This request creates an AWS Network Firewall firewall endpoint in each of the
+         * <p>This request creates an Network Firewall firewall endpoint in each of the
          * subnets. To enable the firewall's protections, you must also modify the VPC's
          * route tables for each subnet's Availability Zone, to redirect the traffic that's
          * coming into and going out of the zone through the firewall endpoint.
@@ -366,40 +373,40 @@ namespace Model
         virtual void AssociateSubnetsAsync(const Model::AssociateSubnetsRequest& request, const AssociateSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an AWS Network Firewall <a>Firewall</a> and accompanying
+         * <p>Creates an Network Firewall <a>Firewall</a> and accompanying
          * <a>FirewallStatus</a> for a VPC. </p> <p>The firewall defines the configuration
-         * settings for an AWS Network Firewall firewall. The settings that you can define
-         * at creation include the firewall policy, the subnets in your VPC to use for the
-         * firewall endpoints, and any tags that are attached to the firewall AWS resource.
-         * </p> <p>After you create a firewall, you can provide additional settings, like
-         * the logging configuration. </p> <p>To update the settings for a firewall, you
-         * use the operations that apply to the settings themselves, for example
-         * <a>UpdateLoggingConfiguration</a>, <a>AssociateSubnets</a>, and
-         * <a>UpdateFirewallDeleteProtection</a>. </p> <p>To manage a firewall's tags, use
-         * the standard AWS resource tagging operations, <a>ListTagsForResource</a>,
-         * <a>TagResource</a>, and <a>UntagResource</a>.</p> <p>To retrieve information
-         * about firewalls, use <a>ListFirewalls</a> and
-         * <a>DescribeFirewall</a>.</p><p><h3>See Also:</h3>   <a
+         * settings for an Network Firewall firewall. The settings that you can define at
+         * creation include the firewall policy, the subnets in your VPC to use for the
+         * firewall endpoints, and any tags that are attached to the firewall Amazon Web
+         * Services resource. </p> <p>After you create a firewall, you can provide
+         * additional settings, like the logging configuration. </p> <p>To update the
+         * settings for a firewall, you use the operations that apply to the settings
+         * themselves, for example <a>UpdateLoggingConfiguration</a>,
+         * <a>AssociateSubnets</a>, and <a>UpdateFirewallDeleteProtection</a>. </p> <p>To
+         * manage a firewall's tags, use the standard Amazon Web Services resource tagging
+         * operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and
+         * <a>UntagResource</a>.</p> <p>To retrieve information about firewalls, use
+         * <a>ListFirewalls</a> and <a>DescribeFirewall</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateFirewall">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateFirewallOutcome CreateFirewall(const Model::CreateFirewallRequest& request) const;
 
         /**
-         * <p>Creates an AWS Network Firewall <a>Firewall</a> and accompanying
+         * <p>Creates an Network Firewall <a>Firewall</a> and accompanying
          * <a>FirewallStatus</a> for a VPC. </p> <p>The firewall defines the configuration
-         * settings for an AWS Network Firewall firewall. The settings that you can define
-         * at creation include the firewall policy, the subnets in your VPC to use for the
-         * firewall endpoints, and any tags that are attached to the firewall AWS resource.
-         * </p> <p>After you create a firewall, you can provide additional settings, like
-         * the logging configuration. </p> <p>To update the settings for a firewall, you
-         * use the operations that apply to the settings themselves, for example
-         * <a>UpdateLoggingConfiguration</a>, <a>AssociateSubnets</a>, and
-         * <a>UpdateFirewallDeleteProtection</a>. </p> <p>To manage a firewall's tags, use
-         * the standard AWS resource tagging operations, <a>ListTagsForResource</a>,
-         * <a>TagResource</a>, and <a>UntagResource</a>.</p> <p>To retrieve information
-         * about firewalls, use <a>ListFirewalls</a> and
-         * <a>DescribeFirewall</a>.</p><p><h3>See Also:</h3>   <a
+         * settings for an Network Firewall firewall. The settings that you can define at
+         * creation include the firewall policy, the subnets in your VPC to use for the
+         * firewall endpoints, and any tags that are attached to the firewall Amazon Web
+         * Services resource. </p> <p>After you create a firewall, you can provide
+         * additional settings, like the logging configuration. </p> <p>To update the
+         * settings for a firewall, you use the operations that apply to the settings
+         * themselves, for example <a>UpdateLoggingConfiguration</a>,
+         * <a>AssociateSubnets</a>, and <a>UpdateFirewallDeleteProtection</a>. </p> <p>To
+         * manage a firewall's tags, use the standard Amazon Web Services resource tagging
+         * operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and
+         * <a>UntagResource</a>.</p> <p>To retrieve information about firewalls, use
+         * <a>ListFirewalls</a> and <a>DescribeFirewall</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateFirewall">AWS
          * API Reference</a></p>
          *
@@ -408,20 +415,20 @@ namespace Model
         virtual Model::CreateFirewallOutcomeCallable CreateFirewallCallable(const Model::CreateFirewallRequest& request) const;
 
         /**
-         * <p>Creates an AWS Network Firewall <a>Firewall</a> and accompanying
+         * <p>Creates an Network Firewall <a>Firewall</a> and accompanying
          * <a>FirewallStatus</a> for a VPC. </p> <p>The firewall defines the configuration
-         * settings for an AWS Network Firewall firewall. The settings that you can define
-         * at creation include the firewall policy, the subnets in your VPC to use for the
-         * firewall endpoints, and any tags that are attached to the firewall AWS resource.
-         * </p> <p>After you create a firewall, you can provide additional settings, like
-         * the logging configuration. </p> <p>To update the settings for a firewall, you
-         * use the operations that apply to the settings themselves, for example
-         * <a>UpdateLoggingConfiguration</a>, <a>AssociateSubnets</a>, and
-         * <a>UpdateFirewallDeleteProtection</a>. </p> <p>To manage a firewall's tags, use
-         * the standard AWS resource tagging operations, <a>ListTagsForResource</a>,
-         * <a>TagResource</a>, and <a>UntagResource</a>.</p> <p>To retrieve information
-         * about firewalls, use <a>ListFirewalls</a> and
-         * <a>DescribeFirewall</a>.</p><p><h3>See Also:</h3>   <a
+         * settings for an Network Firewall firewall. The settings that you can define at
+         * creation include the firewall policy, the subnets in your VPC to use for the
+         * firewall endpoints, and any tags that are attached to the firewall Amazon Web
+         * Services resource. </p> <p>After you create a firewall, you can provide
+         * additional settings, like the logging configuration. </p> <p>To update the
+         * settings for a firewall, you use the operations that apply to the settings
+         * themselves, for example <a>UpdateLoggingConfiguration</a>,
+         * <a>AssociateSubnets</a>, and <a>UpdateFirewallDeleteProtection</a>. </p> <p>To
+         * manage a firewall's tags, use the standard Amazon Web Services resource tagging
+         * operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and
+         * <a>UntagResource</a>.</p> <p>To retrieve information about firewalls, use
+         * <a>ListFirewalls</a> and <a>DescribeFirewall</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateFirewall">AWS
          * API Reference</a></p>
          *
@@ -431,10 +438,10 @@ namespace Model
 
         /**
          * <p>Creates the firewall policy for the firewall according to the specifications.
-         * </p> <p>An AWS Network Firewall firewall policy defines the behavior of a
-         * firewall, in a collection of stateless and stateful rule groups and other
-         * settings. You can use one firewall policy for multiple firewalls. </p><p><h3>See
-         * Also:</h3>   <a
+         * </p> <p>An Network Firewall firewall policy defines the behavior of a firewall,
+         * in a collection of stateless and stateful rule groups and other settings. You
+         * can use one firewall policy for multiple firewalls. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateFirewallPolicy">AWS
          * API Reference</a></p>
          */
@@ -442,10 +449,10 @@ namespace Model
 
         /**
          * <p>Creates the firewall policy for the firewall according to the specifications.
-         * </p> <p>An AWS Network Firewall firewall policy defines the behavior of a
-         * firewall, in a collection of stateless and stateful rule groups and other
-         * settings. You can use one firewall policy for multiple firewalls. </p><p><h3>See
-         * Also:</h3>   <a
+         * </p> <p>An Network Firewall firewall policy defines the behavior of a firewall,
+         * in a collection of stateless and stateful rule groups and other settings. You
+         * can use one firewall policy for multiple firewalls. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateFirewallPolicy">AWS
          * API Reference</a></p>
          *
@@ -455,10 +462,10 @@ namespace Model
 
         /**
          * <p>Creates the firewall policy for the firewall according to the specifications.
-         * </p> <p>An AWS Network Firewall firewall policy defines the behavior of a
-         * firewall, in a collection of stateless and stateful rule groups and other
-         * settings. You can use one firewall policy for multiple firewalls. </p><p><h3>See
-         * Also:</h3>   <a
+         * </p> <p>An Network Firewall firewall policy defines the behavior of a firewall,
+         * in a collection of stateless and stateful rule groups and other settings. You
+         * can use one firewall policy for multiple firewalls. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateFirewallPolicy">AWS
          * API Reference</a></p>
          *
@@ -944,10 +951,10 @@ namespace Model
          * <p>Retrieves the tags associated with the specified resource. Tags are key:value
          * pairs that you can use to categorize and manage your resources, for purposes
          * like billing. For example, you might set the tag key to "customer" and the value
-         * to the customer name or ID. You can specify one or more tags to add to each AWS
-         * resource, up to 50 tags for a resource.</p> <p>You can tag the AWS resources
-         * that you manage through AWS Network Firewall: firewalls, firewall policies, and
-         * rule groups. </p><p><h3>See Also:</h3>   <a
+         * to the customer name or ID. You can specify one or more tags to add to each
+         * Amazon Web Services resource, up to 50 tags for a resource.</p> <p>You can tag
+         * the Amazon Web Services resources that you manage through Network Firewall:
+         * firewalls, firewall policies, and rule groups. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -957,10 +964,10 @@ namespace Model
          * <p>Retrieves the tags associated with the specified resource. Tags are key:value
          * pairs that you can use to categorize and manage your resources, for purposes
          * like billing. For example, you might set the tag key to "customer" and the value
-         * to the customer name or ID. You can specify one or more tags to add to each AWS
-         * resource, up to 50 tags for a resource.</p> <p>You can tag the AWS resources
-         * that you manage through AWS Network Firewall: firewalls, firewall policies, and
-         * rule groups. </p><p><h3>See Also:</h3>   <a
+         * to the customer name or ID. You can specify one or more tags to add to each
+         * Amazon Web Services resource, up to 50 tags for a resource.</p> <p>You can tag
+         * the Amazon Web Services resources that you manage through Network Firewall:
+         * firewalls, firewall policies, and rule groups. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -972,10 +979,10 @@ namespace Model
          * <p>Retrieves the tags associated with the specified resource. Tags are key:value
          * pairs that you can use to categorize and manage your resources, for purposes
          * like billing. For example, you might set the tag key to "customer" and the value
-         * to the customer name or ID. You can specify one or more tags to add to each AWS
-         * resource, up to 50 tags for a resource.</p> <p>You can tag the AWS resources
-         * that you manage through AWS Network Firewall: firewalls, firewall policies, and
-         * rule groups. </p><p><h3>See Also:</h3>   <a
+         * to the customer name or ID. You can specify one or more tags to add to each
+         * Amazon Web Services resource, up to 50 tags for a resource.</p> <p>You can tag
+         * the Amazon Web Services resources that you manage through Network Firewall:
+         * firewalls, firewall policies, and rule groups. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -984,48 +991,48 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates or updates an AWS Identity and Access Management policy for your rule
-         * group or firewall policy. Use this to share rule groups and firewall policies
-         * between accounts. This operation works in conjunction with the AWS Resource
-         * Access Manager (RAM) service to manage resource sharing for Network Firewall.
-         * </p> <p>Use this operation to create or update a resource policy for your rule
-         * group or firewall policy. In the policy, you specify the accounts that you want
-         * to share the resource with and the operations that you want the accounts to be
-         * able to perform. </p> <p>When you add an account in the resource policy, you
-         * then run the following Resource Access Manager (RAM) operations to access and
-         * accept the shared rule group or firewall policy. </p> <ul> <li> <p> <a
+         * <p>Creates or updates an IAM policy for your rule group or firewall policy. Use
+         * this to share rule groups and firewall policies between accounts. This operation
+         * works in conjunction with the Amazon Web Services Resource Access Manager (RAM)
+         * service to manage resource sharing for Network Firewall. </p> <p>Use this
+         * operation to create or update a resource policy for your rule group or firewall
+         * policy. In the policy, you specify the accounts that you want to share the
+         * resource with and the operations that you want the accounts to be able to
+         * perform. </p> <p>When you add an account in the resource policy, you then run
+         * the following Resource Access Manager (RAM) operations to access and accept the
+         * shared rule group or firewall policy. </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShareInvitations.html">GetResourceShareInvitations</a>
          * - Returns the Amazon Resource Names (ARNs) of the resource share invitations.
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_AcceptResourceShareInvitation.html">AcceptResourceShareInvitation</a>
          * - Accepts the share invitation for a specified resource share. </p> </li> </ul>
          * <p>For additional information about resource sharing using RAM, see <a
-         * href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">AWS
-         * Resource Access Manager User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">Resource
+         * Access Manager User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/PutResourcePolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
 
         /**
-         * <p>Creates or updates an AWS Identity and Access Management policy for your rule
-         * group or firewall policy. Use this to share rule groups and firewall policies
-         * between accounts. This operation works in conjunction with the AWS Resource
-         * Access Manager (RAM) service to manage resource sharing for Network Firewall.
-         * </p> <p>Use this operation to create or update a resource policy for your rule
-         * group or firewall policy. In the policy, you specify the accounts that you want
-         * to share the resource with and the operations that you want the accounts to be
-         * able to perform. </p> <p>When you add an account in the resource policy, you
-         * then run the following Resource Access Manager (RAM) operations to access and
-         * accept the shared rule group or firewall policy. </p> <ul> <li> <p> <a
+         * <p>Creates or updates an IAM policy for your rule group or firewall policy. Use
+         * this to share rule groups and firewall policies between accounts. This operation
+         * works in conjunction with the Amazon Web Services Resource Access Manager (RAM)
+         * service to manage resource sharing for Network Firewall. </p> <p>Use this
+         * operation to create or update a resource policy for your rule group or firewall
+         * policy. In the policy, you specify the accounts that you want to share the
+         * resource with and the operations that you want the accounts to be able to
+         * perform. </p> <p>When you add an account in the resource policy, you then run
+         * the following Resource Access Manager (RAM) operations to access and accept the
+         * shared rule group or firewall policy. </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShareInvitations.html">GetResourceShareInvitations</a>
          * - Returns the Amazon Resource Names (ARNs) of the resource share invitations.
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_AcceptResourceShareInvitation.html">AcceptResourceShareInvitation</a>
          * - Accepts the share invitation for a specified resource share. </p> </li> </ul>
          * <p>For additional information about resource sharing using RAM, see <a
-         * href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">AWS
-         * Resource Access Manager User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">Resource
+         * Access Manager User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/PutResourcePolicy">AWS
          * API Reference</a></p>
          *
@@ -1034,24 +1041,24 @@ namespace Model
         virtual Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const Model::PutResourcePolicyRequest& request) const;
 
         /**
-         * <p>Creates or updates an AWS Identity and Access Management policy for your rule
-         * group or firewall policy. Use this to share rule groups and firewall policies
-         * between accounts. This operation works in conjunction with the AWS Resource
-         * Access Manager (RAM) service to manage resource sharing for Network Firewall.
-         * </p> <p>Use this operation to create or update a resource policy for your rule
-         * group or firewall policy. In the policy, you specify the accounts that you want
-         * to share the resource with and the operations that you want the accounts to be
-         * able to perform. </p> <p>When you add an account in the resource policy, you
-         * then run the following Resource Access Manager (RAM) operations to access and
-         * accept the shared rule group or firewall policy. </p> <ul> <li> <p> <a
+         * <p>Creates or updates an IAM policy for your rule group or firewall policy. Use
+         * this to share rule groups and firewall policies between accounts. This operation
+         * works in conjunction with the Amazon Web Services Resource Access Manager (RAM)
+         * service to manage resource sharing for Network Firewall. </p> <p>Use this
+         * operation to create or update a resource policy for your rule group or firewall
+         * policy. In the policy, you specify the accounts that you want to share the
+         * resource with and the operations that you want the accounts to be able to
+         * perform. </p> <p>When you add an account in the resource policy, you then run
+         * the following Resource Access Manager (RAM) operations to access and accept the
+         * shared rule group or firewall policy. </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShareInvitations.html">GetResourceShareInvitations</a>
          * - Returns the Amazon Resource Names (ARNs) of the resource share invitations.
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_AcceptResourceShareInvitation.html">AcceptResourceShareInvitation</a>
          * - Accepts the share invitation for a specified resource share. </p> </li> </ul>
          * <p>For additional information about resource sharing using RAM, see <a
-         * href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">AWS
-         * Resource Access Manager User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">Resource
+         * Access Manager User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/PutResourcePolicy">AWS
          * API Reference</a></p>
          *
@@ -1063,10 +1070,10 @@ namespace Model
          * <p>Adds the specified tags to the specified resource. Tags are key:value pairs
          * that you can use to categorize and manage your resources, for purposes like
          * billing. For example, you might set the tag key to "customer" and the value to
-         * the customer name or ID. You can specify one or more tags to add to each AWS
-         * resource, up to 50 tags for a resource.</p> <p>You can tag the AWS resources
-         * that you manage through AWS Network Firewall: firewalls, firewall policies, and
-         * rule groups. </p><p><h3>See Also:</h3>   <a
+         * the customer name or ID. You can specify one or more tags to add to each Amazon
+         * Web Services resource, up to 50 tags for a resource.</p> <p>You can tag the
+         * Amazon Web Services resources that you manage through Network Firewall:
+         * firewalls, firewall policies, and rule groups. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/TagResource">AWS
          * API Reference</a></p>
          */
@@ -1076,10 +1083,10 @@ namespace Model
          * <p>Adds the specified tags to the specified resource. Tags are key:value pairs
          * that you can use to categorize and manage your resources, for purposes like
          * billing. For example, you might set the tag key to "customer" and the value to
-         * the customer name or ID. You can specify one or more tags to add to each AWS
-         * resource, up to 50 tags for a resource.</p> <p>You can tag the AWS resources
-         * that you manage through AWS Network Firewall: firewalls, firewall policies, and
-         * rule groups. </p><p><h3>See Also:</h3>   <a
+         * the customer name or ID. You can specify one or more tags to add to each Amazon
+         * Web Services resource, up to 50 tags for a resource.</p> <p>You can tag the
+         * Amazon Web Services resources that you manage through Network Firewall:
+         * firewalls, firewall policies, and rule groups. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1091,10 +1098,10 @@ namespace Model
          * <p>Adds the specified tags to the specified resource. Tags are key:value pairs
          * that you can use to categorize and manage your resources, for purposes like
          * billing. For example, you might set the tag key to "customer" and the value to
-         * the customer name or ID. You can specify one or more tags to add to each AWS
-         * resource, up to 50 tags for a resource.</p> <p>You can tag the AWS resources
-         * that you manage through AWS Network Firewall: firewalls, firewall policies, and
-         * rule groups. </p><p><h3>See Also:</h3>   <a
+         * the customer name or ID. You can specify one or more tags to add to each Amazon
+         * Web Services resource, up to 50 tags for a resource.</p> <p>You can tag the
+         * Amazon Web Services resources that you manage through Network Firewall:
+         * firewalls, firewall policies, and rule groups. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1107,9 +1114,10 @@ namespace Model
          * are key:value pairs that you can use to categorize and manage your resources,
          * for purposes like billing. For example, you might set the tag key to "customer"
          * and the value to the customer name or ID. You can specify one or more tags to
-         * add to each AWS resource, up to 50 tags for a resource.</p> <p>You can manage
-         * tags for the AWS resources that you manage through AWS Network Firewall:
-         * firewalls, firewall policies, and rule groups. </p><p><h3>See Also:</h3>   <a
+         * add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
+         * <p>You can manage tags for the Amazon Web Services resources that you manage
+         * through Network Firewall: firewalls, firewall policies, and rule groups.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -1120,9 +1128,10 @@ namespace Model
          * are key:value pairs that you can use to categorize and manage your resources,
          * for purposes like billing. For example, you might set the tag key to "customer"
          * and the value to the customer name or ID. You can specify one or more tags to
-         * add to each AWS resource, up to 50 tags for a resource.</p> <p>You can manage
-         * tags for the AWS resources that you manage through AWS Network Firewall:
-         * firewalls, firewall policies, and rule groups. </p><p><h3>See Also:</h3>   <a
+         * add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
+         * <p>You can manage tags for the Amazon Web Services resources that you manage
+         * through Network Firewall: firewalls, firewall policies, and rule groups.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1135,9 +1144,10 @@ namespace Model
          * are key:value pairs that you can use to categorize and manage your resources,
          * for purposes like billing. For example, you might set the tag key to "customer"
          * and the value to the customer name or ID. You can specify one or more tags to
-         * add to each AWS resource, up to 50 tags for a resource.</p> <p>You can manage
-         * tags for the AWS resources that you manage through AWS Network Firewall:
-         * firewalls, firewall policies, and rule groups. </p><p><h3>See Also:</h3>   <a
+         * add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
+         * <p>You can manage tags for the Amazon Web Services resources that you manage
+         * through Network Firewall: firewalls, firewall policies, and rule groups.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1209,6 +1219,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateFirewallDescriptionAsync(const Model::UpdateFirewallDescriptionRequest& request, const UpdateFirewallDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>A complex type that contains settings for encryption of your firewall
+         * resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallEncryptionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFirewallEncryptionConfigurationOutcome UpdateFirewallEncryptionConfiguration(const Model::UpdateFirewallEncryptionConfigurationRequest& request) const;
+
+        /**
+         * <p>A complex type that contains settings for encryption of your firewall
+         * resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallEncryptionConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateFirewallEncryptionConfigurationOutcomeCallable UpdateFirewallEncryptionConfigurationCallable(const Model::UpdateFirewallEncryptionConfigurationRequest& request) const;
+
+        /**
+         * <p>A complex type that contains settings for encryption of your firewall
+         * resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallEncryptionConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateFirewallEncryptionConfigurationAsync(const Model::UpdateFirewallEncryptionConfigurationRequest& request, const UpdateFirewallEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the properties of the specified firewall policy.</p><p><h3>See
@@ -1442,6 +1480,7 @@ namespace Model
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFirewallDeleteProtectionAsyncHelper(const Model::UpdateFirewallDeleteProtectionRequest& request, const UpdateFirewallDeleteProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFirewallDescriptionAsyncHelper(const Model::UpdateFirewallDescriptionRequest& request, const UpdateFirewallDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateFirewallEncryptionConfigurationAsyncHelper(const Model::UpdateFirewallEncryptionConfigurationRequest& request, const UpdateFirewallEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFirewallPolicyAsyncHelper(const Model::UpdateFirewallPolicyRequest& request, const UpdateFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFirewallPolicyChangeProtectionAsyncHelper(const Model::UpdateFirewallPolicyChangeProtectionRequest& request, const UpdateFirewallPolicyChangeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateLoggingConfigurationAsyncHelper(const Model::UpdateLoggingConfigurationRequest& request, const UpdateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

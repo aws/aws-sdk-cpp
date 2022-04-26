@@ -1230,19 +1230,28 @@ namespace Model
         virtual void BatchGetCrawlersAsync(const Model::BatchGetCrawlersRequest& request, const BatchGetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Retrieves the details for the custom patterns specified by a list of
+         * names.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetCustomEntityTypes">AWS
+         * API Reference</a></p>
          */
         virtual Model::BatchGetCustomEntityTypesOutcome BatchGetCustomEntityTypes(const Model::BatchGetCustomEntityTypesRequest& request) const;
 
         /**
-         * 
+         * <p>Retrieves the details for the custom patterns specified by a list of
+         * names.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetCustomEntityTypes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::BatchGetCustomEntityTypesOutcomeCallable BatchGetCustomEntityTypesCallable(const Model::BatchGetCustomEntityTypesRequest& request) const;
 
         /**
-         * 
+         * <p>Retrieves the details for the custom patterns specified by a list of
+         * names.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetCustomEntityTypes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1698,19 +1707,37 @@ namespace Model
         virtual void CreateCrawlerAsync(const Model::CreateCrawlerRequest& request, const CreateCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Creates a custom pattern that is used to detect sensitive data across the
+         * columns and rows of your structured data.</p> <p>Each custom pattern you create
+         * specifies a regular expression and an optional list of context words. If no
+         * context words are passed only a regular expression is checked.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCustomEntityType">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateCustomEntityTypeOutcome CreateCustomEntityType(const Model::CreateCustomEntityTypeRequest& request) const;
 
         /**
-         * 
+         * <p>Creates a custom pattern that is used to detect sensitive data across the
+         * columns and rows of your structured data.</p> <p>Each custom pattern you create
+         * specifies a regular expression and an optional list of context words. If no
+         * context words are passed only a regular expression is checked.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCustomEntityType">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateCustomEntityTypeOutcomeCallable CreateCustomEntityTypeCallable(const Model::CreateCustomEntityTypeRequest& request) const;
 
         /**
-         * 
+         * <p>Creates a custom pattern that is used to detect sensitive data across the
+         * columns and rows of your structured data.</p> <p>Each custom pattern you create
+         * specifies a regular expression and an optional list of context words. If no
+         * context words are passed only a regular expression is checked.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCustomEntityType">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2350,19 +2377,28 @@ namespace Model
         virtual void DeleteCrawlerAsync(const Model::DeleteCrawlerRequest& request, const DeleteCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Deletes a custom pattern by specifying its name.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCustomEntityType">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteCustomEntityTypeOutcome DeleteCustomEntityType(const Model::DeleteCustomEntityTypeRequest& request) const;
 
         /**
-         * 
+         * <p>Deletes a custom pattern by specifying its name.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCustomEntityType">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteCustomEntityTypeOutcomeCallable DeleteCustomEntityTypeCallable(const Model::DeleteCustomEntityTypeRequest& request) const;
 
         /**
-         * 
+         * <p>Deletes a custom pattern by specifying its name.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCustomEntityType">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3302,19 +3338,28 @@ namespace Model
         virtual void GetCrawlersAsync(const Model::GetCrawlersRequest& request, const GetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Retrieves the details of a custom pattern by specifying its
+         * name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCustomEntityType">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetCustomEntityTypeOutcome GetCustomEntityType(const Model::GetCustomEntityTypeRequest& request) const;
 
         /**
-         * 
+         * <p>Retrieves the details of a custom pattern by specifying its
+         * name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCustomEntityType">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetCustomEntityTypeOutcomeCallable GetCustomEntityTypeCallable(const Model::GetCustomEntityTypeRequest& request) const;
 
         /**
-         * 
+         * <p>Retrieves the details of a custom pattern by specifying its
+         * name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCustomEntityType">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -4751,19 +4796,28 @@ namespace Model
         virtual void ListCrawlersAsync(const Model::ListCrawlersRequest& request, const ListCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Lists all the custom patterns that have been created.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCustomEntityTypes">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListCustomEntityTypesOutcome ListCustomEntityTypes(const Model::ListCustomEntityTypesRequest& request) const;
 
         /**
-         * 
+         * <p>Lists all the custom patterns that have been created.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCustomEntityTypes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListCustomEntityTypesOutcomeCallable ListCustomEntityTypesCallable(const Model::ListCustomEntityTypesRequest& request) const;
 
         /**
-         * 
+         * <p>Lists all the custom patterns that have been created.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCustomEntityTypes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

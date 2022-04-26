@@ -36,7 +36,7 @@ namespace Model
    * deployment VPC plus the other CIDR ranges. For more information, see
    * <a>RuleVariables</a> in this guide and <a
    * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-domain-names.html">Stateful
-   * domain list rule groups in AWS Network Firewall</a> in the <i>Network Firewall
+   * domain list rule groups in Network Firewall</a> in the <i>Network Firewall
    * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/RulesSourceList">AWS
    * API Reference</a></p>

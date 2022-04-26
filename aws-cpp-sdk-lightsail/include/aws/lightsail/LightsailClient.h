@@ -114,6 +114,7 @@
 #include <aws/lightsail/model/GetLoadBalancerResult.h>
 #include <aws/lightsail/model/GetLoadBalancerMetricDataResult.h>
 #include <aws/lightsail/model/GetLoadBalancerTlsCertificatesResult.h>
+#include <aws/lightsail/model/GetLoadBalancerTlsPoliciesResult.h>
 #include <aws/lightsail/model/GetLoadBalancersResult.h>
 #include <aws/lightsail/model/GetOperationResult.h>
 #include <aws/lightsail/model/GetOperationsResult.h>
@@ -306,6 +307,7 @@ namespace Model
         class GetLoadBalancerRequest;
         class GetLoadBalancerMetricDataRequest;
         class GetLoadBalancerTlsCertificatesRequest;
+        class GetLoadBalancerTlsPoliciesRequest;
         class GetLoadBalancersRequest;
         class GetOperationRequest;
         class GetOperationsRequest;
@@ -460,6 +462,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetLoadBalancerResult, LightsailError> GetLoadBalancerOutcome;
         typedef Aws::Utils::Outcome<GetLoadBalancerMetricDataResult, LightsailError> GetLoadBalancerMetricDataOutcome;
         typedef Aws::Utils::Outcome<GetLoadBalancerTlsCertificatesResult, LightsailError> GetLoadBalancerTlsCertificatesOutcome;
+        typedef Aws::Utils::Outcome<GetLoadBalancerTlsPoliciesResult, LightsailError> GetLoadBalancerTlsPoliciesOutcome;
         typedef Aws::Utils::Outcome<GetLoadBalancersResult, LightsailError> GetLoadBalancersOutcome;
         typedef Aws::Utils::Outcome<GetOperationResult, LightsailError> GetOperationOutcome;
         typedef Aws::Utils::Outcome<GetOperationsResult, LightsailError> GetOperationsOutcome;
@@ -614,6 +617,7 @@ namespace Model
         typedef std::future<GetLoadBalancerOutcome> GetLoadBalancerOutcomeCallable;
         typedef std::future<GetLoadBalancerMetricDataOutcome> GetLoadBalancerMetricDataOutcomeCallable;
         typedef std::future<GetLoadBalancerTlsCertificatesOutcome> GetLoadBalancerTlsCertificatesOutcomeCallable;
+        typedef std::future<GetLoadBalancerTlsPoliciesOutcome> GetLoadBalancerTlsPoliciesOutcomeCallable;
         typedef std::future<GetLoadBalancersOutcome> GetLoadBalancersOutcomeCallable;
         typedef std::future<GetOperationOutcome> GetOperationOutcomeCallable;
         typedef std::future<GetOperationsOutcome> GetOperationsOutcomeCallable;
@@ -771,6 +775,7 @@ namespace Model
     typedef std::function<void(const LightsailClient*, const Model::GetLoadBalancerRequest&, const Model::GetLoadBalancerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLoadBalancerResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetLoadBalancerMetricDataRequest&, const Model::GetLoadBalancerMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLoadBalancerMetricDataResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetLoadBalancerTlsCertificatesRequest&, const Model::GetLoadBalancerTlsCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLoadBalancerTlsCertificatesResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetLoadBalancerTlsPoliciesRequest&, const Model::GetLoadBalancerTlsPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLoadBalancerTlsPoliciesResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetLoadBalancersRequest&, const Model::GetLoadBalancersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLoadBalancersResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetOperationRequest&, const Model::GetOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOperationResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetOperationsRequest&, const Model::GetOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOperationsResponseReceivedHandler;
@@ -824,22 +829,23 @@ namespace Model
 
   /**
    * <p>Amazon Lightsail is the easiest way to get started with Amazon Web Services
-   * (AWS) for developers who need to build websites or web applications. It includes
-   * everything you need to launch your project quickly - instances (virtual private
-   * servers), container services, storage buckets, managed databases, SSD-based
-   * block storage, static IP addresses, load balancers, content delivery network
-   * (CDN) distributions, DNS management of registered domains, and resource
-   * snapshots (backups) - for a low, predictable monthly price.</p> <p>You can
-   * manage your Lightsail resources using the Lightsail console, Lightsail API, AWS
-   * Command Line Interface (AWS CLI), or SDKs. For more information about Lightsail
-   * concepts and tasks, see the <a
+   * (Amazon Web Services) for developers who need to build websites or web
+   * applications. It includes everything you need to launch your project quickly -
+   * instances (virtual private servers), container services, storage buckets,
+   * managed databases, SSD-based block storage, static IP addresses, load balancers,
+   * content delivery network (CDN) distributions, DNS management of registered
+   * domains, and resource snapshots (backups) - for a low, predictable monthly
+   * price.</p> <p>You can manage your Lightsail resources using the Lightsail
+   * console, Lightsail API, AWS Command Line Interface (AWS CLI), or SDKs. For more
+   * information about Lightsail concepts and tasks, see the <a
    * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli">Amazon
    * Lightsail Developer Guide</a>.</p> <p>This API Reference provides detailed
    * information about the actions, data types, parameters, and errors of the
-   * Lightsail service. For more information about the supported AWS Regions,
-   * endpoints, and service quotas of the Lightsail service, see <a
+   * Lightsail service. For more information about the supported Amazon Web Services
+   * Regions, endpoints, and service quotas of the Lightsail service, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon
-   * Lightsail Endpoints and Quotas</a> in the <i>AWS General Reference</i>.</p>
+   * Lightsail Endpoints and Quotas</a> in the <i>Amazon Web Services General
+   * Reference</i>.</p>
    */
   class AWS_LIGHTSAIL_API LightsailClient : public Aws::Client::AWSJsonClient
   {
@@ -899,11 +905,11 @@ namespace Model
          * distribution accepts HTTPS traffic for all of the domains that are associated
          * with the certificate.</p> <p>Use the <code>CreateCertificate</code> action to
          * create a certificate that you can attach to your distribution.</p> 
-         * <p>Only certificates created in the <code>us-east-1</code> AWS Region can be
-         * attached to Lightsail distributions. Lightsail distributions are global
-         * resources that can reference an origin in any AWS Region, and distribute its
-         * content globally. However, all distributions are located in the
-         * <code>us-east-1</code> Region.</p> <p><h3>See Also:</h3>   <a
+         * <p>Only certificates created in the <code>us-east-1</code> Amazon Web Services
+         * Region can be attached to Lightsail distributions. Lightsail distributions are
+         * global resources that can reference an origin in any Amazon Web Services Region,
+         * and distribute its content globally. However, all distributions are located in
+         * the <code>us-east-1</code> Region.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachCertificateToDistribution">AWS
          * API Reference</a></p>
          */
@@ -915,11 +921,11 @@ namespace Model
          * distribution accepts HTTPS traffic for all of the domains that are associated
          * with the certificate.</p> <p>Use the <code>CreateCertificate</code> action to
          * create a certificate that you can attach to your distribution.</p> 
-         * <p>Only certificates created in the <code>us-east-1</code> AWS Region can be
-         * attached to Lightsail distributions. Lightsail distributions are global
-         * resources that can reference an origin in any AWS Region, and distribute its
-         * content globally. However, all distributions are located in the
-         * <code>us-east-1</code> Region.</p> <p><h3>See Also:</h3>   <a
+         * <p>Only certificates created in the <code>us-east-1</code> Amazon Web Services
+         * Region can be attached to Lightsail distributions. Lightsail distributions are
+         * global resources that can reference an origin in any Amazon Web Services Region,
+         * and distribute its content globally. However, all distributions are located in
+         * the <code>us-east-1</code> Region.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachCertificateToDistribution">AWS
          * API Reference</a></p>
          *
@@ -933,11 +939,11 @@ namespace Model
          * distribution accepts HTTPS traffic for all of the domains that are associated
          * with the certificate.</p> <p>Use the <code>CreateCertificate</code> action to
          * create a certificate that you can attach to your distribution.</p> 
-         * <p>Only certificates created in the <code>us-east-1</code> AWS Region can be
-         * attached to Lightsail distributions. Lightsail distributions are global
-         * resources that can reference an origin in any AWS Region, and distribute its
-         * content globally. However, all distributions are located in the
-         * <code>us-east-1</code> Region.</p> <p><h3>See Also:</h3>   <a
+         * <p>Only certificates created in the <code>us-east-1</code> Amazon Web Services
+         * Region can be attached to Lightsail distributions. Lightsail distributions are
+         * global resources that can reference an origin in any Amazon Web Services Region,
+         * and distribute its content globally. However, all distributions are located in
+         * the <code>us-east-1</code> Region.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachCertificateToDistribution">AWS
          * API Reference</a></p>
          *
@@ -1164,14 +1170,14 @@ namespace Model
          * <p>Copies a manual snapshot of an instance or disk as another manual snapshot,
          * or copies an automatic snapshot of an instance or disk as a manual snapshot.
          * This operation can also be used to copy a manual or automatic snapshot of an
-         * instance or a disk from one AWS Region to another in Amazon Lightsail.</p>
-         * <p>When copying a <i>manual snapshot</i>, be sure to define the <code>source
-         * region</code>, <code>source snapshot name</code>, and <code>target snapshot
-         * name</code> parameters.</p> <p>When copying an <i>automatic snapshot</i>, be
-         * sure to define the <code>source region</code>, <code>source resource
-         * name</code>, <code>target snapshot name</code>, and either the <code>restore
-         * date</code> or the <code>use latest restorable auto snapshot</code>
-         * parameters.</p><p><h3>See Also:</h3>   <a
+         * instance or a disk from one Amazon Web Services Region to another in Amazon
+         * Lightsail.</p> <p>When copying a <i>manual snapshot</i>, be sure to define the
+         * <code>source region</code>, <code>source snapshot name</code>, and <code>target
+         * snapshot name</code> parameters.</p> <p>When copying an <i>automatic
+         * snapshot</i>, be sure to define the <code>source region</code>, <code>source
+         * resource name</code>, <code>target snapshot name</code>, and either the
+         * <code>restore date</code> or the <code>use latest restorable auto
+         * snapshot</code> parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CopySnapshot">AWS
          * API Reference</a></p>
          */
@@ -1181,14 +1187,14 @@ namespace Model
          * <p>Copies a manual snapshot of an instance or disk as another manual snapshot,
          * or copies an automatic snapshot of an instance or disk as a manual snapshot.
          * This operation can also be used to copy a manual or automatic snapshot of an
-         * instance or a disk from one AWS Region to another in Amazon Lightsail.</p>
-         * <p>When copying a <i>manual snapshot</i>, be sure to define the <code>source
-         * region</code>, <code>source snapshot name</code>, and <code>target snapshot
-         * name</code> parameters.</p> <p>When copying an <i>automatic snapshot</i>, be
-         * sure to define the <code>source region</code>, <code>source resource
-         * name</code>, <code>target snapshot name</code>, and either the <code>restore
-         * date</code> or the <code>use latest restorable auto snapshot</code>
-         * parameters.</p><p><h3>See Also:</h3>   <a
+         * instance or a disk from one Amazon Web Services Region to another in Amazon
+         * Lightsail.</p> <p>When copying a <i>manual snapshot</i>, be sure to define the
+         * <code>source region</code>, <code>source snapshot name</code>, and <code>target
+         * snapshot name</code> parameters.</p> <p>When copying an <i>automatic
+         * snapshot</i>, be sure to define the <code>source region</code>, <code>source
+         * resource name</code>, <code>target snapshot name</code>, and either the
+         * <code>restore date</code> or the <code>use latest restorable auto
+         * snapshot</code> parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CopySnapshot">AWS
          * API Reference</a></p>
          *
@@ -1200,14 +1206,14 @@ namespace Model
          * <p>Copies a manual snapshot of an instance or disk as another manual snapshot,
          * or copies an automatic snapshot of an instance or disk as a manual snapshot.
          * This operation can also be used to copy a manual or automatic snapshot of an
-         * instance or a disk from one AWS Region to another in Amazon Lightsail.</p>
-         * <p>When copying a <i>manual snapshot</i>, be sure to define the <code>source
-         * region</code>, <code>source snapshot name</code>, and <code>target snapshot
-         * name</code> parameters.</p> <p>When copying an <i>automatic snapshot</i>, be
-         * sure to define the <code>source region</code>, <code>source resource
-         * name</code>, <code>target snapshot name</code>, and either the <code>restore
-         * date</code> or the <code>use latest restorable auto snapshot</code>
-         * parameters.</p><p><h3>See Also:</h3>   <a
+         * instance or a disk from one Amazon Web Services Region to another in Amazon
+         * Lightsail.</p> <p>When copying a <i>manual snapshot</i>, be sure to define the
+         * <code>source region</code>, <code>source snapshot name</code>, and <code>target
+         * snapshot name</code> parameters.</p> <p>When copying an <i>automatic
+         * snapshot</i>, be sure to define the <code>source region</code>, <code>source
+         * resource name</code>, <code>target snapshot name</code>, and either the
+         * <code>restore date</code> or the <code>use latest restorable auto
+         * snapshot</code> parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CopySnapshot">AWS
          * API Reference</a></p>
          *
@@ -1329,11 +1335,11 @@ namespace Model
          * certificate and its domains with your distribution. Or use the
          * <code>UpdateContainerService</code> action to use the certificate and its
          * domains with your container service.</p>  <p>Only certificates
-         * created in the <code>us-east-1</code> AWS Region can be attached to Lightsail
-         * distributions. Lightsail distributions are global resources that can reference
-         * an origin in any AWS Region, and distribute its content globally. However, all
-         * distributions are located in the <code>us-east-1</code> Region.</p>
-         * <p><h3>See Also:</h3>   <a
+         * created in the <code>us-east-1</code> Amazon Web Services Region can be attached
+         * to Lightsail distributions. Lightsail distributions are global resources that
+         * can reference an origin in any Amazon Web Services Region, and distribute its
+         * content globally. However, all distributions are located in the
+         * <code>us-east-1</code> Region.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCertificate">AWS
          * API Reference</a></p>
          */
@@ -1346,11 +1352,11 @@ namespace Model
          * certificate and its domains with your distribution. Or use the
          * <code>UpdateContainerService</code> action to use the certificate and its
          * domains with your container service.</p>  <p>Only certificates
-         * created in the <code>us-east-1</code> AWS Region can be attached to Lightsail
-         * distributions. Lightsail distributions are global resources that can reference
-         * an origin in any AWS Region, and distribute its content globally. However, all
-         * distributions are located in the <code>us-east-1</code> Region.</p>
-         * <p><h3>See Also:</h3>   <a
+         * created in the <code>us-east-1</code> Amazon Web Services Region can be attached
+         * to Lightsail distributions. Lightsail distributions are global resources that
+         * can reference an origin in any Amazon Web Services Region, and distribute its
+         * content globally. However, all distributions are located in the
+         * <code>us-east-1</code> Region.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCertificate">AWS
          * API Reference</a></p>
          *
@@ -1365,11 +1371,11 @@ namespace Model
          * certificate and its domains with your distribution. Or use the
          * <code>UpdateContainerService</code> action to use the certificate and its
          * domains with your container service.</p>  <p>Only certificates
-         * created in the <code>us-east-1</code> AWS Region can be attached to Lightsail
-         * distributions. Lightsail distributions are global resources that can reference
-         * an origin in any AWS Region, and distribute its content globally. However, all
-         * distributions are located in the <code>us-east-1</code> Region.</p>
-         * <p><h3>See Also:</h3>   <a
+         * created in the <code>us-east-1</code> Amazon Web Services Region can be attached
+         * to Lightsail distributions. Lightsail distributions are global resources that
+         * can reference an origin in any Amazon Web Services Region, and distribute its
+         * content globally. However, all distributions are located in the
+         * <code>us-east-1</code> Region.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCertificate">AWS
          * API Reference</a></p>
          *
@@ -1426,10 +1432,10 @@ namespace Model
         /**
          * <p>Creates an email or SMS text message contact method.</p> <p>A contact method
          * is used to send you notifications about your Amazon Lightsail resources. You can
-         * add one email address and one mobile phone number contact method in each AWS
-         * Region. However, SMS text messaging is not supported in some AWS Regions, and
-         * SMS text messages cannot be sent to some countries/regions. For more
-         * information, see <a
+         * add one email address and one mobile phone number contact method in each Amazon
+         * Web Services Region. However, SMS text messaging is not supported in some Amazon
+         * Web Services Regions, and SMS text messages cannot be sent to some
+         * countries/regions. For more information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
          * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContactMethod">AWS
@@ -1440,10 +1446,10 @@ namespace Model
         /**
          * <p>Creates an email or SMS text message contact method.</p> <p>A contact method
          * is used to send you notifications about your Amazon Lightsail resources. You can
-         * add one email address and one mobile phone number contact method in each AWS
-         * Region. However, SMS text messaging is not supported in some AWS Regions, and
-         * SMS text messages cannot be sent to some countries/regions. For more
-         * information, see <a
+         * add one email address and one mobile phone number contact method in each Amazon
+         * Web Services Region. However, SMS text messaging is not supported in some Amazon
+         * Web Services Regions, and SMS text messages cannot be sent to some
+         * countries/regions. For more information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
          * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContactMethod">AWS
@@ -1456,10 +1462,10 @@ namespace Model
         /**
          * <p>Creates an email or SMS text message contact method.</p> <p>A contact method
          * is used to send you notifications about your Amazon Lightsail resources. You can
-         * add one email address and one mobile phone number contact method in each AWS
-         * Region. However, SMS text messaging is not supported in some AWS Regions, and
-         * SMS text messages cannot be sent to some countries/regions. For more
-         * information, see <a
+         * add one email address and one mobile phone number contact method in each Amazon
+         * Web Services Region. However, SMS text messaging is not supported in some Amazon
+         * Web Services Regions, and SMS text messages cannot be sent to some
+         * countries/regions. For more information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
          * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContactMethod">AWS
@@ -2422,7 +2428,7 @@ namespace Model
         /**
          * <p>Deletes a Amazon Lightsail bucket.</p>  <p>When you delete your bucket,
          * the bucket name is released and can be reused for a new bucket in your account
-         * or another AWS account.</p> <p><h3>See Also:</h3>   <a
+         * or another Amazon Web Services account.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteBucket">AWS
          * API Reference</a></p>
          */
@@ -2431,7 +2437,7 @@ namespace Model
         /**
          * <p>Deletes a Amazon Lightsail bucket.</p>  <p>When you delete your bucket,
          * the bucket name is released and can be reused for a new bucket in your account
-         * or another AWS account.</p> <p><h3>See Also:</h3>   <a
+         * or another Amazon Web Services account.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteBucket">AWS
          * API Reference</a></p>
          *
@@ -2442,7 +2448,7 @@ namespace Model
         /**
          * <p>Deletes a Amazon Lightsail bucket.</p>  <p>When you delete your bucket,
          * the bucket name is released and can be reused for a new bucket in your account
-         * or another AWS account.</p> <p><h3>See Also:</h3>   <a
+         * or another Amazon Web Services account.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteBucket">AWS
          * API Reference</a></p>
          *
@@ -2530,9 +2536,10 @@ namespace Model
         /**
          * <p>Deletes a contact method.</p> <p>A contact method is used to send you
          * notifications about your Amazon Lightsail resources. You can add one email
-         * address and one mobile phone number contact method in each AWS Region. However,
-         * SMS text messaging is not supported in some AWS Regions, and SMS text messages
-         * cannot be sent to some countries/regions. For more information, see <a
+         * address and one mobile phone number contact method in each Amazon Web Services
+         * Region. However, SMS text messaging is not supported in some Amazon Web Services
+         * Regions, and SMS text messages cannot be sent to some countries/regions. For
+         * more information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
          * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContactMethod">AWS
@@ -2543,9 +2550,10 @@ namespace Model
         /**
          * <p>Deletes a contact method.</p> <p>A contact method is used to send you
          * notifications about your Amazon Lightsail resources. You can add one email
-         * address and one mobile phone number contact method in each AWS Region. However,
-         * SMS text messaging is not supported in some AWS Regions, and SMS text messages
-         * cannot be sent to some countries/regions. For more information, see <a
+         * address and one mobile phone number contact method in each Amazon Web Services
+         * Region. However, SMS text messaging is not supported in some Amazon Web Services
+         * Regions, and SMS text messages cannot be sent to some countries/regions. For
+         * more information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
          * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContactMethod">AWS
@@ -2558,9 +2566,10 @@ namespace Model
         /**
          * <p>Deletes a contact method.</p> <p>A contact method is used to send you
          * notifications about your Amazon Lightsail resources. You can add one email
-         * address and one mobile phone number contact method in each AWS Region. However,
-         * SMS text messaging is not supported in some AWS Regions, and SMS text messages
-         * cannot be sent to some countries/regions. For more information, see <a
+         * address and one mobile phone number contact method in each Amazon Web Services
+         * Region. However, SMS text messaging is not supported in some Amazon Web Services
+         * Regions, and SMS text messages cannot be sent to some countries/regions. For
+         * more information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
          * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContactMethod">AWS
@@ -3950,9 +3959,9 @@ namespace Model
          * in your request to return information about a specific contact method.</p> <p>A
          * contact method is used to send you notifications about your Amazon Lightsail
          * resources. You can add one email address and one mobile phone number contact
-         * method in each AWS Region. However, SMS text messaging is not supported in some
-         * AWS Regions, and SMS text messages cannot be sent to some countries/regions. For
-         * more information, see <a
+         * method in each Amazon Web Services Region. However, SMS text messaging is not
+         * supported in some Amazon Web Services Regions, and SMS text messages cannot be
+         * sent to some countries/regions. For more information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
          * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContactMethods">AWS
@@ -3965,9 +3974,9 @@ namespace Model
          * in your request to return information about a specific contact method.</p> <p>A
          * contact method is used to send you notifications about your Amazon Lightsail
          * resources. You can add one email address and one mobile phone number contact
-         * method in each AWS Region. However, SMS text messaging is not supported in some
-         * AWS Regions, and SMS text messages cannot be sent to some countries/regions. For
-         * more information, see <a
+         * method in each Amazon Web Services Region. However, SMS text messaging is not
+         * supported in some Amazon Web Services Regions, and SMS text messages cannot be
+         * sent to some countries/regions. For more information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
          * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContactMethods">AWS
@@ -3982,9 +3991,9 @@ namespace Model
          * in your request to return information about a specific contact method.</p> <p>A
          * contact method is used to send you notifications about your Amazon Lightsail
          * resources. You can add one email address and one mobile phone number contact
-         * method in each AWS Region. However, SMS text messaging is not supported in some
-         * AWS Regions, and SMS text messages cannot be sent to some countries/regions. For
-         * more information, see <a
+         * method in each Amazon Web Services Region. However, SMS text messaging is not
+         * supported in some Amazon Web Services Regions, and SMS text messages cannot be
+         * sent to some countries/regions. For more information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
          * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContactMethods">AWS
@@ -4999,6 +5008,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetLoadBalancerTlsCertificatesAsync(const Model::GetLoadBalancerTlsCertificatesRequest& request, const GetLoadBalancerTlsCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of TLS security policies that you can apply to Lightsail load
+         * balancers.</p> <p>For more information about load balancer TLS security
+         * policies, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Load
+         * balancer TLS security policies</a> in the <i>Amazon Lightsail Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerTlsPolicies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLoadBalancerTlsPoliciesOutcome GetLoadBalancerTlsPolicies(const Model::GetLoadBalancerTlsPoliciesRequest& request) const;
+
+        /**
+         * <p>Returns a list of TLS security policies that you can apply to Lightsail load
+         * balancers.</p> <p>For more information about load balancer TLS security
+         * policies, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Load
+         * balancer TLS security policies</a> in the <i>Amazon Lightsail Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerTlsPolicies">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLoadBalancerTlsPoliciesOutcomeCallable GetLoadBalancerTlsPoliciesCallable(const Model::GetLoadBalancerTlsPoliciesRequest& request) const;
+
+        /**
+         * <p>Returns a list of TLS security policies that you can apply to Lightsail load
+         * balancers.</p> <p>For more information about load balancer TLS security
+         * policies, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Load
+         * balancer TLS security policies</a> in the <i>Amazon Lightsail Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerTlsPolicies">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLoadBalancerTlsPoliciesAsync(const Model::GetLoadBalancerTlsPoliciesRequest& request, const GetLoadBalancerTlsPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about all load balancers in an account.</p><p><h3>See
@@ -6022,9 +6071,9 @@ namespace Model
          * by the requester. SMS contact methods don't need to be verified.</p> <p>A
          * contact method is used to send you notifications about your Amazon Lightsail
          * resources. You can add one email address and one mobile phone number contact
-         * method in each AWS Region. However, SMS text messaging is not supported in some
-         * AWS Regions, and SMS text messages cannot be sent to some countries/regions. For
-         * more information, see <a
+         * method in each Amazon Web Services Region. However, SMS text messaging is not
+         * supported in some Amazon Web Services Regions, and SMS text messages cannot be
+         * sent to some countries/regions. For more information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
          * in Amazon Lightsail</a>.</p> <p>A verification request is sent to the contact
          * method when you initially create it. Use this action to send another
@@ -6042,9 +6091,9 @@ namespace Model
          * by the requester. SMS contact methods don't need to be verified.</p> <p>A
          * contact method is used to send you notifications about your Amazon Lightsail
          * resources. You can add one email address and one mobile phone number contact
-         * method in each AWS Region. However, SMS text messaging is not supported in some
-         * AWS Regions, and SMS text messages cannot be sent to some countries/regions. For
-         * more information, see <a
+         * method in each Amazon Web Services Region. However, SMS text messaging is not
+         * supported in some Amazon Web Services Regions, and SMS text messages cannot be
+         * sent to some countries/regions. For more information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
          * in Amazon Lightsail</a>.</p> <p>A verification request is sent to the contact
          * method when you initially create it. Use this action to send another
@@ -6064,9 +6113,9 @@ namespace Model
          * by the requester. SMS contact methods don't need to be verified.</p> <p>A
          * contact method is used to send you notifications about your Amazon Lightsail
          * resources. You can add one email address and one mobile phone number contact
-         * method in each AWS Region. However, SMS text messaging is not supported in some
-         * AWS Regions, and SMS text messages cannot be sent to some countries/regions. For
-         * more information, see <a
+         * method in each Amazon Web Services Region. However, SMS text messaging is not
+         * supported in some Amazon Web Services Regions, and SMS text messages cannot be
+         * sent to some countries/regions. For more information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
          * in Amazon Lightsail</a>.</p> <p>A verification request is sent to the contact
          * method when you initially create it. Use this action to send another
@@ -6118,7 +6167,7 @@ namespace Model
         /**
          * <p>Sets the Amazon Lightsail resources that can access the specified Lightsail
          * bucket.</p> <p>Lightsail buckets currently support setting access for Lightsail
-         * instances in the same AWS Region.</p><p><h3>See Also:</h3>   <a
+         * instances in the same Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetResourceAccessForBucket">AWS
          * API Reference</a></p>
          */
@@ -6127,7 +6176,7 @@ namespace Model
         /**
          * <p>Sets the Amazon Lightsail resources that can access the specified Lightsail
          * bucket.</p> <p>Lightsail buckets currently support setting access for Lightsail
-         * instances in the same AWS Region.</p><p><h3>See Also:</h3>   <a
+         * instances in the same Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetResourceAccessForBucket">AWS
          * API Reference</a></p>
          *
@@ -6138,7 +6187,7 @@ namespace Model
         /**
          * <p>Sets the Amazon Lightsail resources that can access the specified Lightsail
          * bucket.</p> <p>Lightsail buckets currently support setting access for Lightsail
-         * instances in the same AWS Region.</p><p><h3>See Also:</h3>   <a
+         * instances in the same Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetResourceAccessForBucket">AWS
          * API Reference</a></p>
          *
@@ -6526,8 +6575,8 @@ namespace Model
         /**
          * <p>Updates an existing Amazon Lightsail bucket.</p> <p>Use this action to update
          * the configuration of an existing bucket, such as versioning, public
-         * accessibility, and the AWS accounts that can access the bucket.</p><p><h3>See
-         * Also:</h3>   <a
+         * accessibility, and the Amazon Web Services accounts that can access the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateBucket">AWS
          * API Reference</a></p>
          */
@@ -6536,8 +6585,8 @@ namespace Model
         /**
          * <p>Updates an existing Amazon Lightsail bucket.</p> <p>Use this action to update
          * the configuration of an existing bucket, such as versioning, public
-         * accessibility, and the AWS accounts that can access the bucket.</p><p><h3>See
-         * Also:</h3>   <a
+         * accessibility, and the Amazon Web Services accounts that can access the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateBucket">AWS
          * API Reference</a></p>
          *
@@ -6548,8 +6597,8 @@ namespace Model
         /**
          * <p>Updates an existing Amazon Lightsail bucket.</p> <p>Use this action to update
          * the configuration of an existing bucket, such as versioning, public
-         * accessibility, and the AWS accounts that can access the bucket.</p><p><h3>See
-         * Also:</h3>   <a
+         * accessibility, and the Amazon Web Services accounts that can access the
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateBucket">AWS
          * API Reference</a></p>
          *
@@ -7035,6 +7084,7 @@ namespace Model
         void GetLoadBalancerAsyncHelper(const Model::GetLoadBalancerRequest& request, const GetLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLoadBalancerMetricDataAsyncHelper(const Model::GetLoadBalancerMetricDataRequest& request, const GetLoadBalancerMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLoadBalancerTlsCertificatesAsyncHelper(const Model::GetLoadBalancerTlsCertificatesRequest& request, const GetLoadBalancerTlsCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetLoadBalancerTlsPoliciesAsyncHelper(const Model::GetLoadBalancerTlsPoliciesRequest& request, const GetLoadBalancerTlsPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLoadBalancersAsyncHelper(const Model::GetLoadBalancersRequest& request, const GetLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetOperationAsyncHelper(const Model::GetOperationRequest& request, const GetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetOperationsAsyncHelper(const Model::GetOperationsRequest& request, const GetOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

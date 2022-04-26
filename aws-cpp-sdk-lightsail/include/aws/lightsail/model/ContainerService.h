@@ -163,37 +163,37 @@ namespace Model
 
     /**
      * <p>An object that describes the location of the container service, such as the
-     * AWS Region and Availability Zone.</p>
+     * Amazon Web Services Region and Availability Zone.</p>
      */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
 
     /**
      * <p>An object that describes the location of the container service, such as the
-     * AWS Region and Availability Zone.</p>
+     * Amazon Web Services Region and Availability Zone.</p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>An object that describes the location of the container service, such as the
-     * AWS Region and Availability Zone.</p>
+     * Amazon Web Services Region and Availability Zone.</p>
      */
     inline void SetLocation(const ResourceLocation& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
      * <p>An object that describes the location of the container service, such as the
-     * AWS Region and Availability Zone.</p>
+     * Amazon Web Services Region and Availability Zone.</p>
      */
     inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
      * <p>An object that describes the location of the container service, such as the
-     * AWS Region and Availability Zone.</p>
+     * Amazon Web Services Region and Availability Zone.</p>
      */
     inline ContainerService& WithLocation(const ResourceLocation& value) { SetLocation(value); return *this;}
 
     /**
      * <p>An object that describes the location of the container service, such as the
-     * AWS Region and Availability Zone.</p>
+     * Amazon Web Services Region and Availability Zone.</p>
      */
     inline ContainerService& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 
@@ -658,65 +658,73 @@ namespace Model
 
     /**
      * <p>The principal ARN of the container service.</p> <p>The principal ARN can be
-     * used to create a trust relationship between your standard AWS account and your
-     * Lightsail container service. This allows you to give your service permission to
-     * access resources in your standard AWS account.</p>
+     * used to create a trust relationship between your standard Amazon Web Services
+     * account and your Lightsail container service. This allows you to give your
+     * service permission to access resources in your standard Amazon Web Services
+     * account.</p>
      */
     inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
 
     /**
      * <p>The principal ARN of the container service.</p> <p>The principal ARN can be
-     * used to create a trust relationship between your standard AWS account and your
-     * Lightsail container service. This allows you to give your service permission to
-     * access resources in your standard AWS account.</p>
+     * used to create a trust relationship between your standard Amazon Web Services
+     * account and your Lightsail container service. This allows you to give your
+     * service permission to access resources in your standard Amazon Web Services
+     * account.</p>
      */
     inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
 
     /**
      * <p>The principal ARN of the container service.</p> <p>The principal ARN can be
-     * used to create a trust relationship between your standard AWS account and your
-     * Lightsail container service. This allows you to give your service permission to
-     * access resources in your standard AWS account.</p>
+     * used to create a trust relationship between your standard Amazon Web Services
+     * account and your Lightsail container service. This allows you to give your
+     * service permission to access resources in your standard Amazon Web Services
+     * account.</p>
      */
     inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
 
     /**
      * <p>The principal ARN of the container service.</p> <p>The principal ARN can be
-     * used to create a trust relationship between your standard AWS account and your
-     * Lightsail container service. This allows you to give your service permission to
-     * access resources in your standard AWS account.</p>
+     * used to create a trust relationship between your standard Amazon Web Services
+     * account and your Lightsail container service. This allows you to give your
+     * service permission to access resources in your standard Amazon Web Services
+     * account.</p>
      */
     inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
 
     /**
      * <p>The principal ARN of the container service.</p> <p>The principal ARN can be
-     * used to create a trust relationship between your standard AWS account and your
-     * Lightsail container service. This allows you to give your service permission to
-     * access resources in your standard AWS account.</p>
+     * used to create a trust relationship between your standard Amazon Web Services
+     * account and your Lightsail container service. This allows you to give your
+     * service permission to access resources in your standard Amazon Web Services
+     * account.</p>
      */
     inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
 
     /**
      * <p>The principal ARN of the container service.</p> <p>The principal ARN can be
-     * used to create a trust relationship between your standard AWS account and your
-     * Lightsail container service. This allows you to give your service permission to
-     * access resources in your standard AWS account.</p>
+     * used to create a trust relationship between your standard Amazon Web Services
+     * account and your Lightsail container service. This allows you to give your
+     * service permission to access resources in your standard Amazon Web Services
+     * account.</p>
      */
     inline ContainerService& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
 
     /**
      * <p>The principal ARN of the container service.</p> <p>The principal ARN can be
-     * used to create a trust relationship between your standard AWS account and your
-     * Lightsail container service. This allows you to give your service permission to
-     * access resources in your standard AWS account.</p>
+     * used to create a trust relationship between your standard Amazon Web Services
+     * account and your Lightsail container service. This allows you to give your
+     * service permission to access resources in your standard Amazon Web Services
+     * account.</p>
      */
     inline ContainerService& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
 
     /**
      * <p>The principal ARN of the container service.</p> <p>The principal ARN can be
-     * used to create a trust relationship between your standard AWS account and your
-     * Lightsail container service. This allows you to give your service permission to
-     * access resources in your standard AWS account.</p>
+     * used to create a trust relationship between your standard Amazon Web Services
+     * account and your Lightsail container service. This allows you to give your
+     * service permission to access resources in your standard Amazon Web Services
+     * account.</p>
      */
     inline ContainerService& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
 

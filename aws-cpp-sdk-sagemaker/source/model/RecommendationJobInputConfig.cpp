@@ -24,7 +24,8 @@ RecommendationJobInputConfig::RecommendationJobInputConfig() :
     m_jobDurationInSecondsHasBeenSet(false),
     m_trafficPatternHasBeenSet(false),
     m_resourceLimitHasBeenSet(false),
-    m_endpointConfigurationsHasBeenSet(false)
+    m_endpointConfigurationsHasBeenSet(false),
+    m_volumeKmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ RecommendationJobInputConfig::RecommendationJobInputConfig(JsonView jsonValue) :
     m_jobDurationInSecondsHasBeenSet(false),
     m_trafficPatternHasBeenSet(false),
     m_resourceLimitHasBeenSet(false),
-    m_endpointConfigurationsHasBeenSet(false)
+    m_endpointConfigurationsHasBeenSet(false),
+    m_volumeKmsKeyIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,6 +81,13 @@ RecommendationJobInputConfig& RecommendationJobInputConfig::operator =(JsonView 
     m_endpointConfigurationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VolumeKmsKeyId"))
+  {
+    m_volumeKmsKeyId = jsonValue.GetString("VolumeKmsKeyId");
+
+    m_volumeKmsKeyIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -118,6 +127,12 @@ JsonValue RecommendationJobInputConfig::Jsonize() const
      endpointConfigurationsJsonList[endpointConfigurationsIndex].AsObject(m_endpointConfigurations[endpointConfigurationsIndex].Jsonize());
    }
    payload.WithArray("EndpointConfigurations", std::move(endpointConfigurationsJsonList));
+
+  }
+
+  if(m_volumeKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
 
   }
 

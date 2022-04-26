@@ -23,7 +23,8 @@ CreateRuleGroupRequest::CreateRuleGroupRequest() :
     m_capacityHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,12 @@ Aws::String CreateRuleGroupRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
    payload.WithBool("DryRun", m_dryRun);
+
+  }
+
+  if(m_encryptionConfigurationHasBeenSet)
+  {
+   payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
 
   }
 

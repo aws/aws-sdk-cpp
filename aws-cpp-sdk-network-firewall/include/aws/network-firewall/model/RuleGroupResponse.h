@@ -9,6 +9,7 @@
 #include <aws/network-firewall/model/RuleGroupType.h>
 #include <aws/network-firewall/model/ResourceStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/network-firewall/model/EncryptionConfiguration.h>
 #include <aws/network-firewall/model/Tag.h>
 #include <utility>
 
@@ -440,6 +441,43 @@ namespace Model
      */
     inline RuleGroupResponse& WithNumberOfAssociations(int value) { SetNumberOfAssociations(value); return *this;}
 
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your rule group.</p>
+     */
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your rule group.</p>
+     */
+    inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your rule group.</p>
+     */
+    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your rule group.</p>
+     */
+    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your rule group.</p>
+     */
+    inline RuleGroupResponse& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
+
+    /**
+     * <p>A complex type that contains the Amazon Web Services KMS encryption
+     * configuration settings for your rule group.</p>
+     */
+    inline RuleGroupResponse& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_ruleGroupArn;
@@ -471,6 +509,9 @@ namespace Model
 
     int m_numberOfAssociations;
     bool m_numberOfAssociationsHasBeenSet;
+
+    EncryptionConfiguration m_encryptionConfiguration;
+    bool m_encryptionConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -20,6 +20,7 @@ CreateInferenceRecommendationsJobRequest::CreateInferenceRecommendationsJobReque
     m_inputConfigHasBeenSet(false),
     m_jobDescriptionHasBeenSet(false),
     m_stoppingConditionsHasBeenSet(false),
+    m_outputConfigHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -60,6 +61,12 @@ Aws::String CreateInferenceRecommendationsJobRequest::SerializePayload() const
   if(m_stoppingConditionsHasBeenSet)
   {
    payload.WithObject("StoppingConditions", m_stoppingConditions.Jsonize());
+
+  }
+
+  if(m_outputConfigHasBeenSet)
+  {
+   payload.WithObject("OutputConfig", m_outputConfig.Jsonize());
 
   }
 
