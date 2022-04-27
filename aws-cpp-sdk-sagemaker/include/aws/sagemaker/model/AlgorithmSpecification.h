@@ -28,8 +28,8 @@ namespace Model
 
   /**
    * <p>Specifies the training algorithm to use in a <a>CreateTrainingJob</a>
-   * request.</p> <p>For more information about algorithms provided by Amazon
-   * SageMaker, see <a
+   * request.</p> <p>For more information about algorithms provided by SageMaker, see
+   * <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
    * For information about using your own algorithms, see <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -50,8 +50,8 @@ namespace Model
      * <p>The registry path of the Docker image that contains the training algorithm.
      * For information about docker registry paths for built-in algorithms, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports
-     * both <code>registry/repository[:tag]</code> and
+     * Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -63,8 +63,8 @@ namespace Model
      * <p>The registry path of the Docker image that contains the training algorithm.
      * For information about docker registry paths for built-in algorithms, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports
-     * both <code>registry/repository[:tag]</code> and
+     * Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -76,8 +76,8 @@ namespace Model
      * <p>The registry path of the Docker image that contains the training algorithm.
      * For information about docker registry paths for built-in algorithms, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports
-     * both <code>registry/repository[:tag]</code> and
+     * Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -89,8 +89,8 @@ namespace Model
      * <p>The registry path of the Docker image that contains the training algorithm.
      * For information about docker registry paths for built-in algorithms, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports
-     * both <code>registry/repository[:tag]</code> and
+     * Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -102,8 +102,8 @@ namespace Model
      * <p>The registry path of the Docker image that contains the training algorithm.
      * For information about docker registry paths for built-in algorithms, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports
-     * both <code>registry/repository[:tag]</code> and
+     * Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -115,8 +115,8 @@ namespace Model
      * <p>The registry path of the Docker image that contains the training algorithm.
      * For information about docker registry paths for built-in algorithms, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports
-     * both <code>registry/repository[:tag]</code> and
+     * Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -128,8 +128,8 @@ namespace Model
      * <p>The registry path of the Docker image that contains the training algorithm.
      * For information about docker registry paths for built-in algorithms, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports
-     * both <code>registry/repository[:tag]</code> and
+     * Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -141,8 +141,8 @@ namespace Model
      * <p>The registry path of the Docker image that contains the training algorithm.
      * For information about docker registry paths for built-in algorithms, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports
-     * both <code>registry/repository[:tag]</code> and
+     * Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -237,57 +237,57 @@ namespace Model
 
     /**
      * <p>A list of metric definition objects. Each object specifies the metric name
-     * and regular expressions used to parse algorithm logs. Amazon SageMaker publishes
-     * each metric to Amazon CloudWatch.</p>
+     * and regular expressions used to parse algorithm logs. SageMaker publishes each
+     * metric to Amazon CloudWatch.</p>
      */
     inline const Aws::Vector<MetricDefinition>& GetMetricDefinitions() const{ return m_metricDefinitions; }
 
     /**
      * <p>A list of metric definition objects. Each object specifies the metric name
-     * and regular expressions used to parse algorithm logs. Amazon SageMaker publishes
-     * each metric to Amazon CloudWatch.</p>
+     * and regular expressions used to parse algorithm logs. SageMaker publishes each
+     * metric to Amazon CloudWatch.</p>
      */
     inline bool MetricDefinitionsHasBeenSet() const { return m_metricDefinitionsHasBeenSet; }
 
     /**
      * <p>A list of metric definition objects. Each object specifies the metric name
-     * and regular expressions used to parse algorithm logs. Amazon SageMaker publishes
-     * each metric to Amazon CloudWatch.</p>
+     * and regular expressions used to parse algorithm logs. SageMaker publishes each
+     * metric to Amazon CloudWatch.</p>
      */
     inline void SetMetricDefinitions(const Aws::Vector<MetricDefinition>& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions = value; }
 
     /**
      * <p>A list of metric definition objects. Each object specifies the metric name
-     * and regular expressions used to parse algorithm logs. Amazon SageMaker publishes
-     * each metric to Amazon CloudWatch.</p>
+     * and regular expressions used to parse algorithm logs. SageMaker publishes each
+     * metric to Amazon CloudWatch.</p>
      */
     inline void SetMetricDefinitions(Aws::Vector<MetricDefinition>&& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions = std::move(value); }
 
     /**
      * <p>A list of metric definition objects. Each object specifies the metric name
-     * and regular expressions used to parse algorithm logs. Amazon SageMaker publishes
-     * each metric to Amazon CloudWatch.</p>
+     * and regular expressions used to parse algorithm logs. SageMaker publishes each
+     * metric to Amazon CloudWatch.</p>
      */
     inline AlgorithmSpecification& WithMetricDefinitions(const Aws::Vector<MetricDefinition>& value) { SetMetricDefinitions(value); return *this;}
 
     /**
      * <p>A list of metric definition objects. Each object specifies the metric name
-     * and regular expressions used to parse algorithm logs. Amazon SageMaker publishes
-     * each metric to Amazon CloudWatch.</p>
+     * and regular expressions used to parse algorithm logs. SageMaker publishes each
+     * metric to Amazon CloudWatch.</p>
      */
     inline AlgorithmSpecification& WithMetricDefinitions(Aws::Vector<MetricDefinition>&& value) { SetMetricDefinitions(std::move(value)); return *this;}
 
     /**
      * <p>A list of metric definition objects. Each object specifies the metric name
-     * and regular expressions used to parse algorithm logs. Amazon SageMaker publishes
-     * each metric to Amazon CloudWatch.</p>
+     * and regular expressions used to parse algorithm logs. SageMaker publishes each
+     * metric to Amazon CloudWatch.</p>
      */
     inline AlgorithmSpecification& AddMetricDefinitions(const MetricDefinition& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions.push_back(value); return *this; }
 
     /**
      * <p>A list of metric definition objects. Each object specifies the metric name
-     * and regular expressions used to parse algorithm logs. Amazon SageMaker publishes
-     * each metric to Amazon CloudWatch.</p>
+     * and regular expressions used to parse algorithm logs. SageMaker publishes each
+     * metric to Amazon CloudWatch.</p>
      */
     inline AlgorithmSpecification& AddMetricDefinitions(MetricDefinition&& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions.push_back(std::move(value)); return *this; }
 
@@ -296,10 +296,10 @@ namespace Model
      * <p>To generate and save time-series metrics during training, set to
      * <code>true</code>. The default is <code>false</code> and time-series metrics
      * aren't generated except in the following cases:</p> <ul> <li> <p>You use one of
-     * the Amazon SageMaker built-in algorithms</p> </li> <li> <p>You use one of the
-     * following <a
+     * the SageMaker built-in algorithms</p> </li> <li> <p>You use one of the following
+     * <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt
-     * Amazon SageMaker Docker Images</a>:</p> <ul> <li> <p>Tensorflow (version &gt;=
+     * SageMaker Docker Images</a>:</p> <ul> <li> <p>Tensorflow (version &gt;=
      * 1.15)</p> </li> <li> <p>MXNet (version &gt;= 1.6)</p> </li> <li> <p>PyTorch
      * (version &gt;= 1.3)</p> </li> </ul> </li> <li> <p>You specify at least one
      * <a>MetricDefinition</a> </p> </li> </ul>
@@ -310,10 +310,10 @@ namespace Model
      * <p>To generate and save time-series metrics during training, set to
      * <code>true</code>. The default is <code>false</code> and time-series metrics
      * aren't generated except in the following cases:</p> <ul> <li> <p>You use one of
-     * the Amazon SageMaker built-in algorithms</p> </li> <li> <p>You use one of the
-     * following <a
+     * the SageMaker built-in algorithms</p> </li> <li> <p>You use one of the following
+     * <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt
-     * Amazon SageMaker Docker Images</a>:</p> <ul> <li> <p>Tensorflow (version &gt;=
+     * SageMaker Docker Images</a>:</p> <ul> <li> <p>Tensorflow (version &gt;=
      * 1.15)</p> </li> <li> <p>MXNet (version &gt;= 1.6)</p> </li> <li> <p>PyTorch
      * (version &gt;= 1.3)</p> </li> </ul> </li> <li> <p>You specify at least one
      * <a>MetricDefinition</a> </p> </li> </ul>
@@ -324,10 +324,10 @@ namespace Model
      * <p>To generate and save time-series metrics during training, set to
      * <code>true</code>. The default is <code>false</code> and time-series metrics
      * aren't generated except in the following cases:</p> <ul> <li> <p>You use one of
-     * the Amazon SageMaker built-in algorithms</p> </li> <li> <p>You use one of the
-     * following <a
+     * the SageMaker built-in algorithms</p> </li> <li> <p>You use one of the following
+     * <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt
-     * Amazon SageMaker Docker Images</a>:</p> <ul> <li> <p>Tensorflow (version &gt;=
+     * SageMaker Docker Images</a>:</p> <ul> <li> <p>Tensorflow (version &gt;=
      * 1.15)</p> </li> <li> <p>MXNet (version &gt;= 1.6)</p> </li> <li> <p>PyTorch
      * (version &gt;= 1.3)</p> </li> </ul> </li> <li> <p>You specify at least one
      * <a>MetricDefinition</a> </p> </li> </ul>
@@ -338,10 +338,10 @@ namespace Model
      * <p>To generate and save time-series metrics during training, set to
      * <code>true</code>. The default is <code>false</code> and time-series metrics
      * aren't generated except in the following cases:</p> <ul> <li> <p>You use one of
-     * the Amazon SageMaker built-in algorithms</p> </li> <li> <p>You use one of the
-     * following <a
+     * the SageMaker built-in algorithms</p> </li> <li> <p>You use one of the following
+     * <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt
-     * Amazon SageMaker Docker Images</a>:</p> <ul> <li> <p>Tensorflow (version &gt;=
+     * SageMaker Docker Images</a>:</p> <ul> <li> <p>Tensorflow (version &gt;=
      * 1.15)</p> </li> <li> <p>MXNet (version &gt;= 1.6)</p> </li> <li> <p>PyTorch
      * (version &gt;= 1.3)</p> </li> </ul> </li> <li> <p>You specify at least one
      * <a>MetricDefinition</a> </p> </li> </ul>

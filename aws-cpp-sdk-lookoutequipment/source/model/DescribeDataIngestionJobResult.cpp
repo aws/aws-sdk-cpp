@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeDataIngestionJobResult::DescribeDataIngestionJobResult() : 
-    m_status(IngestionJobStatus::NOT_SET)
+    m_status(IngestionJobStatus::NOT_SET),
+    m_ingestedDataSize(0)
 {
 }
 
 DescribeDataIngestionJobResult::DescribeDataIngestionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(IngestionJobStatus::NOT_SET)
+    m_status(IngestionJobStatus::NOT_SET),
+    m_ingestedDataSize(0)
 {
   *this = result;
 }
@@ -69,6 +71,42 @@ DescribeDataIngestionJobResult& DescribeDataIngestionJobResult::operator =(const
   if(jsonValue.ValueExists("FailedReason"))
   {
     m_failedReason = jsonValue.GetString("FailedReason");
+
+  }
+
+  if(jsonValue.ValueExists("DataQualitySummary"))
+  {
+    m_dataQualitySummary = jsonValue.GetObject("DataQualitySummary");
+
+  }
+
+  if(jsonValue.ValueExists("IngestedFilesSummary"))
+  {
+    m_ingestedFilesSummary = jsonValue.GetObject("IngestedFilesSummary");
+
+  }
+
+  if(jsonValue.ValueExists("StatusDetail"))
+  {
+    m_statusDetail = jsonValue.GetString("StatusDetail");
+
+  }
+
+  if(jsonValue.ValueExists("IngestedDataSize"))
+  {
+    m_ingestedDataSize = jsonValue.GetInt64("IngestedDataSize");
+
+  }
+
+  if(jsonValue.ValueExists("DataStartTime"))
+  {
+    m_dataStartTime = jsonValue.GetDouble("DataStartTime");
+
+  }
+
+  if(jsonValue.ValueExists("DataEndTime"))
+  {
+    m_dataEndTime = jsonValue.GetDouble("DataEndTime");
 
   }
 

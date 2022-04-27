@@ -451,8 +451,8 @@ namespace Model
      * <p>The resources, including the compute instances and storage volumes, to use
      * for the training jobs that the tuning job launches.</p> <p>Storage volumes store
      * model artifacts and incremental states. Training algorithms might also use
-     * storage volumes for scratch space. If you want Amazon SageMaker to use the
-     * storage volume to store the training data, choose <code>File</code> as the
+     * storage volumes for scratch space. If you want SageMaker to use the storage
+     * volume to store the training data, choose <code>File</code> as the
      * <code>TrainingInputMode</code> in the algorithm specification. For distributed
      * training algorithms, specify an instance count greater than 1.</p>
      */
@@ -462,8 +462,8 @@ namespace Model
      * <p>The resources, including the compute instances and storage volumes, to use
      * for the training jobs that the tuning job launches.</p> <p>Storage volumes store
      * model artifacts and incremental states. Training algorithms might also use
-     * storage volumes for scratch space. If you want Amazon SageMaker to use the
-     * storage volume to store the training data, choose <code>File</code> as the
+     * storage volumes for scratch space. If you want SageMaker to use the storage
+     * volume to store the training data, choose <code>File</code> as the
      * <code>TrainingInputMode</code> in the algorithm specification. For distributed
      * training algorithms, specify an instance count greater than 1.</p>
      */
@@ -473,8 +473,8 @@ namespace Model
      * <p>The resources, including the compute instances and storage volumes, to use
      * for the training jobs that the tuning job launches.</p> <p>Storage volumes store
      * model artifacts and incremental states. Training algorithms might also use
-     * storage volumes for scratch space. If you want Amazon SageMaker to use the
-     * storage volume to store the training data, choose <code>File</code> as the
+     * storage volumes for scratch space. If you want SageMaker to use the storage
+     * volume to store the training data, choose <code>File</code> as the
      * <code>TrainingInputMode</code> in the algorithm specification. For distributed
      * training algorithms, specify an instance count greater than 1.</p>
      */
@@ -484,8 +484,8 @@ namespace Model
      * <p>The resources, including the compute instances and storage volumes, to use
      * for the training jobs that the tuning job launches.</p> <p>Storage volumes store
      * model artifacts and incremental states. Training algorithms might also use
-     * storage volumes for scratch space. If you want Amazon SageMaker to use the
-     * storage volume to store the training data, choose <code>File</code> as the
+     * storage volumes for scratch space. If you want SageMaker to use the storage
+     * volume to store the training data, choose <code>File</code> as the
      * <code>TrainingInputMode</code> in the algorithm specification. For distributed
      * training algorithms, specify an instance count greater than 1.</p>
      */
@@ -495,8 +495,8 @@ namespace Model
      * <p>The resources, including the compute instances and storage volumes, to use
      * for the training jobs that the tuning job launches.</p> <p>Storage volumes store
      * model artifacts and incremental states. Training algorithms might also use
-     * storage volumes for scratch space. If you want Amazon SageMaker to use the
-     * storage volume to store the training data, choose <code>File</code> as the
+     * storage volumes for scratch space. If you want SageMaker to use the storage
+     * volume to store the training data, choose <code>File</code> as the
      * <code>TrainingInputMode</code> in the algorithm specification. For distributed
      * training algorithms, specify an instance count greater than 1.</p>
      */
@@ -506,8 +506,8 @@ namespace Model
      * <p>The resources, including the compute instances and storage volumes, to use
      * for the training jobs that the tuning job launches.</p> <p>Storage volumes store
      * model artifacts and incremental states. Training algorithms might also use
-     * storage volumes for scratch space. If you want Amazon SageMaker to use the
-     * storage volume to store the training data, choose <code>File</code> as the
+     * storage volumes for scratch space. If you want SageMaker to use the storage
+     * volume to store the training data, choose <code>File</code> as the
      * <code>TrainingInputMode</code> in the algorithm specification. For distributed
      * training algorithms, specify an instance count greater than 1.</p>
      */
@@ -517,48 +517,48 @@ namespace Model
     /**
      * <p>Specifies a limit to how long a model hyperparameter training job can run. It
      * also specifies how long a managed spot training job has to complete. When the
-     * job reaches the time limit, Amazon SageMaker ends the training job. Use this API
-     * to cap model training costs.</p>
+     * job reaches the time limit, SageMaker ends the training job. Use this API to cap
+     * model training costs.</p>
      */
     inline const StoppingCondition& GetStoppingCondition() const{ return m_stoppingCondition; }
 
     /**
      * <p>Specifies a limit to how long a model hyperparameter training job can run. It
      * also specifies how long a managed spot training job has to complete. When the
-     * job reaches the time limit, Amazon SageMaker ends the training job. Use this API
-     * to cap model training costs.</p>
+     * job reaches the time limit, SageMaker ends the training job. Use this API to cap
+     * model training costs.</p>
      */
     inline bool StoppingConditionHasBeenSet() const { return m_stoppingConditionHasBeenSet; }
 
     /**
      * <p>Specifies a limit to how long a model hyperparameter training job can run. It
      * also specifies how long a managed spot training job has to complete. When the
-     * job reaches the time limit, Amazon SageMaker ends the training job. Use this API
-     * to cap model training costs.</p>
+     * job reaches the time limit, SageMaker ends the training job. Use this API to cap
+     * model training costs.</p>
      */
     inline void SetStoppingCondition(const StoppingCondition& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = value; }
 
     /**
      * <p>Specifies a limit to how long a model hyperparameter training job can run. It
      * also specifies how long a managed spot training job has to complete. When the
-     * job reaches the time limit, Amazon SageMaker ends the training job. Use this API
-     * to cap model training costs.</p>
+     * job reaches the time limit, SageMaker ends the training job. Use this API to cap
+     * model training costs.</p>
      */
     inline void SetStoppingCondition(StoppingCondition&& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = std::move(value); }
 
     /**
      * <p>Specifies a limit to how long a model hyperparameter training job can run. It
      * also specifies how long a managed spot training job has to complete. When the
-     * job reaches the time limit, Amazon SageMaker ends the training job. Use this API
-     * to cap model training costs.</p>
+     * job reaches the time limit, SageMaker ends the training job. Use this API to cap
+     * model training costs.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithStoppingCondition(const StoppingCondition& value) { SetStoppingCondition(value); return *this;}
 
     /**
      * <p>Specifies a limit to how long a model hyperparameter training job can run. It
      * also specifies how long a managed spot training job has to complete. When the
-     * job reaches the time limit, Amazon SageMaker ends the training job. Use this API
-     * to cap model training costs.</p>
+     * job reaches the time limit, SageMaker ends the training job. Use this API to cap
+     * model training costs.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithStoppingCondition(StoppingCondition&& value) { SetStoppingCondition(std::move(value)); return *this;}
 
@@ -567,9 +567,9 @@ namespace Model
      * <p>Isolates the training container. No inbound or outbound network calls can be
      * made, except for calls between peers within a training cluster for distributed
      * training. If network isolation is used for training jobs that are configured to
-     * use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     * artifacts through the specified VPC, but the training container does not have
-     * network access.</p>
+     * use a VPC, SageMaker downloads and uploads customer data and model artifacts
+     * through the specified VPC, but the training container does not have network
+     * access.</p>
      */
     inline bool GetEnableNetworkIsolation() const{ return m_enableNetworkIsolation; }
 
@@ -577,9 +577,9 @@ namespace Model
      * <p>Isolates the training container. No inbound or outbound network calls can be
      * made, except for calls between peers within a training cluster for distributed
      * training. If network isolation is used for training jobs that are configured to
-     * use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     * artifacts through the specified VPC, but the training container does not have
-     * network access.</p>
+     * use a VPC, SageMaker downloads and uploads customer data and model artifacts
+     * through the specified VPC, but the training container does not have network
+     * access.</p>
      */
     inline bool EnableNetworkIsolationHasBeenSet() const { return m_enableNetworkIsolationHasBeenSet; }
 
@@ -587,9 +587,9 @@ namespace Model
      * <p>Isolates the training container. No inbound or outbound network calls can be
      * made, except for calls between peers within a training cluster for distributed
      * training. If network isolation is used for training jobs that are configured to
-     * use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     * artifacts through the specified VPC, but the training container does not have
-     * network access.</p>
+     * use a VPC, SageMaker downloads and uploads customer data and model artifacts
+     * through the specified VPC, but the training container does not have network
+     * access.</p>
      */
     inline void SetEnableNetworkIsolation(bool value) { m_enableNetworkIsolationHasBeenSet = true; m_enableNetworkIsolation = value; }
 
@@ -597,9 +597,9 @@ namespace Model
      * <p>Isolates the training container. No inbound or outbound network calls can be
      * made, except for calls between peers within a training cluster for distributed
      * training. If network isolation is used for training jobs that are configured to
-     * use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     * artifacts through the specified VPC, but the training container does not have
-     * network access.</p>
+     * use a VPC, SageMaker downloads and uploads customer data and model artifacts
+     * through the specified VPC, but the training container does not have network
+     * access.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
 

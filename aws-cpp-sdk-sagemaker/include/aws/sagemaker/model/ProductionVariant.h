@@ -29,8 +29,8 @@ namespace Model
 
   /**
    * <p>Identifies a model that you want to host and the resources chosen to deploy
-   * for hosting it. If you are deploying multiple models, tell Amazon SageMaker how
-   * to distribute traffic among the models by specifying variant weights.
+   * for hosting it. If you are deploying multiple models, tell SageMaker how to
+   * distribute traffic among the models by specifying variant weights.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProductionVariant">AWS
    * API Reference</a></p>
@@ -317,55 +317,37 @@ namespace Model
 
     /**
      * <p>The serverless configuration for an endpoint. Specifies a serverless endpoint
-     * configuration instead of an instance-based endpoint configuration.</p> 
-     * <p>Serverless Inference is in preview release for Amazon SageMaker and is
-     * subject to change. We do not recommend using this feature in production
-     * environments.</p> 
+     * configuration instead of an instance-based endpoint configuration.</p>
      */
     inline const ProductionVariantServerlessConfig& GetServerlessConfig() const{ return m_serverlessConfig; }
 
     /**
      * <p>The serverless configuration for an endpoint. Specifies a serverless endpoint
-     * configuration instead of an instance-based endpoint configuration.</p> 
-     * <p>Serverless Inference is in preview release for Amazon SageMaker and is
-     * subject to change. We do not recommend using this feature in production
-     * environments.</p> 
+     * configuration instead of an instance-based endpoint configuration.</p>
      */
     inline bool ServerlessConfigHasBeenSet() const { return m_serverlessConfigHasBeenSet; }
 
     /**
      * <p>The serverless configuration for an endpoint. Specifies a serverless endpoint
-     * configuration instead of an instance-based endpoint configuration.</p> 
-     * <p>Serverless Inference is in preview release for Amazon SageMaker and is
-     * subject to change. We do not recommend using this feature in production
-     * environments.</p> 
+     * configuration instead of an instance-based endpoint configuration.</p>
      */
     inline void SetServerlessConfig(const ProductionVariantServerlessConfig& value) { m_serverlessConfigHasBeenSet = true; m_serverlessConfig = value; }
 
     /**
      * <p>The serverless configuration for an endpoint. Specifies a serverless endpoint
-     * configuration instead of an instance-based endpoint configuration.</p> 
-     * <p>Serverless Inference is in preview release for Amazon SageMaker and is
-     * subject to change. We do not recommend using this feature in production
-     * environments.</p> 
+     * configuration instead of an instance-based endpoint configuration.</p>
      */
     inline void SetServerlessConfig(ProductionVariantServerlessConfig&& value) { m_serverlessConfigHasBeenSet = true; m_serverlessConfig = std::move(value); }
 
     /**
      * <p>The serverless configuration for an endpoint. Specifies a serverless endpoint
-     * configuration instead of an instance-based endpoint configuration.</p> 
-     * <p>Serverless Inference is in preview release for Amazon SageMaker and is
-     * subject to change. We do not recommend using this feature in production
-     * environments.</p> 
+     * configuration instead of an instance-based endpoint configuration.</p>
      */
     inline ProductionVariant& WithServerlessConfig(const ProductionVariantServerlessConfig& value) { SetServerlessConfig(value); return *this;}
 
     /**
      * <p>The serverless configuration for an endpoint. Specifies a serverless endpoint
-     * configuration instead of an instance-based endpoint configuration.</p> 
-     * <p>Serverless Inference is in preview release for Amazon SageMaker and is
-     * subject to change. We do not recommend using this feature in production
-     * environments.</p> 
+     * configuration instead of an instance-based endpoint configuration.</p>
      */
     inline ProductionVariant& WithServerlessConfig(ProductionVariantServerlessConfig&& value) { SetServerlessConfig(std::move(value)); return *this;}
 

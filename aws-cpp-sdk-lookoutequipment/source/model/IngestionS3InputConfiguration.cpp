@@ -20,13 +20,15 @@ namespace Model
 
 IngestionS3InputConfiguration::IngestionS3InputConfiguration() : 
     m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+    m_prefixHasBeenSet(false),
+    m_keyPatternHasBeenSet(false)
 {
 }
 
 IngestionS3InputConfiguration::IngestionS3InputConfiguration(JsonView jsonValue) : 
     m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+    m_prefixHasBeenSet(false),
+    m_keyPatternHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ IngestionS3InputConfiguration& IngestionS3InputConfiguration::operator =(JsonVie
     m_prefixHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KeyPattern"))
+  {
+    m_keyPattern = jsonValue.GetString("KeyPattern");
+
+    m_keyPatternHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue IngestionS3InputConfiguration::Jsonize() const
   if(m_prefixHasBeenSet)
   {
    payload.WithString("Prefix", m_prefix);
+
+  }
+
+  if(m_keyPatternHasBeenSet)
+  {
+   payload.WithString("KeyPattern", m_keyPattern);
 
   }
 

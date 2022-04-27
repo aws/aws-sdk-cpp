@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The message in downlink queue.</p><p><h3>See Also:</h3>   <a
+   * <p>The message in the downlink queue.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DownlinkQueueMessage">AWS
    * API Reference</a></p>
    */
@@ -39,69 +39,77 @@ namespace Model
 
 
     /**
-     * <p> The messageId allocated by IoT Wireless for tracing purpose</p>
+     * <p> The message ID assigned by IoT Wireless to each downlink message, which
+     * helps identify the message.</p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
 
     /**
-     * <p> The messageId allocated by IoT Wireless for tracing purpose</p>
+     * <p> The message ID assigned by IoT Wireless to each downlink message, which
+     * helps identify the message.</p>
      */
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
 
     /**
-     * <p> The messageId allocated by IoT Wireless for tracing purpose</p>
+     * <p> The message ID assigned by IoT Wireless to each downlink message, which
+     * helps identify the message.</p>
      */
     inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
 
     /**
-     * <p> The messageId allocated by IoT Wireless for tracing purpose</p>
+     * <p> The message ID assigned by IoT Wireless to each downlink message, which
+     * helps identify the message.</p>
      */
     inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
 
     /**
-     * <p> The messageId allocated by IoT Wireless for tracing purpose</p>
+     * <p> The message ID assigned by IoT Wireless to each downlink message, which
+     * helps identify the message.</p>
      */
     inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
 
     /**
-     * <p> The messageId allocated by IoT Wireless for tracing purpose</p>
+     * <p> The message ID assigned by IoT Wireless to each downlink message, which
+     * helps identify the message.</p>
      */
     inline DownlinkQueueMessage& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
 
     /**
-     * <p> The messageId allocated by IoT Wireless for tracing purpose</p>
+     * <p> The message ID assigned by IoT Wireless to each downlink message, which
+     * helps identify the message.</p>
      */
     inline DownlinkQueueMessage& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
 
     /**
-     * <p> The messageId allocated by IoT Wireless for tracing purpose</p>
+     * <p> The message ID assigned by IoT Wireless to each downlink message, which
+     * helps identify the message.</p>
      */
     inline DownlinkQueueMessage& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 
 
     /**
-     * <p>The transmit mode to use to send data to the wireless device. Can be:
+     * <p>The transmit mode to use for sending data to the wireless device. This can be
      * <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge
      * mode).</p>
      */
     inline int GetTransmitMode() const{ return m_transmitMode; }
 
     /**
-     * <p>The transmit mode to use to send data to the wireless device. Can be:
+     * <p>The transmit mode to use for sending data to the wireless device. This can be
      * <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge
      * mode).</p>
      */
     inline bool TransmitModeHasBeenSet() const { return m_transmitModeHasBeenSet; }
 
     /**
-     * <p>The transmit mode to use to send data to the wireless device. Can be:
+     * <p>The transmit mode to use for sending data to the wireless device. This can be
      * <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge
      * mode).</p>
      */
     inline void SetTransmitMode(int value) { m_transmitModeHasBeenSet = true; m_transmitMode = value; }
 
     /**
-     * <p>The transmit mode to use to send data to the wireless device. Can be:
+     * <p>The transmit mode to use for sending data to the wireless device. This can be
      * <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge
      * mode).</p>
      */
@@ -109,42 +117,42 @@ namespace Model
 
 
     /**
-     * <p>The timestamp that Iot Wireless received the message.</p>
+     * <p>The time at which Iot Wireless received the downlink message.</p>
      */
     inline const Aws::String& GetReceivedAt() const{ return m_receivedAt; }
 
     /**
-     * <p>The timestamp that Iot Wireless received the message.</p>
+     * <p>The time at which Iot Wireless received the downlink message.</p>
      */
     inline bool ReceivedAtHasBeenSet() const { return m_receivedAtHasBeenSet; }
 
     /**
-     * <p>The timestamp that Iot Wireless received the message.</p>
+     * <p>The time at which Iot Wireless received the downlink message.</p>
      */
     inline void SetReceivedAt(const Aws::String& value) { m_receivedAtHasBeenSet = true; m_receivedAt = value; }
 
     /**
-     * <p>The timestamp that Iot Wireless received the message.</p>
+     * <p>The time at which Iot Wireless received the downlink message.</p>
      */
     inline void SetReceivedAt(Aws::String&& value) { m_receivedAtHasBeenSet = true; m_receivedAt = std::move(value); }
 
     /**
-     * <p>The timestamp that Iot Wireless received the message.</p>
+     * <p>The time at which Iot Wireless received the downlink message.</p>
      */
     inline void SetReceivedAt(const char* value) { m_receivedAtHasBeenSet = true; m_receivedAt.assign(value); }
 
     /**
-     * <p>The timestamp that Iot Wireless received the message.</p>
+     * <p>The time at which Iot Wireless received the downlink message.</p>
      */
     inline DownlinkQueueMessage& WithReceivedAt(const Aws::String& value) { SetReceivedAt(value); return *this;}
 
     /**
-     * <p>The timestamp that Iot Wireless received the message.</p>
+     * <p>The time at which Iot Wireless received the downlink message.</p>
      */
     inline DownlinkQueueMessage& WithReceivedAt(Aws::String&& value) { SetReceivedAt(std::move(value)); return *this;}
 
     /**
-     * <p>The timestamp that Iot Wireless received the message.</p>
+     * <p>The time at which Iot Wireless received the downlink message.</p>
      */
     inline DownlinkQueueMessage& WithReceivedAt(const char* value) { SetReceivedAt(value); return *this;}
 

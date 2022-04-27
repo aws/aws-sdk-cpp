@@ -19,12 +19,14 @@ namespace Model
 {
 
 StreamProcessorOutput::StreamProcessorOutput() : 
-    m_kinesisDataStreamHasBeenSet(false)
+    m_kinesisDataStreamHasBeenSet(false),
+    m_s3DestinationHasBeenSet(false)
 {
 }
 
 StreamProcessorOutput::StreamProcessorOutput(JsonView jsonValue) : 
-    m_kinesisDataStreamHasBeenSet(false)
+    m_kinesisDataStreamHasBeenSet(false),
+    m_s3DestinationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ StreamProcessorOutput& StreamProcessorOutput::operator =(JsonView jsonValue)
     m_kinesisDataStreamHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("S3Destination"))
+  {
+    m_s3Destination = jsonValue.GetObject("S3Destination");
+
+    m_s3DestinationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue StreamProcessorOutput::Jsonize() const
   if(m_kinesisDataStreamHasBeenSet)
   {
    payload.WithObject("KinesisDataStream", m_kinesisDataStream.Jsonize());
+
+  }
+
+  if(m_s3DestinationHasBeenSet)
+  {
+   payload.WithObject("S3Destination", m_s3Destination.Jsonize());
 
   }
 

@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/AutoMLJobCompletionCriteria.h>
 #include <aws/sagemaker/model/AutoMLSecurityConfig.h>
+#include <aws/sagemaker/model/AutoMLDataSplitConfig.h>
 #include <utility>
 
 namespace Aws
@@ -106,6 +107,43 @@ namespace Model
      */
     inline AutoMLJobConfig& WithSecurityConfig(AutoMLSecurityConfig&& value) { SetSecurityConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
+     * AutoMLDataSplitConfig</p>
+     */
+    inline const AutoMLDataSplitConfig& GetDataSplitConfig() const{ return m_dataSplitConfig; }
+
+    /**
+     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
+     * AutoMLDataSplitConfig</p>
+     */
+    inline bool DataSplitConfigHasBeenSet() const { return m_dataSplitConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
+     * AutoMLDataSplitConfig</p>
+     */
+    inline void SetDataSplitConfig(const AutoMLDataSplitConfig& value) { m_dataSplitConfigHasBeenSet = true; m_dataSplitConfig = value; }
+
+    /**
+     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
+     * AutoMLDataSplitConfig</p>
+     */
+    inline void SetDataSplitConfig(AutoMLDataSplitConfig&& value) { m_dataSplitConfigHasBeenSet = true; m_dataSplitConfig = std::move(value); }
+
+    /**
+     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
+     * AutoMLDataSplitConfig</p>
+     */
+    inline AutoMLJobConfig& WithDataSplitConfig(const AutoMLDataSplitConfig& value) { SetDataSplitConfig(value); return *this;}
+
+    /**
+     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
+     * AutoMLDataSplitConfig</p>
+     */
+    inline AutoMLJobConfig& WithDataSplitConfig(AutoMLDataSplitConfig&& value) { SetDataSplitConfig(std::move(value)); return *this;}
+
   private:
 
     AutoMLJobCompletionCriteria m_completionCriteria;
@@ -113,6 +151,9 @@ namespace Model
 
     AutoMLSecurityConfig m_securityConfig;
     bool m_securityConfigHasBeenSet;
+
+    AutoMLDataSplitConfig m_dataSplitConfig;
+    bool m_dataSplitConfigHasBeenSet;
   };
 
 } // namespace Model

@@ -78,6 +78,7 @@
 #include <aws/rekognition/model/TagResourceRequest.h>
 #include <aws/rekognition/model/UntagResourceRequest.h>
 #include <aws/rekognition/model/UpdateDatasetEntriesRequest.h>
+#include <aws/rekognition/model/UpdateStreamProcessorRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -1542,5 +1543,29 @@ void RekognitionClient::UpdateDatasetEntriesAsync(const UpdateDatasetEntriesRequ
 void RekognitionClient::UpdateDatasetEntriesAsyncHelper(const UpdateDatasetEntriesRequest& request, const UpdateDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDatasetEntries(request), context);
+}
+
+UpdateStreamProcessorOutcome RekognitionClient::UpdateStreamProcessor(const UpdateStreamProcessorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateStreamProcessorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateStreamProcessorOutcomeCallable RekognitionClient::UpdateStreamProcessorCallable(const UpdateStreamProcessorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateStreamProcessorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStreamProcessor(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::UpdateStreamProcessorAsync(const UpdateStreamProcessorRequest& request, const UpdateStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateStreamProcessorAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::UpdateStreamProcessorAsyncHelper(const UpdateStreamProcessorRequest& request, const UpdateStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateStreamProcessor(request), context);
 }
 

@@ -306,92 +306,92 @@ namespace Model
 
     /**
      * <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a
-     * set if property key value pairs. If multiple pairs are provided, an entity will
-     * be included in the results if it matches any of the provided pairs.</p>
+     * set if property key value pairs. If multiple pairs are provided, an entity is
+     * included in the results if it matches any of the provided pairs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetProperties() const{ return m_properties; }
 
     /**
      * <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a
-     * set if property key value pairs. If multiple pairs are provided, an entity will
-     * be included in the results if it matches any of the provided pairs.</p>
+     * set if property key value pairs. If multiple pairs are provided, an entity is
+     * included in the results if it matches any of the provided pairs.</p>
      */
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
 
     /**
      * <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a
-     * set if property key value pairs. If multiple pairs are provided, an entity will
-     * be included in the results if it matches any of the provided pairs.</p>
+     * set if property key value pairs. If multiple pairs are provided, an entity is
+     * included in the results if it matches any of the provided pairs.</p>
      */
     inline void SetProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
 
     /**
      * <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a
-     * set if property key value pairs. If multiple pairs are provided, an entity will
-     * be included in the results if it matches any of the provided pairs.</p>
+     * set if property key value pairs. If multiple pairs are provided, an entity is
+     * included in the results if it matches any of the provided pairs.</p>
      */
     inline void SetProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
 
     /**
      * <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a
-     * set if property key value pairs. If multiple pairs are provided, an entity will
-     * be included in the results if it matches any of the provided pairs.</p>
+     * set if property key value pairs. If multiple pairs are provided, an entity is
+     * included in the results if it matches any of the provided pairs.</p>
      */
     inline QueryFilters& WithProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetProperties(value); return *this;}
 
     /**
      * <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a
-     * set if property key value pairs. If multiple pairs are provided, an entity will
-     * be included in the results if it matches any of the provided pairs.</p>
+     * set if property key value pairs. If multiple pairs are provided, an entity is
+     * included in the results if it matches any of the provided pairs.</p>
      */
     inline QueryFilters& WithProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetProperties(std::move(value)); return *this;}
 
     /**
      * <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a
-     * set if property key value pairs. If multiple pairs are provided, an entity will
-     * be included in the results if it matches any of the provided pairs.</p>
+     * set if property key value pairs. If multiple pairs are provided, an entity is
+     * included in the results if it matches any of the provided pairs.</p>
      */
     inline QueryFilters& AddProperties(const Aws::String& key, const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
 
     /**
      * <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a
-     * set if property key value pairs. If multiple pairs are provided, an entity will
-     * be included in the results if it matches any of the provided pairs.</p>
+     * set if property key value pairs. If multiple pairs are provided, an entity is
+     * included in the results if it matches any of the provided pairs.</p>
      */
     inline QueryFilters& AddProperties(Aws::String&& key, const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a
-     * set if property key value pairs. If multiple pairs are provided, an entity will
-     * be included in the results if it matches any of the provided pairs.</p>
+     * set if property key value pairs. If multiple pairs are provided, an entity is
+     * included in the results if it matches any of the provided pairs.</p>
      */
     inline QueryFilters& AddProperties(const Aws::String& key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a
-     * set if property key value pairs. If multiple pairs are provided, an entity will
-     * be included in the results if it matches any of the provided pairs.</p>
+     * set if property key value pairs. If multiple pairs are provided, an entity is
+     * included in the results if it matches any of the provided pairs.</p>
      */
     inline QueryFilters& AddProperties(Aws::String&& key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a
-     * set if property key value pairs. If multiple pairs are provided, an entity will
-     * be included in the results if it matches any of the provided pairs.</p>
+     * set if property key value pairs. If multiple pairs are provided, an entity is
+     * included in the results if it matches any of the provided pairs.</p>
      */
     inline QueryFilters& AddProperties(const char* key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a
-     * set if property key value pairs. If multiple pairs are provided, an entity will
-     * be included in the results if it matches any of the provided pairs.</p>
+     * set if property key value pairs. If multiple pairs are provided, an entity is
+     * included in the results if it matches any of the provided pairs.</p>
      */
     inline QueryFilters& AddProperties(Aws::String&& key, const char* value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a
-     * set if property key value pairs. If multiple pairs are provided, an entity will
-     * be included in the results if it matches any of the provided pairs.</p>
+     * set if property key value pairs. If multiple pairs are provided, an entity is
+     * included in the results if it matches any of the provided pairs.</p>
      */
     inline QueryFilters& AddProperties(const char* key, const char* value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
 

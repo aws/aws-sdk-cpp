@@ -382,37 +382,37 @@ namespace Model
 
     /**
      * <p> Specifies configuration information for the output results from for the
-     * inference execution, including the output S3 location. </p>
+     * inference execution, including the output Amazon S3 location. </p>
      */
     inline const InferenceOutputConfiguration& GetDataOutputConfiguration() const{ return m_dataOutputConfiguration; }
 
     /**
      * <p> Specifies configuration information for the output results from for the
-     * inference execution, including the output S3 location. </p>
+     * inference execution, including the output Amazon S3 location. </p>
      */
     inline bool DataOutputConfigurationHasBeenSet() const { return m_dataOutputConfigurationHasBeenSet; }
 
     /**
      * <p> Specifies configuration information for the output results from for the
-     * inference execution, including the output S3 location. </p>
+     * inference execution, including the output Amazon S3 location. </p>
      */
     inline void SetDataOutputConfiguration(const InferenceOutputConfiguration& value) { m_dataOutputConfigurationHasBeenSet = true; m_dataOutputConfiguration = value; }
 
     /**
      * <p> Specifies configuration information for the output results from for the
-     * inference execution, including the output S3 location. </p>
+     * inference execution, including the output Amazon S3 location. </p>
      */
     inline void SetDataOutputConfiguration(InferenceOutputConfiguration&& value) { m_dataOutputConfigurationHasBeenSet = true; m_dataOutputConfiguration = std::move(value); }
 
     /**
      * <p> Specifies configuration information for the output results from for the
-     * inference execution, including the output S3 location. </p>
+     * inference execution, including the output Amazon S3 location. </p>
      */
     inline InferenceExecutionSummary& WithDataOutputConfiguration(const InferenceOutputConfiguration& value) { SetDataOutputConfiguration(value); return *this;}
 
     /**
      * <p> Specifies configuration information for the output results from for the
-     * inference execution, including the output S3 location. </p>
+     * inference execution, including the output Amazon S3 location. </p>
      */
     inline InferenceExecutionSummary& WithDataOutputConfiguration(InferenceOutputConfiguration&& value) { SetDataOutputConfiguration(std::move(value)); return *this;}
 

@@ -27,7 +27,7 @@ namespace Model
 
   /**
    * <p>Specifies configuration information for the input data for the inference,
-   * including S3 location of input data.. </p><p><h3>See Also:</h3>   <a
+   * including Amazon S3 location of input data.. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/InferenceInputConfiguration">AWS
    * API Reference</a></p>
    */
@@ -42,86 +42,86 @@ namespace Model
 
     /**
      * <p> Specifies configuration information for the input data for the inference,
-     * including S3 location of input data.. </p>
+     * including Amazon S3 location of input data.</p>
      */
     inline const InferenceS3InputConfiguration& GetS3InputConfiguration() const{ return m_s3InputConfiguration; }
 
     /**
      * <p> Specifies configuration information for the input data for the inference,
-     * including S3 location of input data.. </p>
+     * including Amazon S3 location of input data.</p>
      */
     inline bool S3InputConfigurationHasBeenSet() const { return m_s3InputConfigurationHasBeenSet; }
 
     /**
      * <p> Specifies configuration information for the input data for the inference,
-     * including S3 location of input data.. </p>
+     * including Amazon S3 location of input data.</p>
      */
     inline void SetS3InputConfiguration(const InferenceS3InputConfiguration& value) { m_s3InputConfigurationHasBeenSet = true; m_s3InputConfiguration = value; }
 
     /**
      * <p> Specifies configuration information for the input data for the inference,
-     * including S3 location of input data.. </p>
+     * including Amazon S3 location of input data.</p>
      */
     inline void SetS3InputConfiguration(InferenceS3InputConfiguration&& value) { m_s3InputConfigurationHasBeenSet = true; m_s3InputConfiguration = std::move(value); }
 
     /**
      * <p> Specifies configuration information for the input data for the inference,
-     * including S3 location of input data.. </p>
+     * including Amazon S3 location of input data.</p>
      */
     inline InferenceInputConfiguration& WithS3InputConfiguration(const InferenceS3InputConfiguration& value) { SetS3InputConfiguration(value); return *this;}
 
     /**
      * <p> Specifies configuration information for the input data for the inference,
-     * including S3 location of input data.. </p>
+     * including Amazon S3 location of input data.</p>
      */
     inline InferenceInputConfiguration& WithS3InputConfiguration(InferenceS3InputConfiguration&& value) { SetS3InputConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Indicates the difference between your time zone and Greenwich Mean Time
-     * (GMT). </p>
+     * <p>Indicates the difference between your time zone and Coordinated Universal
+     * Time (UTC).</p>
      */
     inline const Aws::String& GetInputTimeZoneOffset() const{ return m_inputTimeZoneOffset; }
 
     /**
-     * <p>Indicates the difference between your time zone and Greenwich Mean Time
-     * (GMT). </p>
+     * <p>Indicates the difference between your time zone and Coordinated Universal
+     * Time (UTC).</p>
      */
     inline bool InputTimeZoneOffsetHasBeenSet() const { return m_inputTimeZoneOffsetHasBeenSet; }
 
     /**
-     * <p>Indicates the difference between your time zone and Greenwich Mean Time
-     * (GMT). </p>
+     * <p>Indicates the difference between your time zone and Coordinated Universal
+     * Time (UTC).</p>
      */
     inline void SetInputTimeZoneOffset(const Aws::String& value) { m_inputTimeZoneOffsetHasBeenSet = true; m_inputTimeZoneOffset = value; }
 
     /**
-     * <p>Indicates the difference between your time zone and Greenwich Mean Time
-     * (GMT). </p>
+     * <p>Indicates the difference between your time zone and Coordinated Universal
+     * Time (UTC).</p>
      */
     inline void SetInputTimeZoneOffset(Aws::String&& value) { m_inputTimeZoneOffsetHasBeenSet = true; m_inputTimeZoneOffset = std::move(value); }
 
     /**
-     * <p>Indicates the difference between your time zone and Greenwich Mean Time
-     * (GMT). </p>
+     * <p>Indicates the difference between your time zone and Coordinated Universal
+     * Time (UTC).</p>
      */
     inline void SetInputTimeZoneOffset(const char* value) { m_inputTimeZoneOffsetHasBeenSet = true; m_inputTimeZoneOffset.assign(value); }
 
     /**
-     * <p>Indicates the difference between your time zone and Greenwich Mean Time
-     * (GMT). </p>
+     * <p>Indicates the difference between your time zone and Coordinated Universal
+     * Time (UTC).</p>
      */
     inline InferenceInputConfiguration& WithInputTimeZoneOffset(const Aws::String& value) { SetInputTimeZoneOffset(value); return *this;}
 
     /**
-     * <p>Indicates the difference between your time zone and Greenwich Mean Time
-     * (GMT). </p>
+     * <p>Indicates the difference between your time zone and Coordinated Universal
+     * Time (UTC).</p>
      */
     inline InferenceInputConfiguration& WithInputTimeZoneOffset(Aws::String&& value) { SetInputTimeZoneOffset(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates the difference between your time zone and Greenwich Mean Time
-     * (GMT). </p>
+     * <p>Indicates the difference between your time zone and Coordinated Universal
+     * Time (UTC).</p>
      */
     inline InferenceInputConfiguration& WithInputTimeZoneOffset(const char* value) { SetInputTimeZoneOffset(value); return *this;}
 

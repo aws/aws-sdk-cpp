@@ -38,37 +38,37 @@ namespace Model
 
 
     /**
-     * <p>Name of the Amazon SageMaker model.</p>
+     * <p>Name of the SageMaker model.</p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }
 
     /**
-     * <p>Name of the Amazon SageMaker model.</p>
+     * <p>Name of the SageMaker model.</p>
      */
     inline void SetModelName(const Aws::String& value) { m_modelName = value; }
 
     /**
-     * <p>Name of the Amazon SageMaker model.</p>
+     * <p>Name of the SageMaker model.</p>
      */
     inline void SetModelName(Aws::String&& value) { m_modelName = std::move(value); }
 
     /**
-     * <p>Name of the Amazon SageMaker model.</p>
+     * <p>Name of the SageMaker model.</p>
      */
     inline void SetModelName(const char* value) { m_modelName.assign(value); }
 
     /**
-     * <p>Name of the Amazon SageMaker model.</p>
+     * <p>Name of the SageMaker model.</p>
      */
     inline DescribeModelResult& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
 
     /**
-     * <p>Name of the Amazon SageMaker model.</p>
+     * <p>Name of the SageMaker model.</p>
      */
     inline DescribeModelResult& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the Amazon SageMaker model.</p>
+     * <p>Name of the SageMaker model.</p>
      */
     inline DescribeModelResult& WithModelName(const char* value) { SetModelName(value); return *this;}
 

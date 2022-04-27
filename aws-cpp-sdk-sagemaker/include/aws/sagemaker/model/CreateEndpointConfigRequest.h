@@ -231,9 +231,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId
-     * can be any of the following formats: </p> <ul> <li> <p>Key ID:
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
+     * any of the following formats: </p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -264,9 +264,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId
-     * can be any of the following formats: </p> <ul> <li> <p>Key ID:
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
+     * any of the following formats: </p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -297,9 +297,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId
-     * can be any of the following formats: </p> <ul> <li> <p>Key ID:
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
+     * any of the following formats: </p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -330,9 +330,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId
-     * can be any of the following formats: </p> <ul> <li> <p>Key ID:
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
+     * any of the following formats: </p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -363,9 +363,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId
-     * can be any of the following formats: </p> <ul> <li> <p>Key ID:
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
+     * any of the following formats: </p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -396,9 +396,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId
-     * can be any of the following formats: </p> <ul> <li> <p>Key ID:
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
+     * any of the following formats: </p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -429,9 +429,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId
-     * can be any of the following formats: </p> <ul> <li> <p>Key ID:
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
+     * any of the following formats: </p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -462,9 +462,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId
-     * can be any of the following formats: </p> <ul> <li> <p>Key ID:
+     * Service key that SageMaker uses to encrypt data on the storage volume attached
+     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
+     * any of the following formats: </p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>

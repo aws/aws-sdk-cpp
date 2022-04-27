@@ -269,38 +269,38 @@ namespace Model
 
 
     /**
-     * <p>Specifies configurations for one or more transform jobs that Amazon SageMaker
-     * runs to test the model package.</p>
+     * <p>Specifies configurations for one or more transform jobs that SageMaker runs
+     * to test the model package.</p>
      */
     inline const ModelPackageValidationSpecification& GetValidationSpecification() const{ return m_validationSpecification; }
 
     /**
-     * <p>Specifies configurations for one or more transform jobs that Amazon SageMaker
-     * runs to test the model package.</p>
+     * <p>Specifies configurations for one or more transform jobs that SageMaker runs
+     * to test the model package.</p>
      */
     inline bool ValidationSpecificationHasBeenSet() const { return m_validationSpecificationHasBeenSet; }
 
     /**
-     * <p>Specifies configurations for one or more transform jobs that Amazon SageMaker
-     * runs to test the model package.</p>
+     * <p>Specifies configurations for one or more transform jobs that SageMaker runs
+     * to test the model package.</p>
      */
     inline void SetValidationSpecification(const ModelPackageValidationSpecification& value) { m_validationSpecificationHasBeenSet = true; m_validationSpecification = value; }
 
     /**
-     * <p>Specifies configurations for one or more transform jobs that Amazon SageMaker
-     * runs to test the model package.</p>
+     * <p>Specifies configurations for one or more transform jobs that SageMaker runs
+     * to test the model package.</p>
      */
     inline void SetValidationSpecification(ModelPackageValidationSpecification&& value) { m_validationSpecificationHasBeenSet = true; m_validationSpecification = std::move(value); }
 
     /**
-     * <p>Specifies configurations for one or more transform jobs that Amazon SageMaker
-     * runs to test the model package.</p>
+     * <p>Specifies configurations for one or more transform jobs that SageMaker runs
+     * to test the model package.</p>
      */
     inline CreateModelPackageRequest& WithValidationSpecification(const ModelPackageValidationSpecification& value) { SetValidationSpecification(value); return *this;}
 
     /**
-     * <p>Specifies configurations for one or more transform jobs that Amazon SageMaker
-     * runs to test the model package.</p>
+     * <p>Specifies configurations for one or more transform jobs that SageMaker runs
+     * to test the model package.</p>
      */
     inline CreateModelPackageRequest& WithValidationSpecification(ModelPackageValidationSpecification&& value) { SetValidationSpecification(std::move(value)); return *this;}
 

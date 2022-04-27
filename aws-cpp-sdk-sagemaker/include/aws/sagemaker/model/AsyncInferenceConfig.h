@@ -40,38 +40,38 @@ namespace Model
 
 
     /**
-     * <p>Configures the behavior of the client used by Amazon SageMaker to interact
-     * with the model container during asynchronous inference.</p>
+     * <p>Configures the behavior of the client used by SageMaker to interact with the
+     * model container during asynchronous inference.</p>
      */
     inline const AsyncInferenceClientConfig& GetClientConfig() const{ return m_clientConfig; }
 
     /**
-     * <p>Configures the behavior of the client used by Amazon SageMaker to interact
-     * with the model container during asynchronous inference.</p>
+     * <p>Configures the behavior of the client used by SageMaker to interact with the
+     * model container during asynchronous inference.</p>
      */
     inline bool ClientConfigHasBeenSet() const { return m_clientConfigHasBeenSet; }
 
     /**
-     * <p>Configures the behavior of the client used by Amazon SageMaker to interact
-     * with the model container during asynchronous inference.</p>
+     * <p>Configures the behavior of the client used by SageMaker to interact with the
+     * model container during asynchronous inference.</p>
      */
     inline void SetClientConfig(const AsyncInferenceClientConfig& value) { m_clientConfigHasBeenSet = true; m_clientConfig = value; }
 
     /**
-     * <p>Configures the behavior of the client used by Amazon SageMaker to interact
-     * with the model container during asynchronous inference.</p>
+     * <p>Configures the behavior of the client used by SageMaker to interact with the
+     * model container during asynchronous inference.</p>
      */
     inline void SetClientConfig(AsyncInferenceClientConfig&& value) { m_clientConfigHasBeenSet = true; m_clientConfig = std::move(value); }
 
     /**
-     * <p>Configures the behavior of the client used by Amazon SageMaker to interact
-     * with the model container during asynchronous inference.</p>
+     * <p>Configures the behavior of the client used by SageMaker to interact with the
+     * model container during asynchronous inference.</p>
      */
     inline AsyncInferenceConfig& WithClientConfig(const AsyncInferenceClientConfig& value) { SetClientConfig(value); return *this;}
 
     /**
-     * <p>Configures the behavior of the client used by Amazon SageMaker to interact
-     * with the model container during asynchronous inference.</p>
+     * <p>Configures the behavior of the client used by SageMaker to interact with the
+     * model container during asynchronous inference.</p>
      */
     inline AsyncInferenceConfig& WithClientConfig(AsyncInferenceClientConfig&& value) { SetClientConfig(std::move(value)); return *this;}
 

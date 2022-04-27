@@ -16,7 +16,11 @@ namespace Model
   enum class IdentifierType
   {
     NOT_SET,
-    PartnerAccountId
+    PartnerAccountId,
+    DevEui,
+    GatewayEui,
+    WirelessDeviceId,
+    WirelessGatewayId
   };
 
 namespace IdentifierTypeMapper

@@ -23,6 +23,7 @@
 #include <aws/lookoutequipment/model/ListInferenceExecutionsResult.h>
 #include <aws/lookoutequipment/model/ListInferenceSchedulersResult.h>
 #include <aws/lookoutequipment/model/ListModelsResult.h>
+#include <aws/lookoutequipment/model/ListSensorStatisticsResult.h>
 #include <aws/lookoutequipment/model/ListTagsForResourceResult.h>
 #include <aws/lookoutequipment/model/StartDataIngestionJobResult.h>
 #include <aws/lookoutequipment/model/StartInferenceSchedulerResult.h>
@@ -84,6 +85,7 @@ namespace Model
         class ListInferenceExecutionsRequest;
         class ListInferenceSchedulersRequest;
         class ListModelsRequest;
+        class ListSensorStatisticsRequest;
         class ListTagsForResourceRequest;
         class StartDataIngestionJobRequest;
         class StartInferenceSchedulerRequest;
@@ -107,6 +109,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListInferenceExecutionsResult, LookoutEquipmentError> ListInferenceExecutionsOutcome;
         typedef Aws::Utils::Outcome<ListInferenceSchedulersResult, LookoutEquipmentError> ListInferenceSchedulersOutcome;
         typedef Aws::Utils::Outcome<ListModelsResult, LookoutEquipmentError> ListModelsOutcome;
+        typedef Aws::Utils::Outcome<ListSensorStatisticsResult, LookoutEquipmentError> ListSensorStatisticsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, LookoutEquipmentError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<StartDataIngestionJobResult, LookoutEquipmentError> StartDataIngestionJobOutcome;
         typedef Aws::Utils::Outcome<StartInferenceSchedulerResult, LookoutEquipmentError> StartInferenceSchedulerOutcome;
@@ -130,6 +133,7 @@ namespace Model
         typedef std::future<ListInferenceExecutionsOutcome> ListInferenceExecutionsOutcomeCallable;
         typedef std::future<ListInferenceSchedulersOutcome> ListInferenceSchedulersOutcomeCallable;
         typedef std::future<ListModelsOutcome> ListModelsOutcomeCallable;
+        typedef std::future<ListSensorStatisticsOutcome> ListSensorStatisticsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<StartDataIngestionJobOutcome> StartDataIngestionJobOutcomeCallable;
         typedef std::future<StartInferenceSchedulerOutcome> StartInferenceSchedulerOutcomeCallable;
@@ -156,6 +160,7 @@ namespace Model
     typedef std::function<void(const LookoutEquipmentClient*, const Model::ListInferenceExecutionsRequest&, const Model::ListInferenceExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInferenceExecutionsResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::ListInferenceSchedulersRequest&, const Model::ListInferenceSchedulersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInferenceSchedulersResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::ListModelsRequest&, const Model::ListModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelsResponseReceivedHandler;
+    typedef std::function<void(const LookoutEquipmentClient*, const Model::ListSensorStatisticsRequest&, const Model::ListSensorStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSensorStatisticsResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::StartDataIngestionJobRequest&, const Model::StartDataIngestionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDataIngestionJobResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::StartInferenceSchedulerRequest&, const Model::StartInferenceSchedulerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInferenceSchedulerResponseReceivedHandler;
@@ -423,7 +428,7 @@ namespace Model
 
         /**
          * <p>Provides information on a specific data ingestion job such as creation time,
-         * dataset ARN, status, and so on. </p><p><h3>See Also:</h3>   <a
+         * dataset ARN, and status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataIngestionJob">AWS
          * API Reference</a></p>
          */
@@ -431,7 +436,7 @@ namespace Model
 
         /**
          * <p>Provides information on a specific data ingestion job such as creation time,
-         * dataset ARN, status, and so on. </p><p><h3>See Also:</h3>   <a
+         * dataset ARN, and status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataIngestionJob">AWS
          * API Reference</a></p>
          *
@@ -441,7 +446,7 @@ namespace Model
 
         /**
          * <p>Provides information on a specific data ingestion job such as creation time,
-         * dataset ARN, status, and so on. </p><p><h3>See Also:</h3>   <a
+         * dataset ARN, and status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataIngestionJob">AWS
          * API Reference</a></p>
          *
@@ -450,7 +455,7 @@ namespace Model
         virtual void DescribeDataIngestionJobAsync(const Model::DescribeDataIngestionJobRequest& request, const DescribeDataIngestionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides a JSON description of the data that is in each time series dataset,
+         * <p>Provides a JSON description of the data in each time series dataset,
          * including names, column names, and data types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataset">AWS
          * API Reference</a></p>
@@ -458,7 +463,7 @@ namespace Model
         virtual Model::DescribeDatasetOutcome DescribeDataset(const Model::DescribeDatasetRequest& request) const;
 
         /**
-         * <p>Provides a JSON description of the data that is in each time series dataset,
+         * <p>Provides a JSON description of the data in each time series dataset,
          * including names, column names, and data types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataset">AWS
          * API Reference</a></p>
@@ -468,7 +473,7 @@ namespace Model
         virtual Model::DescribeDatasetOutcomeCallable DescribeDatasetCallable(const Model::DescribeDatasetRequest& request) const;
 
         /**
-         * <p>Provides a JSON description of the data that is in each time series dataset,
+         * <p>Provides a JSON description of the data in each time series dataset,
          * including names, column names, and data types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataset">AWS
          * API Reference</a></p>
@@ -675,6 +680,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListModelsAsync(const Model::ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Lists statistics about the data collected for each of the sensors that have
+         * been successfully ingested in the particular dataset. Can also be used to
+         * retreive Sensor Statistics for a previous ingestion job. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSensorStatisticsOutcome ListSensorStatistics(const Model::ListSensorStatisticsRequest& request) const;
+
+        /**
+         * <p> Lists statistics about the data collected for each of the sensors that have
+         * been successfully ingested in the particular dataset. Can also be used to
+         * retreive Sensor Statistics for a previous ingestion job. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSensorStatisticsOutcomeCallable ListSensorStatisticsCallable(const Model::ListSensorStatisticsRequest& request) const;
+
+        /**
+         * <p> Lists statistics about the data collected for each of the sensors that have
+         * been successfully ingested in the particular dataset. Can also be used to
+         * retreive Sensor Statistics for a previous ingestion job. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSensorStatisticsAsync(const Model::ListSensorStatisticsRequest& request, const ListSensorStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the tags for a specified resource, including key and value.
@@ -894,6 +933,7 @@ namespace Model
         void ListInferenceExecutionsAsyncHelper(const Model::ListInferenceExecutionsRequest& request, const ListInferenceExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInferenceSchedulersAsyncHelper(const Model::ListInferenceSchedulersRequest& request, const ListInferenceSchedulersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListModelsAsyncHelper(const Model::ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListSensorStatisticsAsyncHelper(const Model::ListSensorStatisticsRequest& request, const ListSensorStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartDataIngestionJobAsyncHelper(const Model::StartDataIngestionJobRequest& request, const StartDataIngestionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartInferenceSchedulerAsyncHelper(const Model::StartInferenceSchedulerRequest& request, const StartInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

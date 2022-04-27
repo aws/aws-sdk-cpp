@@ -251,26 +251,28 @@ namespace Model
 
 
         /**
-         * <p>Adds one or more tags to a trail, up to a limit of 50. Overwrites an existing
-         * tag's value when a new value is specified for an existing tag key. Tag key names
-         * must be unique for a trail; you cannot have two keys with the same name but
-         * different values. If you specify a key without a value, the tag will be created
-         * with the specified key and a value of null. You can tag a trail that applies to
-         * all Amazon Web Services Regions only from the Region in which the trail was
-         * created (also known as its home region).</p><p><h3>See Also:</h3>   <a
+         * <p>Adds one or more tags to a trail or event data store, up to a limit of 50.
+         * Overwrites an existing tag's value when a new value is specified for an existing
+         * tag key. Tag key names must be unique for a trail; you cannot have two keys with
+         * the same name but different values. If you specify a key without a value, the
+         * tag will be created with the specified key and a value of null. You can tag a
+         * trail or event data store that applies to all Amazon Web Services Regions only
+         * from the Region in which the trail or event data store was created (also known
+         * as its home region).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">AWS
          * API Reference</a></p>
          */
         virtual Model::AddTagsOutcome AddTags(const Model::AddTagsRequest& request) const;
 
         /**
-         * <p>Adds one or more tags to a trail, up to a limit of 50. Overwrites an existing
-         * tag's value when a new value is specified for an existing tag key. Tag key names
-         * must be unique for a trail; you cannot have two keys with the same name but
-         * different values. If you specify a key without a value, the tag will be created
-         * with the specified key and a value of null. You can tag a trail that applies to
-         * all Amazon Web Services Regions only from the Region in which the trail was
-         * created (also known as its home region).</p><p><h3>See Also:</h3>   <a
+         * <p>Adds one or more tags to a trail or event data store, up to a limit of 50.
+         * Overwrites an existing tag's value when a new value is specified for an existing
+         * tag key. Tag key names must be unique for a trail; you cannot have two keys with
+         * the same name but different values. If you specify a key without a value, the
+         * tag will be created with the specified key and a value of null. You can tag a
+         * trail or event data store that applies to all Amazon Web Services Regions only
+         * from the Region in which the trail or event data store was created (also known
+         * as its home region).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">AWS
          * API Reference</a></p>
          *
@@ -279,13 +281,14 @@ namespace Model
         virtual Model::AddTagsOutcomeCallable AddTagsCallable(const Model::AddTagsRequest& request) const;
 
         /**
-         * <p>Adds one or more tags to a trail, up to a limit of 50. Overwrites an existing
-         * tag's value when a new value is specified for an existing tag key. Tag key names
-         * must be unique for a trail; you cannot have two keys with the same name but
-         * different values. If you specify a key without a value, the tag will be created
-         * with the specified key and a value of null. You can tag a trail that applies to
-         * all Amazon Web Services Regions only from the Region in which the trail was
-         * created (also known as its home region).</p><p><h3>See Also:</h3>   <a
+         * <p>Adds one or more tags to a trail or event data store, up to a limit of 50.
+         * Overwrites an existing tag's value when a new value is specified for an existing
+         * tag key. Tag key names must be unique for a trail; you cannot have two keys with
+         * the same name but different values. If you specify a key without a value, the
+         * tag will be created with the specified key and a value of null. You can tag a
+         * trail or event data store that applies to all Amazon Web Services Regions only
+         * from the Region in which the trail or event data store was created (also known
+         * as its home region).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">AWS
          * API Reference</a></p>
          *
@@ -892,16 +895,16 @@ namespace Model
         virtual void ListQueriesAsync(const Model::ListQueriesRequest& request, const ListQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tags for the trail in the current region.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Lists the tags for the trail or event data store in the current
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsOutcome ListTags(const Model::ListTagsRequest& request) const;
 
         /**
-         * <p>Lists the tags for the trail in the current region.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Lists the tags for the trail or event data store in the current
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">AWS
          * API Reference</a></p>
          *
@@ -910,8 +913,8 @@ namespace Model
         virtual Model::ListTagsOutcomeCallable ListTagsCallable(const Model::ListTagsRequest& request) const;
 
         /**
-         * <p>Lists the tags for the trail in the current region.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Lists the tags for the trail or event data store in the current
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">AWS
          * API Reference</a></p>
          *
@@ -1185,14 +1188,16 @@ namespace Model
         virtual void PutInsightSelectorsAsync(const Model::PutInsightSelectorsRequest& request, const PutInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified tags from a trail.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tags from a trail or event data store.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">AWS
          * API Reference</a></p>
          */
         virtual Model::RemoveTagsOutcome RemoveTags(const Model::RemoveTagsRequest& request) const;
 
         /**
-         * <p>Removes the specified tags from a trail.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tags from a trail or event data store.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">AWS
          * API Reference</a></p>
          *
@@ -1201,7 +1206,8 @@ namespace Model
         virtual Model::RemoveTagsOutcomeCallable RemoveTagsCallable(const Model::RemoveTagsRequest& request) const;
 
         /**
-         * <p>Removes the specified tags from a trail.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tags from a trail or event data store.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">AWS
          * API Reference</a></p>
          *

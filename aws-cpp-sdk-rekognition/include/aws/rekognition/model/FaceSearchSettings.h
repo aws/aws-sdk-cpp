@@ -25,7 +25,8 @@ namespace Model
 
   /**
    * <p>Input face recognition parameters for an Amazon Rekognition stream processor.
-   * <code>FaceRecognitionSettings</code> is a request parameter for
+   * Includes the collection to use for face recognition and the face attributes to
+   * detect. Defining the settings is required in the request parameter for
    * <a>CreateStreamProcessor</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/FaceSearchSettings">AWS
    * API Reference</a></p>

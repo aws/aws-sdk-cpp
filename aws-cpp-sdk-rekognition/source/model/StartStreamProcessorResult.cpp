@@ -27,7 +27,13 @@ StartStreamProcessorResult::StartStreamProcessorResult(const Aws::AmazonWebServi
 
 StartStreamProcessorResult& StartStreamProcessorResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  AWS_UNREFERENCED_PARAM(result);
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("SessionId"))
+  {
+    m_sessionId = jsonValue.GetString("SessionId");
+
+  }
+
 
 
   return *this;

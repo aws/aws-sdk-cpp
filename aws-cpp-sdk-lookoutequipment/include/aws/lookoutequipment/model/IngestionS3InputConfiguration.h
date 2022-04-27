@@ -135,6 +135,63 @@ namespace Model
      */
     inline IngestionS3InputConfiguration& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
+
+    /**
+     * <p> Pattern for matching the Amazon S3 files which will be used for ingestion.
+     * If no KeyPattern is provided, we will use the default hierarchy file structure,
+     * which is same as KeyPattern {prefix}/{component_name}/ * </p>
+     */
+    inline const Aws::String& GetKeyPattern() const{ return m_keyPattern; }
+
+    /**
+     * <p> Pattern for matching the Amazon S3 files which will be used for ingestion.
+     * If no KeyPattern is provided, we will use the default hierarchy file structure,
+     * which is same as KeyPattern {prefix}/{component_name}/ * </p>
+     */
+    inline bool KeyPatternHasBeenSet() const { return m_keyPatternHasBeenSet; }
+
+    /**
+     * <p> Pattern for matching the Amazon S3 files which will be used for ingestion.
+     * If no KeyPattern is provided, we will use the default hierarchy file structure,
+     * which is same as KeyPattern {prefix}/{component_name}/ * </p>
+     */
+    inline void SetKeyPattern(const Aws::String& value) { m_keyPatternHasBeenSet = true; m_keyPattern = value; }
+
+    /**
+     * <p> Pattern for matching the Amazon S3 files which will be used for ingestion.
+     * If no KeyPattern is provided, we will use the default hierarchy file structure,
+     * which is same as KeyPattern {prefix}/{component_name}/ * </p>
+     */
+    inline void SetKeyPattern(Aws::String&& value) { m_keyPatternHasBeenSet = true; m_keyPattern = std::move(value); }
+
+    /**
+     * <p> Pattern for matching the Amazon S3 files which will be used for ingestion.
+     * If no KeyPattern is provided, we will use the default hierarchy file structure,
+     * which is same as KeyPattern {prefix}/{component_name}/ * </p>
+     */
+    inline void SetKeyPattern(const char* value) { m_keyPatternHasBeenSet = true; m_keyPattern.assign(value); }
+
+    /**
+     * <p> Pattern for matching the Amazon S3 files which will be used for ingestion.
+     * If no KeyPattern is provided, we will use the default hierarchy file structure,
+     * which is same as KeyPattern {prefix}/{component_name}/ * </p>
+     */
+    inline IngestionS3InputConfiguration& WithKeyPattern(const Aws::String& value) { SetKeyPattern(value); return *this;}
+
+    /**
+     * <p> Pattern for matching the Amazon S3 files which will be used for ingestion.
+     * If no KeyPattern is provided, we will use the default hierarchy file structure,
+     * which is same as KeyPattern {prefix}/{component_name}/ * </p>
+     */
+    inline IngestionS3InputConfiguration& WithKeyPattern(Aws::String&& value) { SetKeyPattern(std::move(value)); return *this;}
+
+    /**
+     * <p> Pattern for matching the Amazon S3 files which will be used for ingestion.
+     * If no KeyPattern is provided, we will use the default hierarchy file structure,
+     * which is same as KeyPattern {prefix}/{component_name}/ * </p>
+     */
+    inline IngestionS3InputConfiguration& WithKeyPattern(const char* value) { SetKeyPattern(value); return *this;}
+
   private:
 
     Aws::String m_bucket;
@@ -142,6 +199,9 @@ namespace Model
 
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
+
+    Aws::String m_keyPattern;
+    bool m_keyPatternHasBeenSet;
   };
 
 } // namespace Model

@@ -40,6 +40,18 @@ GetResourceEventConfigurationResult& GetResourceEventConfigurationResult::operat
 
   }
 
+  if(jsonValue.ValueExists("Join"))
+  {
+    m_join = jsonValue.GetObject("Join");
+
+  }
+
+  if(jsonValue.ValueExists("ConnectionStatus"))
+  {
+    m_connectionStatus = jsonValue.GetObject("ConnectionStatus");
+
+  }
+
 
 
   return *this;

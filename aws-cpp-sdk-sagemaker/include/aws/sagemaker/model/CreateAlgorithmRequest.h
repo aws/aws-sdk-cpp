@@ -274,50 +274,44 @@ namespace Model
 
 
     /**
-     * <p>Specifies configurations for one or more training jobs and that Amazon
-     * SageMaker runs to test the algorithm's training code and, optionally, one or
-     * more batch transform jobs that Amazon SageMaker runs to test the algorithm's
-     * inference code.</p>
+     * <p>Specifies configurations for one or more training jobs and that SageMaker
+     * runs to test the algorithm's training code and, optionally, one or more batch
+     * transform jobs that SageMaker runs to test the algorithm's inference code.</p>
      */
     inline const AlgorithmValidationSpecification& GetValidationSpecification() const{ return m_validationSpecification; }
 
     /**
-     * <p>Specifies configurations for one or more training jobs and that Amazon
-     * SageMaker runs to test the algorithm's training code and, optionally, one or
-     * more batch transform jobs that Amazon SageMaker runs to test the algorithm's
-     * inference code.</p>
+     * <p>Specifies configurations for one or more training jobs and that SageMaker
+     * runs to test the algorithm's training code and, optionally, one or more batch
+     * transform jobs that SageMaker runs to test the algorithm's inference code.</p>
      */
     inline bool ValidationSpecificationHasBeenSet() const { return m_validationSpecificationHasBeenSet; }
 
     /**
-     * <p>Specifies configurations for one or more training jobs and that Amazon
-     * SageMaker runs to test the algorithm's training code and, optionally, one or
-     * more batch transform jobs that Amazon SageMaker runs to test the algorithm's
-     * inference code.</p>
+     * <p>Specifies configurations for one or more training jobs and that SageMaker
+     * runs to test the algorithm's training code and, optionally, one or more batch
+     * transform jobs that SageMaker runs to test the algorithm's inference code.</p>
      */
     inline void SetValidationSpecification(const AlgorithmValidationSpecification& value) { m_validationSpecificationHasBeenSet = true; m_validationSpecification = value; }
 
     /**
-     * <p>Specifies configurations for one or more training jobs and that Amazon
-     * SageMaker runs to test the algorithm's training code and, optionally, one or
-     * more batch transform jobs that Amazon SageMaker runs to test the algorithm's
-     * inference code.</p>
+     * <p>Specifies configurations for one or more training jobs and that SageMaker
+     * runs to test the algorithm's training code and, optionally, one or more batch
+     * transform jobs that SageMaker runs to test the algorithm's inference code.</p>
      */
     inline void SetValidationSpecification(AlgorithmValidationSpecification&& value) { m_validationSpecificationHasBeenSet = true; m_validationSpecification = std::move(value); }
 
     /**
-     * <p>Specifies configurations for one or more training jobs and that Amazon
-     * SageMaker runs to test the algorithm's training code and, optionally, one or
-     * more batch transform jobs that Amazon SageMaker runs to test the algorithm's
-     * inference code.</p>
+     * <p>Specifies configurations for one or more training jobs and that SageMaker
+     * runs to test the algorithm's training code and, optionally, one or more batch
+     * transform jobs that SageMaker runs to test the algorithm's inference code.</p>
      */
     inline CreateAlgorithmRequest& WithValidationSpecification(const AlgorithmValidationSpecification& value) { SetValidationSpecification(value); return *this;}
 
     /**
-     * <p>Specifies configurations for one or more training jobs and that Amazon
-     * SageMaker runs to test the algorithm's training code and, optionally, one or
-     * more batch transform jobs that Amazon SageMaker runs to test the algorithm's
-     * inference code.</p>
+     * <p>Specifies configurations for one or more training jobs and that SageMaker
+     * runs to test the algorithm's training code and, optionally, one or more batch
+     * transform jobs that SageMaker runs to test the algorithm's inference code.</p>
      */
     inline CreateAlgorithmRequest& WithValidationSpecification(AlgorithmValidationSpecification&& value) { SetValidationSpecification(std::move(value)); return *this;}
 

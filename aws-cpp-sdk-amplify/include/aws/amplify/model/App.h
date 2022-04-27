@@ -966,50 +966,56 @@ namespace Model
 
 
     /**
-     * <p>The authentication protocol to use to access the Git repository for an
-     * Amplify app. For a GitHub repository, specify <code>TOKEN</code>. For an Amazon
-     * Web Services CodeCommit repository, specify <code>SIGV4</code>. For GitLab and
-     * Bitbucket repositories, specify <code>SSH</code>.</p>
+     *  <p>This is for internal use.</p>  <p>The Amplify service uses this
+     * parameter to specify the authentication protocol to use to access the Git
+     * repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub
+     * repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository,
+     * and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
      */
     inline const RepositoryCloneMethod& GetRepositoryCloneMethod() const{ return m_repositoryCloneMethod; }
 
     /**
-     * <p>The authentication protocol to use to access the Git repository for an
-     * Amplify app. For a GitHub repository, specify <code>TOKEN</code>. For an Amazon
-     * Web Services CodeCommit repository, specify <code>SIGV4</code>. For GitLab and
-     * Bitbucket repositories, specify <code>SSH</code>.</p>
+     *  <p>This is for internal use.</p>  <p>The Amplify service uses this
+     * parameter to specify the authentication protocol to use to access the Git
+     * repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub
+     * repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository,
+     * and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
      */
     inline bool RepositoryCloneMethodHasBeenSet() const { return m_repositoryCloneMethodHasBeenSet; }
 
     /**
-     * <p>The authentication protocol to use to access the Git repository for an
-     * Amplify app. For a GitHub repository, specify <code>TOKEN</code>. For an Amazon
-     * Web Services CodeCommit repository, specify <code>SIGV4</code>. For GitLab and
-     * Bitbucket repositories, specify <code>SSH</code>.</p>
+     *  <p>This is for internal use.</p>  <p>The Amplify service uses this
+     * parameter to specify the authentication protocol to use to access the Git
+     * repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub
+     * repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository,
+     * and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
      */
     inline void SetRepositoryCloneMethod(const RepositoryCloneMethod& value) { m_repositoryCloneMethodHasBeenSet = true; m_repositoryCloneMethod = value; }
 
     /**
-     * <p>The authentication protocol to use to access the Git repository for an
-     * Amplify app. For a GitHub repository, specify <code>TOKEN</code>. For an Amazon
-     * Web Services CodeCommit repository, specify <code>SIGV4</code>. For GitLab and
-     * Bitbucket repositories, specify <code>SSH</code>.</p>
+     *  <p>This is for internal use.</p>  <p>The Amplify service uses this
+     * parameter to specify the authentication protocol to use to access the Git
+     * repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub
+     * repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository,
+     * and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
      */
     inline void SetRepositoryCloneMethod(RepositoryCloneMethod&& value) { m_repositoryCloneMethodHasBeenSet = true; m_repositoryCloneMethod = std::move(value); }
 
     /**
-     * <p>The authentication protocol to use to access the Git repository for an
-     * Amplify app. For a GitHub repository, specify <code>TOKEN</code>. For an Amazon
-     * Web Services CodeCommit repository, specify <code>SIGV4</code>. For GitLab and
-     * Bitbucket repositories, specify <code>SSH</code>.</p>
+     *  <p>This is for internal use.</p>  <p>The Amplify service uses this
+     * parameter to specify the authentication protocol to use to access the Git
+     * repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub
+     * repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository,
+     * and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
      */
     inline App& WithRepositoryCloneMethod(const RepositoryCloneMethod& value) { SetRepositoryCloneMethod(value); return *this;}
 
     /**
-     * <p>The authentication protocol to use to access the Git repository for an
-     * Amplify app. For a GitHub repository, specify <code>TOKEN</code>. For an Amazon
-     * Web Services CodeCommit repository, specify <code>SIGV4</code>. For GitLab and
-     * Bitbucket repositories, specify <code>SSH</code>.</p>
+     *  <p>This is for internal use.</p>  <p>The Amplify service uses this
+     * parameter to specify the authentication protocol to use to access the Git
+     * repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub
+     * repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository,
+     * and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
      */
     inline App& WithRepositoryCloneMethod(RepositoryCloneMethod&& value) { SetRepositoryCloneMethod(std::move(value)); return *this;}
 

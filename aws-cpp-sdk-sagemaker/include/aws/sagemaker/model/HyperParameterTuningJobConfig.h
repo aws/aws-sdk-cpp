@@ -219,7 +219,7 @@ namespace Model
      * hyperparameter tuning job. This can be one of the following values (the default
      * value is <code>OFF</code>):</p> <dl> <dt>OFF</dt> <dd> <p>Training jobs launched
      * by the hyperparameter tuning job do not use early stopping.</p> </dd>
-     * <dt>AUTO</dt> <dd> <p>Amazon SageMaker stops training jobs launched by the
+     * <dt>AUTO</dt> <dd> <p>SageMaker stops training jobs launched by the
      * hyperparameter tuning job when they are unlikely to perform better than
      * previously completed training jobs. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
@@ -232,7 +232,7 @@ namespace Model
      * hyperparameter tuning job. This can be one of the following values (the default
      * value is <code>OFF</code>):</p> <dl> <dt>OFF</dt> <dd> <p>Training jobs launched
      * by the hyperparameter tuning job do not use early stopping.</p> </dd>
-     * <dt>AUTO</dt> <dd> <p>Amazon SageMaker stops training jobs launched by the
+     * <dt>AUTO</dt> <dd> <p>SageMaker stops training jobs launched by the
      * hyperparameter tuning job when they are unlikely to perform better than
      * previously completed training jobs. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
@@ -245,7 +245,7 @@ namespace Model
      * hyperparameter tuning job. This can be one of the following values (the default
      * value is <code>OFF</code>):</p> <dl> <dt>OFF</dt> <dd> <p>Training jobs launched
      * by the hyperparameter tuning job do not use early stopping.</p> </dd>
-     * <dt>AUTO</dt> <dd> <p>Amazon SageMaker stops training jobs launched by the
+     * <dt>AUTO</dt> <dd> <p>SageMaker stops training jobs launched by the
      * hyperparameter tuning job when they are unlikely to perform better than
      * previously completed training jobs. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
@@ -258,7 +258,7 @@ namespace Model
      * hyperparameter tuning job. This can be one of the following values (the default
      * value is <code>OFF</code>):</p> <dl> <dt>OFF</dt> <dd> <p>Training jobs launched
      * by the hyperparameter tuning job do not use early stopping.</p> </dd>
-     * <dt>AUTO</dt> <dd> <p>Amazon SageMaker stops training jobs launched by the
+     * <dt>AUTO</dt> <dd> <p>SageMaker stops training jobs launched by the
      * hyperparameter tuning job when they are unlikely to perform better than
      * previously completed training jobs. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
@@ -271,7 +271,7 @@ namespace Model
      * hyperparameter tuning job. This can be one of the following values (the default
      * value is <code>OFF</code>):</p> <dl> <dt>OFF</dt> <dd> <p>Training jobs launched
      * by the hyperparameter tuning job do not use early stopping.</p> </dd>
-     * <dt>AUTO</dt> <dd> <p>Amazon SageMaker stops training jobs launched by the
+     * <dt>AUTO</dt> <dd> <p>SageMaker stops training jobs launched by the
      * hyperparameter tuning job when they are unlikely to perform better than
      * previously completed training jobs. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
@@ -284,7 +284,7 @@ namespace Model
      * hyperparameter tuning job. This can be one of the following values (the default
      * value is <code>OFF</code>):</p> <dl> <dt>OFF</dt> <dd> <p>Training jobs launched
      * by the hyperparameter tuning job do not use early stopping.</p> </dd>
-     * <dt>AUTO</dt> <dd> <p>Amazon SageMaker stops training jobs launched by the
+     * <dt>AUTO</dt> <dd> <p>SageMaker stops training jobs launched by the
      * hyperparameter tuning job when they are unlikely to perform better than
      * previously completed training jobs. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop

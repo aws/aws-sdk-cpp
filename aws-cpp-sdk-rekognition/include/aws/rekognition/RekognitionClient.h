@@ -69,6 +69,7 @@
 #include <aws/rekognition/model/TagResourceResult.h>
 #include <aws/rekognition/model/UntagResourceResult.h>
 #include <aws/rekognition/model/UpdateDatasetEntriesResult.h>
+#include <aws/rekognition/model/UpdateStreamProcessorResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -166,6 +167,7 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateDatasetEntriesRequest;
+        class UpdateStreamProcessorRequest;
 
         typedef Aws::Utils::Outcome<CompareFacesResult, RekognitionError> CompareFacesOutcome;
         typedef Aws::Utils::Outcome<CreateCollectionResult, RekognitionError> CreateCollectionOutcome;
@@ -225,6 +227,7 @@ namespace Model
         typedef Aws::Utils::Outcome<TagResourceResult, RekognitionError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, RekognitionError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateDatasetEntriesResult, RekognitionError> UpdateDatasetEntriesOutcome;
+        typedef Aws::Utils::Outcome<UpdateStreamProcessorResult, RekognitionError> UpdateStreamProcessorOutcome;
 
         typedef std::future<CompareFacesOutcome> CompareFacesOutcomeCallable;
         typedef std::future<CreateCollectionOutcome> CreateCollectionOutcomeCallable;
@@ -284,6 +287,7 @@ namespace Model
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateDatasetEntriesOutcome> UpdateDatasetEntriesOutcomeCallable;
+        typedef std::future<UpdateStreamProcessorOutcome> UpdateStreamProcessorOutcomeCallable;
 } // namespace Model
 
   class RekognitionClient;
@@ -346,9 +350,33 @@ namespace Model
     typedef std::function<void(const RekognitionClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::UpdateDatasetEntriesRequest&, const Model::UpdateDatasetEntriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDatasetEntriesResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::UpdateStreamProcessorRequest&, const Model::UpdateStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStreamProcessorResponseReceivedHandler;
 
   /**
-   * <p>This is the Amazon Rekognition API reference.</p>
+   * <p>This is the API Reference for <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/dg/images.html">Amazon
+   * Rekognition Image</a>, <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/what-is.html">Amazon
+   * Rekognition Custom Labels</a>, <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/dg/video.html">Amazon
+   * Rekognition Stored Video</a>, <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/dg/streaming-video.html">Amazon
+   * Rekognition Streaming Video</a>. It provides descriptions of actions, data
+   * types, common parameters, and common errors.</p> <p> <b>Amazon Rekognition
+   * Image</b> </p> <ul> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li> <li> <p/>
+   * </li> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li> <li> <p/>
+   * </li> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li> <li> <p/>
+   * </li> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li> </ul> <p> <b>Amazon
+   * Rekognition Custom Labels</b> </p> <ul> <li> <p/> </li> <li> <p/> </li> <li>
+   * <p/> </li> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li> <li>
+   * <p/> </li> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li> <li>
+   * <p/> </li> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li> </ul> <p> <b>Amazon
+   * Rekognition Video Stored Video</b> </p> <ul> <li> <p/> </li> <li> <p/> </li>
+   * <li> <p/> </li> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li>
+   * <li> <p/> </li> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li>
+   * <li> <p/> </li> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li> </ul> <p>
+   * <b>Amazon Rekognition Video Streaming Video</b> </p> <ul> <li> <p/> </li> <li>
+   * <p/> </li> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li> </ul>
    */
   class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient
   {
@@ -810,21 +838,32 @@ namespace Model
 
         /**
          * <p>Creates an Amazon Rekognition stream processor that you can use to detect and
-         * recognize faces in a streaming video.</p> <p>Amazon Rekognition Video is a
-         * consumer of live video from Amazon Kinesis Video Streams. Amazon Rekognition
-         * Video sends analysis results to Amazon Kinesis Data Streams.</p> <p>You provide
-         * as input a Kinesis video stream (<code>Input</code>) and a Kinesis data stream
-         * (<code>Output</code>) stream. You also specify the face recognition criteria in
-         * <code>Settings</code>. For example, the collection containing faces that you
-         * want to recognize. Use <code>Name</code> to assign an identifier for the stream
-         * processor. You use <code>Name</code> to manage the stream processor. For
+         * recognize faces or to detect labels in a streaming video.</p> <p>Amazon
+         * Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams.
+         * There are two different settings for stream processors in Amazon Rekognition:
+         * detecting faces and detecting labels.</p> <ul> <li> <p>If you are creating a
+         * stream processor for detecting faces, you provide as input a Kinesis video
+         * stream (<code>Input</code>) and a Kinesis data stream (<code>Output</code>)
+         * stream. You also specify the face recognition criteria in <code>Settings</code>.
+         * For example, the collection containing faces that you want to recognize. After
+         * you have finished analyzing a streaming video, use <a>StopStreamProcessor</a> to
+         * stop processing.</p> </li> <li> <p>If you are creating a stream processor to
+         * detect labels, you provide as input a Kinesis video stream (<code>Input</code>),
+         * Amazon S3 bucket information (<code>Output</code>), and an Amazon SNS topic ARN
+         * (<code>NotificationChannel</code>). You can also provide a KMS key ID to encrypt
+         * the data sent to your Amazon S3 bucket. You specify what you want to detect in
+         * <code>ConnectedHomeSettings</code>, such as people, packages and people, or
+         * pets, people, and packages. You can also specify where in the frame you want
+         * Amazon Rekognition to monitor with <code>RegionsOfInterest</code>. When you run
+         * the <a>StartStreamProcessor</a> operation on a label detection stream processor,
+         * you input start and stop information to determine the length of the processing
+         * time.</p> </li> </ul> <p> Use <code>Name</code> to assign an identifier for the
+         * stream processor. You use <code>Name</code> to manage the stream processor. For
          * example, you can start processing the source video by calling
-         * <a>StartStreamProcessor</a> with the <code>Name</code> field. </p> <p>After you
-         * have finished analyzing a streaming video, use <a>StopStreamProcessor</a> to
-         * stop processing. You can delete the stream processor by calling
-         * <a>DeleteStreamProcessor</a>.</p> <p>This operation requires permissions to
-         * perform the <code>rekognition:CreateStreamProcessor</code> action. If you want
-         * to tag your stream processor, you also require permission to perform the
+         * <a>StartStreamProcessor</a> with the <code>Name</code> field. </p> <p>This
+         * operation requires permissions to perform the
+         * <code>rekognition:CreateStreamProcessor</code> action. If you want to tag your
+         * stream processor, you also require permission to perform the
          * <code>rekognition:TagResource</code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateStreamProcessor">AWS
          * API Reference</a></p>
@@ -833,21 +872,32 @@ namespace Model
 
         /**
          * <p>Creates an Amazon Rekognition stream processor that you can use to detect and
-         * recognize faces in a streaming video.</p> <p>Amazon Rekognition Video is a
-         * consumer of live video from Amazon Kinesis Video Streams. Amazon Rekognition
-         * Video sends analysis results to Amazon Kinesis Data Streams.</p> <p>You provide
-         * as input a Kinesis video stream (<code>Input</code>) and a Kinesis data stream
-         * (<code>Output</code>) stream. You also specify the face recognition criteria in
-         * <code>Settings</code>. For example, the collection containing faces that you
-         * want to recognize. Use <code>Name</code> to assign an identifier for the stream
-         * processor. You use <code>Name</code> to manage the stream processor. For
+         * recognize faces or to detect labels in a streaming video.</p> <p>Amazon
+         * Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams.
+         * There are two different settings for stream processors in Amazon Rekognition:
+         * detecting faces and detecting labels.</p> <ul> <li> <p>If you are creating a
+         * stream processor for detecting faces, you provide as input a Kinesis video
+         * stream (<code>Input</code>) and a Kinesis data stream (<code>Output</code>)
+         * stream. You also specify the face recognition criteria in <code>Settings</code>.
+         * For example, the collection containing faces that you want to recognize. After
+         * you have finished analyzing a streaming video, use <a>StopStreamProcessor</a> to
+         * stop processing.</p> </li> <li> <p>If you are creating a stream processor to
+         * detect labels, you provide as input a Kinesis video stream (<code>Input</code>),
+         * Amazon S3 bucket information (<code>Output</code>), and an Amazon SNS topic ARN
+         * (<code>NotificationChannel</code>). You can also provide a KMS key ID to encrypt
+         * the data sent to your Amazon S3 bucket. You specify what you want to detect in
+         * <code>ConnectedHomeSettings</code>, such as people, packages and people, or
+         * pets, people, and packages. You can also specify where in the frame you want
+         * Amazon Rekognition to monitor with <code>RegionsOfInterest</code>. When you run
+         * the <a>StartStreamProcessor</a> operation on a label detection stream processor,
+         * you input start and stop information to determine the length of the processing
+         * time.</p> </li> </ul> <p> Use <code>Name</code> to assign an identifier for the
+         * stream processor. You use <code>Name</code> to manage the stream processor. For
          * example, you can start processing the source video by calling
-         * <a>StartStreamProcessor</a> with the <code>Name</code> field. </p> <p>After you
-         * have finished analyzing a streaming video, use <a>StopStreamProcessor</a> to
-         * stop processing. You can delete the stream processor by calling
-         * <a>DeleteStreamProcessor</a>.</p> <p>This operation requires permissions to
-         * perform the <code>rekognition:CreateStreamProcessor</code> action. If you want
-         * to tag your stream processor, you also require permission to perform the
+         * <a>StartStreamProcessor</a> with the <code>Name</code> field. </p> <p>This
+         * operation requires permissions to perform the
+         * <code>rekognition:CreateStreamProcessor</code> action. If you want to tag your
+         * stream processor, you also require permission to perform the
          * <code>rekognition:TagResource</code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateStreamProcessor">AWS
          * API Reference</a></p>
@@ -858,21 +908,32 @@ namespace Model
 
         /**
          * <p>Creates an Amazon Rekognition stream processor that you can use to detect and
-         * recognize faces in a streaming video.</p> <p>Amazon Rekognition Video is a
-         * consumer of live video from Amazon Kinesis Video Streams. Amazon Rekognition
-         * Video sends analysis results to Amazon Kinesis Data Streams.</p> <p>You provide
-         * as input a Kinesis video stream (<code>Input</code>) and a Kinesis data stream
-         * (<code>Output</code>) stream. You also specify the face recognition criteria in
-         * <code>Settings</code>. For example, the collection containing faces that you
-         * want to recognize. Use <code>Name</code> to assign an identifier for the stream
-         * processor. You use <code>Name</code> to manage the stream processor. For
+         * recognize faces or to detect labels in a streaming video.</p> <p>Amazon
+         * Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams.
+         * There are two different settings for stream processors in Amazon Rekognition:
+         * detecting faces and detecting labels.</p> <ul> <li> <p>If you are creating a
+         * stream processor for detecting faces, you provide as input a Kinesis video
+         * stream (<code>Input</code>) and a Kinesis data stream (<code>Output</code>)
+         * stream. You also specify the face recognition criteria in <code>Settings</code>.
+         * For example, the collection containing faces that you want to recognize. After
+         * you have finished analyzing a streaming video, use <a>StopStreamProcessor</a> to
+         * stop processing.</p> </li> <li> <p>If you are creating a stream processor to
+         * detect labels, you provide as input a Kinesis video stream (<code>Input</code>),
+         * Amazon S3 bucket information (<code>Output</code>), and an Amazon SNS topic ARN
+         * (<code>NotificationChannel</code>). You can also provide a KMS key ID to encrypt
+         * the data sent to your Amazon S3 bucket. You specify what you want to detect in
+         * <code>ConnectedHomeSettings</code>, such as people, packages and people, or
+         * pets, people, and packages. You can also specify where in the frame you want
+         * Amazon Rekognition to monitor with <code>RegionsOfInterest</code>. When you run
+         * the <a>StartStreamProcessor</a> operation on a label detection stream processor,
+         * you input start and stop information to determine the length of the processing
+         * time.</p> </li> </ul> <p> Use <code>Name</code> to assign an identifier for the
+         * stream processor. You use <code>Name</code> to manage the stream processor. For
          * example, you can start processing the source video by calling
-         * <a>StartStreamProcessor</a> with the <code>Name</code> field. </p> <p>After you
-         * have finished analyzing a streaming video, use <a>StopStreamProcessor</a> to
-         * stop processing. You can delete the stream processor by calling
-         * <a>DeleteStreamProcessor</a>.</p> <p>This operation requires permissions to
-         * perform the <code>rekognition:CreateStreamProcessor</code> action. If you want
-         * to tag your stream processor, you also require permission to perform the
+         * <a>StartStreamProcessor</a> with the <code>Name</code> field. </p> <p>This
+         * operation requires permissions to perform the
+         * <code>rekognition:CreateStreamProcessor</code> action. If you want to tag your
+         * stream processor, you also require permission to perform the
          * <code>rekognition:TagResource</code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateStreamProcessor">AWS
          * API Reference</a></p>
@@ -883,8 +944,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified collection. Note that this operation removes all faces
-         * in the collection. For an example, see <a>delete-collection-procedure</a>.</p>
-         * <p>This operation requires permissions to perform the
+         * in the collection. For an example, see <a
+         * href="https://docs.aws.amazon.com/rekognition/latest/dg/delete-collection-procedure.html">Deleting
+         * a collection</a>.</p> <p>This operation requires permissions to perform the
          * <code>rekognition:DeleteCollection</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteCollection">AWS
          * API Reference</a></p>
@@ -893,8 +955,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified collection. Note that this operation removes all faces
-         * in the collection. For an example, see <a>delete-collection-procedure</a>.</p>
-         * <p>This operation requires permissions to perform the
+         * in the collection. For an example, see <a
+         * href="https://docs.aws.amazon.com/rekognition/latest/dg/delete-collection-procedure.html">Deleting
+         * a collection</a>.</p> <p>This operation requires permissions to perform the
          * <code>rekognition:DeleteCollection</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteCollection">AWS
          * API Reference</a></p>
@@ -905,8 +968,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified collection. Note that this operation removes all faces
-         * in the collection. For an example, see <a>delete-collection-procedure</a>.</p>
-         * <p>This operation requires permissions to perform the
+         * in the collection. For an example, see <a
+         * href="https://docs.aws.amazon.com/rekognition/latest/dg/delete-collection-procedure.html">Deleting
+         * a collection</a>.</p> <p>This operation requires permissions to perform the
          * <code>rekognition:DeleteCollection</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteCollection">AWS
          * API Reference</a></p>
@@ -1495,8 +1559,8 @@ namespace Model
          * <p>Detects instances of real-world entities within an image (JPEG or PNG)
          * provided as input. This includes objects like flower, tree, and table; events
          * like wedding, graduation, and birthday party; and concepts like landscape,
-         * evening, and nature. </p> <p>For an example, see Analyzing Images Stored in an
-         * Amazon S3 Bucket in the Amazon Rekognition Developer Guide.</p>  <p>
+         * evening, and nature. </p> <p>For an example, see Analyzing images stored in an
+         * Amazon S3 bucket in the Amazon Rekognition Developer Guide.</p>  <p>
          * <code>DetectLabels</code> does not support the detection of activities. However,
          * activity detection is supported for label detection in videos. For more
          * information, see StartLabelDetection in the Amazon Rekognition Developer
@@ -1547,8 +1611,8 @@ namespace Model
          * <p>Detects instances of real-world entities within an image (JPEG or PNG)
          * provided as input. This includes objects like flower, tree, and table; events
          * like wedding, graduation, and birthday party; and concepts like landscape,
-         * evening, and nature. </p> <p>For an example, see Analyzing Images Stored in an
-         * Amazon S3 Bucket in the Amazon Rekognition Developer Guide.</p>  <p>
+         * evening, and nature. </p> <p>For an example, see Analyzing images stored in an
+         * Amazon S3 bucket in the Amazon Rekognition Developer Guide.</p>  <p>
          * <code>DetectLabels</code> does not support the detection of activities. However,
          * activity detection is supported for label detection in videos. For more
          * information, see StartLabelDetection in the Amazon Rekognition Developer
@@ -1601,8 +1665,8 @@ namespace Model
          * <p>Detects instances of real-world entities within an image (JPEG or PNG)
          * provided as input. This includes objects like flower, tree, and table; events
          * like wedding, graduation, and birthday party; and concepts like landscape,
-         * evening, and nature. </p> <p>For an example, see Analyzing Images Stored in an
-         * Amazon S3 Bucket in the Amazon Rekognition Developer Guide.</p>  <p>
+         * evening, and nature. </p> <p>For an example, see Analyzing images stored in an
+         * Amazon S3 bucket in the Amazon Rekognition Developer Guide.</p>  <p>
          * <code>DetectLabels</code> does not support the detection of activities. However,
          * activity detection is supported for label detection in videos. For more
          * information, see StartLabelDetection in the Amazon Rekognition Developer
@@ -1820,7 +1884,7 @@ namespace Model
          * determine whether a <code>TextDetection</code> element is a line of text or a
          * word, use the <code>TextDetection</code> object <code>Type</code> field. </p>
          * <p>To be detected, text must be within +/- 90 degrees orientation of the
-         * horizontal axis.</p> <p>For more information, see DetectText in the Amazon
+         * horizontal axis.</p> <p>For more information, see Detecting text in the Amazon
          * Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectText">AWS
          * API Reference</a></p>
@@ -1850,7 +1914,7 @@ namespace Model
          * determine whether a <code>TextDetection</code> element is a line of text or a
          * word, use the <code>TextDetection</code> object <code>Type</code> field. </p>
          * <p>To be detected, text must be within +/- 90 degrees orientation of the
-         * horizontal axis.</p> <p>For more information, see DetectText in the Amazon
+         * horizontal axis.</p> <p>For more information, see Detecting text in the Amazon
          * Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectText">AWS
          * API Reference</a></p>
@@ -1882,7 +1946,7 @@ namespace Model
          * determine whether a <code>TextDetection</code> element is a line of text or a
          * word, use the <code>TextDetection</code> object <code>Type</code> field. </p>
          * <p>To be detected, text must be within +/- 90 degrees orientation of the
-         * horizontal axis.</p> <p>For more information, see DetectText in the Amazon
+         * horizontal axis.</p> <p>For more information, see Detecting text in the Amazon
          * Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectText">AWS
          * API Reference</a></p>
@@ -1965,7 +2029,7 @@ namespace Model
          * <p>Gets the name and additional information about a celebrity based on their
          * Amazon Rekognition ID. The additional information is returned as an array of
          * URLs. If there is no additional information about the celebrity, this list is
-         * empty.</p> <p>For more information, see Recognizing Celebrities in an Image in
+         * empty.</p> <p>For more information, see Getting information about a celebrity in
          * the Amazon Rekognition Developer Guide.</p> <p>This operation requires
          * permissions to perform the <code>rekognition:GetCelebrityInfo</code> action.
          * </p><p><h3>See Also:</h3>   <a
@@ -1978,7 +2042,7 @@ namespace Model
          * <p>Gets the name and additional information about a celebrity based on their
          * Amazon Rekognition ID. The additional information is returned as an array of
          * URLs. If there is no additional information about the celebrity, this list is
-         * empty.</p> <p>For more information, see Recognizing Celebrities in an Image in
+         * empty.</p> <p>For more information, see Getting information about a celebrity in
          * the Amazon Rekognition Developer Guide.</p> <p>This operation requires
          * permissions to perform the <code>rekognition:GetCelebrityInfo</code> action.
          * </p><p><h3>See Also:</h3>   <a
@@ -1993,7 +2057,7 @@ namespace Model
          * <p>Gets the name and additional information about a celebrity based on their
          * Amazon Rekognition ID. The additional information is returned as an array of
          * URLs. If there is no additional information about the celebrity, this list is
-         * empty.</p> <p>For more information, see Recognizing Celebrities in an Image in
+         * empty.</p> <p>For more information, see Getting information about a celebrity in
          * the Amazon Rekognition Developer Guide.</p> <p>This operation requires
          * permissions to perform the <code>rekognition:GetCelebrityInfo</code> action.
          * </p><p><h3>See Also:</h3>   <a
@@ -2188,7 +2252,7 @@ namespace Model
          * <code>GetContentModeration</code> and populate the <code>NextToken</code>
          * request parameter with the value of <code>NextToken</code> returned from the
          * previous call to <code>GetContentModeration</code>.</p> <p>For more information,
-         * see Content moderation in the Amazon Rekognition Developer Guide.</p><p><h3>See
+         * see moderating content in the Amazon Rekognition Developer Guide.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetContentModeration">AWS
          * API Reference</a></p>
@@ -2228,7 +2292,7 @@ namespace Model
          * <code>GetContentModeration</code> and populate the <code>NextToken</code>
          * request parameter with the value of <code>NextToken</code> returned from the
          * previous call to <code>GetContentModeration</code>.</p> <p>For more information,
-         * see Content moderation in the Amazon Rekognition Developer Guide.</p><p><h3>See
+         * see moderating content in the Amazon Rekognition Developer Guide.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetContentModeration">AWS
          * API Reference</a></p>
@@ -2270,7 +2334,7 @@ namespace Model
          * <code>GetContentModeration</code> and populate the <code>NextToken</code>
          * request parameter with the value of <code>NextToken</code> returned from the
          * previous call to <code>GetContentModeration</code>.</p> <p>For more information,
-         * see Content moderation in the Amazon Rekognition Developer Guide.</p><p><h3>See
+         * see moderating content in the Amazon Rekognition Developer Guide.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetContentModeration">AWS
          * API Reference</a></p>
@@ -2696,7 +2760,7 @@ namespace Model
          * <code>GetSegmentDetection</code> and populate the <code>NextToken</code> request
          * parameter with the token value returned from the previous call to
          * <code>GetSegmentDetection</code>.</p> <p>For more information, see Detecting
-         * Video Segments in Stored Video in the Amazon Rekognition Developer
+         * video segments in stored video in the Amazon Rekognition Developer
          * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetSegmentDetection">AWS
          * API Reference</a></p>
@@ -2732,7 +2796,7 @@ namespace Model
          * <code>GetSegmentDetection</code> and populate the <code>NextToken</code> request
          * parameter with the token value returned from the previous call to
          * <code>GetSegmentDetection</code>.</p> <p>For more information, see Detecting
-         * Video Segments in Stored Video in the Amazon Rekognition Developer
+         * video segments in stored video in the Amazon Rekognition Developer
          * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetSegmentDetection">AWS
          * API Reference</a></p>
@@ -2770,7 +2834,7 @@ namespace Model
          * <code>GetSegmentDetection</code> and populate the <code>NextToken</code> request
          * parameter with the token value returned from the previous call to
          * <code>GetSegmentDetection</code>.</p> <p>For more information, see Detecting
-         * Video Segments in Stored Video in the Amazon Rekognition Developer
+         * video segments in stored video in the Amazon Rekognition Developer
          * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetSegmentDetection">AWS
          * API Reference</a></p>
@@ -2881,7 +2945,7 @@ namespace Model
          * vector, and stores it in the backend database. Amazon Rekognition uses feature
          * vectors when it performs face match and search operations using the
          * <a>SearchFaces</a> and <a>SearchFacesByImage</a> operations.</p> <p>For more
-         * information, see Adding Faces to a Collection in the Amazon Rekognition
+         * information, see Adding faces to a collection in the Amazon Rekognition
          * Developer Guide.</p> <p>To get the number of faces in a collection, call
          * <a>DescribeCollection</a>. </p> <p>If you're using version 1.0 of the face
          * detection model, <code>IndexFaces</code> indexes the 15 largest faces in the
@@ -2931,13 +2995,13 @@ namespace Model
          * attributes (by using the <code>detectionAttributes</code> parameter), Amazon
          * Rekognition returns detailed facial attributes, such as facial landmarks (for
          * example, location of eye and mouth) and other facial attributes. If you provide
-         * the same image, specify the same collection, use the same external ID, and use
-         * the same model version in the <code>IndexFaces</code> operation, Amazon
-         * Rekognition doesn't save duplicate face metadata.</p> <p/> <p>The input image is
-         * passed either as base64-encoded image bytes, or as a reference to an image in an
-         * Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations,
-         * passing image bytes isn't supported. The image must be formatted as a PNG or
-         * JPEG file. </p> <p>This operation requires permissions to perform the
+         * the same image, specify the same collection, and use the same external ID in the
+         * <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate
+         * face metadata.</p> <p/> <p>The input image is passed either as base64-encoded
+         * image bytes, or as a reference to an image in an Amazon S3 bucket. If you use
+         * the AWS CLI to call Amazon Rekognition operations, passing image bytes isn't
+         * supported. The image must be formatted as a PNG or JPEG file. </p> <p>This
+         * operation requires permissions to perform the
          * <code>rekognition:IndexFaces</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">AWS
          * API Reference</a></p>
@@ -2952,7 +3016,7 @@ namespace Model
          * vector, and stores it in the backend database. Amazon Rekognition uses feature
          * vectors when it performs face match and search operations using the
          * <a>SearchFaces</a> and <a>SearchFacesByImage</a> operations.</p> <p>For more
-         * information, see Adding Faces to a Collection in the Amazon Rekognition
+         * information, see Adding faces to a collection in the Amazon Rekognition
          * Developer Guide.</p> <p>To get the number of faces in a collection, call
          * <a>DescribeCollection</a>. </p> <p>If you're using version 1.0 of the face
          * detection model, <code>IndexFaces</code> indexes the 15 largest faces in the
@@ -3002,13 +3066,13 @@ namespace Model
          * attributes (by using the <code>detectionAttributes</code> parameter), Amazon
          * Rekognition returns detailed facial attributes, such as facial landmarks (for
          * example, location of eye and mouth) and other facial attributes. If you provide
-         * the same image, specify the same collection, use the same external ID, and use
-         * the same model version in the <code>IndexFaces</code> operation, Amazon
-         * Rekognition doesn't save duplicate face metadata.</p> <p/> <p>The input image is
-         * passed either as base64-encoded image bytes, or as a reference to an image in an
-         * Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations,
-         * passing image bytes isn't supported. The image must be formatted as a PNG or
-         * JPEG file. </p> <p>This operation requires permissions to perform the
+         * the same image, specify the same collection, and use the same external ID in the
+         * <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate
+         * face metadata.</p> <p/> <p>The input image is passed either as base64-encoded
+         * image bytes, or as a reference to an image in an Amazon S3 bucket. If you use
+         * the AWS CLI to call Amazon Rekognition operations, passing image bytes isn't
+         * supported. The image must be formatted as a PNG or JPEG file. </p> <p>This
+         * operation requires permissions to perform the
          * <code>rekognition:IndexFaces</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">AWS
          * API Reference</a></p>
@@ -3025,7 +3089,7 @@ namespace Model
          * vector, and stores it in the backend database. Amazon Rekognition uses feature
          * vectors when it performs face match and search operations using the
          * <a>SearchFaces</a> and <a>SearchFacesByImage</a> operations.</p> <p>For more
-         * information, see Adding Faces to a Collection in the Amazon Rekognition
+         * information, see Adding faces to a collection in the Amazon Rekognition
          * Developer Guide.</p> <p>To get the number of faces in a collection, call
          * <a>DescribeCollection</a>. </p> <p>If you're using version 1.0 of the face
          * detection model, <code>IndexFaces</code> indexes the 15 largest faces in the
@@ -3075,13 +3139,13 @@ namespace Model
          * attributes (by using the <code>detectionAttributes</code> parameter), Amazon
          * Rekognition returns detailed facial attributes, such as facial landmarks (for
          * example, location of eye and mouth) and other facial attributes. If you provide
-         * the same image, specify the same collection, use the same external ID, and use
-         * the same model version in the <code>IndexFaces</code> operation, Amazon
-         * Rekognition doesn't save duplicate face metadata.</p> <p/> <p>The input image is
-         * passed either as base64-encoded image bytes, or as a reference to an image in an
-         * Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations,
-         * passing image bytes isn't supported. The image must be formatted as a PNG or
-         * JPEG file. </p> <p>This operation requires permissions to perform the
+         * the same image, specify the same collection, and use the same external ID in the
+         * <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate
+         * face metadata.</p> <p/> <p>The input image is passed either as base64-encoded
+         * image bytes, or as a reference to an image in an Amazon S3 bucket. If you use
+         * the AWS CLI to call Amazon Rekognition operations, passing image bytes isn't
+         * supported. The image must be formatted as a PNG or JPEG file. </p> <p>This
+         * operation requires permissions to perform the
          * <code>rekognition:IndexFaces</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">AWS
          * API Reference</a></p>
@@ -3094,7 +3158,7 @@ namespace Model
          * <p>Returns list of collection IDs in your account. If the result is truncated,
          * the response also provides a <code>NextToken</code> that you can use in the
          * subsequent request to fetch the next set of collection IDs.</p> <p>For an
-         * example, see Listing Collections in the Amazon Rekognition Developer Guide.</p>
+         * example, see Listing collections in the Amazon Rekognition Developer Guide.</p>
          * <p>This operation requires permissions to perform the
          * <code>rekognition:ListCollections</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">AWS
@@ -3106,7 +3170,7 @@ namespace Model
          * <p>Returns list of collection IDs in your account. If the result is truncated,
          * the response also provides a <code>NextToken</code> that you can use in the
          * subsequent request to fetch the next set of collection IDs.</p> <p>For an
-         * example, see Listing Collections in the Amazon Rekognition Developer Guide.</p>
+         * example, see Listing collections in the Amazon Rekognition Developer Guide.</p>
          * <p>This operation requires permissions to perform the
          * <code>rekognition:ListCollections</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">AWS
@@ -3120,7 +3184,7 @@ namespace Model
          * <p>Returns list of collection IDs in your account. If the result is truncated,
          * the response also provides a <code>NextToken</code> that you can use in the
          * subsequent request to fetch the next set of collection IDs.</p> <p>For an
-         * example, see Listing Collections in the Amazon Rekognition Developer Guide.</p>
+         * example, see Listing collections in the Amazon Rekognition Developer Guide.</p>
          * <p>This operation requires permissions to perform the
          * <code>rekognition:ListCollections</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">AWS
@@ -3341,7 +3405,7 @@ namespace Model
 
         /**
          * <p>Returns an array of celebrities recognized in the input image. For more
-         * information, see Recognizing Celebrities in the Amazon Rekognition Developer
+         * information, see Recognizing celebrities in the Amazon Rekognition Developer
          * Guide. </p> <p> <code>RecognizeCelebrities</code> returns the 64 largest faces
          * in the image. It lists the recognized celebrities in the
          * <code>CelebrityFaces</code> array and any unrecognized faces in the
@@ -3361,8 +3425,8 @@ namespace Model
          * the input image either as base64-encoded image bytes or as a reference to an
          * image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition
          * operations, passing image bytes is not supported. The image must be either a PNG
-         * or JPEG formatted file. </p> <p>For an example, see Recognizing Celebrities in
-         * an Image in the Amazon Rekognition Developer Guide.</p> <p>This operation
+         * or JPEG formatted file. </p> <p>For an example, see Recognizing celebrities in
+         * an image in the Amazon Rekognition Developer Guide.</p> <p>This operation
          * requires permissions to perform the
          * <code>rekognition:RecognizeCelebrities</code> operation.</p><p><h3>See
          * Also:</h3>   <a
@@ -3373,7 +3437,7 @@ namespace Model
 
         /**
          * <p>Returns an array of celebrities recognized in the input image. For more
-         * information, see Recognizing Celebrities in the Amazon Rekognition Developer
+         * information, see Recognizing celebrities in the Amazon Rekognition Developer
          * Guide. </p> <p> <code>RecognizeCelebrities</code> returns the 64 largest faces
          * in the image. It lists the recognized celebrities in the
          * <code>CelebrityFaces</code> array and any unrecognized faces in the
@@ -3393,8 +3457,8 @@ namespace Model
          * the input image either as base64-encoded image bytes or as a reference to an
          * image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition
          * operations, passing image bytes is not supported. The image must be either a PNG
-         * or JPEG formatted file. </p> <p>For an example, see Recognizing Celebrities in
-         * an Image in the Amazon Rekognition Developer Guide.</p> <p>This operation
+         * or JPEG formatted file. </p> <p>For an example, see Recognizing celebrities in
+         * an image in the Amazon Rekognition Developer Guide.</p> <p>This operation
          * requires permissions to perform the
          * <code>rekognition:RecognizeCelebrities</code> operation.</p><p><h3>See
          * Also:</h3>   <a
@@ -3407,7 +3471,7 @@ namespace Model
 
         /**
          * <p>Returns an array of celebrities recognized in the input image. For more
-         * information, see Recognizing Celebrities in the Amazon Rekognition Developer
+         * information, see Recognizing celebrities in the Amazon Rekognition Developer
          * Guide. </p> <p> <code>RecognizeCelebrities</code> returns the 64 largest faces
          * in the image. It lists the recognized celebrities in the
          * <code>CelebrityFaces</code> array and any unrecognized faces in the
@@ -3427,8 +3491,8 @@ namespace Model
          * the input image either as base64-encoded image bytes or as a reference to an
          * image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition
          * operations, passing image bytes is not supported. The image must be either a PNG
-         * or JPEG formatted file. </p> <p>For an example, see Recognizing Celebrities in
-         * an Image in the Amazon Rekognition Developer Guide.</p> <p>This operation
+         * or JPEG formatted file. </p> <p>For an example, see Recognizing celebrities in
+         * an image in the Amazon Rekognition Developer Guide.</p> <p>This operation
          * requires permissions to perform the
          * <code>rekognition:RecognizeCelebrities</code> operation.</p><p><h3>See
          * Also:</h3>   <a
@@ -3450,8 +3514,8 @@ namespace Model
          * specifically, it is an array of metadata for each face match that is found.
          * Along with the metadata, the response also includes a <code>confidence</code>
          * value for each face match, indicating the confidence that the specific face
-         * matches the input face. </p> <p>For an example, see Searching for a Face Using
-         * Its Face ID in the Amazon Rekognition Developer Guide.</p> <p>This operation
+         * matches the input face. </p> <p>For an example, see Searching for a face using
+         * its face ID in the Amazon Rekognition Developer Guide.</p> <p>This operation
          * requires permissions to perform the <code>rekognition:SearchFaces</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">AWS
@@ -3470,8 +3534,8 @@ namespace Model
          * specifically, it is an array of metadata for each face match that is found.
          * Along with the metadata, the response also includes a <code>confidence</code>
          * value for each face match, indicating the confidence that the specific face
-         * matches the input face. </p> <p>For an example, see Searching for a Face Using
-         * Its Face ID in the Amazon Rekognition Developer Guide.</p> <p>This operation
+         * matches the input face. </p> <p>For an example, see Searching for a face using
+         * its face ID in the Amazon Rekognition Developer Guide.</p> <p>This operation
          * requires permissions to perform the <code>rekognition:SearchFaces</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">AWS
@@ -3492,8 +3556,8 @@ namespace Model
          * specifically, it is an array of metadata for each face match that is found.
          * Along with the metadata, the response also includes a <code>confidence</code>
          * value for each face match, indicating the confidence that the specific face
-         * matches the input face. </p> <p>For an example, see Searching for a Face Using
-         * Its Face ID in the Amazon Rekognition Developer Guide.</p> <p>This operation
+         * matches the input face. </p> <p>For an example, see Searching for a face using
+         * its face ID in the Amazon Rekognition Developer Guide.</p> <p>This operation
          * requires permissions to perform the <code>rekognition:SearchFaces</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">AWS
@@ -3640,7 +3704,7 @@ namespace Model
          * published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
          * <a>GetCelebrityRecognition</a> and pass the job identifier (<code>JobId</code>)
          * from the initial call to <code>StartCelebrityRecognition</code>. </p> <p>For
-         * more information, see Recognizing Celebrities in the Amazon Rekognition
+         * more information, see Recognizing celebrities in the Amazon Rekognition
          * Developer Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartCelebrityRecognition">AWS
          * API Reference</a></p>
@@ -3660,7 +3724,7 @@ namespace Model
          * published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
          * <a>GetCelebrityRecognition</a> and pass the job identifier (<code>JobId</code>)
          * from the initial call to <code>StartCelebrityRecognition</code>. </p> <p>For
-         * more information, see Recognizing Celebrities in the Amazon Rekognition
+         * more information, see Recognizing celebrities in the Amazon Rekognition
          * Developer Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartCelebrityRecognition">AWS
          * API Reference</a></p>
@@ -3682,7 +3746,7 @@ namespace Model
          * published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
          * <a>GetCelebrityRecognition</a> and pass the job identifier (<code>JobId</code>)
          * from the initial call to <code>StartCelebrityRecognition</code>. </p> <p>For
-         * more information, see Recognizing Celebrities in the Amazon Rekognition
+         * more information, see Recognizing celebrities in the Amazon Rekognition
          * Developer Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartCelebrityRecognition">AWS
          * API Reference</a></p>
@@ -3707,9 +3771,9 @@ namespace Model
          * analysis, first check that the status value published to the Amazon SNS topic is
          * <code>SUCCEEDED</code>. If so, call <a>GetContentModeration</a> and pass the job
          * identifier (<code>JobId</code>) from the initial call to
-         * <code>StartContentModeration</code>. </p> <p>For more information, see Content
-         * moderation in the Amazon Rekognition Developer Guide.</p><p><h3>See Also:</h3>  
-         * <a
+         * <code>StartContentModeration</code>. </p> <p>For more information, see
+         * Moderating content in the Amazon Rekognition Developer Guide.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartContentModeration">AWS
          * API Reference</a></p>
          */
@@ -3731,9 +3795,9 @@ namespace Model
          * analysis, first check that the status value published to the Amazon SNS topic is
          * <code>SUCCEEDED</code>. If so, call <a>GetContentModeration</a> and pass the job
          * identifier (<code>JobId</code>) from the initial call to
-         * <code>StartContentModeration</code>. </p> <p>For more information, see Content
-         * moderation in the Amazon Rekognition Developer Guide.</p><p><h3>See Also:</h3>  
-         * <a
+         * <code>StartContentModeration</code>. </p> <p>For more information, see
+         * Moderating content in the Amazon Rekognition Developer Guide.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartContentModeration">AWS
          * API Reference</a></p>
          *
@@ -3757,9 +3821,9 @@ namespace Model
          * analysis, first check that the status value published to the Amazon SNS topic is
          * <code>SUCCEEDED</code>. If so, call <a>GetContentModeration</a> and pass the job
          * identifier (<code>JobId</code>) from the initial call to
-         * <code>StartContentModeration</code>. </p> <p>For more information, see Content
-         * moderation in the Amazon Rekognition Developer Guide.</p><p><h3>See Also:</h3>  
-         * <a
+         * <code>StartContentModeration</code>. </p> <p>For more information, see
+         * Moderating content in the Amazon Rekognition Developer Guide.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartContentModeration">AWS
          * API Reference</a></p>
          *
@@ -3780,7 +3844,7 @@ namespace Model
          * is <code>SUCCEEDED</code>. If so, call <a>GetFaceDetection</a> and pass the job
          * identifier (<code>JobId</code>) from the initial call to
          * <code>StartFaceDetection</code>.</p> <p>For more information, see Detecting
-         * Faces in a Stored Video in the Amazon Rekognition Developer Guide.</p><p><h3>See
+         * faces in a stored video in the Amazon Rekognition Developer Guide.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceDetection">AWS
          * API Reference</a></p>
@@ -3800,7 +3864,7 @@ namespace Model
          * is <code>SUCCEEDED</code>. If so, call <a>GetFaceDetection</a> and pass the job
          * identifier (<code>JobId</code>) from the initial call to
          * <code>StartFaceDetection</code>.</p> <p>For more information, see Detecting
-         * Faces in a Stored Video in the Amazon Rekognition Developer Guide.</p><p><h3>See
+         * faces in a stored video in the Amazon Rekognition Developer Guide.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceDetection">AWS
          * API Reference</a></p>
@@ -3822,7 +3886,7 @@ namespace Model
          * is <code>SUCCEEDED</code>. If so, call <a>GetFaceDetection</a> and pass the job
          * identifier (<code>JobId</code>) from the initial call to
          * <code>StartFaceDetection</code>.</p> <p>For more information, see Detecting
-         * Faces in a Stored Video in the Amazon Rekognition Developer Guide.</p><p><h3>See
+         * faces in a stored video in the Amazon Rekognition Developer Guide.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceDetection">AWS
          * API Reference</a></p>
@@ -3843,8 +3907,9 @@ namespace Model
          * check that the status value published to the Amazon SNS topic is
          * <code>SUCCEEDED</code>. If so, call <a>GetFaceSearch</a> and pass the job
          * identifier (<code>JobId</code>) from the initial call to
-         * <code>StartFaceSearch</code>. For more information, see
-         * <a>procedure-person-search-videos</a>.</p><p><h3>See Also:</h3>   <a
+         * <code>StartFaceSearch</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/rekognition/latest/dg/procedure-person-search-videos.html">Searching
+         * stored videos for faces</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceSearch">AWS
          * API Reference</a></p>
          */
@@ -3862,8 +3927,9 @@ namespace Model
          * check that the status value published to the Amazon SNS topic is
          * <code>SUCCEEDED</code>. If so, call <a>GetFaceSearch</a> and pass the job
          * identifier (<code>JobId</code>) from the initial call to
-         * <code>StartFaceSearch</code>. For more information, see
-         * <a>procedure-person-search-videos</a>.</p><p><h3>See Also:</h3>   <a
+         * <code>StartFaceSearch</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/rekognition/latest/dg/procedure-person-search-videos.html">Searching
+         * stored videos for faces</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceSearch">AWS
          * API Reference</a></p>
          *
@@ -3883,8 +3949,9 @@ namespace Model
          * check that the status value published to the Amazon SNS topic is
          * <code>SUCCEEDED</code>. If so, call <a>GetFaceSearch</a> and pass the job
          * identifier (<code>JobId</code>) from the initial call to
-         * <code>StartFaceSearch</code>. For more information, see
-         * <a>procedure-person-search-videos</a>.</p><p><h3>See Also:</h3>   <a
+         * <code>StartFaceSearch</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/rekognition/latest/dg/procedure-person-search-videos.html">Searching
+         * stored videos for faces</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceSearch">AWS
          * API Reference</a></p>
          *
@@ -4084,7 +4151,7 @@ namespace Model
          * value published to the Amazon SNS topic is <code>SUCCEEDED</code>. if so, call
          * <a>GetSegmentDetection</a> and pass the job identifier (<code>JobId</code>) from
          * the initial call to <code>StartSegmentDetection</code>. </p> <p>For more
-         * information, see Detecting Video Segments in Stored Video in the Amazon
+         * information, see Detecting video segments in stored video in the Amazon
          * Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartSegmentDetection">AWS
          * API Reference</a></p>
@@ -4109,7 +4176,7 @@ namespace Model
          * value published to the Amazon SNS topic is <code>SUCCEEDED</code>. if so, call
          * <a>GetSegmentDetection</a> and pass the job identifier (<code>JobId</code>) from
          * the initial call to <code>StartSegmentDetection</code>. </p> <p>For more
-         * information, see Detecting Video Segments in Stored Video in the Amazon
+         * information, see Detecting video segments in stored video in the Amazon
          * Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartSegmentDetection">AWS
          * API Reference</a></p>
@@ -4136,7 +4203,7 @@ namespace Model
          * value published to the Amazon SNS topic is <code>SUCCEEDED</code>. if so, call
          * <a>GetSegmentDetection</a> and pass the job identifier (<code>JobId</code>) from
          * the initial call to <code>StartSegmentDetection</code>. </p> <p>For more
-         * information, see Detecting Video Segments in Stored Video in the Amazon
+         * information, see Detecting video segments in stored video in the Amazon
          * Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartSegmentDetection">AWS
          * API Reference</a></p>
@@ -4149,8 +4216,10 @@ namespace Model
          * <p>Starts processing a stream processor. You create a stream processor by
          * calling <a>CreateStreamProcessor</a>. To tell <code>StartStreamProcessor</code>
          * which stream processor to start, use the value of the <code>Name</code> field
-         * specified in the call to <code>CreateStreamProcessor</code>.</p><p><h3>See
-         * Also:</h3>   <a
+         * specified in the call to <code>CreateStreamProcessor</code>.</p> <p>If you are
+         * using a label detection stream processor to detect labels, you need to provide a
+         * <code>Start selector</code> and a <code>Stop selector</code> to determine the
+         * length of the stream processing time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartStreamProcessor">AWS
          * API Reference</a></p>
          */
@@ -4160,8 +4229,10 @@ namespace Model
          * <p>Starts processing a stream processor. You create a stream processor by
          * calling <a>CreateStreamProcessor</a>. To tell <code>StartStreamProcessor</code>
          * which stream processor to start, use the value of the <code>Name</code> field
-         * specified in the call to <code>CreateStreamProcessor</code>.</p><p><h3>See
-         * Also:</h3>   <a
+         * specified in the call to <code>CreateStreamProcessor</code>.</p> <p>If you are
+         * using a label detection stream processor to detect labels, you need to provide a
+         * <code>Start selector</code> and a <code>Stop selector</code> to determine the
+         * length of the stream processing time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartStreamProcessor">AWS
          * API Reference</a></p>
          *
@@ -4173,8 +4244,10 @@ namespace Model
          * <p>Starts processing a stream processor. You create a stream processor by
          * calling <a>CreateStreamProcessor</a>. To tell <code>StartStreamProcessor</code>
          * which stream processor to start, use the value of the <code>Name</code> field
-         * specified in the call to <code>CreateStreamProcessor</code>.</p><p><h3>See
-         * Also:</h3>   <a
+         * specified in the call to <code>CreateStreamProcessor</code>.</p> <p>If you are
+         * using a label detection stream processor to detect labels, you need to provide a
+         * <code>Start selector</code> and a <code>Stop selector</code> to determine the
+         * length of the stream processing time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartStreamProcessor">AWS
          * API Reference</a></p>
          *
@@ -4461,6 +4534,37 @@ namespace Model
          */
         virtual void UpdateDatasetEntriesAsync(const Model::UpdateDatasetEntriesRequest& request, const UpdateDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p> Allows you to update a stream processor. You can change some settings and
+         * regions of interest and delete certain parameters. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UpdateStreamProcessor">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateStreamProcessorOutcome UpdateStreamProcessor(const Model::UpdateStreamProcessorRequest& request) const;
+
+        /**
+         * <p> Allows you to update a stream processor. You can change some settings and
+         * regions of interest and delete certain parameters. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UpdateStreamProcessor">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateStreamProcessorOutcomeCallable UpdateStreamProcessorCallable(const Model::UpdateStreamProcessorRequest& request) const;
+
+        /**
+         * <p> Allows you to update a stream processor. You can change some settings and
+         * regions of interest and delete certain parameters. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UpdateStreamProcessor">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateStreamProcessorAsync(const Model::UpdateStreamProcessorRequest& request, const UpdateStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -4523,6 +4627,7 @@ namespace Model
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDatasetEntriesAsyncHelper(const Model::UpdateDatasetEntriesRequest& request, const UpdateDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateStreamProcessorAsyncHelper(const Model::UpdateStreamProcessorRequest& request, const UpdateStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

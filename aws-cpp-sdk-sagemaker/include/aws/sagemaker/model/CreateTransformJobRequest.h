@@ -247,7 +247,10 @@ namespace Model
      * size of a record in MB, divide the size of your dataset by the number of
      * records. To ensure that the records fit within the maximum payload size, we
      * recommend using a slightly larger value. The default value is <code>6</code> MB.
-     * </p> <p>For cases where the payload might be arbitrarily large and is
+     * </p> <p>The value of <code>MaxPayloadInMB</code> cannot be greater than 100 MB.
+     * If you specify the <code>MaxConcurrentTransforms</code> parameter, the value of
+     * <code>(MaxConcurrentTransforms * MaxPayloadInMB)</code> also cannot exceed 100
+     * MB.</p> <p>For cases where the payload might be arbitrarily large and is
      * transmitted using HTTP chunked encoding, set the value to <code>0</code>. This
      * feature works only in supported algorithms. Currently, Amazon SageMaker built-in
      * algorithms do not support HTTP chunked encoding.</p>
@@ -261,7 +264,10 @@ namespace Model
      * size of a record in MB, divide the size of your dataset by the number of
      * records. To ensure that the records fit within the maximum payload size, we
      * recommend using a slightly larger value. The default value is <code>6</code> MB.
-     * </p> <p>For cases where the payload might be arbitrarily large and is
+     * </p> <p>The value of <code>MaxPayloadInMB</code> cannot be greater than 100 MB.
+     * If you specify the <code>MaxConcurrentTransforms</code> parameter, the value of
+     * <code>(MaxConcurrentTransforms * MaxPayloadInMB)</code> also cannot exceed 100
+     * MB.</p> <p>For cases where the payload might be arbitrarily large and is
      * transmitted using HTTP chunked encoding, set the value to <code>0</code>. This
      * feature works only in supported algorithms. Currently, Amazon SageMaker built-in
      * algorithms do not support HTTP chunked encoding.</p>
@@ -275,7 +281,10 @@ namespace Model
      * size of a record in MB, divide the size of your dataset by the number of
      * records. To ensure that the records fit within the maximum payload size, we
      * recommend using a slightly larger value. The default value is <code>6</code> MB.
-     * </p> <p>For cases where the payload might be arbitrarily large and is
+     * </p> <p>The value of <code>MaxPayloadInMB</code> cannot be greater than 100 MB.
+     * If you specify the <code>MaxConcurrentTransforms</code> parameter, the value of
+     * <code>(MaxConcurrentTransforms * MaxPayloadInMB)</code> also cannot exceed 100
+     * MB.</p> <p>For cases where the payload might be arbitrarily large and is
      * transmitted using HTTP chunked encoding, set the value to <code>0</code>. This
      * feature works only in supported algorithms. Currently, Amazon SageMaker built-in
      * algorithms do not support HTTP chunked encoding.</p>
@@ -289,7 +298,10 @@ namespace Model
      * size of a record in MB, divide the size of your dataset by the number of
      * records. To ensure that the records fit within the maximum payload size, we
      * recommend using a slightly larger value. The default value is <code>6</code> MB.
-     * </p> <p>For cases where the payload might be arbitrarily large and is
+     * </p> <p>The value of <code>MaxPayloadInMB</code> cannot be greater than 100 MB.
+     * If you specify the <code>MaxConcurrentTransforms</code> parameter, the value of
+     * <code>(MaxConcurrentTransforms * MaxPayloadInMB)</code> also cannot exceed 100
+     * MB.</p> <p>For cases where the payload might be arbitrarily large and is
      * transmitted using HTTP chunked encoding, set the value to <code>0</code>. This
      * feature works only in supported algorithms. Currently, Amazon SageMaker built-in
      * algorithms do not support HTTP chunked encoding.</p>
