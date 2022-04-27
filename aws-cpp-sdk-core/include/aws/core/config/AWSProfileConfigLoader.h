@@ -104,6 +104,10 @@ namespace Aws
 
             using ProfilesContainer = Aws::Map<Aws::String, Aws::Config::Profile>;
 
+            // Delete copy c-tor and assignment operator
+            AWSProfileConfigLoader() = default;
+            AWSProfileConfigLoader(const AWSProfileConfigLoader&) = delete;
+            const AWSProfileConfigLoader& operator=(AWSProfileConfigLoader&) = delete;
         protected:
             /**
              * Subclasses override this method to implement fetching the profiles.

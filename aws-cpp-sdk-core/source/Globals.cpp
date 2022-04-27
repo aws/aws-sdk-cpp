@@ -54,6 +54,7 @@ namespace Aws
         Aws::SetDefaultClientBootstrap(nullptr);
         Aws::SetDefaultTlsConnectionOptions(nullptr);
         Aws::Delete(g_apiHandle);
+        g_apiHandle = nullptr;
     }
 
     static Utils::EnumParseOverflowContainer* g_enumOverflow;
