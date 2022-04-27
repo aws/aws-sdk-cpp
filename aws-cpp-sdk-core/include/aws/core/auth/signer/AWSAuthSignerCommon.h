@@ -18,16 +18,6 @@ namespace Aws
     namespace Auth
     {
         AWS_CORE_API extern const char SIGNATURE[];
-
-        namespace Common
-        {
-            /**
-             * Helper functions used across different signers
-             */
-            Aws::String CanonicalizeRequestSigningString(Aws::Http::HttpRequest &request, bool urlEscapePath);
-
-            Aws::Http::HeaderValueCollection CanonicalizeHeaders(Http::HeaderValueCollection &&headers);
-        }
     } // namespace Client
 } // namespace Aws
 
