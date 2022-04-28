@@ -283,6 +283,31 @@ namespace Model
      */
     inline DescribeKeyPairsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>If <code>true</code>, the public key material is included in the
+     * response.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool GetIncludePublicKey() const{ return m_includePublicKey; }
+
+    /**
+     * <p>If <code>true</code>, the public key material is included in the
+     * response.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool IncludePublicKeyHasBeenSet() const { return m_includePublicKeyHasBeenSet; }
+
+    /**
+     * <p>If <code>true</code>, the public key material is included in the
+     * response.</p> <p>Default: <code>false</code> </p>
+     */
+    inline void SetIncludePublicKey(bool value) { m_includePublicKeyHasBeenSet = true; m_includePublicKey = value; }
+
+    /**
+     * <p>If <code>true</code>, the public key material is included in the
+     * response.</p> <p>Default: <code>false</code> </p>
+     */
+    inline DescribeKeyPairsRequest& WithIncludePublicKey(bool value) { SetIncludePublicKey(value); return *this;}
+
   private:
 
     Aws::Vector<Filter> m_filters;
@@ -296,6 +321,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    bool m_includePublicKey;
+    bool m_includePublicKeyHasBeenSet;
   };
 
 } // namespace Model

@@ -1047,8 +1047,11 @@ namespace Model
 
         /**
          * <p>Disassociates GuardDuty member accounts (to the current GuardDuty
-         * administrator account) specified by the account IDs.</p><p><h3>See Also:</h3>  
-         * <a
+         * administrator account) specified by the account IDs. Member accounts added
+         * through <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_invitations.html">Invitation</a>
+         * get deleted from the current GuardDuty administrator account after 30 days of
+         * disassociation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateMembers">AWS
          * API Reference</a></p>
          */
@@ -1056,8 +1059,11 @@ namespace Model
 
         /**
          * <p>Disassociates GuardDuty member accounts (to the current GuardDuty
-         * administrator account) specified by the account IDs.</p><p><h3>See Also:</h3>  
-         * <a
+         * administrator account) specified by the account IDs. Member accounts added
+         * through <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_invitations.html">Invitation</a>
+         * get deleted from the current GuardDuty administrator account after 30 days of
+         * disassociation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateMembers">AWS
          * API Reference</a></p>
          *
@@ -1067,8 +1073,11 @@ namespace Model
 
         /**
          * <p>Disassociates GuardDuty member accounts (to the current GuardDuty
-         * administrator account) specified by the account IDs.</p><p><h3>See Also:</h3>  
-         * <a
+         * administrator account) specified by the account IDs. Member accounts added
+         * through <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_invitations.html">Invitation</a>
+         * get deleted from the current GuardDuty administrator account after 30 days of
+         * disassociation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateMembers">AWS
          * API Reference</a></p>
          *

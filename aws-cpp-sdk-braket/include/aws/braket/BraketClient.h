@@ -124,7 +124,10 @@ namespace Model
 
   /**
    * <p>The Amazon Braket API Reference provides information about the operations and
-   * structures supported in Amazon Braket.</p>
+   * structures supported in Amazon Braket.</p> <p>Additional Resources:</p> <ul>
+   * <li> <p> <a
+   * href="https://docs.aws.amazon.com/braket/latest/developerguide/what-is-braket.html">Amazon
+   * Braket Developer Guide</a> </p> </li> </ul>
    */
   class AWS_BRAKET_API BraketClient : public Aws::Client::AWSJsonClient
   {
@@ -254,15 +257,31 @@ namespace Model
         virtual void CreateQuantumTaskAsync(const Model::CreateQuantumTaskRequest& request, const CreateQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the devices available in Amazon Braket.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/GetDevice">AWS
+         * <p>Retrieves the devices available in Amazon Braket.</p>  <p>For backwards
+         * compatibility with older versions of BraketSchemas, OpenQASM information is
+         * omitted from GetDevice API calls. To get this information the user-agent needs
+         * to present a recent version of the BraketSchemas (1.8.0 or later). The Braket
+         * SDK automatically reports this for you. If you do not see OpenQASM results in
+         * the GetDevice response when using a Braket SDK, you may need to set
+         * AWS_EXECUTION_ENV environment variable to configure user-agent. See the code
+         * examples provided below for how to do this for the AWS CLI, Boto3, and the Go,
+         * Java, and JavaScript/TypeScript SDKs.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/GetDevice">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDeviceOutcome GetDevice(const Model::GetDeviceRequest& request) const;
 
         /**
-         * <p>Retrieves the devices available in Amazon Braket.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/GetDevice">AWS
+         * <p>Retrieves the devices available in Amazon Braket.</p>  <p>For backwards
+         * compatibility with older versions of BraketSchemas, OpenQASM information is
+         * omitted from GetDevice API calls. To get this information the user-agent needs
+         * to present a recent version of the BraketSchemas (1.8.0 or later). The Braket
+         * SDK automatically reports this for you. If you do not see OpenQASM results in
+         * the GetDevice response when using a Braket SDK, you may need to set
+         * AWS_EXECUTION_ENV environment variable to configure user-agent. See the code
+         * examples provided below for how to do this for the AWS CLI, Boto3, and the Go,
+         * Java, and JavaScript/TypeScript SDKs.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/GetDevice">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -270,8 +289,16 @@ namespace Model
         virtual Model::GetDeviceOutcomeCallable GetDeviceCallable(const Model::GetDeviceRequest& request) const;
 
         /**
-         * <p>Retrieves the devices available in Amazon Braket.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/GetDevice">AWS
+         * <p>Retrieves the devices available in Amazon Braket.</p>  <p>For backwards
+         * compatibility with older versions of BraketSchemas, OpenQASM information is
+         * omitted from GetDevice API calls. To get this information the user-agent needs
+         * to present a recent version of the BraketSchemas (1.8.0 or later). The Braket
+         * SDK automatically reports this for you. If you do not see OpenQASM results in
+         * the GetDevice response when using a Braket SDK, you may need to set
+         * AWS_EXECUTION_ENV environment variable to configure user-agent. See the code
+         * examples provided below for how to do this for the AWS CLI, Boto3, and the Go,
+         * Java, and JavaScript/TypeScript SDKs.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/GetDevice">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.

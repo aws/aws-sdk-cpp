@@ -68,6 +68,12 @@ DescribeRuleGroupMetadataResult& DescribeRuleGroupMetadataResult::operator =(con
 
   }
 
+  if(jsonValue.ValueExists("LastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+
+  }
+
 
 
   return *this;

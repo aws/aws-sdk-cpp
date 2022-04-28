@@ -770,7 +770,26 @@ namespace Model
         virtual void DeleteAssessmentFrameworkShareAsync(const Model::DeleteAssessmentFrameworkShareRequest& request, const DeleteAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deletes an assessment report from an assessment in Audit Manager.
+         * <p>Deletes an assessment report in Audit Manager. </p> <p>When you run the
+         * <code>DeleteAssessmentReport</code> operation, Audit Manager attempts to delete
+         * the following data:</p> <ol> <li> <p>The specified assessment report that’s
+         * stored in your S3 bucket</p> </li> <li> <p>The associated metadata that’s stored
+         * in Audit Manager</p> </li> </ol> <p>If Audit Manager can’t access the assessment
+         * report in your S3 bucket, the report isn’t deleted. In this event, the
+         * <code>DeleteAssessmentReport</code> operation doesn’t fail. Instead, it proceeds
+         * to delete the associated metadata only. You must then delete the assessment
+         * report from the S3 bucket yourself. </p> <p>This scenario happens when Audit
+         * Manager receives a <code>403 (Forbidden)</code> or <code>404 (Not Found)</code>
+         * error from Amazon S3. To avoid this, make sure that your S3 bucket is available,
+         * and that you configured the correct permissions for Audit Manager to delete
+         * resources in your S3 bucket. For an example permissions policy that you can use,
+         * see <a
+         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/security_iam_id-based-policy-examples.html#full-administrator-access-assessment-report-destination">Assessment
+         * report destination permissions</a> in the <i>Audit Manager User Guide</i>. For
+         * information about the issues that could cause a <code>403 (Forbidden)</code> or
+         * <code>404 (Not Found</code>) error from Amazon S3, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+         * of Error Codes</a> in the <i>Amazon Simple Storage Service API Reference</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessmentReport">AWS
          * API Reference</a></p>
@@ -778,7 +797,26 @@ namespace Model
         virtual Model::DeleteAssessmentReportOutcome DeleteAssessmentReport(const Model::DeleteAssessmentReportRequest& request) const;
 
         /**
-         * <p> Deletes an assessment report from an assessment in Audit Manager.
+         * <p>Deletes an assessment report in Audit Manager. </p> <p>When you run the
+         * <code>DeleteAssessmentReport</code> operation, Audit Manager attempts to delete
+         * the following data:</p> <ol> <li> <p>The specified assessment report that’s
+         * stored in your S3 bucket</p> </li> <li> <p>The associated metadata that’s stored
+         * in Audit Manager</p> </li> </ol> <p>If Audit Manager can’t access the assessment
+         * report in your S3 bucket, the report isn’t deleted. In this event, the
+         * <code>DeleteAssessmentReport</code> operation doesn’t fail. Instead, it proceeds
+         * to delete the associated metadata only. You must then delete the assessment
+         * report from the S3 bucket yourself. </p> <p>This scenario happens when Audit
+         * Manager receives a <code>403 (Forbidden)</code> or <code>404 (Not Found)</code>
+         * error from Amazon S3. To avoid this, make sure that your S3 bucket is available,
+         * and that you configured the correct permissions for Audit Manager to delete
+         * resources in your S3 bucket. For an example permissions policy that you can use,
+         * see <a
+         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/security_iam_id-based-policy-examples.html#full-administrator-access-assessment-report-destination">Assessment
+         * report destination permissions</a> in the <i>Audit Manager User Guide</i>. For
+         * information about the issues that could cause a <code>403 (Forbidden)</code> or
+         * <code>404 (Not Found</code>) error from Amazon S3, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+         * of Error Codes</a> in the <i>Amazon Simple Storage Service API Reference</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessmentReport">AWS
          * API Reference</a></p>
@@ -788,7 +826,26 @@ namespace Model
         virtual Model::DeleteAssessmentReportOutcomeCallable DeleteAssessmentReportCallable(const Model::DeleteAssessmentReportRequest& request) const;
 
         /**
-         * <p> Deletes an assessment report from an assessment in Audit Manager.
+         * <p>Deletes an assessment report in Audit Manager. </p> <p>When you run the
+         * <code>DeleteAssessmentReport</code> operation, Audit Manager attempts to delete
+         * the following data:</p> <ol> <li> <p>The specified assessment report that’s
+         * stored in your S3 bucket</p> </li> <li> <p>The associated metadata that’s stored
+         * in Audit Manager</p> </li> </ol> <p>If Audit Manager can’t access the assessment
+         * report in your S3 bucket, the report isn’t deleted. In this event, the
+         * <code>DeleteAssessmentReport</code> operation doesn’t fail. Instead, it proceeds
+         * to delete the associated metadata only. You must then delete the assessment
+         * report from the S3 bucket yourself. </p> <p>This scenario happens when Audit
+         * Manager receives a <code>403 (Forbidden)</code> or <code>404 (Not Found)</code>
+         * error from Amazon S3. To avoid this, make sure that your S3 bucket is available,
+         * and that you configured the correct permissions for Audit Manager to delete
+         * resources in your S3 bucket. For an example permissions policy that you can use,
+         * see <a
+         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/security_iam_id-based-policy-examples.html#full-administrator-access-assessment-report-destination">Assessment
+         * report destination permissions</a> in the <i>Audit Manager User Guide</i>. For
+         * information about the issues that could cause a <code>403 (Forbidden)</code> or
+         * <code>404 (Not Found</code>) error from Amazon S3, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+         * of Error Codes</a> in the <i>Amazon Simple Storage Service API Reference</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessmentReport">AWS
          * API Reference</a></p>

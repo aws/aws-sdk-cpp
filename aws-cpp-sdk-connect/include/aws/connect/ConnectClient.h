@@ -81,6 +81,7 @@
 #include <aws/connect/model/ListUseCasesResult.h>
 #include <aws/connect/model/ListUserHierarchyGroupsResult.h>
 #include <aws/connect/model/ListUsersResult.h>
+#include <aws/connect/model/PutUserStatusResult.h>
 #include <aws/connect/model/ResumeContactRecordingResult.h>
 #include <aws/connect/model/SearchAvailablePhoneNumbersResult.h>
 #include <aws/connect/model/SearchUsersResult.h>
@@ -235,6 +236,7 @@ namespace Model
         class ListUseCasesRequest;
         class ListUserHierarchyGroupsRequest;
         class ListUsersRequest;
+        class PutUserStatusRequest;
         class ReleasePhoneNumberRequest;
         class ResumeContactRecordingRequest;
         class SearchAvailablePhoneNumbersRequest;
@@ -379,6 +381,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListUseCasesResult, ConnectError> ListUseCasesOutcome;
         typedef Aws::Utils::Outcome<ListUserHierarchyGroupsResult, ConnectError> ListUserHierarchyGroupsOutcome;
         typedef Aws::Utils::Outcome<ListUsersResult, ConnectError> ListUsersOutcome;
+        typedef Aws::Utils::Outcome<PutUserStatusResult, ConnectError> PutUserStatusOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> ReleasePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<ResumeContactRecordingResult, ConnectError> ResumeContactRecordingOutcome;
         typedef Aws::Utils::Outcome<SearchAvailablePhoneNumbersResult, ConnectError> SearchAvailablePhoneNumbersOutcome;
@@ -523,6 +526,7 @@ namespace Model
         typedef std::future<ListUseCasesOutcome> ListUseCasesOutcomeCallable;
         typedef std::future<ListUserHierarchyGroupsOutcome> ListUserHierarchyGroupsOutcomeCallable;
         typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
+        typedef std::future<PutUserStatusOutcome> PutUserStatusOutcomeCallable;
         typedef std::future<ReleasePhoneNumberOutcome> ReleasePhoneNumberOutcomeCallable;
         typedef std::future<ResumeContactRecordingOutcome> ResumeContactRecordingOutcomeCallable;
         typedef std::future<SearchAvailablePhoneNumbersOutcome> SearchAvailablePhoneNumbersOutcomeCallable;
@@ -670,6 +674,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::ListUseCasesRequest&, const Model::ListUseCasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUseCasesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListUserHierarchyGroupsRequest&, const Model::ListUserHierarchyGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserHierarchyGroupsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::PutUserStatusRequest&, const Model::PutUserStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutUserStatusResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ReleasePhoneNumberRequest&, const Model::ReleasePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReleasePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ResumeContactRecordingRequest&, const Model::ResumeContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeContactRecordingResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchAvailablePhoneNumbersRequest&, const Model::SearchAvailablePhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAvailablePhoneNumbersResponseReceivedHandler;
@@ -3780,6 +3785,52 @@ namespace Model
         virtual void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Changes the current status of a user or agent in Amazon Connect. If the agent
+         * is currently handling a contact, this sets the agent's next status.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-agent-status.html">Agent
+         * status</a> and <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-next-status.html">Set
+         * your next status</a> in the <i>Amazon Connect Administrator
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PutUserStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutUserStatusOutcome PutUserStatus(const Model::PutUserStatusRequest& request) const;
+
+        /**
+         * <p>Changes the current status of a user or agent in Amazon Connect. If the agent
+         * is currently handling a contact, this sets the agent's next status.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-agent-status.html">Agent
+         * status</a> and <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-next-status.html">Set
+         * your next status</a> in the <i>Amazon Connect Administrator
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PutUserStatus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutUserStatusOutcomeCallable PutUserStatusCallable(const Model::PutUserStatusRequest& request) const;
+
+        /**
+         * <p>Changes the current status of a user or agent in Amazon Connect. If the agent
+         * is currently handling a contact, this sets the agent's next status.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-agent-status.html">Agent
+         * status</a> and <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-next-status.html">Set
+         * your next status</a> in the <i>Amazon Connect Administrator
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PutUserStatus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutUserStatusAsync(const Model::PutUserStatusRequest& request, const PutUserStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Releases a phone number previously claimed to an Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReleasePhoneNumber">AWS
@@ -5549,6 +5600,7 @@ namespace Model
         void ListUseCasesAsyncHelper(const Model::ListUseCasesRequest& request, const ListUseCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUserHierarchyGroupsAsyncHelper(const Model::ListUserHierarchyGroupsRequest& request, const ListUserHierarchyGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutUserStatusAsyncHelper(const Model::PutUserStatusRequest& request, const PutUserStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ReleasePhoneNumberAsyncHelper(const Model::ReleasePhoneNumberRequest& request, const ReleasePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResumeContactRecordingAsyncHelper(const Model::ResumeContactRecordingRequest& request, const ResumeContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchAvailablePhoneNumbersAsyncHelper(const Model::SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

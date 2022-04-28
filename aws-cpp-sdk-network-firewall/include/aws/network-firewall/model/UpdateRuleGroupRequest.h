@@ -10,6 +10,7 @@
 #include <aws/network-firewall/model/RuleGroup.h>
 #include <aws/network-firewall/model/RuleGroupType.h>
 #include <aws/network-firewall/model/EncryptionConfiguration.h>
+#include <aws/network-firewall/model/SourceMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -567,6 +568,49 @@ namespace Model
      */
     inline UpdateRuleGroupRequest& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to keep track of updates made to
+     * the originating rule group.</p>
+     */
+    inline const SourceMetadata& GetSourceMetadata() const{ return m_sourceMetadata; }
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to keep track of updates made to
+     * the originating rule group.</p>
+     */
+    inline bool SourceMetadataHasBeenSet() const { return m_sourceMetadataHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to keep track of updates made to
+     * the originating rule group.</p>
+     */
+    inline void SetSourceMetadata(const SourceMetadata& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = value; }
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to keep track of updates made to
+     * the originating rule group.</p>
+     */
+    inline void SetSourceMetadata(SourceMetadata&& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = std::move(value); }
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to keep track of updates made to
+     * the originating rule group.</p>
+     */
+    inline UpdateRuleGroupRequest& WithSourceMetadata(const SourceMetadata& value) { SetSourceMetadata(value); return *this;}
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to keep track of updates made to
+     * the originating rule group.</p>
+     */
+    inline UpdateRuleGroupRequest& WithSourceMetadata(SourceMetadata&& value) { SetSourceMetadata(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_updateToken;
@@ -595,6 +639,9 @@ namespace Model
 
     EncryptionConfiguration m_encryptionConfiguration;
     bool m_encryptionConfigurationHasBeenSet;
+
+    SourceMetadata m_sourceMetadata;
+    bool m_sourceMetadataHasBeenSet;
   };
 
 } // namespace Model

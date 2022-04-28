@@ -23,7 +23,8 @@ UpdateRuleGroupRequest::UpdateRuleGroupRequest() :
     m_descriptionHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
+    m_encryptionConfigurationHasBeenSet(false),
+    m_sourceMetadataHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,12 @@ Aws::String UpdateRuleGroupRequest::SerializePayload() const
   if(m_encryptionConfigurationHasBeenSet)
   {
    payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
+
+  }
+
+  if(m_sourceMetadataHasBeenSet)
+  {
+   payload.WithObject("SourceMetadata", m_sourceMetadata.Jsonize());
 
   }
 

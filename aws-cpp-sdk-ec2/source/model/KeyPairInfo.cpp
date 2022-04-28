@@ -26,7 +26,9 @@ KeyPairInfo::KeyPairInfo() :
     m_keyNameHasBeenSet(false),
     m_keyType(KeyType::NOT_SET),
     m_keyTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_publicKeyHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ KeyPairInfo::KeyPairInfo(const XmlNode& xmlNode) :
     m_keyNameHasBeenSet(false),
     m_keyType(KeyType::NOT_SET),
     m_keyTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_publicKeyHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -83,6 +87,18 @@ KeyPairInfo& KeyPairInfo::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode publicKeyNode = resultNode.FirstChild("publicKey");
+    if(!publicKeyNode.IsNull())
+    {
+      m_publicKey = Aws::Utils::Xml::DecodeEscapedXmlText(publicKeyNode.GetText());
+      m_publicKeyHasBeenSet = true;
+    }
+    XmlNode createTimeNode = resultNode.FirstChild("createTime");
+    if(!createTimeNode.IsNull())
+    {
+      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createTimeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -121,6 +137,16 @@ void KeyPairInfo::OutputToStream(Aws::OStream& oStream, const char* location, un
       }
   }
 
+  if(m_publicKeyHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PublicKey=" << StringUtils::URLEncode(m_publicKey.c_str()) << "&";
+  }
+
+  if(m_createTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
 }
 
 void KeyPairInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -150,6 +176,14 @@ void KeyPairInfo::OutputToStream(Aws::OStream& oStream, const char* location) co
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_publicKeyHasBeenSet)
+  {
+      oStream << location << ".PublicKey=" << StringUtils::URLEncode(m_publicKey.c_str()) << "&";
+  }
+  if(m_createTimeHasBeenSet)
+  {
+      oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/KeyType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -316,6 +317,114 @@ namespace Model
      */
     inline KeyPairInfo& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The public key material.</p>
+     */
+    inline const Aws::String& GetPublicKey() const{ return m_publicKey; }
+
+    /**
+     * <p>The public key material.</p>
+     */
+    inline bool PublicKeyHasBeenSet() const { return m_publicKeyHasBeenSet; }
+
+    /**
+     * <p>The public key material.</p>
+     */
+    inline void SetPublicKey(const Aws::String& value) { m_publicKeyHasBeenSet = true; m_publicKey = value; }
+
+    /**
+     * <p>The public key material.</p>
+     */
+    inline void SetPublicKey(Aws::String&& value) { m_publicKeyHasBeenSet = true; m_publicKey = std::move(value); }
+
+    /**
+     * <p>The public key material.</p>
+     */
+    inline void SetPublicKey(const char* value) { m_publicKeyHasBeenSet = true; m_publicKey.assign(value); }
+
+    /**
+     * <p>The public key material.</p>
+     */
+    inline KeyPairInfo& WithPublicKey(const Aws::String& value) { SetPublicKey(value); return *this;}
+
+    /**
+     * <p>The public key material.</p>
+     */
+    inline KeyPairInfo& WithPublicKey(Aws::String&& value) { SetPublicKey(std::move(value)); return *this;}
+
+    /**
+     * <p>The public key material.</p>
+     */
+    inline KeyPairInfo& WithPublicKey(const char* value) { SetPublicKey(value); return *this;}
+
+
+    /**
+     * <p>If you used Amazon EC2 to create the key pair, this is the date and time when
+     * the key was created, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p> <p>If you imported an existing key pair to
+     * Amazon EC2, this is the date and time the key was imported, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+
+    /**
+     * <p>If you used Amazon EC2 to create the key pair, this is the date and time when
+     * the key was created, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p> <p>If you imported an existing key pair to
+     * Amazon EC2, this is the date and time the key was imported, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p>
+     */
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+
+    /**
+     * <p>If you used Amazon EC2 to create the key pair, this is the date and time when
+     * the key was created, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p> <p>If you imported an existing key pair to
+     * Amazon EC2, this is the date and time the key was imported, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p>
+     */
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+
+    /**
+     * <p>If you used Amazon EC2 to create the key pair, this is the date and time when
+     * the key was created, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p> <p>If you imported an existing key pair to
+     * Amazon EC2, this is the date and time the key was imported, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p>
+     */
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
+
+    /**
+     * <p>If you used Amazon EC2 to create the key pair, this is the date and time when
+     * the key was created, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p> <p>If you imported an existing key pair to
+     * Amazon EC2, this is the date and time the key was imported, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p>
+     */
+    inline KeyPairInfo& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    /**
+     * <p>If you used Amazon EC2 to create the key pair, this is the date and time when
+     * the key was created, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p> <p>If you imported an existing key pair to
+     * Amazon EC2, this is the date and time the key was imported, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time
+     * format</a>, in the UTC time zone.</p>
+     */
+    inline KeyPairInfo& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_keyPairId;
@@ -332,6 +441,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_publicKey;
+    bool m_publicKeyHasBeenSet;
+
+    Aws::Utils::DateTime m_createTime;
+    bool m_createTimeHasBeenSet;
   };
 
 } // namespace Model

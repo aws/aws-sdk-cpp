@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/KeyType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/KeyFormat.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
@@ -198,6 +199,37 @@ namespace Model
      */
     inline CreateKeyPairRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The format of the key pair.</p> <p>Default: <code>pem</code> </p>
+     */
+    inline const KeyFormat& GetKeyFormat() const{ return m_keyFormat; }
+
+    /**
+     * <p>The format of the key pair.</p> <p>Default: <code>pem</code> </p>
+     */
+    inline bool KeyFormatHasBeenSet() const { return m_keyFormatHasBeenSet; }
+
+    /**
+     * <p>The format of the key pair.</p> <p>Default: <code>pem</code> </p>
+     */
+    inline void SetKeyFormat(const KeyFormat& value) { m_keyFormatHasBeenSet = true; m_keyFormat = value; }
+
+    /**
+     * <p>The format of the key pair.</p> <p>Default: <code>pem</code> </p>
+     */
+    inline void SetKeyFormat(KeyFormat&& value) { m_keyFormatHasBeenSet = true; m_keyFormat = std::move(value); }
+
+    /**
+     * <p>The format of the key pair.</p> <p>Default: <code>pem</code> </p>
+     */
+    inline CreateKeyPairRequest& WithKeyFormat(const KeyFormat& value) { SetKeyFormat(value); return *this;}
+
+    /**
+     * <p>The format of the key pair.</p> <p>Default: <code>pem</code> </p>
+     */
+    inline CreateKeyPairRequest& WithKeyFormat(KeyFormat&& value) { SetKeyFormat(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_keyName;
@@ -211,6 +243,9 @@ namespace Model
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;
+
+    KeyFormat m_keyFormat;
+    bool m_keyFormatHasBeenSet;
   };
 
 } // namespace Model

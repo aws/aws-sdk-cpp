@@ -16,7 +16,9 @@ CreateKeyPairRequest::CreateKeyPairRequest() :
     m_dryRunHasBeenSet(false),
     m_keyType(KeyType::NOT_SET),
     m_keyTypeHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_tagSpecificationsHasBeenSet(false),
+    m_keyFormat(KeyFormat::NOT_SET),
+    m_keyFormatHasBeenSet(false)
 {
 }
 
@@ -47,6 +49,11 @@ Aws::String CreateKeyPairRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
+  }
+
+  if(m_keyFormatHasBeenSet)
+  {
+    ss << "KeyFormat=" << KeyFormatMapper::GetNameForKeyFormat(m_keyFormat) << "&";
   }
 
   ss << "Version=2016-11-15";

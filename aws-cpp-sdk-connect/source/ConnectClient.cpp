@@ -115,6 +115,7 @@
 #include <aws/connect/model/ListUseCasesRequest.h>
 #include <aws/connect/model/ListUserHierarchyGroupsRequest.h>
 #include <aws/connect/model/ListUsersRequest.h>
+#include <aws/connect/model/PutUserStatusRequest.h>
 #include <aws/connect/model/ReleasePhoneNumberRequest.h>
 #include <aws/connect/model/ResumeContactRecordingRequest.h>
 #include <aws/connect/model/SearchAvailablePhoneNumbersRequest.h>
@@ -3478,6 +3479,44 @@ void ConnectClient::ListUsersAsync(const ListUsersRequest& request, const ListUs
 void ConnectClient::ListUsersAsyncHelper(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListUsers(request), context);
+}
+
+PutUserStatusOutcome ConnectClient::PutUserStatus(const PutUserStatusRequest& request) const
+{
+  if (!request.UserIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutUserStatus", "Required field: UserId, is not set");
+    return PutUserStatusOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+  }
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutUserStatus", "Required field: InstanceId, is not set");
+    return PutUserStatusOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetUserId());
+  uri.AddPathSegments("/status");
+  return PutUserStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutUserStatusOutcomeCallable ConnectClient::PutUserStatusCallable(const PutUserStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutUserStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutUserStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::PutUserStatusAsync(const PutUserStatusRequest& request, const PutUserStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutUserStatusAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::PutUserStatusAsyncHelper(const PutUserStatusRequest& request, const PutUserStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutUserStatus(request), context);
 }
 
 ReleasePhoneNumberOutcome ConnectClient::ReleasePhoneNumber(const ReleasePhoneNumberRequest& request) const
