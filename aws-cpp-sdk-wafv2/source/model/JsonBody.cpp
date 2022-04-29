@@ -23,7 +23,9 @@ JsonBody::JsonBody() :
     m_matchScope(JsonMatchScope::NOT_SET),
     m_matchScopeHasBeenSet(false),
     m_invalidFallbackBehavior(BodyParsingFallbackBehavior::NOT_SET),
-    m_invalidFallbackBehaviorHasBeenSet(false)
+    m_invalidFallbackBehaviorHasBeenSet(false),
+    m_oversizeHandling(OversizeHandling::NOT_SET),
+    m_oversizeHandlingHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ JsonBody::JsonBody(JsonView jsonValue) :
     m_matchScope(JsonMatchScope::NOT_SET),
     m_matchScopeHasBeenSet(false),
     m_invalidFallbackBehavior(BodyParsingFallbackBehavior::NOT_SET),
-    m_invalidFallbackBehaviorHasBeenSet(false)
+    m_invalidFallbackBehaviorHasBeenSet(false),
+    m_oversizeHandling(OversizeHandling::NOT_SET),
+    m_oversizeHandlingHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +64,13 @@ JsonBody& JsonBody::operator =(JsonView jsonValue)
     m_invalidFallbackBehaviorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OversizeHandling"))
+  {
+    m_oversizeHandling = OversizeHandlingMapper::GetOversizeHandlingForName(jsonValue.GetString("OversizeHandling"));
+
+    m_oversizeHandlingHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -81,6 +92,11 @@ JsonValue JsonBody::Jsonize() const
   if(m_invalidFallbackBehaviorHasBeenSet)
   {
    payload.WithString("InvalidFallbackBehavior", BodyParsingFallbackBehaviorMapper::GetNameForBodyParsingFallbackBehavior(m_invalidFallbackBehavior));
+  }
+
+  if(m_oversizeHandlingHasBeenSet)
+  {
+   payload.WithString("OversizeHandling", OversizeHandlingMapper::GetNameForOversizeHandling(m_oversizeHandling));
   }
 
   return payload;

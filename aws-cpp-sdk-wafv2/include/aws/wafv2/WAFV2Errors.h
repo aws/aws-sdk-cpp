@@ -48,6 +48,7 @@ enum class WAFV2Errors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   W_A_F_ASSOCIATED_ITEM= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  W_A_F_CONFIGURATION_WARNING,
   W_A_F_DUPLICATE_ITEM,
   W_A_F_EXPIRED_MANAGED_RULE_GROUP_VERSION,
   W_A_F_INTERNAL_ERROR,

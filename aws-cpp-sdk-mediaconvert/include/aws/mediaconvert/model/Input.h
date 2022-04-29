@@ -17,6 +17,7 @@
 #include <aws/mediaconvert/model/InputScanType.h>
 #include <aws/mediaconvert/model/InputPsiControl.h>
 #include <aws/mediaconvert/model/InputTimecodeSource.h>
+#include <aws/mediaconvert/model/InputVideoGenerator.h>
 #include <aws/mediaconvert/model/VideoSelector.h>
 #include <aws/mediaconvert/model/AudioSelectorGroup.h>
 #include <aws/mediaconvert/model/AudioSelector.h>
@@ -1368,6 +1369,61 @@ namespace Model
 
 
     /**
+     * Use this setting if you do not have a video input or if you want to add black
+     * video frames before, or after, other inputs. When you include Video generator,
+     * MediaConvert creates a video input with black frames and without an audio track.
+     * You can specify a value for Video generator, or you can specify an Input file,
+     * but you cannot specify both.
+     */
+    inline const InputVideoGenerator& GetVideoGenerator() const{ return m_videoGenerator; }
+
+    /**
+     * Use this setting if you do not have a video input or if you want to add black
+     * video frames before, or after, other inputs. When you include Video generator,
+     * MediaConvert creates a video input with black frames and without an audio track.
+     * You can specify a value for Video generator, or you can specify an Input file,
+     * but you cannot specify both.
+     */
+    inline bool VideoGeneratorHasBeenSet() const { return m_videoGeneratorHasBeenSet; }
+
+    /**
+     * Use this setting if you do not have a video input or if you want to add black
+     * video frames before, or after, other inputs. When you include Video generator,
+     * MediaConvert creates a video input with black frames and without an audio track.
+     * You can specify a value for Video generator, or you can specify an Input file,
+     * but you cannot specify both.
+     */
+    inline void SetVideoGenerator(const InputVideoGenerator& value) { m_videoGeneratorHasBeenSet = true; m_videoGenerator = value; }
+
+    /**
+     * Use this setting if you do not have a video input or if you want to add black
+     * video frames before, or after, other inputs. When you include Video generator,
+     * MediaConvert creates a video input with black frames and without an audio track.
+     * You can specify a value for Video generator, or you can specify an Input file,
+     * but you cannot specify both.
+     */
+    inline void SetVideoGenerator(InputVideoGenerator&& value) { m_videoGeneratorHasBeenSet = true; m_videoGenerator = std::move(value); }
+
+    /**
+     * Use this setting if you do not have a video input or if you want to add black
+     * video frames before, or after, other inputs. When you include Video generator,
+     * MediaConvert creates a video input with black frames and without an audio track.
+     * You can specify a value for Video generator, or you can specify an Input file,
+     * but you cannot specify both.
+     */
+    inline Input& WithVideoGenerator(const InputVideoGenerator& value) { SetVideoGenerator(value); return *this;}
+
+    /**
+     * Use this setting if you do not have a video input or if you want to add black
+     * video frames before, or after, other inputs. When you include Video generator,
+     * MediaConvert creates a video input with black frames and without an audio track.
+     * You can specify a value for Video generator, or you can specify an Input file,
+     * but you cannot specify both.
+     */
+    inline Input& WithVideoGenerator(InputVideoGenerator&& value) { SetVideoGenerator(std::move(value)); return *this;}
+
+
+    /**
      * Input video selectors contain the video settings for the input. Each of your
      * inputs can have up to one video selector.
      */
@@ -1464,6 +1520,9 @@ namespace Model
 
     Aws::String m_timecodeStart;
     bool m_timecodeStartHasBeenSet;
+
+    InputVideoGenerator m_videoGenerator;
+    bool m_videoGeneratorHasBeenSet;
 
     VideoSelector m_videoSelector;
     bool m_videoSelectorHasBeenSet;

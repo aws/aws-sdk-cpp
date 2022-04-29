@@ -141,120 +141,112 @@ namespace Model
 
 
     /**
-     * <p>The name of the plugin for which you want detailed results. If the document
-     * contains only one plugin, you can omit the name and details for that plugin. If
-     * the document contains more than one plugin, you must specify the name of the
-     * plugin for which you want to view details.</p> <p>Plugin names are also referred
-     * to as <i>step names</i> in Systems Manager documents (SSM documents). For
-     * example, <code>aws:RunShellScript</code> is a plugin.</p> <p>To find the
+     * <p>The name of the step for which you want detailed results. If the document
+     * contains only one step, you can omit the name and details for that step. If the
+     * document contains more than one step, you must specify the name of the step for
+     * which you want to view details. Be sure to specify the name of the step, not the
+     * name of a plugin like <code>aws:RunShellScript</code>.</p> <p>To find the
      * <code>PluginName</code>, check the document content and find the name of the
-     * plugin. Alternatively, use <a>ListCommandInvocations</a> with the
-     * <code>CommandId</code> and <code>Details</code> parameters. The
+     * step you want details for. Alternatively, use <a>ListCommandInvocations</a> with
+     * the <code>CommandId</code> and <code>Details</code> parameters. The
      * <code>PluginName</code> is the <code>Name</code> attribute of the
      * <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
      */
     inline const Aws::String& GetPluginName() const{ return m_pluginName; }
 
     /**
-     * <p>The name of the plugin for which you want detailed results. If the document
-     * contains only one plugin, you can omit the name and details for that plugin. If
-     * the document contains more than one plugin, you must specify the name of the
-     * plugin for which you want to view details.</p> <p>Plugin names are also referred
-     * to as <i>step names</i> in Systems Manager documents (SSM documents). For
-     * example, <code>aws:RunShellScript</code> is a plugin.</p> <p>To find the
+     * <p>The name of the step for which you want detailed results. If the document
+     * contains only one step, you can omit the name and details for that step. If the
+     * document contains more than one step, you must specify the name of the step for
+     * which you want to view details. Be sure to specify the name of the step, not the
+     * name of a plugin like <code>aws:RunShellScript</code>.</p> <p>To find the
      * <code>PluginName</code>, check the document content and find the name of the
-     * plugin. Alternatively, use <a>ListCommandInvocations</a> with the
-     * <code>CommandId</code> and <code>Details</code> parameters. The
+     * step you want details for. Alternatively, use <a>ListCommandInvocations</a> with
+     * the <code>CommandId</code> and <code>Details</code> parameters. The
      * <code>PluginName</code> is the <code>Name</code> attribute of the
      * <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
      */
     inline bool PluginNameHasBeenSet() const { return m_pluginNameHasBeenSet; }
 
     /**
-     * <p>The name of the plugin for which you want detailed results. If the document
-     * contains only one plugin, you can omit the name and details for that plugin. If
-     * the document contains more than one plugin, you must specify the name of the
-     * plugin for which you want to view details.</p> <p>Plugin names are also referred
-     * to as <i>step names</i> in Systems Manager documents (SSM documents). For
-     * example, <code>aws:RunShellScript</code> is a plugin.</p> <p>To find the
+     * <p>The name of the step for which you want detailed results. If the document
+     * contains only one step, you can omit the name and details for that step. If the
+     * document contains more than one step, you must specify the name of the step for
+     * which you want to view details. Be sure to specify the name of the step, not the
+     * name of a plugin like <code>aws:RunShellScript</code>.</p> <p>To find the
      * <code>PluginName</code>, check the document content and find the name of the
-     * plugin. Alternatively, use <a>ListCommandInvocations</a> with the
-     * <code>CommandId</code> and <code>Details</code> parameters. The
+     * step you want details for. Alternatively, use <a>ListCommandInvocations</a> with
+     * the <code>CommandId</code> and <code>Details</code> parameters. The
      * <code>PluginName</code> is the <code>Name</code> attribute of the
      * <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
      */
     inline void SetPluginName(const Aws::String& value) { m_pluginNameHasBeenSet = true; m_pluginName = value; }
 
     /**
-     * <p>The name of the plugin for which you want detailed results. If the document
-     * contains only one plugin, you can omit the name and details for that plugin. If
-     * the document contains more than one plugin, you must specify the name of the
-     * plugin for which you want to view details.</p> <p>Plugin names are also referred
-     * to as <i>step names</i> in Systems Manager documents (SSM documents). For
-     * example, <code>aws:RunShellScript</code> is a plugin.</p> <p>To find the
+     * <p>The name of the step for which you want detailed results. If the document
+     * contains only one step, you can omit the name and details for that step. If the
+     * document contains more than one step, you must specify the name of the step for
+     * which you want to view details. Be sure to specify the name of the step, not the
+     * name of a plugin like <code>aws:RunShellScript</code>.</p> <p>To find the
      * <code>PluginName</code>, check the document content and find the name of the
-     * plugin. Alternatively, use <a>ListCommandInvocations</a> with the
-     * <code>CommandId</code> and <code>Details</code> parameters. The
+     * step you want details for. Alternatively, use <a>ListCommandInvocations</a> with
+     * the <code>CommandId</code> and <code>Details</code> parameters. The
      * <code>PluginName</code> is the <code>Name</code> attribute of the
      * <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
      */
     inline void SetPluginName(Aws::String&& value) { m_pluginNameHasBeenSet = true; m_pluginName = std::move(value); }
 
     /**
-     * <p>The name of the plugin for which you want detailed results. If the document
-     * contains only one plugin, you can omit the name and details for that plugin. If
-     * the document contains more than one plugin, you must specify the name of the
-     * plugin for which you want to view details.</p> <p>Plugin names are also referred
-     * to as <i>step names</i> in Systems Manager documents (SSM documents). For
-     * example, <code>aws:RunShellScript</code> is a plugin.</p> <p>To find the
+     * <p>The name of the step for which you want detailed results. If the document
+     * contains only one step, you can omit the name and details for that step. If the
+     * document contains more than one step, you must specify the name of the step for
+     * which you want to view details. Be sure to specify the name of the step, not the
+     * name of a plugin like <code>aws:RunShellScript</code>.</p> <p>To find the
      * <code>PluginName</code>, check the document content and find the name of the
-     * plugin. Alternatively, use <a>ListCommandInvocations</a> with the
-     * <code>CommandId</code> and <code>Details</code> parameters. The
+     * step you want details for. Alternatively, use <a>ListCommandInvocations</a> with
+     * the <code>CommandId</code> and <code>Details</code> parameters. The
      * <code>PluginName</code> is the <code>Name</code> attribute of the
      * <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
      */
     inline void SetPluginName(const char* value) { m_pluginNameHasBeenSet = true; m_pluginName.assign(value); }
 
     /**
-     * <p>The name of the plugin for which you want detailed results. If the document
-     * contains only one plugin, you can omit the name and details for that plugin. If
-     * the document contains more than one plugin, you must specify the name of the
-     * plugin for which you want to view details.</p> <p>Plugin names are also referred
-     * to as <i>step names</i> in Systems Manager documents (SSM documents). For
-     * example, <code>aws:RunShellScript</code> is a plugin.</p> <p>To find the
+     * <p>The name of the step for which you want detailed results. If the document
+     * contains only one step, you can omit the name and details for that step. If the
+     * document contains more than one step, you must specify the name of the step for
+     * which you want to view details. Be sure to specify the name of the step, not the
+     * name of a plugin like <code>aws:RunShellScript</code>.</p> <p>To find the
      * <code>PluginName</code>, check the document content and find the name of the
-     * plugin. Alternatively, use <a>ListCommandInvocations</a> with the
-     * <code>CommandId</code> and <code>Details</code> parameters. The
+     * step you want details for. Alternatively, use <a>ListCommandInvocations</a> with
+     * the <code>CommandId</code> and <code>Details</code> parameters. The
      * <code>PluginName</code> is the <code>Name</code> attribute of the
      * <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
      */
     inline GetCommandInvocationRequest& WithPluginName(const Aws::String& value) { SetPluginName(value); return *this;}
 
     /**
-     * <p>The name of the plugin for which you want detailed results. If the document
-     * contains only one plugin, you can omit the name and details for that plugin. If
-     * the document contains more than one plugin, you must specify the name of the
-     * plugin for which you want to view details.</p> <p>Plugin names are also referred
-     * to as <i>step names</i> in Systems Manager documents (SSM documents). For
-     * example, <code>aws:RunShellScript</code> is a plugin.</p> <p>To find the
+     * <p>The name of the step for which you want detailed results. If the document
+     * contains only one step, you can omit the name and details for that step. If the
+     * document contains more than one step, you must specify the name of the step for
+     * which you want to view details. Be sure to specify the name of the step, not the
+     * name of a plugin like <code>aws:RunShellScript</code>.</p> <p>To find the
      * <code>PluginName</code>, check the document content and find the name of the
-     * plugin. Alternatively, use <a>ListCommandInvocations</a> with the
-     * <code>CommandId</code> and <code>Details</code> parameters. The
+     * step you want details for. Alternatively, use <a>ListCommandInvocations</a> with
+     * the <code>CommandId</code> and <code>Details</code> parameters. The
      * <code>PluginName</code> is the <code>Name</code> attribute of the
      * <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
      */
     inline GetCommandInvocationRequest& WithPluginName(Aws::String&& value) { SetPluginName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the plugin for which you want detailed results. If the document
-     * contains only one plugin, you can omit the name and details for that plugin. If
-     * the document contains more than one plugin, you must specify the name of the
-     * plugin for which you want to view details.</p> <p>Plugin names are also referred
-     * to as <i>step names</i> in Systems Manager documents (SSM documents). For
-     * example, <code>aws:RunShellScript</code> is a plugin.</p> <p>To find the
+     * <p>The name of the step for which you want detailed results. If the document
+     * contains only one step, you can omit the name and details for that step. If the
+     * document contains more than one step, you must specify the name of the step for
+     * which you want to view details. Be sure to specify the name of the step, not the
+     * name of a plugin like <code>aws:RunShellScript</code>.</p> <p>To find the
      * <code>PluginName</code>, check the document content and find the name of the
-     * plugin. Alternatively, use <a>ListCommandInvocations</a> with the
-     * <code>CommandId</code> and <code>Details</code> parameters. The
+     * step you want details for. Alternatively, use <a>ListCommandInvocations</a> with
+     * the <code>CommandId</code> and <code>Details</code> parameters. The
      * <code>PluginName</code> is the <code>Name</code> attribute of the
      * <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
      */

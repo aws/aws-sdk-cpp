@@ -298,6 +298,55 @@ namespace Model
 
 
     /**
+     * <p>A key-value mapping of runbook parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& GetTargetMaps() const{ return m_targetMaps; }
+
+    /**
+     * <p>A key-value mapping of runbook parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline bool TargetMapsHasBeenSet() const { return m_targetMapsHasBeenSet; }
+
+    /**
+     * <p>A key-value mapping of runbook parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline void SetTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps = value; }
+
+    /**
+     * <p>A key-value mapping of runbook parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline void SetTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps = std::move(value); }
+
+    /**
+     * <p>A key-value mapping of runbook parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline Runbook& WithTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { SetTargetMaps(value); return *this;}
+
+    /**
+     * <p>A key-value mapping of runbook parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline Runbook& WithTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { SetTargetMaps(std::move(value)); return *this;}
+
+    /**
+     * <p>A key-value mapping of runbook parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline Runbook& AddTargetMaps(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(value); return *this; }
+
+    /**
+     * <p>A key-value mapping of runbook parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline Runbook& AddTargetMaps(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The <code>MaxConcurrency</code> value specified by the user when the
      * operation started, indicating the maximum number of resources that the runbook
      * operation can run on at the same time.</p>
@@ -475,6 +524,9 @@ namespace Model
 
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet;
+
+    Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
+    bool m_targetMapsHasBeenSet;
 
     Aws::String m_maxConcurrency;
     bool m_maxConcurrencyHasBeenSet;

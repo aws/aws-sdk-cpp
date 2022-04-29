@@ -10,6 +10,7 @@
 #include <aws/mediaconvert/model/ColorSpaceUsage.h>
 #include <aws/mediaconvert/model/EmbeddedTimecodeOverride.h>
 #include <aws/mediaconvert/model/Hdr10Metadata.h>
+#include <aws/mediaconvert/model/PadVideo.h>
 #include <aws/mediaconvert/model/InputRotate.h>
 #include <aws/mediaconvert/model/InputSampleRange.h>
 #include <utility>
@@ -422,6 +423,79 @@ namespace Model
 
 
     /**
+     * Use this setting if your input has video and audio durations that don't align,
+     * and your output or player has strict alignment requirements. Examples: Input
+     * audio track has a delayed start. Input video track ends before audio ends. When
+     * you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black
+     * video frames so that output video and audio durations match. Black video frames
+     * are added at the beginning or end, depending on your input. To keep the default
+     * behavior and not generate black video, set Pad video to Disabled (DISABLED) or
+     * leave blank.
+     */
+    inline const PadVideo& GetPadVideo() const{ return m_padVideo; }
+
+    /**
+     * Use this setting if your input has video and audio durations that don't align,
+     * and your output or player has strict alignment requirements. Examples: Input
+     * audio track has a delayed start. Input video track ends before audio ends. When
+     * you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black
+     * video frames so that output video and audio durations match. Black video frames
+     * are added at the beginning or end, depending on your input. To keep the default
+     * behavior and not generate black video, set Pad video to Disabled (DISABLED) or
+     * leave blank.
+     */
+    inline bool PadVideoHasBeenSet() const { return m_padVideoHasBeenSet; }
+
+    /**
+     * Use this setting if your input has video and audio durations that don't align,
+     * and your output or player has strict alignment requirements. Examples: Input
+     * audio track has a delayed start. Input video track ends before audio ends. When
+     * you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black
+     * video frames so that output video and audio durations match. Black video frames
+     * are added at the beginning or end, depending on your input. To keep the default
+     * behavior and not generate black video, set Pad video to Disabled (DISABLED) or
+     * leave blank.
+     */
+    inline void SetPadVideo(const PadVideo& value) { m_padVideoHasBeenSet = true; m_padVideo = value; }
+
+    /**
+     * Use this setting if your input has video and audio durations that don't align,
+     * and your output or player has strict alignment requirements. Examples: Input
+     * audio track has a delayed start. Input video track ends before audio ends. When
+     * you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black
+     * video frames so that output video and audio durations match. Black video frames
+     * are added at the beginning or end, depending on your input. To keep the default
+     * behavior and not generate black video, set Pad video to Disabled (DISABLED) or
+     * leave blank.
+     */
+    inline void SetPadVideo(PadVideo&& value) { m_padVideoHasBeenSet = true; m_padVideo = std::move(value); }
+
+    /**
+     * Use this setting if your input has video and audio durations that don't align,
+     * and your output or player has strict alignment requirements. Examples: Input
+     * audio track has a delayed start. Input video track ends before audio ends. When
+     * you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black
+     * video frames so that output video and audio durations match. Black video frames
+     * are added at the beginning or end, depending on your input. To keep the default
+     * behavior and not generate black video, set Pad video to Disabled (DISABLED) or
+     * leave blank.
+     */
+    inline VideoSelector& WithPadVideo(const PadVideo& value) { SetPadVideo(value); return *this;}
+
+    /**
+     * Use this setting if your input has video and audio durations that don't align,
+     * and your output or player has strict alignment requirements. Examples: Input
+     * audio track has a delayed start. Input video track ends before audio ends. When
+     * you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black
+     * video frames so that output video and audio durations match. Black video frames
+     * are added at the beginning or end, depending on your input. To keep the default
+     * behavior and not generate black video, set Pad video to Disabled (DISABLED) or
+     * leave blank.
+     */
+    inline VideoSelector& WithPadVideo(PadVideo&& value) { SetPadVideo(std::move(value)); return *this;}
+
+
+    /**
      * Use PID (Pid) to select specific video data from an input file. Specify this
      * value as an integer; the system automatically converts it to the hexidecimal
      * value. For example, 257 selects PID 0x101. A PID, or packet identifier, is an
@@ -646,6 +720,9 @@ namespace Model
 
     Hdr10Metadata m_hdr10Metadata;
     bool m_hdr10MetadataHasBeenSet;
+
+    PadVideo m_padVideo;
+    bool m_padVideoHasBeenSet;
 
     int m_pid;
     bool m_pidHasBeenSet;

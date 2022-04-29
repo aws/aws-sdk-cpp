@@ -33,6 +33,7 @@ static const int W_A_F_INVALID_RESOURCE_HASH = HashingUtils::HashString("WAFInva
 static const int W_A_F_INVALID_OPERATION_HASH = HashingUtils::HashString("WAFInvalidOperationException");
 static const int W_A_F_EXPIRED_MANAGED_RULE_GROUP_VERSION_HASH = HashingUtils::HashString("WAFExpiredManagedRuleGroupVersionException");
 static const int W_A_F_ASSOCIATED_ITEM_HASH = HashingUtils::HashString("WAFAssociatedItemException");
+static const int W_A_F_CONFIGURATION_WARNING_HASH = HashingUtils::HashString("WAFConfigurationWarningException");
 static const int W_A_F_SUBSCRIPTION_NOT_FOUND_HASH = HashingUtils::HashString("WAFSubscriptionNotFoundException");
 static const int W_A_F_INTERNAL_ERROR_HASH = HashingUtils::HashString("WAFInternalErrorException");
 static const int W_A_F_TAG_OPERATION_HASH = HashingUtils::HashString("WAFTagOperationException");
@@ -76,6 +77,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == W_A_F_ASSOCIATED_ITEM_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFV2Errors::W_A_F_ASSOCIATED_ITEM), false);
+  }
+  else if (hashCode == W_A_F_CONFIGURATION_WARNING_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFV2Errors::W_A_F_CONFIGURATION_WARNING), false);
   }
   else if (hashCode == W_A_F_SUBSCRIPTION_NOT_FOUND_HASH)
   {

@@ -381,8 +381,19 @@ namespace Model
          * configuration. To associate a web ACL, in the CloudFront call
          * <code>UpdateDistribution</code>, set the web ACL ID to the Amazon Resource Name
          * (ARN) of the web ACL. For information, see <a
-         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p>
+         * <p>When you make changes to web ACLs or web ACL components, like rules and rule
+         * groups, WAF propagates the changes everywhere that the web ACL and its
+         * components are stored and used. Your changes are applied within seconds, but
+         * there might be a brief period of inconsistency when the changes have arrived in
+         * some places and not in others. So, for example, if you change a rule action
+         * setting, the action might be the old action in one area and the new action in
+         * another area. Or if you add an IP address to an IP set used in a blocking rule,
+         * the new address might briefly be blocked in one area while still allowed in
+         * another. This temporary inconsistency can occur when you first associate a web
+         * ACL with an Amazon Web Services resource and when you change a web ACL that is
+         * already associated with a resource. Generally, any inconsistencies of this type
+         * last only a few seconds.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AssociateWebACL">AWS
          * API Reference</a></p>
          */
@@ -396,8 +407,19 @@ namespace Model
          * configuration. To associate a web ACL, in the CloudFront call
          * <code>UpdateDistribution</code>, set the web ACL ID to the Amazon Resource Name
          * (ARN) of the web ACL. For information, see <a
-         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p>
+         * <p>When you make changes to web ACLs or web ACL components, like rules and rule
+         * groups, WAF propagates the changes everywhere that the web ACL and its
+         * components are stored and used. Your changes are applied within seconds, but
+         * there might be a brief period of inconsistency when the changes have arrived in
+         * some places and not in others. So, for example, if you change a rule action
+         * setting, the action might be the old action in one area and the new action in
+         * another area. Or if you add an IP address to an IP set used in a blocking rule,
+         * the new address might briefly be blocked in one area while still allowed in
+         * another. This temporary inconsistency can occur when you first associate a web
+         * ACL with an Amazon Web Services resource and when you change a web ACL that is
+         * already associated with a resource. Generally, any inconsistencies of this type
+         * last only a few seconds.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AssociateWebACL">AWS
          * API Reference</a></p>
          *
@@ -413,8 +435,19 @@ namespace Model
          * configuration. To associate a web ACL, in the CloudFront call
          * <code>UpdateDistribution</code>, set the web ACL ID to the Amazon Resource Name
          * (ARN) of the web ACL. For information, see <a
-         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p>
+         * <p>When you make changes to web ACLs or web ACL components, like rules and rule
+         * groups, WAF propagates the changes everywhere that the web ACL and its
+         * components are stored and used. Your changes are applied within seconds, but
+         * there might be a brief period of inconsistency when the changes have arrived in
+         * some places and not in others. So, for example, if you change a rule action
+         * setting, the action might be the old action in one area and the new action in
+         * another area. Or if you add an IP address to an IP set used in a blocking rule,
+         * the new address might briefly be blocked in one area while still allowed in
+         * another. This temporary inconsistency can occur when you first associate a web
+         * ACL with an Amazon Web Services resource and when you change a web ACL that is
+         * already associated with a resource. Generally, any inconsistencies of this type
+         * last only a few seconds.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AssociateWebACL">AWS
          * API Reference</a></p>
          *
@@ -803,18 +836,44 @@ namespace Model
         virtual void DeleteRuleGroupAsync(const Model::DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified <a>WebACL</a>.</p> <p>You can only use this if
+         * <p>Deletes the specified <a>WebACL</a>. </p> <p>You can only use this if
          * <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p>  <p>Before deleting any web ACL, first disassociate it from all
+         * resources.</p> <ul> <li> <p>To retrieve a list of the resources that are
+         * associated with a web ACL, use the following calls:</p> <ul> <li> <p>For
+         * regional resources, call <a>ListResourcesForWebACL</a>.</p> </li> <li> <p>For
+         * Amazon CloudFront distributions, use the CloudFront call
+         * <code>ListDistributionsByWebACLId</code>. For information, see <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>.</p>
+         * </li> </ul> </li> <li> <p>To disassociate a resource from a web ACL, use the
+         * following calls:</p> <ul> <li> <p>For regional resources, call
+         * <a>DisassociateWebACL</a>.</p> </li> <li> <p>For Amazon CloudFront
+         * distributions, provide an empty web ACL ID in the CloudFront call
+         * <code>UpdateDistribution</code>. For information, see <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p>
+         * </li> </ul> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteWebACL">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteWebACLOutcome DeleteWebACL(const Model::DeleteWebACLRequest& request) const;
 
         /**
-         * <p>Deletes the specified <a>WebACL</a>.</p> <p>You can only use this if
+         * <p>Deletes the specified <a>WebACL</a>. </p> <p>You can only use this if
          * <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p>  <p>Before deleting any web ACL, first disassociate it from all
+         * resources.</p> <ul> <li> <p>To retrieve a list of the resources that are
+         * associated with a web ACL, use the following calls:</p> <ul> <li> <p>For
+         * regional resources, call <a>ListResourcesForWebACL</a>.</p> </li> <li> <p>For
+         * Amazon CloudFront distributions, use the CloudFront call
+         * <code>ListDistributionsByWebACLId</code>. For information, see <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>.</p>
+         * </li> </ul> </li> <li> <p>To disassociate a resource from a web ACL, use the
+         * following calls:</p> <ul> <li> <p>For regional resources, call
+         * <a>DisassociateWebACL</a>.</p> </li> <li> <p>For Amazon CloudFront
+         * distributions, provide an empty web ACL ID in the CloudFront call
+         * <code>UpdateDistribution</code>. For information, see <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p>
+         * </li> </ul> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteWebACL">AWS
          * API Reference</a></p>
          *
@@ -823,9 +882,22 @@ namespace Model
         virtual Model::DeleteWebACLOutcomeCallable DeleteWebACLCallable(const Model::DeleteWebACLRequest& request) const;
 
         /**
-         * <p>Deletes the specified <a>WebACL</a>.</p> <p>You can only use this if
+         * <p>Deletes the specified <a>WebACL</a>. </p> <p>You can only use this if
          * <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p>  <p>Before deleting any web ACL, first disassociate it from all
+         * resources.</p> <ul> <li> <p>To retrieve a list of the resources that are
+         * associated with a web ACL, use the following calls:</p> <ul> <li> <p>For
+         * regional resources, call <a>ListResourcesForWebACL</a>.</p> </li> <li> <p>For
+         * Amazon CloudFront distributions, use the CloudFront call
+         * <code>ListDistributionsByWebACLId</code>. For information, see <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>.</p>
+         * </li> </ul> </li> <li> <p>To disassociate a resource from a web ACL, use the
+         * following calls:</p> <ul> <li> <p>For regional resources, call
+         * <a>DisassociateWebACL</a>.</p> </li> <li> <p>For Amazon CloudFront
+         * distributions, provide an empty web ACL ID in the CloudFront call
+         * <code>UpdateDistribution</code>. For information, see <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p>
+         * </li> </ul> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteWebACL">AWS
          * API Reference</a></p>
          *
@@ -862,10 +934,11 @@ namespace Model
         virtual void DescribeManagedRuleGroupAsync(const Model::DescribeManagedRuleGroupRequest& request, const DescribeManagedRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates a web ACL from a regional application resource. A regional
-         * application can be an Application Load Balancer (ALB), an Amazon API Gateway
-         * REST API, or an AppSync GraphQL API. </p> <p>For Amazon CloudFront, don't use
-         * this call. Instead, use your CloudFront distribution configuration. To
+         * <p>Disassociates the specified regional application resource from any existing
+         * web ACL association. A resource can have at most one web ACL association. A
+         * regional application can be an Application Load Balancer (ALB), an Amazon API
+         * Gateway REST API, or an AppSync GraphQL API. </p> <p>For Amazon CloudFront,
+         * don't use this call. Instead, use your CloudFront distribution configuration. To
          * disassociate a web ACL, provide an empty web ACL ID in the CloudFront call
          * <code>UpdateDistribution</code>. For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
@@ -876,10 +949,11 @@ namespace Model
         virtual Model::DisassociateWebACLOutcome DisassociateWebACL(const Model::DisassociateWebACLRequest& request) const;
 
         /**
-         * <p>Disassociates a web ACL from a regional application resource. A regional
-         * application can be an Application Load Balancer (ALB), an Amazon API Gateway
-         * REST API, or an AppSync GraphQL API. </p> <p>For Amazon CloudFront, don't use
-         * this call. Instead, use your CloudFront distribution configuration. To
+         * <p>Disassociates the specified regional application resource from any existing
+         * web ACL association. A resource can have at most one web ACL association. A
+         * regional application can be an Application Load Balancer (ALB), an Amazon API
+         * Gateway REST API, or an AppSync GraphQL API. </p> <p>For Amazon CloudFront,
+         * don't use this call. Instead, use your CloudFront distribution configuration. To
          * disassociate a web ACL, provide an empty web ACL ID in the CloudFront call
          * <code>UpdateDistribution</code>. For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
@@ -892,10 +966,11 @@ namespace Model
         virtual Model::DisassociateWebACLOutcomeCallable DisassociateWebACLCallable(const Model::DisassociateWebACLRequest& request) const;
 
         /**
-         * <p>Disassociates a web ACL from a regional application resource. A regional
-         * application can be an Application Load Balancer (ALB), an Amazon API Gateway
-         * REST API, or an AppSync GraphQL API. </p> <p>For Amazon CloudFront, don't use
-         * this call. Instead, use your CloudFront distribution configuration. To
+         * <p>Disassociates the specified regional application resource from any existing
+         * web ACL association. A resource can have at most one web ACL association. A
+         * regional application can be an Application Load Balancer (ALB), an Amazon API
+         * Gateway REST API, or an AppSync GraphQL API. </p> <p>For Amazon CloudFront,
+         * don't use this call. Instead, use your CloudFront distribution configuration. To
          * disassociate a web ACL, provide an empty web ACL ID in the CloudFront call
          * <code>UpdateDistribution</code>. For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
@@ -2041,8 +2116,19 @@ namespace Model
          * replaces the mutable specifications that you already have for the IP set with
          * the ones that you provide to this call. To modify the IP set, retrieve it by
          * calling <a>GetIPSet</a>, update the settings as needed, and then provide the
-         * complete IP set specification to this call.</p> <p><h3>See Also:</h3>  
-         * <a
+         * complete IP set specification to this call.</p>  <p>When you make changes
+         * to web ACLs or web ACL components, like rules and rule groups, WAF propagates
+         * the changes everywhere that the web ACL and its components are stored and used.
+         * Your changes are applied within seconds, but there might be a brief period of
+         * inconsistency when the changes have arrived in some places and not in others.
+         * So, for example, if you change a rule action setting, the action might be the
+         * old action in one area and the new action in another area. Or if you add an IP
+         * address to an IP set used in a blocking rule, the new address might briefly be
+         * blocked in one area while still allowed in another. This temporary inconsistency
+         * can occur when you first associate a web ACL with an Amazon Web Services
+         * resource and when you change a web ACL that is already associated with a
+         * resource. Generally, any inconsistencies of this type last only a few
+         * seconds.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateIPSet">AWS
          * API Reference</a></p>
          */
@@ -2053,8 +2139,19 @@ namespace Model
          * replaces the mutable specifications that you already have for the IP set with
          * the ones that you provide to this call. To modify the IP set, retrieve it by
          * calling <a>GetIPSet</a>, update the settings as needed, and then provide the
-         * complete IP set specification to this call.</p> <p><h3>See Also:</h3>  
-         * <a
+         * complete IP set specification to this call.</p>  <p>When you make changes
+         * to web ACLs or web ACL components, like rules and rule groups, WAF propagates
+         * the changes everywhere that the web ACL and its components are stored and used.
+         * Your changes are applied within seconds, but there might be a brief period of
+         * inconsistency when the changes have arrived in some places and not in others.
+         * So, for example, if you change a rule action setting, the action might be the
+         * old action in one area and the new action in another area. Or if you add an IP
+         * address to an IP set used in a blocking rule, the new address might briefly be
+         * blocked in one area while still allowed in another. This temporary inconsistency
+         * can occur when you first associate a web ACL with an Amazon Web Services
+         * resource and when you change a web ACL that is already associated with a
+         * resource. Generally, any inconsistencies of this type last only a few
+         * seconds.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateIPSet">AWS
          * API Reference</a></p>
          *
@@ -2067,8 +2164,19 @@ namespace Model
          * replaces the mutable specifications that you already have for the IP set with
          * the ones that you provide to this call. To modify the IP set, retrieve it by
          * calling <a>GetIPSet</a>, update the settings as needed, and then provide the
-         * complete IP set specification to this call.</p> <p><h3>See Also:</h3>  
-         * <a
+         * complete IP set specification to this call.</p>  <p>When you make changes
+         * to web ACLs or web ACL components, like rules and rule groups, WAF propagates
+         * the changes everywhere that the web ACL and its components are stored and used.
+         * Your changes are applied within seconds, but there might be a brief period of
+         * inconsistency when the changes have arrived in some places and not in others.
+         * So, for example, if you change a rule action setting, the action might be the
+         * old action in one area and the new action in another area. Or if you add an IP
+         * address to an IP set used in a blocking rule, the new address might briefly be
+         * blocked in one area while still allowed in another. This temporary inconsistency
+         * can occur when you first associate a web ACL with an Amazon Web Services
+         * resource and when you change a web ACL that is already associated with a
+         * resource. Generally, any inconsistencies of this type last only a few
+         * seconds.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateIPSet">AWS
          * API Reference</a></p>
          *
@@ -2140,7 +2248,19 @@ namespace Model
          * regex pattern set with the ones that you provide to this call. To modify the
          * regex pattern set, retrieve it by calling <a>GetRegexPatternSet</a>, update the
          * settings as needed, and then provide the complete regex pattern set
-         * specification to this call.</p> <p><h3>See Also:</h3>   <a
+         * specification to this call.</p>  <p>When you make changes to web ACLs or
+         * web ACL components, like rules and rule groups, WAF propagates the changes
+         * everywhere that the web ACL and its components are stored and used. Your changes
+         * are applied within seconds, but there might be a brief period of inconsistency
+         * when the changes have arrived in some places and not in others. So, for example,
+         * if you change a rule action setting, the action might be the old action in one
+         * area and the new action in another area. Or if you add an IP address to an IP
+         * set used in a blocking rule, the new address might briefly be blocked in one
+         * area while still allowed in another. This temporary inconsistency can occur when
+         * you first associate a web ACL with an Amazon Web Services resource and when you
+         * change a web ACL that is already associated with a resource. Generally, any
+         * inconsistencies of this type last only a few seconds.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRegexPatternSet">AWS
          * API Reference</a></p>
          */
@@ -2152,7 +2272,19 @@ namespace Model
          * regex pattern set with the ones that you provide to this call. To modify the
          * regex pattern set, retrieve it by calling <a>GetRegexPatternSet</a>, update the
          * settings as needed, and then provide the complete regex pattern set
-         * specification to this call.</p> <p><h3>See Also:</h3>   <a
+         * specification to this call.</p>  <p>When you make changes to web ACLs or
+         * web ACL components, like rules and rule groups, WAF propagates the changes
+         * everywhere that the web ACL and its components are stored and used. Your changes
+         * are applied within seconds, but there might be a brief period of inconsistency
+         * when the changes have arrived in some places and not in others. So, for example,
+         * if you change a rule action setting, the action might be the old action in one
+         * area and the new action in another area. Or if you add an IP address to an IP
+         * set used in a blocking rule, the new address might briefly be blocked in one
+         * area while still allowed in another. This temporary inconsistency can occur when
+         * you first associate a web ACL with an Amazon Web Services resource and when you
+         * change a web ACL that is already associated with a resource. Generally, any
+         * inconsistencies of this type last only a few seconds.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRegexPatternSet">AWS
          * API Reference</a></p>
          *
@@ -2166,7 +2298,19 @@ namespace Model
          * regex pattern set with the ones that you provide to this call. To modify the
          * regex pattern set, retrieve it by calling <a>GetRegexPatternSet</a>, update the
          * settings as needed, and then provide the complete regex pattern set
-         * specification to this call.</p> <p><h3>See Also:</h3>   <a
+         * specification to this call.</p>  <p>When you make changes to web ACLs or
+         * web ACL components, like rules and rule groups, WAF propagates the changes
+         * everywhere that the web ACL and its components are stored and used. Your changes
+         * are applied within seconds, but there might be a brief period of inconsistency
+         * when the changes have arrived in some places and not in others. So, for example,
+         * if you change a rule action setting, the action might be the old action in one
+         * area and the new action in another area. Or if you add an IP address to an IP
+         * set used in a blocking rule, the new address might briefly be blocked in one
+         * area while still allowed in another. This temporary inconsistency can occur when
+         * you first associate a web ACL with an Amazon Web Services resource and when you
+         * change a web ACL that is already associated with a resource. Generally, any
+         * inconsistencies of this type last only a few seconds.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRegexPatternSet">AWS
          * API Reference</a></p>
          *
@@ -2180,11 +2324,23 @@ namespace Model
          * rule group with the ones that you provide to this call. To modify the rule
          * group, retrieve it by calling <a>GetRuleGroup</a>, update the settings as
          * needed, and then provide the complete rule group specification to this call.</p>
-         *  <p> A rule group defines a collection of rules to inspect and control
-         * web requests that you can use in a <a>WebACL</a>. When you create a rule group,
-         * you define an immutable capacity limit. If you update a rule group, you must
-         * stay within the capacity. This allows others to reuse the rule group with
-         * confidence in its capacity requirements. </p><p><h3>See Also:</h3>   <a
+         *  <p>When you make changes to web ACLs or web ACL components, like rules
+         * and rule groups, WAF propagates the changes everywhere that the web ACL and its
+         * components are stored and used. Your changes are applied within seconds, but
+         * there might be a brief period of inconsistency when the changes have arrived in
+         * some places and not in others. So, for example, if you change a rule action
+         * setting, the action might be the old action in one area and the new action in
+         * another area. Or if you add an IP address to an IP set used in a blocking rule,
+         * the new address might briefly be blocked in one area while still allowed in
+         * another. This temporary inconsistency can occur when you first associate a web
+         * ACL with an Amazon Web Services resource and when you change a web ACL that is
+         * already associated with a resource. Generally, any inconsistencies of this type
+         * last only a few seconds.</p> <p> A rule group defines a collection of rules to
+         * inspect and control web requests that you can use in a <a>WebACL</a>. When you
+         * create a rule group, you define an immutable capacity limit. If you update a
+         * rule group, you must stay within the capacity. This allows others to reuse the
+         * rule group with confidence in its capacity requirements. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRuleGroup">AWS
          * API Reference</a></p>
          */
@@ -2196,11 +2352,23 @@ namespace Model
          * rule group with the ones that you provide to this call. To modify the rule
          * group, retrieve it by calling <a>GetRuleGroup</a>, update the settings as
          * needed, and then provide the complete rule group specification to this call.</p>
-         *  <p> A rule group defines a collection of rules to inspect and control
-         * web requests that you can use in a <a>WebACL</a>. When you create a rule group,
-         * you define an immutable capacity limit. If you update a rule group, you must
-         * stay within the capacity. This allows others to reuse the rule group with
-         * confidence in its capacity requirements. </p><p><h3>See Also:</h3>   <a
+         *  <p>When you make changes to web ACLs or web ACL components, like rules
+         * and rule groups, WAF propagates the changes everywhere that the web ACL and its
+         * components are stored and used. Your changes are applied within seconds, but
+         * there might be a brief period of inconsistency when the changes have arrived in
+         * some places and not in others. So, for example, if you change a rule action
+         * setting, the action might be the old action in one area and the new action in
+         * another area. Or if you add an IP address to an IP set used in a blocking rule,
+         * the new address might briefly be blocked in one area while still allowed in
+         * another. This temporary inconsistency can occur when you first associate a web
+         * ACL with an Amazon Web Services resource and when you change a web ACL that is
+         * already associated with a resource. Generally, any inconsistencies of this type
+         * last only a few seconds.</p> <p> A rule group defines a collection of rules to
+         * inspect and control web requests that you can use in a <a>WebACL</a>. When you
+         * create a rule group, you define an immutable capacity limit. If you update a
+         * rule group, you must stay within the capacity. This allows others to reuse the
+         * rule group with confidence in its capacity requirements. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRuleGroup">AWS
          * API Reference</a></p>
          *
@@ -2214,11 +2382,23 @@ namespace Model
          * rule group with the ones that you provide to this call. To modify the rule
          * group, retrieve it by calling <a>GetRuleGroup</a>, update the settings as
          * needed, and then provide the complete rule group specification to this call.</p>
-         *  <p> A rule group defines a collection of rules to inspect and control
-         * web requests that you can use in a <a>WebACL</a>. When you create a rule group,
-         * you define an immutable capacity limit. If you update a rule group, you must
-         * stay within the capacity. This allows others to reuse the rule group with
-         * confidence in its capacity requirements. </p><p><h3>See Also:</h3>   <a
+         *  <p>When you make changes to web ACLs or web ACL components, like rules
+         * and rule groups, WAF propagates the changes everywhere that the web ACL and its
+         * components are stored and used. Your changes are applied within seconds, but
+         * there might be a brief period of inconsistency when the changes have arrived in
+         * some places and not in others. So, for example, if you change a rule action
+         * setting, the action might be the old action in one area and the new action in
+         * another area. Or if you add an IP address to an IP set used in a blocking rule,
+         * the new address might briefly be blocked in one area while still allowed in
+         * another. This temporary inconsistency can occur when you first associate a web
+         * ACL with an Amazon Web Services resource and when you change a web ACL that is
+         * already associated with a resource. Generally, any inconsistencies of this type
+         * last only a few seconds.</p> <p> A rule group defines a collection of rules to
+         * inspect and control web requests that you can use in a <a>WebACL</a>. When you
+         * create a rule group, you define an immutable capacity limit. If you update a
+         * rule group, you must stay within the capacity. This allows others to reuse the
+         * rule group with confidence in its capacity requirements. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRuleGroup">AWS
          * API Reference</a></p>
          *
@@ -2227,11 +2407,24 @@ namespace Model
         virtual void UpdateRuleGroupAsync(const Model::UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified <a>WebACL</a>.</p>  <p>This operation completely
-         * replaces the mutable specifications that you already have for the web ACL with
-         * the ones that you provide to this call. To modify the web ACL, retrieve it by
-         * calling <a>GetWebACL</a>, update the settings as needed, and then provide the
-         * complete web ACL specification to this call.</p>  <p> A web ACL defines a
+         * <p>Updates the specified <a>WebACL</a>. While updating a web ACL, WAF provides
+         * continous coverage to the resources that you have associated with the web ACL.
+         * </p> <p>When you make changes to web ACLs or web ACL components, like rules and
+         * rule groups, WAF propagates the changes everywhere that the web ACL and its
+         * components are stored and used. Your changes are applied within seconds, but
+         * there might be a brief period of inconsistency when the changes have arrived in
+         * some places and not in others. So, for example, if you change a rule action
+         * setting, the action might be the old action in one area and the new action in
+         * another area. Or if you add an IP address to an IP set used in a blocking rule,
+         * the new address might briefly be blocked in one area while still allowed in
+         * another. This temporary inconsistency can occur when you first associate a web
+         * ACL with an Amazon Web Services resource and when you change a web ACL that is
+         * already associated with a resource. Generally, any inconsistencies of this type
+         * last only a few seconds.</p>  <p>This operation completely replaces the
+         * mutable specifications that you already have for the web ACL with the ones that
+         * you provide to this call. To modify the web ACL, retrieve it by calling
+         * <a>GetWebACL</a>, update the settings as needed, and then provide the complete
+         * web ACL specification to this call.</p>  <p> A web ACL defines a
          * collection of rules to use to inspect and control web requests. Each rule has an
          * action defined (allow, block, or count) for requests that match the statement of
          * the rule. In the web ACL, you assign a default action to take (allow, block) for
@@ -2247,11 +2440,24 @@ namespace Model
         virtual Model::UpdateWebACLOutcome UpdateWebACL(const Model::UpdateWebACLRequest& request) const;
 
         /**
-         * <p>Updates the specified <a>WebACL</a>.</p>  <p>This operation completely
-         * replaces the mutable specifications that you already have for the web ACL with
-         * the ones that you provide to this call. To modify the web ACL, retrieve it by
-         * calling <a>GetWebACL</a>, update the settings as needed, and then provide the
-         * complete web ACL specification to this call.</p>  <p> A web ACL defines a
+         * <p>Updates the specified <a>WebACL</a>. While updating a web ACL, WAF provides
+         * continous coverage to the resources that you have associated with the web ACL.
+         * </p> <p>When you make changes to web ACLs or web ACL components, like rules and
+         * rule groups, WAF propagates the changes everywhere that the web ACL and its
+         * components are stored and used. Your changes are applied within seconds, but
+         * there might be a brief period of inconsistency when the changes have arrived in
+         * some places and not in others. So, for example, if you change a rule action
+         * setting, the action might be the old action in one area and the new action in
+         * another area. Or if you add an IP address to an IP set used in a blocking rule,
+         * the new address might briefly be blocked in one area while still allowed in
+         * another. This temporary inconsistency can occur when you first associate a web
+         * ACL with an Amazon Web Services resource and when you change a web ACL that is
+         * already associated with a resource. Generally, any inconsistencies of this type
+         * last only a few seconds.</p>  <p>This operation completely replaces the
+         * mutable specifications that you already have for the web ACL with the ones that
+         * you provide to this call. To modify the web ACL, retrieve it by calling
+         * <a>GetWebACL</a>, update the settings as needed, and then provide the complete
+         * web ACL specification to this call.</p>  <p> A web ACL defines a
          * collection of rules to use to inspect and control web requests. Each rule has an
          * action defined (allow, block, or count) for requests that match the statement of
          * the rule. In the web ACL, you assign a default action to take (allow, block) for
@@ -2269,11 +2475,24 @@ namespace Model
         virtual Model::UpdateWebACLOutcomeCallable UpdateWebACLCallable(const Model::UpdateWebACLRequest& request) const;
 
         /**
-         * <p>Updates the specified <a>WebACL</a>.</p>  <p>This operation completely
-         * replaces the mutable specifications that you already have for the web ACL with
-         * the ones that you provide to this call. To modify the web ACL, retrieve it by
-         * calling <a>GetWebACL</a>, update the settings as needed, and then provide the
-         * complete web ACL specification to this call.</p>  <p> A web ACL defines a
+         * <p>Updates the specified <a>WebACL</a>. While updating a web ACL, WAF provides
+         * continous coverage to the resources that you have associated with the web ACL.
+         * </p> <p>When you make changes to web ACLs or web ACL components, like rules and
+         * rule groups, WAF propagates the changes everywhere that the web ACL and its
+         * components are stored and used. Your changes are applied within seconds, but
+         * there might be a brief period of inconsistency when the changes have arrived in
+         * some places and not in others. So, for example, if you change a rule action
+         * setting, the action might be the old action in one area and the new action in
+         * another area. Or if you add an IP address to an IP set used in a blocking rule,
+         * the new address might briefly be blocked in one area while still allowed in
+         * another. This temporary inconsistency can occur when you first associate a web
+         * ACL with an Amazon Web Services resource and when you change a web ACL that is
+         * already associated with a resource. Generally, any inconsistencies of this type
+         * last only a few seconds.</p>  <p>This operation completely replaces the
+         * mutable specifications that you already have for the web ACL with the ones that
+         * you provide to this call. To modify the web ACL, retrieve it by calling
+         * <a>GetWebACL</a>, update the settings as needed, and then provide the complete
+         * web ACL specification to this call.</p>  <p> A web ACL defines a
          * collection of rules to use to inspect and control web requests. Each rule has an
          * action defined (allow, block, or count) for requests that match the statement of
          * the rule. In the web ACL, you assign a default action to take (allow, block) for

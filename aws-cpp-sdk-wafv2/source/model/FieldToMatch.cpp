@@ -26,7 +26,9 @@ FieldToMatch::FieldToMatch() :
     m_queryStringHasBeenSet(false),
     m_bodyHasBeenSet(false),
     m_methodHasBeenSet(false),
-    m_jsonBodyHasBeenSet(false)
+    m_jsonBodyHasBeenSet(false),
+    m_headersHasBeenSet(false),
+    m_cookiesHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ FieldToMatch::FieldToMatch(JsonView jsonValue) :
     m_queryStringHasBeenSet(false),
     m_bodyHasBeenSet(false),
     m_methodHasBeenSet(false),
-    m_jsonBodyHasBeenSet(false)
+    m_jsonBodyHasBeenSet(false),
+    m_headersHasBeenSet(false),
+    m_cookiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +105,20 @@ FieldToMatch& FieldToMatch::operator =(JsonView jsonValue)
     m_jsonBodyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Headers"))
+  {
+    m_headers = jsonValue.GetObject("Headers");
+
+    m_headersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Cookies"))
+  {
+    m_cookies = jsonValue.GetObject("Cookies");
+
+    m_cookiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +171,18 @@ JsonValue FieldToMatch::Jsonize() const
   if(m_jsonBodyHasBeenSet)
   {
    payload.WithObject("JsonBody", m_jsonBody.Jsonize());
+
+  }
+
+  if(m_headersHasBeenSet)
+  {
+   payload.WithObject("Headers", m_headers.Jsonize());
+
+  }
+
+  if(m_cookiesHasBeenSet)
+  {
+   payload.WithObject("Cookies", m_cookies.Jsonize());
 
   }
 

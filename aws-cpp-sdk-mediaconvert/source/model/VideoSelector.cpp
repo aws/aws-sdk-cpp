@@ -28,6 +28,8 @@ VideoSelector::VideoSelector() :
     m_embeddedTimecodeOverride(EmbeddedTimecodeOverride::NOT_SET),
     m_embeddedTimecodeOverrideHasBeenSet(false),
     m_hdr10MetadataHasBeenSet(false),
+    m_padVideo(PadVideo::NOT_SET),
+    m_padVideoHasBeenSet(false),
     m_pid(0),
     m_pidHasBeenSet(false),
     m_programNumber(0),
@@ -49,6 +51,8 @@ VideoSelector::VideoSelector(JsonView jsonValue) :
     m_embeddedTimecodeOverride(EmbeddedTimecodeOverride::NOT_SET),
     m_embeddedTimecodeOverrideHasBeenSet(false),
     m_hdr10MetadataHasBeenSet(false),
+    m_padVideo(PadVideo::NOT_SET),
+    m_padVideoHasBeenSet(false),
     m_pid(0),
     m_pidHasBeenSet(false),
     m_programNumber(0),
@@ -96,6 +100,13 @@ VideoSelector& VideoSelector::operator =(JsonView jsonValue)
     m_hdr10Metadata = jsonValue.GetObject("hdr10Metadata");
 
     m_hdr10MetadataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("padVideo"))
+  {
+    m_padVideo = PadVideoMapper::GetPadVideoForName(jsonValue.GetString("padVideo"));
+
+    m_padVideoHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("pid"))
@@ -157,6 +168,11 @@ JsonValue VideoSelector::Jsonize() const
   {
    payload.WithObject("hdr10Metadata", m_hdr10Metadata.Jsonize());
 
+  }
+
+  if(m_padVideoHasBeenSet)
+  {
+   payload.WithString("padVideo", PadVideoMapper::GetNameForPadVideo(m_padVideo));
   }
 
   if(m_pidHasBeenSet)

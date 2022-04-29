@@ -79,6 +79,10 @@ namespace Aws
         static const int LOG_DESTINATION_HASH = HashingUtils::HashString("LOG_DESTINATION");
         static const int MANAGED_RULE_GROUP_CONFIG_HASH = HashingUtils::HashString("MANAGED_RULE_GROUP_CONFIG");
         static const int PAYLOAD_TYPE_HASH = HashingUtils::HashString("PAYLOAD_TYPE");
+        static const int HEADER_MATCH_PATTERN_HASH = HashingUtils::HashString("HEADER_MATCH_PATTERN");
+        static const int COOKIE_MATCH_PATTERN_HASH = HashingUtils::HashString("COOKIE_MATCH_PATTERN");
+        static const int MAP_MATCH_SCOPE_HASH = HashingUtils::HashString("MAP_MATCH_SCOPE");
+        static const int OVERSIZE_HANDLING_HASH = HashingUtils::HashString("OVERSIZE_HANDLING");
 
 
         ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name)
@@ -320,6 +324,22 @@ namespace Aws
           {
             return ParameterExceptionField::PAYLOAD_TYPE;
           }
+          else if (hashCode == HEADER_MATCH_PATTERN_HASH)
+          {
+            return ParameterExceptionField::HEADER_MATCH_PATTERN;
+          }
+          else if (hashCode == COOKIE_MATCH_PATTERN_HASH)
+          {
+            return ParameterExceptionField::COOKIE_MATCH_PATTERN;
+          }
+          else if (hashCode == MAP_MATCH_SCOPE_HASH)
+          {
+            return ParameterExceptionField::MAP_MATCH_SCOPE;
+          }
+          else if (hashCode == OVERSIZE_HANDLING_HASH)
+          {
+            return ParameterExceptionField::OVERSIZE_HANDLING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -452,6 +472,14 @@ namespace Aws
             return "MANAGED_RULE_GROUP_CONFIG";
           case ParameterExceptionField::PAYLOAD_TYPE:
             return "PAYLOAD_TYPE";
+          case ParameterExceptionField::HEADER_MATCH_PATTERN:
+            return "HEADER_MATCH_PATTERN";
+          case ParameterExceptionField::COOKIE_MATCH_PATTERN:
+            return "COOKIE_MATCH_PATTERN";
+          case ParameterExceptionField::MAP_MATCH_SCOPE:
+            return "MAP_MATCH_SCOPE";
+          case ParameterExceptionField::OVERSIZE_HANDLING:
+            return "OVERSIZE_HANDLING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

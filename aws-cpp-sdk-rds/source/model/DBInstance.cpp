@@ -116,7 +116,8 @@ DBInstance::DBInstance() :
     m_automationModeHasBeenSet(false),
     m_resumeFullAutomationModeTimeHasBeenSet(false),
     m_customIamInstanceProfileHasBeenSet(false),
-    m_backupTargetHasBeenSet(false)
+    m_backupTargetHasBeenSet(false),
+    m_networkTypeHasBeenSet(false)
 {
 }
 
@@ -216,7 +217,8 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_automationModeHasBeenSet(false),
     m_resumeFullAutomationModeTimeHasBeenSet(false),
     m_customIamInstanceProfileHasBeenSet(false),
-    m_backupTargetHasBeenSet(false)
+    m_backupTargetHasBeenSet(false),
+    m_networkTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -749,6 +751,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_backupTarget = Aws::Utils::Xml::DecodeEscapedXmlText(backupTargetNode.GetText());
       m_backupTargetHasBeenSet = true;
     }
+    XmlNode networkTypeNode = resultNode.FirstChild("NetworkType");
+    if(!networkTypeNode.IsNull())
+    {
+      m_networkType = Aws::Utils::Xml::DecodeEscapedXmlText(networkTypeNode.GetText());
+      m_networkTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1206,6 +1214,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".BackupTarget=" << StringUtils::URLEncode(m_backupTarget.c_str()) << "&";
   }
 
+  if(m_networkTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1585,6 +1598,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_backupTargetHasBeenSet)
   {
       oStream << location << ".BackupTarget=" << StringUtils::URLEncode(m_backupTarget.c_str()) << "&";
+  }
+  if(m_networkTypeHasBeenSet)
+  {
+      oStream << location << ".NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 }
 

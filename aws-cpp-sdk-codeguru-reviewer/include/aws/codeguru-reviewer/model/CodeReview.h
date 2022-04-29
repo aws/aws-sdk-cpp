@@ -13,6 +13,7 @@
 #include <aws/codeguru-reviewer/model/SourceCodeType.h>
 #include <aws/codeguru-reviewer/model/Metrics.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codeguru-reviewer/model/ConfigFileState.h>
 #include <aws/codeguru-reviewer/model/AnalysisType.h>
 #include <utility>
 
@@ -681,60 +682,109 @@ namespace Model
 
 
     /**
-     * <p>They types of analysis performed during a repository analysis or a pull
+     * <p>The types of analysis performed during a repository analysis or a pull
      * request review. You can specify either <code>Security</code>,
      * <code>CodeQuality</code>, or both.</p>
      */
     inline const Aws::Vector<AnalysisType>& GetAnalysisTypes() const{ return m_analysisTypes; }
 
     /**
-     * <p>They types of analysis performed during a repository analysis or a pull
+     * <p>The types of analysis performed during a repository analysis or a pull
      * request review. You can specify either <code>Security</code>,
      * <code>CodeQuality</code>, or both.</p>
      */
     inline bool AnalysisTypesHasBeenSet() const { return m_analysisTypesHasBeenSet; }
 
     /**
-     * <p>They types of analysis performed during a repository analysis or a pull
+     * <p>The types of analysis performed during a repository analysis or a pull
      * request review. You can specify either <code>Security</code>,
      * <code>CodeQuality</code>, or both.</p>
      */
     inline void SetAnalysisTypes(const Aws::Vector<AnalysisType>& value) { m_analysisTypesHasBeenSet = true; m_analysisTypes = value; }
 
     /**
-     * <p>They types of analysis performed during a repository analysis or a pull
+     * <p>The types of analysis performed during a repository analysis or a pull
      * request review. You can specify either <code>Security</code>,
      * <code>CodeQuality</code>, or both.</p>
      */
     inline void SetAnalysisTypes(Aws::Vector<AnalysisType>&& value) { m_analysisTypesHasBeenSet = true; m_analysisTypes = std::move(value); }
 
     /**
-     * <p>They types of analysis performed during a repository analysis or a pull
+     * <p>The types of analysis performed during a repository analysis or a pull
      * request review. You can specify either <code>Security</code>,
      * <code>CodeQuality</code>, or both.</p>
      */
     inline CodeReview& WithAnalysisTypes(const Aws::Vector<AnalysisType>& value) { SetAnalysisTypes(value); return *this;}
 
     /**
-     * <p>They types of analysis performed during a repository analysis or a pull
+     * <p>The types of analysis performed during a repository analysis or a pull
      * request review. You can specify either <code>Security</code>,
      * <code>CodeQuality</code>, or both.</p>
      */
     inline CodeReview& WithAnalysisTypes(Aws::Vector<AnalysisType>&& value) { SetAnalysisTypes(std::move(value)); return *this;}
 
     /**
-     * <p>They types of analysis performed during a repository analysis or a pull
+     * <p>The types of analysis performed during a repository analysis or a pull
      * request review. You can specify either <code>Security</code>,
      * <code>CodeQuality</code>, or both.</p>
      */
     inline CodeReview& AddAnalysisTypes(const AnalysisType& value) { m_analysisTypesHasBeenSet = true; m_analysisTypes.push_back(value); return *this; }
 
     /**
-     * <p>They types of analysis performed during a repository analysis or a pull
+     * <p>The types of analysis performed during a repository analysis or a pull
      * request review. You can specify either <code>Security</code>,
      * <code>CodeQuality</code>, or both.</p>
      */
     inline CodeReview& AddAnalysisTypes(AnalysisType&& value) { m_analysisTypesHasBeenSet = true; m_analysisTypes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file
+     * that allows the configuration of the CodeGuru Reviewer analysis. The file either
+     * exists, doesn't exist, or exists with errors at the root directory of your
+     * repository.</p>
+     */
+    inline const ConfigFileState& GetConfigFileState() const{ return m_configFileState; }
+
+    /**
+     * <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file
+     * that allows the configuration of the CodeGuru Reviewer analysis. The file either
+     * exists, doesn't exist, or exists with errors at the root directory of your
+     * repository.</p>
+     */
+    inline bool ConfigFileStateHasBeenSet() const { return m_configFileStateHasBeenSet; }
+
+    /**
+     * <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file
+     * that allows the configuration of the CodeGuru Reviewer analysis. The file either
+     * exists, doesn't exist, or exists with errors at the root directory of your
+     * repository.</p>
+     */
+    inline void SetConfigFileState(const ConfigFileState& value) { m_configFileStateHasBeenSet = true; m_configFileState = value; }
+
+    /**
+     * <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file
+     * that allows the configuration of the CodeGuru Reviewer analysis. The file either
+     * exists, doesn't exist, or exists with errors at the root directory of your
+     * repository.</p>
+     */
+    inline void SetConfigFileState(ConfigFileState&& value) { m_configFileStateHasBeenSet = true; m_configFileState = std::move(value); }
+
+    /**
+     * <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file
+     * that allows the configuration of the CodeGuru Reviewer analysis. The file either
+     * exists, doesn't exist, or exists with errors at the root directory of your
+     * repository.</p>
+     */
+    inline CodeReview& WithConfigFileState(const ConfigFileState& value) { SetConfigFileState(value); return *this;}
+
+    /**
+     * <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file
+     * that allows the configuration of the CodeGuru Reviewer analysis. The file either
+     * exists, doesn't exist, or exists with errors at the root directory of your
+     * repository.</p>
+     */
+    inline CodeReview& WithConfigFileState(ConfigFileState&& value) { SetConfigFileState(std::move(value)); return *this;}
 
   private:
 
@@ -782,6 +832,9 @@ namespace Model
 
     Aws::Vector<AnalysisType> m_analysisTypes;
     bool m_analysisTypesHasBeenSet;
+
+    ConfigFileState m_configFileState;
+    bool m_configFileStateHasBeenSet;
   };
 
 } // namespace Model

@@ -37,32 +37,73 @@ namespace Model
 
 
     /**
-     * <p> <code>MeteredLinesOfCode</code> is the number of lines of code in the
+     * <p> <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the
      * repository where the code review happened. This does not include non-code lines
      * such as comments and blank lines. </p>
      */
     inline long long GetMeteredLinesOfCodeCount() const{ return m_meteredLinesOfCodeCount; }
 
     /**
-     * <p> <code>MeteredLinesOfCode</code> is the number of lines of code in the
+     * <p> <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the
      * repository where the code review happened. This does not include non-code lines
      * such as comments and blank lines. </p>
      */
     inline bool MeteredLinesOfCodeCountHasBeenSet() const { return m_meteredLinesOfCodeCountHasBeenSet; }
 
     /**
-     * <p> <code>MeteredLinesOfCode</code> is the number of lines of code in the
+     * <p> <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the
      * repository where the code review happened. This does not include non-code lines
      * such as comments and blank lines. </p>
      */
     inline void SetMeteredLinesOfCodeCount(long long value) { m_meteredLinesOfCodeCountHasBeenSet = true; m_meteredLinesOfCodeCount = value; }
 
     /**
-     * <p> <code>MeteredLinesOfCode</code> is the number of lines of code in the
+     * <p> <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the
      * repository where the code review happened. This does not include non-code lines
      * such as comments and blank lines. </p>
      */
     inline Metrics& WithMeteredLinesOfCodeCount(long long value) { SetMeteredLinesOfCodeCount(value); return *this;}
+
+
+    /**
+     * <p> <code>SuppressedLinesOfCodeCount</code> is the number of lines of code in
+     * the repository where the code review happened that CodeGuru Reviewer did not
+     * analyze. The lines suppressed in the analysis is based on the
+     * <code>excludeFiles</code> variable in the <code>aws-codeguru-reviewer.yml</code>
+     * file. This number does not include non-code lines such as comments and blank
+     * lines. </p>
+     */
+    inline long long GetSuppressedLinesOfCodeCount() const{ return m_suppressedLinesOfCodeCount; }
+
+    /**
+     * <p> <code>SuppressedLinesOfCodeCount</code> is the number of lines of code in
+     * the repository where the code review happened that CodeGuru Reviewer did not
+     * analyze. The lines suppressed in the analysis is based on the
+     * <code>excludeFiles</code> variable in the <code>aws-codeguru-reviewer.yml</code>
+     * file. This number does not include non-code lines such as comments and blank
+     * lines. </p>
+     */
+    inline bool SuppressedLinesOfCodeCountHasBeenSet() const { return m_suppressedLinesOfCodeCountHasBeenSet; }
+
+    /**
+     * <p> <code>SuppressedLinesOfCodeCount</code> is the number of lines of code in
+     * the repository where the code review happened that CodeGuru Reviewer did not
+     * analyze. The lines suppressed in the analysis is based on the
+     * <code>excludeFiles</code> variable in the <code>aws-codeguru-reviewer.yml</code>
+     * file. This number does not include non-code lines such as comments and blank
+     * lines. </p>
+     */
+    inline void SetSuppressedLinesOfCodeCount(long long value) { m_suppressedLinesOfCodeCountHasBeenSet = true; m_suppressedLinesOfCodeCount = value; }
+
+    /**
+     * <p> <code>SuppressedLinesOfCodeCount</code> is the number of lines of code in
+     * the repository where the code review happened that CodeGuru Reviewer did not
+     * analyze. The lines suppressed in the analysis is based on the
+     * <code>excludeFiles</code> variable in the <code>aws-codeguru-reviewer.yml</code>
+     * file. This number does not include non-code lines such as comments and blank
+     * lines. </p>
+     */
+    inline Metrics& WithSuppressedLinesOfCodeCount(long long value) { SetSuppressedLinesOfCodeCount(value); return *this;}
 
 
     /**
@@ -89,6 +130,9 @@ namespace Model
 
     long long m_meteredLinesOfCodeCount;
     bool m_meteredLinesOfCodeCountHasBeenSet;
+
+    long long m_suppressedLinesOfCodeCount;
+    bool m_suppressedLinesOfCodeCountHasBeenSet;
 
     long long m_findingsCount;
     bool m_findingsCountHasBeenSet;
