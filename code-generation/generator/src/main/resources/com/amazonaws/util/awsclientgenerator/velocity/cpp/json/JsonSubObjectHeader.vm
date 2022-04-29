@@ -29,14 +29,8 @@ namespace ${serviceNamespace}
 namespace Model
 {
 #set($classNameRef = "${typeInfo.className}&")
-#foreach($entry in $shape.members.entrySet())##Forward declaration for classes whose headers could not be included in this file.
-#set($memberShape = $entry.value.shape)
-#if($entry.value.shape.isList())
-#set($memberShape = $entry.value.shape.getListMember().getShape())##If member shape is mutually referenced through a list container
-#end
-#if($memberShape.isMutuallyReferencedWith($shape))
-  class $memberShape.name;
-#end
+#foreach($forwardDeclaration in $typeInfo.forwardDeclarations)
+  class $forwardDeclaration;
 #end
 
 #if($shape.documentation)

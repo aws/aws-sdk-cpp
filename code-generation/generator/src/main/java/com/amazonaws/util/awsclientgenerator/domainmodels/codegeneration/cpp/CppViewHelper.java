@@ -271,10 +271,15 @@ public class CppViewHelper {
                 }
             }
             if(!next.isPrimitive()) {
-                if(next.isMutuallyReferencedWith(shape)) {
+                // if `next` is a direct member of a `shape` and they are mutually referenced
+                if(next.isMutuallyReferencedWith(shape) &&
+                        shape.getMembers().values().parallelStream().anyMatch(member -> member.getShape().getName().equals(next.getName()))) {
+                    // Historically in this SDK, a single mutually referenced member is included as a shared_ptr,
+                    // forward declaration and include shared_ptr header in the model header file is enough
                     includeMemoryHeader = true;
-                }
-                else {
+                } else if (!shape.getName().equals(next.getName())) {
+                    // non-ptr and non-ref objects require object info at compile time (so header is required)
+                    // forward declaration may be required OR not depending on the mutual reference
                     headers.add(formatModelIncludeName(projectName, next));
                 }
                 includeUtilityHeader = true;
@@ -290,6 +295,38 @@ public class CppViewHelper {
 
         headers.addAll(shape.getMembers().values().stream().filter(member -> member.isIdempotencyToken()).map(member -> "<aws/core/utils/UUID.h>").collect(Collectors.toList()));
         return headers;
+    }
+
+    public static Set<String> computeForwardDeclarations(Shape shape) {
+        Set<String> forwardDeclarations = new LinkedHashSet<>();
+        Set<String> visited = new LinkedHashSet<>();
+        Queue<Shape> toVisit = shape.getMembers().values().stream().map(ShapeMember::getShape).collect(Collectors.toCollection(() -> new LinkedList<>()));
+
+        while(!toVisit.isEmpty()) {
+            Shape next = toVisit.remove();
+            visited.add(next.getName());
+            if(next.isMap()) {
+                if(!visited.contains(next.getMapKey().getShape().getName())) {
+                    toVisit.add(next.getMapKey().getShape());
+                }
+                if(!visited.contains(next.getMapValue().getShape().getName())) {
+                    toVisit.add(next.getMapValue().getShape());
+                }
+            }
+            if(next.isList())
+            {
+                Shape shapeInList = next.getListMember().getShape();
+                if(!visited.contains(shapeInList.getName())) {
+                    toVisit.add(shapeInList);
+                }
+            }
+            if(!next.isPrimitive() && !next.isMap() && !next.isList() && !next.isBlob()) {
+                if(!next.getName().equals(shape.getName()) && next.isMutuallyReferencedWith(shape)) {
+                    forwardDeclarations.add(next.getName());
+                }
+            }
+        }
+        return forwardDeclarations;
     }
 
     public static String formatModelIncludeName(String projectName, Shape shape) {
