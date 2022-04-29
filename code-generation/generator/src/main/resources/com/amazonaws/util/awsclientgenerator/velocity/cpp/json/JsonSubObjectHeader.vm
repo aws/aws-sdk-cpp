@@ -33,6 +33,9 @@ namespace Model
 #if($entry.value.shape.isMutuallyReferencedWith($shape) || $shape.isListMemberAndMutuallyReferencedWith($entry.value.shape))
   class $entry.value.shape.name;
 #end
+#if($entry.value.shape.isList() && $entry.value.shape.getListMember().getShape().isMutuallyReferencedWith($shape))##If member shape is mutually referenced through a list container
+class $entry.value.shape.getListMember().getShape().name;
+#end
 #end
 
 #if($shape.documentation)
