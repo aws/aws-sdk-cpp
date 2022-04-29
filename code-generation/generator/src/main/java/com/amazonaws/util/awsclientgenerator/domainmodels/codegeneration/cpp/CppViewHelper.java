@@ -271,7 +271,7 @@ public class CppViewHelper {
                 }
             }
             if(!next.isPrimitive()) {
-                if(next.isMutuallyReferencedWith(shape) || shape.isListMemberAndMutuallyReferencedWith(next)) {
+                if(next.isMutuallyReferencedWith(shape)) {
                     includeMemoryHeader = true;
                 }
                 else {
@@ -343,7 +343,7 @@ public class CppViewHelper {
                     toVisit.add(next.getListMember().getShape());
                 }
             }
-            if(!next.isPrimitive() && (next.isMutuallyReferencedWith(shape) || shape.isListMemberAndMutuallyReferencedWith(next))) {
+            if(!next.isPrimitive() && next.isMutuallyReferencedWith(shape)) {
                 headers.add(formatModelIncludeName(projectName, next));
             }
         }

@@ -220,12 +220,4 @@ public class Shape {
 
         return thisMemberShapeNames.contains(otherShape.getName()) && otherMemberShapeNames.contains(this.getName());
     }
-
-    // e.g. "StructValue" has a list of "Value"s as its member, and "StructValue" itself is a member of "Value".
-    // Then "Value".isListMemberAndMutuallyReferencedWith("StructValue") = true
-    public boolean isListMemberAndMutuallyReferencedWith(Shape shape) {
-        if (shape == null || shape.members == null || members == null || !isStructure() || !shape.isStructure() || name.equals(shape.getName())) return false;
-        return members.values().parallelStream().anyMatch(member -> member.getShape().getName().equals(shape.getName()))
-            && shape.getMembers().values().parallelStream().anyMatch(member -> member.getShape().isList() && member.getShape().getListMember().getShape().getName().equals(name));
-    }
 }
