@@ -8,7 +8,6 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/model/HandshakeResourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/organizations/model/HandshakeResource.h>
 #include <utility>
 
 namespace Aws

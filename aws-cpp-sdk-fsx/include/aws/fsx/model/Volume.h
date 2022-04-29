@@ -12,9 +12,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fsx/model/VolumeType.h>
 #include <aws/fsx/model/LifecycleTransitionReason.h>
+#include <aws/fsx/model/AdministrativeAction.h>
 #include <aws/fsx/model/OpenZFSVolumeConfiguration.h>
 #include <aws/fsx/model/Tag.h>
-#include <aws/fsx/model/AdministrativeAction.h>
 #include <utility>
 
 namespace Aws
@@ -31,6 +31,7 @@ namespace FSx
 {
 namespace Model
 {
+  class AdministrativeAction;
 
   /**
    * <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS

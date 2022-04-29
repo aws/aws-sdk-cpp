@@ -6,7 +6,6 @@
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ce/model/Expression.h>
 #include <aws/ce/model/DimensionValues.h>
 #include <aws/ce/model/TagValues.h>
 #include <aws/ce/model/CostCategoryValues.h>

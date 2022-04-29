@@ -26,7 +26,6 @@ namespace TimestreamQuery
 namespace Model
 {
   class ColumnInfo;
-  class ColumnInfo;
 
   /**
    * <p>Contains the data type of a column in a query result set. The data type can

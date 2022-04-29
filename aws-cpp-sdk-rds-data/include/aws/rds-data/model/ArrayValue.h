@@ -6,7 +6,6 @@
 #pragma once
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/rds-data/model/ArrayValue.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 

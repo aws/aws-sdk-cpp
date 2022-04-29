@@ -8,7 +8,6 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/rds-data/model/Value.h>
 #include <utility>
 #include <memory>
 

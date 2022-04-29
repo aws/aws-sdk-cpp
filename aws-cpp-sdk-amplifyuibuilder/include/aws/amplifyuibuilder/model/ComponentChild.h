@@ -8,7 +8,6 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/amplifyuibuilder/model/ComponentChild.h>
 #include <aws/amplifyuibuilder/model/ComponentEvent.h>
 #include <aws/amplifyuibuilder/model/ComponentProperty.h>
 #include <utility>

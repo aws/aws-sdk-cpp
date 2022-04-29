@@ -9,7 +9,6 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/OpsFilter.h>
-#include <aws/ssm/model/OpsAggregator.h>
 #include <utility>
 
 namespace Aws

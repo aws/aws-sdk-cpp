@@ -8,7 +8,6 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/connect/model/StringCondition.h>
 #include <aws/connect/model/HierarchyGroupCondition.h>
-#include <aws/connect/model/UserSearchCriteria.h>
 #include <utility>
 
 namespace Aws

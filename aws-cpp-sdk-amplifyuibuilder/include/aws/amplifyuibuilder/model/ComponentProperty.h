@@ -10,7 +10,6 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/amplifyuibuilder/model/FormBindingElement.h>
-#include <aws/amplifyuibuilder/model/ComponentProperty.h>
 #include <utility>
 #include <memory>
 

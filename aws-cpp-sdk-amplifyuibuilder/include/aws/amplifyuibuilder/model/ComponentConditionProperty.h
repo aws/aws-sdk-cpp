@@ -24,7 +24,6 @@ namespace AmplifyUIBuilder
 namespace Model
 {
   class ComponentProperty;
-  class ComponentProperty;
 
   /**
    * <p>Represents a conditional expression to set a component property. Use

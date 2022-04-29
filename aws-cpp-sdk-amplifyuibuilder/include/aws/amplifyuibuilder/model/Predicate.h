@@ -7,7 +7,6 @@
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/amplifyuibuilder/model/Predicate.h>
 #include <utility>
 
 namespace Aws
