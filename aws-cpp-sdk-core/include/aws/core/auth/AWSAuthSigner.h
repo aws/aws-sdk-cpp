@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include <aws/core/auth/signer/AWSAuthSignerInterface.h>
+#include <aws/core/auth/signer/AWSAuthSignerBase.h>
 #include <aws/core/auth/signer/AWSAuthSignerCommon.h>
 
 #include <aws/core/auth/signer/AWSAuthV4Signer.h>

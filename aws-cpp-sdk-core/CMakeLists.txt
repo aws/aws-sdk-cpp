@@ -44,6 +44,7 @@ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/SDKConfig.h.in"
 file(GLOB AWS_HEADERS "include/aws/core/*.h")
 file(GLOB AWS_AUTH_HEADERS "include/aws/core/auth/*.h")
 file(GLOB AWS_AUTH_SIGNER_HEADERS "include/aws/core/auth/signer/*.h")
+file(GLOB AWS_AUTH_SIGNER_PROVIDER_HEADERS "include/aws/core/auth/signer-provider/*.h")
 file(GLOB AWS_CLIENT_HEADERS "include/aws/core/client/*.h")
 file(GLOB AWS_INTERNAL_HEADERS "include/aws/core/internal/*.h")
 file(GLOB NET_HEADERS "include/aws/core/net/*.h")
@@ -73,6 +74,7 @@ file(GLOB AWS_TINYXML2_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/external/tinyx
 file(GLOB CJSON_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/external/cjson/*.cpp")
 file(GLOB AWS_AUTH_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/auth/*.cpp")
 file(GLOB AWS_AUTH_SIGNER_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/auth/signer/*.cpp")
+file(GLOB AWS_AUTH_SIGNER_PROVIDER_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/auth/signer-provider/*.cpp")
 file(GLOB AWS_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.cpp")
 file(GLOB AWS_INTERNAL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/internal/*.cpp")
 file(GLOB AWS_MODEL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/aws/model/*.cpp")
@@ -216,6 +218,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_SRC
     ${AWS_TINYXML2_SOURCE}
     ${AWS_AUTH_SOURCE}
     ${AWS_AUTH_SIGNER_SOURCE}
+    ${AWS_AUTH_SIGNER_PROVIDER_SOURCE}
     ${AWS_CLIENT_SOURCE}
     ${HTTP_STANDARD_SOURCE}
     ${HTTP_CLIENT_SOURCE}
@@ -237,6 +240,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${AWS_HEADERS}
   ${AWS_AUTH_HEADERS}
   ${AWS_AUTH_SIGNER_HEADERS}
+  ${AWS_AUTH_SIGNER_PROVIDER_HEADERS}
   ${AWS_CLIENT_HEADERS}
   ${AWS_INTERNAL_HEADERS}
   ${NET_HEADERS}
@@ -350,6 +354,7 @@ if(MSVC)
     source_group("Header Files\\aws\\core" FILES ${AWS_HEADERS})
     source_group("Header Files\\aws\\core\\auth" FILES ${AWS_AUTH_HEADERS})
     source_group("Header Files\\aws\\core\\auth\\signer" FILES ${AWS_AUTH_SIGNER_HEADERS})
+    source_group("Header Files\\aws\\core\\auth\\signer-provider" FILES ${AWS_AUTH_SIGNER_PROVIDER_HEADERS})
     source_group("Header Files\\aws\\core\\client" FILES ${AWS_CLIENT_HEADERS})
     source_group("Header Files\\aws\\core\\internal" FILES ${AWS_INTERNAL_HEADERS})
     source_group("Header Files\\aws\\core\\net" FILES ${NET_HEADERS})
@@ -396,6 +401,7 @@ if(MSVC)
     source_group("Source Files\\external\\tinyxml2" FILES ${AWS_TINYXML2_SOURCE})
     source_group("Source Files\\auth" FILES ${AWS_AUTH_SOURCE})
     source_group("Source Files\\auth\\signer" FILES ${AWS_AUTH_SIGNER_SOURCE})
+    source_group("Source Files\\auth\\signer-provider" FILES ${AWS_AUTH_SIGNER_PROVIDER_SOURCE})
     source_group("Source Files\\client" FILES ${AWS_CLIENT_SOURCE})
     source_group("Source Files\\internal" FILES ${AWS_INTERNAL_SOURCE})
     source_group("Source Files\\net\\windows" FILES ${NET_SOURCE})
@@ -564,6 +570,7 @@ endif()
 install (FILES ${AWS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core)
 install (FILES ${AWS_AUTH_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/auth)
 install (FILES ${AWS_AUTH_SIGNER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/auth/signer)
+install (FILES ${AWS_AUTH_SIGNER_PROVIDER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/auth/signer-provider)
 install (FILES ${AWS_CLIENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/client)
 install (FILES ${AWS_INTERNAL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/internal)
 install (FILES ${NET_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/net)

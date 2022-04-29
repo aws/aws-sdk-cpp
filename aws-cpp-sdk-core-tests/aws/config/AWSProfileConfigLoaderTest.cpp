@@ -167,6 +167,149 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileCorrupted)
     ASSERT_EQ(0u, loader.GetProfiles().size());
 }
 
+TEST(AWSConfigFileProfileConfigLoaderTest, TestEmptyProfileFile)
+{
+    TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(configFile.good());
+
+    configFile << R"()";
+    configFile.flush();
+
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName());
+    ASSERT_FALSE(loader.Load());
+    ASSERT_EQ(0u, loader.GetProfiles().size());
+
+    configFile << "\t    \n\n\n\n\n\t\t\t\t\t\n    \n\n\n  ";
+    configFile.flush();
+    AWSConfigFileProfileConfigLoader loader1(configFile.GetFileName());
+    ASSERT_FALSE(loader1.Load());
+    ASSERT_EQ(0u, loader1.GetProfiles().size());
+}
+
+TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileCredentialsProcess)
+{
+    TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(configFile.good());
+
+    const Aws::String profileFileContent = \
+R"(
+# Here is the example of .awsprofile
+     ;another comment
+
+[  default ]
+
+source_profile   =   base)" "\t" R"(
+credential_process = echo '{ "Version": 1, "AccessKeyId": "ASIARTESTID", "SecretAccessKey": "TESTSECRETKEY", "SessionToken": "TESTSESSIONTOKEN", "Expiration": "2022-05-02T18:36:00+00:00" }'#COMMENT
+ ; Comment to be ignored
+
+)"
+R"(                  )"
+R"(
+
+[  profile   )" "\t\t\t" R"(    base  ]
+    region  =   us-east-1#sa-east-3
+    #region = commented-out region
+
+
+)";
+
+    configFile << profileFileContent;
+    configFile.flush();
+
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName());
+    ASSERT_TRUE(loader.Load());
+    ASSERT_EQ(2u, loader.GetProfiles().size());
+
+    ASSERT_EQ("base", loader.GetProfiles().at("default").GetSourceProfile());
+    ASSERT_TRUE(loader.GetProfiles().at("base").GetSourceProfile().empty());
+
+    ASSERT_TRUE(loader.GetProfiles().at("base").GetCredentialProcess().empty());
+    ASSERT_EQ(R"(echo '{ "Version": 1, "AccessKeyId": "ASIARTESTID", "SecretAccessKey": "TESTSECRETKEY", "SessionToken": "TESTSESSIONTOKEN", "Expiration": "2022-05-02T18:36:00+00:00" }')",
+              loader.GetProfiles().at("default").GetCredentialProcess());
+
+    ASSERT_EQ("us-east-1", loader.GetProfiles().at("base").GetRegion());
+    ASSERT_TRUE(loader.GetProfiles().at("default").GetRegion().empty());
+}
+
+TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileProfileName)
+{
+    TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(configFile.good());
+
+    Aws::String profileFileContent = \
+R"([default]
+region = us-east-1
+aws_access_key_id = incorrect_key
+aws_secret_access_key = incorrect_secret
+
+[profile some-thing:long/the_one%only.foo@bar+]
+region = us-east-2
+aws_access_key_id = correct_key
+aws_secret_access_key = correct_secret)";
+
+    configFile << profileFileContent;
+    configFile.flush();
+
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName());
+    ASSERT_TRUE(loader.Load());
+    ASSERT_EQ(2u, loader.GetProfiles().size());
+    ASSERT_TRUE(loader.GetProfiles().find("default") != loader.GetProfiles().end());
+    ASSERT_EQ("default", loader.GetProfiles().at("default").GetName());
+    ASSERT_EQ("us-east-1", loader.GetProfiles().at("default").GetRegion());
+    ASSERT_EQ("incorrect_key", loader.GetProfiles().at("default").GetCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("incorrect_secret", loader.GetProfiles().at("default").GetCredentials().GetAWSSecretKey());
+
+    const Aws::String complicatedProfileName = R"(some-thing:long/the_one%only.foo@bar+)";
+    ASSERT_TRUE(loader.GetProfiles().find(complicatedProfileName) != loader.GetProfiles().end());
+    ASSERT_EQ(complicatedProfileName, loader.GetProfiles().at(complicatedProfileName).GetName());
+    ASSERT_EQ("us-east-2", loader.GetProfiles().at(complicatedProfileName).GetRegion());
+    ASSERT_EQ("correct_key", loader.GetProfiles().at(complicatedProfileName).GetCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("correct_secret", loader.GetProfiles().at(complicatedProfileName).GetCredentials().GetAWSSecretKey());
+}
+
+TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsBlankSpace)
+{
+    TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(configFile.good());
+
+    Aws::String profileFileContent = \
+R"([  default ]
+region   = us-east-1
+)"
+R"(                  )"
+R"(
+aws_access_key_id =   incorrect_key
+
+   aws_secret_access_key = incorrect_secret
+
+[   profile      some-thing:long/the_one%only.foo@bar+  ]
+
+region = us-east-2
+ aws_access_key_id = correct_key
+aws_secret_access_key =   correct_secret)";
+
+    std::replace(profileFileContent.begin(), profileFileContent.end(), ' ', '\t');
+
+    configFile << profileFileContent;
+    configFile.flush();
+
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName());
+    ASSERT_TRUE(loader.Load());
+    ASSERT_EQ(2u, loader.GetProfiles().size());
+    ASSERT_TRUE(loader.GetProfiles().find("default") != loader.GetProfiles().end());
+    ASSERT_EQ("default", loader.GetProfiles().at("default").GetName());
+    ASSERT_EQ("us-east-1", loader.GetProfiles().at("default").GetRegion());
+    ASSERT_EQ("incorrect_key", loader.GetProfiles().at("default").GetCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("incorrect_secret", loader.GetProfiles().at("default").GetCredentials().GetAWSSecretKey());
+
+    const Aws::String complicatedProfileName = R"(some-thing:long/the_one%only.foo@bar+)";
+    ASSERT_TRUE(loader.GetProfiles().find(complicatedProfileName) != loader.GetProfiles().end());
+    ASSERT_EQ(complicatedProfileName, loader.GetProfiles().at(complicatedProfileName).GetName());
+    ASSERT_EQ("us-east-2", loader.GetProfiles().at(complicatedProfileName).GetRegion());
+    ASSERT_EQ("correct_key", loader.GetProfiles().at(complicatedProfileName).GetCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("correct_secret", loader.GetProfiles().at(complicatedProfileName).GetCredentials().GetAWSSecretKey());
+}
+
 static const char* const ALLOCATION_TAG = "EC2InstanceProfileConfigLoaderTest";
 
 TEST(EC2InstanceProfileConfigLoaderTest, TestSuccesfullyHitsService)
