@@ -379,7 +379,13 @@ namespace Model
      * doesn't have valid identity data.</p> </li> <li> <p>INVALID_ADDRESS: The account
      * could not be created because the address you provided is not valid.</p> </li>
      * <li> <p>INVALID_EMAIL: The account could not be created because the email
-     * address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The
+     * address you provided is not valid.</p> </li> <li> <p>INVALID_PAYMENT_INSTRUMENT:
+     * The Amazon Web Services account that owns your organization does not have a
+     * supported payment method associated with the account. Amazon Web Services does
+     * not support cards issued by financial institutions in Russia or Belarus. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+     * your Amazon Web Services payments</a>.</p> </li> <li> <p>INTERNAL_FAILURE: The
      * account could not be created because of an internal failure. Try again later. If
      * the problem persists, contact Amazon Web Services Customer Support.</p> </li>
      * <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns
@@ -411,7 +417,13 @@ namespace Model
      * doesn't have valid identity data.</p> </li> <li> <p>INVALID_ADDRESS: The account
      * could not be created because the address you provided is not valid.</p> </li>
      * <li> <p>INVALID_EMAIL: The account could not be created because the email
-     * address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The
+     * address you provided is not valid.</p> </li> <li> <p>INVALID_PAYMENT_INSTRUMENT:
+     * The Amazon Web Services account that owns your organization does not have a
+     * supported payment method associated with the account. Amazon Web Services does
+     * not support cards issued by financial institutions in Russia or Belarus. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+     * your Amazon Web Services payments</a>.</p> </li> <li> <p>INTERNAL_FAILURE: The
      * account could not be created because of an internal failure. Try again later. If
      * the problem persists, contact Amazon Web Services Customer Support.</p> </li>
      * <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns
@@ -443,7 +455,13 @@ namespace Model
      * doesn't have valid identity data.</p> </li> <li> <p>INVALID_ADDRESS: The account
      * could not be created because the address you provided is not valid.</p> </li>
      * <li> <p>INVALID_EMAIL: The account could not be created because the email
-     * address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The
+     * address you provided is not valid.</p> </li> <li> <p>INVALID_PAYMENT_INSTRUMENT:
+     * The Amazon Web Services account that owns your organization does not have a
+     * supported payment method associated with the account. Amazon Web Services does
+     * not support cards issued by financial institutions in Russia or Belarus. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+     * your Amazon Web Services payments</a>.</p> </li> <li> <p>INTERNAL_FAILURE: The
      * account could not be created because of an internal failure. Try again later. If
      * the problem persists, contact Amazon Web Services Customer Support.</p> </li>
      * <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns
@@ -475,7 +493,13 @@ namespace Model
      * doesn't have valid identity data.</p> </li> <li> <p>INVALID_ADDRESS: The account
      * could not be created because the address you provided is not valid.</p> </li>
      * <li> <p>INVALID_EMAIL: The account could not be created because the email
-     * address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The
+     * address you provided is not valid.</p> </li> <li> <p>INVALID_PAYMENT_INSTRUMENT:
+     * The Amazon Web Services account that owns your organization does not have a
+     * supported payment method associated with the account. Amazon Web Services does
+     * not support cards issued by financial institutions in Russia or Belarus. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+     * your Amazon Web Services payments</a>.</p> </li> <li> <p>INTERNAL_FAILURE: The
      * account could not be created because of an internal failure. Try again later. If
      * the problem persists, contact Amazon Web Services Customer Support.</p> </li>
      * <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns
@@ -507,7 +531,13 @@ namespace Model
      * doesn't have valid identity data.</p> </li> <li> <p>INVALID_ADDRESS: The account
      * could not be created because the address you provided is not valid.</p> </li>
      * <li> <p>INVALID_EMAIL: The account could not be created because the email
-     * address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The
+     * address you provided is not valid.</p> </li> <li> <p>INVALID_PAYMENT_INSTRUMENT:
+     * The Amazon Web Services account that owns your organization does not have a
+     * supported payment method associated with the account. Amazon Web Services does
+     * not support cards issued by financial institutions in Russia or Belarus. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+     * your Amazon Web Services payments</a>.</p> </li> <li> <p>INTERNAL_FAILURE: The
      * account could not be created because of an internal failure. Try again later. If
      * the problem persists, contact Amazon Web Services Customer Support.</p> </li>
      * <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns
@@ -539,7 +569,13 @@ namespace Model
      * doesn't have valid identity data.</p> </li> <li> <p>INVALID_ADDRESS: The account
      * could not be created because the address you provided is not valid.</p> </li>
      * <li> <p>INVALID_EMAIL: The account could not be created because the email
-     * address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The
+     * address you provided is not valid.</p> </li> <li> <p>INVALID_PAYMENT_INSTRUMENT:
+     * The Amazon Web Services account that owns your organization does not have a
+     * supported payment method associated with the account. Amazon Web Services does
+     * not support cards issued by financial institutions in Russia or Belarus. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+     * your Amazon Web Services payments</a>.</p> </li> <li> <p>INTERNAL_FAILURE: The
      * account could not be created because of an internal failure. Try again later. If
      * the problem persists, contact Amazon Web Services Customer Support.</p> </li>
      * <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns

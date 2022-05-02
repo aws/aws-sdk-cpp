@@ -23,6 +23,7 @@
 #include <aws/outposts/model/GetOutpostInstanceTypesResult.h>
 #include <aws/outposts/model/GetSiteResult.h>
 #include <aws/outposts/model/GetSiteAddressResult.h>
+#include <aws/outposts/model/ListAssetsResult.h>
 #include <aws/outposts/model/ListCatalogItemsResult.h>
 #include <aws/outposts/model/ListOrdersResult.h>
 #include <aws/outposts/model/ListOutpostsResult.h>
@@ -85,6 +86,7 @@ namespace Model
         class GetOutpostInstanceTypesRequest;
         class GetSiteRequest;
         class GetSiteAddressRequest;
+        class ListAssetsRequest;
         class ListCatalogItemsRequest;
         class ListOrdersRequest;
         class ListOutpostsRequest;
@@ -109,6 +111,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetOutpostInstanceTypesResult, OutpostsError> GetOutpostInstanceTypesOutcome;
         typedef Aws::Utils::Outcome<GetSiteResult, OutpostsError> GetSiteOutcome;
         typedef Aws::Utils::Outcome<GetSiteAddressResult, OutpostsError> GetSiteAddressOutcome;
+        typedef Aws::Utils::Outcome<ListAssetsResult, OutpostsError> ListAssetsOutcome;
         typedef Aws::Utils::Outcome<ListCatalogItemsResult, OutpostsError> ListCatalogItemsOutcome;
         typedef Aws::Utils::Outcome<ListOrdersResult, OutpostsError> ListOrdersOutcome;
         typedef Aws::Utils::Outcome<ListOutpostsResult, OutpostsError> ListOutpostsOutcome;
@@ -133,6 +136,7 @@ namespace Model
         typedef std::future<GetOutpostInstanceTypesOutcome> GetOutpostInstanceTypesOutcomeCallable;
         typedef std::future<GetSiteOutcome> GetSiteOutcomeCallable;
         typedef std::future<GetSiteAddressOutcome> GetSiteAddressOutcomeCallable;
+        typedef std::future<ListAssetsOutcome> ListAssetsOutcomeCallable;
         typedef std::future<ListCatalogItemsOutcome> ListCatalogItemsOutcomeCallable;
         typedef std::future<ListOrdersOutcome> ListOrdersOutcomeCallable;
         typedef std::future<ListOutpostsOutcome> ListOutpostsOutcomeCallable;
@@ -160,6 +164,7 @@ namespace Model
     typedef std::function<void(const OutpostsClient*, const Model::GetOutpostInstanceTypesRequest&, const Model::GetOutpostInstanceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOutpostInstanceTypesResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::GetSiteRequest&, const Model::GetSiteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSiteResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::GetSiteAddressRequest&, const Model::GetSiteAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSiteAddressResponseReceivedHandler;
+    typedef std::function<void(const OutpostsClient*, const Model::ListAssetsRequest&, const Model::ListAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetsResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::ListCatalogItemsRequest&, const Model::ListCatalogItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCatalogItemsResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::ListOrdersRequest&, const Model::ListOrdersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrdersResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::ListOutpostsRequest&, const Model::ListOutpostsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOutpostsResponseReceivedHandler;
@@ -437,7 +442,7 @@ namespace Model
         virtual void GetOutpostAsync(const Model::GetOutpostRequest& request, const GetOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the instance types for the specified Outpost.</p><p><h3>See Also:</h3> 
+         * <p>Gets the instance types for the specified Outpost.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostInstanceTypes">AWS
          * API Reference</a></p>
@@ -445,7 +450,7 @@ namespace Model
         virtual Model::GetOutpostInstanceTypesOutcome GetOutpostInstanceTypes(const Model::GetOutpostInstanceTypesRequest& request) const;
 
         /**
-         * <p>Lists the instance types for the specified Outpost.</p><p><h3>See Also:</h3> 
+         * <p>Gets the instance types for the specified Outpost.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostInstanceTypes">AWS
          * API Reference</a></p>
@@ -455,7 +460,7 @@ namespace Model
         virtual Model::GetOutpostInstanceTypesOutcomeCallable GetOutpostInstanceTypesCallable(const Model::GetOutpostInstanceTypesRequest& request) const;
 
         /**
-         * <p>Lists the instance types for the specified Outpost.</p><p><h3>See Also:</h3> 
+         * <p>Gets the instance types for the specified Outpost.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostInstanceTypes">AWS
          * API Reference</a></p>
@@ -515,22 +520,56 @@ namespace Model
         virtual void GetSiteAddressAsync(const Model::GetSiteAddressRequest& request, const GetSiteAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Use to create a list of every item in the catalog. Add filters to your
-         * request to return a more specific list of results. Use filters to match an item
-         * class, storage option, or EC2 family. </p> <p>If you specify multiple filters,
-         * the filters are joined with an <code>AND</code>, and the request returns only
-         * results that match all of the specified filters.</p><p><h3>See Also:</h3>   <a
+         * <p> Lists the hardware assets in an Outpost. If you are using Dedicated Hosts on
+         * Amazon Web Services Outposts, you can filter your request by host ID to return a
+         * list of hardware assets that allocate resources for Dedicated Hosts.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListAssets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAssetsOutcome ListAssets(const Model::ListAssetsRequest& request) const;
+
+        /**
+         * <p> Lists the hardware assets in an Outpost. If you are using Dedicated Hosts on
+         * Amazon Web Services Outposts, you can filter your request by host ID to return a
+         * list of hardware assets that allocate resources for Dedicated Hosts.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListAssets">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAssetsOutcomeCallable ListAssetsCallable(const Model::ListAssetsRequest& request) const;
+
+        /**
+         * <p> Lists the hardware assets in an Outpost. If you are using Dedicated Hosts on
+         * Amazon Web Services Outposts, you can filter your request by host ID to return a
+         * list of hardware assets that allocate resources for Dedicated Hosts.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListAssets">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAssetsAsync(const Model::ListAssetsRequest& request, const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the items in the catalog. Add filters to your request to return a more
+         * specific list of results. Use filters to match an item class, storage option, or
+         * EC2 family. </p> <p>If you specify multiple filters, the filters are joined with
+         * an <code>AND</code>, and the request returns only results that match all of the
+         * specified filters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListCatalogItems">AWS
          * API Reference</a></p>
          */
         virtual Model::ListCatalogItemsOutcome ListCatalogItems(const Model::ListCatalogItemsRequest& request) const;
 
         /**
-         * <p>Use to create a list of every item in the catalog. Add filters to your
-         * request to return a more specific list of results. Use filters to match an item
-         * class, storage option, or EC2 family. </p> <p>If you specify multiple filters,
-         * the filters are joined with an <code>AND</code>, and the request returns only
-         * results that match all of the specified filters.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the items in the catalog. Add filters to your request to return a more
+         * specific list of results. Use filters to match an item class, storage option, or
+         * EC2 family. </p> <p>If you specify multiple filters, the filters are joined with
+         * an <code>AND</code>, and the request returns only results that match all of the
+         * specified filters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListCatalogItems">AWS
          * API Reference</a></p>
          *
@@ -539,11 +578,11 @@ namespace Model
         virtual Model::ListCatalogItemsOutcomeCallable ListCatalogItemsCallable(const Model::ListCatalogItemsRequest& request) const;
 
         /**
-         * <p>Use to create a list of every item in the catalog. Add filters to your
-         * request to return a more specific list of results. Use filters to match an item
-         * class, storage option, or EC2 family. </p> <p>If you specify multiple filters,
-         * the filters are joined with an <code>AND</code>, and the request returns only
-         * results that match all of the specified filters.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the items in the catalog. Add filters to your request to return a more
+         * specific list of results. Use filters to match an item class, storage option, or
+         * EC2 family. </p> <p>If you specify multiple filters, the filters are joined with
+         * an <code>AND</code>, and the request returns only results that match all of the
+         * specified filters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListCatalogItems">AWS
          * API Reference</a></p>
          *
@@ -552,8 +591,8 @@ namespace Model
         virtual void ListCatalogItemsAsync(const Model::ListCatalogItemsRequest& request, const ListCatalogItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create a list of the Outpost orders for your Amazon Web Services account. You
-         * can filter your request by Outpost to return a more specific list of results.
+         * <p>Lists the Outpost orders for your Amazon Web Services account. You can filter
+         * your request by Outpost to return a more specific list of results.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListOrders">AWS
          * API Reference</a></p>
@@ -561,8 +600,8 @@ namespace Model
         virtual Model::ListOrdersOutcome ListOrders(const Model::ListOrdersRequest& request) const;
 
         /**
-         * <p>Create a list of the Outpost orders for your Amazon Web Services account. You
-         * can filter your request by Outpost to return a more specific list of results.
+         * <p>Lists the Outpost orders for your Amazon Web Services account. You can filter
+         * your request by Outpost to return a more specific list of results.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListOrders">AWS
          * API Reference</a></p>
@@ -572,8 +611,8 @@ namespace Model
         virtual Model::ListOrdersOutcomeCallable ListOrdersCallable(const Model::ListOrdersRequest& request) const;
 
         /**
-         * <p>Create a list of the Outpost orders for your Amazon Web Services account. You
-         * can filter your request by Outpost to return a more specific list of results.
+         * <p>Lists the Outpost orders for your Amazon Web Services account. You can filter
+         * your request by Outpost to return a more specific list of results.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListOrders">AWS
          * API Reference</a></p>
@@ -583,26 +622,24 @@ namespace Model
         virtual void ListOrdersAsync(const Model::ListOrdersRequest& request, const ListOrdersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create a list of the Outposts for your Amazon Web Services account. Add
-         * filters to your request to return a more specific list of results. Use filters
-         * to match an Outpost lifecycle status, Availability Zone
-         * (<code>us-east-1a</code>), and AZ ID (<code>use1-az1</code>). </p> <p>If you
-         * specify multiple filters, the filters are joined with an <code>AND</code>, and
-         * the request returns only results that match all of the specified
-         * filters.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Outposts for your Amazon Web Services account. Add filters to your
+         * request to return a more specific list of results. Use filters to match an
+         * Outpost lifecycle status, Availability Zone (<code>us-east-1a</code>), and AZ ID
+         * (<code>use1-az1</code>). </p> <p>If you specify multiple filters, the filters
+         * are joined with an <code>AND</code>, and the request returns only results that
+         * match all of the specified filters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListOutposts">AWS
          * API Reference</a></p>
          */
         virtual Model::ListOutpostsOutcome ListOutposts(const Model::ListOutpostsRequest& request) const;
 
         /**
-         * <p>Create a list of the Outposts for your Amazon Web Services account. Add
-         * filters to your request to return a more specific list of results. Use filters
-         * to match an Outpost lifecycle status, Availability Zone
-         * (<code>us-east-1a</code>), and AZ ID (<code>use1-az1</code>). </p> <p>If you
-         * specify multiple filters, the filters are joined with an <code>AND</code>, and
-         * the request returns only results that match all of the specified
-         * filters.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Outposts for your Amazon Web Services account. Add filters to your
+         * request to return a more specific list of results. Use filters to match an
+         * Outpost lifecycle status, Availability Zone (<code>us-east-1a</code>), and AZ ID
+         * (<code>use1-az1</code>). </p> <p>If you specify multiple filters, the filters
+         * are joined with an <code>AND</code>, and the request returns only results that
+         * match all of the specified filters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListOutposts">AWS
          * API Reference</a></p>
          *
@@ -611,13 +648,12 @@ namespace Model
         virtual Model::ListOutpostsOutcomeCallable ListOutpostsCallable(const Model::ListOutpostsRequest& request) const;
 
         /**
-         * <p>Create a list of the Outposts for your Amazon Web Services account. Add
-         * filters to your request to return a more specific list of results. Use filters
-         * to match an Outpost lifecycle status, Availability Zone
-         * (<code>us-east-1a</code>), and AZ ID (<code>use1-az1</code>). </p> <p>If you
-         * specify multiple filters, the filters are joined with an <code>AND</code>, and
-         * the request returns only results that match all of the specified
-         * filters.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Outposts for your Amazon Web Services account. Add filters to your
+         * request to return a more specific list of results. Use filters to match an
+         * Outpost lifecycle status, Availability Zone (<code>us-east-1a</code>), and AZ ID
+         * (<code>use1-az1</code>). </p> <p>If you specify multiple filters, the filters
+         * are joined with an <code>AND</code>, and the request returns only results that
+         * match all of the specified filters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListOutposts">AWS
          * API Reference</a></p>
          *
@@ -626,24 +662,24 @@ namespace Model
         virtual void ListOutpostsAsync(const Model::ListOutpostsRequest& request, const ListOutpostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create a list of the Outpost sites for your Amazon Web Services account. Add
-         * operating address filters to your request to return a more specific list of
-         * results. Use filters to match site city, country code, or state/region of the
-         * operating address. </p> <p>If you specify multiple filters, the filters are
-         * joined with an <code>AND</code>, and the request returns only results that match
-         * all of the specified filters.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Outpost sites for your Amazon Web Services account. Add operating
+         * address filters to your request to return a more specific list of results. Use
+         * filters to match site city, country code, or state/region of the operating
+         * address. </p> <p>If you specify multiple filters, the filters are joined with an
+         * <code>AND</code>, and the request returns only results that match all of the
+         * specified filters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListSites">AWS
          * API Reference</a></p>
          */
         virtual Model::ListSitesOutcome ListSites(const Model::ListSitesRequest& request) const;
 
         /**
-         * <p>Create a list of the Outpost sites for your Amazon Web Services account. Add
-         * operating address filters to your request to return a more specific list of
-         * results. Use filters to match site city, country code, or state/region of the
-         * operating address. </p> <p>If you specify multiple filters, the filters are
-         * joined with an <code>AND</code>, and the request returns only results that match
-         * all of the specified filters.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Outpost sites for your Amazon Web Services account. Add operating
+         * address filters to your request to return a more specific list of results. Use
+         * filters to match site city, country code, or state/region of the operating
+         * address. </p> <p>If you specify multiple filters, the filters are joined with an
+         * <code>AND</code>, and the request returns only results that match all of the
+         * specified filters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListSites">AWS
          * API Reference</a></p>
          *
@@ -652,12 +688,12 @@ namespace Model
         virtual Model::ListSitesOutcomeCallable ListSitesCallable(const Model::ListSitesRequest& request) const;
 
         /**
-         * <p>Create a list of the Outpost sites for your Amazon Web Services account. Add
-         * operating address filters to your request to return a more specific list of
-         * results. Use filters to match site city, country code, or state/region of the
-         * operating address. </p> <p>If you specify multiple filters, the filters are
-         * joined with an <code>AND</code>, and the request returns only results that match
-         * all of the specified filters.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Outpost sites for your Amazon Web Services account. Add operating
+         * address filters to your request to return a more specific list of results. Use
+         * filters to match site city, country code, or state/region of the operating
+         * address. </p> <p>If you specify multiple filters, the filters are joined with an
+         * <code>AND</code>, and the request returns only results that match all of the
+         * specified filters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListSites">AWS
          * API Reference</a></p>
          *
@@ -886,6 +922,7 @@ namespace Model
         void GetOutpostInstanceTypesAsyncHelper(const Model::GetOutpostInstanceTypesRequest& request, const GetOutpostInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSiteAsyncHelper(const Model::GetSiteRequest& request, const GetSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSiteAddressAsyncHelper(const Model::GetSiteAddressRequest& request, const GetSiteAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAssetsAsyncHelper(const Model::ListAssetsRequest& request, const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCatalogItemsAsyncHelper(const Model::ListCatalogItemsRequest& request, const ListCatalogItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOrdersAsyncHelper(const Model::ListOrdersRequest& request, const ListOrdersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOutpostsAsyncHelper(const Model::ListOutpostsRequest& request, const ListOutpostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

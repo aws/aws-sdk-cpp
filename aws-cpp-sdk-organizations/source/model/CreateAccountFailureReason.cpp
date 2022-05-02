@@ -33,6 +33,7 @@ namespace Aws
         static const int INVALID_IDENTITY_FOR_BUSINESS_VALIDATION_HASH = HashingUtils::HashString("INVALID_IDENTITY_FOR_BUSINESS_VALIDATION");
         static const int UNKNOWN_BUSINESS_VALIDATION_HASH = HashingUtils::HashString("UNKNOWN_BUSINESS_VALIDATION");
         static const int MISSING_PAYMENT_INSTRUMENT_HASH = HashingUtils::HashString("MISSING_PAYMENT_INSTRUMENT");
+        static const int INVALID_PAYMENT_INSTRUMENT_HASH = HashingUtils::HashString("INVALID_PAYMENT_INSTRUMENT");
 
 
         CreateAccountFailureReason GetCreateAccountFailureReasonForName(const Aws::String& name)
@@ -90,6 +91,10 @@ namespace Aws
           {
             return CreateAccountFailureReason::MISSING_PAYMENT_INSTRUMENT;
           }
+          else if (hashCode == INVALID_PAYMENT_INSTRUMENT_HASH)
+          {
+            return CreateAccountFailureReason::INVALID_PAYMENT_INSTRUMENT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -130,6 +135,8 @@ namespace Aws
             return "UNKNOWN_BUSINESS_VALIDATION";
           case CreateAccountFailureReason::MISSING_PAYMENT_INSTRUMENT:
             return "MISSING_PAYMENT_INSTRUMENT";
+          case CreateAccountFailureReason::INVALID_PAYMENT_INSTRUMENT:
+            return "INVALID_PAYMENT_INSTRUMENT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

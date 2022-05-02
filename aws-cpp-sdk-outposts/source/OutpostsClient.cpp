@@ -32,6 +32,7 @@
 #include <aws/outposts/model/GetOutpostInstanceTypesRequest.h>
 #include <aws/outposts/model/GetSiteRequest.h>
 #include <aws/outposts/model/GetSiteAddressRequest.h>
+#include <aws/outposts/model/ListAssetsRequest.h>
 #include <aws/outposts/model/ListCatalogItemsRequest.h>
 #include <aws/outposts/model/ListOrdersRequest.h>
 #include <aws/outposts/model/ListOutpostsRequest.h>
@@ -477,6 +478,38 @@ void OutpostsClient::GetSiteAddressAsync(const GetSiteAddressRequest& request, c
 void OutpostsClient::GetSiteAddressAsyncHelper(const GetSiteAddressRequest& request, const GetSiteAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetSiteAddress(request), context);
+}
+
+ListAssetsOutcome OutpostsClient::ListAssets(const ListAssetsRequest& request) const
+{
+  if (!request.OutpostIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAssets", "Required field: OutpostIdentifier, is not set");
+    return ListAssetsOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutpostIdentifier]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/outposts/");
+  uri.AddPathSegment(request.GetOutpostIdentifier());
+  uri.AddPathSegments("/assets");
+  return ListAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAssetsOutcomeCallable OutpostsClient::ListAssetsCallable(const ListAssetsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAssetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssets(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OutpostsClient::ListAssetsAsync(const ListAssetsRequest& request, const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAssetsAsyncHelper( request, handler, context ); } );
+}
+
+void OutpostsClient::ListAssetsAsyncHelper(const ListAssetsRequest& request, const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAssets(request), context);
 }
 
 ListCatalogItemsOutcome OutpostsClient::ListCatalogItems(const ListCatalogItemsRequest& request) const

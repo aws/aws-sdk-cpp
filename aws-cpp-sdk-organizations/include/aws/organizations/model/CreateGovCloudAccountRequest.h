@@ -223,42 +223,58 @@ namespace Model
 
 
     /**
-     * <p>The friendly name of the member account.</p>
+     * <p>The friendly name of the member account. </p> <p>The account name can consist
+     * of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't
+     * separate characters with a dash (–).</p>
      */
     inline const Aws::String& GetAccountName() const{ return m_accountName; }
 
     /**
-     * <p>The friendly name of the member account.</p>
+     * <p>The friendly name of the member account. </p> <p>The account name can consist
+     * of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't
+     * separate characters with a dash (–).</p>
      */
     inline bool AccountNameHasBeenSet() const { return m_accountNameHasBeenSet; }
 
     /**
-     * <p>The friendly name of the member account.</p>
+     * <p>The friendly name of the member account. </p> <p>The account name can consist
+     * of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't
+     * separate characters with a dash (–).</p>
      */
     inline void SetAccountName(const Aws::String& value) { m_accountNameHasBeenSet = true; m_accountName = value; }
 
     /**
-     * <p>The friendly name of the member account.</p>
+     * <p>The friendly name of the member account. </p> <p>The account name can consist
+     * of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't
+     * separate characters with a dash (–).</p>
      */
     inline void SetAccountName(Aws::String&& value) { m_accountNameHasBeenSet = true; m_accountName = std::move(value); }
 
     /**
-     * <p>The friendly name of the member account.</p>
+     * <p>The friendly name of the member account. </p> <p>The account name can consist
+     * of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't
+     * separate characters with a dash (–).</p>
      */
     inline void SetAccountName(const char* value) { m_accountNameHasBeenSet = true; m_accountName.assign(value); }
 
     /**
-     * <p>The friendly name of the member account.</p>
+     * <p>The friendly name of the member account. </p> <p>The account name can consist
+     * of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't
+     * separate characters with a dash (–).</p>
      */
     inline CreateGovCloudAccountRequest& WithAccountName(const Aws::String& value) { SetAccountName(value); return *this;}
 
     /**
-     * <p>The friendly name of the member account.</p>
+     * <p>The friendly name of the member account. </p> <p>The account name can consist
+     * of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't
+     * separate characters with a dash (–).</p>
      */
     inline CreateGovCloudAccountRequest& WithAccountName(Aws::String&& value) { SetAccountName(std::move(value)); return *this;}
 
     /**
-     * <p>The friendly name of the member account.</p>
+     * <p>The friendly name of the member account. </p> <p>The account name can consist
+     * of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't
+     * separate characters with a dash (–).</p>
      */
     inline CreateGovCloudAccountRequest& WithAccountName(const char* value) { SetAccountName(value); return *this;}
 
