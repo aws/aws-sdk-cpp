@@ -14,6 +14,7 @@
 #include <aws/kinesis-video-archived-media/model/GetClipResult.h>
 #include <aws/kinesis-video-archived-media/model/GetDASHStreamingSessionURLResult.h>
 #include <aws/kinesis-video-archived-media/model/GetHLSStreamingSessionURLResult.h>
+#include <aws/kinesis-video-archived-media/model/GetImagesResult.h>
 #include <aws/kinesis-video-archived-media/model/GetMediaForFragmentListResult.h>
 #include <aws/kinesis-video-archived-media/model/ListFragmentsResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -58,18 +59,21 @@ namespace Model
         class GetClipRequest;
         class GetDASHStreamingSessionURLRequest;
         class GetHLSStreamingSessionURLRequest;
+        class GetImagesRequest;
         class GetMediaForFragmentListRequest;
         class ListFragmentsRequest;
 
         typedef Aws::Utils::Outcome<GetClipResult, KinesisVideoArchivedMediaError> GetClipOutcome;
         typedef Aws::Utils::Outcome<GetDASHStreamingSessionURLResult, KinesisVideoArchivedMediaError> GetDASHStreamingSessionURLOutcome;
         typedef Aws::Utils::Outcome<GetHLSStreamingSessionURLResult, KinesisVideoArchivedMediaError> GetHLSStreamingSessionURLOutcome;
+        typedef Aws::Utils::Outcome<GetImagesResult, KinesisVideoArchivedMediaError> GetImagesOutcome;
         typedef Aws::Utils::Outcome<GetMediaForFragmentListResult, KinesisVideoArchivedMediaError> GetMediaForFragmentListOutcome;
         typedef Aws::Utils::Outcome<ListFragmentsResult, KinesisVideoArchivedMediaError> ListFragmentsOutcome;
 
         typedef std::future<GetClipOutcome> GetClipOutcomeCallable;
         typedef std::future<GetDASHStreamingSessionURLOutcome> GetDASHStreamingSessionURLOutcomeCallable;
         typedef std::future<GetHLSStreamingSessionURLOutcome> GetHLSStreamingSessionURLOutcomeCallable;
+        typedef std::future<GetImagesOutcome> GetImagesOutcomeCallable;
         typedef std::future<GetMediaForFragmentListOutcome> GetMediaForFragmentListOutcomeCallable;
         typedef std::future<ListFragmentsOutcome> ListFragmentsOutcomeCallable;
 } // namespace Model
@@ -79,6 +83,7 @@ namespace Model
     typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::GetClipRequest&, Model::GetClipOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClipResponseReceivedHandler;
     typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::GetDASHStreamingSessionURLRequest&, const Model::GetDASHStreamingSessionURLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDASHStreamingSessionURLResponseReceivedHandler;
     typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::GetHLSStreamingSessionURLRequest&, const Model::GetHLSStreamingSessionURLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHLSStreamingSessionURLResponseReceivedHandler;
+    typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::GetImagesRequest&, const Model::GetImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImagesResponseReceivedHandler;
     typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::GetMediaForFragmentListRequest&, Model::GetMediaForFragmentListOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMediaForFragmentListResponseReceivedHandler;
     typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::ListFragmentsRequest&, const Model::ListFragmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFragmentsResponseReceivedHandler;
 
@@ -935,6 +940,37 @@ namespace Model
         virtual void GetHLSStreamingSessionURLAsync(const Model::GetHLSStreamingSessionURLRequest& request, const GetHLSStreamingSessionURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves a list of Images corresponding to each timestamp for a given time
+         * range, sampling interval, and image format configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetImages">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetImagesOutcome GetImages(const Model::GetImagesRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of Images corresponding to each timestamp for a given time
+         * range, sampling interval, and image format configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetImages">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetImagesOutcomeCallable GetImagesCallable(const Model::GetImagesRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of Images corresponding to each timestamp for a given time
+         * range, sampling interval, and image format configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetImages">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetImagesAsync(const Model::GetImagesRequest& request, const GetImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets media for a list of fragments (specified by fragment number) from the
          * archived data in an Amazon Kinesis video stream.</p>  <p>You must first
          * call the <code>GetDataEndpoint</code> API to get an endpoint. Then send the
@@ -1123,6 +1159,7 @@ namespace Model
         void GetClipAsyncHelper(const Model::GetClipRequest& request, const GetClipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDASHStreamingSessionURLAsyncHelper(const Model::GetDASHStreamingSessionURLRequest& request, const GetDASHStreamingSessionURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetHLSStreamingSessionURLAsyncHelper(const Model::GetHLSStreamingSessionURLRequest& request, const GetHLSStreamingSessionURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetImagesAsyncHelper(const Model::GetImagesRequest& request, const GetImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMediaForFragmentListAsyncHelper(const Model::GetMediaForFragmentListRequest& request, const GetMediaForFragmentListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFragmentsAsyncHelper(const Model::ListFragmentsRequest& request, const ListFragmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

@@ -8155,12 +8155,13 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.</p>
          *  <p> <b>Rules</b> </p> <p>You specify the lifecycle configuration in your
          * request body. The lifecycle configuration is specified as XML consisting of one
-         * or more rules. Each rule consists of the following:</p> <ul> <li> <p>Filter
-         * identifying a subset of objects to which the rule applies. The filter can be
-         * based on a key name prefix, object tags, or a combination of both.</p> </li>
-         * <li> <p>Status whether the rule is in effect.</p> </li> <li> <p>One or more
-         * lifecycle transition and expiration actions that you want Amazon S3 to perform
-         * on the objects identified by the filter. If the state of your bucket is
+         * or more rules. An Amazon S3 Lifecycle configuration can have up to 1,000 rules.
+         * This limit is not adjustable. Each rule consists of the following:</p> <ul> <li>
+         * <p>Filter identifying a subset of objects to which the rule applies. The filter
+         * can be based on a key name prefix, object tags, or a combination of both.</p>
+         * </li> <li> <p>Status whether the rule is in effect.</p> </li> <li> <p>One or
+         * more lifecycle transition and expiration actions that you want Amazon S3 to
+         * perform on the objects identified by the filter. If the state of your bucket is
          * versioning-enabled or versioning-suspended, you can have many versions of the
          * same object (one current version and zero or more noncurrent versions). Amazon
          * S3 provides predefined actions that you can specify for current and noncurrent
@@ -8212,12 +8213,13 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.</p>
          *  <p> <b>Rules</b> </p> <p>You specify the lifecycle configuration in your
          * request body. The lifecycle configuration is specified as XML consisting of one
-         * or more rules. Each rule consists of the following:</p> <ul> <li> <p>Filter
-         * identifying a subset of objects to which the rule applies. The filter can be
-         * based on a key name prefix, object tags, or a combination of both.</p> </li>
-         * <li> <p>Status whether the rule is in effect.</p> </li> <li> <p>One or more
-         * lifecycle transition and expiration actions that you want Amazon S3 to perform
-         * on the objects identified by the filter. If the state of your bucket is
+         * or more rules. An Amazon S3 Lifecycle configuration can have up to 1,000 rules.
+         * This limit is not adjustable. Each rule consists of the following:</p> <ul> <li>
+         * <p>Filter identifying a subset of objects to which the rule applies. The filter
+         * can be based on a key name prefix, object tags, or a combination of both.</p>
+         * </li> <li> <p>Status whether the rule is in effect.</p> </li> <li> <p>One or
+         * more lifecycle transition and expiration actions that you want Amazon S3 to
+         * perform on the objects identified by the filter. If the state of your bucket is
          * versioning-enabled or versioning-suspended, you can have many versions of the
          * same object (one current version and zero or more noncurrent versions). Amazon
          * S3 provides predefined actions that you can specify for current and noncurrent
@@ -8271,12 +8273,13 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.</p>
          *  <p> <b>Rules</b> </p> <p>You specify the lifecycle configuration in your
          * request body. The lifecycle configuration is specified as XML consisting of one
-         * or more rules. Each rule consists of the following:</p> <ul> <li> <p>Filter
-         * identifying a subset of objects to which the rule applies. The filter can be
-         * based on a key name prefix, object tags, or a combination of both.</p> </li>
-         * <li> <p>Status whether the rule is in effect.</p> </li> <li> <p>One or more
-         * lifecycle transition and expiration actions that you want Amazon S3 to perform
-         * on the objects identified by the filter. If the state of your bucket is
+         * or more rules. An Amazon S3 Lifecycle configuration can have up to 1,000 rules.
+         * This limit is not adjustable. Each rule consists of the following:</p> <ul> <li>
+         * <p>Filter identifying a subset of objects to which the rule applies. The filter
+         * can be based on a key name prefix, object tags, or a combination of both.</p>
+         * </li> <li> <p>Status whether the rule is in effect.</p> </li> <li> <p>One or
+         * more lifecycle transition and expiration actions that you want Amazon S3 to
+         * perform on the objects identified by the filter. If the state of your bucket is
          * versioning-enabled or versioning-suspended, you can have many versions of the
          * same object (one current version and zero or more noncurrent versions). Amazon
          * S3 provides predefined actions that you can specify for current and noncurrent
@@ -11169,15 +11172,17 @@ namespace Aws
          * part request.</p> <p>Part numbers can be any number from 1 to 10,000, inclusive.
          * A part number uniquely identifies a part and also defines its position within
          * the object being created. If you upload a new part using the same part number
-         * that was used with a previous part, the previously uploaded part is overwritten.
-         * Each part must be at least 5 MB in size, except the last part. There is no size
-         * limit on the last part of your multipart upload.</p> <p>To ensure that data is
-         * not corrupted when traversing the network, specify the <code>Content-MD5</code>
-         * header in the upload part request. Amazon S3 checks the part data against the
-         * provided MD5 value. If they do not match, Amazon S3 returns an error. </p> <p>If
-         * the upload request is signed with Signature Version 4, then Amazon Web Services
-         * S3 uses the <code>x-amz-content-sha256</code> header as a checksum instead of
-         * <code>Content-MD5</code>. For more information see <a
+         * that was used with a previous part, the previously uploaded part is
+         * overwritten.</p> <p>For information about maximum and minimum part sizes and
+         * other multipart upload specifications, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/qfacts.html">Multipart
+         * upload limits</a> in the <i>Amazon S3 User Guide</i>.</p> <p>To ensure that data
+         * is not corrupted when traversing the network, specify the
+         * <code>Content-MD5</code> header in the upload part request. Amazon S3 checks the
+         * part data against the provided MD5 value. If they do not match, Amazon S3
+         * returns an error. </p> <p>If the upload request is signed with Signature Version
+         * 4, then Amazon Web Services S3 uses the <code>x-amz-content-sha256</code> header
+         * as a checksum instead of <code>Content-MD5</code>. For more information see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html">Authenticating
          * Requests: Using the Authorization Header (Amazon Web Services Signature Version
          * 4)</a>. </p> <p> <b>Note:</b> After you initiate multipart upload and upload one
@@ -11248,15 +11253,17 @@ namespace Aws
          * part request.</p> <p>Part numbers can be any number from 1 to 10,000, inclusive.
          * A part number uniquely identifies a part and also defines its position within
          * the object being created. If you upload a new part using the same part number
-         * that was used with a previous part, the previously uploaded part is overwritten.
-         * Each part must be at least 5 MB in size, except the last part. There is no size
-         * limit on the last part of your multipart upload.</p> <p>To ensure that data is
-         * not corrupted when traversing the network, specify the <code>Content-MD5</code>
-         * header in the upload part request. Amazon S3 checks the part data against the
-         * provided MD5 value. If they do not match, Amazon S3 returns an error. </p> <p>If
-         * the upload request is signed with Signature Version 4, then Amazon Web Services
-         * S3 uses the <code>x-amz-content-sha256</code> header as a checksum instead of
-         * <code>Content-MD5</code>. For more information see <a
+         * that was used with a previous part, the previously uploaded part is
+         * overwritten.</p> <p>For information about maximum and minimum part sizes and
+         * other multipart upload specifications, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/qfacts.html">Multipart
+         * upload limits</a> in the <i>Amazon S3 User Guide</i>.</p> <p>To ensure that data
+         * is not corrupted when traversing the network, specify the
+         * <code>Content-MD5</code> header in the upload part request. Amazon S3 checks the
+         * part data against the provided MD5 value. If they do not match, Amazon S3
+         * returns an error. </p> <p>If the upload request is signed with Signature Version
+         * 4, then Amazon Web Services S3 uses the <code>x-amz-content-sha256</code> header
+         * as a checksum instead of <code>Content-MD5</code>. For more information see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html">Authenticating
          * Requests: Using the Authorization Header (Amazon Web Services Signature Version
          * 4)</a>. </p> <p> <b>Note:</b> After you initiate multipart upload and upload one
@@ -11329,15 +11336,17 @@ namespace Aws
          * part request.</p> <p>Part numbers can be any number from 1 to 10,000, inclusive.
          * A part number uniquely identifies a part and also defines its position within
          * the object being created. If you upload a new part using the same part number
-         * that was used with a previous part, the previously uploaded part is overwritten.
-         * Each part must be at least 5 MB in size, except the last part. There is no size
-         * limit on the last part of your multipart upload.</p> <p>To ensure that data is
-         * not corrupted when traversing the network, specify the <code>Content-MD5</code>
-         * header in the upload part request. Amazon S3 checks the part data against the
-         * provided MD5 value. If they do not match, Amazon S3 returns an error. </p> <p>If
-         * the upload request is signed with Signature Version 4, then Amazon Web Services
-         * S3 uses the <code>x-amz-content-sha256</code> header as a checksum instead of
-         * <code>Content-MD5</code>. For more information see <a
+         * that was used with a previous part, the previously uploaded part is
+         * overwritten.</p> <p>For information about maximum and minimum part sizes and
+         * other multipart upload specifications, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/qfacts.html">Multipart
+         * upload limits</a> in the <i>Amazon S3 User Guide</i>.</p> <p>To ensure that data
+         * is not corrupted when traversing the network, specify the
+         * <code>Content-MD5</code> header in the upload part request. Amazon S3 checks the
+         * part data against the provided MD5 value. If they do not match, Amazon S3
+         * returns an error. </p> <p>If the upload request is signed with Signature Version
+         * 4, then Amazon Web Services S3 uses the <code>x-amz-content-sha256</code> header
+         * as a checksum instead of <code>Content-MD5</code>. For more information see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html">Authenticating
          * Requests: Using the Authorization Header (Amazon Web Services Signature Version
          * 4)</a>. </p> <p> <b>Note:</b> After you initiate multipart upload and upload one
@@ -11401,12 +11410,12 @@ namespace Aws
          * <p>Uploads a part by copying data from an existing object as data source. You
          * specify the data source by adding the request header
          * <code>x-amz-copy-source</code> in your request and a byte range by adding the
-         * request header <code>x-amz-copy-source-range</code> in your request. </p> <p>The
-         * minimum allowable part size for a multipart upload is 5 MB. For more information
-         * about multipart upload limits, go to <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/qfacts.html">Quick
-         * Facts</a> in the <i>Amazon S3 User Guide</i>. </p>  <p>Instead of using an
-         * existing object as part data, you might use the <a
+         * request header <code>x-amz-copy-source-range</code> in your request. </p> <p>For
+         * information about maximum and minimum part sizes and other multipart upload
+         * specifications, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/qfacts.html">Multipart
+         * upload limits</a> in the <i>Amazon S3 User Guide</i>. </p>  <p>Instead of
+         * using an existing object as part data, you might use the <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
          * action and provide data in your request.</p>  <p>You must initiate a
          * multipart upload before you can upload any part. In response to your initiate
@@ -11489,12 +11498,12 @@ namespace Aws
          * <p>Uploads a part by copying data from an existing object as data source. You
          * specify the data source by adding the request header
          * <code>x-amz-copy-source</code> in your request and a byte range by adding the
-         * request header <code>x-amz-copy-source-range</code> in your request. </p> <p>The
-         * minimum allowable part size for a multipart upload is 5 MB. For more information
-         * about multipart upload limits, go to <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/qfacts.html">Quick
-         * Facts</a> in the <i>Amazon S3 User Guide</i>. </p>  <p>Instead of using an
-         * existing object as part data, you might use the <a
+         * request header <code>x-amz-copy-source-range</code> in your request. </p> <p>For
+         * information about maximum and minimum part sizes and other multipart upload
+         * specifications, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/qfacts.html">Multipart
+         * upload limits</a> in the <i>Amazon S3 User Guide</i>. </p>  <p>Instead of
+         * using an existing object as part data, you might use the <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
          * action and provide data in your request.</p>  <p>You must initiate a
          * multipart upload before you can upload any part. In response to your initiate
@@ -11579,12 +11588,12 @@ namespace Aws
          * <p>Uploads a part by copying data from an existing object as data source. You
          * specify the data source by adding the request header
          * <code>x-amz-copy-source</code> in your request and a byte range by adding the
-         * request header <code>x-amz-copy-source-range</code> in your request. </p> <p>The
-         * minimum allowable part size for a multipart upload is 5 MB. For more information
-         * about multipart upload limits, go to <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/qfacts.html">Quick
-         * Facts</a> in the <i>Amazon S3 User Guide</i>. </p>  <p>Instead of using an
-         * existing object as part data, you might use the <a
+         * request header <code>x-amz-copy-source-range</code> in your request. </p> <p>For
+         * information about maximum and minimum part sizes and other multipart upload
+         * specifications, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/qfacts.html">Multipart
+         * upload limits</a> in the <i>Amazon S3 User Guide</i>. </p>  <p>Instead of
+         * using an existing object as part data, you might use the <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
          * action and provide data in your request.</p>  <p>You must initiate a
          * multipart upload before you can upload any part. In response to your initiate

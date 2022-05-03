@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/AutoMLMetricEnum.h>
 #include <aws/sagemaker/model/MetricSetSource.h>
+#include <aws/sagemaker/model/AutoMLMetricExtendedEnum.h>
 #include <utility>
 
 namespace Aws
@@ -121,6 +122,37 @@ namespace Model
      */
     inline MetricDatum& WithSet(MetricSetSource&& value) { SetSet(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the standard metric.</p>
+     */
+    inline const AutoMLMetricExtendedEnum& GetStandardMetricName() const{ return m_standardMetricName; }
+
+    /**
+     * <p>The name of the standard metric.</p>
+     */
+    inline bool StandardMetricNameHasBeenSet() const { return m_standardMetricNameHasBeenSet; }
+
+    /**
+     * <p>The name of the standard metric.</p>
+     */
+    inline void SetStandardMetricName(const AutoMLMetricExtendedEnum& value) { m_standardMetricNameHasBeenSet = true; m_standardMetricName = value; }
+
+    /**
+     * <p>The name of the standard metric.</p>
+     */
+    inline void SetStandardMetricName(AutoMLMetricExtendedEnum&& value) { m_standardMetricNameHasBeenSet = true; m_standardMetricName = std::move(value); }
+
+    /**
+     * <p>The name of the standard metric.</p>
+     */
+    inline MetricDatum& WithStandardMetricName(const AutoMLMetricExtendedEnum& value) { SetStandardMetricName(value); return *this;}
+
+    /**
+     * <p>The name of the standard metric.</p>
+     */
+    inline MetricDatum& WithStandardMetricName(AutoMLMetricExtendedEnum&& value) { SetStandardMetricName(std::move(value)); return *this;}
+
   private:
 
     AutoMLMetricEnum m_metricName;
@@ -131,6 +163,9 @@ namespace Model
 
     MetricSetSource m_set;
     bool m_setHasBeenSet;
+
+    AutoMLMetricExtendedEnum m_standardMetricName;
+    bool m_standardMetricNameHasBeenSet;
   };
 
 } // namespace Model

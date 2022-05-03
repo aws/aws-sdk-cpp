@@ -24205,8 +24205,10 @@ namespace Model
         virtual void StartVpcEndpointServicePrivateDnsVerificationAsync(const Model::StartVpcEndpointServicePrivateDnsVerificationRequest& request, const StartVpcEndpointServicePrivateDnsVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops an Amazon EBS-backed instance.</p> <p>You can use the Stop action to
-         * hibernate an instance if the instance is <a
+         * <p>Stops an Amazon EBS-backed instance. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop
+         * and start your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can
+         * use the Stop action to hibernate an instance if the instance is <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#enabling-hibernation">enabled
          * for hibernation</a> and it meets the <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
@@ -24249,8 +24251,10 @@ namespace Model
         virtual Model::StopInstancesOutcome StopInstances(const Model::StopInstancesRequest& request) const;
 
         /**
-         * <p>Stops an Amazon EBS-backed instance.</p> <p>You can use the Stop action to
-         * hibernate an instance if the instance is <a
+         * <p>Stops an Amazon EBS-backed instance. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop
+         * and start your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can
+         * use the Stop action to hibernate an instance if the instance is <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#enabling-hibernation">enabled
          * for hibernation</a> and it meets the <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
@@ -24295,8 +24299,10 @@ namespace Model
         virtual Model::StopInstancesOutcomeCallable StopInstancesCallable(const Model::StopInstancesRequest& request) const;
 
         /**
-         * <p>Stops an Amazon EBS-backed instance.</p> <p>You can use the Stop action to
-         * hibernate an instance if the instance is <a
+         * <p>Stops an Amazon EBS-backed instance. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop
+         * and start your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can
+         * use the Stop action to hibernate an instance if the instance is <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#enabling-hibernation">enabled
          * for hibernation</a> and it meets the <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation

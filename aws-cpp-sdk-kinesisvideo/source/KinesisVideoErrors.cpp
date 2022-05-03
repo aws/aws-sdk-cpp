@@ -23,6 +23,7 @@ static const int INVALID_DEVICE_HASH = HashingUtils::HashString("InvalidDeviceEx
 static const int TAGS_PER_RESOURCE_EXCEEDED_LIMIT_HASH = HashingUtils::HashString("TagsPerResourceExceededLimitException");
 static const int INVALID_RESOURCE_FORMAT_HASH = HashingUtils::HashString("InvalidResourceFormatException");
 static const int ACCOUNT_STREAM_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AccountStreamLimitExceededException");
+static const int NO_DATA_RETENTION_HASH = HashingUtils::HashString("NoDataRetentionException");
 static const int ACCOUNT_CHANNEL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AccountChannelLimitExceededException");
 static const int DEVICE_STREAM_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DeviceStreamLimitExceededException");
 static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
@@ -54,6 +55,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ACCOUNT_STREAM_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::ACCOUNT_STREAM_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == NO_DATA_RETENTION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::NO_DATA_RETENTION), false);
   }
   else if (hashCode == ACCOUNT_CHANNEL_LIMIT_EXCEEDED_HASH)
   {

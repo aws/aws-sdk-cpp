@@ -135,8 +135,10 @@ namespace Model
      * Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have
      * ETags that are not an MD5 digest of their object data.</p> </li> <li> <p>If an
      * object is created by either the Multipart Upload or Part Copy operation, the
-     * ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
-     * </ul>
+     * ETag is not an MD5 digest, regardless of the method of encryption. If an object
+     * is larger than 16 MB, the Amazon Web Services Management Console will upload or
+     * copy that object as a Multipart Upload, and therefore the ETag will not be an
+     * MD5 digest.</p> </li> </ul>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
@@ -152,8 +154,10 @@ namespace Model
      * Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have
      * ETags that are not an MD5 digest of their object data.</p> </li> <li> <p>If an
      * object is created by either the Multipart Upload or Part Copy operation, the
-     * ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
-     * </ul>
+     * ETag is not an MD5 digest, regardless of the method of encryption. If an object
+     * is larger than 16 MB, the Amazon Web Services Management Console will upload or
+     * copy that object as a Multipart Upload, and therefore the ETag will not be an
+     * MD5 digest.</p> </li> </ul>
      */
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
 
@@ -169,8 +173,10 @@ namespace Model
      * Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have
      * ETags that are not an MD5 digest of their object data.</p> </li> <li> <p>If an
      * object is created by either the Multipart Upload or Part Copy operation, the
-     * ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
-     * </ul>
+     * ETag is not an MD5 digest, regardless of the method of encryption. If an object
+     * is larger than 16 MB, the Amazon Web Services Management Console will upload or
+     * copy that object as a Multipart Upload, and therefore the ETag will not be an
+     * MD5 digest.</p> </li> </ul>
      */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
@@ -186,8 +192,10 @@ namespace Model
      * Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have
      * ETags that are not an MD5 digest of their object data.</p> </li> <li> <p>If an
      * object is created by either the Multipart Upload or Part Copy operation, the
-     * ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
-     * </ul>
+     * ETag is not an MD5 digest, regardless of the method of encryption. If an object
+     * is larger than 16 MB, the Amazon Web Services Management Console will upload or
+     * copy that object as a Multipart Upload, and therefore the ETag will not be an
+     * MD5 digest.</p> </li> </ul>
      */
     inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
 
@@ -203,8 +211,10 @@ namespace Model
      * Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have
      * ETags that are not an MD5 digest of their object data.</p> </li> <li> <p>If an
      * object is created by either the Multipart Upload or Part Copy operation, the
-     * ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
-     * </ul>
+     * ETag is not an MD5 digest, regardless of the method of encryption. If an object
+     * is larger than 16 MB, the Amazon Web Services Management Console will upload or
+     * copy that object as a Multipart Upload, and therefore the ETag will not be an
+     * MD5 digest.</p> </li> </ul>
      */
     inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
 
@@ -220,8 +230,10 @@ namespace Model
      * Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have
      * ETags that are not an MD5 digest of their object data.</p> </li> <li> <p>If an
      * object is created by either the Multipart Upload or Part Copy operation, the
-     * ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
-     * </ul>
+     * ETag is not an MD5 digest, regardless of the method of encryption. If an object
+     * is larger than 16 MB, the Amazon Web Services Management Console will upload or
+     * copy that object as a Multipart Upload, and therefore the ETag will not be an
+     * MD5 digest.</p> </li> </ul>
      */
     inline Object& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
@@ -237,8 +249,10 @@ namespace Model
      * Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have
      * ETags that are not an MD5 digest of their object data.</p> </li> <li> <p>If an
      * object is created by either the Multipart Upload or Part Copy operation, the
-     * ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
-     * </ul>
+     * ETag is not an MD5 digest, regardless of the method of encryption. If an object
+     * is larger than 16 MB, the Amazon Web Services Management Console will upload or
+     * copy that object as a Multipart Upload, and therefore the ETag will not be an
+     * MD5 digest.</p> </li> </ul>
      */
     inline Object& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
@@ -254,8 +268,10 @@ namespace Model
      * Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have
      * ETags that are not an MD5 digest of their object data.</p> </li> <li> <p>If an
      * object is created by either the Multipart Upload or Part Copy operation, the
-     * ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
-     * </ul>
+     * ETag is not an MD5 digest, regardless of the method of encryption. If an object
+     * is larger than 16 MB, the Amazon Web Services Management Console will upload or
+     * copy that object as a Multipart Upload, and therefore the ETag will not be an
+     * MD5 digest.</p> </li> </ul>
      */
     inline Object& WithETag(const char* value) { SetETag(value); return *this;}
 

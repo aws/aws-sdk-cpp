@@ -38,49 +38,49 @@ namespace Model
 
     /**
      * <p>A name for the signaling channel that you are creating. It must be unique for
-     * each AWS account and AWS Region.</p>
+     * each Amazon Web Services account and Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetChannelName() const{ return m_channelName; }
 
     /**
      * <p>A name for the signaling channel that you are creating. It must be unique for
-     * each AWS account and AWS Region.</p>
+     * each Amazon Web Services account and Amazon Web Services Region.</p>
      */
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
 
     /**
      * <p>A name for the signaling channel that you are creating. It must be unique for
-     * each AWS account and AWS Region.</p>
+     * each Amazon Web Services account and Amazon Web Services Region.</p>
      */
     inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
 
     /**
      * <p>A name for the signaling channel that you are creating. It must be unique for
-     * each AWS account and AWS Region.</p>
+     * each Amazon Web Services account and Amazon Web Services Region.</p>
      */
     inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
 
     /**
      * <p>A name for the signaling channel that you are creating. It must be unique for
-     * each AWS account and AWS Region.</p>
+     * each Amazon Web Services account and Amazon Web Services Region.</p>
      */
     inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
 
     /**
      * <p>A name for the signaling channel that you are creating. It must be unique for
-     * each AWS account and AWS Region.</p>
+     * each Amazon Web Services account and Amazon Web Services Region.</p>
      */
     inline CreateSignalingChannelRequest& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
 
     /**
      * <p>A name for the signaling channel that you are creating. It must be unique for
-     * each AWS account and AWS Region.</p>
+     * each Amazon Web Services account and Amazon Web Services Region.</p>
      */
     inline CreateSignalingChannelRequest& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
 
     /**
      * <p>A name for the signaling channel that you are creating. It must be unique for
-     * each AWS account and AWS Region.</p>
+     * each Amazon Web Services account and Amazon Web Services Region.</p>
      */
     inline CreateSignalingChannelRequest& WithChannelName(const char* value) { SetChannelName(value); return *this;}
 

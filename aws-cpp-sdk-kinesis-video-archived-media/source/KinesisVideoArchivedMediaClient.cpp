@@ -23,6 +23,7 @@
 #include <aws/kinesis-video-archived-media/model/GetClipRequest.h>
 #include <aws/kinesis-video-archived-media/model/GetDASHStreamingSessionURLRequest.h>
 #include <aws/kinesis-video-archived-media/model/GetHLSStreamingSessionURLRequest.h>
+#include <aws/kinesis-video-archived-media/model/GetImagesRequest.h>
 #include <aws/kinesis-video-archived-media/model/GetMediaForFragmentListRequest.h>
 #include <aws/kinesis-video-archived-media/model/ListFragmentsRequest.h>
 
@@ -172,6 +173,31 @@ void KinesisVideoArchivedMediaClient::GetHLSStreamingSessionURLAsync(const GetHL
 void KinesisVideoArchivedMediaClient::GetHLSStreamingSessionURLAsyncHelper(const GetHLSStreamingSessionURLRequest& request, const GetHLSStreamingSessionURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetHLSStreamingSessionURL(request), context);
+}
+
+GetImagesOutcome KinesisVideoArchivedMediaClient::GetImages(const GetImagesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/getImages");
+  return GetImagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetImagesOutcomeCallable KinesisVideoArchivedMediaClient::GetImagesCallable(const GetImagesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetImagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetImages(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisVideoArchivedMediaClient::GetImagesAsync(const GetImagesRequest& request, const GetImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetImagesAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisVideoArchivedMediaClient::GetImagesAsyncHelper(const GetImagesRequest& request, const GetImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetImages(request), context);
 }
 
 GetMediaForFragmentListOutcome KinesisVideoArchivedMediaClient::GetMediaForFragmentList(const GetMediaForFragmentListRequest& request) const
