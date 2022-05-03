@@ -105,7 +105,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 #set($elseText = "")
   int hashCode = HashingUtils::HashString(errorName);
   AWSError<CoreErrors> error;
-#set($maxHelperIndex = $nonCoreServiceErrors.size() / 122)
+#set($maxHelperIndex = ($nonCoreServiceErrors.size() - 1) / 122)
 #foreach($helperIndex in [0..$maxHelperIndex])
   ${elseText}if (GetErrorForNameHelper${helperIndex}(hashCode, error))
   {
