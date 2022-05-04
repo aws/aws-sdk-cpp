@@ -28,9 +28,9 @@ namespace Model
    * <p>Describes the TLS security policies that are available for Lightsail load
    * balancers.</p> <p>For more information about load balancer TLS security
    * policies, see <a
-   * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Load
-   * balancer TLS security policies</a> in the <i>Amazon Lightsail Developer
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
+   * TLS security policies on your Amazon Lightsail load balancers</a> in the
+   * <i>Amazon Lightsail Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/LoadBalancerTlsPolicy">AWS
    * API Reference</a></p>
    */
@@ -44,106 +44,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the TLS security policy.</p> <p>The following TLS security policy
-     * names are possible:</p> <ul> <li> <p> <code>TLS-2016-08</code> </p> </li> <li>
-     * <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li> </ul> <p>You can specify
-     * either of these values for the <code>tlsSecurityPolicyName</code> request
-     * parameter in the <a
-     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer</a>
-     * action, and the <code>attributeValue</code> request parameter in the <a
-     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html">UpdateLoadBalancerAttribute</a>
-     * action.</p>
+     * <p>The name of the TLS security policy.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the TLS security policy.</p> <p>The following TLS security policy
-     * names are possible:</p> <ul> <li> <p> <code>TLS-2016-08</code> </p> </li> <li>
-     * <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li> </ul> <p>You can specify
-     * either of these values for the <code>tlsSecurityPolicyName</code> request
-     * parameter in the <a
-     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer</a>
-     * action, and the <code>attributeValue</code> request parameter in the <a
-     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html">UpdateLoadBalancerAttribute</a>
-     * action.</p>
+     * <p>The name of the TLS security policy.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the TLS security policy.</p> <p>The following TLS security policy
-     * names are possible:</p> <ul> <li> <p> <code>TLS-2016-08</code> </p> </li> <li>
-     * <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li> </ul> <p>You can specify
-     * either of these values for the <code>tlsSecurityPolicyName</code> request
-     * parameter in the <a
-     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer</a>
-     * action, and the <code>attributeValue</code> request parameter in the <a
-     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html">UpdateLoadBalancerAttribute</a>
-     * action.</p>
+     * <p>The name of the TLS security policy.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the TLS security policy.</p> <p>The following TLS security policy
-     * names are possible:</p> <ul> <li> <p> <code>TLS-2016-08</code> </p> </li> <li>
-     * <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li> </ul> <p>You can specify
-     * either of these values for the <code>tlsSecurityPolicyName</code> request
-     * parameter in the <a
-     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer</a>
-     * action, and the <code>attributeValue</code> request parameter in the <a
-     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html">UpdateLoadBalancerAttribute</a>
-     * action.</p>
+     * <p>The name of the TLS security policy.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the TLS security policy.</p> <p>The following TLS security policy
-     * names are possible:</p> <ul> <li> <p> <code>TLS-2016-08</code> </p> </li> <li>
-     * <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li> </ul> <p>You can specify
-     * either of these values for the <code>tlsSecurityPolicyName</code> request
-     * parameter in the <a
-     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer</a>
-     * action, and the <code>attributeValue</code> request parameter in the <a
-     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html">UpdateLoadBalancerAttribute</a>
-     * action.</p>
+     * <p>The name of the TLS security policy.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the TLS security policy.</p> <p>The following TLS security policy
-     * names are possible:</p> <ul> <li> <p> <code>TLS-2016-08</code> </p> </li> <li>
-     * <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li> </ul> <p>You can specify
-     * either of these values for the <code>tlsSecurityPolicyName</code> request
-     * parameter in the <a
-     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer</a>
-     * action, and the <code>attributeValue</code> request parameter in the <a
-     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html">UpdateLoadBalancerAttribute</a>
-     * action.</p>
+     * <p>The name of the TLS security policy.</p>
      */
     inline LoadBalancerTlsPolicy& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the TLS security policy.</p> <p>The following TLS security policy
-     * names are possible:</p> <ul> <li> <p> <code>TLS-2016-08</code> </p> </li> <li>
-     * <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li> </ul> <p>You can specify
-     * either of these values for the <code>tlsSecurityPolicyName</code> request
-     * parameter in the <a
-     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer</a>
-     * action, and the <code>attributeValue</code> request parameter in the <a
-     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html">UpdateLoadBalancerAttribute</a>
-     * action.</p>
+     * <p>The name of the TLS security policy.</p>
      */
     inline LoadBalancerTlsPolicy& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the TLS security policy.</p> <p>The following TLS security policy
-     * names are possible:</p> <ul> <li> <p> <code>TLS-2016-08</code> </p> </li> <li>
-     * <p> <code>TLS-FS-Res-1-2-2019-08</code> </p> </li> </ul> <p>You can specify
-     * either of these values for the <code>tlsSecurityPolicyName</code> request
-     * parameter in the <a
-     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer</a>
-     * action, and the <code>attributeValue</code> request parameter in the <a
-     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html">UpdateLoadBalancerAttribute</a>
-     * action.</p>
+     * <p>The name of the TLS security policy.</p>
      */
     inline LoadBalancerTlsPolicy& WithName(const char* value) { SetName(value); return *this;}
 
@@ -215,74 +151,47 @@ namespace Model
 
 
     /**
-     * <p>The protocols used in a given TLS security policy.</p> <p>The following
-     * protocols are possible:</p> <ul> <li> <p> <code>Protocol-TLSv1</code> </p> </li>
-     * <li> <p> <code>Protocol-TLSv1.1</code> </p> </li> <li> <p>
-     * <code>Protocol-TLSv1.2</code> </p> </li> </ul>
+     * <p>The protocols used in a given TLS security policy.</p>
      */
     inline const Aws::Vector<Aws::String>& GetProtocols() const{ return m_protocols; }
 
     /**
-     * <p>The protocols used in a given TLS security policy.</p> <p>The following
-     * protocols are possible:</p> <ul> <li> <p> <code>Protocol-TLSv1</code> </p> </li>
-     * <li> <p> <code>Protocol-TLSv1.1</code> </p> </li> <li> <p>
-     * <code>Protocol-TLSv1.2</code> </p> </li> </ul>
+     * <p>The protocols used in a given TLS security policy.</p>
      */
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
 
     /**
-     * <p>The protocols used in a given TLS security policy.</p> <p>The following
-     * protocols are possible:</p> <ul> <li> <p> <code>Protocol-TLSv1</code> </p> </li>
-     * <li> <p> <code>Protocol-TLSv1.1</code> </p> </li> <li> <p>
-     * <code>Protocol-TLSv1.2</code> </p> </li> </ul>
+     * <p>The protocols used in a given TLS security policy.</p>
      */
     inline void SetProtocols(const Aws::Vector<Aws::String>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
 
     /**
-     * <p>The protocols used in a given TLS security policy.</p> <p>The following
-     * protocols are possible:</p> <ul> <li> <p> <code>Protocol-TLSv1</code> </p> </li>
-     * <li> <p> <code>Protocol-TLSv1.1</code> </p> </li> <li> <p>
-     * <code>Protocol-TLSv1.2</code> </p> </li> </ul>
+     * <p>The protocols used in a given TLS security policy.</p>
      */
     inline void SetProtocols(Aws::Vector<Aws::String>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
 
     /**
-     * <p>The protocols used in a given TLS security policy.</p> <p>The following
-     * protocols are possible:</p> <ul> <li> <p> <code>Protocol-TLSv1</code> </p> </li>
-     * <li> <p> <code>Protocol-TLSv1.1</code> </p> </li> <li> <p>
-     * <code>Protocol-TLSv1.2</code> </p> </li> </ul>
+     * <p>The protocols used in a given TLS security policy.</p>
      */
     inline LoadBalancerTlsPolicy& WithProtocols(const Aws::Vector<Aws::String>& value) { SetProtocols(value); return *this;}
 
     /**
-     * <p>The protocols used in a given TLS security policy.</p> <p>The following
-     * protocols are possible:</p> <ul> <li> <p> <code>Protocol-TLSv1</code> </p> </li>
-     * <li> <p> <code>Protocol-TLSv1.1</code> </p> </li> <li> <p>
-     * <code>Protocol-TLSv1.2</code> </p> </li> </ul>
+     * <p>The protocols used in a given TLS security policy.</p>
      */
     inline LoadBalancerTlsPolicy& WithProtocols(Aws::Vector<Aws::String>&& value) { SetProtocols(std::move(value)); return *this;}
 
     /**
-     * <p>The protocols used in a given TLS security policy.</p> <p>The following
-     * protocols are possible:</p> <ul> <li> <p> <code>Protocol-TLSv1</code> </p> </li>
-     * <li> <p> <code>Protocol-TLSv1.1</code> </p> </li> <li> <p>
-     * <code>Protocol-TLSv1.2</code> </p> </li> </ul>
+     * <p>The protocols used in a given TLS security policy.</p>
      */
     inline LoadBalancerTlsPolicy& AddProtocols(const Aws::String& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
 
     /**
-     * <p>The protocols used in a given TLS security policy.</p> <p>The following
-     * protocols are possible:</p> <ul> <li> <p> <code>Protocol-TLSv1</code> </p> </li>
-     * <li> <p> <code>Protocol-TLSv1.1</code> </p> </li> <li> <p>
-     * <code>Protocol-TLSv1.2</code> </p> </li> </ul>
+     * <p>The protocols used in a given TLS security policy.</p>
      */
     inline LoadBalancerTlsPolicy& AddProtocols(Aws::String&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The protocols used in a given TLS security policy.</p> <p>The following
-     * protocols are possible:</p> <ul> <li> <p> <code>Protocol-TLSv1</code> </p> </li>
-     * <li> <p> <code>Protocol-TLSv1.1</code> </p> </li> <li> <p>
-     * <code>Protocol-TLSv1.2</code> </p> </li> </ul>
+     * <p>The protocols used in a given TLS security policy.</p>
      */
     inline LoadBalancerTlsPolicy& AddProtocols(const char* value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
 

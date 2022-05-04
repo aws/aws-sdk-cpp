@@ -26,7 +26,9 @@ ListBackupJobsRequest::ListBackupJobsRequest() :
     m_byCreatedBeforeHasBeenSet(false),
     m_byCreatedAfterHasBeenSet(false),
     m_byResourceTypeHasBeenSet(false),
-    m_byAccountIdHasBeenSet(false)
+    m_byAccountIdHasBeenSet(false),
+    m_byCompleteAfterHasBeenSet(false),
+    m_byCompleteBeforeHasBeenSet(false)
 {
 }
 
@@ -98,6 +100,20 @@ void ListBackupJobsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_byAccountId;
       uri.AddQueryStringParameter("accountId", ss.str());
+      ss.str("");
+    }
+
+    if(m_byCompleteAfterHasBeenSet)
+    {
+      ss << m_byCompleteAfter.ToGmtString(DateFormat::ISO_8601);
+      uri.AddQueryStringParameter("completeAfter", ss.str());
+      ss.str("");
+    }
+
+    if(m_byCompleteBeforeHasBeenSet)
+    {
+      ss << m_byCompleteBefore.ToGmtString(DateFormat::ISO_8601);
+      uri.AddQueryStringParameter("completeBefore", ss.str());
       ss.str("");
     }
 

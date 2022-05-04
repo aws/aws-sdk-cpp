@@ -334,7 +334,7 @@ namespace Model
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “retention” setting must be 90 days greater than the
-     * “transition to cold after days” setting. The “transition to cold after days”
+     * ���transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
      * <p>Only resource types that support full Backup management can transition their
      * backups to cold storage. Those resource types are listed in the "Full Backup
@@ -351,7 +351,7 @@ namespace Model
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “retention” setting must be 90 days greater than the
-     * “transition to cold after days” setting. The “transition to cold after days”
+     * ���transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
      * <p>Only resource types that support full Backup management can transition their
      * backups to cold storage. Those resource types are listed in the "Full Backup
@@ -368,7 +368,7 @@ namespace Model
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “retention” setting must be 90 days greater than the
-     * “transition to cold after days” setting. The “transition to cold after days”
+     * ���transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
      * <p>Only resource types that support full Backup management can transition their
      * backups to cold storage. Those resource types are listed in the "Full Backup
@@ -385,7 +385,7 @@ namespace Model
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “retention” setting must be 90 days greater than the
-     * “transition to cold after days” setting. The “transition to cold after days”
+     * ���transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
      * <p>Only resource types that support full Backup management can transition their
      * backups to cold storage. Those resource types are listed in the "Full Backup
@@ -402,7 +402,7 @@ namespace Model
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “retention” setting must be 90 days greater than the
-     * “transition to cold after days” setting. The “transition to cold after days”
+     * ���transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
      * <p>Only resource types that support full Backup management can transition their
      * backups to cold storage. Those resource types are listed in the "Full Backup
@@ -419,7 +419,7 @@ namespace Model
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “retention” setting must be 90 days greater than the
-     * “transition to cold after days” setting. The “transition to cold after days”
+     * ���transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
      * <p>Only resource types that support full Backup management can transition their
      * backups to cold storage. Those resource types are listed in the "Full Backup

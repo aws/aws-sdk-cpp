@@ -125,17 +125,21 @@ namespace Model
      * <code>/weather/us/wa/seattle</code>).</p> </li> <li> <p>If you specify
      * <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request
      * parameter, then the <code>attributeValue</code> request parameter must be
-     * <code>true</code> or <code>false</code>.</p> </li> <li> <p>If you specify
+     * <code>true</code> to activate session stickiness or <code>false</code> to
+     * deactivate session stickiness.</p> </li> <li> <p>If you specify
      * <code>SessionStickiness_LB_CookieDurationSeconds</code> for the
      * <code>attributeName</code> request parameter, then the
      * <code>attributeValue</code> request parameter must be an interger that
      * represents the cookie duration in seconds.</p> </li> <li> <p>If you specify
      * <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request
      * parameter, then the <code>attributeValue</code> request parameter must be
-     * <code>true</code> or <code>false</code>.</p> </li> <li> <p>If you specify
+     * <code>true</code> to activate HTTP to HTTPS redirection or <code>false</code> to
+     * deactivate HTTP to HTTPS redirection.</p> </li> <li> <p>If you specify
      * <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter,
-     * then the <code>attributeValue</code> request parameter must be <code>TLS version
-     * 1.0, 1.1, and 1.2</code> or <code>TLS version 1.2</code>.</p> </li> </ul>
+     * then the <code>attributeValue</code> request parameter must be the name of the
+     * TLS policy.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> </li> </ul>
      */
     inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
 
@@ -149,17 +153,21 @@ namespace Model
      * <code>/weather/us/wa/seattle</code>).</p> </li> <li> <p>If you specify
      * <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request
      * parameter, then the <code>attributeValue</code> request parameter must be
-     * <code>true</code> or <code>false</code>.</p> </li> <li> <p>If you specify
+     * <code>true</code> to activate session stickiness or <code>false</code> to
+     * deactivate session stickiness.</p> </li> <li> <p>If you specify
      * <code>SessionStickiness_LB_CookieDurationSeconds</code> for the
      * <code>attributeName</code> request parameter, then the
      * <code>attributeValue</code> request parameter must be an interger that
      * represents the cookie duration in seconds.</p> </li> <li> <p>If you specify
      * <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request
      * parameter, then the <code>attributeValue</code> request parameter must be
-     * <code>true</code> or <code>false</code>.</p> </li> <li> <p>If you specify
+     * <code>true</code> to activate HTTP to HTTPS redirection or <code>false</code> to
+     * deactivate HTTP to HTTPS redirection.</p> </li> <li> <p>If you specify
      * <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter,
-     * then the <code>attributeValue</code> request parameter must be <code>TLS version
-     * 1.0, 1.1, and 1.2</code> or <code>TLS version 1.2</code>.</p> </li> </ul>
+     * then the <code>attributeValue</code> request parameter must be the name of the
+     * TLS policy.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> </li> </ul>
      */
     inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
 
@@ -173,17 +181,21 @@ namespace Model
      * <code>/weather/us/wa/seattle</code>).</p> </li> <li> <p>If you specify
      * <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request
      * parameter, then the <code>attributeValue</code> request parameter must be
-     * <code>true</code> or <code>false</code>.</p> </li> <li> <p>If you specify
+     * <code>true</code> to activate session stickiness or <code>false</code> to
+     * deactivate session stickiness.</p> </li> <li> <p>If you specify
      * <code>SessionStickiness_LB_CookieDurationSeconds</code> for the
      * <code>attributeName</code> request parameter, then the
      * <code>attributeValue</code> request parameter must be an interger that
      * represents the cookie duration in seconds.</p> </li> <li> <p>If you specify
      * <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request
      * parameter, then the <code>attributeValue</code> request parameter must be
-     * <code>true</code> or <code>false</code>.</p> </li> <li> <p>If you specify
+     * <code>true</code> to activate HTTP to HTTPS redirection or <code>false</code> to
+     * deactivate HTTP to HTTPS redirection.</p> </li> <li> <p>If you specify
      * <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter,
-     * then the <code>attributeValue</code> request parameter must be <code>TLS version
-     * 1.0, 1.1, and 1.2</code> or <code>TLS version 1.2</code>.</p> </li> </ul>
+     * then the <code>attributeValue</code> request parameter must be the name of the
+     * TLS policy.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> </li> </ul>
      */
     inline void SetAttributeValue(const Aws::String& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
 
@@ -197,17 +209,21 @@ namespace Model
      * <code>/weather/us/wa/seattle</code>).</p> </li> <li> <p>If you specify
      * <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request
      * parameter, then the <code>attributeValue</code> request parameter must be
-     * <code>true</code> or <code>false</code>.</p> </li> <li> <p>If you specify
+     * <code>true</code> to activate session stickiness or <code>false</code> to
+     * deactivate session stickiness.</p> </li> <li> <p>If you specify
      * <code>SessionStickiness_LB_CookieDurationSeconds</code> for the
      * <code>attributeName</code> request parameter, then the
      * <code>attributeValue</code> request parameter must be an interger that
      * represents the cookie duration in seconds.</p> </li> <li> <p>If you specify
      * <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request
      * parameter, then the <code>attributeValue</code> request parameter must be
-     * <code>true</code> or <code>false</code>.</p> </li> <li> <p>If you specify
+     * <code>true</code> to activate HTTP to HTTPS redirection or <code>false</code> to
+     * deactivate HTTP to HTTPS redirection.</p> </li> <li> <p>If you specify
      * <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter,
-     * then the <code>attributeValue</code> request parameter must be <code>TLS version
-     * 1.0, 1.1, and 1.2</code> or <code>TLS version 1.2</code>.</p> </li> </ul>
+     * then the <code>attributeValue</code> request parameter must be the name of the
+     * TLS policy.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> </li> </ul>
      */
     inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::move(value); }
 
@@ -221,17 +237,21 @@ namespace Model
      * <code>/weather/us/wa/seattle</code>).</p> </li> <li> <p>If you specify
      * <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request
      * parameter, then the <code>attributeValue</code> request parameter must be
-     * <code>true</code> or <code>false</code>.</p> </li> <li> <p>If you specify
+     * <code>true</code> to activate session stickiness or <code>false</code> to
+     * deactivate session stickiness.</p> </li> <li> <p>If you specify
      * <code>SessionStickiness_LB_CookieDurationSeconds</code> for the
      * <code>attributeName</code> request parameter, then the
      * <code>attributeValue</code> request parameter must be an interger that
      * represents the cookie duration in seconds.</p> </li> <li> <p>If you specify
      * <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request
      * parameter, then the <code>attributeValue</code> request parameter must be
-     * <code>true</code> or <code>false</code>.</p> </li> <li> <p>If you specify
+     * <code>true</code> to activate HTTP to HTTPS redirection or <code>false</code> to
+     * deactivate HTTP to HTTPS redirection.</p> </li> <li> <p>If you specify
      * <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter,
-     * then the <code>attributeValue</code> request parameter must be <code>TLS version
-     * 1.0, 1.1, and 1.2</code> or <code>TLS version 1.2</code>.</p> </li> </ul>
+     * then the <code>attributeValue</code> request parameter must be the name of the
+     * TLS policy.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> </li> </ul>
      */
     inline void SetAttributeValue(const char* value) { m_attributeValueHasBeenSet = true; m_attributeValue.assign(value); }
 
@@ -245,17 +265,21 @@ namespace Model
      * <code>/weather/us/wa/seattle</code>).</p> </li> <li> <p>If you specify
      * <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request
      * parameter, then the <code>attributeValue</code> request parameter must be
-     * <code>true</code> or <code>false</code>.</p> </li> <li> <p>If you specify
+     * <code>true</code> to activate session stickiness or <code>false</code> to
+     * deactivate session stickiness.</p> </li> <li> <p>If you specify
      * <code>SessionStickiness_LB_CookieDurationSeconds</code> for the
      * <code>attributeName</code> request parameter, then the
      * <code>attributeValue</code> request parameter must be an interger that
      * represents the cookie duration in seconds.</p> </li> <li> <p>If you specify
      * <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request
      * parameter, then the <code>attributeValue</code> request parameter must be
-     * <code>true</code> or <code>false</code>.</p> </li> <li> <p>If you specify
+     * <code>true</code> to activate HTTP to HTTPS redirection or <code>false</code> to
+     * deactivate HTTP to HTTPS redirection.</p> </li> <li> <p>If you specify
      * <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter,
-     * then the <code>attributeValue</code> request parameter must be <code>TLS version
-     * 1.0, 1.1, and 1.2</code> or <code>TLS version 1.2</code>.</p> </li> </ul>
+     * then the <code>attributeValue</code> request parameter must be the name of the
+     * TLS policy.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> </li> </ul>
      */
     inline UpdateLoadBalancerAttributeRequest& WithAttributeValue(const Aws::String& value) { SetAttributeValue(value); return *this;}
 
@@ -269,17 +293,21 @@ namespace Model
      * <code>/weather/us/wa/seattle</code>).</p> </li> <li> <p>If you specify
      * <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request
      * parameter, then the <code>attributeValue</code> request parameter must be
-     * <code>true</code> or <code>false</code>.</p> </li> <li> <p>If you specify
+     * <code>true</code> to activate session stickiness or <code>false</code> to
+     * deactivate session stickiness.</p> </li> <li> <p>If you specify
      * <code>SessionStickiness_LB_CookieDurationSeconds</code> for the
      * <code>attributeName</code> request parameter, then the
      * <code>attributeValue</code> request parameter must be an interger that
      * represents the cookie duration in seconds.</p> </li> <li> <p>If you specify
      * <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request
      * parameter, then the <code>attributeValue</code> request parameter must be
-     * <code>true</code> or <code>false</code>.</p> </li> <li> <p>If you specify
+     * <code>true</code> to activate HTTP to HTTPS redirection or <code>false</code> to
+     * deactivate HTTP to HTTPS redirection.</p> </li> <li> <p>If you specify
      * <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter,
-     * then the <code>attributeValue</code> request parameter must be <code>TLS version
-     * 1.0, 1.1, and 1.2</code> or <code>TLS version 1.2</code>.</p> </li> </ul>
+     * then the <code>attributeValue</code> request parameter must be the name of the
+     * TLS policy.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> </li> </ul>
      */
     inline UpdateLoadBalancerAttributeRequest& WithAttributeValue(Aws::String&& value) { SetAttributeValue(std::move(value)); return *this;}
 
@@ -293,17 +321,21 @@ namespace Model
      * <code>/weather/us/wa/seattle</code>).</p> </li> <li> <p>If you specify
      * <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request
      * parameter, then the <code>attributeValue</code> request parameter must be
-     * <code>true</code> or <code>false</code>.</p> </li> <li> <p>If you specify
+     * <code>true</code> to activate session stickiness or <code>false</code> to
+     * deactivate session stickiness.</p> </li> <li> <p>If you specify
      * <code>SessionStickiness_LB_CookieDurationSeconds</code> for the
      * <code>attributeName</code> request parameter, then the
      * <code>attributeValue</code> request parameter must be an interger that
      * represents the cookie duration in seconds.</p> </li> <li> <p>If you specify
      * <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request
      * parameter, then the <code>attributeValue</code> request parameter must be
-     * <code>true</code> or <code>false</code>.</p> </li> <li> <p>If you specify
+     * <code>true</code> to activate HTTP to HTTPS redirection or <code>false</code> to
+     * deactivate HTTP to HTTPS redirection.</p> </li> <li> <p>If you specify
      * <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter,
-     * then the <code>attributeValue</code> request parameter must be <code>TLS version
-     * 1.0, 1.1, and 1.2</code> or <code>TLS version 1.2</code>.</p> </li> </ul>
+     * then the <code>attributeValue</code> request parameter must be the name of the
+     * TLS policy.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> </li> </ul>
      */
     inline UpdateLoadBalancerAttributeRequest& WithAttributeValue(const char* value) { SetAttributeValue(value); return *this;}
 

@@ -518,6 +518,80 @@ namespace Model
      */
     inline ListBackupJobsRequest& WithByAccountId(const char* value) { SetByAccountId(value); return *this;}
 
+
+    /**
+     * <p>Returns only backup jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline const Aws::Utils::DateTime& GetByCompleteAfter() const{ return m_byCompleteAfter; }
+
+    /**
+     * <p>Returns only backup jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline bool ByCompleteAfterHasBeenSet() const { return m_byCompleteAfterHasBeenSet; }
+
+    /**
+     * <p>Returns only backup jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline void SetByCompleteAfter(const Aws::Utils::DateTime& value) { m_byCompleteAfterHasBeenSet = true; m_byCompleteAfter = value; }
+
+    /**
+     * <p>Returns only backup jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline void SetByCompleteAfter(Aws::Utils::DateTime&& value) { m_byCompleteAfterHasBeenSet = true; m_byCompleteAfter = std::move(value); }
+
+    /**
+     * <p>Returns only backup jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline ListBackupJobsRequest& WithByCompleteAfter(const Aws::Utils::DateTime& value) { SetByCompleteAfter(value); return *this;}
+
+    /**
+     * <p>Returns only backup jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline ListBackupJobsRequest& WithByCompleteAfter(Aws::Utils::DateTime&& value) { SetByCompleteAfter(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Returns only backup jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline const Aws::Utils::DateTime& GetByCompleteBefore() const{ return m_byCompleteBefore; }
+
+    /**
+     * <p>Returns only backup jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline bool ByCompleteBeforeHasBeenSet() const { return m_byCompleteBeforeHasBeenSet; }
+
+    /**
+     * <p>Returns only backup jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline void SetByCompleteBefore(const Aws::Utils::DateTime& value) { m_byCompleteBeforeHasBeenSet = true; m_byCompleteBefore = value; }
+
+    /**
+     * <p>Returns only backup jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline void SetByCompleteBefore(Aws::Utils::DateTime&& value) { m_byCompleteBeforeHasBeenSet = true; m_byCompleteBefore = std::move(value); }
+
+    /**
+     * <p>Returns only backup jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline ListBackupJobsRequest& WithByCompleteBefore(const Aws::Utils::DateTime& value) { SetByCompleteBefore(value); return *this;}
+
+    /**
+     * <p>Returns only backup jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline ListBackupJobsRequest& WithByCompleteBefore(Aws::Utils::DateTime&& value) { SetByCompleteBefore(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -546,6 +620,12 @@ namespace Model
 
     Aws::String m_byAccountId;
     bool m_byAccountIdHasBeenSet;
+
+    Aws::Utils::DateTime m_byCompleteAfter;
+    bool m_byCompleteAfterHasBeenSet;
+
+    Aws::Utils::DateTime m_byCompleteBefore;
+    bool m_byCompleteBeforeHasBeenSet;
   };
 
 } // namespace Model

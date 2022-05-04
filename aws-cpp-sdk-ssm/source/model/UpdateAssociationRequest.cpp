@@ -34,7 +34,8 @@ UpdateAssociationRequest::UpdateAssociationRequest() :
     m_calendarNamesHasBeenSet(false),
     m_targetLocationsHasBeenSet(false),
     m_scheduleOffset(0),
-    m_scheduleOffsetHasBeenSet(false)
+    m_scheduleOffsetHasBeenSet(false),
+    m_targetMapsHasBeenSet(false)
 {
 }
 
@@ -170,6 +171,27 @@ Aws::String UpdateAssociationRequest::SerializePayload() const
   if(m_scheduleOffsetHasBeenSet)
   {
    payload.WithInteger("ScheduleOffset", m_scheduleOffset);
+
+  }
+
+  if(m_targetMapsHasBeenSet)
+  {
+   Array<JsonValue> targetMapsJsonList(m_targetMaps.size());
+   for(unsigned targetMapsIndex = 0; targetMapsIndex < targetMapsJsonList.GetLength(); ++targetMapsIndex)
+   {
+     JsonValue targetMapJsonMap;
+     for(auto& targetMapItem : m_targetMaps[targetMapsIndex])
+     {
+       Array<JsonValue> targetMapValueListJsonList(targetMapItem.second.size());
+       for(unsigned targetMapValueListIndex = 0; targetMapValueListIndex < targetMapValueListJsonList.GetLength(); ++targetMapValueListIndex)
+       {
+         targetMapValueListJsonList[targetMapValueListIndex].AsString(targetMapItem.second[targetMapValueListIndex]);
+       }
+       targetMapJsonMap.WithArray(targetMapItem.first, std::move(targetMapValueListJsonList));
+     }
+     targetMapsJsonList[targetMapsIndex].AsObject(std::move(targetMapJsonMap));
+   }
+   payload.WithArray("TargetMaps", std::move(targetMapsJsonList));
 
   }
 

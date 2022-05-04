@@ -1144,6 +1144,55 @@ namespace Model
      */
     inline CreateAssociationBatchRequestEntry& WithScheduleOffset(int value) { SetScheduleOffset(value); return *this;}
 
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& GetTargetMaps() const{ return m_targetMaps; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline bool TargetMapsHasBeenSet() const { return m_targetMapsHasBeenSet; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline void SetTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps = value; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline void SetTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps = std::move(value); }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline CreateAssociationBatchRequestEntry& WithTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { SetTargetMaps(value); return *this;}
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline CreateAssociationBatchRequestEntry& WithTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { SetTargetMaps(std::move(value)); return *this;}
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline CreateAssociationBatchRequestEntry& AddTargetMaps(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(value); return *this; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline CreateAssociationBatchRequestEntry& AddTargetMaps(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -1196,6 +1245,9 @@ namespace Model
 
     int m_scheduleOffset;
     bool m_scheduleOffsetHasBeenSet;
+
+    Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
+    bool m_targetMapsHasBeenSet;
   };
 
 } // namespace Model

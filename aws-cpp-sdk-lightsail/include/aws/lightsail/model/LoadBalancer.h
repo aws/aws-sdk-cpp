@@ -846,66 +846,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the TLS security policy for the load balancer.</p> <p>The
-     * following TLS security policy names are possible:</p> <ul> <li> <p>
-     * <code>TLS-2016-08</code> </p> </li> <li> <p> <code>TLS-FS-Res-1-2-2019-08</code>
-     * </p> </li> </ul>
+     * <p>The name of the TLS security policy for the load balancer.</p>
      */
     inline const Aws::String& GetTlsPolicyName() const{ return m_tlsPolicyName; }
 
     /**
-     * <p>The name of the TLS security policy for the load balancer.</p> <p>The
-     * following TLS security policy names are possible:</p> <ul> <li> <p>
-     * <code>TLS-2016-08</code> </p> </li> <li> <p> <code>TLS-FS-Res-1-2-2019-08</code>
-     * </p> </li> </ul>
+     * <p>The name of the TLS security policy for the load balancer.</p>
      */
     inline bool TlsPolicyNameHasBeenSet() const { return m_tlsPolicyNameHasBeenSet; }
 
     /**
-     * <p>The name of the TLS security policy for the load balancer.</p> <p>The
-     * following TLS security policy names are possible:</p> <ul> <li> <p>
-     * <code>TLS-2016-08</code> </p> </li> <li> <p> <code>TLS-FS-Res-1-2-2019-08</code>
-     * </p> </li> </ul>
+     * <p>The name of the TLS security policy for the load balancer.</p>
      */
     inline void SetTlsPolicyName(const Aws::String& value) { m_tlsPolicyNameHasBeenSet = true; m_tlsPolicyName = value; }
 
     /**
-     * <p>The name of the TLS security policy for the load balancer.</p> <p>The
-     * following TLS security policy names are possible:</p> <ul> <li> <p>
-     * <code>TLS-2016-08</code> </p> </li> <li> <p> <code>TLS-FS-Res-1-2-2019-08</code>
-     * </p> </li> </ul>
+     * <p>The name of the TLS security policy for the load balancer.</p>
      */
     inline void SetTlsPolicyName(Aws::String&& value) { m_tlsPolicyNameHasBeenSet = true; m_tlsPolicyName = std::move(value); }
 
     /**
-     * <p>The name of the TLS security policy for the load balancer.</p> <p>The
-     * following TLS security policy names are possible:</p> <ul> <li> <p>
-     * <code>TLS-2016-08</code> </p> </li> <li> <p> <code>TLS-FS-Res-1-2-2019-08</code>
-     * </p> </li> </ul>
+     * <p>The name of the TLS security policy for the load balancer.</p>
      */
     inline void SetTlsPolicyName(const char* value) { m_tlsPolicyNameHasBeenSet = true; m_tlsPolicyName.assign(value); }
 
     /**
-     * <p>The name of the TLS security policy for the load balancer.</p> <p>The
-     * following TLS security policy names are possible:</p> <ul> <li> <p>
-     * <code>TLS-2016-08</code> </p> </li> <li> <p> <code>TLS-FS-Res-1-2-2019-08</code>
-     * </p> </li> </ul>
+     * <p>The name of the TLS security policy for the load balancer.</p>
      */
     inline LoadBalancer& WithTlsPolicyName(const Aws::String& value) { SetTlsPolicyName(value); return *this;}
 
     /**
-     * <p>The name of the TLS security policy for the load balancer.</p> <p>The
-     * following TLS security policy names are possible:</p> <ul> <li> <p>
-     * <code>TLS-2016-08</code> </p> </li> <li> <p> <code>TLS-FS-Res-1-2-2019-08</code>
-     * </p> </li> </ul>
+     * <p>The name of the TLS security policy for the load balancer.</p>
      */
     inline LoadBalancer& WithTlsPolicyName(Aws::String&& value) { SetTlsPolicyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the TLS security policy for the load balancer.</p> <p>The
-     * following TLS security policy names are possible:</p> <ul> <li> <p>
-     * <code>TLS-2016-08</code> </p> </li> <li> <p> <code>TLS-FS-Res-1-2-2019-08</code>
-     * </p> </li> </ul>
+     * <p>The name of the TLS security policy for the load balancer.</p>
      */
     inline LoadBalancer& WithTlsPolicyName(const char* value) { SetTlsPolicyName(value); return *this;}
 
