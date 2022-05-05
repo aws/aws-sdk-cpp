@@ -42,7 +42,9 @@ Job::Job() :
     m_namespaceIdHasBeenSet(false),
     m_jobTemplateArnHasBeenSet(false),
     m_jobExecutionsRetryConfigHasBeenSet(false),
-    m_documentParametersHasBeenSet(false)
+    m_documentParametersHasBeenSet(false),
+    m_isConcurrent(false),
+    m_isConcurrentHasBeenSet(false)
 {
 }
 
@@ -70,7 +72,9 @@ Job::Job(JsonView jsonValue) :
     m_namespaceIdHasBeenSet(false),
     m_jobTemplateArnHasBeenSet(false),
     m_jobExecutionsRetryConfigHasBeenSet(false),
-    m_documentParametersHasBeenSet(false)
+    m_documentParametersHasBeenSet(false),
+    m_isConcurrent(false),
+    m_isConcurrentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -230,6 +234,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_documentParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("isConcurrent"))
+  {
+    m_isConcurrent = jsonValue.GetBool("isConcurrent");
+
+    m_isConcurrentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -365,6 +376,12 @@ JsonValue Job::Jsonize() const
      documentParametersJsonMap.WithString(documentParametersItem.first, documentParametersItem.second);
    }
    payload.WithObject("documentParameters", std::move(documentParametersJsonMap));
+
+  }
+
+  if(m_isConcurrentHasBeenSet)
+  {
+   payload.WithBool("isConcurrent", m_isConcurrent);
 
   }
 

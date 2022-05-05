@@ -347,6 +347,19 @@ namespace Model
      */
     inline JobSummary& WithCompletedAt(Aws::Utils::DateTime&& value) { SetCompletedAt(std::move(value)); return *this;}
 
+
+    
+    inline bool GetIsConcurrent() const{ return m_isConcurrent; }
+
+    
+    inline bool IsConcurrentHasBeenSet() const { return m_isConcurrentHasBeenSet; }
+
+    
+    inline void SetIsConcurrent(bool value) { m_isConcurrentHasBeenSet = true; m_isConcurrent = value; }
+
+    
+    inline JobSummary& WithIsConcurrent(bool value) { SetIsConcurrent(value); return *this;}
+
   private:
 
     Aws::String m_jobArn;
@@ -372,6 +385,9 @@ namespace Model
 
     Aws::Utils::DateTime m_completedAt;
     bool m_completedAtHasBeenSet;
+
+    bool m_isConcurrent;
+    bool m_isConcurrentHasBeenSet;
   };
 
 } // namespace Model

@@ -522,7 +522,14 @@ namespace Model
     c6a_32xlarge,
     c6a_48xlarge,
     c6a_metal,
-    m6a_metal
+    m6a_metal,
+    i4i_large,
+    i4i_xlarge,
+    i4i_2xlarge,
+    i4i_4xlarge,
+    i4i_8xlarge,
+    i4i_16xlarge,
+    i4i_32xlarge
   };
 
 namespace InstanceTypeMapper

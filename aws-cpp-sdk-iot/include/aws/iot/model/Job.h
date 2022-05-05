@@ -961,6 +961,19 @@ namespace Model
      */
     inline Job& AddDocumentParameters(const char* key, const char* value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, value); return *this; }
 
+
+    
+    inline bool GetIsConcurrent() const{ return m_isConcurrent; }
+
+    
+    inline bool IsConcurrentHasBeenSet() const { return m_isConcurrentHasBeenSet; }
+
+    
+    inline void SetIsConcurrent(bool value) { m_isConcurrentHasBeenSet = true; m_isConcurrent = value; }
+
+    
+    inline Job& WithIsConcurrent(bool value) { SetIsConcurrent(value); return *this;}
+
   private:
 
     Aws::String m_jobArn;
@@ -1025,6 +1038,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_documentParameters;
     bool m_documentParametersHasBeenSet;
+
+    bool m_isConcurrent;
+    bool m_isConcurrentHasBeenSet;
   };
 
 } // namespace Model

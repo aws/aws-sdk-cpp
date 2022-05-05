@@ -42,222 +42,198 @@ namespace Model
 
 
     /**
-     * <p>The configuration information to connect to your Quip data source domain.</p>
+     * <p>The Quip site domain.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>The configuration information to connect to your Quip data source domain.</p>
+     * <p>The Quip site domain.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>The configuration information to connect to your Quip data source domain.</p>
+     * <p>The Quip site domain.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>The configuration information to connect to your Quip data source domain.</p>
+     * <p>The Quip site domain.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>The configuration information to connect to your Quip data source domain.</p>
+     * <p>The Quip site domain.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>The configuration information to connect to your Quip data source domain.</p>
+     * <p>The Quip site domain.</p>
      */
     inline QuipConfiguration& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>The configuration information to connect to your Quip data source domain.</p>
+     * <p>The Quip site domain.</p>
      */
     inline QuipConfiguration& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>The configuration information to connect to your Quip data source domain.</p>
+     * <p>The Quip site domain.</p>
      */
     inline QuipConfiguration& WithDomain(const char* value) { SetDomain(value); return *this;}
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs that are required to connect to your Quip file system. Windows
-     * is currently the only supported type. The secret must contain a JSON structure
-     * with the following keys:</p> <ul> <li> <p>username—The Active Directory user
-     * name, along with the Domain Name System (DNS) domain name. For example,
-     * <i>user@corp.example.com</i>. The Active Directory user account must have read
-     * and mounting access to the Quip file system for Windows.</p> </li> <li>
-     * <p>password—The password of the Active Directory user account with read and
-     * mounting access to the Quip Windows file system.</p> </li> </ul>
+     * key-value pairs that are required to connect to your Quip. The secret must
+     * contain a JSON structure with the following keys:</p> <ul> <li>
+     * <p>accessToken—The token created in Quip. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication
+     * for a Quip data source</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs that are required to connect to your Quip file system. Windows
-     * is currently the only supported type. The secret must contain a JSON structure
-     * with the following keys:</p> <ul> <li> <p>username—The Active Directory user
-     * name, along with the Domain Name System (DNS) domain name. For example,
-     * <i>user@corp.example.com</i>. The Active Directory user account must have read
-     * and mounting access to the Quip file system for Windows.</p> </li> <li>
-     * <p>password—The password of the Active Directory user account with read and
-     * mounting access to the Quip Windows file system.</p> </li> </ul>
+     * key-value pairs that are required to connect to your Quip. The secret must
+     * contain a JSON structure with the following keys:</p> <ul> <li>
+     * <p>accessToken—The token created in Quip. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication
+     * for a Quip data source</a>.</p> </li> </ul>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs that are required to connect to your Quip file system. Windows
-     * is currently the only supported type. The secret must contain a JSON structure
-     * with the following keys:</p> <ul> <li> <p>username—The Active Directory user
-     * name, along with the Domain Name System (DNS) domain name. For example,
-     * <i>user@corp.example.com</i>. The Active Directory user account must have read
-     * and mounting access to the Quip file system for Windows.</p> </li> <li>
-     * <p>password—The password of the Active Directory user account with read and
-     * mounting access to the Quip Windows file system.</p> </li> </ul>
+     * key-value pairs that are required to connect to your Quip. The secret must
+     * contain a JSON structure with the following keys:</p> <ul> <li>
+     * <p>accessToken—The token created in Quip. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication
+     * for a Quip data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs that are required to connect to your Quip file system. Windows
-     * is currently the only supported type. The secret must contain a JSON structure
-     * with the following keys:</p> <ul> <li> <p>username—The Active Directory user
-     * name, along with the Domain Name System (DNS) domain name. For example,
-     * <i>user@corp.example.com</i>. The Active Directory user account must have read
-     * and mounting access to the Quip file system for Windows.</p> </li> <li>
-     * <p>password—The password of the Active Directory user account with read and
-     * mounting access to the Quip Windows file system.</p> </li> </ul>
+     * key-value pairs that are required to connect to your Quip. The secret must
+     * contain a JSON structure with the following keys:</p> <ul> <li>
+     * <p>accessToken—The token created in Quip. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication
+     * for a Quip data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs that are required to connect to your Quip file system. Windows
-     * is currently the only supported type. The secret must contain a JSON structure
-     * with the following keys:</p> <ul> <li> <p>username—The Active Directory user
-     * name, along with the Domain Name System (DNS) domain name. For example,
-     * <i>user@corp.example.com</i>. The Active Directory user account must have read
-     * and mounting access to the Quip file system for Windows.</p> </li> <li>
-     * <p>password—The password of the Active Directory user account with read and
-     * mounting access to the Quip Windows file system.</p> </li> </ul>
+     * key-value pairs that are required to connect to your Quip. The secret must
+     * contain a JSON structure with the following keys:</p> <ul> <li>
+     * <p>accessToken—The token created in Quip. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication
+     * for a Quip data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs that are required to connect to your Quip file system. Windows
-     * is currently the only supported type. The secret must contain a JSON structure
-     * with the following keys:</p> <ul> <li> <p>username—The Active Directory user
-     * name, along with the Domain Name System (DNS) domain name. For example,
-     * <i>user@corp.example.com</i>. The Active Directory user account must have read
-     * and mounting access to the Quip file system for Windows.</p> </li> <li>
-     * <p>password—The password of the Active Directory user account with read and
-     * mounting access to the Quip Windows file system.</p> </li> </ul>
+     * key-value pairs that are required to connect to your Quip. The secret must
+     * contain a JSON structure with the following keys:</p> <ul> <li>
+     * <p>accessToken—The token created in Quip. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication
+     * for a Quip data source</a>.</p> </li> </ul>
      */
     inline QuipConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs that are required to connect to your Quip file system. Windows
-     * is currently the only supported type. The secret must contain a JSON structure
-     * with the following keys:</p> <ul> <li> <p>username—The Active Directory user
-     * name, along with the Domain Name System (DNS) domain name. For example,
-     * <i>user@corp.example.com</i>. The Active Directory user account must have read
-     * and mounting access to the Quip file system for Windows.</p> </li> <li>
-     * <p>password—The password of the Active Directory user account with read and
-     * mounting access to the Quip Windows file system.</p> </li> </ul>
+     * key-value pairs that are required to connect to your Quip. The secret must
+     * contain a JSON structure with the following keys:</p> <ul> <li>
+     * <p>accessToken—The token created in Quip. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication
+     * for a Quip data source</a>.</p> </li> </ul>
      */
     inline QuipConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs that are required to connect to your Quip file system. Windows
-     * is currently the only supported type. The secret must contain a JSON structure
-     * with the following keys:</p> <ul> <li> <p>username—The Active Directory user
-     * name, along with the Domain Name System (DNS) domain name. For example,
-     * <i>user@corp.example.com</i>. The Active Directory user account must have read
-     * and mounting access to the Quip file system for Windows.</p> </li> <li>
-     * <p>password—The password of the Active Directory user account with read and
-     * mounting access to the Quip Windows file system.</p> </li> </ul>
+     * key-value pairs that are required to connect to your Quip. The secret must
+     * contain a JSON structure with the following keys:</p> <ul> <li>
+     * <p>accessToken—The token created in Quip. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication
+     * for a Quip data source</a>.</p> </li> </ul>
      */
     inline QuipConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 
 
     /**
-     * <p>Specify whether to crawl file comments in your Quip data source. You can
-     * specify one or more of these options.</p>
+     * <p>Specify whether to crawl file comments in Quip. You can specify one or more
+     * of these options.</p>
      */
     inline bool GetCrawlFileComments() const{ return m_crawlFileComments; }
 
     /**
-     * <p>Specify whether to crawl file comments in your Quip data source. You can
-     * specify one or more of these options.</p>
+     * <p>Specify whether to crawl file comments in Quip. You can specify one or more
+     * of these options.</p>
      */
     inline bool CrawlFileCommentsHasBeenSet() const { return m_crawlFileCommentsHasBeenSet; }
 
     /**
-     * <p>Specify whether to crawl file comments in your Quip data source. You can
-     * specify one or more of these options.</p>
+     * <p>Specify whether to crawl file comments in Quip. You can specify one or more
+     * of these options.</p>
      */
     inline void SetCrawlFileComments(bool value) { m_crawlFileCommentsHasBeenSet = true; m_crawlFileComments = value; }
 
     /**
-     * <p>Specify whether to crawl file comments in your Quip data source. You can
-     * specify one or more of these options.</p>
+     * <p>Specify whether to crawl file comments in Quip. You can specify one or more
+     * of these options.</p>
      */
     inline QuipConfiguration& WithCrawlFileComments(bool value) { SetCrawlFileComments(value); return *this;}
 
 
     /**
-     * <p>Specify whether to crawl chat rooms in your Quip data source. You can specify
-     * one or more of these options.</p>
+     * <p>Specify whether to crawl chat rooms in Quip. You can specify one or more of
+     * these options.</p>
      */
     inline bool GetCrawlChatRooms() const{ return m_crawlChatRooms; }
 
     /**
-     * <p>Specify whether to crawl chat rooms in your Quip data source. You can specify
-     * one or more of these options.</p>
+     * <p>Specify whether to crawl chat rooms in Quip. You can specify one or more of
+     * these options.</p>
      */
     inline bool CrawlChatRoomsHasBeenSet() const { return m_crawlChatRoomsHasBeenSet; }
 
     /**
-     * <p>Specify whether to crawl chat rooms in your Quip data source. You can specify
-     * one or more of these options.</p>
+     * <p>Specify whether to crawl chat rooms in Quip. You can specify one or more of
+     * these options.</p>
      */
     inline void SetCrawlChatRooms(bool value) { m_crawlChatRoomsHasBeenSet = true; m_crawlChatRooms = value; }
 
     /**
-     * <p>Specify whether to crawl chat rooms in your Quip data source. You can specify
-     * one or more of these options.</p>
+     * <p>Specify whether to crawl chat rooms in Quip. You can specify one or more of
+     * these options.</p>
      */
     inline QuipConfiguration& WithCrawlChatRooms(bool value) { SetCrawlChatRooms(value); return *this;}
 
 
     /**
-     * <p>Specify whether to crawl attachments in your Quip data source. You can
-     * specify one or more of these options.</p>
+     * <p>Specify whether to crawl attachments in Quip. You can specify one or more of
+     * these options.</p>
      */
     inline bool GetCrawlAttachments() const{ return m_crawlAttachments; }
 
     /**
-     * <p>Specify whether to crawl attachments in your Quip data source. You can
-     * specify one or more of these options.</p>
+     * <p>Specify whether to crawl attachments in Quip. You can specify one or more of
+     * these options.</p>
      */
     inline bool CrawlAttachmentsHasBeenSet() const { return m_crawlAttachmentsHasBeenSet; }
 
     /**
-     * <p>Specify whether to crawl attachments in your Quip data source. You can
-     * specify one or more of these options.</p>
+     * <p>Specify whether to crawl attachments in Quip. You can specify one or more of
+     * these options.</p>
      */
     inline void SetCrawlAttachments(bool value) { m_crawlAttachmentsHasBeenSet = true; m_crawlAttachments = value; }
 
     /**
-     * <p>Specify whether to crawl attachments in your Quip data source. You can
-     * specify one or more of these options.</p>
+     * <p>Specify whether to crawl attachments in Quip. You can specify one or more of
+     * these options.</p>
      */
     inline QuipConfiguration& WithCrawlAttachments(bool value) { SetCrawlAttachments(value); return *this;}
 
@@ -309,124 +285,268 @@ namespace Model
 
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip threads.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip threads to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetThreadFieldMappings() const{ return m_threadFieldMappings; }
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip threads.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip threads to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline bool ThreadFieldMappingsHasBeenSet() const { return m_threadFieldMappingsHasBeenSet; }
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip threads.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip threads to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline void SetThreadFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_threadFieldMappingsHasBeenSet = true; m_threadFieldMappings = value; }
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip threads.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip threads to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline void SetThreadFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_threadFieldMappingsHasBeenSet = true; m_threadFieldMappings = std::move(value); }
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip threads.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip threads to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline QuipConfiguration& WithThreadFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetThreadFieldMappings(value); return *this;}
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip threads.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip threads to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline QuipConfiguration& WithThreadFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetThreadFieldMappings(std::move(value)); return *this;}
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip threads.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip threads to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline QuipConfiguration& AddThreadFieldMappings(const DataSourceToIndexFieldMapping& value) { m_threadFieldMappingsHasBeenSet = true; m_threadFieldMappings.push_back(value); return *this; }
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip threads.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip threads to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline QuipConfiguration& AddThreadFieldMappings(DataSourceToIndexFieldMapping&& value) { m_threadFieldMappingsHasBeenSet = true; m_threadFieldMappings.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip messages.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip messages to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetMessageFieldMappings() const{ return m_messageFieldMappings; }
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip messages.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip messages to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline bool MessageFieldMappingsHasBeenSet() const { return m_messageFieldMappingsHasBeenSet; }
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip messages.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip messages to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline void SetMessageFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_messageFieldMappingsHasBeenSet = true; m_messageFieldMappings = value; }
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip messages.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip messages to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline void SetMessageFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_messageFieldMappingsHasBeenSet = true; m_messageFieldMappings = std::move(value); }
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip messages.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip messages to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline QuipConfiguration& WithMessageFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetMessageFieldMappings(value); return *this;}
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip messages.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip messages to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline QuipConfiguration& WithMessageFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetMessageFieldMappings(std::move(value)); return *this;}
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip messages.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip messages to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline QuipConfiguration& AddMessageFieldMappings(const DataSourceToIndexFieldMapping& value) { m_messageFieldMappingsHasBeenSet = true; m_messageFieldMappings.push_back(value); return *this; }
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip messages.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip messages to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline QuipConfiguration& AddMessageFieldMappings(DataSourceToIndexFieldMapping&& value) { m_messageFieldMappingsHasBeenSet = true; m_messageFieldMappings.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip attachments.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip attachments to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetAttachmentFieldMappings() const{ return m_attachmentFieldMappings; }
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip attachments.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip attachments to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline bool AttachmentFieldMappingsHasBeenSet() const { return m_attachmentFieldMappingsHasBeenSet; }
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip attachments.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip attachments to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline void SetAttachmentFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_attachmentFieldMappingsHasBeenSet = true; m_attachmentFieldMappings = value; }
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip attachments.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip attachments to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline void SetAttachmentFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_attachmentFieldMappingsHasBeenSet = true; m_attachmentFieldMappings = std::move(value); }
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip attachments.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip attachments to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline QuipConfiguration& WithAttachmentFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetAttachmentFieldMappings(value); return *this;}
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip attachments.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip attachments to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline QuipConfiguration& WithAttachmentFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetAttachmentFieldMappings(std::move(value)); return *this;}
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip attachments.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip attachments to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline QuipConfiguration& AddAttachmentFieldMappings(const DataSourceToIndexFieldMapping& value) { m_attachmentFieldMappingsHasBeenSet = true; m_attachmentFieldMappings.push_back(value); return *this; }
 
     /**
-     * <p>A list of field mappings to apply when indexing Quip attachments.</p>
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Quip attachments to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Quip fields. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+     * data source fields</a>. The Quip field names must exist in your Quip custom
+     * metadata.</p>
      */
     inline QuipConfiguration& AddAttachmentFieldMappings(DataSourceToIndexFieldMapping&& value) { m_attachmentFieldMappingsHasBeenSet = true; m_attachmentFieldMappings.push_back(std::move(value)); return *this; }
 
@@ -596,38 +716,50 @@ namespace Model
 
 
     /**
-     * <p>Configuration information for connecting to an Amazon Virtual Private Cloud
-     * (VPC) for your Quip. Your Quip instance must reside inside your VPC.</p>
+     * <p>Configuration information for an Amazon Virtual Private Cloud (VPC) to
+     * connect to your Quip. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
      */
     inline const DataSourceVpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
 
     /**
-     * <p>Configuration information for connecting to an Amazon Virtual Private Cloud
-     * (VPC) for your Quip. Your Quip instance must reside inside your VPC.</p>
+     * <p>Configuration information for an Amazon Virtual Private Cloud (VPC) to
+     * connect to your Quip. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
      */
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
 
     /**
-     * <p>Configuration information for connecting to an Amazon Virtual Private Cloud
-     * (VPC) for your Quip. Your Quip instance must reside inside your VPC.</p>
+     * <p>Configuration information for an Amazon Virtual Private Cloud (VPC) to
+     * connect to your Quip. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
      */
     inline void SetVpcConfiguration(const DataSourceVpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
 
     /**
-     * <p>Configuration information for connecting to an Amazon Virtual Private Cloud
-     * (VPC) for your Quip. Your Quip instance must reside inside your VPC.</p>
+     * <p>Configuration information for an Amazon Virtual Private Cloud (VPC) to
+     * connect to your Quip. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
      */
     inline void SetVpcConfiguration(DataSourceVpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
 
     /**
-     * <p>Configuration information for connecting to an Amazon Virtual Private Cloud
-     * (VPC) for your Quip. Your Quip instance must reside inside your VPC.</p>
+     * <p>Configuration information for an Amazon Virtual Private Cloud (VPC) to
+     * connect to your Quip. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
      */
     inline QuipConfiguration& WithVpcConfiguration(const DataSourceVpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
 
     /**
-     * <p>Configuration information for connecting to an Amazon Virtual Private Cloud
-     * (VPC) for your Quip. Your Quip instance must reside inside your VPC.</p>
+     * <p>Configuration information for an Amazon Virtual Private Cloud (VPC) to
+     * connect to your Quip. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
      */
     inline QuipConfiguration& WithVpcConfiguration(DataSourceVpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
 

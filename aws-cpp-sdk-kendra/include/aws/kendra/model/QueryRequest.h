@@ -195,121 +195,113 @@ namespace Model
 
     /**
      * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. You can use this information to help narrow the search
-     * for your user.</p>
+     * attribute key specified. This helps your users narrow their search.</p>
      */
     inline const Aws::Vector<Facet>& GetFacets() const{ return m_facets; }
 
     /**
      * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. You can use this information to help narrow the search
-     * for your user.</p>
+     * attribute key specified. This helps your users narrow their search.</p>
      */
     inline bool FacetsHasBeenSet() const { return m_facetsHasBeenSet; }
 
     /**
      * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. You can use this information to help narrow the search
-     * for your user.</p>
+     * attribute key specified. This helps your users narrow their search.</p>
      */
     inline void SetFacets(const Aws::Vector<Facet>& value) { m_facetsHasBeenSet = true; m_facets = value; }
 
     /**
      * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. You can use this information to help narrow the search
-     * for your user.</p>
+     * attribute key specified. This helps your users narrow their search.</p>
      */
     inline void SetFacets(Aws::Vector<Facet>&& value) { m_facetsHasBeenSet = true; m_facets = std::move(value); }
 
     /**
      * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. You can use this information to help narrow the search
-     * for your user.</p>
+     * attribute key specified. This helps your users narrow their search.</p>
      */
     inline QueryRequest& WithFacets(const Aws::Vector<Facet>& value) { SetFacets(value); return *this;}
 
     /**
      * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. You can use this information to help narrow the search
-     * for your user.</p>
+     * attribute key specified. This helps your users narrow their search.</p>
      */
     inline QueryRequest& WithFacets(Aws::Vector<Facet>&& value) { SetFacets(std::move(value)); return *this;}
 
     /**
      * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. You can use this information to help narrow the search
-     * for your user.</p>
+     * attribute key specified. This helps your users narrow their search.</p>
      */
     inline QueryRequest& AddFacets(const Facet& value) { m_facetsHasBeenSet = true; m_facets.push_back(value); return *this; }
 
     /**
      * <p>An array of documents attributes. Amazon Kendra returns a count for each
-     * attribute key specified. You can use this information to help narrow the search
-     * for your user.</p>
+     * attribute key specified. This helps your users narrow their search.</p>
      */
     inline QueryRequest& AddFacets(Facet&& value) { m_facetsHasBeenSet = true; m_facets.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>An array of document attributes to include in the response. No other document
-     * attributes are included in the response. By default all document attributes are
-     * included in the response. </p>
+     * <p>An array of document attributes to include in the response. You can limit the
+     * response to include certain document attributes. By default all document
+     * attributes are included in the response.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRequestedDocumentAttributes() const{ return m_requestedDocumentAttributes; }
 
     /**
-     * <p>An array of document attributes to include in the response. No other document
-     * attributes are included in the response. By default all document attributes are
-     * included in the response. </p>
+     * <p>An array of document attributes to include in the response. You can limit the
+     * response to include certain document attributes. By default all document
+     * attributes are included in the response.</p>
      */
     inline bool RequestedDocumentAttributesHasBeenSet() const { return m_requestedDocumentAttributesHasBeenSet; }
 
     /**
-     * <p>An array of document attributes to include in the response. No other document
-     * attributes are included in the response. By default all document attributes are
-     * included in the response. </p>
+     * <p>An array of document attributes to include in the response. You can limit the
+     * response to include certain document attributes. By default all document
+     * attributes are included in the response.</p>
      */
     inline void SetRequestedDocumentAttributes(const Aws::Vector<Aws::String>& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes = value; }
 
     /**
-     * <p>An array of document attributes to include in the response. No other document
-     * attributes are included in the response. By default all document attributes are
-     * included in the response. </p>
+     * <p>An array of document attributes to include in the response. You can limit the
+     * response to include certain document attributes. By default all document
+     * attributes are included in the response.</p>
      */
     inline void SetRequestedDocumentAttributes(Aws::Vector<Aws::String>&& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes = std::move(value); }
 
     /**
-     * <p>An array of document attributes to include in the response. No other document
-     * attributes are included in the response. By default all document attributes are
-     * included in the response. </p>
+     * <p>An array of document attributes to include in the response. You can limit the
+     * response to include certain document attributes. By default all document
+     * attributes are included in the response.</p>
      */
     inline QueryRequest& WithRequestedDocumentAttributes(const Aws::Vector<Aws::String>& value) { SetRequestedDocumentAttributes(value); return *this;}
 
     /**
-     * <p>An array of document attributes to include in the response. No other document
-     * attributes are included in the response. By default all document attributes are
-     * included in the response. </p>
+     * <p>An array of document attributes to include in the response. You can limit the
+     * response to include certain document attributes. By default all document
+     * attributes are included in the response.</p>
      */
     inline QueryRequest& WithRequestedDocumentAttributes(Aws::Vector<Aws::String>&& value) { SetRequestedDocumentAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>An array of document attributes to include in the response. No other document
-     * attributes are included in the response. By default all document attributes are
-     * included in the response. </p>
+     * <p>An array of document attributes to include in the response. You can limit the
+     * response to include certain document attributes. By default all document
+     * attributes are included in the response.</p>
      */
     inline QueryRequest& AddRequestedDocumentAttributes(const Aws::String& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes.push_back(value); return *this; }
 
     /**
-     * <p>An array of document attributes to include in the response. No other document
-     * attributes are included in the response. By default all document attributes are
-     * included in the response. </p>
+     * <p>An array of document attributes to include in the response. You can limit the
+     * response to include certain document attributes. By default all document
+     * attributes are included in the response.</p>
      */
     inline QueryRequest& AddRequestedDocumentAttributes(Aws::String&& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of document attributes to include in the response. No other document
-     * attributes are included in the response. By default all document attributes are
-     * included in the response. </p>
+     * <p>An array of document attributes to include in the response. You can limit the
+     * response to include certain document attributes. By default all document
+     * attributes are included in the response.</p>
      */
     inline QueryRequest& AddRequestedDocumentAttributes(const char* value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes.push_back(value); return *this; }
 

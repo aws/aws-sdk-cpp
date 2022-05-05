@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The value of a custom document attribute. You can only provide one value for
-   * a custom attribute.</p><p><h3>See Also:</h3>   <a
+   * <p>The value of a document attribute. You can only provide one value for a
+   * document attribute.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DocumentAttributeValue">AWS
    * API Reference</a></p>
    */

@@ -527,6 +527,13 @@ namespace Aws
         static const int c6a_48xlarge_HASH = HashingUtils::HashString("c6a.48xlarge");
         static const int c6a_metal_HASH = HashingUtils::HashString("c6a.metal");
         static const int m6a_metal_HASH = HashingUtils::HashString("m6a.metal");
+        static const int i4i_large_HASH = HashingUtils::HashString("i4i.large");
+        static const int i4i_xlarge_HASH = HashingUtils::HashString("i4i.xlarge");
+        static const int i4i_2xlarge_HASH = HashingUtils::HashString("i4i.2xlarge");
+        static const int i4i_4xlarge_HASH = HashingUtils::HashString("i4i.4xlarge");
+        static const int i4i_8xlarge_HASH = HashingUtils::HashString("i4i.8xlarge");
+        static const int i4i_16xlarge_HASH = HashingUtils::HashString("i4i.16xlarge");
+        static const int i4i_32xlarge_HASH = HashingUtils::HashString("i4i.32xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -3086,6 +3093,41 @@ namespace Aws
             enumValue = InstanceType::m6a_metal;
             return true;
           }
+          else if (hashCode == i4i_large_HASH)
+          {
+            enumValue = InstanceType::i4i_large;
+            return true;
+          }
+          else if (hashCode == i4i_xlarge_HASH)
+          {
+            enumValue = InstanceType::i4i_xlarge;
+            return true;
+          }
+          else if (hashCode == i4i_2xlarge_HASH)
+          {
+            enumValue = InstanceType::i4i_2xlarge;
+            return true;
+          }
+          else if (hashCode == i4i_4xlarge_HASH)
+          {
+            enumValue = InstanceType::i4i_4xlarge;
+            return true;
+          }
+          else if (hashCode == i4i_8xlarge_HASH)
+          {
+            enumValue = InstanceType::i4i_8xlarge;
+            return true;
+          }
+          else if (hashCode == i4i_16xlarge_HASH)
+          {
+            enumValue = InstanceType::i4i_16xlarge;
+            return true;
+          }
+          else if (hashCode == i4i_32xlarge_HASH)
+          {
+            enumValue = InstanceType::i4i_32xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -4645,6 +4687,27 @@ namespace Aws
             return true;
           case InstanceType::m6a_metal:
             value = "m6a.metal";
+            return true;
+          case InstanceType::i4i_large:
+            value = "i4i.large";
+            return true;
+          case InstanceType::i4i_xlarge:
+            value = "i4i.xlarge";
+            return true;
+          case InstanceType::i4i_2xlarge:
+            value = "i4i.2xlarge";
+            return true;
+          case InstanceType::i4i_4xlarge:
+            value = "i4i.4xlarge";
+            return true;
+          case InstanceType::i4i_8xlarge:
+            value = "i4i.8xlarge";
+            return true;
+          case InstanceType::i4i_16xlarge:
+            value = "i4i.16xlarge";
+            return true;
+          case InstanceType::i4i_32xlarge:
+            value = "i4i.32xlarge";
             return true;
           default:
             return false;
