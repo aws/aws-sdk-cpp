@@ -27,7 +27,8 @@ namespace Model
 
   /**
    * <p>Contains details about addresses or points of interest that match the search
-   * criteria.</p><p><h3>See Also:</h3>   <a
+   * criteria.</p> <p>Not all details are included with all responses. Some details
+   * may only be returned by specific data partners.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/Place">AWS API
    * Reference</a></p>
    */

@@ -1281,12 +1281,7 @@ namespace Model
      * Region.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
      * a Multi-AZ deployment. The specified Availability Zone must be in the same
-     * Amazon Web Services Region as the current endpoint.</p>  <p>If you're
-     * creating a DB instance in an RDS on VMware environment, specify the identifier
-     * of the custom Availability Zone to create the DB instance in.</p> <p>For more
-     * information about RDS on VMware, see the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-     * RDS on VMware User Guide.</a> </p> 
+     * Amazon Web Services Region as the current endpoint.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
@@ -1302,12 +1297,7 @@ namespace Model
      * Region.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
      * a Multi-AZ deployment. The specified Availability Zone must be in the same
-     * Amazon Web Services Region as the current endpoint.</p>  <p>If you're
-     * creating a DB instance in an RDS on VMware environment, specify the identifier
-     * of the custom Availability Zone to create the DB instance in.</p> <p>For more
-     * information about RDS on VMware, see the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-     * RDS on VMware User Guide.</a> </p> 
+     * Amazon Web Services Region as the current endpoint.</p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
@@ -1323,12 +1313,7 @@ namespace Model
      * Region.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
      * a Multi-AZ deployment. The specified Availability Zone must be in the same
-     * Amazon Web Services Region as the current endpoint.</p>  <p>If you're
-     * creating a DB instance in an RDS on VMware environment, specify the identifier
-     * of the custom Availability Zone to create the DB instance in.</p> <p>For more
-     * information about RDS on VMware, see the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-     * RDS on VMware User Guide.</a> </p> 
+     * Amazon Web Services Region as the current endpoint.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
@@ -1344,12 +1329,7 @@ namespace Model
      * Region.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
      * a Multi-AZ deployment. The specified Availability Zone must be in the same
-     * Amazon Web Services Region as the current endpoint.</p>  <p>If you're
-     * creating a DB instance in an RDS on VMware environment, specify the identifier
-     * of the custom Availability Zone to create the DB instance in.</p> <p>For more
-     * information about RDS on VMware, see the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-     * RDS on VMware User Guide.</a> </p> 
+     * Amazon Web Services Region as the current endpoint.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
@@ -1365,12 +1345,7 @@ namespace Model
      * Region.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
      * a Multi-AZ deployment. The specified Availability Zone must be in the same
-     * Amazon Web Services Region as the current endpoint.</p>  <p>If you're
-     * creating a DB instance in an RDS on VMware environment, specify the identifier
-     * of the custom Availability Zone to create the DB instance in.</p> <p>For more
-     * information about RDS on VMware, see the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-     * RDS on VMware User Guide.</a> </p> 
+     * Amazon Web Services Region as the current endpoint.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
@@ -1386,12 +1361,7 @@ namespace Model
      * Region.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
      * a Multi-AZ deployment. The specified Availability Zone must be in the same
-     * Amazon Web Services Region as the current endpoint.</p>  <p>If you're
-     * creating a DB instance in an RDS on VMware environment, specify the identifier
-     * of the custom Availability Zone to create the DB instance in.</p> <p>For more
-     * information about RDS on VMware, see the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-     * RDS on VMware User Guide.</a> </p> 
+     * Amazon Web Services Region as the current endpoint.</p>
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
@@ -1407,12 +1377,7 @@ namespace Model
      * Region.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
      * a Multi-AZ deployment. The specified Availability Zone must be in the same
-     * Amazon Web Services Region as the current endpoint.</p>  <p>If you're
-     * creating a DB instance in an RDS on VMware environment, specify the identifier
-     * of the custom Availability Zone to create the DB instance in.</p> <p>For more
-     * information about RDS on VMware, see the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-     * RDS on VMware User Guide.</a> </p> 
+     * Amazon Web Services Region as the current endpoint.</p>
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
@@ -1428,12 +1393,7 @@ namespace Model
      * Region.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
      * a Multi-AZ deployment. The specified Availability Zone must be in the same
-     * Amazon Web Services Region as the current endpoint.</p>  <p>If you're
-     * creating a DB instance in an RDS on VMware environment, specify the identifier
-     * of the custom Availability Zone to create the DB instance in.</p> <p>For more
-     * information about RDS on VMware, see the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-     * RDS on VMware User Guide.</a> </p> 
+     * Amazon Web Services Region as the current endpoint.</p>
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 

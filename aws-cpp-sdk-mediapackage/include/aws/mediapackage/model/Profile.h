@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     NONE,
     HBBTV_1_5,
-    HYBRIDCAST
+    HYBRIDCAST,
+    DVB_DASH_2014
   };
 
 namespace ProfileMapper

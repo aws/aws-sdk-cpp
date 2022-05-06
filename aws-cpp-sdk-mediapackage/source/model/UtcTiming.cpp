@@ -23,6 +23,7 @@ namespace Aws
         static const int NONE_HASH = HashingUtils::HashString("NONE");
         static const int HTTP_HEAD_HASH = HashingUtils::HashString("HTTP-HEAD");
         static const int HTTP_ISO_HASH = HashingUtils::HashString("HTTP-ISO");
+        static const int HTTP_XSDATE_HASH = HashingUtils::HashString("HTTP-XSDATE");
 
 
         UtcTiming GetUtcTimingForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == HTTP_ISO_HASH)
           {
             return UtcTiming::HTTP_ISO;
+          }
+          else if (hashCode == HTTP_XSDATE_HASH)
+          {
+            return UtcTiming::HTTP_XSDATE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "HTTP-HEAD";
           case UtcTiming::HTTP_ISO:
             return "HTTP-ISO";
+          case UtcTiming::HTTP_XSDATE:
+            return "HTTP-XSDATE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

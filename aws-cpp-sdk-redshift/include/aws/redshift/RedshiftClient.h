@@ -881,7 +881,7 @@ namespace Model
          * <p>From a data producer account, authorizes the sharing of a datashare with one
          * or more consumer accounts or managing entities. To authorize a datashare for a
          * data consumer, the producer account must have the correct access
-         * privileges.</p><p><h3>See Also:</h3>   <a
+         * permissions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeDataShare">AWS
          * API Reference</a></p>
          */
@@ -891,7 +891,7 @@ namespace Model
          * <p>From a data producer account, authorizes the sharing of a datashare with one
          * or more consumer accounts or managing entities. To authorize a datashare for a
          * data consumer, the producer account must have the correct access
-         * privileges.</p><p><h3>See Also:</h3>   <a
+         * permissions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeDataShare">AWS
          * API Reference</a></p>
          *
@@ -903,7 +903,7 @@ namespace Model
          * <p>From a data producer account, authorizes the sharing of a datashare with one
          * or more consumer accounts or managing entities. To authorize a datashare for a
          * data consumer, the producer account must have the correct access
-         * privileges.</p><p><h3>See Also:</h3>   <a
+         * permissions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeDataShare">AWS
          * API Reference</a></p>
          *
@@ -1734,7 +1734,7 @@ namespace Model
         virtual void CreateUsageLimitAsync(const Model::CreateUsageLimitRequest& request, const CreateUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>From the producer account, removes authorization from the specified
+         * <p>From a datashare producer account, removes authorization from the specified
          * datashare. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeauthorizeDataShare">AWS
          * API Reference</a></p>
@@ -1742,7 +1742,7 @@ namespace Model
         virtual Model::DeauthorizeDataShareOutcome DeauthorizeDataShare(const Model::DeauthorizeDataShareRequest& request) const;
 
         /**
-         * <p>From the producer account, removes authorization from the specified
+         * <p>From a datashare producer account, removes authorization from the specified
          * datashare. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeauthorizeDataShare">AWS
          * API Reference</a></p>
@@ -1752,7 +1752,7 @@ namespace Model
         virtual Model::DeauthorizeDataShareOutcomeCallable DeauthorizeDataShareCallable(const Model::DeauthorizeDataShareRequest& request) const;
 
         /**
-         * <p>From the producer account, removes authorization from the specified
+         * <p>From a datashare producer account, removes authorization from the specified
          * datashare. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeauthorizeDataShare">AWS
          * API Reference</a></p>
@@ -3863,16 +3863,16 @@ namespace Model
         virtual void DisableSnapshotCopyAsync(const Model::DisableSnapshotCopyRequest& request, const DisableSnapshotCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>From a consumer account, remove association for the specified datashare.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>From a datashare consumer account, remove association for the specified
+         * datashare. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisassociateDataShareConsumer">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateDataShareConsumerOutcome DisassociateDataShareConsumer(const Model::DisassociateDataShareConsumerRequest& request) const;
 
         /**
-         * <p>From a consumer account, remove association for the specified datashare.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>From a datashare consumer account, remove association for the specified
+         * datashare. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisassociateDataShareConsumer">AWS
          * API Reference</a></p>
          *
@@ -3881,8 +3881,8 @@ namespace Model
         virtual Model::DisassociateDataShareConsumerOutcomeCallable DisassociateDataShareConsumerCallable(const Model::DisassociateDataShareConsumerRequest& request) const;
 
         /**
-         * <p>From a consumer account, remove association for the specified datashare.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>From a datashare consumer account, remove association for the specified
+         * datashare. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisassociateDataShareConsumer">AWS
          * API Reference</a></p>
          *
@@ -3967,7 +3967,7 @@ namespace Model
          * policy must allow the <code>redshift:JoinGroup</code> action with access to the
          * listed <code>dbgroups</code>. </p> <p>In addition, if the
          * <code>AutoCreate</code> parameter is set to <code>True</code>, then the policy
-         * must include the <code>redshift:CreateClusterUser</code> privilege.</p> <p>If
+         * must include the <code>redshift:CreateClusterUser</code> permission.</p> <p>If
          * the <code>DbName</code> parameter is specified, the IAM policy must allow access
          * to the resource <code>dbname</code> for the specified database name.
          * </p><p><h3>See Also:</h3>   <a
@@ -3997,7 +3997,7 @@ namespace Model
          * policy must allow the <code>redshift:JoinGroup</code> action with access to the
          * listed <code>dbgroups</code>. </p> <p>In addition, if the
          * <code>AutoCreate</code> parameter is set to <code>True</code>, then the policy
-         * must include the <code>redshift:CreateClusterUser</code> privilege.</p> <p>If
+         * must include the <code>redshift:CreateClusterUser</code> permission.</p> <p>If
          * the <code>DbName</code> parameter is specified, the IAM policy must allow access
          * to the resource <code>dbname</code> for the specified database name.
          * </p><p><h3>See Also:</h3>   <a
@@ -4029,7 +4029,7 @@ namespace Model
          * policy must allow the <code>redshift:JoinGroup</code> action with access to the
          * listed <code>dbgroups</code>. </p> <p>In addition, if the
          * <code>AutoCreate</code> parameter is set to <code>True</code>, then the policy
-         * must include the <code>redshift:CreateClusterUser</code> privilege.</p> <p>If
+         * must include the <code>redshift:CreateClusterUser</code> permission.</p> <p>If
          * the <code>DbName</code> parameter is specified, the IAM policy must allow access
          * to the resource <code>dbname</code> for the specified database name.
          * </p><p><h3>See Also:</h3>   <a
@@ -4740,16 +4740,16 @@ namespace Model
         virtual void RebootClusterAsync(const Model::RebootClusterRequest& request, const RebootClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>From the consumer account, rejects the specified datashare.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>From a datashare consumer account, rejects the specified
+         * datashare.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RejectDataShare">AWS
          * API Reference</a></p>
          */
         virtual Model::RejectDataShareOutcome RejectDataShare(const Model::RejectDataShareRequest& request) const;
 
         /**
-         * <p>From the consumer account, rejects the specified datashare.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>From a datashare consumer account, rejects the specified
+         * datashare.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RejectDataShare">AWS
          * API Reference</a></p>
          *
@@ -4758,8 +4758,8 @@ namespace Model
         virtual Model::RejectDataShareOutcomeCallable RejectDataShareCallable(const Model::RejectDataShareRequest& request) const;
 
         /**
-         * <p>From the consumer account, rejects the specified datashare.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>From a datashare consumer account, rejects the specified
+         * datashare.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RejectDataShare">AWS
          * API Reference</a></p>
          *

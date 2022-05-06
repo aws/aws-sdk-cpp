@@ -2106,6 +2106,55 @@ namespace Model
      */
     inline CreateClusterRequest& WithDefaultIamRoleArn(const char* value) { SetDefaultIamRoleArn(value); return *this;}
 
+
+    /**
+     * <p>A flag that specifies whether to load sample data once the cluster is
+     * created.</p>
+     */
+    inline const Aws::String& GetLoadSampleData() const{ return m_loadSampleData; }
+
+    /**
+     * <p>A flag that specifies whether to load sample data once the cluster is
+     * created.</p>
+     */
+    inline bool LoadSampleDataHasBeenSet() const { return m_loadSampleDataHasBeenSet; }
+
+    /**
+     * <p>A flag that specifies whether to load sample data once the cluster is
+     * created.</p>
+     */
+    inline void SetLoadSampleData(const Aws::String& value) { m_loadSampleDataHasBeenSet = true; m_loadSampleData = value; }
+
+    /**
+     * <p>A flag that specifies whether to load sample data once the cluster is
+     * created.</p>
+     */
+    inline void SetLoadSampleData(Aws::String&& value) { m_loadSampleDataHasBeenSet = true; m_loadSampleData = std::move(value); }
+
+    /**
+     * <p>A flag that specifies whether to load sample data once the cluster is
+     * created.</p>
+     */
+    inline void SetLoadSampleData(const char* value) { m_loadSampleDataHasBeenSet = true; m_loadSampleData.assign(value); }
+
+    /**
+     * <p>A flag that specifies whether to load sample data once the cluster is
+     * created.</p>
+     */
+    inline CreateClusterRequest& WithLoadSampleData(const Aws::String& value) { SetLoadSampleData(value); return *this;}
+
+    /**
+     * <p>A flag that specifies whether to load sample data once the cluster is
+     * created.</p>
+     */
+    inline CreateClusterRequest& WithLoadSampleData(Aws::String&& value) { SetLoadSampleData(std::move(value)); return *this;}
+
+    /**
+     * <p>A flag that specifies whether to load sample data once the cluster is
+     * created.</p>
+     */
+    inline CreateClusterRequest& WithLoadSampleData(const char* value) { SetLoadSampleData(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -2206,6 +2255,9 @@ namespace Model
 
     Aws::String m_defaultIamRoleArn;
     bool m_defaultIamRoleArnHasBeenSet;
+
+    Aws::String m_loadSampleData;
+    bool m_loadSampleDataHasBeenSet;
   };
 
 } // namespace Model

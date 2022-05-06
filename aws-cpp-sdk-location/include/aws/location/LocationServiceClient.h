@@ -462,8 +462,10 @@ namespace Model
          * last geofence that a device was observed within is tracked for 30 days after the
          * most recent device position update.</p>   <p>Geofence evaluation
          * uses the given device position. It does not account for the optional
-         * <code>Accuracy</code> of a <code>DevicePositionUpdate</code>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <code>Accuracy</code> of a <code>DevicePositionUpdate</code>.</p>  
+         * <p>The <code>DeviceID</code> is used as a string to represent the device. You do
+         * not need to have a <code>Tracker</code> associated with the
+         * <code>DeviceID</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchEvaluateGeofences">AWS
          * API Reference</a></p>
          */
@@ -481,8 +483,10 @@ namespace Model
          * last geofence that a device was observed within is tracked for 30 days after the
          * most recent device position update.</p>   <p>Geofence evaluation
          * uses the given device position. It does not account for the optional
-         * <code>Accuracy</code> of a <code>DevicePositionUpdate</code>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <code>Accuracy</code> of a <code>DevicePositionUpdate</code>.</p>  
+         * <p>The <code>DeviceID</code> is used as a string to represent the device. You do
+         * not need to have a <code>Tracker</code> associated with the
+         * <code>DeviceID</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchEvaluateGeofences">AWS
          * API Reference</a></p>
          *
@@ -502,8 +506,10 @@ namespace Model
          * last geofence that a device was observed within is tracked for 30 days after the
          * most recent device position update.</p>   <p>Geofence evaluation
          * uses the given device position. It does not account for the optional
-         * <code>Accuracy</code> of a <code>DevicePositionUpdate</code>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <code>Accuracy</code> of a <code>DevicePositionUpdate</code>.</p>  
+         * <p>The <code>DeviceID</code> is used as a string to represent the device. You do
+         * not need to have a <code>Tracker</code> associated with the
+         * <code>DeviceID</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchEvaluateGeofences">AWS
          * API Reference</a></p>
          *
