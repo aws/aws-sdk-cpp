@@ -81,32 +81,38 @@ namespace Model
 
 
     /**
-     * <p>The date and time that the experiment ended, if it is completed.</p>
+     * <p>The date and time that the experiment ended, if it is completed. This must be
+     * no longer than 30 days after the experiment start time.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The date and time that the experiment ended, if it is completed.</p>
+     * <p>The date and time that the experiment ended, if it is completed. This must be
+     * no longer than 30 days after the experiment start time.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>The date and time that the experiment ended, if it is completed.</p>
+     * <p>The date and time that the experiment ended, if it is completed. This must be
+     * no longer than 30 days after the experiment start time.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The date and time that the experiment ended, if it is completed.</p>
+     * <p>The date and time that the experiment ended, if it is completed. This must be
+     * no longer than 30 days after the experiment start time.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The date and time that the experiment ended, if it is completed.</p>
+     * <p>The date and time that the experiment ended, if it is completed. This must be
+     * no longer than 30 days after the experiment start time.</p>
      */
     inline GetExperimentResultsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The date and time that the experiment ended, if it is completed.</p>
+     * <p>The date and time that the experiment ended, if it is completed. This must be
+     * no longer than 30 days after the experiment start time.</p>
      */
     inline GetExperimentResultsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 

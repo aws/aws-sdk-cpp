@@ -787,16 +787,22 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds a resource to the specified contact or escalation plan.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds a resource policy to the specified contact or escalation plan. The
+         * resource policy is used to share the contact or escalation plan using Resource
+         * Access Manager (RAM). For more information about cross-account sharing, see <a
+         * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/xa.html">Setting
+         * up cross-account functionality</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/PutContactPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::PutContactPolicyOutcome PutContactPolicy(const Model::PutContactPolicyRequest& request) const;
 
         /**
-         * <p>Adds a resource to the specified contact or escalation plan.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds a resource policy to the specified contact or escalation plan. The
+         * resource policy is used to share the contact or escalation plan using Resource
+         * Access Manager (RAM). For more information about cross-account sharing, see <a
+         * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/xa.html">Setting
+         * up cross-account functionality</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/PutContactPolicy">AWS
          * API Reference</a></p>
          *
@@ -805,8 +811,11 @@ namespace Model
         virtual Model::PutContactPolicyOutcomeCallable PutContactPolicyCallable(const Model::PutContactPolicyRequest& request) const;
 
         /**
-         * <p>Adds a resource to the specified contact or escalation plan.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds a resource policy to the specified contact or escalation plan. The
+         * resource policy is used to share the contact or escalation plan using Resource
+         * Access Manager (RAM). For more information about cross-account sharing, see <a
+         * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/xa.html">Setting
+         * up cross-account functionality</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/PutContactPolicy">AWS
          * API Reference</a></p>
          *

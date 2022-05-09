@@ -748,16 +748,24 @@ namespace Model
         virtual void GetExperimentAsync(const Model::GetExperimentRequest& request, const GetExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the results of a running or completed experiment.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the results of a running or completed experiment. No results are
+         * available until there have been 100 events for each variation and at least 10
+         * minutes have passed since the start of the experiment.</p> <p>Experiment results
+         * are available up to 63 days after the start of the experiment. They are not
+         * available after that because of CloudWatch data retention
+         * policies.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetExperimentResults">AWS
          * API Reference</a></p>
          */
         virtual Model::GetExperimentResultsOutcome GetExperimentResults(const Model::GetExperimentResultsRequest& request) const;
 
         /**
-         * <p>Retrieves the results of a running or completed experiment.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the results of a running or completed experiment. No results are
+         * available until there have been 100 events for each variation and at least 10
+         * minutes have passed since the start of the experiment.</p> <p>Experiment results
+         * are available up to 63 days after the start of the experiment. They are not
+         * available after that because of CloudWatch data retention
+         * policies.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetExperimentResults">AWS
          * API Reference</a></p>
          *
@@ -766,8 +774,12 @@ namespace Model
         virtual Model::GetExperimentResultsOutcomeCallable GetExperimentResultsCallable(const Model::GetExperimentResultsRequest& request) const;
 
         /**
-         * <p>Retrieves the results of a running or completed experiment.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the results of a running or completed experiment. No results are
+         * available until there have been 100 events for each variation and at least 10
+         * minutes have passed since the start of the experiment.</p> <p>Experiment results
+         * are available up to 63 days after the start of the experiment. They are not
+         * available after that because of CloudWatch data retention
+         * policies.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetExperimentResults">AWS
          * API Reference</a></p>
          *

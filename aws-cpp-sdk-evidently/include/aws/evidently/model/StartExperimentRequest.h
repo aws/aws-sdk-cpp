@@ -34,32 +34,38 @@ namespace Model
 
 
     /**
-     * <p>The date and time to end the experiment.</p>
+     * <p>The date and time to end the experiment. This must be no more than 30 days
+     * after the experiment starts.</p>
      */
     inline const Aws::Utils::DateTime& GetAnalysisCompleteTime() const{ return m_analysisCompleteTime; }
 
     /**
-     * <p>The date and time to end the experiment.</p>
+     * <p>The date and time to end the experiment. This must be no more than 30 days
+     * after the experiment starts.</p>
      */
     inline bool AnalysisCompleteTimeHasBeenSet() const { return m_analysisCompleteTimeHasBeenSet; }
 
     /**
-     * <p>The date and time to end the experiment.</p>
+     * <p>The date and time to end the experiment. This must be no more than 30 days
+     * after the experiment starts.</p>
      */
     inline void SetAnalysisCompleteTime(const Aws::Utils::DateTime& value) { m_analysisCompleteTimeHasBeenSet = true; m_analysisCompleteTime = value; }
 
     /**
-     * <p>The date and time to end the experiment.</p>
+     * <p>The date and time to end the experiment. This must be no more than 30 days
+     * after the experiment starts.</p>
      */
     inline void SetAnalysisCompleteTime(Aws::Utils::DateTime&& value) { m_analysisCompleteTimeHasBeenSet = true; m_analysisCompleteTime = std::move(value); }
 
     /**
-     * <p>The date and time to end the experiment.</p>
+     * <p>The date and time to end the experiment. This must be no more than 30 days
+     * after the experiment starts.</p>
      */
     inline StartExperimentRequest& WithAnalysisCompleteTime(const Aws::Utils::DateTime& value) { SetAnalysisCompleteTime(value); return *this;}
 
     /**
-     * <p>The date and time to end the experiment.</p>
+     * <p>The date and time to end the experiment. This must be no more than 30 days
+     * after the experiment starts.</p>
      */
     inline StartExperimentRequest& WithAnalysisCompleteTime(Aws::Utils::DateTime&& value) { SetAnalysisCompleteTime(std::move(value)); return *this;}
 
