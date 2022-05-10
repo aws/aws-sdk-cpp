@@ -28,6 +28,8 @@ namespace Aws
         static const int blockDeviceMapping_HASH = HashingUtils::HashString("blockDeviceMapping");
         static const int sriovNetSupport_HASH = HashingUtils::HashString("sriovNetSupport");
         static const int bootMode_HASH = HashingUtils::HashString("bootMode");
+        static const int tpmSupport_HASH = HashingUtils::HashString("tpmSupport");
+        static const int uefiData_HASH = HashingUtils::HashString("uefiData");
         static const int lastLaunchedTime_HASH = HashingUtils::HashString("lastLaunchedTime");
 
 
@@ -66,6 +68,14 @@ namespace Aws
           {
             return ImageAttributeName::bootMode;
           }
+          else if (hashCode == tpmSupport_HASH)
+          {
+            return ImageAttributeName::tpmSupport;
+          }
+          else if (hashCode == uefiData_HASH)
+          {
+            return ImageAttributeName::uefiData;
+          }
           else if (hashCode == lastLaunchedTime_HASH)
           {
             return ImageAttributeName::lastLaunchedTime;
@@ -100,6 +110,10 @@ namespace Aws
             return "sriovNetSupport";
           case ImageAttributeName::bootMode:
             return "bootMode";
+          case ImageAttributeName::tpmSupport:
+            return "tpmSupport";
+          case ImageAttributeName::uefiData:
+            return "uefiData";
           case ImageAttributeName::lastLaunchedTime:
             return "lastLaunchedTime";
           default:

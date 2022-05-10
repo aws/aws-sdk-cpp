@@ -26,6 +26,8 @@ namespace Aws
         static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
         static const int BOTTLEROCKET_ARM_64_HASH = HashingUtils::HashString("BOTTLEROCKET_ARM_64");
         static const int BOTTLEROCKET_x86_64_HASH = HashingUtils::HashString("BOTTLEROCKET_x86_64");
+        static const int BOTTLEROCKET_ARM_64_NVIDIA_HASH = HashingUtils::HashString("BOTTLEROCKET_ARM_64_NVIDIA");
+        static const int BOTTLEROCKET_x86_64_NVIDIA_HASH = HashingUtils::HashString("BOTTLEROCKET_x86_64_NVIDIA");
 
 
         AMITypes GetAMITypesForName(const Aws::String& name)
@@ -55,6 +57,14 @@ namespace Aws
           {
             return AMITypes::BOTTLEROCKET_x86_64;
           }
+          else if (hashCode == BOTTLEROCKET_ARM_64_NVIDIA_HASH)
+          {
+            return AMITypes::BOTTLEROCKET_ARM_64_NVIDIA;
+          }
+          else if (hashCode == BOTTLEROCKET_x86_64_NVIDIA_HASH)
+          {
+            return AMITypes::BOTTLEROCKET_x86_64_NVIDIA;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +91,10 @@ namespace Aws
             return "BOTTLEROCKET_ARM_64";
           case AMITypes::BOTTLEROCKET_x86_64:
             return "BOTTLEROCKET_x86_64";
+          case AMITypes::BOTTLEROCKET_ARM_64_NVIDIA:
+            return "BOTTLEROCKET_ARM_64_NVIDIA";
+          case AMITypes::BOTTLEROCKET_x86_64_NVIDIA:
+            return "BOTTLEROCKET_x86_64_NVIDIA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

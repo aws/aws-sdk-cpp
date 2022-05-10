@@ -2196,6 +2196,71 @@ namespace Model
 
 
     /**
+     * <p>If the instance is configured for NitroTPM support, the value is
+     * <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline const Aws::String& GetTpmSupport() const{ return m_tpmSupport; }
+
+    /**
+     * <p>If the instance is configured for NitroTPM support, the value is
+     * <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline bool TpmSupportHasBeenSet() const { return m_tpmSupportHasBeenSet; }
+
+    /**
+     * <p>If the instance is configured for NitroTPM support, the value is
+     * <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetTpmSupport(const Aws::String& value) { m_tpmSupportHasBeenSet = true; m_tpmSupport = value; }
+
+    /**
+     * <p>If the instance is configured for NitroTPM support, the value is
+     * <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetTpmSupport(Aws::String&& value) { m_tpmSupportHasBeenSet = true; m_tpmSupport = std::move(value); }
+
+    /**
+     * <p>If the instance is configured for NitroTPM support, the value is
+     * <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetTpmSupport(const char* value) { m_tpmSupportHasBeenSet = true; m_tpmSupport.assign(value); }
+
+    /**
+     * <p>If the instance is configured for NitroTPM support, the value is
+     * <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline Instance& WithTpmSupport(const Aws::String& value) { SetTpmSupport(value); return *this;}
+
+    /**
+     * <p>If the instance is configured for NitroTPM support, the value is
+     * <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline Instance& WithTpmSupport(Aws::String&& value) { SetTpmSupport(std::move(value)); return *this;}
+
+    /**
+     * <p>If the instance is configured for NitroTPM support, the value is
+     * <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline Instance& WithTpmSupport(const char* value) { SetTpmSupport(value); return *this;}
+
+
+    /**
      * <p>Provides information on the recovery and maintenance options of your
      * instance.</p>
      */
@@ -2394,6 +2459,9 @@ namespace Model
 
     Aws::String m_ipv6Address;
     bool m_ipv6AddressHasBeenSet;
+
+    Aws::String m_tpmSupport;
+    bool m_tpmSupportHasBeenSet;
 
     InstanceMaintenanceOptions m_maintenanceOptions;
     bool m_maintenanceOptionsHasBeenSet;

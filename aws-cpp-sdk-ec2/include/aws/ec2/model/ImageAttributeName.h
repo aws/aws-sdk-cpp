@@ -24,6 +24,8 @@ namespace Model
     blockDeviceMapping,
     sriovNetSupport,
     bootMode,
+    tpmSupport,
+    uefiData,
     lastLaunchedTime
   };
 

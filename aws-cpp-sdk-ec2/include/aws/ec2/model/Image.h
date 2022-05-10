@@ -17,6 +17,7 @@
 #include <aws/ec2/model/StateReason.h>
 #include <aws/ec2/model/VirtualizationType.h>
 #include <aws/ec2/model/BootModeValues.h>
+#include <aws/ec2/model/TpmSupportValues.h>
 #include <aws/ec2/model/ProductCode.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/Tag.h>
@@ -1220,6 +1221,55 @@ namespace Model
 
 
     /**
+     * <p>If the image is configured for NitroTPM support, the value is
+     * <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline const TpmSupportValues& GetTpmSupport() const{ return m_tpmSupport; }
+
+    /**
+     * <p>If the image is configured for NitroTPM support, the value is
+     * <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline bool TpmSupportHasBeenSet() const { return m_tpmSupportHasBeenSet; }
+
+    /**
+     * <p>If the image is configured for NitroTPM support, the value is
+     * <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetTpmSupport(const TpmSupportValues& value) { m_tpmSupportHasBeenSet = true; m_tpmSupport = value; }
+
+    /**
+     * <p>If the image is configured for NitroTPM support, the value is
+     * <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetTpmSupport(TpmSupportValues&& value) { m_tpmSupportHasBeenSet = true; m_tpmSupport = std::move(value); }
+
+    /**
+     * <p>If the image is configured for NitroTPM support, the value is
+     * <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline Image& WithTpmSupport(const TpmSupportValues& value) { SetTpmSupport(value); return *this;}
+
+    /**
+     * <p>If the image is configured for NitroTPM support, the value is
+     * <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline Image& WithTpmSupport(TpmSupportValues&& value) { SetTpmSupport(std::move(value)); return *this;}
+
+
+    /**
      * <p>The date and time to deprecate the AMI, in UTC, in the following format:
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
      * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
@@ -1357,6 +1407,9 @@ namespace Model
 
     BootModeValues m_bootMode;
     bool m_bootModeHasBeenSet;
+
+    TpmSupportValues m_tpmSupport;
+    bool m_tpmSupportHasBeenSet;
 
     Aws::String m_deprecationTime;
     bool m_deprecationTimeHasBeenSet;

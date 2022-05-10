@@ -180,7 +180,7 @@ namespace Model
    * the API request parameters and the response. Alternatively, you can use one of
    * the Amazon Web Services SDKs to access an API that is tailored to the
    * programming language or platform that you're using. For more information, see
-   * &lt;a href=&quot;http://aws.amazon.com/tools/#SDKs&quot;&gt;Amazon Web Services
+   * &lt;a href=&quot;https://aws.amazon.com/tools/#SDKs&quot;&gt;Amazon Web Services
    * SDKs&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;To share Refactor Spaces environments with
    * other Amazon Web Services accounts or with Organizations and their OUs, use
    * Resource Access Manager's &lt;code&gt;CreateResourceShare&lt;/code&gt; API. See

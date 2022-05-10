@@ -101,6 +101,16 @@ DescribeImageAttributeResponse& DescribeImageAttributeResponse::operator =(const
     {
       m_bootMode = bootModeNode;
     }
+    XmlNode tpmSupportNode = resultNode.FirstChild("tpmSupport");
+    if(!tpmSupportNode.IsNull())
+    {
+      m_tpmSupport = tpmSupportNode;
+    }
+    XmlNode uefiDataNode = resultNode.FirstChild("uefiData");
+    if(!uefiDataNode.IsNull())
+    {
+      m_uefiData = uefiDataNode;
+    }
     XmlNode lastLaunchedTimeNode = resultNode.FirstChild("lastLaunchedTime");
     if(!lastLaunchedTimeNode.IsNull())
     {

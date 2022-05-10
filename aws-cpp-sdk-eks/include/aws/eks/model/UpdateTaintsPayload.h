@@ -25,8 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the details of an update to a taints
-   * payload.</p><p><h3>See Also:</h3>   <a
+   * <p>An object representing the details of an update to a taints payload. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+   * taints on managed node groups</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateTaintsPayload">AWS
    * API Reference</a></p>
    */

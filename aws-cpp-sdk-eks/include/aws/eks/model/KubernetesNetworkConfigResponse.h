@@ -41,7 +41,7 @@ namespace Model
 
 
     /**
-     * <p>The CIDR block that Kubernetes Pod and Service IP addresses are assigned
+     * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned
      * from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet
      * that the node is in. If you didn't specify a CIDR block when you created the
      * cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
@@ -51,7 +51,7 @@ namespace Model
     inline const Aws::String& GetServiceIpv4Cidr() const{ return m_serviceIpv4Cidr; }
 
     /**
-     * <p>The CIDR block that Kubernetes Pod and Service IP addresses are assigned
+     * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned
      * from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet
      * that the node is in. If you didn't specify a CIDR block when you created the
      * cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
@@ -61,7 +61,7 @@ namespace Model
     inline bool ServiceIpv4CidrHasBeenSet() const { return m_serviceIpv4CidrHasBeenSet; }
 
     /**
-     * <p>The CIDR block that Kubernetes Pod and Service IP addresses are assigned
+     * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned
      * from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet
      * that the node is in. If you didn't specify a CIDR block when you created the
      * cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
@@ -71,7 +71,7 @@ namespace Model
     inline void SetServiceIpv4Cidr(const Aws::String& value) { m_serviceIpv4CidrHasBeenSet = true; m_serviceIpv4Cidr = value; }
 
     /**
-     * <p>The CIDR block that Kubernetes Pod and Service IP addresses are assigned
+     * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned
      * from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet
      * that the node is in. If you didn't specify a CIDR block when you created the
      * cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
@@ -81,7 +81,7 @@ namespace Model
     inline void SetServiceIpv4Cidr(Aws::String&& value) { m_serviceIpv4CidrHasBeenSet = true; m_serviceIpv4Cidr = std::move(value); }
 
     /**
-     * <p>The CIDR block that Kubernetes Pod and Service IP addresses are assigned
+     * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned
      * from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet
      * that the node is in. If you didn't specify a CIDR block when you created the
      * cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
@@ -91,7 +91,7 @@ namespace Model
     inline void SetServiceIpv4Cidr(const char* value) { m_serviceIpv4CidrHasBeenSet = true; m_serviceIpv4Cidr.assign(value); }
 
     /**
-     * <p>The CIDR block that Kubernetes Pod and Service IP addresses are assigned
+     * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned
      * from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet
      * that the node is in. If you didn't specify a CIDR block when you created the
      * cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
@@ -101,7 +101,7 @@ namespace Model
     inline KubernetesNetworkConfigResponse& WithServiceIpv4Cidr(const Aws::String& value) { SetServiceIpv4Cidr(value); return *this;}
 
     /**
-     * <p>The CIDR block that Kubernetes Pod and Service IP addresses are assigned
+     * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned
      * from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet
      * that the node is in. If you didn't specify a CIDR block when you created the
      * cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
@@ -111,7 +111,7 @@ namespace Model
     inline KubernetesNetworkConfigResponse& WithServiceIpv4Cidr(Aws::String&& value) { SetServiceIpv4Cidr(std::move(value)); return *this;}
 
     /**
-     * <p>The CIDR block that Kubernetes Pod and Service IP addresses are assigned
+     * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned
      * from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet
      * that the node is in. If you didn't specify a CIDR block when you created the
      * cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
@@ -122,122 +122,130 @@ namespace Model
 
 
     /**
-     * <p>The CIDR block that Kubernetes Pod and Service IP addresses are assigned from
-     * if you created a 1.21 or later cluster with version 1.10.0 or later of the
+     * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from
+     * if you created a 1.21 or later cluster with version 1.10.1 or later of the
      * Amazon VPC CNI add-on and specified <code>ipv6</code> for <b>ipFamily</b> when
-     * you created the cluster. Kubernetes assigns addresses from the unique local
-     * address range (fc00::/7).</p>
+     * you created the cluster. Kubernetes assigns service addresses from the unique
+     * local address range (<code>fc00::/7</code>) because you can't specify a custom
+     * IPv6 CIDR block when you create the cluster.</p>
      */
     inline const Aws::String& GetServiceIpv6Cidr() const{ return m_serviceIpv6Cidr; }
 
     /**
-     * <p>The CIDR block that Kubernetes Pod and Service IP addresses are assigned from
-     * if you created a 1.21 or later cluster with version 1.10.0 or later of the
+     * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from
+     * if you created a 1.21 or later cluster with version 1.10.1 or later of the
      * Amazon VPC CNI add-on and specified <code>ipv6</code> for <b>ipFamily</b> when
-     * you created the cluster. Kubernetes assigns addresses from the unique local
-     * address range (fc00::/7).</p>
+     * you created the cluster. Kubernetes assigns service addresses from the unique
+     * local address range (<code>fc00::/7</code>) because you can't specify a custom
+     * IPv6 CIDR block when you create the cluster.</p>
      */
     inline bool ServiceIpv6CidrHasBeenSet() const { return m_serviceIpv6CidrHasBeenSet; }
 
     /**
-     * <p>The CIDR block that Kubernetes Pod and Service IP addresses are assigned from
-     * if you created a 1.21 or later cluster with version 1.10.0 or later of the
+     * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from
+     * if you created a 1.21 or later cluster with version 1.10.1 or later of the
      * Amazon VPC CNI add-on and specified <code>ipv6</code> for <b>ipFamily</b> when
-     * you created the cluster. Kubernetes assigns addresses from the unique local
-     * address range (fc00::/7).</p>
+     * you created the cluster. Kubernetes assigns service addresses from the unique
+     * local address range (<code>fc00::/7</code>) because you can't specify a custom
+     * IPv6 CIDR block when you create the cluster.</p>
      */
     inline void SetServiceIpv6Cidr(const Aws::String& value) { m_serviceIpv6CidrHasBeenSet = true; m_serviceIpv6Cidr = value; }
 
     /**
-     * <p>The CIDR block that Kubernetes Pod and Service IP addresses are assigned from
-     * if you created a 1.21 or later cluster with version 1.10.0 or later of the
+     * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from
+     * if you created a 1.21 or later cluster with version 1.10.1 or later of the
      * Amazon VPC CNI add-on and specified <code>ipv6</code> for <b>ipFamily</b> when
-     * you created the cluster. Kubernetes assigns addresses from the unique local
-     * address range (fc00::/7).</p>
+     * you created the cluster. Kubernetes assigns service addresses from the unique
+     * local address range (<code>fc00::/7</code>) because you can't specify a custom
+     * IPv6 CIDR block when you create the cluster.</p>
      */
     inline void SetServiceIpv6Cidr(Aws::String&& value) { m_serviceIpv6CidrHasBeenSet = true; m_serviceIpv6Cidr = std::move(value); }
 
     /**
-     * <p>The CIDR block that Kubernetes Pod and Service IP addresses are assigned from
-     * if you created a 1.21 or later cluster with version 1.10.0 or later of the
+     * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from
+     * if you created a 1.21 or later cluster with version 1.10.1 or later of the
      * Amazon VPC CNI add-on and specified <code>ipv6</code> for <b>ipFamily</b> when
-     * you created the cluster. Kubernetes assigns addresses from the unique local
-     * address range (fc00::/7).</p>
+     * you created the cluster. Kubernetes assigns service addresses from the unique
+     * local address range (<code>fc00::/7</code>) because you can't specify a custom
+     * IPv6 CIDR block when you create the cluster.</p>
      */
     inline void SetServiceIpv6Cidr(const char* value) { m_serviceIpv6CidrHasBeenSet = true; m_serviceIpv6Cidr.assign(value); }
 
     /**
-     * <p>The CIDR block that Kubernetes Pod and Service IP addresses are assigned from
-     * if you created a 1.21 or later cluster with version 1.10.0 or later of the
+     * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from
+     * if you created a 1.21 or later cluster with version 1.10.1 or later of the
      * Amazon VPC CNI add-on and specified <code>ipv6</code> for <b>ipFamily</b> when
-     * you created the cluster. Kubernetes assigns addresses from the unique local
-     * address range (fc00::/7).</p>
+     * you created the cluster. Kubernetes assigns service addresses from the unique
+     * local address range (<code>fc00::/7</code>) because you can't specify a custom
+     * IPv6 CIDR block when you create the cluster.</p>
      */
     inline KubernetesNetworkConfigResponse& WithServiceIpv6Cidr(const Aws::String& value) { SetServiceIpv6Cidr(value); return *this;}
 
     /**
-     * <p>The CIDR block that Kubernetes Pod and Service IP addresses are assigned from
-     * if you created a 1.21 or later cluster with version 1.10.0 or later of the
+     * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from
+     * if you created a 1.21 or later cluster with version 1.10.1 or later of the
      * Amazon VPC CNI add-on and specified <code>ipv6</code> for <b>ipFamily</b> when
-     * you created the cluster. Kubernetes assigns addresses from the unique local
-     * address range (fc00::/7).</p>
+     * you created the cluster. Kubernetes assigns service addresses from the unique
+     * local address range (<code>fc00::/7</code>) because you can't specify a custom
+     * IPv6 CIDR block when you create the cluster.</p>
      */
     inline KubernetesNetworkConfigResponse& WithServiceIpv6Cidr(Aws::String&& value) { SetServiceIpv6Cidr(std::move(value)); return *this;}
 
     /**
-     * <p>The CIDR block that Kubernetes Pod and Service IP addresses are assigned from
-     * if you created a 1.21 or later cluster with version 1.10.0 or later of the
+     * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from
+     * if you created a 1.21 or later cluster with version 1.10.1 or later of the
      * Amazon VPC CNI add-on and specified <code>ipv6</code> for <b>ipFamily</b> when
-     * you created the cluster. Kubernetes assigns addresses from the unique local
-     * address range (fc00::/7).</p>
+     * you created the cluster. Kubernetes assigns service addresses from the unique
+     * local address range (<code>fc00::/7</code>) because you can't specify a custom
+     * IPv6 CIDR block when you create the cluster.</p>
      */
     inline KubernetesNetworkConfigResponse& WithServiceIpv6Cidr(const char* value) { SetServiceIpv6Cidr(value); return *this;}
 
 
     /**
-     * <p>The IP family used to assign Kubernetes Pod and Service IP addresses. The IP
+     * <p>The IP family used to assign Kubernetes pod and service IP addresses. The IP
      * family is always <code>ipv4</code>, unless you have a <code>1.21</code> or later
-     * cluster running version 1.10.0 or later of the Amazon VPC CNI add-on and
+     * cluster running version 1.10.1 or later of the Amazon VPC CNI add-on and
      * specified <code>ipv6</code> when you created the cluster. </p>
      */
     inline const IpFamily& GetIpFamily() const{ return m_ipFamily; }
 
     /**
-     * <p>The IP family used to assign Kubernetes Pod and Service IP addresses. The IP
+     * <p>The IP family used to assign Kubernetes pod and service IP addresses. The IP
      * family is always <code>ipv4</code>, unless you have a <code>1.21</code> or later
-     * cluster running version 1.10.0 or later of the Amazon VPC CNI add-on and
+     * cluster running version 1.10.1 or later of the Amazon VPC CNI add-on and
      * specified <code>ipv6</code> when you created the cluster. </p>
      */
     inline bool IpFamilyHasBeenSet() const { return m_ipFamilyHasBeenSet; }
 
     /**
-     * <p>The IP family used to assign Kubernetes Pod and Service IP addresses. The IP
+     * <p>The IP family used to assign Kubernetes pod and service IP addresses. The IP
      * family is always <code>ipv4</code>, unless you have a <code>1.21</code> or later
-     * cluster running version 1.10.0 or later of the Amazon VPC CNI add-on and
+     * cluster running version 1.10.1 or later of the Amazon VPC CNI add-on and
      * specified <code>ipv6</code> when you created the cluster. </p>
      */
     inline void SetIpFamily(const IpFamily& value) { m_ipFamilyHasBeenSet = true; m_ipFamily = value; }
 
     /**
-     * <p>The IP family used to assign Kubernetes Pod and Service IP addresses. The IP
+     * <p>The IP family used to assign Kubernetes pod and service IP addresses. The IP
      * family is always <code>ipv4</code>, unless you have a <code>1.21</code> or later
-     * cluster running version 1.10.0 or later of the Amazon VPC CNI add-on and
+     * cluster running version 1.10.1 or later of the Amazon VPC CNI add-on and
      * specified <code>ipv6</code> when you created the cluster. </p>
      */
     inline void SetIpFamily(IpFamily&& value) { m_ipFamilyHasBeenSet = true; m_ipFamily = std::move(value); }
 
     /**
-     * <p>The IP family used to assign Kubernetes Pod and Service IP addresses. The IP
+     * <p>The IP family used to assign Kubernetes pod and service IP addresses. The IP
      * family is always <code>ipv4</code>, unless you have a <code>1.21</code> or later
-     * cluster running version 1.10.0 or later of the Amazon VPC CNI add-on and
+     * cluster running version 1.10.1 or later of the Amazon VPC CNI add-on and
      * specified <code>ipv6</code> when you created the cluster. </p>
      */
     inline KubernetesNetworkConfigResponse& WithIpFamily(const IpFamily& value) { SetIpFamily(value); return *this;}
 
     /**
-     * <p>The IP family used to assign Kubernetes Pod and Service IP addresses. The IP
+     * <p>The IP family used to assign Kubernetes pod and service IP addresses. The IP
      * family is always <code>ipv4</code>, unless you have a <code>1.21</code> or later
-     * cluster running version 1.10.0 or later of the Amazon VPC CNI add-on and
+     * cluster running version 1.10.1 or later of the Amazon VPC CNI add-on and
      * specified <code>ipv6</code> when you created the cluster. </p>
      */
     inline KubernetesNetworkConfigResponse& WithIpFamily(IpFamily&& value) { SetIpFamily(std::move(value)); return *this;}

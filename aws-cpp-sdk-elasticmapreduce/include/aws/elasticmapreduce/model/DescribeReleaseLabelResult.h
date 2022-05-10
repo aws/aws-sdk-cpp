@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/SimplifiedApplication.h>
+#include <aws/elasticmapreduce/model/OSRelease.h>
 #include <utility>
 
 namespace Aws
@@ -155,6 +156,70 @@ namespace Model
      */
     inline DescribeReleaseLabelResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The list of available Amazon Linux release versions for an Amazon EMR
+     * release. Contains a Label field that is formatted as shown in <a
+     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html">
+     * <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a
+     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
+     */
+    inline const Aws::Vector<OSRelease>& GetAvailableOSReleases() const{ return m_availableOSReleases; }
+
+    /**
+     * <p>The list of available Amazon Linux release versions for an Amazon EMR
+     * release. Contains a Label field that is formatted as shown in <a
+     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html">
+     * <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a
+     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
+     */
+    inline void SetAvailableOSReleases(const Aws::Vector<OSRelease>& value) { m_availableOSReleases = value; }
+
+    /**
+     * <p>The list of available Amazon Linux release versions for an Amazon EMR
+     * release. Contains a Label field that is formatted as shown in <a
+     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html">
+     * <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a
+     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
+     */
+    inline void SetAvailableOSReleases(Aws::Vector<OSRelease>&& value) { m_availableOSReleases = std::move(value); }
+
+    /**
+     * <p>The list of available Amazon Linux release versions for an Amazon EMR
+     * release. Contains a Label field that is formatted as shown in <a
+     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html">
+     * <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a
+     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
+     */
+    inline DescribeReleaseLabelResult& WithAvailableOSReleases(const Aws::Vector<OSRelease>& value) { SetAvailableOSReleases(value); return *this;}
+
+    /**
+     * <p>The list of available Amazon Linux release versions for an Amazon EMR
+     * release. Contains a Label field that is formatted as shown in <a
+     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html">
+     * <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a
+     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
+     */
+    inline DescribeReleaseLabelResult& WithAvailableOSReleases(Aws::Vector<OSRelease>&& value) { SetAvailableOSReleases(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of available Amazon Linux release versions for an Amazon EMR
+     * release. Contains a Label field that is formatted as shown in <a
+     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html">
+     * <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a
+     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
+     */
+    inline DescribeReleaseLabelResult& AddAvailableOSReleases(const OSRelease& value) { m_availableOSReleases.push_back(value); return *this; }
+
+    /**
+     * <p>The list of available Amazon Linux release versions for an Amazon EMR
+     * release. Contains a Label field that is formatted as shown in <a
+     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html">
+     * <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a
+     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
+     */
+    inline DescribeReleaseLabelResult& AddAvailableOSReleases(OSRelease&& value) { m_availableOSReleases.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_releaseLabel;
@@ -162,6 +227,8 @@ namespace Model
     Aws::Vector<SimplifiedApplication> m_applications;
 
     Aws::String m_nextToken;
+
+    Aws::Vector<OSRelease> m_availableOSReleases;
   };
 
 } // namespace Model

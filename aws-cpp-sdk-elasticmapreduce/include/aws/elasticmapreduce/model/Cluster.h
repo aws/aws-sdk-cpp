@@ -1445,6 +1445,63 @@ namespace Model
      */
     inline Cluster& AddPlacementGroups(PlacementGroupConfig&& value) { m_placementGroupsHasBeenSet = true; m_placementGroups.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If
+     * no Amazon Linux release was specified, the default Amazon Linux release is shown
+     * in the response.</p>
+     */
+    inline const Aws::String& GetOSReleaseLabel() const{ return m_oSReleaseLabel; }
+
+    /**
+     * <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If
+     * no Amazon Linux release was specified, the default Amazon Linux release is shown
+     * in the response.</p>
+     */
+    inline bool OSReleaseLabelHasBeenSet() const { return m_oSReleaseLabelHasBeenSet; }
+
+    /**
+     * <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If
+     * no Amazon Linux release was specified, the default Amazon Linux release is shown
+     * in the response.</p>
+     */
+    inline void SetOSReleaseLabel(const Aws::String& value) { m_oSReleaseLabelHasBeenSet = true; m_oSReleaseLabel = value; }
+
+    /**
+     * <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If
+     * no Amazon Linux release was specified, the default Amazon Linux release is shown
+     * in the response.</p>
+     */
+    inline void SetOSReleaseLabel(Aws::String&& value) { m_oSReleaseLabelHasBeenSet = true; m_oSReleaseLabel = std::move(value); }
+
+    /**
+     * <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If
+     * no Amazon Linux release was specified, the default Amazon Linux release is shown
+     * in the response.</p>
+     */
+    inline void SetOSReleaseLabel(const char* value) { m_oSReleaseLabelHasBeenSet = true; m_oSReleaseLabel.assign(value); }
+
+    /**
+     * <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If
+     * no Amazon Linux release was specified, the default Amazon Linux release is shown
+     * in the response.</p>
+     */
+    inline Cluster& WithOSReleaseLabel(const Aws::String& value) { SetOSReleaseLabel(value); return *this;}
+
+    /**
+     * <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If
+     * no Amazon Linux release was specified, the default Amazon Linux release is shown
+     * in the response.</p>
+     */
+    inline Cluster& WithOSReleaseLabel(Aws::String&& value) { SetOSReleaseLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If
+     * no Amazon Linux release was specified, the default Amazon Linux release is shown
+     * in the response.</p>
+     */
+    inline Cluster& WithOSReleaseLabel(const char* value) { SetOSReleaseLabel(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -1536,6 +1593,9 @@ namespace Model
 
     Aws::Vector<PlacementGroupConfig> m_placementGroups;
     bool m_placementGroupsHasBeenSet;
+
+    Aws::String m_oSReleaseLabel;
+    bool m_oSReleaseLabelHasBeenSet;
   };
 
 } // namespace Model

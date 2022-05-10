@@ -1747,6 +1747,63 @@ namespace Model
     
     inline RunJobFlowRequest& WithAutoTerminationPolicy(AutoTerminationPolicy&& value) { SetAutoTerminationPolicy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch
+     * RunJobFlow request. If a release is not specified, Amazon EMR uses the latest
+     * validated Amazon Linux release for cluster launch.</p>
+     */
+    inline const Aws::String& GetOSReleaseLabel() const{ return m_oSReleaseLabel; }
+
+    /**
+     * <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch
+     * RunJobFlow request. If a release is not specified, Amazon EMR uses the latest
+     * validated Amazon Linux release for cluster launch.</p>
+     */
+    inline bool OSReleaseLabelHasBeenSet() const { return m_oSReleaseLabelHasBeenSet; }
+
+    /**
+     * <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch
+     * RunJobFlow request. If a release is not specified, Amazon EMR uses the latest
+     * validated Amazon Linux release for cluster launch.</p>
+     */
+    inline void SetOSReleaseLabel(const Aws::String& value) { m_oSReleaseLabelHasBeenSet = true; m_oSReleaseLabel = value; }
+
+    /**
+     * <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch
+     * RunJobFlow request. If a release is not specified, Amazon EMR uses the latest
+     * validated Amazon Linux release for cluster launch.</p>
+     */
+    inline void SetOSReleaseLabel(Aws::String&& value) { m_oSReleaseLabelHasBeenSet = true; m_oSReleaseLabel = std::move(value); }
+
+    /**
+     * <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch
+     * RunJobFlow request. If a release is not specified, Amazon EMR uses the latest
+     * validated Amazon Linux release for cluster launch.</p>
+     */
+    inline void SetOSReleaseLabel(const char* value) { m_oSReleaseLabelHasBeenSet = true; m_oSReleaseLabel.assign(value); }
+
+    /**
+     * <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch
+     * RunJobFlow request. If a release is not specified, Amazon EMR uses the latest
+     * validated Amazon Linux release for cluster launch.</p>
+     */
+    inline RunJobFlowRequest& WithOSReleaseLabel(const Aws::String& value) { SetOSReleaseLabel(value); return *this;}
+
+    /**
+     * <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch
+     * RunJobFlow request. If a release is not specified, Amazon EMR uses the latest
+     * validated Amazon Linux release for cluster launch.</p>
+     */
+    inline RunJobFlowRequest& WithOSReleaseLabel(Aws::String&& value) { SetOSReleaseLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch
+     * RunJobFlow request. If a release is not specified, Amazon EMR uses the latest
+     * validated Amazon Linux release for cluster launch.</p>
+     */
+    inline RunJobFlowRequest& WithOSReleaseLabel(const char* value) { SetOSReleaseLabel(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1832,6 +1889,9 @@ namespace Model
 
     AutoTerminationPolicy m_autoTerminationPolicy;
     bool m_autoTerminationPolicyHasBeenSet;
+
+    Aws::String m_oSReleaseLabel;
+    bool m_oSReleaseLabelHasBeenSet;
   };
 
 } // namespace Model

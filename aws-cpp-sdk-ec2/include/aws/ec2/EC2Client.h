@@ -349,6 +349,7 @@
 #include <aws/ec2/model/GetGroupsForCapacityReservationResponse.h>
 #include <aws/ec2/model/GetHostReservationPurchasePreviewResponse.h>
 #include <aws/ec2/model/GetInstanceTypesFromInstanceRequirementsResponse.h>
+#include <aws/ec2/model/GetInstanceUefiDataResponse.h>
 #include <aws/ec2/model/GetIpamAddressHistoryResponse.h>
 #include <aws/ec2/model/GetIpamPoolAllocationsResponse.h>
 #include <aws/ec2/model/GetIpamPoolCidrsResponse.h>
@@ -897,6 +898,7 @@ namespace Model
         class GetGroupsForCapacityReservationRequest;
         class GetHostReservationPurchasePreviewRequest;
         class GetInstanceTypesFromInstanceRequirementsRequest;
+        class GetInstanceUefiDataRequest;
         class GetIpamAddressHistoryRequest;
         class GetIpamPoolAllocationsRequest;
         class GetIpamPoolCidrsRequest;
@@ -1420,6 +1422,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetGroupsForCapacityReservationResponse, EC2Error> GetGroupsForCapacityReservationOutcome;
         typedef Aws::Utils::Outcome<GetHostReservationPurchasePreviewResponse, EC2Error> GetHostReservationPurchasePreviewOutcome;
         typedef Aws::Utils::Outcome<GetInstanceTypesFromInstanceRequirementsResponse, EC2Error> GetInstanceTypesFromInstanceRequirementsOutcome;
+        typedef Aws::Utils::Outcome<GetInstanceUefiDataResponse, EC2Error> GetInstanceUefiDataOutcome;
         typedef Aws::Utils::Outcome<GetIpamAddressHistoryResponse, EC2Error> GetIpamAddressHistoryOutcome;
         typedef Aws::Utils::Outcome<GetIpamPoolAllocationsResponse, EC2Error> GetIpamPoolAllocationsOutcome;
         typedef Aws::Utils::Outcome<GetIpamPoolCidrsResponse, EC2Error> GetIpamPoolCidrsOutcome;
@@ -1943,6 +1946,7 @@ namespace Model
         typedef std::future<GetGroupsForCapacityReservationOutcome> GetGroupsForCapacityReservationOutcomeCallable;
         typedef std::future<GetHostReservationPurchasePreviewOutcome> GetHostReservationPurchasePreviewOutcomeCallable;
         typedef std::future<GetInstanceTypesFromInstanceRequirementsOutcome> GetInstanceTypesFromInstanceRequirementsOutcomeCallable;
+        typedef std::future<GetInstanceUefiDataOutcome> GetInstanceUefiDataOutcomeCallable;
         typedef std::future<GetIpamAddressHistoryOutcome> GetIpamAddressHistoryOutcomeCallable;
         typedef std::future<GetIpamPoolAllocationsOutcome> GetIpamPoolAllocationsOutcomeCallable;
         typedef std::future<GetIpamPoolCidrsOutcome> GetIpamPoolCidrsOutcomeCallable;
@@ -2469,6 +2473,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::GetGroupsForCapacityReservationRequest&, const Model::GetGroupsForCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupsForCapacityReservationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetHostReservationPurchasePreviewRequest&, const Model::GetHostReservationPurchasePreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostReservationPurchasePreviewResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetInstanceTypesFromInstanceRequirementsRequest&, const Model::GetInstanceTypesFromInstanceRequirementsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInstanceTypesFromInstanceRequirementsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetInstanceUefiDataRequest&, const Model::GetInstanceUefiDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInstanceUefiDataResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetIpamAddressHistoryRequest&, const Model::GetIpamAddressHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIpamAddressHistoryResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetIpamPoolAllocationsRequest&, const Model::GetIpamPoolAllocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIpamPoolAllocationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetIpamPoolCidrsRequest&, const Model::GetIpamPoolCidrsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIpamPoolCidrsResponseReceivedHandler;
@@ -17957,6 +17962,70 @@ namespace Model
         virtual void GetInstanceTypesFromInstanceRequirementsAsync(const Model::GetInstanceTypesFromInstanceRequirementsRequest& request, const GetInstanceTypesFromInstanceRequirementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>A binary representation of the UEFI variable store. Only non-volatile
+         * variables are stored. This is a base64 encoded and zlib compressed binary value
+         * that must be properly encoded.</p> <p>When you use <a
+         * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/register-image.html">register-image</a>
+         * to create an AMI, you can create an exact copy of your variable store by passing
+         * the UEFI data in the <code>UefiData</code> parameter. You can modify the UEFI
+         * data by using the <a
+         * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
+         * GitHub. You can use the tool to convert the UEFI data into a human-readable
+         * format (JSON), which you can inspect and modify, and then convert back into the
+         * binary format to use with register-image.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
+         * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceUefiData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInstanceUefiDataOutcome GetInstanceUefiData(const Model::GetInstanceUefiDataRequest& request) const;
+
+        /**
+         * <p>A binary representation of the UEFI variable store. Only non-volatile
+         * variables are stored. This is a base64 encoded and zlib compressed binary value
+         * that must be properly encoded.</p> <p>When you use <a
+         * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/register-image.html">register-image</a>
+         * to create an AMI, you can create an exact copy of your variable store by passing
+         * the UEFI data in the <code>UefiData</code> parameter. You can modify the UEFI
+         * data by using the <a
+         * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
+         * GitHub. You can use the tool to convert the UEFI data into a human-readable
+         * format (JSON), which you can inspect and modify, and then convert back into the
+         * binary format to use with register-image.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
+         * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceUefiData">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetInstanceUefiDataOutcomeCallable GetInstanceUefiDataCallable(const Model::GetInstanceUefiDataRequest& request) const;
+
+        /**
+         * <p>A binary representation of the UEFI variable store. Only non-volatile
+         * variables are stored. This is a base64 encoded and zlib compressed binary value
+         * that must be properly encoded.</p> <p>When you use <a
+         * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/register-image.html">register-image</a>
+         * to create an AMI, you can create an exact copy of your variable store by passing
+         * the UEFI data in the <code>UefiData</code> parameter. You can modify the UEFI
+         * data by using the <a
+         * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
+         * GitHub. You can use the tool to convert the UEFI data into a human-readable
+         * format (JSON), which you can inspect and modify, and then convert back into the
+         * binary format to use with register-image.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
+         * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceUefiData">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetInstanceUefiDataAsync(const Model::GetInstanceUefiDataRequest& request, const GetInstanceUefiDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieve historical information about a CIDR within an IPAM scope. For more
          * information, see <a href="/vpc/latest/ipam/view-history-cidr-ipam.html">View the
          * history of IP addresses</a> in the <i>Amazon VPC IPAM User
@@ -25094,6 +25163,7 @@ namespace Model
         void GetGroupsForCapacityReservationAsyncHelper(const Model::GetGroupsForCapacityReservationRequest& request, const GetGroupsForCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetHostReservationPurchasePreviewAsyncHelper(const Model::GetHostReservationPurchasePreviewRequest& request, const GetHostReservationPurchasePreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetInstanceTypesFromInstanceRequirementsAsyncHelper(const Model::GetInstanceTypesFromInstanceRequirementsRequest& request, const GetInstanceTypesFromInstanceRequirementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetInstanceUefiDataAsyncHelper(const Model::GetInstanceUefiDataRequest& request, const GetInstanceUefiDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIpamAddressHistoryAsyncHelper(const Model::GetIpamAddressHistoryRequest& request, const GetIpamAddressHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIpamPoolAllocationsAsyncHelper(const Model::GetIpamPoolAllocationsRequest& request, const GetIpamPoolAllocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIpamPoolCidrsAsyncHelper(const Model::GetIpamPoolCidrsRequest& request, const GetIpamPoolCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

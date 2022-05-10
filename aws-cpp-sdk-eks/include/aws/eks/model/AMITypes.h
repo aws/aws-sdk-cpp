@@ -21,7 +21,9 @@ namespace Model
     AL2_ARM_64,
     CUSTOM,
     BOTTLEROCKET_ARM_64,
-    BOTTLEROCKET_x86_64
+    BOTTLEROCKET_x86_64,
+    BOTTLEROCKET_ARM_64_NVIDIA,
+    BOTTLEROCKET_x86_64_NVIDIA
   };
 
 namespace AMITypesMapper

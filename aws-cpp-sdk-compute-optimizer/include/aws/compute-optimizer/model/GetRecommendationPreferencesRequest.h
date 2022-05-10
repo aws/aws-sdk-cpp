@@ -41,7 +41,8 @@ namespace Model
      * preferences.</p> <p>The <code>Ec2Instance</code> option encompasses standalone
      * instances and instances that are part of Auto Scaling groups. The
      * <code>AutoScalingGroup</code> option encompasses only instances that are part of
-     * an Auto Scaling group.</p>
+     * an Auto Scaling group.</p>  <p>The valid values for this parameter are
+     * <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p> 
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
@@ -50,7 +51,8 @@ namespace Model
      * preferences.</p> <p>The <code>Ec2Instance</code> option encompasses standalone
      * instances and instances that are part of Auto Scaling groups. The
      * <code>AutoScalingGroup</code> option encompasses only instances that are part of
-     * an Auto Scaling group.</p>
+     * an Auto Scaling group.</p>  <p>The valid values for this parameter are
+     * <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p> 
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
@@ -59,7 +61,8 @@ namespace Model
      * preferences.</p> <p>The <code>Ec2Instance</code> option encompasses standalone
      * instances and instances that are part of Auto Scaling groups. The
      * <code>AutoScalingGroup</code> option encompasses only instances that are part of
-     * an Auto Scaling group.</p>
+     * an Auto Scaling group.</p>  <p>The valid values for this parameter are
+     * <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p> 
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
@@ -68,7 +71,8 @@ namespace Model
      * preferences.</p> <p>The <code>Ec2Instance</code> option encompasses standalone
      * instances and instances that are part of Auto Scaling groups. The
      * <code>AutoScalingGroup</code> option encompasses only instances that are part of
-     * an Auto Scaling group.</p>
+     * an Auto Scaling group.</p>  <p>The valid values for this parameter are
+     * <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p> 
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
@@ -77,7 +81,8 @@ namespace Model
      * preferences.</p> <p>The <code>Ec2Instance</code> option encompasses standalone
      * instances and instances that are part of Auto Scaling groups. The
      * <code>AutoScalingGroup</code> option encompasses only instances that are part of
-     * an Auto Scaling group.</p>
+     * an Auto Scaling group.</p>  <p>The valid values for this parameter are
+     * <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p> 
      */
     inline GetRecommendationPreferencesRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
@@ -86,7 +91,8 @@ namespace Model
      * preferences.</p> <p>The <code>Ec2Instance</code> option encompasses standalone
      * instances and instances that are part of Auto Scaling groups. The
      * <code>AutoScalingGroup</code> option encompasses only instances that are part of
-     * an Auto Scaling group.</p>
+     * an Auto Scaling group.</p>  <p>The valid values for this parameter are
+     * <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p> 
      */
     inline GetRecommendationPreferencesRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
