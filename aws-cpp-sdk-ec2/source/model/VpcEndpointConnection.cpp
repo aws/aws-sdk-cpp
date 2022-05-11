@@ -29,7 +29,9 @@ VpcEndpointConnection::VpcEndpointConnection() :
     m_creationTimestampHasBeenSet(false),
     m_dnsEntriesHasBeenSet(false),
     m_networkLoadBalancerArnsHasBeenSet(false),
-    m_gatewayLoadBalancerArnsHasBeenSet(false)
+    m_gatewayLoadBalancerArnsHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ VpcEndpointConnection::VpcEndpointConnection(const XmlNode& xmlNode) :
     m_creationTimestampHasBeenSet(false),
     m_dnsEntriesHasBeenSet(false),
     m_networkLoadBalancerArnsHasBeenSet(false),
-    m_gatewayLoadBalancerArnsHasBeenSet(false)
+    m_gatewayLoadBalancerArnsHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -119,6 +123,12 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
 
       m_gatewayLoadBalancerArnsHasBeenSet = true;
     }
+    XmlNode ipAddressTypeNode = resultNode.FirstChild("ipAddressType");
+    if(!ipAddressTypeNode.IsNull())
+    {
+      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()).c_str());
+      m_ipAddressTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -180,6 +190,11 @@ void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* lo
       }
   }
 
+  if(m_ipAddressTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+  }
+
 }
 
 void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -229,6 +244,10 @@ void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* lo
       {
         oStream << location << ".GatewayLoadBalancerArnSet." << gatewayLoadBalancerArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_ipAddressTypeHasBeenSet)
+  {
+      oStream << location << ".IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
   }
 }
 

@@ -9,6 +9,8 @@
 #include <aws/ec2/model/VpcEndpointType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/IpAddressType.h>
+#include <aws/ec2/model/DnsOptionsSpecification.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
@@ -435,6 +437,68 @@ namespace Model
 
 
     /**
+     * <p>The IP address type for the endpoint.</p>
+     */
+    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The IP address type for the endpoint.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The IP address type for the endpoint.</p>
+     */
+    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The IP address type for the endpoint.</p>
+     */
+    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>The IP address type for the endpoint.</p>
+     */
+    inline CreateVpcEndpointRequest& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The IP address type for the endpoint.</p>
+     */
+    inline CreateVpcEndpointRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The DNS options for the endpoint.</p>
+     */
+    inline const DnsOptionsSpecification& GetDnsOptions() const{ return m_dnsOptions; }
+
+    /**
+     * <p>The DNS options for the endpoint.</p>
+     */
+    inline bool DnsOptionsHasBeenSet() const { return m_dnsOptionsHasBeenSet; }
+
+    /**
+     * <p>The DNS options for the endpoint.</p>
+     */
+    inline void SetDnsOptions(const DnsOptionsSpecification& value) { m_dnsOptionsHasBeenSet = true; m_dnsOptions = value; }
+
+    /**
+     * <p>The DNS options for the endpoint.</p>
+     */
+    inline void SetDnsOptions(DnsOptionsSpecification&& value) { m_dnsOptionsHasBeenSet = true; m_dnsOptions = std::move(value); }
+
+    /**
+     * <p>The DNS options for the endpoint.</p>
+     */
+    inline CreateVpcEndpointRequest& WithDnsOptions(const DnsOptionsSpecification& value) { SetDnsOptions(value); return *this;}
+
+    /**
+     * <p>The DNS options for the endpoint.</p>
+     */
+    inline CreateVpcEndpointRequest& WithDnsOptions(DnsOptionsSpecification&& value) { SetDnsOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
@@ -625,6 +689,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
+
+    IpAddressType m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet;
+
+    DnsOptionsSpecification m_dnsOptions;
+    bool m_dnsOptionsHasBeenSet;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;

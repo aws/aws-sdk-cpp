@@ -429,6 +429,98 @@ namespace Model
      */
     inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveGatewayLoadBalancerArns(const char* value) { m_removeGatewayLoadBalancerArnsHasBeenSet = true; m_removeGatewayLoadBalancerArns.push_back(value); return *this; }
 
+
+    /**
+     * <p>The IP address types to add to your service configuration.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAddSupportedIpAddressTypes() const{ return m_addSupportedIpAddressTypes; }
+
+    /**
+     * <p>The IP address types to add to your service configuration.</p>
+     */
+    inline bool AddSupportedIpAddressTypesHasBeenSet() const { return m_addSupportedIpAddressTypesHasBeenSet; }
+
+    /**
+     * <p>The IP address types to add to your service configuration.</p>
+     */
+    inline void SetAddSupportedIpAddressTypes(const Aws::Vector<Aws::String>& value) { m_addSupportedIpAddressTypesHasBeenSet = true; m_addSupportedIpAddressTypes = value; }
+
+    /**
+     * <p>The IP address types to add to your service configuration.</p>
+     */
+    inline void SetAddSupportedIpAddressTypes(Aws::Vector<Aws::String>&& value) { m_addSupportedIpAddressTypesHasBeenSet = true; m_addSupportedIpAddressTypes = std::move(value); }
+
+    /**
+     * <p>The IP address types to add to your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& WithAddSupportedIpAddressTypes(const Aws::Vector<Aws::String>& value) { SetAddSupportedIpAddressTypes(value); return *this;}
+
+    /**
+     * <p>The IP address types to add to your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& WithAddSupportedIpAddressTypes(Aws::Vector<Aws::String>&& value) { SetAddSupportedIpAddressTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The IP address types to add to your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddSupportedIpAddressTypes(const Aws::String& value) { m_addSupportedIpAddressTypesHasBeenSet = true; m_addSupportedIpAddressTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The IP address types to add to your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddSupportedIpAddressTypes(Aws::String&& value) { m_addSupportedIpAddressTypesHasBeenSet = true; m_addSupportedIpAddressTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IP address types to add to your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddSupportedIpAddressTypes(const char* value) { m_addSupportedIpAddressTypesHasBeenSet = true; m_addSupportedIpAddressTypes.push_back(value); return *this; }
+
+
+    /**
+     * <p>The IP address types to remove from your service configuration.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRemoveSupportedIpAddressTypes() const{ return m_removeSupportedIpAddressTypes; }
+
+    /**
+     * <p>The IP address types to remove from your service configuration.</p>
+     */
+    inline bool RemoveSupportedIpAddressTypesHasBeenSet() const { return m_removeSupportedIpAddressTypesHasBeenSet; }
+
+    /**
+     * <p>The IP address types to remove from your service configuration.</p>
+     */
+    inline void SetRemoveSupportedIpAddressTypes(const Aws::Vector<Aws::String>& value) { m_removeSupportedIpAddressTypesHasBeenSet = true; m_removeSupportedIpAddressTypes = value; }
+
+    /**
+     * <p>The IP address types to remove from your service configuration.</p>
+     */
+    inline void SetRemoveSupportedIpAddressTypes(Aws::Vector<Aws::String>&& value) { m_removeSupportedIpAddressTypesHasBeenSet = true; m_removeSupportedIpAddressTypes = std::move(value); }
+
+    /**
+     * <p>The IP address types to remove from your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& WithRemoveSupportedIpAddressTypes(const Aws::Vector<Aws::String>& value) { SetRemoveSupportedIpAddressTypes(value); return *this;}
+
+    /**
+     * <p>The IP address types to remove from your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& WithRemoveSupportedIpAddressTypes(Aws::Vector<Aws::String>&& value) { SetRemoveSupportedIpAddressTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The IP address types to remove from your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveSupportedIpAddressTypes(const Aws::String& value) { m_removeSupportedIpAddressTypesHasBeenSet = true; m_removeSupportedIpAddressTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The IP address types to remove from your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveSupportedIpAddressTypes(Aws::String&& value) { m_removeSupportedIpAddressTypesHasBeenSet = true; m_removeSupportedIpAddressTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IP address types to remove from your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveSupportedIpAddressTypes(const char* value) { m_removeSupportedIpAddressTypesHasBeenSet = true; m_removeSupportedIpAddressTypes.push_back(value); return *this; }
+
   private:
 
     bool m_dryRun;
@@ -457,6 +549,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_removeGatewayLoadBalancerArns;
     bool m_removeGatewayLoadBalancerArnsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_addSupportedIpAddressTypes;
+    bool m_addSupportedIpAddressTypesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_removeSupportedIpAddressTypes;
+    bool m_removeSupportedIpAddressTypesHasBeenSet;
   };
 
 } // namespace Model
