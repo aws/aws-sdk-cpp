@@ -93,12 +93,14 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #end
   ${spaces}  ${varName}Count++;
   ${spaces}}
-#elseif($member.value.shape.map)
+#elseif($member.value.shape.map)##--#if($member.value.shape.list)
 #if($member.value.locationName)
 #set($mapLocationName = $member.value.locationName)
+#elseif($member.value.shape.flattened)
+#set($mapLocationName = $member.value.shape.locationName)## The xmlFlattened trait can be used to unwrap the values into a containing structure or union, with the key not containing the initial "." separator and "entry" segment.
 #else
 #set($mapLocationName = $member.key + ".entry")
-#end
+#end##--#if($member.value.locationName)--#elseif($member.value.shape.flattened)
 #if($member.value.shape.mapKey.locationName)
 #set($keyLocationName = $member.value.shape.mapKey.locationName)
 #else
@@ -176,7 +178,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #else
   ${spaces}ss << "${location}=" << ${memberVarName} << "&";
 #end
-#end
+#end##--#if($member.value.shape.list)
 #if(!$member.value.required)
   }
 
