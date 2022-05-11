@@ -87,7 +87,7 @@ namespace
             m_httpClient = Aws::Http::CreateHttpClient(config);
 
             // IAM client has to use us-east-1 in its signer.
-            auto accountId = Aws::Environment::GetEnv("TEST_ACCOUNT_ID");
+            auto accountId = Aws::Environment::GetEnv("CATAPULT_TEST_ACCOUNT");
             if(accountId.empty()) {
                 config.region = Aws::Region::US_EAST_1;
                 auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, config);
@@ -123,8 +123,9 @@ namespace
         }
 
         static S3::S3Client createS3Client(const ClientConfiguration &configuration) {
-            Aws::String testRoleArn(Aws::Environment::GetEnv("TEST_ASSUME_ROLE_ARN"));
-            if (!testRoleArn.empty()) {
+            Aws::String testAccount(Aws::Environment::GetEnv("CATAPULT_TEST_ACCOUNT"));
+            if (!testAccount.empty()) {
+                Aws::String testRoleArn("arn:aws:iam::" + testAccount + ":role/IntegrationTest");
                 STS::STSClient stsClient(configuration);
                 STS::Model::AssumeRoleRequest assumeRoleRequest;
                 assumeRoleRequest.SetRoleArn(testRoleArn);

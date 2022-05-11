@@ -162,7 +162,7 @@ protected:
 
     Aws::String GetAwsAccountId()
     {
-        auto accountId = Aws::Environment::GetEnv("TEST_ACCOUNT_ID");
+        auto accountId = Aws::Environment::GetEnv("CATAPULT_TEST_ACCOUNT");
         if (accountId.empty()) {
             auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, GetConfig());
             auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, GetConfig());
