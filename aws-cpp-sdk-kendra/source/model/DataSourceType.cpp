@@ -35,6 +35,7 @@ namespace Aws
         static const int SLACK_HASH = HashingUtils::HashString("SLACK");
         static const int BOX_HASH = HashingUtils::HashString("BOX");
         static const int QUIP_HASH = HashingUtils::HashString("QUIP");
+        static const int JIRA_HASH = HashingUtils::HashString("JIRA");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -100,6 +101,10 @@ namespace Aws
           {
             return DataSourceType::QUIP;
           }
+          else if (hashCode == JIRA_HASH)
+          {
+            return DataSourceType::JIRA;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -144,6 +149,8 @@ namespace Aws
             return "BOX";
           case DataSourceType::QUIP:
             return "QUIP";
+          case DataSourceType::JIRA:
+            return "JIRA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

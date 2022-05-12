@@ -145,7 +145,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a device when the thing
      * representing the device is added to a target group, even after the job was
-     * completed by all things originally in the group. </p>
+     * completed by all things originally in the group. </p>  <p>We recommend
+     * that you use continuous jobs instead of snapshot jobs for dynamic thing group
+     * targets. By using continuous jobs, devices that join the group receive the job
+     * execution even after the job has been created.</p> 
      */
     inline const TargetSelection& GetTargetSelection() const{ return m_targetSelection; }
 
@@ -155,7 +158,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a device when the thing
      * representing the device is added to a target group, even after the job was
-     * completed by all things originally in the group. </p>
+     * completed by all things originally in the group. </p>  <p>We recommend
+     * that you use continuous jobs instead of snapshot jobs for dynamic thing group
+     * targets. By using continuous jobs, devices that join the group receive the job
+     * execution even after the job has been created.</p> 
      */
     inline bool TargetSelectionHasBeenSet() const { return m_targetSelectionHasBeenSet; }
 
@@ -165,7 +171,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a device when the thing
      * representing the device is added to a target group, even after the job was
-     * completed by all things originally in the group. </p>
+     * completed by all things originally in the group. </p>  <p>We recommend
+     * that you use continuous jobs instead of snapshot jobs for dynamic thing group
+     * targets. By using continuous jobs, devices that join the group receive the job
+     * execution even after the job has been created.</p> 
      */
     inline void SetTargetSelection(const TargetSelection& value) { m_targetSelectionHasBeenSet = true; m_targetSelection = value; }
 
@@ -175,7 +184,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a device when the thing
      * representing the device is added to a target group, even after the job was
-     * completed by all things originally in the group. </p>
+     * completed by all things originally in the group. </p>  <p>We recommend
+     * that you use continuous jobs instead of snapshot jobs for dynamic thing group
+     * targets. By using continuous jobs, devices that join the group receive the job
+     * execution even after the job has been created.</p> 
      */
     inline void SetTargetSelection(TargetSelection&& value) { m_targetSelectionHasBeenSet = true; m_targetSelection = std::move(value); }
 
@@ -185,7 +197,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a device when the thing
      * representing the device is added to a target group, even after the job was
-     * completed by all things originally in the group. </p>
+     * completed by all things originally in the group. </p>  <p>We recommend
+     * that you use continuous jobs instead of snapshot jobs for dynamic thing group
+     * targets. By using continuous jobs, devices that join the group receive the job
+     * execution even after the job has been created.</p> 
      */
     inline Job& WithTargetSelection(const TargetSelection& value) { SetTargetSelection(value); return *this;}
 
@@ -195,7 +210,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a device when the thing
      * representing the device is added to a target group, even after the job was
-     * completed by all things originally in the group. </p>
+     * completed by all things originally in the group. </p>  <p>We recommend
+     * that you use continuous jobs instead of snapshot jobs for dynamic thing group
+     * targets. By using continuous jobs, devices that join the group receive the job
+     * execution even after the job has been created.</p> 
      */
     inline Job& WithTargetSelection(TargetSelection&& value) { SetTargetSelection(std::move(value)); return *this;}
 
@@ -873,91 +891,130 @@ namespace Model
     /**
      * <p>A key-value map that pairs the patterns that need to be replaced in a managed
      * template job document schema. You can use the description of each key as a
-     * guidance to specify the inputs during runtime when creating a job.</p>
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetDocumentParameters() const{ return m_documentParameters; }
 
     /**
      * <p>A key-value map that pairs the patterns that need to be replaced in a managed
      * template job document schema. You can use the description of each key as a
-     * guidance to specify the inputs during runtime when creating a job.</p>
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
      */
     inline bool DocumentParametersHasBeenSet() const { return m_documentParametersHasBeenSet; }
 
     /**
      * <p>A key-value map that pairs the patterns that need to be replaced in a managed
      * template job document schema. You can use the description of each key as a
-     * guidance to specify the inputs during runtime when creating a job.</p>
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
      */
     inline void SetDocumentParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_documentParametersHasBeenSet = true; m_documentParameters = value; }
 
     /**
      * <p>A key-value map that pairs the patterns that need to be replaced in a managed
      * template job document schema. You can use the description of each key as a
-     * guidance to specify the inputs during runtime when creating a job.</p>
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
      */
     inline void SetDocumentParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_documentParametersHasBeenSet = true; m_documentParameters = std::move(value); }
 
     /**
      * <p>A key-value map that pairs the patterns that need to be replaced in a managed
      * template job document schema. You can use the description of each key as a
-     * guidance to specify the inputs during runtime when creating a job.</p>
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
      */
     inline Job& WithDocumentParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetDocumentParameters(value); return *this;}
 
     /**
      * <p>A key-value map that pairs the patterns that need to be replaced in a managed
      * template job document schema. You can use the description of each key as a
-     * guidance to specify the inputs during runtime when creating a job.</p>
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
      */
     inline Job& WithDocumentParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetDocumentParameters(std::move(value)); return *this;}
 
     /**
      * <p>A key-value map that pairs the patterns that need to be replaced in a managed
      * template job document schema. You can use the description of each key as a
-     * guidance to specify the inputs during runtime when creating a job.</p>
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
      */
     inline Job& AddDocumentParameters(const Aws::String& key, const Aws::String& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, value); return *this; }
 
     /**
      * <p>A key-value map that pairs the patterns that need to be replaced in a managed
      * template job document schema. You can use the description of each key as a
-     * guidance to specify the inputs during runtime when creating a job.</p>
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
      */
     inline Job& AddDocumentParameters(Aws::String&& key, const Aws::String& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A key-value map that pairs the patterns that need to be replaced in a managed
      * template job document schema. You can use the description of each key as a
-     * guidance to specify the inputs during runtime when creating a job.</p>
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
      */
     inline Job& AddDocumentParameters(const Aws::String& key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A key-value map that pairs the patterns that need to be replaced in a managed
      * template job document schema. You can use the description of each key as a
-     * guidance to specify the inputs during runtime when creating a job.</p>
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
      */
     inline Job& AddDocumentParameters(Aws::String&& key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A key-value map that pairs the patterns that need to be replaced in a managed
      * template job document schema. You can use the description of each key as a
-     * guidance to specify the inputs during runtime when creating a job.</p>
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
      */
     inline Job& AddDocumentParameters(const char* key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A key-value map that pairs the patterns that need to be replaced in a managed
      * template job document schema. You can use the description of each key as a
-     * guidance to specify the inputs during runtime when creating a job.</p>
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
      */
     inline Job& AddDocumentParameters(Aws::String&& key, const char* value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A key-value map that pairs the patterns that need to be replaced in a managed
      * template job document schema. You can use the description of each key as a
-     * guidance to specify the inputs during runtime when creating a job.</p>
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
      */
     inline Job& AddDocumentParameters(const char* key, const char* value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, value); return *this; }
 

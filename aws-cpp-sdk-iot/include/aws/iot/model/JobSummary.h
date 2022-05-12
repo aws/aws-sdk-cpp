@@ -169,7 +169,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group.</p>
+     * originally in the group.</p>  <p>We recommend that you use continuous jobs
+     * instead of snapshot jobs for dynamic thing group targets. By using continuous
+     * jobs, devices that join the group receive the job execution even after the job
+     * has been created.</p> 
      */
     inline const TargetSelection& GetTargetSelection() const{ return m_targetSelection; }
 
@@ -179,7 +182,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group.</p>
+     * originally in the group.</p>  <p>We recommend that you use continuous jobs
+     * instead of snapshot jobs for dynamic thing group targets. By using continuous
+     * jobs, devices that join the group receive the job execution even after the job
+     * has been created.</p> 
      */
     inline bool TargetSelectionHasBeenSet() const { return m_targetSelectionHasBeenSet; }
 
@@ -189,7 +195,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group.</p>
+     * originally in the group.</p>  <p>We recommend that you use continuous jobs
+     * instead of snapshot jobs for dynamic thing group targets. By using continuous
+     * jobs, devices that join the group receive the job execution even after the job
+     * has been created.</p> 
      */
     inline void SetTargetSelection(const TargetSelection& value) { m_targetSelectionHasBeenSet = true; m_targetSelection = value; }
 
@@ -199,7 +208,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group.</p>
+     * originally in the group.</p>  <p>We recommend that you use continuous jobs
+     * instead of snapshot jobs for dynamic thing group targets. By using continuous
+     * jobs, devices that join the group receive the job execution even after the job
+     * has been created.</p> 
      */
     inline void SetTargetSelection(TargetSelection&& value) { m_targetSelectionHasBeenSet = true; m_targetSelection = std::move(value); }
 
@@ -209,7 +221,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group.</p>
+     * originally in the group.</p>  <p>We recommend that you use continuous jobs
+     * instead of snapshot jobs for dynamic thing group targets. By using continuous
+     * jobs, devices that join the group receive the job execution even after the job
+     * has been created.</p> 
      */
     inline JobSummary& WithTargetSelection(const TargetSelection& value) { SetTargetSelection(value); return *this;}
 
@@ -219,7 +234,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group.</p>
+     * originally in the group.</p>  <p>We recommend that you use continuous jobs
+     * instead of snapshot jobs for dynamic thing group targets. By using continuous
+     * jobs, devices that join the group receive the job execution even after the job
+     * has been created.</p> 
      */
     inline JobSummary& WithTargetSelection(TargetSelection&& value) { SetTargetSelection(std::move(value)); return *this;}
 

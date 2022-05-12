@@ -221,43 +221,64 @@ namespace Model
 
     /**
      * <p>A map of key-value pairs that you can use as guidance to specify the inputs
-     * for creating a job from a managed template.</p>
+     * for creating a job from a managed template.</p>  <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon
+     * Web Services managed templates. This parameter can't be used with custom job
+     * templates or to create jobs from them.</p> 
      */
     inline const Aws::Vector<DocumentParameter>& GetDocumentParameters() const{ return m_documentParameters; }
 
     /**
      * <p>A map of key-value pairs that you can use as guidance to specify the inputs
-     * for creating a job from a managed template.</p>
+     * for creating a job from a managed template.</p>  <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon
+     * Web Services managed templates. This parameter can't be used with custom job
+     * templates or to create jobs from them.</p> 
      */
     inline void SetDocumentParameters(const Aws::Vector<DocumentParameter>& value) { m_documentParameters = value; }
 
     /**
      * <p>A map of key-value pairs that you can use as guidance to specify the inputs
-     * for creating a job from a managed template.</p>
+     * for creating a job from a managed template.</p>  <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon
+     * Web Services managed templates. This parameter can't be used with custom job
+     * templates or to create jobs from them.</p> 
      */
     inline void SetDocumentParameters(Aws::Vector<DocumentParameter>&& value) { m_documentParameters = std::move(value); }
 
     /**
      * <p>A map of key-value pairs that you can use as guidance to specify the inputs
-     * for creating a job from a managed template.</p>
+     * for creating a job from a managed template.</p>  <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon
+     * Web Services managed templates. This parameter can't be used with custom job
+     * templates or to create jobs from them.</p> 
      */
     inline DescribeManagedJobTemplateResult& WithDocumentParameters(const Aws::Vector<DocumentParameter>& value) { SetDocumentParameters(value); return *this;}
 
     /**
      * <p>A map of key-value pairs that you can use as guidance to specify the inputs
-     * for creating a job from a managed template.</p>
+     * for creating a job from a managed template.</p>  <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon
+     * Web Services managed templates. This parameter can't be used with custom job
+     * templates or to create jobs from them.</p> 
      */
     inline DescribeManagedJobTemplateResult& WithDocumentParameters(Aws::Vector<DocumentParameter>&& value) { SetDocumentParameters(std::move(value)); return *this;}
 
     /**
      * <p>A map of key-value pairs that you can use as guidance to specify the inputs
-     * for creating a job from a managed template.</p>
+     * for creating a job from a managed template.</p>  <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon
+     * Web Services managed templates. This parameter can't be used with custom job
+     * templates or to create jobs from them.</p> 
      */
     inline DescribeManagedJobTemplateResult& AddDocumentParameters(const DocumentParameter& value) { m_documentParameters.push_back(value); return *this; }
 
     /**
      * <p>A map of key-value pairs that you can use as guidance to specify the inputs
-     * for creating a job from a managed template.</p>
+     * for creating a job from a managed template.</p>  <p>
+     * <code>documentParameters</code> can only be used when creating jobs from Amazon
+     * Web Services managed templates. This parameter can't be used with custom job
+     * templates or to create jobs from them.</p> 
      */
     inline DescribeManagedJobTemplateResult& AddDocumentParameters(DocumentParameter&& value) { m_documentParameters.push_back(std::move(value)); return *this; }
 

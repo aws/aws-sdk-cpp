@@ -39,56 +39,32 @@ namespace Model
 
 
     /**
-     * <p>The type of related item. Incident Manager supports the following types:</p>
-     * <ul> <li> <p> <code>ANALYSIS</code> </p> </li> <li> <p> <code>INCIDENT</code>
-     * </p> </li> <li> <p> <code>METRIC</code> </p> </li> <li> <p> <code>PARENT</code>
-     * </p> </li> <li> <p> <code>ATTACHMENT</code> </p> </li> <li> <p>
-     * <code>OTHER</code> </p> </li> </ul>
+     * <p>The type of related item. </p>
      */
     inline const ItemType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of related item. Incident Manager supports the following types:</p>
-     * <ul> <li> <p> <code>ANALYSIS</code> </p> </li> <li> <p> <code>INCIDENT</code>
-     * </p> </li> <li> <p> <code>METRIC</code> </p> </li> <li> <p> <code>PARENT</code>
-     * </p> </li> <li> <p> <code>ATTACHMENT</code> </p> </li> <li> <p>
-     * <code>OTHER</code> </p> </li> </ul>
+     * <p>The type of related item. </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of related item. Incident Manager supports the following types:</p>
-     * <ul> <li> <p> <code>ANALYSIS</code> </p> </li> <li> <p> <code>INCIDENT</code>
-     * </p> </li> <li> <p> <code>METRIC</code> </p> </li> <li> <p> <code>PARENT</code>
-     * </p> </li> <li> <p> <code>ATTACHMENT</code> </p> </li> <li> <p>
-     * <code>OTHER</code> </p> </li> </ul>
+     * <p>The type of related item. </p>
      */
     inline void SetType(const ItemType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of related item. Incident Manager supports the following types:</p>
-     * <ul> <li> <p> <code>ANALYSIS</code> </p> </li> <li> <p> <code>INCIDENT</code>
-     * </p> </li> <li> <p> <code>METRIC</code> </p> </li> <li> <p> <code>PARENT</code>
-     * </p> </li> <li> <p> <code>ATTACHMENT</code> </p> </li> <li> <p>
-     * <code>OTHER</code> </p> </li> </ul>
+     * <p>The type of related item. </p>
      */
     inline void SetType(ItemType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of related item. Incident Manager supports the following types:</p>
-     * <ul> <li> <p> <code>ANALYSIS</code> </p> </li> <li> <p> <code>INCIDENT</code>
-     * </p> </li> <li> <p> <code>METRIC</code> </p> </li> <li> <p> <code>PARENT</code>
-     * </p> </li> <li> <p> <code>ATTACHMENT</code> </p> </li> <li> <p>
-     * <code>OTHER</code> </p> </li> </ul>
+     * <p>The type of related item. </p>
      */
     inline ItemIdentifier& WithType(const ItemType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of related item. Incident Manager supports the following types:</p>
-     * <ul> <li> <p> <code>ANALYSIS</code> </p> </li> <li> <p> <code>INCIDENT</code>
-     * </p> </li> <li> <p> <code>METRIC</code> </p> </li> <li> <p> <code>PARENT</code>
-     * </p> </li> <li> <p> <code>ATTACHMENT</code> </p> </li> <li> <p>
-     * <code>OTHER</code> </p> </li> </ul>
+     * <p>The type of related item. </p>
      */
     inline ItemIdentifier& WithType(ItemType&& value) { SetType(std::move(value)); return *this;}
 

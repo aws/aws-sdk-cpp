@@ -104,26 +104,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of messages per second that a client can send to the room.
-     * Default: 10.</p>
+     * <p>Maximum number of messages per second that can be sent to the room (by all
+     * clients). Default: 10.</p>
      */
     inline int GetMaximumMessageRatePerSecond() const{ return m_maximumMessageRatePerSecond; }
 
     /**
-     * <p>The maximum number of messages per second that a client can send to the room.
-     * Default: 10.</p>
+     * <p>Maximum number of messages per second that can be sent to the room (by all
+     * clients). Default: 10.</p>
      */
     inline bool MaximumMessageRatePerSecondHasBeenSet() const { return m_maximumMessageRatePerSecondHasBeenSet; }
 
     /**
-     * <p>The maximum number of messages per second that a client can send to the room.
-     * Default: 10.</p>
+     * <p>Maximum number of messages per second that can be sent to the room (by all
+     * clients). Default: 10.</p>
      */
     inline void SetMaximumMessageRatePerSecond(int value) { m_maximumMessageRatePerSecondHasBeenSet = true; m_maximumMessageRatePerSecond = value; }
 
     /**
-     * <p>The maximum number of messages per second that a client can send to the room.
-     * Default: 10.</p>
+     * <p>Maximum number of messages per second that can be sent to the room (by all
+     * clients). Default: 10.</p>
      */
     inline UpdateRoomRequest& WithMaximumMessageRatePerSecond(int value) { SetMaximumMessageRatePerSecond(value); return *this;}
 

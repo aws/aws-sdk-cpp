@@ -32,7 +32,8 @@ DataSourceConfiguration::DataSourceConfiguration() :
     m_fsxConfigurationHasBeenSet(false),
     m_slackConfigurationHasBeenSet(false),
     m_boxConfigurationHasBeenSet(false),
-    m_quipConfigurationHasBeenSet(false)
+    m_quipConfigurationHasBeenSet(false),
+    m_jiraConfigurationHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue) :
     m_fsxConfigurationHasBeenSet(false),
     m_slackConfigurationHasBeenSet(false),
     m_boxConfigurationHasBeenSet(false),
-    m_quipConfigurationHasBeenSet(false)
+    m_quipConfigurationHasBeenSet(false),
+    m_jiraConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -155,6 +157,13 @@ DataSourceConfiguration& DataSourceConfiguration::operator =(JsonView jsonValue)
     m_quipConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("JiraConfiguration"))
+  {
+    m_jiraConfiguration = jsonValue.GetObject("JiraConfiguration");
+
+    m_jiraConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -243,6 +252,12 @@ JsonValue DataSourceConfiguration::Jsonize() const
   if(m_quipConfigurationHasBeenSet)
   {
    payload.WithObject("QuipConfiguration", m_quipConfiguration.Jsonize());
+
+  }
+
+  if(m_jiraConfigurationHasBeenSet)
+  {
+   payload.WithObject("JiraConfiguration", m_jiraConfiguration.Jsonize());
 
   }
 

@@ -13,25 +13,19 @@ namespace SSMIncidents
 {
 namespace Model
 {
-  enum class ItemType
+  enum class VariableType
   {
     NOT_SET,
-    ANALYSIS,
-    INCIDENT,
-    METRIC,
-    PARENT,
-    ATTACHMENT,
-    OTHER,
-    AUTOMATION,
-    INVOLVED_RESOURCE
+    INCIDENT_RECORD_ARN,
+    INVOLVED_RESOURCES
   };
 
-namespace ItemTypeMapper
+namespace VariableTypeMapper
 {
-AWS_SSMINCIDENTS_API ItemType GetItemTypeForName(const Aws::String& name);
+AWS_SSMINCIDENTS_API VariableType GetVariableTypeForName(const Aws::String& name);
 
-AWS_SSMINCIDENTS_API Aws::String GetNameForItemType(ItemType value);
-} // namespace ItemTypeMapper
+AWS_SSMINCIDENTS_API Aws::String GetNameForVariableType(VariableType value);
+} // namespace VariableTypeMapper
 } // namespace Model
 } // namespace SSMIncidents
 } // namespace Aws

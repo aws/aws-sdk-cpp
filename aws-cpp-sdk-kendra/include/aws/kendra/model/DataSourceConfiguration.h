@@ -19,6 +19,7 @@
 #include <aws/kendra/model/SlackConfiguration.h>
 #include <aws/kendra/model/BoxConfiguration.h>
 #include <aws/kendra/model/QuipConfiguration.h>
+#include <aws/kendra/model/JiraConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -550,6 +551,43 @@ namespace Model
      */
     inline DataSourceConfiguration& WithQuipConfiguration(QuipConfiguration&& value) { SetQuipConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides the configuration information to connect to Jira as your data
+     * source.</p>
+     */
+    inline const JiraConfiguration& GetJiraConfiguration() const{ return m_jiraConfiguration; }
+
+    /**
+     * <p>Provides the configuration information to connect to Jira as your data
+     * source.</p>
+     */
+    inline bool JiraConfigurationHasBeenSet() const { return m_jiraConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides the configuration information to connect to Jira as your data
+     * source.</p>
+     */
+    inline void SetJiraConfiguration(const JiraConfiguration& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = value; }
+
+    /**
+     * <p>Provides the configuration information to connect to Jira as your data
+     * source.</p>
+     */
+    inline void SetJiraConfiguration(JiraConfiguration&& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides the configuration information to connect to Jira as your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithJiraConfiguration(const JiraConfiguration& value) { SetJiraConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides the configuration information to connect to Jira as your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithJiraConfiguration(JiraConfiguration&& value) { SetJiraConfiguration(std::move(value)); return *this;}
+
   private:
 
     S3DataSourceConfiguration m_s3Configuration;
@@ -593,6 +631,9 @@ namespace Model
 
     QuipConfiguration m_quipConfiguration;
     bool m_quipConfigurationHasBeenSet;
+
+    JiraConfiguration m_jiraConfiguration;
+    bool m_jiraConfigurationHasBeenSet;
   };
 
 } // namespace Model

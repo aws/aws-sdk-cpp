@@ -779,16 +779,22 @@ namespace Model
         virtual void ListTimelineEventsAsync(const Model::ListTimelineEventsRequest& request, const ListTimelineEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds a resource policy to the specified response plan.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds a resource policy to the specified response plan. The resource policy is
+         * used to share the response plan using Resource Access Manager (RAM). For more
+         * information about cross-account sharing, see <a
+         * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/xa.html">Setting
+         * up cross-account functionality</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/PutResourcePolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
 
         /**
-         * <p>Adds a resource policy to the specified response plan.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds a resource policy to the specified response plan. The resource policy is
+         * used to share the response plan using Resource Access Manager (RAM). For more
+         * information about cross-account sharing, see <a
+         * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/xa.html">Setting
+         * up cross-account functionality</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/PutResourcePolicy">AWS
          * API Reference</a></p>
          *
@@ -797,8 +803,11 @@ namespace Model
         virtual Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const Model::PutResourcePolicyRequest& request) const;
 
         /**
-         * <p>Adds a resource policy to the specified response plan.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds a resource policy to the specified response plan. The resource policy is
+         * used to share the response plan using Resource Access Manager (RAM). For more
+         * information about cross-account sharing, see <a
+         * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/xa.html">Setting
+         * up cross-account functionality</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/PutResourcePolicy">AWS
          * API Reference</a></p>
          *

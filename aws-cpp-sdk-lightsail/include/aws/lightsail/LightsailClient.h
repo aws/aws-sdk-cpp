@@ -3853,18 +3853,24 @@ namespace Model
         virtual void GetBucketsAsync(const Model::GetBucketsRequest& request, const GetBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the list of bundles that are available for purchase. A bundle
-         * describes the specs for your virtual private server (or
-         * <i>instance</i>).</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the bundles that you can apply to an Amazon Lightsail instance when
+         * you create it.</p> <p>A bundle describes the specifications of an instance, such
+         * as the monthly cost, amount of memory, the number of vCPUs, amount of storage
+         * space, and monthly network data transfer quota.</p>  <p>Bundles are
+         * referred to as <i>instance plans</i> in the Lightsail console.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBundlesOutcome GetBundles(const Model::GetBundlesRequest& request) const;
 
         /**
-         * <p>Returns the list of bundles that are available for purchase. A bundle
-         * describes the specs for your virtual private server (or
-         * <i>instance</i>).</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the bundles that you can apply to an Amazon Lightsail instance when
+         * you create it.</p> <p>A bundle describes the specifications of an instance, such
+         * as the monthly cost, amount of memory, the number of vCPUs, amount of storage
+         * space, and monthly network data transfer quota.</p>  <p>Bundles are
+         * referred to as <i>instance plans</i> in the Lightsail console.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles">AWS
          * API Reference</a></p>
          *
@@ -3873,9 +3879,12 @@ namespace Model
         virtual Model::GetBundlesOutcomeCallable GetBundlesCallable(const Model::GetBundlesRequest& request) const;
 
         /**
-         * <p>Returns the list of bundles that are available for purchase. A bundle
-         * describes the specs for your virtual private server (or
-         * <i>instance</i>).</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the bundles that you can apply to an Amazon Lightsail instance when
+         * you create it.</p> <p>A bundle describes the specifications of an instance, such
+         * as the monthly cost, amount of memory, the number of vCPUs, amount of storage
+         * space, and monthly network data transfer quota.</p>  <p>Bundles are
+         * referred to as <i>instance plans</i> in the Lightsail console.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles">AWS
          * API Reference</a></p>
          *

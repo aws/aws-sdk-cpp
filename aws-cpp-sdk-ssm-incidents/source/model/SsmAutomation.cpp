@@ -21,6 +21,7 @@ namespace Model
 SsmAutomation::SsmAutomation() : 
     m_documentNameHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
+    m_dynamicParametersHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_targetAccount(SsmTargetAccount::NOT_SET),
@@ -31,6 +32,7 @@ SsmAutomation::SsmAutomation() :
 SsmAutomation::SsmAutomation(JsonView jsonValue) : 
     m_documentNameHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
+    m_dynamicParametersHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_targetAccount(SsmTargetAccount::NOT_SET),
@@ -53,6 +55,16 @@ SsmAutomation& SsmAutomation::operator =(JsonView jsonValue)
     m_documentVersion = jsonValue.GetString("documentVersion");
 
     m_documentVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dynamicParameters"))
+  {
+    Aws::Map<Aws::String, JsonView> dynamicParametersJsonMap = jsonValue.GetObject("dynamicParameters").GetAllObjects();
+    for(auto& dynamicParametersItem : dynamicParametersJsonMap)
+    {
+      m_dynamicParameters[dynamicParametersItem.first] = dynamicParametersItem.second.AsObject();
+    }
+    m_dynamicParametersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("parameters"))
@@ -102,6 +114,17 @@ JsonValue SsmAutomation::Jsonize() const
   if(m_documentVersionHasBeenSet)
   {
    payload.WithString("documentVersion", m_documentVersion);
+
+  }
+
+  if(m_dynamicParametersHasBeenSet)
+  {
+   JsonValue dynamicParametersJsonMap;
+   for(auto& dynamicParametersItem : m_dynamicParameters)
+   {
+     dynamicParametersJsonMap.WithObject(dynamicParametersItem.first, dynamicParametersItem.second.Jsonize());
+   }
+   payload.WithObject("dynamicParameters", std::move(dynamicParametersJsonMap));
 
   }
 

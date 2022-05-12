@@ -30,7 +30,8 @@ namespace Model
     FSX,
     SLACK,
     BOX,
-    QUIP
+    QUIP,
+    JIRA
   };
 
 namespace DataSourceTypeMapper

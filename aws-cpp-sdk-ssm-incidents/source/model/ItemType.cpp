@@ -27,6 +27,7 @@ namespace Aws
         static const int ATTACHMENT_HASH = HashingUtils::HashString("ATTACHMENT");
         static const int OTHER_HASH = HashingUtils::HashString("OTHER");
         static const int AUTOMATION_HASH = HashingUtils::HashString("AUTOMATION");
+        static const int INVOLVED_RESOURCE_HASH = HashingUtils::HashString("INVOLVED_RESOURCE");
 
 
         ItemType GetItemTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return ItemType::AUTOMATION;
           }
+          else if (hashCode == INVOLVED_RESOURCE_HASH)
+          {
+            return ItemType::INVOLVED_RESOURCE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "OTHER";
           case ItemType::AUTOMATION:
             return "AUTOMATION";
+          case ItemType::INVOLVED_RESOURCE:
+            return "INVOLVED_RESOURCE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm-incidents/model/SsmTargetAccount.h>
+#include <aws/ssm-incidents/model/DynamicSsmParameterValue.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
@@ -121,6 +122,79 @@ namespace Model
      * <p>The automation document's version to use when running.</p>
      */
     inline SsmAutomation& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
+
+    /**
+     * <p>The key-value pair to resolve dynamic parameter values when processing a
+     * Systems Manager Automation runbook.</p>
+     */
+    inline const Aws::Map<Aws::String, DynamicSsmParameterValue>& GetDynamicParameters() const{ return m_dynamicParameters; }
+
+    /**
+     * <p>The key-value pair to resolve dynamic parameter values when processing a
+     * Systems Manager Automation runbook.</p>
+     */
+    inline bool DynamicParametersHasBeenSet() const { return m_dynamicParametersHasBeenSet; }
+
+    /**
+     * <p>The key-value pair to resolve dynamic parameter values when processing a
+     * Systems Manager Automation runbook.</p>
+     */
+    inline void SetDynamicParameters(const Aws::Map<Aws::String, DynamicSsmParameterValue>& value) { m_dynamicParametersHasBeenSet = true; m_dynamicParameters = value; }
+
+    /**
+     * <p>The key-value pair to resolve dynamic parameter values when processing a
+     * Systems Manager Automation runbook.</p>
+     */
+    inline void SetDynamicParameters(Aws::Map<Aws::String, DynamicSsmParameterValue>&& value) { m_dynamicParametersHasBeenSet = true; m_dynamicParameters = std::move(value); }
+
+    /**
+     * <p>The key-value pair to resolve dynamic parameter values when processing a
+     * Systems Manager Automation runbook.</p>
+     */
+    inline SsmAutomation& WithDynamicParameters(const Aws::Map<Aws::String, DynamicSsmParameterValue>& value) { SetDynamicParameters(value); return *this;}
+
+    /**
+     * <p>The key-value pair to resolve dynamic parameter values when processing a
+     * Systems Manager Automation runbook.</p>
+     */
+    inline SsmAutomation& WithDynamicParameters(Aws::Map<Aws::String, DynamicSsmParameterValue>&& value) { SetDynamicParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>The key-value pair to resolve dynamic parameter values when processing a
+     * Systems Manager Automation runbook.</p>
+     */
+    inline SsmAutomation& AddDynamicParameters(const Aws::String& key, const DynamicSsmParameterValue& value) { m_dynamicParametersHasBeenSet = true; m_dynamicParameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>The key-value pair to resolve dynamic parameter values when processing a
+     * Systems Manager Automation runbook.</p>
+     */
+    inline SsmAutomation& AddDynamicParameters(Aws::String&& key, const DynamicSsmParameterValue& value) { m_dynamicParametersHasBeenSet = true; m_dynamicParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The key-value pair to resolve dynamic parameter values when processing a
+     * Systems Manager Automation runbook.</p>
+     */
+    inline SsmAutomation& AddDynamicParameters(const Aws::String& key, DynamicSsmParameterValue&& value) { m_dynamicParametersHasBeenSet = true; m_dynamicParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The key-value pair to resolve dynamic parameter values when processing a
+     * Systems Manager Automation runbook.</p>
+     */
+    inline SsmAutomation& AddDynamicParameters(Aws::String&& key, DynamicSsmParameterValue&& value) { m_dynamicParametersHasBeenSet = true; m_dynamicParameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The key-value pair to resolve dynamic parameter values when processing a
+     * Systems Manager Automation runbook.</p>
+     */
+    inline SsmAutomation& AddDynamicParameters(const char* key, DynamicSsmParameterValue&& value) { m_dynamicParametersHasBeenSet = true; m_dynamicParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The key-value pair to resolve dynamic parameter values when processing a
+     * Systems Manager Automation runbook.</p>
+     */
+    inline SsmAutomation& AddDynamicParameters(const char* key, const DynamicSsmParameterValue& value) { m_dynamicParametersHasBeenSet = true; m_dynamicParameters.emplace(key, value); return *this; }
 
 
     /**
@@ -288,6 +362,9 @@ namespace Model
 
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
+
+    Aws::Map<Aws::String, DynamicSsmParameterValue> m_dynamicParameters;
+    bool m_dynamicParametersHasBeenSet;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
     bool m_parametersHasBeenSet;

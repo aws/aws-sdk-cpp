@@ -26,8 +26,11 @@ namespace Model
   /**
    * <p>A map of key-value pairs containing the patterns that need to be replaced in
    * a managed template job document schema. You can use the description of each key
-   * as a guidance to specify the inputs during runtime when creating a
-   * job.</p><p><h3>See Also:</h3>   <a
+   * as a guidance to specify the inputs during runtime when creating a job.</p>
+   *  <p> <code>documentParameters</code> can only be used when creating jobs
+   * from Amazon Web Services managed templates. This parameter can't be used with
+   * custom job templates or to create jobs from them.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DocumentParameter">AWS
    * API Reference</a></p>
    */
