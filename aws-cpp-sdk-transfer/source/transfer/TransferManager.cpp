@@ -1053,6 +1053,12 @@ namespace Aws
                     if (!IsS3KeyPrefix(content.GetKey()))
                     {
                         Aws::String fileName = DetermineFilePath(downloadContext->rootDirectory, downloadContext->prefix, content.GetKey());
+                        if(!IsWithinParentDirectory(downloadContext->rootDirectory, fileName))
+                        {
+                            AWS_LOGSTREAM_ERROR(CLASS_TAG, "SKIPPING PREFIX: S3 bucket contains relative prefix: "
+                                << downloadContext->prefix <<" that goes outside local target directory: " << directory);
+                            continue;
+                        }
                         auto lastDelimter = fileName.find_last_of(Aws::FileSystem::PATH_DELIM);
                         if (lastDelimter != std::string::npos)
                         {
@@ -1077,6 +1083,53 @@ namespace Aws
             }
         }
 
+        bool TransferManager::IsWithinParentDirectory(Aws::String parentDirectory, Aws::String filePath)
+        {
+            char delimiter[] = { Aws::FileSystem::PATH_DELIM, 0 };
+            // normalize to unix ending style
+            Aws::Utils::StringUtils::Replace(parentDirectory, delimiter, "/");
+            Aws::Utils::StringUtils::Replace(filePath, delimiter, "/");
+
+            if(!parentDirectory.empty() && parentDirectory.back() == '/')
+            {
+                parentDirectory.resize(parentDirectory.size() - 1);
+            }
+
+            if (filePath.rfind(parentDirectory, 0) == 0) // if starts_with
+            {
+                filePath = filePath.substr(parentDirectory.size());
+            }
+            else
+            {
+                return false;
+            }
+
+            size_t level = 0;
+            for(size_t i = 0; i < filePath.size(); ++i)
+            {
+                if('/' == filePath[i])
+                {
+                    if(i + 2 < filePath.size() && '.' == filePath[i+1] && '/' == filePath[i+2]) // if "/./"
+                    {
+                        continue;
+                    }
+
+                    if(i + 2 < filePath.size() && '.' == filePath[i+1] && '.' == filePath[i+2]) // if "/.."
+                    {
+                        if(i + 3 == filePath.size() || (i + 3 < filePath.size() && '/' == filePath[i+3])) // if "/.." or "/../"
+                        {
+                            if(0 == level) {
+                                return false; // attempting to escape parent
+                            }
+                            level--;
+                        }
+                    }
+                    level++;
+                }
+            }
+            return true;
+        }
+
         Aws::String TransferManager::DetermineFilePath(const Aws::String& directory, const Aws::String& prefix, const Aws::String& keyName)
         {
             Aws::String shortenedFileName = keyName;
@@ -1088,11 +1141,20 @@ namespace Aws
             }
 
             char delimiter[] = { Aws::FileSystem::PATH_DELIM, 0 };
-            Aws::Utils::StringUtils::Replace(shortenedFileName, "/", delimiter);
-            Aws::StringStream ss;
-            ss << directory << shortenedFileName;
+            Aws::Utils::StringUtils::Replace(shortenedFileName, delimiter, "/");
 
-            return ss.str();
+            Aws::String normalizedDirectory = directory;
+            Aws::Utils::StringUtils::Replace(normalizedDirectory, delimiter, "/");
+
+            Aws::StringStream ss;
+            ss << normalizedDirectory;
+            if (!normalizedDirectory.empty() && normalizedDirectory.back() != '/')
+                ss << '/';
+            ss << shortenedFileName;
+
+            Aws::String result = ss.str();
+            Aws::Utils::StringUtils::Replace(result, "/", delimiter);
+            return result;
         }
 
         TransferStatus TransferManager::DetermineIfFailedOrCanceled(const TransferHandle& handle) const

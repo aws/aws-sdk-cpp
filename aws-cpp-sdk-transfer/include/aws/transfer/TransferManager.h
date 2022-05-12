@@ -309,6 +309,9 @@ namespace Aws
 
             Aws::Utils::ExclusiveOwnershipResourceManager<unsigned char*> m_bufferManager;
             TransferManagerConfiguration m_transferConfig;
+
+        protected:
+            static bool IsWithinParentDirectory(Aws::String parentDirectory, Aws::String filePath);
         };
 
         
