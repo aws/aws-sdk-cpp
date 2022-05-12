@@ -1980,4 +1980,81 @@ TEST_F(TransferTests, TransferManager_TemplatesTest)
                        "text/plain",
                        Aws::Map<Aws::String, Aws::String>());
 }
+
+class TestHelperTransferManager : public Aws::Transfer::TransferManager
+{
+public:
+    static bool MakePublicIsWithinParentDirectory(Aws::String parentDirectory, Aws::String filePath)
+    {
+        return Aws::Transfer::TransferManager::IsWithinParentDirectory(parentDirectory, filePath);
+    }
+
+    struct TestCaseEntry
+    {
+        Aws::String parentDir;
+        Aws::String filePath;
+
+        bool expectedIsWithinParentDirectory;
+    };
+};
+
+TEST_F(TransferTests, TransferManager_TestRelativePrefix)
+{
+
+    static const std::vector<TestHelperTransferManager::TestCaseEntry> TEST_CASES =
+            {
+                {R"(C:/temp/)", R"(C:/temp/filename.bmp)", true},
+                {R"(C:/temp)", R"(C:/temp/filename.bmp)", true},
+                {R"(C:/temp/)", R"(C:/temp/../temp-1/filename.bmp)", false},
+                {R"(C:/temp/)", R"(C:/temp/temp/filename..bmp)", true},
+                {R"(C:/temp/)", R"(C:/temp/temp/filename/..bmp)", true},
+                {R"(C:/temp/)", R"(C:/temp/temp/filename/../bmp)", true},
+                {R"(C:/temp/)", R"(C:/temp/../temp-1/filename..bmp)", false},
+                {R"(C:/temp/)", R"(C:/temp/../temp/temp-1/filename..bmp)", false},
+                {R"(C:/)", R"(C:/..../foo.txt)", true},
+                {R"(C:/)", R"(C:/./foo.txt)", true},
+                {R"(C:/)", R"(C:/.../foo.txt)", true},
+                {R"(C:/)", R"(C:/.../../foo.txt)", true},
+                {R"(C:/)", R"(C:/.../.../../../foo.txt)", true},
+                {R"(C:/)", R"(C:/...////./foo.txt)", true},
+
+                {R"(/home/user/my-intended-directory)", R"(/home/user/my-intended-directory/foo.txt)", true},
+                {R"(/home/user/my-intended-directory/)", R"(/home/user/my-intended-directory/foo.txt)", true},
+                {R"(/home/user/my-intended-directory/)", R"(/home/user/my-intended-directory//////foo.txt)", true},
+                {R"(/home/user/)", R"(/home/user/down/../down/../down/../foo.txt)", true},
+                {R"(/home/user/my-intended-directory)", R"(/home/user/my-intended-directory/../my-intended-directory-2/foo.txt)", false},
+                {R"(/home/user/)", R"(/home/user/../../root/foo.txt)", false},
+                {R"(/home/user)", R"(/home/user/../../root/foo.txt)", false},
+
+                {R"(/home/user/)", R"(/home/user/.. )", true},
+                {R"(/home/user/)", R"(/home/user/ .. )", true},
+                {R"(/home/user/)", R"(/home/user/ ..)", true},
+                {R"(/home/user/)", R"(/home/user/./foo)", true},
+                {R"(/home/user)", R"(/home/user/./foo)", true},
+                {R"(/home/user/)", R"(/home/user/./././././foo)", true},
+                {R"(/home/user/)", R"(/home/user/./././.././foo)", false},
+
+                {R"(./)", R"(./foo)", true},
+                {R"(./)", R"(./..foo)", true},
+                {R"(./)", R"(./../foo)", false},
+                {R"(./)", R"(./.../foo)", true},
+                {R"(./)", R"(./.../../foo)", true},
+                {R"(./)", R"(.//.../../foo)", true},
+            };
+
+    for(const TestHelperTransferManager::TestCaseEntry& TC_ENTRY : TEST_CASES)
+    {
+        char delimiter[] = { Aws::FileSystem::PATH_DELIM, 0 };
+        Aws::String osNormalizedParentDir = TC_ENTRY.parentDir;
+        Aws::Utils::StringUtils::Replace(osNormalizedParentDir, "/", delimiter);
+        Aws::String osNormalizedFilePath = TC_ENTRY.filePath;
+        Aws::Utils::StringUtils::Replace(osNormalizedFilePath, "/", delimiter);
+
+        bool actualResult = TestHelperTransferManager::MakePublicIsWithinParentDirectory(osNormalizedParentDir, osNormalizedFilePath);
+
+        ASSERT_EQ(TC_ENTRY.expectedIsWithinParentDirectory, actualResult)
+            << (TC_ENTRY.expectedIsWithinParentDirectory ? "EXPECTED \"" : "NOT EXPECTED \"") << osNormalizedFilePath << "\" to be found in \"" << osNormalizedParentDir << "\"";
+    }
+}
+
 }
