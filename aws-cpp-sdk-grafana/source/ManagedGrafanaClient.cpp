@@ -22,7 +22,9 @@
 #include <aws/grafana/ManagedGrafanaErrorMarshaller.h>
 #include <aws/grafana/model/AssociateLicenseRequest.h>
 #include <aws/grafana/model/CreateWorkspaceRequest.h>
+#include <aws/grafana/model/CreateWorkspaceApiKeyRequest.h>
 #include <aws/grafana/model/DeleteWorkspaceRequest.h>
+#include <aws/grafana/model/DeleteWorkspaceApiKeyRequest.h>
 #include <aws/grafana/model/DescribeWorkspaceRequest.h>
 #include <aws/grafana/model/DescribeWorkspaceAuthenticationRequest.h>
 #include <aws/grafana/model/DisassociateLicenseRequest.h>
@@ -171,6 +173,38 @@ void ManagedGrafanaClient::CreateWorkspaceAsyncHelper(const CreateWorkspaceReque
   handler(this, request, CreateWorkspace(request), context);
 }
 
+CreateWorkspaceApiKeyOutcome ManagedGrafanaClient::CreateWorkspaceApiKey(const CreateWorkspaceApiKeyRequest& request) const
+{
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateWorkspaceApiKey", "Required field: WorkspaceId, is not set");
+    return CreateWorkspaceApiKeyOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/workspaces/");
+  uri.AddPathSegment(request.GetWorkspaceId());
+  uri.AddPathSegments("/apikeys");
+  return CreateWorkspaceApiKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateWorkspaceApiKeyOutcomeCallable ManagedGrafanaClient::CreateWorkspaceApiKeyCallable(const CreateWorkspaceApiKeyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateWorkspaceApiKeyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkspaceApiKey(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ManagedGrafanaClient::CreateWorkspaceApiKeyAsync(const CreateWorkspaceApiKeyRequest& request, const CreateWorkspaceApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateWorkspaceApiKeyAsyncHelper( request, handler, context ); } );
+}
+
+void ManagedGrafanaClient::CreateWorkspaceApiKeyAsyncHelper(const CreateWorkspaceApiKeyRequest& request, const CreateWorkspaceApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateWorkspaceApiKey(request), context);
+}
+
 DeleteWorkspaceOutcome ManagedGrafanaClient::DeleteWorkspace(const DeleteWorkspaceRequest& request) const
 {
   if (!request.WorkspaceIdHasBeenSet())
@@ -200,6 +234,44 @@ void ManagedGrafanaClient::DeleteWorkspaceAsync(const DeleteWorkspaceRequest& re
 void ManagedGrafanaClient::DeleteWorkspaceAsyncHelper(const DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteWorkspace(request), context);
+}
+
+DeleteWorkspaceApiKeyOutcome ManagedGrafanaClient::DeleteWorkspaceApiKey(const DeleteWorkspaceApiKeyRequest& request) const
+{
+  if (!request.KeyNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteWorkspaceApiKey", "Required field: KeyName, is not set");
+    return DeleteWorkspaceApiKeyOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KeyName]", false));
+  }
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteWorkspaceApiKey", "Required field: WorkspaceId, is not set");
+    return DeleteWorkspaceApiKeyOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/workspaces/");
+  uri.AddPathSegment(request.GetWorkspaceId());
+  uri.AddPathSegments("/apikeys/");
+  uri.AddPathSegment(request.GetKeyName());
+  return DeleteWorkspaceApiKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteWorkspaceApiKeyOutcomeCallable ManagedGrafanaClient::DeleteWorkspaceApiKeyCallable(const DeleteWorkspaceApiKeyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkspaceApiKeyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorkspaceApiKey(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ManagedGrafanaClient::DeleteWorkspaceApiKeyAsync(const DeleteWorkspaceApiKeyRequest& request, const DeleteWorkspaceApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteWorkspaceApiKeyAsyncHelper( request, handler, context ); } );
+}
+
+void ManagedGrafanaClient::DeleteWorkspaceApiKeyAsyncHelper(const DeleteWorkspaceApiKeyRequest& request, const DeleteWorkspaceApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteWorkspaceApiKey(request), context);
 }
 
 DescribeWorkspaceOutcome ManagedGrafanaClient::DescribeWorkspace(const DescribeWorkspaceRequest& request) const

@@ -13,7 +13,9 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/grafana/model/AssociateLicenseResult.h>
 #include <aws/grafana/model/CreateWorkspaceResult.h>
+#include <aws/grafana/model/CreateWorkspaceApiKeyResult.h>
 #include <aws/grafana/model/DeleteWorkspaceResult.h>
+#include <aws/grafana/model/DeleteWorkspaceApiKeyResult.h>
 #include <aws/grafana/model/DescribeWorkspaceResult.h>
 #include <aws/grafana/model/DescribeWorkspaceAuthenticationResult.h>
 #include <aws/grafana/model/DisassociateLicenseResult.h>
@@ -66,7 +68,9 @@ namespace Model
 {
         class AssociateLicenseRequest;
         class CreateWorkspaceRequest;
+        class CreateWorkspaceApiKeyRequest;
         class DeleteWorkspaceRequest;
+        class DeleteWorkspaceApiKeyRequest;
         class DescribeWorkspaceRequest;
         class DescribeWorkspaceAuthenticationRequest;
         class DisassociateLicenseRequest;
@@ -81,7 +85,9 @@ namespace Model
 
         typedef Aws::Utils::Outcome<AssociateLicenseResult, ManagedGrafanaError> AssociateLicenseOutcome;
         typedef Aws::Utils::Outcome<CreateWorkspaceResult, ManagedGrafanaError> CreateWorkspaceOutcome;
+        typedef Aws::Utils::Outcome<CreateWorkspaceApiKeyResult, ManagedGrafanaError> CreateWorkspaceApiKeyOutcome;
         typedef Aws::Utils::Outcome<DeleteWorkspaceResult, ManagedGrafanaError> DeleteWorkspaceOutcome;
+        typedef Aws::Utils::Outcome<DeleteWorkspaceApiKeyResult, ManagedGrafanaError> DeleteWorkspaceApiKeyOutcome;
         typedef Aws::Utils::Outcome<DescribeWorkspaceResult, ManagedGrafanaError> DescribeWorkspaceOutcome;
         typedef Aws::Utils::Outcome<DescribeWorkspaceAuthenticationResult, ManagedGrafanaError> DescribeWorkspaceAuthenticationOutcome;
         typedef Aws::Utils::Outcome<DisassociateLicenseResult, ManagedGrafanaError> DisassociateLicenseOutcome;
@@ -96,7 +102,9 @@ namespace Model
 
         typedef std::future<AssociateLicenseOutcome> AssociateLicenseOutcomeCallable;
         typedef std::future<CreateWorkspaceOutcome> CreateWorkspaceOutcomeCallable;
+        typedef std::future<CreateWorkspaceApiKeyOutcome> CreateWorkspaceApiKeyOutcomeCallable;
         typedef std::future<DeleteWorkspaceOutcome> DeleteWorkspaceOutcomeCallable;
+        typedef std::future<DeleteWorkspaceApiKeyOutcome> DeleteWorkspaceApiKeyOutcomeCallable;
         typedef std::future<DescribeWorkspaceOutcome> DescribeWorkspaceOutcomeCallable;
         typedef std::future<DescribeWorkspaceAuthenticationOutcome> DescribeWorkspaceAuthenticationOutcomeCallable;
         typedef std::future<DisassociateLicenseOutcome> DisassociateLicenseOutcomeCallable;
@@ -114,7 +122,9 @@ namespace Model
 
     typedef std::function<void(const ManagedGrafanaClient*, const Model::AssociateLicenseRequest&, const Model::AssociateLicenseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateLicenseResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::CreateWorkspaceRequest&, const Model::CreateWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspaceResponseReceivedHandler;
+    typedef std::function<void(const ManagedGrafanaClient*, const Model::CreateWorkspaceApiKeyRequest&, const Model::CreateWorkspaceApiKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspaceApiKeyResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::DeleteWorkspaceRequest&, const Model::DeleteWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkspaceResponseReceivedHandler;
+    typedef std::function<void(const ManagedGrafanaClient*, const Model::DeleteWorkspaceApiKeyRequest&, const Model::DeleteWorkspaceApiKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkspaceApiKeyResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::DescribeWorkspaceRequest&, const Model::DescribeWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::DescribeWorkspaceAuthenticationRequest&, const Model::DescribeWorkspaceAuthenticationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceAuthenticationResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::DisassociateLicenseRequest&, const Model::DisassociateLicenseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateLicenseResponseReceivedHandler;
@@ -243,6 +253,43 @@ namespace Model
         virtual void CreateWorkspaceAsync(const Model::CreateWorkspaceRequest& request, const CreateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates an API key for the workspace. This key can be used to authenticate
+         * requests sent to the workspace's HTTP API. See <a href="
+         * https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">
+         * https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a>
+         * for available APIs and example requests.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceApiKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateWorkspaceApiKeyOutcome CreateWorkspaceApiKey(const Model::CreateWorkspaceApiKeyRequest& request) const;
+
+        /**
+         * <p>Creates an API key for the workspace. This key can be used to authenticate
+         * requests sent to the workspace's HTTP API. See <a href="
+         * https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">
+         * https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a>
+         * for available APIs and example requests.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceApiKey">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateWorkspaceApiKeyOutcomeCallable CreateWorkspaceApiKeyCallable(const Model::CreateWorkspaceApiKeyRequest& request) const;
+
+        /**
+         * <p>Creates an API key for the workspace. This key can be used to authenticate
+         * requests sent to the workspace's HTTP API. See <a href="
+         * https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">
+         * https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a>
+         * for available APIs and example requests.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceApiKey">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateWorkspaceApiKeyAsync(const Model::CreateWorkspaceApiKeyRequest& request, const CreateWorkspaceApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes an Amazon Managed Grafana workspace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspace">AWS
          * API Reference</a></p>
@@ -266,6 +313,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteWorkspaceAsync(const Model::DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an API key for a workspace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceApiKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteWorkspaceApiKeyOutcome DeleteWorkspaceApiKey(const Model::DeleteWorkspaceApiKeyRequest& request) const;
+
+        /**
+         * <p>Deletes an API key for a workspace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceApiKey">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteWorkspaceApiKeyOutcomeCallable DeleteWorkspaceApiKeyCallable(const Model::DeleteWorkspaceApiKeyRequest& request) const;
+
+        /**
+         * <p>Deletes an API key for a workspace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceApiKey">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteWorkspaceApiKeyAsync(const Model::DeleteWorkspaceApiKeyRequest& request, const DeleteWorkspaceApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays information about one Amazon Managed Grafana
@@ -653,7 +725,9 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AssociateLicenseAsyncHelper(const Model::AssociateLicenseRequest& request, const AssociateLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWorkspaceAsyncHelper(const Model::CreateWorkspaceRequest& request, const CreateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateWorkspaceApiKeyAsyncHelper(const Model::CreateWorkspaceApiKeyRequest& request, const CreateWorkspaceApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteWorkspaceAsyncHelper(const Model::DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteWorkspaceApiKeyAsyncHelper(const Model::DeleteWorkspaceApiKeyRequest& request, const DeleteWorkspaceApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeWorkspaceAsyncHelper(const Model::DescribeWorkspaceRequest& request, const DescribeWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeWorkspaceAuthenticationAsyncHelper(const Model::DescribeWorkspaceAuthenticationRequest& request, const DescribeWorkspaceAuthenticationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateLicenseAsyncHelper(const Model::DisassociateLicenseRequest& request, const DisassociateLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
