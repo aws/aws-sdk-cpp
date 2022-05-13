@@ -137,34 +137,12 @@ namespace Model
         virtual Model::DescribeServicesOutcome DescribeServices(const Model::DescribeServicesRequest& request) const;
 
         /**
-         * <p>Returns the metadata for one service or a list of the metadata for all
-         * services. Use this without a service code to get the service codes for all
-         * services. Use it with a service code, such as <code>AmazonEC2</code>, to get
-         * information specific to that service, such as the attribute names available for
-         * that service. For example, some of the attribute names available for EC2 are
-         * <code>volumeType</code>, <code>maxIopsVolume</code>, <code>operation</code>,
-         * <code>locationType</code>, and
-         * <code>instanceCapacity10xlarge</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/DescribeServices">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeServices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeServicesOutcomeCallable DescribeServicesCallable(const Model::DescribeServicesRequest& request) const;
 
         /**
-         * <p>Returns the metadata for one service or a list of the metadata for all
-         * services. Use this without a service code to get the service codes for all
-         * services. Use it with a service code, such as <code>AmazonEC2</code>, to get
-         * information specific to that service, such as the attribute names available for
-         * that service. For example, some of the attribute names available for EC2 are
-         * <code>volumeType</code>, <code>maxIopsVolume</code>, <code>operation</code>,
-         * <code>locationType</code>, and
-         * <code>instanceCapacity10xlarge</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/DescribeServices">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeServices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeServicesAsync(const Model::DescribeServicesRequest& request, const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -182,32 +160,12 @@ namespace Model
         virtual Model::GetAttributeValuesOutcome GetAttributeValues(const Model::GetAttributeValuesRequest& request) const;
 
         /**
-         * <p>Returns a list of attribute values. Attributes are similar to the details in
-         * a Price List API offer file. For a list of available attributes, see <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/reading-an-offer.html#pps-defs">Offer
-         * File Definitions</a> in the <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">Amazon
-         * Web Services Billing and Cost Management User Guide</a>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetAttributeValues">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetAttributeValues that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetAttributeValuesOutcomeCallable GetAttributeValuesCallable(const Model::GetAttributeValuesRequest& request) const;
 
         /**
-         * <p>Returns a list of attribute values. Attributes are similar to the details in
-         * a Price List API offer file. For a list of available attributes, see <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/reading-an-offer.html#pps-defs">Offer
-         * File Definitions</a> in the <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">Amazon
-         * Web Services Billing and Cost Management User Guide</a>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetAttributeValues">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetAttributeValues that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetAttributeValuesAsync(const Model::GetAttributeValuesRequest& request, const GetAttributeValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -220,22 +178,12 @@ namespace Model
         virtual Model::GetProductsOutcome GetProducts(const Model::GetProductsRequest& request) const;
 
         /**
-         * <p>Returns a list of all products that match the filter criteria.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetProducts">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetProducts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetProductsOutcomeCallable GetProductsCallable(const Model::GetProductsRequest& request) const;
 
         /**
-         * <p>Returns a list of all products that match the filter criteria.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetProducts">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetProducts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetProductsAsync(const Model::GetProductsRequest& request, const GetProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

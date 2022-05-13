@@ -426,22 +426,12 @@ namespace Model
         virtual Model::AssociateAssessmentReportEvidenceFolderOutcome AssociateAssessmentReportEvidenceFolder(const Model::AssociateAssessmentReportEvidenceFolderRequest& request) const;
 
         /**
-         * <p> Associates an evidence folder to an assessment report in a Audit Manager
-         * assessment. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AssociateAssessmentReportEvidenceFolder">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociateAssessmentReportEvidenceFolder that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateAssessmentReportEvidenceFolderOutcomeCallable AssociateAssessmentReportEvidenceFolderCallable(const Model::AssociateAssessmentReportEvidenceFolderRequest& request) const;
 
         /**
-         * <p> Associates an evidence folder to an assessment report in a Audit Manager
-         * assessment. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AssociateAssessmentReportEvidenceFolder">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociateAssessmentReportEvidenceFolder that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateAssessmentReportEvidenceFolderAsync(const Model::AssociateAssessmentReportEvidenceFolderRequest& request, const AssociateAssessmentReportEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -454,22 +444,12 @@ namespace Model
         virtual Model::BatchAssociateAssessmentReportEvidenceOutcome BatchAssociateAssessmentReportEvidence(const Model::BatchAssociateAssessmentReportEvidenceRequest& request) const;
 
         /**
-         * <p> Associates a list of evidence to an assessment report in an Audit Manager
-         * assessment. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchAssociateAssessmentReportEvidence">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for BatchAssociateAssessmentReportEvidence that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::BatchAssociateAssessmentReportEvidenceOutcomeCallable BatchAssociateAssessmentReportEvidenceCallable(const Model::BatchAssociateAssessmentReportEvidenceRequest& request) const;
 
         /**
-         * <p> Associates a list of evidence to an assessment report in an Audit Manager
-         * assessment. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchAssociateAssessmentReportEvidence">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for BatchAssociateAssessmentReportEvidence that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchAssociateAssessmentReportEvidenceAsync(const Model::BatchAssociateAssessmentReportEvidenceRequest& request, const BatchAssociateAssessmentReportEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -482,22 +462,12 @@ namespace Model
         virtual Model::BatchCreateDelegationByAssessmentOutcome BatchCreateDelegationByAssessment(const Model::BatchCreateDelegationByAssessmentRequest& request) const;
 
         /**
-         * <p> Creates a batch of delegations for an assessment in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchCreateDelegationByAssessment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for BatchCreateDelegationByAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::BatchCreateDelegationByAssessmentOutcomeCallable BatchCreateDelegationByAssessmentCallable(const Model::BatchCreateDelegationByAssessmentRequest& request) const;
 
         /**
-         * <p> Creates a batch of delegations for an assessment in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchCreateDelegationByAssessment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for BatchCreateDelegationByAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchCreateDelegationByAssessmentAsync(const Model::BatchCreateDelegationByAssessmentRequest& request, const BatchCreateDelegationByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -510,22 +480,12 @@ namespace Model
         virtual Model::BatchDeleteDelegationByAssessmentOutcome BatchDeleteDelegationByAssessment(const Model::BatchDeleteDelegationByAssessmentRequest& request) const;
 
         /**
-         * <p> Deletes a batch of delegations for an assessment in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchDeleteDelegationByAssessment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for BatchDeleteDelegationByAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::BatchDeleteDelegationByAssessmentOutcomeCallable BatchDeleteDelegationByAssessmentCallable(const Model::BatchDeleteDelegationByAssessmentRequest& request) const;
 
         /**
-         * <p> Deletes a batch of delegations for an assessment in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchDeleteDelegationByAssessment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for BatchDeleteDelegationByAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchDeleteDelegationByAssessmentAsync(const Model::BatchDeleteDelegationByAssessmentRequest& request, const BatchDeleteDelegationByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -538,22 +498,12 @@ namespace Model
         virtual Model::BatchDisassociateAssessmentReportEvidenceOutcome BatchDisassociateAssessmentReportEvidence(const Model::BatchDisassociateAssessmentReportEvidenceRequest& request) const;
 
         /**
-         * <p> Disassociates a list of evidence from an assessment report in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchDisassociateAssessmentReportEvidence">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for BatchDisassociateAssessmentReportEvidence that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::BatchDisassociateAssessmentReportEvidenceOutcomeCallable BatchDisassociateAssessmentReportEvidenceCallable(const Model::BatchDisassociateAssessmentReportEvidenceRequest& request) const;
 
         /**
-         * <p> Disassociates a list of evidence from an assessment report in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchDisassociateAssessmentReportEvidence">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for BatchDisassociateAssessmentReportEvidence that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchDisassociateAssessmentReportEvidenceAsync(const Model::BatchDisassociateAssessmentReportEvidenceRequest& request, const BatchDisassociateAssessmentReportEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -566,22 +516,12 @@ namespace Model
         virtual Model::BatchImportEvidenceToAssessmentControlOutcome BatchImportEvidenceToAssessmentControl(const Model::BatchImportEvidenceToAssessmentControlRequest& request) const;
 
         /**
-         * <p> Uploads one or more pieces of evidence to a control in an Audit Manager
-         * assessment. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchImportEvidenceToAssessmentControl">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for BatchImportEvidenceToAssessmentControl that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::BatchImportEvidenceToAssessmentControlOutcomeCallable BatchImportEvidenceToAssessmentControlCallable(const Model::BatchImportEvidenceToAssessmentControlRequest& request) const;
 
         /**
-         * <p> Uploads one or more pieces of evidence to a control in an Audit Manager
-         * assessment. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchImportEvidenceToAssessmentControl">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for BatchImportEvidenceToAssessmentControl that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchImportEvidenceToAssessmentControlAsync(const Model::BatchImportEvidenceToAssessmentControlRequest& request, const BatchImportEvidenceToAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -593,20 +533,12 @@ namespace Model
         virtual Model::CreateAssessmentOutcome CreateAssessment(const Model::CreateAssessmentRequest& request) const;
 
         /**
-         * <p> Creates an assessment in Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateAssessment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateAssessmentOutcomeCallable CreateAssessmentCallable(const Model::CreateAssessmentRequest& request) const;
 
         /**
-         * <p> Creates an assessment in Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateAssessment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateAssessmentAsync(const Model::CreateAssessmentRequest& request, const CreateAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -618,20 +550,12 @@ namespace Model
         virtual Model::CreateAssessmentFrameworkOutcome CreateAssessmentFramework(const Model::CreateAssessmentFrameworkRequest& request) const;
 
         /**
-         * <p> Creates a custom framework in Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateAssessmentFramework">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateAssessmentFramework that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateAssessmentFrameworkOutcomeCallable CreateAssessmentFrameworkCallable(const Model::CreateAssessmentFrameworkRequest& request) const;
 
         /**
-         * <p> Creates a custom framework in Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateAssessmentFramework">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateAssessmentFramework that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateAssessmentFrameworkAsync(const Model::CreateAssessmentFrameworkRequest& request, const CreateAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -644,22 +568,12 @@ namespace Model
         virtual Model::CreateAssessmentReportOutcome CreateAssessmentReport(const Model::CreateAssessmentReportRequest& request) const;
 
         /**
-         * <p> Creates an assessment report for the specified assessment. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateAssessmentReport">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateAssessmentReport that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateAssessmentReportOutcomeCallable CreateAssessmentReportCallable(const Model::CreateAssessmentReportRequest& request) const;
 
         /**
-         * <p> Creates an assessment report for the specified assessment. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateAssessmentReport">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateAssessmentReport that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateAssessmentReportAsync(const Model::CreateAssessmentReportRequest& request, const CreateAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -672,22 +586,12 @@ namespace Model
         virtual Model::CreateControlOutcome CreateControl(const Model::CreateControlRequest& request) const;
 
         /**
-         * <p> Creates a new custom control in Audit Manager. </p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateControl">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateControl that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateControlOutcomeCallable CreateControlCallable(const Model::CreateControlRequest& request) const;
 
         /**
-         * <p> Creates a new custom control in Audit Manager. </p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateControl">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateControl that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateControlAsync(const Model::CreateControlRequest& request, const CreateControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -699,20 +603,12 @@ namespace Model
         virtual Model::DeleteAssessmentOutcome DeleteAssessment(const Model::DeleteAssessmentRequest& request) const;
 
         /**
-         * <p> Deletes an assessment in Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteAssessmentOutcomeCallable DeleteAssessmentCallable(const Model::DeleteAssessmentRequest& request) const;
 
         /**
-         * <p> Deletes an assessment in Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAssessmentAsync(const Model::DeleteAssessmentRequest& request, const DeleteAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -724,20 +620,12 @@ namespace Model
         virtual Model::DeleteAssessmentFrameworkOutcome DeleteAssessmentFramework(const Model::DeleteAssessmentFrameworkRequest& request) const;
 
         /**
-         * <p> Deletes a custom framework in Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessmentFramework">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteAssessmentFramework that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteAssessmentFrameworkOutcomeCallable DeleteAssessmentFrameworkCallable(const Model::DeleteAssessmentFrameworkRequest& request) const;
 
         /**
-         * <p> Deletes a custom framework in Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessmentFramework">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteAssessmentFramework that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAssessmentFrameworkAsync(const Model::DeleteAssessmentFrameworkRequest& request, const DeleteAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -750,22 +638,12 @@ namespace Model
         virtual Model::DeleteAssessmentFrameworkShareOutcome DeleteAssessmentFrameworkShare(const Model::DeleteAssessmentFrameworkShareRequest& request) const;
 
         /**
-         * <p> Deletes a share request for a custom framework in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessmentFrameworkShare">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteAssessmentFrameworkShare that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteAssessmentFrameworkShareOutcomeCallable DeleteAssessmentFrameworkShareCallable(const Model::DeleteAssessmentFrameworkShareRequest& request) const;
 
         /**
-         * <p> Deletes a share request for a custom framework in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessmentFrameworkShare">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteAssessmentFrameworkShare that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAssessmentFrameworkShareAsync(const Model::DeleteAssessmentFrameworkShareRequest& request, const DeleteAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -797,60 +675,12 @@ namespace Model
         virtual Model::DeleteAssessmentReportOutcome DeleteAssessmentReport(const Model::DeleteAssessmentReportRequest& request) const;
 
         /**
-         * <p>Deletes an assessment report in Audit Manager. </p> <p>When you run the
-         * <code>DeleteAssessmentReport</code> operation, Audit Manager attempts to delete
-         * the following data:</p> <ol> <li> <p>The specified assessment report that’s
-         * stored in your S3 bucket</p> </li> <li> <p>The associated metadata that’s stored
-         * in Audit Manager</p> </li> </ol> <p>If Audit Manager can’t access the assessment
-         * report in your S3 bucket, the report isn’t deleted. In this event, the
-         * <code>DeleteAssessmentReport</code> operation doesn’t fail. Instead, it proceeds
-         * to delete the associated metadata only. You must then delete the assessment
-         * report from the S3 bucket yourself. </p> <p>This scenario happens when Audit
-         * Manager receives a <code>403 (Forbidden)</code> or <code>404 (Not Found)</code>
-         * error from Amazon S3. To avoid this, make sure that your S3 bucket is available,
-         * and that you configured the correct permissions for Audit Manager to delete
-         * resources in your S3 bucket. For an example permissions policy that you can use,
-         * see <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/security_iam_id-based-policy-examples.html#full-administrator-access-assessment-report-destination">Assessment
-         * report destination permissions</a> in the <i>Audit Manager User Guide</i>. For
-         * information about the issues that could cause a <code>403 (Forbidden)</code> or
-         * <code>404 (Not Found</code>) error from Amazon S3, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
-         * of Error Codes</a> in the <i>Amazon Simple Storage Service API Reference</i>.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessmentReport">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteAssessmentReport that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteAssessmentReportOutcomeCallable DeleteAssessmentReportCallable(const Model::DeleteAssessmentReportRequest& request) const;
 
         /**
-         * <p>Deletes an assessment report in Audit Manager. </p> <p>When you run the
-         * <code>DeleteAssessmentReport</code> operation, Audit Manager attempts to delete
-         * the following data:</p> <ol> <li> <p>The specified assessment report that’s
-         * stored in your S3 bucket</p> </li> <li> <p>The associated metadata that’s stored
-         * in Audit Manager</p> </li> </ol> <p>If Audit Manager can’t access the assessment
-         * report in your S3 bucket, the report isn’t deleted. In this event, the
-         * <code>DeleteAssessmentReport</code> operation doesn’t fail. Instead, it proceeds
-         * to delete the associated metadata only. You must then delete the assessment
-         * report from the S3 bucket yourself. </p> <p>This scenario happens when Audit
-         * Manager receives a <code>403 (Forbidden)</code> or <code>404 (Not Found)</code>
-         * error from Amazon S3. To avoid this, make sure that your S3 bucket is available,
-         * and that you configured the correct permissions for Audit Manager to delete
-         * resources in your S3 bucket. For an example permissions policy that you can use,
-         * see <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/security_iam_id-based-policy-examples.html#full-administrator-access-assessment-report-destination">Assessment
-         * report destination permissions</a> in the <i>Audit Manager User Guide</i>. For
-         * information about the issues that could cause a <code>403 (Forbidden)</code> or
-         * <code>404 (Not Found</code>) error from Amazon S3, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
-         * of Error Codes</a> in the <i>Amazon Simple Storage Service API Reference</i>.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessmentReport">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteAssessmentReport that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAssessmentReportAsync(const Model::DeleteAssessmentReportRequest& request, const DeleteAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -862,20 +692,12 @@ namespace Model
         virtual Model::DeleteControlOutcome DeleteControl(const Model::DeleteControlRequest& request) const;
 
         /**
-         * <p> Deletes a custom control in Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteControl">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteControl that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteControlOutcomeCallable DeleteControlCallable(const Model::DeleteControlRequest& request) const;
 
         /**
-         * <p> Deletes a custom control in Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteControl">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteControl that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteControlAsync(const Model::DeleteControlRequest& request, const DeleteControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -919,84 +741,12 @@ namespace Model
         virtual Model::DeregisterAccountOutcome DeregisterAccount(const Model::DeregisterAccountRequest& request) const;
 
         /**
-         * <p> Deregisters an account in Audit Manager. </p>  <p>When you deregister
-         * your account from Audit Manager, your data isn’t deleted. If you want to delete
-         * your resource data, you must perform that task separately before you deregister
-         * your account. Either, you can do this in the Audit Manager console. Or, you can
-         * use one of the delete API operations that are provided by Audit Manager. </p>
-         * <p>To delete your Audit Manager resource data, see the following instructions:
-         * </p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessment.html">DeleteAssessment</a>
-         * (see also: <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-assessment.html">Deleting
-         * an assessment</a> in the <i>Audit Manager User Guide</i>)</p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFramework.html">DeleteAssessmentFramework</a>
-         * (see also: <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-custom-framework.html">Deleting
-         * a custom framework</a> in the <i>Audit Manager User Guide</i>)</p> </li> <li>
-         * <p> <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFrameworkShare.html">DeleteAssessmentFrameworkShare</a>
-         * (see also: <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/deleting-shared-framework-requests.html">Deleting
-         * a share request</a> in the <i>Audit Manager User Guide</i>)</p> </li> <li> <p>
-         * <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentReport.html">DeleteAssessmentReport</a>
-         * (see also: <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#delete-assessment-report-steps">Deleting
-         * an assessment report</a> in the <i>Audit Manager User Guide</i>)</p> </li> <li>
-         * <p> <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteControl.html">DeleteControl</a>
-         * (see also: <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-controls.html">Deleting
-         * a custom control</a> in the <i>Audit Manager User Guide</i>)</p> </li> </ul>
-         * <p>At this time, Audit Manager doesn't provide an option to delete evidence. All
-         * available delete operations are listed above.</p> <p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeregisterAccount">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeregisterAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeregisterAccountOutcomeCallable DeregisterAccountCallable(const Model::DeregisterAccountRequest& request) const;
 
         /**
-         * <p> Deregisters an account in Audit Manager. </p>  <p>When you deregister
-         * your account from Audit Manager, your data isn’t deleted. If you want to delete
-         * your resource data, you must perform that task separately before you deregister
-         * your account. Either, you can do this in the Audit Manager console. Or, you can
-         * use one of the delete API operations that are provided by Audit Manager. </p>
-         * <p>To delete your Audit Manager resource data, see the following instructions:
-         * </p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessment.html">DeleteAssessment</a>
-         * (see also: <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-assessment.html">Deleting
-         * an assessment</a> in the <i>Audit Manager User Guide</i>)</p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFramework.html">DeleteAssessmentFramework</a>
-         * (see also: <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-custom-framework.html">Deleting
-         * a custom framework</a> in the <i>Audit Manager User Guide</i>)</p> </li> <li>
-         * <p> <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFrameworkShare.html">DeleteAssessmentFrameworkShare</a>
-         * (see also: <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/deleting-shared-framework-requests.html">Deleting
-         * a share request</a> in the <i>Audit Manager User Guide</i>)</p> </li> <li> <p>
-         * <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentReport.html">DeleteAssessmentReport</a>
-         * (see also: <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#delete-assessment-report-steps">Deleting
-         * an assessment report</a> in the <i>Audit Manager User Guide</i>)</p> </li> <li>
-         * <p> <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteControl.html">DeleteControl</a>
-         * (see also: <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-controls.html">Deleting
-         * a custom control</a> in the <i>Audit Manager User Guide</i>)</p> </li> </ul>
-         * <p>At this time, Audit Manager doesn't provide an option to delete evidence. All
-         * available delete operations are listed above.</p> <p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeregisterAccount">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeregisterAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeregisterAccountAsync(const Model::DeregisterAccountRequest& request, const DeregisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1047,98 +797,12 @@ namespace Model
         virtual Model::DeregisterOrganizationAdminAccountOutcome DeregisterOrganizationAdminAccount(const Model::DeregisterOrganizationAdminAccountRequest& request) const;
 
         /**
-         * <p>Removes the specified Amazon Web Services account as a delegated
-         * administrator for Audit Manager. </p>  <p>When you remove a delegated
-         * administrator from your Audit Manager settings, you continue to have access to
-         * the evidence that you previously collected under that account. This is also the
-         * case when you deregister a delegated administrator from Organizations. However,
-         * Audit Manager will stop collecting and attaching evidence to that delegated
-         * administrator account moving forward.</p>   <p>When you
-         * deregister a delegated administrator account for Audit Manager, the data for
-         * that account isn’t deleted. If you want to delete resource data for a delegated
-         * administrator account, you must perform that task separately before you
-         * deregister the account. Either, you can do this in the Audit Manager console.
-         * Or, you can use one of the delete API operations that are provided by Audit
-         * Manager. </p> <p>To delete your Audit Manager resource data, see the following
-         * instructions: </p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessment.html">DeleteAssessment</a>
-         * (see also: <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-assessment.html">Deleting
-         * an assessment</a> in the <i>Audit Manager User Guide</i>)</p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFramework.html">DeleteAssessmentFramework</a>
-         * (see also: <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-custom-framework.html">Deleting
-         * a custom framework</a> in the <i>Audit Manager User Guide</i>)</p> </li> <li>
-         * <p> <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFrameworkShare.html">DeleteAssessmentFrameworkShare</a>
-         * (see also: <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/deleting-shared-framework-requests.html">Deleting
-         * a share request</a> in the <i>Audit Manager User Guide</i>)</p> </li> <li> <p>
-         * <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentReport.html">DeleteAssessmentReport</a>
-         * (see also: <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#delete-assessment-report-steps">Deleting
-         * an assessment report</a> in the <i>Audit Manager User Guide</i>)</p> </li> <li>
-         * <p> <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteControl.html">DeleteControl</a>
-         * (see also: <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-controls.html">Deleting
-         * a custom control</a> in the <i>Audit Manager User Guide</i>)</p> </li> </ul>
-         * <p>At this time, Audit Manager doesn't provide an option to delete evidence. All
-         * available delete operations are listed above.</p> <p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeregisterOrganizationAdminAccount">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeregisterOrganizationAdminAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeregisterOrganizationAdminAccountOutcomeCallable DeregisterOrganizationAdminAccountCallable(const Model::DeregisterOrganizationAdminAccountRequest& request) const;
 
         /**
-         * <p>Removes the specified Amazon Web Services account as a delegated
-         * administrator for Audit Manager. </p>  <p>When you remove a delegated
-         * administrator from your Audit Manager settings, you continue to have access to
-         * the evidence that you previously collected under that account. This is also the
-         * case when you deregister a delegated administrator from Organizations. However,
-         * Audit Manager will stop collecting and attaching evidence to that delegated
-         * administrator account moving forward.</p>   <p>When you
-         * deregister a delegated administrator account for Audit Manager, the data for
-         * that account isn’t deleted. If you want to delete resource data for a delegated
-         * administrator account, you must perform that task separately before you
-         * deregister the account. Either, you can do this in the Audit Manager console.
-         * Or, you can use one of the delete API operations that are provided by Audit
-         * Manager. </p> <p>To delete your Audit Manager resource data, see the following
-         * instructions: </p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessment.html">DeleteAssessment</a>
-         * (see also: <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-assessment.html">Deleting
-         * an assessment</a> in the <i>Audit Manager User Guide</i>)</p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFramework.html">DeleteAssessmentFramework</a>
-         * (see also: <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-custom-framework.html">Deleting
-         * a custom framework</a> in the <i>Audit Manager User Guide</i>)</p> </li> <li>
-         * <p> <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFrameworkShare.html">DeleteAssessmentFrameworkShare</a>
-         * (see also: <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/deleting-shared-framework-requests.html">Deleting
-         * a share request</a> in the <i>Audit Manager User Guide</i>)</p> </li> <li> <p>
-         * <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentReport.html">DeleteAssessmentReport</a>
-         * (see also: <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#delete-assessment-report-steps">Deleting
-         * an assessment report</a> in the <i>Audit Manager User Guide</i>)</p> </li> <li>
-         * <p> <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteControl.html">DeleteControl</a>
-         * (see also: <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-controls.html">Deleting
-         * a custom control</a> in the <i>Audit Manager User Guide</i>)</p> </li> </ul>
-         * <p>At this time, Audit Manager doesn't provide an option to delete evidence. All
-         * available delete operations are listed above.</p> <p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeregisterOrganizationAdminAccount">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeregisterOrganizationAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeregisterOrganizationAdminAccountAsync(const Model::DeregisterOrganizationAdminAccountRequest& request, const DeregisterOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1151,22 +815,12 @@ namespace Model
         virtual Model::DisassociateAssessmentReportEvidenceFolderOutcome DisassociateAssessmentReportEvidenceFolder(const Model::DisassociateAssessmentReportEvidenceFolderRequest& request) const;
 
         /**
-         * <p> Disassociates an evidence folder from the specified assessment report in
-         * Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DisassociateAssessmentReportEvidenceFolder">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisassociateAssessmentReportEvidenceFolder that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateAssessmentReportEvidenceFolderOutcomeCallable DisassociateAssessmentReportEvidenceFolderCallable(const Model::DisassociateAssessmentReportEvidenceFolderRequest& request) const;
 
         /**
-         * <p> Disassociates an evidence folder from the specified assessment report in
-         * Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DisassociateAssessmentReportEvidenceFolder">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisassociateAssessmentReportEvidenceFolder that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateAssessmentReportEvidenceFolderAsync(const Model::DisassociateAssessmentReportEvidenceFolderRequest& request, const DisassociateAssessmentReportEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1179,22 +833,12 @@ namespace Model
         virtual Model::GetAccountStatusOutcome GetAccountStatus(const Model::GetAccountStatusRequest& request) const;
 
         /**
-         * <p> Returns the registration status of an account in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAccountStatus">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetAccountStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetAccountStatusOutcomeCallable GetAccountStatusCallable(const Model::GetAccountStatusRequest& request) const;
 
         /**
-         * <p> Returns the registration status of an account in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAccountStatus">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetAccountStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetAccountStatusAsync(const Model::GetAccountStatusRequest& request, const GetAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1206,20 +850,12 @@ namespace Model
         virtual Model::GetAssessmentOutcome GetAssessment(const Model::GetAssessmentRequest& request) const;
 
         /**
-         * <p>Returns an assessment from Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetAssessmentOutcomeCallable GetAssessmentCallable(const Model::GetAssessmentRequest& request) const;
 
         /**
-         * <p>Returns an assessment from Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetAssessmentAsync(const Model::GetAssessmentRequest& request, const GetAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1231,20 +867,12 @@ namespace Model
         virtual Model::GetAssessmentFrameworkOutcome GetAssessmentFramework(const Model::GetAssessmentFrameworkRequest& request) const;
 
         /**
-         * <p>Returns a framework from Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessmentFramework">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetAssessmentFramework that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetAssessmentFrameworkOutcomeCallable GetAssessmentFrameworkCallable(const Model::GetAssessmentFrameworkRequest& request) const;
 
         /**
-         * <p>Returns a framework from Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessmentFramework">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetAssessmentFramework that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetAssessmentFrameworkAsync(const Model::GetAssessmentFrameworkRequest& request, const GetAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1257,22 +885,12 @@ namespace Model
         virtual Model::GetAssessmentReportUrlOutcome GetAssessmentReportUrl(const Model::GetAssessmentReportUrlRequest& request) const;
 
         /**
-         * <p> Returns the URL of an assessment report in Audit Manager. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessmentReportUrl">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetAssessmentReportUrl that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetAssessmentReportUrlOutcomeCallable GetAssessmentReportUrlCallable(const Model::GetAssessmentReportUrlRequest& request) const;
 
         /**
-         * <p> Returns the URL of an assessment report in Audit Manager. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessmentReportUrl">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetAssessmentReportUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetAssessmentReportUrlAsync(const Model::GetAssessmentReportUrlRequest& request, const GetAssessmentReportUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1285,22 +903,12 @@ namespace Model
         virtual Model::GetChangeLogsOutcome GetChangeLogs(const Model::GetChangeLogsRequest& request) const;
 
         /**
-         * <p> Returns a list of changelogs from Audit Manager. </p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetChangeLogs">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetChangeLogs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetChangeLogsOutcomeCallable GetChangeLogsCallable(const Model::GetChangeLogsRequest& request) const;
 
         /**
-         * <p> Returns a list of changelogs from Audit Manager. </p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetChangeLogs">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetChangeLogs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetChangeLogsAsync(const Model::GetChangeLogsRequest& request, const GetChangeLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1312,20 +920,12 @@ namespace Model
         virtual Model::GetControlOutcome GetControl(const Model::GetControlRequest& request) const;
 
         /**
-         * <p> Returns a control from Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetControl">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetControl that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetControlOutcomeCallable GetControlCallable(const Model::GetControlRequest& request) const;
 
         /**
-         * <p> Returns a control from Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetControl">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetControl that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetControlAsync(const Model::GetControlRequest& request, const GetControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1338,22 +938,12 @@ namespace Model
         virtual Model::GetDelegationsOutcome GetDelegations(const Model::GetDelegationsRequest& request) const;
 
         /**
-         * <p> Returns a list of delegations from an audit owner to a delegate.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetDelegations">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetDelegations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDelegationsOutcomeCallable GetDelegationsCallable(const Model::GetDelegationsRequest& request) const;
 
         /**
-         * <p> Returns a list of delegations from an audit owner to a delegate.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetDelegations">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetDelegations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDelegationsAsync(const Model::GetDelegationsRequest& request, const GetDelegationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1365,20 +955,12 @@ namespace Model
         virtual Model::GetEvidenceOutcome GetEvidence(const Model::GetEvidenceRequest& request) const;
 
         /**
-         * <p> Returns evidence from Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidence">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetEvidence that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetEvidenceOutcomeCallable GetEvidenceCallable(const Model::GetEvidenceRequest& request) const;
 
         /**
-         * <p> Returns evidence from Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidence">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetEvidence that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetEvidenceAsync(const Model::GetEvidenceRequest& request, const GetEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1391,22 +973,12 @@ namespace Model
         virtual Model::GetEvidenceByEvidenceFolderOutcome GetEvidenceByEvidenceFolder(const Model::GetEvidenceByEvidenceFolderRequest& request) const;
 
         /**
-         * <p> Returns all evidence from a specified evidence folder in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceByEvidenceFolder">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetEvidenceByEvidenceFolder that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetEvidenceByEvidenceFolderOutcomeCallable GetEvidenceByEvidenceFolderCallable(const Model::GetEvidenceByEvidenceFolderRequest& request) const;
 
         /**
-         * <p> Returns all evidence from a specified evidence folder in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceByEvidenceFolder">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetEvidenceByEvidenceFolder that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetEvidenceByEvidenceFolderAsync(const Model::GetEvidenceByEvidenceFolderRequest& request, const GetEvidenceByEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1419,22 +991,12 @@ namespace Model
         virtual Model::GetEvidenceFolderOutcome GetEvidenceFolder(const Model::GetEvidenceFolderRequest& request) const;
 
         /**
-         * <p> Returns an evidence folder from the specified assessment in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFolder">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetEvidenceFolder that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetEvidenceFolderOutcomeCallable GetEvidenceFolderCallable(const Model::GetEvidenceFolderRequest& request) const;
 
         /**
-         * <p> Returns an evidence folder from the specified assessment in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFolder">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetEvidenceFolder that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetEvidenceFolderAsync(const Model::GetEvidenceFolderRequest& request, const GetEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1447,22 +1009,12 @@ namespace Model
         virtual Model::GetEvidenceFoldersByAssessmentOutcome GetEvidenceFoldersByAssessment(const Model::GetEvidenceFoldersByAssessmentRequest& request) const;
 
         /**
-         * <p> Returns the evidence folders from a specified assessment in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFoldersByAssessment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetEvidenceFoldersByAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetEvidenceFoldersByAssessmentOutcomeCallable GetEvidenceFoldersByAssessmentCallable(const Model::GetEvidenceFoldersByAssessmentRequest& request) const;
 
         /**
-         * <p> Returns the evidence folders from a specified assessment in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFoldersByAssessment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetEvidenceFoldersByAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetEvidenceFoldersByAssessmentAsync(const Model::GetEvidenceFoldersByAssessmentRequest& request, const GetEvidenceFoldersByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1475,22 +1027,12 @@ namespace Model
         virtual Model::GetEvidenceFoldersByAssessmentControlOutcome GetEvidenceFoldersByAssessmentControl(const Model::GetEvidenceFoldersByAssessmentControlRequest& request) const;
 
         /**
-         * <p> Returns a list of evidence folders that are associated with a specified
-         * control of an assessment in Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFoldersByAssessmentControl">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetEvidenceFoldersByAssessmentControl that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetEvidenceFoldersByAssessmentControlOutcomeCallable GetEvidenceFoldersByAssessmentControlCallable(const Model::GetEvidenceFoldersByAssessmentControlRequest& request) const;
 
         /**
-         * <p> Returns a list of evidence folders that are associated with a specified
-         * control of an assessment in Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFoldersByAssessmentControl">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetEvidenceFoldersByAssessmentControl that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetEvidenceFoldersByAssessmentControlAsync(const Model::GetEvidenceFoldersByAssessmentControlRequest& request, const GetEvidenceFoldersByAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1503,22 +1045,12 @@ namespace Model
         virtual Model::GetInsightsOutcome GetInsights(const Model::GetInsightsRequest& request) const;
 
         /**
-         * <p>Gets the latest analytics data for all your current active assessments.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsights">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetInsights that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetInsightsOutcomeCallable GetInsightsCallable(const Model::GetInsightsRequest& request) const;
 
         /**
-         * <p>Gets the latest analytics data for all your current active assessments.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsights">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetInsights that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetInsightsAsync(const Model::GetInsightsRequest& request, const GetInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1531,22 +1063,12 @@ namespace Model
         virtual Model::GetInsightsByAssessmentOutcome GetInsightsByAssessment(const Model::GetInsightsByAssessmentRequest& request) const;
 
         /**
-         * <p>Gets the latest analytics data for a specific active assessment.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsightsByAssessment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetInsightsByAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetInsightsByAssessmentOutcomeCallable GetInsightsByAssessmentCallable(const Model::GetInsightsByAssessmentRequest& request) const;
 
         /**
-         * <p>Gets the latest analytics data for a specific active assessment.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsightsByAssessment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetInsightsByAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetInsightsByAssessmentAsync(const Model::GetInsightsByAssessmentRequest& request, const GetInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1559,22 +1081,12 @@ namespace Model
         virtual Model::GetOrganizationAdminAccountOutcome GetOrganizationAdminAccount(const Model::GetOrganizationAdminAccountRequest& request) const;
 
         /**
-         * <p> Returns the name of the delegated Amazon Web Services administrator account
-         * for the organization. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetOrganizationAdminAccount">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetOrganizationAdminAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetOrganizationAdminAccountOutcomeCallable GetOrganizationAdminAccountCallable(const Model::GetOrganizationAdminAccountRequest& request) const;
 
         /**
-         * <p> Returns the name of the delegated Amazon Web Services administrator account
-         * for the organization. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetOrganizationAdminAccount">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetOrganizationAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetOrganizationAdminAccountAsync(const Model::GetOrganizationAdminAccountRequest& request, const GetOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1587,22 +1099,12 @@ namespace Model
         virtual Model::GetServicesInScopeOutcome GetServicesInScope(const Model::GetServicesInScopeRequest& request) const;
 
         /**
-         * <p> Returns a list of the in-scope Amazon Web Services services for the
-         * specified assessment. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetServicesInScope">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetServicesInScope that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetServicesInScopeOutcomeCallable GetServicesInScopeCallable(const Model::GetServicesInScopeRequest& request) const;
 
         /**
-         * <p> Returns a list of the in-scope Amazon Web Services services for the
-         * specified assessment. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetServicesInScope">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetServicesInScope that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetServicesInScopeAsync(const Model::GetServicesInScopeRequest& request, const GetServicesInScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1615,22 +1117,12 @@ namespace Model
         virtual Model::GetSettingsOutcome GetSettings(const Model::GetSettingsRequest& request) const;
 
         /**
-         * <p> Returns the settings for the specified Amazon Web Services account.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetSettings">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetSettingsOutcomeCallable GetSettingsCallable(const Model::GetSettingsRequest& request) const;
 
         /**
-         * <p> Returns the settings for the specified Amazon Web Services account.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetSettings">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSettingsAsync(const Model::GetSettingsRequest& request, const GetSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1648,32 +1140,12 @@ namespace Model
         virtual Model::ListAssessmentControlInsightsByControlDomainOutcome ListAssessmentControlInsightsByControlDomain(const Model::ListAssessmentControlInsightsByControlDomainRequest& request) const;
 
         /**
-         * <p>Lists the latest analytics data for controls within a specific control domain
-         * and a specific active assessment.</p>  <p>Control insights are listed only
-         * if the control belongs to the control domain and assessment that was specified.
-         * Moreover, the control must have collected evidence on the
-         * <code>lastUpdated</code> date of <code>controlInsightsByAssessment</code>. If
-         * neither of these conditions are met, no data is listed for that control. </p>
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentControlInsightsByControlDomain">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListAssessmentControlInsightsByControlDomain that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAssessmentControlInsightsByControlDomainOutcomeCallable ListAssessmentControlInsightsByControlDomainCallable(const Model::ListAssessmentControlInsightsByControlDomainRequest& request) const;
 
         /**
-         * <p>Lists the latest analytics data for controls within a specific control domain
-         * and a specific active assessment.</p>  <p>Control insights are listed only
-         * if the control belongs to the control domain and assessment that was specified.
-         * Moreover, the control must have collected evidence on the
-         * <code>lastUpdated</code> date of <code>controlInsightsByAssessment</code>. If
-         * neither of these conditions are met, no data is listed for that control. </p>
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentControlInsightsByControlDomain">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListAssessmentControlInsightsByControlDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAssessmentControlInsightsByControlDomainAsync(const Model::ListAssessmentControlInsightsByControlDomainRequest& request, const ListAssessmentControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1686,22 +1158,12 @@ namespace Model
         virtual Model::ListAssessmentFrameworkShareRequestsOutcome ListAssessmentFrameworkShareRequests(const Model::ListAssessmentFrameworkShareRequestsRequest& request) const;
 
         /**
-         * <p> Returns a list of sent or received share requests for custom frameworks in
-         * Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentFrameworkShareRequests">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListAssessmentFrameworkShareRequests that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAssessmentFrameworkShareRequestsOutcomeCallable ListAssessmentFrameworkShareRequestsCallable(const Model::ListAssessmentFrameworkShareRequestsRequest& request) const;
 
         /**
-         * <p> Returns a list of sent or received share requests for custom frameworks in
-         * Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentFrameworkShareRequests">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListAssessmentFrameworkShareRequests that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAssessmentFrameworkShareRequestsAsync(const Model::ListAssessmentFrameworkShareRequestsRequest& request, const ListAssessmentFrameworkShareRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1714,22 +1176,12 @@ namespace Model
         virtual Model::ListAssessmentFrameworksOutcome ListAssessmentFrameworks(const Model::ListAssessmentFrameworksRequest& request) const;
 
         /**
-         * <p> Returns a list of the frameworks that are available in the Audit Manager
-         * framework library. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentFrameworks">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListAssessmentFrameworks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAssessmentFrameworksOutcomeCallable ListAssessmentFrameworksCallable(const Model::ListAssessmentFrameworksRequest& request) const;
 
         /**
-         * <p> Returns a list of the frameworks that are available in the Audit Manager
-         * framework library. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentFrameworks">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListAssessmentFrameworks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAssessmentFrameworksAsync(const Model::ListAssessmentFrameworksRequest& request, const ListAssessmentFrameworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1742,22 +1194,12 @@ namespace Model
         virtual Model::ListAssessmentReportsOutcome ListAssessmentReports(const Model::ListAssessmentReportsRequest& request) const;
 
         /**
-         * <p> Returns a list of assessment reports created in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentReports">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListAssessmentReports that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAssessmentReportsOutcomeCallable ListAssessmentReportsCallable(const Model::ListAssessmentReportsRequest& request) const;
 
         /**
-         * <p> Returns a list of assessment reports created in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentReports">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListAssessmentReports that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAssessmentReportsAsync(const Model::ListAssessmentReportsRequest& request, const ListAssessmentReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1770,22 +1212,12 @@ namespace Model
         virtual Model::ListAssessmentsOutcome ListAssessments(const Model::ListAssessmentsRequest& request) const;
 
         /**
-         * <p> Returns a list of current and past assessments from Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessments">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListAssessments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAssessmentsOutcomeCallable ListAssessmentsCallable(const Model::ListAssessmentsRequest& request) const;
 
         /**
-         * <p> Returns a list of current and past assessments from Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessments">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListAssessments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAssessmentsAsync(const Model::ListAssessmentsRequest& request, const ListAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1802,30 +1234,12 @@ namespace Model
         virtual Model::ListControlDomainInsightsOutcome ListControlDomainInsights(const Model::ListControlDomainInsightsRequest& request) const;
 
         /**
-         * <p>Lists the latest analytics data for control domains across all of your active
-         * assessments. </p>  <p>A control domain is listed only if at least one of
-         * the controls within that domain collected evidence on the
-         * <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If this
-         * condition isn’t met, no data is listed for that control domain.</p>
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsights">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListControlDomainInsights that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListControlDomainInsightsOutcomeCallable ListControlDomainInsightsCallable(const Model::ListControlDomainInsightsRequest& request) const;
 
         /**
-         * <p>Lists the latest analytics data for control domains across all of your active
-         * assessments. </p>  <p>A control domain is listed only if at least one of
-         * the controls within that domain collected evidence on the
-         * <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If this
-         * condition isn’t met, no data is listed for that control domain.</p>
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsights">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListControlDomainInsights that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListControlDomainInsightsAsync(const Model::ListControlDomainInsightsRequest& request, const ListControlDomainInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1841,28 +1255,12 @@ namespace Model
         virtual Model::ListControlDomainInsightsByAssessmentOutcome ListControlDomainInsightsByAssessment(const Model::ListControlDomainInsightsByAssessmentRequest& request) const;
 
         /**
-         * <p>Lists analytics data for control domains within a specified active
-         * assessment.</p>  <p>A control domain is listed only if at least one of the
-         * controls within that domain collected evidence on the <code>lastUpdated</code>
-         * date of <code>controlDomainInsights</code>. If this condition isn’t met, no data
-         * is listed for that domain.</p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsightsByAssessment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListControlDomainInsightsByAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListControlDomainInsightsByAssessmentOutcomeCallable ListControlDomainInsightsByAssessmentCallable(const Model::ListControlDomainInsightsByAssessmentRequest& request) const;
 
         /**
-         * <p>Lists analytics data for control domains within a specified active
-         * assessment.</p>  <p>A control domain is listed only if at least one of the
-         * controls within that domain collected evidence on the <code>lastUpdated</code>
-         * date of <code>controlDomainInsights</code>. If this condition isn’t met, no data
-         * is listed for that domain.</p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsightsByAssessment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListControlDomainInsightsByAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListControlDomainInsightsByAssessmentAsync(const Model::ListControlDomainInsightsByAssessmentRequest& request, const ListControlDomainInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1879,30 +1277,12 @@ namespace Model
         virtual Model::ListControlInsightsByControlDomainOutcome ListControlInsightsByControlDomain(const Model::ListControlInsightsByControlDomainRequest& request) const;
 
         /**
-         * <p>Lists the latest analytics data for controls within a specific control domain
-         * across all active assessments.</p>  <p>Control insights are listed only if
-         * the control belongs to the control domain that was specified and the control
-         * collected evidence on the <code>lastUpdated</code> date of
-         * <code>controlInsightsMetadata</code>. If neither of these conditions are met, no
-         * data is listed for that control. </p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlInsightsByControlDomain">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListControlInsightsByControlDomain that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListControlInsightsByControlDomainOutcomeCallable ListControlInsightsByControlDomainCallable(const Model::ListControlInsightsByControlDomainRequest& request) const;
 
         /**
-         * <p>Lists the latest analytics data for controls within a specific control domain
-         * across all active assessments.</p>  <p>Control insights are listed only if
-         * the control belongs to the control domain that was specified and the control
-         * collected evidence on the <code>lastUpdated</code> date of
-         * <code>controlInsightsMetadata</code>. If neither of these conditions are met, no
-         * data is listed for that control. </p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlInsightsByControlDomain">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListControlInsightsByControlDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListControlInsightsByControlDomainAsync(const Model::ListControlInsightsByControlDomainRequest& request, const ListControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1915,22 +1295,12 @@ namespace Model
         virtual Model::ListControlsOutcome ListControls(const Model::ListControlsRequest& request) const;
 
         /**
-         * <p> Returns a list of controls from Audit Manager. </p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControls">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListControls that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListControlsOutcomeCallable ListControlsCallable(const Model::ListControlsRequest& request) const;
 
         /**
-         * <p> Returns a list of controls from Audit Manager. </p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControls">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListControls that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListControlsAsync(const Model::ListControlsRequest& request, const ListControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1943,22 +1313,12 @@ namespace Model
         virtual Model::ListKeywordsForDataSourceOutcome ListKeywordsForDataSource(const Model::ListKeywordsForDataSourceRequest& request) const;
 
         /**
-         * <p> Returns a list of keywords that are pre-mapped to the specified control data
-         * source. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListKeywordsForDataSource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListKeywordsForDataSource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListKeywordsForDataSourceOutcomeCallable ListKeywordsForDataSourceCallable(const Model::ListKeywordsForDataSourceRequest& request) const;
 
         /**
-         * <p> Returns a list of keywords that are pre-mapped to the specified control data
-         * source. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListKeywordsForDataSource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListKeywordsForDataSource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListKeywordsForDataSourceAsync(const Model::ListKeywordsForDataSourceRequest& request, const ListKeywordsForDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1971,22 +1331,12 @@ namespace Model
         virtual Model::ListNotificationsOutcome ListNotifications(const Model::ListNotificationsRequest& request) const;
 
         /**
-         * <p> Returns a list of all Audit Manager notifications. </p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListNotifications">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListNotifications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListNotificationsOutcomeCallable ListNotificationsCallable(const Model::ListNotificationsRequest& request) const;
 
         /**
-         * <p> Returns a list of all Audit Manager notifications. </p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListNotifications">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListNotifications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListNotificationsAsync(const Model::ListNotificationsRequest& request, const ListNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1999,22 +1349,12 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p> Returns a list of tags for the specified resource in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p> Returns a list of tags for the specified resource in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2027,22 +1367,12 @@ namespace Model
         virtual Model::RegisterAccountOutcome RegisterAccount(const Model::RegisterAccountRequest& request) const;
 
         /**
-         * <p> Enables Audit Manager for the specified Amazon Web Services account.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/RegisterAccount">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for RegisterAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RegisterAccountOutcomeCallable RegisterAccountCallable(const Model::RegisterAccountRequest& request) const;
 
         /**
-         * <p> Enables Audit Manager for the specified Amazon Web Services account.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/RegisterAccount">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for RegisterAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RegisterAccountAsync(const Model::RegisterAccountRequest& request, const RegisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2055,22 +1385,12 @@ namespace Model
         virtual Model::RegisterOrganizationAdminAccountOutcome RegisterOrganizationAdminAccount(const Model::RegisterOrganizationAdminAccountRequest& request) const;
 
         /**
-         * <p> Enables an Amazon Web Services account within the organization as the
-         * delegated administrator for Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/RegisterOrganizationAdminAccount">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for RegisterOrganizationAdminAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RegisterOrganizationAdminAccountOutcomeCallable RegisterOrganizationAdminAccountCallable(const Model::RegisterOrganizationAdminAccountRequest& request) const;
 
         /**
-         * <p> Enables an Amazon Web Services account within the organization as the
-         * delegated administrator for Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/RegisterOrganizationAdminAccount">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for RegisterOrganizationAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RegisterOrganizationAdminAccountAsync(const Model::RegisterOrganizationAdminAccountRequest& request, const RegisterOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2095,46 +1415,12 @@ namespace Model
         virtual Model::StartAssessmentFrameworkShareOutcome StartAssessmentFrameworkShare(const Model::StartAssessmentFrameworkShareRequest& request) const;
 
         /**
-         * <p> Creates a share request for a custom framework in Audit Manager. </p> <p>The
-         * share request specifies a recipient and notifies them that a custom framework is
-         * available. Recipients have 120 days to accept or decline the request. If no
-         * action is taken, the share request expires.</p>  <p>When you invoke
-         * the <code>StartAssessmentFrameworkShare</code> API, you are about to share a
-         * custom framework with another Amazon Web Services account. You may not share a
-         * custom framework that is derived from a standard framework if the standard
-         * framework is designated as not eligible for sharing by Amazon Web Services,
-         * unless you have obtained permission to do so from the owner of the standard
-         * framework. To learn more about which standard frameworks are eligible for
-         * sharing, see <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/share-custom-framework-concepts-and-terminology.html#eligibility">Framework
-         * sharing eligibility</a> in the <i>Audit Manager User Guide</i>.</p>
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/StartAssessmentFrameworkShare">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StartAssessmentFrameworkShare that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartAssessmentFrameworkShareOutcomeCallable StartAssessmentFrameworkShareCallable(const Model::StartAssessmentFrameworkShareRequest& request) const;
 
         /**
-         * <p> Creates a share request for a custom framework in Audit Manager. </p> <p>The
-         * share request specifies a recipient and notifies them that a custom framework is
-         * available. Recipients have 120 days to accept or decline the request. If no
-         * action is taken, the share request expires.</p>  <p>When you invoke
-         * the <code>StartAssessmentFrameworkShare</code> API, you are about to share a
-         * custom framework with another Amazon Web Services account. You may not share a
-         * custom framework that is derived from a standard framework if the standard
-         * framework is designated as not eligible for sharing by Amazon Web Services,
-         * unless you have obtained permission to do so from the owner of the standard
-         * framework. To learn more about which standard frameworks are eligible for
-         * sharing, see <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/share-custom-framework-concepts-and-terminology.html#eligibility">Framework
-         * sharing eligibility</a> in the <i>Audit Manager User Guide</i>.</p>
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/StartAssessmentFrameworkShare">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StartAssessmentFrameworkShare that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartAssessmentFrameworkShareAsync(const Model::StartAssessmentFrameworkShareRequest& request, const StartAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2146,20 +1432,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p> Tags the specified resource in Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p> Tags the specified resource in Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2172,22 +1450,12 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p> Removes a tag from a resource in Audit Manager. </p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p> Removes a tag from a resource in Audit Manager. </p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2199,20 +1467,12 @@ namespace Model
         virtual Model::UpdateAssessmentOutcome UpdateAssessment(const Model::UpdateAssessmentRequest& request) const;
 
         /**
-         * <p> Edits an Audit Manager assessment. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateAssessmentOutcomeCallable UpdateAssessmentCallable(const Model::UpdateAssessmentRequest& request) const;
 
         /**
-         * <p> Edits an Audit Manager assessment. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateAssessmentAsync(const Model::UpdateAssessmentRequest& request, const UpdateAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2225,22 +1485,12 @@ namespace Model
         virtual Model::UpdateAssessmentControlOutcome UpdateAssessmentControl(const Model::UpdateAssessmentControlRequest& request) const;
 
         /**
-         * <p> Updates a control within an assessment in Audit Manager. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentControl">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateAssessmentControl that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateAssessmentControlOutcomeCallable UpdateAssessmentControlCallable(const Model::UpdateAssessmentControlRequest& request) const;
 
         /**
-         * <p> Updates a control within an assessment in Audit Manager. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentControl">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateAssessmentControl that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateAssessmentControlAsync(const Model::UpdateAssessmentControlRequest& request, const UpdateAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2253,22 +1503,12 @@ namespace Model
         virtual Model::UpdateAssessmentControlSetStatusOutcome UpdateAssessmentControlSetStatus(const Model::UpdateAssessmentControlSetStatusRequest& request) const;
 
         /**
-         * <p> Updates the status of a control set in an Audit Manager assessment.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentControlSetStatus">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateAssessmentControlSetStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateAssessmentControlSetStatusOutcomeCallable UpdateAssessmentControlSetStatusCallable(const Model::UpdateAssessmentControlSetStatusRequest& request) const;
 
         /**
-         * <p> Updates the status of a control set in an Audit Manager assessment.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentControlSetStatus">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateAssessmentControlSetStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateAssessmentControlSetStatusAsync(const Model::UpdateAssessmentControlSetStatusRequest& request, const UpdateAssessmentControlSetStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2280,20 +1520,12 @@ namespace Model
         virtual Model::UpdateAssessmentFrameworkOutcome UpdateAssessmentFramework(const Model::UpdateAssessmentFrameworkRequest& request) const;
 
         /**
-         * <p> Updates a custom framework in Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentFramework">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateAssessmentFramework that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateAssessmentFrameworkOutcomeCallable UpdateAssessmentFrameworkCallable(const Model::UpdateAssessmentFrameworkRequest& request) const;
 
         /**
-         * <p> Updates a custom framework in Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentFramework">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateAssessmentFramework that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateAssessmentFrameworkAsync(const Model::UpdateAssessmentFrameworkRequest& request, const UpdateAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2306,22 +1538,12 @@ namespace Model
         virtual Model::UpdateAssessmentFrameworkShareOutcome UpdateAssessmentFrameworkShare(const Model::UpdateAssessmentFrameworkShareRequest& request) const;
 
         /**
-         * <p> Updates a share request for a custom framework in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentFrameworkShare">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateAssessmentFrameworkShare that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateAssessmentFrameworkShareOutcomeCallable UpdateAssessmentFrameworkShareCallable(const Model::UpdateAssessmentFrameworkShareRequest& request) const;
 
         /**
-         * <p> Updates a share request for a custom framework in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentFrameworkShare">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateAssessmentFrameworkShare that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateAssessmentFrameworkShareAsync(const Model::UpdateAssessmentFrameworkShareRequest& request, const UpdateAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2334,22 +1556,12 @@ namespace Model
         virtual Model::UpdateAssessmentStatusOutcome UpdateAssessmentStatus(const Model::UpdateAssessmentStatusRequest& request) const;
 
         /**
-         * <p> Updates the status of an assessment in Audit Manager. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentStatus">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateAssessmentStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateAssessmentStatusOutcomeCallable UpdateAssessmentStatusCallable(const Model::UpdateAssessmentStatusRequest& request) const;
 
         /**
-         * <p> Updates the status of an assessment in Audit Manager. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentStatus">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateAssessmentStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateAssessmentStatusAsync(const Model::UpdateAssessmentStatusRequest& request, const UpdateAssessmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2361,20 +1573,12 @@ namespace Model
         virtual Model::UpdateControlOutcome UpdateControl(const Model::UpdateControlRequest& request) const;
 
         /**
-         * <p> Updates a custom control in Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateControl">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateControl that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateControlOutcomeCallable UpdateControlCallable(const Model::UpdateControlRequest& request) const;
 
         /**
-         * <p> Updates a custom control in Audit Manager. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateControl">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateControl that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateControlAsync(const Model::UpdateControlRequest& request, const UpdateControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2387,22 +1591,12 @@ namespace Model
         virtual Model::UpdateSettingsOutcome UpdateSettings(const Model::UpdateSettingsRequest& request) const;
 
         /**
-         * <p> Updates Audit Manager settings for the current user account. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateSettings">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateSettingsOutcomeCallable UpdateSettingsCallable(const Model::UpdateSettingsRequest& request) const;
 
         /**
-         * <p> Updates Audit Manager settings for the current user account. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateSettings">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateSettingsAsync(const Model::UpdateSettingsRequest& request, const UpdateSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2415,22 +1609,12 @@ namespace Model
         virtual Model::ValidateAssessmentReportIntegrityOutcome ValidateAssessmentReportIntegrity(const Model::ValidateAssessmentReportIntegrityRequest& request) const;
 
         /**
-         * <p> Validates the integrity of an assessment report in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ValidateAssessmentReportIntegrity">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ValidateAssessmentReportIntegrity that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ValidateAssessmentReportIntegrityOutcomeCallable ValidateAssessmentReportIntegrityCallable(const Model::ValidateAssessmentReportIntegrityRequest& request) const;
 
         /**
-         * <p> Validates the integrity of an assessment report in Audit Manager.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ValidateAssessmentReportIntegrity">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ValidateAssessmentReportIntegrity that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ValidateAssessmentReportIntegrityAsync(const Model::ValidateAssessmentReportIntegrityRequest& request, const ValidateAssessmentReportIntegrityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

@@ -121,32 +121,12 @@ namespace Model
         virtual Model::CreateEndpointOutcome CreateEndpoint(const Model::CreateEndpointRequest& request) const;
 
         /**
-         * <p>Creates an endpoint and associates it with the specified Outpost.</p> 
-         * <p>It can take up to 5 minutes for this action to finish.</p>  <p/>
-         * <p>Related actions include:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a>
-         * </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/CreateEndpoint">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateEndpointOutcomeCallable CreateEndpointCallable(const Model::CreateEndpointRequest& request) const;
 
         /**
-         * <p>Creates an endpoint and associates it with the specified Outpost.</p> 
-         * <p>It can take up to 5 minutes for this action to finish.</p>  <p/>
-         * <p>Related actions include:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a>
-         * </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/CreateEndpoint">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateEndpointAsync(const Model::CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -164,32 +144,12 @@ namespace Model
         virtual Model::DeleteEndpointOutcome DeleteEndpoint(const Model::DeleteEndpointRequest& request) const;
 
         /**
-         * <p>Deletes an endpoint.</p>  <p>It can take up to 5 minutes for this
-         * action to finish.</p>  <p/> <p>Related actions include:</p> <ul> <li> <p>
-         * <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a>
-         * </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/DeleteEndpoint">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteEndpointOutcomeCallable DeleteEndpointCallable(const Model::DeleteEndpointRequest& request) const;
 
         /**
-         * <p>Deletes an endpoint.</p>  <p>It can take up to 5 minutes for this
-         * action to finish.</p>  <p/> <p>Related actions include:</p> <ul> <li> <p>
-         * <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a>
-         * </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/DeleteEndpoint">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteEndpointAsync(const Model::DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -206,30 +166,12 @@ namespace Model
         virtual Model::ListEndpointsOutcome ListEndpoints(const Model::ListEndpointsRequest& request) const;
 
         /**
-         * <p>Lists endpoints associated with the specified Outpost. </p> <p>Related
-         * actions include:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a>
-         * </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListEndpoints">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListEndpointsOutcomeCallable ListEndpointsCallable(const Model::ListEndpointsRequest& request) const;
 
         /**
-         * <p>Lists endpoints associated with the specified Outpost. </p> <p>Related
-         * actions include:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a>
-         * </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListEndpoints">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListEndpointsAsync(const Model::ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -247,32 +189,12 @@ namespace Model
         virtual Model::ListSharedEndpointsOutcome ListSharedEndpoints(const Model::ListSharedEndpointsRequest& request) const;
 
         /**
-         * <p>Lists all endpoints associated with an Outpost that has been shared by Amazon
-         * Web Services Resource Access Manager (RAM).</p> <p>Related actions include:</p>
-         * <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a>
-         * </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListSharedEndpoints">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListSharedEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListSharedEndpointsOutcomeCallable ListSharedEndpointsCallable(const Model::ListSharedEndpointsRequest& request) const;
 
         /**
-         * <p>Lists all endpoints associated with an Outpost that has been shared by Amazon
-         * Web Services Resource Access Manager (RAM).</p> <p>Related actions include:</p>
-         * <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a>
-         * </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListSharedEndpoints">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListSharedEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListSharedEndpointsAsync(const Model::ListSharedEndpointsRequest& request, const ListSharedEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

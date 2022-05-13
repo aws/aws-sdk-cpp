@@ -192,24 +192,12 @@ namespace Model
         virtual Model::CancelJobRunOutcome CancelJobRun(const Model::CancelJobRunRequest& request) const;
 
         /**
-         * <p>Cancels a job run. A job run is a unit of work, such as a Spark jar, PySpark
-         * script, or SparkSQL query, that you submit to Amazon EMR on EKS.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CancelJobRun">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CancelJobRun that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CancelJobRunOutcomeCallable CancelJobRunCallable(const Model::CancelJobRunRequest& request) const;
 
         /**
-         * <p>Cancels a job run. A job run is a unit of work, such as a Spark jar, PySpark
-         * script, or SparkSQL query, that you submit to Amazon EMR on EKS.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CancelJobRun">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CancelJobRun that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CancelJobRunAsync(const Model::CancelJobRunRequest& request, const CancelJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -223,24 +211,12 @@ namespace Model
         virtual Model::CreateManagedEndpointOutcome CreateManagedEndpoint(const Model::CreateManagedEndpointRequest& request) const;
 
         /**
-         * <p>Creates a managed endpoint. A managed endpoint is a gateway that connects EMR
-         * Studio to Amazon EMR on EKS so that EMR Studio can communicate with your virtual
-         * cluster.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateManagedEndpoint">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateManagedEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateManagedEndpointOutcomeCallable CreateManagedEndpointCallable(const Model::CreateManagedEndpointRequest& request) const;
 
         /**
-         * <p>Creates a managed endpoint. A managed endpoint is a gateway that connects EMR
-         * Studio to Amazon EMR on EKS so that EMR Studio can communicate with your virtual
-         * cluster.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateManagedEndpoint">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateManagedEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateManagedEndpointAsync(const Model::CreateManagedEndpointRequest& request, const CreateManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -257,30 +233,12 @@ namespace Model
         virtual Model::CreateVirtualClusterOutcome CreateVirtualCluster(const Model::CreateVirtualClusterRequest& request) const;
 
         /**
-         * <p>Creates a virtual cluster. Virtual cluster is a managed entity on Amazon EMR
-         * on EKS. You can create, describe, list and delete virtual clusters. They do not
-         * consume any additional resource in your system. A single virtual cluster maps to
-         * a single Kubernetes namespace. Given this relationship, you can model virtual
-         * clusters the same way you model Kubernetes namespaces to meet your
-         * requirements.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateVirtualCluster">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateVirtualCluster that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateVirtualClusterOutcomeCallable CreateVirtualClusterCallable(const Model::CreateVirtualClusterRequest& request) const;
 
         /**
-         * <p>Creates a virtual cluster. Virtual cluster is a managed entity on Amazon EMR
-         * on EKS. You can create, describe, list and delete virtual clusters. They do not
-         * consume any additional resource in your system. A single virtual cluster maps to
-         * a single Kubernetes namespace. Given this relationship, you can model virtual
-         * clusters the same way you model Kubernetes namespaces to meet your
-         * requirements.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateVirtualCluster">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateVirtualCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateVirtualClusterAsync(const Model::CreateVirtualClusterRequest& request, const CreateVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -294,24 +252,12 @@ namespace Model
         virtual Model::DeleteManagedEndpointOutcome DeleteManagedEndpoint(const Model::DeleteManagedEndpointRequest& request) const;
 
         /**
-         * <p>Deletes a managed endpoint. A managed endpoint is a gateway that connects EMR
-         * Studio to Amazon EMR on EKS so that EMR Studio can communicate with your virtual
-         * cluster.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteManagedEndpoint">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteManagedEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteManagedEndpointOutcomeCallable DeleteManagedEndpointCallable(const Model::DeleteManagedEndpointRequest& request) const;
 
         /**
-         * <p>Deletes a managed endpoint. A managed endpoint is a gateway that connects EMR
-         * Studio to Amazon EMR on EKS so that EMR Studio can communicate with your virtual
-         * cluster.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteManagedEndpoint">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteManagedEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteManagedEndpointAsync(const Model::DeleteManagedEndpointRequest& request, const DeleteManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -328,30 +274,12 @@ namespace Model
         virtual Model::DeleteVirtualClusterOutcome DeleteVirtualCluster(const Model::DeleteVirtualClusterRequest& request) const;
 
         /**
-         * <p>Deletes a virtual cluster. Virtual cluster is a managed entity on Amazon EMR
-         * on EKS. You can create, describe, list and delete virtual clusters. They do not
-         * consume any additional resource in your system. A single virtual cluster maps to
-         * a single Kubernetes namespace. Given this relationship, you can model virtual
-         * clusters the same way you model Kubernetes namespaces to meet your
-         * requirements.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteVirtualCluster">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteVirtualCluster that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteVirtualClusterOutcomeCallable DeleteVirtualClusterCallable(const Model::DeleteVirtualClusterRequest& request) const;
 
         /**
-         * <p>Deletes a virtual cluster. Virtual cluster is a managed entity on Amazon EMR
-         * on EKS. You can create, describe, list and delete virtual clusters. They do not
-         * consume any additional resource in your system. A single virtual cluster maps to
-         * a single Kubernetes namespace. Given this relationship, you can model virtual
-         * clusters the same way you model Kubernetes namespaces to meet your
-         * requirements.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteVirtualCluster">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteVirtualCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteVirtualClusterAsync(const Model::DeleteVirtualClusterRequest& request, const DeleteVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -365,24 +293,12 @@ namespace Model
         virtual Model::DescribeJobRunOutcome DescribeJobRun(const Model::DescribeJobRunRequest& request) const;
 
         /**
-         * <p>Displays detailed information about a job run. A job run is a unit of work,
-         * such as a Spark jar, PySpark script, or SparkSQL query, that you submit to
-         * Amazon EMR on EKS.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobRun">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeJobRun that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeJobRunOutcomeCallable DescribeJobRunCallable(const Model::DescribeJobRunRequest& request) const;
 
         /**
-         * <p>Displays detailed information about a job run. A job run is a unit of work,
-         * such as a Spark jar, PySpark script, or SparkSQL query, that you submit to
-         * Amazon EMR on EKS.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobRun">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeJobRun that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeJobRunAsync(const Model::DescribeJobRunRequest& request, const DescribeJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -396,24 +312,12 @@ namespace Model
         virtual Model::DescribeManagedEndpointOutcome DescribeManagedEndpoint(const Model::DescribeManagedEndpointRequest& request) const;
 
         /**
-         * <p>Displays detailed information about a managed endpoint. A managed endpoint is
-         * a gateway that connects EMR Studio to Amazon EMR on EKS so that EMR Studio can
-         * communicate with your virtual cluster.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeManagedEndpoint">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeManagedEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeManagedEndpointOutcomeCallable DescribeManagedEndpointCallable(const Model::DescribeManagedEndpointRequest& request) const;
 
         /**
-         * <p>Displays detailed information about a managed endpoint. A managed endpoint is
-         * a gateway that connects EMR Studio to Amazon EMR on EKS so that EMR Studio can
-         * communicate with your virtual cluster.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeManagedEndpoint">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeManagedEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeManagedEndpointAsync(const Model::DescribeManagedEndpointRequest& request, const DescribeManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -430,30 +334,12 @@ namespace Model
         virtual Model::DescribeVirtualClusterOutcome DescribeVirtualCluster(const Model::DescribeVirtualClusterRequest& request) const;
 
         /**
-         * <p>Displays detailed information about a specified virtual cluster. Virtual
-         * cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list
-         * and delete virtual clusters. They do not consume any additional resource in your
-         * system. A single virtual cluster maps to a single Kubernetes namespace. Given
-         * this relationship, you can model virtual clusters the same way you model
-         * Kubernetes namespaces to meet your requirements.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeVirtualCluster">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeVirtualCluster that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeVirtualClusterOutcomeCallable DescribeVirtualClusterCallable(const Model::DescribeVirtualClusterRequest& request) const;
 
         /**
-         * <p>Displays detailed information about a specified virtual cluster. Virtual
-         * cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list
-         * and delete virtual clusters. They do not consume any additional resource in your
-         * system. A single virtual cluster maps to a single Kubernetes namespace. Given
-         * this relationship, you can model virtual clusters the same way you model
-         * Kubernetes namespaces to meet your requirements.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeVirtualCluster">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeVirtualCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeVirtualClusterAsync(const Model::DescribeVirtualClusterRequest& request, const DescribeVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -467,24 +353,12 @@ namespace Model
         virtual Model::ListJobRunsOutcome ListJobRuns(const Model::ListJobRunsRequest& request) const;
 
         /**
-         * <p>Lists job runs based on a set of parameters. A job run is a unit of work,
-         * such as a Spark jar, PySpark script, or SparkSQL query, that you submit to
-         * Amazon EMR on EKS.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobRuns">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListJobRuns that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListJobRunsOutcomeCallable ListJobRunsCallable(const Model::ListJobRunsRequest& request) const;
 
         /**
-         * <p>Lists job runs based on a set of parameters. A job run is a unit of work,
-         * such as a Spark jar, PySpark script, or SparkSQL query, that you submit to
-         * Amazon EMR on EKS.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobRuns">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListJobRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListJobRunsAsync(const Model::ListJobRunsRequest& request, const ListJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -498,24 +372,12 @@ namespace Model
         virtual Model::ListManagedEndpointsOutcome ListManagedEndpoints(const Model::ListManagedEndpointsRequest& request) const;
 
         /**
-         * <p>Lists managed endpoints based on a set of parameters. A managed endpoint is a
-         * gateway that connects EMR Studio to Amazon EMR on EKS so that EMR Studio can
-         * communicate with your virtual cluster.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListManagedEndpoints">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListManagedEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListManagedEndpointsOutcomeCallable ListManagedEndpointsCallable(const Model::ListManagedEndpointsRequest& request) const;
 
         /**
-         * <p>Lists managed endpoints based on a set of parameters. A managed endpoint is a
-         * gateway that connects EMR Studio to Amazon EMR on EKS so that EMR Studio can
-         * communicate with your virtual cluster.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListManagedEndpoints">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListManagedEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListManagedEndpointsAsync(const Model::ListManagedEndpointsRequest& request, const ListManagedEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -527,20 +389,12 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags assigned to the resources.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags assigned to the resources.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -557,30 +411,12 @@ namespace Model
         virtual Model::ListVirtualClustersOutcome ListVirtualClusters(const Model::ListVirtualClustersRequest& request) const;
 
         /**
-         * <p>Lists information about the specified virtual cluster. Virtual cluster is a
-         * managed entity on Amazon EMR on EKS. You can create, describe, list and delete
-         * virtual clusters. They do not consume any additional resource in your system. A
-         * single virtual cluster maps to a single Kubernetes namespace. Given this
-         * relationship, you can model virtual clusters the same way you model Kubernetes
-         * namespaces to meet your requirements.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListVirtualClusters">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListVirtualClusters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListVirtualClustersOutcomeCallable ListVirtualClustersCallable(const Model::ListVirtualClustersRequest& request) const;
 
         /**
-         * <p>Lists information about the specified virtual cluster. Virtual cluster is a
-         * managed entity on Amazon EMR on EKS. You can create, describe, list and delete
-         * virtual clusters. They do not consume any additional resource in your system. A
-         * single virtual cluster maps to a single Kubernetes namespace. Given this
-         * relationship, you can model virtual clusters the same way you model Kubernetes
-         * namespaces to meet your requirements.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListVirtualClusters">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListVirtualClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListVirtualClustersAsync(const Model::ListVirtualClustersRequest& request, const ListVirtualClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -594,24 +430,12 @@ namespace Model
         virtual Model::StartJobRunOutcome StartJobRun(const Model::StartJobRunRequest& request) const;
 
         /**
-         * <p>Starts a job run. A job run is a unit of work, such as a Spark jar, PySpark
-         * script, or SparkSQL query, that you submit to Amazon EMR on EKS.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/StartJobRun">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StartJobRun that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartJobRunOutcomeCallable StartJobRunCallable(const Model::StartJobRunRequest& request) const;
 
         /**
-         * <p>Starts a job run. A job run is a unit of work, such as a Spark jar, PySpark
-         * script, or SparkSQL query, that you submit to Amazon EMR on EKS.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/StartJobRun">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StartJobRun that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartJobRunAsync(const Model::StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -632,38 +456,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Assigns tags to resources. A tag is a label that you assign to an AWS
-         * resource. Each tag consists of a key and an optional value, both of which you
-         * define. Tags enable you to categorize your AWS resources by attributes such as
-         * purpose, owner, or environment. When you have many resources of the same type,
-         * you can quickly identify a specific resource based on the tags you've assigned
-         * to it. For example, you can define a set of tags for your Amazon EMR on EKS
-         * clusters to help you track each cluster's owner and stack level. We recommend
-         * that you devise a consistent set of tag keys for each resource type. You can
-         * then search and filter the resources based on the tags that you
-         * add.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Assigns tags to resources. A tag is a label that you assign to an AWS
-         * resource. Each tag consists of a key and an optional value, both of which you
-         * define. Tags enable you to categorize your AWS resources by attributes such as
-         * purpose, owner, or environment. When you have many resources of the same type,
-         * you can quickly identify a specific resource based on the tags you've assigned
-         * to it. For example, you can define a set of tags for your Amazon EMR on EKS
-         * clusters to help you track each cluster's owner and stack level. We recommend
-         * that you devise a consistent set of tag keys for each resource type. You can
-         * then search and filter the resources based on the tags that you
-         * add.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -675,20 +473,12 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from resources.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from resources.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

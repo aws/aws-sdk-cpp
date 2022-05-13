@@ -177,20 +177,12 @@ namespace Model
         virtual Model::CreateComponentOutcome CreateComponent(const Model::CreateComponentRequest& request) const;
 
         /**
-         * <p>Creates a new component for an Amplify app.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateComponent">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateComponent that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateComponentOutcomeCallable CreateComponentCallable(const Model::CreateComponentRequest& request) const;
 
         /**
-         * <p>Creates a new component for an Amplify app.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateComponent">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateComponentAsync(const Model::CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -203,22 +195,12 @@ namespace Model
         virtual Model::CreateThemeOutcome CreateTheme(const Model::CreateThemeRequest& request) const;
 
         /**
-         * <p>Creates a theme to apply to the components in an Amplify app.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateTheme">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateTheme that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateThemeOutcomeCallable CreateThemeCallable(const Model::CreateThemeRequest& request) const;
 
         /**
-         * <p>Creates a theme to apply to the components in an Amplify app.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateTheme">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateTheme that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateThemeAsync(const Model::CreateThemeRequest& request, const CreateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -230,20 +212,12 @@ namespace Model
         virtual Model::DeleteComponentOutcome DeleteComponent(const Model::DeleteComponentRequest& request) const;
 
         /**
-         * <p>Deletes a component from an Amplify app.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/DeleteComponent">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteComponent that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteComponentOutcomeCallable DeleteComponentCallable(const Model::DeleteComponentRequest& request) const;
 
         /**
-         * <p>Deletes a component from an Amplify app.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/DeleteComponent">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteComponentAsync(const Model::DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -255,20 +229,12 @@ namespace Model
         virtual Model::DeleteThemeOutcome DeleteTheme(const Model::DeleteThemeRequest& request) const;
 
         /**
-         * <p>Deletes a theme from an Amplify app.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/DeleteTheme">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteTheme that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteThemeOutcomeCallable DeleteThemeCallable(const Model::DeleteThemeRequest& request) const;
 
         /**
-         * <p>Deletes a theme from an Amplify app.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/DeleteTheme">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteTheme that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteThemeAsync(const Model::DeleteThemeRequest& request, const DeleteThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -280,20 +246,12 @@ namespace Model
         virtual Model::ExchangeCodeForTokenOutcome ExchangeCodeForToken(const Model::ExchangeCodeForTokenRequest& request) const;
 
         /**
-         * <p>Exchanges an access code for a token.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExchangeCodeForToken">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ExchangeCodeForToken that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ExchangeCodeForTokenOutcomeCallable ExchangeCodeForTokenCallable(const Model::ExchangeCodeForTokenRequest& request) const;
 
         /**
-         * <p>Exchanges an access code for a token.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExchangeCodeForToken">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ExchangeCodeForToken that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ExchangeCodeForTokenAsync(const Model::ExchangeCodeForTokenRequest& request, const ExchangeCodeForTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -306,22 +264,12 @@ namespace Model
         virtual Model::ExportComponentsOutcome ExportComponents(const Model::ExportComponentsRequest& request) const;
 
         /**
-         * <p>Exports component configurations to code that is ready to integrate into an
-         * Amplify app.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExportComponents">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ExportComponents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ExportComponentsOutcomeCallable ExportComponentsCallable(const Model::ExportComponentsRequest& request) const;
 
         /**
-         * <p>Exports component configurations to code that is ready to integrate into an
-         * Amplify app.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExportComponents">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ExportComponents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ExportComponentsAsync(const Model::ExportComponentsRequest& request, const ExportComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -334,22 +282,12 @@ namespace Model
         virtual Model::ExportThemesOutcome ExportThemes(const Model::ExportThemesRequest& request) const;
 
         /**
-         * <p>Exports theme configurations to code that is ready to integrate into an
-         * Amplify app.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExportThemes">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ExportThemes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ExportThemesOutcomeCallable ExportThemesCallable(const Model::ExportThemesRequest& request) const;
 
         /**
-         * <p>Exports theme configurations to code that is ready to integrate into an
-         * Amplify app.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExportThemes">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ExportThemes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ExportThemesAsync(const Model::ExportThemesRequest& request, const ExportThemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -362,22 +300,12 @@ namespace Model
         virtual Model::GetComponentOutcome GetComponent(const Model::GetComponentRequest& request) const;
 
         /**
-         * <p>Returns an existing component for an Amplify app.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetComponent">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetComponent that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetComponentOutcomeCallable GetComponentCallable(const Model::GetComponentRequest& request) const;
 
         /**
-         * <p>Returns an existing component for an Amplify app.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetComponent">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetComponentAsync(const Model::GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -389,20 +317,12 @@ namespace Model
         virtual Model::GetThemeOutcome GetTheme(const Model::GetThemeRequest& request) const;
 
         /**
-         * <p>Returns an existing theme for an Amplify app.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetTheme">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetTheme that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetThemeOutcomeCallable GetThemeCallable(const Model::GetThemeRequest& request) const;
 
         /**
-         * <p>Returns an existing theme for an Amplify app.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetTheme">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetTheme that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetThemeAsync(const Model::GetThemeRequest& request, const GetThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -415,22 +335,12 @@ namespace Model
         virtual Model::ListComponentsOutcome ListComponents(const Model::ListComponentsRequest& request) const;
 
         /**
-         * <p>Retrieves a list of components for a specified Amplify app and backend
-         * environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListComponents">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListComponents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListComponentsOutcomeCallable ListComponentsCallable(const Model::ListComponentsRequest& request) const;
 
         /**
-         * <p>Retrieves a list of components for a specified Amplify app and backend
-         * environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListComponents">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListComponents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListComponentsAsync(const Model::ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -443,22 +353,12 @@ namespace Model
         virtual Model::ListThemesOutcome ListThemes(const Model::ListThemesRequest& request) const;
 
         /**
-         * <p>Retrieves a list of themes for a specified Amplify app and backend
-         * environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListThemes">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListThemes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListThemesOutcomeCallable ListThemesCallable(const Model::ListThemesRequest& request) const;
 
         /**
-         * <p>Retrieves a list of themes for a specified Amplify app and backend
-         * environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListThemes">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListThemes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListThemesAsync(const Model::ListThemesRequest& request, const ListThemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -471,22 +371,12 @@ namespace Model
         virtual Model::RefreshTokenOutcome RefreshToken(const Model::RefreshTokenRequest& request) const;
 
         /**
-         * <p>Refreshes a previously issued access token that might have
-         * expired.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/RefreshToken">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for RefreshToken that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RefreshTokenOutcomeCallable RefreshTokenCallable(const Model::RefreshTokenRequest& request) const;
 
         /**
-         * <p>Refreshes a previously issued access token that might have
-         * expired.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/RefreshToken">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for RefreshToken that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RefreshTokenAsync(const Model::RefreshTokenRequest& request, const RefreshTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -498,20 +388,12 @@ namespace Model
         virtual Model::UpdateComponentOutcome UpdateComponent(const Model::UpdateComponentRequest& request) const;
 
         /**
-         * <p>Updates an existing component.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UpdateComponent">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateComponent that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateComponentOutcomeCallable UpdateComponentCallable(const Model::UpdateComponentRequest& request) const;
 
         /**
-         * <p>Updates an existing component.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UpdateComponent">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateComponentAsync(const Model::UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -523,20 +405,12 @@ namespace Model
         virtual Model::UpdateThemeOutcome UpdateTheme(const Model::UpdateThemeRequest& request) const;
 
         /**
-         * <p>Updates an existing theme.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UpdateTheme">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateTheme that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateThemeOutcomeCallable UpdateThemeCallable(const Model::UpdateThemeRequest& request) const;
 
         /**
-         * <p>Updates an existing theme.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UpdateTheme">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateTheme that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateThemeAsync(const Model::UpdateThemeRequest& request, const UpdateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

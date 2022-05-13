@@ -243,34 +243,12 @@ namespace Model
         virtual Model::CreateBudgetOutcome CreateBudget(const Model::CreateBudgetRequest& request) const;
 
         /**
-         * <p>Creates a budget and, if included, notifications and subscribers. </p>
-         *  <p>Only one of <code>BudgetLimit</code> or
-         * <code>PlannedBudgetLimits</code> can be present in the syntax at one time. Use
-         * the syntax that matches your case. The Request Syntax section shows the
-         * <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the
-         * <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples">Examples</a>
-         * section. </p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudget">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateBudget that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateBudgetOutcomeCallable CreateBudgetCallable(const Model::CreateBudgetRequest& request) const;
 
         /**
-         * <p>Creates a budget and, if included, notifications and subscribers. </p>
-         *  <p>Only one of <code>BudgetLimit</code> or
-         * <code>PlannedBudgetLimits</code> can be present in the syntax at one time. Use
-         * the syntax that matches your case. The Request Syntax section shows the
-         * <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the
-         * <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples">Examples</a>
-         * section. </p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudget">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateBudget that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateBudgetAsync(const Model::CreateBudgetRequest& request, const CreateBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -282,20 +260,12 @@ namespace Model
         virtual Model::CreateBudgetActionOutcome CreateBudgetAction(const Model::CreateBudgetActionRequest& request) const;
 
         /**
-         * <p> Creates a budget action. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudgetAction">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateBudgetAction that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateBudgetActionOutcomeCallable CreateBudgetActionCallable(const Model::CreateBudgetActionRequest& request) const;
 
         /**
-         * <p> Creates a budget action. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudgetAction">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateBudgetAction that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateBudgetActionAsync(const Model::CreateBudgetActionRequest& request, const CreateBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -308,22 +278,12 @@ namespace Model
         virtual Model::CreateNotificationOutcome CreateNotification(const Model::CreateNotificationRequest& request) const;
 
         /**
-         * <p>Creates a notification. You must create the budget before you create the
-         * associated notification.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateNotification">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateNotification that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateNotificationOutcomeCallable CreateNotificationCallable(const Model::CreateNotificationRequest& request) const;
 
         /**
-         * <p>Creates a notification. You must create the budget before you create the
-         * associated notification.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateNotification">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateNotification that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateNotificationAsync(const Model::CreateNotificationRequest& request, const CreateNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -336,22 +296,12 @@ namespace Model
         virtual Model::CreateSubscriberOutcome CreateSubscriber(const Model::CreateSubscriberRequest& request) const;
 
         /**
-         * <p>Creates a subscriber. You must create the associated budget and notification
-         * before you create the subscriber.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateSubscriber">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateSubscriber that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateSubscriberOutcomeCallable CreateSubscriberCallable(const Model::CreateSubscriberRequest& request) const;
 
         /**
-         * <p>Creates a subscriber. You must create the associated budget and notification
-         * before you create the subscriber.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateSubscriber">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateSubscriber that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateSubscriberAsync(const Model::CreateSubscriberRequest& request, const CreateSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -365,24 +315,12 @@ namespace Model
         virtual Model::DeleteBudgetOutcome DeleteBudget(const Model::DeleteBudgetRequest& request) const;
 
         /**
-         * <p>Deletes a budget. You can delete your budget at any time.</p> 
-         * <p>Deleting a budget also deletes the notifications and subscribers that are
-         * associated with that budget.</p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudget">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteBudget that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteBudgetOutcomeCallable DeleteBudgetCallable(const Model::DeleteBudgetRequest& request) const;
 
         /**
-         * <p>Deletes a budget. You can delete your budget at any time.</p> 
-         * <p>Deleting a budget also deletes the notifications and subscribers that are
-         * associated with that budget.</p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudget">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteBudget that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteBudgetAsync(const Model::DeleteBudgetRequest& request, const DeleteBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -394,20 +332,12 @@ namespace Model
         virtual Model::DeleteBudgetActionOutcome DeleteBudgetAction(const Model::DeleteBudgetActionRequest& request) const;
 
         /**
-         * <p> Deletes a budget action. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudgetAction">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteBudgetAction that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteBudgetActionOutcomeCallable DeleteBudgetActionCallable(const Model::DeleteBudgetActionRequest& request) const;
 
         /**
-         * <p> Deletes a budget action. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudgetAction">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteBudgetAction that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteBudgetActionAsync(const Model::DeleteBudgetActionRequest& request, const DeleteBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -421,24 +351,12 @@ namespace Model
         virtual Model::DeleteNotificationOutcome DeleteNotification(const Model::DeleteNotificationRequest& request) const;
 
         /**
-         * <p>Deletes a notification.</p>  <p>Deleting a notification also
-         * deletes the subscribers that are associated with the notification.</p>
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteNotification">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteNotification that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteNotificationOutcomeCallable DeleteNotificationCallable(const Model::DeleteNotificationRequest& request) const;
 
         /**
-         * <p>Deletes a notification.</p>  <p>Deleting a notification also
-         * deletes the subscribers that are associated with the notification.</p>
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteNotification">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteNotification that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteNotificationAsync(const Model::DeleteNotificationRequest& request, const DeleteNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -452,24 +370,12 @@ namespace Model
         virtual Model::DeleteSubscriberOutcome DeleteSubscriber(const Model::DeleteSubscriberRequest& request) const;
 
         /**
-         * <p>Deletes a subscriber.</p>  <p>Deleting the last subscriber to a
-         * notification also deletes the notification.</p> <p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteSubscriber">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteSubscriber that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteSubscriberOutcomeCallable DeleteSubscriberCallable(const Model::DeleteSubscriberRequest& request) const;
 
         /**
-         * <p>Deletes a subscriber.</p>  <p>Deleting the last subscriber to a
-         * notification also deletes the notification.</p> <p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteSubscriber">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteSubscriber that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteSubscriberAsync(const Model::DeleteSubscriberRequest& request, const DeleteSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -485,28 +391,12 @@ namespace Model
         virtual Model::DescribeBudgetOutcome DescribeBudget(const Model::DescribeBudgetRequest& request) const;
 
         /**
-         * <p>Describes a budget.</p>  <p>The Request Syntax section shows the
-         * <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the
-         * <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudget.html#API_DescribeBudget_Examples">Examples</a>
-         * section. </p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudget">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeBudget that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeBudgetOutcomeCallable DescribeBudgetCallable(const Model::DescribeBudgetRequest& request) const;
 
         /**
-         * <p>Describes a budget.</p>  <p>The Request Syntax section shows the
-         * <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the
-         * <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudget.html#API_DescribeBudget_Examples">Examples</a>
-         * section. </p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudget">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeBudget that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeBudgetAsync(const Model::DescribeBudgetRequest& request, const DescribeBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -518,20 +408,12 @@ namespace Model
         virtual Model::DescribeBudgetActionOutcome DescribeBudgetAction(const Model::DescribeBudgetActionRequest& request) const;
 
         /**
-         * <p> Describes a budget action detail. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetAction">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeBudgetAction that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeBudgetActionOutcomeCallable DescribeBudgetActionCallable(const Model::DescribeBudgetActionRequest& request) const;
 
         /**
-         * <p> Describes a budget action detail. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetAction">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeBudgetAction that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeBudgetActionAsync(const Model::DescribeBudgetActionRequest& request, const DescribeBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -543,20 +425,12 @@ namespace Model
         virtual Model::DescribeBudgetActionHistoriesOutcome DescribeBudgetActionHistories(const Model::DescribeBudgetActionHistoriesRequest& request) const;
 
         /**
-         * <p> Describes a budget action history detail. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionHistories">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeBudgetActionHistories that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeBudgetActionHistoriesOutcomeCallable DescribeBudgetActionHistoriesCallable(const Model::DescribeBudgetActionHistoriesRequest& request) const;
 
         /**
-         * <p> Describes a budget action history detail. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionHistories">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeBudgetActionHistories that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeBudgetActionHistoriesAsync(const Model::DescribeBudgetActionHistoriesRequest& request, const DescribeBudgetActionHistoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -569,22 +443,12 @@ namespace Model
         virtual Model::DescribeBudgetActionsForAccountOutcome DescribeBudgetActionsForAccount(const Model::DescribeBudgetActionsForAccountRequest& request) const;
 
         /**
-         * <p> Describes all of the budget actions for an account. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionsForAccount">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeBudgetActionsForAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeBudgetActionsForAccountOutcomeCallable DescribeBudgetActionsForAccountCallable(const Model::DescribeBudgetActionsForAccountRequest& request) const;
 
         /**
-         * <p> Describes all of the budget actions for an account. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionsForAccount">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeBudgetActionsForAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeBudgetActionsForAccountAsync(const Model::DescribeBudgetActionsForAccountRequest& request, const DescribeBudgetActionsForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -597,22 +461,12 @@ namespace Model
         virtual Model::DescribeBudgetActionsForBudgetOutcome DescribeBudgetActionsForBudget(const Model::DescribeBudgetActionsForBudgetRequest& request) const;
 
         /**
-         * <p> Describes all of the budget actions for a budget. </p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionsForBudget">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeBudgetActionsForBudget that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeBudgetActionsForBudgetOutcomeCallable DescribeBudgetActionsForBudgetCallable(const Model::DescribeBudgetActionsForBudgetRequest& request) const;
 
         /**
-         * <p> Describes all of the budget actions for a budget. </p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionsForBudget">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeBudgetActionsForBudget that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeBudgetActionsForBudgetAsync(const Model::DescribeBudgetActionsForBudgetRequest& request, const DescribeBudgetActionsForBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -625,22 +479,12 @@ namespace Model
         virtual Model::DescribeBudgetNotificationsForAccountOutcome DescribeBudgetNotificationsForAccount(const Model::DescribeBudgetNotificationsForAccountRequest& request) const;
 
         /**
-         * <p> Lists the budget names and notifications that are associated with an
-         * account. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetNotificationsForAccount">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeBudgetNotificationsForAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeBudgetNotificationsForAccountOutcomeCallable DescribeBudgetNotificationsForAccountCallable(const Model::DescribeBudgetNotificationsForAccountRequest& request) const;
 
         /**
-         * <p> Lists the budget names and notifications that are associated with an
-         * account. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetNotificationsForAccount">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeBudgetNotificationsForAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeBudgetNotificationsForAccountAsync(const Model::DescribeBudgetNotificationsForAccountRequest& request, const DescribeBudgetNotificationsForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -654,24 +498,12 @@ namespace Model
         virtual Model::DescribeBudgetPerformanceHistoryOutcome DescribeBudgetPerformanceHistory(const Model::DescribeBudgetPerformanceHistoryRequest& request) const;
 
         /**
-         * <p>Describes the history for <code>DAILY</code>, <code>MONTHLY</code>, and
-         * <code>QUARTERLY</code> budgets. Budget history isn't available for
-         * <code>ANNUAL</code> budgets.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetPerformanceHistory">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeBudgetPerformanceHistory that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeBudgetPerformanceHistoryOutcomeCallable DescribeBudgetPerformanceHistoryCallable(const Model::DescribeBudgetPerformanceHistoryRequest& request) const;
 
         /**
-         * <p>Describes the history for <code>DAILY</code>, <code>MONTHLY</code>, and
-         * <code>QUARTERLY</code> budgets. Budget history isn't available for
-         * <code>ANNUAL</code> budgets.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetPerformanceHistory">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeBudgetPerformanceHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeBudgetPerformanceHistoryAsync(const Model::DescribeBudgetPerformanceHistoryRequest& request, const DescribeBudgetPerformanceHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -687,28 +519,12 @@ namespace Model
         virtual Model::DescribeBudgetsOutcome DescribeBudgets(const Model::DescribeBudgetsRequest& request) const;
 
         /**
-         * <p>Lists the budgets that are associated with an account.</p>  <p>The
-         * Request Syntax section shows the <code>BudgetLimit</code> syntax. For
-         * <code>PlannedBudgetLimits</code>, see the <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgets.html#API_DescribeBudgets_Examples">Examples</a>
-         * section. </p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgets">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeBudgets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeBudgetsOutcomeCallable DescribeBudgetsCallable(const Model::DescribeBudgetsRequest& request) const;
 
         /**
-         * <p>Lists the budgets that are associated with an account.</p>  <p>The
-         * Request Syntax section shows the <code>BudgetLimit</code> syntax. For
-         * <code>PlannedBudgetLimits</code>, see the <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgets.html#API_DescribeBudgets_Examples">Examples</a>
-         * section. </p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgets">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeBudgets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeBudgetsAsync(const Model::DescribeBudgetsRequest& request, const DescribeBudgetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -721,22 +537,12 @@ namespace Model
         virtual Model::DescribeNotificationsForBudgetOutcome DescribeNotificationsForBudget(const Model::DescribeNotificationsForBudgetRequest& request) const;
 
         /**
-         * <p>Lists the notifications that are associated with a budget.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeNotificationsForBudget">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeNotificationsForBudget that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeNotificationsForBudgetOutcomeCallable DescribeNotificationsForBudgetCallable(const Model::DescribeNotificationsForBudgetRequest& request) const;
 
         /**
-         * <p>Lists the notifications that are associated with a budget.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeNotificationsForBudget">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeNotificationsForBudget that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeNotificationsForBudgetAsync(const Model::DescribeNotificationsForBudgetRequest& request, const DescribeNotificationsForBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -749,22 +555,12 @@ namespace Model
         virtual Model::DescribeSubscribersForNotificationOutcome DescribeSubscribersForNotification(const Model::DescribeSubscribersForNotificationRequest& request) const;
 
         /**
-         * <p>Lists the subscribers that are associated with a notification.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeSubscribersForNotification">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeSubscribersForNotification that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeSubscribersForNotificationOutcomeCallable DescribeSubscribersForNotificationCallable(const Model::DescribeSubscribersForNotificationRequest& request) const;
 
         /**
-         * <p>Lists the subscribers that are associated with a notification.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeSubscribersForNotification">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeSubscribersForNotification that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeSubscribersForNotificationAsync(const Model::DescribeSubscribersForNotificationRequest& request, const DescribeSubscribersForNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -776,20 +572,12 @@ namespace Model
         virtual Model::ExecuteBudgetActionOutcome ExecuteBudgetAction(const Model::ExecuteBudgetActionRequest& request) const;
 
         /**
-         * <p> Executes a budget action. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/ExecuteBudgetAction">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ExecuteBudgetAction that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ExecuteBudgetActionOutcomeCallable ExecuteBudgetActionCallable(const Model::ExecuteBudgetActionRequest& request) const;
 
         /**
-         * <p> Executes a budget action. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/ExecuteBudgetAction">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ExecuteBudgetAction that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ExecuteBudgetActionAsync(const Model::ExecuteBudgetActionRequest& request, const ExecuteBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -810,38 +598,12 @@ namespace Model
         virtual Model::UpdateBudgetOutcome UpdateBudget(const Model::UpdateBudgetRequest& request) const;
 
         /**
-         * <p>Updates a budget. You can change every part of a budget except for the
-         * <code>budgetName</code> and the <code>calculatedSpend</code>. When you modify a
-         * budget, the <code>calculatedSpend</code> drops to zero until Amazon Web Services
-         * has new usage data to use for forecasting.</p>  <p>Only one of
-         * <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present in
-         * the syntax at one time. Use the syntax that matches your case. The Request
-         * Syntax section shows the <code>BudgetLimit</code> syntax. For
-         * <code>PlannedBudgetLimits</code>, see the <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UpdateBudget.html#API_UpdateBudget_Examples">Examples</a>
-         * section. </p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudget">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateBudget that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateBudgetOutcomeCallable UpdateBudgetCallable(const Model::UpdateBudgetRequest& request) const;
 
         /**
-         * <p>Updates a budget. You can change every part of a budget except for the
-         * <code>budgetName</code> and the <code>calculatedSpend</code>. When you modify a
-         * budget, the <code>calculatedSpend</code> drops to zero until Amazon Web Services
-         * has new usage data to use for forecasting.</p>  <p>Only one of
-         * <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present in
-         * the syntax at one time. Use the syntax that matches your case. The Request
-         * Syntax section shows the <code>BudgetLimit</code> syntax. For
-         * <code>PlannedBudgetLimits</code>, see the <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UpdateBudget.html#API_UpdateBudget_Examples">Examples</a>
-         * section. </p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudget">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateBudget that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateBudgetAsync(const Model::UpdateBudgetRequest& request, const UpdateBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -853,20 +615,12 @@ namespace Model
         virtual Model::UpdateBudgetActionOutcome UpdateBudgetAction(const Model::UpdateBudgetActionRequest& request) const;
 
         /**
-         * <p> Updates a budget action. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudgetAction">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateBudgetAction that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateBudgetActionOutcomeCallable UpdateBudgetActionCallable(const Model::UpdateBudgetActionRequest& request) const;
 
         /**
-         * <p> Updates a budget action. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudgetAction">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateBudgetAction that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateBudgetActionAsync(const Model::UpdateBudgetActionRequest& request, const UpdateBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -878,20 +632,12 @@ namespace Model
         virtual Model::UpdateNotificationOutcome UpdateNotification(const Model::UpdateNotificationRequest& request) const;
 
         /**
-         * <p>Updates a notification.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateNotification">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateNotification that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateNotificationOutcomeCallable UpdateNotificationCallable(const Model::UpdateNotificationRequest& request) const;
 
         /**
-         * <p>Updates a notification.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateNotification">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateNotification that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateNotificationAsync(const Model::UpdateNotificationRequest& request, const UpdateNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -903,20 +649,12 @@ namespace Model
         virtual Model::UpdateSubscriberOutcome UpdateSubscriber(const Model::UpdateSubscriberRequest& request) const;
 
         /**
-         * <p>Updates a subscriber.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateSubscriber">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateSubscriber that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateSubscriberOutcomeCallable UpdateSubscriberCallable(const Model::UpdateSubscriberRequest& request) const;
 
         /**
-         * <p>Updates a subscriber.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateSubscriber">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateSubscriber that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateSubscriberAsync(const Model::UpdateSubscriberRequest& request, const UpdateSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

@@ -238,20 +238,12 @@ namespace Model
         virtual Model::ActivateAnomalyDetectorOutcome ActivateAnomalyDetector(const Model::ActivateAnomalyDetectorRequest& request) const;
 
         /**
-         * <p>Activates an anomaly detector.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ActivateAnomalyDetector">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ActivateAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ActivateAnomalyDetectorOutcomeCallable ActivateAnomalyDetectorCallable(const Model::ActivateAnomalyDetectorRequest& request) const;
 
         /**
-         * <p>Activates an anomaly detector.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ActivateAnomalyDetector">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ActivateAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ActivateAnomalyDetectorAsync(const Model::ActivateAnomalyDetectorRequest& request, const ActivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -264,22 +256,12 @@ namespace Model
         virtual Model::BackTestAnomalyDetectorOutcome BackTestAnomalyDetector(const Model::BackTestAnomalyDetectorRequest& request) const;
 
         /**
-         * <p>Runs a backtest for anomaly detection for the specified
-         * resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/BackTestAnomalyDetector">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for BackTestAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::BackTestAnomalyDetectorOutcomeCallable BackTestAnomalyDetectorCallable(const Model::BackTestAnomalyDetectorRequest& request) const;
 
         /**
-         * <p>Runs a backtest for anomaly detection for the specified
-         * resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/BackTestAnomalyDetector">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for BackTestAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BackTestAnomalyDetectorAsync(const Model::BackTestAnomalyDetectorRequest& request, const BackTestAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -291,20 +273,12 @@ namespace Model
         virtual Model::CreateAlertOutcome CreateAlert(const Model::CreateAlertRequest& request) const;
 
         /**
-         * <p>Creates an alert for an anomaly detector.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/CreateAlert">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateAlert that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateAlertOutcomeCallable CreateAlertCallable(const Model::CreateAlertRequest& request) const;
 
         /**
-         * <p>Creates an alert for an anomaly detector.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/CreateAlert">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateAlert that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateAlertAsync(const Model::CreateAlertRequest& request, const CreateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -316,20 +290,12 @@ namespace Model
         virtual Model::CreateAnomalyDetectorOutcome CreateAnomalyDetector(const Model::CreateAnomalyDetectorRequest& request) const;
 
         /**
-         * <p>Creates an anomaly detector.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/CreateAnomalyDetector">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateAnomalyDetectorOutcomeCallable CreateAnomalyDetectorCallable(const Model::CreateAnomalyDetectorRequest& request) const;
 
         /**
-         * <p>Creates an anomaly detector.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/CreateAnomalyDetector">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateAnomalyDetectorAsync(const Model::CreateAnomalyDetectorRequest& request, const CreateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -341,20 +307,12 @@ namespace Model
         virtual Model::CreateMetricSetOutcome CreateMetricSet(const Model::CreateMetricSetRequest& request) const;
 
         /**
-         * <p>Creates a dataset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/CreateMetricSet">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateMetricSet that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateMetricSetOutcomeCallable CreateMetricSetCallable(const Model::CreateMetricSetRequest& request) const;
 
         /**
-         * <p>Creates a dataset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/CreateMetricSet">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateMetricSet that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateMetricSetAsync(const Model::CreateMetricSetRequest& request, const CreateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -366,20 +324,12 @@ namespace Model
         virtual Model::DeactivateAnomalyDetectorOutcome DeactivateAnomalyDetector(const Model::DeactivateAnomalyDetectorRequest& request) const;
 
         /**
-         * <p>Deactivates an anomaly detector.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeactivateAnomalyDetector">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeactivateAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeactivateAnomalyDetectorOutcomeCallable DeactivateAnomalyDetectorCallable(const Model::DeactivateAnomalyDetectorRequest& request) const;
 
         /**
-         * <p>Deactivates an anomaly detector.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeactivateAnomalyDetector">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeactivateAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeactivateAnomalyDetectorAsync(const Model::DeactivateAnomalyDetectorRequest& request, const DeactivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -391,20 +341,12 @@ namespace Model
         virtual Model::DeleteAlertOutcome DeleteAlert(const Model::DeleteAlertRequest& request) const;
 
         /**
-         * <p>Deletes an alert.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeleteAlert">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteAlert that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteAlertOutcomeCallable DeleteAlertCallable(const Model::DeleteAlertRequest& request) const;
 
         /**
-         * <p>Deletes an alert.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeleteAlert">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteAlert that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAlertAsync(const Model::DeleteAlertRequest& request, const DeleteAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -418,24 +360,12 @@ namespace Model
         virtual Model::DeleteAnomalyDetectorOutcome DeleteAnomalyDetector(const Model::DeleteAnomalyDetectorRequest& request) const;
 
         /**
-         * <p>Deletes a detector. Deleting an anomaly detector will delete all of its
-         * corresponding resources including any configured datasets and
-         * alerts.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeleteAnomalyDetector">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteAnomalyDetectorOutcomeCallable DeleteAnomalyDetectorCallable(const Model::DeleteAnomalyDetectorRequest& request) const;
 
         /**
-         * <p>Deletes a detector. Deleting an anomaly detector will delete all of its
-         * corresponding resources including any configured datasets and
-         * alerts.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeleteAnomalyDetector">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAnomalyDetectorAsync(const Model::DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -450,26 +380,12 @@ namespace Model
         virtual Model::DescribeAlertOutcome DescribeAlert(const Model::DescribeAlertRequest& request) const;
 
         /**
-         * <p>Describes an alert.</p> <p>Amazon Lookout for Metrics API actions are
-         * eventually consistent. If you do a read operation on a resource immediately
-         * after creating or modifying it, use retries to allow time for the write
-         * operation to complete.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeAlert">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeAlert that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeAlertOutcomeCallable DescribeAlertCallable(const Model::DescribeAlertRequest& request) const;
 
         /**
-         * <p>Describes an alert.</p> <p>Amazon Lookout for Metrics API actions are
-         * eventually consistent. If you do a read operation on a resource immediately
-         * after creating or modifying it, use retries to allow time for the write
-         * operation to complete.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeAlert">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeAlert that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAlertAsync(const Model::DescribeAlertRequest& request, const DescribeAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -482,22 +398,12 @@ namespace Model
         virtual Model::DescribeAnomalyDetectionExecutionsOutcome DescribeAnomalyDetectionExecutions(const Model::DescribeAnomalyDetectionExecutionsRequest& request) const;
 
         /**
-         * <p>Returns information about the status of the specified anomaly detection
-         * jobs.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeAnomalyDetectionExecutions">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeAnomalyDetectionExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeAnomalyDetectionExecutionsOutcomeCallable DescribeAnomalyDetectionExecutionsCallable(const Model::DescribeAnomalyDetectionExecutionsRequest& request) const;
 
         /**
-         * <p>Returns information about the status of the specified anomaly detection
-         * jobs.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeAnomalyDetectionExecutions">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeAnomalyDetectionExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAnomalyDetectionExecutionsAsync(const Model::DescribeAnomalyDetectionExecutionsRequest& request, const DescribeAnomalyDetectionExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -512,26 +418,12 @@ namespace Model
         virtual Model::DescribeAnomalyDetectorOutcome DescribeAnomalyDetector(const Model::DescribeAnomalyDetectorRequest& request) const;
 
         /**
-         * <p>Describes a detector.</p> <p>Amazon Lookout for Metrics API actions are
-         * eventually consistent. If you do a read operation on a resource immediately
-         * after creating or modifying it, use retries to allow time for the write
-         * operation to complete.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeAnomalyDetector">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeAnomalyDetectorOutcomeCallable DescribeAnomalyDetectorCallable(const Model::DescribeAnomalyDetectorRequest& request) const;
 
         /**
-         * <p>Describes a detector.</p> <p>Amazon Lookout for Metrics API actions are
-         * eventually consistent. If you do a read operation on a resource immediately
-         * after creating or modifying it, use retries to allow time for the write
-         * operation to complete.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeAnomalyDetector">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAnomalyDetectorAsync(const Model::DescribeAnomalyDetectorRequest& request, const DescribeAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -546,26 +438,12 @@ namespace Model
         virtual Model::DescribeMetricSetOutcome DescribeMetricSet(const Model::DescribeMetricSetRequest& request) const;
 
         /**
-         * <p>Describes a dataset.</p> <p>Amazon Lookout for Metrics API actions are
-         * eventually consistent. If you do a read operation on a resource immediately
-         * after creating or modifying it, use retries to allow time for the write
-         * operation to complete.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeMetricSet">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeMetricSet that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeMetricSetOutcomeCallable DescribeMetricSetCallable(const Model::DescribeMetricSetRequest& request) const;
 
         /**
-         * <p>Describes a dataset.</p> <p>Amazon Lookout for Metrics API actions are
-         * eventually consistent. If you do a read operation on a resource immediately
-         * after creating or modifying it, use retries to allow time for the write
-         * operation to complete.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeMetricSet">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeMetricSet that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeMetricSetAsync(const Model::DescribeMetricSetRequest& request, const DescribeMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -578,22 +456,12 @@ namespace Model
         virtual Model::DetectMetricSetConfigOutcome DetectMetricSetConfig(const Model::DetectMetricSetConfigRequest& request) const;
 
         /**
-         * <p>Detects an Amazon S3 dataset's file format, interval, and
-         * offset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DetectMetricSetConfig">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DetectMetricSetConfig that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DetectMetricSetConfigOutcomeCallable DetectMetricSetConfigCallable(const Model::DetectMetricSetConfigRequest& request) const;
 
         /**
-         * <p>Detects an Amazon S3 dataset's file format, interval, and
-         * offset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DetectMetricSetConfig">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DetectMetricSetConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DetectMetricSetConfigAsync(const Model::DetectMetricSetConfigRequest& request, const DetectMetricSetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -606,22 +474,12 @@ namespace Model
         virtual Model::GetAnomalyGroupOutcome GetAnomalyGroup(const Model::GetAnomalyGroupRequest& request) const;
 
         /**
-         * <p>Returns details about a group of anomalous metrics.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetAnomalyGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetAnomalyGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetAnomalyGroupOutcomeCallable GetAnomalyGroupCallable(const Model::GetAnomalyGroupRequest& request) const;
 
         /**
-         * <p>Returns details about a group of anomalous metrics.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetAnomalyGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetAnomalyGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetAnomalyGroupAsync(const Model::GetAnomalyGroupRequest& request, const GetAnomalyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -633,20 +491,12 @@ namespace Model
         virtual Model::GetFeedbackOutcome GetFeedback(const Model::GetFeedbackRequest& request) const;
 
         /**
-         * <p>Get feedback for an anomaly group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetFeedback">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetFeedbackOutcomeCallable GetFeedbackCallable(const Model::GetFeedbackRequest& request) const;
 
         /**
-         * <p>Get feedback for an anomaly group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetFeedback">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetFeedbackAsync(const Model::GetFeedbackRequest& request, const GetFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -659,22 +509,12 @@ namespace Model
         virtual Model::GetSampleDataOutcome GetSampleData(const Model::GetSampleDataRequest& request) const;
 
         /**
-         * <p>Returns a selection of sample records from an Amazon S3
-         * datasource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetSampleData">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetSampleData that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetSampleDataOutcomeCallable GetSampleDataCallable(const Model::GetSampleDataRequest& request) const;
 
         /**
-         * <p>Returns a selection of sample records from an Amazon S3
-         * datasource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetSampleData">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetSampleData that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSampleDataAsync(const Model::GetSampleDataRequest& request, const GetSampleDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -689,26 +529,12 @@ namespace Model
         virtual Model::ListAlertsOutcome ListAlerts(const Model::ListAlertsRequest& request) const;
 
         /**
-         * <p>Lists the alerts attached to a detector.</p> <p>Amazon Lookout for Metrics
-         * API actions are eventually consistent. If you do a read operation on a resource
-         * immediately after creating or modifying it, use retries to allow time for the
-         * write operation to complete.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAlerts">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListAlerts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAlertsOutcomeCallable ListAlertsCallable(const Model::ListAlertsRequest& request) const;
 
         /**
-         * <p>Lists the alerts attached to a detector.</p> <p>Amazon Lookout for Metrics
-         * API actions are eventually consistent. If you do a read operation on a resource
-         * immediately after creating or modifying it, use retries to allow time for the
-         * write operation to complete.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAlerts">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListAlerts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAlertsAsync(const Model::ListAlertsRequest& request, const ListAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -723,26 +549,12 @@ namespace Model
         virtual Model::ListAnomalyDetectorsOutcome ListAnomalyDetectors(const Model::ListAnomalyDetectorsRequest& request) const;
 
         /**
-         * <p>Lists the detectors in the current AWS Region.</p> <p>Amazon Lookout for
-         * Metrics API actions are eventually consistent. If you do a read operation on a
-         * resource immediately after creating or modifying it, use retries to allow time
-         * for the write operation to complete.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyDetectors">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListAnomalyDetectors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAnomalyDetectorsOutcomeCallable ListAnomalyDetectorsCallable(const Model::ListAnomalyDetectorsRequest& request) const;
 
         /**
-         * <p>Lists the detectors in the current AWS Region.</p> <p>Amazon Lookout for
-         * Metrics API actions are eventually consistent. If you do a read operation on a
-         * resource immediately after creating or modifying it, use retries to allow time
-         * for the write operation to complete.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyDetectors">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListAnomalyDetectors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAnomalyDetectorsAsync(const Model::ListAnomalyDetectorsRequest& request, const ListAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -755,22 +567,12 @@ namespace Model
         virtual Model::ListAnomalyGroupRelatedMetricsOutcome ListAnomalyGroupRelatedMetrics(const Model::ListAnomalyGroupRelatedMetricsRequest& request) const;
 
         /**
-         * <p>Returns a list of measures that are potential causes or effects of an anomaly
-         * group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyGroupRelatedMetrics">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListAnomalyGroupRelatedMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAnomalyGroupRelatedMetricsOutcomeCallable ListAnomalyGroupRelatedMetricsCallable(const Model::ListAnomalyGroupRelatedMetricsRequest& request) const;
 
         /**
-         * <p>Returns a list of measures that are potential causes or effects of an anomaly
-         * group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyGroupRelatedMetrics">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListAnomalyGroupRelatedMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAnomalyGroupRelatedMetricsAsync(const Model::ListAnomalyGroupRelatedMetricsRequest& request, const ListAnomalyGroupRelatedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -782,20 +584,12 @@ namespace Model
         virtual Model::ListAnomalyGroupSummariesOutcome ListAnomalyGroupSummaries(const Model::ListAnomalyGroupSummariesRequest& request) const;
 
         /**
-         * <p>Returns a list of anomaly groups.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyGroupSummaries">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListAnomalyGroupSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAnomalyGroupSummariesOutcomeCallable ListAnomalyGroupSummariesCallable(const Model::ListAnomalyGroupSummariesRequest& request) const;
 
         /**
-         * <p>Returns a list of anomaly groups.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyGroupSummaries">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListAnomalyGroupSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAnomalyGroupSummariesAsync(const Model::ListAnomalyGroupSummariesRequest& request, const ListAnomalyGroupSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -808,22 +602,12 @@ namespace Model
         virtual Model::ListAnomalyGroupTimeSeriesOutcome ListAnomalyGroupTimeSeries(const Model::ListAnomalyGroupTimeSeriesRequest& request) const;
 
         /**
-         * <p>Gets a list of anomalous metrics for a measure in an anomaly
-         * group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyGroupTimeSeries">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListAnomalyGroupTimeSeries that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAnomalyGroupTimeSeriesOutcomeCallable ListAnomalyGroupTimeSeriesCallable(const Model::ListAnomalyGroupTimeSeriesRequest& request) const;
 
         /**
-         * <p>Gets a list of anomalous metrics for a measure in an anomaly
-         * group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyGroupTimeSeries">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListAnomalyGroupTimeSeries that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAnomalyGroupTimeSeriesAsync(const Model::ListAnomalyGroupTimeSeriesRequest& request, const ListAnomalyGroupTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -838,26 +622,12 @@ namespace Model
         virtual Model::ListMetricSetsOutcome ListMetricSets(const Model::ListMetricSetsRequest& request) const;
 
         /**
-         * <p>Lists the datasets in the current AWS Region.</p> <p>Amazon Lookout for
-         * Metrics API actions are eventually consistent. If you do a read operation on a
-         * resource immediately after creating or modifying it, use retries to allow time
-         * for the write operation to complete.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListMetricSets">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListMetricSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListMetricSetsOutcomeCallable ListMetricSetsCallable(const Model::ListMetricSetsRequest& request) const;
 
         /**
-         * <p>Lists the datasets in the current AWS Region.</p> <p>Amazon Lookout for
-         * Metrics API actions are eventually consistent. If you do a read operation on a
-         * resource immediately after creating or modifying it, use retries to allow time
-         * for the write operation to complete.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListMetricSets">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListMetricSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListMetricSetsAsync(const Model::ListMetricSetsRequest& request, const ListMetricSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -871,24 +641,12 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Gets a list of <a
-         * href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>
-         * for a detector, dataset, or alert.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Gets a list of <a
-         * href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>
-         * for a detector, dataset, or alert.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -900,20 +658,12 @@ namespace Model
         virtual Model::PutFeedbackOutcome PutFeedback(const Model::PutFeedbackRequest& request) const;
 
         /**
-         * <p>Add feedback for an anomalous metric.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/PutFeedback">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutFeedbackOutcomeCallable PutFeedbackCallable(const Model::PutFeedbackRequest& request) const;
 
         /**
-         * <p>Add feedback for an anomalous metric.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/PutFeedback">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutFeedbackAsync(const Model::PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -927,24 +677,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds <a
-         * href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>
-         * to a detector, dataset, or alert.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds <a
-         * href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>
-         * to a detector, dataset, or alert.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -958,24 +696,12 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes <a
-         * href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>
-         * from a detector, dataset, or alert.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes <a
-         * href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>
-         * from a detector, dataset, or alert.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -988,22 +714,12 @@ namespace Model
         virtual Model::UpdateAnomalyDetectorOutcome UpdateAnomalyDetector(const Model::UpdateAnomalyDetectorRequest& request) const;
 
         /**
-         * <p>Updates a detector. After activation, you can only change a detector's
-         * ingestion delay and description.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateAnomalyDetector">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateAnomalyDetectorOutcomeCallable UpdateAnomalyDetectorCallable(const Model::UpdateAnomalyDetectorRequest& request) const;
 
         /**
-         * <p>Updates a detector. After activation, you can only change a detector's
-         * ingestion delay and description.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateAnomalyDetector">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateAnomalyDetectorAsync(const Model::UpdateAnomalyDetectorRequest& request, const UpdateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1015,20 +731,12 @@ namespace Model
         virtual Model::UpdateMetricSetOutcome UpdateMetricSet(const Model::UpdateMetricSetRequest& request) const;
 
         /**
-         * <p>Updates a dataset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateMetricSet">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateMetricSet that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateMetricSetOutcomeCallable UpdateMetricSetCallable(const Model::UpdateMetricSetRequest& request) const;
 
         /**
-         * <p>Updates a dataset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateMetricSet">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateMetricSet that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateMetricSetAsync(const Model::UpdateMetricSetRequest& request, const UpdateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

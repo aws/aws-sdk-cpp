@@ -151,26 +151,12 @@ namespace Model
         virtual Model::CreateRuleOutcome CreateRule(const Model::CreateRuleRequest& request) const;
 
         /**
-         * <p>Creates a Recycle Bin retention rule. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-create-rule">
-         * Create Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/CreateRule">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateRule that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateRuleOutcomeCallable CreateRuleCallable(const Model::CreateRuleRequest& request) const;
 
         /**
-         * <p>Creates a Recycle Bin retention rule. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-create-rule">
-         * Create Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/CreateRule">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateRule that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateRuleAsync(const Model::CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -185,26 +171,12 @@ namespace Model
         virtual Model::DeleteRuleOutcome DeleteRule(const Model::DeleteRuleRequest& request) const;
 
         /**
-         * <p>Deletes a Recycle Bin retention rule. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-delete-rule">
-         * Delete Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/DeleteRule">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteRule that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteRuleOutcomeCallable DeleteRuleCallable(const Model::DeleteRuleRequest& request) const;
 
         /**
-         * <p>Deletes a Recycle Bin retention rule. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-delete-rule">
-         * Delete Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/DeleteRule">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteRule that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteRuleAsync(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -216,20 +188,12 @@ namespace Model
         virtual Model::GetRuleOutcome GetRule(const Model::GetRuleRequest& request) const;
 
         /**
-         * <p>Gets information about a Recycle Bin retention rule.</p><p><h3>See Also:</h3>
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/GetRule">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetRule that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetRuleOutcomeCallable GetRuleCallable(const Model::GetRuleRequest& request) const;
 
         /**
-         * <p>Gets information about a Recycle Bin retention rule.</p><p><h3>See Also:</h3>
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/GetRule">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetRule that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRuleAsync(const Model::GetRuleRequest& request, const GetRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -241,20 +205,12 @@ namespace Model
         virtual Model::ListRulesOutcome ListRules(const Model::ListRulesRequest& request) const;
 
         /**
-         * <p>Lists the Recycle Bin retention rules in the Region.</p><p><h3>See Also:</h3>
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/ListRules">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListRules that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListRulesOutcomeCallable ListRulesCallable(const Model::ListRulesRequest& request) const;
 
         /**
-         * <p>Lists the Recycle Bin retention rules in the Region.</p><p><h3>See Also:</h3>
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/ListRules">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListRules that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListRulesAsync(const Model::ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -266,20 +222,12 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags assigned to a retention rule.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags assigned to a retention rule.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -291,20 +239,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Assigns tags to the specified retention rule.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Assigns tags to the specified retention rule.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -316,20 +256,12 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Unassigns a tag from a retention rule.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Unassigns a tag from a retention rule.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -344,26 +276,12 @@ namespace Model
         virtual Model::UpdateRuleOutcome UpdateRule(const Model::UpdateRuleRequest& request) const;
 
         /**
-         * <p>Updates an existing Recycle Bin retention rule. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule">
-         * Update Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/UpdateRule">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateRule that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateRuleOutcomeCallable UpdateRuleCallable(const Model::UpdateRuleRequest& request) const;
 
         /**
-         * <p>Updates an existing Recycle Bin retention rule. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule">
-         * Update Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/UpdateRule">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateRule that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateRuleAsync(const Model::UpdateRuleRequest& request, const UpdateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

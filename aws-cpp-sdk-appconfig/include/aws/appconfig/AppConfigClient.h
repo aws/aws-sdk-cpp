@@ -282,28 +282,12 @@ namespace Model
         virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
 
         /**
-         * <p>Creates an application. An application in AppConfig is a logical unit of code
-         * that provides capabilities for your customers. For example, an application can
-         * be a microservice that runs on Amazon EC2 instances, a mobile application
-         * installed by your users, a serverless application using Amazon API Gateway and
-         * Lambda, or any system you run on behalf of others.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateApplication">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request) const;
 
         /**
-         * <p>Creates an application. An application in AppConfig is a logical unit of code
-         * that provides capabilities for your customers. For example, an application can
-         * be a microservice that runs on Amazon EC2 instances, a mobile application
-         * installed by your users, a serverless application using Amazon API Gateway and
-         * Lambda, or any system you run on behalf of others.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateApplication">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -329,48 +313,12 @@ namespace Model
         virtual Model::CreateConfigurationProfileOutcome CreateConfigurationProfile(const Model::CreateConfigurationProfileRequest& request) const;
 
         /**
-         * <p>Creates a configuration profile, which is information that enables AppConfig
-         * to access the configuration source. Valid configuration sources include the
-         * AppConfig hosted configuration store, Amazon Web Services Systems Manager (SSM)
-         * documents, SSM Parameter Store parameters, Amazon S3 objects, or any <a
-         * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/integrations-action-type.html#integrations-source">integration
-         * source action</a> supported by CodePipeline. A configuration profile includes
-         * the following information:</p> <ul> <li> <p>The URI location of the
-         * configuration data.</p> </li> <li> <p>The Identity and Access Management (IAM)
-         * role that provides access to the configuration data.</p> </li> <li> <p>A
-         * validator for the configuration data. Available validators include either a JSON
-         * Schema or an Amazon Web Services Lambda function.</p> </li> </ul> <p>For more
-         * information, see <a
-         * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile.html">Create
-         * a Configuration and a Configuration Profile</a> in the <i>AppConfig User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateConfigurationProfile">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateConfigurationProfile that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateConfigurationProfileOutcomeCallable CreateConfigurationProfileCallable(const Model::CreateConfigurationProfileRequest& request) const;
 
         /**
-         * <p>Creates a configuration profile, which is information that enables AppConfig
-         * to access the configuration source. Valid configuration sources include the
-         * AppConfig hosted configuration store, Amazon Web Services Systems Manager (SSM)
-         * documents, SSM Parameter Store parameters, Amazon S3 objects, or any <a
-         * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/integrations-action-type.html#integrations-source">integration
-         * source action</a> supported by CodePipeline. A configuration profile includes
-         * the following information:</p> <ul> <li> <p>The URI location of the
-         * configuration data.</p> </li> <li> <p>The Identity and Access Management (IAM)
-         * role that provides access to the configuration data.</p> </li> <li> <p>A
-         * validator for the configuration data. Available validators include either a JSON
-         * Schema or an Amazon Web Services Lambda function.</p> </li> </ul> <p>For more
-         * information, see <a
-         * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile.html">Create
-         * a Configuration and a Configuration Profile</a> in the <i>AppConfig User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateConfigurationProfile">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateConfigurationProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateConfigurationProfileAsync(const Model::CreateConfigurationProfileRequest& request, const CreateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -386,28 +334,12 @@ namespace Model
         virtual Model::CreateDeploymentStrategyOutcome CreateDeploymentStrategy(const Model::CreateDeploymentStrategyRequest& request) const;
 
         /**
-         * <p>Creates a deployment strategy that defines important criteria for rolling out
-         * your configuration to the designated targets. A deployment strategy includes the
-         * overall duration required, a percentage of targets to receive the deployment
-         * during each interval, an algorithm that defines how percentage grows, and bake
-         * time.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateDeploymentStrategy">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateDeploymentStrategy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateDeploymentStrategyOutcomeCallable CreateDeploymentStrategyCallable(const Model::CreateDeploymentStrategyRequest& request) const;
 
         /**
-         * <p>Creates a deployment strategy that defines important criteria for rolling out
-         * your configuration to the designated targets. A deployment strategy includes the
-         * overall duration required, a percentage of targets to receive the deployment
-         * during each interval, an algorithm that defines how percentage grows, and bake
-         * time.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateDeploymentStrategy">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateDeploymentStrategy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDeploymentStrategyAsync(const Model::CreateDeploymentStrategyRequest& request, const CreateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -427,36 +359,12 @@ namespace Model
         virtual Model::CreateEnvironmentOutcome CreateEnvironment(const Model::CreateEnvironmentRequest& request) const;
 
         /**
-         * <p>Creates an environment. For each application, you define one or more
-         * environments. An environment is a logical deployment group of AppConfig targets,
-         * such as applications in a <code>Beta</code> or <code>Production</code>
-         * environment. You can also define environments for application subcomponents such
-         * as the <code>Web</code>, <code>Mobile</code> and <code>Back-end</code>
-         * components for your application. You can configure Amazon CloudWatch alarms for
-         * each environment. The system monitors alarms during a configuration deployment.
-         * If an alarm is triggered, the system rolls back the configuration.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateEnvironment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateEnvironmentOutcomeCallable CreateEnvironmentCallable(const Model::CreateEnvironmentRequest& request) const;
 
         /**
-         * <p>Creates an environment. For each application, you define one or more
-         * environments. An environment is a logical deployment group of AppConfig targets,
-         * such as applications in a <code>Beta</code> or <code>Production</code>
-         * environment. You can also define environments for application subcomponents such
-         * as the <code>Web</code>, <code>Mobile</code> and <code>Back-end</code>
-         * components for your application. You can configure Amazon CloudWatch alarms for
-         * each environment. The system monitors alarms during a configuration deployment.
-         * If an alarm is triggered, the system rolls back the configuration.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateEnvironment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateEnvironmentAsync(const Model::CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -469,22 +377,12 @@ namespace Model
         virtual Model::CreateHostedConfigurationVersionOutcome CreateHostedConfigurationVersion(const Model::CreateHostedConfigurationVersionRequest& request) const;
 
         /**
-         * <p>Creates a new configuration in the AppConfig hosted configuration
-         * store.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateHostedConfigurationVersion">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateHostedConfigurationVersion that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateHostedConfigurationVersionOutcomeCallable CreateHostedConfigurationVersionCallable(const Model::CreateHostedConfigurationVersionRequest& request) const;
 
         /**
-         * <p>Creates a new configuration in the AppConfig hosted configuration
-         * store.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateHostedConfigurationVersion">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateHostedConfigurationVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateHostedConfigurationVersionAsync(const Model::CreateHostedConfigurationVersionRequest& request, const CreateHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -497,22 +395,12 @@ namespace Model
         virtual Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
 
         /**
-         * <p>Deletes an application. Deleting an application does not delete a
-         * configuration from a host.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteApplication">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteApplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
 
         /**
-         * <p>Deletes an application. Deleting an application does not delete a
-         * configuration from a host.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteApplication">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -525,22 +413,12 @@ namespace Model
         virtual Model::DeleteConfigurationProfileOutcome DeleteConfigurationProfile(const Model::DeleteConfigurationProfileRequest& request) const;
 
         /**
-         * <p>Deletes a configuration profile. Deleting a configuration profile does not
-         * delete a configuration from a host.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteConfigurationProfile">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteConfigurationProfile that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteConfigurationProfileOutcomeCallable DeleteConfigurationProfileCallable(const Model::DeleteConfigurationProfileRequest& request) const;
 
         /**
-         * <p>Deletes a configuration profile. Deleting a configuration profile does not
-         * delete a configuration from a host.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteConfigurationProfile">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteConfigurationProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteConfigurationProfileAsync(const Model::DeleteConfigurationProfileRequest& request, const DeleteConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -553,22 +431,12 @@ namespace Model
         virtual Model::DeleteDeploymentStrategyOutcome DeleteDeploymentStrategy(const Model::DeleteDeploymentStrategyRequest& request) const;
 
         /**
-         * <p>Deletes a deployment strategy. Deleting a deployment strategy does not delete
-         * a configuration from a host.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteDeploymentStrategy">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteDeploymentStrategy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteDeploymentStrategyOutcomeCallable DeleteDeploymentStrategyCallable(const Model::DeleteDeploymentStrategyRequest& request) const;
 
         /**
-         * <p>Deletes a deployment strategy. Deleting a deployment strategy does not delete
-         * a configuration from a host.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteDeploymentStrategy">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteDeploymentStrategy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDeploymentStrategyAsync(const Model::DeleteDeploymentStrategyRequest& request, const DeleteDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -581,22 +449,12 @@ namespace Model
         virtual Model::DeleteEnvironmentOutcome DeleteEnvironment(const Model::DeleteEnvironmentRequest& request) const;
 
         /**
-         * <p>Deletes an environment. Deleting an environment does not delete a
-         * configuration from a host.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteEnvironment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteEnvironmentOutcomeCallable DeleteEnvironmentCallable(const Model::DeleteEnvironmentRequest& request) const;
 
         /**
-         * <p>Deletes an environment. Deleting an environment does not delete a
-         * configuration from a host.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteEnvironment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteEnvironmentAsync(const Model::DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -609,22 +467,12 @@ namespace Model
         virtual Model::DeleteHostedConfigurationVersionOutcome DeleteHostedConfigurationVersion(const Model::DeleteHostedConfigurationVersionRequest& request) const;
 
         /**
-         * <p>Deletes a version of a configuration from the AppConfig hosted configuration
-         * store.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteHostedConfigurationVersion">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteHostedConfigurationVersion that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteHostedConfigurationVersionOutcomeCallable DeleteHostedConfigurationVersionCallable(const Model::DeleteHostedConfigurationVersionRequest& request) const;
 
         /**
-         * <p>Deletes a version of a configuration from the AppConfig hosted configuration
-         * store.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteHostedConfigurationVersion">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteHostedConfigurationVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteHostedConfigurationVersionAsync(const Model::DeleteHostedConfigurationVersionRequest& request, const DeleteHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -636,20 +484,12 @@ namespace Model
         virtual Model::GetApplicationOutcome GetApplication(const Model::GetApplicationRequest& request) const;
 
         /**
-         * <p>Retrieves information about an application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetApplication">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetApplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetApplicationOutcomeCallable GetApplicationCallable(const Model::GetApplicationRequest& request) const;
 
         /**
-         * <p>Retrieves information about an application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetApplication">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetApplicationAsync(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -662,22 +502,12 @@ namespace Model
         virtual Model::GetConfigurationProfileOutcome GetConfigurationProfile(const Model::GetConfigurationProfileRequest& request) const;
 
         /**
-         * <p>Retrieves information about a configuration profile.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetConfigurationProfile">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetConfigurationProfile that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetConfigurationProfileOutcomeCallable GetConfigurationProfileCallable(const Model::GetConfigurationProfileRequest& request) const;
 
         /**
-         * <p>Retrieves information about a configuration profile.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetConfigurationProfile">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetConfigurationProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetConfigurationProfileAsync(const Model::GetConfigurationProfileRequest& request, const GetConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -690,22 +520,12 @@ namespace Model
         virtual Model::GetDeploymentOutcome GetDeployment(const Model::GetDeploymentRequest& request) const;
 
         /**
-         * <p>Retrieves information about a configuration deployment.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetDeployment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDeploymentOutcomeCallable GetDeploymentCallable(const Model::GetDeploymentRequest& request) const;
 
         /**
-         * <p>Retrieves information about a configuration deployment.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetDeployment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDeploymentAsync(const Model::GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -722,30 +542,12 @@ namespace Model
         virtual Model::GetDeploymentStrategyOutcome GetDeploymentStrategy(const Model::GetDeploymentStrategyRequest& request) const;
 
         /**
-         * <p>Retrieves information about a deployment strategy. A deployment strategy
-         * defines important criteria for rolling out your configuration to the designated
-         * targets. A deployment strategy includes the overall duration required, a
-         * percentage of targets to receive the deployment during each interval, an
-         * algorithm that defines how percentage grows, and bake time.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetDeploymentStrategy">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetDeploymentStrategy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDeploymentStrategyOutcomeCallable GetDeploymentStrategyCallable(const Model::GetDeploymentStrategyRequest& request) const;
 
         /**
-         * <p>Retrieves information about a deployment strategy. A deployment strategy
-         * defines important criteria for rolling out your configuration to the designated
-         * targets. A deployment strategy includes the overall duration required, a
-         * percentage of targets to receive the deployment during each interval, an
-         * algorithm that defines how percentage grows, and bake time.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetDeploymentStrategy">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetDeploymentStrategy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDeploymentStrategyAsync(const Model::GetDeploymentStrategyRequest& request, const GetDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -763,32 +565,12 @@ namespace Model
         virtual Model::GetEnvironmentOutcome GetEnvironment(const Model::GetEnvironmentRequest& request) const;
 
         /**
-         * <p>Retrieves information about an environment. An environment is a logical
-         * deployment group of AppConfig applications, such as applications in a
-         * <code>Production</code> environment or in an <code>EU_Region</code> environment.
-         * Each configuration deployment targets an environment. You can enable one or more
-         * Amazon CloudWatch alarms for an environment. If an alarm is triggered during a
-         * deployment, AppConfig roles back the configuration.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetEnvironment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetEnvironmentOutcomeCallable GetEnvironmentCallable(const Model::GetEnvironmentRequest& request) const;
 
         /**
-         * <p>Retrieves information about an environment. An environment is a logical
-         * deployment group of AppConfig applications, such as applications in a
-         * <code>Production</code> environment or in an <code>EU_Region</code> environment.
-         * Each configuration deployment targets an environment. You can enable one or more
-         * Amazon CloudWatch alarms for an environment. If an alarm is triggered during a
-         * deployment, AppConfig roles back the configuration.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetEnvironment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetEnvironmentAsync(const Model::GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -801,22 +583,12 @@ namespace Model
         virtual Model::GetHostedConfigurationVersionOutcome GetHostedConfigurationVersion(const Model::GetHostedConfigurationVersionRequest& request) const;
 
         /**
-         * <p>Retrieves information about a specific configuration version.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetHostedConfigurationVersion">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetHostedConfigurationVersion that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetHostedConfigurationVersionOutcomeCallable GetHostedConfigurationVersionCallable(const Model::GetHostedConfigurationVersionRequest& request) const;
 
         /**
-         * <p>Retrieves information about a specific configuration version.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetHostedConfigurationVersion">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetHostedConfigurationVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetHostedConfigurationVersionAsync(const Model::GetHostedConfigurationVersionRequest& request, const GetHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -829,22 +601,12 @@ namespace Model
         virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
 
         /**
-         * <p>Lists all applications in your Amazon Web Services account.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListApplications">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListApplications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const Model::ListApplicationsRequest& request) const;
 
         /**
-         * <p>Lists all applications in your Amazon Web Services account.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListApplications">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -857,22 +619,12 @@ namespace Model
         virtual Model::ListConfigurationProfilesOutcome ListConfigurationProfiles(const Model::ListConfigurationProfilesRequest& request) const;
 
         /**
-         * <p>Lists the configuration profiles for an application.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListConfigurationProfiles">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListConfigurationProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListConfigurationProfilesOutcomeCallable ListConfigurationProfilesCallable(const Model::ListConfigurationProfilesRequest& request) const;
 
         /**
-         * <p>Lists the configuration profiles for an application.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListConfigurationProfiles">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListConfigurationProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListConfigurationProfilesAsync(const Model::ListConfigurationProfilesRequest& request, const ListConfigurationProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -884,20 +636,12 @@ namespace Model
         virtual Model::ListDeploymentStrategiesOutcome ListDeploymentStrategies(const Model::ListDeploymentStrategiesRequest& request) const;
 
         /**
-         * <p>Lists deployment strategies.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListDeploymentStrategies">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListDeploymentStrategies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDeploymentStrategiesOutcomeCallable ListDeploymentStrategiesCallable(const Model::ListDeploymentStrategiesRequest& request) const;
 
         /**
-         * <p>Lists deployment strategies.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListDeploymentStrategies">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListDeploymentStrategies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDeploymentStrategiesAsync(const Model::ListDeploymentStrategiesRequest& request, const ListDeploymentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -910,22 +654,12 @@ namespace Model
         virtual Model::ListDeploymentsOutcome ListDeployments(const Model::ListDeploymentsRequest& request) const;
 
         /**
-         * <p>Lists the deployments for an environment in descending deployment number
-         * order.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListDeployments">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDeploymentsOutcomeCallable ListDeploymentsCallable(const Model::ListDeploymentsRequest& request) const;
 
         /**
-         * <p>Lists the deployments for an environment in descending deployment number
-         * order.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListDeployments">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDeploymentsAsync(const Model::ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -937,20 +671,12 @@ namespace Model
         virtual Model::ListEnvironmentsOutcome ListEnvironments(const Model::ListEnvironmentsRequest& request) const;
 
         /**
-         * <p>Lists the environments for an application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListEnvironments">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListEnvironments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListEnvironmentsOutcomeCallable ListEnvironmentsCallable(const Model::ListEnvironmentsRequest& request) const;
 
         /**
-         * <p>Lists the environments for an application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListEnvironments">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListEnvironments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListEnvironmentsAsync(const Model::ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -963,22 +689,12 @@ namespace Model
         virtual Model::ListHostedConfigurationVersionsOutcome ListHostedConfigurationVersions(const Model::ListHostedConfigurationVersionsRequest& request) const;
 
         /**
-         * <p>Lists configurations stored in the AppConfig hosted configuration store by
-         * version.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListHostedConfigurationVersions">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListHostedConfigurationVersions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListHostedConfigurationVersionsOutcomeCallable ListHostedConfigurationVersionsCallable(const Model::ListHostedConfigurationVersionsRequest& request) const;
 
         /**
-         * <p>Lists configurations stored in the AppConfig hosted configuration store by
-         * version.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListHostedConfigurationVersions">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListHostedConfigurationVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListHostedConfigurationVersionsAsync(const Model::ListHostedConfigurationVersionsRequest& request, const ListHostedConfigurationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -991,22 +707,12 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Retrieves the list of key-value tags assigned to the resource.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Retrieves the list of key-value tags assigned to the resource.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1018,20 +724,12 @@ namespace Model
         virtual Model::StartDeploymentOutcome StartDeployment(const Model::StartDeploymentRequest& request) const;
 
         /**
-         * <p>Starts a deployment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/StartDeployment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StartDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartDeploymentOutcomeCallable StartDeploymentCallable(const Model::StartDeploymentRequest& request) const;
 
         /**
-         * <p>Starts a deployment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/StartDeployment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StartDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartDeploymentAsync(const Model::StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1045,24 +743,12 @@ namespace Model
         virtual Model::StopDeploymentOutcome StopDeployment(const Model::StopDeploymentRequest& request) const;
 
         /**
-         * <p>Stops a deployment. This API action works only on deployments that have a
-         * status of <code>DEPLOYING</code>. This action moves the deployment to a status
-         * of <code>ROLLED_BACK</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/StopDeployment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StopDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StopDeploymentOutcomeCallable StopDeploymentCallable(const Model::StopDeploymentRequest& request) const;
 
         /**
-         * <p>Stops a deployment. This API action works only on deployments that have a
-         * status of <code>DEPLOYING</code>. This action moves the deployment to a status
-         * of <code>ROLLED_BACK</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/StopDeployment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StopDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopDeploymentAsync(const Model::StopDeploymentRequest& request, const StopDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1077,26 +763,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Assigns metadata to an AppConfig resource. Tags help organize and categorize
-         * your AppConfig resources. Each tag consists of a key and an optional value, both
-         * of which you define. You can specify a maximum of 50 tags for a
-         * resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Assigns metadata to an AppConfig resource. Tags help organize and categorize
-         * your AppConfig resources. Each tag consists of a key and an optional value, both
-         * of which you define. You can specify a maximum of 50 tags for a
-         * resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1109,22 +781,12 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Deletes a tag key and value from an AppConfig resource.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Deletes a tag key and value from an AppConfig resource.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1136,20 +798,12 @@ namespace Model
         virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
         /**
-         * <p>Updates an application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateApplication">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
 
         /**
-         * <p>Updates an application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateApplication">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1161,20 +815,12 @@ namespace Model
         virtual Model::UpdateConfigurationProfileOutcome UpdateConfigurationProfile(const Model::UpdateConfigurationProfileRequest& request) const;
 
         /**
-         * <p>Updates a configuration profile.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateConfigurationProfile">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateConfigurationProfile that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateConfigurationProfileOutcomeCallable UpdateConfigurationProfileCallable(const Model::UpdateConfigurationProfileRequest& request) const;
 
         /**
-         * <p>Updates a configuration profile.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateConfigurationProfile">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateConfigurationProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateConfigurationProfileAsync(const Model::UpdateConfigurationProfileRequest& request, const UpdateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1186,20 +832,12 @@ namespace Model
         virtual Model::UpdateDeploymentStrategyOutcome UpdateDeploymentStrategy(const Model::UpdateDeploymentStrategyRequest& request) const;
 
         /**
-         * <p>Updates a deployment strategy.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateDeploymentStrategy">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateDeploymentStrategy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateDeploymentStrategyOutcomeCallable UpdateDeploymentStrategyCallable(const Model::UpdateDeploymentStrategyRequest& request) const;
 
         /**
-         * <p>Updates a deployment strategy.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateDeploymentStrategy">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateDeploymentStrategy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateDeploymentStrategyAsync(const Model::UpdateDeploymentStrategyRequest& request, const UpdateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1211,20 +849,12 @@ namespace Model
         virtual Model::UpdateEnvironmentOutcome UpdateEnvironment(const Model::UpdateEnvironmentRequest& request) const;
 
         /**
-         * <p>Updates an environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateEnvironment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateEnvironmentOutcomeCallable UpdateEnvironmentCallable(const Model::UpdateEnvironmentRequest& request) const;
 
         /**
-         * <p>Updates an environment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateEnvironment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateEnvironmentAsync(const Model::UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1237,22 +867,12 @@ namespace Model
         virtual Model::ValidateConfigurationOutcome ValidateConfiguration(const Model::ValidateConfigurationRequest& request) const;
 
         /**
-         * <p>Uses the validators in a configuration profile to validate a
-         * configuration.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ValidateConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ValidateConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ValidateConfigurationOutcomeCallable ValidateConfigurationCallable(const Model::ValidateConfigurationRequest& request) const;
 
         /**
-         * <p>Uses the validators in a configuration profile to validate a
-         * configuration.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ValidateConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ValidateConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ValidateConfigurationAsync(const Model::ValidateConfigurationRequest& request, const ValidateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

@@ -149,48 +149,12 @@ namespace Model
         virtual Model::GetLatestConfigurationOutcome GetLatestConfiguration(const Model::GetLatestConfigurationRequest& request) const;
 
         /**
-         * <p>Retrieves the latest deployed configuration. This API may return empty
-         * configuration data if the client already has the latest version. For more
-         * information about this API action and to view example CLI commands that show how
-         * to use it with the <a>StartConfigurationSession</a> API action, see <a
-         * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving
-         * the configuration</a> in the <i>AppConfig User Guide</i>. </p> 
-         * <p>Note the following important information.</p> <ul> <li> <p>Each configuration
-         * token is only valid for one call to <code>GetLatestConfiguration</code>. The
-         * <code>GetLatestConfiguration</code> response includes a
-         * <code>NextPollConfigurationToken</code> that should always replace the token
-         * used for the just-completed call in preparation for the next one. </p> </li>
-         * <li> <p> <code>GetLatestConfiguration</code> is a priced call. For more
-         * information, see <a
-         * href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.</p> </li>
-         * </ul> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/GetLatestConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetLatestConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetLatestConfigurationOutcomeCallable GetLatestConfigurationCallable(const Model::GetLatestConfigurationRequest& request) const;
 
         /**
-         * <p>Retrieves the latest deployed configuration. This API may return empty
-         * configuration data if the client already has the latest version. For more
-         * information about this API action and to view example CLI commands that show how
-         * to use it with the <a>StartConfigurationSession</a> API action, see <a
-         * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving
-         * the configuration</a> in the <i>AppConfig User Guide</i>. </p> 
-         * <p>Note the following important information.</p> <ul> <li> <p>Each configuration
-         * token is only valid for one call to <code>GetLatestConfiguration</code>. The
-         * <code>GetLatestConfiguration</code> response includes a
-         * <code>NextPollConfigurationToken</code> that should always replace the token
-         * used for the just-completed call in preparation for the next one. </p> </li>
-         * <li> <p> <code>GetLatestConfiguration</code> is a priced call. For more
-         * information, see <a
-         * href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.</p> </li>
-         * </ul> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/GetLatestConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetLatestConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetLatestConfigurationAsync(const Model::GetLatestConfigurationRequest& request, const GetLatestConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -207,30 +171,12 @@ namespace Model
         virtual Model::StartConfigurationSessionOutcome StartConfigurationSession(const Model::StartConfigurationSessionRequest& request) const;
 
         /**
-         * <p>Starts a configuration session used to retrieve a deployed configuration. For
-         * more information about this API action and to view example CLI commands that
-         * show how to use it with the <a>GetLatestConfiguration</a> API action, see <a
-         * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving
-         * the configuration</a> in the <i>AppConfig User Guide</i>. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/StartConfigurationSession">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StartConfigurationSession that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartConfigurationSessionOutcomeCallable StartConfigurationSessionCallable(const Model::StartConfigurationSessionRequest& request) const;
 
         /**
-         * <p>Starts a configuration session used to retrieve a deployed configuration. For
-         * more information about this API action and to view example CLI commands that
-         * show how to use it with the <a>GetLatestConfiguration</a> API action, see <a
-         * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving
-         * the configuration</a> in the <i>AppConfig User Guide</i>. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/StartConfigurationSession">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StartConfigurationSession that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartConfigurationSessionAsync(const Model::StartConfigurationSessionRequest& request, const StartConfigurationSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

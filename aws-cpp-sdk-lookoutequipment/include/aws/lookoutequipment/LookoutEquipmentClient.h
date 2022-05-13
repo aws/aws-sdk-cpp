@@ -213,28 +213,12 @@ namespace Model
         virtual Model::CreateDatasetOutcome CreateDataset(const Model::CreateDatasetRequest& request) const;
 
         /**
-         * <p>Creates a container for a collection of data being ingested for analysis. The
-         * dataset contains the metadata describing where the data is and what the data
-         * actually looks like. In other words, it contains the location of the data
-         * source, the data schema, and other information. A dataset also contains any tags
-         * associated with the ingested data. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateDataset">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateDataset that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateDatasetOutcomeCallable CreateDatasetCallable(const Model::CreateDatasetRequest& request) const;
 
         /**
-         * <p>Creates a container for a collection of data being ingested for analysis. The
-         * dataset contains the metadata describing where the data is and what the data
-         * actually looks like. In other words, it contains the location of the data
-         * source, the data schema, and other information. A dataset also contains any tags
-         * associated with the ingested data. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateDataset">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDatasetAsync(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -251,30 +235,12 @@ namespace Model
         virtual Model::CreateInferenceSchedulerOutcome CreateInferenceScheduler(const Model::CreateInferenceSchedulerRequest& request) const;
 
         /**
-         * <p> Creates a scheduled inference. Scheduling an inference is setting up a
-         * continuous real-time inference plan to analyze new measurement data. When
-         * setting up the schedule, you provide an S3 bucket location for the input data,
-         * assign it a delimiter between separate entries in the data, set an offset delay
-         * if desired, and set the frequency of inferencing. You must also provide an S3
-         * bucket location for the output data. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateInferenceScheduler">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateInferenceScheduler that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateInferenceSchedulerOutcomeCallable CreateInferenceSchedulerCallable(const Model::CreateInferenceSchedulerRequest& request) const;
 
         /**
-         * <p> Creates a scheduled inference. Scheduling an inference is setting up a
-         * continuous real-time inference plan to analyze new measurement data. When
-         * setting up the schedule, you provide an S3 bucket location for the input data,
-         * assign it a delimiter between separate entries in the data, set an offset delay
-         * if desired, and set the frequency of inferencing. You must also provide an S3
-         * bucket location for the output data. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateInferenceScheduler">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateInferenceScheduler that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateInferenceSchedulerAsync(const Model::CreateInferenceSchedulerRequest& request, const CreateInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -294,36 +260,12 @@ namespace Model
         virtual Model::CreateModelOutcome CreateModel(const Model::CreateModelRequest& request) const;
 
         /**
-         * <p>Creates an ML model for data inference. </p> <p>A machine-learning (ML) model
-         * is a mathematical model that finds patterns in your data. In Amazon Lookout for
-         * Equipment, the model learns the patterns of normal behavior and detects abnormal
-         * behavior that could be potential equipment failure (or maintenance events). The
-         * models are made by analyzing normal data and abnormalities in machine behavior
-         * that have already occurred.</p> <p>Your model is trained using a portion of the
-         * data from your dataset and uses that data to learn patterns of normal behavior
-         * and abnormal patterns that lead to equipment failure. Another portion of the
-         * data is used to evaluate the model's accuracy. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateModel">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateModel that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateModelOutcomeCallable CreateModelCallable(const Model::CreateModelRequest& request) const;
 
         /**
-         * <p>Creates an ML model for data inference. </p> <p>A machine-learning (ML) model
-         * is a mathematical model that finds patterns in your data. In Amazon Lookout for
-         * Equipment, the model learns the patterns of normal behavior and detects abnormal
-         * behavior that could be potential equipment failure (or maintenance events). The
-         * models are made by analyzing normal data and abnormalities in machine behavior
-         * that have already occurred.</p> <p>Your model is trained using a portion of the
-         * data from your dataset and uses that data to learn patterns of normal behavior
-         * and abnormal patterns that lead to equipment failure. Another portion of the
-         * data is used to evaluate the model's accuracy. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateModel">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateModel that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateModelAsync(const Model::CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -340,30 +282,12 @@ namespace Model
         virtual Model::DeleteDatasetOutcome DeleteDataset(const Model::DeleteDatasetRequest& request) const;
 
         /**
-         * <p> Deletes a dataset and associated artifacts. The operation will check to see
-         * if any inference scheduler or data ingestion job is currently using the dataset,
-         * and if there isn't, the dataset, its metadata, and any associated data stored in
-         * S3 will be deleted. This does not affect any models that used this dataset for
-         * training and evaluation, but does prevent it from being used in the future.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteDataset">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteDataset that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteDatasetOutcomeCallable DeleteDatasetCallable(const Model::DeleteDatasetRequest& request) const;
 
         /**
-         * <p> Deletes a dataset and associated artifacts. The operation will check to see
-         * if any inference scheduler or data ingestion job is currently using the dataset,
-         * and if there isn't, the dataset, its metadata, and any associated data stored in
-         * S3 will be deleted. This does not affect any models that used this dataset for
-         * training and evaluation, but does prevent it from being used in the future.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteDataset">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDatasetAsync(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -376,22 +300,12 @@ namespace Model
         virtual Model::DeleteInferenceSchedulerOutcome DeleteInferenceScheduler(const Model::DeleteInferenceSchedulerRequest& request) const;
 
         /**
-         * <p>Deletes an inference scheduler that has been set up. Already processed output
-         * results are not affected. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteInferenceScheduler">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteInferenceScheduler that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteInferenceSchedulerOutcomeCallable DeleteInferenceSchedulerCallable(const Model::DeleteInferenceSchedulerRequest& request) const;
 
         /**
-         * <p>Deletes an inference scheduler that has been set up. Already processed output
-         * results are not affected. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteInferenceScheduler">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteInferenceScheduler that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteInferenceSchedulerAsync(const Model::DeleteInferenceSchedulerRequest& request, const DeleteInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -405,24 +319,12 @@ namespace Model
         virtual Model::DeleteModelOutcome DeleteModel(const Model::DeleteModelRequest& request) const;
 
         /**
-         * <p>Deletes an ML model currently available for Amazon Lookout for Equipment.
-         * This will prevent it from being used with an inference scheduler, even one that
-         * is already set up. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteModel">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteModel that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteModelOutcomeCallable DeleteModelCallable(const Model::DeleteModelRequest& request) const;
 
         /**
-         * <p>Deletes an ML model currently available for Amazon Lookout for Equipment.
-         * This will prevent it from being used with an inference scheduler, even one that
-         * is already set up. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteModel">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteModel that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteModelAsync(const Model::DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -435,22 +337,12 @@ namespace Model
         virtual Model::DescribeDataIngestionJobOutcome DescribeDataIngestionJob(const Model::DescribeDataIngestionJobRequest& request) const;
 
         /**
-         * <p>Provides information on a specific data ingestion job such as creation time,
-         * dataset ARN, and status.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataIngestionJob">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeDataIngestionJob that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeDataIngestionJobOutcomeCallable DescribeDataIngestionJobCallable(const Model::DescribeDataIngestionJobRequest& request) const;
 
         /**
-         * <p>Provides information on a specific data ingestion job such as creation time,
-         * dataset ARN, and status.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataIngestionJob">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeDataIngestionJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDataIngestionJobAsync(const Model::DescribeDataIngestionJobRequest& request, const DescribeDataIngestionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -463,22 +355,12 @@ namespace Model
         virtual Model::DescribeDatasetOutcome DescribeDataset(const Model::DescribeDatasetRequest& request) const;
 
         /**
-         * <p>Provides a JSON description of the data in each time series dataset,
-         * including names, column names, and data types.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataset">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeDataset that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeDatasetOutcomeCallable DescribeDatasetCallable(const Model::DescribeDatasetRequest& request) const;
 
         /**
-         * <p>Provides a JSON description of the data in each time series dataset,
-         * including names, column names, and data types.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataset">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDatasetAsync(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -491,22 +373,12 @@ namespace Model
         virtual Model::DescribeInferenceSchedulerOutcome DescribeInferenceScheduler(const Model::DescribeInferenceSchedulerRequest& request) const;
 
         /**
-         * <p> Specifies information about the inference scheduler being used, including
-         * name, model, status, and associated metadata </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeInferenceScheduler">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeInferenceScheduler that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeInferenceSchedulerOutcomeCallable DescribeInferenceSchedulerCallable(const Model::DescribeInferenceSchedulerRequest& request) const;
 
         /**
-         * <p> Specifies information about the inference scheduler being used, including
-         * name, model, status, and associated metadata </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeInferenceScheduler">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeInferenceScheduler that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeInferenceSchedulerAsync(const Model::DescribeInferenceSchedulerRequest& request, const DescribeInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -520,24 +392,12 @@ namespace Model
         virtual Model::DescribeModelOutcome DescribeModel(const Model::DescribeModelRequest& request) const;
 
         /**
-         * <p>Provides a JSON containing the overall information about a specific ML model,
-         * including model name and ARN, dataset, training and evaluation information,
-         * status, and so on. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModel">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeModel that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeModelOutcomeCallable DescribeModelCallable(const Model::DescribeModelRequest& request) const;
 
         /**
-         * <p>Provides a JSON containing the overall information about a specific ML model,
-         * including model name and ARN, dataset, training and evaluation information,
-         * status, and so on. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModel">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeModel that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeModelAsync(const Model::DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -550,22 +410,12 @@ namespace Model
         virtual Model::ListDataIngestionJobsOutcome ListDataIngestionJobs(const Model::ListDataIngestionJobsRequest& request) const;
 
         /**
-         * <p>Provides a list of all data ingestion jobs, including dataset name and ARN,
-         * S3 location of the input data, status, and so on. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDataIngestionJobs">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListDataIngestionJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDataIngestionJobsOutcomeCallable ListDataIngestionJobsCallable(const Model::ListDataIngestionJobsRequest& request) const;
 
         /**
-         * <p>Provides a list of all data ingestion jobs, including dataset name and ARN,
-         * S3 location of the input data, status, and so on. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDataIngestionJobs">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListDataIngestionJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDataIngestionJobsAsync(const Model::ListDataIngestionJobsRequest& request, const ListDataIngestionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -578,22 +428,12 @@ namespace Model
         virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request) const;
 
         /**
-         * <p>Lists all datasets currently available in your account, filtering on the
-         * dataset name. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDatasets">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListDatasets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const Model::ListDatasetsRequest& request) const;
 
         /**
-         * <p>Lists all datasets currently available in your account, filtering on the
-         * dataset name. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDatasets">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListDatasets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDatasetsAsync(const Model::ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -606,22 +446,12 @@ namespace Model
         virtual Model::ListInferenceExecutionsOutcome ListInferenceExecutions(const Model::ListInferenceExecutionsRequest& request) const;
 
         /**
-         * <p> Lists all inference executions that have been performed by the specified
-         * inference scheduler. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceExecutions">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListInferenceExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListInferenceExecutionsOutcomeCallable ListInferenceExecutionsCallable(const Model::ListInferenceExecutionsRequest& request) const;
 
         /**
-         * <p> Lists all inference executions that have been performed by the specified
-         * inference scheduler. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceExecutions">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListInferenceExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListInferenceExecutionsAsync(const Model::ListInferenceExecutionsRequest& request, const ListInferenceExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -634,22 +464,12 @@ namespace Model
         virtual Model::ListInferenceSchedulersOutcome ListInferenceSchedulers(const Model::ListInferenceSchedulersRequest& request) const;
 
         /**
-         * <p>Retrieves a list of all inference schedulers currently available for your
-         * account. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceSchedulers">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListInferenceSchedulers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListInferenceSchedulersOutcomeCallable ListInferenceSchedulersCallable(const Model::ListInferenceSchedulersRequest& request) const;
 
         /**
-         * <p>Retrieves a list of all inference schedulers currently available for your
-         * account. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceSchedulers">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListInferenceSchedulers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListInferenceSchedulersAsync(const Model::ListInferenceSchedulersRequest& request, const ListInferenceSchedulersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -662,22 +482,12 @@ namespace Model
         virtual Model::ListModelsOutcome ListModels(const Model::ListModelsRequest& request) const;
 
         /**
-         * <p>Generates a list of all models in the account, including model name and ARN,
-         * dataset, and status. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModels">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListModels that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListModelsOutcomeCallable ListModelsCallable(const Model::ListModelsRequest& request) const;
 
         /**
-         * <p>Generates a list of all models in the account, including model name and ARN,
-         * dataset, and status. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModels">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListModels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListModelsAsync(const Model::ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -692,26 +502,12 @@ namespace Model
         virtual Model::ListSensorStatisticsOutcome ListSensorStatistics(const Model::ListSensorStatisticsRequest& request) const;
 
         /**
-         * <p> Lists statistics about the data collected for each of the sensors that have
-         * been successfully ingested in the particular dataset. Can also be used to
-         * retreive Sensor Statistics for a previous ingestion job. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListSensorStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListSensorStatisticsOutcomeCallable ListSensorStatisticsCallable(const Model::ListSensorStatisticsRequest& request) const;
 
         /**
-         * <p> Lists statistics about the data collected for each of the sensors that have
-         * been successfully ingested in the particular dataset. Can also be used to
-         * retreive Sensor Statistics for a previous ingestion job. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListSensorStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListSensorStatisticsAsync(const Model::ListSensorStatisticsRequest& request, const ListSensorStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -724,22 +520,12 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all the tags for a specified resource, including key and value.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all the tags for a specified resource, including key and value.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -752,22 +538,12 @@ namespace Model
         virtual Model::StartDataIngestionJobOutcome StartDataIngestionJob(const Model::StartDataIngestionJobRequest& request) const;
 
         /**
-         * <p>Starts a data ingestion job. Amazon Lookout for Equipment returns the job
-         * status. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartDataIngestionJob">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StartDataIngestionJob that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartDataIngestionJobOutcomeCallable StartDataIngestionJobCallable(const Model::StartDataIngestionJobRequest& request) const;
 
         /**
-         * <p>Starts a data ingestion job. Amazon Lookout for Equipment returns the job
-         * status. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartDataIngestionJob">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StartDataIngestionJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartDataIngestionJobAsync(const Model::StartDataIngestionJobRequest& request, const StartDataIngestionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -779,20 +555,12 @@ namespace Model
         virtual Model::StartInferenceSchedulerOutcome StartInferenceScheduler(const Model::StartInferenceSchedulerRequest& request) const;
 
         /**
-         * <p>Starts an inference scheduler. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartInferenceScheduler">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StartInferenceScheduler that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartInferenceSchedulerOutcomeCallable StartInferenceSchedulerCallable(const Model::StartInferenceSchedulerRequest& request) const;
 
         /**
-         * <p>Starts an inference scheduler. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartInferenceScheduler">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StartInferenceScheduler that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartInferenceSchedulerAsync(const Model::StartInferenceSchedulerRequest& request, const StartInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -804,20 +572,12 @@ namespace Model
         virtual Model::StopInferenceSchedulerOutcome StopInferenceScheduler(const Model::StopInferenceSchedulerRequest& request) const;
 
         /**
-         * <p>Stops an inference scheduler. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopInferenceScheduler">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StopInferenceScheduler that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StopInferenceSchedulerOutcomeCallable StopInferenceSchedulerCallable(const Model::StopInferenceSchedulerRequest& request) const;
 
         /**
-         * <p>Stops an inference scheduler. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopInferenceScheduler">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StopInferenceScheduler that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopInferenceSchedulerAsync(const Model::StopInferenceSchedulerRequest& request, const StopInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -834,30 +594,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Associates a given tag to a resource in your account. A tag is a key-value
-         * pair which can be added to an Amazon Lookout for Equipment resource as metadata.
-         * Tags can be used for organizing your resources as well as helping you to search
-         * and filter by tag. Multiple tags can be added to a resource, either when you
-         * create it, or later. Up to 50 tags can be associated with each resource.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Associates a given tag to a resource in your account. A tag is a key-value
-         * pair which can be added to an Amazon Lookout for Equipment resource as metadata.
-         * Tags can be used for organizing your resources as well as helping you to search
-         * and filter by tag. Multiple tags can be added to a resource, either when you
-         * create it, or later. Up to 50 tags can be associated with each resource.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -870,22 +612,12 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes a specific tag from a given resource. The tag is specified by its
-         * key. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes a specific tag from a given resource. The tag is specified by its
-         * key. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -897,20 +629,12 @@ namespace Model
         virtual Model::UpdateInferenceSchedulerOutcome UpdateInferenceScheduler(const Model::UpdateInferenceSchedulerRequest& request) const;
 
         /**
-         * <p>Updates an inference scheduler. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateInferenceScheduler">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateInferenceScheduler that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateInferenceSchedulerOutcomeCallable UpdateInferenceSchedulerCallable(const Model::UpdateInferenceSchedulerRequest& request) const;
 
         /**
-         * <p>Updates an inference scheduler. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateInferenceScheduler">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateInferenceScheduler that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateInferenceSchedulerAsync(const Model::UpdateInferenceSchedulerRequest& request, const UpdateInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

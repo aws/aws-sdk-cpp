@@ -263,32 +263,12 @@ namespace Model
         virtual Model::CreateAccessOutcome CreateAccess(const Model::CreateAccessRequest& request) const;
 
         /**
-         * <p>Used by administrators to choose which groups in the directory should have
-         * access to upload and download files over the enabled protocols using Amazon Web
-         * Services Transfer Family. For example, a Microsoft Active Directory might
-         * contain 50,000 users, but only a small fraction might need the ability to
-         * transfer files to the server. An administrator can use <code>CreateAccess</code>
-         * to limit the access to the correct set of users who need this
-         * ability.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAccess">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateAccess that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateAccessOutcomeCallable CreateAccessCallable(const Model::CreateAccessRequest& request) const;
 
         /**
-         * <p>Used by administrators to choose which groups in the directory should have
-         * access to upload and download files over the enabled protocols using Amazon Web
-         * Services Transfer Family. For example, a Microsoft Active Directory might
-         * contain 50,000 users, but only a small fraction might need the ability to
-         * transfer files to the server. An administrator can use <code>CreateAccess</code>
-         * to limit the access to the correct set of users who need this
-         * ability.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAccess">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateAccessAsync(const Model::CreateAccessRequest& request, const CreateAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -304,28 +284,12 @@ namespace Model
         virtual Model::CreateServerOutcome CreateServer(const Model::CreateServerRequest& request) const;
 
         /**
-         * <p>Instantiates an auto-scaling virtual server based on the selected file
-         * transfer protocol in Amazon Web Services. When you make updates to your file
-         * transfer protocol-enabled server or when you work with users, use the
-         * service-generated <code>ServerId</code> property that is assigned to the newly
-         * created server.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateServer">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateServer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateServerOutcomeCallable CreateServerCallable(const Model::CreateServerRequest& request) const;
 
         /**
-         * <p>Instantiates an auto-scaling virtual server based on the selected file
-         * transfer protocol in Amazon Web Services. When you make updates to your file
-         * transfer protocol-enabled server or when you work with users, use the
-         * service-generated <code>ServerId</code> property that is assigned to the newly
-         * created server.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateServer">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateServer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateServerAsync(const Model::CreateServerRequest& request, const CreateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -345,36 +309,12 @@ namespace Model
         virtual Model::CreateUserOutcome CreateUser(const Model::CreateUserRequest& request) const;
 
         /**
-         * <p>Creates a user and associates them with an existing file transfer
-         * protocol-enabled server. You can only create and associate users with servers
-         * that have the <code>IdentityProviderType</code> set to
-         * <code>SERVICE_MANAGED</code>. Using parameters for <code>CreateUser</code>, you
-         * can specify the user name, set the home directory, store the user's public key,
-         * and assign the user's Amazon Web Services Identity and Access Management (IAM)
-         * role. You can also optionally add a session policy, and assign metadata with
-         * tags that can be used to group and search for users.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateUser">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateUser that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request) const;
 
         /**
-         * <p>Creates a user and associates them with an existing file transfer
-         * protocol-enabled server. You can only create and associate users with servers
-         * that have the <code>IdentityProviderType</code> set to
-         * <code>SERVICE_MANAGED</code>. Using parameters for <code>CreateUser</code>, you
-         * can specify the user name, set the home directory, store the user's public key,
-         * and assign the user's Amazon Web Services Identity and Access Management (IAM)
-         * role. You can also optionally add a session policy, and assign metadata with
-         * tags that can be used to group and search for users.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateUser">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -390,28 +330,12 @@ namespace Model
         virtual Model::CreateWorkflowOutcome CreateWorkflow(const Model::CreateWorkflowRequest& request) const;
 
         /**
-         * <p> Allows you to create a workflow with specified steps and step details the
-         * workflow invokes after file transfer completes. After creating a workflow, you
-         * can associate the workflow created with any transfer servers by specifying the
-         * <code>workflow-details</code> field in <code>CreateServer</code> and
-         * <code>UpdateServer</code> operations. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateWorkflow">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateWorkflowOutcomeCallable CreateWorkflowCallable(const Model::CreateWorkflowRequest& request) const;
 
         /**
-         * <p> Allows you to create a workflow with specified steps and step details the
-         * workflow invokes after file transfer completes. After creating a workflow, you
-         * can associate the workflow created with any transfer servers by specifying the
-         * <code>workflow-details</code> field in <code>CreateServer</code> and
-         * <code>UpdateServer</code> operations. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateWorkflow">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateWorkflowAsync(const Model::CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -424,22 +348,12 @@ namespace Model
         virtual Model::DeleteAccessOutcome DeleteAccess(const Model::DeleteAccessRequest& request) const;
 
         /**
-         * <p>Allows you to delete the access specified in the <code>ServerID</code> and
-         * <code>ExternalID</code> parameters.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteAccess">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteAccess that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteAccessOutcomeCallable DeleteAccessCallable(const Model::DeleteAccessRequest& request) const;
 
         /**
-         * <p>Allows you to delete the access specified in the <code>ServerID</code> and
-         * <code>ExternalID</code> parameters.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteAccess">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAccessAsync(const Model::DeleteAccessRequest& request, const DeleteAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -452,22 +366,12 @@ namespace Model
         virtual Model::DeleteServerOutcome DeleteServer(const Model::DeleteServerRequest& request) const;
 
         /**
-         * <p>Deletes the file transfer protocol-enabled server that you specify.</p> <p>No
-         * response returns from this operation.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteServer">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteServer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteServerOutcomeCallable DeleteServerCallable(const Model::DeleteServerRequest& request) const;
 
         /**
-         * <p>Deletes the file transfer protocol-enabled server that you specify.</p> <p>No
-         * response returns from this operation.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteServer">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteServer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteServerAsync(const Model::DeleteServerRequest& request, const DeleteServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -479,20 +383,12 @@ namespace Model
         virtual Model::DeleteSshPublicKeyOutcome DeleteSshPublicKey(const Model::DeleteSshPublicKeyRequest& request) const;
 
         /**
-         * <p>Deletes a user's Secure Shell (SSH) public key.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteSshPublicKey">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteSshPublicKey that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteSshPublicKeyOutcomeCallable DeleteSshPublicKeyCallable(const Model::DeleteSshPublicKeyRequest& request) const;
 
         /**
-         * <p>Deletes a user's Secure Shell (SSH) public key.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteSshPublicKey">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteSshPublicKey that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteSshPublicKeyAsync(const Model::DeleteSshPublicKeyRequest& request, const DeleteSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -507,26 +403,12 @@ namespace Model
         virtual Model::DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest& request) const;
 
         /**
-         * <p>Deletes the user belonging to a file transfer protocol-enabled server you
-         * specify.</p> <p>No response returns from this operation.</p>  <p>When you
-         * delete a user from a server, the user's information is lost.</p>
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteUser">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteUser that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request) const;
 
         /**
-         * <p>Deletes the user belonging to a file transfer protocol-enabled server you
-         * specify.</p> <p>No response returns from this operation.</p>  <p>When you
-         * delete a user from a server, the user's information is lost.</p>
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteUser">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteUser that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -538,20 +420,12 @@ namespace Model
         virtual Model::DeleteWorkflowOutcome DeleteWorkflow(const Model::DeleteWorkflowRequest& request) const;
 
         /**
-         * <p>Deletes the specified workflow.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteWorkflow">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteWorkflowOutcomeCallable DeleteWorkflowCallable(const Model::DeleteWorkflowRequest& request) const;
 
         /**
-         * <p>Deletes the specified workflow.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteWorkflow">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteWorkflowAsync(const Model::DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -567,28 +441,12 @@ namespace Model
         virtual Model::DescribeAccessOutcome DescribeAccess(const Model::DescribeAccessRequest& request) const;
 
         /**
-         * <p>Describes the access that is assigned to the specific file transfer
-         * protocol-enabled server, as identified by its <code>ServerId</code> property and
-         * its <code>ExternalID</code>.</p> <p>The response from this call returns the
-         * properties of the access that is associated with the <code>ServerId</code> value
-         * that was specified.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeAccess">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeAccess that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeAccessOutcomeCallable DescribeAccessCallable(const Model::DescribeAccessRequest& request) const;
 
         /**
-         * <p>Describes the access that is assigned to the specific file transfer
-         * protocol-enabled server, as identified by its <code>ServerId</code> property and
-         * its <code>ExternalID</code>.</p> <p>The response from this call returns the
-         * properties of the access that is associated with the <code>ServerId</code> value
-         * that was specified.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeAccess">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAccessAsync(const Model::DescribeAccessRequest& request, const DescribeAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -601,22 +459,12 @@ namespace Model
         virtual Model::DescribeExecutionOutcome DescribeExecution(const Model::DescribeExecutionRequest& request) const;
 
         /**
-         * <p>You can use <code>DescribeExecution</code> to check the details of the
-         * execution of the specified workflow.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeExecution">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeExecution that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeExecutionOutcomeCallable DescribeExecutionCallable(const Model::DescribeExecutionRequest& request) const;
 
         /**
-         * <p>You can use <code>DescribeExecution</code> to check the details of the
-         * execution of the specified workflow.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeExecution">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeExecutionAsync(const Model::DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -632,28 +480,12 @@ namespace Model
         virtual Model::DescribeSecurityPolicyOutcome DescribeSecurityPolicy(const Model::DescribeSecurityPolicyRequest& request) const;
 
         /**
-         * <p>Describes the security policy that is attached to your file transfer
-         * protocol-enabled server. The response contains a description of the security
-         * policy's properties. For more information about security policies, see <a
-         * href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
-         * with security policies</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeSecurityPolicy">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeSecurityPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeSecurityPolicyOutcomeCallable DescribeSecurityPolicyCallable(const Model::DescribeSecurityPolicyRequest& request) const;
 
         /**
-         * <p>Describes the security policy that is attached to your file transfer
-         * protocol-enabled server. The response contains a description of the security
-         * policy's properties. For more information about security policies, see <a
-         * href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
-         * with security policies</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeSecurityPolicy">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeSecurityPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeSecurityPolicyAsync(const Model::DescribeSecurityPolicyRequest& request, const DescribeSecurityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -669,28 +501,12 @@ namespace Model
         virtual Model::DescribeServerOutcome DescribeServer(const Model::DescribeServerRequest& request) const;
 
         /**
-         * <p>Describes a file transfer protocol-enabled server that you specify by passing
-         * the <code>ServerId</code> parameter.</p> <p>The response contains a description
-         * of a server's properties. When you set <code>EndpointType</code> to VPC, the
-         * response will contain the <code>EndpointDetails</code>.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeServer">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeServer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeServerOutcomeCallable DescribeServerCallable(const Model::DescribeServerRequest& request) const;
 
         /**
-         * <p>Describes a file transfer protocol-enabled server that you specify by passing
-         * the <code>ServerId</code> parameter.</p> <p>The response contains a description
-         * of a server's properties. When you set <code>EndpointType</code> to VPC, the
-         * response will contain the <code>EndpointDetails</code>.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeServer">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeServer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeServerAsync(const Model::DescribeServerRequest& request, const DescribeServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -705,26 +521,12 @@ namespace Model
         virtual Model::DescribeUserOutcome DescribeUser(const Model::DescribeUserRequest& request) const;
 
         /**
-         * <p>Describes the user assigned to the specific file transfer protocol-enabled
-         * server, as identified by its <code>ServerId</code> property.</p> <p>The response
-         * from this call returns the properties of the user associated with the
-         * <code>ServerId</code> value that was specified.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeUser">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeUser that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeUserOutcomeCallable DescribeUserCallable(const Model::DescribeUserRequest& request) const;
 
         /**
-         * <p>Describes the user assigned to the specific file transfer protocol-enabled
-         * server, as identified by its <code>ServerId</code> property.</p> <p>The response
-         * from this call returns the properties of the user associated with the
-         * <code>ServerId</code> value that was specified.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeUser">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeUser that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeUserAsync(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -736,20 +538,12 @@ namespace Model
         virtual Model::DescribeWorkflowOutcome DescribeWorkflow(const Model::DescribeWorkflowRequest& request) const;
 
         /**
-         * <p>Describes the specified workflow.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeWorkflow">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeWorkflowOutcomeCallable DescribeWorkflowCallable(const Model::DescribeWorkflowRequest& request) const;
 
         /**
-         * <p>Describes the specified workflow.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeWorkflow">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeWorkflowAsync(const Model::DescribeWorkflowRequest& request, const DescribeWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -766,30 +560,12 @@ namespace Model
         virtual Model::ImportSshPublicKeyOutcome ImportSshPublicKey(const Model::ImportSshPublicKeyRequest& request) const;
 
         /**
-         * <p>Adds a Secure Shell (SSH) public key to a user account identified by a
-         * <code>UserName</code> value assigned to the specific file transfer
-         * protocol-enabled server, identified by <code>ServerId</code>.</p> <p>The
-         * response returns the <code>UserName</code> value, the <code>ServerId</code>
-         * value, and the name of the <code>SshPublicKeyId</code>.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportSshPublicKey">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ImportSshPublicKey that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ImportSshPublicKeyOutcomeCallable ImportSshPublicKeyCallable(const Model::ImportSshPublicKeyRequest& request) const;
 
         /**
-         * <p>Adds a Secure Shell (SSH) public key to a user account identified by a
-         * <code>UserName</code> value assigned to the specific file transfer
-         * protocol-enabled server, identified by <code>ServerId</code>.</p> <p>The
-         * response returns the <code>UserName</code> value, the <code>ServerId</code>
-         * value, and the name of the <code>SshPublicKeyId</code>.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportSshPublicKey">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ImportSshPublicKey that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ImportSshPublicKeyAsync(const Model::ImportSshPublicKeyRequest& request, const ImportSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -802,22 +578,12 @@ namespace Model
         virtual Model::ListAccessesOutcome ListAccesses(const Model::ListAccessesRequest& request) const;
 
         /**
-         * <p>Lists the details for all the accesses you have on your server.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListAccesses">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListAccesses that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAccessesOutcomeCallable ListAccessesCallable(const Model::ListAccessesRequest& request) const;
 
         /**
-         * <p>Lists the details for all the accesses you have on your server.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListAccesses">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListAccesses that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAccessesAsync(const Model::ListAccessesRequest& request, const ListAccessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -830,22 +596,12 @@ namespace Model
         virtual Model::ListExecutionsOutcome ListExecutions(const Model::ListExecutionsRequest& request) const;
 
         /**
-         * <p>Lists all executions for the specified workflow.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListExecutions">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListExecutionsOutcomeCallable ListExecutionsCallable(const Model::ListExecutionsRequest& request) const;
 
         /**
-         * <p>Lists all executions for the specified workflow.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListExecutions">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListExecutionsAsync(const Model::ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -858,22 +614,12 @@ namespace Model
         virtual Model::ListSecurityPoliciesOutcome ListSecurityPolicies(const Model::ListSecurityPoliciesRequest& request) const;
 
         /**
-         * <p>Lists the security policies that are attached to your file transfer
-         * protocol-enabled servers.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListSecurityPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListSecurityPoliciesOutcomeCallable ListSecurityPoliciesCallable(const Model::ListSecurityPoliciesRequest& request) const;
 
         /**
-         * <p>Lists the security policies that are attached to your file transfer
-         * protocol-enabled servers.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListSecurityPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListSecurityPoliciesAsync(const Model::ListSecurityPoliciesRequest& request, const ListSecurityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -886,22 +632,12 @@ namespace Model
         virtual Model::ListServersOutcome ListServers(const Model::ListServersRequest& request) const;
 
         /**
-         * <p>Lists the file transfer protocol-enabled servers that are associated with
-         * your Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListServers">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListServers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListServersOutcomeCallable ListServersCallable(const Model::ListServersRequest& request) const;
 
         /**
-         * <p>Lists the file transfer protocol-enabled servers that are associated with
-         * your Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListServers">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListServers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListServersAsync(const Model::ListServersRequest& request, const ListServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -915,24 +651,12 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all of the tags associated with the Amazon Resource Name (ARN) that you
-         * specify. The resource can be a user, server, or role.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all of the tags associated with the Amazon Resource Name (ARN) that you
-         * specify. The resource can be a user, server, or role.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -945,22 +669,12 @@ namespace Model
         virtual Model::ListUsersOutcome ListUsers(const Model::ListUsersRequest& request) const;
 
         /**
-         * <p>Lists the users for a file transfer protocol-enabled server that you specify
-         * by passing the <code>ServerId</code> parameter.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListUsers">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListUsers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListUsersOutcomeCallable ListUsersCallable(const Model::ListUsersRequest& request) const;
 
         /**
-         * <p>Lists the users for a file transfer protocol-enabled server that you specify
-         * by passing the <code>ServerId</code> parameter.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListUsers">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -972,20 +686,12 @@ namespace Model
         virtual Model::ListWorkflowsOutcome ListWorkflows(const Model::ListWorkflowsRequest& request) const;
 
         /**
-         * <p>Lists all of your workflows.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListWorkflows">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListWorkflows that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListWorkflowsOutcomeCallable ListWorkflowsCallable(const Model::ListWorkflowsRequest& request) const;
 
         /**
-         * <p>Lists all of your workflows.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListWorkflows">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListWorkflows that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListWorkflowsAsync(const Model::ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1001,28 +707,12 @@ namespace Model
         virtual Model::SendWorkflowStepStateOutcome SendWorkflowStepState(const Model::SendWorkflowStepStateRequest& request) const;
 
         /**
-         * <p>Sends a callback for asynchronous custom steps.</p> <p> The
-         * <code>ExecutionId</code>, <code>WorkflowId</code>, and <code>Token</code> are
-         * passed to the target resource during execution of a custom step of a workflow.
-         * You must include those with their callback as well as providing a status.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/SendWorkflowStepState">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for SendWorkflowStepState that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SendWorkflowStepStateOutcomeCallable SendWorkflowStepStateCallable(const Model::SendWorkflowStepStateRequest& request) const;
 
         /**
-         * <p>Sends a callback for asynchronous custom steps.</p> <p> The
-         * <code>ExecutionId</code>, <code>WorkflowId</code>, and <code>Token</code> are
-         * passed to the target resource during execution of a custom step of a workflow.
-         * You must include those with their callback as well as providing a status.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/SendWorkflowStepState">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for SendWorkflowStepState that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SendWorkflowStepStateAsync(const Model::SendWorkflowStepStateRequest& request, const SendWorkflowStepStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1041,34 +731,12 @@ namespace Model
         virtual Model::StartServerOutcome StartServer(const Model::StartServerRequest& request) const;
 
         /**
-         * <p>Changes the state of a file transfer protocol-enabled server from
-         * <code>OFFLINE</code> to <code>ONLINE</code>. It has no impact on a server that
-         * is already <code>ONLINE</code>. An <code>ONLINE</code> server can accept and
-         * process file transfer jobs.</p> <p>The state of <code>STARTING</code> indicates
-         * that the server is in an intermediate state, either not fully able to respond,
-         * or not fully online. The values of <code>START_FAILED</code> can indicate an
-         * error condition.</p> <p>No response is returned from this call.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartServer">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StartServer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartServerOutcomeCallable StartServerCallable(const Model::StartServerRequest& request) const;
 
         /**
-         * <p>Changes the state of a file transfer protocol-enabled server from
-         * <code>OFFLINE</code> to <code>ONLINE</code>. It has no impact on a server that
-         * is already <code>ONLINE</code>. An <code>ONLINE</code> server can accept and
-         * process file transfer jobs.</p> <p>The state of <code>STARTING</code> indicates
-         * that the server is in an intermediate state, either not fully able to respond,
-         * or not fully online. The values of <code>START_FAILED</code> can indicate an
-         * error condition.</p> <p>No response is returned from this call.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartServer">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StartServer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartServerAsync(const Model::StartServerRequest& request, const StartServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1090,40 +758,12 @@ namespace Model
         virtual Model::StopServerOutcome StopServer(const Model::StopServerRequest& request) const;
 
         /**
-         * <p>Changes the state of a file transfer protocol-enabled server from
-         * <code>ONLINE</code> to <code>OFFLINE</code>. An <code>OFFLINE</code> server
-         * cannot accept and process file transfer jobs. Information tied to your server,
-         * such as server and user properties, are not affected by stopping your
-         * server.</p>  <p>Stopping the server will not reduce or impact your file
-         * transfer protocol endpoint billing; you must delete the server to stop being
-         * billed.</p>  <p>The state of <code>STOPPING</code> indicates that the
-         * server is in an intermediate state, either not fully able to respond, or not
-         * fully offline. The values of <code>STOP_FAILED</code> can indicate an error
-         * condition.</p> <p>No response is returned from this call.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StopServer">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StopServer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StopServerOutcomeCallable StopServerCallable(const Model::StopServerRequest& request) const;
 
         /**
-         * <p>Changes the state of a file transfer protocol-enabled server from
-         * <code>ONLINE</code> to <code>OFFLINE</code>. An <code>OFFLINE</code> server
-         * cannot accept and process file transfer jobs. Information tied to your server,
-         * such as server and user properties, are not affected by stopping your
-         * server.</p>  <p>Stopping the server will not reduce or impact your file
-         * transfer protocol endpoint billing; you must delete the server to stop being
-         * billed.</p>  <p>The state of <code>STOPPING</code> indicates that the
-         * server is in an intermediate state, either not fully able to respond, or not
-         * fully offline. The values of <code>STOP_FAILED</code> can indicate an error
-         * condition.</p> <p>No response is returned from this call.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StopServer">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StopServer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopServerAsync(const Model::StopServerRequest& request, const StopServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1137,24 +777,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Attaches a key-value pair to a resource, as identified by its Amazon Resource
-         * Name (ARN). Resources are users, servers, roles, and other entities.</p>
-         * <p>There is no response returned from this call.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Attaches a key-value pair to a resource, as identified by its Amazon Resource
-         * Name (ARN). Resources are users, servers, roles, and other entities.</p>
-         * <p>There is no response returned from this call.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1186,60 +814,12 @@ namespace Model
         virtual Model::TestIdentityProviderOutcome TestIdentityProvider(const Model::TestIdentityProviderRequest& request) const;
 
         /**
-         * <p>If the <code>IdentityProviderType</code> of a file transfer protocol-enabled
-         * server is <code>AWS_DIRECTORY_SERVICE</code> or <code>API_Gateway</code>, tests
-         * whether your identity provider is set up successfully. We highly recommend that
-         * you call this operation to test your authentication method as soon as you create
-         * your server. By doing so, you can troubleshoot issues with the identity provider
-         * integration to ensure that your users can successfully use the service.</p> <p>
-         * The <code>ServerId</code> and <code>UserName</code> parameters are required. The
-         * <code>ServerProtocol</code>, <code>SourceIp</code>, and
-         * <code>UserPassword</code> are all optional. </p>  <p> You cannot use
-         * <code>TestIdentityProvider</code> if the <code>IdentityProviderType</code> of
-         * your server is <code>SERVICE_MANAGED</code>. </p>  <ul> <li> <p> If you
-         * provide any incorrect values for any parameters, the <code>Response</code> field
-         * is empty. </p> </li> <li> <p> If you provide a server ID for a server that uses
-         * service-managed users, you get an error: </p> <p> <code> An error occurred
-         * (InvalidRequestException) when calling the TestIdentityProvider operation:
-         * s-<i>server-ID</i> not configured for external auth </code> </p> </li> <li> <p>
-         * If you enter a Server ID for the <code>--server-id</code> parameter that does
-         * not identify an actual Transfer server, you receive the following error: </p>
-         * <p> <code>An error occurred (ResourceNotFoundException) when calling the
-         * TestIdentityProvider operation: Unknown server</code> </p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TestIdentityProvider">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TestIdentityProvider that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TestIdentityProviderOutcomeCallable TestIdentityProviderCallable(const Model::TestIdentityProviderRequest& request) const;
 
         /**
-         * <p>If the <code>IdentityProviderType</code> of a file transfer protocol-enabled
-         * server is <code>AWS_DIRECTORY_SERVICE</code> or <code>API_Gateway</code>, tests
-         * whether your identity provider is set up successfully. We highly recommend that
-         * you call this operation to test your authentication method as soon as you create
-         * your server. By doing so, you can troubleshoot issues with the identity provider
-         * integration to ensure that your users can successfully use the service.</p> <p>
-         * The <code>ServerId</code> and <code>UserName</code> parameters are required. The
-         * <code>ServerProtocol</code>, <code>SourceIp</code>, and
-         * <code>UserPassword</code> are all optional. </p>  <p> You cannot use
-         * <code>TestIdentityProvider</code> if the <code>IdentityProviderType</code> of
-         * your server is <code>SERVICE_MANAGED</code>. </p>  <ul> <li> <p> If you
-         * provide any incorrect values for any parameters, the <code>Response</code> field
-         * is empty. </p> </li> <li> <p> If you provide a server ID for a server that uses
-         * service-managed users, you get an error: </p> <p> <code> An error occurred
-         * (InvalidRequestException) when calling the TestIdentityProvider operation:
-         * s-<i>server-ID</i> not configured for external auth </code> </p> </li> <li> <p>
-         * If you enter a Server ID for the <code>--server-id</code> parameter that does
-         * not identify an actual Transfer server, you receive the following error: </p>
-         * <p> <code>An error occurred (ResourceNotFoundException) when calling the
-         * TestIdentityProvider operation: Unknown server</code> </p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TestIdentityProvider">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TestIdentityProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TestIdentityProviderAsync(const Model::TestIdentityProviderRequest& request, const TestIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1254,26 +834,12 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Detaches a key-value pair from a resource, as identified by its Amazon
-         * Resource Name (ARN). Resources are users, servers, roles, and other
-         * entities.</p> <p>No response is returned from this call.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Detaches a key-value pair from a resource, as identified by its Amazon
-         * Resource Name (ARN). Resources are users, servers, roles, and other
-         * entities.</p> <p>No response is returned from this call.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1287,24 +853,12 @@ namespace Model
         virtual Model::UpdateAccessOutcome UpdateAccess(const Model::UpdateAccessRequest& request) const;
 
         /**
-         * <p>Allows you to update parameters for the access specified in the
-         * <code>ServerID</code> and <code>ExternalID</code> parameters.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAccess">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateAccess that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateAccessOutcomeCallable UpdateAccessCallable(const Model::UpdateAccessRequest& request) const;
 
         /**
-         * <p>Allows you to update parameters for the access specified in the
-         * <code>ServerID</code> and <code>ExternalID</code> parameters.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAccess">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateAccessAsync(const Model::UpdateAccessRequest& request, const UpdateAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1318,24 +872,12 @@ namespace Model
         virtual Model::UpdateServerOutcome UpdateServer(const Model::UpdateServerRequest& request) const;
 
         /**
-         * <p>Updates the file transfer protocol-enabled server's properties after that
-         * server has been created.</p> <p>The <code>UpdateServer</code> call returns the
-         * <code>ServerId</code> of the server you updated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateServer">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateServer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateServerOutcomeCallable UpdateServerCallable(const Model::UpdateServerRequest& request) const;
 
         /**
-         * <p>Updates the file transfer protocol-enabled server's properties after that
-         * server has been created.</p> <p>The <code>UpdateServer</code> call returns the
-         * <code>ServerId</code> of the server you updated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateServer">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateServer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateServerAsync(const Model::UpdateServerRequest& request, const UpdateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1351,28 +893,12 @@ namespace Model
         virtual Model::UpdateUserOutcome UpdateUser(const Model::UpdateUserRequest& request) const;
 
         /**
-         * <p>Assigns new properties to a user. Parameters you pass modify any or all of
-         * the following: the home directory, role, and policy for the
-         * <code>UserName</code> and <code>ServerId</code> you specify.</p> <p>The response
-         * returns the <code>ServerId</code> and the <code>UserName</code> for the updated
-         * user.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateUser">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateUser that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateUserOutcomeCallable UpdateUserCallable(const Model::UpdateUserRequest& request) const;
 
         /**
-         * <p>Assigns new properties to a user. Parameters you pass modify any or all of
-         * the following: the home directory, role, and policy for the
-         * <code>UserName</code> and <code>ServerId</code> you specify.</p> <p>The response
-         * returns the <code>ServerId</code> and the <code>UserName</code> for the updated
-         * user.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateUser">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateUserAsync(const Model::UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

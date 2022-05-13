@@ -139,20 +139,12 @@ namespace Model
         virtual Model::CreateScalingPlanOutcome CreateScalingPlan(const Model::CreateScalingPlanRequest& request) const;
 
         /**
-         * <p>Creates a scaling plan. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/CreateScalingPlan">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateScalingPlan that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateScalingPlanOutcomeCallable CreateScalingPlanCallable(const Model::CreateScalingPlanRequest& request) const;
 
         /**
-         * <p>Creates a scaling plan. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/CreateScalingPlan">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateScalingPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateScalingPlanAsync(const Model::CreateScalingPlanRequest& request, const CreateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -168,28 +160,12 @@ namespace Model
         virtual Model::DeleteScalingPlanOutcome DeleteScalingPlan(const Model::DeleteScalingPlanRequest& request) const;
 
         /**
-         * <p>Deletes the specified scaling plan.</p> <p>Deleting a scaling plan deletes
-         * the underlying <a>ScalingInstruction</a> for all of the scalable resources that
-         * are covered by the plan.</p> <p>If the plan has launched resources or has
-         * scaling activities in progress, you must delete those resources
-         * separately.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/DeleteScalingPlan">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteScalingPlan that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteScalingPlanOutcomeCallable DeleteScalingPlanCallable(const Model::DeleteScalingPlanRequest& request) const;
 
         /**
-         * <p>Deletes the specified scaling plan.</p> <p>Deleting a scaling plan deletes
-         * the underlying <a>ScalingInstruction</a> for all of the scalable resources that
-         * are covered by the plan.</p> <p>If the plan has launched resources or has
-         * scaling activities in progress, you must delete those resources
-         * separately.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/DeleteScalingPlan">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteScalingPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteScalingPlanAsync(const Model::DeleteScalingPlanRequest& request, const DeleteScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -202,22 +178,12 @@ namespace Model
         virtual Model::DescribeScalingPlanResourcesOutcome DescribeScalingPlanResources(const Model::DescribeScalingPlanResourcesRequest& request) const;
 
         /**
-         * <p>Describes the scalable resources in the specified scaling plan.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/DescribeScalingPlanResources">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeScalingPlanResources that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeScalingPlanResourcesOutcomeCallable DescribeScalingPlanResourcesCallable(const Model::DescribeScalingPlanResourcesRequest& request) const;
 
         /**
-         * <p>Describes the scalable resources in the specified scaling plan.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/DescribeScalingPlanResources">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeScalingPlanResources that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeScalingPlanResourcesAsync(const Model::DescribeScalingPlanResourcesRequest& request, const DescribeScalingPlanResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -229,20 +195,12 @@ namespace Model
         virtual Model::DescribeScalingPlansOutcome DescribeScalingPlans(const Model::DescribeScalingPlansRequest& request) const;
 
         /**
-         * <p>Describes one or more of your scaling plans.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/DescribeScalingPlans">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeScalingPlans that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeScalingPlansOutcomeCallable DescribeScalingPlansCallable(const Model::DescribeScalingPlansRequest& request) const;
 
         /**
-         * <p>Describes one or more of your scaling plans.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/DescribeScalingPlans">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeScalingPlans that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeScalingPlansAsync(const Model::DescribeScalingPlansRequest& request, const DescribeScalingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -257,26 +215,12 @@ namespace Model
         virtual Model::GetScalingPlanResourceForecastDataOutcome GetScalingPlanResourceForecastData(const Model::GetScalingPlanResourceForecastDataRequest& request) const;
 
         /**
-         * <p>Retrieves the forecast data for a scalable resource.</p> <p>Capacity
-         * forecasts are represented as predicted values, or data points, that are
-         * calculated using historical data points from a specified CloudWatch load metric.
-         * Data points are available for up to 56 days. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/GetScalingPlanResourceForecastData">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetScalingPlanResourceForecastData that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetScalingPlanResourceForecastDataOutcomeCallable GetScalingPlanResourceForecastDataCallable(const Model::GetScalingPlanResourceForecastDataRequest& request) const;
 
         /**
-         * <p>Retrieves the forecast data for a scalable resource.</p> <p>Capacity
-         * forecasts are represented as predicted values, or data points, that are
-         * calculated using historical data points from a specified CloudWatch load metric.
-         * Data points are available for up to 56 days. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/GetScalingPlanResourceForecastData">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetScalingPlanResourceForecastData that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetScalingPlanResourceForecastDataAsync(const Model::GetScalingPlanResourceForecastDataRequest& request, const GetScalingPlanResourceForecastDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -290,24 +234,12 @@ namespace Model
         virtual Model::UpdateScalingPlanOutcome UpdateScalingPlan(const Model::UpdateScalingPlanRequest& request) const;
 
         /**
-         * <p>Updates the specified scaling plan.</p> <p>You cannot update a scaling plan
-         * if it is in the process of being created, updated, or deleted.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/UpdateScalingPlan">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateScalingPlan that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateScalingPlanOutcomeCallable UpdateScalingPlanCallable(const Model::UpdateScalingPlanRequest& request) const;
 
         /**
-         * <p>Updates the specified scaling plan.</p> <p>You cannot update a scaling plan
-         * if it is in the process of being created, updated, or deleted.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/UpdateScalingPlan">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateScalingPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateScalingPlanAsync(const Model::UpdateScalingPlanRequest& request, const UpdateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

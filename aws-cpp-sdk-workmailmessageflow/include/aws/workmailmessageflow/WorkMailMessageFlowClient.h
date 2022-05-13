@@ -107,22 +107,12 @@ namespace Model
         virtual Model::GetRawMessageContentOutcome GetRawMessageContent(const Model::GetRawMessageContentRequest& request) const;
 
         /**
-         * <p>Retrieves the raw content of an in-transit email message, in MIME
-         * format.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/workmailmessageflow-2019-05-01/GetRawMessageContent">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetRawMessageContent that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetRawMessageContentOutcomeCallable GetRawMessageContentCallable(const Model::GetRawMessageContentRequest& request) const;
 
         /**
-         * <p>Retrieves the raw content of an in-transit email message, in MIME
-         * format.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/workmailmessageflow-2019-05-01/GetRawMessageContent">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetRawMessageContent that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRawMessageContentAsync(const Model::GetRawMessageContentRequest& request, const GetRawMessageContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -145,42 +135,12 @@ namespace Model
         virtual Model::PutRawMessageContentOutcome PutRawMessageContent(const Model::PutRawMessageContentRequest& request) const;
 
         /**
-         * <p>Updates the raw content of an in-transit email message, in MIME format.</p>
-         * <p>This example describes how to update in-transit email message. For more
-         * information and examples for using this API, see <a
-         * href="https://docs.aws.amazon.com/workmail/latest/adminguide/update-with-lambda.html">
-         * Updating message content with AWS Lambda</a>.</p>  <p>Updates to an
-         * in-transit message only appear when you call <code>PutRawMessageContent</code>
-         * from an AWS Lambda function configured with a synchronous <a
-         * href="https://docs.aws.amazon.com/workmail/latest/adminguide/lambda.html#synchronous-rules">
-         * Run Lambda</a> rule. If you call <code>PutRawMessageContent</code> on a
-         * delivered or sent message, the message remains unchanged, even though <a
-         * href="https://docs.aws.amazon.com/workmail/latest/APIReference/API_messageflow_GetRawMessageContent.html">GetRawMessageContent</a>
-         * returns an updated message. </p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/workmailmessageflow-2019-05-01/PutRawMessageContent">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutRawMessageContent that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutRawMessageContentOutcomeCallable PutRawMessageContentCallable(const Model::PutRawMessageContentRequest& request) const;
 
         /**
-         * <p>Updates the raw content of an in-transit email message, in MIME format.</p>
-         * <p>This example describes how to update in-transit email message. For more
-         * information and examples for using this API, see <a
-         * href="https://docs.aws.amazon.com/workmail/latest/adminguide/update-with-lambda.html">
-         * Updating message content with AWS Lambda</a>.</p>  <p>Updates to an
-         * in-transit message only appear when you call <code>PutRawMessageContent</code>
-         * from an AWS Lambda function configured with a synchronous <a
-         * href="https://docs.aws.amazon.com/workmail/latest/adminguide/lambda.html#synchronous-rules">
-         * Run Lambda</a> rule. If you call <code>PutRawMessageContent</code> on a
-         * delivered or sent message, the message remains unchanged, even though <a
-         * href="https://docs.aws.amazon.com/workmail/latest/APIReference/API_messageflow_GetRawMessageContent.html">GetRawMessageContent</a>
-         * returns an updated message. </p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/workmailmessageflow-2019-05-01/PutRawMessageContent">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutRawMessageContent that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutRawMessageContentAsync(const Model::PutRawMessageContentRequest& request, const PutRawMessageContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

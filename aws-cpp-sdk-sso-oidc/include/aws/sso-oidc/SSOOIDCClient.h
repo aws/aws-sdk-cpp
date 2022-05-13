@@ -129,24 +129,12 @@ namespace Model
         virtual Model::CreateTokenOutcome CreateToken(const Model::CreateTokenRequest& request) const;
 
         /**
-         * <p>Creates and returns an access token for the authorized client. The access
-         * token issued will be used to fetch short-term credentials for the assigned roles
-         * in the AWS account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/CreateToken">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateToken that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateTokenOutcomeCallable CreateTokenCallable(const Model::CreateTokenRequest& request) const;
 
         /**
-         * <p>Creates and returns an access token for the authorized client. The access
-         * token issued will be used to fetch short-term credentials for the assigned roles
-         * in the AWS account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/CreateToken">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateToken that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateTokenAsync(const Model::CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -160,24 +148,12 @@ namespace Model
         virtual Model::RegisterClientOutcome RegisterClient(const Model::RegisterClientRequest& request) const;
 
         /**
-         * <p>Registers a client with AWS SSO. This allows clients to initiate device
-         * authorization. The output should be persisted for reuse through many
-         * authentication requests.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/RegisterClient">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for RegisterClient that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RegisterClientOutcomeCallable RegisterClientCallable(const Model::RegisterClientRequest& request) const;
 
         /**
-         * <p>Registers a client with AWS SSO. This allows clients to initiate device
-         * authorization. The output should be persisted for reuse through many
-         * authentication requests.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/RegisterClient">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for RegisterClient that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RegisterClientAsync(const Model::RegisterClientRequest& request, const RegisterClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -190,22 +166,12 @@ namespace Model
         virtual Model::StartDeviceAuthorizationOutcome StartDeviceAuthorization(const Model::StartDeviceAuthorizationRequest& request) const;
 
         /**
-         * <p>Initiates device authorization by requesting a pair of verification codes
-         * from the authorization service.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/StartDeviceAuthorization">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StartDeviceAuthorization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartDeviceAuthorizationOutcomeCallable StartDeviceAuthorizationCallable(const Model::StartDeviceAuthorizationRequest& request) const;
 
         /**
-         * <p>Initiates device authorization by requesting a pair of verification codes
-         * from the authorization service.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/StartDeviceAuthorization">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StartDeviceAuthorization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartDeviceAuthorizationAsync(const Model::StartDeviceAuthorizationRequest& request, const StartDeviceAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

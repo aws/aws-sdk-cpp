@@ -292,34 +292,12 @@ namespace Model
         virtual Model::CreateCallAnalyticsCategoryOutcome CreateCallAnalyticsCategory(const Model::CreateCallAnalyticsCategoryRequest& request) const;
 
         /**
-         * <p>Creates a call analytics category. Amazon Transcribe applies the conditions
-         * specified by your call analytics categories to your call analytics jobs. For
-         * each analytics category, you must create between 1 and 20 rules. For example,
-         * you can create a 'greeting' category with a rule that flags calls in which your
-         * agent does not use a specified phrase (for example: "Please note this call may
-         * be recorded.") in the first 15 seconds of the call. When you start a call
-         * analytics job, Amazon Transcribe applies all your existing call analytics
-         * categories to that job.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateCallAnalyticsCategory">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateCallAnalyticsCategory that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateCallAnalyticsCategoryOutcomeCallable CreateCallAnalyticsCategoryCallable(const Model::CreateCallAnalyticsCategoryRequest& request) const;
 
         /**
-         * <p>Creates a call analytics category. Amazon Transcribe applies the conditions
-         * specified by your call analytics categories to your call analytics jobs. For
-         * each analytics category, you must create between 1 and 20 rules. For example,
-         * you can create a 'greeting' category with a rule that flags calls in which your
-         * agent does not use a specified phrase (for example: "Please note this call may
-         * be recorded.") in the first 15 seconds of the call. When you start a call
-         * analytics job, Amazon Transcribe applies all your existing call analytics
-         * categories to that job.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateCallAnalyticsCategory">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateCallAnalyticsCategory that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateCallAnalyticsCategoryAsync(const Model::CreateCallAnalyticsCategoryRequest& request, const CreateCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -336,30 +314,12 @@ namespace Model
         virtual Model::CreateLanguageModelOutcome CreateLanguageModel(const Model::CreateLanguageModelRequest& request) const;
 
         /**
-         * <p>Creates a new custom language model. When creating a new language model, you
-         * must specify if you want a Wideband (audio sample rates over 16,000 Hz) or
-         * Narrowband (audio sample rates under 16,000 Hz) base model. You then include the
-         * S3 URI location of your training and tuning files, the language for the model, a
-         * unique name, and any tags you want associated with your model.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateLanguageModel">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateLanguageModel that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateLanguageModelOutcomeCallable CreateLanguageModelCallable(const Model::CreateLanguageModelRequest& request) const;
 
         /**
-         * <p>Creates a new custom language model. When creating a new language model, you
-         * must specify if you want a Wideband (audio sample rates over 16,000 Hz) or
-         * Narrowband (audio sample rates under 16,000 Hz) base model. You then include the
-         * S3 URI location of your training and tuning files, the language for the model, a
-         * unique name, and any tags you want associated with your model.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateLanguageModel">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateLanguageModel that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateLanguageModelAsync(const Model::CreateLanguageModelRequest& request, const CreateLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -379,36 +339,12 @@ namespace Model
         virtual Model::CreateMedicalVocabularyOutcome CreateMedicalVocabulary(const Model::CreateMedicalVocabularyRequest& request) const;
 
         /**
-         * <p>Creates a new custom medical vocabulary.</p> <p>When creating a new medical
-         * vocabulary, you must upload a text file that contains your new entries, phrases,
-         * and terms into an S3 bucket. Note that this differs from , where you can include
-         * a list of terms within your request using the <code>Phrases</code> flag, as
-         * <code>CreateMedicalVocabulary</code> does not support the <code>Phrases</code>
-         * flag.</p> <p>For more information on creating a custom vocabulary text file, see
-         * <a
-         * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating
-         * a custom vocabulary</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateMedicalVocabulary">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateMedicalVocabulary that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateMedicalVocabularyOutcomeCallable CreateMedicalVocabularyCallable(const Model::CreateMedicalVocabularyRequest& request) const;
 
         /**
-         * <p>Creates a new custom medical vocabulary.</p> <p>When creating a new medical
-         * vocabulary, you must upload a text file that contains your new entries, phrases,
-         * and terms into an S3 bucket. Note that this differs from , where you can include
-         * a list of terms within your request using the <code>Phrases</code> flag, as
-         * <code>CreateMedicalVocabulary</code> does not support the <code>Phrases</code>
-         * flag.</p> <p>For more information on creating a custom vocabulary text file, see
-         * <a
-         * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating
-         * a custom vocabulary</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateMedicalVocabulary">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateMedicalVocabulary that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateMedicalVocabularyAsync(const Model::CreateMedicalVocabularyRequest& request, const CreateMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -426,32 +362,12 @@ namespace Model
         virtual Model::CreateVocabularyOutcome CreateVocabulary(const Model::CreateVocabularyRequest& request) const;
 
         /**
-         * <p>Creates a new custom vocabulary.</p> <p>When creating a new medical
-         * vocabulary, you can either upload a text file that contains your new entries,
-         * phrases, and terms into an S3 bucket or include a list of terms directly in your
-         * request using the <code>Phrases</code> flag.</p> <p>For more information on
-         * creating a custom vocabulary, see <a
-         * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating
-         * a custom vocabulary</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabulary">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateVocabulary that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateVocabularyOutcomeCallable CreateVocabularyCallable(const Model::CreateVocabularyRequest& request) const;
 
         /**
-         * <p>Creates a new custom vocabulary.</p> <p>When creating a new medical
-         * vocabulary, you can either upload a text file that contains your new entries,
-         * phrases, and terms into an S3 bucket or include a list of terms directly in your
-         * request using the <code>Phrases</code> flag.</p> <p>For more information on
-         * creating a custom vocabulary, see <a
-         * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating
-         * a custom vocabulary</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabulary">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateVocabulary that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateVocabularyAsync(const Model::CreateVocabularyRequest& request, const CreateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -465,24 +381,12 @@ namespace Model
         virtual Model::CreateVocabularyFilterOutcome CreateVocabularyFilter(const Model::CreateVocabularyFilterRequest& request) const;
 
         /**
-         * <p>Creates a new vocabulary filter that you can use to filter words from your
-         * transcription output. For example, you can use this operation to remove
-         * profanity from your transcript.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabularyFilter">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateVocabularyFilter that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateVocabularyFilterOutcomeCallable CreateVocabularyFilterCallable(const Model::CreateVocabularyFilterRequest& request) const;
 
         /**
-         * <p>Creates a new vocabulary filter that you can use to filter words from your
-         * transcription output. For example, you can use this operation to remove
-         * profanity from your transcript.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabularyFilter">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateVocabularyFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateVocabularyFilterAsync(const Model::CreateVocabularyFilterRequest& request, const CreateVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -496,24 +400,12 @@ namespace Model
         virtual Model::DeleteCallAnalyticsCategoryOutcome DeleteCallAnalyticsCategory(const Model::DeleteCallAnalyticsCategoryRequest& request) const;
 
         /**
-         * <p>Deletes a call analytics category. To use this operation, specify the name of
-         * the category you want to delete using <code>CategoryName</code>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteCallAnalyticsCategory">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteCallAnalyticsCategory that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteCallAnalyticsCategoryOutcomeCallable DeleteCallAnalyticsCategoryCallable(const Model::DeleteCallAnalyticsCategoryRequest& request) const;
 
         /**
-         * <p>Deletes a call analytics category. To use this operation, specify the name of
-         * the category you want to delete using <code>CategoryName</code>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteCallAnalyticsCategory">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteCallAnalyticsCategory that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteCallAnalyticsCategoryAsync(const Model::DeleteCallAnalyticsCategoryRequest& request, const DeleteCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -527,24 +419,12 @@ namespace Model
         virtual Model::DeleteCallAnalyticsJobOutcome DeleteCallAnalyticsJob(const Model::DeleteCallAnalyticsJobRequest& request) const;
 
         /**
-         * <p>Deletes a call analytics job. To use this operation, specify the name of the
-         * job you want to delete using <code>CallAnalyticsJobName</code>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteCallAnalyticsJob">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteCallAnalyticsJob that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteCallAnalyticsJobOutcomeCallable DeleteCallAnalyticsJobCallable(const Model::DeleteCallAnalyticsJobRequest& request) const;
 
         /**
-         * <p>Deletes a call analytics job. To use this operation, specify the name of the
-         * job you want to delete using <code>CallAnalyticsJobName</code>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteCallAnalyticsJob">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteCallAnalyticsJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteCallAnalyticsJobAsync(const Model::DeleteCallAnalyticsJobRequest& request, const DeleteCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -558,24 +438,12 @@ namespace Model
         virtual Model::DeleteLanguageModelOutcome DeleteLanguageModel(const Model::DeleteLanguageModelRequest& request) const;
 
         /**
-         * <p>Deletes a custom language model. To use this operation, specify the name of
-         * the language model you want to delete using
-         * <code>ModelName</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteLanguageModel">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteLanguageModel that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteLanguageModelOutcomeCallable DeleteLanguageModelCallable(const Model::DeleteLanguageModelRequest& request) const;
 
         /**
-         * <p>Deletes a custom language model. To use this operation, specify the name of
-         * the language model you want to delete using
-         * <code>ModelName</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteLanguageModel">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteLanguageModel that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteLanguageModelAsync(const Model::DeleteLanguageModelRequest& request, const DeleteLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -589,24 +457,12 @@ namespace Model
         virtual Model::DeleteMedicalTranscriptionJobOutcome DeleteMedicalTranscriptionJob(const Model::DeleteMedicalTranscriptionJobRequest& request) const;
 
         /**
-         * <p>Deletes a medical transcription job, along with any related information. To
-         * use this operation, specify the name of the job you want to delete using
-         * <code>MedicalTranscriptionJobName</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalTranscriptionJob">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteMedicalTranscriptionJob that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteMedicalTranscriptionJobOutcomeCallable DeleteMedicalTranscriptionJobCallable(const Model::DeleteMedicalTranscriptionJobRequest& request) const;
 
         /**
-         * <p>Deletes a medical transcription job, along with any related information. To
-         * use this operation, specify the name of the job you want to delete using
-         * <code>MedicalTranscriptionJobName</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalTranscriptionJob">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteMedicalTranscriptionJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteMedicalTranscriptionJobAsync(const Model::DeleteMedicalTranscriptionJobRequest& request, const DeleteMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -620,24 +476,12 @@ namespace Model
         virtual Model::DeleteMedicalVocabularyOutcome DeleteMedicalVocabulary(const Model::DeleteMedicalVocabularyRequest& request) const;
 
         /**
-         * <p>Deletes a custom medical vocabulary. To use this operation, specify the name
-         * of the vocabulary you want to delete using
-         * <code>VocabularyName</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalVocabulary">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteMedicalVocabulary that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteMedicalVocabularyOutcomeCallable DeleteMedicalVocabularyCallable(const Model::DeleteMedicalVocabularyRequest& request) const;
 
         /**
-         * <p>Deletes a custom medical vocabulary. To use this operation, specify the name
-         * of the vocabulary you want to delete using
-         * <code>VocabularyName</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalVocabulary">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteMedicalVocabulary that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteMedicalVocabularyAsync(const Model::DeleteMedicalVocabularyRequest& request, const DeleteMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -651,24 +495,12 @@ namespace Model
         virtual Model::DeleteTranscriptionJobOutcome DeleteTranscriptionJob(const Model::DeleteTranscriptionJobRequest& request) const;
 
         /**
-         * <p>Deletes a transcription job, along with any related information. To use this
-         * operation, specify the name of the job you want to delete using
-         * <code>TranscriptionJobName</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteTranscriptionJob that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteTranscriptionJobOutcomeCallable DeleteTranscriptionJobCallable(const Model::DeleteTranscriptionJobRequest& request) const;
 
         /**
-         * <p>Deletes a transcription job, along with any related information. To use this
-         * operation, specify the name of the job you want to delete using
-         * <code>TranscriptionJobName</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteTranscriptionJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteTranscriptionJobAsync(const Model::DeleteTranscriptionJobRequest& request, const DeleteTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -682,24 +514,12 @@ namespace Model
         virtual Model::DeleteVocabularyOutcome DeleteVocabulary(const Model::DeleteVocabularyRequest& request) const;
 
         /**
-         * <p>Deletes a custom vocabulary. To use this operation, specify the name of the
-         * vocabulary you want to delete using <code>VocabularyName</code>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteVocabulary">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteVocabulary that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteVocabularyOutcomeCallable DeleteVocabularyCallable(const Model::DeleteVocabularyRequest& request) const;
 
         /**
-         * <p>Deletes a custom vocabulary. To use this operation, specify the name of the
-         * vocabulary you want to delete using <code>VocabularyName</code>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteVocabulary">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteVocabulary that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteVocabularyAsync(const Model::DeleteVocabularyRequest& request, const DeleteVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -713,24 +533,12 @@ namespace Model
         virtual Model::DeleteVocabularyFilterOutcome DeleteVocabularyFilter(const Model::DeleteVocabularyFilterRequest& request) const;
 
         /**
-         * <p>Deletes a vocabulary filter. To use this operation, specify the name of the
-         * vocabulary filter you want to delete using
-         * <code>VocabularyFilterName</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteVocabularyFilter">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteVocabularyFilter that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteVocabularyFilterOutcomeCallable DeleteVocabularyFilterCallable(const Model::DeleteVocabularyFilterRequest& request) const;
 
         /**
-         * <p>Deletes a vocabulary filter. To use this operation, specify the name of the
-         * vocabulary filter you want to delete using
-         * <code>VocabularyFilterName</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteVocabularyFilter">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteVocabularyFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteVocabularyFilterAsync(const Model::DeleteVocabularyFilterRequest& request, const DeleteVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -748,32 +556,12 @@ namespace Model
         virtual Model::DescribeLanguageModelOutcome DescribeLanguageModel(const Model::DescribeLanguageModelRequest& request) const;
 
         /**
-         * <p>Provides information about a specific custom language model in your Amazon
-         * Web Services account.</p> <p>This operation also shows if the base language
-         * model you used to create your custom language model has been updated. If Amazon
-         * Transcribe has updated the base model, you can create a new custom language
-         * model using the updated base model.</p> <p>If you tried to create a new custom
-         * language model and the request wasn't successful, you can use this operation to
-         * help identify the reason. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DescribeLanguageModel">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeLanguageModel that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeLanguageModelOutcomeCallable DescribeLanguageModelCallable(const Model::DescribeLanguageModelRequest& request) const;
 
         /**
-         * <p>Provides information about a specific custom language model in your Amazon
-         * Web Services account.</p> <p>This operation also shows if the base language
-         * model you used to create your custom language model has been updated. If Amazon
-         * Transcribe has updated the base model, you can create a new custom language
-         * model using the updated base model.</p> <p>If you tried to create a new custom
-         * language model and the request wasn't successful, you can use this operation to
-         * help identify the reason. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DescribeLanguageModel">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeLanguageModel that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeLanguageModelAsync(const Model::DescribeLanguageModelRequest& request, const DescribeLanguageModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -786,22 +574,12 @@ namespace Model
         virtual Model::GetCallAnalyticsCategoryOutcome GetCallAnalyticsCategory(const Model::GetCallAnalyticsCategoryRequest& request) const;
 
         /**
-         * <p>Retrieves information about a call analytics category.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetCallAnalyticsCategory">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetCallAnalyticsCategory that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetCallAnalyticsCategoryOutcomeCallable GetCallAnalyticsCategoryCallable(const Model::GetCallAnalyticsCategoryRequest& request) const;
 
         /**
-         * <p>Retrieves information about a call analytics category.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetCallAnalyticsCategory">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetCallAnalyticsCategory that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCallAnalyticsCategoryAsync(const Model::GetCallAnalyticsCategoryRequest& request, const GetCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -819,32 +597,12 @@ namespace Model
         virtual Model::GetCallAnalyticsJobOutcome GetCallAnalyticsJob(const Model::GetCallAnalyticsJobRequest& request) const;
 
         /**
-         * <p>Retrieves information about a call analytics job.</p> <p>To view the job's
-         * status, refer to the <code>CallAnalyticsJobStatus</code> field. If the status is
-         * <code>COMPLETED</code>, the job is finished. You can then find your transcript
-         * at the URI specified in the <code>TranscriptFileUri</code> field. If you enabled
-         * personally identifiable information (PII) redaction, the redacted transcript
-         * appears in the <code>RedactedTranscriptFileUri</code> field.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetCallAnalyticsJob">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetCallAnalyticsJob that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetCallAnalyticsJobOutcomeCallable GetCallAnalyticsJobCallable(const Model::GetCallAnalyticsJobRequest& request) const;
 
         /**
-         * <p>Retrieves information about a call analytics job.</p> <p>To view the job's
-         * status, refer to the <code>CallAnalyticsJobStatus</code> field. If the status is
-         * <code>COMPLETED</code>, the job is finished. You can then find your transcript
-         * at the URI specified in the <code>TranscriptFileUri</code> field. If you enabled
-         * personally identifiable information (PII) redaction, the redacted transcript
-         * appears in the <code>RedactedTranscriptFileUri</code> field.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetCallAnalyticsJob">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetCallAnalyticsJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCallAnalyticsJobAsync(const Model::GetCallAnalyticsJobRequest& request, const GetCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -860,28 +618,12 @@ namespace Model
         virtual Model::GetMedicalTranscriptionJobOutcome GetMedicalTranscriptionJob(const Model::GetMedicalTranscriptionJobRequest& request) const;
 
         /**
-         * <p>Retrieves information about a medical transcription job.</p> <p>To view the
-         * job's status, refer to the <code>TranscriptionJobStatus</code> field. If the
-         * status is <code>COMPLETED</code>, the job is finished. You can then find your
-         * transcript at the URI specified in the <code>TranscriptFileUri</code>
-         * field.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalTranscriptionJob">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetMedicalTranscriptionJob that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetMedicalTranscriptionJobOutcomeCallable GetMedicalTranscriptionJobCallable(const Model::GetMedicalTranscriptionJobRequest& request) const;
 
         /**
-         * <p>Retrieves information about a medical transcription job.</p> <p>To view the
-         * job's status, refer to the <code>TranscriptionJobStatus</code> field. If the
-         * status is <code>COMPLETED</code>, the job is finished. You can then find your
-         * transcript at the URI specified in the <code>TranscriptFileUri</code>
-         * field.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalTranscriptionJob">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetMedicalTranscriptionJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetMedicalTranscriptionJobAsync(const Model::GetMedicalTranscriptionJobRequest& request, const GetMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -894,22 +636,12 @@ namespace Model
         virtual Model::GetMedicalVocabularyOutcome GetMedicalVocabulary(const Model::GetMedicalVocabularyRequest& request) const;
 
         /**
-         * <p>Retrieves information about a medical vocabulary.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalVocabulary">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetMedicalVocabulary that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetMedicalVocabularyOutcomeCallable GetMedicalVocabularyCallable(const Model::GetMedicalVocabularyRequest& request) const;
 
         /**
-         * <p>Retrieves information about a medical vocabulary.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalVocabulary">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetMedicalVocabulary that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetMedicalVocabularyAsync(const Model::GetMedicalVocabularyRequest& request, const GetMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -926,30 +658,12 @@ namespace Model
         virtual Model::GetTranscriptionJobOutcome GetTranscriptionJob(const Model::GetTranscriptionJobRequest& request) const;
 
         /**
-         * <p>Returns information about a transcription job. To see the status of the job,
-         * check the <code>TranscriptionJobStatus</code> field. If the status is
-         * <code>COMPLETED</code>, the job is finished and you can find the results at the
-         * location specified in the <code>TranscriptFileUri</code> field. If you enable
-         * content redaction, the redacted transcript appears in
-         * <code>RedactedTranscriptFileUri</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetTranscriptionJob">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetTranscriptionJob that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetTranscriptionJobOutcomeCallable GetTranscriptionJobCallable(const Model::GetTranscriptionJobRequest& request) const;
 
         /**
-         * <p>Returns information about a transcription job. To see the status of the job,
-         * check the <code>TranscriptionJobStatus</code> field. If the status is
-         * <code>COMPLETED</code>, the job is finished and you can find the results at the
-         * location specified in the <code>TranscriptFileUri</code> field. If you enable
-         * content redaction, the redacted transcript appears in
-         * <code>RedactedTranscriptFileUri</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetTranscriptionJob">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetTranscriptionJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetTranscriptionJobAsync(const Model::GetTranscriptionJobRequest& request, const GetTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -961,20 +675,12 @@ namespace Model
         virtual Model::GetVocabularyOutcome GetVocabulary(const Model::GetVocabularyRequest& request) const;
 
         /**
-         * <p>Gets information about a vocabulary. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabulary">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetVocabulary that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetVocabularyOutcomeCallable GetVocabularyCallable(const Model::GetVocabularyRequest& request) const;
 
         /**
-         * <p>Gets information about a vocabulary. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabulary">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetVocabulary that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetVocabularyAsync(const Model::GetVocabularyRequest& request, const GetVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -986,20 +692,12 @@ namespace Model
         virtual Model::GetVocabularyFilterOutcome GetVocabularyFilter(const Model::GetVocabularyFilterRequest& request) const;
 
         /**
-         * <p>Returns information about a vocabulary filter.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabularyFilter">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetVocabularyFilter that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetVocabularyFilterOutcomeCallable GetVocabularyFilterCallable(const Model::GetVocabularyFilterRequest& request) const;
 
         /**
-         * <p>Returns information about a vocabulary filter.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabularyFilter">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetVocabularyFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetVocabularyFilterAsync(const Model::GetVocabularyFilterRequest& request, const GetVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1014,26 +712,12 @@ namespace Model
         virtual Model::ListCallAnalyticsCategoriesOutcome ListCallAnalyticsCategories(const Model::ListCallAnalyticsCategoriesRequest& request) const;
 
         /**
-         * <p>Provides more information about the call analytics categories that you've
-         * created. You can use the information in this list to find a specific category.
-         * You can then use the operation to get more information about it.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListCallAnalyticsCategories">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListCallAnalyticsCategories that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListCallAnalyticsCategoriesOutcomeCallable ListCallAnalyticsCategoriesCallable(const Model::ListCallAnalyticsCategoriesRequest& request) const;
 
         /**
-         * <p>Provides more information about the call analytics categories that you've
-         * created. You can use the information in this list to find a specific category.
-         * You can then use the operation to get more information about it.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListCallAnalyticsCategories">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListCallAnalyticsCategories that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListCallAnalyticsCategoriesAsync(const Model::ListCallAnalyticsCategoriesRequest& request, const ListCallAnalyticsCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1046,22 +730,12 @@ namespace Model
         virtual Model::ListCallAnalyticsJobsOutcome ListCallAnalyticsJobs(const Model::ListCallAnalyticsJobsRequest& request) const;
 
         /**
-         * <p>List call analytics jobs with a specified status or substring that matches
-         * their names.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListCallAnalyticsJobs">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListCallAnalyticsJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListCallAnalyticsJobsOutcomeCallable ListCallAnalyticsJobsCallable(const Model::ListCallAnalyticsJobsRequest& request) const;
 
         /**
-         * <p>List call analytics jobs with a specified status or substring that matches
-         * their names.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListCallAnalyticsJobs">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListCallAnalyticsJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListCallAnalyticsJobsAsync(const Model::ListCallAnalyticsJobsRequest& request, const ListCallAnalyticsJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1076,26 +750,12 @@ namespace Model
         virtual Model::ListLanguageModelsOutcome ListLanguageModels(const Model::ListLanguageModelsRequest& request) const;
 
         /**
-         * <p>Provides more information about the custom language models you've created.
-         * You can use the information in this list to find a specific custom language
-         * model. You can then use the operation to get more information about
-         * it.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListLanguageModels">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListLanguageModels that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListLanguageModelsOutcomeCallable ListLanguageModelsCallable(const Model::ListLanguageModelsRequest& request) const;
 
         /**
-         * <p>Provides more information about the custom language models you've created.
-         * You can use the information in this list to find a specific custom language
-         * model. You can then use the operation to get more information about
-         * it.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListLanguageModels">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListLanguageModels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListLanguageModelsAsync(const Model::ListLanguageModelsRequest& request, const ListLanguageModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1108,22 +768,12 @@ namespace Model
         virtual Model::ListMedicalTranscriptionJobsOutcome ListMedicalTranscriptionJobs(const Model::ListMedicalTranscriptionJobsRequest& request) const;
 
         /**
-         * <p>Lists medical transcription jobs with a specified status or substring that
-         * matches their names.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalTranscriptionJobs">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListMedicalTranscriptionJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListMedicalTranscriptionJobsOutcomeCallable ListMedicalTranscriptionJobsCallable(const Model::ListMedicalTranscriptionJobsRequest& request) const;
 
         /**
-         * <p>Lists medical transcription jobs with a specified status or substring that
-         * matches their names.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalTranscriptionJobs">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListMedicalTranscriptionJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListMedicalTranscriptionJobsAsync(const Model::ListMedicalTranscriptionJobsRequest& request, const ListMedicalTranscriptionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1137,24 +787,12 @@ namespace Model
         virtual Model::ListMedicalVocabulariesOutcome ListMedicalVocabularies(const Model::ListMedicalVocabulariesRequest& request) const;
 
         /**
-         * <p>Returns a list of vocabularies that match the specified criteria. If you
-         * don't enter a value in any of the request parameters, returns the entire list of
-         * vocabularies.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalVocabularies">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListMedicalVocabularies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListMedicalVocabulariesOutcomeCallable ListMedicalVocabulariesCallable(const Model::ListMedicalVocabulariesRequest& request) const;
 
         /**
-         * <p>Returns a list of vocabularies that match the specified criteria. If you
-         * don't enter a value in any of the request parameters, returns the entire list of
-         * vocabularies.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalVocabularies">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListMedicalVocabularies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListMedicalVocabulariesAsync(const Model::ListMedicalVocabulariesRequest& request, const ListMedicalVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1167,22 +805,12 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all tags associated with a given transcription job, vocabulary, or
-         * resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all tags associated with a given transcription job, vocabulary, or
-         * resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1195,22 +823,12 @@ namespace Model
         virtual Model::ListTranscriptionJobsOutcome ListTranscriptionJobs(const Model::ListTranscriptionJobsRequest& request) const;
 
         /**
-         * <p>Lists transcription jobs with the specified status.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListTranscriptionJobs">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTranscriptionJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTranscriptionJobsOutcomeCallable ListTranscriptionJobsCallable(const Model::ListTranscriptionJobsRequest& request) const;
 
         /**
-         * <p>Lists transcription jobs with the specified status.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListTranscriptionJobs">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTranscriptionJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTranscriptionJobsAsync(const Model::ListTranscriptionJobsRequest& request, const ListTranscriptionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1224,24 +842,12 @@ namespace Model
         virtual Model::ListVocabulariesOutcome ListVocabularies(const Model::ListVocabulariesRequest& request) const;
 
         /**
-         * <p>Returns a list of vocabularies that match the specified criteria. If no
-         * criteria are specified, returns the entire list of vocabularies.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListVocabularies">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListVocabularies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListVocabulariesOutcomeCallable ListVocabulariesCallable(const Model::ListVocabulariesRequest& request) const;
 
         /**
-         * <p>Returns a list of vocabularies that match the specified criteria. If no
-         * criteria are specified, returns the entire list of vocabularies.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListVocabularies">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListVocabularies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListVocabulariesAsync(const Model::ListVocabulariesRequest& request, const ListVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1253,20 +859,12 @@ namespace Model
         virtual Model::ListVocabularyFiltersOutcome ListVocabularyFilters(const Model::ListVocabularyFiltersRequest& request) const;
 
         /**
-         * <p>Gets information about vocabulary filters.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListVocabularyFilters">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListVocabularyFilters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListVocabularyFiltersOutcomeCallable ListVocabularyFiltersCallable(const Model::ListVocabularyFiltersRequest& request) const;
 
         /**
-         * <p>Gets information about vocabulary filters.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListVocabularyFilters">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListVocabularyFilters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListVocabularyFiltersAsync(const Model::ListVocabularyFiltersRequest& request, const ListVocabularyFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1284,32 +882,12 @@ namespace Model
         virtual Model::StartCallAnalyticsJobOutcome StartCallAnalyticsJob(const Model::StartCallAnalyticsJobRequest& request) const;
 
         /**
-         * <p>Starts an asynchronous analytics job that not only transcribes the audio
-         * recording of a caller and agent, but also returns additional insights. These
-         * insights include how quickly or loudly the caller or agent was speaking. To
-         * retrieve additional insights with your analytics jobs, create categories. A
-         * category is a way to classify analytics jobs based on attributes, such as a
-         * customer's sentiment or a particular phrase being used during the call. For more
-         * information, see the operation. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartCallAnalyticsJob">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StartCallAnalyticsJob that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartCallAnalyticsJobOutcomeCallable StartCallAnalyticsJobCallable(const Model::StartCallAnalyticsJobRequest& request) const;
 
         /**
-         * <p>Starts an asynchronous analytics job that not only transcribes the audio
-         * recording of a caller and agent, but also returns additional insights. These
-         * insights include how quickly or loudly the caller or agent was speaking. To
-         * retrieve additional insights with your analytics jobs, create categories. A
-         * category is a way to classify analytics jobs based on attributes, such as a
-         * customer's sentiment or a particular phrase being used during the call. For more
-         * information, see the operation. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartCallAnalyticsJob">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StartCallAnalyticsJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartCallAnalyticsJobAsync(const Model::StartCallAnalyticsJobRequest& request, const StartCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1322,22 +900,12 @@ namespace Model
         virtual Model::StartMedicalTranscriptionJobOutcome StartMedicalTranscriptionJob(const Model::StartMedicalTranscriptionJobRequest& request) const;
 
         /**
-         * <p>Starts a batch job to transcribe medical speech to text.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartMedicalTranscriptionJob">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StartMedicalTranscriptionJob that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartMedicalTranscriptionJobOutcomeCallable StartMedicalTranscriptionJobCallable(const Model::StartMedicalTranscriptionJobRequest& request) const;
 
         /**
-         * <p>Starts a batch job to transcribe medical speech to text.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartMedicalTranscriptionJob">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StartMedicalTranscriptionJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartMedicalTranscriptionJobAsync(const Model::StartMedicalTranscriptionJobRequest& request, const StartMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1350,22 +918,12 @@ namespace Model
         virtual Model::StartTranscriptionJobOutcome StartTranscriptionJob(const Model::StartTranscriptionJobRequest& request) const;
 
         /**
-         * <p>Starts an asynchronous job to transcribe speech to text.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartTranscriptionJob">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StartTranscriptionJob that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartTranscriptionJobOutcomeCallable StartTranscriptionJobCallable(const Model::StartTranscriptionJobRequest& request) const;
 
         /**
-         * <p>Starts an asynchronous job to transcribe speech to text.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartTranscriptionJob">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StartTranscriptionJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartTranscriptionJobAsync(const Model::StartTranscriptionJobRequest& request, const StartTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1378,22 +936,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Tags an Amazon Transcribe resource with the given list of tags.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Tags an Amazon Transcribe resource with the given list of tags.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1406,22 +954,12 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes specified tags from a specified Amazon Transcribe
-         * resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes specified tags from a specified Amazon Transcribe
-         * resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1436,26 +974,12 @@ namespace Model
         virtual Model::UpdateCallAnalyticsCategoryOutcome UpdateCallAnalyticsCategory(const Model::UpdateCallAnalyticsCategoryRequest& request) const;
 
         /**
-         * <p>Updates the call analytics category with new values. The
-         * <code>UpdateCallAnalyticsCategory</code> operation overwrites all of the
-         * existing information with the values that you provide in the
-         * request.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateCallAnalyticsCategory">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateCallAnalyticsCategory that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateCallAnalyticsCategoryOutcomeCallable UpdateCallAnalyticsCategoryCallable(const Model::UpdateCallAnalyticsCategoryRequest& request) const;
 
         /**
-         * <p>Updates the call analytics category with new values. The
-         * <code>UpdateCallAnalyticsCategory</code> operation overwrites all of the
-         * existing information with the values that you provide in the
-         * request.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateCallAnalyticsCategory">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateCallAnalyticsCategory that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateCallAnalyticsCategoryAsync(const Model::UpdateCallAnalyticsCategoryRequest& request, const UpdateCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1471,28 +995,12 @@ namespace Model
         virtual Model::UpdateMedicalVocabularyOutcome UpdateMedicalVocabulary(const Model::UpdateMedicalVocabularyRequest& request) const;
 
         /**
-         * <p>Updates a vocabulary with new values that you provide in a different text
-         * file from the one you used to create the vocabulary. The
-         * <code>UpdateMedicalVocabulary</code> operation overwrites all of the existing
-         * information with the values that you provide in the request.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateMedicalVocabulary">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateMedicalVocabulary that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateMedicalVocabularyOutcomeCallable UpdateMedicalVocabularyCallable(const Model::UpdateMedicalVocabularyRequest& request) const;
 
         /**
-         * <p>Updates a vocabulary with new values that you provide in a different text
-         * file from the one you used to create the vocabulary. The
-         * <code>UpdateMedicalVocabulary</code> operation overwrites all of the existing
-         * information with the values that you provide in the request.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateMedicalVocabulary">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateMedicalVocabulary that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateMedicalVocabularyAsync(const Model::UpdateMedicalVocabularyRequest& request, const UpdateMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1507,26 +1015,12 @@ namespace Model
         virtual Model::UpdateVocabularyOutcome UpdateVocabulary(const Model::UpdateVocabularyRequest& request) const;
 
         /**
-         * <p>Updates an existing vocabulary with new values. The
-         * <code>UpdateVocabulary</code> operation overwrites all of the existing
-         * information with the values that you provide in the request. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabulary">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateVocabulary that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateVocabularyOutcomeCallable UpdateVocabularyCallable(const Model::UpdateVocabularyRequest& request) const;
 
         /**
-         * <p>Updates an existing vocabulary with new values. The
-         * <code>UpdateVocabulary</code> operation overwrites all of the existing
-         * information with the values that you provide in the request. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabulary">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateVocabulary that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateVocabularyAsync(const Model::UpdateVocabularyRequest& request, const UpdateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1539,22 +1033,12 @@ namespace Model
         virtual Model::UpdateVocabularyFilterOutcome UpdateVocabularyFilter(const Model::UpdateVocabularyFilterRequest& request) const;
 
         /**
-         * <p>Updates a vocabulary filter with a new list of filtered words.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabularyFilter">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateVocabularyFilter that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateVocabularyFilterOutcomeCallable UpdateVocabularyFilterCallable(const Model::UpdateVocabularyFilterRequest& request) const;
 
         /**
-         * <p>Updates a vocabulary filter with a new list of filtered words.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabularyFilter">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateVocabularyFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateVocabularyFilterAsync(const Model::UpdateVocabularyFilterRequest& request, const UpdateVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

@@ -231,22 +231,12 @@ namespace Model
         virtual Model::BatchPutPropertyValuesOutcome BatchPutPropertyValues(const Model::BatchPutPropertyValuesRequest& request) const;
 
         /**
-         * <p>Sets values for multiple time series properties.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/BatchPutPropertyValues">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for BatchPutPropertyValues that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::BatchPutPropertyValuesOutcomeCallable BatchPutPropertyValuesCallable(const Model::BatchPutPropertyValuesRequest& request) const;
 
         /**
-         * <p>Sets values for multiple time series properties.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/BatchPutPropertyValues">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for BatchPutPropertyValues that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchPutPropertyValuesAsync(const Model::BatchPutPropertyValuesRequest& request, const BatchPutPropertyValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -258,20 +248,12 @@ namespace Model
         virtual Model::CreateComponentTypeOutcome CreateComponentType(const Model::CreateComponentTypeRequest& request) const;
 
         /**
-         * <p>Creates a component type.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateComponentType">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateComponentType that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateComponentTypeOutcomeCallable CreateComponentTypeCallable(const Model::CreateComponentTypeRequest& request) const;
 
         /**
-         * <p>Creates a component type.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateComponentType">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateComponentType that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateComponentTypeAsync(const Model::CreateComponentTypeRequest& request, const CreateComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -283,20 +265,12 @@ namespace Model
         virtual Model::CreateEntityOutcome CreateEntity(const Model::CreateEntityRequest& request) const;
 
         /**
-         * <p>Creates an entity.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateEntity">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateEntity that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateEntityOutcomeCallable CreateEntityCallable(const Model::CreateEntityRequest& request) const;
 
         /**
-         * <p>Creates an entity.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateEntity">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateEntity that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateEntityAsync(const Model::CreateEntityRequest& request, const CreateEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -308,20 +282,12 @@ namespace Model
         virtual Model::CreateSceneOutcome CreateScene(const Model::CreateSceneRequest& request) const;
 
         /**
-         * <p>Creates a scene.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateScene">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateScene that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateSceneOutcomeCallable CreateSceneCallable(const Model::CreateSceneRequest& request) const;
 
         /**
-         * <p>Creates a scene.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateScene">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateScene that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateSceneAsync(const Model::CreateSceneRequest& request, const CreateSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -333,20 +299,12 @@ namespace Model
         virtual Model::CreateWorkspaceOutcome CreateWorkspace(const Model::CreateWorkspaceRequest& request) const;
 
         /**
-         * <p>Creates a workplace.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateWorkspace">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateWorkspace that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateWorkspaceOutcomeCallable CreateWorkspaceCallable(const Model::CreateWorkspaceRequest& request) const;
 
         /**
-         * <p>Creates a workplace.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateWorkspace">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateWorkspace that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateWorkspaceAsync(const Model::CreateWorkspaceRequest& request, const CreateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -358,20 +316,12 @@ namespace Model
         virtual Model::DeleteComponentTypeOutcome DeleteComponentType(const Model::DeleteComponentTypeRequest& request) const;
 
         /**
-         * <p>Deletes a component type.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteComponentType">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteComponentType that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteComponentTypeOutcomeCallable DeleteComponentTypeCallable(const Model::DeleteComponentTypeRequest& request) const;
 
         /**
-         * <p>Deletes a component type.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteComponentType">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteComponentType that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteComponentTypeAsync(const Model::DeleteComponentTypeRequest& request, const DeleteComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -383,20 +333,12 @@ namespace Model
         virtual Model::DeleteEntityOutcome DeleteEntity(const Model::DeleteEntityRequest& request) const;
 
         /**
-         * <p>Deletes an entity.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteEntity">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteEntity that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteEntityOutcomeCallable DeleteEntityCallable(const Model::DeleteEntityRequest& request) const;
 
         /**
-         * <p>Deletes an entity.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteEntity">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteEntity that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteEntityAsync(const Model::DeleteEntityRequest& request, const DeleteEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -408,20 +350,12 @@ namespace Model
         virtual Model::DeleteSceneOutcome DeleteScene(const Model::DeleteSceneRequest& request) const;
 
         /**
-         * <p>Deletes a scene.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteScene">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteScene that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteSceneOutcomeCallable DeleteSceneCallable(const Model::DeleteSceneRequest& request) const;
 
         /**
-         * <p>Deletes a scene.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteScene">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteScene that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteSceneAsync(const Model::DeleteSceneRequest& request, const DeleteSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -433,20 +367,12 @@ namespace Model
         virtual Model::DeleteWorkspaceOutcome DeleteWorkspace(const Model::DeleteWorkspaceRequest& request) const;
 
         /**
-         * <p>Deletes a workspace.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteWorkspace">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteWorkspace that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteWorkspaceOutcomeCallable DeleteWorkspaceCallable(const Model::DeleteWorkspaceRequest& request) const;
 
         /**
-         * <p>Deletes a workspace.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteWorkspace">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteWorkspace that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteWorkspaceAsync(const Model::DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -458,20 +384,12 @@ namespace Model
         virtual Model::GetComponentTypeOutcome GetComponentType(const Model::GetComponentTypeRequest& request) const;
 
         /**
-         * <p>Retrieves information about a component type.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetComponentType">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetComponentType that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetComponentTypeOutcomeCallable GetComponentTypeCallable(const Model::GetComponentTypeRequest& request) const;
 
         /**
-         * <p>Retrieves information about a component type.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetComponentType">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetComponentType that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetComponentTypeAsync(const Model::GetComponentTypeRequest& request, const GetComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -483,20 +401,12 @@ namespace Model
         virtual Model::GetEntityOutcome GetEntity(const Model::GetEntityRequest& request) const;
 
         /**
-         * <p>Retrieves information about an entity.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetEntity">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetEntity that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetEntityOutcomeCallable GetEntityCallable(const Model::GetEntityRequest& request) const;
 
         /**
-         * <p>Retrieves information about an entity.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetEntity">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetEntity that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetEntityAsync(const Model::GetEntityRequest& request, const GetEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -511,26 +421,12 @@ namespace Model
         virtual Model::GetPropertyValueOutcome GetPropertyValue(const Model::GetPropertyValueRequest& request) const;
 
         /**
-         * <p>Gets the property values for a component, component type, entity, or
-         * workspace.</p> <p>You must specify a value for either
-         * <code>componentName</code>, <code>componentTypeId</code>, <code>entityId</code>,
-         * or <code>workspaceId</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetPropertyValue">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetPropertyValue that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetPropertyValueOutcomeCallable GetPropertyValueCallable(const Model::GetPropertyValueRequest& request) const;
 
         /**
-         * <p>Gets the property values for a component, component type, entity, or
-         * workspace.</p> <p>You must specify a value for either
-         * <code>componentName</code>, <code>componentTypeId</code>, <code>entityId</code>,
-         * or <code>workspaceId</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetPropertyValue">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetPropertyValue that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetPropertyValueAsync(const Model::GetPropertyValueRequest& request, const GetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -546,28 +442,12 @@ namespace Model
         virtual Model::GetPropertyValueHistoryOutcome GetPropertyValueHistory(const Model::GetPropertyValueHistoryRequest& request) const;
 
         /**
-         * <p>Retrieves information about the history of a time series property value for a
-         * component, component type, entity, or workspace.</p> <p>You must specify a value
-         * for <code>workspaceId</code>. For entity-specific queries, specify values for
-         * <code>componentName</code> and <code>entityId</code>. For cross-entity quries,
-         * specify a value for <code>componentTypeId</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetPropertyValueHistory">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetPropertyValueHistory that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetPropertyValueHistoryOutcomeCallable GetPropertyValueHistoryCallable(const Model::GetPropertyValueHistoryRequest& request) const;
 
         /**
-         * <p>Retrieves information about the history of a time series property value for a
-         * component, component type, entity, or workspace.</p> <p>You must specify a value
-         * for <code>workspaceId</code>. For entity-specific queries, specify values for
-         * <code>componentName</code> and <code>entityId</code>. For cross-entity quries,
-         * specify a value for <code>componentTypeId</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetPropertyValueHistory">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetPropertyValueHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetPropertyValueHistoryAsync(const Model::GetPropertyValueHistoryRequest& request, const GetPropertyValueHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -579,20 +459,12 @@ namespace Model
         virtual Model::GetSceneOutcome GetScene(const Model::GetSceneRequest& request) const;
 
         /**
-         * <p>Retrieves information about a scene.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetScene">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetScene that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetSceneOutcomeCallable GetSceneCallable(const Model::GetSceneRequest& request) const;
 
         /**
-         * <p>Retrieves information about a scene.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetScene">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetScene that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSceneAsync(const Model::GetSceneRequest& request, const GetSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -604,20 +476,12 @@ namespace Model
         virtual Model::GetWorkspaceOutcome GetWorkspace(const Model::GetWorkspaceRequest& request) const;
 
         /**
-         * <p>Retrieves information about a workspace.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetWorkspace">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetWorkspace that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetWorkspaceOutcomeCallable GetWorkspaceCallable(const Model::GetWorkspaceRequest& request) const;
 
         /**
-         * <p>Retrieves information about a workspace.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetWorkspace">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetWorkspace that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetWorkspaceAsync(const Model::GetWorkspaceRequest& request, const GetWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -629,20 +493,12 @@ namespace Model
         virtual Model::ListComponentTypesOutcome ListComponentTypes(const Model::ListComponentTypesRequest& request) const;
 
         /**
-         * <p>Lists all component types in a workspace.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListComponentTypes">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListComponentTypes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListComponentTypesOutcomeCallable ListComponentTypesCallable(const Model::ListComponentTypesRequest& request) const;
 
         /**
-         * <p>Lists all component types in a workspace.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListComponentTypes">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListComponentTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListComponentTypesAsync(const Model::ListComponentTypesRequest& request, const ListComponentTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -654,20 +510,12 @@ namespace Model
         virtual Model::ListEntitiesOutcome ListEntities(const Model::ListEntitiesRequest& request) const;
 
         /**
-         * <p>Lists all entities in a workspace.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListEntities">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListEntities that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListEntitiesOutcomeCallable ListEntitiesCallable(const Model::ListEntitiesRequest& request) const;
 
         /**
-         * <p>Lists all entities in a workspace.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListEntities">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListEntities that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListEntitiesAsync(const Model::ListEntitiesRequest& request, const ListEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -679,20 +527,12 @@ namespace Model
         virtual Model::ListScenesOutcome ListScenes(const Model::ListScenesRequest& request) const;
 
         /**
-         * <p>Lists all scenes in a workspace.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListScenes">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListScenes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListScenesOutcomeCallable ListScenesCallable(const Model::ListScenesRequest& request) const;
 
         /**
-         * <p>Lists all scenes in a workspace.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListScenes">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListScenes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListScenesAsync(const Model::ListScenesRequest& request, const ListScenesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -704,20 +544,12 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all tags associated with a resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all tags associated with a resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -730,22 +562,12 @@ namespace Model
         virtual Model::ListWorkspacesOutcome ListWorkspaces(const Model::ListWorkspacesRequest& request) const;
 
         /**
-         * <p>Retrieves information about workspaces in the current account.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListWorkspaces">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListWorkspaces that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListWorkspacesOutcomeCallable ListWorkspacesCallable(const Model::ListWorkspacesRequest& request) const;
 
         /**
-         * <p>Retrieves information about workspaces in the current account.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListWorkspaces">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListWorkspaces that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListWorkspacesAsync(const Model::ListWorkspacesRequest& request, const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -757,20 +579,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds tags to a resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds tags to a resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -782,20 +596,12 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from a resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from a resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -807,20 +613,12 @@ namespace Model
         virtual Model::UpdateComponentTypeOutcome UpdateComponentType(const Model::UpdateComponentTypeRequest& request) const;
 
         /**
-         * <p>Updates information in a component type.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdateComponentType">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateComponentType that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateComponentTypeOutcomeCallable UpdateComponentTypeCallable(const Model::UpdateComponentTypeRequest& request) const;
 
         /**
-         * <p>Updates information in a component type.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdateComponentType">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateComponentType that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateComponentTypeAsync(const Model::UpdateComponentTypeRequest& request, const UpdateComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -832,20 +630,12 @@ namespace Model
         virtual Model::UpdateEntityOutcome UpdateEntity(const Model::UpdateEntityRequest& request) const;
 
         /**
-         * <p>Updates an entity.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdateEntity">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateEntity that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateEntityOutcomeCallable UpdateEntityCallable(const Model::UpdateEntityRequest& request) const;
 
         /**
-         * <p>Updates an entity.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdateEntity">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateEntity that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateEntityAsync(const Model::UpdateEntityRequest& request, const UpdateEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -857,20 +647,12 @@ namespace Model
         virtual Model::UpdateSceneOutcome UpdateScene(const Model::UpdateSceneRequest& request) const;
 
         /**
-         * <p>Updates a scene.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdateScene">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateScene that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateSceneOutcomeCallable UpdateSceneCallable(const Model::UpdateSceneRequest& request) const;
 
         /**
-         * <p>Updates a scene.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdateScene">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateScene that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateSceneAsync(const Model::UpdateSceneRequest& request, const UpdateSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -882,20 +664,12 @@ namespace Model
         virtual Model::UpdateWorkspaceOutcome UpdateWorkspace(const Model::UpdateWorkspaceRequest& request) const;
 
         /**
-         * <p>Updates a workspace.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdateWorkspace">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateWorkspace that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateWorkspaceOutcomeCallable UpdateWorkspaceCallable(const Model::UpdateWorkspaceRequest& request) const;
 
         /**
-         * <p>Updates a workspace.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdateWorkspace">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateWorkspace that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateWorkspaceAsync(const Model::UpdateWorkspaceRequest& request, const UpdateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

@@ -145,24 +145,12 @@ namespace Model
         virtual Model::CancelJobOutcome CancelJob(const Model::CancelJobRequest& request) const;
 
         /**
-         * This operation cancels a specified job. Only the job owner can cancel it. The
-         * operation fails if the job has already started or is complete.<p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CancelJob">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CancelJob that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CancelJobOutcomeCallable CancelJobCallable(const Model::CancelJobRequest& request) const;
 
         /**
-         * This operation cancels a specified job. Only the job owner can cancel it. The
-         * operation fails if the job has already started or is complete.<p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CancelJob">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CancelJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CancelJobAsync(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -178,28 +166,12 @@ namespace Model
         virtual Model::CreateJobOutcome CreateJob(const Model::CreateJobRequest& request) const;
 
         /**
-         * This operation initiates the process of scheduling an upload or download of your
-         * data. You include in the request a manifest that describes the data transfer
-         * specifics. The response to the request includes a job ID, which you can use in
-         * other operations, a signature that you use to identify your storage device, and
-         * the address where you should ship your storage device.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CreateJob">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateJob that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateJobOutcomeCallable CreateJobCallable(const Model::CreateJobRequest& request) const;
 
         /**
-         * This operation initiates the process of scheduling an upload or download of your
-         * data. You include in the request a manifest that describes the data transfer
-         * specifics. The response to the request includes a job ID, which you can use in
-         * other operations, a signature that you use to identify your storage device, and
-         * the address where you should ship your storage device.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CreateJob">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateJobAsync(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -212,22 +184,12 @@ namespace Model
         virtual Model::GetShippingLabelOutcome GetShippingLabel(const Model::GetShippingLabelRequest& request) const;
 
         /**
-         * This operation generates a pre-paid UPS shipping label that you will use to ship
-         * your device to AWS for processing.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetShippingLabel">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetShippingLabel that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetShippingLabelOutcomeCallable GetShippingLabelCallable(const Model::GetShippingLabelRequest& request) const;
 
         /**
-         * This operation generates a pre-paid UPS shipping label that you will use to ship
-         * your device to AWS for processing.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetShippingLabel">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetShippingLabel that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetShippingLabelAsync(const Model::GetShippingLabelRequest& request, const GetShippingLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -242,26 +204,12 @@ namespace Model
         virtual Model::GetStatusOutcome GetStatus(const Model::GetStatusRequest& request) const;
 
         /**
-         * This operation returns information about a job, including where the job is in
-         * the processing pipeline, the status of the results, and the signature value
-         * associated with the job. You can only return information about jobs you
-         * own.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetStatus">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetStatusOutcomeCallable GetStatusCallable(const Model::GetStatusRequest& request) const;
 
         /**
-         * This operation returns information about a job, including where the job is in
-         * the processing pipeline, the status of the results, and the signature value
-         * associated with the job. You can only return information about jobs you
-         * own.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetStatus">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetStatusAsync(const Model::GetStatusRequest& request, const GetStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -277,28 +225,12 @@ namespace Model
         virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
 
         /**
-         * This operation returns the jobs associated with the requester. AWS Import/Export
-         * lists the jobs in reverse chronological order based on the date of creation. For
-         * example if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the
-         * ListJobs operation would return Test2 followed by Test1.<p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/ListJobs">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListJobsOutcomeCallable ListJobsCallable(const Model::ListJobsRequest& request) const;
 
         /**
-         * This operation returns the jobs associated with the requester. AWS Import/Export
-         * lists the jobs in reverse chronological order based on the date of creation. For
-         * example if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the
-         * ListJobs operation would return Test2 followed by Test1.<p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/ListJobs">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -314,28 +246,12 @@ namespace Model
         virtual Model::UpdateJobOutcome UpdateJob(const Model::UpdateJobRequest& request) const;
 
         /**
-         * You use this operation to change the parameters specified in the original
-         * manifest file by supplying a new manifest file. The manifest file attached to
-         * this request replaces the original manifest file. You can only use the operation
-         * after a CreateJob request but before the data transfer starts and you can only
-         * use it on jobs you own.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/UpdateJob">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateJob that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateJobOutcomeCallable UpdateJobCallable(const Model::UpdateJobRequest& request) const;
 
         /**
-         * You use this operation to change the parameters specified in the original
-         * manifest file by supplying a new manifest file. The manifest file attached to
-         * this request replaces the original manifest file. You can only use the operation
-         * after a CreateJob request but before the data transfer starts and you can only
-         * use it on jobs you own.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/UpdateJob">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateJobAsync(const Model::UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

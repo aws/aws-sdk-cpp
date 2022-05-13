@@ -132,22 +132,12 @@ namespace Model
         virtual Model::DeleteReportDefinitionOutcome DeleteReportDefinition(const Model::DeleteReportDefinitionRequest& request) const;
 
         /**
-         * <p>Deletes the specified report definition in AWS Application Cost Profiler.
-         * This stops the report from being generated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/DeleteReportDefinition">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteReportDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteReportDefinitionOutcomeCallable DeleteReportDefinitionCallable(const Model::DeleteReportDefinitionRequest& request) const;
 
         /**
-         * <p>Deletes the specified report definition in AWS Application Cost Profiler.
-         * This stops the report from being generated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/DeleteReportDefinition">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteReportDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteReportDefinitionAsync(const Model::DeleteReportDefinitionRequest& request, const DeleteReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -160,22 +150,12 @@ namespace Model
         virtual Model::GetReportDefinitionOutcome GetReportDefinition(const Model::GetReportDefinitionRequest& request) const;
 
         /**
-         * <p>Retrieves the definition of a report already configured in AWS Application
-         * Cost Profiler.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/GetReportDefinition">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetReportDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetReportDefinitionOutcomeCallable GetReportDefinitionCallable(const Model::GetReportDefinitionRequest& request) const;
 
         /**
-         * <p>Retrieves the definition of a report already configured in AWS Application
-         * Cost Profiler.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/GetReportDefinition">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetReportDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetReportDefinitionAsync(const Model::GetReportDefinitionRequest& request, const GetReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -191,28 +171,12 @@ namespace Model
         virtual Model::ImportApplicationUsageOutcome ImportApplicationUsage(const Model::ImportApplicationUsageRequest& request) const;
 
         /**
-         * <p>Ingests application usage data from Amazon Simple Storage Service (Amazon
-         * S3).</p> <p>The data must already exist in the S3 location. As part of the
-         * action, AWS Application Cost Profiler copies the object from your S3 bucket to
-         * an S3 bucket owned by Amazon for processing asynchronously.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/ImportApplicationUsage">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ImportApplicationUsage that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ImportApplicationUsageOutcomeCallable ImportApplicationUsageCallable(const Model::ImportApplicationUsageRequest& request) const;
 
         /**
-         * <p>Ingests application usage data from Amazon Simple Storage Service (Amazon
-         * S3).</p> <p>The data must already exist in the S3 location. As part of the
-         * action, AWS Application Cost Profiler copies the object from your S3 bucket to
-         * an S3 bucket owned by Amazon for processing asynchronously.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/ImportApplicationUsage">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ImportApplicationUsage that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ImportApplicationUsageAsync(const Model::ImportApplicationUsageRequest& request, const ImportApplicationUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -226,24 +190,12 @@ namespace Model
         virtual Model::ListReportDefinitionsOutcome ListReportDefinitions(const Model::ListReportDefinitionsRequest& request) const;
 
         /**
-         * <p>Retrieves a list of all reports and their configurations for your AWS
-         * account.</p> <p>The maximum number of reports is one.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/ListReportDefinitions">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListReportDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListReportDefinitionsOutcomeCallable ListReportDefinitionsCallable(const Model::ListReportDefinitionsRequest& request) const;
 
         /**
-         * <p>Retrieves a list of all reports and their configurations for your AWS
-         * account.</p> <p>The maximum number of reports is one.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/ListReportDefinitions">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListReportDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListReportDefinitionsAsync(const Model::ListReportDefinitionsRequest& request, const ListReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -256,22 +208,12 @@ namespace Model
         virtual Model::PutReportDefinitionOutcome PutReportDefinition(const Model::PutReportDefinitionRequest& request) const;
 
         /**
-         * <p>Creates the report definition for a report in Application Cost
-         * Profiler.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/PutReportDefinition">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutReportDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutReportDefinitionOutcomeCallable PutReportDefinitionCallable(const Model::PutReportDefinitionRequest& request) const;
 
         /**
-         * <p>Creates the report definition for a report in Application Cost
-         * Profiler.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/PutReportDefinition">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutReportDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutReportDefinitionAsync(const Model::PutReportDefinitionRequest& request, const PutReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -284,22 +226,12 @@ namespace Model
         virtual Model::UpdateReportDefinitionOutcome UpdateReportDefinition(const Model::UpdateReportDefinitionRequest& request) const;
 
         /**
-         * <p>Updates existing report in AWS Application Cost Profiler.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/UpdateReportDefinition">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateReportDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateReportDefinitionOutcomeCallable UpdateReportDefinitionCallable(const Model::UpdateReportDefinitionRequest& request) const;
 
         /**
-         * <p>Updates existing report in AWS Application Cost Profiler.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/UpdateReportDefinition">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateReportDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateReportDefinitionAsync(const Model::UpdateReportDefinitionRequest& request, const UpdateReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

@@ -235,28 +235,12 @@ namespace Model
         virtual Model::CreateChatTokenOutcome CreateChatToken(const Model::CreateChatTokenRequest& request) const;
 
         /**
-         * <p>Creates an encrypted token that is used to establish an individual WebSocket
-         * connection to a room. The token is valid for one minute, and a connection
-         * (session) established with the token is valid for the specified duration.</p>
-         * <p>Encryption keys are owned by Amazon IVS Chat and never used directly by your
-         * application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateChatToken">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateChatToken that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateChatTokenOutcomeCallable CreateChatTokenCallable(const Model::CreateChatTokenRequest& request) const;
 
         /**
-         * <p>Creates an encrypted token that is used to establish an individual WebSocket
-         * connection to a room. The token is valid for one minute, and a connection
-         * (session) established with the token is valid for the specified duration.</p>
-         * <p>Encryption keys are owned by Amazon IVS Chat and never used directly by your
-         * application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateChatToken">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateChatToken that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateChatTokenAsync(const Model::CreateChatTokenRequest& request, const CreateChatTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -269,22 +253,12 @@ namespace Model
         virtual Model::CreateRoomOutcome CreateRoom(const Model::CreateRoomRequest& request) const;
 
         /**
-         * <p>Creates a room that allows clients to connect and pass
-         * messages.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateRoom">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateRoom that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateRoomOutcomeCallable CreateRoomCallable(const Model::CreateRoomRequest& request) const;
 
         /**
-         * <p>Creates a room that allows clients to connect and pass
-         * messages.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateRoom">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateRoom that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateRoomAsync(const Model::CreateRoomRequest& request, const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -302,32 +276,12 @@ namespace Model
         virtual Model::DeleteMessageOutcome DeleteMessage(const Model::DeleteMessageRequest& request) const;
 
         /**
-         * <p>Sends an event to a specific room which directs clients to delete a specific
-         * message; that is, unrender it from view and delete it from the client’s chat
-         * history. This event’s <code>EventName</code> is <code>aws:DELETE_MESSAGE</code>.
-         * This replicates the <a
-         * href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-deletemessage-publish.html">
-         * DeleteMessage</a> WebSocket operation in the Amazon IVS Chat Messaging
-         * API.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteMessage">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteMessage that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteMessageOutcomeCallable DeleteMessageCallable(const Model::DeleteMessageRequest& request) const;
 
         /**
-         * <p>Sends an event to a specific room which directs clients to delete a specific
-         * message; that is, unrender it from view and delete it from the client’s chat
-         * history. This event’s <code>EventName</code> is <code>aws:DELETE_MESSAGE</code>.
-         * This replicates the <a
-         * href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-deletemessage-publish.html">
-         * DeleteMessage</a> WebSocket operation in the Amazon IVS Chat Messaging
-         * API.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteMessage">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteMessage that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteMessageAsync(const Model::DeleteMessageRequest& request, const DeleteMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -339,20 +293,12 @@ namespace Model
         virtual Model::DeleteRoomOutcome DeleteRoom(const Model::DeleteRoomRequest& request) const;
 
         /**
-         * <p>Deletes the specified room.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteRoom">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteRoom that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteRoomOutcomeCallable DeleteRoomCallable(const Model::DeleteRoomRequest& request) const;
 
         /**
-         * <p>Deletes the specified room.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteRoom">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteRoom that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteRoomAsync(const Model::DeleteRoomRequest& request, const DeleteRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -368,28 +314,12 @@ namespace Model
         virtual Model::DisconnectUserOutcome DisconnectUser(const Model::DisconnectUserRequest& request) const;
 
         /**
-         * <p>Disconnects all connections using a specified user ID from a room. This
-         * replicates the <a
-         * href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-disconnectuser-publish.html">
-         * DisconnectUser</a> WebSocket operation in the Amazon IVS Chat Messaging
-         * API.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DisconnectUser">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisconnectUser that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisconnectUserOutcomeCallable DisconnectUserCallable(const Model::DisconnectUserRequest& request) const;
 
         /**
-         * <p>Disconnects all connections using a specified user ID from a room. This
-         * replicates the <a
-         * href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-disconnectuser-publish.html">
-         * DisconnectUser</a> WebSocket operation in the Amazon IVS Chat Messaging
-         * API.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DisconnectUser">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisconnectUser that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisconnectUserAsync(const Model::DisconnectUserRequest& request, const DisconnectUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -401,20 +331,12 @@ namespace Model
         virtual Model::GetRoomOutcome GetRoom(const Model::GetRoomRequest& request) const;
 
         /**
-         * <p>Gets the specified room.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/GetRoom">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetRoom that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetRoomOutcomeCallable GetRoomCallable(const Model::GetRoomRequest& request) const;
 
         /**
-         * <p>Gets the specified room.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/GetRoom">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetRoom that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRoomAsync(const Model::GetRoomRequest& request, const GetRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -428,24 +350,12 @@ namespace Model
         virtual Model::ListRoomsOutcome ListRooms(const Model::ListRoomsRequest& request) const;
 
         /**
-         * <p>Gets summary information about all your rooms in the AWS region where the API
-         * request is processed. Results are sorted in descending order of
-         * <code>updateTime</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListRooms">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListRooms that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListRoomsOutcomeCallable ListRoomsCallable(const Model::ListRoomsRequest& request) const;
 
         /**
-         * <p>Gets summary information about all your rooms in the AWS region where the API
-         * request is processed. Results are sorted in descending order of
-         * <code>updateTime</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListRooms">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListRooms that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListRoomsAsync(const Model::ListRoomsRequest& request, const ListRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -458,22 +368,12 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Gets information about AWS tags for the specified ARN.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Gets information about AWS tags for the specified ARN.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -487,24 +387,12 @@ namespace Model
         virtual Model::SendEventOutcome SendEvent(const Model::SendEventRequest& request) const;
 
         /**
-         * <p>Sends an event to a room. Use this within your application’s business logic
-         * to send events to clients of a room; e.g., to notify clients to change the way
-         * the chat UI is rendered.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/SendEvent">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for SendEvent that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SendEventOutcomeCallable SendEventCallable(const Model::SendEventRequest& request) const;
 
         /**
-         * <p>Sends an event to a room. Use this within your application’s business logic
-         * to send events to clients of a room; e.g., to notify clients to change the way
-         * the chat UI is rendered.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/SendEvent">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for SendEvent that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SendEventAsync(const Model::SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -517,22 +405,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds or updates tags for the AWS resource with the specified
-         * ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds or updates tags for the AWS resource with the specified
-         * ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -545,22 +423,12 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from the resource with the specified ARN.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from the resource with the specified ARN.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -572,20 +440,12 @@ namespace Model
         virtual Model::UpdateRoomOutcome UpdateRoom(const Model::UpdateRoomRequest& request) const;
 
         /**
-         * <p>Updates a room’s configuration.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/UpdateRoom">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateRoom that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateRoomOutcomeCallable UpdateRoomCallable(const Model::UpdateRoomRequest& request) const;
 
         /**
-         * <p>Updates a room’s configuration.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/UpdateRoom">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateRoom that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateRoomAsync(const Model::UpdateRoomRequest& request, const UpdateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

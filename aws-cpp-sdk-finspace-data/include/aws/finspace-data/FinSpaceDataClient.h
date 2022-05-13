@@ -220,20 +220,12 @@ namespace Model
         virtual Model::CreateChangesetOutcome CreateChangeset(const Model::CreateChangesetRequest& request) const;
 
         /**
-         * <p>Creates a new Changeset in a FinSpace Dataset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateChangeset">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateChangeset that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateChangesetOutcomeCallable CreateChangesetCallable(const Model::CreateChangesetRequest& request) const;
 
         /**
-         * <p>Creates a new Changeset in a FinSpace Dataset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateChangeset">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateChangeset that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateChangesetAsync(const Model::CreateChangesetRequest& request, const CreateChangesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -245,20 +237,12 @@ namespace Model
         virtual Model::CreateDataViewOutcome CreateDataView(const Model::CreateDataViewRequest& request) const;
 
         /**
-         * <p>Creates a Dataview for a Dataset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataView">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateDataView that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateDataViewOutcomeCallable CreateDataViewCallable(const Model::CreateDataViewRequest& request) const;
 
         /**
-         * <p>Creates a Dataview for a Dataset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataView">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateDataView that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDataViewAsync(const Model::CreateDataViewRequest& request, const CreateDataViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -270,20 +254,12 @@ namespace Model
         virtual Model::CreateDatasetOutcome CreateDataset(const Model::CreateDatasetRequest& request) const;
 
         /**
-         * <p>Creates a new FinSpace Dataset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataset">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateDataset that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateDatasetOutcomeCallable CreateDatasetCallable(const Model::CreateDatasetRequest& request) const;
 
         /**
-         * <p>Creates a new FinSpace Dataset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataset">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDatasetAsync(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -296,22 +272,12 @@ namespace Model
         virtual Model::CreatePermissionGroupOutcome CreatePermissionGroup(const Model::CreatePermissionGroupRequest& request) const;
 
         /**
-         * <p>Creates a group of permissions for various actions that a user can perform in
-         * FinSpace.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreatePermissionGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreatePermissionGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreatePermissionGroupOutcomeCallable CreatePermissionGroupCallable(const Model::CreatePermissionGroupRequest& request) const;
 
         /**
-         * <p>Creates a group of permissions for various actions that a user can perform in
-         * FinSpace.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreatePermissionGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreatePermissionGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreatePermissionGroupAsync(const Model::CreatePermissionGroupRequest& request, const CreatePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -323,20 +289,12 @@ namespace Model
         virtual Model::CreateUserOutcome CreateUser(const Model::CreateUserRequest& request) const;
 
         /**
-         * <p>Creates a new user in FinSpace.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateUser">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateUser that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request) const;
 
         /**
-         * <p>Creates a new user in FinSpace.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateUser">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -348,20 +306,12 @@ namespace Model
         virtual Model::DeleteDatasetOutcome DeleteDataset(const Model::DeleteDatasetRequest& request) const;
 
         /**
-         * <p>Deletes a FinSpace Dataset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DeleteDataset">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteDataset that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteDatasetOutcomeCallable DeleteDatasetCallable(const Model::DeleteDatasetRequest& request) const;
 
         /**
-         * <p>Deletes a FinSpace Dataset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DeleteDataset">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDatasetAsync(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -374,22 +324,12 @@ namespace Model
         virtual Model::DeletePermissionGroupOutcome DeletePermissionGroup(const Model::DeletePermissionGroupRequest& request) const;
 
         /**
-         * <p>Deletes a permission group. This action is irreversible.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DeletePermissionGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeletePermissionGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeletePermissionGroupOutcomeCallable DeletePermissionGroupCallable(const Model::DeletePermissionGroupRequest& request) const;
 
         /**
-         * <p>Deletes a permission group. This action is irreversible.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DeletePermissionGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeletePermissionGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeletePermissionGroupAsync(const Model::DeletePermissionGroupRequest& request, const DeletePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -402,22 +342,12 @@ namespace Model
         virtual Model::DisableUserOutcome DisableUser(const Model::DisableUserRequest& request) const;
 
         /**
-         * <p>Denies access to the FinSpace web application and API for the specified
-         * user.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisableUser">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisableUser that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisableUserOutcomeCallable DisableUserCallable(const Model::DisableUserRequest& request) const;
 
         /**
-         * <p>Denies access to the FinSpace web application and API for the specified
-         * user.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisableUser">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisableUser that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisableUserAsync(const Model::DisableUserRequest& request, const DisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -430,22 +360,12 @@ namespace Model
         virtual Model::EnableUserOutcome EnableUser(const Model::EnableUserRequest& request) const;
 
         /**
-         * <p> Allows the specified user to access the FinSpace web application and
-         * API.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/EnableUser">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for EnableUser that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::EnableUserOutcomeCallable EnableUserCallable(const Model::EnableUserRequest& request) const;
 
         /**
-         * <p> Allows the specified user to access the FinSpace web application and
-         * API.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/EnableUser">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for EnableUser that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void EnableUserAsync(const Model::EnableUserRequest& request, const EnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -457,20 +377,12 @@ namespace Model
         virtual Model::GetChangesetOutcome GetChangeset(const Model::GetChangesetRequest& request) const;
 
         /**
-         * <p>Get information about a Changeset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetChangeset">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetChangeset that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetChangesetOutcomeCallable GetChangesetCallable(const Model::GetChangesetRequest& request) const;
 
         /**
-         * <p>Get information about a Changeset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetChangeset">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetChangeset that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetChangesetAsync(const Model::GetChangesetRequest& request, const GetChangesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -482,20 +394,12 @@ namespace Model
         virtual Model::GetDataViewOutcome GetDataView(const Model::GetDataViewRequest& request) const;
 
         /**
-         * <p>Gets information about a Dataview.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataView">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetDataView that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDataViewOutcomeCallable GetDataViewCallable(const Model::GetDataViewRequest& request) const;
 
         /**
-         * <p>Gets information about a Dataview.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataView">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetDataView that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDataViewAsync(const Model::GetDataViewRequest& request, const GetDataViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -507,20 +411,12 @@ namespace Model
         virtual Model::GetDatasetOutcome GetDataset(const Model::GetDatasetRequest& request) const;
 
         /**
-         * <p>Returns information about a Dataset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataset">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetDataset that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDatasetOutcomeCallable GetDatasetCallable(const Model::GetDatasetRequest& request) const;
 
         /**
-         * <p>Returns information about a Dataset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataset">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDatasetAsync(const Model::GetDatasetRequest& request, const GetDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -533,22 +429,12 @@ namespace Model
         virtual Model::GetProgrammaticAccessCredentialsOutcome GetProgrammaticAccessCredentials(const Model::GetProgrammaticAccessCredentialsRequest& request) const;
 
         /**
-         * <p>Request programmatic credentials to use with FinSpace SDK.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetProgrammaticAccessCredentials">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetProgrammaticAccessCredentials that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetProgrammaticAccessCredentialsOutcomeCallable GetProgrammaticAccessCredentialsCallable(const Model::GetProgrammaticAccessCredentialsRequest& request) const;
 
         /**
-         * <p>Request programmatic credentials to use with FinSpace SDK.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetProgrammaticAccessCredentials">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetProgrammaticAccessCredentials that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetProgrammaticAccessCredentialsAsync(const Model::GetProgrammaticAccessCredentialsRequest& request, const GetProgrammaticAccessCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -560,20 +446,12 @@ namespace Model
         virtual Model::GetUserOutcome GetUser(const Model::GetUserRequest& request) const;
 
         /**
-         * <p>Retrieves details for a specific user.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetUser">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetUser that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetUserOutcomeCallable GetUserCallable(const Model::GetUserRequest& request) const;
 
         /**
-         * <p>Retrieves details for a specific user.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetUser">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetUser that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetUserAsync(const Model::GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -587,24 +465,12 @@ namespace Model
         virtual Model::GetWorkingLocationOutcome GetWorkingLocation(const Model::GetWorkingLocationRequest& request) const;
 
         /**
-         * <p>A temporary Amazon S3 location, where you can copy your files from a source
-         * location to stage or use as a scratch space in FinSpace notebook.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetWorkingLocation">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetWorkingLocation that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetWorkingLocationOutcomeCallable GetWorkingLocationCallable(const Model::GetWorkingLocationRequest& request) const;
 
         /**
-         * <p>A temporary Amazon S3 location, where you can copy your files from a source
-         * location to stage or use as a scratch space in FinSpace notebook.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetWorkingLocation">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetWorkingLocation that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetWorkingLocationAsync(const Model::GetWorkingLocationRequest& request, const GetWorkingLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -616,20 +482,12 @@ namespace Model
         virtual Model::ListChangesetsOutcome ListChangesets(const Model::ListChangesetsRequest& request) const;
 
         /**
-         * <p>Lists the FinSpace Changesets for a Dataset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListChangesets">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListChangesets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListChangesetsOutcomeCallable ListChangesetsCallable(const Model::ListChangesetsRequest& request) const;
 
         /**
-         * <p>Lists the FinSpace Changesets for a Dataset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListChangesets">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListChangesets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListChangesetsAsync(const Model::ListChangesetsRequest& request, const ListChangesetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -641,20 +499,12 @@ namespace Model
         virtual Model::ListDataViewsOutcome ListDataViews(const Model::ListDataViewsRequest& request) const;
 
         /**
-         * <p>Lists all available Dataviews for a Dataset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDataViews">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListDataViews that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDataViewsOutcomeCallable ListDataViewsCallable(const Model::ListDataViewsRequest& request) const;
 
         /**
-         * <p>Lists all available Dataviews for a Dataset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDataViews">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListDataViews that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDataViewsAsync(const Model::ListDataViewsRequest& request, const ListDataViewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -667,22 +517,12 @@ namespace Model
         virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request) const;
 
         /**
-         * <p>Lists all of the active Datasets that a user has access to.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDatasets">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListDatasets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const Model::ListDatasetsRequest& request) const;
 
         /**
-         * <p>Lists all of the active Datasets that a user has access to.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDatasets">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListDatasets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDatasetsAsync(const Model::ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -695,22 +535,12 @@ namespace Model
         virtual Model::ListPermissionGroupsOutcome ListPermissionGroups(const Model::ListPermissionGroupsRequest& request) const;
 
         /**
-         * <p>Lists all available permission groups in FinSpace.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroups">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListPermissionGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListPermissionGroupsOutcomeCallable ListPermissionGroupsCallable(const Model::ListPermissionGroupsRequest& request) const;
 
         /**
-         * <p>Lists all available permission groups in FinSpace.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroups">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListPermissionGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListPermissionGroupsAsync(const Model::ListPermissionGroupsRequest& request, const ListPermissionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -722,20 +552,12 @@ namespace Model
         virtual Model::ListUsersOutcome ListUsers(const Model::ListUsersRequest& request) const;
 
         /**
-         * <p>Lists all available user accounts in FinSpace.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsers">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListUsers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListUsersOutcomeCallable ListUsersCallable(const Model::ListUsersRequest& request) const;
 
         /**
-         * <p>Lists all available user accounts in FinSpace.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsers">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -750,26 +572,12 @@ namespace Model
         virtual Model::ResetUserPasswordOutcome ResetUserPassword(const Model::ResetUserPasswordRequest& request) const;
 
         /**
-         * <p>Resets the password for a specified user ID and generates a temporary one.
-         * Only a superuser can reset password for other users. Resetting the password
-         * immediately invalidates the previous password associated with the
-         * user.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ResetUserPassword">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ResetUserPassword that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ResetUserPasswordOutcomeCallable ResetUserPasswordCallable(const Model::ResetUserPasswordRequest& request) const;
 
         /**
-         * <p>Resets the password for a specified user ID and generates a temporary one.
-         * Only a superuser can reset password for other users. Resetting the password
-         * immediately invalidates the previous password associated with the
-         * user.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ResetUserPassword">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ResetUserPassword that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ResetUserPasswordAsync(const Model::ResetUserPasswordRequest& request, const ResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -781,20 +589,12 @@ namespace Model
         virtual Model::UpdateChangesetOutcome UpdateChangeset(const Model::UpdateChangesetRequest& request) const;
 
         /**
-         * <p>Updates a FinSpace Changeset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateChangeset">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateChangeset that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateChangesetOutcomeCallable UpdateChangesetCallable(const Model::UpdateChangesetRequest& request) const;
 
         /**
-         * <p>Updates a FinSpace Changeset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateChangeset">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateChangeset that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateChangesetAsync(const Model::UpdateChangesetRequest& request, const UpdateChangesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -806,20 +606,12 @@ namespace Model
         virtual Model::UpdateDatasetOutcome UpdateDataset(const Model::UpdateDatasetRequest& request) const;
 
         /**
-         * <p>Updates a FinSpace Dataset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateDataset">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateDataset that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateDatasetOutcomeCallable UpdateDatasetCallable(const Model::UpdateDatasetRequest& request) const;
 
         /**
-         * <p>Updates a FinSpace Dataset.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateDataset">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateDatasetAsync(const Model::UpdateDatasetRequest& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -832,22 +624,12 @@ namespace Model
         virtual Model::UpdatePermissionGroupOutcome UpdatePermissionGroup(const Model::UpdatePermissionGroupRequest& request) const;
 
         /**
-         * <p>Modifies the details of a permission group. You cannot modify a
-         * <code>permissionGroupID</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdatePermissionGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdatePermissionGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdatePermissionGroupOutcomeCallable UpdatePermissionGroupCallable(const Model::UpdatePermissionGroupRequest& request) const;
 
         /**
-         * <p>Modifies the details of a permission group. You cannot modify a
-         * <code>permissionGroupID</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdatePermissionGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdatePermissionGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdatePermissionGroupAsync(const Model::UpdatePermissionGroupRequest& request, const UpdatePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -860,22 +642,12 @@ namespace Model
         virtual Model::UpdateUserOutcome UpdateUser(const Model::UpdateUserRequest& request) const;
 
         /**
-         * <p>Modifies the details of the specified user account. You cannot update the
-         * <code>userId</code> for a user.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateUser">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateUser that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateUserOutcomeCallable UpdateUserCallable(const Model::UpdateUserRequest& request) const;
 
         /**
-         * <p>Modifies the details of the specified user account. You cannot update the
-         * <code>userId</code> for a user.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateUser">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateUserAsync(const Model::UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

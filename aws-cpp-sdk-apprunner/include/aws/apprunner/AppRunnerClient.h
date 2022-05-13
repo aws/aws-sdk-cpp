@@ -273,38 +273,12 @@ namespace Model
         virtual Model::AssociateCustomDomainOutcome AssociateCustomDomain(const Model::AssociateCustomDomainRequest& request) const;
 
         /**
-         * <p>Associate your own domain name with the App Runner subdomain URL of your App
-         * Runner service.</p> <p>After you call <code>AssociateCustomDomain</code> and
-         * receive a successful response, use the information in the <a>CustomDomain</a>
-         * record that's returned to add CNAME records to your Domain Name System (DNS).
-         * For each mapped domain name, add a mapping to the target App Runner subdomain
-         * and one or more certificate validation records. App Runner then performs DNS
-         * validation to verify that you own or control the domain name that you
-         * associated. App Runner tracks domain validity in a certificate stored in <a
-         * href="https://docs.aws.amazon.com/acm/latest/userguide">AWS Certificate Manager
-         * (ACM)</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/AssociateCustomDomain">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociateCustomDomain that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateCustomDomainOutcomeCallable AssociateCustomDomainCallable(const Model::AssociateCustomDomainRequest& request) const;
 
         /**
-         * <p>Associate your own domain name with the App Runner subdomain URL of your App
-         * Runner service.</p> <p>After you call <code>AssociateCustomDomain</code> and
-         * receive a successful response, use the information in the <a>CustomDomain</a>
-         * record that's returned to add CNAME records to your Domain Name System (DNS).
-         * For each mapped domain name, add a mapping to the target App Runner subdomain
-         * and one or more certificate validation records. App Runner then performs DNS
-         * validation to verify that you own or control the domain name that you
-         * associated. App Runner tracks domain validity in a certificate stored in <a
-         * href="https://docs.aws.amazon.com/acm/latest/userguide">AWS Certificate Manager
-         * (ACM)</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/AssociateCustomDomain">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociateCustomDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateCustomDomainAsync(const Model::AssociateCustomDomainRequest& request, const AssociateCustomDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -330,48 +304,12 @@ namespace Model
         virtual Model::CreateAutoScalingConfigurationOutcome CreateAutoScalingConfiguration(const Model::CreateAutoScalingConfigurationRequest& request) const;
 
         /**
-         * <p>Create an App Runner automatic scaling configuration resource. App Runner
-         * requires this resource when you create or update App Runner services and you
-         * require non-default auto scaling settings. You can share an auto scaling
-         * configuration across multiple services.</p> <p>Create multiple revisions of a
-         * configuration by calling this action multiple times using the same
-         * <code>AutoScalingConfigurationName</code>. The call returns incremental
-         * <code>AutoScalingConfigurationRevision</code> values. When you create a service
-         * and configure an auto scaling configuration resource, the service uses the
-         * latest active revision of the auto scaling configuration by default. You can
-         * optionally configure the service to use a specific revision.</p> <p>Configure a
-         * higher <code>MinSize</code> to increase the spread of your App Runner service
-         * over more Availability Zones in the Amazon Web Services Region. The tradeoff is
-         * a higher minimal cost.</p> <p>Configure a lower <code>MaxSize</code> to control
-         * your cost. The tradeoff is lower responsiveness during peak
-         * demand.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateAutoScalingConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateAutoScalingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateAutoScalingConfigurationOutcomeCallable CreateAutoScalingConfigurationCallable(const Model::CreateAutoScalingConfigurationRequest& request) const;
 
         /**
-         * <p>Create an App Runner automatic scaling configuration resource. App Runner
-         * requires this resource when you create or update App Runner services and you
-         * require non-default auto scaling settings. You can share an auto scaling
-         * configuration across multiple services.</p> <p>Create multiple revisions of a
-         * configuration by calling this action multiple times using the same
-         * <code>AutoScalingConfigurationName</code>. The call returns incremental
-         * <code>AutoScalingConfigurationRevision</code> values. When you create a service
-         * and configure an auto scaling configuration resource, the service uses the
-         * latest active revision of the auto scaling configuration by default. You can
-         * optionally configure the service to use a specific revision.</p> <p>Configure a
-         * higher <code>MinSize</code> to increase the spread of your App Runner service
-         * over more Availability Zones in the Amazon Web Services Region. The tradeoff is
-         * a higher minimal cost.</p> <p>Configure a lower <code>MaxSize</code> to control
-         * your cost. The tradeoff is lower responsiveness during peak
-         * demand.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateAutoScalingConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateAutoScalingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateAutoScalingConfigurationAsync(const Model::CreateAutoScalingConfigurationRequest& request, const CreateAutoScalingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -388,30 +326,12 @@ namespace Model
         virtual Model::CreateConnectionOutcome CreateConnection(const Model::CreateConnectionRequest& request) const;
 
         /**
-         * <p>Create an App Runner connection resource. App Runner requires a connection
-         * resource when you create App Runner services that access private repositories
-         * from certain third-party providers. You can share a connection across multiple
-         * services.</p> <p>A connection resource is needed to access GitHub repositories.
-         * GitHub requires a user interface approval process through the App Runner console
-         * before you can use the connection.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateConnection">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateConnection that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateConnectionOutcomeCallable CreateConnectionCallable(const Model::CreateConnectionRequest& request) const;
 
         /**
-         * <p>Create an App Runner connection resource. App Runner requires a connection
-         * resource when you create App Runner services that access private repositories
-         * from certain third-party providers. You can share a connection across multiple
-         * services.</p> <p>A connection resource is needed to access GitHub repositories.
-         * GitHub requires a user interface approval process through the App Runner console
-         * before you can use the connection.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateConnection">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateConnectionAsync(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -437,48 +357,12 @@ namespace Model
         virtual Model::CreateObservabilityConfigurationOutcome CreateObservabilityConfiguration(const Model::CreateObservabilityConfigurationRequest& request) const;
 
         /**
-         * <p>Create an App Runner observability configuration resource. App Runner
-         * requires this resource when you create or update App Runner services and you
-         * want to enable non-default observability features. You can share an
-         * observability configuration across multiple services.</p> <p>Create multiple
-         * revisions of a configuration by calling this action multiple times using the
-         * same <code>ObservabilityConfigurationName</code>. The call returns incremental
-         * <code>ObservabilityConfigurationRevision</code> values. When you create a
-         * service and configure an observability configuration resource, the service uses
-         * the latest active revision of the observability configuration by default. You
-         * can optionally configure the service to use a specific revision.</p> <p>The
-         * observability configuration resource is designed to configure multiple features
-         * (currently one feature, tracing). This action takes optional parameters that
-         * describe the configuration of these features (currently one parameter,
-         * <code>TraceConfiguration</code>). If you don't specify a feature parameter, App
-         * Runner doesn't enable the feature.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateObservabilityConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateObservabilityConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateObservabilityConfigurationOutcomeCallable CreateObservabilityConfigurationCallable(const Model::CreateObservabilityConfigurationRequest& request) const;
 
         /**
-         * <p>Create an App Runner observability configuration resource. App Runner
-         * requires this resource when you create or update App Runner services and you
-         * want to enable non-default observability features. You can share an
-         * observability configuration across multiple services.</p> <p>Create multiple
-         * revisions of a configuration by calling this action multiple times using the
-         * same <code>ObservabilityConfigurationName</code>. The call returns incremental
-         * <code>ObservabilityConfigurationRevision</code> values. When you create a
-         * service and configure an observability configuration resource, the service uses
-         * the latest active revision of the observability configuration by default. You
-         * can optionally configure the service to use a specific revision.</p> <p>The
-         * observability configuration resource is designed to configure multiple features
-         * (currently one feature, tracing). This action takes optional parameters that
-         * describe the configuration of these features (currently one parameter,
-         * <code>TraceConfiguration</code>). If you don't specify a feature parameter, App
-         * Runner doesn't enable the feature.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateObservabilityConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateObservabilityConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateObservabilityConfigurationAsync(const Model::CreateObservabilityConfigurationRequest& request, const CreateObservabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -494,28 +378,12 @@ namespace Model
         virtual Model::CreateServiceOutcome CreateService(const Model::CreateServiceRequest& request) const;
 
         /**
-         * <p>Create an App Runner service. After the service is created, the action also
-         * automatically starts a deployment.</p> <p>This is an asynchronous operation. On
-         * a successful call, you can use the returned <code>OperationId</code> and the <a
-         * href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListOperations.html">ListOperations</a>
-         * call to track the operation's progress.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateService">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateService that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateServiceOutcomeCallable CreateServiceCallable(const Model::CreateServiceRequest& request) const;
 
         /**
-         * <p>Create an App Runner service. After the service is created, the action also
-         * automatically starts a deployment.</p> <p>This is an asynchronous operation. On
-         * a successful call, you can use the returned <code>OperationId</code> and the <a
-         * href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListOperations.html">ListOperations</a>
-         * call to track the operation's progress.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateService">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateService that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateServiceAsync(const Model::CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -529,24 +397,12 @@ namespace Model
         virtual Model::CreateVpcConnectorOutcome CreateVpcConnector(const Model::CreateVpcConnectorRequest& request) const;
 
         /**
-         * <p>Create an App Runner VPC connector resource. App Runner requires this
-         * resource when you want to associate your App Runner service to a custom Amazon
-         * Virtual Private Cloud (Amazon VPC).</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcConnector">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateVpcConnector that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateVpcConnectorOutcomeCallable CreateVpcConnectorCallable(const Model::CreateVpcConnectorRequest& request) const;
 
         /**
-         * <p>Create an App Runner VPC connector resource. App Runner requires this
-         * resource when you want to associate your App Runner service to a custom Amazon
-         * Virtual Private Cloud (Amazon VPC).</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcConnector">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateVpcConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateVpcConnectorAsync(const Model::CreateVpcConnectorRequest& request, const CreateVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -561,26 +417,12 @@ namespace Model
         virtual Model::DeleteAutoScalingConfigurationOutcome DeleteAutoScalingConfiguration(const Model::DeleteAutoScalingConfigurationRequest& request) const;
 
         /**
-         * <p>Delete an App Runner automatic scaling configuration resource. You can delete
-         * a specific revision or the latest active revision. You can't delete a
-         * configuration that's used by one or more App Runner services.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteAutoScalingConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteAutoScalingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteAutoScalingConfigurationOutcomeCallable DeleteAutoScalingConfigurationCallable(const Model::DeleteAutoScalingConfigurationRequest& request) const;
 
         /**
-         * <p>Delete an App Runner automatic scaling configuration resource. You can delete
-         * a specific revision or the latest active revision. You can't delete a
-         * configuration that's used by one or more App Runner services.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteAutoScalingConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteAutoScalingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAutoScalingConfigurationAsync(const Model::DeleteAutoScalingConfigurationRequest& request, const DeleteAutoScalingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -594,24 +436,12 @@ namespace Model
         virtual Model::DeleteConnectionOutcome DeleteConnection(const Model::DeleteConnectionRequest& request) const;
 
         /**
-         * <p>Delete an App Runner connection. You must first ensure that there are no
-         * running App Runner services that use this connection. If there are any, the
-         * <code>DeleteConnection</code> action fails.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteConnection">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteConnection that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteConnectionOutcomeCallable DeleteConnectionCallable(const Model::DeleteConnectionRequest& request) const;
 
         /**
-         * <p>Delete an App Runner connection. You must first ensure that there are no
-         * running App Runner services that use this connection. If there are any, the
-         * <code>DeleteConnection</code> action fails.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteConnection">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteConnectionAsync(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -626,26 +456,12 @@ namespace Model
         virtual Model::DeleteObservabilityConfigurationOutcome DeleteObservabilityConfiguration(const Model::DeleteObservabilityConfigurationRequest& request) const;
 
         /**
-         * <p>Delete an App Runner observability configuration resource. You can delete a
-         * specific revision or the latest active revision. You can't delete a
-         * configuration that's used by one or more App Runner services.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteObservabilityConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteObservabilityConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteObservabilityConfigurationOutcomeCallable DeleteObservabilityConfigurationCallable(const Model::DeleteObservabilityConfigurationRequest& request) const;
 
         /**
-         * <p>Delete an App Runner observability configuration resource. You can delete a
-         * specific revision or the latest active revision. You can't delete a
-         * configuration that's used by one or more App Runner services.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteObservabilityConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteObservabilityConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteObservabilityConfigurationAsync(const Model::DeleteObservabilityConfigurationRequest& request, const DeleteObservabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -660,26 +476,12 @@ namespace Model
         virtual Model::DeleteServiceOutcome DeleteService(const Model::DeleteServiceRequest& request) const;
 
         /**
-         * <p>Delete an App Runner service.</p> <p>This is an asynchronous operation. On a
-         * successful call, you can use the returned <code>OperationId</code> and the
-         * <a>ListOperations</a> call to track the operation's progress.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteService">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteService that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteServiceOutcomeCallable DeleteServiceCallable(const Model::DeleteServiceRequest& request) const;
 
         /**
-         * <p>Delete an App Runner service.</p> <p>This is an asynchronous operation. On a
-         * successful call, you can use the returned <code>OperationId</code> and the
-         * <a>ListOperations</a> call to track the operation's progress.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteService">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteService that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteServiceAsync(const Model::DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -692,22 +494,12 @@ namespace Model
         virtual Model::DeleteVpcConnectorOutcome DeleteVpcConnector(const Model::DeleteVpcConnectorRequest& request) const;
 
         /**
-         * <p>Delete an App Runner VPC connector resource. You can't delete a connector
-         * that's used by one or more App Runner services.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcConnector">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteVpcConnector that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteVpcConnectorOutcomeCallable DeleteVpcConnectorCallable(const Model::DeleteVpcConnectorRequest& request) const;
 
         /**
-         * <p>Delete an App Runner VPC connector resource. You can't delete a connector
-         * that's used by one or more App Runner services.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcConnector">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteVpcConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteVpcConnectorAsync(const Model::DeleteVpcConnectorRequest& request, const DeleteVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -720,22 +512,12 @@ namespace Model
         virtual Model::DescribeAutoScalingConfigurationOutcome DescribeAutoScalingConfiguration(const Model::DescribeAutoScalingConfigurationRequest& request) const;
 
         /**
-         * <p>Return a full description of an App Runner automatic scaling configuration
-         * resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeAutoScalingConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeAutoScalingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeAutoScalingConfigurationOutcomeCallable DescribeAutoScalingConfigurationCallable(const Model::DescribeAutoScalingConfigurationRequest& request) const;
 
         /**
-         * <p>Return a full description of an App Runner automatic scaling configuration
-         * resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeAutoScalingConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeAutoScalingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAutoScalingConfigurationAsync(const Model::DescribeAutoScalingConfigurationRequest& request, const DescribeAutoScalingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -748,22 +530,12 @@ namespace Model
         virtual Model::DescribeCustomDomainsOutcome DescribeCustomDomains(const Model::DescribeCustomDomainsRequest& request) const;
 
         /**
-         * <p>Return a description of custom domain names that are associated with an App
-         * Runner service.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeCustomDomains">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeCustomDomains that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeCustomDomainsOutcomeCallable DescribeCustomDomainsCallable(const Model::DescribeCustomDomainsRequest& request) const;
 
         /**
-         * <p>Return a description of custom domain names that are associated with an App
-         * Runner service.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeCustomDomains">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeCustomDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeCustomDomainsAsync(const Model::DescribeCustomDomainsRequest& request, const DescribeCustomDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -776,22 +548,12 @@ namespace Model
         virtual Model::DescribeObservabilityConfigurationOutcome DescribeObservabilityConfiguration(const Model::DescribeObservabilityConfigurationRequest& request) const;
 
         /**
-         * <p>Return a full description of an App Runner observability configuration
-         * resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeObservabilityConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeObservabilityConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeObservabilityConfigurationOutcomeCallable DescribeObservabilityConfigurationCallable(const Model::DescribeObservabilityConfigurationRequest& request) const;
 
         /**
-         * <p>Return a full description of an App Runner observability configuration
-         * resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeObservabilityConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeObservabilityConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeObservabilityConfigurationAsync(const Model::DescribeObservabilityConfigurationRequest& request, const DescribeObservabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -804,22 +566,12 @@ namespace Model
         virtual Model::DescribeServiceOutcome DescribeService(const Model::DescribeServiceRequest& request) const;
 
         /**
-         * <p>Return a full description of an App Runner service.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeService">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeService that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeServiceOutcomeCallable DescribeServiceCallable(const Model::DescribeServiceRequest& request) const;
 
         /**
-         * <p>Return a full description of an App Runner service.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeService">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeService that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeServiceAsync(const Model::DescribeServiceRequest& request, const DescribeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -832,22 +584,12 @@ namespace Model
         virtual Model::DescribeVpcConnectorOutcome DescribeVpcConnector(const Model::DescribeVpcConnectorRequest& request) const;
 
         /**
-         * <p>Return a description of an App Runner VPC connector resource.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcConnector">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeVpcConnector that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeVpcConnectorOutcomeCallable DescribeVpcConnectorCallable(const Model::DescribeVpcConnectorRequest& request) const;
 
         /**
-         * <p>Return a description of an App Runner VPC connector resource.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcConnector">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeVpcConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeVpcConnectorAsync(const Model::DescribeVpcConnectorRequest& request, const DescribeVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -864,30 +606,12 @@ namespace Model
         virtual Model::DisassociateCustomDomainOutcome DisassociateCustomDomain(const Model::DisassociateCustomDomainRequest& request) const;
 
         /**
-         * <p>Disassociate a custom domain name from an App Runner service.</p>
-         * <p>Certificates tracking domain validity are associated with a custom domain and
-         * are stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide">AWS
-         * Certificate Manager (ACM)</a>. These certificates aren't deleted as part of this
-         * action. App Runner delays certificate deletion for 30 days after a domain is
-         * disassociated from your service.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DisassociateCustomDomain">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisassociateCustomDomain that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateCustomDomainOutcomeCallable DisassociateCustomDomainCallable(const Model::DisassociateCustomDomainRequest& request) const;
 
         /**
-         * <p>Disassociate a custom domain name from an App Runner service.</p>
-         * <p>Certificates tracking domain validity are associated with a custom domain and
-         * are stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide">AWS
-         * Certificate Manager (ACM)</a>. These certificates aren't deleted as part of this
-         * action. App Runner delays certificate deletion for 30 days after a domain is
-         * disassociated from your service.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DisassociateCustomDomain">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisassociateCustomDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateCustomDomainAsync(const Model::DisassociateCustomDomainRequest& request, const DisassociateCustomDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -905,32 +629,12 @@ namespace Model
         virtual Model::ListAutoScalingConfigurationsOutcome ListAutoScalingConfigurations(const Model::ListAutoScalingConfigurationsRequest& request) const;
 
         /**
-         * <p>Returns a list of active App Runner automatic scaling configurations in your
-         * Amazon Web Services account. You can query the revisions for a specific
-         * configuration name or the revisions for all active configurations in your
-         * account. You can optionally query only the latest revision of each requested
-         * name.</p> <p>To retrieve a full description of a particular configuration
-         * revision, call and provide one of the ARNs returned by
-         * <code>ListAutoScalingConfigurations</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListAutoScalingConfigurations">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListAutoScalingConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAutoScalingConfigurationsOutcomeCallable ListAutoScalingConfigurationsCallable(const Model::ListAutoScalingConfigurationsRequest& request) const;
 
         /**
-         * <p>Returns a list of active App Runner automatic scaling configurations in your
-         * Amazon Web Services account. You can query the revisions for a specific
-         * configuration name or the revisions for all active configurations in your
-         * account. You can optionally query only the latest revision of each requested
-         * name.</p> <p>To retrieve a full description of a particular configuration
-         * revision, call and provide one of the ARNs returned by
-         * <code>ListAutoScalingConfigurations</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListAutoScalingConfigurations">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListAutoScalingConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAutoScalingConfigurationsAsync(const Model::ListAutoScalingConfigurationsRequest& request, const ListAutoScalingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -943,22 +647,12 @@ namespace Model
         virtual Model::ListConnectionsOutcome ListConnections(const Model::ListConnectionsRequest& request) const;
 
         /**
-         * <p>Returns a list of App Runner connections that are associated with your Amazon
-         * Web Services account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListConnections">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListConnections that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListConnectionsOutcomeCallable ListConnectionsCallable(const Model::ListConnectionsRequest& request) const;
 
         /**
-         * <p>Returns a list of App Runner connections that are associated with your Amazon
-         * Web Services account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListConnections">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListConnectionsAsync(const Model::ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -976,32 +670,12 @@ namespace Model
         virtual Model::ListObservabilityConfigurationsOutcome ListObservabilityConfigurations(const Model::ListObservabilityConfigurationsRequest& request) const;
 
         /**
-         * <p>Returns a list of active App Runner observability configurations in your
-         * Amazon Web Services account. You can query the revisions for a specific
-         * configuration name or the revisions for all active configurations in your
-         * account. You can optionally query only the latest revision of each requested
-         * name.</p> <p>To retrieve a full description of a particular configuration
-         * revision, call and provide one of the ARNs returned by
-         * <code>ListObservabilityConfigurations</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListObservabilityConfigurations">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListObservabilityConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListObservabilityConfigurationsOutcomeCallable ListObservabilityConfigurationsCallable(const Model::ListObservabilityConfigurationsRequest& request) const;
 
         /**
-         * <p>Returns a list of active App Runner observability configurations in your
-         * Amazon Web Services account. You can query the revisions for a specific
-         * configuration name or the revisions for all active configurations in your
-         * account. You can optionally query only the latest revision of each requested
-         * name.</p> <p>To retrieve a full description of a particular configuration
-         * revision, call and provide one of the ARNs returned by
-         * <code>ListObservabilityConfigurations</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListObservabilityConfigurations">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListObservabilityConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListObservabilityConfigurationsAsync(const Model::ListObservabilityConfigurationsRequest& request, const ListObservabilityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1016,26 +690,12 @@ namespace Model
         virtual Model::ListOperationsOutcome ListOperations(const Model::ListOperationsRequest& request) const;
 
         /**
-         * <p>Return a list of operations that occurred on an App Runner service.</p>
-         * <p>The resulting list of <a>OperationSummary</a> objects is sorted in reverse
-         * chronological order. The first object on the list represents the last started
-         * operation.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListOperations">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListOperations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListOperationsOutcomeCallable ListOperationsCallable(const Model::ListOperationsRequest& request) const;
 
         /**
-         * <p>Return a list of operations that occurred on an App Runner service.</p>
-         * <p>The resulting list of <a>OperationSummary</a> objects is sorted in reverse
-         * chronological order. The first object on the list represents the last started
-         * operation.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListOperations">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListOperations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListOperationsAsync(const Model::ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1048,22 +708,12 @@ namespace Model
         virtual Model::ListServicesOutcome ListServices(const Model::ListServicesRequest& request) const;
 
         /**
-         * <p>Returns a list of running App Runner services in your Amazon Web Services
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListServices">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListServices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListServicesOutcomeCallable ListServicesCallable(const Model::ListServicesRequest& request) const;
 
         /**
-         * <p>Returns a list of running App Runner services in your Amazon Web Services
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListServices">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListServices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListServicesAsync(const Model::ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1076,22 +726,12 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>List tags that are associated with for an App Runner resource. The response
-         * contains a list of tag key-value pairs.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>List tags that are associated with for an App Runner resource. The response
-         * contains a list of tag key-value pairs.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1104,22 +744,12 @@ namespace Model
         virtual Model::ListVpcConnectorsOutcome ListVpcConnectors(const Model::ListVpcConnectorsRequest& request) const;
 
         /**
-         * <p>Returns a list of App Runner VPC connectors in your Amazon Web Services
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcConnectors">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListVpcConnectors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListVpcConnectorsOutcomeCallable ListVpcConnectorsCallable(const Model::ListVpcConnectorsRequest& request) const;
 
         /**
-         * <p>Returns a list of App Runner VPC connectors in your Amazon Web Services
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcConnectors">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListVpcConnectors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListVpcConnectorsAsync(const Model::ListVpcConnectorsRequest& request, const ListVpcConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1135,28 +765,12 @@ namespace Model
         virtual Model::PauseServiceOutcome PauseService(const Model::PauseServiceRequest& request) const;
 
         /**
-         * <p>Pause an active App Runner service. App Runner reduces compute capacity for
-         * the service to zero and loses state (for example, ephemeral storage is
-         * removed).</p> <p>This is an asynchronous operation. On a successful call, you
-         * can use the returned <code>OperationId</code> and the <a>ListOperations</a> call
-         * to track the operation's progress.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/PauseService">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PauseService that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PauseServiceOutcomeCallable PauseServiceCallable(const Model::PauseServiceRequest& request) const;
 
         /**
-         * <p>Pause an active App Runner service. App Runner reduces compute capacity for
-         * the service to zero and loses state (for example, ephemeral storage is
-         * removed).</p> <p>This is an asynchronous operation. On a successful call, you
-         * can use the returned <code>OperationId</code> and the <a>ListOperations</a> call
-         * to track the operation's progress.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/PauseService">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PauseService that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PauseServiceAsync(const Model::PauseServiceRequest& request, const PauseServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1171,26 +785,12 @@ namespace Model
         virtual Model::ResumeServiceOutcome ResumeService(const Model::ResumeServiceRequest& request) const;
 
         /**
-         * <p>Resume an active App Runner service. App Runner provisions compute capacity
-         * for the service.</p> <p>This is an asynchronous operation. On a successful call,
-         * you can use the returned <code>OperationId</code> and the <a>ListOperations</a>
-         * call to track the operation's progress.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ResumeService">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ResumeService that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ResumeServiceOutcomeCallable ResumeServiceCallable(const Model::ResumeServiceRequest& request) const;
 
         /**
-         * <p>Resume an active App Runner service. App Runner provisions compute capacity
-         * for the service.</p> <p>This is an asynchronous operation. On a successful call,
-         * you can use the returned <code>OperationId</code> and the <a>ListOperations</a>
-         * call to track the operation's progress.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ResumeService">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ResumeService that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ResumeServiceAsync(const Model::ResumeServiceRequest& request, const ResumeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1210,36 +810,12 @@ namespace Model
         virtual Model::StartDeploymentOutcome StartDeployment(const Model::StartDeploymentRequest& request) const;
 
         /**
-         * <p>Initiate a manual deployment of the latest commit in a source code repository
-         * or the latest image in a source image repository to an App Runner service.</p>
-         * <p>For a source code repository, App Runner retrieves the commit and builds a
-         * Docker image. For a source image repository, App Runner retrieves the latest
-         * Docker image. In both cases, App Runner then deploys the new image to your
-         * service and starts a new container instance.</p> <p>This is an asynchronous
-         * operation. On a successful call, you can use the returned
-         * <code>OperationId</code> and the <a>ListOperations</a> call to track the
-         * operation's progress.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/StartDeployment">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StartDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartDeploymentOutcomeCallable StartDeploymentCallable(const Model::StartDeploymentRequest& request) const;
 
         /**
-         * <p>Initiate a manual deployment of the latest commit in a source code repository
-         * or the latest image in a source image repository to an App Runner service.</p>
-         * <p>For a source code repository, App Runner retrieves the commit and builds a
-         * Docker image. For a source image repository, App Runner retrieves the latest
-         * Docker image. In both cases, App Runner then deploys the new image to your
-         * service and starts a new container instance.</p> <p>This is an asynchronous
-         * operation. On a successful call, you can use the returned
-         * <code>OperationId</code> and the <a>ListOperations</a> call to track the
-         * operation's progress.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/StartDeployment">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StartDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartDeploymentAsync(const Model::StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1252,22 +828,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Add tags to, or update the tag values of, an App Runner resource. A tag is a
-         * key-value pair.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Add tags to, or update the tag values of, an App Runner resource. A tag is a
-         * key-value pair.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1279,20 +845,12 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Remove tags from an App Runner resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Remove tags from an App Runner resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1313,38 +871,12 @@ namespace Model
         virtual Model::UpdateServiceOutcome UpdateService(const Model::UpdateServiceRequest& request) const;
 
         /**
-         * <p>Update an App Runner service. You can update the source configuration and
-         * instance configuration of the service. You can also update the ARN of the auto
-         * scaling configuration resource that's associated with the service. However, you
-         * can't change the name or the encryption configuration of the service. These can
-         * be set only when you create the service.</p> <p>To update the tags applied to
-         * your service, use the separate actions <a>TagResource</a> and
-         * <a>UntagResource</a>.</p> <p>This is an asynchronous operation. On a successful
-         * call, you can use the returned <code>OperationId</code> and the
-         * <a>ListOperations</a> call to track the operation's progress.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateService">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateService that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateServiceOutcomeCallable UpdateServiceCallable(const Model::UpdateServiceRequest& request) const;
 
         /**
-         * <p>Update an App Runner service. You can update the source configuration and
-         * instance configuration of the service. You can also update the ARN of the auto
-         * scaling configuration resource that's associated with the service. However, you
-         * can't change the name or the encryption configuration of the service. These can
-         * be set only when you create the service.</p> <p>To update the tags applied to
-         * your service, use the separate actions <a>TagResource</a> and
-         * <a>UntagResource</a>.</p> <p>This is an asynchronous operation. On a successful
-         * call, you can use the returned <code>OperationId</code> and the
-         * <a>ListOperations</a> call to track the operation's progress.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateService">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateService that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateServiceAsync(const Model::UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

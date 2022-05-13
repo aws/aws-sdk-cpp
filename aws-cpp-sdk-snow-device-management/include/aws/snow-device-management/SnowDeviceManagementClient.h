@@ -163,28 +163,12 @@ namespace Model
         virtual Model::CancelTaskOutcome CancelTask(const Model::CancelTaskRequest& request) const;
 
         /**
-         * <p>Sends a cancel request for a specified task. You can cancel a task only if
-         * it's still in a <code>QUEUED</code> state. Tasks that are already running can't
-         * be cancelled.</p>  <p>A task might still run if it's processed from the
-         * queue before the <code>CancelTask</code> operation changes the task's state.</p>
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/CancelTask">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CancelTask that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CancelTaskOutcomeCallable CancelTaskCallable(const Model::CancelTaskRequest& request) const;
 
         /**
-         * <p>Sends a cancel request for a specified task. You can cancel a task only if
-         * it's still in a <code>QUEUED</code> state. Tasks that are already running can't
-         * be cancelled.</p>  <p>A task might still run if it's processed from the
-         * queue before the <code>CancelTask</code> operation changes the task's state.</p>
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/CancelTask">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CancelTask that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CancelTaskAsync(const Model::CancelTaskRequest& request, const CancelTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -197,22 +181,12 @@ namespace Model
         virtual Model::CreateTaskOutcome CreateTask(const Model::CreateTaskRequest& request) const;
 
         /**
-         * <p>Instructs one or more devices to start a task, such as unlocking or
-         * rebooting.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/CreateTask">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateTask that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateTaskOutcomeCallable CreateTaskCallable(const Model::CreateTaskRequest& request) const;
 
         /**
-         * <p>Instructs one or more devices to start a task, such as unlocking or
-         * rebooting.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/CreateTask">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateTask that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateTaskAsync(const Model::CreateTaskRequest& request, const CreateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -225,22 +199,12 @@ namespace Model
         virtual Model::DescribeDeviceOutcome DescribeDevice(const Model::DescribeDeviceRequest& request) const;
 
         /**
-         * <p>Checks device-specific information, such as the device type, software
-         * version, IP addresses, and lock status.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/DescribeDevice">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeDevice that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeDeviceOutcomeCallable DescribeDeviceCallable(const Model::DescribeDeviceRequest& request) const;
 
         /**
-         * <p>Checks device-specific information, such as the device type, software
-         * version, IP addresses, and lock status.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/DescribeDevice">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDeviceAsync(const Model::DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -255,26 +219,12 @@ namespace Model
         virtual Model::DescribeDeviceEc2InstancesOutcome DescribeDeviceEc2Instances(const Model::DescribeDeviceEc2InstancesRequest& request) const;
 
         /**
-         * <p>Checks the current state of the Amazon EC2 instances. The output is similar
-         * to <code>describeDevice</code>, but the results are sourced from the device
-         * cache in the Amazon Web Services Cloud and include a subset of the available
-         * fields. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/DescribeDeviceEc2Instances">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeDeviceEc2Instances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeDeviceEc2InstancesOutcomeCallable DescribeDeviceEc2InstancesCallable(const Model::DescribeDeviceEc2InstancesRequest& request) const;
 
         /**
-         * <p>Checks the current state of the Amazon EC2 instances. The output is similar
-         * to <code>describeDevice</code>, but the results are sourced from the device
-         * cache in the Amazon Web Services Cloud and include a subset of the available
-         * fields. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/DescribeDeviceEc2Instances">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeDeviceEc2Instances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDeviceEc2InstancesAsync(const Model::DescribeDeviceEc2InstancesRequest& request, const DescribeDeviceEc2InstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -287,22 +237,12 @@ namespace Model
         virtual Model::DescribeExecutionOutcome DescribeExecution(const Model::DescribeExecutionRequest& request) const;
 
         /**
-         * <p>Checks the status of a remote task running on one or more target
-         * devices.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/DescribeExecution">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeExecution that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeExecutionOutcomeCallable DescribeExecutionCallable(const Model::DescribeExecutionRequest& request) const;
 
         /**
-         * <p>Checks the status of a remote task running on one or more target
-         * devices.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/DescribeExecution">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeExecutionAsync(const Model::DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -315,22 +255,12 @@ namespace Model
         virtual Model::DescribeTaskOutcome DescribeTask(const Model::DescribeTaskRequest& request) const;
 
         /**
-         * <p>Checks the metadata for a given task on a device. </p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/DescribeTask">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeTask that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeTaskOutcomeCallable DescribeTaskCallable(const Model::DescribeTaskRequest& request) const;
 
         /**
-         * <p>Checks the metadata for a given task on a device. </p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/DescribeTask">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeTask that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeTaskAsync(const Model::DescribeTaskRequest& request, const DescribeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -344,24 +274,12 @@ namespace Model
         virtual Model::ListDeviceResourcesOutcome ListDeviceResources(const Model::ListDeviceResourcesRequest& request) const;
 
         /**
-         * <p>Returns a list of the Amazon Web Services resources available for a device.
-         * Currently, Amazon EC2 instances are the only supported resource
-         * type.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/ListDeviceResources">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListDeviceResources that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDeviceResourcesOutcomeCallable ListDeviceResourcesCallable(const Model::ListDeviceResourcesRequest& request) const;
 
         /**
-         * <p>Returns a list of the Amazon Web Services resources available for a device.
-         * Currently, Amazon EC2 instances are the only supported resource
-         * type.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/ListDeviceResources">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListDeviceResources that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDeviceResourcesAsync(const Model::ListDeviceResourcesRequest& request, const ListDeviceResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -375,24 +293,12 @@ namespace Model
         virtual Model::ListDevicesOutcome ListDevices(const Model::ListDevicesRequest& request) const;
 
         /**
-         * <p>Returns a list of all devices on your Amazon Web Services account that have
-         * Amazon Web Services Snow Device Management enabled in the Amazon Web Services
-         * Region where the command is run.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/ListDevices">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListDevices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDevicesOutcomeCallable ListDevicesCallable(const Model::ListDevicesRequest& request) const;
 
         /**
-         * <p>Returns a list of all devices on your Amazon Web Services account that have
-         * Amazon Web Services Snow Device Management enabled in the Amazon Web Services
-         * Region where the command is run.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/ListDevices">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDevicesAsync(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -405,22 +311,12 @@ namespace Model
         virtual Model::ListExecutionsOutcome ListExecutions(const Model::ListExecutionsRequest& request) const;
 
         /**
-         * <p>Returns the status of tasks for one or more target devices.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/ListExecutions">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListExecutionsOutcomeCallable ListExecutionsCallable(const Model::ListExecutionsRequest& request) const;
 
         /**
-         * <p>Returns the status of tasks for one or more target devices.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/ListExecutions">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListExecutionsAsync(const Model::ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -433,22 +329,12 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns a list of tags for a managed device or task.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns a list of tags for a managed device or task.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -461,22 +347,12 @@ namespace Model
         virtual Model::ListTasksOutcome ListTasks(const Model::ListTasksRequest& request) const;
 
         /**
-         * <p>Returns a list of tasks that can be filtered by state.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/ListTasks">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTasks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTasksOutcomeCallable ListTasksCallable(const Model::ListTasksRequest& request) const;
 
         /**
-         * <p>Returns a list of tasks that can be filtered by state.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/ListTasks">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTasksAsync(const Model::ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -488,20 +364,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds or replaces tags on a device or task.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds or replaces tags on a device or task.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -513,20 +381,12 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes a tag from a device or task.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes a tag from a device or task.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
