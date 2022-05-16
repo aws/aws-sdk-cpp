@@ -1,5 +1,5 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-# SPDX-License-Identifier: Apache-2.0.
+# SPDX-License-Identifier: Apache-2.0
 #
 
 cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
@@ -20,9 +20,22 @@ else ()
     message(STATUS "Building with 1.10 CMake scripts.")
     string(CONCAT DESCRIPTION_STRING "The AWS SDK for C++ provides a modern C++ (standard version C++11 or later) "
             "interface for Amazon Web Services (AWS).")
+
+    if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+        message(STATUS "Setting build type to 'RelWithDebInfo' as none was specified.")
+        set(CMAKE_BUILD_TYPE "RelWithDebInfo" CACHE
+                STRING "Choose the type of build." FORCE)
+        # cmake-gui helper
+        set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
+    endif ()
+
+    list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
+    include(sdk_versioning)
+    obtain_project_version(SDK_PROJECT_VERSION)
+
     project("aws-cpp-sdk"
             LANGUAGES CXX
-            VERSION 1.10.0
+            VERSION ${SDK_PROJECT_VERSION}
             DESCRIPTION ${DESCRIPTION_STRING}
             HOMEPAGE_URL "https://docs.aws.amazon.com/sdk-for-cpp"
             )
@@ -30,7 +43,23 @@ else ()
     set(CMAKE_CXX_EXTENSIONS OFF)
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-    message(STATUS "Building ${PROJECT_NAME} ${PROJECT_VERSION}")
+    message(STATUS "Building ${PROJECT_NAME} ${CMAKE_PROJECT_VERSION}")
 
-    message(WARNING "This builds nothing yet.")
+
+    message(WARNING "Anything below this warning is a TODO not yet implemented.")
+
+    message(STATUS "Detecting toolchain and external dependencies.")
+    message(STATUS "Prepare CRT dependency.")
+    message(STATUS "Setting up core library.")
+    message(STATUS "Building core library.")
+    message(STATUS "Building core library tests.")
+    message(STATUS "Add support for static analysis.")
+    message(STATUS "Building client libraries.")
+    message(STATUS "Setting up tests.")
+    message(STATUS "Setting up installation.")
+    message(STATUS "Setting up packaging. ")
+    message(STATUS "Setting up docs.")
+    message(STATUS "Add support support for SDK flags.")
+    message(STATUS "Add previously available options.")
+
 endif ()
