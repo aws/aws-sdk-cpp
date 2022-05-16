@@ -35,6 +35,7 @@ AppAssessment::AppAssessment() :
     m_messageHasBeenSet(false),
     m_policyHasBeenSet(false),
     m_resiliencyScoreHasBeenSet(false),
+    m_resourceErrorsDetailsHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -57,6 +58,7 @@ AppAssessment::AppAssessment(JsonView jsonValue) :
     m_messageHasBeenSet(false),
     m_policyHasBeenSet(false),
     m_resiliencyScoreHasBeenSet(false),
+    m_resourceErrorsDetailsHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -159,6 +161,13 @@ AppAssessment& AppAssessment::operator =(JsonView jsonValue)
     m_resiliencyScoreHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("resourceErrorsDetails"))
+  {
+    m_resourceErrorsDetails = jsonValue.GetObject("resourceErrorsDetails");
+
+    m_resourceErrorsDetailsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
@@ -259,6 +268,12 @@ JsonValue AppAssessment::Jsonize() const
   if(m_resiliencyScoreHasBeenSet)
   {
    payload.WithObject("resiliencyScore", m_resiliencyScore.Jsonize());
+
+  }
+
+  if(m_resourceErrorsDetailsHasBeenSet)
+  {
+   payload.WithObject("resourceErrorsDetails", m_resourceErrorsDetails.Jsonize());
 
   }
 

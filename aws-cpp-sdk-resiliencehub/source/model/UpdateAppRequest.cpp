@@ -14,6 +14,8 @@ using namespace Aws::Utils;
 
 UpdateAppRequest::UpdateAppRequest() : 
     m_appArnHasBeenSet(false),
+    m_assessmentSchedule(AppAssessmentScheduleType::NOT_SET),
+    m_assessmentScheduleHasBeenSet(false),
     m_clearResiliencyPolicyArn(false),
     m_clearResiliencyPolicyArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -29,6 +31,11 @@ Aws::String UpdateAppRequest::SerializePayload() const
   {
    payload.WithString("appArn", m_appArn);
 
+  }
+
+  if(m_assessmentScheduleHasBeenSet)
+  {
+   payload.WithString("assessmentSchedule", AppAssessmentScheduleTypeMapper::GetNameForAppAssessmentScheduleType(m_assessmentSchedule));
   }
 
   if(m_clearResiliencyPolicyArnHasBeenSet)

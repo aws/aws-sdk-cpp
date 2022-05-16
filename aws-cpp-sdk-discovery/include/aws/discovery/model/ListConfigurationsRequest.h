@@ -75,8 +75,8 @@ namespace Model
      * "serverType", "value": "webServer"}</code> </p> <p>For a complete list of filter
      * options and guidance about using them with this action, see <a
      * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using
-     * the ListConfigurations Action</a> in the <i>AWS Application Discovery Service
-     * User Guide</i>.</p>
+     * the ListConfigurations Action</a> in the <i>Amazon Web Services Application
+     * Discovery Service User Guide</i>.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -86,8 +86,8 @@ namespace Model
      * "serverType", "value": "webServer"}</code> </p> <p>For a complete list of filter
      * options and guidance about using them with this action, see <a
      * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using
-     * the ListConfigurations Action</a> in the <i>AWS Application Discovery Service
-     * User Guide</i>.</p>
+     * the ListConfigurations Action</a> in the <i>Amazon Web Services Application
+     * Discovery Service User Guide</i>.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -97,8 +97,8 @@ namespace Model
      * "serverType", "value": "webServer"}</code> </p> <p>For a complete list of filter
      * options and guidance about using them with this action, see <a
      * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using
-     * the ListConfigurations Action</a> in the <i>AWS Application Discovery Service
-     * User Guide</i>.</p>
+     * the ListConfigurations Action</a> in the <i>Amazon Web Services Application
+     * Discovery Service User Guide</i>.</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -108,8 +108,8 @@ namespace Model
      * "serverType", "value": "webServer"}</code> </p> <p>For a complete list of filter
      * options and guidance about using them with this action, see <a
      * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using
-     * the ListConfigurations Action</a> in the <i>AWS Application Discovery Service
-     * User Guide</i>.</p>
+     * the ListConfigurations Action</a> in the <i>Amazon Web Services Application
+     * Discovery Service User Guide</i>.</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -119,8 +119,8 @@ namespace Model
      * "serverType", "value": "webServer"}</code> </p> <p>For a complete list of filter
      * options and guidance about using them with this action, see <a
      * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using
-     * the ListConfigurations Action</a> in the <i>AWS Application Discovery Service
-     * User Guide</i>.</p>
+     * the ListConfigurations Action</a> in the <i>Amazon Web Services Application
+     * Discovery Service User Guide</i>.</p>
      */
     inline ListConfigurationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -130,8 +130,8 @@ namespace Model
      * "serverType", "value": "webServer"}</code> </p> <p>For a complete list of filter
      * options and guidance about using them with this action, see <a
      * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using
-     * the ListConfigurations Action</a> in the <i>AWS Application Discovery Service
-     * User Guide</i>.</p>
+     * the ListConfigurations Action</a> in the <i>Amazon Web Services Application
+     * Discovery Service User Guide</i>.</p>
      */
     inline ListConfigurationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -141,8 +141,8 @@ namespace Model
      * "serverType", "value": "webServer"}</code> </p> <p>For a complete list of filter
      * options and guidance about using them with this action, see <a
      * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using
-     * the ListConfigurations Action</a> in the <i>AWS Application Discovery Service
-     * User Guide</i>.</p>
+     * the ListConfigurations Action</a> in the <i>Amazon Web Services Application
+     * Discovery Service User Guide</i>.</p>
      */
     inline ListConfigurationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -152,8 +152,8 @@ namespace Model
      * "serverType", "value": "webServer"}</code> </p> <p>For a complete list of filter
      * options and guidance about using them with this action, see <a
      * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using
-     * the ListConfigurations Action</a> in the <i>AWS Application Discovery Service
-     * User Guide</i>.</p>
+     * the ListConfigurations Action</a> in the <i>Amazon Web Services Application
+     * Discovery Service User Guide</i>.</p>
      */
     inline ListConfigurationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
@@ -256,8 +256,8 @@ namespace Model
      * <p>Certain filter criteria return output that can be sorted in ascending or
      * descending order. For a list of output characteristics for each filter, see <a
      * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using
-     * the ListConfigurations Action</a> in the <i>AWS Application Discovery Service
-     * User Guide</i>.</p>
+     * the ListConfigurations Action</a> in the <i>Amazon Web Services Application
+     * Discovery Service User Guide</i>.</p>
      */
     inline const Aws::Vector<OrderByElement>& GetOrderBy() const{ return m_orderBy; }
 
@@ -265,8 +265,8 @@ namespace Model
      * <p>Certain filter criteria return output that can be sorted in ascending or
      * descending order. For a list of output characteristics for each filter, see <a
      * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using
-     * the ListConfigurations Action</a> in the <i>AWS Application Discovery Service
-     * User Guide</i>.</p>
+     * the ListConfigurations Action</a> in the <i>Amazon Web Services Application
+     * Discovery Service User Guide</i>.</p>
      */
     inline bool OrderByHasBeenSet() const { return m_orderByHasBeenSet; }
 
@@ -274,8 +274,8 @@ namespace Model
      * <p>Certain filter criteria return output that can be sorted in ascending or
      * descending order. For a list of output characteristics for each filter, see <a
      * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using
-     * the ListConfigurations Action</a> in the <i>AWS Application Discovery Service
-     * User Guide</i>.</p>
+     * the ListConfigurations Action</a> in the <i>Amazon Web Services Application
+     * Discovery Service User Guide</i>.</p>
      */
     inline void SetOrderBy(const Aws::Vector<OrderByElement>& value) { m_orderByHasBeenSet = true; m_orderBy = value; }
 
@@ -283,8 +283,8 @@ namespace Model
      * <p>Certain filter criteria return output that can be sorted in ascending or
      * descending order. For a list of output characteristics for each filter, see <a
      * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using
-     * the ListConfigurations Action</a> in the <i>AWS Application Discovery Service
-     * User Guide</i>.</p>
+     * the ListConfigurations Action</a> in the <i>Amazon Web Services Application
+     * Discovery Service User Guide</i>.</p>
      */
     inline void SetOrderBy(Aws::Vector<OrderByElement>&& value) { m_orderByHasBeenSet = true; m_orderBy = std::move(value); }
 
@@ -292,8 +292,8 @@ namespace Model
      * <p>Certain filter criteria return output that can be sorted in ascending or
      * descending order. For a list of output characteristics for each filter, see <a
      * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using
-     * the ListConfigurations Action</a> in the <i>AWS Application Discovery Service
-     * User Guide</i>.</p>
+     * the ListConfigurations Action</a> in the <i>Amazon Web Services Application
+     * Discovery Service User Guide</i>.</p>
      */
     inline ListConfigurationsRequest& WithOrderBy(const Aws::Vector<OrderByElement>& value) { SetOrderBy(value); return *this;}
 
@@ -301,8 +301,8 @@ namespace Model
      * <p>Certain filter criteria return output that can be sorted in ascending or
      * descending order. For a list of output characteristics for each filter, see <a
      * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using
-     * the ListConfigurations Action</a> in the <i>AWS Application Discovery Service
-     * User Guide</i>.</p>
+     * the ListConfigurations Action</a> in the <i>Amazon Web Services Application
+     * Discovery Service User Guide</i>.</p>
      */
     inline ListConfigurationsRequest& WithOrderBy(Aws::Vector<OrderByElement>&& value) { SetOrderBy(std::move(value)); return *this;}
 
@@ -310,8 +310,8 @@ namespace Model
      * <p>Certain filter criteria return output that can be sorted in ascending or
      * descending order. For a list of output characteristics for each filter, see <a
      * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using
-     * the ListConfigurations Action</a> in the <i>AWS Application Discovery Service
-     * User Guide</i>.</p>
+     * the ListConfigurations Action</a> in the <i>Amazon Web Services Application
+     * Discovery Service User Guide</i>.</p>
      */
     inline ListConfigurationsRequest& AddOrderBy(const OrderByElement& value) { m_orderByHasBeenSet = true; m_orderBy.push_back(value); return *this; }
 
@@ -319,8 +319,8 @@ namespace Model
      * <p>Certain filter criteria return output that can be sorted in ascending or
      * descending order. For a list of output characteristics for each filter, see <a
      * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using
-     * the ListConfigurations Action</a> in the <i>AWS Application Discovery Service
-     * User Guide</i>.</p>
+     * the ListConfigurations Action</a> in the <i>Amazon Web Services Application
+     * Discovery Service User Guide</i>.</p>
      */
     inline ListConfigurationsRequest& AddOrderBy(OrderByElement&& value) { m_orderByHasBeenSet = true; m_orderBy.push_back(std::move(value)); return *this; }
 

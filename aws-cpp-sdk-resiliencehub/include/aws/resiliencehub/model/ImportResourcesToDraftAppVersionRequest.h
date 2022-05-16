@@ -8,6 +8,7 @@
 #include <aws/resiliencehub/ResilienceHubRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/resiliencehub/model/TerraformSource.h>
 #include <utility>
 
 namespace Aws
@@ -36,7 +37,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
      * is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -46,7 +47,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
      * is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
      * is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
      * is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
      * is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
      * is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
      * is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
      * is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -168,6 +169,47 @@ namespace Model
      */
     inline ImportResourcesToDraftAppVersionRequest& AddSourceArns(const char* value) { m_sourceArnsHasBeenSet = true; m_sourceArns.push_back(value); return *this; }
 
+
+    /**
+     * <p> A list of terraform file s3 URLs you need to import. </p>
+     */
+    inline const Aws::Vector<TerraformSource>& GetTerraformSources() const{ return m_terraformSources; }
+
+    /**
+     * <p> A list of terraform file s3 URLs you need to import. </p>
+     */
+    inline bool TerraformSourcesHasBeenSet() const { return m_terraformSourcesHasBeenSet; }
+
+    /**
+     * <p> A list of terraform file s3 URLs you need to import. </p>
+     */
+    inline void SetTerraformSources(const Aws::Vector<TerraformSource>& value) { m_terraformSourcesHasBeenSet = true; m_terraformSources = value; }
+
+    /**
+     * <p> A list of terraform file s3 URLs you need to import. </p>
+     */
+    inline void SetTerraformSources(Aws::Vector<TerraformSource>&& value) { m_terraformSourcesHasBeenSet = true; m_terraformSources = std::move(value); }
+
+    /**
+     * <p> A list of terraform file s3 URLs you need to import. </p>
+     */
+    inline ImportResourcesToDraftAppVersionRequest& WithTerraformSources(const Aws::Vector<TerraformSource>& value) { SetTerraformSources(value); return *this;}
+
+    /**
+     * <p> A list of terraform file s3 URLs you need to import. </p>
+     */
+    inline ImportResourcesToDraftAppVersionRequest& WithTerraformSources(Aws::Vector<TerraformSource>&& value) { SetTerraformSources(std::move(value)); return *this;}
+
+    /**
+     * <p> A list of terraform file s3 URLs you need to import. </p>
+     */
+    inline ImportResourcesToDraftAppVersionRequest& AddTerraformSources(const TerraformSource& value) { m_terraformSourcesHasBeenSet = true; m_terraformSources.push_back(value); return *this; }
+
+    /**
+     * <p> A list of terraform file s3 URLs you need to import. </p>
+     */
+    inline ImportResourcesToDraftAppVersionRequest& AddTerraformSources(TerraformSource&& value) { m_terraformSourcesHasBeenSet = true; m_terraformSources.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_appArn;
@@ -175,6 +217,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_sourceArns;
     bool m_sourceArnsHasBeenSet;
+
+    Aws::Vector<TerraformSource> m_terraformSources;
+    bool m_terraformSourcesHasBeenSet;
   };
 
 } // namespace Model

@@ -747,19 +747,25 @@ namespace Model
          * Temporary Security Credentials</a> and <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
          * the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.</p>
-         * <p> <b>Session Duration</b> </p> <p>The <code>GetSessionToken</code> operation
-         * must be called by using the long-term Amazon Web Services security credentials
-         * of the Amazon Web Services account root user or an IAM user. Credentials that
-         * are created by IAM users are valid for the duration that you specify. This
-         * duration can range from 900 seconds (15 minutes) up to a maximum of 129,600
-         * seconds (36 hours), with a default of 43,200 seconds (12 hours). Credentials
-         * based on account credentials can range from 900 seconds (15 minutes) up to 3,600
-         * seconds (1 hour), with a default of 1 hour. </p> <p> <b>Permissions</b> </p>
-         * <p>The temporary security credentials created by <code>GetSessionToken</code>
-         * can be used to make API calls to any Amazon Web Services service with the
-         * following exceptions:</p> <ul> <li> <p>You cannot call any IAM API operations
-         * unless MFA authentication information is included in the request.</p> </li> <li>
-         * <p>You cannot call any STS API <i>except</i> <code>AssumeRole</code> or
+         *  <p>No permissions are required for users to perform this operation. The
+         * purpose of the <code>sts:GetSessionToken</code> operation is to authenticate the
+         * user using MFA. You cannot use policies to control authentication operations.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getsessiontoken.html">Permissions
+         * for GetSessionToken</a> in the <i>IAM User Guide</i>.</p>  <p> <b>Session
+         * Duration</b> </p> <p>The <code>GetSessionToken</code> operation must be called
+         * by using the long-term Amazon Web Services security credentials of the Amazon
+         * Web Services account root user or an IAM user. Credentials that are created by
+         * IAM users are valid for the duration that you specify. This duration can range
+         * from 900 seconds (15 minutes) up to a maximum of 129,600 seconds (36 hours),
+         * with a default of 43,200 seconds (12 hours). Credentials based on account
+         * credentials can range from 900 seconds (15 minutes) up to 3,600 seconds (1
+         * hour), with a default of 1 hour. </p> <p> <b>Permissions</b> </p> <p>The
+         * temporary security credentials created by <code>GetSessionToken</code> can be
+         * used to make API calls to any Amazon Web Services service with the following
+         * exceptions:</p> <ul> <li> <p>You cannot call any IAM API operations unless MFA
+         * authentication information is included in the request.</p> </li> <li> <p>You
+         * cannot call any STS API <i>except</i> <code>AssumeRole</code> or
          * <code>GetCallerIdentity</code>.</p> </li> </ul>  <p>We recommend that you
          * do not call <code>GetSessionToken</code> with Amazon Web Services account root
          * user credentials. Instead, follow our <a

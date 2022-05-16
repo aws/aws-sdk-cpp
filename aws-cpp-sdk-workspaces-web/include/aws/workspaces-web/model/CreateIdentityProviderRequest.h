@@ -140,7 +140,7 @@ namespace Model
      * key</i> </p> </li> <li> <p> <code>jwks_uri</code> <i>if not available from
      * discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> </ul>
      * </li> <li> <p>For SAML providers:</p> <ul> <li> <p> <code>MetadataFile</code> OR
-     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code>
+     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code> (boolean)
      * <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetIdentityProviderDetails() const{ return m_identityProviderDetails; }
@@ -169,7 +169,7 @@ namespace Model
      * key</i> </p> </li> <li> <p> <code>jwks_uri</code> <i>if not available from
      * discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> </ul>
      * </li> <li> <p>For SAML providers:</p> <ul> <li> <p> <code>MetadataFile</code> OR
-     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code>
+     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code> (boolean)
      * <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline bool IdentityProviderDetailsHasBeenSet() const { return m_identityProviderDetailsHasBeenSet; }
@@ -198,7 +198,7 @@ namespace Model
      * key</i> </p> </li> <li> <p> <code>jwks_uri</code> <i>if not available from
      * discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> </ul>
      * </li> <li> <p>For SAML providers:</p> <ul> <li> <p> <code>MetadataFile</code> OR
-     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code>
+     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code> (boolean)
      * <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline void SetIdentityProviderDetails(const Aws::Map<Aws::String, Aws::String>& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = value; }
@@ -227,7 +227,7 @@ namespace Model
      * key</i> </p> </li> <li> <p> <code>jwks_uri</code> <i>if not available from
      * discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> </ul>
      * </li> <li> <p>For SAML providers:</p> <ul> <li> <p> <code>MetadataFile</code> OR
-     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code>
+     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code> (boolean)
      * <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline void SetIdentityProviderDetails(Aws::Map<Aws::String, Aws::String>&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = std::move(value); }
@@ -256,7 +256,7 @@ namespace Model
      * key</i> </p> </li> <li> <p> <code>jwks_uri</code> <i>if not available from
      * discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> </ul>
      * </li> <li> <p>For SAML providers:</p> <ul> <li> <p> <code>MetadataFile</code> OR
-     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code>
+     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code> (boolean)
      * <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline CreateIdentityProviderRequest& WithIdentityProviderDetails(const Aws::Map<Aws::String, Aws::String>& value) { SetIdentityProviderDetails(value); return *this;}
@@ -285,7 +285,7 @@ namespace Model
      * key</i> </p> </li> <li> <p> <code>jwks_uri</code> <i>if not available from
      * discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> </ul>
      * </li> <li> <p>For SAML providers:</p> <ul> <li> <p> <code>MetadataFile</code> OR
-     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code>
+     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code> (boolean)
      * <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline CreateIdentityProviderRequest& WithIdentityProviderDetails(Aws::Map<Aws::String, Aws::String>&& value) { SetIdentityProviderDetails(std::move(value)); return *this;}
@@ -314,7 +314,7 @@ namespace Model
      * key</i> </p> </li> <li> <p> <code>jwks_uri</code> <i>if not available from
      * discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> </ul>
      * </li> <li> <p>For SAML providers:</p> <ul> <li> <p> <code>MetadataFile</code> OR
-     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code>
+     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code> (boolean)
      * <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline CreateIdentityProviderRequest& AddIdentityProviderDetails(const Aws::String& key, const Aws::String& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(key, value); return *this; }
@@ -343,7 +343,7 @@ namespace Model
      * key</i> </p> </li> <li> <p> <code>jwks_uri</code> <i>if not available from
      * discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> </ul>
      * </li> <li> <p>For SAML providers:</p> <ul> <li> <p> <code>MetadataFile</code> OR
-     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code>
+     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code> (boolean)
      * <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline CreateIdentityProviderRequest& AddIdentityProviderDetails(Aws::String&& key, const Aws::String& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(std::move(key), value); return *this; }
@@ -372,7 +372,7 @@ namespace Model
      * key</i> </p> </li> <li> <p> <code>jwks_uri</code> <i>if not available from
      * discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> </ul>
      * </li> <li> <p>For SAML providers:</p> <ul> <li> <p> <code>MetadataFile</code> OR
-     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code>
+     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code> (boolean)
      * <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline CreateIdentityProviderRequest& AddIdentityProviderDetails(const Aws::String& key, Aws::String&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(key, std::move(value)); return *this; }
@@ -401,7 +401,7 @@ namespace Model
      * key</i> </p> </li> <li> <p> <code>jwks_uri</code> <i>if not available from
      * discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> </ul>
      * </li> <li> <p>For SAML providers:</p> <ul> <li> <p> <code>MetadataFile</code> OR
-     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code>
+     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code> (boolean)
      * <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline CreateIdentityProviderRequest& AddIdentityProviderDetails(Aws::String&& key, Aws::String&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(std::move(key), std::move(value)); return *this; }
@@ -430,7 +430,7 @@ namespace Model
      * key</i> </p> </li> <li> <p> <code>jwks_uri</code> <i>if not available from
      * discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> </ul>
      * </li> <li> <p>For SAML providers:</p> <ul> <li> <p> <code>MetadataFile</code> OR
-     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code>
+     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code> (boolean)
      * <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline CreateIdentityProviderRequest& AddIdentityProviderDetails(const char* key, Aws::String&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(key, std::move(value)); return *this; }
@@ -459,7 +459,7 @@ namespace Model
      * key</i> </p> </li> <li> <p> <code>jwks_uri</code> <i>if not available from
      * discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> </ul>
      * </li> <li> <p>For SAML providers:</p> <ul> <li> <p> <code>MetadataFile</code> OR
-     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code>
+     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code> (boolean)
      * <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline CreateIdentityProviderRequest& AddIdentityProviderDetails(Aws::String&& key, const char* value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(std::move(key), value); return *this; }
@@ -488,7 +488,7 @@ namespace Model
      * key</i> </p> </li> <li> <p> <code>jwks_uri</code> <i>if not available from
      * discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li> </ul>
      * </li> <li> <p>For SAML providers:</p> <ul> <li> <p> <code>MetadataFile</code> OR
-     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code>
+     * <code>MetadataURL</code> </p> </li> <li> <p> <code>IDPSignout</code> (boolean)
      * <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline CreateIdentityProviderRequest& AddIdentityProviderDetails(const char* key, const char* value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(key, value); return *this; }

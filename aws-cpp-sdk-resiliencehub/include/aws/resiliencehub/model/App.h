@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resiliencehub/model/AppAssessmentScheduleType.h>
 #include <aws/resiliencehub/model/AppComplianceStatusType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/resiliencehub/model/AppStatusType.h>
@@ -44,7 +45,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
      * is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
      * is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
      * is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
      * is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
      * is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
      * is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
      * is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -114,12 +115,43 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
      * is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline App& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+
+
+    /**
+     * <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+     */
+    inline const AppAssessmentScheduleType& GetAssessmentSchedule() const{ return m_assessmentSchedule; }
+
+    /**
+     * <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+     */
+    inline bool AssessmentScheduleHasBeenSet() const { return m_assessmentScheduleHasBeenSet; }
+
+    /**
+     * <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+     */
+    inline void SetAssessmentSchedule(const AppAssessmentScheduleType& value) { m_assessmentScheduleHasBeenSet = true; m_assessmentSchedule = value; }
+
+    /**
+     * <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+     */
+    inline void SetAssessmentSchedule(AppAssessmentScheduleType&& value) { m_assessmentScheduleHasBeenSet = true; m_assessmentSchedule = std::move(value); }
+
+    /**
+     * <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+     */
+    inline App& WithAssessmentSchedule(const AppAssessmentScheduleType& value) { SetAssessmentSchedule(value); return *this;}
+
+    /**
+     * <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+     */
+    inline App& WithAssessmentSchedule(AppAssessmentScheduleType&& value) { SetAssessmentSchedule(std::move(value)); return *this;}
 
 
     /**
@@ -331,7 +363,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
      * ARN is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -341,7 +373,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
      * ARN is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -351,7 +383,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
      * ARN is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -361,7 +393,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
      * ARN is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -371,7 +403,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
      * ARN is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -381,7 +413,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
      * ARN is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -391,7 +423,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
      * ARN is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -401,7 +433,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
      * ARN is:
-     * arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
+     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -543,6 +575,9 @@ namespace Model
 
     Aws::String m_appArn;
     bool m_appArnHasBeenSet;
+
+    AppAssessmentScheduleType m_assessmentSchedule;
+    bool m_assessmentScheduleHasBeenSet;
 
     AppComplianceStatusType m_complianceStatus;
     bool m_complianceStatusHasBeenSet;

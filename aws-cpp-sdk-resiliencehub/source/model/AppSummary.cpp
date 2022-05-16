@@ -20,6 +20,8 @@ namespace Model
 
 AppSummary::AppSummary() : 
     m_appArnHasBeenSet(false),
+    m_assessmentSchedule(AppAssessmentScheduleType::NOT_SET),
+    m_assessmentScheduleHasBeenSet(false),
     m_complianceStatus(AppComplianceStatusType::NOT_SET),
     m_complianceStatusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -32,6 +34,8 @@ AppSummary::AppSummary() :
 
 AppSummary::AppSummary(JsonView jsonValue) : 
     m_appArnHasBeenSet(false),
+    m_assessmentSchedule(AppAssessmentScheduleType::NOT_SET),
+    m_assessmentScheduleHasBeenSet(false),
     m_complianceStatus(AppComplianceStatusType::NOT_SET),
     m_complianceStatusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -50,6 +54,13 @@ AppSummary& AppSummary::operator =(JsonView jsonValue)
     m_appArn = jsonValue.GetString("appArn");
 
     m_appArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("assessmentSchedule"))
+  {
+    m_assessmentSchedule = AppAssessmentScheduleTypeMapper::GetAppAssessmentScheduleTypeForName(jsonValue.GetString("assessmentSchedule"));
+
+    m_assessmentScheduleHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("complianceStatus"))
@@ -98,6 +109,11 @@ JsonValue AppSummary::Jsonize() const
   {
    payload.WithString("appArn", m_appArn);
 
+  }
+
+  if(m_assessmentScheduleHasBeenSet)
+  {
+   payload.WithString("assessmentSchedule", AppAssessmentScheduleTypeMapper::GetNameForAppAssessmentScheduleType(m_assessmentSchedule));
   }
 
   if(m_complianceStatusHasBeenSet)

@@ -25,7 +25,8 @@ ResourceMapping::ResourceMapping() :
     m_mappingTypeHasBeenSet(false),
     m_physicalResourceIdHasBeenSet(false),
     m_resourceGroupNameHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+    m_resourceNameHasBeenSet(false),
+    m_terraformSourceNameHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ ResourceMapping::ResourceMapping(JsonView jsonValue) :
     m_mappingTypeHasBeenSet(false),
     m_physicalResourceIdHasBeenSet(false),
     m_resourceGroupNameHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+    m_resourceNameHasBeenSet(false),
+    m_terraformSourceNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +87,13 @@ ResourceMapping& ResourceMapping::operator =(JsonView jsonValue)
     m_resourceNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("terraformSourceName"))
+  {
+    m_terraformSourceName = jsonValue.GetString("terraformSourceName");
+
+    m_terraformSourceNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -124,6 +133,12 @@ JsonValue ResourceMapping::Jsonize() const
   if(m_resourceNameHasBeenSet)
   {
    payload.WithString("resourceName", m_resourceName);
+
+  }
+
+  if(m_terraformSourceNameHasBeenSet)
+  {
+   payload.WithString("terraformSourceName", m_terraformSourceName);
 
   }
 

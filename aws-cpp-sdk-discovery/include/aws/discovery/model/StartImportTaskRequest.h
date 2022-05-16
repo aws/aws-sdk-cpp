@@ -183,57 +183,57 @@ namespace Model
 
     /**
      * <p>The URL for your import file that you've uploaded to Amazon S3.</p> 
-     * <p>If you're using the AWS CLI, this URL is structured as follows:
-     * <code>s3://BucketName/ImportFileName.CSV</code> </p> 
+     * <p>If you're using the Amazon Web Services CLI, this URL is structured as
+     * follows: <code>s3://BucketName/ImportFileName.CSV</code> </p> 
      */
     inline const Aws::String& GetImportUrl() const{ return m_importUrl; }
 
     /**
      * <p>The URL for your import file that you've uploaded to Amazon S3.</p> 
-     * <p>If you're using the AWS CLI, this URL is structured as follows:
-     * <code>s3://BucketName/ImportFileName.CSV</code> </p> 
+     * <p>If you're using the Amazon Web Services CLI, this URL is structured as
+     * follows: <code>s3://BucketName/ImportFileName.CSV</code> </p> 
      */
     inline bool ImportUrlHasBeenSet() const { return m_importUrlHasBeenSet; }
 
     /**
      * <p>The URL for your import file that you've uploaded to Amazon S3.</p> 
-     * <p>If you're using the AWS CLI, this URL is structured as follows:
-     * <code>s3://BucketName/ImportFileName.CSV</code> </p> 
+     * <p>If you're using the Amazon Web Services CLI, this URL is structured as
+     * follows: <code>s3://BucketName/ImportFileName.CSV</code> </p> 
      */
     inline void SetImportUrl(const Aws::String& value) { m_importUrlHasBeenSet = true; m_importUrl = value; }
 
     /**
      * <p>The URL for your import file that you've uploaded to Amazon S3.</p> 
-     * <p>If you're using the AWS CLI, this URL is structured as follows:
-     * <code>s3://BucketName/ImportFileName.CSV</code> </p> 
+     * <p>If you're using the Amazon Web Services CLI, this URL is structured as
+     * follows: <code>s3://BucketName/ImportFileName.CSV</code> </p> 
      */
     inline void SetImportUrl(Aws::String&& value) { m_importUrlHasBeenSet = true; m_importUrl = std::move(value); }
 
     /**
      * <p>The URL for your import file that you've uploaded to Amazon S3.</p> 
-     * <p>If you're using the AWS CLI, this URL is structured as follows:
-     * <code>s3://BucketName/ImportFileName.CSV</code> </p> 
+     * <p>If you're using the Amazon Web Services CLI, this URL is structured as
+     * follows: <code>s3://BucketName/ImportFileName.CSV</code> </p> 
      */
     inline void SetImportUrl(const char* value) { m_importUrlHasBeenSet = true; m_importUrl.assign(value); }
 
     /**
      * <p>The URL for your import file that you've uploaded to Amazon S3.</p> 
-     * <p>If you're using the AWS CLI, this URL is structured as follows:
-     * <code>s3://BucketName/ImportFileName.CSV</code> </p> 
+     * <p>If you're using the Amazon Web Services CLI, this URL is structured as
+     * follows: <code>s3://BucketName/ImportFileName.CSV</code> </p> 
      */
     inline StartImportTaskRequest& WithImportUrl(const Aws::String& value) { SetImportUrl(value); return *this;}
 
     /**
      * <p>The URL for your import file that you've uploaded to Amazon S3.</p> 
-     * <p>If you're using the AWS CLI, this URL is structured as follows:
-     * <code>s3://BucketName/ImportFileName.CSV</code> </p> 
+     * <p>If you're using the Amazon Web Services CLI, this URL is structured as
+     * follows: <code>s3://BucketName/ImportFileName.CSV</code> </p> 
      */
     inline StartImportTaskRequest& WithImportUrl(Aws::String&& value) { SetImportUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL for your import file that you've uploaded to Amazon S3.</p> 
-     * <p>If you're using the AWS CLI, this URL is structured as follows:
-     * <code>s3://BucketName/ImportFileName.CSV</code> </p> 
+     * <p>If you're using the Amazon Web Services CLI, this URL is structured as
+     * follows: <code>s3://BucketName/ImportFileName.CSV</code> </p> 
      */
     inline StartImportTaskRequest& WithImportUrl(const char* value) { SetImportUrl(value); return *this;}
 

@@ -83,6 +83,61 @@ namespace Model
 
 
     /**
+     * <p> A list of recommended alarms that are used in the test and must be exported
+     * before or with the test. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDependsOnAlarms() const{ return m_dependsOnAlarms; }
+
+    /**
+     * <p> A list of recommended alarms that are used in the test and must be exported
+     * before or with the test. </p>
+     */
+    inline bool DependsOnAlarmsHasBeenSet() const { return m_dependsOnAlarmsHasBeenSet; }
+
+    /**
+     * <p> A list of recommended alarms that are used in the test and must be exported
+     * before or with the test. </p>
+     */
+    inline void SetDependsOnAlarms(const Aws::Vector<Aws::String>& value) { m_dependsOnAlarmsHasBeenSet = true; m_dependsOnAlarms = value; }
+
+    /**
+     * <p> A list of recommended alarms that are used in the test and must be exported
+     * before or with the test. </p>
+     */
+    inline void SetDependsOnAlarms(Aws::Vector<Aws::String>&& value) { m_dependsOnAlarmsHasBeenSet = true; m_dependsOnAlarms = std::move(value); }
+
+    /**
+     * <p> A list of recommended alarms that are used in the test and must be exported
+     * before or with the test. </p>
+     */
+    inline TestRecommendation& WithDependsOnAlarms(const Aws::Vector<Aws::String>& value) { SetDependsOnAlarms(value); return *this;}
+
+    /**
+     * <p> A list of recommended alarms that are used in the test and must be exported
+     * before or with the test. </p>
+     */
+    inline TestRecommendation& WithDependsOnAlarms(Aws::Vector<Aws::String>&& value) { SetDependsOnAlarms(std::move(value)); return *this;}
+
+    /**
+     * <p> A list of recommended alarms that are used in the test and must be exported
+     * before or with the test. </p>
+     */
+    inline TestRecommendation& AddDependsOnAlarms(const Aws::String& value) { m_dependsOnAlarmsHasBeenSet = true; m_dependsOnAlarms.push_back(value); return *this; }
+
+    /**
+     * <p> A list of recommended alarms that are used in the test and must be exported
+     * before or with the test. </p>
+     */
+    inline TestRecommendation& AddDependsOnAlarms(Aws::String&& value) { m_dependsOnAlarmsHasBeenSet = true; m_dependsOnAlarms.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> A list of recommended alarms that are used in the test and must be exported
+     * before or with the test. </p>
+     */
+    inline TestRecommendation& AddDependsOnAlarms(const char* value) { m_dependsOnAlarmsHasBeenSet = true; m_dependsOnAlarms.push_back(value); return *this; }
+
+
+    /**
      * <p>The description for the test recommendation.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -434,6 +489,9 @@ namespace Model
 
     Aws::String m_appComponentName;
     bool m_appComponentNameHasBeenSet;
+
+    Aws::Vector<Aws::String> m_dependsOnAlarms;
+    bool m_dependsOnAlarmsHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;

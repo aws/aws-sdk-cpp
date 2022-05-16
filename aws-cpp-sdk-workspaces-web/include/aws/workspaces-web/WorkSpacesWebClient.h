@@ -999,7 +999,7 @@ namespace Model
         virtual void UpdateBrowserSettingsAsync(const Model::UpdateBrowserSettingsRequest& request, const UpdateBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the identity provider.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the identity provider. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateIdentityProvider">AWS
          * API Reference</a></p>
          */

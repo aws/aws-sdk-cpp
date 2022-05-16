@@ -318,6 +318,47 @@ namespace Model
      */
     inline ResourceMapping& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
+
+    /**
+     * <p> The short name of the Terraform source. </p>
+     */
+    inline const Aws::String& GetTerraformSourceName() const{ return m_terraformSourceName; }
+
+    /**
+     * <p> The short name of the Terraform source. </p>
+     */
+    inline bool TerraformSourceNameHasBeenSet() const { return m_terraformSourceNameHasBeenSet; }
+
+    /**
+     * <p> The short name of the Terraform source. </p>
+     */
+    inline void SetTerraformSourceName(const Aws::String& value) { m_terraformSourceNameHasBeenSet = true; m_terraformSourceName = value; }
+
+    /**
+     * <p> The short name of the Terraform source. </p>
+     */
+    inline void SetTerraformSourceName(Aws::String&& value) { m_terraformSourceNameHasBeenSet = true; m_terraformSourceName = std::move(value); }
+
+    /**
+     * <p> The short name of the Terraform source. </p>
+     */
+    inline void SetTerraformSourceName(const char* value) { m_terraformSourceNameHasBeenSet = true; m_terraformSourceName.assign(value); }
+
+    /**
+     * <p> The short name of the Terraform source. </p>
+     */
+    inline ResourceMapping& WithTerraformSourceName(const Aws::String& value) { SetTerraformSourceName(value); return *this;}
+
+    /**
+     * <p> The short name of the Terraform source. </p>
+     */
+    inline ResourceMapping& WithTerraformSourceName(Aws::String&& value) { SetTerraformSourceName(std::move(value)); return *this;}
+
+    /**
+     * <p> The short name of the Terraform source. </p>
+     */
+    inline ResourceMapping& WithTerraformSourceName(const char* value) { SetTerraformSourceName(value); return *this;}
+
   private:
 
     Aws::String m_appRegistryAppName;
@@ -337,6 +378,9 @@ namespace Model
 
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+
+    Aws::String m_terraformSourceName;
+    bool m_terraformSourceNameHasBeenSet;
   };
 
 } // namespace Model

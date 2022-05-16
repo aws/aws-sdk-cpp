@@ -159,6 +159,47 @@ namespace Model
      */
     inline LogicalResourceId& WithResourceGroupName(const char* value) { SetResourceGroupName(value); return *this;}
 
+
+    /**
+     * <p> The name of the Terraform S3 state file this resource belongs to. </p>
+     */
+    inline const Aws::String& GetTerraformSourceName() const{ return m_terraformSourceName; }
+
+    /**
+     * <p> The name of the Terraform S3 state file this resource belongs to. </p>
+     */
+    inline bool TerraformSourceNameHasBeenSet() const { return m_terraformSourceNameHasBeenSet; }
+
+    /**
+     * <p> The name of the Terraform S3 state file this resource belongs to. </p>
+     */
+    inline void SetTerraformSourceName(const Aws::String& value) { m_terraformSourceNameHasBeenSet = true; m_terraformSourceName = value; }
+
+    /**
+     * <p> The name of the Terraform S3 state file this resource belongs to. </p>
+     */
+    inline void SetTerraformSourceName(Aws::String&& value) { m_terraformSourceNameHasBeenSet = true; m_terraformSourceName = std::move(value); }
+
+    /**
+     * <p> The name of the Terraform S3 state file this resource belongs to. </p>
+     */
+    inline void SetTerraformSourceName(const char* value) { m_terraformSourceNameHasBeenSet = true; m_terraformSourceName.assign(value); }
+
+    /**
+     * <p> The name of the Terraform S3 state file this resource belongs to. </p>
+     */
+    inline LogicalResourceId& WithTerraformSourceName(const Aws::String& value) { SetTerraformSourceName(value); return *this;}
+
+    /**
+     * <p> The name of the Terraform S3 state file this resource belongs to. </p>
+     */
+    inline LogicalResourceId& WithTerraformSourceName(Aws::String&& value) { SetTerraformSourceName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of the Terraform S3 state file this resource belongs to. </p>
+     */
+    inline LogicalResourceId& WithTerraformSourceName(const char* value) { SetTerraformSourceName(value); return *this;}
+
   private:
 
     Aws::String m_identifier;
@@ -169,6 +210,9 @@ namespace Model
 
     Aws::String m_resourceGroupName;
     bool m_resourceGroupNameHasBeenSet;
+
+    Aws::String m_terraformSourceName;
+    bool m_terraformSourceNameHasBeenSet;
   };
 
 } // namespace Model

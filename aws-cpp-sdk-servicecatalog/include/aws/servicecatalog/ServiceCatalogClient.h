@@ -1560,7 +1560,9 @@ namespace Model
         virtual void ImportAsProvisionedProductAsync(const Model::ImportAsProvisionedProductRequest& request, const ImportAsProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all portfolios for which sharing was accepted by this
+         * <p>Lists all imported portfolios for which account-to-account shares were
+         * accepted by this account. By specifying the <code>PortfolioShareType</code>, you
+         * can list portfolios for which organizational shares were accepted by this
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares">AWS
          * API Reference</a></p>

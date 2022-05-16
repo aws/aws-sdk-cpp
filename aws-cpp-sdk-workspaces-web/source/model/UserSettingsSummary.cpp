@@ -21,8 +21,12 @@ namespace Model
 UserSettingsSummary::UserSettingsSummary() : 
     m_copyAllowed(EnabledType::NOT_SET),
     m_copyAllowedHasBeenSet(false),
+    m_disconnectTimeoutInMinutes(0),
+    m_disconnectTimeoutInMinutesHasBeenSet(false),
     m_downloadAllowed(EnabledType::NOT_SET),
     m_downloadAllowedHasBeenSet(false),
+    m_idleDisconnectTimeoutInMinutes(0),
+    m_idleDisconnectTimeoutInMinutesHasBeenSet(false),
     m_pasteAllowed(EnabledType::NOT_SET),
     m_pasteAllowedHasBeenSet(false),
     m_printAllowed(EnabledType::NOT_SET),
@@ -36,8 +40,12 @@ UserSettingsSummary::UserSettingsSummary() :
 UserSettingsSummary::UserSettingsSummary(JsonView jsonValue) : 
     m_copyAllowed(EnabledType::NOT_SET),
     m_copyAllowedHasBeenSet(false),
+    m_disconnectTimeoutInMinutes(0),
+    m_disconnectTimeoutInMinutesHasBeenSet(false),
     m_downloadAllowed(EnabledType::NOT_SET),
     m_downloadAllowedHasBeenSet(false),
+    m_idleDisconnectTimeoutInMinutes(0),
+    m_idleDisconnectTimeoutInMinutesHasBeenSet(false),
     m_pasteAllowed(EnabledType::NOT_SET),
     m_pasteAllowedHasBeenSet(false),
     m_printAllowed(EnabledType::NOT_SET),
@@ -58,11 +66,25 @@ UserSettingsSummary& UserSettingsSummary::operator =(JsonView jsonValue)
     m_copyAllowedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("disconnectTimeoutInMinutes"))
+  {
+    m_disconnectTimeoutInMinutes = jsonValue.GetInteger("disconnectTimeoutInMinutes");
+
+    m_disconnectTimeoutInMinutesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("downloadAllowed"))
   {
     m_downloadAllowed = EnabledTypeMapper::GetEnabledTypeForName(jsonValue.GetString("downloadAllowed"));
 
     m_downloadAllowedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("idleDisconnectTimeoutInMinutes"))
+  {
+    m_idleDisconnectTimeoutInMinutes = jsonValue.GetInteger("idleDisconnectTimeoutInMinutes");
+
+    m_idleDisconnectTimeoutInMinutesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("pasteAllowed"))
@@ -105,9 +127,21 @@ JsonValue UserSettingsSummary::Jsonize() const
    payload.WithString("copyAllowed", EnabledTypeMapper::GetNameForEnabledType(m_copyAllowed));
   }
 
+  if(m_disconnectTimeoutInMinutesHasBeenSet)
+  {
+   payload.WithInteger("disconnectTimeoutInMinutes", m_disconnectTimeoutInMinutes);
+
+  }
+
   if(m_downloadAllowedHasBeenSet)
   {
    payload.WithString("downloadAllowed", EnabledTypeMapper::GetNameForEnabledType(m_downloadAllowed));
+  }
+
+  if(m_idleDisconnectTimeoutInMinutesHasBeenSet)
+  {
+   payload.WithInteger("idleDisconnectTimeoutInMinutes", m_idleDisconnectTimeoutInMinutes);
+
   }
 
   if(m_pasteAllowedHasBeenSet)
