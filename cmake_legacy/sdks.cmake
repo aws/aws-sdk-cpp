@@ -55,7 +55,7 @@ else()
         set(REMOVE_SDK 0)
 
         if(SDK STREQUAL "core")
-            set(SDK_DIR "aws-cpp-sdk-${SDK}")
+            set(SDK_DIR "src/aws-cpp-sdk-${SDK}")
         else()
             set(SDK_DIR "generated/aws-cpp-sdk-${SDK}")
         endif()
