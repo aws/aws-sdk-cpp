@@ -72,7 +72,7 @@ endfunction()
 # services have the name format abc.def.ghi will be renamed to ghi-def-abc (dot will not be accepted as Windows directory name )
 # and put into C2J_SPECIAL_NAME_LIST, but rumtime.lex will be renamed to lex based on historical reason.
 function(build_sdk_list)
-    file(GLOB ALL_MODEL_FILES "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/api-descriptions/*-[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9].normal.json")
+    file(GLOB ALL_MODEL_FILES "${CMAKE_CURRENT_SOURCE_DIR}/tools/code-generation/api-descriptions/*-[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9].normal.json")
     foreach(model IN LISTS ALL_MODEL_FILES)
         get_filename_component(modelName "${model}" NAME)
         STRING(REGEX MATCH "([0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9])" date "${modelName}")
