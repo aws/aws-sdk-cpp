@@ -397,8 +397,14 @@ namespace Model
      * visible to KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i> <i>Identity and
-     * Access Management User Guide</i> </i>.</p> </li> <li> <p>The key policy size
-     * quota is 32 kilobytes (32768 bytes).</p> </li> </ul>
+     * Access Management User Guide</i> </i>.</p> </li> </ul> <p>A key policy document
+     * must conform to the following rules.</p> <ul> <li> <p>Up to 32 kilobytes (32768
+     * bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li> <p>The only
+     * Unicode characters that are permitted in a key policy document are the
+     * horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
+     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
+     * element in a key policy statement can include spaces. (Spaces are prohibited in
+     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
@@ -425,8 +431,14 @@ namespace Model
      * visible to KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i> <i>Identity and
-     * Access Management User Guide</i> </i>.</p> </li> <li> <p>The key policy size
-     * quota is 32 kilobytes (32768 bytes).</p> </li> </ul>
+     * Access Management User Guide</i> </i>.</p> </li> </ul> <p>A key policy document
+     * must conform to the following rules.</p> <ul> <li> <p>Up to 32 kilobytes (32768
+     * bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li> <p>The only
+     * Unicode characters that are permitted in a key policy document are the
+     * horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
+     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
+     * element in a key policy statement can include spaces. (Spaces are prohibited in
+     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul>
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
@@ -453,8 +465,14 @@ namespace Model
      * visible to KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i> <i>Identity and
-     * Access Management User Guide</i> </i>.</p> </li> <li> <p>The key policy size
-     * quota is 32 kilobytes (32768 bytes).</p> </li> </ul>
+     * Access Management User Guide</i> </i>.</p> </li> </ul> <p>A key policy document
+     * must conform to the following rules.</p> <ul> <li> <p>Up to 32 kilobytes (32768
+     * bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li> <p>The only
+     * Unicode characters that are permitted in a key policy document are the
+     * horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
+     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
+     * element in a key policy statement can include spaces. (Spaces are prohibited in
+     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -481,8 +499,14 @@ namespace Model
      * visible to KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i> <i>Identity and
-     * Access Management User Guide</i> </i>.</p> </li> <li> <p>The key policy size
-     * quota is 32 kilobytes (32768 bytes).</p> </li> </ul>
+     * Access Management User Guide</i> </i>.</p> </li> </ul> <p>A key policy document
+     * must conform to the following rules.</p> <ul> <li> <p>Up to 32 kilobytes (32768
+     * bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li> <p>The only
+     * Unicode characters that are permitted in a key policy document are the
+     * horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
+     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
+     * element in a key policy statement can include spaces. (Spaces are prohibited in
+     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
@@ -509,8 +533,14 @@ namespace Model
      * visible to KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i> <i>Identity and
-     * Access Management User Guide</i> </i>.</p> </li> <li> <p>The key policy size
-     * quota is 32 kilobytes (32768 bytes).</p> </li> </ul>
+     * Access Management User Guide</i> </i>.</p> </li> </ul> <p>A key policy document
+     * must conform to the following rules.</p> <ul> <li> <p>Up to 32 kilobytes (32768
+     * bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li> <p>The only
+     * Unicode characters that are permitted in a key policy document are the
+     * horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
+     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
+     * element in a key policy statement can include spaces. (Spaces are prohibited in
+     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
@@ -537,8 +567,14 @@ namespace Model
      * visible to KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i> <i>Identity and
-     * Access Management User Guide</i> </i>.</p> </li> <li> <p>The key policy size
-     * quota is 32 kilobytes (32768 bytes).</p> </li> </ul>
+     * Access Management User Guide</i> </i>.</p> </li> </ul> <p>A key policy document
+     * must conform to the following rules.</p> <ul> <li> <p>Up to 32 kilobytes (32768
+     * bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li> <p>The only
+     * Unicode characters that are permitted in a key policy document are the
+     * horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
+     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
+     * element in a key policy statement can include spaces. (Spaces are prohibited in
+     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul>
      */
     inline ReplicateKeyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
@@ -565,8 +601,14 @@ namespace Model
      * visible to KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i> <i>Identity and
-     * Access Management User Guide</i> </i>.</p> </li> <li> <p>The key policy size
-     * quota is 32 kilobytes (32768 bytes).</p> </li> </ul>
+     * Access Management User Guide</i> </i>.</p> </li> </ul> <p>A key policy document
+     * must conform to the following rules.</p> <ul> <li> <p>Up to 32 kilobytes (32768
+     * bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li> <p>The only
+     * Unicode characters that are permitted in a key policy document are the
+     * horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
+     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
+     * element in a key policy statement can include spaces. (Spaces are prohibited in
+     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul>
      */
     inline ReplicateKeyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
@@ -593,8 +635,14 @@ namespace Model
      * visible to KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i> <i>Identity and
-     * Access Management User Guide</i> </i>.</p> </li> <li> <p>The key policy size
-     * quota is 32 kilobytes (32768 bytes).</p> </li> </ul>
+     * Access Management User Guide</i> </i>.</p> </li> </ul> <p>A key policy document
+     * must conform to the following rules.</p> <ul> <li> <p>Up to 32 kilobytes (32768
+     * bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li> <p>The only
+     * Unicode characters that are permitted in a key policy document are the
+     * horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
+     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
+     * element in a key policy statement can include spaces. (Spaces are prohibited in
+     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul>
      */
     inline ReplicateKeyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 

@@ -40,13 +40,16 @@ namespace Model
 
 
     /**
-     * <p>The key policy to attach to the KMS key.</p> <p>If you provide a key policy,
-     * it must meet the following criteria:</p> <ul> <li> <p>If you don't set
-     * <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow
-     * the principal that is making the <code>CreateKey</code> request to make a
-     * subsequent <a>PutKeyPolicy</a> request on the KMS key. This reduces the risk
-     * that the KMS key becomes unmanageable. For more information, refer to the
-     * scenario in the <a
+     * <p>The key policy to attach to the KMS key. If you do not specify a key policy,
+     * KMS attaches a default key policy to the KMS key. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
+     * key policy</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>If
+     * you provide a key policy, it must meet the following criteria:</p> <ul> <li>
+     * <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to
+     * <code>True</code>, the key policy must allow the principal that is making the
+     * <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a> request
+     * on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For
+     * more information, refer to the scenario in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i>
      * </i>.</p> </li> <li> <p>Each statement in the key policy must contain one or
@@ -57,13 +60,15 @@ namespace Model
      * visible to KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>Amazon Web Services
-     * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>If you do not
-     * provide a key policy, KMS attaches a default key policy to the KMS key. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>Key Management Service Developer Guide</i>. </p> <p>The
-     * key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help writing and
-     * formatting a JSON policy document, see the <a
+     * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>A key policy
+     * document must conform to the following rules.</p> <ul> <li> <p>Up to 32
+     * kilobytes (32768 bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li>
+     * <p>The only Unicode characters that are permitted in a key policy document are
+     * the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
+     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
+     * element in a key policy statement can include spaces. (Spaces are prohibited in
+     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul> <p>For
+     * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
      * Guide</i> </i>.</p>
@@ -71,13 +76,16 @@ namespace Model
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>The key policy to attach to the KMS key.</p> <p>If you provide a key policy,
-     * it must meet the following criteria:</p> <ul> <li> <p>If you don't set
-     * <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow
-     * the principal that is making the <code>CreateKey</code> request to make a
-     * subsequent <a>PutKeyPolicy</a> request on the KMS key. This reduces the risk
-     * that the KMS key becomes unmanageable. For more information, refer to the
-     * scenario in the <a
+     * <p>The key policy to attach to the KMS key. If you do not specify a key policy,
+     * KMS attaches a default key policy to the KMS key. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
+     * key policy</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>If
+     * you provide a key policy, it must meet the following criteria:</p> <ul> <li>
+     * <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to
+     * <code>True</code>, the key policy must allow the principal that is making the
+     * <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a> request
+     * on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For
+     * more information, refer to the scenario in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i>
      * </i>.</p> </li> <li> <p>Each statement in the key policy must contain one or
@@ -88,13 +96,15 @@ namespace Model
      * visible to KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>Amazon Web Services
-     * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>If you do not
-     * provide a key policy, KMS attaches a default key policy to the KMS key. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>Key Management Service Developer Guide</i>. </p> <p>The
-     * key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help writing and
-     * formatting a JSON policy document, see the <a
+     * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>A key policy
+     * document must conform to the following rules.</p> <ul> <li> <p>Up to 32
+     * kilobytes (32768 bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li>
+     * <p>The only Unicode characters that are permitted in a key policy document are
+     * the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
+     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
+     * element in a key policy statement can include spaces. (Spaces are prohibited in
+     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul> <p>For
+     * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
      * Guide</i> </i>.</p>
@@ -102,13 +112,16 @@ namespace Model
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
-     * <p>The key policy to attach to the KMS key.</p> <p>If you provide a key policy,
-     * it must meet the following criteria:</p> <ul> <li> <p>If you don't set
-     * <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow
-     * the principal that is making the <code>CreateKey</code> request to make a
-     * subsequent <a>PutKeyPolicy</a> request on the KMS key. This reduces the risk
-     * that the KMS key becomes unmanageable. For more information, refer to the
-     * scenario in the <a
+     * <p>The key policy to attach to the KMS key. If you do not specify a key policy,
+     * KMS attaches a default key policy to the KMS key. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
+     * key policy</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>If
+     * you provide a key policy, it must meet the following criteria:</p> <ul> <li>
+     * <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to
+     * <code>True</code>, the key policy must allow the principal that is making the
+     * <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a> request
+     * on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For
+     * more information, refer to the scenario in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i>
      * </i>.</p> </li> <li> <p>Each statement in the key policy must contain one or
@@ -119,13 +132,15 @@ namespace Model
      * visible to KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>Amazon Web Services
-     * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>If you do not
-     * provide a key policy, KMS attaches a default key policy to the KMS key. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>Key Management Service Developer Guide</i>. </p> <p>The
-     * key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help writing and
-     * formatting a JSON policy document, see the <a
+     * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>A key policy
+     * document must conform to the following rules.</p> <ul> <li> <p>Up to 32
+     * kilobytes (32768 bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li>
+     * <p>The only Unicode characters that are permitted in a key policy document are
+     * the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
+     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
+     * element in a key policy statement can include spaces. (Spaces are prohibited in
+     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul> <p>For
+     * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
      * Guide</i> </i>.</p>
@@ -133,13 +148,16 @@ namespace Model
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * <p>The key policy to attach to the KMS key.</p> <p>If you provide a key policy,
-     * it must meet the following criteria:</p> <ul> <li> <p>If you don't set
-     * <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow
-     * the principal that is making the <code>CreateKey</code> request to make a
-     * subsequent <a>PutKeyPolicy</a> request on the KMS key. This reduces the risk
-     * that the KMS key becomes unmanageable. For more information, refer to the
-     * scenario in the <a
+     * <p>The key policy to attach to the KMS key. If you do not specify a key policy,
+     * KMS attaches a default key policy to the KMS key. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
+     * key policy</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>If
+     * you provide a key policy, it must meet the following criteria:</p> <ul> <li>
+     * <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to
+     * <code>True</code>, the key policy must allow the principal that is making the
+     * <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a> request
+     * on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For
+     * more information, refer to the scenario in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i>
      * </i>.</p> </li> <li> <p>Each statement in the key policy must contain one or
@@ -150,13 +168,15 @@ namespace Model
      * visible to KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>Amazon Web Services
-     * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>If you do not
-     * provide a key policy, KMS attaches a default key policy to the KMS key. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>Key Management Service Developer Guide</i>. </p> <p>The
-     * key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help writing and
-     * formatting a JSON policy document, see the <a
+     * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>A key policy
+     * document must conform to the following rules.</p> <ul> <li> <p>Up to 32
+     * kilobytes (32768 bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li>
+     * <p>The only Unicode characters that are permitted in a key policy document are
+     * the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
+     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
+     * element in a key policy statement can include spaces. (Spaces are prohibited in
+     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul> <p>For
+     * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
      * Guide</i> </i>.</p>
@@ -164,13 +184,16 @@ namespace Model
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
-     * <p>The key policy to attach to the KMS key.</p> <p>If you provide a key policy,
-     * it must meet the following criteria:</p> <ul> <li> <p>If you don't set
-     * <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow
-     * the principal that is making the <code>CreateKey</code> request to make a
-     * subsequent <a>PutKeyPolicy</a> request on the KMS key. This reduces the risk
-     * that the KMS key becomes unmanageable. For more information, refer to the
-     * scenario in the <a
+     * <p>The key policy to attach to the KMS key. If you do not specify a key policy,
+     * KMS attaches a default key policy to the KMS key. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
+     * key policy</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>If
+     * you provide a key policy, it must meet the following criteria:</p> <ul> <li>
+     * <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to
+     * <code>True</code>, the key policy must allow the principal that is making the
+     * <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a> request
+     * on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For
+     * more information, refer to the scenario in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i>
      * </i>.</p> </li> <li> <p>Each statement in the key policy must contain one or
@@ -181,13 +204,15 @@ namespace Model
      * visible to KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>Amazon Web Services
-     * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>If you do not
-     * provide a key policy, KMS attaches a default key policy to the KMS key. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>Key Management Service Developer Guide</i>. </p> <p>The
-     * key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help writing and
-     * formatting a JSON policy document, see the <a
+     * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>A key policy
+     * document must conform to the following rules.</p> <ul> <li> <p>Up to 32
+     * kilobytes (32768 bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li>
+     * <p>The only Unicode characters that are permitted in a key policy document are
+     * the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
+     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
+     * element in a key policy statement can include spaces. (Spaces are prohibited in
+     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul> <p>For
+     * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
      * Guide</i> </i>.</p>
@@ -195,13 +220,16 @@ namespace Model
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /**
-     * <p>The key policy to attach to the KMS key.</p> <p>If you provide a key policy,
-     * it must meet the following criteria:</p> <ul> <li> <p>If you don't set
-     * <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow
-     * the principal that is making the <code>CreateKey</code> request to make a
-     * subsequent <a>PutKeyPolicy</a> request on the KMS key. This reduces the risk
-     * that the KMS key becomes unmanageable. For more information, refer to the
-     * scenario in the <a
+     * <p>The key policy to attach to the KMS key. If you do not specify a key policy,
+     * KMS attaches a default key policy to the KMS key. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
+     * key policy</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>If
+     * you provide a key policy, it must meet the following criteria:</p> <ul> <li>
+     * <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to
+     * <code>True</code>, the key policy must allow the principal that is making the
+     * <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a> request
+     * on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For
+     * more information, refer to the scenario in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i>
      * </i>.</p> </li> <li> <p>Each statement in the key policy must contain one or
@@ -212,13 +240,15 @@ namespace Model
      * visible to KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>Amazon Web Services
-     * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>If you do not
-     * provide a key policy, KMS attaches a default key policy to the KMS key. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>Key Management Service Developer Guide</i>. </p> <p>The
-     * key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help writing and
-     * formatting a JSON policy document, see the <a
+     * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>A key policy
+     * document must conform to the following rules.</p> <ul> <li> <p>Up to 32
+     * kilobytes (32768 bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li>
+     * <p>The only Unicode characters that are permitted in a key policy document are
+     * the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
+     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
+     * element in a key policy statement can include spaces. (Spaces are prohibited in
+     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul> <p>For
+     * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
      * Guide</i> </i>.</p>
@@ -226,13 +256,16 @@ namespace Model
     inline CreateKeyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The key policy to attach to the KMS key.</p> <p>If you provide a key policy,
-     * it must meet the following criteria:</p> <ul> <li> <p>If you don't set
-     * <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow
-     * the principal that is making the <code>CreateKey</code> request to make a
-     * subsequent <a>PutKeyPolicy</a> request on the KMS key. This reduces the risk
-     * that the KMS key becomes unmanageable. For more information, refer to the
-     * scenario in the <a
+     * <p>The key policy to attach to the KMS key. If you do not specify a key policy,
+     * KMS attaches a default key policy to the KMS key. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
+     * key policy</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>If
+     * you provide a key policy, it must meet the following criteria:</p> <ul> <li>
+     * <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to
+     * <code>True</code>, the key policy must allow the principal that is making the
+     * <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a> request
+     * on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For
+     * more information, refer to the scenario in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i>
      * </i>.</p> </li> <li> <p>Each statement in the key policy must contain one or
@@ -243,13 +276,15 @@ namespace Model
      * visible to KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>Amazon Web Services
-     * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>If you do not
-     * provide a key policy, KMS attaches a default key policy to the KMS key. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>Key Management Service Developer Guide</i>. </p> <p>The
-     * key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help writing and
-     * formatting a JSON policy document, see the <a
+     * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>A key policy
+     * document must conform to the following rules.</p> <ul> <li> <p>Up to 32
+     * kilobytes (32768 bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li>
+     * <p>The only Unicode characters that are permitted in a key policy document are
+     * the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
+     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
+     * element in a key policy statement can include spaces. (Spaces are prohibited in
+     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul> <p>For
+     * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
      * Guide</i> </i>.</p>
@@ -257,13 +292,16 @@ namespace Model
     inline CreateKeyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>The key policy to attach to the KMS key.</p> <p>If you provide a key policy,
-     * it must meet the following criteria:</p> <ul> <li> <p>If you don't set
-     * <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow
-     * the principal that is making the <code>CreateKey</code> request to make a
-     * subsequent <a>PutKeyPolicy</a> request on the KMS key. This reduces the risk
-     * that the KMS key becomes unmanageable. For more information, refer to the
-     * scenario in the <a
+     * <p>The key policy to attach to the KMS key. If you do not specify a key policy,
+     * KMS attaches a default key policy to the KMS key. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
+     * key policy</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>If
+     * you provide a key policy, it must meet the following criteria:</p> <ul> <li>
+     * <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to
+     * <code>True</code>, the key policy must allow the principal that is making the
+     * <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a> request
+     * on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For
+     * more information, refer to the scenario in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i>
      * </i>.</p> </li> <li> <p>Each statement in the key policy must contain one or
@@ -274,13 +312,15 @@ namespace Model
      * visible to KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>Amazon Web Services
-     * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>If you do not
-     * provide a key policy, KMS attaches a default key policy to the KMS key. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>Key Management Service Developer Guide</i>. </p> <p>The
-     * key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help writing and
-     * formatting a JSON policy document, see the <a
+     * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>A key policy
+     * document must conform to the following rules.</p> <ul> <li> <p>Up to 32
+     * kilobytes (32768 bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li>
+     * <p>The only Unicode characters that are permitted in a key policy document are
+     * the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
+     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
+     * element in a key policy statement can include spaces. (Spaces are prohibited in
+     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul> <p>For
+     * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
      * Guide</i> </i>.</p>
@@ -464,11 +504,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing
      * a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i>
      * </i>.</p> <p>The <code>KeySpec</code> determines whether the KMS key contains a
-     * symmetric key or an asymmetric key pair. It also determines the algorithms that
-     * the KMS key supports. You can't change the <code>KeySpec</code> after the KMS
-     * key is created. To further restrict the algorithms that can be used with the KMS
-     * key, use a condition key in its key policy or IAM policy. For more information,
-     * see <a
+     * symmetric key or an asymmetric key pair. It also determines the cryptographic
+     * algorithms that the KMS key supports. You can't change the <code>KeySpec</code>
+     * after the KMS key is created. To further restrict the algorithms that can be
+     * used with the KMS key, use a condition key in its key policy or IAM policy. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>,
      * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a>
@@ -505,11 +545,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing
      * a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i>
      * </i>.</p> <p>The <code>KeySpec</code> determines whether the KMS key contains a
-     * symmetric key or an asymmetric key pair. It also determines the algorithms that
-     * the KMS key supports. You can't change the <code>KeySpec</code> after the KMS
-     * key is created. To further restrict the algorithms that can be used with the KMS
-     * key, use a condition key in its key policy or IAM policy. For more information,
-     * see <a
+     * symmetric key or an asymmetric key pair. It also determines the cryptographic
+     * algorithms that the KMS key supports. You can't change the <code>KeySpec</code>
+     * after the KMS key is created. To further restrict the algorithms that can be
+     * used with the KMS key, use a condition key in its key policy or IAM policy. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>,
      * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a>
@@ -546,11 +586,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing
      * a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i>
      * </i>.</p> <p>The <code>KeySpec</code> determines whether the KMS key contains a
-     * symmetric key or an asymmetric key pair. It also determines the algorithms that
-     * the KMS key supports. You can't change the <code>KeySpec</code> after the KMS
-     * key is created. To further restrict the algorithms that can be used with the KMS
-     * key, use a condition key in its key policy or IAM policy. For more information,
-     * see <a
+     * symmetric key or an asymmetric key pair. It also determines the cryptographic
+     * algorithms that the KMS key supports. You can't change the <code>KeySpec</code>
+     * after the KMS key is created. To further restrict the algorithms that can be
+     * used with the KMS key, use a condition key in its key policy or IAM policy. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>,
      * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a>
@@ -587,11 +627,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing
      * a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i>
      * </i>.</p> <p>The <code>KeySpec</code> determines whether the KMS key contains a
-     * symmetric key or an asymmetric key pair. It also determines the algorithms that
-     * the KMS key supports. You can't change the <code>KeySpec</code> after the KMS
-     * key is created. To further restrict the algorithms that can be used with the KMS
-     * key, use a condition key in its key policy or IAM policy. For more information,
-     * see <a
+     * symmetric key or an asymmetric key pair. It also determines the cryptographic
+     * algorithms that the KMS key supports. You can't change the <code>KeySpec</code>
+     * after the KMS key is created. To further restrict the algorithms that can be
+     * used with the KMS key, use a condition key in its key policy or IAM policy. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>,
      * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a>
@@ -628,11 +668,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing
      * a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i>
      * </i>.</p> <p>The <code>KeySpec</code> determines whether the KMS key contains a
-     * symmetric key or an asymmetric key pair. It also determines the algorithms that
-     * the KMS key supports. You can't change the <code>KeySpec</code> after the KMS
-     * key is created. To further restrict the algorithms that can be used with the KMS
-     * key, use a condition key in its key policy or IAM policy. For more information,
-     * see <a
+     * symmetric key or an asymmetric key pair. It also determines the cryptographic
+     * algorithms that the KMS key supports. You can't change the <code>KeySpec</code>
+     * after the KMS key is created. To further restrict the algorithms that can be
+     * used with the KMS key, use a condition key in its key policy or IAM policy. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>,
      * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a>
@@ -669,11 +709,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing
      * a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i>
      * </i>.</p> <p>The <code>KeySpec</code> determines whether the KMS key contains a
-     * symmetric key or an asymmetric key pair. It also determines the algorithms that
-     * the KMS key supports. You can't change the <code>KeySpec</code> after the KMS
-     * key is created. To further restrict the algorithms that can be used with the KMS
-     * key, use a condition key in its key policy or IAM policy. For more information,
-     * see <a
+     * symmetric key or an asymmetric key pair. It also determines the cryptographic
+     * algorithms that the KMS key supports. You can't change the <code>KeySpec</code>
+     * after the KMS key is created. To further restrict the algorithms that can be
+     * used with the KMS key, use a condition key in its key policy or IAM policy. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a>,
      * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-mac-algorithm">kms:MacAlgorithm</a>
@@ -1224,9 +1264,9 @@ namespace Model
      * keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
      * <p>This value creates a <i>primary key</i>, not a replica. To create a
      * <i>replica key</i>, use the <a>ReplicateKey</a> operation. </p> <p>You can
-     * create a symmetric or asymmetric multi-Region key, and you can create a
-     * multi-Region key with imported key material. However, you cannot create a
-     * multi-Region key in a custom key store.</p>
+     * create a multi-Region version of a symmetric encryption KMS key, an HMAC KMS
+     * key, an asymmetric KMS key, or a KMS key with imported key material. However,
+     * you cannot create a multi-Region key in a custom key store.</p>
      */
     inline bool GetMultiRegion() const{ return m_multiRegion; }
 
@@ -1247,9 +1287,9 @@ namespace Model
      * keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
      * <p>This value creates a <i>primary key</i>, not a replica. To create a
      * <i>replica key</i>, use the <a>ReplicateKey</a> operation. </p> <p>You can
-     * create a symmetric or asymmetric multi-Region key, and you can create a
-     * multi-Region key with imported key material. However, you cannot create a
-     * multi-Region key in a custom key store.</p>
+     * create a multi-Region version of a symmetric encryption KMS key, an HMAC KMS
+     * key, an asymmetric KMS key, or a KMS key with imported key material. However,
+     * you cannot create a multi-Region key in a custom key store.</p>
      */
     inline bool MultiRegionHasBeenSet() const { return m_multiRegionHasBeenSet; }
 
@@ -1270,9 +1310,9 @@ namespace Model
      * keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
      * <p>This value creates a <i>primary key</i>, not a replica. To create a
      * <i>replica key</i>, use the <a>ReplicateKey</a> operation. </p> <p>You can
-     * create a symmetric or asymmetric multi-Region key, and you can create a
-     * multi-Region key with imported key material. However, you cannot create a
-     * multi-Region key in a custom key store.</p>
+     * create a multi-Region version of a symmetric encryption KMS key, an HMAC KMS
+     * key, an asymmetric KMS key, or a KMS key with imported key material. However,
+     * you cannot create a multi-Region key in a custom key store.</p>
      */
     inline void SetMultiRegion(bool value) { m_multiRegionHasBeenSet = true; m_multiRegion = value; }
 
@@ -1293,9 +1333,9 @@ namespace Model
      * keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
      * <p>This value creates a <i>primary key</i>, not a replica. To create a
      * <i>replica key</i>, use the <a>ReplicateKey</a> operation. </p> <p>You can
-     * create a symmetric or asymmetric multi-Region key, and you can create a
-     * multi-Region key with imported key material. However, you cannot create a
-     * multi-Region key in a custom key store.</p>
+     * create a multi-Region version of a symmetric encryption KMS key, an HMAC KMS
+     * key, an asymmetric KMS key, or a KMS key with imported key material. However,
+     * you cannot create a multi-Region key in a custom key store.</p>
      */
     inline CreateKeyRequest& WithMultiRegion(bool value) { SetMultiRegion(value); return *this;}
 
