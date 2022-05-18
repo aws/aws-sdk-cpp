@@ -21,14 +21,18 @@ namespace Model
 ProtocolDetails::ProtocolDetails() : 
     m_passiveIpHasBeenSet(false),
     m_tlsSessionResumptionMode(TlsSessionResumptionMode::NOT_SET),
-    m_tlsSessionResumptionModeHasBeenSet(false)
+    m_tlsSessionResumptionModeHasBeenSet(false),
+    m_setStatOption(SetStatOption::NOT_SET),
+    m_setStatOptionHasBeenSet(false)
 {
 }
 
 ProtocolDetails::ProtocolDetails(JsonView jsonValue) : 
     m_passiveIpHasBeenSet(false),
     m_tlsSessionResumptionMode(TlsSessionResumptionMode::NOT_SET),
-    m_tlsSessionResumptionModeHasBeenSet(false)
+    m_tlsSessionResumptionModeHasBeenSet(false),
+    m_setStatOption(SetStatOption::NOT_SET),
+    m_setStatOptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +53,13 @@ ProtocolDetails& ProtocolDetails::operator =(JsonView jsonValue)
     m_tlsSessionResumptionModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SetStatOption"))
+  {
+    m_setStatOption = SetStatOptionMapper::GetSetStatOptionForName(jsonValue.GetString("SetStatOption"));
+
+    m_setStatOptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +76,11 @@ JsonValue ProtocolDetails::Jsonize() const
   if(m_tlsSessionResumptionModeHasBeenSet)
   {
    payload.WithString("TlsSessionResumptionMode", TlsSessionResumptionModeMapper::GetNameForTlsSessionResumptionMode(m_tlsSessionResumptionMode));
+  }
+
+  if(m_setStatOptionHasBeenSet)
+  {
+   payload.WithString("SetStatOption", SetStatOptionMapper::GetNameForSetStatOption(m_setStatOption));
   }
 
   return payload;

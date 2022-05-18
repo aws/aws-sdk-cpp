@@ -235,68 +235,110 @@ namespace Model
 
 
     /**
-     * <p> The protocol settings that are configured for your server. </p> <p> Use the
-     * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
-     * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
-     * address of a firewall, router, or load balancer. </p> <p>Use the
-     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
-     * Transfer server resumes recent, negotiated sessions through a unique session
-     * ID.</p>
+     * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
+     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and
+     * FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external
+     * IP address of a firewall, router, or load balancer. </p> </li> <li> <p>Use the
+     * <code>SetStatOption</code> to ignore the error that is generated when the client
+     * attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the
+     * value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
+     * SETSTAT command, and upload files without needing to make any changes to your
+     * SFTP client. Note that with <code>SetStatOption</code> set to
+     * <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so
+     * you can determine when the client is making a SETSTAT call.</p> </li> <li>
+     * <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether
+     * or not your Transfer server resumes recent, negotiated sessions through a unique
+     * session ID.</p> </li> </ul>
      */
     inline const ProtocolDetails& GetProtocolDetails() const{ return m_protocolDetails; }
 
     /**
-     * <p> The protocol settings that are configured for your server. </p> <p> Use the
-     * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
-     * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
-     * address of a firewall, router, or load balancer. </p> <p>Use the
-     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
-     * Transfer server resumes recent, negotiated sessions through a unique session
-     * ID.</p>
+     * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
+     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and
+     * FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external
+     * IP address of a firewall, router, or load balancer. </p> </li> <li> <p>Use the
+     * <code>SetStatOption</code> to ignore the error that is generated when the client
+     * attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the
+     * value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
+     * SETSTAT command, and upload files without needing to make any changes to your
+     * SFTP client. Note that with <code>SetStatOption</code> set to
+     * <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so
+     * you can determine when the client is making a SETSTAT call.</p> </li> <li>
+     * <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether
+     * or not your Transfer server resumes recent, negotiated sessions through a unique
+     * session ID.</p> </li> </ul>
      */
     inline bool ProtocolDetailsHasBeenSet() const { return m_protocolDetailsHasBeenSet; }
 
     /**
-     * <p> The protocol settings that are configured for your server. </p> <p> Use the
-     * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
-     * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
-     * address of a firewall, router, or load balancer. </p> <p>Use the
-     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
-     * Transfer server resumes recent, negotiated sessions through a unique session
-     * ID.</p>
+     * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
+     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and
+     * FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external
+     * IP address of a firewall, router, or load balancer. </p> </li> <li> <p>Use the
+     * <code>SetStatOption</code> to ignore the error that is generated when the client
+     * attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the
+     * value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
+     * SETSTAT command, and upload files without needing to make any changes to your
+     * SFTP client. Note that with <code>SetStatOption</code> set to
+     * <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so
+     * you can determine when the client is making a SETSTAT call.</p> </li> <li>
+     * <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether
+     * or not your Transfer server resumes recent, negotiated sessions through a unique
+     * session ID.</p> </li> </ul>
      */
     inline void SetProtocolDetails(const ProtocolDetails& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = value; }
 
     /**
-     * <p> The protocol settings that are configured for your server. </p> <p> Use the
-     * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
-     * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
-     * address of a firewall, router, or load balancer. </p> <p>Use the
-     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
-     * Transfer server resumes recent, negotiated sessions through a unique session
-     * ID.</p>
+     * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
+     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and
+     * FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external
+     * IP address of a firewall, router, or load balancer. </p> </li> <li> <p>Use the
+     * <code>SetStatOption</code> to ignore the error that is generated when the client
+     * attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the
+     * value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
+     * SETSTAT command, and upload files without needing to make any changes to your
+     * SFTP client. Note that with <code>SetStatOption</code> set to
+     * <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so
+     * you can determine when the client is making a SETSTAT call.</p> </li> <li>
+     * <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether
+     * or not your Transfer server resumes recent, negotiated sessions through a unique
+     * session ID.</p> </li> </ul>
      */
     inline void SetProtocolDetails(ProtocolDetails&& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = std::move(value); }
 
     /**
-     * <p> The protocol settings that are configured for your server. </p> <p> Use the
-     * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
-     * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
-     * address of a firewall, router, or load balancer. </p> <p>Use the
-     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
-     * Transfer server resumes recent, negotiated sessions through a unique session
-     * ID.</p>
+     * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
+     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and
+     * FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external
+     * IP address of a firewall, router, or load balancer. </p> </li> <li> <p>Use the
+     * <code>SetStatOption</code> to ignore the error that is generated when the client
+     * attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the
+     * value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
+     * SETSTAT command, and upload files without needing to make any changes to your
+     * SFTP client. Note that with <code>SetStatOption</code> set to
+     * <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so
+     * you can determine when the client is making a SETSTAT call.</p> </li> <li>
+     * <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether
+     * or not your Transfer server resumes recent, negotiated sessions through a unique
+     * session ID.</p> </li> </ul>
      */
     inline UpdateServerRequest& WithProtocolDetails(const ProtocolDetails& value) { SetProtocolDetails(value); return *this;}
 
     /**
-     * <p> The protocol settings that are configured for your server. </p> <p> Use the
-     * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
-     * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
-     * address of a firewall, router, or load balancer. </p> <p>Use the
-     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
-     * Transfer server resumes recent, negotiated sessions through a unique session
-     * ID.</p>
+     * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
+     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and
+     * FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external
+     * IP address of a firewall, router, or load balancer. </p> </li> <li> <p>Use the
+     * <code>SetStatOption</code> to ignore the error that is generated when the client
+     * attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the
+     * value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
+     * SETSTAT command, and upload files without needing to make any changes to your
+     * SFTP client. Note that with <code>SetStatOption</code> set to
+     * <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so
+     * you can determine when the client is making a SETSTAT call.</p> </li> <li>
+     * <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether
+     * or not your Transfer server resumes recent, negotiated sessions through a unique
+     * session ID.</p> </li> </ul>
      */
     inline UpdateServerRequest& WithProtocolDetails(ProtocolDetails&& value) { SetProtocolDetails(std::move(value)); return *this;}
 
@@ -496,162 +538,98 @@ namespace Model
 
 
     /**
-     * <p>The RSA or ECDSA private key to use for your server.</p> <p>Use the following
-     * command to generate an RSA 2048 bit key with no passphrase:</p> <p>
-     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a
-     * stronger key using 3072 or 4096.</p> <p>Use the following command to generate an
-     * ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256
-     * -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
-     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>For both of these
-     * commands, you can replace <i>my-new-server-key</i> with a string of your
-     * choice.</p>  <p>If you aren't planning to migrate existing users from
-     * an existing SFTP-enabled server to a new server, don't update the host key.
-     * Accidentally changing a server's host key can be disruptive.</p> 
-     * <p>For more information, see <a
+     * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
+     * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
+     * existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web
+     * ServicesTransfer Family User Guide</i>.</p>
      */
     inline const Aws::String& GetHostKey() const{ return m_hostKey; }
 
     /**
-     * <p>The RSA or ECDSA private key to use for your server.</p> <p>Use the following
-     * command to generate an RSA 2048 bit key with no passphrase:</p> <p>
-     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a
-     * stronger key using 3072 or 4096.</p> <p>Use the following command to generate an
-     * ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256
-     * -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
-     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>For both of these
-     * commands, you can replace <i>my-new-server-key</i> with a string of your
-     * choice.</p>  <p>If you aren't planning to migrate existing users from
-     * an existing SFTP-enabled server to a new server, don't update the host key.
-     * Accidentally changing a server's host key can be disruptive.</p> 
-     * <p>For more information, see <a
+     * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
+     * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
+     * existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web
+     * ServicesTransfer Family User Guide</i>.</p>
      */
     inline bool HostKeyHasBeenSet() const { return m_hostKeyHasBeenSet; }
 
     /**
-     * <p>The RSA or ECDSA private key to use for your server.</p> <p>Use the following
-     * command to generate an RSA 2048 bit key with no passphrase:</p> <p>
-     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a
-     * stronger key using 3072 or 4096.</p> <p>Use the following command to generate an
-     * ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256
-     * -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
-     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>For both of these
-     * commands, you can replace <i>my-new-server-key</i> with a string of your
-     * choice.</p>  <p>If you aren't planning to migrate existing users from
-     * an existing SFTP-enabled server to a new server, don't update the host key.
-     * Accidentally changing a server's host key can be disruptive.</p> 
-     * <p>For more information, see <a
+     * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
+     * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
+     * existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web
+     * ServicesTransfer Family User Guide</i>.</p>
      */
     inline void SetHostKey(const Aws::String& value) { m_hostKeyHasBeenSet = true; m_hostKey = value; }
 
     /**
-     * <p>The RSA or ECDSA private key to use for your server.</p> <p>Use the following
-     * command to generate an RSA 2048 bit key with no passphrase:</p> <p>
-     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a
-     * stronger key using 3072 or 4096.</p> <p>Use the following command to generate an
-     * ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256
-     * -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
-     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>For both of these
-     * commands, you can replace <i>my-new-server-key</i> with a string of your
-     * choice.</p>  <p>If you aren't planning to migrate existing users from
-     * an existing SFTP-enabled server to a new server, don't update the host key.
-     * Accidentally changing a server's host key can be disruptive.</p> 
-     * <p>For more information, see <a
+     * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
+     * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
+     * existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web
+     * ServicesTransfer Family User Guide</i>.</p>
      */
     inline void SetHostKey(Aws::String&& value) { m_hostKeyHasBeenSet = true; m_hostKey = std::move(value); }
 
     /**
-     * <p>The RSA or ECDSA private key to use for your server.</p> <p>Use the following
-     * command to generate an RSA 2048 bit key with no passphrase:</p> <p>
-     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a
-     * stronger key using 3072 or 4096.</p> <p>Use the following command to generate an
-     * ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256
-     * -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
-     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>For both of these
-     * commands, you can replace <i>my-new-server-key</i> with a string of your
-     * choice.</p>  <p>If you aren't planning to migrate existing users from
-     * an existing SFTP-enabled server to a new server, don't update the host key.
-     * Accidentally changing a server's host key can be disruptive.</p> 
-     * <p>For more information, see <a
+     * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
+     * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
+     * existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web
+     * ServicesTransfer Family User Guide</i>.</p>
      */
     inline void SetHostKey(const char* value) { m_hostKeyHasBeenSet = true; m_hostKey.assign(value); }
 
     /**
-     * <p>The RSA or ECDSA private key to use for your server.</p> <p>Use the following
-     * command to generate an RSA 2048 bit key with no passphrase:</p> <p>
-     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a
-     * stronger key using 3072 or 4096.</p> <p>Use the following command to generate an
-     * ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256
-     * -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
-     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>For both of these
-     * commands, you can replace <i>my-new-server-key</i> with a string of your
-     * choice.</p>  <p>If you aren't planning to migrate existing users from
-     * an existing SFTP-enabled server to a new server, don't update the host key.
-     * Accidentally changing a server's host key can be disruptive.</p> 
-     * <p>For more information, see <a
+     * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
+     * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
+     * existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web
+     * ServicesTransfer Family User Guide</i>.</p>
      */
     inline UpdateServerRequest& WithHostKey(const Aws::String& value) { SetHostKey(value); return *this;}
 
     /**
-     * <p>The RSA or ECDSA private key to use for your server.</p> <p>Use the following
-     * command to generate an RSA 2048 bit key with no passphrase:</p> <p>
-     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a
-     * stronger key using 3072 or 4096.</p> <p>Use the following command to generate an
-     * ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256
-     * -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
-     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>For both of these
-     * commands, you can replace <i>my-new-server-key</i> with a string of your
-     * choice.</p>  <p>If you aren't planning to migrate existing users from
-     * an existing SFTP-enabled server to a new server, don't update the host key.
-     * Accidentally changing a server's host key can be disruptive.</p> 
-     * <p>For more information, see <a
+     * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
+     * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
+     * existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web
+     * ServicesTransfer Family User Guide</i>.</p>
      */
     inline UpdateServerRequest& WithHostKey(Aws::String&& value) { SetHostKey(std::move(value)); return *this;}
 
     /**
-     * <p>The RSA or ECDSA private key to use for your server.</p> <p>Use the following
-     * command to generate an RSA 2048 bit key with no passphrase:</p> <p>
-     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a
-     * stronger key using 3072 or 4096.</p> <p>Use the following command to generate an
-     * ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256
-     * -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
-     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>For both of these
-     * commands, you can replace <i>my-new-server-key</i> with a string of your
-     * choice.</p>  <p>If you aren't planning to migrate existing users from
-     * an existing SFTP-enabled server to a new server, don't update the host key.
-     * Accidentally changing a server's host key can be disruptive.</p> 
-     * <p>For more information, see <a
+     * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
+     * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
+     * existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web
+     * ServicesTransfer Family User Guide</i>.</p>
      */
     inline UpdateServerRequest& WithHostKey(const char* value) { SetHostKey(value); return *this;}
 

@@ -43,7 +43,9 @@ namespace Model
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
      * of the IoT thing group by which to filter. If you specify this parameter, the
-     * list includes only core devices that are members of this thing group.</p>
+     * list includes only core devices that have successfully deployed a deployment
+     * that targets the thing group. When you remove a core device from a thing group,
+     * the list continues to include that core device.</p>
      */
     inline const Aws::String& GetThingGroupArn() const{ return m_thingGroupArn; }
 
@@ -51,7 +53,9 @@ namespace Model
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
      * of the IoT thing group by which to filter. If you specify this parameter, the
-     * list includes only core devices that are members of this thing group.</p>
+     * list includes only core devices that have successfully deployed a deployment
+     * that targets the thing group. When you remove a core device from a thing group,
+     * the list continues to include that core device.</p>
      */
     inline bool ThingGroupArnHasBeenSet() const { return m_thingGroupArnHasBeenSet; }
 
@@ -59,7 +63,9 @@ namespace Model
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
      * of the IoT thing group by which to filter. If you specify this parameter, the
-     * list includes only core devices that are members of this thing group.</p>
+     * list includes only core devices that have successfully deployed a deployment
+     * that targets the thing group. When you remove a core device from a thing group,
+     * the list continues to include that core device.</p>
      */
     inline void SetThingGroupArn(const Aws::String& value) { m_thingGroupArnHasBeenSet = true; m_thingGroupArn = value; }
 
@@ -67,7 +73,9 @@ namespace Model
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
      * of the IoT thing group by which to filter. If you specify this parameter, the
-     * list includes only core devices that are members of this thing group.</p>
+     * list includes only core devices that have successfully deployed a deployment
+     * that targets the thing group. When you remove a core device from a thing group,
+     * the list continues to include that core device.</p>
      */
     inline void SetThingGroupArn(Aws::String&& value) { m_thingGroupArnHasBeenSet = true; m_thingGroupArn = std::move(value); }
 
@@ -75,7 +83,9 @@ namespace Model
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
      * of the IoT thing group by which to filter. If you specify this parameter, the
-     * list includes only core devices that are members of this thing group.</p>
+     * list includes only core devices that have successfully deployed a deployment
+     * that targets the thing group. When you remove a core device from a thing group,
+     * the list continues to include that core device.</p>
      */
     inline void SetThingGroupArn(const char* value) { m_thingGroupArnHasBeenSet = true; m_thingGroupArn.assign(value); }
 
@@ -83,7 +93,9 @@ namespace Model
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
      * of the IoT thing group by which to filter. If you specify this parameter, the
-     * list includes only core devices that are members of this thing group.</p>
+     * list includes only core devices that have successfully deployed a deployment
+     * that targets the thing group. When you remove a core device from a thing group,
+     * the list continues to include that core device.</p>
      */
     inline ListCoreDevicesRequest& WithThingGroupArn(const Aws::String& value) { SetThingGroupArn(value); return *this;}
 
@@ -91,7 +103,9 @@ namespace Model
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
      * of the IoT thing group by which to filter. If you specify this parameter, the
-     * list includes only core devices that are members of this thing group.</p>
+     * list includes only core devices that have successfully deployed a deployment
+     * that targets the thing group. When you remove a core device from a thing group,
+     * the list continues to include that core device.</p>
      */
     inline ListCoreDevicesRequest& WithThingGroupArn(Aws::String&& value) { SetThingGroupArn(std::move(value)); return *this;}
 
@@ -99,7 +113,9 @@ namespace Model
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
      * of the IoT thing group by which to filter. If you specify this parameter, the
-     * list includes only core devices that are members of this thing group.</p>
+     * list includes only core devices that have successfully deployed a deployment
+     * that targets the thing group. When you remove a core device from a thing group,
+     * the list continues to include that core device.</p>
      */
     inline ListCoreDevicesRequest& WithThingGroupArn(const char* value) { SetThingGroupArn(value); return *this;}
 

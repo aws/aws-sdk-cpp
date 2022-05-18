@@ -28,6 +28,7 @@
 #include <aws/greengrassv2/model/CreateDeploymentRequest.h>
 #include <aws/greengrassv2/model/DeleteComponentRequest.h>
 #include <aws/greengrassv2/model/DeleteCoreDeviceRequest.h>
+#include <aws/greengrassv2/model/DeleteDeploymentRequest.h>
 #include <aws/greengrassv2/model/DescribeComponentRequest.h>
 #include <aws/greengrassv2/model/DisassociateServiceRoleFromAccountRequest.h>
 #include <aws/greengrassv2/model/GetComponentRequest.h>
@@ -353,6 +354,37 @@ void GreengrassV2Client::DeleteCoreDeviceAsync(const DeleteCoreDeviceRequest& re
 void GreengrassV2Client::DeleteCoreDeviceAsyncHelper(const DeleteCoreDeviceRequest& request, const DeleteCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteCoreDevice(request), context);
+}
+
+DeleteDeploymentOutcome GreengrassV2Client::DeleteDeployment(const DeleteDeploymentRequest& request) const
+{
+  if (!request.DeploymentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDeployment", "Required field: DeploymentId, is not set");
+    return DeleteDeploymentOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeploymentId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/greengrass/v2/deployments/");
+  uri.AddPathSegment(request.GetDeploymentId());
+  return DeleteDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteDeploymentOutcomeCallable GreengrassV2Client::DeleteDeploymentCallable(const DeleteDeploymentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDeployment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassV2Client::DeleteDeploymentAsync(const DeleteDeploymentRequest& request, const DeleteDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDeploymentAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassV2Client::DeleteDeploymentAsyncHelper(const DeleteDeploymentRequest& request, const DeleteDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDeployment(request), context);
 }
 
 DescribeComponentOutcome GreengrassV2Client::DescribeComponent(const DescribeComponentRequest& request) const

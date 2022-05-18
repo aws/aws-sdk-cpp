@@ -410,7 +410,7 @@ namespace Model
          * when setting these variables. For more information aboutApp Mesh Envoy
          * variables, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy
-         * image</a> in the AWS App Mesh User Guide.</p><p><h3>See Also:</h3>   <a
+         * image</a> in the App Mesh User Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualNode">AWS
          * API Reference</a></p>
          */

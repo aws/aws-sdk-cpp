@@ -20,6 +20,8 @@ namespace Model
 
 DnsServiceDiscovery::DnsServiceDiscovery() : 
     m_hostnameHasBeenSet(false),
+    m_ipPreference(IpPreference::NOT_SET),
+    m_ipPreferenceHasBeenSet(false),
     m_responseType(DnsResponseType::NOT_SET),
     m_responseTypeHasBeenSet(false)
 {
@@ -27,6 +29,8 @@ DnsServiceDiscovery::DnsServiceDiscovery() :
 
 DnsServiceDiscovery::DnsServiceDiscovery(JsonView jsonValue) : 
     m_hostnameHasBeenSet(false),
+    m_ipPreference(IpPreference::NOT_SET),
+    m_ipPreferenceHasBeenSet(false),
     m_responseType(DnsResponseType::NOT_SET),
     m_responseTypeHasBeenSet(false)
 {
@@ -40,6 +44,13 @@ DnsServiceDiscovery& DnsServiceDiscovery::operator =(JsonView jsonValue)
     m_hostname = jsonValue.GetString("hostname");
 
     m_hostnameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ipPreference"))
+  {
+    m_ipPreference = IpPreferenceMapper::GetIpPreferenceForName(jsonValue.GetString("ipPreference"));
+
+    m_ipPreferenceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("responseType"))
@@ -60,6 +71,11 @@ JsonValue DnsServiceDiscovery::Jsonize() const
   {
    payload.WithString("hostname", m_hostname);
 
+  }
+
+  if(m_ipPreferenceHasBeenSet)
+  {
+   payload.WithString("ipPreference", IpPreferenceMapper::GetNameForIpPreference(m_ipPreference));
   }
 
   if(m_responseTypeHasBeenSet)

@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotevents-data/model/BatchAcknowledgeAlarmResult.h>
+#include <aws/iotevents-data/model/BatchDeleteDetectorResult.h>
 #include <aws/iotevents-data/model/BatchDisableAlarmResult.h>
 #include <aws/iotevents-data/model/BatchEnableAlarmResult.h>
 #include <aws/iotevents-data/model/BatchPutMessageResult.h>
@@ -62,6 +63,7 @@ namespace IoTEventsData
 namespace Model
 {
         class BatchAcknowledgeAlarmRequest;
+        class BatchDeleteDetectorRequest;
         class BatchDisableAlarmRequest;
         class BatchEnableAlarmRequest;
         class BatchPutMessageRequest;
@@ -74,6 +76,7 @@ namespace Model
         class ListDetectorsRequest;
 
         typedef Aws::Utils::Outcome<BatchAcknowledgeAlarmResult, IoTEventsDataError> BatchAcknowledgeAlarmOutcome;
+        typedef Aws::Utils::Outcome<BatchDeleteDetectorResult, IoTEventsDataError> BatchDeleteDetectorOutcome;
         typedef Aws::Utils::Outcome<BatchDisableAlarmResult, IoTEventsDataError> BatchDisableAlarmOutcome;
         typedef Aws::Utils::Outcome<BatchEnableAlarmResult, IoTEventsDataError> BatchEnableAlarmOutcome;
         typedef Aws::Utils::Outcome<BatchPutMessageResult, IoTEventsDataError> BatchPutMessageOutcome;
@@ -86,6 +89,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDetectorsResult, IoTEventsDataError> ListDetectorsOutcome;
 
         typedef std::future<BatchAcknowledgeAlarmOutcome> BatchAcknowledgeAlarmOutcomeCallable;
+        typedef std::future<BatchDeleteDetectorOutcome> BatchDeleteDetectorOutcomeCallable;
         typedef std::future<BatchDisableAlarmOutcome> BatchDisableAlarmOutcomeCallable;
         typedef std::future<BatchEnableAlarmOutcome> BatchEnableAlarmOutcomeCallable;
         typedef std::future<BatchPutMessageOutcome> BatchPutMessageOutcomeCallable;
@@ -101,6 +105,7 @@ namespace Model
   class IoTEventsDataClient;
 
     typedef std::function<void(const IoTEventsDataClient*, const Model::BatchAcknowledgeAlarmRequest&, const Model::BatchAcknowledgeAlarmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchAcknowledgeAlarmResponseReceivedHandler;
+    typedef std::function<void(const IoTEventsDataClient*, const Model::BatchDeleteDetectorRequest&, const Model::BatchDeleteDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteDetectorResponseReceivedHandler;
     typedef std::function<void(const IoTEventsDataClient*, const Model::BatchDisableAlarmRequest&, const Model::BatchDisableAlarmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDisableAlarmResponseReceivedHandler;
     typedef std::function<void(const IoTEventsDataClient*, const Model::BatchEnableAlarmRequest&, const Model::BatchEnableAlarmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchEnableAlarmResponseReceivedHandler;
     typedef std::function<void(const IoTEventsDataClient*, const Model::BatchPutMessageRequest&, const Model::BatchPutMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutMessageResponseReceivedHandler;
@@ -165,6 +170,27 @@ namespace Model
          * An Async wrapper for BatchAcknowledgeAlarm that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchAcknowledgeAlarmAsync(const Model::BatchAcknowledgeAlarmRequest& request, const BatchAcknowledgeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes one or more detectors that were created. When a detector is deleted,
+         * its state will be cleared and the detector will be removed from the list of
+         * detectors. The deleted detector will no longer appear if referenced in the <a
+         * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_ListDetectors.html">ListDetectors</a>
+         * API call.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDeleteDetector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDeleteDetectorOutcome BatchDeleteDetector(const Model::BatchDeleteDetectorRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDeleteDetector that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchDeleteDetectorOutcomeCallable BatchDeleteDetectorCallable(const Model::BatchDeleteDetectorRequest& request) const;
+
+        /**
+         * An Async wrapper for BatchDeleteDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchDeleteDetectorAsync(const Model::BatchDeleteDetectorRequest& request, const BatchDeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables one or more alarms. The alarms change to the <code>DISABLED</code>
@@ -356,6 +382,7 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void BatchAcknowledgeAlarmAsyncHelper(const Model::BatchAcknowledgeAlarmRequest& request, const BatchAcknowledgeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchDeleteDetectorAsyncHelper(const Model::BatchDeleteDetectorRequest& request, const BatchDeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchDisableAlarmAsyncHelper(const Model::BatchDisableAlarmRequest& request, const BatchDisableAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchEnableAlarmAsyncHelper(const Model::BatchEnableAlarmRequest& request, const BatchEnableAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchPutMessageAsyncHelper(const Model::BatchPutMessageRequest& request, const BatchPutMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

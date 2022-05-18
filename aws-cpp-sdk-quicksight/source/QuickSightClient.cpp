@@ -130,6 +130,7 @@
 #include <aws/quicksight/model/UpdateGroupRequest.h>
 #include <aws/quicksight/model/UpdateIAMPolicyAssignmentRequest.h>
 #include <aws/quicksight/model/UpdateIpRestrictionRequest.h>
+#include <aws/quicksight/model/UpdatePublicSharingSettingsRequest.h>
 #include <aws/quicksight/model/UpdateTemplateRequest.h>
 #include <aws/quicksight/model/UpdateTemplateAliasRequest.h>
 #include <aws/quicksight/model/UpdateTemplatePermissionsRequest.h>
@@ -4483,6 +4484,38 @@ void QuickSightClient::UpdateIpRestrictionAsync(const UpdateIpRestrictionRequest
 void QuickSightClient::UpdateIpRestrictionAsyncHelper(const UpdateIpRestrictionRequest& request, const UpdateIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateIpRestriction(request), context);
+}
+
+UpdatePublicSharingSettingsOutcome QuickSightClient::UpdatePublicSharingSettings(const UpdatePublicSharingSettingsRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePublicSharingSettings", "Required field: AwsAccountId, is not set");
+    return UpdatePublicSharingSettingsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/public-sharing-settings");
+  return UpdatePublicSharingSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdatePublicSharingSettingsOutcomeCallable QuickSightClient::UpdatePublicSharingSettingsCallable(const UpdatePublicSharingSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePublicSharingSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePublicSharingSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::UpdatePublicSharingSettingsAsync(const UpdatePublicSharingSettingsRequest& request, const UpdatePublicSharingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePublicSharingSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::UpdatePublicSharingSettingsAsyncHelper(const UpdatePublicSharingSettingsRequest& request, const UpdatePublicSharingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePublicSharingSettings(request), context);
 }
 
 UpdateTemplateOutcome QuickSightClient::UpdateTemplate(const UpdateTemplateRequest& request) const

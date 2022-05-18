@@ -21,6 +21,7 @@
 #include <aws/iotevents-data/IoTEventsDataEndpoint.h>
 #include <aws/iotevents-data/IoTEventsDataErrorMarshaller.h>
 #include <aws/iotevents-data/model/BatchAcknowledgeAlarmRequest.h>
+#include <aws/iotevents-data/model/BatchDeleteDetectorRequest.h>
 #include <aws/iotevents-data/model/BatchDisableAlarmRequest.h>
 #include <aws/iotevents-data/model/BatchEnableAlarmRequest.h>
 #include <aws/iotevents-data/model/BatchPutMessageRequest.h>
@@ -128,6 +129,31 @@ void IoTEventsDataClient::BatchAcknowledgeAlarmAsync(const BatchAcknowledgeAlarm
 void IoTEventsDataClient::BatchAcknowledgeAlarmAsyncHelper(const BatchAcknowledgeAlarmRequest& request, const BatchAcknowledgeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchAcknowledgeAlarm(request), context);
+}
+
+BatchDeleteDetectorOutcome IoTEventsDataClient::BatchDeleteDetector(const BatchDeleteDetectorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/detectors/delete");
+  return BatchDeleteDetectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchDeleteDetectorOutcomeCallable IoTEventsDataClient::BatchDeleteDetectorCallable(const BatchDeleteDetectorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchDeleteDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDeleteDetector(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTEventsDataClient::BatchDeleteDetectorAsync(const BatchDeleteDetectorRequest& request, const BatchDeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteDetectorAsyncHelper( request, handler, context ); } );
+}
+
+void IoTEventsDataClient::BatchDeleteDetectorAsyncHelper(const BatchDeleteDetectorRequest& request, const BatchDeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchDeleteDetector(request), context);
 }
 
 BatchDisableAlarmOutcome IoTEventsDataClient::BatchDisableAlarm(const BatchDisableAlarmRequest& request) const

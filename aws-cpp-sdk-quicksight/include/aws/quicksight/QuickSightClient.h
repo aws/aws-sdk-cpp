@@ -121,6 +121,7 @@
 #include <aws/quicksight/model/UpdateGroupResult.h>
 #include <aws/quicksight/model/UpdateIAMPolicyAssignmentResult.h>
 #include <aws/quicksight/model/UpdateIpRestrictionResult.h>
+#include <aws/quicksight/model/UpdatePublicSharingSettingsResult.h>
 #include <aws/quicksight/model/UpdateTemplateResult.h>
 #include <aws/quicksight/model/UpdateTemplateAliasResult.h>
 #include <aws/quicksight/model/UpdateTemplatePermissionsResult.h>
@@ -277,6 +278,7 @@ namespace Model
         class UpdateGroupRequest;
         class UpdateIAMPolicyAssignmentRequest;
         class UpdateIpRestrictionRequest;
+        class UpdatePublicSharingSettingsRequest;
         class UpdateTemplateRequest;
         class UpdateTemplateAliasRequest;
         class UpdateTemplatePermissionsRequest;
@@ -395,6 +397,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateGroupResult, QuickSightError> UpdateGroupOutcome;
         typedef Aws::Utils::Outcome<UpdateIAMPolicyAssignmentResult, QuickSightError> UpdateIAMPolicyAssignmentOutcome;
         typedef Aws::Utils::Outcome<UpdateIpRestrictionResult, QuickSightError> UpdateIpRestrictionOutcome;
+        typedef Aws::Utils::Outcome<UpdatePublicSharingSettingsResult, QuickSightError> UpdatePublicSharingSettingsOutcome;
         typedef Aws::Utils::Outcome<UpdateTemplateResult, QuickSightError> UpdateTemplateOutcome;
         typedef Aws::Utils::Outcome<UpdateTemplateAliasResult, QuickSightError> UpdateTemplateAliasOutcome;
         typedef Aws::Utils::Outcome<UpdateTemplatePermissionsResult, QuickSightError> UpdateTemplatePermissionsOutcome;
@@ -513,6 +516,7 @@ namespace Model
         typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
         typedef std::future<UpdateIAMPolicyAssignmentOutcome> UpdateIAMPolicyAssignmentOutcomeCallable;
         typedef std::future<UpdateIpRestrictionOutcome> UpdateIpRestrictionOutcomeCallable;
+        typedef std::future<UpdatePublicSharingSettingsOutcome> UpdatePublicSharingSettingsOutcomeCallable;
         typedef std::future<UpdateTemplateOutcome> UpdateTemplateOutcomeCallable;
         typedef std::future<UpdateTemplateAliasOutcome> UpdateTemplateAliasOutcomeCallable;
         typedef std::future<UpdateTemplatePermissionsOutcome> UpdateTemplatePermissionsOutcomeCallable;
@@ -634,6 +638,7 @@ namespace Model
     typedef std::function<void(const QuickSightClient*, const Model::UpdateGroupRequest&, const Model::UpdateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGroupResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateIAMPolicyAssignmentRequest&, const Model::UpdateIAMPolicyAssignmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIAMPolicyAssignmentResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateIpRestrictionRequest&, const Model::UpdateIpRestrictionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIpRestrictionResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::UpdatePublicSharingSettingsRequest&, const Model::UpdatePublicSharingSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePublicSharingSettingsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateTemplateRequest&, const Model::UpdateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTemplateResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateTemplateAliasRequest&, const Model::UpdateTemplateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTemplateAliasResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateTemplatePermissionsRequest&, const Model::UpdateTemplatePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTemplatePermissionsResponseReceivedHandler;
@@ -1866,9 +1871,9 @@ namespace Model
          * session lifetime that can be customized using the <code> <a
          * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a>
          * </code> parameter.</p> <p>The resulting user session is valid for 15 minutes
-         * (default) to 10 hours (maximum).</p> </li> <li> <p>You are charged only when the
-         * URL is used or there is interaction with Amazon QuickSight.</p> </li> </ul>
-         * <p>For more information, see <a
+         * (minimum) to 10 hours (maximum). The default session duration is 10 hours. </p>
+         * </li> <li> <p>You are charged only when the URL is used or there is interaction
+         * with Amazon QuickSight.</p> </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
          * Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>For more
          * information about the high-level steps for embedding and for an interactive demo
@@ -1902,9 +1907,9 @@ namespace Model
          * session lifetime that can be customized using the <code> <a
          * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html#QS-GenerateEmbedUrlForRegisteredUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a>
          * </code> parameter.</p> <p>The resulting user session is valid for 15 minutes
-         * (default) to 10 hours (maximum).</p> </li> <li> <p>You are charged only when the
-         * URL is used or there is interaction with Amazon QuickSight.</p> </li> </ul>
-         * <p>For more information, see <a
+         * (minimum) to 10 hours (maximum). The default session duration is 10 hours.</p>
+         * </li> <li> <p>You are charged only when the URL is used or there is interaction
+         * with Amazon QuickSight.</p> </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
          * Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>For more
          * information about the high-level steps for embedding and for an interactive demo
@@ -2845,6 +2850,30 @@ namespace Model
         virtual void UpdateIpRestrictionAsync(const Model::UpdateIpRestrictionRequest& request, const UpdateIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Use the UpdatePublicSharingSettings operation to enable or disable the public
+         * sharing settings of an Amazon QuickSight dashboard.</p> <p>To use this
+         * operation, enable session capacity pricing on your Amazon QuickSight
+         * account.</p> <p>Before you can enable public sharing on your account, you need
+         * to allow public sharing permissions to an administrative user in the IAM
+         * console. For more information on using IAM with Amazon QuickSight, see <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using
+         * Amazon QuickSight with IAM</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdatePublicSharingSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePublicSharingSettingsOutcome UpdatePublicSharingSettings(const Model::UpdatePublicSharingSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdatePublicSharingSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdatePublicSharingSettingsOutcomeCallable UpdatePublicSharingSettingsCallable(const Model::UpdatePublicSharingSettingsRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdatePublicSharingSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdatePublicSharingSettingsAsync(const Model::UpdatePublicSharingSettingsRequest& request, const UpdatePublicSharingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a template from an existing Amazon QuickSight analysis or another
          * template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTemplate">AWS
@@ -3100,6 +3129,7 @@ namespace Model
         void UpdateGroupAsyncHelper(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIAMPolicyAssignmentAsyncHelper(const Model::UpdateIAMPolicyAssignmentRequest& request, const UpdateIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIpRestrictionAsyncHelper(const Model::UpdateIpRestrictionRequest& request, const UpdateIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdatePublicSharingSettingsAsyncHelper(const Model::UpdatePublicSharingSettingsRequest& request, const UpdatePublicSharingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTemplateAsyncHelper(const Model::UpdateTemplateRequest& request, const UpdateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTemplateAliasAsyncHelper(const Model::UpdateTemplateAliasRequest& request, const UpdateTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTemplatePermissionsAsyncHelper(const Model::UpdateTemplatePermissionsRequest& request, const UpdateTemplatePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

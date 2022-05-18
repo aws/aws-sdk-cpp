@@ -41,37 +41,37 @@ namespace Model
 
 
     /**
-     * <p>A reference to an object that represents an AWS Certicate Manager (ACM)
+     * <p>A reference to an object that represents an Certificate Manager
      * certificate.</p>
      */
     inline const ListenerTlsAcmCertificate& GetAcm() const{ return m_acm; }
 
     /**
-     * <p>A reference to an object that represents an AWS Certicate Manager (ACM)
+     * <p>A reference to an object that represents an Certificate Manager
      * certificate.</p>
      */
     inline bool AcmHasBeenSet() const { return m_acmHasBeenSet; }
 
     /**
-     * <p>A reference to an object that represents an AWS Certicate Manager (ACM)
+     * <p>A reference to an object that represents an Certificate Manager
      * certificate.</p>
      */
     inline void SetAcm(const ListenerTlsAcmCertificate& value) { m_acmHasBeenSet = true; m_acm = value; }
 
     /**
-     * <p>A reference to an object that represents an AWS Certicate Manager (ACM)
+     * <p>A reference to an object that represents an Certificate Manager
      * certificate.</p>
      */
     inline void SetAcm(ListenerTlsAcmCertificate&& value) { m_acmHasBeenSet = true; m_acm = std::move(value); }
 
     /**
-     * <p>A reference to an object that represents an AWS Certicate Manager (ACM)
+     * <p>A reference to an object that represents an Certificate Manager
      * certificate.</p>
      */
     inline ListenerTlsCertificate& WithAcm(const ListenerTlsAcmCertificate& value) { SetAcm(value); return *this;}
 
     /**
-     * <p>A reference to an object that represents an AWS Certicate Manager (ACM)
+     * <p>A reference to an object that represents an Certificate Manager
      * certificate.</p>
      */
     inline ListenerTlsCertificate& WithAcm(ListenerTlsAcmCertificate&& value) { SetAcm(std::move(value)); return *this;}

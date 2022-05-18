@@ -85,6 +85,7 @@ namespace Model
         class CreateDeploymentRequest;
         class DeleteComponentRequest;
         class DeleteCoreDeviceRequest;
+        class DeleteDeploymentRequest;
         class DescribeComponentRequest;
         class DisassociateServiceRoleFromAccountRequest;
         class GetComponentRequest;
@@ -114,6 +115,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateDeploymentResult, GreengrassV2Error> CreateDeploymentOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, GreengrassV2Error> DeleteComponentOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, GreengrassV2Error> DeleteCoreDeviceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, GreengrassV2Error> DeleteDeploymentOutcome;
         typedef Aws::Utils::Outcome<DescribeComponentResult, GreengrassV2Error> DescribeComponentOutcome;
         typedef Aws::Utils::Outcome<DisassociateServiceRoleFromAccountResult, GreengrassV2Error> DisassociateServiceRoleFromAccountOutcome;
         typedef Aws::Utils::Outcome<GetComponentResult, GreengrassV2Error> GetComponentOutcome;
@@ -143,6 +145,7 @@ namespace Model
         typedef std::future<CreateDeploymentOutcome> CreateDeploymentOutcomeCallable;
         typedef std::future<DeleteComponentOutcome> DeleteComponentOutcomeCallable;
         typedef std::future<DeleteCoreDeviceOutcome> DeleteCoreDeviceOutcomeCallable;
+        typedef std::future<DeleteDeploymentOutcome> DeleteDeploymentOutcomeCallable;
         typedef std::future<DescribeComponentOutcome> DescribeComponentOutcomeCallable;
         typedef std::future<DisassociateServiceRoleFromAccountOutcome> DisassociateServiceRoleFromAccountOutcomeCallable;
         typedef std::future<GetComponentOutcome> GetComponentOutcomeCallable;
@@ -175,6 +178,7 @@ namespace Model
     typedef std::function<void(const GreengrassV2Client*, const Model::CreateDeploymentRequest&, const Model::CreateDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDeploymentResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::DeleteComponentRequest&, const Model::DeleteComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteComponentResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::DeleteCoreDeviceRequest&, const Model::DeleteCoreDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCoreDeviceResponseReceivedHandler;
+    typedef std::function<void(const GreengrassV2Client*, const Model::DeleteDeploymentRequest&, const Model::DeleteDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeploymentResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::DescribeComponentRequest&, const Model::DescribeComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeComponentResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::DisassociateServiceRoleFromAccountRequest&, const Model::DisassociateServiceRoleFromAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateServiceRoleFromAccountResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::GetComponentRequest&, const Model::GetComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComponentResponseReceivedHandler;
@@ -355,12 +359,14 @@ namespace Model
          * V2.</p> <p>This function only accepts Lambda functions that use the following
          * runtimes:</p> <ul> <li> <p>Python 2.7 – <code>python2.7</code> </p> </li> <li>
          * <p>Python 3.7 – <code>python3.7</code> </p> </li> <li> <p>Python 3.8 –
-         * <code>python3.8</code> </p> </li> <li> <p>Java 8 – <code>java8</code> </p> </li>
-         * <li> <p>Node.js 10 – <code>nodejs10.x</code> </p> </li> <li> <p>Node.js 12 –
-         * <code>nodejs12.x</code> </p> </li> </ul> <p>To create a component from a Lambda
-         * function, specify <code>lambdaFunction</code> when you call this operation.</p>
-         *  <p>IoT Greengrass currently supports Lambda functions on only Linux core
-         * devices.</p>  </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>python3.8</code> </p> </li> <li> <p>Python 3.9 – <code>python3.9</code>
+         * </p> </li> <li> <p>Java 8 – <code>java8</code> </p> </li> <li> <p>Java 11 –
+         * <code>java11</code> </p> </li> <li> <p>Node.js 10 – <code>nodejs10.x</code> </p>
+         * </li> <li> <p>Node.js 12 – <code>nodejs12.x</code> </p> </li> <li> <p>Node.js 14
+         * – <code>nodejs14.x</code> </p> </li> </ul> <p>To create a component from a
+         * Lambda function, specify <code>lambdaFunction</code> when you call this
+         * operation.</p>  <p>IoT Greengrass currently supports Lambda functions on
+         * only Linux core devices.</p>  </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/CreateComponentVersion">AWS
          * API Reference</a></p>
          */
@@ -450,6 +456,29 @@ namespace Model
         virtual void DeleteCoreDeviceAsync(const Model::DeleteCoreDeviceRequest& request, const DeleteCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a deployment. To delete an active deployment, you must first cancel
+         * it. For more information, see <a
+         * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CancelDeployment.html">CancelDeployment</a>.</p>
+         * <p>Deleting a deployment doesn't affect core devices that run that deployment,
+         * because core devices store the deployment's configuration on the device.
+         * Additionally, core devices can roll back to a previous deployment that has been
+         * deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DeleteDeployment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDeploymentOutcome DeleteDeployment(const Model::DeleteDeploymentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteDeploymentOutcomeCallable DeleteDeploymentCallable(const Model::DeleteDeploymentRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteDeploymentAsync(const Model::DeleteDeploymentRequest& request, const DeleteDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves metadata for a version of a component.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DescribeComponent">AWS
@@ -510,9 +539,9 @@ namespace Model
         virtual void GetComponentAsync(const Model::GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the pre-signed URL to download a public component artifact. Core devices
-         * call this operation to identify the URL that they can use to download an
-         * artifact to install.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the pre-signed URL to download a public or a Lambda component artifact.
+         * Core devices call this operation to identify the URL that they can use to
+         * download an artifact to install.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetComponentVersionArtifact">AWS
          * API Reference</a></p>
          */
@@ -556,8 +585,20 @@ namespace Model
         virtual void GetConnectivityInfoAsync(const Model::GetConnectivityInfoRequest& request, const GetConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves metadata for a Greengrass core device.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Retrieves metadata for a Greengrass core device.</p>  <p>IoT Greengrass
+         * relies on individual devices to send status updates to the Amazon Web Services
+         * Cloud. If the IoT Greengrass Core software isn't running on the device, or if
+         * device isn't connected to the Amazon Web Services Cloud, then the reported
+         * status of that device might not reflect its current status. The status timestamp
+         * indicates when the device status was last updated.</p> <p>Core devices send
+         * status updates at the following times:</p> <ul> <li> <p>When the IoT Greengrass
+         * Core software starts</p> </li> <li> <p>When the core device receives a
+         * deployment from the Amazon Web Services Cloud</p> </li> <li> <p>When the status
+         * of any component on the core device becomes <code>BROKEN</code> </p> </li> <li>
+         * <p>At a <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular
+         * interval that you can configure</a>, which defaults to 24 hours</p> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetCoreDevice">AWS
          * API Reference</a></p>
          */
@@ -669,8 +710,20 @@ namespace Model
         virtual void ListComponentsAsync(const Model::ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a paginated list of Greengrass core devices.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a paginated list of Greengrass core devices.</p>  <p>IoT
+         * Greengrass relies on individual devices to send status updates to the Amazon Web
+         * Services Cloud. If the IoT Greengrass Core software isn't running on the device,
+         * or if device isn't connected to the Amazon Web Services Cloud, then the reported
+         * status of that device might not reflect its current status. The status timestamp
+         * indicates when the device status was last updated.</p> <p>Core devices send
+         * status updates at the following times:</p> <ul> <li> <p>When the IoT Greengrass
+         * Core software starts</p> </li> <li> <p>When the core device receives a
+         * deployment from the Amazon Web Services Cloud</p> </li> <li> <p>When the status
+         * of any component on the core device becomes <code>BROKEN</code> </p> </li> <li>
+         * <p>At a <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular
+         * interval that you can configure</a>, which defaults to 24 hours</p> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListCoreDevices">AWS
          * API Reference</a></p>
          */
@@ -723,7 +776,21 @@ namespace Model
 
         /**
          * <p>Retrieves a paginated list of the components that a Greengrass core device
-         * runs.</p><p><h3>See Also:</h3>   <a
+         * runs. This list doesn't include components that are deployed from local
+         * deployments or components that are deployed as dependencies of other
+         * components.</p>  <p>IoT Greengrass relies on individual devices to send
+         * status updates to the Amazon Web Services Cloud. If the IoT Greengrass Core
+         * software isn't running on the device, or if device isn't connected to the Amazon
+         * Web Services Cloud, then the reported status of that device might not reflect
+         * its current status. The status timestamp indicates when the device status was
+         * last updated.</p> <p>Core devices send status updates at the following
+         * times:</p> <ul> <li> <p>When the IoT Greengrass Core software starts</p> </li>
+         * <li> <p>When the core device receives a deployment from the Amazon Web Services
+         * Cloud</p> </li> <li> <p>When the status of any component on the core device
+         * becomes <code>BROKEN</code> </p> </li> <li> <p>At a <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular
+         * interval that you can configure</a>, which defaults to 24 hours</p> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListInstalledComponents">AWS
          * API Reference</a></p>
          */
@@ -863,6 +930,7 @@ namespace Model
         void CreateDeploymentAsyncHelper(const Model::CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteComponentAsyncHelper(const Model::DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCoreDeviceAsyncHelper(const Model::DeleteCoreDeviceRequest& request, const DeleteCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteDeploymentAsyncHelper(const Model::DeleteDeploymentRequest& request, const DeleteDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeComponentAsyncHelper(const Model::DescribeComponentRequest& request, const DescribeComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateServiceRoleFromAccountAsyncHelper(const Model::DisassociateServiceRoleFromAccountRequest& request, const DisassociateServiceRoleFromAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetComponentAsyncHelper(const Model::GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

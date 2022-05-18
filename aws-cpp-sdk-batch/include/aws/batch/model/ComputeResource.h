@@ -994,13 +994,13 @@ namespace Model
      * compute environment. For Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
-     * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created. Any changes to these tags
-     * require that you create a new compute environment and remove the old compute
-     * environment. These tags aren't seen when using the Batch
-     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * your Batch instances in the Amazon EC2 console. Updating these tags requires an
+     * infrastructure update to the compute environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen
+     * when using the Batch <code>ListTagsForResource</code> API operation.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
@@ -1009,13 +1009,13 @@ namespace Model
      * compute environment. For Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
-     * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created. Any changes to these tags
-     * require that you create a new compute environment and remove the old compute
-     * environment. These tags aren't seen when using the Batch
-     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * your Batch instances in the Amazon EC2 console. Updating these tags requires an
+     * infrastructure update to the compute environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen
+     * when using the Batch <code>ListTagsForResource</code> API operation.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -1024,13 +1024,13 @@ namespace Model
      * compute environment. For Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
-     * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created. Any changes to these tags
-     * require that you create a new compute environment and remove the old compute
-     * environment. These tags aren't seen when using the Batch
-     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * your Batch instances in the Amazon EC2 console. Updating these tags requires an
+     * infrastructure update to the compute environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen
+     * when using the Batch <code>ListTagsForResource</code> API operation.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -1039,13 +1039,13 @@ namespace Model
      * compute environment. For Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
-     * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created. Any changes to these tags
-     * require that you create a new compute environment and remove the old compute
-     * environment. These tags aren't seen when using the Batch
-     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * your Batch instances in the Amazon EC2 console. Updating these tags requires an
+     * infrastructure update to the compute environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen
+     * when using the Batch <code>ListTagsForResource</code> API operation.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -1054,13 +1054,13 @@ namespace Model
      * compute environment. For Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
-     * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created. Any changes to these tags
-     * require that you create a new compute environment and remove the old compute
-     * environment. These tags aren't seen when using the Batch
-     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * your Batch instances in the Amazon EC2 console. Updating these tags requires an
+     * infrastructure update to the compute environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen
+     * when using the Batch <code>ListTagsForResource</code> API operation.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline ComputeResource& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
@@ -1069,13 +1069,13 @@ namespace Model
      * compute environment. For Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
-     * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created. Any changes to these tags
-     * require that you create a new compute environment and remove the old compute
-     * environment. These tags aren't seen when using the Batch
-     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * your Batch instances in the Amazon EC2 console. Updating these tags requires an
+     * infrastructure update to the compute environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen
+     * when using the Batch <code>ListTagsForResource</code> API operation.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline ComputeResource& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -1084,13 +1084,13 @@ namespace Model
      * compute environment. For Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
-     * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created. Any changes to these tags
-     * require that you create a new compute environment and remove the old compute
-     * environment. These tags aren't seen when using the Batch
-     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * your Batch instances in the Amazon EC2 console. Updating these tags requires an
+     * infrastructure update to the compute environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen
+     * when using the Batch <code>ListTagsForResource</code> API operation.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline ComputeResource& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -1099,13 +1099,13 @@ namespace Model
      * compute environment. For Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
-     * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created. Any changes to these tags
-     * require that you create a new compute environment and remove the old compute
-     * environment. These tags aren't seen when using the Batch
-     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * your Batch instances in the Amazon EC2 console. Updating these tags requires an
+     * infrastructure update to the compute environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen
+     * when using the Batch <code>ListTagsForResource</code> API operation.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline ComputeResource& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -1114,13 +1114,13 @@ namespace Model
      * compute environment. For Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
-     * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created. Any changes to these tags
-     * require that you create a new compute environment and remove the old compute
-     * environment. These tags aren't seen when using the Batch
-     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * your Batch instances in the Amazon EC2 console. Updating these tags requires an
+     * infrastructure update to the compute environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen
+     * when using the Batch <code>ListTagsForResource</code> API operation.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline ComputeResource& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -1129,13 +1129,13 @@ namespace Model
      * compute environment. For Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
-     * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created. Any changes to these tags
-     * require that you create a new compute environment and remove the old compute
-     * environment. These tags aren't seen when using the Batch
-     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * your Batch instances in the Amazon EC2 console. Updating these tags requires an
+     * infrastructure update to the compute environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen
+     * when using the Batch <code>ListTagsForResource</code> API operation.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline ComputeResource& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -1144,13 +1144,13 @@ namespace Model
      * compute environment. For Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
-     * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created. Any changes to these tags
-     * require that you create a new compute environment and remove the old compute
-     * environment. These tags aren't seen when using the Batch
-     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * your Batch instances in the Amazon EC2 console. Updating these tags requires an
+     * infrastructure update to the compute environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen
+     * when using the Batch <code>ListTagsForResource</code> API operation.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline ComputeResource& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -1159,13 +1159,13 @@ namespace Model
      * compute environment. For Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
-     * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created. Any changes to these tags
-     * require that you create a new compute environment and remove the old compute
-     * environment. These tags aren't seen when using the Batch
-     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * your Batch instances in the Amazon EC2 console. Updating these tags requires an
+     * infrastructure update to the compute environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen
+     * when using the Batch <code>ListTagsForResource</code> API operation.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline ComputeResource& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -1174,13 +1174,13 @@ namespace Model
      * compute environment. For Batch, these take the form of "String1": "String2",
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
-     * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created. Any changes to these tags
-     * require that you create a new compute environment and remove the old compute
-     * environment. These tags aren't seen when using the Batch
-     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * your Batch instances in the Amazon EC2 console. Updating these tags requires an
+     * infrastructure update to the compute environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+     * compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen
+     * when using the Batch <code>ListTagsForResource</code> API operation.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline ComputeResource& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
