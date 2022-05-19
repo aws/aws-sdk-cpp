@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/gamesparks/model/DeploymentAction.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gamesparks/model/DeploymentResult.h>
 #include <aws/gamesparks/model/DeploymentState.h>
 #include <utility>
 
@@ -145,6 +146,37 @@ namespace Model
 
 
     /**
+     * <p>The result of the deployment.</p>
+     */
+    inline const DeploymentResult& GetDeploymentResult() const{ return m_deploymentResult; }
+
+    /**
+     * <p>The result of the deployment.</p>
+     */
+    inline bool DeploymentResultHasBeenSet() const { return m_deploymentResultHasBeenSet; }
+
+    /**
+     * <p>The result of the deployment.</p>
+     */
+    inline void SetDeploymentResult(const DeploymentResult& value) { m_deploymentResultHasBeenSet = true; m_deploymentResult = value; }
+
+    /**
+     * <p>The result of the deployment.</p>
+     */
+    inline void SetDeploymentResult(DeploymentResult&& value) { m_deploymentResultHasBeenSet = true; m_deploymentResult = std::move(value); }
+
+    /**
+     * <p>The result of the deployment.</p>
+     */
+    inline StageDeploymentDetails& WithDeploymentResult(const DeploymentResult& value) { SetDeploymentResult(value); return *this;}
+
+    /**
+     * <p>The result of the deployment.</p>
+     */
+    inline StageDeploymentDetails& WithDeploymentResult(DeploymentResult&& value) { SetDeploymentResult(std::move(value)); return *this;}
+
+
+    /**
      * <p>The state of the deployment.</p>
      */
     inline const DeploymentState& GetDeploymentState() const{ return m_deploymentState; }
@@ -256,6 +288,9 @@ namespace Model
 
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
+
+    DeploymentResult m_deploymentResult;
+    bool m_deploymentResultHasBeenSet;
 
     DeploymentState m_deploymentState;
     bool m_deploymentStateHasBeenSet;

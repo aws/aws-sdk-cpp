@@ -20,13 +20,17 @@ namespace Model
 
 SNSConfiguration::SNSConfiguration() : 
     m_roleArnHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false)
+    m_snsTopicArnHasBeenSet(false),
+    m_snsFormat(SnsFormat::NOT_SET),
+    m_snsFormatHasBeenSet(false)
 {
 }
 
 SNSConfiguration::SNSConfiguration(JsonView jsonValue) : 
     m_roleArnHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false)
+    m_snsTopicArnHasBeenSet(false),
+    m_snsFormat(SnsFormat::NOT_SET),
+    m_snsFormatHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,13 @@ SNSConfiguration& SNSConfiguration::operator =(JsonView jsonValue)
     m_snsTopicArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SnsFormat"))
+  {
+    m_snsFormat = SnsFormatMapper::GetSnsFormatForName(jsonValue.GetString("SnsFormat"));
+
+    m_snsFormatHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -64,6 +75,11 @@ JsonValue SNSConfiguration::Jsonize() const
   {
    payload.WithString("SnsTopicArn", m_snsTopicArn);
 
+  }
+
+  if(m_snsFormatHasBeenSet)
+  {
+   payload.WithString("SnsFormat", SnsFormatMapper::GetNameForSnsFormat(m_snsFormat));
   }
 
   return payload;

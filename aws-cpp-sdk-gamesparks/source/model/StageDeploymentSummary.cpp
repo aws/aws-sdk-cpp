@@ -22,6 +22,7 @@ StageDeploymentSummary::StageDeploymentSummary() :
     m_deploymentAction(DeploymentAction::NOT_SET),
     m_deploymentActionHasBeenSet(false),
     m_deploymentIdHasBeenSet(false),
+    m_deploymentResultHasBeenSet(false),
     m_deploymentState(DeploymentState::NOT_SET),
     m_deploymentStateHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
@@ -33,6 +34,7 @@ StageDeploymentSummary::StageDeploymentSummary(JsonView jsonValue) :
     m_deploymentAction(DeploymentAction::NOT_SET),
     m_deploymentActionHasBeenSet(false),
     m_deploymentIdHasBeenSet(false),
+    m_deploymentResultHasBeenSet(false),
     m_deploymentState(DeploymentState::NOT_SET),
     m_deploymentStateHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
@@ -55,6 +57,13 @@ StageDeploymentSummary& StageDeploymentSummary::operator =(JsonView jsonValue)
     m_deploymentId = jsonValue.GetString("DeploymentId");
 
     m_deploymentIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeploymentResult"))
+  {
+    m_deploymentResult = jsonValue.GetObject("DeploymentResult");
+
+    m_deploymentResultHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DeploymentState"))
@@ -93,6 +102,12 @@ JsonValue StageDeploymentSummary::Jsonize() const
   if(m_deploymentIdHasBeenSet)
   {
    payload.WithString("DeploymentId", m_deploymentId);
+
+  }
+
+  if(m_deploymentResultHasBeenSet)
+  {
+   payload.WithObject("DeploymentResult", m_deploymentResult.Jsonize());
 
   }
 
