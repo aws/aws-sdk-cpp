@@ -206,43 +206,37 @@ namespace Model
 
 
     /**
-     * <p>The language of the input documents. You can specify any of the primary
-     * languages supported by Amazon Comprehend. All documents must be in the same
+     * <p>The language of the input documents. Currently, English is the only valid
      * language.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language of the input documents. You can specify any of the primary
-     * languages supported by Amazon Comprehend. All documents must be in the same
+     * <p>The language of the input documents. Currently, English is the only valid
      * language.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
-     * <p>The language of the input documents. You can specify any of the primary
-     * languages supported by Amazon Comprehend. All documents must be in the same
+     * <p>The language of the input documents. Currently, English is the only valid
      * language.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p>The language of the input documents. You can specify any of the primary
-     * languages supported by Amazon Comprehend. All documents must be in the same
+     * <p>The language of the input documents. Currently, English is the only valid
      * language.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p>The language of the input documents. You can specify any of the primary
-     * languages supported by Amazon Comprehend. All documents must be in the same
+     * <p>The language of the input documents. Currently, English is the only valid
      * language.</p>
      */
     inline StartTargetedSentimentDetectionJobRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language of the input documents. You can specify any of the primary
-     * languages supported by Amazon Comprehend. All documents must be in the same
+     * <p>The language of the input documents. Currently, English is the only valid
      * language.</p>
      */
     inline StartTargetedSentimentDetectionJobRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}

@@ -26,8 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Specifies information about the specified endpoint.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Specifies information about the specified endpoint. For information about
+   * endpoints, see <a
+   * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+   * endpoints</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EndpointProperties">AWS
    * API Reference</a></p>
    */

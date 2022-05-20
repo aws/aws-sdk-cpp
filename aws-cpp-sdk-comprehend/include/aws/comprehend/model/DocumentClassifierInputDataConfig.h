@@ -28,8 +28,8 @@ namespace Model
 
   /**
    * <p>The input properties for training a document classifier. </p> <p>For more
-   * information on how the input file is formatted, see
-   * <a>how-document-classification-training-data</a>. </p><p><h3>See Also:</h3>   <a
+   * information on how the input file is formatted, see <a>prep-classifier-data</a>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentClassifierInputDataConfig">AWS
    * API Reference</a></p>
    */

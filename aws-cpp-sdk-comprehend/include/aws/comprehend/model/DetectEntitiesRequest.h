@@ -145,7 +145,9 @@ namespace Model
      * using your own custom model instead of the default model that is used by Amazon
      * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
      * language of your custom model, and it ignores any language code that you provide
-     * in your request.</p>
+     * in your request.</p> <p>For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
 
@@ -155,7 +157,9 @@ namespace Model
      * using your own custom model instead of the default model that is used by Amazon
      * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
      * language of your custom model, and it ignores any language code that you provide
-     * in your request.</p>
+     * in your request.</p> <p>For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
 
@@ -165,7 +169,9 @@ namespace Model
      * using your own custom model instead of the default model that is used by Amazon
      * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
      * language of your custom model, and it ignores any language code that you provide
-     * in your request.</p>
+     * in your request.</p> <p>For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
 
@@ -175,7 +181,9 @@ namespace Model
      * using your own custom model instead of the default model that is used by Amazon
      * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
      * language of your custom model, and it ignores any language code that you provide
-     * in your request.</p>
+     * in your request.</p> <p>For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::move(value); }
 
@@ -185,7 +193,9 @@ namespace Model
      * using your own custom model instead of the default model that is used by Amazon
      * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
      * language of your custom model, and it ignores any language code that you provide
-     * in your request.</p>
+     * in your request.</p> <p>For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline void SetEndpointArn(const char* value) { m_endpointArnHasBeenSet = true; m_endpointArn.assign(value); }
 
@@ -195,7 +205,9 @@ namespace Model
      * using your own custom model instead of the default model that is used by Amazon
      * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
      * language of your custom model, and it ignores any language code that you provide
-     * in your request.</p>
+     * in your request.</p> <p>For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline DetectEntitiesRequest& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
 
@@ -205,7 +217,9 @@ namespace Model
      * using your own custom model instead of the default model that is used by Amazon
      * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
      * language of your custom model, and it ignores any language code that you provide
-     * in your request.</p>
+     * in your request.</p> <p>For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline DetectEntitiesRequest& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
 
@@ -215,7 +229,9 @@ namespace Model
      * using your own custom model instead of the default model that is used by Amazon
      * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
      * language of your custom model, and it ignores any language code that you provide
-     * in your request.</p>
+     * in your request.</p> <p>For information about endpoints, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+     * endpoints</a>.</p>
      */
     inline DetectEntitiesRequest& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
 

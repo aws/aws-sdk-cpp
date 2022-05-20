@@ -602,7 +602,9 @@ namespace Model
 
         /**
          * <p>Creates a model-specific endpoint for synchronous inference for a previously
-         * trained custom model </p><p><h3>See Also:</h3>   <a
+         * trained custom model For information about endpoints, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+         * endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEndpoint">AWS
          * API Reference</a></p>
          */
@@ -662,8 +664,10 @@ namespace Model
 
         /**
          * <p>Deletes a model-specific endpoint for a previously-trained custom model. All
-         * endpoints must be deleted in order for the model to be deleted.</p><p><h3>See
-         * Also:</h3>   <a
+         * endpoints must be deleted in order for the model to be deleted. For information
+         * about endpoints, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+         * endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteEndpoint">AWS
          * API Reference</a></p>
          */
@@ -778,7 +782,9 @@ namespace Model
 
         /**
          * <p>Gets the properties associated with a specific endpoint. Use this operation
-         * to get the status of an endpoint.</p><p><h3>See Also:</h3>   <a
+         * to get the status of an endpoint. For information about endpoints, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+         * endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEndpoint">AWS
          * API Reference</a></p>
          */
@@ -1166,8 +1172,10 @@ namespace Model
         virtual void ListDominantLanguageDetectionJobsAsync(const Model::ListDominantLanguageDetectionJobsRequest& request, const ListDominantLanguageDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a list of all existing endpoints that you've created.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets a list of all existing endpoints that you've created. For information
+         * about endpoints, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+         * endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEndpoints">AWS
          * API Reference</a></p>
          */
@@ -1672,7 +1680,7 @@ namespace Model
 
         /**
          * <p>Stops a sentiment detection job in progress.</p> <p>If the job state is
-         * <code>IN_PROGRESS</code> the job is marked for termination and put into the
+         * <code>IN_PROGRESS</code>, the job is marked for termination and put into the
          * <code>STOP_REQUESTED</code> state. If the job completes before it can be
          * stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
          * be stopped and put into the <code>STOPPED</code> state.</p> <p>If the job is in
@@ -1698,7 +1706,7 @@ namespace Model
 
         /**
          * <p>Stops a targeted sentiment detection job in progress.</p> <p>If the job state
-         * is <code>IN_PROGRESS</code> the job is marked for termination and put into the
+         * is <code>IN_PROGRESS</code>, the job is marked for termination and put into the
          * <code>STOP_REQUESTED</code> state. If the job completes before it can be
          * stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
          * be stopped and put into the <code>STOPPED</code> state.</p> <p>If the job is in
@@ -1807,8 +1815,10 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates information about the specified endpoint.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Updates information about the specified endpoint. For information about
+         * endpoints, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+         * endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UpdateEndpoint">AWS
          * API Reference</a></p>
          */
