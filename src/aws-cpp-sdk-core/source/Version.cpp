@@ -12,22 +12,26 @@ namespace Version
 {
   const char* GetVersionString()
   {
-    return AWS_SDK_VERSION_STRING;
+    return AWS_CPP_SDK_VERSION_STRING;
   }
 
   unsigned GetVersionMajor()
   {
-    return AWS_SDK_VERSION_MAJOR;
+    return AWS_CPP_SDK_VERSION_MAJOR;
   }
 
   unsigned GetVersionMinor()
   {
-    return AWS_SDK_VERSION_MINOR;
+    return AWS_CPP_SDK_VERSION_MINOR;
   }
 
   unsigned GetVersionPatch()
   {
-    return AWS_SDK_VERSION_PATCH;
+    return AWS_CPP_SDK_VERSION_PATCH;
+  }
+
+  const char* GetGitHash(){
+    return AWS_CPP_SDK_GIT_HASH;
   }
 
 
