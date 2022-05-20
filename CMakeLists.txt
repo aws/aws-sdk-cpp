@@ -17,21 +17,16 @@ if (LEGACY_BUILD)
     project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
     include(legacy_main)
 else ()
-    message(STATUS "Building with 1.10 CMake scripts.")
+    message(STATUS "Building with new CMake scripts.")
     string(CONCAT DESCRIPTION_STRING "The AWS SDK for C++ provides a modern C++ (standard version C++11 or later) "
             "interface for Amazon Web Services (AWS).")
 
-    if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
-        message(STATUS "Setting build type to 'RelWithDebInfo' as none was specified.")
-        set(CMAKE_BUILD_TYPE "RelWithDebInfo" CACHE
-                STRING "Choose the type of build." FORCE)
-        # cmake-gui helper
-        set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
-    endif ()
-
     list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
-    include(sdk_versioning)
-    obtain_project_version(SDK_PROJECT_VERSION)
+
+    find_package(Git QUIET) # Adding development helper tools as git_hash built when available.
+
+    include(project_version)
+    obtain_project_version(SDK_PROJECT_VERSION aws-cpp-sdk_GIT_HASH)
 
     project("aws-cpp-sdk"
             LANGUAGES CXX
@@ -39,18 +34,40 @@ else ()
             DESCRIPTION ${DESCRIPTION_STRING}
             HOMEPAGE_URL "https://docs.aws.amazon.com/sdk-for-cpp"
             )
+
+    # Setting C++ minimum requirements
     set(CMAKE_CXX_STANDARD 11)
     set(CMAKE_CXX_EXTENSIONS OFF)
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
     message(STATUS "Building ${PROJECT_NAME} ${CMAKE_PROJECT_VERSION}")
 
+    # Setting version header for library
+    configure_file(
+            VersionConfig.h.in
+            src/aws-cpp-sdk-core/include/aws/core/VersionConfig.h
+            @ONLY
+    )
+
+    # Validating config type and setting default if needed
+    get_property(is_multi_conf_build GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
+    if (NOT is_multi_conf_build)
+        set(allowed_build_types Debug Release RelWithDebInfo MinSizeRel)
+        # cmake-gui helper
+        set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "${allowed_build_types}")
+        if (NOT CMAKE_BUILD_TYPE)
+            message(STATUS "Setting build type to 'RelWithDebInfo' as none was specified.")
+            set(CMAKE_BUILD_TYPE "RelWithDebInfo" CACHE STRING "Choose the type of build." FORCE)
+        elseif (NOT CMAKE_BUILD_TYPE IN_LIST allowed_build_types)
+            message(FATAL_ERROR "Unknown build type: ${CMAKE_BUILD_TYPE}")
+        endif ()
+    endif ()
+    option(BUILD_TESTS "If enabled, the SDK will include tests in the build" OFF)
 
     message(WARNING "Anything below this warning is a TODO not yet implemented.")
-
     message(STATUS "Detecting toolchain and external dependencies.")
-    message(STATUS "Prepare CRT dependency.")
     message(STATUS "Setting up core library.")
+    message(STATUS "Prepare CRT dependency.")
     message(STATUS "Building core library.")
     message(STATUS "Building core library tests.")
     message(STATUS "Add support for static analysis.")
